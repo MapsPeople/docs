@@ -2,17 +2,18 @@
 
 ## Trying the Showcase Web App
 
-A showcase app is available on GitHub, free to use and adapt to your needs.
-SHOWCASE WEB APP
-To try it out right away:
+A [showcase app is available on GitHub](https://github.com/MapsIndoors/Showcase-Web-App), free to use and adapt to your needs.
+
+### To try it out right away:
 Make sure nodejs, npm and gulp is installed on your system
 Using a terminal/shell in the project folder, run the following commands:
-npm install -g browser-sync
-gulp build
-browser-sync start --server
-If on Windows and prompted, allow server to use your PC network
-Open your browser at http://localhost:3000/app (or whatever port browser-sync chooses per default)
-Script Loading
+*npm install -g browser-sync
+*gulp build
+*browser-sync start --server
+*If on Windows and prompted, allow server to use your PC network
+*Open your browser at http://localhost:3000/app (or whatever port browser-sync chooses per default)
+
+## Script Loading
 
 Include the following scripts in your document. MapsIndoors depend on jQuery and Google Maps API v3, so if it’s not present on script load, MapsIndoors will not be able to initialize.
 If you need to use a floor selector (most projects do), just add a css reference as in the sample. This will provide a basic CSS-layout for the floor selector.
