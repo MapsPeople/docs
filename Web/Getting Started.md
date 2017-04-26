@@ -1,4 +1,4 @@
-# Getting started - indoor navigation for Web
+# MapsIndoors for Web - Getting started
 
 ## Trying the Showcase Web App
 
