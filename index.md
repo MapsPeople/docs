@@ -1,1 +1,7 @@
-# Getting started with MapsIndoors
+---
+layout: page
+title: Getting started with MapsIndoors
+
+---
+
+

@@ -1,4 +1,8 @@
-# MapsIndoors for Web - Getting started
+---
+title: MapsIndoors for Web - Getting started
+layout: page
+---
+
 
 ## Trying the Showcase Web App
 
@@ -7,11 +11,12 @@ A [showcase app is available on GitHub](https://github.com/MapsIndoors/Showcase-
 ### To try it out right away:
 Make sure nodejs, npm and gulp is installed on your system
 Using a terminal/shell in the project folder, run the following commands:
-*npm install -g browser-sync
-*gulp build
-*browser-sync start --server
-*If on Windows and prompted, allow server to use your PC network
-*Open your browser at http://localhost:3000/app (or whatever port browser-sync chooses per default)
+
+* npm install -g browser-sync
+* gulp build
+* browser-sync start --server
+* If on Windows and prompted, allow server to use your PC network
+* Open your browser at http://localhost:3000/app (or whatever port browser-sync chooses per default)
 
 ## Script Loading
 
