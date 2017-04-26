@@ -100,7 +100,7 @@ google.maps.event.addListener(marker, 'click', function () {
 The event names and their targets are as follows:
 
 | Event Name | Target Object of Class | Returns |
-| --- | ––– | --- |
+| --- | --- | --- |
 | "ready" | MapsIndoors | MapsIndoors object |
 | "building_changed" | MapsIndoors | Current building object |
 | "floor_changed" | MapsIndoors | Current floor index |
