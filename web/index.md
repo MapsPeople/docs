@@ -3,7 +3,6 @@ title: MapsIndoors for Web - Getting started
 layout: page
 ---
 
-
 ## Trying the Showcase Web App
 
 A [showcase app is available on GitHub](https://github.com/MapsIndoors/Showcase-Web-App), free to use and adapt to your needs.
