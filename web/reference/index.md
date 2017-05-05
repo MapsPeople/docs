@@ -3,6 +3,9 @@ title: MapsIndoors for Web - Reference Guide
 layout: page
 ---
 
+* TOC
+{:toc}
+
 ## MapsIndoors
 `mapsindoors.MapsIndoors(opts:MapsIndoorsOptions)`
 
@@ -29,6 +32,7 @@ locate(options:locateOptions)
 ```
 
 ### Events
+| --- |
 | ready |
 | map_changed |
 | floor_changed |
