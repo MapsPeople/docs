@@ -1,5 +1,5 @@
 ---
-layout:page
+layout: page
 title: MapsIndoors for Android Reference Guide
 ---
 
@@ -17,7 +17,7 @@ Interface AppConfigProvider {#interface-appconfigprovider .title title="Interfac
 -   
 
     All Known Implementing Classes:
-    :   [MPAppConfigAsyncLoader](../../../com/mapspeople/data/loader/MPAppConfigAsyncLoader.html "class in com.mapspeople.data.loader")
+    :   MPAppConfigAsyncLoader
 
     ------------------------------------------------------------------------
 
@@ -27,9 +27,7 @@ Interface AppConfigProvider {#interface-appconfigprovider .title title="Interfac
 
     The interface App config provider.
 
--   -   []{#method.summary}
-
-        ### Method Summary
+-   -   ### Method Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -45,11 +43,7 @@ Interface AppConfigProvider {#interface-appconfigprovider .title title="Interfac
         |                                   | listener.                         |
         +-----------------------------------+-----------------------------------+
 
--   -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#getAppConfigAsync-java.lang.String-java.util.Locale-}
+-   -   ### Method Detail
 
         -   #### getAppConfigAsync
 
@@ -61,8 +55,7 @@ Interface AppConfigProvider {#interface-appconfigprovider .title title="Interfac
             :   `arg` - the arg
             :   `locale` - the locale
 
-        []{#setOnAppConfigReadyListener-com.mapspeople.data.OnAppConfigReadyListener-}
-
+        &nbsp;
         -   #### setOnAppConfigReadyListener
 
                 void setOnAppConfigReadyListener(OnAppConfigReadyListener listener)
@@ -80,7 +73,7 @@ Interface AppDataProvider {#interface-appdataprovider .title title="Interface Ap
 -   
 
     All Known Implementing Classes:
-    :   [MPAppDataProvider](../../../com/mapspeople/data/MPAppDataProvider.html "class in com.mapspeople.data")
+    :   MPAppDataProvider
 
     ------------------------------------------------------------------------
 
@@ -90,9 +83,7 @@ Interface AppDataProvider {#interface-appdataprovider .title title="Interface Ap
 
     App data provider interface
 
--   -   []{#method.summary}
-
-        ### Method Summary
+-   -   ### Method Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -108,11 +99,7 @@ Interface AppDataProvider {#interface-appdataprovider .title title="Interface Ap
         |                                   | data                              |
         +-----------------------------------+-----------------------------------+
 
--   -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#setOnAppDataReadyListener-com.mapspeople.data.OnAppDataReadyListener-}
+-   -   ### Method Detail
 
         -   #### setOnAppDataReadyListener
 
@@ -123,8 +110,7 @@ Interface AppDataProvider {#interface-appdataprovider .title title="Interface Ap
             [Parameters:]{.paramLabel}
             :   `listener` - The listener object
 
-        []{#getAppDataAsync-java.lang.String-}
-
+        &nbsp;
         -   #### getAppDataAsync
 
                 void getAppDataAsync(java.lang.String venueId)
@@ -143,8 +129,7 @@ Interface CategoryProvider {#interface-categoryprovider .title title="Interface 
 -   
 
     All Known Implementing Classes:
-    :   [MPCategoryAsyncLoader](../../../com/mapspeople/data/loader/MPCategoryAsyncLoader.html "class in com.mapspeople.data.loader"),
-        [MPCategoryProvider](../../../com/mapspeople/data/MPCategoryProvider.html "class in com.mapspeople.data")
+    :   MPCategoryAsyncLoader, MPCategoryProvider
 
     ------------------------------------------------------------------------
 
@@ -154,9 +139,7 @@ Interface CategoryProvider {#interface-categoryprovider .title title="Interface 
 
     The interface Category provider.
 
--   -   []{#method.summary}
-
-        ### Method Summary
+-   -   ### Method Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -171,11 +154,7 @@ Interface CategoryProvider {#interface-categoryprovider .title title="Interface 
         |                                   | Sets on category ready listener.  |
         +-----------------------------------+-----------------------------------+
 
--   -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#getCategoryAsync-java.lang.String-java.util.Locale-}
+-   -   ### Method Detail
 
         -   #### getCategoryAsync
 
@@ -187,8 +166,7 @@ Interface CategoryProvider {#interface-categoryprovider .title title="Interface 
             :   `arg` - the arg
             :   `locale` - the locale
 
-        []{#setOnCategoryReadyListener-com.mapspeople.data.OnCategoryReadyListener-}
-
+        &nbsp;
         -   #### setOnCategoryReadyListener
 
                 void setOnCategoryReadyListener(OnCategoryReadyListener listener)
@@ -206,8 +184,7 @@ Interface GatewayProvider {#interface-gatewayprovider .title title="Interface Ga
 -   
 
     All Known Implementing Classes:
-    :   [MPGatewayAsyncLoader](../../../com/mapspeople/data/loader/MPGatewayAsyncLoader.html "class in com.mapspeople.data.loader"),
-        [MPGatewayProvider](../../../com/mapspeople/data/MPGatewayProvider.html "class in com.mapspeople.data")
+    :   MPGatewayAsyncLoader, MPGatewayProvider
 
     ------------------------------------------------------------------------
 
@@ -217,9 +194,7 @@ Interface GatewayProvider {#interface-gatewayprovider .title title="Interface Ga
 
     GatewayProvider Created by mh on 03-10-2016.
 
--   -   []{#method.summary}
-
-        ### Method Summary
+-   -   ### Method Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -233,11 +208,7 @@ Interface GatewayProvider {#interface-gatewayprovider .title title="Interface Ga
         |                                   | Sets on gateway ready listener.   |
         +-----------------------------------+-----------------------------------+
 
--   -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#getGatewayAsync-java.lang.String-}
+-   -   ### Method Detail
 
         -   #### getGatewayAsync
 
@@ -248,8 +219,7 @@ Interface GatewayProvider {#interface-gatewayprovider .title title="Interface Ga
             [Parameters:]{.paramLabel}
             :   `solutionId` - the solution id
 
-        []{#setOnGatewayReadyListener-com.mapspeople.data.OnGatewayReadyListener-}
-
+        &nbsp;
         -   #### setOnGatewayReadyListener
 
                 void setOnGatewayReadyListener(OnGatewayReadyListener listener)
@@ -270,7 +240,7 @@ Class LocationCache {#class-locationcache .title title="Class LocationCache"}
 -   
 
     All Implemented Interfaces:
-    :   [OnLocationsReadyListener](../../../com/mapspeople/data/OnLocationsReadyListener.html "interface in com.mapspeople.data")
+    :   OnLocationsReadyListener
 
     ------------------------------------------------------------------------
 
@@ -280,9 +250,7 @@ Class LocationCache {#class-locationcache .title title="Class LocationCache"}
 
     LocationCache created by mh on 10-02-2016.
 
--   -   []{#constructor.summary}
-
-        ### Constructor Summary
+-   -   ### Constructor Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -302,17 +270,11 @@ Class LocationCache {#class-locationcache .title title="Class LocationCache"}
         |                                   | On locations ready.               |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#LocationCache-com.mapspeople.models.Solution-com.mapspeople.data.LocationsProvider-}
+-   -   ### Constructor Detail
 
         -   #### LocationCache
 
@@ -325,11 +287,7 @@ Class LocationCache {#class-locationcache .title title="Class LocationCache"}
             :   `locationsProvider` - the locations provider
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#getLocationListAsync-java.util.Locale-int-com.mapspeople.models.MapExtend-}
+    -   ### Method Detail
 
         -   #### getLocationListAsync
 
@@ -342,8 +300,7 @@ Class LocationCache {#class-locationcache .title title="Class LocationCache"}
             :   `floorIndex` - the floor index
             :   `mapExtend` - the map extend
 
-        []{#onLocationsReady-java.util.List-}
-
+        &nbsp;
         -   #### onLocationsReady
 
                 public abstract void onLocationsReady(java.util.List<Location> locations)
@@ -357,8 +314,7 @@ Class LocationCache {#class-locationcache .title title="Class LocationCache"}
             [Parameters:]{.paramLabel}
             :   `locations` - the locations
 
-        []{#onLocationDetailsReady-com.mapspeople.models.Location-}
-
+        &nbsp;
         -   #### onLocationDetailsReady
 
                 public void onLocationDetailsReady(Location location)
@@ -383,7 +339,7 @@ Class LocationQuery.OrderBy {#class-locationquery.orderby .title title="Class Lo
 -   
 
     Enclosing class:
-    :   [LocationQuery](../../../com/mapspeople/data/LocationQuery.html "class in com.mapspeople.data")
+    :   LocationQuery
 
     ------------------------------------------------------------------------
 
@@ -393,30 +349,20 @@ Class LocationQuery.OrderBy {#class-locationquery.orderby .title title="Class Lo
 
     The type Order by.
 
--   -   []{#field.summary}
-
-        ### Field Summary
+-   -   ### Field Summary
 
           Constructor and Description
           -----------------------------
           `OrderBy()` 
 
     &nbsp;
-    -   []{#method.summary}
+    -   ### Method Summary
 
-        ### Method Summary
-
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#field.detail}
-
-        ### Field Detail
-
-        []{#NAME}
+-   -   ### Field Detail
 
         -   #### NAME
 
@@ -425,11 +371,9 @@ Class LocationQuery.OrderBy {#class-locationquery.orderby .title title="Class Lo
             The constant NAME.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.data.LocationQuery.OrderBy.NAME)
+            :   Constant Field Values
 
-        []{#TYPE}
-
+        &nbsp;
         -   #### TYPE
 
                 public static final java.lang.String TYPE
@@ -437,11 +381,9 @@ Class LocationQuery.OrderBy {#class-locationquery.orderby .title title="Class Lo
             The constant TYPE.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.data.LocationQuery.OrderBy.TYPE)
+            :   Constant Field Values
 
-        []{#FLOOR}
-
+        &nbsp;
         -   #### FLOOR
 
                 public static final java.lang.String FLOOR
@@ -449,11 +391,9 @@ Class LocationQuery.OrderBy {#class-locationquery.orderby .title title="Class Lo
             The constant FLOOR.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.data.LocationQuery.OrderBy.FLOOR)
+            :   Constant Field Values
 
-        []{#BUILDING}
-
+        &nbsp;
         -   #### BUILDING
 
                 public static final java.lang.String BUILDING
@@ -461,11 +401,9 @@ Class LocationQuery.OrderBy {#class-locationquery.orderby .title title="Class Lo
             The constant BUILDING.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.data.LocationQuery.OrderBy.BUILDING)
+            :   Constant Field Values
 
-        []{#VENUE}
-
+        &nbsp;
         -   #### VENUE
 
                 public static final java.lang.String VENUE
@@ -473,11 +411,9 @@ Class LocationQuery.OrderBy {#class-locationquery.orderby .title title="Class Lo
             The constant VENUE.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.data.LocationQuery.OrderBy.VENUE)
+            :   Constant Field Values
 
-        []{#ROOMID}
-
+        &nbsp;
         -   #### ROOMID
 
                 public static final java.lang.String ROOMID
@@ -485,11 +421,9 @@ Class LocationQuery.OrderBy {#class-locationquery.orderby .title title="Class Lo
             The constant ROOMID.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.data.LocationQuery.OrderBy.ROOMID)
+            :   Constant Field Values
 
-        []{#RELEVANCE}
-
+        &nbsp;
         -   #### RELEVANCE
 
                 public static final java.lang.String RELEVANCE
@@ -497,15 +431,10 @@ Class LocationQuery.OrderBy {#class-locationquery.orderby .title title="Class Lo
             The constant RELEVANCE.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.data.LocationQuery.OrderBy.RELEVANCE)
+            :   Constant Field Values
 
     &nbsp;
-    -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#OrderBy--}
+    -   ### Constructor Detail
 
         -   #### OrderBy
 
@@ -522,7 +451,7 @@ Class LocationQuery.SortOrder {#class-locationquery.sortorder .title title="Clas
 -   
 
     Enclosing class:
-    :   [LocationQuery](../../../com/mapspeople/data/LocationQuery.html "class in com.mapspeople.data")
+    :   LocationQuery
 
     ------------------------------------------------------------------------
 
@@ -532,30 +461,20 @@ Class LocationQuery.SortOrder {#class-locationquery.sortorder .title title="Clas
 
     The type Sort order.
 
--   -   []{#field.summary}
-
-        ### Field Summary
+-   -   ### Field Summary
 
           Constructor and Description
           -----------------------------
           `SortOrder()` 
 
     &nbsp;
-    -   []{#method.summary}
+    -   ### Method Summary
 
-        ### Method Summary
-
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#field.detail}
-
-        ### Field Detail
-
-        []{#ASC}
+-   -   ### Field Detail
 
         -   #### ASC
 
@@ -564,11 +483,9 @@ Class LocationQuery.SortOrder {#class-locationquery.sortorder .title title="Clas
             The constant ASC.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.data.LocationQuery.SortOrder.ASC)
+            :   Constant Field Values
 
-        []{#DESC}
-
+        &nbsp;
         -   #### DESC
 
                 public static final java.lang.String DESC
@@ -576,15 +493,10 @@ Class LocationQuery.SortOrder {#class-locationquery.sortorder .title title="Clas
             The constant DESC.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.data.LocationQuery.SortOrder.DESC)
+            :   Constant Field Values
 
     &nbsp;
-    -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#SortOrder--}
+    -   ### Constructor Detail
 
         -   #### SortOrder
 
@@ -608,9 +520,7 @@ Class LocationQuery {#class-locationquery .title title="Class LocationQuery"}
 
     The type Location query.
 
--   -   []{#nested.class.summary}
-
-        ### Nested Class Summary
+-   -   ### Nested Class Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -628,17 +538,11 @@ Class LocationQuery {#class-locationquery .title title="Class LocationQuery"}
         |                                   | Sets tokens.                      |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#field.detail}
-
-        ### Field Detail
-
-        []{#arg}
+-   -   ### Field Detail
 
         -   #### arg
 
@@ -646,64 +550,56 @@ Class LocationQuery {#class-locationquery .title title="Class LocationQuery"}
 
             The Arg.
 
-        []{#categories}
-
+        &nbsp;
         -   #### categories
 
                 public java.util.List<java.lang.String> categories
 
             The Categories.
 
-        []{#types}
-
+        &nbsp;
         -   #### types
 
                 public java.util.List<java.lang.String> types
 
             The Types.
 
-        []{#mapExtend}
-
+        &nbsp;
         -   #### mapExtend
 
                 public MapExtend mapExtend
 
             The Map extend.
 
-        []{#near}
-
+        &nbsp;
         -   #### near
 
                 public Point near
 
             The Near.
 
-        []{#max}
-
+        &nbsp;
         -   #### max
 
                 public int max
 
             The Max.
 
-        []{#radius}
-
+        &nbsp;
         -   #### radius
 
                 public int radius
 
             The Radius.
 
-        []{#floor}
-
+        &nbsp;
         -   #### floor
 
                 public int floor
 
             The Floor.
 
-        []{#venue}
-
+        &nbsp;
         -   #### venue
 
                 public final java.lang.String venue
@@ -711,19 +607,16 @@ Class LocationQuery {#class-locationquery .title title="Class LocationQuery"}
             The Venue.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.data.LocationQuery.venue)
+            :   Constant Field Values
 
-        []{#orderBy}
-
+        &nbsp;
         -   #### orderBy
 
                 public java.lang.String orderBy
 
             The Order by.
 
-        []{#sortOrder}
-
+        &nbsp;
         -   #### sortOrder
 
                 public final java.lang.String sortOrder
@@ -731,11 +624,9 @@ Class LocationQuery {#class-locationquery .title title="Class LocationQuery"}
             The Sort order.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.data.LocationQuery.sortOrder)
+            :   Constant Field Values
 
-        []{#building}
-
+        &nbsp;
         -   #### building
 
                 public java.lang.String building
@@ -743,11 +634,7 @@ Class LocationQuery {#class-locationquery .title title="Class LocationQuery"}
             The Building.
 
     &nbsp;
-    -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#LocationQuery--}
+    -   ### Constructor Detail
 
         -   #### LocationQuery
 
@@ -755,8 +642,7 @@ Class LocationQuery {#class-locationquery .title title="Class LocationQuery"}
 
             Instantiates a new Location query.
 
-        []{#LocationQuery-java.lang.String-}
-
+        &nbsp;
         -   #### LocationQuery
 
                 public LocationQuery(java.lang.String solutionId)
@@ -767,11 +653,7 @@ Class LocationQuery {#class-locationquery .title title="Class LocationQuery"}
             :   `solutionId` - the solution id
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#setTokens-java.lang.String:A-java.lang.String:A-}
+    -   ### Method Detail
 
         -   #### setTokens
 
@@ -783,8 +665,7 @@ Class LocationQuery {#class-locationquery .title title="Class LocationQuery"}
             :   `buildingTokens` - the building tokens
             :   `floorTokens` - the floor tokens
 
-        []{#getQuery--}
-
+        &nbsp;
         -   #### getQuery
 
                 public java.lang.String getQuery()
@@ -794,8 +675,7 @@ Class LocationQuery {#class-locationquery .title title="Class LocationQuery"}
             [Returns:]{.returnLabel}
             :   the query
 
-        []{#setQuery-java.lang.String-}
-
+        &nbsp;
         -   #### setQuery
 
                 public void setQuery(java.lang.String inputQuery)
@@ -813,8 +693,7 @@ Interface LocationsProvider {#interface-locationsprovider .title title="Interfac
 -   
 
     All Known Implementing Classes:
-    :   [MPLocationsAsyncLoader](../../../com/mapspeople/data/loader/MPLocationsAsyncLoader.html "class in com.mapspeople.data.loader"),
-        [MPLocationsProvider](../../../com/mapspeople/data/MPLocationsProvider.html "class in com.mapspeople.data")
+    :   MPLocationsAsyncLoader, MPLocationsProvider
 
     ------------------------------------------------------------------------
 
@@ -824,9 +703,7 @@ Interface LocationsProvider {#interface-locationsprovider .title title="Interfac
 
     Location provider interface
 
--   -   []{#method.summary}
-
-        ### Method Summary
+-   -   ### Method Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -885,11 +762,7 @@ Interface LocationsProvider {#interface-locationsprovider .title title="Interfac
         |                                   | the locations.                    |
         +-----------------------------------+-----------------------------------+
 
--   -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#getLocationsDetailsAsync-java.lang.String-java.lang.String-}
+-   -   ### Method Detail
 
         -   #### getLocationsDetailsAsync
 
@@ -902,8 +775,7 @@ Interface LocationsProvider {#interface-locationsprovider .title title="Interfac
             :   `solutionId` - The string parameter
             :   `locationId` - The string parameter
 
-        []{#getLocationsAsync-java.lang.String-java.util.Locale-}
-
+        &nbsp;
         -   #### getLocationsAsync
 
                 void getLocationsAsync(java.lang.String solutionId,                       java.util.Locale locale)
@@ -914,8 +786,7 @@ Interface LocationsProvider {#interface-locationsprovider .title title="Interfac
             :   `solutionId` - the solution id
             :   `locale` - the locale
 
-        []{#getLocationsWithinMapExtendAsync-com.mapspeople.models.MapExtend-java.lang.String-java.util.Locale-}
-
+        &nbsp;
         -   #### getLocationsWithinMapExtendAsync
 
                 void getLocationsWithinMapExtendAsync(MapExtend mapExtend,                                      java.lang.String solutionId,                                      java.util.Locale locale)
@@ -927,8 +798,7 @@ Interface LocationsProvider {#interface-locationsprovider .title title="Interfac
             :   `solutionId` - the solution id
             :   `locale` - the locale
 
-        []{#getLocationsWithinMapExtendAsync-int-float-com.mapspeople.models.MapExtend-java.lang.String-java.util.Locale-}
-
+        &nbsp;
         -   #### getLocationsWithinMapExtendAsync
 
                 void getLocationsWithinMapExtendAsync(int floorIndex,                                      float zoomLevel,                                      MapExtend mapExtend,                                      java.lang.String solutionId,                                      java.util.Locale locale)
@@ -942,8 +812,7 @@ Interface LocationsProvider {#interface-locationsprovider .title title="Interfac
             :   `solutionId` - the solution id
             :   `locale` - the locale
 
-        []{#getLocationsUsingQueryAsync-com.mapspeople.data.LocationQuery-java.util.Locale-}
-
+        &nbsp;
         -   #### getLocationsUsingQueryAsync
 
                 void getLocationsUsingQueryAsync(LocationQuery locationQuery,                                 java.util.Locale locale)
@@ -954,8 +823,7 @@ Interface LocationsProvider {#interface-locationsprovider .title title="Interfac
             :   `locationQuery` - the location query
             :   `locale` - the locale
 
-        []{#getLocationsUsingQuery-com.mapspeople.data.LocationQuery-java.util.Locale-}
-
+        &nbsp;
         -   #### getLocationsUsingQuery
 
                 java.util.List<Location> getLocationsUsingQuery(LocationQuery locationQuery,                                                java.util.Locale locale)
@@ -969,16 +837,14 @@ Interface LocationsProvider {#interface-locationsprovider .title title="Interfac
             [Returns:]{.returnLabel}
             :   the locations using query
 
-        []{#cancelRequest--}
-
+        &nbsp;
         -   #### cancelRequest
 
                 void cancelRequest()
 
             Cancel request.
 
-        []{#setOnLocationsReadyListener-com.mapspeople.data.OnLocationsReadyListener-}
-
+        &nbsp;
         -   #### setOnLocationsReadyListener
 
                 void setOnLocationsReadyListener(OnLocationsReadyListener listener)
@@ -999,7 +865,7 @@ Class MPAppDataProvider {#class-mpappdataprovider .title title="Class MPAppDataP
 -   
 
     All Implemented Interfaces:
-    :   [AppDataProvider](../../../com/mapspeople/data/AppDataProvider.html "interface in com.mapspeople.data")
+    :   AppDataProvider
 
     ------------------------------------------------------------------------
 
@@ -1011,9 +877,7 @@ Class MPAppDataProvider {#class-mpappdataprovider .title title="Class MPAppDataP
     MapsPeople (or another service that implements the same data
     structure)
 
--   -   []{#constructor.summary}
-
-        ### Constructor Summary
+-   -   ### Constructor Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -1027,17 +891,11 @@ Class MPAppDataProvider {#class-mpappdataprovider .title title="Class MPAppDataP
         |                                   | Sets on app data ready listener.  |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#MPAppDataProvider-android.content.Context-}
+-   -   ### Constructor Detail
 
         -   #### MPAppDataProvider
 
@@ -1049,11 +907,7 @@ Class MPAppDataProvider {#class-mpappdataprovider .title title="Class MPAppDataP
             :   `context` - the context
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#setOnAppDataReadyListener-com.mapspeople.data.OnAppDataReadyListener-}
+    -   ### Method Detail
 
         -   #### setOnAppDataReadyListener
 
@@ -1068,8 +922,7 @@ Class MPAppDataProvider {#class-mpappdataprovider .title title="Class MPAppDataP
             [Parameters:]{.paramLabel}
             :   `listener` - the listener
 
-        []{#getAppDataAsync-java.lang.String-}
-
+        &nbsp;
         -   #### getAppDataAsync
 
                 public void getAppDataAsync(java.lang.String siteName)
@@ -1093,7 +946,7 @@ Class MPCategoryProvider {#class-mpcategoryprovider .title title="Class MPCatego
 -   
 
     All Implemented Interfaces:
-    :   [CategoryProvider](../../../com/mapspeople/data/CategoryProvider.html "interface in com.mapspeople.data")
+    :   CategoryProvider
 
     ------------------------------------------------------------------------
 
@@ -1104,9 +957,7 @@ Class MPCategoryProvider {#class-mpcategoryprovider .title title="Class MPCatego
     Use this provider to fetch solution from MapsPeoples services, the
     provider is default in {com.mapspeople.mapcontrol.MapControl}
 
--   -   []{#constructor.summary}
-
-        ### Constructor Summary
+-   -   ### Constructor Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -1121,28 +972,18 @@ Class MPCategoryProvider {#class-mpcategoryprovider .title title="Class MPCatego
         |                                   | Sets on category ready listener.  |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#MPCategoryProvider--}
+-   -   ### Constructor Detail
 
         -   #### MPCategoryProvider
 
                 public MPCategoryProvider()
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#getCategoryAsync-java.lang.String-java.util.Locale-}
+    -   ### Method Detail
 
         -   #### getCategoryAsync
 
@@ -1157,8 +998,7 @@ Class MPCategoryProvider {#class-mpcategoryprovider .title title="Class MPCatego
             :   `arg` - the arg
             :   `locale` - the locale
 
-        []{#setOnCategoryReadyListener-com.mapspeople.data.OnCategoryReadyListener-}
-
+        &nbsp;
         -   #### setOnCategoryReadyListener
 
                 public void setOnCategoryReadyListener(OnCategoryReadyListener listener)
@@ -1183,7 +1023,7 @@ Class MPGatewayProvider {#class-mpgatewayprovider .title title="Class MPGatewayP
 -   
 
     All Implemented Interfaces:
-    :   [GatewayProvider](../../../com/mapspeople/data/GatewayProvider.html "interface in com.mapspeople.data")
+    :   GatewayProvider
 
     ------------------------------------------------------------------------
 
@@ -1194,9 +1034,7 @@ Class MPGatewayProvider {#class-mpgatewayprovider .title title="Class MPGatewayP
     Use this provider to fetch gateways from MapsPeoples services, the
     provider is default in {com.mapspeople.mapcontrol.MapControl}
 
--   -   []{#constructor.summary}
-
-        ### Constructor Summary
+-   -   ### Constructor Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -1210,28 +1048,18 @@ Class MPGatewayProvider {#class-mpgatewayprovider .title title="Class MPGatewayP
         |                                   | Sets on gateway ready listener.   |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#MPGatewayProvider--}
+-   -   ### Constructor Detail
 
         -   #### MPGatewayProvider
 
                 public MPGatewayProvider()
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#getGatewayAsync-java.lang.String-}
+    -   ### Method Detail
 
         -   #### getGatewayAsync
 
@@ -1245,8 +1073,7 @@ Class MPGatewayProvider {#class-mpgatewayprovider .title title="Class MPGatewayP
             [Parameters:]{.paramLabel}
             :   `solutionId` - the solution id
 
-        []{#setOnGatewayReadyListener-com.mapspeople.data.OnGatewayReadyListener-}
-
+        &nbsp;
         -   #### setOnGatewayReadyListener
 
                 public void setOnGatewayReadyListener(OnGatewayReadyListener listener)
@@ -1271,7 +1098,7 @@ Class MPLocationsProvider {#class-mplocationsprovider .title title="Class MPLoca
 -   
 
     All Implemented Interfaces:
-    :   [LocationsProvider](../../../com/mapspeople/data/LocationsProvider.html "interface in com.mapspeople.data")
+    :   LocationsProvider
 
     ------------------------------------------------------------------------
 
@@ -1281,9 +1108,7 @@ Class MPLocationsProvider {#class-mplocationsprovider .title title="Class MPLoca
 
     Use this provider to fetch locations from MapsPeoples services
 
--   -   []{#constructor.summary}
-
-        ### Constructor Summary
+-   -   ### Constructor Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -1342,17 +1167,11 @@ Class MPLocationsProvider {#class-mplocationsprovider .title title="Class MPLoca
         |                                   | Sets solution.                    |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#MPLocationsProvider-android.content.Context-}
+-   -   ### Constructor Detail
 
         -   #### MPLocationsProvider
 
@@ -1364,11 +1183,7 @@ Class MPLocationsProvider {#class-mplocationsprovider .title title="Class MPLoca
             :   `context` - the context
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#setSolution-com.mapspeople.models.Solution-}
+    -   ### Method Detail
 
         -   #### setSolution
 
@@ -1379,8 +1194,7 @@ Class MPLocationsProvider {#class-mplocationsprovider .title title="Class MPLoca
             [Parameters:]{.paramLabel}
             :   `_solution` - the solution
 
-        []{#getLocationsAsync-java.lang.String-java.util.Locale-}
-
+        &nbsp;
         -   #### getLocationsAsync
 
                 public void getLocationsAsync(java.lang.String solutionId,                              java.util.Locale locale)
@@ -1394,8 +1208,7 @@ Class MPLocationsProvider {#class-mplocationsprovider .title title="Class MPLoca
             :   `solutionId` - the solution id
             :   `locale` - the locale
 
-        []{#getLocationsWithinMapExtendAsync-com.mapspeople.models.MapExtend-java.lang.String-java.util.Locale-}
-
+        &nbsp;
         -   #### getLocationsWithinMapExtendAsync
 
                 public void getLocationsWithinMapExtendAsync(MapExtend mapExtend,                                             java.lang.String solutionId,                                             java.util.Locale locale)
@@ -1411,8 +1224,7 @@ Class MPLocationsProvider {#class-mplocationsprovider .title title="Class MPLoca
             :   `solutionId` - the solution id
             :   `locale` - the locale
 
-        []{#getLocationsWithinMapExtendAsync-int-float-com.mapspeople.models.MapExtend-java.lang.String-java.util.Locale-}
-
+        &nbsp;
         -   #### getLocationsWithinMapExtendAsync
 
                 public void getLocationsWithinMapExtendAsync(int floorIndex,                                             float zoomLevel,                                             MapExtend mapExtend,                                             java.lang.String solutionId,                                             java.util.Locale locale)
@@ -1430,8 +1242,7 @@ Class MPLocationsProvider {#class-mplocationsprovider .title title="Class MPLoca
             :   `solutionId` - the solution id
             :   `locale` - the locale
 
-        []{#getLocationsUsingQueryAsync-com.mapspeople.data.LocationQuery-java.util.Locale-}
-
+        &nbsp;
         -   #### getLocationsUsingQueryAsync
 
                 public void getLocationsUsingQueryAsync(LocationQuery locationQuery,                                        java.util.Locale locale)
@@ -1446,8 +1257,7 @@ Class MPLocationsProvider {#class-mplocationsprovider .title title="Class MPLoca
             :   `locationQuery` - the location query
             :   `locale` - the locale
 
-        []{#setOnLocationsReadyListener-com.mapspeople.data.OnLocationsReadyListener-}
-
+        &nbsp;
         -   #### setOnLocationsReadyListener
 
                 public void setOnLocationsReadyListener(OnLocationsReadyListener listener)
@@ -1461,8 +1271,7 @@ Class MPLocationsProvider {#class-mplocationsprovider .title title="Class MPLoca
             [Parameters:]{.paramLabel}
             :   `listener` - the listener
 
-        []{#getLocationsDetailsAsync-java.lang.String-java.lang.String-}
-
+        &nbsp;
         -   #### getLocationsDetailsAsync
 
                 public void getLocationsDetailsAsync(java.lang.String solutionId,                                     java.lang.String locationId)
@@ -1477,8 +1286,7 @@ Class MPLocationsProvider {#class-mplocationsprovider .title title="Class MPLoca
             :   `solutionId` - the solution id
             :   `locationId` - the location id
 
-        []{#cancelRequest--}
-
+        &nbsp;
         -   #### cancelRequest
 
                 public void cancelRequest()
@@ -1488,8 +1296,7 @@ Class MPLocationsProvider {#class-mplocationsprovider .title title="Class MPLoca
             [Specified by:]{.overrideSpecifyLabel}
             :   `cancelRequest` in interface `LocationsProvider`
 
-        []{#getLocationsUsingQuery-com.mapspeople.data.LocationQuery-java.util.Locale-}
-
+        &nbsp;
         -   #### getLocationsUsingQuery
 
                 public java.util.List<Location> getLocationsUsingQuery(LocationQuery locationQuery,                                                       java.util.Locale locale)
@@ -1518,7 +1325,7 @@ Class MPSolutionProvider {#class-mpsolutionprovider .title title="Class MPSoluti
 -   
 
     All Implemented Interfaces:
-    :   [SolutionProvider](../../../com/mapspeople/data/SolutionProvider.html "interface in com.mapspeople.data")
+    :   SolutionProvider
 
     ------------------------------------------------------------------------
 
@@ -1529,9 +1336,7 @@ Class MPSolutionProvider {#class-mpsolutionprovider .title title="Class MPSoluti
     Use this provider to fetch solution from MapsPeoples services, the
     provider is default in {com.mapspeople.mapcontrol.MapControl}
 
--   -   []{#constructor.summary}
-
-        ### Constructor Summary
+-   -   ### Constructor Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -1546,28 +1351,18 @@ Class MPSolutionProvider {#class-mpsolutionprovider .title title="Class MPSoluti
         |                                   | Sets on solution ready listener.  |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#MPSolutionProvider--}
+-   -   ### Constructor Detail
 
         -   #### MPSolutionProvider
 
                 public MPSolutionProvider()
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#getSolutionAsync-java.lang.String-java.util.Locale-}
+    -   ### Method Detail
 
         -   #### getSolutionAsync
 
@@ -1582,8 +1377,7 @@ Class MPSolutionProvider {#class-mpsolutionprovider .title title="Class MPSoluti
             :   `arg` - the arg
             :   `locale` - the locale
 
-        []{#setOnSolutionReadyListener-com.mapspeople.data.OnSolutionReadyListener-}
-
+        &nbsp;
         -   #### setOnSolutionReadyListener
 
                 public void setOnSolutionReadyListener(OnSolutionReadyListener listener)
@@ -1612,9 +1406,7 @@ Interface OnAppConfigReadyListener {#interface-onappconfigreadylistener .title t
 
     The interface On app config ready listener.
 
--   -   []{#method.summary}
-
-        ### Method Summary
+-   -   ### Method Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -1624,11 +1416,7 @@ Interface OnAppConfigReadyListener {#interface-onappconfigreadylistener .title t
         |                                   | On app config ready.              |
         +-----------------------------------+-----------------------------------+
 
--   -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#onAppConfigReady-com.mapspeople.models.AppConfig-}
+-   -   ### Method Detail
 
         -   #### onAppConfigReady
 
@@ -1654,9 +1442,7 @@ Interface OnAppDataReadyListener {#interface-onappdatareadylistener .title title
 
     App data ready listener
 
--   -   []{#method.summary}
-
-        ### Method Summary
+-   -   ### Method Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -1665,11 +1451,7 @@ Interface OnAppDataReadyListener {#interface-onappdatareadylistener .title title
         |                                   | App data ready event method.      |
         +-----------------------------------+-----------------------------------+
 
--   -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#onAppDataReady-com.mapspeople.models.AppData-}
+-   -   ### Method Detail
 
         -   #### onAppDataReady
 
@@ -1695,9 +1477,7 @@ Interface OnBuildingReadyListener {#interface-onbuildingreadylistener .title tit
 
     The interface On building ready listener.
 
--   -   []{#method.summary}
-
-        ### Method Summary
+-   -   ### Method Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -1707,11 +1487,7 @@ Interface OnBuildingReadyListener {#interface-onbuildingreadylistener .title tit
         |                                   | On building ready.                |
         +-----------------------------------+-----------------------------------+
 
--   -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#onBuildingReady-com.mapspeople.models.BuildingCollection-}
+-   -   ### Method Detail
 
         -   #### onBuildingReady
 
@@ -1737,9 +1513,7 @@ Interface OnCategoryReadyListener {#interface-oncategoryreadylistener .title tit
 
     The interface On category ready listener.
 
--   -   []{#method.summary}
-
-        ### Method Summary
+-   -   ### Method Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -1749,11 +1523,7 @@ Interface OnCategoryReadyListener {#interface-oncategoryreadylistener .title tit
         |                                   | On category ready.                |
         +-----------------------------------+-----------------------------------+
 
--   -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#onCategoryReady-com.mapspeople.models.CategoryCollection-}
+-   -   ### Method Detail
 
         -   #### onCategoryReady
 
@@ -1779,9 +1549,7 @@ Interface OnDataReadyListener {#interface-ondatareadylistener .title title="Inte
 
     Listener interface to catch data context fetching events.
 
--   -   []{#method.summary}
-
-        ### Method Summary
+-   -   ### Method Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -1820,11 +1588,7 @@ Interface OnDataReadyListener {#interface-ondatareadylistener .title title="Inte
         |                                   | fetch.                            |
         +-----------------------------------+-----------------------------------+
 
--   -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#onLocationDataReady--}
+-   -   ### Method Detail
 
         -   #### onLocationDataReady
 
@@ -1832,16 +1596,14 @@ Interface OnDataReadyListener {#interface-ondatareadylistener .title title="Inte
 
             Listener method to catch locations fetch.
 
-        []{#onAppDataReady--}
-
+        &nbsp;
         -   #### onAppDataReady
 
                 void onAppDataReady()
 
             Listener method to catch app data fetch.
 
-        []{#onVenueDataReady-com.mapspeople.models.VenueCollection-}
-
+        &nbsp;
         -   #### onVenueDataReady
 
                 void onVenueDataReady(VenueCollection venueCollection)
@@ -1851,8 +1613,7 @@ Interface OnDataReadyListener {#interface-ondatareadylistener .title title="Inte
             [Parameters:]{.paramLabel}
             :   `venueCollection` - the venue collection
 
-        []{#onSolutionDataReady-com.mapspeople.models.Solution-}
-
+        &nbsp;
         -   #### onSolutionDataReady
 
                 void onSolutionDataReady(Solution solution)
@@ -1862,8 +1623,7 @@ Interface OnDataReadyListener {#interface-ondatareadylistener .title title="Inte
             [Parameters:]{.paramLabel}
             :   `solution` - the solution
 
-        []{#onCategoryDataReady-com.mapspeople.models.CategoryCollection-}
-
+        &nbsp;
         -   #### onCategoryDataReady
 
                 void onCategoryDataReady(CategoryCollection categories)
@@ -1873,8 +1633,7 @@ Interface OnDataReadyListener {#interface-ondatareadylistener .title title="Inte
             [Parameters:]{.paramLabel}
             :   `categories` - the categories
 
-        []{#onPushMessageDataReady-com.mapspeople.models.PushMessageCollection-}
-
+        &nbsp;
         -   #### onPushMessageDataReady
 
                 void onPushMessageDataReady(PushMessageCollection pushMessages)
@@ -1884,8 +1643,7 @@ Interface OnDataReadyListener {#interface-ondatareadylistener .title title="Inte
             [Parameters:]{.paramLabel}
             :   `pushMessages` - the push messages
 
-        []{#onAppConfigDataReady-com.mapspeople.models.AppConfig-}
-
+        &nbsp;
         -   #### onAppConfigDataReady
 
                 void onAppConfigDataReady(AppConfig settings)
@@ -1910,9 +1668,7 @@ Interface OnGatewayReadyListener {#interface-ongatewayreadylistener .title title
 
     The interface On gateway ready listener.
 
--   -   []{#method.summary}
-
-        ### Method Summary
+-   -   ### Method Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -1922,11 +1678,7 @@ Interface OnGatewayReadyListener {#interface-ongatewayreadylistener .title title
         |                                   | On gateway data ready.            |
         +-----------------------------------+-----------------------------------+
 
--   -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#onGatewayDataReady-com.mapspeople.models.Gateway-}
+-   -   ### Method Detail
 
         -   #### onGatewayDataReady
 
@@ -1952,9 +1704,7 @@ Interface OnGeocodeReadyListener {#interface-ongeocodereadylistener .title title
 
     The interface On geocode ready listener.
 
--   -   []{#method.summary}
-
-        ### Method Summary
+-   -   ### Method Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -1964,11 +1714,7 @@ Interface OnGeocodeReadyListener {#interface-ongeocodereadylistener .title title
         |                                   | On geocode ready.                 |
         +-----------------------------------+-----------------------------------+
 
--   -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#onGeocodeReady-com.mapspeople.models.ReverseGeoCodeResult:A-}
+-   -   ### Method Detail
 
         -   #### onGeocodeReady
 
@@ -1987,7 +1733,7 @@ Interface OnLocationsReadyListener {#interface-onlocationsreadylistener .title t
 -   
 
     All Known Implementing Classes:
-    :   [LocationCache](../../../com/mapspeople/data/LocationCache.html "class in com.mapspeople.data")
+    :   LocationCache
 
     ------------------------------------------------------------------------
 
@@ -1997,9 +1743,7 @@ Interface OnLocationsReadyListener {#interface-onlocationsreadylistener .title t
 
     Locations ready event listener
 
--   -   []{#method.summary}
-
-        ### Method Summary
+-   -   ### Method Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -2013,11 +1757,7 @@ Interface OnLocationsReadyListener {#interface-onlocationsreadylistener .title t
         |                                   | On locations ready event method   |
         +-----------------------------------+-----------------------------------+
 
--   -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#onLocationsReady-java.util.List-}
+-   -   ### Method Detail
 
         -   #### onLocationsReady
 
@@ -2028,8 +1768,7 @@ Interface OnLocationsReadyListener {#interface-onlocationsreadylistener .title t
             [Parameters:]{.paramLabel}
             :   `locations` - The locations.
 
-        []{#onLocationDetailsReady-com.mapspeople.models.Location-}
-
+        &nbsp;
         -   #### onLocationDetailsReady
 
                 void onLocationDetailsReady(Location location)
@@ -2054,9 +1793,7 @@ Interface OnPushMessageReadyListener {#interface-onpushmessagereadylistener .tit
 
     The interface On push message ready listener.
 
--   -   []{#method.summary}
-
-        ### Method Summary
+-   -   ### Method Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -2066,11 +1803,7 @@ Interface OnPushMessageReadyListener {#interface-onpushmessagereadylistener .tit
         |                                   | On push message ready.            |
         +-----------------------------------+-----------------------------------+
 
--   -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#onPushMessageReady-com.mapspeople.models.PushMessageCollection-}
+-   -   ### Method Detail
 
         -   #### onPushMessageReady
 
@@ -2096,9 +1829,7 @@ Interface OnSolutionReadyListener {#interface-onsolutionreadylistener .title tit
 
     The interface On solution ready listener.
 
--   -   []{#method.summary}
-
-        ### Method Summary
+-   -   ### Method Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -2108,11 +1839,7 @@ Interface OnSolutionReadyListener {#interface-onsolutionreadylistener .title tit
         |                                   | On solution ready.                |
         +-----------------------------------+-----------------------------------+
 
--   -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#onSolutionReady-com.mapspeople.models.Solution-}
+-   -   ### Method Detail
 
         -   #### onSolutionReady
 
@@ -2138,9 +1865,7 @@ Interface OnVenuesReadyListener {#interface-onvenuesreadylistener .title title="
 
     The interface On venues ready listener.
 
--   -   []{#method.summary}
-
-        ### Method Summary
+-   -   ### Method Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -2154,11 +1879,7 @@ Interface OnVenuesReadyListener {#interface-onvenuesreadylistener .title title="
         |                                   | On venues ready.                  |
         +-----------------------------------+-----------------------------------+
 
--   -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#onVenuesReady-com.mapspeople.models.VenueCollection-}
+-   -   ### Method Detail
 
         -   #### onVenuesReady
 
@@ -2169,8 +1890,7 @@ Interface OnVenuesReadyListener {#interface-onvenuesreadylistener .title title="
             [Parameters:]{.paramLabel}
             :   `venues` - the venues
 
-        []{#onBuildingsReady-com.mapspeople.models.BuildingCollection-}
-
+        &nbsp;
         -   #### onBuildingsReady
 
                 void onBuildingsReady(BuildingCollection buildings)
@@ -2188,7 +1908,7 @@ Interface PushMessageProvider {#interface-pushmessageprovider .title title="Inte
 -   
 
     All Known Implementing Classes:
-    :   [MPPushMessageAsyncLoader](../../../com/mapspeople/data/loader/MPPushMessageAsyncLoader.html "class in com.mapspeople.data.loader")
+    :   MPPushMessageAsyncLoader
 
     ------------------------------------------------------------------------
 
@@ -2198,9 +1918,7 @@ Interface PushMessageProvider {#interface-pushmessageprovider .title title="Inte
 
     The interface Push message provider.
 
--   -   []{#method.summary}
-
-        ### Method Summary
+-   -   ### Method Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -2217,11 +1935,7 @@ Interface PushMessageProvider {#interface-pushmessageprovider .title title="Inte
         |                                   | listener.                         |
         +-----------------------------------+-----------------------------------+
 
--   -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#getPushMessageAsync-java.lang.String-java.util.Locale-}
+-   -   ### Method Detail
 
         -   #### getPushMessageAsync
 
@@ -2233,8 +1947,7 @@ Interface PushMessageProvider {#interface-pushmessageprovider .title title="Inte
             :   `arg` - the arg
             :   `locale` - the locale
 
-        []{#setOnPushMessageReadyListener-com.mapspeople.data.OnPushMessageReadyListener-}
-
+        &nbsp;
         -   #### setOnPushMessageReadyListener
 
                 void setOnPushMessageReadyListener(OnPushMessageReadyListener listener)
@@ -2252,8 +1965,7 @@ Interface SolutionProvider {#interface-solutionprovider .title title="Interface 
 -   
 
     All Known Implementing Classes:
-    :   [MPSolutionAsyncLoader](../../../com/mapspeople/data/loader/MPSolutionAsyncLoader.html "class in com.mapspeople.data.loader"),
-        [MPSolutionProvider](../../../com/mapspeople/data/MPSolutionProvider.html "class in com.mapspeople.data")
+    :   MPSolutionAsyncLoader, MPSolutionProvider
 
     ------------------------------------------------------------------------
 
@@ -2263,9 +1975,7 @@ Interface SolutionProvider {#interface-solutionprovider .title title="Interface 
 
     The interface Solution provider.
 
--   -   []{#method.summary}
-
-        ### Method Summary
+-   -   ### Method Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -2280,11 +1990,7 @@ Interface SolutionProvider {#interface-solutionprovider .title title="Interface 
         |                                   | Sets on solution ready listener.  |
         +-----------------------------------+-----------------------------------+
 
--   -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#getSolutionAsync-java.lang.String-java.util.Locale-}
+-   -   ### Method Detail
 
         -   #### getSolutionAsync
 
@@ -2296,8 +2002,7 @@ Interface SolutionProvider {#interface-solutionprovider .title title="Interface 
             :   `arg` - the arg
             :   `locale` - the locale
 
-        []{#setOnSolutionReadyListener-com.mapspeople.data.OnSolutionReadyListener-}
-
+        &nbsp;
         -   #### setOnSolutionReadyListener
 
                 void setOnSolutionReadyListener(OnSolutionReadyListener listener)
@@ -2315,7 +2020,7 @@ Interface VenueProvider {#interface-venueprovider .title title="Interface VenueP
 -   
 
     All Known Implementing Classes:
-    :   [MPVenueAsyncLoader](../../../com/mapspeople/data/loader/MPVenueAsyncLoader.html "class in com.mapspeople.data.loader")
+    :   MPVenueAsyncLoader
 
     ------------------------------------------------------------------------
 
@@ -2325,9 +2030,7 @@ Interface VenueProvider {#interface-venueprovider .title title="Interface VenueP
 
     The interface Venue provider.
 
--   -   []{#method.summary}
-
-        ### Method Summary
+-   -   ### Method Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -2348,11 +2051,7 @@ Interface VenueProvider {#interface-venueprovider .title title="Interface VenueP
         |                                   | Sets on venues ready listener.    |
         +-----------------------------------+-----------------------------------+
 
--   -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#getVenuesAsync-java.lang.String-java.util.Locale-}
+-   -   ### Method Detail
 
         -   #### getVenuesAsync
 
@@ -2364,8 +2063,7 @@ Interface VenueProvider {#interface-venueprovider .title title="Interface VenueP
             :   `arg` - the arg
             :   `locale` - the locale
 
-        []{#getBuildingsAsync-java.lang.String-java.lang.String-java.util.Locale-}
-
+        &nbsp;
         -   #### getBuildingsAsync
 
                 void getBuildingsAsync(java.lang.String arg,                       java.lang.String venueName,                       java.util.Locale locale)
@@ -2377,8 +2075,7 @@ Interface VenueProvider {#interface-venueprovider .title title="Interface VenueP
             :   `venueName` - the venue name
             :   `locale` - the locale
 
-        []{#setOnVenuesReadyListener-com.mapspeople.data.OnVenuesReadyListener-}
-
+        &nbsp;
         -   #### setOnVenuesReadyListener
 
                 void setOnVenuesReadyListener(OnVenuesReadyListener listener)
@@ -2409,9 +2106,7 @@ Class dbglog {#class-dbglog .title title="Class dbglog"}
 
     The type Dbglog.
 
--   -   []{#field.summary}
-
-        ### Field Summary
+-   -   ### Field Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -2454,17 +2149,11 @@ Class dbglog {#class-dbglog .title title="Class dbglog"}
         |                                   | Use debug.                        |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#field.detail}
-
-        ### Field Detail
-
-        []{#DEBUG}
+-   -   ### Field Detail
 
         -   #### DEBUG
 
@@ -2473,11 +2162,9 @@ Class dbglog {#class-dbglog .title title="Class dbglog"}
             The constant DEBUG.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.debug.dbglog.DEBUG)
+            :   Constant Field Values
 
-        []{#INFO}
-
+        &nbsp;
         -   #### INFO
 
                 public static final int INFO
@@ -2485,11 +2172,9 @@ Class dbglog {#class-dbglog .title title="Class dbglog"}
             The constant INFO.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.debug.dbglog.INFO)
+            :   Constant Field Values
 
-        []{#WARN}
-
+        &nbsp;
         -   #### WARN
 
                 public static final int WARN
@@ -2497,11 +2182,9 @@ Class dbglog {#class-dbglog .title title="Class dbglog"}
             The constant WARN.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.debug.dbglog.WARN)
+            :   Constant Field Values
 
-        []{#ERROR}
-
+        &nbsp;
         -   #### ERROR
 
                 public static final int ERROR
@@ -2509,11 +2192,9 @@ Class dbglog {#class-dbglog .title title="Class dbglog"}
             The constant ERROR.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.debug.dbglog.ERROR)
+            :   Constant Field Values
 
-        []{#ASSERT}
-
+        &nbsp;
         -   #### ASSERT
 
                 public static final int ASSERT
@@ -2521,26 +2202,17 @@ Class dbglog {#class-dbglog .title title="Class dbglog"}
             The constant ASSERT.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.debug.dbglog.ASSERT)
+            :   Constant Field Values
 
     &nbsp;
-    -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#dbglog--}
+    -   ### Constructor Detail
 
         -   #### dbglog
 
                 public dbglog()
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#Assert-boolean-}
+    -   ### Method Detail
 
         -   #### Assert
 
@@ -2552,8 +2224,7 @@ Class dbglog {#class-dbglog .title title="Class dbglog"}
             :   `condition` - If this condition is NOT true the
                 assertion will throw an assert exception
 
-        []{#Assert-boolean-java.lang.String-}
-
+        &nbsp;
         -   #### Assert
 
                 public static void Assert(boolean condition,                          java.lang.String message)
@@ -2566,8 +2237,7 @@ Class dbglog {#class-dbglog .title title="Class dbglog"}
             :   `message` - The message to show if this assertion is
                 executed
 
-        []{#SetLoglevel-int-}
-
+        &nbsp;
         -   #### SetLoglevel
 
                 public static void SetLoglevel(int level)
@@ -2578,8 +2248,7 @@ Class dbglog {#class-dbglog .title title="Class dbglog"}
             :   `level` - If Log is called only messages with a log type
                 equal to or higher than this level will be shown.
 
-        []{#Log-java.lang.String-}
-
+        &nbsp;
         -   #### Log
 
                 public static void Log(java.lang.String message)
@@ -2590,8 +2259,7 @@ Class dbglog {#class-dbglog .title title="Class dbglog"}
             :   `message` - The message to be shown. The log level will
                 be set to DEBUG
 
-        []{#Log-java.lang.String-int-}
-
+        &nbsp;
         -   #### Log
 
                 public static void Log(java.lang.String message,                       int level)
@@ -2605,8 +2273,7 @@ Class dbglog {#class-dbglog .title title="Class dbglog"}
                 message will only be shown if logging level is set to
                 this level or above.
 
-        []{#startTimer--}
-
+        &nbsp;
         -   #### startTimer
 
                 public static void startTimer()
@@ -2614,8 +2281,7 @@ Class dbglog {#class-dbglog .title title="Class dbglog"}
             Starts a timer for instrumenting code Note: This method is
             not thread safe.
 
-        []{#stopTimer-java.lang.String-}
-
+        &nbsp;
         -   #### stopTimer
 
                 public static void stopTimer(java.lang.String message)
@@ -2628,8 +2294,7 @@ Class dbglog {#class-dbglog .title title="Class dbglog"}
             :   `message` - The message to be shown. The log level will
                 be set to DEBUG
 
-        []{#useDebug-boolean-}
-
+        &nbsp;
         -   #### useDebug
 
                 public static void useDebug(boolean debugInfo)
@@ -2639,8 +2304,7 @@ Class dbglog {#class-dbglog .title title="Class dbglog"}
             [Parameters:]{.paramLabel}
             :   `debugInfo` - the debug info
 
-        []{#isDebugMode--}
-
+        &nbsp;
         -   #### isDebugMode
 
                 public static boolean isDebugMode()
@@ -2671,9 +2335,7 @@ Class Info {#class-info .title title="Class Info"}
 
     The type Info.
 
--   -   []{#constructor.summary}
-
-        ### Constructor Summary
+-   -   ### Constructor Summary
 
         +-----------------------------------------------------------------------+
         | Constructor and Description                                           |
@@ -2683,21 +2345,13 @@ Class Info {#class-info .title title="Class Info"}
         +-----------------------------------------------------------------------+
 
     &nbsp;
-    -   []{#method.summary}
+    -   ### Method Summary
 
-        ### Method Summary
-
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#Info--}
+-   -   ### Constructor Detail
 
         -   #### Info
 
@@ -2729,17 +2383,14 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
     locations/points-of-interest, position and navigation
 
     To fire up a venueId on a google map, first set up the google map,
-    then create a
-    [`MapControl`](../../../com/mapspeople/mapcontrol/MapControl.html "class in com.mapspeople.mapcontrol")
-    with your MapsPeople client and venueId id:
+    then create a `MapControl` with your MapsPeople client and venueId
+    id:
 
     ``
          SupportMapFragment fragment = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map_fragment)); googleMap = fragment.getMap(); mapControl = new MapControl(getApplicationContext(), fragment); mapControl.setOnDataReadyListener(mapControlListener); mapControl.initMap("0DB13630-031A-47E8-A680-A1C197D5D367", "rtx"); 
 
     To setup with e.g. locations from your own service or database, make
-    an implementation of the
-    [`LocationsProvider`](../../../com/mapspeople/data/LocationsProvider.html "interface in com.mapspeople.data")
-    interface, and do
+    an implementation of the `LocationsProvider` interface, and do
 
     ``
          MyLocationsProvider myLocationsProvider = new MyLocationsProvider(); mapControl.initMap("0DB13630-031A-47E8-A680-A1C197D5D367", "rtx", myLocationsProvider, null, null, null); 
@@ -2750,9 +2401,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
     ``
          Bitmap icon1 = BitmapFactory.decodeResource(getApplicationContext().getRessources(), R.drawable.marker_icon1); Bitmap icon2 = BitmapFactory.decodeResource(getApplicationContext().getRessources(), R.drawable.marker_icon2);  // Rule applies to category "room" and will display at zoom level 19 and higher LocationDisplayRule myRule1 = new LocationDisplayRule("room", icon1, 19); // Rule applies to category "poi" and will display at zoom level 15 and higher LocationDisplayRule myRule2 = new LocationDisplayRule("poi", icon2, 15);  mapControl.addLocationDisplayRule(myRule1); mapControl.addLocationDisplayRule(myRule2);  MyLocationsProvider myLocationsProvider = new MyLocationsProvider(); mapControl.initMap("0DB13630-031A-47E8-A680-A1C197D5D367", "rtx", myLocationsProvider, null, null, null); 
 
--   -   []{#field.summary}
-
-        ### Field Summary
+-   -   ### Field Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -3122,17 +2771,11 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
         |                                   | activity using this method.       |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#field.detail}
-
-        ### Field Detail
-
-        []{#NAVIGATION_STATE}
+-   -   ### Field Detail
 
         -   #### NAVIGATION\_STATE
 
@@ -3141,11 +2784,9 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             The constant NAVIGATION\_STATE.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.mapcontrol.MapControl.NAVIGATION_STATE)
+            :   Constant Field Values
 
-        []{#MAP_STATE}
-
+        &nbsp;
         -   #### MAP\_STATE
 
                 public static final int MAP_STATE
@@ -3153,11 +2794,9 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             The constant MAP\_STATE.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.mapcontrol.MapControl.MAP_STATE)
+            :   Constant Field Values
 
-        []{#SEARCH_STATE}
-
+        &nbsp;
         -   #### SEARCH\_STATE
 
                 public static final int SEARCH_STATE
@@ -3165,11 +2804,9 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             The constant SEARCH\_STATE.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.mapcontrol.MapControl.SEARCH_STATE)
+            :   Constant Field Values
 
-        []{#TILE_CACHESCHEME_NONE}
-
+        &nbsp;
         -   #### TILE\_CACHESCHEME\_NONE
 
                 public static final int TILE_CACHESCHEME_NONE
@@ -3177,11 +2814,9 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             The constant TILE\_CACHESCHEME\_NONE.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.mapcontrol.MapControl.TILE_CACHESCHEME_NONE)
+            :   Constant Field Values
 
-        []{#TILE_CACHESCHEME_TEMPORARY}
-
+        &nbsp;
         -   #### TILE\_CACHESCHEME\_TEMPORARY
 
                 public static final int TILE_CACHESCHEME_TEMPORARY
@@ -3189,11 +2824,9 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             The constant TILE\_CACHESCHEME\_TEMPORARY.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.mapcontrol.MapControl.TILE_CACHESCHEME_TEMPORARY)
+            :   Constant Field Values
 
-        []{#TILE_CACHESCHEME_PERSISTENT}
-
+        &nbsp;
         -   #### TILE\_CACHESCHEME\_PERSISTENT
 
                 public static final int TILE_CACHESCHEME_PERSISTENT
@@ -3201,15 +2834,10 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             The constant TILE\_CACHESCHEME\_PERSISTENT.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.mapcontrol.MapControl.TILE_CACHESCHEME_PERSISTENT)
+            :   Constant Field Values
 
     &nbsp;
-    -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#MapControl-android.content.Context-}
+    -   ### Constructor Detail
 
         -   #### MapControl
 
@@ -3220,8 +2848,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             [Parameters:]{.paramLabel}
             :   `context` - the context
 
-        []{#MapControl-android.content.Context-SupportMapFragment-}
-
+        &nbsp;
         -   #### MapControl
 
                 public MapControl(android.content.Context context,                  SupportMapFragment fragment)
@@ -3238,8 +2865,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             :   `context` - The app context.
             :   `fragment` - The fragment
 
-        []{#MapControl-android.content.Context-SupportMapFragment-GoogleMap-}
-
+        &nbsp;
         -   #### MapControl
 
                 public MapControl(android.content.Context context,                  SupportMapFragment fragment,                  GoogleMap googleMap)
@@ -3251,8 +2877,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             :   `fragment` - the fragment
             :   `googleMap` - the google map
 
-        []{#MapControl-android.content.Context-MapFragment-}
-
+        &nbsp;
         -   #### MapControl
 
                 public MapControl(android.content.Context context,                  MapFragment fragment)
@@ -3265,8 +2890,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             :   `context` - The app context.
             :   `fragment` - The fragment
 
-        []{#MapControl-android.content.Context-MapView-}
-
+        &nbsp;
         -   #### MapControl
 
                 public MapControl(android.content.Context context,                  MapView view)
@@ -3279,11 +2903,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             :   `view` - The view
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#getRoute--}
+    -   ### Method Detail
 
         -   #### getRoute
 
@@ -3294,8 +2914,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             [Returns:]{.returnLabel}
             :   the route
 
-        []{#build-android.content.Context-SupportMapFragment-}
-
+        &nbsp;
         -   #### build
 
                 public void build(android.content.Context context,                  SupportMapFragment fragment)
@@ -3306,8 +2925,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             :   `context` - the context
             :   `fragment` - the fragment
 
-        []{#initMap-java.lang.String-java.lang.String-}
-
+        &nbsp;
         -   #### initMap
 
                 public void initMap(java.lang.String clientId,                    java.lang.String venueId)
@@ -3319,8 +2937,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             :   `clientId` - Some MapsPeople client id.
             :   `venueId` - Some MapsPeople venueId id.
 
-        []{#initMap-java.lang.String-}
-
+        &nbsp;
         -   #### initMap
 
                 public void initMap(java.lang.String clientId)
@@ -3331,8 +2948,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             [Parameters:]{.paramLabel}
             :   `clientId` - Some MapsPeople client id.
 
-        []{#initMap-java.lang.String-java.lang.String-com.mapspeople.data.LocationsProvider-com.mapspeople.data.VenueProvider-com.mapspeople.routing.RoutingProvider-}
-
+        &nbsp;
         -   #### initMap
 
                 public void initMap(java.lang.String clientId,                    java.lang.String venueId,                    LocationsProvider locationsProvider,                    VenueProvider venueProvider,                    RoutingProvider routingProvider)
@@ -3346,8 +2962,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             :   `venueProvider` - The venueId data provider
             :   `routingProvider` - the routing provider
 
-        []{#initMap-com.mapspeople.data.LocationsProvider-com.mapspeople.data.VenueProvider-com.mapspeople.routing.RoutingProvider-}
-
+        &nbsp;
         -   #### initMap
 
                 public void initMap(LocationsProvider locationsProvider,                    VenueProvider venueProvider,                    RoutingProvider routingProvider)
@@ -3359,8 +2974,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             :   `venueProvider` - The venueId data provider
             :   `routingProvider` - the routing provider
 
-        []{#useDownloadNotification-android.app.Activity-}
-
+        &nbsp;
         -   #### useDownloadNotification
 
                 public void useDownloadNotification(android.app.Activity activity)
@@ -3372,16 +2986,14 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             :   `activity` - The activity that will show the
                 notification.
 
-        []{#loadPushMessagesData--}
-
+        &nbsp;
         -   #### loadPushMessagesData
 
                 public void loadPushMessagesData()
 
             Load push messages data.
 
-        []{#selectVenue-java.lang.String-}
-
+        &nbsp;
         -   #### selectVenue
 
                 public void selectVenue(java.lang.String venueId)
@@ -3391,8 +3003,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             [Parameters:]{.paramLabel}
             :   `venueId` - the venue id
 
-        []{#getMap--}
-
+        &nbsp;
         -   #### getMap
 
                 public GoogleMap getMap()
@@ -3402,8 +3013,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             [Returns:]{.returnLabel}
             :   the map
 
-        []{#setCurrentPosition-com.mapspeople.models.Point-double-}
-
+        &nbsp;
         -   #### setCurrentPosition
 
                 public void setCurrentPosition(Point position,                               double probability)
@@ -3416,8 +3026,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             :   `probability` - Set a probability circle, alternatively
                 hide it by setting value to 0.0.
 
-        []{#mapLocations-java.util.List-}
-
+        &nbsp;
         -   #### mapLocations
 
                 public void mapLocations(java.util.List<Location> newLocations)
@@ -3427,8 +3036,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             [Parameters:]{.paramLabel}
             :   `newLocations` - The list of locations.
 
-        []{#setInfoSnippet-com.mapspeople.ui.InfoSnippetView-}
-
+        &nbsp;
         -   #### setInfoSnippet
 
                 public void setInfoSnippet(InfoSnippetView infoSnippetView)
@@ -3439,8 +3047,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             [Parameters:]{.paramLabel}
             :   `infoSnippetView` - The view
 
-        []{#setRotation-float-}
-
+        &nbsp;
         -   #### setRotation
 
                 public void setRotation(float rotation)
@@ -3452,8 +3059,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             :   `rotation` - the map rotation / camera bearing in
                 degrees. 0 is north.
 
-        []{#setMapZoom-float-boolean-}
-
+        &nbsp;
         -   #### setMapZoom
 
                 public void setMapZoom(float zoom,                       boolean animate)
@@ -3464,8 +3070,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             :   `zoom` - The zoom level.
             :   `animate` - Whether to animate the change in zoom.
 
-        []{#setMapPosition-com.mapspeople.models.Point-boolean-}
-
+        &nbsp;
         -   #### setMapPosition
 
                 public void setMapPosition(Point position,                           boolean animate)
@@ -3476,8 +3081,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             :   `position` - The position.
             :   `animate` - Whether to animate the position change.
 
-        []{#setMapPosition-com.mapspeople.models.Point-float-boolean-}
-
+        &nbsp;
         -   #### setMapPosition
 
                 public void setMapPosition(Point position,                           float zoom,                           boolean animate)
@@ -3491,8 +3095,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             :   `animate` - Whether to animate the position and zoom
                 change.
 
-        []{#getDisplayRules--}
-
+        &nbsp;
         -   #### getDisplayRules
 
                 public LocationDisplayRules getDisplayRules()
@@ -3502,8 +3105,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             [Returns:]{.returnLabel}
             :   A list object containing the display rules.
 
-        []{#setDisplayRules-com.mapspeople.models.LocationDisplayRules-}
-
+        &nbsp;
         -   #### setDisplayRules
 
                 public void setDisplayRules(LocationDisplayRules displayRules)
@@ -3514,8 +3116,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             :   `displayRules` - the rules needed to display locations
                 correctly.
 
-        []{#addDisplayRules-com.mapspeople.models.LocationDisplayRules-}
-
+        &nbsp;
         -   #### addDisplayRules
 
                 public void addDisplayRules(LocationDisplayRules displayRules)
@@ -3525,8 +3126,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             [Parameters:]{.paramLabel}
             :   `displayRules` - The new display rule to add
 
-        []{#getCurrentBuildingFloor--}
-
+        &nbsp;
         -   #### getCurrentBuildingFloor
 
                 public Floor getCurrentBuildingFloor()
@@ -3537,8 +3137,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             [Returns:]{.returnLabel}
             :   The current floor object or null.
 
-        []{#getCurrentBuilding--}
-
+        &nbsp;
         -   #### getCurrentBuilding
 
                 public Building getCurrentBuilding()
@@ -3548,8 +3147,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             [Returns:]{.returnLabel}
             :   the current building
 
-        []{#getCurrentFloorIndex--}
-
+        &nbsp;
         -   #### getCurrentFloorIndex
 
                 public int getCurrentFloorIndex()
@@ -3559,8 +3157,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             [Returns:]{.returnLabel}
             :   The current floor index
 
-        []{#getLocations--}
-
+        &nbsp;
         -   #### getLocations
 
                 public java.util.List<Location> getLocations()
@@ -3571,8 +3168,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             [Returns:]{.returnLabel}
             :   List of locations.
 
-        []{#getLocation-java.lang.String-}
-
+        &nbsp;
         -   #### getLocation
 
                 public Location getLocation(java.lang.String id)
@@ -3585,8 +3181,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             [Returns:]{.returnLabel}
             :   The qualifying location or null
 
-        []{#getLocation-Marker-}
-
+        &nbsp;
         -   #### getLocation
 
                 public Location getLocation(Marker marker)
@@ -3599,8 +3194,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             [Returns:]{.returnLabel}
             :   The qualifying location or null
 
-        []{#displaySingleLocation-com.mapspeople.models.Location-}
-
+        &nbsp;
         -   #### displaySingleLocation
 
                 public void displaySingleLocation(Location location)
@@ -3610,8 +3204,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             [Parameters:]{.paramLabel}
             :   `location` - the location
 
-        []{#displaySearchResults-java.util.List-boolean-}
-
+        &nbsp;
         -   #### displaySearchResults
 
                 public void displaySearchResults(java.util.List<Location> inputLocations,                                 boolean fitBounds)
@@ -3623,24 +3216,21 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             :   `inputLocations` - The temporary locations.
             :   `fitBounds` - the fit bounds
 
-        []{#stopPositioning--}
-
+        &nbsp;
         -   #### stopPositioning
 
                 public void stopPositioning()
 
             Stop the positioning service.
 
-        []{#startPositioning--}
-
+        &nbsp;
         -   #### startPositioning
 
                 public void startPositioning()
 
             Start the positioning service.
 
-        []{#addOnSnippetTappedListener-com.mapspeople.ui.OnSnippetTappedListener-}
-
+        &nbsp;
         -   #### addOnSnippetTappedListener
 
                 public void addOnSnippetTappedListener(OnSnippetTappedListener listener)
@@ -3652,8 +3242,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             [Parameters:]{.paramLabel}
             :   `listener` - The listener object.
 
-        []{#getFloorSelector--}
-
+        &nbsp;
         -   #### getFloorSelector
 
                 public FloorSelector getFloorSelector()
@@ -3663,8 +3252,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             [Returns:]{.returnLabel}
             :   floor selector control object.
 
-        []{#showInfoSnippet-com.mapspeople.models.Location-}
-
+        &nbsp;
         -   #### showInfoSnippet
 
                 public void showInfoSnippet(Location location)
@@ -3674,8 +3262,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             [Parameters:]{.paramLabel}
             :   `location` - the location
 
-        []{#routeTo-com.mapspeople.models.Location-java.lang.String-java.lang.String:A-java.util.Calendar-java.util.Calendar-}
-
+        &nbsp;
         -   #### routeTo
 
                 public void routeTo(Location destination,                    java.lang.String travelMode,                    java.lang.String[] avoids,                    java.util.Calendar departure,                    java.util.Calendar arrival)
@@ -3689,8 +3276,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             :   `departure` - the departure
             :   `arrival` - the arrival
 
-        []{#route-com.mapspeople.models.Location-com.mapspeople.models.Location-java.lang.String-java.lang.String:A-java.util.Calendar-java.util.Calendar-}
-
+        &nbsp;
         -   #### route
 
                 public void route(Location origin,                  Location destination,                  java.lang.String travelMode,                  java.lang.String[] avoids,                  java.util.Calendar departure,                  java.util.Calendar arrival)
@@ -3706,16 +3292,14 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             :   `departure` - the departure
             :   `arrival` - the arrival
 
-        []{#closeRouting--}
-
+        &nbsp;
         -   #### closeRouting
 
                 public void closeRouting()
 
             Close the current routing control.
 
-        []{#getCurrentState--}
-
+        &nbsp;
         -   #### getCurrentState
 
                 public int getCurrentState()
@@ -3726,8 +3310,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             [Returns:]{.returnLabel}
             :   The map state
 
-        []{#setCurrentState-int-}
-
+        &nbsp;
         -   #### setCurrentState
 
                 public void setCurrentState(int currentState)
@@ -3738,8 +3321,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             [Parameters:]{.paramLabel}
             :   `currentState` - the current state
 
-        []{#setOnFloorUpdateListener-com.mapspeople.mapcontrol.OnFloorUpdateListener-}
-
+        &nbsp;
         -   #### setOnFloorUpdateListener
 
                 public void setOnFloorUpdateListener(OnFloorUpdateListener listener)
@@ -3750,8 +3332,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             [Parameters:]{.paramLabel}
             :   `listener` - listener object to catch floor changes
 
-        []{#setOnDataReadyListener-com.mapspeople.data.OnDataReadyListener-}
-
+        &nbsp;
         -   #### setOnDataReadyListener
 
                 public void setOnDataReadyListener(OnDataReadyListener listener)
@@ -3761,8 +3342,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             [Parameters:]{.paramLabel}
             :   `listener` - listener object to catch data returns
 
-        []{#getNavigationMode--}
-
+        &nbsp;
         -   #### getNavigationMode
 
                 public int getNavigationMode()
@@ -3773,8 +3353,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             [Returns:]{.returnLabel}
             :   the navigation mode
 
-        []{#setNavigationMode-int-}
-
+        &nbsp;
         -   #### setNavigationMode
 
                 public void setNavigationMode(int navigationMode)
@@ -3785,8 +3364,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             [Parameters:]{.paramLabel}
             :   `navigationMode` - the navigation mode
 
-        []{#getVenueCollection--}
-
+        &nbsp;
         -   #### getVenueCollection
 
                 public VenueCollection getVenueCollection()
@@ -3796,8 +3374,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             [Returns:]{.returnLabel}
             :   the venue collection
 
-        []{#setupVenues-com.mapspeople.models.VenueCollection-}
-
+        &nbsp;
         -   #### setupVenues
 
                 public void setupVenues(VenueCollection venueCollection)
@@ -3807,8 +3384,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             [Parameters:]{.paramLabel}
             :   `venueCollection` - The collection of venues
 
-        []{#setTileSize-int-}
-
+        &nbsp;
         -   #### setTileSize
 
                 public void setTileSize(int tileSize)
@@ -3818,8 +3394,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             [Parameters:]{.paramLabel}
             :   `tileSize` - the tile size
 
-        []{#selectFloor-int-}
-
+        &nbsp;
         -   #### selectFloor
 
                 public void selectFloor(int floor)
@@ -3829,8 +3404,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             [Parameters:]{.paramLabel}
             :   `floor` - the floor
 
-        []{#updatePosition-com.mapspeople.position.PositionResult-}
-
+        &nbsp;
         -   #### updatePosition
 
                 public void updatePosition(PositionResult res)
@@ -3840,8 +3414,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             [Parameters:]{.paramLabel}
             :   `res` - the res
 
-        []{#getAppDataProvider--}
-
+        &nbsp;
         -   #### getAppDataProvider
 
                 public AppDataProvider getAppDataProvider()
@@ -3851,8 +3424,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             [Returns:]{.returnLabel}
             :   the app data provider
 
-        []{#setAppDataProvider-com.mapspeople.data.AppDataProvider-}
-
+        &nbsp;
         -   #### setAppDataProvider
 
                 public void setAppDataProvider(AppDataProvider appDataProvider)
@@ -3862,8 +3434,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             [Parameters:]{.paramLabel}
             :   `appDataProvider` - The custom provider
 
-        []{#getLocationsProvider--}
-
+        &nbsp;
         -   #### getLocationsProvider
 
                 public LocationsProvider getLocationsProvider()
@@ -3873,8 +3444,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             [Returns:]{.returnLabel}
             :   the locations provider
 
-        []{#setLocationsProvider-com.mapspeople.data.LocationsProvider-}
-
+        &nbsp;
         -   #### setLocationsProvider
 
                 public void setLocationsProvider(LocationsProvider locationsProvider)
@@ -3884,8 +3454,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             [Parameters:]{.paramLabel}
             :   `locationsProvider` - The custom provider
 
-        []{#getVenueProvider--}
-
+        &nbsp;
         -   #### getVenueProvider
 
                 public VenueProvider getVenueProvider()
@@ -3895,8 +3464,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             [Returns:]{.returnLabel}
             :   the venue provider
 
-        []{#setVenueProvider-com.mapspeople.data.VenueProvider-}
-
+        &nbsp;
         -   #### setVenueProvider
 
                 public void setVenueProvider(VenueProvider venueProvider)
@@ -3906,8 +3474,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             [Parameters:]{.paramLabel}
             :   `venueProvider` - The custom provider
 
-        []{#getCurrentPosition--}
-
+        &nbsp;
         -   #### getCurrentPosition
 
                 public PositionIndicator getCurrentPosition()
@@ -3918,8 +3485,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             [Returns:]{.returnLabel}
             :   The current user position indication
 
-        []{#getRoutingProvider--}
-
+        &nbsp;
         -   #### getRoutingProvider
 
                 public RoutingProvider getRoutingProvider()
@@ -3929,8 +3495,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             [Returns:]{.returnLabel}
             :   The routing provider
 
-        []{#setRoutingProvider-com.mapspeople.routing.RoutingProvider-}
-
+        &nbsp;
         -   #### setRoutingProvider
 
                 public void setRoutingProvider(RoutingProvider routingProvider)
@@ -3940,8 +3505,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             [Parameters:]{.paramLabel}
             :   `routingProvider` - the routing provider
 
-        []{#addLocationDisplayRule-com.mapspeople.models.LocationDisplayRule-}
-
+        &nbsp;
         -   #### addLocationDisplayRule
 
                 public void addLocationDisplayRule(LocationDisplayRule rule)
@@ -3951,16 +3515,14 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             [Parameters:]{.paramLabel}
             :   `rule` - The display rule.
 
-        []{#clearMap--}
-
+        &nbsp;
         -   #### clearMap
 
                 public void clearMap()
 
             Clear map.
 
-        []{#setOnMapClickListener-OnMapClickListener-}
-
+        &nbsp;
         -   #### setOnMapClickListener
 
                 public void setOnMapClickListener(OnMapClickListener listener)
@@ -3972,8 +3534,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             [Parameters:]{.paramLabel}
             :   `listener` - the map click listener
 
-        []{#setOnMarkerClickListener-OnMarkerClickListener-}
-
+        &nbsp;
         -   #### setOnMarkerClickListener
 
                 public void setOnMarkerClickListener(OnMarkerClickListener listener)
@@ -3985,8 +3546,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             [Parameters:]{.paramLabel}
             :   `listener` - the map click listener
 
-        []{#setOnCameraChangeListener-OnCameraChangeListener-}
-
+        &nbsp;
         -   #### setOnCameraChangeListener
 
                 public void setOnCameraChangeListener(OnCameraChangeListener listener)
@@ -3998,8 +3558,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             [Parameters:]{.paramLabel}
             :   `listener` - the map click listener
 
-        []{#getPositionProviders--}
-
+        &nbsp;
         -   #### getPositionProviders
 
                 public java.util.List<PositionProvider> getPositionProviders()
@@ -4009,8 +3568,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             [Returns:]{.returnLabel}
             :   the position providers
 
-        []{#addPositionProvider-com.mapspeople.position.PositionProvider-}
-
+        &nbsp;
         -   #### addPositionProvider
 
                 public void addPositionProvider(PositionProvider positionProvider)
@@ -4020,24 +3578,21 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             [Parameters:]{.paramLabel}
             :   `positionProvider` - the position provider
 
-        []{#stopTrackPosition--}
-
+        &nbsp;
         -   #### stopTrackPosition
 
                 public void stopTrackPosition()
 
             Stop track position.
 
-        []{#startTrackPosition--}
-
+        &nbsp;
         -   #### startTrackPosition
 
                 public void startTrackPosition()
 
             Start track position.
 
-        []{#showUserPosition-boolean-}
-
+        &nbsp;
         -   #### showUserPosition
 
                 public void showUserPosition(boolean show)
@@ -4047,8 +3602,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             [Parameters:]{.paramLabel}
             :   `show` - the show
 
-        []{#onBackPressed--}
-
+        &nbsp;
         -   #### onBackPressed
 
                 public boolean onBackPressed()
@@ -4058,8 +3612,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             [Returns:]{.returnLabel}
             :   the boolean
 
-        []{#setRouteRenderer-com.mapspeople.routing.RouteRenderer-}
-
+        &nbsp;
         -   #### setRouteRenderer
 
                 public void setRouteRenderer(RouteRenderer renderer)
@@ -4069,8 +3622,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             [Parameters:]{.paramLabel}
             :   `renderer` - the renderer
 
-        []{#getClientId--}
-
+        &nbsp;
         -   #### getClientId
 
                 public static java.lang.String getClientId()
@@ -4080,8 +3632,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             [Returns:]{.returnLabel}
             :   the client id
 
-        []{#getSolution--}
-
+        &nbsp;
         -   #### getSolution
 
                 public static Solution getSolution()
@@ -4091,8 +3642,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             [Returns:]{.returnLabel}
             :   the solution
 
-        []{#getVenues--}
-
+        &nbsp;
         -   #### getVenues
 
                 public static VenueCollection getVenues()
@@ -4102,8 +3652,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             [Returns:]{.returnLabel}
             :   the venues
 
-        []{#getAppConfig--}
-
+        &nbsp;
         -   #### getAppConfig
 
                 public static AppConfig getAppConfig()
@@ -4113,8 +3662,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             [Returns:]{.returnLabel}
             :   the app config
 
-        []{#getTypeUrl-java.lang.String-}
-
+        &nbsp;
         -   #### getTypeUrl
 
                 public static java.lang.String getTypeUrl(java.lang.String typeName)
@@ -4127,8 +3675,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             [Returns:]{.returnLabel}
             :   the type url
 
-        []{#addMarkerCallback-Marker-android.view.View.OnClickListener-}
-
+        &nbsp;
         -   #### addMarkerCallback
 
                 public static void addMarkerCallback(Marker marker,                                     android.view.View.OnClickListener listener)
@@ -4142,8 +3689,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             :   `marker` - The marker to listen to
             :   `listener` - The listener to forward the call to
 
-        []{#deleteMarkerCallback-Marker-}
-
+        &nbsp;
         -   #### deleteMarkerCallback
 
                 public static void deleteMarkerCallback(Marker marker)
@@ -4154,8 +3700,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             [Parameters:]{.paramLabel}
             :   `marker` - The marker to stop listening to.
 
-        []{#setCacheScheme-int-}
-
+        &nbsp;
         -   #### setCacheScheme
 
                 public void setCacheScheme(int scheme)
@@ -4171,8 +3716,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             :   `scheme` - The caching scheme to use. Default:
                 TILE\_CACHESCHEME\_NONE
 
-        []{#setRouteStyle-com.mapspeople.routing.RouteDisplayStyle-}
-
+        &nbsp;
         -   #### setRouteStyle
 
                 public void setRouteStyle(RouteDisplayStyle style)
@@ -4182,8 +3726,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             [Parameters:]{.paramLabel}
             :   `style` - The style object to set
 
-        []{#setLangugage-java.lang.String-}
-
+        &nbsp;
         -   #### setLangugage
 
                 public void setLangugage(java.lang.String langugage)
@@ -4195,8 +3738,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             [Parameters:]{.paramLabel}
             :   `langugage` - The language wanted.
 
-        []{#getLangugage--}
-
+        &nbsp;
         -   #### getLangugage
 
                 public java.lang.String getLangugage()
@@ -4208,8 +3750,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             [Returns:]{.returnLabel}
             :   the langugage
 
-        []{#showBuildingNames-boolean-}
-
+        &nbsp;
         -   #### showBuildingNames
 
                 public void showBuildingNames(boolean showBuildingNames)
@@ -4221,8 +3762,7 @@ Class MapControl {#class-mapcontrol .title title="Class MapControl"}
             [Parameters:]{.paramLabel}
             :   `showBuildingNames` - the show building names
 
-        []{#isOnMainThread--}
-
+        &nbsp;
         -   #### isOnMainThread
 
                 public static boolean isOnMainThread()
@@ -4247,9 +3787,7 @@ Interface OnFloorUpdateListener {#interface-onfloorupdatelistener .title title="
 
     Floor update event listener interface
 
--   -   []{#method.summary}
-
-        ### Method Summary
+-   -   ### Method Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -4260,11 +3798,7 @@ Interface OnFloorUpdateListener {#interface-onfloorupdatelistener .title title="
         |                                   | method                            |
         +-----------------------------------+-----------------------------------+
 
--   -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#onFloorUpdate-com.mapspeople.models.Building-int-}
+-   -   ### Method Detail
 
         -   #### onFloorUpdate
 
@@ -4291,9 +3825,7 @@ Interface ReadyListener {#interface-readylistener .title title="Interface ReadyL
 
     HTTP GET update event listener interface
 
--   -   []{#method.summary}
-
-        ### Method Summary
+-   -   ### Method Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -4302,11 +3834,7 @@ Interface ReadyListener {#interface-readylistener .title title="Interface ReadyL
         |                                   | called when ready                 |
         +-----------------------------------+-----------------------------------+
 
--   -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#onResult--}
+-   -   ### Method Detail
 
         -   #### onResult
 
@@ -4335,9 +3863,7 @@ Class FloorTileProvider {#class-floortileprovider .title title="Class FloorTileP
 
     The type Floor tile provider.
 
--   -   []{#constructor.summary}
-
-        ### Constructor Summary
+-   -   ### Constructor Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -4368,17 +3894,11 @@ Class FloorTileProvider {#class-floortileprovider .title title="Class FloorTileP
         |                                   | Set a new url template.           |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#FloorTileProvider-int-int-}
+-   -   ### Constructor Detail
 
         -   #### FloorTileProvider
 
@@ -4390,8 +3910,7 @@ Class FloorTileProvider {#class-floortileprovider .title title="Class FloorTileP
             :   `width` - the width
             :   `height` - the height
 
-        []{#FloorTileProvider-com.mapspeople.models.Venue-com.mapspeople.models.Floor-}
-
+        &nbsp;
         -   #### FloorTileProvider
 
                 public FloorTileProvider(Venue venue,                         Floor floor)
@@ -4402,8 +3921,7 @@ Class FloorTileProvider {#class-floortileprovider .title title="Class FloorTileP
             :   `venue` - the venue
             :   `floor` - the floor
 
-        []{#FloorTileProvider-com.mapspeople.models.Venue-com.mapspeople.models.Floor-int-}
-
+        &nbsp;
         -   #### FloorTileProvider
 
                 public FloorTileProvider(Venue venue,                         Floor floor,                         int size)
@@ -4416,11 +3934,7 @@ Class FloorTileProvider {#class-floortileprovider .title title="Class FloorTileP
             :   `size` - the size
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#setCacheScheme-int-}
+    -   ### Method Detail
 
         -   #### setCacheScheme
 
@@ -4431,8 +3945,7 @@ Class FloorTileProvider {#class-floortileprovider .title title="Class FloorTileP
             [Parameters:]{.paramLabel}
             :   `scheme` - the scheme
 
-        []{#getFloor--}
-
+        &nbsp;
         -   #### getFloor
 
                 public Floor getFloor()
@@ -4442,8 +3955,7 @@ Class FloorTileProvider {#class-floortileprovider .title title="Class FloorTileP
             [Returns:]{.returnLabel}
             :   The floor object.
 
-        []{#setFloor-com.mapspeople.models.Floor-}
-
+        &nbsp;
         -   #### setFloor
 
                 public void setFloor(Floor _floor)
@@ -4453,8 +3965,7 @@ Class FloorTileProvider {#class-floortileprovider .title title="Class FloorTileP
             [Parameters:]{.paramLabel}
             :   `_floor` - The new floor object.
 
-        []{#getTileUrl-int-int-int-}
-
+        &nbsp;
         -   #### getTileUrl
 
                 public java.net.URL getTileUrl(int x,                               int y,                               int zoom)
@@ -4470,8 +3981,7 @@ Class FloorTileProvider {#class-floortileprovider .title title="Class FloorTileP
             [Returns:]{.returnLabel}
             :   the tile url
 
-        []{#setUrlTemplate-java.lang.String-}
-
+        &nbsp;
         -   #### setUrlTemplate
 
                 public void setUrlTemplate(java.lang.String tilesUrl)
@@ -4480,17 +3990,14 @@ Class FloorTileProvider {#class-floortileprovider .title title="Class FloorTileP
             fetching tiles. Must have format
             "prefix{param\_1}infix{param\_N}suffix", e.g.:
             "http://tiles.url.com/{floor}/{x}/{y}/{zoom}.png" By default
-            the
-            [`getTileUrl(int, int, int)`](../../../com/mapspeople/maps/FloorTileProvider.html#getTileUrl-int-int-int-)
-            method will look for
+            the `getTileUrl(int, int, int)` method will look for
             {venueId}/{style}/{buildingId}/{floor}/{z}/{x}/{y}, where x,
             y and z is mandatory.
 
             [Parameters:]{.paramLabel}
             :   `tilesUrl` - The new url template
 
-        []{#getTile-int-int-int-}
-
+        &nbsp;
         -   #### getTile
 
                 public final Tile getTile(int x,                          int y,                          int zoom)
@@ -4526,9 +4033,7 @@ Class AppConfig {#class-appconfig .title title="Class AppConfig"}
 
     The type App config.
 
--   -   []{#constructor.summary}
-
-        ### Constructor Summary
+-   -   ### Constructor Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -4551,28 +4056,18 @@ Class AppConfig {#class-appconfig .title title="Class AppConfig"}
         |                                   | Init.                             |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#AppConfig--}
+-   -   ### Constructor Detail
 
         -   #### AppConfig
 
                 public AppConfig()
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#init-com.mapspeople.mapcontrol.ReadyListener-}
+    -   ### Method Detail
 
         -   #### init
 
@@ -4583,8 +4078,7 @@ Class AppConfig {#class-appconfig .title title="Class AppConfig"}
             [Parameters:]{.paramLabel}
             :   `callback` - the callback
 
-        []{#getMenuInfo-java.lang.String-}
-
+        &nbsp;
         -   #### getMenuInfo
 
                 public java.util.ArrayList<MenuInfo> getMenuInfo(java.lang.String menuName)
@@ -4597,8 +4091,7 @@ Class AppConfig {#class-appconfig .title title="Class AppConfig"}
             [Returns:]{.returnLabel}
             :   the menu info
 
-        []{#getVenueImage-java.lang.String-}
-
+        &nbsp;
         -   #### getVenueImage
 
                 public android.graphics.Bitmap getVenueImage(java.lang.String venueName)
@@ -4611,8 +4104,7 @@ Class AppConfig {#class-appconfig .title title="Class AppConfig"}
             [Returns:]{.returnLabel}
             :   the venue image
 
-        []{#getTranslations--}
-
+        &nbsp;
         -   #### getTranslations
 
                 public java.util.HashMap<java.lang.String,java.lang.String> getTranslations()
@@ -4622,8 +4114,7 @@ Class AppConfig {#class-appconfig .title title="Class AppConfig"}
             [Returns:]{.returnLabel}
             :   the translations
 
-        []{#getAppSettings--}
-
+        &nbsp;
         -   #### getAppSettings
 
                 public java.util.HashMap<java.lang.String,java.lang.String> getAppSettings()
@@ -4649,13 +4140,10 @@ Class AppData {#class-appdata .title title="Class AppData"}
 
         public class AppDataextends java.lang.Object
 
-    App data model. Contains meta data on how a
-    [`MapControl`](../../../com/mapspeople/mapcontrol/MapControl.html "class in com.mapspeople.mapcontrol")
-    will execute and behave.
+    App data model. Contains meta data on how a `MapControl` will
+    execute and behave.
 
--   -   []{#field.summary}
-
-        ### Field Summary
+-   -   ### Field Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -4682,17 +4170,11 @@ Class AppData {#class-appdata .title title="Class AppData"}
         |                                   | Gets tokens.                      |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#field.detail}
-
-        ### Field Detail
-
-        []{#INDOOR_MODE}
+-   -   ### Field Detail
 
         -   #### INDOOR\_MODE
 
@@ -4700,16 +4182,14 @@ Class AppData {#class-appdata .title title="Class AppData"}
 
             The constant INDOOR\_MODE.
 
-        []{#OUTDOOR_MODE}
-
+        &nbsp;
         -   #### OUTDOOR\_MODE
 
                 public static int OUTDOOR_MODE
 
             The constant OUTDOOR\_MODE.
 
-        []{#INDOOR_AND_OUTDOOR_MODE}
-
+        &nbsp;
         -   #### INDOOR\_AND\_OUTDOOR\_MODE
 
                 public static int INDOOR_AND_OUTDOOR_MODE
@@ -4717,22 +4197,14 @@ Class AppData {#class-appdata .title title="Class AppData"}
             The constant INDOOR\_AND\_OUTDOOR\_MODE.
 
     &nbsp;
-    -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#AppData--}
+    -   ### Constructor Detail
 
         -   #### AppData
 
                 public AppData()
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#getTileServices--}
+    -   ### Method Detail
 
         -   #### getTileServices
 
@@ -4743,8 +4215,7 @@ Class AppData {#class-appdata .title title="Class AppData"}
             [Returns:]{.returnLabel}
             :   the tile services
 
-        []{#getTileDatabases--}
-
+        &nbsp;
         -   #### getTileDatabases
 
                 public java.util.List<java.lang.String> getTileDatabases()
@@ -4754,8 +4225,7 @@ Class AppData {#class-appdata .title title="Class AppData"}
             [Returns:]{.returnLabel}
             :   the tile databases
 
-        []{#getDisplayRuleset--}
-
+        &nbsp;
         -   #### getDisplayRuleset
 
                 public LocationDisplayRuleset getDisplayRuleset()
@@ -4765,8 +4235,7 @@ Class AppData {#class-appdata .title title="Class AppData"}
             [Returns:]{.returnLabel}
             :   the display ruleset
 
-        []{#getSite--}
-
+        &nbsp;
         -   #### getSite
 
                 public Site getSite()
@@ -4776,8 +4245,7 @@ Class AppData {#class-appdata .title title="Class AppData"}
             [Returns:]{.returnLabel}
             :   the site
 
-        []{#getSiteName--}
-
+        &nbsp;
         -   #### getSiteName
 
                 public java.lang.String getSiteName()
@@ -4787,8 +4255,7 @@ Class AppData {#class-appdata .title title="Class AppData"}
             [Returns:]{.returnLabel}
             :   the site name
 
-        []{#getAppMode--}
-
+        &nbsp;
         -   #### getAppMode
 
                 public int getAppMode()
@@ -4798,8 +4265,7 @@ Class AppData {#class-appdata .title title="Class AppData"}
             [Returns:]{.returnLabel}
             :   the app mode
 
-        []{#getTokens--}
-
+        &nbsp;
         -   #### getTokens
 
                 public java.util.List<Token> getTokens()
@@ -4831,9 +4297,7 @@ Class BooleanSerializer {#class-booleanserializer .title title="Class BooleanSer
 
     The type Boolean serializer.
 
--   -   []{#constructor.summary}
-
-        ### Constructor Summary
+-   -   ### Constructor Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -4852,28 +4316,18 @@ Class BooleanSerializer {#class-booleanserializer .title title="Class BooleanSer
         |                                   | Serialize json element.           |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#BooleanSerializer--}
+-   -   ### Constructor Detail
 
         -   #### BooleanSerializer
 
                 public BooleanSerializer()
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#serialize-java.lang.Boolean-java.lang.reflect.Type-com.google.gson.JsonSerializationContext-}
+    -   ### Method Detail
 
         -   #### serialize
 
@@ -4893,8 +4347,7 @@ Class BooleanSerializer {#class-booleanserializer .title title="Class BooleanSer
             [Returns:]{.returnLabel}
             :   the json element
 
-        []{#deserialize-com.google.gson.JsonElement-java.lang.reflect.Type-com.google.gson.JsonDeserializationContext-}
-
+        &nbsp;
         -   #### deserialize
 
                 public java.lang.Boolean deserialize(com.google.gson.JsonElement arg0,                                     java.lang.reflect.Type arg1,                                     com.google.gson.JsonDeserializationContext arg2)                              throws com.google.gson.JsonParseException
@@ -4935,9 +4388,7 @@ Class Building {#class-building .title title="Class Building"}
 
     Building model that holds building metadata and its floors.
 
--   -   []{#constructor.summary}
-
-        ### Constructor Summary
+-   -   ### Constructor Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -5018,17 +4469,11 @@ Class Building {#class-building .title title="Class Building"}
         |                                   | Switch the current floor.         |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#Building--}
+-   -   ### Constructor Detail
 
         -   #### Building
 
@@ -5037,11 +4482,7 @@ Class Building {#class-building .title title="Class Building"}
             Instantiates a new Building.
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#isOfflineMode--}
+    -   ### Method Detail
 
         -   #### isOfflineMode
 
@@ -5052,8 +4493,7 @@ Class Building {#class-building .title title="Class Building"}
             [Returns:]{.returnLabel}
             :   True or false.
 
-        []{#setOfflineMode-boolean-}
-
+        &nbsp;
         -   #### setOfflineMode
 
                 public void setOfflineMode(boolean offlineMode)
@@ -5063,8 +4503,7 @@ Class Building {#class-building .title title="Class Building"}
             [Parameters:]{.paramLabel}
             :   `offlineMode` - True or false.
 
-        []{#getInitFloorZIndex--}
-
+        &nbsp;
         -   #### getInitFloorZIndex
 
                 public int getInitFloorZIndex()
@@ -5074,8 +4513,7 @@ Class Building {#class-building .title title="Class Building"}
             [Returns:]{.returnLabel}
             :   An index value.
 
-        []{#getInitFloor--}
-
+        &nbsp;
         -   #### getInitFloor
 
                 public Floor getInitFloor()
@@ -5085,8 +4523,7 @@ Class Building {#class-building .title title="Class Building"}
             [Returns:]{.returnLabel}
             :   An index value.
 
-        []{#getCurrentFloorZIndex--}
-
+        &nbsp;
         -   #### getCurrentFloorZIndex
 
                 public int getCurrentFloorZIndex()
@@ -5096,8 +4533,7 @@ Class Building {#class-building .title title="Class Building"}
             [Returns:]{.returnLabel}
             :   An index value.
 
-        []{#getCurrentFloor--}
-
+        &nbsp;
         -   #### getCurrentFloor
 
                 public Floor getCurrentFloor()
@@ -5107,8 +4543,7 @@ Class Building {#class-building .title title="Class Building"}
             [Returns:]{.returnLabel}
             :   A floor object, null if no floors exist.
 
-        []{#switchFloor-int-}
-
+        &nbsp;
         -   #### switchFloor
 
                 public Floor switchFloor(int index)
@@ -5122,8 +4557,7 @@ Class Building {#class-building .title title="Class Building"}
             [Returns:]{.returnLabel}
             :   The visible floor object after switch.
 
-        []{#getBuildingId--}
-
+        &nbsp;
         -   #### getBuildingId
 
                 public java.lang.String getBuildingId()
@@ -5133,8 +4567,7 @@ Class Building {#class-building .title title="Class Building"}
             [Returns:]{.returnLabel}
             :   building id
 
-        []{#getName--}
-
+        &nbsp;
         -   #### getName
 
                 public java.lang.String getName()
@@ -5144,8 +4577,7 @@ Class Building {#class-building .title title="Class Building"}
             [Returns:]{.returnLabel}
             :   name
 
-        []{#getFloors--}
-
+        &nbsp;
         -   #### getFloors
 
                 public java.util.List<Floor> getFloors()
@@ -5155,8 +4587,7 @@ Class Building {#class-building .title title="Class Building"}
             [Returns:]{.returnLabel}
             :   floors
 
-        []{#setFloors-com.mapspeople.models.FloorCollection-}
-
+        &nbsp;
         -   #### setFloors
 
                 public void setFloors(FloorCollection floors)
@@ -5166,8 +4597,7 @@ Class Building {#class-building .title title="Class Building"}
             [Parameters:]{.paramLabel}
             :   `floors` - the floors
 
-        []{#addFloor-com.mapspeople.models.Floor-}
-
+        &nbsp;
         -   #### addFloor
 
                 public void addFloor(Floor floor)
@@ -5177,8 +4607,7 @@ Class Building {#class-building .title title="Class Building"}
             [Parameters:]{.paramLabel}
             :   `floor` - the floor
 
-        []{#hasFloorIndex-int-}
-
+        &nbsp;
         -   #### hasFloorIndex
 
                 public boolean hasFloorIndex(int floorIndex)
@@ -5191,8 +4620,7 @@ Class Building {#class-building .title title="Class Building"}
             [Returns:]{.returnLabel}
             :   the boolean
 
-        []{#getFloorByZIndex-int-}
-
+        &nbsp;
         -   #### getFloorByZIndex
 
                 public Floor getFloorByZIndex(int index)
@@ -5205,8 +4633,7 @@ Class Building {#class-building .title title="Class Building"}
             [Returns:]{.returnLabel}
             :   the floor by z index
 
-        []{#getBoundingBox--}
-
+        &nbsp;
         -   #### getBoundingBox
 
                 public java.util.List<java.lang.Double> getBoundingBox()
@@ -5216,8 +4643,7 @@ Class Building {#class-building .title title="Class Building"}
             [Returns:]{.returnLabel}
             :   the bounding box
 
-        []{#getPerimeter--}
-
+        &nbsp;
         -   #### getPerimeter
 
                 public LineString getPerimeter()
@@ -5227,8 +4653,7 @@ Class Building {#class-building .title title="Class Building"}
             [Returns:]{.returnLabel}
             :   the perimeter
 
-        []{#getMarker--}
-
+        &nbsp;
         -   #### getMarker
 
                 public Marker getMarker()
@@ -5238,8 +4663,7 @@ Class Building {#class-building .title title="Class Building"}
             [Returns:]{.returnLabel}
             :   the marker
 
-        []{#setMarker-Marker-}
-
+        &nbsp;
         -   #### setMarker
 
                 public void setMarker(Marker marker)
@@ -5249,8 +4673,7 @@ Class Building {#class-building .title title="Class Building"}
             [Parameters:]{.paramLabel}
             :   `marker` - the marker
 
-        []{#getCurrentFloorIndex--}
-
+        &nbsp;
         -   #### getCurrentFloorIndex
 
                 public int getCurrentFloorIndex()
@@ -5260,8 +4683,7 @@ Class Building {#class-building .title title="Class Building"}
             [Returns:]{.returnLabel}
             :   the current floor index
 
-        []{#getAnchor--}
-
+        &nbsp;
         -   #### getAnchor
 
                 public Point getAnchor()
@@ -5271,8 +4693,7 @@ Class Building {#class-building .title title="Class Building"}
             [Returns:]{.returnLabel}
             :   the anchor
 
-        []{#setAnchor-com.mapspeople.models.Point-}
-
+        &nbsp;
         -   #### setAnchor
 
                 public void setAnchor(Point anchor)
@@ -5282,8 +4703,7 @@ Class Building {#class-building .title title="Class Building"}
             [Parameters:]{.paramLabel}
             :   `anchor` - the anchor
 
-        []{#isInside-com.mapspeople.models.Point-}
-
+        &nbsp;
         -   #### isInside
 
                 public boolean isInside(Point inPoint)
@@ -5314,9 +4734,7 @@ Class BuildingCollection {#class-buildingcollection .title title="Class Building
 
     The type Building collection.
 
--   -   []{#constructor.summary}
-
-        ### Constructor Summary
+-   -   ### Constructor Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -5337,17 +4755,11 @@ Class BuildingCollection {#class-buildingcollection .title title="Class Building
         |                                   | Intersection area double.         |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#BuildingCollection-java.util.List-}
+-   -   ### Constructor Detail
 
         -   #### BuildingCollection
 
@@ -5359,11 +4771,7 @@ Class BuildingCollection {#class-buildingcollection .title title="Class Building
             :   `buildings` - the buildings
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#getCollection--}
+    -   ### Method Detail
 
         -   #### getCollection
 
@@ -5374,8 +4782,7 @@ Class BuildingCollection {#class-buildingcollection .title title="Class Building
             [Returns:]{.returnLabel}
             :   the collection
 
-        []{#intersectionArea-LatLngBounds-LatLngBounds-}
-
+        &nbsp;
         -   #### intersectionArea
 
                 public double intersectionArea(LatLngBounds b1,                               LatLngBounds b2)
@@ -5389,8 +4796,7 @@ Class BuildingCollection {#class-buildingcollection .title title="Class Building
             [Returns:]{.returnLabel}
             :   the double
 
-        []{#getCurrentBuilding-LatLngBounds-}
-
+        &nbsp;
         -   #### getCurrentBuilding
 
                 public Building getCurrentBuilding(LatLngBounds bounds)
@@ -5403,8 +4809,7 @@ Class BuildingCollection {#class-buildingcollection .title title="Class Building
             [Returns:]{.returnLabel}
             :   the current building
 
-        []{#getBuilding-LatLng-}
-
+        &nbsp;
         -   #### getBuilding
 
                 public Building getBuilding(LatLng point)
@@ -5435,9 +4840,7 @@ Class BuildingInfo {#class-buildinginfo .title title="Class BuildingInfo"}
 
     The type Building info.
 
--   -   []{#constructor.summary}
-
-        ### Constructor Summary
+-   -   ### Constructor Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -5449,28 +4852,18 @@ Class BuildingInfo {#class-buildinginfo .title title="Class BuildingInfo"}
         |                                   | Gets name.                        |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#BuildingInfo--}
+-   -   ### Constructor Detail
 
         -   #### BuildingInfo
 
                 public BuildingInfo()
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#getName--}
+    -   ### Method Detail
 
         -   #### getName
 
@@ -5481,8 +4874,7 @@ Class BuildingInfo {#class-buildinginfo .title title="Class BuildingInfo"}
             [Returns:]{.returnLabel}
             :   the name
 
-        []{#getAliases--}
-
+        &nbsp;
         -   #### getAliases
 
                 public java.lang.String[] getAliases()
@@ -5510,9 +4902,7 @@ Class Category {#class-category .title title="Class Category"}
 
     The type Category.
 
--   -   []{#constructor.summary}
-
-        ### Constructor Summary
+-   -   ### Constructor Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -5531,17 +4921,11 @@ Class Category {#class-category .title title="Class Category"}
         |                                   | Is equal to boolean.              |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#Category-java.lang.String-java.lang.String-}
+-   -   ### Constructor Detail
 
         -   #### Category
 
@@ -5554,11 +4938,7 @@ Class Category {#class-category .title title="Class Category"}
             :   `name` - the name
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#getKey--}
+    -   ### Method Detail
 
         -   #### getKey
 
@@ -5569,8 +4949,7 @@ Class Category {#class-category .title title="Class Category"}
             [Returns:]{.returnLabel}
             :   the key
 
-        []{#getValue--}
-
+        &nbsp;
         -   #### getValue
 
                 public java.lang.String getValue()
@@ -5580,8 +4959,7 @@ Class Category {#class-category .title title="Class Category"}
             [Returns:]{.returnLabel}
             :   the value
 
-        []{#isEqualTo-com.mapspeople.models.Category-}
-
+        &nbsp;
         -   #### isEqualTo
 
                 public boolean isEqualTo(Category category)
@@ -5594,8 +4972,7 @@ Class Category {#class-category .title title="Class Category"}
             [Returns:]{.returnLabel}
             :   the boolean
 
-        []{#isEqualTo-java.lang.String-}
-
+        &nbsp;
         -   #### isEqualTo
 
                 public boolean isEqualTo(java.lang.String name)
@@ -5626,9 +5003,7 @@ Class CategoryCollection {#class-categorycollection .title title="Class Category
 
     The type Category collection.
 
--   -   []{#constructor.summary}
-
-        ### Constructor Summary
+-   -   ### Constructor Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -5644,17 +5019,11 @@ Class CategoryCollection {#class-categorycollection .title title="Class Category
         |                                   | Gets value.                       |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#CategoryCollection-java.util.List-}
+-   -   ### Constructor Detail
 
         -   #### CategoryCollection
 
@@ -5666,11 +5035,7 @@ Class CategoryCollection {#class-categorycollection .title title="Class Category
             :   `categories` - the categories
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#getCategories--}
+    -   ### Method Detail
 
         -   #### getCategories
 
@@ -5681,8 +5046,7 @@ Class CategoryCollection {#class-categorycollection .title title="Class Category
             [Returns:]{.returnLabel}
             :   the categories
 
-        []{#getValue-java.lang.String-}
-
+        &nbsp;
         -   #### getValue
 
                 public java.lang.String getValue(java.lang.String key)
@@ -5695,8 +5059,7 @@ Class CategoryCollection {#class-categorycollection .title title="Class Category
             [Returns:]{.returnLabel}
             :   the value
 
-        []{#getCategoryIndex-java.lang.String-}
-
+        &nbsp;
         -   #### getCategoryIndex
 
                 public int getCategoryIndex(java.lang.String key)
@@ -5727,9 +5090,7 @@ Class ContactModule {#class-contactmodule .title title="Class ContactModule"}
 
     The type Contact module.
 
--   -   []{#constructor.summary}
-
-        ### Constructor Summary
+-   -   ### Constructor Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -5747,28 +5108,18 @@ Class ContactModule {#class-contactmodule .title title="Class ContactModule"}
         |                                   | Gets website.                     |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#ContactModule--}
+-   -   ### Constructor Detail
 
         -   #### ContactModule
 
                 public ContactModule()
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#getEmail--}
+    -   ### Method Detail
 
         -   #### getEmail
 
@@ -5779,8 +5130,7 @@ Class ContactModule {#class-contactmodule .title title="Class ContactModule"}
             [Returns:]{.returnLabel}
             :   the email
 
-        []{#getTelephone--}
-
+        &nbsp;
         -   #### getTelephone
 
                 public java.lang.String getTelephone()
@@ -5790,8 +5140,7 @@ Class ContactModule {#class-contactmodule .title title="Class ContactModule"}
             [Returns:]{.returnLabel}
             :   the telephone
 
-        []{#getWebsite--}
-
+        &nbsp;
         -   #### getWebsite
 
                 public java.lang.String getWebsite()
@@ -5801,8 +5150,7 @@ Class ContactModule {#class-contactmodule .title title="Class ContactModule"}
             [Returns:]{.returnLabel}
             :   the website
 
-        []{#getFaxNumber--}
-
+        &nbsp;
         -   #### getFaxNumber
 
                 public java.lang.String getFaxNumber()
@@ -5830,9 +5178,7 @@ Class DataField {#class-datafield .title title="Class DataField"}
 
     The type Data field.
 
--   -   []{#constructor.summary}
-
-        ### Constructor Summary
+-   -   ### Constructor Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -5847,17 +5193,11 @@ Class DataField {#class-datafield .title title="Class DataField"}
         |                                   | Gets value.                       |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#DataField-java.lang.String-java.lang.String-java.lang.String-}
+-   -   ### Constructor Detail
 
         -   #### DataField
 
@@ -5870,8 +5210,7 @@ Class DataField {#class-datafield .title title="Class DataField"}
             :   `value` - the value
             :   `type` - the type
 
-        []{#DataField-java.lang.String-java.lang.String-}
-
+        &nbsp;
         -   #### DataField
 
                 public DataField(java.lang.String name,                 java.lang.String value)
@@ -5883,11 +5222,7 @@ Class DataField {#class-datafield .title title="Class DataField"}
             :   `value` - the value
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#getValue--}
+    -   ### Method Detail
 
         -   #### getValue
 
@@ -5898,8 +5233,7 @@ Class DataField {#class-datafield .title title="Class DataField"}
             [Returns:]{.returnLabel}
             :   the value
 
-        []{#getName--}
-
+        &nbsp;
         -   #### getName
 
                 public java.lang.String getName()
@@ -5909,8 +5243,7 @@ Class DataField {#class-datafield .title title="Class DataField"}
             [Returns:]{.returnLabel}
             :   the name
 
-        []{#getType--}
-
+        &nbsp;
         -   #### getType
 
                 public java.lang.String getType()
@@ -5946,9 +5279,7 @@ Class DisplayRule {#class-displayrule .title title="Class DisplayRule"}
     a LocationDisplayRule object locally. This happens in
     MPLocationsAsyncLoader.deSerialize.
 
--   -   []{#constructor.summary}
-
-        ### Constructor Summary
+-   -   ### Constructor Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -5969,17 +5300,11 @@ Class DisplayRule {#class-displayrule .title title="Class DisplayRule"}
         |                                   | Is visible boolean.               |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#DisplayRule-java.lang.String-java.lang.String-boolean-float-float-}
+-   -   ### Constructor Detail
 
         -   #### DisplayRule
 
@@ -5995,11 +5320,7 @@ Class DisplayRule {#class-displayrule .title title="Class DisplayRule"}
             :   `zoomTo` - the zoom to
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#getIconUrl--}
+    -   ### Method Detail
 
         -   #### getIconUrl
 
@@ -6010,8 +5331,7 @@ Class DisplayRule {#class-displayrule .title title="Class DisplayRule"}
             [Returns:]{.returnLabel}
             :   the icon url
 
-        []{#getLabel--}
-
+        &nbsp;
         -   #### getLabel
 
                 public java.lang.String getLabel()
@@ -6021,8 +5341,7 @@ Class DisplayRule {#class-displayrule .title title="Class DisplayRule"}
             [Returns:]{.returnLabel}
             :   the label
 
-        []{#isVisible--}
-
+        &nbsp;
         -   #### isVisible
 
                 public boolean isVisible()
@@ -6032,8 +5351,7 @@ Class DisplayRule {#class-displayrule .title title="Class DisplayRule"}
             [Returns:]{.returnLabel}
             :   the boolean
 
-        []{#getZoomFrom--}
-
+        &nbsp;
         -   #### getZoomFrom
 
                 public float getZoomFrom()
@@ -6043,8 +5361,7 @@ Class DisplayRule {#class-displayrule .title title="Class DisplayRule"}
             [Returns:]{.returnLabel}
             :   the zoom from
 
-        []{#getZoomTo--}
-
+        &nbsp;
         -   #### getZoomTo
 
                 public float getZoomTo()
@@ -6062,15 +5379,12 @@ Interface Feature {#interface-feature .title title="Interface Feature"}
 -   
 
     All Known Subinterfaces:
-    :   [Location](../../../com/mapspeople/models/Location.html "interface in com.mapspeople.models")
+    :   Location
 
     &nbsp;
 
     All Known Implementing Classes:
-    :   [MPLocation](../../../com/mapspeople/models/MPLocation.html "class in com.mapspeople.models"),
-        [MPPositionResult](../../../com/mapspeople/position/MPPositionResult.html "class in com.mapspeople.position"),
-        [PositionIndicator](../../../com/mapspeople/models/PositionIndicator.html "class in com.mapspeople.models"),
-        [PositionUpdate](../../../com/mapspeople/models/PositionUpdate.html "class in com.mapspeople.models")
+    :   MPLocation, MPPositionResult, PositionIndicator, PositionUpdate
 
     ------------------------------------------------------------------------
 
@@ -6080,9 +5394,7 @@ Interface Feature {#interface-feature .title title="Interface Feature"}
 
     The interface Feature.
 
--   -   []{#method.summary}
-
-        ### Method Summary
+-   -   ### Method Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -6097,11 +5409,7 @@ Interface Feature {#interface-feature .title title="Interface Feature"}
         |                                   | Gets type.                        |
         +-----------------------------------+-----------------------------------+
 
--   -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#getType--}
+-   -   ### Method Detail
 
         -   #### getType
 
@@ -6112,8 +5420,7 @@ Interface Feature {#interface-feature .title title="Interface Feature"}
             [Returns:]{.returnLabel}
             :   the type
 
-        []{#getProperties--}
-
+        &nbsp;
         -   #### getProperties
 
                 java.util.Map<java.lang.String,java.lang.Object> getProperties()
@@ -6123,8 +5430,7 @@ Interface Feature {#interface-feature .title title="Interface Feature"}
             [Returns:]{.returnLabel}
             :   the properties
 
-        []{#getGeometry--}
-
+        &nbsp;
         -   #### getGeometry
 
                 Geometry getGeometry()
@@ -6152,9 +5458,7 @@ Class Floor {#class-floor .title title="Class Floor"}
 
     The type Floor.
 
--   -   []{#constructor.summary}
-
-        ### Constructor Summary
+-   -   ### Constructor Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -6199,17 +5503,11 @@ Class Floor {#class-floor .title title="Class Floor"}
         |                                   | Sets z index.                     |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#Floor--}
+-   -   ### Constructor Detail
 
         -   #### Floor
 
@@ -6217,8 +5515,7 @@ Class Floor {#class-floor .title title="Class Floor"}
 
             Instantiates a new Floor.
 
-        []{#Floor-int-java.lang.String-int-}
-
+        &nbsp;
         -   #### Floor
 
                 public Floor(int zLevelIndex,             java.lang.String name,             int buildingId)
@@ -6231,11 +5528,7 @@ Class Floor {#class-floor .title title="Class Floor"}
             :   `buildingId` - the building id
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#getGeometry--}
+    -   ### Method Detail
 
         -   #### getGeometry
 
@@ -6246,8 +5539,7 @@ Class Floor {#class-floor .title title="Class Floor"}
             [Returns:]{.returnLabel}
             :   the geometry
 
-        []{#getZIndex--}
-
+        &nbsp;
         -   #### getZIndex
 
                 public int getZIndex()
@@ -6257,8 +5549,7 @@ Class Floor {#class-floor .title title="Class Floor"}
             [Returns:]{.returnLabel}
             :   the z index
 
-        []{#getDisplayName--}
-
+        &nbsp;
         -   #### getDisplayName
 
                 public java.lang.String getDisplayName()
@@ -6268,8 +5559,7 @@ Class Floor {#class-floor .title title="Class Floor"}
             [Returns:]{.returnLabel}
             :   the display name
 
-        []{#setZIndex-int-}
-
+        &nbsp;
         -   #### setZIndex
 
                 public void setZIndex(int value)
@@ -6279,8 +5569,7 @@ Class Floor {#class-floor .title title="Class Floor"}
             [Parameters:]{.paramLabel}
             :   `value` - the value
 
-        []{#setVisible-boolean-}
-
+        &nbsp;
         -   #### setVisible
 
                 public void setVisible(boolean visible)
@@ -6290,8 +5579,7 @@ Class Floor {#class-floor .title title="Class Floor"}
             [Parameters:]{.paramLabel}
             :   `visible` - the visible
 
-        []{#setOverlay-java.lang.String-TileOverlay-}
-
+        &nbsp;
         -   #### setOverlay
 
                 public void setOverlay(java.lang.String style,                       TileOverlay overlay)
@@ -6302,8 +5590,7 @@ Class Floor {#class-floor .title title="Class Floor"}
             :   `style` - the style
             :   `overlay` - the overlay
 
-        []{#getTileOverlay--}
-
+        &nbsp;
         -   #### getTileOverlay
 
                 public TileOverlay getTileOverlay()
@@ -6313,8 +5600,7 @@ Class Floor {#class-floor .title title="Class Floor"}
             [Returns:]{.returnLabel}
             :   the tile overlay
 
-        []{#getCurrentStyle--}
-
+        &nbsp;
         -   #### getCurrentStyle
 
                 public java.lang.String getCurrentStyle()
@@ -6324,8 +5610,7 @@ Class Floor {#class-floor .title title="Class Floor"}
             [Returns:]{.returnLabel}
             :   the current style
 
-        []{#setCurrentStyle-java.lang.String-}
-
+        &nbsp;
         -   #### setCurrentStyle
 
                 public void setCurrentStyle(java.lang.String currentStyle)
@@ -6335,8 +5620,7 @@ Class Floor {#class-floor .title title="Class Floor"}
             [Parameters:]{.paramLabel}
             :   `currentStyle` - the current style
 
-        []{#isVisible--}
-
+        &nbsp;
         -   #### isVisible
 
                 public boolean isVisible()
@@ -6346,8 +5630,7 @@ Class Floor {#class-floor .title title="Class Floor"}
             [Returns:]{.returnLabel}
             :   the boolean
 
-        []{#getBuildingId--}
-
+        &nbsp;
         -   #### getBuildingId
 
                 public java.lang.String getBuildingId()
@@ -6357,8 +5640,7 @@ Class Floor {#class-floor .title title="Class Floor"}
             [Returns:]{.returnLabel}
             :   the building id
 
-        []{#setBuildingId-java.lang.String-}
-
+        &nbsp;
         -   #### setBuildingId
 
                 public void setBuildingId(java.lang.String buildingId)
@@ -6375,14 +5657,14 @@ Class FloorCollection {#class-floorcollection .title title="Class FloorCollectio
 
 -   java.lang.Object
 -   -   java.util.AbstractMap&lt;K,V&gt;
-    -   -   java.util.HashMap&lt;java.lang.String,[Floor](../../../com/mapspeople/models/Floor.html "class in com.mapspeople.models")&gt;
+    -   -   java.util.HashMap&lt;java.lang.String,Floor&gt;
         -   -   com.mapspeople.models.FloorCollection
 
 -   
 
     All Implemented Interfaces:
     :   java.io.Serializable, java.lang.Cloneable,
-        java.util.Map&lt;java.lang.String,[Floor](../../../com/mapspeople/models/Floor.html "class in com.mapspeople.models")&gt;
+        java.util.Map&lt;java.lang.String,Floor&gt;
 
     ------------------------------------------------------------------------
 
@@ -6393,30 +5675,21 @@ Class FloorCollection {#class-floorcollection .title title="Class FloorCollectio
     The type Floor collection.
 
     [See Also:]{.seeLabel}
-    :   [Serialized
-        Form](../../../serialized-form.html#com.mapspeople.models.FloorCollection)
+    :   Serialized Form
 
--   -   []{#nested.class.summary}
+-   -   ### Nested Class Summary
 
-        ### Nested Class Summary
-
-        -   []{#nested.classes.inherited.from.class.java.util.AbstractMap}
-
-            ### Nested classes/interfaces inherited from class java.util.AbstractMap
+        -   ### Nested classes/interfaces inherited from class java.util.AbstractMap
 
             `java.util.AbstractMap.SimpleEntry<K,V>, java.util.AbstractMap.SimpleImmutableEntry<K,V>`
 
         &nbsp;
-        -   []{#nested.classes.inherited.from.class.java.util.Map}
-
-            ### Nested classes/interfaces inherited from interface java.util.Map
+        -   ### Nested classes/interfaces inherited from interface java.util.Map
 
             `java.util.Map.Entry<K,V>`
 
     &nbsp;
-    -   []{#constructor.summary}
-
-        ### Constructor Summary
+    -   ### Constructor Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -6432,49 +5705,33 @@ Class FloorCollection {#class-floorcollection .title title="Class FloorCollectio
         |                                   | Sets floors.                      |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.util.HashMap}
-
-            ### Methods inherited from class java.util.HashMap
+        -   ### Methods inherited from class java.util.HashMap
 
             `clear, clone, containsKey, containsValue, entrySet, forEach, get, isEmpty, keySet, put, putAll, remove, replace, replaceAll, size, values`
 
         &nbsp;
-        -   []{#methods.inherited.from.class.java.util.AbstractMap}
-
-            ### Methods inherited from class java.util.AbstractMap
+        -   ### Methods inherited from class java.util.AbstractMap
 
             `equals, hashCode, toString`
 
         &nbsp;
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `getClass, notify, notifyAll, wait, wait, wait`
 
         &nbsp;
-        -   []{#methods.inherited.from.class.java.util.Map}
-
-            ### Methods inherited from interface java.util.Map
+        -   ### Methods inherited from interface java.util.Map
 
             `compute, computeIfAbsent, computeIfPresent, equals, getOrDefault, hashCode, merge, putIfAbsent, remove, replace`
 
--   -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#FloorCollection--}
+-   -   ### Constructor Detail
 
         -   #### FloorCollection
 
                 public FloorCollection()
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#getFloors--}
+    -   ### Method Detail
 
         -   #### getFloors
 
@@ -6485,8 +5742,7 @@ Class FloorCollection {#class-floorcollection .title title="Class FloorCollectio
             [Returns:]{.returnLabel}
             :   the floors
 
-        []{#setFloors-java.util.List-}
-
+        &nbsp;
         -   #### setFloors
 
                 public void setFloors(java.util.List<Floor> floors)
@@ -6496,8 +5752,7 @@ Class FloorCollection {#class-floorcollection .title title="Class FloorCollectio
             [Parameters:]{.paramLabel}
             :   `floors` - the floors
 
-        []{#addFloor-com.mapspeople.models.Floor-}
-
+        &nbsp;
         -   #### addFloor
 
                 public void addFloor(Floor floor)
@@ -6525,30 +5780,20 @@ Class Gateway {#class-gateway .title title="Class Gateway"}
 
     Created by mh on 03-10-2016.
 
--   -   []{#field.summary}
-
-        ### Field Summary
+-   -   ### Field Summary
 
           Constructor and Description
           -----------------------------
           `Gateway()` 
 
     &nbsp;
-    -   []{#method.summary}
+    -   ### Method Summary
 
-        ### Method Summary
-
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#field.detail}
-
-        ### Field Detail
-
-        []{#backendUrls}
+-   -   ### Field Detail
 
         -   #### backendUrls
 
@@ -6556,8 +5801,7 @@ Class Gateway {#class-gateway .title title="Class Gateway"}
 
             The Backend urls.
 
-        []{#sessionToken}
-
+        &nbsp;
         -   #### sessionToken
 
                 public java.lang.String sessionToken
@@ -6565,11 +5809,7 @@ Class Gateway {#class-gateway .title title="Class Gateway"}
             The Session token.
 
     &nbsp;
-    -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#Gateway--}
+    -   ### Constructor Detail
 
         -   #### Gateway
 
@@ -6593,9 +5833,7 @@ Class GeoJSONGeometry {#class-geojsongeometry .title title="Class GeoJSONGeometr
 
     The type Geo json geometry.
 
--   -   []{#field.summary}
-
-        ### Field Summary
+-   -   ### Field Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -6621,17 +5859,11 @@ Class GeoJSONGeometry {#class-geojsongeometry .title title="Class GeoJSONGeometr
         |                                   | Sets coordinates.                 |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#field.detail}
-
-        ### Field Detail
-
-        []{#coordinates}
+-   -   ### Field Detail
 
         -   #### coordinates
 
@@ -6640,22 +5872,14 @@ Class GeoJSONGeometry {#class-geojsongeometry .title title="Class GeoJSONGeometr
             The Coordinates.
 
     &nbsp;
-    -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#GeoJSONGeometry--}
+    -   ### Constructor Detail
 
         -   #### GeoJSONGeometry
 
                 public GeoJSONGeometry()
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#getType--}
+    -   ### Method Detail
 
         -   #### getType
 
@@ -6666,8 +5890,7 @@ Class GeoJSONGeometry {#class-geojsongeometry .title title="Class GeoJSONGeometr
             [Returns:]{.returnLabel}
             :   the type
 
-        []{#getCoordinates--}
-
+        &nbsp;
         -   #### getCoordinates
 
                 public java.util.List<java.util.List<double[]>> getCoordinates()
@@ -6677,8 +5900,7 @@ Class GeoJSONGeometry {#class-geojsongeometry .title title="Class GeoJSONGeometr
             [Returns:]{.returnLabel}
             :   the coordinates
 
-        []{#setCoordinates-java.util.List-}
-
+        &nbsp;
         -   #### setCoordinates
 
                 public void setCoordinates(java.util.List<java.util.List<double[]>> coordinates)
@@ -6688,8 +5910,7 @@ Class GeoJSONGeometry {#class-geojsongeometry .title title="Class GeoJSONGeometr
             [Parameters:]{.paramLabel}
             :   `coordinates` - the coordinates
 
-        []{#isInside-com.mapspeople.models.Point-}
-
+        &nbsp;
         -   #### isInside
 
                 public boolean isInside(Point point)
@@ -6703,8 +5924,7 @@ Class GeoJSONGeometry {#class-geojsongeometry .title title="Class GeoJSONGeometr
             [Returns:]{.returnLabel}
             :   true if the given point is inside
 
-        []{#getPosition--}
-
+        &nbsp;
         -   #### getPosition
 
                 public Point getPosition()
@@ -6726,7 +5946,7 @@ Class Geometry {#class-geometry .title title="Class Geometry"}
 -   
 
     Direct Known Subclasses:
-    :   [Point](../../../com/mapspeople/models/Point.html "class in com.mapspeople.models")
+    :   Point
 
     ------------------------------------------------------------------------
 
@@ -6736,9 +5956,7 @@ Class Geometry {#class-geometry .title title="Class Geometry"}
 
     The type Geometry.
 
--   -   []{#constructor.summary}
-
-        ### Constructor Summary
+-   -   ### Constructor Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -6754,28 +5972,18 @@ Class Geometry {#class-geometry .title title="Class Geometry"}
         |                                   | Sets coordinates.                 |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#Geometry--}
+-   -   ### Constructor Detail
 
         -   #### Geometry
 
                 public Geometry()
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#getType--}
+    -   ### Method Detail
 
         -   #### getType
 
@@ -6786,8 +5994,7 @@ Class Geometry {#class-geometry .title title="Class Geometry"}
             [Returns:]{.returnLabel}
             :   the type
 
-        []{#getCoordinates--}
-
+        &nbsp;
         -   #### getCoordinates
 
                 public double[] getCoordinates()
@@ -6797,8 +6004,7 @@ Class Geometry {#class-geometry .title title="Class Geometry"}
             [Returns:]{.returnLabel}
             :   the double \[ \]
 
-        []{#setCoordinates-double:A-}
-
+        &nbsp;
         -   #### setCoordinates
 
                 public void setCoordinates(double[] coordinates)
@@ -6826,30 +6032,20 @@ Class IconType {#class-icontype .title title="Class IconType"}
 
     The type Icon type.
 
--   -   []{#field.summary}
-
-        ### Field Summary
+-   -   ### Field Summary
 
           Constructor and Description
           -----------------------------
           `IconType()` 
 
     &nbsp;
-    -   []{#method.summary}
+    -   ### Method Summary
 
-        ### Method Summary
-
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#field.detail}
-
-        ### Field Detail
-
-        []{#glass}
+-   -   ### Field Detail
 
         -   #### glass
 
@@ -6857,520 +6053,455 @@ Class IconType {#class-icontype .title title="Class IconType"}
 
             The constant glass.
 
-        []{#music}
-
+        &nbsp;
         -   #### music
 
                 public static java.lang.String music
 
             The constant music.
 
-        []{#search}
-
+        &nbsp;
         -   #### search
 
                 public static java.lang.String search
 
             The constant search.
 
-        []{#envelope}
-
+        &nbsp;
         -   #### envelope
 
                 public static java.lang.String envelope
 
             The constant envelope.
 
-        []{#heart}
-
+        &nbsp;
         -   #### heart
 
                 public static java.lang.String heart
 
             The constant heart.
 
-        []{#star}
-
+        &nbsp;
         -   #### star
 
                 public static java.lang.String star
 
             The constant star.
 
-        []{#star_empty}
-
+        &nbsp;
         -   #### star\_empty
 
                 public static java.lang.String star_empty
 
             The constant star\_empty.
 
-        []{#user}
-
+        &nbsp;
         -   #### user
 
                 public static java.lang.String user
 
             The constant user.
 
-        []{#th_large}
-
+        &nbsp;
         -   #### th\_large
 
                 public static java.lang.String th_large
 
             The constant th\_large.
 
-        []{#th}
-
+        &nbsp;
         -   #### th
 
                 public static java.lang.String th
 
             The constant th.
 
-        []{#th_list}
-
+        &nbsp;
         -   #### th\_list
 
                 public static java.lang.String th_list
 
             The constant th\_list.
 
-        []{#ok}
-
+        &nbsp;
         -   #### ok
 
                 public static java.lang.String ok
 
             The constant ok.
 
-        []{#remove}
-
+        &nbsp;
         -   #### remove
 
                 public static java.lang.String remove
 
             The constant remove.
 
-        []{#zoom_in}
-
+        &nbsp;
         -   #### zoom\_in
 
                 public static java.lang.String zoom_in
 
             The constant zoom\_in.
 
-        []{#zoom_out}
-
+        &nbsp;
         -   #### zoom\_out
 
                 public static java.lang.String zoom_out
 
             The constant zoom\_out.
 
-        []{#off}
-
+        &nbsp;
         -   #### off
 
                 public static java.lang.String off
 
             The constant off.
 
-        []{#signal}
-
+        &nbsp;
         -   #### signal
 
                 public static java.lang.String signal
 
             The constant signal.
 
-        []{#cog}
-
+        &nbsp;
         -   #### cog
 
                 public static java.lang.String cog
 
             The constant cog.
 
-        []{#trash}
-
+        &nbsp;
         -   #### trash
 
                 public static java.lang.String trash
 
             The constant trash.
 
-        []{#file}
-
+        &nbsp;
         -   #### file
 
                 public static java.lang.String file
 
             The constant file.
 
-        []{#time}
-
+        &nbsp;
         -   #### time
 
                 public static java.lang.String time
 
             The constant time.
 
-        []{#road}
-
+        &nbsp;
         -   #### road
 
                 public static java.lang.String road
 
             The constant road.
 
-        []{#download_alt}
-
+        &nbsp;
         -   #### download\_alt
 
                 public static java.lang.String download_alt
 
             The constant download\_alt.
 
-        []{#download}
-
+        &nbsp;
         -   #### download
 
                 public static java.lang.String download
 
             The constant download.
 
-        []{#upload}
-
+        &nbsp;
         -   #### upload
 
                 public static java.lang.String upload
 
             The constant upload.
 
-        []{#inbox}
-
+        &nbsp;
         -   #### inbox
 
                 public static java.lang.String inbox
 
             The constant inbox.
 
-        []{#play_circle}
-
+        &nbsp;
         -   #### play\_circle
 
                 public static java.lang.String play_circle
 
             The constant play\_circle.
 
-        []{#repeat}
-
+        &nbsp;
         -   #### repeat
 
                 public static java.lang.String repeat
 
             The constant repeat.
 
-        []{#refresh}
-
+        &nbsp;
         -   #### refresh
 
                 public static java.lang.String refresh
 
             The constant refresh.
 
-        []{#list_alt}
-
+        &nbsp;
         -   #### list\_alt
 
                 public static java.lang.String list_alt
 
             The constant list\_alt.
 
-        []{#lock}
-
+        &nbsp;
         -   #### lock
 
                 public static java.lang.String lock
 
             The constant lock.
 
-        []{#flag}
-
+        &nbsp;
         -   #### flag
 
                 public static java.lang.String flag
 
             The constant flag.
 
-        []{#headphones}
-
+        &nbsp;
         -   #### headphones
 
                 public static java.lang.String headphones
 
             The constant headphones.
 
-        []{#volume_off}
-
+        &nbsp;
         -   #### volume\_off
 
                 public static java.lang.String volume_off
 
             The constant volume\_off.
 
-        []{#volume_down}
-
+        &nbsp;
         -   #### volume\_down
 
                 public static java.lang.String volume_down
 
             The constant volume\_down.
 
-        []{#volume_up}
-
+        &nbsp;
         -   #### volume\_up
 
                 public static java.lang.String volume_up
 
             The constant volume\_up.
 
-        []{#qrcode}
-
+        &nbsp;
         -   #### qrcode
 
                 public static java.lang.String qrcode
 
             The constant qrcode.
 
-        []{#barcode}
-
+        &nbsp;
         -   #### barcode
 
                 public static java.lang.String barcode
 
             The constant barcode.
 
-        []{#book}
-
+        &nbsp;
         -   #### book
 
                 public static java.lang.String book
 
             The constant book.
 
-        []{#print}
-
+        &nbsp;
         -   #### print
 
                 public static java.lang.String print
 
             The constant print.
 
-        []{#camera}
-
+        &nbsp;
         -   #### camera
 
                 public static java.lang.String camera
 
             The constant camera.
 
-        []{#font}
-
+        &nbsp;
         -   #### font
 
                 public static java.lang.String font
 
             The constant font.
 
-        []{#bold}
-
+        &nbsp;
         -   #### bold
 
                 public static java.lang.String bold
 
             The constant bold.
 
-        []{#italic}
-
+        &nbsp;
         -   #### italic
 
                 public static java.lang.String italic
 
             The constant italic.
 
-        []{#text_height}
-
+        &nbsp;
         -   #### text\_height
 
                 public static java.lang.String text_height
 
             The constant text\_height.
 
-        []{#text_width}
-
+        &nbsp;
         -   #### text\_width
 
                 public static java.lang.String text_width
 
             The constant text\_width.
 
-        []{#align_left}
-
+        &nbsp;
         -   #### align\_left
 
                 public static java.lang.String align_left
 
             The constant align\_left.
 
-        []{#align_center}
-
+        &nbsp;
         -   #### align\_center
 
                 public static java.lang.String align_center
 
             The constant align\_center.
 
-        []{#align_right}
-
+        &nbsp;
         -   #### align\_right
 
                 public static java.lang.String align_right
 
             The constant align\_right.
 
-        []{#align_justify}
-
+        &nbsp;
         -   #### align\_justify
 
                 public static java.lang.String align_justify
 
             The constant align\_justify.
 
-        []{#list}
-
+        &nbsp;
         -   #### list
 
                 public static java.lang.String list
 
             The constant list.
 
-        []{#indent_left}
-
+        &nbsp;
         -   #### indent\_left
 
                 public static java.lang.String indent_left
 
             The constant indent\_left.
 
-        []{#indent_right}
-
+        &nbsp;
         -   #### indent\_right
 
                 public static java.lang.String indent_right
 
             The constant indent\_right.
 
-        []{#facetime_video}
-
+        &nbsp;
         -   #### facetime\_video
 
                 public static java.lang.String facetime_video
 
             The constant facetime\_video.
 
-        []{#picture}
-
+        &nbsp;
         -   #### picture
 
                 public static java.lang.String picture
 
             The constant picture.
 
-        []{#pencil}
-
+        &nbsp;
         -   #### pencil
 
                 public static java.lang.String pencil
 
             The constant pencil.
 
-        []{#map_marker}
-
+        &nbsp;
         -   #### map\_marker
 
                 public static java.lang.String map_marker
 
             The constant map\_marker.
 
-        []{#adjust}
-
+        &nbsp;
         -   #### adjust
 
                 public static java.lang.String adjust
 
             The constant adjust.
 
-        []{#tint}
-
+        &nbsp;
         -   #### tint
 
                 public static java.lang.String tint
 
             The constant tint.
 
-        []{#edit}
-
+        &nbsp;
         -   #### edit
 
                 public static java.lang.String edit
 
             The constant edit.
 
-        []{#share}
-
+        &nbsp;
         -   #### share
 
                 public static java.lang.String share
 
             The constant share.
 
-        []{#check}
-
+        &nbsp;
         -   #### check
 
                 public static java.lang.String check
 
             The constant check.
 
-        []{#move}
-
+        &nbsp;
         -   #### move
 
                 public static java.lang.String move
 
             The constant move.
 
-        []{#step_backward}
-
+        &nbsp;
         -   #### step\_backward
 
                 public static java.lang.String step_backward
 
             The constant step\_backward.
 
-        []{#fast_backward}
-
+        &nbsp;
         -   #### fast\_backward
 
                 public static java.lang.String fast_backward
 
             The constant fast\_backward.
 
-        []{#backward}
-
+        &nbsp;
         -   #### backward
 
                 public static final java.lang.String backward
@@ -7378,155 +6509,135 @@ Class IconType {#class-icontype .title title="Class IconType"}
             The constant backward.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.models.IconType.backward)
+            :   Constant Field Values
 
-        []{#pause}
-
+        &nbsp;
         -   #### pause
 
                 public static java.lang.String pause
 
             The constant pause.
 
-        []{#stop}
-
+        &nbsp;
         -   #### stop
 
                 public static java.lang.String stop
 
             The constant stop.
 
-        []{#forward}
-
+        &nbsp;
         -   #### forward
 
                 public static java.lang.String forward
 
             The constant forward.
 
-        []{#fast_forward}
-
+        &nbsp;
         -   #### fast\_forward
 
                 public static java.lang.String fast_forward
 
             The constant fast\_forward.
 
-        []{#step_forward}
-
+        &nbsp;
         -   #### step\_forward
 
                 public static java.lang.String step_forward
 
             The constant step\_forward.
 
-        []{#eject}
-
+        &nbsp;
         -   #### eject
 
                 public static java.lang.String eject
 
             The constant eject.
 
-        []{#chevron_left}
-
+        &nbsp;
         -   #### chevron\_left
 
                 public static java.lang.String chevron_left
 
             The constant chevron\_left.
 
-        []{#chevron_right}
-
+        &nbsp;
         -   #### chevron\_right
 
                 public static java.lang.String chevron_right
 
             The constant chevron\_right.
 
-        []{#plus_sign}
-
+        &nbsp;
         -   #### plus\_sign
 
                 public static java.lang.String plus_sign
 
             The constant plus\_sign.
 
-        []{#minus_sign}
-
+        &nbsp;
         -   #### minus\_sign
 
                 public static java.lang.String minus_sign
 
             The constant minus\_sign.
 
-        []{#remove_sign}
-
+        &nbsp;
         -   #### remove\_sign
 
                 public static java.lang.String remove_sign
 
             The constant remove\_sign.
 
-        []{#ok_sign}
-
+        &nbsp;
         -   #### ok\_sign
 
                 public static java.lang.String ok_sign
 
             The constant ok\_sign.
 
-        []{#question_sign}
-
+        &nbsp;
         -   #### question\_sign
 
                 public static java.lang.String question_sign
 
             The constant question\_sign.
 
-        []{#info_sign}
-
+        &nbsp;
         -   #### info\_sign
 
                 public static java.lang.String info_sign
 
             The constant info\_sign.
 
-        []{#screenshot}
-
+        &nbsp;
         -   #### screenshot
 
                 public static java.lang.String screenshot
 
             The constant screenshot.
 
-        []{#remove_circle}
-
+        &nbsp;
         -   #### remove\_circle
 
                 public static java.lang.String remove_circle
 
             The constant remove\_circle.
 
-        []{#ok_circle}
-
+        &nbsp;
         -   #### ok\_circle
 
                 public static java.lang.String ok_circle
 
             The constant ok\_circle.
 
-        []{#ban_circle}
-
+        &nbsp;
         -   #### ban\_circle
 
                 public static java.lang.String ban_circle
 
             The constant ban\_circle.
 
-        []{#arrow_left}
-
+        &nbsp;
         -   #### arrow\_left
 
                 public static final java.lang.String arrow_left
@@ -7534,11 +6645,9 @@ Class IconType {#class-icontype .title title="Class IconType"}
             The constant arrow\_left.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.models.IconType.arrow_left)
+            :   Constant Field Values
 
-        []{#arrow_right}
-
+        &nbsp;
         -   #### arrow\_right
 
                 public static final java.lang.String arrow_right
@@ -7546,11 +6655,9 @@ Class IconType {#class-icontype .title title="Class IconType"}
             The constant arrow\_right.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.models.IconType.arrow_right)
+            :   Constant Field Values
 
-        []{#arrow_up}
-
+        &nbsp;
         -   #### arrow\_up
 
                 public static final java.lang.String arrow_up
@@ -7558,1291 +6665,1129 @@ Class IconType {#class-icontype .title title="Class IconType"}
             The constant arrow\_up.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.models.IconType.arrow_up)
+            :   Constant Field Values
 
-        []{#arrow_down}
-
+        &nbsp;
         -   #### arrow\_down
 
                 public static java.lang.String arrow_down
 
             The constant arrow\_down.
 
-        []{#share_alt}
-
+        &nbsp;
         -   #### share\_alt
 
                 public static java.lang.String share_alt
 
             The constant share\_alt.
 
-        []{#resize_full}
-
+        &nbsp;
         -   #### resize\_full
 
                 public static java.lang.String resize_full
 
             The constant resize\_full.
 
-        []{#resize_small}
-
+        &nbsp;
         -   #### resize\_small
 
                 public static java.lang.String resize_small
 
             The constant resize\_small.
 
-        []{#plus}
-
+        &nbsp;
         -   #### plus
 
                 public static java.lang.String plus
 
             The constant plus.
 
-        []{#minus}
-
+        &nbsp;
         -   #### minus
 
                 public static java.lang.String minus
 
             The constant minus.
 
-        []{#asterisk}
-
+        &nbsp;
         -   #### asterisk
 
                 public static java.lang.String asterisk
 
             The constant asterisk.
 
-        []{#exclamation_sign}
-
+        &nbsp;
         -   #### exclamation\_sign
 
                 public static java.lang.String exclamation_sign
 
             The constant exclamation\_sign.
 
-        []{#gift}
-
+        &nbsp;
         -   #### gift
 
                 public static java.lang.String gift
 
             The constant gift.
 
-        []{#leaf}
-
+        &nbsp;
         -   #### leaf
 
                 public static java.lang.String leaf
 
             The constant leaf.
 
-        []{#fire}
-
+        &nbsp;
         -   #### fire
 
                 public static java.lang.String fire
 
             The constant fire.
 
-        []{#eye_open}
-
+        &nbsp;
         -   #### eye\_open
 
                 public static java.lang.String eye_open
 
             The constant eye\_open.
 
-        []{#eye_close}
-
+        &nbsp;
         -   #### eye\_close
 
                 public static java.lang.String eye_close
 
             The constant eye\_close.
 
-        []{#warning_sign}
-
+        &nbsp;
         -   #### warning\_sign
 
                 public static java.lang.String warning_sign
 
             The constant warning\_sign.
 
-        []{#plane}
-
+        &nbsp;
         -   #### plane
 
                 public static java.lang.String plane
 
             The constant plane.
 
-        []{#calendar}
-
+        &nbsp;
         -   #### calendar
 
                 public static java.lang.String calendar
 
             The constant calendar.
 
-        []{#random}
-
+        &nbsp;
         -   #### random
 
                 public static java.lang.String random
 
             The constant random.
 
-        []{#comment}
-
+        &nbsp;
         -   #### comment
 
                 public static java.lang.String comment
 
             The constant comment.
 
-        []{#magnet}
-
+        &nbsp;
         -   #### magnet
 
                 public static java.lang.String magnet
 
             The constant magnet.
 
-        []{#chevron_up}
-
+        &nbsp;
         -   #### chevron\_up
 
                 public static java.lang.String chevron_up
 
             The constant chevron\_up.
 
-        []{#chevron_down}
-
+        &nbsp;
         -   #### chevron\_down
 
                 public static java.lang.String chevron_down
 
             The constant chevron\_down.
 
-        []{#retweet}
-
+        &nbsp;
         -   #### retweet
 
                 public static java.lang.String retweet
 
             The constant retweet.
 
-        []{#shopping_cart}
-
+        &nbsp;
         -   #### shopping\_cart
 
                 public static java.lang.String shopping_cart
 
             The constant shopping\_cart.
 
-        []{#folder_close}
-
+        &nbsp;
         -   #### folder\_close
 
                 public static java.lang.String folder_close
 
             The constant folder\_close.
 
-        []{#folder_open}
-
+        &nbsp;
         -   #### folder\_open
 
                 public static java.lang.String folder_open
 
             The constant folder\_open.
 
-        []{#resize_vertical}
-
+        &nbsp;
         -   #### resize\_vertical
 
                 public static java.lang.String resize_vertical
 
             The constant resize\_vertical.
 
-        []{#resize_horizontal}
-
+        &nbsp;
         -   #### resize\_horizontal
 
                 public static java.lang.String resize_horizontal
 
             The constant resize\_horizontal.
 
-        []{#bar_chart}
-
+        &nbsp;
         -   #### bar\_chart
 
                 public static java.lang.String bar_chart
 
             The constant bar\_chart.
 
-        []{#twitter_sign}
-
+        &nbsp;
         -   #### twitter\_sign
 
                 public static java.lang.String twitter_sign
 
             The constant twitter\_sign.
 
-        []{#facebook_sign}
-
+        &nbsp;
         -   #### facebook\_sign
 
                 public static java.lang.String facebook_sign
 
             The constant facebook\_sign.
 
-        []{#camera_retro}
-
+        &nbsp;
         -   #### camera\_retro
 
                 public static java.lang.String camera_retro
 
             The constant camera\_retro.
 
-        []{#key}
-
+        &nbsp;
         -   #### key
 
                 public static java.lang.String key
 
             The constant key.
 
-        []{#cogs}
-
+        &nbsp;
         -   #### cogs
 
                 public static java.lang.String cogs
 
             The constant cogs.
 
-        []{#comments}
-
+        &nbsp;
         -   #### comments
 
                 public static java.lang.String comments
 
             The constant comments.
 
-        []{#thumbs_up}
-
+        &nbsp;
         -   #### thumbs\_up
 
                 public static java.lang.String thumbs_up
 
             The constant thumbs\_up.
 
-        []{#thumbs_down}
-
+        &nbsp;
         -   #### thumbs\_down
 
                 public static java.lang.String thumbs_down
 
             The constant thumbs\_down.
 
-        []{#star_half}
-
+        &nbsp;
         -   #### star\_half
 
                 public static java.lang.String star_half
 
             The constant star\_half.
 
-        []{#heart_empty}
-
+        &nbsp;
         -   #### heart\_empty
 
                 public static java.lang.String heart_empty
 
             The constant heart\_empty.
 
-        []{#signout}
-
+        &nbsp;
         -   #### signout
 
                 public static java.lang.String signout
 
             The constant signout.
 
-        []{#linkedin_sign}
-
+        &nbsp;
         -   #### linkedin\_sign
 
                 public static java.lang.String linkedin_sign
 
             The constant linkedin\_sign.
 
-        []{#pushpin}
-
+        &nbsp;
         -   #### pushpin
 
                 public static java.lang.String pushpin
 
             The constant pushpin.
 
-        []{#external_link}
-
+        &nbsp;
         -   #### external\_link
 
                 public static java.lang.String external_link
 
             The constant external\_link.
 
-        []{#signin}
-
+        &nbsp;
         -   #### signin
 
                 public static java.lang.String signin
 
             The constant signin.
 
-        []{#trophy}
-
+        &nbsp;
         -   #### trophy
 
                 public static java.lang.String trophy
 
             The constant trophy.
 
-        []{#github_sign}
-
+        &nbsp;
         -   #### github\_sign
 
                 public static java.lang.String github_sign
 
             The constant github\_sign.
 
-        []{#upload_alt}
-
+        &nbsp;
         -   #### upload\_alt
 
                 public static java.lang.String upload_alt
 
             The constant upload\_alt.
 
-        []{#lemon}
-
+        &nbsp;
         -   #### lemon
 
                 public static java.lang.String lemon
 
             The constant lemon.
 
-        []{#phone}
-
+        &nbsp;
         -   #### phone
 
                 public static java.lang.String phone
 
             The constant phone.
 
-        []{#check_empty}
-
+        &nbsp;
         -   #### check\_empty
 
                 public static java.lang.String check_empty
 
             The constant check\_empty.
 
-        []{#bookmark_empty}
-
+        &nbsp;
         -   #### bookmark\_empty
 
                 public static java.lang.String bookmark_empty
 
             The constant bookmark\_empty.
 
-        []{#phone_sign}
-
+        &nbsp;
         -   #### phone\_sign
 
                 public static java.lang.String phone_sign
 
             The constant phone\_sign.
 
-        []{#twitter}
-
+        &nbsp;
         -   #### twitter
 
                 public static java.lang.String twitter
 
             The constant twitter.
 
-        []{#facebook}
-
+        &nbsp;
         -   #### facebook
 
                 public static java.lang.String facebook
 
             The constant facebook.
 
-        []{#github}
-
+        &nbsp;
         -   #### github
 
                 public static java.lang.String github
 
             The constant github.
 
-        []{#unlock}
-
+        &nbsp;
         -   #### unlock
 
                 public static java.lang.String unlock
 
             The constant unlock.
 
-        []{#credit_card}
-
+        &nbsp;
         -   #### credit\_card
 
                 public static java.lang.String credit_card
 
             The constant credit\_card.
 
-        []{#rss}
-
+        &nbsp;
         -   #### rss
 
                 public static java.lang.String rss
 
             The constant rss.
 
-        []{#hdd}
-
+        &nbsp;
         -   #### hdd
 
                 public static java.lang.String hdd
 
             The constant hdd.
 
-        []{#bullhorn}
-
+        &nbsp;
         -   #### bullhorn
 
                 public static java.lang.String bullhorn
 
             The constant bullhorn.
 
-        []{#bell}
-
+        &nbsp;
         -   #### bell
 
                 public static java.lang.String bell
 
             The constant bell.
 
-        []{#certificate}
-
+        &nbsp;
         -   #### certificate
 
                 public static java.lang.String certificate
 
             The constant certificate.
 
-        []{#hand_right}
-
+        &nbsp;
         -   #### hand\_right
 
                 public static java.lang.String hand_right
 
             The constant hand\_right.
 
-        []{#hand_left}
-
+        &nbsp;
         -   #### hand\_left
 
                 public static java.lang.String hand_left
 
             The constant hand\_left.
 
-        []{#hand_up}
-
+        &nbsp;
         -   #### hand\_up
 
                 public static java.lang.String hand_up
 
             The constant hand\_up.
 
-        []{#hand_down}
-
+        &nbsp;
         -   #### hand\_down
 
                 public static java.lang.String hand_down
 
             The constant hand\_down.
 
-        []{#circle_arrow_left}
-
+        &nbsp;
         -   #### circle\_arrow\_left
 
                 public static java.lang.String circle_arrow_left
 
             The constant circle\_arrow\_left.
 
-        []{#circle_arrow_right}
-
+        &nbsp;
         -   #### circle\_arrow\_right
 
                 public static java.lang.String circle_arrow_right
 
             The constant circle\_arrow\_right.
 
-        []{#circle_arrow_up}
-
+        &nbsp;
         -   #### circle\_arrow\_up
 
                 public static java.lang.String circle_arrow_up
 
             The constant circle\_arrow\_up.
 
-        []{#circle_arrow_down}
-
+        &nbsp;
         -   #### circle\_arrow\_down
 
                 public static java.lang.String circle_arrow_down
 
             The constant circle\_arrow\_down.
 
-        []{#globe}
-
+        &nbsp;
         -   #### globe
 
                 public static java.lang.String globe
 
             The constant globe.
 
-        []{#wrench}
-
+        &nbsp;
         -   #### wrench
 
                 public static java.lang.String wrench
 
             The constant wrench.
 
-        []{#tasks}
-
+        &nbsp;
         -   #### tasks
 
                 public static java.lang.String tasks
 
             The constant tasks.
 
-        []{#filter}
-
+        &nbsp;
         -   #### filter
 
                 public static java.lang.String filter
 
             The constant filter.
 
-        []{#briefcase}
-
+        &nbsp;
         -   #### briefcase
 
                 public static java.lang.String briefcase
 
             The constant briefcase.
 
-        []{#fullscreen}
-
+        &nbsp;
         -   #### fullscreen
 
                 public static java.lang.String fullscreen
 
             The constant fullscreen.
 
-        []{#group}
-
+        &nbsp;
         -   #### group
 
                 public static java.lang.String group
 
             The constant group.
 
-        []{#link}
-
+        &nbsp;
         -   #### link
 
                 public static java.lang.String link
 
             The constant link.
 
-        []{#cloud}
-
+        &nbsp;
         -   #### cloud
 
                 public static java.lang.String cloud
 
             The constant cloud.
 
-        []{#beaker}
-
+        &nbsp;
         -   #### beaker
 
                 public static java.lang.String beaker
 
             The constant beaker.
 
-        []{#cut}
-
+        &nbsp;
         -   #### cut
 
                 public static java.lang.String cut
 
             The constant cut.
 
-        []{#copy}
-
+        &nbsp;
         -   #### copy
 
                 public static java.lang.String copy
 
             The constant copy.
 
-        []{#paper_clip}
-
+        &nbsp;
         -   #### paper\_clip
 
                 public static java.lang.String paper_clip
 
             The constant paper\_clip.
 
-        []{#save}
-
+        &nbsp;
         -   #### save
 
                 public static java.lang.String save
 
             The constant save.
 
-        []{#sign_blank}
-
+        &nbsp;
         -   #### sign\_blank
 
                 public static java.lang.String sign_blank
 
             The constant sign\_blank.
 
-        []{#reorder}
-
+        &nbsp;
         -   #### reorder
 
                 public static java.lang.String reorder
 
             The constant reorder.
 
-        []{#list_ul}
-
+        &nbsp;
         -   #### list\_ul
 
                 public static java.lang.String list_ul
 
             The constant list\_ul.
 
-        []{#list_ol}
-
+        &nbsp;
         -   #### list\_ol
 
                 public static java.lang.String list_ol
 
             The constant list\_ol.
 
-        []{#strikethrough}
-
+        &nbsp;
         -   #### strikethrough
 
                 public static java.lang.String strikethrough
 
             The constant strikethrough.
 
-        []{#underline}
-
+        &nbsp;
         -   #### underline
 
                 public static java.lang.String underline
 
             The constant underline.
 
-        []{#table}
-
+        &nbsp;
         -   #### table
 
                 public static java.lang.String table
 
             The constant table.
 
-        []{#magic}
-
+        &nbsp;
         -   #### magic
 
                 public static java.lang.String magic
 
             The constant magic.
 
-        []{#pinterest}
-
+        &nbsp;
         -   #### pinterest
 
                 public static java.lang.String pinterest
 
             The constant pinterest.
 
-        []{#pinterest_sign}
-
+        &nbsp;
         -   #### pinterest\_sign
 
                 public static java.lang.String pinterest_sign
 
             The constant pinterest\_sign.
 
-        []{#google_plus_sign}
-
+        &nbsp;
         -   #### google\_plus\_sign
 
                 public static java.lang.String google_plus_sign
 
             The constant google\_plus\_sign.
 
-        []{#google_plus}
-
+        &nbsp;
         -   #### google\_plus
 
                 public static java.lang.String google_plus
 
             The constant google\_plus.
 
-        []{#money}
-
+        &nbsp;
         -   #### money
 
                 public static java.lang.String money
 
             The constant money.
 
-        []{#caret_down}
-
+        &nbsp;
         -   #### caret\_down
 
                 public static java.lang.String caret_down
 
             The constant caret\_down.
 
-        []{#caret_up}
-
+        &nbsp;
         -   #### caret\_up
 
                 public static java.lang.String caret_up
 
             The constant caret\_up.
 
-        []{#caret_left}
-
+        &nbsp;
         -   #### caret\_left
 
                 public static java.lang.String caret_left
 
             The constant caret\_left.
 
-        []{#caret_right}
-
+        &nbsp;
         -   #### caret\_right
 
                 public static java.lang.String caret_right
 
             The constant caret\_right.
 
-        []{#columns}
-
+        &nbsp;
         -   #### columns
 
                 public static java.lang.String columns
 
             The constant columns.
 
-        []{#sort}
-
+        &nbsp;
         -   #### sort
 
                 public static java.lang.String sort
 
             The constant sort.
 
-        []{#sort_down}
-
+        &nbsp;
         -   #### sort\_down
 
                 public static java.lang.String sort_down
 
             The constant sort\_down.
 
-        []{#sort_up}
-
+        &nbsp;
         -   #### sort\_up
 
                 public static java.lang.String sort_up
 
             The constant sort\_up.
 
-        []{#envelope_alt}
-
+        &nbsp;
         -   #### envelope\_alt
 
                 public static java.lang.String envelope_alt
 
             The constant envelope\_alt.
 
-        []{#linkedin}
-
+        &nbsp;
         -   #### linkedin
 
                 public static java.lang.String linkedin
 
             The constant linkedin.
 
-        []{#undo}
-
+        &nbsp;
         -   #### undo
 
                 public static java.lang.String undo
 
             The constant undo.
 
-        []{#legal}
-
+        &nbsp;
         -   #### legal
 
                 public static java.lang.String legal
 
             The constant legal.
 
-        []{#dashboard}
-
+        &nbsp;
         -   #### dashboard
 
                 public static java.lang.String dashboard
 
             The constant dashboard.
 
-        []{#comment_alt}
-
+        &nbsp;
         -   #### comment\_alt
 
                 public static java.lang.String comment_alt
 
             The constant comment\_alt.
 
-        []{#comments_alt}
-
+        &nbsp;
         -   #### comments\_alt
 
                 public static java.lang.String comments_alt
 
             The constant comments\_alt.
 
-        []{#bolt}
-
+        &nbsp;
         -   #### bolt
 
                 public static java.lang.String bolt
 
             The constant bolt.
 
-        []{#sitemap}
-
+        &nbsp;
         -   #### sitemap
 
                 public static java.lang.String sitemap
 
             The constant sitemap.
 
-        []{#umbrella}
-
+        &nbsp;
         -   #### umbrella
 
                 public static java.lang.String umbrella
 
             The constant umbrella.
 
-        []{#paste}
-
+        &nbsp;
         -   #### paste
 
                 public static java.lang.String paste
 
             The constant paste.
 
-        []{#lightbulb}
-
+        &nbsp;
         -   #### lightbulb
 
                 public static java.lang.String lightbulb
 
             The constant lightbulb.
 
-        []{#exchange}
-
+        &nbsp;
         -   #### exchange
 
                 public static java.lang.String exchange
 
             The constant exchange.
 
-        []{#cloud_download}
-
+        &nbsp;
         -   #### cloud\_download
 
                 public static java.lang.String cloud_download
 
             The constant cloud\_download.
 
-        []{#cloud_upload}
-
+        &nbsp;
         -   #### cloud\_upload
 
                 public static java.lang.String cloud_upload
 
             The constant cloud\_upload.
 
-        []{#user_md}
-
+        &nbsp;
         -   #### user\_md
 
                 public static java.lang.String user_md
 
             The constant user\_md.
 
-        []{#stethoscope}
-
+        &nbsp;
         -   #### stethoscope
 
                 public static java.lang.String stethoscope
 
             The constant stethoscope.
 
-        []{#suitcase}
-
+        &nbsp;
         -   #### suitcase
 
                 public static java.lang.String suitcase
 
             The constant suitcase.
 
-        []{#bell_alt}
-
+        &nbsp;
         -   #### bell\_alt
 
                 public static java.lang.String bell_alt
 
             The constant bell\_alt.
 
-        []{#coffee}
-
+        &nbsp;
         -   #### coffee
 
                 public static java.lang.String coffee
 
             The constant coffee.
 
-        []{#food}
-
+        &nbsp;
         -   #### food
 
                 public static java.lang.String food
 
             The constant food.
 
-        []{#file_alt}
-
+        &nbsp;
         -   #### file\_alt
 
                 public static java.lang.String file_alt
 
             The constant file\_alt.
 
-        []{#ambulance}
-
+        &nbsp;
         -   #### ambulance
 
                 public static java.lang.String ambulance
 
             The constant ambulance.
 
-        []{#medkit}
-
+        &nbsp;
         -   #### medkit
 
                 public static java.lang.String medkit
 
             The constant medkit.
 
-        []{#fighter_jet}
-
+        &nbsp;
         -   #### fighter\_jet
 
                 public static java.lang.String fighter_jet
 
             The constant fighter\_jet.
 
-        []{#beer}
-
+        &nbsp;
         -   #### beer
 
                 public static java.lang.String beer
 
             The constant beer.
 
-        []{#h_sign}
-
+        &nbsp;
         -   #### h\_sign
 
                 public static java.lang.String h_sign
 
             The constant h\_sign.
 
-        []{#plus_sign_alt}
-
+        &nbsp;
         -   #### plus\_sign\_alt
 
                 public static java.lang.String plus_sign_alt
 
             The constant plus\_sign\_alt.
 
-        []{#double_angle_left}
-
+        &nbsp;
         -   #### double\_angle\_left
 
                 public static java.lang.String double_angle_left
 
             The constant double\_angle\_left.
 
-        []{#double_angle_right}
-
+        &nbsp;
         -   #### double\_angle\_right
 
                 public static java.lang.String double_angle_right
 
             The constant double\_angle\_right.
 
-        []{#double_angle_up}
-
+        &nbsp;
         -   #### double\_angle\_up
 
                 public static java.lang.String double_angle_up
 
             The constant double\_angle\_up.
 
-        []{#double_angle_down}
-
+        &nbsp;
         -   #### double\_angle\_down
 
                 public static java.lang.String double_angle_down
 
             The constant double\_angle\_down.
 
-        []{#angle_left}
-
+        &nbsp;
         -   #### angle\_left
 
                 public static java.lang.String angle_left
 
             The constant angle\_left.
 
-        []{#angle_right}
-
+        &nbsp;
         -   #### angle\_right
 
                 public static java.lang.String angle_right
 
             The constant angle\_right.
 
-        []{#angle_up}
-
+        &nbsp;
         -   #### angle\_up
 
                 public static java.lang.String angle_up
 
             The constant angle\_up.
 
-        []{#angle_down}
-
+        &nbsp;
         -   #### angle\_down
 
                 public static java.lang.String angle_down
 
             The constant angle\_down.
 
-        []{#desktop}
-
+        &nbsp;
         -   #### desktop
 
                 public static java.lang.String desktop
 
             The constant desktop.
 
-        []{#laptop}
-
+        &nbsp;
         -   #### laptop
 
                 public static java.lang.String laptop
 
             The constant laptop.
 
-        []{#tablet}
-
+        &nbsp;
         -   #### tablet
 
                 public static java.lang.String tablet
 
             The constant tablet.
 
-        []{#mobile_phone}
-
+        &nbsp;
         -   #### mobile\_phone
 
                 public static java.lang.String mobile_phone
 
             The constant mobile\_phone.
 
-        []{#circle_blank}
-
+        &nbsp;
         -   #### circle\_blank
 
                 public static java.lang.String circle_blank
 
             The constant circle\_blank.
 
-        []{#quote_left}
-
+        &nbsp;
         -   #### quote\_left
 
                 public static java.lang.String quote_left
 
             The constant quote\_left.
 
-        []{#quote_right}
-
+        &nbsp;
         -   #### quote\_right
 
                 public static java.lang.String quote_right
 
             The constant quote\_right.
 
-        []{#spinner}
-
+        &nbsp;
         -   #### spinner
 
                 public static java.lang.String spinner
 
             The constant spinner.
 
-        []{#circle}
-
+        &nbsp;
         -   #### circle
 
                 public static java.lang.String circle
 
             The constant circle.
 
-        []{#reply}
-
+        &nbsp;
         -   #### reply
 
                 public static java.lang.String reply
 
             The constant reply.
 
-        []{#folder_close_alt}
-
+        &nbsp;
         -   #### folder\_close\_alt
 
                 public static java.lang.String folder_close_alt
 
             The constant folder\_close\_alt.
 
-        []{#folder_open_alt}
-
+        &nbsp;
         -   #### folder\_open\_alt
 
                 public static java.lang.String folder_open_alt
 
             The constant folder\_open\_alt.
 
-        []{#expand_alt}
-
+        &nbsp;
         -   #### expand\_alt
 
                 public static java.lang.String expand_alt
 
             The constant expand\_alt.
 
-        []{#collapse_alt}
-
+        &nbsp;
         -   #### collapse\_alt
 
                 public static java.lang.String collapse_alt
 
             The constant collapse\_alt.
 
-        []{#smile}
-
+        &nbsp;
         -   #### smile
 
                 public static java.lang.String smile
 
             The constant smile.
 
-        []{#frown}
-
+        &nbsp;
         -   #### frown
 
                 public static java.lang.String frown
 
             The constant frown.
 
-        []{#meh}
-
+        &nbsp;
         -   #### meh
 
                 public static java.lang.String meh
 
             The constant meh.
 
-        []{#gamepad}
-
+        &nbsp;
         -   #### gamepad
 
                 public static java.lang.String gamepad
 
             The constant gamepad.
 
-        []{#keyboard}
-
+        &nbsp;
         -   #### keyboard
 
                 public static java.lang.String keyboard
 
             The constant keyboard.
 
-        []{#flag_alt}
-
+        &nbsp;
         -   #### flag\_alt
 
                 public static java.lang.String flag_alt
 
             The constant flag\_alt.
 
-        []{#flag_checkered}
-
+        &nbsp;
         -   #### flag\_checkered
 
                 public static final java.lang.String flag_checkered
@@ -8850,331 +7795,289 @@ Class IconType {#class-icontype .title title="Class IconType"}
             The constant flag\_checkered.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.models.IconType.flag_checkered)
+            :   Constant Field Values
 
-        []{#terminal}
-
+        &nbsp;
         -   #### terminal
 
                 public static java.lang.String terminal
 
             The constant terminal.
 
-        []{#code}
-
+        &nbsp;
         -   #### code
 
                 public static java.lang.String code
 
             The constant code.
 
-        []{#reply_all}
-
+        &nbsp;
         -   #### reply\_all
 
                 public static java.lang.String reply_all
 
             The constant reply\_all.
 
-        []{#mail_reply_all}
-
+        &nbsp;
         -   #### mail\_reply\_all
 
                 public static java.lang.String mail_reply_all
 
             The constant mail\_reply\_all.
 
-        []{#star_half_full}
-
+        &nbsp;
         -   #### star\_half\_full
 
                 public static java.lang.String star_half_full
 
             The constant star\_half\_full.
 
-        []{#star_half_empty}
-
+        &nbsp;
         -   #### star\_half\_empty
 
                 public static java.lang.String star_half_empty
 
             The constant star\_half\_empty.
 
-        []{#location_arrow}
-
+        &nbsp;
         -   #### location\_arrow
 
                 public static java.lang.String location_arrow
 
             The constant location\_arrow.
 
-        []{#crop}
-
+        &nbsp;
         -   #### crop
 
                 public static java.lang.String crop
 
             The constant crop.
 
-        []{#code_fork}
-
+        &nbsp;
         -   #### code\_fork
 
                 public static java.lang.String code_fork
 
             The constant code\_fork.
 
-        []{#unlink}
-
+        &nbsp;
         -   #### unlink
 
                 public static java.lang.String unlink
 
             The constant unlink.
 
-        []{#question}
-
+        &nbsp;
         -   #### question
 
                 public static java.lang.String question
 
             The constant question.
 
-        []{#info}
-
+        &nbsp;
         -   #### info
 
                 public static java.lang.String info
 
             The constant info.
 
-        []{#exclamation}
-
+        &nbsp;
         -   #### exclamation
 
                 public static java.lang.String exclamation
 
             The constant exclamation.
 
-        []{#superscript}
-
+        &nbsp;
         -   #### superscript
 
                 public static java.lang.String superscript
 
             The constant superscript.
 
-        []{#subscript}
-
+        &nbsp;
         -   #### subscript
 
                 public static java.lang.String subscript
 
             The constant subscript.
 
-        []{#eraser}
-
+        &nbsp;
         -   #### eraser
 
                 public static java.lang.String eraser
 
             The constant eraser.
 
-        []{#puzzle_piece}
-
+        &nbsp;
         -   #### puzzle\_piece
 
                 public static java.lang.String puzzle_piece
 
             The constant puzzle\_piece.
 
-        []{#microphone}
-
+        &nbsp;
         -   #### microphone
 
                 public static java.lang.String microphone
 
             The constant microphone.
 
-        []{#microphone_off}
-
+        &nbsp;
         -   #### microphone\_off
 
                 public static java.lang.String microphone_off
 
             The constant microphone\_off.
 
-        []{#shield}
-
+        &nbsp;
         -   #### shield
 
                 public static java.lang.String shield
 
             The constant shield.
 
-        []{#calendar_empty}
-
+        &nbsp;
         -   #### calendar\_empty
 
                 public static java.lang.String calendar_empty
 
             The constant calendar\_empty.
 
-        []{#fire_extinguisher}
-
+        &nbsp;
         -   #### fire\_extinguisher
 
                 public static java.lang.String fire_extinguisher
 
             The constant fire\_extinguisher.
 
-        []{#rocket}
-
+        &nbsp;
         -   #### rocket
 
                 public static java.lang.String rocket
 
             The constant rocket.
 
-        []{#maxcdn}
-
+        &nbsp;
         -   #### maxcdn
 
                 public static java.lang.String maxcdn
 
             The constant maxcdn.
 
-        []{#chevron_sign_left}
-
+        &nbsp;
         -   #### chevron\_sign\_left
 
                 public static java.lang.String chevron_sign_left
 
             The constant chevron\_sign\_left.
 
-        []{#chevron_sign_right}
-
+        &nbsp;
         -   #### chevron\_sign\_right
 
                 public static java.lang.String chevron_sign_right
 
             The constant chevron\_sign\_right.
 
-        []{#chevron_sign_up}
-
+        &nbsp;
         -   #### chevron\_sign\_up
 
                 public static java.lang.String chevron_sign_up
 
             The constant chevron\_sign\_up.
 
-        []{#chevron_sign_down}
-
+        &nbsp;
         -   #### chevron\_sign\_down
 
                 public static java.lang.String chevron_sign_down
 
             The constant chevron\_sign\_down.
 
-        []{#html5}
-
+        &nbsp;
         -   #### html5
 
                 public static java.lang.String html5
 
             The constant html5.
 
-        []{#css3}
-
+        &nbsp;
         -   #### css3
 
                 public static java.lang.String css3
 
             The constant css3.
 
-        []{#anchor}
-
+        &nbsp;
         -   #### anchor
 
                 public static java.lang.String anchor
 
             The constant anchor.
 
-        []{#unlock_alt}
-
+        &nbsp;
         -   #### unlock\_alt
 
                 public static java.lang.String unlock_alt
 
             The constant unlock\_alt.
 
-        []{#bullseye}
-
+        &nbsp;
         -   #### bullseye
 
                 public static java.lang.String bullseye
 
             The constant bullseye.
 
-        []{#ellipsis_horizontal}
-
+        &nbsp;
         -   #### ellipsis\_horizontal
 
                 public static java.lang.String ellipsis_horizontal
 
             The constant ellipsis\_horizontal.
 
-        []{#ellipsis_vertical}
-
+        &nbsp;
         -   #### ellipsis\_vertical
 
                 public static java.lang.String ellipsis_vertical
 
             The constant ellipsis\_vertical.
 
-        []{#rss_sign}
-
+        &nbsp;
         -   #### rss\_sign
 
                 public static java.lang.String rss_sign
 
             The constant rss\_sign.
 
-        []{#play_sign}
-
+        &nbsp;
         -   #### play\_sign
 
                 public static java.lang.String play_sign
 
             The constant play\_sign.
 
-        []{#ticket}
-
+        &nbsp;
         -   #### ticket
 
                 public static java.lang.String ticket
 
             The constant ticket.
 
-        []{#minus_sign_alt}
-
+        &nbsp;
         -   #### minus\_sign\_alt
 
                 public static java.lang.String minus_sign_alt
 
             The constant minus\_sign\_alt.
 
-        []{#check_minus}
-
+        &nbsp;
         -   #### check\_minus
 
                 public static java.lang.String check_minus
 
             The constant check\_minus.
 
-        []{#level_up}
-
+        &nbsp;
         -   #### level\_up
 
                 public static final java.lang.String level_up
@@ -9182,11 +8085,9 @@ Class IconType {#class-icontype .title title="Class IconType"}
             The constant level\_up.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.models.IconType.level_up)
+            :   Constant Field Values
 
-        []{#level_down}
-
+        &nbsp;
         -   #### level\_down
 
                 public static final java.lang.String level_down
@@ -9194,43 +8095,37 @@ Class IconType {#class-icontype .title title="Class IconType"}
             The constant level\_down.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.models.IconType.level_down)
+            :   Constant Field Values
 
-        []{#check_sign}
-
+        &nbsp;
         -   #### check\_sign
 
                 public static java.lang.String check_sign
 
             The constant check\_sign.
 
-        []{#edit_sign}
-
+        &nbsp;
         -   #### edit\_sign
 
                 public static java.lang.String edit_sign
 
             The constant edit\_sign.
 
-        []{#external_link_sign}
-
+        &nbsp;
         -   #### external\_link\_sign
 
                 public static java.lang.String external_link_sign
 
             The constant external\_link\_sign.
 
-        []{#share_sign}
-
+        &nbsp;
         -   #### share\_sign
 
                 public static java.lang.String share_sign
 
             The constant share\_sign.
 
-        []{#bicycle}
-
+        &nbsp;
         -   #### bicycle
 
                 public static final java.lang.String bicycle
@@ -9238,11 +8133,9 @@ Class IconType {#class-icontype .title title="Class IconType"}
             The constant bicycle.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.models.IconType.bicycle)
+            :   Constant Field Values
 
-        []{#car}
-
+        &nbsp;
         -   #### car
 
                 public static final java.lang.String car
@@ -9250,11 +8143,9 @@ Class IconType {#class-icontype .title title="Class IconType"}
             The constant car.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.models.IconType.car)
+            :   Constant Field Values
 
-        []{#hospital}
-
+        &nbsp;
         -   #### hospital
 
                 public static final java.lang.String hospital
@@ -9262,11 +8153,9 @@ Class IconType {#class-icontype .title title="Class IconType"}
             The constant hospital.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.models.IconType.hospital)
+            :   Constant Field Values
 
-        []{#mansilhouette}
-
+        &nbsp;
         -   #### mansilhouette
 
                 public static final java.lang.String mansilhouette
@@ -9274,11 +8163,9 @@ Class IconType {#class-icontype .title title="Class IconType"}
             The constant mansilhouette.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.models.IconType.mansilhouette)
+            :   Constant Field Values
 
-        []{#vehicle}
-
+        &nbsp;
         -   #### vehicle
 
                 public static final java.lang.String vehicle
@@ -9286,11 +8173,9 @@ Class IconType {#class-icontype .title title="Class IconType"}
             The constant vehicle.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.models.IconType.vehicle)
+            :   Constant Field Values
 
-        []{#wheelchair}
-
+        &nbsp;
         -   #### wheelchair
 
                 public static final java.lang.String wheelchair
@@ -9298,11 +8183,9 @@ Class IconType {#class-icontype .title title="Class IconType"}
             The constant wheelchair.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.models.IconType.wheelchair)
+            :   Constant Field Values
 
-        []{#home}
-
+        &nbsp;
         -   #### home
 
                 public static final java.lang.String home
@@ -9310,11 +8193,9 @@ Class IconType {#class-icontype .title title="Class IconType"}
             The constant home.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.models.IconType.home)
+            :   Constant Field Values
 
-        []{#clock}
-
+        &nbsp;
         -   #### clock
 
                 public static final java.lang.String clock
@@ -9322,11 +8203,9 @@ Class IconType {#class-icontype .title title="Class IconType"}
             The constant clock.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.models.IconType.clock)
+            :   Constant Field Values
 
-        []{#playO2}
-
+        &nbsp;
         -   #### playO2
 
                 public static final java.lang.String playO2
@@ -9334,11 +8213,9 @@ Class IconType {#class-icontype .title title="Class IconType"}
             The constant playO2.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.models.IconType.playO2)
+            :   Constant Field Values
 
-        []{#tag}
-
+        &nbsp;
         -   #### tag
 
                 public static final java.lang.String tag
@@ -9346,11 +8223,9 @@ Class IconType {#class-icontype .title title="Class IconType"}
             The constant tag.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.models.IconType.tag)
+            :   Constant Field Values
 
-        []{#tags}
-
+        &nbsp;
         -   #### tags
 
                 public static final java.lang.String tags
@@ -9358,11 +8233,9 @@ Class IconType {#class-icontype .title title="Class IconType"}
             The constant tags.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.models.IconType.tags)
+            :   Constant Field Values
 
-        []{#bookmark}
-
+        &nbsp;
         -   #### bookmark
 
                 public static final java.lang.String bookmark
@@ -9370,11 +8243,9 @@ Class IconType {#class-icontype .title title="Class IconType"}
             The constant bookmark.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.models.IconType.bookmark)
+            :   Constant Field Values
 
-        []{#image}
-
+        &nbsp;
         -   #### image
 
                 public static final java.lang.String image
@@ -9382,11 +8253,9 @@ Class IconType {#class-icontype .title title="Class IconType"}
             The constant image.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.models.IconType.image)
+            :   Constant Field Values
 
-        []{#airplane}
-
+        &nbsp;
         -   #### airplane
 
                 public static final java.lang.String airplane
@@ -9394,11 +8263,9 @@ Class IconType {#class-icontype .title title="Class IconType"}
             The constant airplane.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.models.IconType.airplane)
+            :   Constant Field Values
 
-        []{#levels}
-
+        &nbsp;
         -   #### levels
 
                 public static final java.lang.String levels
@@ -9406,11 +8273,9 @@ Class IconType {#class-icontype .title title="Class IconType"}
             The constant levels.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.models.IconType.levels)
+            :   Constant Field Values
 
-        []{#truck}
-
+        &nbsp;
         -   #### truck
 
                 public static final java.lang.String truck
@@ -9418,11 +8283,9 @@ Class IconType {#class-icontype .title title="Class IconType"}
             The constant truck.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.models.IconType.truck)
+            :   Constant Field Values
 
-        []{#mail}
-
+        &nbsp;
         -   #### mail
 
                 public static final java.lang.String mail
@@ -9430,11 +8293,9 @@ Class IconType {#class-icontype .title title="Class IconType"}
             The constant mail.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.models.IconType.mail)
+            :   Constant Field Values
 
-        []{#building}
-
+        &nbsp;
         -   #### building
 
                 public static final java.lang.String building
@@ -9442,11 +8303,9 @@ Class IconType {#class-icontype .title title="Class IconType"}
             The constant building.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.models.IconType.building)
+            :   Constant Field Values
 
-        []{#navigation}
-
+        &nbsp;
         -   #### navigation
 
                 public static final java.lang.String navigation
@@ -9454,11 +8313,9 @@ Class IconType {#class-icontype .title title="Class IconType"}
             The constant navigation.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.models.IconType.navigation)
+            :   Constant Field Values
 
-        []{#university}
-
+        &nbsp;
         -   #### university
 
                 public static final java.lang.String university
@@ -9466,11 +8323,9 @@ Class IconType {#class-icontype .title title="Class IconType"}
             The constant university.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.models.IconType.university)
+            :   Constant Field Values
 
-        []{#bus}
-
+        &nbsp;
         -   #### bus
 
                 public static final java.lang.String bus
@@ -9478,11 +8333,9 @@ Class IconType {#class-icontype .title title="Class IconType"}
             The constant bus.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.models.IconType.bus)
+            :   Constant Field Values
 
-        []{#motorbike}
-
+        &nbsp;
         -   #### motorbike
 
                 public static final java.lang.String motorbike
@@ -9490,11 +8343,9 @@ Class IconType {#class-icontype .title title="Class IconType"}
             The constant motorbike.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.models.IconType.motorbike)
+            :   Constant Field Values
 
-        []{#train}
-
+        &nbsp;
         -   #### train
 
                 public static final java.lang.String train
@@ -9502,11 +8353,9 @@ Class IconType {#class-icontype .title title="Class IconType"}
             The constant train.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.models.IconType.train)
+            :   Constant Field Values
 
-        []{#play}
-
+        &nbsp;
         -   #### play
 
                 public static final java.lang.String play
@@ -9514,11 +8363,9 @@ Class IconType {#class-icontype .title title="Class IconType"}
             The constant play.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.models.IconType.play)
+            :   Constant Field Values
 
-        []{#film}
-
+        &nbsp;
         -   #### film
 
                 public static final java.lang.String film
@@ -9526,11 +8373,9 @@ Class IconType {#class-icontype .title title="Class IconType"}
             The constant film.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.models.IconType.film)
+            :   Constant Field Values
 
-        []{#playO}
-
+        &nbsp;
         -   #### playO
 
                 public static final java.lang.String playO
@@ -9538,11 +8383,9 @@ Class IconType {#class-icontype .title title="Class IconType"}
             The constant playO.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.models.IconType.playO)
+            :   Constant Field Values
 
-        []{#compass}
-
+        &nbsp;
         -   #### compass
 
                 public static final java.lang.String compass
@@ -9550,11 +8393,9 @@ Class IconType {#class-icontype .title title="Class IconType"}
             The constant compass.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.models.IconType.compass)
+            :   Constant Field Values
 
-        []{#customTypes}
-
+        &nbsp;
         -   #### customTypes
 
                 public static final java.lang.String[] customTypes
@@ -9562,11 +8403,7 @@ Class IconType {#class-icontype .title title="Class IconType"}
             The constant customTypes.
 
     &nbsp;
-    -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#IconType--}
+    -   ### Constructor Detail
 
         -   #### IconType
 
@@ -9583,7 +8420,7 @@ Class LineGeometry {#class-linegeometry .title title="Class LineGeometry"}
 -   
 
     Direct Known Subclasses:
-    :   [LineString](../../../com/mapspeople/models/LineString.html "class in com.mapspeople.models")
+    :   LineString
 
     ------------------------------------------------------------------------
 
@@ -9593,9 +8430,7 @@ Class LineGeometry {#class-linegeometry .title title="Class LineGeometry"}
 
     The type Line geometry.
 
--   -   []{#constructor.summary}
-
-        ### Constructor Summary
+-   -   ### Constructor Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -9617,17 +8452,11 @@ Class LineGeometry {#class-linegeometry .title title="Class LineGeometry"}
         |                                   | Sets coordinates.                 |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#LineGeometry--}
+-   -   ### Constructor Detail
 
         -   #### LineGeometry
 
@@ -9636,11 +8465,7 @@ Class LineGeometry {#class-linegeometry .title title="Class LineGeometry"}
             Instantiates a new Line geometry.
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#getType--}
+    -   ### Method Detail
 
         -   #### getType
 
@@ -9651,8 +8476,7 @@ Class LineGeometry {#class-linegeometry .title title="Class LineGeometry"}
             [Returns:]{.returnLabel}
             :   the type
 
-        []{#getCoordinates--}
-
+        &nbsp;
         -   #### getCoordinates
 
                 public java.util.List<java.lang.Double[]> getCoordinates()
@@ -9662,8 +8486,7 @@ Class LineGeometry {#class-linegeometry .title title="Class LineGeometry"}
             [Returns:]{.returnLabel}
             :   the coordinates
 
-        []{#setCoordinates-java.util.List-}
-
+        &nbsp;
         -   #### setCoordinates
 
                 public void setCoordinates(java.util.List<java.lang.Double[]> coordinates)
@@ -9673,8 +8496,7 @@ Class LineGeometry {#class-linegeometry .title title="Class LineGeometry"}
             [Parameters:]{.paramLabel}
             :   `coordinates` - the coordinates
 
-        []{#setBBox-double:A-}
-
+        &nbsp;
         -   #### setBBox
 
                 public void setBBox(double[] bbox)
@@ -9684,8 +8506,7 @@ Class LineGeometry {#class-linegeometry .title title="Class LineGeometry"}
             [Parameters:]{.paramLabel}
             :   `bbox` - the bbox
 
-        []{#getBBox--}
-
+        &nbsp;
         -   #### getBBox
 
                 public double[] getBBox()
@@ -9701,7 +8522,7 @@ Class LineString {#class-linestring .title title="Class LineString"}
 ----------------
 
 -   java.lang.Object
--   -   [com.mapspeople.models.LineGeometry](../../../com/mapspeople/models/LineGeometry.html "class in com.mapspeople.models")
+-   -   com.mapspeople.models.LineGeometry
     -   -   com.mapspeople.models.LineString
 
 -   
@@ -9714,9 +8535,7 @@ Class LineString {#class-linestring .title title="Class LineString"}
 
     The type Line string.
 
--   -   []{#constructor.summary}
-
-        ### Constructor Summary
+-   -   ### Constructor Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -9725,24 +8544,16 @@ Class LineString {#class-linestring .title title="Class LineString"}
         |                                   | Gets points.                      |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.com.mapspeople.models.LineGeometry}
-
-            ### Methods inherited from class com.mapspeople.models.[LineGeometry](../../../com/mapspeople/models/LineGeometry.html "class in com.mapspeople.models")
+        -   ### Methods inherited from class com.mapspeople.models.LineGeometry
 
             `getBBox, getCoordinates, getType, setBBox, setCoordinates`
 
         &nbsp;
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#LineString--}
+-   -   ### Constructor Detail
 
         -   #### LineString
 
@@ -9751,11 +8562,7 @@ Class LineString {#class-linestring .title title="Class LineString"}
             Instantiates a new Line string.
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#getPoints--}
+    -   ### Method Detail
 
         -   #### getPoints
 
@@ -9774,13 +8581,12 @@ Interface Location {#interface-location .title title="Interface Location"}
 -   
 
     All Superinterfaces:
-    :   [Feature](../../../com/mapspeople/models/Feature.html "interface in com.mapspeople.models")
+    :   Feature
 
     &nbsp;
 
     All Known Implementing Classes:
-    :   [MPLocation](../../../com/mapspeople/models/MPLocation.html "class in com.mapspeople.models"),
-        [PositionIndicator](../../../com/mapspeople/models/PositionIndicator.html "class in com.mapspeople.models")
+    :   MPLocation, PositionIndicator
 
     ------------------------------------------------------------------------
 
@@ -9792,9 +8598,7 @@ Interface Location {#interface-location .title title="Interface Location"}
     locations. Use in conjunction with a provider interface
     implementation/extension.
 
--   -   []{#method.summary}
-
-        ### Method Summary
+-   -   ### Method Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -9914,11 +8718,7 @@ Interface Location {#interface-location .title title="Interface Location"}
         |                                   | the floor index                   |
         +-----------------------------------+-----------------------------------+
 
--   -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#updateView-GoogleMap-}
+-   -   ### Method Detail
 
         -   #### updateView
 
@@ -9930,8 +8730,7 @@ Interface Location {#interface-location .title title="Interface Location"}
             [Parameters:]{.paramLabel}
             :   `map` - google map
 
-        []{#updateView-GoogleMap-int-}
-
+        &nbsp;
         -   #### updateView
 
                 void updateView(GoogleMap map,                int floor)
@@ -9943,8 +8742,7 @@ Interface Location {#interface-location .title title="Interface Location"}
             :   `map` - google map
             :   `floor` - floor index
 
-        []{#getGLatLng--}
-
+        &nbsp;
         -   #### getGLatLng
 
                 LatLng getGLatLng()
@@ -9954,8 +8752,7 @@ Interface Location {#interface-location .title title="Interface Location"}
             [Returns:]{.returnLabel}
             :   LatLng the Google latitude/longitude object
 
-        []{#getName--}
-
+        &nbsp;
         -   #### getName
 
                 java.lang.String getName()
@@ -9965,8 +8762,7 @@ Interface Location {#interface-location .title title="Interface Location"}
             [Returns:]{.returnLabel}
             :   String the name of the location
 
-        []{#getRoomId--}
-
+        &nbsp;
         -   #### getRoomId
 
                 java.lang.String getRoomId()
@@ -9976,8 +8772,7 @@ Interface Location {#interface-location .title title="Interface Location"}
             [Returns:]{.returnLabel}
             :   String the integer representation of the floor index
 
-        []{#getFloorIndex--}
-
+        &nbsp;
         -   #### getFloorIndex
 
                 int getFloorIndex()
@@ -9987,8 +8782,7 @@ Interface Location {#interface-location .title title="Interface Location"}
             [Returns:]{.returnLabel}
             :   String the integer representation of the floor index
 
-        []{#getFloorName--}
-
+        &nbsp;
         -   #### getFloorName
 
                 java.lang.String getFloorName()
@@ -9998,8 +8792,7 @@ Interface Location {#interface-location .title title="Interface Location"}
             [Returns:]{.returnLabel}
             :   String The name of the floor
 
-        []{#getId--}
-
+        &nbsp;
         -   #### getId
 
                 java.lang.String getId()
@@ -10009,8 +8802,7 @@ Interface Location {#interface-location .title title="Interface Location"}
             [Returns:]{.returnLabel}
             :   The string identifier of the location
 
-        []{#getCategories--}
-
+        &nbsp;
         -   #### getCategories
 
                 java.lang.String[] getCategories()
@@ -10020,8 +8812,7 @@ Interface Location {#interface-location .title title="Interface Location"}
             [Returns:]{.returnLabel}
             :   String array of category names
 
-        []{#setCategories-java.lang.String:A-}
-
+        &nbsp;
         -   #### setCategories
 
                 void setCategories(java.lang.String[] categories)
@@ -10031,8 +8822,7 @@ Interface Location {#interface-location .title title="Interface Location"}
             [Parameters:]{.paramLabel}
             :   `categories` - the categories
 
-        []{#getMarker--}
-
+        &nbsp;
         -   #### getMarker
 
                 Marker getMarker()
@@ -10043,8 +8833,7 @@ Interface Location {#interface-location .title title="Interface Location"}
             [Returns:]{.returnLabel}
             :   A google maps marker, otherwise null
 
-        []{#setMarker-Marker-}
-
+        &nbsp;
         -   #### setMarker
 
                 void setMarker(Marker marker)
@@ -10054,24 +8843,21 @@ Interface Location {#interface-location .title title="Interface Location"}
             [Parameters:]{.paramLabel}
             :   `marker` - the marker
 
-        []{#show--}
-
+        &nbsp;
         -   #### show
 
                 void show()
 
             Show.
 
-        []{#hide--}
-
+        &nbsp;
         -   #### hide
 
                 void hide()
 
             Hide.
 
-        []{#setLatLng-LatLng-}
-
+        &nbsp;
         -   #### setLatLng
 
                 void setLatLng(LatLng position)
@@ -10081,8 +8867,7 @@ Interface Location {#interface-location .title title="Interface Location"}
             [Parameters:]{.paramLabel}
             :   `position` - the position
 
-        []{#isVisible--}
-
+        &nbsp;
         -   #### isVisible
 
                 boolean isVisible()
@@ -10092,8 +8877,7 @@ Interface Location {#interface-location .title title="Interface Location"}
             [Returns:]{.returnLabel}
             :   the boolean
 
-        []{#setVisible-boolean-}
-
+        &nbsp;
         -   #### setVisible
 
                 void setVisible(boolean visible)
@@ -10103,8 +8887,7 @@ Interface Location {#interface-location .title title="Interface Location"}
             [Parameters:]{.paramLabel}
             :   `visible` - the visible
 
-        []{#has-java.lang.String-}
-
+        &nbsp;
         -   #### has
 
                 boolean has(java.lang.String key)
@@ -10117,8 +8900,7 @@ Interface Location {#interface-location .title title="Interface Location"}
             [Returns:]{.returnLabel}
             :   the boolean
 
-        []{#getStringProperty-java.lang.String-}
-
+        &nbsp;
         -   #### getStringProperty
 
                 java.lang.String getStringProperty(java.lang.String key)
@@ -10131,8 +8913,7 @@ Interface Location {#interface-location .title title="Interface Location"}
             [Returns:]{.returnLabel}
             :   the string property
 
-        []{#getType--}
-
+        &nbsp;
         -   #### getType
 
                 java.lang.String getType()
@@ -10145,8 +8926,7 @@ Interface Location {#interface-location .title title="Interface Location"}
             [Returns:]{.returnLabel}
             :   the type
 
-        []{#setType-java.lang.String-}
-
+        &nbsp;
         -   #### setType
 
                 void setType(java.lang.String type)
@@ -10156,8 +8936,7 @@ Interface Location {#interface-location .title title="Interface Location"}
             [Parameters:]{.paramLabel}
             :   `type` - the type
 
-        []{#getProperties--}
-
+        &nbsp;
         -   #### getProperties
 
                 java.util.Map<java.lang.String,java.lang.Object> getProperties()
@@ -10170,8 +8949,7 @@ Interface Location {#interface-location .title title="Interface Location"}
             [Returns:]{.returnLabel}
             :   the properties
 
-        []{#getGeometry--}
-
+        &nbsp;
         -   #### getGeometry
 
                 Geometry getGeometry()
@@ -10184,8 +8962,7 @@ Interface Location {#interface-location .title title="Interface Location"}
             [Returns:]{.returnLabel}
             :   the geometry
 
-        []{#getPoint--}
-
+        &nbsp;
         -   #### getPoint
 
                 Point getPoint()
@@ -10195,8 +8972,7 @@ Interface Location {#interface-location .title title="Interface Location"}
             [Returns:]{.returnLabel}
             :   the point
 
-        []{#setPoint-com.mapspeople.models.Point-}
-
+        &nbsp;
         -   #### setPoint
 
                 void setPoint(Point point)
@@ -10206,8 +8982,7 @@ Interface Location {#interface-location .title title="Interface Location"}
             [Parameters:]{.paramLabel}
             :   `point` - the point
 
-        []{#setName-java.lang.String-}
-
+        &nbsp;
         -   #### setName
 
                 void setName(java.lang.String name)
@@ -10217,8 +8992,7 @@ Interface Location {#interface-location .title title="Interface Location"}
             [Parameters:]{.paramLabel}
             :   `name` - the name
 
-        []{#getProperty-java.lang.String-}
-
+        &nbsp;
         -   #### getProperty
 
                 java.lang.Object getProperty(java.lang.String key)
@@ -10231,8 +9005,7 @@ Interface Location {#interface-location .title title="Interface Location"}
             [Returns:]{.returnLabel}
             :   the property
 
-        []{#setProperty-java.lang.String-java.lang.Object-}
-
+        &nbsp;
         -   #### setProperty
 
                 void setProperty(java.lang.String key,                 java.lang.Object value)
@@ -10243,8 +9016,7 @@ Interface Location {#interface-location .title title="Interface Location"}
             :   `key` - the key
             :   `value` - the value
 
-        []{#setDisplayRule-com.mapspeople.models.LocationDisplayRule-}
-
+        &nbsp;
         -   #### setDisplayRule
 
                 void setDisplayRule(LocationDisplayRule rule)
@@ -10254,8 +9026,7 @@ Interface Location {#interface-location .title title="Interface Location"}
             [Parameters:]{.paramLabel}
             :   `rule` - the rule
 
-        []{#getDisplayRule--}
-
+        &nbsp;
         -   #### getDisplayRule
 
                 LocationDisplayRule getDisplayRule()
@@ -10265,8 +9036,7 @@ Interface Location {#interface-location .title title="Interface Location"}
             [Returns:]{.returnLabel}
             :   the display rule
 
-        []{#getLocationProperyList--}
-
+        &nbsp;
         -   #### getLocationProperyList
 
                 java.util.List<LocationProperty> getLocationProperyList()
@@ -10276,8 +9046,7 @@ Interface Location {#interface-location .title title="Interface Location"}
             [Returns:]{.returnLabel}
             :   the location propery list
 
-        []{#getField-java.lang.String-}
-
+        &nbsp;
         -   #### getField
 
                 DataField getField(java.lang.String key)
@@ -10308,9 +9077,7 @@ Class LocationDisplayRule {#class-locationdisplayrule .title title="Class Locati
 
     The type Location display rule.
 
--   -   []{#constructor.summary}
-
-        ### Constructor Summary
+-   -   ### Constructor Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -10387,17 +9154,11 @@ Class LocationDisplayRule {#class-locationdisplayrule .title title="Class Locati
         |                                   | Solution loaded.                  |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#LocationDisplayRule--}
+-   -   ### Constructor Detail
 
         -   #### LocationDisplayRule
 
@@ -10405,8 +9166,7 @@ Class LocationDisplayRule {#class-locationdisplayrule .title title="Class Locati
 
             Instantiates a new Location display rule.
 
-        []{#LocationDisplayRule-com.mapspeople.models.DisplayRule-}
-
+        &nbsp;
         -   #### LocationDisplayRule
 
                 public LocationDisplayRule(DisplayRule displayRule)
@@ -10417,8 +9177,7 @@ Class LocationDisplayRule {#class-locationdisplayrule .title title="Class Locati
             [Parameters:]{.paramLabel}
             :   `displayRule` - The serverside object
 
-        []{#LocationDisplayRule-java.lang.String-android.graphics.Bitmap-float-}
-
+        &nbsp;
         -   #### LocationDisplayRule
 
                 public LocationDisplayRule(java.lang.String name,                           android.graphics.Bitmap icon,                           float zOn)
@@ -10435,8 +9194,7 @@ Class LocationDisplayRule {#class-locationdisplayrule .title title="Class Locati
             :   `zOn` - The zoom level at (and above) which the icon
                 should display.
 
-        []{#LocationDisplayRule-java.lang.String-float-boolean-}
-
+        &nbsp;
         -   #### LocationDisplayRule
 
                 public LocationDisplayRule(java.lang.String name,                           float zOn,                           boolean showLabel)
@@ -10454,8 +9212,7 @@ Class LocationDisplayRule {#class-locationdisplayrule .title title="Class Locati
             :   `showLabel` - Whether or not to show the marker as a
                 label.
 
-        []{#LocationDisplayRule-java.lang.String-android.graphics.Bitmap-float-boolean-}
-
+        &nbsp;
         -   #### LocationDisplayRule
 
                 public LocationDisplayRule(java.lang.String name,                           android.graphics.Bitmap icon,                           float zOn,                           boolean showLabel)
@@ -10474,8 +9231,7 @@ Class LocationDisplayRule {#class-locationdisplayrule .title title="Class Locati
             :   `showLabel` - Whether or not to show the marker as a
                 label.
 
-        []{#LocationDisplayRule-java.lang.String-int-float-boolean-}
-
+        &nbsp;
         -   #### LocationDisplayRule
 
                 public LocationDisplayRule(java.lang.String name,                           int iconResource,                           float zOn,                           boolean showLabel)
@@ -10494,8 +9250,7 @@ Class LocationDisplayRule {#class-locationdisplayrule .title title="Class Locati
             :   `showLabel` - Whether or not to show the marker as a
                 label.
 
-        []{#LocationDisplayRule-java.lang.String-java.lang.String-float-boolean-}
-
+        &nbsp;
         -   #### LocationDisplayRule
 
                 public LocationDisplayRule(java.lang.String name,                           java.lang.String iconURL,                           float zOn,                           boolean showLabel)
@@ -10515,11 +9270,7 @@ Class LocationDisplayRule {#class-locationdisplayrule .title title="Class Locati
             :   `showLabel` - the show label
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#solutionLoaded--}
+    -   ### Method Detail
 
         -   #### solutionLoaded
 
@@ -10527,8 +9278,7 @@ Class LocationDisplayRule {#class-locationdisplayrule .title title="Class Locati
 
             Solution loaded.
 
-        []{#show-float-}
-
+        &nbsp;
         -   #### show
 
                 public boolean show(float zLevel)
@@ -10541,8 +9291,7 @@ Class LocationDisplayRule {#class-locationdisplayrule .title title="Class Locati
             [Returns:]{.returnLabel}
             :   True or false.
 
-        []{#getIcon--}
-
+        &nbsp;
         -   #### getIcon
 
                 public android.graphics.Bitmap getIcon()
@@ -10552,8 +9301,7 @@ Class LocationDisplayRule {#class-locationdisplayrule .title title="Class Locati
             [Returns:]{.returnLabel}
             :   The icon bitmap or null.
 
-        []{#setIcon-android.graphics.Bitmap-}
-
+        &nbsp;
         -   #### setIcon
 
                 public void setIcon(android.graphics.Bitmap icon)
@@ -10563,8 +9311,7 @@ Class LocationDisplayRule {#class-locationdisplayrule .title title="Class Locati
             [Parameters:]{.paramLabel}
             :   `icon` - The bitmap icon.
 
-        []{#isShowLabel--}
-
+        &nbsp;
         -   #### isShowLabel
 
                 public boolean isShowLabel()
@@ -10574,8 +9321,7 @@ Class LocationDisplayRule {#class-locationdisplayrule .title title="Class Locati
             [Returns:]{.returnLabel}
             :   True or false.
 
-        []{#setShowLabel-boolean-}
-
+        &nbsp;
         -   #### setShowLabel
 
                 public void setShowLabel(boolean showLabel)
@@ -10585,8 +9331,7 @@ Class LocationDisplayRule {#class-locationdisplayrule .title title="Class Locati
             [Parameters:]{.paramLabel}
             :   `showLabel` - the show label
 
-        []{#getShowLabel--}
-
+        &nbsp;
         -   #### getShowLabel
 
                 public boolean getShowLabel()
@@ -10596,8 +9341,7 @@ Class LocationDisplayRule {#class-locationdisplayrule .title title="Class Locati
             [Returns:]{.returnLabel}
             :   the show label
 
-        []{#getRuleName--}
-
+        &nbsp;
         -   #### getRuleName
 
                 public java.lang.String getRuleName()
@@ -10607,8 +9351,7 @@ Class LocationDisplayRule {#class-locationdisplayrule .title title="Class Locati
             [Returns:]{.returnLabel}
             :   A string value or null.
 
-        []{#setRuleName-java.lang.String-}
-
+        &nbsp;
         -   #### setRuleName
 
                 public void setRuleName(java.lang.String ruleName)
@@ -10618,8 +9361,7 @@ Class LocationDisplayRule {#class-locationdisplayrule .title title="Class Locati
             [Parameters:]{.paramLabel}
             :   `ruleName` - The rule identifier.
 
-        []{#getIconPath--}
-
+        &nbsp;
         -   #### getIconPath
 
                 public java.lang.String getIconPath()
@@ -10629,8 +9371,7 @@ Class LocationDisplayRule {#class-locationdisplayrule .title title="Class Locati
             [Returns:]{.returnLabel}
             :   icon path
 
-        []{#setIconPath-java.lang.String-}
-
+        &nbsp;
         -   #### setIconPath
 
                 public void setIconPath(java.lang.String iconPath)
@@ -10640,8 +9381,7 @@ Class LocationDisplayRule {#class-locationdisplayrule .title title="Class Locati
             [Parameters:]{.paramLabel}
             :   `iconPath` - the icon path
 
-        []{#getLabelContent-com.mapspeople.models.Location-}
-
+        &nbsp;
         -   #### getLabelContent
 
                 public java.lang.String getLabelContent(Location location)
@@ -10656,8 +9396,7 @@ Class LocationDisplayRule {#class-locationdisplayrule .title title="Class Locati
             [Returns:]{.returnLabel}
             :   The label content string.
 
-        []{#getIconResourceId--}
-
+        &nbsp;
         -   #### getIconResourceId
 
                 public int getIconResourceId()
@@ -10667,8 +9406,7 @@ Class LocationDisplayRule {#class-locationdisplayrule .title title="Class Locati
             [Returns:]{.returnLabel}
             :   the icon resource id
 
-        []{#getZoomLevelOn--}
-
+        &nbsp;
         -   #### getZoomLevelOn
 
                 public float getZoomLevelOn()
@@ -10678,8 +9416,7 @@ Class LocationDisplayRule {#class-locationdisplayrule .title title="Class Locati
             [Returns:]{.returnLabel}
             :   the zoom level on
 
-        []{#getZoomLevelOff--}
-
+        &nbsp;
         -   #### getZoomLevelOff
 
                 public float getZoomLevelOff()
@@ -10689,8 +9426,7 @@ Class LocationDisplayRule {#class-locationdisplayrule .title title="Class Locati
             [Returns:]{.returnLabel}
             :   the zoom level off
 
-        []{#setZoomLevelOn-float-}
-
+        &nbsp;
         -   #### setZoomLevelOn
 
                 public void setZoomLevelOn(float zOn)
@@ -10700,8 +9436,7 @@ Class LocationDisplayRule {#class-locationdisplayrule .title title="Class Locati
             [Parameters:]{.paramLabel}
             :   `zOn` - the z on
 
-        []{#setZoomLevelOff-float-}
-
+        &nbsp;
         -   #### setZoomLevelOff
 
                 public void setZoomLevelOff(float zOff)
@@ -10711,8 +9446,7 @@ Class LocationDisplayRule {#class-locationdisplayrule .title title="Class Locati
             [Parameters:]{.paramLabel}
             :   `zOff` - the z off
 
-        []{#setDPI-float-}
-
+        &nbsp;
         -   #### setDPI
 
                 public static void setDPI(float newDPI)
@@ -10722,8 +9456,7 @@ Class LocationDisplayRule {#class-locationdisplayrule .title title="Class Locati
             [Parameters:]{.paramLabel}
             :   `newDPI` - Not in use
 
-        []{#setPOISize-int-}
-
+        &nbsp;
         -   #### setPOISize
 
                 public static void setPOISize(int dpSize)
@@ -10733,8 +9466,7 @@ Class LocationDisplayRule {#class-locationdisplayrule .title title="Class Locati
             [Parameters:]{.paramLabel}
             :   `dpSize` - the dp size
 
-        []{#loadIcon-java.lang.String-}
-
+        &nbsp;
         -   #### loadIcon
 
                 public void loadIcon(java.lang.String iconURL)
@@ -10752,16 +9484,16 @@ Class LocationDisplayRules {#class-locationdisplayrules .title title="Class Loca
 -   java.lang.Object
 -   -   java.util.AbstractCollection&lt;E&gt;
     -   -   java.util.AbstractList&lt;E&gt;
-        -   -   java.util.ArrayList&lt;[LocationDisplayRule](../../../com/mapspeople/models/LocationDisplayRule.html "class in com.mapspeople.models")&gt;
+        -   -   java.util.ArrayList&lt;LocationDisplayRule&gt;
             -   -   com.mapspeople.models.LocationDisplayRules
 
 -   
 
     All Implemented Interfaces:
     :   java.io.Serializable, java.lang.Cloneable,
-        java.lang.Iterable&lt;[LocationDisplayRule](../../../com/mapspeople/models/LocationDisplayRule.html "class in com.mapspeople.models")&gt;,
-        java.util.Collection&lt;[LocationDisplayRule](../../../com/mapspeople/models/LocationDisplayRule.html "class in com.mapspeople.models")&gt;,
-        java.util.List&lt;[LocationDisplayRule](../../../com/mapspeople/models/LocationDisplayRule.html "class in com.mapspeople.models")&gt;,
+        java.lang.Iterable&lt;LocationDisplayRule&gt;,
+        java.util.Collection&lt;LocationDisplayRule&gt;,
+        java.util.List&lt;LocationDisplayRule&gt;,
         java.util.RandomAccess
 
     ------------------------------------------------------------------------
@@ -10773,12 +9505,9 @@ Class LocationDisplayRules {#class-locationdisplayrules .title title="Class Loca
     The type Location display rules.
 
     [See Also:]{.seeLabel}
-    :   [Serialized
-        Form](../../../serialized-form.html#com.mapspeople.models.LocationDisplayRules)
+    :   Serialized Form
 
--   -   []{#field.summary}
-
-        ### Field Summary
+-   -   ### Field Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -10796,52 +9525,36 @@ Class LocationDisplayRules {#class-locationdisplayrules .title title="Class Loca
         | `                                 | Gets types at zoom level.         |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.util.ArrayList}
-
-            ### Methods inherited from class java.util.ArrayList
+        -   ### Methods inherited from class java.util.ArrayList
 
             `add, add, addAll, addAll, clear, clone, contains, ensureCapacity, forEach, get, indexOf, isEmpty, iterator, lastIndexOf, listIterator, listIterator, remove, remove, removeAll, removeIf, replaceAll, retainAll, set, size, sort, spliterator, subList, toArray, toArray, trimToSize`
 
         &nbsp;
-        -   []{#methods.inherited.from.class.java.util.AbstractList}
-
-            ### Methods inherited from class java.util.AbstractList
+        -   ### Methods inherited from class java.util.AbstractList
 
             `equals, hashCode`
 
         &nbsp;
-        -   []{#methods.inherited.from.class.java.util.AbstractCollection}
-
-            ### Methods inherited from class java.util.AbstractCollection
+        -   ### Methods inherited from class java.util.AbstractCollection
 
             `containsAll, toString`
 
         &nbsp;
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `getClass, notify, notifyAll, wait, wait, wait`
 
         &nbsp;
-        -   []{#methods.inherited.from.class.java.util.List}
-
-            ### Methods inherited from interface java.util.List
+        -   ### Methods inherited from interface java.util.List
 
             `containsAll, equals, hashCode`
 
         &nbsp;
-        -   []{#methods.inherited.from.class.java.util.Collection}
-
-            ### Methods inherited from interface java.util.Collection
+        -   ### Methods inherited from interface java.util.Collection
 
             `parallelStream, stream`
 
--   -   []{#field.detail}
-
-        ### Field Detail
-
-        []{#DEFAULT_DISPLAY_RULE}
+-   -   ### Field Detail
 
         -   #### DEFAULT\_DISPLAY\_RULE
 
@@ -10849,8 +9562,7 @@ Class LocationDisplayRules {#class-locationdisplayrules .title title="Class Loca
 
             The constant DEFAULT\_DISPLAY\_RULE.
 
-        []{#POS_DISPLAY_RULE}
-
+        &nbsp;
         -   #### POS\_DISPLAY\_RULE
 
                 public static LocationDisplayRule POS_DISPLAY_RULE
@@ -10858,11 +9570,7 @@ Class LocationDisplayRules {#class-locationdisplayrules .title title="Class Loca
             The constant POS\_DISPLAY\_RULE.
 
     &nbsp;
-    -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#LocationDisplayRules--}
+    -   ### Constructor Detail
 
         -   #### LocationDisplayRules
 
@@ -10871,11 +9579,7 @@ Class LocationDisplayRules {#class-locationdisplayrules .title title="Class Loca
             Instantiates a new Location display rules.
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#firstOccur-java.lang.String-}
+    -   ### Method Detail
 
         -   #### firstOccur
 
@@ -10889,8 +9593,7 @@ Class LocationDisplayRules {#class-locationdisplayrules .title title="Class Loca
             [Returns:]{.returnLabel}
             :   the location display rule
 
-        []{#getRule-java.lang.String-}
-
+        &nbsp;
         -   #### getRule
 
                 public LocationDisplayRule getRule(java.lang.String ruleName)
@@ -10903,8 +9606,7 @@ Class LocationDisplayRules {#class-locationdisplayrules .title title="Class Loca
             [Returns:]{.returnLabel}
             :   the rule
 
-        []{#getTypesAtZoomLevel-float-}
-
+        &nbsp;
         -   #### getTypesAtZoomLevel
 
                 public java.util.List<java.lang.String> getTypesAtZoomLevel(float zoom)
@@ -10935,9 +9637,7 @@ Class LocationDisplayRuleset {#class-locationdisplayruleset .title title="Class 
 
     The type Location display ruleset.
 
--   -   []{#constructor.summary}
-
-        ### Constructor Summary
+-   -   ### Constructor Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -10959,17 +9659,11 @@ Class LocationDisplayRuleset {#class-locationdisplayruleset .title title="Class 
         |                                   | Sets display rules.               |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#LocationDisplayRuleset--}
+-   -   ### Constructor Detail
 
         -   #### LocationDisplayRuleset
 
@@ -10978,11 +9672,7 @@ Class LocationDisplayRuleset {#class-locationdisplayruleset .title title="Class 
             Instantiates a new Location display ruleset.
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#getDisplayRules--}
+    -   ### Method Detail
 
         -   #### getDisplayRules
 
@@ -10993,8 +9683,7 @@ Class LocationDisplayRuleset {#class-locationdisplayruleset .title title="Class 
             [Returns:]{.returnLabel}
             :   the display rules
 
-        []{#setDisplayRules-com.mapspeople.models.LocationDisplayRules-}
-
+        &nbsp;
         -   #### setDisplayRules
 
                 public void setDisplayRules(LocationDisplayRules displayRules)
@@ -11004,8 +9693,7 @@ Class LocationDisplayRuleset {#class-locationdisplayruleset .title title="Class 
             [Parameters:]{.paramLabel}
             :   `displayRules` - the display rules
 
-        []{#getLocalBitmap-java.lang.String-}
-
+        &nbsp;
         -   #### getLocalBitmap
 
                 public android.graphics.Bitmap getLocalBitmap(java.lang.String bitmapPath)
@@ -11018,8 +9706,7 @@ Class LocationDisplayRuleset {#class-locationdisplayruleset .title title="Class 
             [Returns:]{.returnLabel}
             :   the local bitmap
 
-        []{#getAssetBitmap-java.lang.String-android.content.Context-}
-
+        &nbsp;
         -   #### getAssetBitmap
 
                 public android.graphics.Bitmap getAssetBitmap(java.lang.String path,                                              android.content.Context appContext)
@@ -11051,30 +9738,20 @@ Class LocationProperty {#class-locationproperty .title title="Class LocationProp
 
     The type Location property.
 
--   -   []{#field.summary}
-
-        ### Field Summary
+-   -   ### Field Summary
 
           Constructor and Description
           -----------------------------
           `LocationProperty()` 
 
     &nbsp;
-    -   []{#method.summary}
+    -   ### Method Summary
 
-        ### Method Summary
-
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#field.detail}
-
-        ### Field Detail
-
-        []{#contentType}
+-   -   ### Field Detail
 
         -   #### contentType
 
@@ -11082,8 +9759,7 @@ Class LocationProperty {#class-locationproperty .title title="Class LocationProp
 
             The Content type.
 
-        []{#content}
-
+        &nbsp;
         -   #### content
 
                 public java.lang.Object content
@@ -11091,11 +9767,7 @@ Class LocationProperty {#class-locationproperty .title title="Class LocationProp
             The Content.
 
     &nbsp;
-    -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#LocationProperty--}
+    -   ### Constructor Detail
 
         -   #### LocationProperty
 
@@ -11119,9 +9791,7 @@ Class LocationSearchCondition {#class-locationsearchcondition .title title="Clas
 
     The type Location search condition.
 
--   -   []{#constructor.summary}
-
-        ### Constructor Summary
+-   -   ### Constructor Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -11131,17 +9801,11 @@ Class LocationSearchCondition {#class-locationsearchcondition .title title="Clas
         |                                   | Qualify boolean.                  |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#LocationSearchCondition--}
+-   -   ### Constructor Detail
 
         -   #### LocationSearchCondition
 
@@ -11150,11 +9814,7 @@ Class LocationSearchCondition {#class-locationsearchcondition .title title="Clas
             Instantiates a new Location search condition.
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#qualify-java.lang.String-com.mapspeople.models.Location-}
+    -   ### Method Detail
 
         -   #### qualify
 
@@ -11180,13 +9840,12 @@ Class MPLocation {#class-mplocation .title title="Class MPLocation"}
 -   
 
     All Implemented Interfaces:
-    :   [Feature](../../../com/mapspeople/models/Feature.html "interface in com.mapspeople.models"),
-        [Location](../../../com/mapspeople/models/Location.html "interface in com.mapspeople.models")
+    :   Feature, Location
 
     &nbsp;
 
     Direct Known Subclasses:
-    :   [PositionIndicator](../../../com/mapspeople/models/PositionIndicator.html "class in com.mapspeople.models")
+    :   PositionIndicator
 
     ------------------------------------------------------------------------
 
@@ -11196,9 +9855,7 @@ Class MPLocation {#class-mplocation .title title="Class MPLocation"}
 
     The type Mp location.
 
--   -   []{#constructor.summary}
-
-        ### Constructor Summary
+-   -   ### Constructor Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -11318,17 +9975,11 @@ Class MPLocation {#class-mplocation .title title="Class MPLocation"}
         |                                   | Update view.                      |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#MPLocation--}
+-   -   ### Constructor Detail
 
         -   #### MPLocation
 
@@ -11336,8 +9987,7 @@ Class MPLocation {#class-mplocation .title title="Class MPLocation"}
 
             Instantiates a new Mp location.
 
-        []{#MPLocation-com.mapspeople.models.Point-java.lang.String-}
-
+        &nbsp;
         -   #### MPLocation
 
                 public MPLocation(Point point,                  java.lang.String title)
@@ -11348,8 +9998,7 @@ Class MPLocation {#class-mplocation .title title="Class MPLocation"}
             :   `point` - the point
             :   `title` - the title
 
-        []{#MPLocation-java.lang.String-}
-
+        &nbsp;
         -   #### MPLocation
 
                 public MPLocation(java.lang.String id)
@@ -11359,8 +10008,7 @@ Class MPLocation {#class-mplocation .title title="Class MPLocation"}
             [Parameters:]{.paramLabel}
             :   `id` - the id
 
-        []{#MPLocation-com.mapspeople.models.Location-}
-
+        &nbsp;
         -   #### MPLocation
 
                 public MPLocation(Location location)
@@ -11371,11 +10019,7 @@ Class MPLocation {#class-mplocation .title title="Class MPLocation"}
             :   `location` - the location
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#updateView-GoogleMap-}
+    -   ### Method Detail
 
         -   #### updateView
 
@@ -11389,8 +10033,7 @@ Class MPLocation {#class-mplocation .title title="Class MPLocation"}
             [Parameters:]{.paramLabel}
             :   `map` - the map
 
-        []{#updateView-GoogleMap-int-}
-
+        &nbsp;
         -   #### updateView
 
                 public void updateView(GoogleMap map,                       int floor)
@@ -11404,8 +10047,7 @@ Class MPLocation {#class-mplocation .title title="Class MPLocation"}
             :   `map` - the map
             :   `floor` - the floor
 
-        []{#getFloorIndex--}
-
+        &nbsp;
         -   #### getFloorIndex
 
                 public int getFloorIndex()
@@ -11418,8 +10060,7 @@ Class MPLocation {#class-mplocation .title title="Class MPLocation"}
             [Returns:]{.returnLabel}
             :   the floor index
 
-        []{#getFloorName--}
-
+        &nbsp;
         -   #### getFloorName
 
                 public java.lang.String getFloorName()
@@ -11432,8 +10073,7 @@ Class MPLocation {#class-mplocation .title title="Class MPLocation"}
             [Returns:]{.returnLabel}
             :   the floor name
 
-        []{#setDisplayRule-com.mapspeople.models.LocationDisplayRule-}
-
+        &nbsp;
         -   #### setDisplayRule
 
                 public void setDisplayRule(LocationDisplayRule displayRule)
@@ -11446,8 +10086,7 @@ Class MPLocation {#class-mplocation .title title="Class MPLocation"}
             [Parameters:]{.paramLabel}
             :   `displayRule` - the display rule
 
-        []{#getGLatLng--}
-
+        &nbsp;
         -   #### getGLatLng
 
                 public LatLng getGLatLng()
@@ -11460,8 +10099,7 @@ Class MPLocation {#class-mplocation .title title="Class MPLocation"}
             [Returns:]{.returnLabel}
             :   the g lat lng
 
-        []{#getName--}
-
+        &nbsp;
         -   #### getName
 
                 public java.lang.String getName()
@@ -11474,8 +10112,7 @@ Class MPLocation {#class-mplocation .title title="Class MPLocation"}
             [Returns:]{.returnLabel}
             :   the name
 
-        []{#getRoomId--}
-
+        &nbsp;
         -   #### getRoomId
 
                 public java.lang.String getRoomId()
@@ -11488,8 +10125,7 @@ Class MPLocation {#class-mplocation .title title="Class MPLocation"}
             [Returns:]{.returnLabel}
             :   the room id
 
-        []{#getId--}
-
+        &nbsp;
         -   #### getId
 
                 public java.lang.String getId()
@@ -11502,8 +10138,7 @@ Class MPLocation {#class-mplocation .title title="Class MPLocation"}
             [Returns:]{.returnLabel}
             :   the id
 
-        []{#getCategories--}
-
+        &nbsp;
         -   #### getCategories
 
                 public java.lang.String[] getCategories()
@@ -11516,8 +10151,7 @@ Class MPLocation {#class-mplocation .title title="Class MPLocation"}
             [Returns:]{.returnLabel}
             :   the string \[ \]
 
-        []{#setCategories-java.lang.String:A-}
-
+        &nbsp;
         -   #### setCategories
 
                 public void setCategories(java.lang.String[] categories)
@@ -11530,8 +10164,7 @@ Class MPLocation {#class-mplocation .title title="Class MPLocation"}
             [Parameters:]{.paramLabel}
             :   `categories` - the categories
 
-        []{#getMarker--}
-
+        &nbsp;
         -   #### getMarker
 
                 public Marker getMarker()
@@ -11544,8 +10177,7 @@ Class MPLocation {#class-mplocation .title title="Class MPLocation"}
             [Returns:]{.returnLabel}
             :   the marker
 
-        []{#setMarker-Marker-}
-
+        &nbsp;
         -   #### setMarker
 
                 public void setMarker(Marker marker)
@@ -11558,8 +10190,7 @@ Class MPLocation {#class-mplocation .title title="Class MPLocation"}
             [Parameters:]{.paramLabel}
             :   `marker` - the marker
 
-        []{#show--}
-
+        &nbsp;
         -   #### show
 
                 public void show()
@@ -11569,8 +10200,7 @@ Class MPLocation {#class-mplocation .title title="Class MPLocation"}
             [Specified by:]{.overrideSpecifyLabel}
             :   `show` in interface `Location`
 
-        []{#hide--}
-
+        &nbsp;
         -   #### hide
 
                 public void hide()
@@ -11580,8 +10210,7 @@ Class MPLocation {#class-mplocation .title title="Class MPLocation"}
             [Specified by:]{.overrideSpecifyLabel}
             :   `hide` in interface `Location`
 
-        []{#setLatLng-LatLng-}
-
+        &nbsp;
         -   #### setLatLng
 
                 public void setLatLng(LatLng position)
@@ -11594,8 +10223,7 @@ Class MPLocation {#class-mplocation .title title="Class MPLocation"}
             [Parameters:]{.paramLabel}
             :   `position` - the position
 
-        []{#isVisible--}
-
+        &nbsp;
         -   #### isVisible
 
                 public boolean isVisible()
@@ -11608,8 +10236,7 @@ Class MPLocation {#class-mplocation .title title="Class MPLocation"}
             [Returns:]{.returnLabel}
             :   the boolean
 
-        []{#setVisible-boolean-}
-
+        &nbsp;
         -   #### setVisible
 
                 public void setVisible(boolean visible)
@@ -11622,8 +10249,7 @@ Class MPLocation {#class-mplocation .title title="Class MPLocation"}
             [Parameters:]{.paramLabel}
             :   `visible` - the visible
 
-        []{#has-java.lang.String-}
-
+        &nbsp;
         -   #### has
 
                 public boolean has(java.lang.String key)
@@ -11639,8 +10265,7 @@ Class MPLocation {#class-mplocation .title title="Class MPLocation"}
             [Returns:]{.returnLabel}
             :   the boolean
 
-        []{#getStringProperty-java.lang.String-}
-
+        &nbsp;
         -   #### getStringProperty
 
                 public java.lang.String getStringProperty(java.lang.String key)
@@ -11656,8 +10281,7 @@ Class MPLocation {#class-mplocation .title title="Class MPLocation"}
             [Returns:]{.returnLabel}
             :   the string property
 
-        []{#getType--}
-
+        &nbsp;
         -   #### getType
 
                 public java.lang.String getType()
@@ -11673,8 +10297,7 @@ Class MPLocation {#class-mplocation .title title="Class MPLocation"}
             [Returns:]{.returnLabel}
             :   the type
 
-        []{#setType-java.lang.String-}
-
+        &nbsp;
         -   #### setType
 
                 public void setType(java.lang.String type)
@@ -11687,8 +10310,7 @@ Class MPLocation {#class-mplocation .title title="Class MPLocation"}
             [Parameters:]{.paramLabel}
             :   `type` - the type
 
-        []{#getProperties--}
-
+        &nbsp;
         -   #### getProperties
 
                 public java.util.Map<java.lang.String,java.lang.Object> getProperties()
@@ -11704,8 +10326,7 @@ Class MPLocation {#class-mplocation .title title="Class MPLocation"}
             [Returns:]{.returnLabel}
             :   the properties
 
-        []{#getGeometry--}
-
+        &nbsp;
         -   #### getGeometry
 
                 public Geometry getGeometry()
@@ -11721,8 +10342,7 @@ Class MPLocation {#class-mplocation .title title="Class MPLocation"}
             [Returns:]{.returnLabel}
             :   the geometry
 
-        []{#getPoint--}
-
+        &nbsp;
         -   #### getPoint
 
                 public Point getPoint()
@@ -11735,8 +10355,7 @@ Class MPLocation {#class-mplocation .title title="Class MPLocation"}
             [Returns:]{.returnLabel}
             :   the point
 
-        []{#setPoint-com.mapspeople.models.Point-}
-
+        &nbsp;
         -   #### setPoint
 
                 public void setPoint(Point point)
@@ -11749,8 +10368,7 @@ Class MPLocation {#class-mplocation .title title="Class MPLocation"}
             [Parameters:]{.paramLabel}
             :   `point` - the point
 
-        []{#setName-java.lang.String-}
-
+        &nbsp;
         -   #### setName
 
                 public void setName(java.lang.String name)
@@ -11763,8 +10381,7 @@ Class MPLocation {#class-mplocation .title title="Class MPLocation"}
             [Parameters:]{.paramLabel}
             :   `name` - the name
 
-        []{#getProperty-java.lang.String-}
-
+        &nbsp;
         -   #### getProperty
 
                 public java.lang.Object getProperty(java.lang.String key)
@@ -11780,8 +10397,7 @@ Class MPLocation {#class-mplocation .title title="Class MPLocation"}
             [Returns:]{.returnLabel}
             :   the property
 
-        []{#setProperty-java.lang.String-java.lang.Object-}
-
+        &nbsp;
         -   #### setProperty
 
                 public void setProperty(java.lang.String key,                        java.lang.Object value)
@@ -11795,8 +10411,7 @@ Class MPLocation {#class-mplocation .title title="Class MPLocation"}
             :   `key` - the key
             :   `value` - the value
 
-        []{#setCategory-java.lang.String-}
-
+        &nbsp;
         -   #### setCategory
 
                 public void setCategory(java.lang.String category)
@@ -11806,8 +10421,7 @@ Class MPLocation {#class-mplocation .title title="Class MPLocation"}
             [Parameters:]{.paramLabel}
             :   `category` - the category
 
-        []{#getDisplayRule--}
-
+        &nbsp;
         -   #### getDisplayRule
 
                 public LocationDisplayRule getDisplayRule()
@@ -11820,8 +10434,7 @@ Class MPLocation {#class-mplocation .title title="Class MPLocation"}
             [Returns:]{.returnLabel}
             :   the display rule
 
-        []{#equals-java.lang.Object-}
-
+        &nbsp;
         -   #### equals
 
                 public boolean equals(java.lang.Object o)
@@ -11837,8 +10450,7 @@ Class MPLocation {#class-mplocation .title title="Class MPLocation"}
             [Returns:]{.returnLabel}
             :   the boolean
 
-        []{#isOfCategory-java.lang.String-}
-
+        &nbsp;
         -   #### isOfCategory
 
                 public boolean isOfCategory(java.lang.String category)
@@ -11851,8 +10463,7 @@ Class MPLocation {#class-mplocation .title title="Class MPLocation"}
             [Returns:]{.returnLabel}
             :   the boolean
 
-        []{#getLocationProperyList--}
-
+        &nbsp;
         -   #### getLocationProperyList
 
                 public java.util.List<LocationProperty> getLocationProperyList()
@@ -11865,8 +10476,7 @@ Class MPLocation {#class-mplocation .title title="Class MPLocation"}
             [Returns:]{.returnLabel}
             :   the location propery list
 
-        []{#getField-java.lang.String-}
-
+        &nbsp;
         -   #### getField
 
                 public DataField getField(java.lang.String key)
@@ -11900,9 +10510,7 @@ Class MapExtend {#class-mapextend .title title="Class MapExtend"}
 
     The type Map extend.
 
--   -   []{#field.summary}
-
-        ### Field Summary
+-   -   ### Field Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -11911,17 +10519,11 @@ Class MapExtend {#class-mapextend .title title="Class MapExtend"}
         |                                   | To url value string.              |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#field.detail}
-
-        ### Field Detail
-
-        []{#south}
+-   -   ### Field Detail
 
         -   #### south
 
@@ -11929,24 +10531,21 @@ Class MapExtend {#class-mapextend .title title="Class MapExtend"}
 
             The South.
 
-        []{#west}
-
+        &nbsp;
         -   #### west
 
                 public final double west
 
             The West.
 
-        []{#north}
-
+        &nbsp;
         -   #### north
 
                 public final double north
 
             The North.
 
-        []{#east}
-
+        &nbsp;
         -   #### east
 
                 public final double east
@@ -11954,11 +10553,7 @@ Class MapExtend {#class-mapextend .title title="Class MapExtend"}
             The East.
 
     &nbsp;
-    -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#MapExtend-LatLngBounds-}
+    -   ### Constructor Detail
 
         -   #### MapExtend
 
@@ -11970,11 +10565,7 @@ Class MapExtend {#class-mapextend .title title="Class MapExtend"}
             :   `latLngBounds` - the lat lng bounds
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#toUrlValue--}
+    -   ### Method Detail
 
         -   #### toUrlValue
 
@@ -12003,9 +10594,7 @@ Class MapStyle {#class-mapstyle .title title="Class MapStyle"}
 
     The type Map style.
 
--   -   []{#constructor.summary}
-
-        ### Constructor Summary
+-   -   ### Constructor Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -12025,28 +10614,18 @@ Class MapStyle {#class-mapstyle .title title="Class MapStyle"}
         |                                   | Sets folder.                      |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#MapStyle--}
+-   -   ### Constructor Detail
 
         -   #### MapStyle
 
                 public MapStyle()
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#getFolder--}
+    -   ### Method Detail
 
         -   #### getFolder
 
@@ -12057,8 +10636,7 @@ Class MapStyle {#class-mapstyle .title title="Class MapStyle"}
             [Returns:]{.returnLabel}
             :   the folder
 
-        []{#setFolder-java.lang.String-}
-
+        &nbsp;
         -   #### setFolder
 
                 public void setFolder(java.lang.String folder)
@@ -12068,8 +10646,7 @@ Class MapStyle {#class-mapstyle .title title="Class MapStyle"}
             [Parameters:]{.paramLabel}
             :   `folder` - the folder
 
-        []{#getDisplayName--}
-
+        &nbsp;
         -   #### getDisplayName
 
                 public java.lang.String getDisplayName()
@@ -12079,8 +10656,7 @@ Class MapStyle {#class-mapstyle .title title="Class MapStyle"}
             [Returns:]{.returnLabel}
             :   the display name
 
-        []{#setDisplayName-java.lang.String-}
-
+        &nbsp;
         -   #### setDisplayName
 
                 public void setDisplayName(java.lang.String displayName)
@@ -12108,9 +10684,7 @@ Class MenuInfo {#class-menuinfo .title title="Class MenuInfo"}
 
     The type Menu info.
 
--   -   []{#constructor.summary}
-
-        ### Constructor Summary
+-   -   ### Constructor Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -12131,28 +10705,18 @@ Class MenuInfo {#class-menuinfo .title title="Class MenuInfo"}
         |                                   | Init.                             |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#MenuInfo--}
+-   -   ### Constructor Detail
 
         -   #### MenuInfo
 
                 public MenuInfo()
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#getCategoryKey--}
+    -   ### Method Detail
 
         -   #### getCategoryKey
 
@@ -12163,8 +10727,7 @@ Class MenuInfo {#class-menuinfo .title title="Class MenuInfo"}
             [Returns:]{.returnLabel}
             :   the category key
 
-        []{#getName--}
-
+        &nbsp;
         -   #### getName
 
                 public java.lang.String getName()
@@ -12174,8 +10737,7 @@ Class MenuInfo {#class-menuinfo .title title="Class MenuInfo"}
             [Returns:]{.returnLabel}
             :   the name
 
-        []{#getMenuImage--}
-
+        &nbsp;
         -   #### getMenuImage
 
                 public android.graphics.Bitmap getMenuImage()
@@ -12185,8 +10747,7 @@ Class MenuInfo {#class-menuinfo .title title="Class MenuInfo"}
             [Returns:]{.returnLabel}
             :   the menu image
 
-        []{#getIcon--}
-
+        &nbsp;
         -   #### getIcon
 
                 public android.graphics.Bitmap getIcon()
@@ -12196,8 +10757,7 @@ Class MenuInfo {#class-menuinfo .title title="Class MenuInfo"}
             [Returns:]{.returnLabel}
             :   the icon
 
-        []{#init-com.mapspeople.mapcontrol.ReadyListener-}
-
+        &nbsp;
         -   #### init
 
                 public void init(ReadyListener callback)
@@ -12229,9 +10789,7 @@ Class ObjectMapSerializer {#class-objectmapserializer .title title="Class Object
 
     The type Object map serializer.
 
--   -   []{#constructor.summary}
-
-        ### Constructor Summary
+-   -   ### Constructor Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -12251,28 +10809,18 @@ Class ObjectMapSerializer {#class-objectmapserializer .title title="Class Object
         |                                   | Serialize json element.           |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#ObjectMapSerializer--}
+-   -   ### Constructor Detail
 
         -   #### ObjectMapSerializer
 
                 public ObjectMapSerializer()
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#serialize-java.util.Map-java.lang.reflect.Type-com.google.gson.JsonSerializationContext-}
+    -   ### Method Detail
 
         -   #### serialize
 
@@ -12292,8 +10840,7 @@ Class ObjectMapSerializer {#class-objectmapserializer .title title="Class Object
             [Returns:]{.returnLabel}
             :   the json element
 
-        []{#deserialize-com.google.gson.JsonElement-java.lang.reflect.Type-com.google.gson.JsonDeserializationContext-}
-
+        &nbsp;
         -   #### deserialize
 
                 public java.util.Map<java.lang.String,java.lang.Object> deserialize(com.google.gson.JsonElement json,                                                                    java.lang.reflect.Type type,                                                                    com.google.gson.JsonDeserializationContext context)                                                             throws com.google.gson.JsonParseException
@@ -12334,9 +10881,7 @@ Class OpeningHours {#class-openinghours .title title="Class OpeningHours"}
 
     The type Opening hours.
 
--   -   []{#constructor.summary}
-
-        ### Constructor Summary
+-   -   ### Constructor Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -12376,28 +10921,18 @@ Class OpeningHours {#class-openinghours .title title="Class OpeningHours"}
         |                                   | Sets valid through.               |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#OpeningHours--}
+-   -   ### Constructor Detail
 
         -   #### OpeningHours
 
                 public OpeningHours()
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#getDayOfWeek--}
+    -   ### Method Detail
 
         -   #### getDayOfWeek
 
@@ -12408,8 +10943,7 @@ Class OpeningHours {#class-openinghours .title title="Class OpeningHours"}
             [Returns:]{.returnLabel}
             :   the day of week
 
-        []{#setDayOfWeek-int-}
-
+        &nbsp;
         -   #### setDayOfWeek
 
                 public void setDayOfWeek(int dayOfWeek)
@@ -12419,8 +10953,7 @@ Class OpeningHours {#class-openinghours .title title="Class OpeningHours"}
             [Parameters:]{.paramLabel}
             :   `dayOfWeek` - the day of week
 
-        []{#getOpens--}
-
+        &nbsp;
         -   #### getOpens
 
                 public java.lang.String getOpens()
@@ -12430,8 +10963,7 @@ Class OpeningHours {#class-openinghours .title title="Class OpeningHours"}
             [Returns:]{.returnLabel}
             :   the opens
 
-        []{#setOpens-java.lang.String-}
-
+        &nbsp;
         -   #### setOpens
 
                 public void setOpens(java.lang.String opens)
@@ -12441,8 +10973,7 @@ Class OpeningHours {#class-openinghours .title title="Class OpeningHours"}
             [Parameters:]{.paramLabel}
             :   `opens` - the opens
 
-        []{#getClose--}
-
+        &nbsp;
         -   #### getClose
 
                 public java.lang.String getClose()
@@ -12452,8 +10983,7 @@ Class OpeningHours {#class-openinghours .title title="Class OpeningHours"}
             [Returns:]{.returnLabel}
             :   the close
 
-        []{#setClose-java.lang.String-}
-
+        &nbsp;
         -   #### setClose
 
                 public void setClose(java.lang.String close)
@@ -12463,8 +10993,7 @@ Class OpeningHours {#class-openinghours .title title="Class OpeningHours"}
             [Parameters:]{.paramLabel}
             :   `close` - the close
 
-        []{#getValidFrom--}
-
+        &nbsp;
         -   #### getValidFrom
 
                 public java.util.Date getValidFrom()
@@ -12474,8 +11003,7 @@ Class OpeningHours {#class-openinghours .title title="Class OpeningHours"}
             [Returns:]{.returnLabel}
             :   the valid from
 
-        []{#setValidFrom-java.util.Date-}
-
+        &nbsp;
         -   #### setValidFrom
 
                 public void setValidFrom(java.util.Date validFrom)
@@ -12485,8 +11013,7 @@ Class OpeningHours {#class-openinghours .title title="Class OpeningHours"}
             [Parameters:]{.paramLabel}
             :   `validFrom` - the valid from
 
-        []{#getValidThrough--}
-
+        &nbsp;
         -   #### getValidThrough
 
                 public java.util.Date getValidThrough()
@@ -12496,8 +11023,7 @@ Class OpeningHours {#class-openinghours .title title="Class OpeningHours"}
             [Returns:]{.returnLabel}
             :   the valid through
 
-        []{#setValidThrough-java.util.Date-}
-
+        &nbsp;
         -   #### setValidThrough
 
                 public void setValidThrough(java.util.Date validThrough)
@@ -12515,17 +11041,16 @@ Class OpeningHoursModule {#class-openinghoursmodule .title title="Class OpeningH
 -   java.lang.Object
 -   -   java.util.AbstractCollection&lt;E&gt;
     -   -   java.util.AbstractList&lt;E&gt;
-        -   -   java.util.ArrayList&lt;[OpeningHours](../../../com/mapspeople/models/OpeningHours.html "class in com.mapspeople.models")&gt;
+        -   -   java.util.ArrayList&lt;OpeningHours&gt;
             -   -   com.mapspeople.models.OpeningHoursModule
 
 -   
 
     All Implemented Interfaces:
     :   java.io.Serializable, java.lang.Cloneable,
-        java.lang.Iterable&lt;[OpeningHours](../../../com/mapspeople/models/OpeningHours.html "class in com.mapspeople.models")&gt;,
-        java.util.Collection&lt;[OpeningHours](../../../com/mapspeople/models/OpeningHours.html "class in com.mapspeople.models")&gt;,
-        java.util.List&lt;[OpeningHours](../../../com/mapspeople/models/OpeningHours.html "class in com.mapspeople.models")&gt;,
-        java.util.RandomAccess
+        java.lang.Iterable&lt;OpeningHours&gt;,
+        java.util.Collection&lt;OpeningHours&gt;,
+        java.util.List&lt;OpeningHours&gt;, java.util.RandomAccess
 
     ------------------------------------------------------------------------
 
@@ -12536,68 +11061,47 @@ Class OpeningHoursModule {#class-openinghoursmodule .title title="Class OpeningH
     The type Opening hours module.
 
     [See Also:]{.seeLabel}
-    :   [Serialized
-        Form](../../../serialized-form.html#com.mapspeople.models.OpeningHoursModule)
+    :   Serialized Form
 
--   -   []{#constructor.summary}
-
-        ### Constructor Summary
+-   -   ### Constructor Summary
 
           Constructor and Description
           -----------------------------
           `OpeningHoursModule()` 
 
     &nbsp;
-    -   []{#method.summary}
+    -   ### Method Summary
 
-        ### Method Summary
-
-        -   []{#methods.inherited.from.class.java.util.ArrayList}
-
-            ### Methods inherited from class java.util.ArrayList
+        -   ### Methods inherited from class java.util.ArrayList
 
             `add, add, addAll, addAll, clear, clone, contains, ensureCapacity, forEach, get, indexOf, isEmpty, iterator, lastIndexOf, listIterator, listIterator, remove, remove, removeAll, removeIf, replaceAll, retainAll, set, size, sort, spliterator, subList, toArray, toArray, trimToSize`
 
         &nbsp;
-        -   []{#methods.inherited.from.class.java.util.AbstractList}
-
-            ### Methods inherited from class java.util.AbstractList
+        -   ### Methods inherited from class java.util.AbstractList
 
             `equals, hashCode`
 
         &nbsp;
-        -   []{#methods.inherited.from.class.java.util.AbstractCollection}
-
-            ### Methods inherited from class java.util.AbstractCollection
+        -   ### Methods inherited from class java.util.AbstractCollection
 
             `containsAll, toString`
 
         &nbsp;
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `getClass, notify, notifyAll, wait, wait, wait`
 
         &nbsp;
-        -   []{#methods.inherited.from.class.java.util.List}
-
-            ### Methods inherited from interface java.util.List
+        -   ### Methods inherited from interface java.util.List
 
             `containsAll, equals, hashCode`
 
         &nbsp;
-        -   []{#methods.inherited.from.class.java.util.Collection}
-
-            ### Methods inherited from interface java.util.Collection
+        -   ### Methods inherited from interface java.util.Collection
 
             `parallelStream, stream`
 
--   -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#OpeningHoursModule--}
+-   -   ### Constructor Detail
 
         -   #### OpeningHoursModule
 
@@ -12621,30 +11125,20 @@ Class POIType {#class-poitype .title title="Class POIType"}
 
     The type Poi type.
 
--   -   []{#field.summary}
-
-        ### Field Summary
+-   -   ### Field Summary
 
           Constructor and Description
           -----------------------------
           `POIType()` 
 
     &nbsp;
-    -   []{#method.summary}
+    -   ### Method Summary
 
-        ### Method Summary
-
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#field.detail}
-
-        ### Field Detail
-
-        []{#name}
+-   -   ### Field Detail
 
         -   #### name
 
@@ -12652,16 +11146,14 @@ Class POIType {#class-poitype .title title="Class POIType"}
 
             The Name.
 
-        []{#icon}
-
+        &nbsp;
         -   #### icon
 
                 public java.lang.String icon
 
             The Icon.
 
-        []{#displayRule}
-
+        &nbsp;
         -   #### displayRule
 
                 public DisplayRule displayRule
@@ -12669,11 +11161,7 @@ Class POIType {#class-poitype .title title="Class POIType"}
             The Display rule.
 
     &nbsp;
-    -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#POIType--}
+    -   ### Constructor Detail
 
         -   #### POIType
 
@@ -12685,7 +11173,7 @@ Class Point {#class-point .title title="Class Point"}
 -----------
 
 -   java.lang.Object
--   -   [com.mapspeople.models.Geometry](../../../com/mapspeople/models/Geometry.html "class in com.mapspeople.models")
+-   -   com.mapspeople.models.Geometry
     -   -   com.mapspeople.models.Point
 
 -   
@@ -12698,9 +11186,7 @@ Class Point {#class-point .title title="Class Point"}
 
     The type Point.
 
--   -   []{#constructor.summary}
-
-        ### Constructor Summary
+-   -   ### Constructor Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -12751,24 +11237,16 @@ Class Point {#class-point .title title="Class Point"}
         |                                   | Z double.                         |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.com.mapspeople.models.Geometry}
-
-            ### Methods inherited from class com.mapspeople.models.[Geometry](../../../com/mapspeople/models/Geometry.html "class in com.mapspeople.models")
+        -   ### Methods inherited from class com.mapspeople.models.Geometry
 
             `getCoordinates, getType, setCoordinates`
 
         &nbsp;
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, wait, wait, wait`
 
--   -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#Point--}
+-   -   ### Constructor Detail
 
         -   #### Point
 
@@ -12776,8 +11254,7 @@ Class Point {#class-point .title title="Class Point"}
 
             Instantiates a new Point.
 
-        []{#Point-double-double-}
-
+        &nbsp;
         -   #### Point
 
                 public Point(double latitude,             double longitude)
@@ -12788,8 +11265,7 @@ Class Point {#class-point .title title="Class Point"}
             :   `latitude` - the latitude
             :   `longitude` - the longitude
 
-        []{#Point-double-double-double-}
-
+        &nbsp;
         -   #### Point
 
                 public Point(double latitude,             double longitude,             double z)
@@ -12801,8 +11277,7 @@ Class Point {#class-point .title title="Class Point"}
             :   `longitude` - the longitude
             :   `z` - the z
 
-        []{#Point-double:A-}
-
+        &nbsp;
         -   #### Point
 
                 public Point(double[] coordinates)
@@ -12812,8 +11287,7 @@ Class Point {#class-point .title title="Class Point"}
             [Parameters:]{.paramLabel}
             :   `coordinates` - the coordinates
 
-        []{#Point-com.mapspeople.models.Point-}
-
+        &nbsp;
         -   #### Point
 
                 public Point(Point point)
@@ -12823,8 +11297,7 @@ Class Point {#class-point .title title="Class Point"}
             [Parameters:]{.paramLabel}
             :   `point` - the point
 
-        []{#Point-java.lang.String-java.lang.String-java.lang.String-}
-
+        &nbsp;
         -   #### Point
 
                 public Point(java.lang.String latitude,             java.lang.String longitude,             java.lang.String z)
@@ -12836,8 +11309,7 @@ Class Point {#class-point .title title="Class Point"}
             :   `longitude` - the longitude
             :   `z` - the z
 
-        []{#Point-java.lang.String-}
-
+        &nbsp;
         -   #### Point
 
                 public Point(java.lang.String position)
@@ -12848,11 +11320,7 @@ Class Point {#class-point .title title="Class Point"}
             :   `position` - the position
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#getGLatLng--}
+    -   ### Method Detail
 
         -   #### getGLatLng
 
@@ -12863,8 +11331,7 @@ Class Point {#class-point .title title="Class Point"}
             [Returns:]{.returnLabel}
             :   the g lat lng
 
-        []{#setGLatLng-LatLng-}
-
+        &nbsp;
         -   #### setGLatLng
 
                 public void setGLatLng(LatLng position)
@@ -12874,8 +11341,7 @@ Class Point {#class-point .title title="Class Point"}
             [Parameters:]{.paramLabel}
             :   `position` - the position
 
-        []{#lat--}
-
+        &nbsp;
         -   #### lat
 
                 public double lat()
@@ -12885,8 +11351,7 @@ Class Point {#class-point .title title="Class Point"}
             [Returns:]{.returnLabel}
             :   the double
 
-        []{#lng--}
-
+        &nbsp;
         -   #### lng
 
                 public double lng()
@@ -12896,8 +11361,7 @@ Class Point {#class-point .title title="Class Point"}
             [Returns:]{.returnLabel}
             :   the double
 
-        []{#z--}
-
+        &nbsp;
         -   #### z
 
                 public double z()
@@ -12907,8 +11371,7 @@ Class Point {#class-point .title title="Class Point"}
             [Returns:]{.returnLabel}
             :   the double
 
-        []{#getRad-double-}
-
+        &nbsp;
         -   #### getRad
 
                 public static double getRad(double angle)
@@ -12921,8 +11384,7 @@ Class Point {#class-point .title title="Class Point"}
             [Returns:]{.returnLabel}
             :   the rad
 
-        []{#distanceTo-com.mapspeople.models.Point-}
-
+        &nbsp;
         -   #### distanceTo
 
                 public double distanceTo(Point dest)
@@ -12935,8 +11397,7 @@ Class Point {#class-point .title title="Class Point"}
             [Returns:]{.returnLabel}
             :   the double
 
-        []{#angleBetween-com.mapspeople.models.Point-}
-
+        &nbsp;
         -   #### angleBetween
 
                 public double angleBetween(Point dest)
@@ -12949,8 +11410,7 @@ Class Point {#class-point .title title="Class Point"}
             [Returns:]{.returnLabel}
             :   the double
 
-        []{#setLat-double-}
-
+        &nbsp;
         -   #### setLat
 
                 public void setLat(double latitude)
@@ -12960,8 +11420,7 @@ Class Point {#class-point .title title="Class Point"}
             [Parameters:]{.paramLabel}
             :   `latitude` - the latitude
 
-        []{#setLng-double-}
-
+        &nbsp;
         -   #### setLng
 
                 public void setLng(double longitude)
@@ -12971,8 +11430,7 @@ Class Point {#class-point .title title="Class Point"}
             [Parameters:]{.paramLabel}
             :   `longitude` - the longitude
 
-        []{#setZ-double-}
-
+        &nbsp;
         -   #### setZ
 
                 public void setZ(double z)
@@ -12982,8 +11440,7 @@ Class Point {#class-point .title title="Class Point"}
             [Parameters:]{.paramLabel}
             :   `z` - the z
 
-        []{#getRouteVertex--}
-
+        &nbsp;
         -   #### getRouteVertex
 
                 public RouteVertex getRouteVertex()
@@ -12993,8 +11450,7 @@ Class Point {#class-point .title title="Class Point"}
             [Returns:]{.returnLabel}
             :   the route vertex
 
-        []{#equals-com.mapspeople.models.Point-}
-
+        &nbsp;
         -   #### equals
 
                 public boolean equals(Point otherPoint)
@@ -13007,8 +11463,7 @@ Class Point {#class-point .title title="Class Point"}
             [Returns:]{.returnLabel}
             :   the boolean
 
-        []{#toString--}
-
+        &nbsp;
         -   #### toString
 
                 public java.lang.String toString()
@@ -13021,8 +11476,7 @@ Class Point {#class-point .title title="Class Point"}
             [Returns:]{.returnLabel}
             :   the string
 
-        []{#getZIndex--}
-
+        &nbsp;
         -   #### getZIndex
 
                 public int getZIndex()
@@ -13050,9 +11504,7 @@ Class PolygonGeometry {#class-polygongeometry .title title="Class PolygonGeometr
 
     The type Polygon geometry.
 
--   -   []{#constructor.summary}
-
-        ### Constructor Summary
+-   -   ### Constructor Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -13081,17 +11533,11 @@ Class PolygonGeometry {#class-polygongeometry .title title="Class PolygonGeometr
         |                                   | Sets coordinates.                 |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#PolygonGeometry--}
+-   -   ### Constructor Detail
 
         -   #### PolygonGeometry
 
@@ -13100,11 +11546,7 @@ Class PolygonGeometry {#class-polygongeometry .title title="Class PolygonGeometr
             Instantiates a new Polygon geometry.
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#getType--}
+    -   ### Method Detail
 
         -   #### getType
 
@@ -13115,8 +11557,7 @@ Class PolygonGeometry {#class-polygongeometry .title title="Class PolygonGeometr
             [Returns:]{.returnLabel}
             :   the type
 
-        []{#getCoordinates--}
-
+        &nbsp;
         -   #### getCoordinates
 
                 public java.util.List<java.util.List<java.lang.Double[]>> getCoordinates()
@@ -13126,8 +11567,7 @@ Class PolygonGeometry {#class-polygongeometry .title title="Class PolygonGeometr
             [Returns:]{.returnLabel}
             :   the coordinates
 
-        []{#getPoints--}
-
+        &nbsp;
         -   #### getPoints
 
                 public java.util.List<java.util.List<Point>> getPoints()
@@ -13137,8 +11577,7 @@ Class PolygonGeometry {#class-polygongeometry .title title="Class PolygonGeometr
             [Returns:]{.returnLabel}
             :   the points
 
-        []{#isInside-com.mapspeople.models.Point-}
-
+        &nbsp;
         -   #### isInside
 
                 public boolean isInside(Point inPoint)
@@ -13151,8 +11590,7 @@ Class PolygonGeometry {#class-polygongeometry .title title="Class PolygonGeometr
             [Returns:]{.returnLabel}
             :   the boolean
 
-        []{#setCoordinates-java.util.List-}
-
+        &nbsp;
         -   #### setCoordinates
 
                 public void setCoordinates(java.util.List<java.util.List<java.lang.Double[]>> coordinates)
@@ -13162,8 +11600,7 @@ Class PolygonGeometry {#class-polygongeometry .title title="Class PolygonGeometr
             [Parameters:]{.paramLabel}
             :   `coordinates` - the coordinates
 
-        []{#setBBox-double:A-}
-
+        &nbsp;
         -   #### setBBox
 
                 public void setBBox(double[] bbox)
@@ -13173,8 +11610,7 @@ Class PolygonGeometry {#class-polygongeometry .title title="Class PolygonGeometr
             [Parameters:]{.paramLabel}
             :   `bbox` - the bbox
 
-        []{#getBBox--}
-
+        &nbsp;
         -   #### getBBox
 
                 public double[] getBBox()
@@ -13190,14 +11626,13 @@ Class PositionIndicator {#class-positionindicator .title title="Class PositionIn
 -----------------------
 
 -   java.lang.Object
--   -   [com.mapspeople.models.MPLocation](../../../com/mapspeople/models/MPLocation.html "class in com.mapspeople.models")
+-   -   com.mapspeople.models.MPLocation
     -   -   com.mapspeople.models.PositionIndicator
 
 -   
 
     All Implemented Interfaces:
-    :   [Feature](../../../com/mapspeople/models/Feature.html "interface in com.mapspeople.models"),
-        [Location](../../../com/mapspeople/models/Location.html "interface in com.mapspeople.models")
+    :   Feature, Location
 
     ------------------------------------------------------------------------
 
@@ -13207,9 +11642,7 @@ Class PositionIndicator {#class-positionindicator .title title="Class PositionIn
 
     The type Position indicator.
 
--   -   []{#constructor.summary}
-
-        ### Constructor Summary
+-   -   ### Constructor Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -13242,24 +11675,16 @@ Class PositionIndicator {#class-positionindicator .title title="Class PositionIn
         |                                   | Show.                             |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.com.mapspeople.models.MPLocation}
-
-            ### Methods inherited from class com.mapspeople.models.[MPLocation](../../../com/mapspeople/models/MPLocation.html "class in com.mapspeople.models")
+        -   ### Methods inherited from class com.mapspeople.models.MPLocation
 
             `equals, getCategories, getDisplayRule, getField, getFloorIndex, getFloorName, getGeometry, getGLatLng, getId, getLocationProperyList, getMarker, getName, getProperties, getProperty, getRoomId, getStringProperty, getType, has, isOfCategory, isVisible, setCategories, setCategory, setDisplayRule, setLatLng, setMarker, setName, setPoint, setProperty, setType, setVisible, updateView, updateView`
 
         &nbsp;
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#PositionIndicator--}
+-   -   ### Constructor Detail
 
         -   #### PositionIndicator
 
@@ -13268,11 +11693,7 @@ Class PositionIndicator {#class-positionindicator .title title="Class PositionIn
             Instantiates a new Position indicator.
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#getProbability--}
+    -   ### Method Detail
 
         -   #### getProbability
 
@@ -13283,8 +11704,7 @@ Class PositionIndicator {#class-positionindicator .title title="Class PositionIn
             [Returns:]{.returnLabel}
             :   the probability
 
-        []{#setProbability-double-}
-
+        &nbsp;
         -   #### setProbability
 
                 public void setProbability(double probability)
@@ -13294,8 +11714,7 @@ Class PositionIndicator {#class-positionindicator .title title="Class PositionIn
             [Parameters:]{.paramLabel}
             :   `probability` - the probability
 
-        []{#setPosition-com.mapspeople.models.Point-}
-
+        &nbsp;
         -   #### setPosition
 
                 public void setPosition(Point position)
@@ -13305,8 +11724,7 @@ Class PositionIndicator {#class-positionindicator .title title="Class PositionIn
             [Parameters:]{.paramLabel}
             :   `position` - the position
 
-        []{#animatePosition-com.mapspeople.models.Point-}
-
+        &nbsp;
         -   #### animatePosition
 
                 public void animatePosition(Point position)
@@ -13316,8 +11734,7 @@ Class PositionIndicator {#class-positionindicator .title title="Class PositionIn
             [Parameters:]{.paramLabel}
             :   `position` - the position
 
-        []{#addToMap-GoogleMap-com.mapspeople.models.LocationDisplayRules-}
-
+        &nbsp;
         -   #### addToMap
 
                 public void addToMap(GoogleMap map,                     LocationDisplayRules displayRules)
@@ -13328,8 +11745,7 @@ Class PositionIndicator {#class-positionindicator .title title="Class PositionIn
             :   `map` - the map
             :   `displayRules` - the display rules
 
-        []{#getPoint--}
-
+        &nbsp;
         -   #### getPoint
 
                 public Point getPoint()
@@ -13345,8 +11761,7 @@ Class PositionIndicator {#class-positionindicator .title title="Class PositionIn
             [Returns:]{.returnLabel}
             :   the point
 
-        []{#hide--}
-
+        &nbsp;
         -   #### hide
 
                 public void hide()
@@ -13359,8 +11774,7 @@ Class PositionIndicator {#class-positionindicator .title title="Class PositionIn
             [Overrides:]{.overrideSpecifyLabel}
             :   `hide` in class `MPLocation`
 
-        []{#show--}
-
+        &nbsp;
         -   #### show
 
                 public void show()
@@ -13384,7 +11798,7 @@ Class PositionUpdate {#class-positionupdate .title title="Class PositionUpdate"}
 -   
 
     All Implemented Interfaces:
-    :   [Feature](../../../com/mapspeople/models/Feature.html "interface in com.mapspeople.models")
+    :   Feature
 
     ------------------------------------------------------------------------
 
@@ -13394,9 +11808,7 @@ Class PositionUpdate {#class-positionupdate .title title="Class PositionUpdate"}
 
     The type Position update.
 
--   -   []{#constructor.summary}
-
-        ### Constructor Summary
+-   -   ### Constructor Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -13420,17 +11832,11 @@ Class PositionUpdate {#class-positionupdate .title title="Class PositionUpdate"}
         |                                   | Gets type.                        |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#PositionUpdate-com.mapspeople.models.Point-double-double-}
+-   -   ### Constructor Detail
 
         -   #### PositionUpdate
 
@@ -13444,11 +11850,7 @@ Class PositionUpdate {#class-positionupdate .title title="Class PositionUpdate"}
             :   `heading` - the heading
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#getType--}
+    -   ### Method Detail
 
         -   #### getType
 
@@ -13462,8 +11864,7 @@ Class PositionUpdate {#class-positionupdate .title title="Class PositionUpdate"}
             [Returns:]{.returnLabel}
             :   the type
 
-        []{#getProperties--}
-
+        &nbsp;
         -   #### getProperties
 
                 public java.util.Map<java.lang.String,java.lang.Object> getProperties()
@@ -13476,8 +11877,7 @@ Class PositionUpdate {#class-positionupdate .title title="Class PositionUpdate"}
             [Returns:]{.returnLabel}
             :   the properties
 
-        []{#getGeometry--}
-
+        &nbsp;
         -   #### getGeometry
 
                 public Geometry getGeometry()
@@ -13490,8 +11890,7 @@ Class PositionUpdate {#class-positionupdate .title title="Class PositionUpdate"}
             [Returns:]{.returnLabel}
             :   the geometry
 
-        []{#getPoint--}
-
+        &nbsp;
         -   #### getPoint
 
                 public Point getPoint()
@@ -13501,8 +11900,7 @@ Class PositionUpdate {#class-positionupdate .title title="Class PositionUpdate"}
             [Returns:]{.returnLabel}
             :   the point
 
-        []{#getHeading--}
-
+        &nbsp;
         -   #### getHeading
 
                 public double getHeading()
@@ -13512,8 +11910,7 @@ Class PositionUpdate {#class-positionupdate .title title="Class PositionUpdate"}
             [Returns:]{.returnLabel}
             :   the heading
 
-        []{#getProbability--}
-
+        &nbsp;
         -   #### getProbability
 
                 public double getProbability()
@@ -13541,9 +11938,7 @@ Class PushMessage {#class-pushmessage .title title="Class PushMessage"}
 
     The type Push message.
 
--   -   []{#constructor.summary}
-
-        ### Constructor Summary
+-   -   ### Constructor Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -13576,28 +11971,18 @@ Class PushMessage {#class-pushmessage .title title="Class PushMessage"}
         |                                   | Gets title.                       |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#PushMessage--}
+-   -   ### Constructor Detail
 
         -   #### PushMessage
 
                 public PushMessage()
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#getId--}
+    -   ### Method Detail
 
         -   #### getId
 
@@ -13608,8 +11993,7 @@ Class PushMessage {#class-pushmessage .title title="Class PushMessage"}
             [Returns:]{.returnLabel}
             :   the id
 
-        []{#getBeaconId--}
-
+        &nbsp;
         -   #### getBeaconId
 
                 public java.lang.String getBeaconId()
@@ -13619,8 +12003,7 @@ Class PushMessage {#class-pushmessage .title title="Class PushMessage"}
             [Returns:]{.returnLabel}
             :   the beacon id
 
-        []{#getGeometry--}
-
+        &nbsp;
         -   #### getGeometry
 
                 public java.lang.String getGeometry()
@@ -13630,8 +12013,7 @@ Class PushMessage {#class-pushmessage .title title="Class PushMessage"}
             [Returns:]{.returnLabel}
             :   the geometry
 
-        []{#getLocationId--}
-
+        &nbsp;
         -   #### getLocationId
 
                 public java.lang.String getLocationId()
@@ -13641,8 +12023,7 @@ Class PushMessage {#class-pushmessage .title title="Class PushMessage"}
             [Returns:]{.returnLabel}
             :   the location id
 
-        []{#getTitle--}
-
+        &nbsp;
         -   #### getTitle
 
                 public java.lang.String getTitle()
@@ -13652,8 +12033,7 @@ Class PushMessage {#class-pushmessage .title title="Class PushMessage"}
             [Returns:]{.returnLabel}
             :   the title
 
-        []{#getContent--}
-
+        &nbsp;
         -   #### getContent
 
                 public java.lang.String getContent()
@@ -13663,8 +12043,7 @@ Class PushMessage {#class-pushmessage .title title="Class PushMessage"}
             [Returns:]{.returnLabel}
             :   the content
 
-        []{#getIcon--}
-
+        &nbsp;
         -   #### getIcon
 
                 public java.lang.String getIcon()
@@ -13674,8 +12053,7 @@ Class PushMessage {#class-pushmessage .title title="Class PushMessage"}
             [Returns:]{.returnLabel}
             :   the icon
 
-        []{#getMaxPushTimes--}
-
+        &nbsp;
         -   #### getMaxPushTimes
 
                 public int getMaxPushTimes()
@@ -13685,8 +12063,7 @@ Class PushMessage {#class-pushmessage .title title="Class PushMessage"}
             [Returns:]{.returnLabel}
             :   the max push times
 
-        []{#getPushInterval--}
-
+        &nbsp;
         -   #### getPushInterval
 
                 public int getPushInterval()
@@ -13714,9 +12091,7 @@ Class PushMessageCollection {#class-pushmessagecollection .title title="Class Pu
 
     The type Push message collection.
 
--   -   []{#constructor.summary}
-
-        ### Constructor Summary
+-   -   ### Constructor Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -13725,17 +12100,11 @@ Class PushMessageCollection {#class-pushmessagecollection .title title="Class Pu
         |                                   | Gets push messages.               |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#PushMessageCollection-java.util.List-}
+-   -   ### Constructor Detail
 
         -   #### PushMessageCollection
 
@@ -13747,11 +12116,7 @@ Class PushMessageCollection {#class-pushmessagecollection .title title="Class Pu
             :   `pushMessages` - the push messages
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#getPushMessages--}
+    -   ### Method Detail
 
         -   #### getPushMessages
 
@@ -13773,7 +12138,7 @@ Class ReverseGeoCodeResult.BuildingInfo {#class-reversegeocoderesult.buildinginf
 -   
 
     Enclosing class:
-    :   [ReverseGeoCodeResult](../../../com/mapspeople/models/ReverseGeoCodeResult.html "class in com.mapspeople.models")
+    :   ReverseGeoCodeResult
 
     ------------------------------------------------------------------------
 
@@ -13783,30 +12148,20 @@ Class ReverseGeoCodeResult.BuildingInfo {#class-reversegeocoderesult.buildinginf
 
     The type Building info.
 
--   -   []{#field.summary}
-
-        ### Field Summary
+-   -   ### Field Summary
 
           Constructor and Description
           -----------------------------
           `BuildingInfo()` 
 
     &nbsp;
-    -   []{#method.summary}
+    -   ### Method Summary
 
-        ### Method Summary
-
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#field.detail}
-
-        ### Field Detail
-
-        []{#id}
+-   -   ### Field Detail
 
         -   #### id
 
@@ -13814,16 +12169,14 @@ Class ReverseGeoCodeResult.BuildingInfo {#class-reversegeocoderesult.buildinginf
 
             The Id.
 
-        []{#name}
-
+        &nbsp;
         -   #### name
 
                 public java.lang.String name
 
             The Name.
 
-        []{#floors}
-
+        &nbsp;
         -   #### floors
 
                 public java.util.HashMap<java.lang.Integer,java.lang.String> floors
@@ -13831,11 +12184,7 @@ Class ReverseGeoCodeResult.BuildingInfo {#class-reversegeocoderesult.buildinginf
             The Floors.
 
     &nbsp;
-    -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#BuildingInfo--}
+    -   ### Constructor Detail
 
         -   #### BuildingInfo
 
@@ -13852,7 +12201,7 @@ Class ReverseGeoCodeResult.VenueInfo {#class-reversegeocoderesult.venueinfo .tit
 -   
 
     Enclosing class:
-    :   [ReverseGeoCodeResult](../../../com/mapspeople/models/ReverseGeoCodeResult.html "class in com.mapspeople.models")
+    :   ReverseGeoCodeResult
 
     ------------------------------------------------------------------------
 
@@ -13862,30 +12211,20 @@ Class ReverseGeoCodeResult.VenueInfo {#class-reversegeocoderesult.venueinfo .tit
 
     The type Venue info.
 
--   -   []{#field.summary}
-
-        ### Field Summary
+-   -   ### Field Summary
 
           Constructor and Description
           -----------------------------
           `VenueInfo()` 
 
     &nbsp;
-    -   []{#method.summary}
+    -   ### Method Summary
 
-        ### Method Summary
-
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#field.detail}
-
-        ### Field Detail
-
-        []{#id}
+-   -   ### Field Detail
 
         -   #### id
 
@@ -13893,8 +12232,7 @@ Class ReverseGeoCodeResult.VenueInfo {#class-reversegeocoderesult.venueinfo .tit
 
             The Id.
 
-        []{#name}
-
+        &nbsp;
         -   #### name
 
                 public java.lang.String name
@@ -13902,11 +12240,7 @@ Class ReverseGeoCodeResult.VenueInfo {#class-reversegeocoderesult.venueinfo .tit
             The Name.
 
     &nbsp;
-    -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#VenueInfo--}
+    -   ### Constructor Detail
 
         -   #### VenueInfo
 
@@ -13930,9 +12264,7 @@ Class ReverseGeoCodeResult {#class-reversegeocoderesult .title title="Class Reve
 
     The type Reverse geo code result.
 
--   -   []{#nested.class.summary}
-
-        ### Nested Class Summary
+-   -   ### Nested Class Summary
 
         +-----------------------------------------------------------------------+
         | Constructor and Description                                           |
@@ -13942,21 +12274,13 @@ Class ReverseGeoCodeResult {#class-reversegeocoderesult .title title="Class Reve
         +-----------------------------------------------------------------------+
 
     &nbsp;
-    -   []{#method.summary}
+    -   ### Method Summary
 
-        ### Method Summary
-
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#field.detail}
-
-        ### Field Detail
-
-        []{#building}
+-   -   ### Field Detail
 
         -   #### building
 
@@ -13964,8 +12288,7 @@ Class ReverseGeoCodeResult {#class-reversegeocoderesult .title title="Class Reve
 
             The Building.
 
-        []{#venue}
-
+        &nbsp;
         -   #### venue
 
                 public ReverseGeoCodeResult.VenueInfo venue
@@ -13973,11 +12296,7 @@ Class ReverseGeoCodeResult {#class-reversegeocoderesult .title title="Class Reve
             The Venue.
 
     &nbsp;
-    -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#ReverseGeoCodeResult--}
+    -   ### Constructor Detail
 
         -   #### ReverseGeoCodeResult
 
@@ -14003,9 +12322,7 @@ Class Site {#class-site .title title="Class Site"}
 
     The type Site.
 
--   -   []{#constructor.summary}
-
-        ### Constructor Summary
+-   -   ### Constructor Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -14014,17 +12331,11 @@ Class Site {#class-site .title title="Class Site"}
         |                                   | Gets name.                        |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#Site-java.lang.String-}
+-   -   ### Constructor Detail
 
         -   #### Site
 
@@ -14036,11 +12347,7 @@ Class Site {#class-site .title title="Class Site"}
             :   `name` - the name
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#getName--}
+    -   ### Method Detail
 
         -   #### getName
 
@@ -14069,9 +12376,7 @@ Class Solution {#class-solution .title title="Class Solution"}
 
     The type Solution.
 
--   -   []{#constructor.summary}
-
-        ### Constructor Summary
+-   -   ### Constructor Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -14106,28 +12411,18 @@ Class Solution {#class-solution .title title="Class Solution"}
         |                                   | Sets id.                          |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#Solution--}
+-   -   ### Constructor Detail
 
         -   #### Solution
 
                 public Solution()
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#setId-java.lang.String-}
+    -   ### Method Detail
 
         -   #### setId
 
@@ -14138,8 +12433,7 @@ Class Solution {#class-solution .title title="Class Solution"}
             [Parameters:]{.paramLabel}
             :   `solutionId` - the solution id
 
-        []{#getId--}
-
+        &nbsp;
         -   #### getId
 
                 public java.lang.String getId()
@@ -14149,8 +12443,7 @@ Class Solution {#class-solution .title title="Class Solution"}
             [Returns:]{.returnLabel}
             :   the id
 
-        []{#getCustomerId--}
-
+        &nbsp;
         -   #### getCustomerId
 
                 public java.lang.String getCustomerId()
@@ -14160,8 +12453,7 @@ Class Solution {#class-solution .title title="Class Solution"}
             [Returns:]{.returnLabel}
             :   the customer id
 
-        []{#getName--}
-
+        &nbsp;
         -   #### getName
 
                 public java.lang.String getName()
@@ -14171,8 +12463,7 @@ Class Solution {#class-solution .title title="Class Solution"}
             [Returns:]{.returnLabel}
             :   the name
 
-        []{#getDefaultLanguage--}
-
+        &nbsp;
         -   #### getDefaultLanguage
 
                 public java.lang.String getDefaultLanguage()
@@ -14182,8 +12473,7 @@ Class Solution {#class-solution .title title="Class Solution"}
             [Returns:]{.returnLabel}
             :   the default language
 
-        []{#getAvailableLanguages--}
-
+        &nbsp;
         -   #### getAvailableLanguages
 
                 public java.util.List<java.lang.String> getAvailableLanguages()
@@ -14193,8 +12483,7 @@ Class Solution {#class-solution .title title="Class Solution"}
             [Returns:]{.returnLabel}
             :   the available languages
 
-        []{#getTypes--}
-
+        &nbsp;
         -   #### getTypes
 
                 public java.util.List<POIType> getTypes()
@@ -14204,8 +12493,7 @@ Class Solution {#class-solution .title title="Class Solution"}
             [Returns:]{.returnLabel}
             :   the types
 
-        []{#isWhitelabel--}
-
+        &nbsp;
         -   #### isWhitelabel
 
                 public java.lang.Boolean isWhitelabel()
@@ -14215,8 +12503,7 @@ Class Solution {#class-solution .title title="Class Solution"}
             [Returns:]{.returnLabel}
             :   the boolean
 
-        []{#getDisplayRule-java.lang.String-}
-
+        &nbsp;
         -   #### getDisplayRule
 
                 public DisplayRule getDisplayRule(java.lang.String typeName)
@@ -14247,9 +12534,7 @@ Class Token {#class-token .title title="Class Token"}
 
     The type Token.
 
--   -   []{#constructor.summary}
-
-        ### Constructor Summary
+-   -   ### Constructor Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -14261,28 +12546,18 @@ Class Token {#class-token .title title="Class Token"}
         |                                   | Gets secret.                      |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#Token--}
+-   -   ### Constructor Detail
 
         -   #### Token
 
                 public Token()
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#getSecret--}
+    -   ### Method Detail
 
         -   #### getSecret
 
@@ -14293,8 +12568,7 @@ Class Token {#class-token .title title="Class Token"}
             [Returns:]{.returnLabel}
             :   the secret
 
-        []{#getKey--}
-
+        &nbsp;
         -   #### getKey
 
                 public java.lang.String getKey()
@@ -14322,9 +12596,7 @@ Class Venue {#class-venue .title title="Class Venue"}
 
     The type Venue.
 
--   -   []{#constructor.summary}
-
-        ### Constructor Summary
+-   -   ### Constructor Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -14398,28 +12670,18 @@ Class Venue {#class-venue .title title="Class Venue"}
         |                                   | Sets venue id.                    |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#Venue--}
+-   -   ### Constructor Detail
 
         -   #### Venue
 
                 public Venue()
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#isInside-com.mapspeople.models.Point-}
+    -   ### Method Detail
 
         -   #### isInside
 
@@ -14434,8 +12696,7 @@ Class Venue {#class-venue .title title="Class Venue"}
             [Returns:]{.returnLabel}
             :   true if the given point is inside
 
-        []{#getPosition--}
-
+        &nbsp;
         -   #### getPosition
 
                 public Point getPosition()
@@ -14447,8 +12708,7 @@ Class Venue {#class-venue .title title="Class Venue"}
             :   A point describing the geometry (defined here as the
                 average lat/lng)
 
-        []{#getVenueId--}
-
+        &nbsp;
         -   #### getVenueId
 
                 public java.lang.String getVenueId()
@@ -14458,8 +12718,7 @@ Class Venue {#class-venue .title title="Class Venue"}
             [Returns:]{.returnLabel}
             :   the venue id
 
-        []{#setVenueId-java.lang.String-}
-
+        &nbsp;
         -   #### setVenueId
 
                 public void setVenueId(java.lang.String venueId)
@@ -14469,8 +12728,7 @@ Class Venue {#class-venue .title title="Class Venue"}
             [Parameters:]{.paramLabel}
             :   `venueId` - the venue id
 
-        []{#getGraphId--}
-
+        &nbsp;
         -   #### getGraphId
 
                 public java.lang.String getGraphId()
@@ -14480,8 +12738,7 @@ Class Venue {#class-venue .title title="Class Venue"}
             [Returns:]{.returnLabel}
             :   the graph id
 
-        []{#getTilesUrl--}
-
+        &nbsp;
         -   #### getTilesUrl
 
                 public java.lang.String getTilesUrl()
@@ -14491,8 +12748,7 @@ Class Venue {#class-venue .title title="Class Venue"}
             [Returns:]{.returnLabel}
             :   the tiles url
 
-        []{#setTilesUrl-java.lang.String-}
-
+        &nbsp;
         -   #### setTilesUrl
 
                 public void setTilesUrl(java.lang.String tilesUrl)
@@ -14502,8 +12758,7 @@ Class Venue {#class-venue .title title="Class Venue"}
             [Parameters:]{.paramLabel}
             :   `tilesUrl` - the tiles url
 
-        []{#getName--}
-
+        &nbsp;
         -   #### getName
 
                 public java.lang.String getName()
@@ -14513,8 +12768,7 @@ Class Venue {#class-venue .title title="Class Venue"}
             [Returns:]{.returnLabel}
             :   the name
 
-        []{#setName-java.lang.String-}
-
+        &nbsp;
         -   #### setName
 
                 public void setName(java.lang.String name)
@@ -14524,8 +12778,7 @@ Class Venue {#class-venue .title title="Class Venue"}
             [Parameters:]{.paramLabel}
             :   `name` - the name
 
-        []{#getVenueInfo--}
-
+        &nbsp;
         -   #### getVenueInfo
 
                 public VenueInfo getVenueInfo()
@@ -14535,8 +12788,7 @@ Class Venue {#class-venue .title title="Class Venue"}
             [Returns:]{.returnLabel}
             :   the venue info
 
-        []{#getStyles--}
-
+        &nbsp;
         -   #### getStyles
 
                 public java.util.List<java.lang.String> getStyles()
@@ -14546,8 +12798,7 @@ Class Venue {#class-venue .title title="Class Venue"}
             [Returns:]{.returnLabel}
             :   the styles
 
-        []{#getCustomerId--}
-
+        &nbsp;
         -   #### getCustomerId
 
                 public java.lang.String getCustomerId()
@@ -14557,8 +12808,7 @@ Class Venue {#class-venue .title title="Class Venue"}
             [Returns:]{.returnLabel}
             :   the customer id
 
-        []{#setCustomerId-java.lang.String-}
-
+        &nbsp;
         -   #### setCustomerId
 
                 public void setCustomerId(java.lang.String customerId)
@@ -14568,8 +12818,7 @@ Class Venue {#class-venue .title title="Class Venue"}
             [Parameters:]{.paramLabel}
             :   `customerId` - the customer id
 
-        []{#addToMap-GoogleMap-android.content.Context-}
-
+        &nbsp;
         -   #### addToMap
 
                 public void addToMap(GoogleMap map,                     android.content.Context appContext)
@@ -14580,8 +12829,7 @@ Class Venue {#class-venue .title title="Class Venue"}
             :   `map` - the map
             :   `appContext` - the app context
 
-        []{#getDefaultFloor--}
-
+        &nbsp;
         -   #### getDefaultFloor
 
                 public int getDefaultFloor()
@@ -14591,8 +12839,7 @@ Class Venue {#class-venue .title title="Class Venue"}
             [Returns:]{.returnLabel}
             :   the default floor
 
-        []{#getDefaultStyle--}
-
+        &nbsp;
         -   #### getDefaultStyle
 
                 public java.lang.String getDefaultStyle()
@@ -14602,8 +12849,7 @@ Class Venue {#class-venue .title title="Class Venue"}
             [Returns:]{.returnLabel}
             :   the default style
 
-        []{#getBaseTileOverlays-java.lang.String-}
-
+        &nbsp;
         -   #### getBaseTileOverlays
 
                 public java.util.List<TileOverlay> getBaseTileOverlays(java.lang.String style)
@@ -14616,8 +12862,7 @@ Class Venue {#class-venue .title title="Class Venue"}
             [Returns:]{.returnLabel}
             :   the base tile overlays
 
-        []{#getTileOverlays-com.mapspeople.models.Building-}
-
+        &nbsp;
         -   #### getTileOverlays
 
                 public java.util.List<TileOverlay> getTileOverlays(Building building)
@@ -14630,8 +12875,7 @@ Class Venue {#class-venue .title title="Class Venue"}
             [Returns:]{.returnLabel}
             :   the tile overlays
 
-        []{#getEntryPoints--}
-
+        &nbsp;
         -   #### getEntryPoints
 
                 public java.util.List<Point> getEntryPoints()
@@ -14659,9 +12903,7 @@ Class VenueCollection {#class-venuecollection .title title="Class VenueCollectio
 
     The type Venue collection.
 
--   -   []{#constructor.summary}
-
-        ### Constructor Summary
+-   -   ### Constructor Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -14688,28 +12930,18 @@ Class VenueCollection {#class-venuecollection .title title="Class VenueCollectio
         |                                   | Sets venues.                      |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#VenueCollection--}
+-   -   ### Constructor Detail
 
         -   #### VenueCollection
 
                 public VenueCollection()
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#getVenues--}
+    -   ### Method Detail
 
         -   #### getVenues
 
@@ -14720,8 +12952,7 @@ Class VenueCollection {#class-venuecollection .title title="Class VenueCollectio
             [Returns:]{.returnLabel}
             :   the venues
 
-        []{#selectVenue-java.lang.String-}
-
+        &nbsp;
         -   #### selectVenue
 
                 public boolean selectVenue(java.lang.String venueId)
@@ -14734,8 +12965,7 @@ Class VenueCollection {#class-venuecollection .title title="Class VenueCollectio
             [Returns:]{.returnLabel}
             :   the boolean
 
-        []{#getVenue-java.lang.String-}
-
+        &nbsp;
         -   #### getVenue
 
                 public Venue getVenue(java.lang.String venueName)
@@ -14748,8 +12978,7 @@ Class VenueCollection {#class-venuecollection .title title="Class VenueCollectio
             [Returns:]{.returnLabel}
             :   the venue
 
-        []{#getCurrentVenue--}
-
+        &nbsp;
         -   #### getCurrentVenue
 
                 public Venue getCurrentVenue()
@@ -14759,8 +12988,7 @@ Class VenueCollection {#class-venuecollection .title title="Class VenueCollectio
             [Returns:]{.returnLabel}
             :   the current venue
 
-        []{#setVenues-java.util.List-}
-
+        &nbsp;
         -   #### setVenues
 
                 public void setVenues(java.util.List<Venue> venues)
@@ -14770,8 +12998,7 @@ Class VenueCollection {#class-venuecollection .title title="Class VenueCollectio
             [Parameters:]{.paramLabel}
             :   `venues` - the venues
 
-        []{#getDefaultVenue--}
-
+        &nbsp;
         -   #### getDefaultVenue
 
                 public Venue getDefaultVenue()
@@ -14799,30 +13026,20 @@ Class VenueInfo {#class-venueinfo .title title="Class VenueInfo"}
 
     The type Venue info.
 
--   -   []{#field.summary}
-
-        ### Field Summary
+-   -   ### Field Summary
 
           Constructor and Description
           -----------------------------
           `VenueInfo()` 
 
     &nbsp;
-    -   []{#method.summary}
+    -   ### Method Summary
 
-        ### Method Summary
-
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#field.detail}
-
-        ### Field Detail
-
-        []{#name}
+-   -   ### Field Detail
 
         -   #### name
 
@@ -14830,16 +13047,14 @@ Class VenueInfo {#class-venueinfo .title title="Class VenueInfo"}
 
             The Name.
 
-        []{#aliases}
-
+        &nbsp;
         -   #### aliases
 
                 public java.util.List<java.lang.String> aliases
 
             The Aliases.
 
-        []{#language}
-
+        &nbsp;
         -   #### language
 
                 public java.lang.String language
@@ -14847,11 +13062,7 @@ Class VenueInfo {#class-venueinfo .title title="Class VenueInfo"}
             The Language.
 
     &nbsp;
-    -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#VenueInfo--}
+    -   ### Constructor Detail
 
         -   #### VenueInfo
 
@@ -14868,7 +13079,7 @@ Interface BeaconProvider {#interface-beaconprovider .title title="Interface Beac
 -   
 
     All Known Implementing Classes:
-    :   [MPBeaconProvider](../../../com/mapspeople/position/MPBeaconProvider.html "class in com.mapspeople.position")
+    :   MPBeaconProvider
 
     ------------------------------------------------------------------------
 
@@ -14878,9 +13089,7 @@ Interface BeaconProvider {#interface-beaconprovider .title title="Interface Beac
 
     Location provider interface
 
--   -   []{#method.summary}
-
-        ### Method Summary
+-   -   ### Method Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -14901,11 +13110,7 @@ Interface BeaconProvider {#interface-beaconprovider .title title="Interface Beac
         |                                   | the beacons data callback.        |
         +-----------------------------------+-----------------------------------+
 
--   -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#queryBeacons-java.lang.String-java.lang.String:A-}
+-   -   ### Method Detail
 
         -   #### queryBeacons
 
@@ -14919,16 +13124,14 @@ Interface BeaconProvider {#interface-beaconprovider .title title="Interface Beac
             :   `clientId` - the client id
             :   `beaconIds` - The beacon id list
 
-        []{#cancelRequest--}
-
+        &nbsp;
         -   #### cancelRequest
 
                 void cancelRequest()
 
             Cancel request.
 
-        []{#setOnBeaconsReadyListener-com.mapspeople.position.OnBeaconsReadyListener-}
-
+        &nbsp;
         -   #### setOnBeaconsReadyListener
 
                 void setOnBeaconsReadyListener(OnBeaconsReadyListener listener)
@@ -14956,9 +13159,7 @@ Class BeaconRSSICache {#class-beaconrssicache .title title="Class BeaconRSSICach
 
     BeaconRSSICache Created by mh on 07-05-2015.
 
--   -   []{#field.summary}
-
-        ### Field Summary
+-   -   ### Field Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -14970,17 +13171,11 @@ Class BeaconRSSICache {#class-beaconrssicache .title title="Class BeaconRSSICach
         |                                   | Gets avg val.                     |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#field.detail}
-
-        ### Field Detail
-
-        []{#beacon}
+-   -   ### Field Detail
 
         -   #### beacon
 
@@ -14988,8 +13183,7 @@ Class BeaconRSSICache {#class-beaconrssicache .title title="Class BeaconRSSICach
 
             The Beacon.
 
-        []{#time}
-
+        &nbsp;
         -   #### time
 
                 public long time
@@ -14997,11 +13191,7 @@ Class BeaconRSSICache {#class-beaconrssicache .title title="Class BeaconRSSICach
             The Time.
 
     &nbsp;
-    -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#BeaconRSSICache-com.mapspeople.position.MPBeacon-double-}
+    -   ### Constructor Detail
 
         -   #### BeaconRSSICache
 
@@ -15014,11 +13204,7 @@ Class BeaconRSSICache {#class-beaconrssicache .title title="Class BeaconRSSICach
             :   `RSSI` - the rssi
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#getAvgVal--}
+    -   ### Method Detail
 
         -   #### getAvgVal
 
@@ -15029,8 +13215,7 @@ Class BeaconRSSICache {#class-beaconrssicache .title title="Class BeaconRSSICach
             [Returns:]{.returnLabel}
             :   the avg val
 
-        []{#add-double-}
-
+        &nbsp;
         -   #### add
 
                 public void add(double val)
@@ -15058,9 +13243,7 @@ Class BeaconRSSICacheMgr {#class-beaconrssicachemgr .title title="Class BeaconRS
 
     BeaconRSSICacheMgr Created by mh on 07-05-2015.
 
--   -   []{#constructor.summary}
-
-        ### Constructor Summary
+-   -   ### Constructor Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -15073,17 +13256,11 @@ Class BeaconRSSICacheMgr {#class-beaconrssicachemgr .title title="Class BeaconRS
         | che>`                             | Gets beacon list.                 |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#BeaconRSSICacheMgr--}
+-   -   ### Constructor Detail
 
         -   #### BeaconRSSICacheMgr
 
@@ -15092,11 +13269,7 @@ Class BeaconRSSICacheMgr {#class-beaconrssicachemgr .title title="Class BeaconRS
             Instantiates a new Beacon rssi cache mgr.
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#add-com.mapspeople.position.MPBeacon-double-}
+    -   ### Method Detail
 
         -   #### add
 
@@ -15108,8 +13281,7 @@ Class BeaconRSSICacheMgr {#class-beaconrssicachemgr .title title="Class BeaconRS
             :   `beacon` - the beacon
             :   `RSSI` - the rssi
 
-        []{#getBeaconList-int-}
-
+        &nbsp;
         -   #### getBeaconList
 
                 public java.util.ArrayList<BeaconRSSICache> getBeaconList(int sinceMillis)
@@ -15140,9 +13312,7 @@ Class BeaconRSSIValue {#class-beaconrssivalue .title title="Class BeaconRSSIValu
 
     BeaconRSSIValue Created by mh on 07-05-2015.
 
--   -   []{#field.summary}
-
-        ### Field Summary
+-   -   ### Field Summary
 
         +-----------------------------------------------------------------------+
         | Constructor and Description                                           |
@@ -15152,21 +13322,13 @@ Class BeaconRSSIValue {#class-beaconrssivalue .title title="Class BeaconRSSIValu
         +-----------------------------------------------------------------------+
 
     &nbsp;
-    -   []{#method.summary}
+    -   ### Method Summary
 
-        ### Method Summary
-
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#field.detail}
-
-        ### Field Detail
-
-        []{#val}
+-   -   ### Field Detail
 
         -   #### val
 
@@ -15175,11 +13337,7 @@ Class BeaconRSSIValue {#class-beaconrssivalue .title title="Class BeaconRSSIValu
             The Val.
 
     &nbsp;
-    -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#BeaconRSSIValue-double-}
+    -   ### Constructor Detail
 
         -   #### BeaconRSSIValue
 
@@ -15208,9 +13366,7 @@ Class BeaconValues {#class-beaconvalues .title title="Class BeaconValues"}
 
     Created by Daniel Nielsen on 13/02/15.
 
--   -   []{#field.summary}
-
-        ### Field Summary
+-   -   ### Field Summary
 
         +-----------------------------------------------------------------------+
         | Constructor and Description                                           |
@@ -15220,21 +13376,13 @@ Class BeaconValues {#class-beaconvalues .title title="Class BeaconValues"}
         +-----------------------------------------------------------------------+
 
     &nbsp;
-    -   []{#method.summary}
+    -   ### Method Summary
 
-        ### Method Summary
-
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#field.detail}
-
-        ### Field Detail
-
-        []{#id}
+-   -   ### Field Detail
 
         -   #### id
 
@@ -15243,11 +13391,7 @@ Class BeaconValues {#class-beaconvalues .title title="Class BeaconValues"}
             The Id.
 
     &nbsp;
-    -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#BeaconValues-java.lang.String-}
+    -   ### Constructor Detail
 
         -   #### BeaconValues
 
@@ -15276,9 +13420,7 @@ Class IndoorCredentialLevel {#class-indoorcredentiallevel .title title="Class In
 
     The type Indoor credential level.
 
--   -   []{#constructor.summary}
-
-        ### Constructor Summary
+-   -   ### Constructor Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -15298,17 +13440,11 @@ Class IndoorCredentialLevel {#class-indoorcredentiallevel .title title="Class In
         |                                   | Sets level id.                    |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#IndoorCredentialLevel--}
+-   -   ### Constructor Detail
 
         -   #### IndoorCredentialLevel
 
@@ -15316,8 +13452,7 @@ Class IndoorCredentialLevel {#class-indoorcredentiallevel .title title="Class In
 
             Instantiates a new Indoor credential level.
 
-        []{#IndoorCredentialLevel-java.lang.String-java.lang.String-}
-
+        &nbsp;
         -   #### IndoorCredentialLevel
 
                 public IndoorCredentialLevel(java.lang.String level,                             java.lang.String floorplan)
@@ -15329,11 +13464,7 @@ Class IndoorCredentialLevel {#class-indoorcredentiallevel .title title="Class In
             :   `floorplan` - the floorplan
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#getFloorplans--}
+    -   ### Method Detail
 
         -   #### getFloorplans
 
@@ -15344,8 +13475,7 @@ Class IndoorCredentialLevel {#class-indoorcredentiallevel .title title="Class In
             [Returns:]{.returnLabel}
             :   the floorplans
 
-        []{#setFloorplans-java.util.List-}
-
+        &nbsp;
         -   #### setFloorplans
 
                 public void setFloorplans(java.util.List<java.lang.String> floorplans)
@@ -15355,8 +13485,7 @@ Class IndoorCredentialLevel {#class-indoorcredentiallevel .title title="Class In
             [Parameters:]{.paramLabel}
             :   `floorplans` - the floorplans
 
-        []{#getLevelId--}
-
+        &nbsp;
         -   #### getLevelId
 
                 public java.lang.String getLevelId()
@@ -15366,8 +13495,7 @@ Class IndoorCredentialLevel {#class-indoorcredentiallevel .title title="Class In
             [Returns:]{.returnLabel}
             :   the level id
 
-        []{#setLevelId-java.lang.String-}
-
+        &nbsp;
         -   #### setLevelId
 
                 public void setLevelId(java.lang.String levelId)
@@ -15395,9 +13523,7 @@ Class IndoorCredentials {#class-indoorcredentials .title title="Class IndoorCred
 
     The type Indoor credentials.
 
--   -   []{#constructor.summary}
-
-        ### Constructor Summary
+-   -   ### Constructor Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -15427,17 +13553,11 @@ Class IndoorCredentials {#class-indoorcredentials .title title="Class IndoorCred
         |                                   | Sets current level.               |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#IndoorCredentials-java.lang.String-}
+-   -   ### Constructor Detail
 
         -   #### IndoorCredentials
 
@@ -15448,8 +13568,7 @@ Class IndoorCredentials {#class-indoorcredentials .title title="Class IndoorCred
             [Parameters:]{.paramLabel}
             :   `building` - the building
 
-        []{#IndoorCredentials-java.lang.String-java.lang.String-java.lang.String-}
-
+        &nbsp;
         -   #### IndoorCredentials
 
                 public IndoorCredentials(java.lang.String building,                         java.lang.String level,                         java.lang.String floorplan)
@@ -15462,11 +13581,7 @@ Class IndoorCredentials {#class-indoorcredentials .title title="Class IndoorCred
             :   `floorplan` - the floorplan
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#addIndoorCredentialLevel-com.mapspeople.position.IndoorCredentialLevel-}
+    -   ### Method Detail
 
         -   #### addIndoorCredentialLevel
 
@@ -15477,8 +13592,7 @@ Class IndoorCredentials {#class-indoorcredentials .title title="Class IndoorCred
             [Parameters:]{.paramLabel}
             :   `level` - the level
 
-        []{#getBuildingId--}
-
+        &nbsp;
         -   #### getBuildingId
 
                 public java.lang.String getBuildingId()
@@ -15488,8 +13602,7 @@ Class IndoorCredentials {#class-indoorcredentials .title title="Class IndoorCred
             [Returns:]{.returnLabel}
             :   the building id
 
-        []{#setBuildingId-java.lang.String-}
-
+        &nbsp;
         -   #### setBuildingId
 
                 public void setBuildingId(java.lang.String buildingId)
@@ -15499,8 +13612,7 @@ Class IndoorCredentials {#class-indoorcredentials .title title="Class IndoorCred
             [Parameters:]{.paramLabel}
             :   `buildingId` - the building id
 
-        []{#getCurrentLevel--}
-
+        &nbsp;
         -   #### getCurrentLevel
 
                 public int getCurrentLevel()
@@ -15510,8 +13622,7 @@ Class IndoorCredentials {#class-indoorcredentials .title title="Class IndoorCred
             [Returns:]{.returnLabel}
             :   the current level
 
-        []{#setCurrentLevel-int-}
-
+        &nbsp;
         -   #### setCurrentLevel
 
                 public void setCurrentLevel(int currentLevel)
@@ -15521,8 +13632,7 @@ Class IndoorCredentials {#class-indoorcredentials .title title="Class IndoorCred
             [Parameters:]{.paramLabel}
             :   `currentLevel` - the current level
 
-        []{#getCurrentLevelId--}
-
+        &nbsp;
         -   #### getCurrentLevelId
 
                 public java.lang.String getCurrentLevelId()
@@ -15532,8 +13642,7 @@ Class IndoorCredentials {#class-indoorcredentials .title title="Class IndoorCred
             [Returns:]{.returnLabel}
             :   the current level id
 
-        []{#getCurrentFloorplanId--}
-
+        &nbsp;
         -   #### getCurrentFloorplanId
 
                 public java.lang.String getCurrentFloorplanId()
@@ -15551,7 +13660,7 @@ Interface IndoorPositionProvider {#interface-indoorpositionprovider .title title
 -   
 
     All Superinterfaces:
-    :   [PositionProvider](../../../com/mapspeople/position/PositionProvider.html "interface in com.mapspeople.position")
+    :   PositionProvider
 
     ------------------------------------------------------------------------
 
@@ -15561,9 +13670,7 @@ Interface IndoorPositionProvider {#interface-indoorpositionprovider .title title
 
     The interface Indoor position provider.
 
--   -   []{#method.summary}
-
-        ### Method Summary
+-   -   ### Method Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -15575,17 +13682,11 @@ Interface IndoorPositionProvider {#interface-indoorpositionprovider .title title
         |                                   | Sets floor.                       |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.com.mapspeople.position.PositionProvider}
-
-            ### Methods inherited from interface com.mapspeople.position.[PositionProvider](../../../com/mapspeople/position/PositionProvider.html "interface in com.mapspeople.position")
+        -   ### Methods inherited from interface com.mapspeople.position.PositionProvider
 
             `addOnPositionUpdateListener, getLatestPosition, getProviderId, isRunning, setProviderId, startPositioning, startPositioningAfter, stopPositioning`
 
--   -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#setFloor-com.mapspeople.models.Floor-}
+-   -   ### Method Detail
 
         -   #### setFloor
 
@@ -15596,8 +13697,7 @@ Interface IndoorPositionProvider {#interface-indoorpositionprovider .title title
             [Parameters:]{.paramLabel}
             :   `floor` - the floor
 
-        []{#setBuilding-com.mapspeople.models.Building-}
-
+        &nbsp;
         -   #### setBuilding
 
                 void setBuilding(Building building)
@@ -15625,9 +13725,7 @@ Class MPBeacon {#class-mpbeacon .title title="Class MPBeacon"}
 
     Created by Daniel Nielsen on 13/02/15.
 
--   -   []{#constructor.summary}
-
-        ### Constructor Summary
+-   -   ### Constructor Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -15642,28 +13740,18 @@ Class MPBeacon {#class-mpbeacon .title title="Class MPBeacon"}
         |                                   | Gets point.                       |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#MPBeacon--}
+-   -   ### Constructor Detail
 
         -   #### MPBeacon
 
                 public MPBeacon()
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#getPoint--}
+    -   ### Method Detail
 
         -   #### getPoint
 
@@ -15674,8 +13762,7 @@ Class MPBeacon {#class-mpbeacon .title title="Class MPBeacon"}
             [Returns:]{.returnLabel}
             :   the point
 
-        []{#getMaxTxPower--}
-
+        &nbsp;
         -   #### getMaxTxPower
 
                 public double getMaxTxPower()
@@ -15685,8 +13772,7 @@ Class MPBeacon {#class-mpbeacon .title title="Class MPBeacon"}
             [Returns:]{.returnLabel}
             :   the max tx power
 
-        []{#getId--}
-
+        &nbsp;
         -   #### getId
 
                 public java.lang.String getId()
@@ -15707,7 +13793,7 @@ Class MPBeaconProvider {#class-mpbeaconprovider .title title="Class MPBeaconProv
 -   
 
     All Implemented Interfaces:
-    :   [BeaconProvider](../../../com/mapspeople/position/BeaconProvider.html "interface in com.mapspeople.position")
+    :   BeaconProvider
 
     ------------------------------------------------------------------------
 
@@ -15717,9 +13803,7 @@ Class MPBeaconProvider {#class-mpbeaconprovider .title title="Class MPBeaconProv
 
     MPBeaconProvider Created by MH on 13/02/15.
 
--   -   []{#constructor.summary}
-
-        ### Constructor Summary
+-   -   ### Constructor Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -15737,17 +13821,11 @@ Class MPBeaconProvider {#class-mpbeaconprovider .title title="Class MPBeaconProv
         |                                   | Sets on beacons ready listener.   |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#MPBeaconProvider--}
+-   -   ### Constructor Detail
 
         -   #### MPBeaconProvider
 
@@ -15756,11 +13834,7 @@ Class MPBeaconProvider {#class-mpbeaconprovider .title title="Class MPBeaconProv
             Instantiates a new Mp beacon provider.
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#queryBeacons-java.lang.String-java.lang.String:A-}
+    -   ### Method Detail
 
         -   #### queryBeacons
 
@@ -15775,8 +13849,7 @@ Class MPBeaconProvider {#class-mpbeaconprovider .title title="Class MPBeaconProv
             :   `clientId` - the client id
             :   `beaconIds` - the beacon ids
 
-        []{#cancelRequest--}
-
+        &nbsp;
         -   #### cancelRequest
 
                 public void cancelRequest()
@@ -15786,8 +13859,7 @@ Class MPBeaconProvider {#class-mpbeaconprovider .title title="Class MPBeaconProv
             [Specified by:]{.overrideSpecifyLabel}
             :   `cancelRequest` in interface `BeaconProvider`
 
-        []{#setOnBeaconsReadyListener-com.mapspeople.position.OnBeaconsReadyListener-}
-
+        &nbsp;
         -   #### setOnBeaconsReadyListener
 
                 public void setOnBeaconsReadyListener(OnBeaconsReadyListener listener)
@@ -15812,8 +13884,7 @@ Class MPPositionResult {#class-mppositionresult .title title="Class MPPositionRe
 -   
 
     All Implemented Interfaces:
-    :   [Feature](../../../com/mapspeople/models/Feature.html "interface in com.mapspeople.models"),
-        [PositionResult](../../../com/mapspeople/position/PositionResult.html "interface in com.mapspeople.position")
+    :   Feature, PositionResult
 
     ------------------------------------------------------------------------
 
@@ -15823,9 +13894,7 @@ Class MPPositionResult {#class-mppositionresult .title title="Class MPPositionRe
 
     The type Mp position result.
 
--   -   []{#constructor.summary}
-
-        ### Constructor Summary
+-   -   ### Constructor Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -15879,17 +13948,11 @@ Class MPPositionResult {#class-mppositionresult .title title="Class MPPositionRe
         |                                   | Sets provider.                    |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#MPPositionResult-com.mapspeople.models.Point-double-double-double-}
+-   -   ### Constructor Detail
 
         -   #### MPPositionResult
 
@@ -15904,11 +13967,7 @@ Class MPPositionResult {#class-mppositionresult .title title="Class MPPositionRe
             :   `roundtrip` - the roundtrip
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#has-java.lang.String-}
+    -   ### Method Detail
 
         -   #### has
 
@@ -15922,8 +13981,7 @@ Class MPPositionResult {#class-mppositionresult .title title="Class MPPositionRe
             [Returns:]{.returnLabel}
             :   the boolean
 
-        []{#getStringProperty-java.lang.String-}
-
+        &nbsp;
         -   #### getStringProperty
 
                 public java.lang.String getStringProperty(java.lang.String key)
@@ -15936,8 +13994,7 @@ Class MPPositionResult {#class-mppositionresult .title title="Class MPPositionRe
             [Returns:]{.returnLabel}
             :   the string property
 
-        []{#getProperty-java.lang.String-}
-
+        &nbsp;
         -   #### getProperty
 
                 public java.lang.Object getProperty(java.lang.String key)
@@ -15950,8 +14007,7 @@ Class MPPositionResult {#class-mppositionresult .title title="Class MPPositionRe
             [Returns:]{.returnLabel}
             :   the property
 
-        []{#getRoundtrip--}
-
+        &nbsp;
         -   #### getRoundtrip
 
                 public double getRoundtrip()
@@ -15964,8 +14020,7 @@ Class MPPositionResult {#class-mppositionresult .title title="Class MPPositionRe
             [Returns:]{.returnLabel}
             :   the roundtrip
 
-        []{#getPoint--}
-
+        &nbsp;
         -   #### getPoint
 
                 public Point getPoint()
@@ -15978,8 +14033,7 @@ Class MPPositionResult {#class-mppositionresult .title title="Class MPPositionRe
             [Returns:]{.returnLabel}
             :   the point
 
-        []{#getHeadingDegrees--}
-
+        &nbsp;
         -   #### getHeadingDegrees
 
                 public double getHeadingDegrees()
@@ -15992,8 +14046,7 @@ Class MPPositionResult {#class-mppositionresult .title title="Class MPPositionRe
             [Returns:]{.returnLabel}
             :   the heading degrees
 
-        []{#getProbability--}
-
+        &nbsp;
         -   #### getProbability
 
                 public double getProbability()
@@ -16006,8 +14059,7 @@ Class MPPositionResult {#class-mppositionresult .title title="Class MPPositionRe
             [Returns:]{.returnLabel}
             :   the probability
 
-        []{#getType--}
-
+        &nbsp;
         -   #### getType
 
                 public java.lang.String getType()
@@ -16020,8 +14072,7 @@ Class MPPositionResult {#class-mppositionresult .title title="Class MPPositionRe
             [Returns:]{.returnLabel}
             :   the type
 
-        []{#getProperties--}
-
+        &nbsp;
         -   #### getProperties
 
                 public java.util.Map<java.lang.String,java.lang.Object> getProperties()
@@ -16034,8 +14085,7 @@ Class MPPositionResult {#class-mppositionresult .title title="Class MPPositionRe
             [Returns:]{.returnLabel}
             :   the properties
 
-        []{#getGeometry--}
-
+        &nbsp;
         -   #### getGeometry
 
                 public Geometry getGeometry()
@@ -16048,8 +14098,7 @@ Class MPPositionResult {#class-mppositionresult .title title="Class MPPositionRe
             [Returns:]{.returnLabel}
             :   the geometry
 
-        []{#getStatus--}
-
+        &nbsp;
         -   #### getStatus
 
                 public java.lang.String getStatus()
@@ -16062,8 +14111,7 @@ Class MPPositionResult {#class-mppositionresult .title title="Class MPPositionRe
             [Returns:]{.returnLabel}
             :   the status
 
-        []{#getProvider--}
-
+        &nbsp;
         -   #### getProvider
 
                 public PositionProvider getProvider()
@@ -16076,8 +14124,7 @@ Class MPPositionResult {#class-mppositionresult .title title="Class MPPositionRe
             [Returns:]{.returnLabel}
             :   the provider
 
-        []{#setProvider-com.mapspeople.position.PositionProvider-}
-
+        &nbsp;
         -   #### setProvider
 
                 public void setProvider(PositionProvider provider)
@@ -16090,8 +14137,7 @@ Class MPPositionResult {#class-mppositionresult .title title="Class MPPositionRe
             [Parameters:]{.paramLabel}
             :   `provider` - the provider
 
-        []{#getAge--}
-
+        &nbsp;
         -   #### getAge
 
                 public float getAge()
@@ -16104,8 +14150,7 @@ Class MPPositionResult {#class-mppositionresult .title title="Class MPPositionRe
             [Returns:]{.returnLabel}
             :   the age
 
-        []{#getFloor--}
-
+        &nbsp;
         -   #### getFloor
 
                 public int getFloor()
@@ -16133,9 +14178,7 @@ Interface OnBeaconServiceConnectListener {#interface-onbeaconserviceconnectliste
 
     Created by JSM on 27/02/15.
 
--   -   []{#method.summary}
-
-        ### Method Summary
+-   -   ### Method Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -16144,11 +14187,7 @@ Interface OnBeaconServiceConnectListener {#interface-onbeaconserviceconnectliste
         |                                   | On beacon service connect.        |
         +-----------------------------------+-----------------------------------+
 
--   -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#onBeaconServiceConnect--}
+-   -   ### Method Detail
 
         -   #### onBeaconServiceConnect
 
@@ -16171,9 +14210,7 @@ Interface OnBeaconsReadyListener {#interface-onbeaconsreadylistener .title title
 
     Created by JSM on 13/02/15.
 
--   -   []{#method.summary}
-
-        ### Method Summary
+-   -   ### Method Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -16183,11 +14220,7 @@ Interface OnBeaconsReadyListener {#interface-onbeaconsreadylistener .title title
         |                                   | On beacons ready.                 |
         +-----------------------------------+-----------------------------------+
 
--   -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#onBeaconsReady-java.util.List-}
+-   -   ### Method Detail
 
         -   #### onBeaconsReady
 
@@ -16206,7 +14239,7 @@ Interface OnPositionUpdateListener {#interface-onpositionupdatelistener .title t
 -   
 
     All Known Implementing Classes:
-    :   [RoutingControl](../../../com/mapspeople/ui/RoutingControl.html "class in com.mapspeople.ui")
+    :   RoutingControl
 
     ------------------------------------------------------------------------
 
@@ -16216,9 +14249,7 @@ Interface OnPositionUpdateListener {#interface-onpositionupdatelistener .title t
 
     The interface On position update listener.
 
--   -   []{#method.summary}
-
-        ### Method Summary
+-   -   ### Method Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -16236,11 +14267,7 @@ Interface OnPositionUpdateListener {#interface-onpositionupdatelistener .title t
         |                                   | On position update.               |
         +-----------------------------------+-----------------------------------+
 
--   -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#onPositionUpdate-com.mapspeople.position.PositionResult-}
+-   -   ### Method Detail
 
         -   #### onPositionUpdate
 
@@ -16251,8 +14278,7 @@ Interface OnPositionUpdateListener {#interface-onpositionupdatelistener .title t
             [Parameters:]{.paramLabel}
             :   `pos` - the pos
 
-        []{#onPositionFailed-com.mapspeople.position.PositionProvider-}
-
+        &nbsp;
         -   #### onPositionFailed
 
                 void onPositionFailed(PositionProvider provider)
@@ -16262,8 +14288,7 @@ Interface OnPositionUpdateListener {#interface-onpositionupdatelistener .title t
             [Parameters:]{.paramLabel}
             :   `provider` - the provider
 
-        []{#onPositioningStarted-com.mapspeople.position.PositionProvider-}
-
+        &nbsp;
         -   #### onPositioningStarted
 
                 void onPositioningStarted(PositionProvider provider)
@@ -16291,9 +14316,7 @@ Class PointXY {#class-pointxy .title title="Class PointXY"}
 
     Created by mh on 06-05-2015.
 
--   -   []{#field.summary}
-
-        ### Field Summary
+-   -   ### Field Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -16302,17 +14325,11 @@ Class PointXY {#class-pointxy .title title="Class PointXY"}
         |                                   | Gets ref point.                   |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#field.detail}
-
-        ### Field Detail
-
-        []{#X}
+-   -   ### Field Detail
 
         -   #### X
 
@@ -16320,24 +14337,21 @@ Class PointXY {#class-pointxy .title title="Class PointXY"}
 
             The X.
 
-        []{#Y}
-
+        &nbsp;
         -   #### Y
 
                 public double Y
 
             The Y.
 
-        []{#distance}
-
+        &nbsp;
         -   #### distance
 
                 public double distance
 
             The Distance.
 
-        []{#latlng}
-
+        &nbsp;
         -   #### latlng
 
                 public Point latlng
@@ -16345,11 +14359,7 @@ Class PointXY {#class-pointxy .title title="Class PointXY"}
             The Latlng.
 
     &nbsp;
-    -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#PointXY--}
+    -   ### Constructor Detail
 
         -   #### PointXY
 
@@ -16357,8 +14367,7 @@ Class PointXY {#class-pointxy .title title="Class PointXY"}
 
             Instantiates a new Point xy.
 
-        []{#PointXY-com.mapspeople.models.Point-double-}
-
+        &nbsp;
         -   #### PointXY
 
                 public PointXY(Point coord,               double dist)
@@ -16370,11 +14379,7 @@ Class PointXY {#class-pointxy .title title="Class PointXY"}
             :   `dist` - the dist
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#getRefPoint--}
+    -   ### Method Detail
 
         -   #### getRefPoint
 
@@ -16403,9 +14408,7 @@ Class PositionCalculator {#class-positioncalculator .title title="Class Position
 
     Created by JSM on 03/03/15.
 
--   -   []{#constructor.summary}
-
-        ### Constructor Summary
+-   -   ### Constructor Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -16424,28 +14427,18 @@ Class PositionCalculator {#class-positioncalculator .title title="Class Position
         |                                   | Distance between double.          |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#PositionCalculator--}
+-   -   ### Constructor Detail
 
         -   #### PositionCalculator
 
                 public PositionCalculator()
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#convertRSSItoMeter-double-double-}
+    -   ### Method Detail
 
         -   #### convertRSSItoMeter
 
@@ -16460,8 +14453,7 @@ Class PositionCalculator {#class-positioncalculator .title title="Class Position
             [Returns:]{.returnLabel}
             :   the double
 
-        []{#calcLatLngPos-java.util.List-boolean-}
-
+        &nbsp;
         -   #### calcLatLngPos
 
                 public Point calcLatLngPos(java.util.List<PointXY> measurements,                           boolean trilateration)
@@ -16475,8 +14467,7 @@ Class PositionCalculator {#class-positioncalculator .title title="Class Position
             [Returns:]{.returnLabel}
             :   the point
 
-        []{#distanceBetween-com.mapspeople.position.PointXY-com.mapspeople.position.PointXY-}
-
+        &nbsp;
         -   #### distanceBetween
 
                 public double distanceBetween(PointXY p1,                              PointXY p2)
@@ -16498,7 +14489,7 @@ Interface PositionProvider {#interface-positionprovider .title title="Interface 
 -   
 
     All Known Subinterfaces:
-    :   [IndoorPositionProvider](../../../com/mapspeople/position/IndoorPositionProvider.html "interface in com.mapspeople.position")
+    :   IndoorPositionProvider
 
     ------------------------------------------------------------------------
 
@@ -16508,9 +14499,7 @@ Interface PositionProvider {#interface-positionprovider .title title="Interface 
 
     The interface Position provider.
 
--   -   []{#method.summary}
-
-        ### Method Summary
+-   -   ### Method Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -16546,11 +14535,7 @@ Interface PositionProvider {#interface-positionprovider .title title="Interface 
         |                                   | Stop positioning.                 |
         +-----------------------------------+-----------------------------------+
 
--   -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#startPositioning-java.lang.String-}
+-   -   ### Method Detail
 
         -   #### startPositioning
 
@@ -16561,8 +14546,7 @@ Interface PositionProvider {#interface-positionprovider .title title="Interface 
             [Parameters:]{.paramLabel}
             :   `arg` - the arg
 
-        []{#stopPositioning-java.lang.String-}
-
+        &nbsp;
         -   #### stopPositioning
 
                 void stopPositioning(java.lang.String arg)
@@ -16572,8 +14556,7 @@ Interface PositionProvider {#interface-positionprovider .title title="Interface 
             [Parameters:]{.paramLabel}
             :   `arg` - the arg
 
-        []{#isRunning--}
-
+        &nbsp;
         -   #### isRunning
 
                 boolean isRunning()
@@ -16583,8 +14566,7 @@ Interface PositionProvider {#interface-positionprovider .title title="Interface 
             [Returns:]{.returnLabel}
             :   the boolean
 
-        []{#addOnPositionUpdateListener-com.mapspeople.position.OnPositionUpdateListener-}
-
+        &nbsp;
         -   #### addOnPositionUpdateListener
 
                 void addOnPositionUpdateListener(OnPositionUpdateListener listener)
@@ -16594,8 +14576,7 @@ Interface PositionProvider {#interface-positionprovider .title title="Interface 
             [Parameters:]{.paramLabel}
             :   `listener` - the listener
 
-        []{#setProviderId-java.lang.String-}
-
+        &nbsp;
         -   #### setProviderId
 
                 void setProviderId(java.lang.String id)
@@ -16605,8 +14586,7 @@ Interface PositionProvider {#interface-positionprovider .title title="Interface 
             [Parameters:]{.paramLabel}
             :   `id` - the id
 
-        []{#getProviderId--}
-
+        &nbsp;
         -   #### getProviderId
 
                 java.lang.String getProviderId()
@@ -16616,8 +14596,7 @@ Interface PositionProvider {#interface-positionprovider .title title="Interface 
             [Returns:]{.returnLabel}
             :   the provider id
 
-        []{#getLatestPosition--}
-
+        &nbsp;
         -   #### getLatestPosition
 
                 PositionResult getLatestPosition()
@@ -16627,8 +14606,7 @@ Interface PositionProvider {#interface-positionprovider .title title="Interface 
             [Returns:]{.returnLabel}
             :   the latest position
 
-        []{#startPositioningAfter-int-java.lang.String-}
-
+        &nbsp;
         -   #### startPositioningAfter
 
                 void startPositioningAfter(int millis,                           java.lang.String arg)
@@ -16647,7 +14625,7 @@ Interface PositionResult {#interface-positionresult .title title="Interface Posi
 -   
 
     All Known Implementing Classes:
-    :   [MPPositionResult](../../../com/mapspeople/position/MPPositionResult.html "class in com.mapspeople.position")
+    :   MPPositionResult
 
     ------------------------------------------------------------------------
 
@@ -16657,9 +14635,7 @@ Interface PositionResult {#interface-positionresult .title title="Interface Posi
 
     The interface Position result.
 
--   -   []{#method.summary}
-
-        ### Method Summary
+-   -   ### Method Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -16693,11 +14669,7 @@ Interface PositionResult {#interface-positionresult .title title="Interface Posi
         |                                   | Sets provider.                    |
         +-----------------------------------+-----------------------------------+
 
--   -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#getRoundtrip--}
+-   -   ### Method Detail
 
         -   #### getRoundtrip
 
@@ -16708,8 +14680,7 @@ Interface PositionResult {#interface-positionresult .title title="Interface Posi
             [Returns:]{.returnLabel}
             :   the roundtrip
 
-        []{#getPoint--}
-
+        &nbsp;
         -   #### getPoint
 
                 Point getPoint()
@@ -16719,8 +14690,7 @@ Interface PositionResult {#interface-positionresult .title title="Interface Posi
             [Returns:]{.returnLabel}
             :   the point
 
-        []{#getHeadingDegrees--}
-
+        &nbsp;
         -   #### getHeadingDegrees
 
                 double getHeadingDegrees()
@@ -16730,8 +14700,7 @@ Interface PositionResult {#interface-positionresult .title title="Interface Posi
             [Returns:]{.returnLabel}
             :   the heading degrees
 
-        []{#getProbability--}
-
+        &nbsp;
         -   #### getProbability
 
                 double getProbability()
@@ -16741,8 +14710,7 @@ Interface PositionResult {#interface-positionresult .title title="Interface Posi
             [Returns:]{.returnLabel}
             :   the probability
 
-        []{#getStatus--}
-
+        &nbsp;
         -   #### getStatus
 
                 java.lang.String getStatus()
@@ -16752,8 +14720,7 @@ Interface PositionResult {#interface-positionresult .title title="Interface Posi
             [Returns:]{.returnLabel}
             :   the status
 
-        []{#getProvider--}
-
+        &nbsp;
         -   #### getProvider
 
                 PositionProvider getProvider()
@@ -16763,8 +14730,7 @@ Interface PositionResult {#interface-positionresult .title title="Interface Posi
             [Returns:]{.returnLabel}
             :   the provider
 
-        []{#getAge--}
-
+        &nbsp;
         -   #### getAge
 
                 float getAge()
@@ -16774,8 +14740,7 @@ Interface PositionResult {#interface-positionresult .title title="Interface Posi
             [Returns:]{.returnLabel}
             :   the age
 
-        []{#getFloor--}
-
+        &nbsp;
         -   #### getFloor
 
                 int getFloor()
@@ -16785,8 +14750,7 @@ Interface PositionResult {#interface-positionresult .title title="Interface Posi
             [Returns:]{.returnLabel}
             :   the floor
 
-        []{#setProvider-com.mapspeople.position.PositionProvider-}
-
+        &nbsp;
         -   #### setProvider
 
                 void setProvider(PositionProvider provider)
@@ -16824,12 +14788,9 @@ Class PositionTechnologies {#class-positiontechnologies .title title="Class Posi
     The type Position technologies.
 
     [See Also:]{.seeLabel}
-    :   [Serialized
-        Form](../../../serialized-form.html#com.mapspeople.position.PositionTechnologies)
+    :   Serialized Form
 
--   -   []{#field.summary}
-
-        ### Field Summary
+-   -   ### Field Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -16838,52 +14799,36 @@ Class PositionTechnologies {#class-positiontechnologies .title title="Class Posi
         |                                   | Use techology boolean.            |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.util.ArrayList}
-
-            ### Methods inherited from class java.util.ArrayList
+        -   ### Methods inherited from class java.util.ArrayList
 
             `add, add, addAll, addAll, clear, clone, contains, ensureCapacity, forEach, get, indexOf, isEmpty, iterator, lastIndexOf, listIterator, listIterator, remove, remove, removeAll, removeIf, replaceAll, retainAll, set, size, sort, spliterator, subList, toArray, toArray, trimToSize`
 
         &nbsp;
-        -   []{#methods.inherited.from.class.java.util.AbstractList}
-
-            ### Methods inherited from class java.util.AbstractList
+        -   ### Methods inherited from class java.util.AbstractList
 
             `equals, hashCode`
 
         &nbsp;
-        -   []{#methods.inherited.from.class.java.util.AbstractCollection}
-
-            ### Methods inherited from class java.util.AbstractCollection
+        -   ### Methods inherited from class java.util.AbstractCollection
 
             `containsAll, toString`
 
         &nbsp;
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `getClass, notify, notifyAll, wait, wait, wait`
 
         &nbsp;
-        -   []{#methods.inherited.from.class.java.util.List}
-
-            ### Methods inherited from interface java.util.List
+        -   ### Methods inherited from interface java.util.List
 
             `containsAll, equals, hashCode`
 
         &nbsp;
-        -   []{#methods.inherited.from.class.java.util.Collection}
-
-            ### Methods inherited from interface java.util.Collection
+        -   ### Methods inherited from interface java.util.Collection
 
             `parallelStream, stream`
 
--   -   []{#field.detail}
-
-        ### Field Detail
-
-        []{#WIFI}
+-   -   ### Field Detail
 
         -   #### WIFI
 
@@ -16892,11 +14837,9 @@ Class PositionTechnologies {#class-positiontechnologies .title title="Class Posi
             The constant WIFI.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.position.PositionTechnologies.WIFI)
+            :   Constant Field Values
 
-        []{#MAGNETIC}
-
+        &nbsp;
         -   #### MAGNETIC
 
                 public static final int MAGNETIC
@@ -16904,11 +14847,9 @@ Class PositionTechnologies {#class-positiontechnologies .title title="Class Posi
             The constant MAGNETIC.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.position.PositionTechnologies.MAGNETIC)
+            :   Constant Field Values
 
-        []{#GPS}
-
+        &nbsp;
         -   #### GPS
 
                 public static final int GPS
@@ -16916,26 +14857,17 @@ Class PositionTechnologies {#class-positiontechnologies .title title="Class Posi
             The constant GPS.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.position.PositionTechnologies.GPS)
+            :   Constant Field Values
 
     &nbsp;
-    -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#PositionTechnologies--}
+    -   ### Constructor Detail
 
         -   #### PositionTechnologies
 
                 public PositionTechnologies()
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#useTechology-int-}
+    -   ### Method Detail
 
         -   #### useTechology
 
@@ -16960,7 +14892,7 @@ Interface DirectionsRenderer {#interface-directionsrenderer .title title="Interf
 -   
 
     All Known Implementing Classes:
-    :   [MPDirectionsRenderer](../../../com/mapspeople/routing/MPDirectionsRenderer.html "class in com.mapspeople.routing")
+    :   MPDirectionsRenderer
 
     ------------------------------------------------------------------------
 
@@ -16970,9 +14902,7 @@ Interface DirectionsRenderer {#interface-directionsrenderer .title title="Interf
 
     Created on 07/04/15.
 
--   -   []{#method.summary}
-
-        ### Method Summary
+-   -   ### Method Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -17014,11 +14944,7 @@ Interface DirectionsRenderer {#interface-directionsrenderer .title title="Interf
         |                                   | Sets text color.                  |
         +-----------------------------------+-----------------------------------+
 
--   -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#setMap-GoogleMap-}
+-   -   ### Method Detail
 
         -   #### setMap
 
@@ -17029,8 +14955,7 @@ Interface DirectionsRenderer {#interface-directionsrenderer .title title="Interf
             [Parameters:]{.paramLabel}
             :   `map` - the map
 
-        []{#animate-int-}
-
+        &nbsp;
         -   #### animate
 
                 void animate(int millis)
@@ -17040,8 +14965,7 @@ Interface DirectionsRenderer {#interface-directionsrenderer .title title="Interf
             [Parameters:]{.paramLabel}
             :   `millis` - the millis
 
-        []{#setRoute-com.mapspeople.routing.Route-}
-
+        &nbsp;
         -   #### setRoute
 
                 void setRoute(Route route)
@@ -17051,8 +14975,7 @@ Interface DirectionsRenderer {#interface-directionsrenderer .title title="Interf
             [Parameters:]{.paramLabel}
             :   `route` - the route
 
-        []{#setRouteLegIndex-int-}
-
+        &nbsp;
         -   #### setRouteLegIndex
 
                 void setRouteLegIndex(int index)
@@ -17062,16 +14985,14 @@ Interface DirectionsRenderer {#interface-directionsrenderer .title title="Interf
             [Parameters:]{.paramLabel}
             :   `index` - the index
 
-        []{#clear--}
-
+        &nbsp;
         -   #### clear
 
                 void clear()
 
             Clear.
 
-        []{#setPrimaryColor-int-}
-
+        &nbsp;
         -   #### setPrimaryColor
 
                 void setPrimaryColor(int color)
@@ -17081,8 +15002,7 @@ Interface DirectionsRenderer {#interface-directionsrenderer .title title="Interf
             [Parameters:]{.paramLabel}
             :   `color` - the color
 
-        []{#setAccentColor-int-}
-
+        &nbsp;
         -   #### setAccentColor
 
                 void setAccentColor(int color)
@@ -17092,8 +15012,7 @@ Interface DirectionsRenderer {#interface-directionsrenderer .title title="Interf
             [Parameters:]{.paramLabel}
             :   `color` - the color
 
-        []{#setTextColor-int-}
-
+        &nbsp;
         -   #### setTextColor
 
                 void setTextColor(int color)
@@ -17103,8 +15022,7 @@ Interface DirectionsRenderer {#interface-directionsrenderer .title title="Interf
             [Parameters:]{.paramLabel}
             :   `color` - the color
 
-        []{#setAlpha-int-}
-
+        &nbsp;
         -   #### setAlpha
 
                 void setAlpha(int alpha)
@@ -17114,8 +15032,7 @@ Interface DirectionsRenderer {#interface-directionsrenderer .title title="Interf
             [Parameters:]{.paramLabel}
             :   `alpha` - the alpha
 
-        []{#nextLeg--}
-
+        &nbsp;
         -   #### nextLeg
 
                 boolean nextLeg()
@@ -17125,8 +15042,7 @@ Interface DirectionsRenderer {#interface-directionsrenderer .title title="Interf
             [Returns:]{.returnLabel}
             :   the boolean
 
-        []{#previousLeg--}
-
+        &nbsp;
         -   #### previousLeg
 
                 boolean previousLeg()
@@ -17136,8 +15052,7 @@ Interface DirectionsRenderer {#interface-directionsrenderer .title title="Interf
             [Returns:]{.returnLabel}
             :   the boolean
 
-        []{#getLegFloor--}
-
+        &nbsp;
         -   #### getLegFloor
 
                 int getLegFloor()
@@ -17158,7 +15073,7 @@ Class DistanceMatrixResponse.Element {#class-distancematrixresponse.element .tit
 -   
 
     Enclosing class:
-    :   [DistanceMatrixResponse](../../../com/mapspeople/routing/DistanceMatrixResponse.html "class in com.mapspeople.routing")
+    :   DistanceMatrixResponse
 
     ------------------------------------------------------------------------
 
@@ -17168,9 +15083,7 @@ Class DistanceMatrixResponse.Element {#class-distancematrixresponse.element .tit
 
     The type Element.
 
--   -   []{#field.summary}
-
-        ### Field Summary
+-   -   ### Field Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -17185,17 +15098,11 @@ Class DistanceMatrixResponse.Element {#class-distancematrixresponse.element .tit
         |                                   | Gets status.                      |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#field.detail}
-
-        ### Field Detail
-
-        []{#distance}
+-   -   ### Field Detail
 
         -   #### distance
 
@@ -17203,16 +15110,14 @@ Class DistanceMatrixResponse.Element {#class-distancematrixresponse.element .tit
 
             The Distance.
 
-        []{#duration}
-
+        &nbsp;
         -   #### duration
 
                 public DistanceMatrixResponse.TextPair duration
 
             The Duration.
 
-        []{#status}
-
+        &nbsp;
         -   #### status
 
                 public java.lang.String status
@@ -17220,22 +15125,14 @@ Class DistanceMatrixResponse.Element {#class-distancematrixresponse.element .tit
             The Status.
 
     &nbsp;
-    -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#Element--}
+    -   ### Constructor Detail
 
         -   #### Element
 
                 public Element()
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#getDistance--}
+    -   ### Method Detail
 
         -   #### getDistance
 
@@ -17246,8 +15143,7 @@ Class DistanceMatrixResponse.Element {#class-distancematrixresponse.element .tit
             [Returns:]{.returnLabel}
             :   the distance
 
-        []{#getDuration--}
-
+        &nbsp;
         -   #### getDuration
 
                 public java.lang.Double getDuration()
@@ -17257,8 +15153,7 @@ Class DistanceMatrixResponse.Element {#class-distancematrixresponse.element .tit
             [Returns:]{.returnLabel}
             :   the duration
 
-        []{#getStatus--}
-
+        &nbsp;
         -   #### getStatus
 
                 public java.lang.String getStatus()
@@ -17279,7 +15174,7 @@ Class DistanceMatrixResponse.Row {#class-distancematrixresponse.row .title title
 -   
 
     Enclosing class:
-    :   [DistanceMatrixResponse](../../../com/mapspeople/routing/DistanceMatrixResponse.html "class in com.mapspeople.routing")
+    :   DistanceMatrixResponse
 
     ------------------------------------------------------------------------
 
@@ -17289,30 +15184,20 @@ Class DistanceMatrixResponse.Row {#class-distancematrixresponse.row .title title
 
     The type Row.
 
--   -   []{#field.summary}
-
-        ### Field Summary
+-   -   ### Field Summary
 
           Constructor and Description
           -----------------------------
           `Row()` 
 
     &nbsp;
-    -   []{#method.summary}
+    -   ### Method Summary
 
-        ### Method Summary
-
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#field.detail}
-
-        ### Field Detail
-
-        []{#elements}
+-   -   ### Field Detail
 
         -   #### elements
 
@@ -17321,11 +15206,7 @@ Class DistanceMatrixResponse.Row {#class-distancematrixresponse.row .title title
             The Elements.
 
     &nbsp;
-    -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#Row--}
+    -   ### Constructor Detail
 
         -   #### Row
 
@@ -17342,7 +15223,7 @@ Class DistanceMatrixResponse.TextPair {#class-distancematrixresponse.textpair .t
 -   
 
     Enclosing class:
-    :   [DistanceMatrixResponse](../../../com/mapspeople/routing/DistanceMatrixResponse.html "class in com.mapspeople.routing")
+    :   DistanceMatrixResponse
 
     ------------------------------------------------------------------------
 
@@ -17352,30 +15233,20 @@ Class DistanceMatrixResponse.TextPair {#class-distancematrixresponse.textpair .t
 
     The type Text pair.
 
--   -   []{#field.summary}
-
-        ### Field Summary
+-   -   ### Field Summary
 
           Constructor and Description
           -----------------------------
           `TextPair()` 
 
     &nbsp;
-    -   []{#method.summary}
+    -   ### Method Summary
 
-        ### Method Summary
-
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#field.detail}
-
-        ### Field Detail
-
-        []{#text}
+-   -   ### Field Detail
 
         -   #### text
 
@@ -17383,8 +15254,7 @@ Class DistanceMatrixResponse.TextPair {#class-distancematrixresponse.textpair .t
 
             The Text.
 
-        []{#value}
-
+        &nbsp;
         -   #### value
 
                 public java.lang.String value
@@ -17392,11 +15262,7 @@ Class DistanceMatrixResponse.TextPair {#class-distancematrixresponse.textpair .t
             The Value.
 
     &nbsp;
-    -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#TextPair--}
+    -   ### Constructor Detail
 
         -   #### TextPair
 
@@ -17420,9 +15286,7 @@ Class DistanceMatrixResponse {#class-distancematrixresponse .title title="Class 
 
     The type Distance matrix response.
 
--   -   []{#nested.class.summary}
-
-        ### Nested Class Summary
+-   -   ### Nested Class Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -17437,17 +15301,11 @@ Class DistanceMatrixResponse {#class-distancematrixresponse .title title="Class 
         |                                   | Gets status.                      |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#field.detail}
-
-        ### Field Detail
-
-        []{#destination_addresses}
+-   -   ### Field Detail
 
         -   #### destination\_addresses
 
@@ -17455,24 +15313,21 @@ Class DistanceMatrixResponse {#class-distancematrixresponse .title title="Class 
 
             The Destination addresses.
 
-        []{#origin_addresses}
-
+        &nbsp;
         -   #### origin\_addresses
 
                 public java.util.List<java.lang.String> origin_addresses
 
             The Origin addresses.
 
-        []{#rows}
-
+        &nbsp;
         -   #### rows
 
                 public java.util.List<DistanceMatrixResponse.Row> rows
 
             The Rows.
 
-        []{#status}
-
+        &nbsp;
         -   #### status
 
                 public java.lang.String status
@@ -17480,22 +15335,14 @@ Class DistanceMatrixResponse {#class-distancematrixresponse .title title="Class 
             The Status.
 
     &nbsp;
-    -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#DistanceMatrixResponse--}
+    -   ### Constructor Detail
 
         -   #### DistanceMatrixResponse
 
                 public DistanceMatrixResponse()
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#getDestinations--}
+    -   ### Method Detail
 
         -   #### getDestinations
 
@@ -17506,8 +15353,7 @@ Class DistanceMatrixResponse {#class-distancematrixresponse .title title="Class 
             [Returns:]{.returnLabel}
             :   the destinations
 
-        []{#getOrigins--}
-
+        &nbsp;
         -   #### getOrigins
 
                 public java.util.List<java.lang.String> getOrigins()
@@ -17517,8 +15363,7 @@ Class DistanceMatrixResponse {#class-distancematrixresponse .title title="Class 
             [Returns:]{.returnLabel}
             :   the origins
 
-        []{#getStatus--}
-
+        &nbsp;
         -   #### getStatus
 
                 public java.lang.String getStatus()
@@ -17546,30 +15391,20 @@ Class GeocodedWaypoints {#class-geocodedwaypoints .title title="Class GeocodedWa
 
     The type Geocoded waypoints.
 
--   -   []{#constructor.summary}
-
-        ### Constructor Summary
+-   -   ### Constructor Summary
 
           Constructor and Description
           -----------------------------
           `GeocodedWaypoints()` 
 
     &nbsp;
-    -   []{#method.summary}
+    -   ### Method Summary
 
-        ### Method Summary
-
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#GeocodedWaypoints--}
+-   -   ### Constructor Detail
 
         -   #### GeocodedWaypoints
 
@@ -17587,7 +15422,7 @@ Class MPDirectionsRenderer {#class-mpdirectionsrenderer .title title="Class MPDi
 
     All Implemented Interfaces:
     :   android.animation.ValueAnimator.AnimatorUpdateListener,
-        [DirectionsRenderer](../../../com/mapspeople/routing/DirectionsRenderer.html "interface in com.mapspeople.routing")
+        DirectionsRenderer
 
     ------------------------------------------------------------------------
 
@@ -17598,9 +15433,7 @@ Class MPDirectionsRenderer {#class-mpdirectionsrenderer .title title="Class MPDi
     Created by mh on 05-10-2015. Based on Google's direction renderer:
     https://developers.google.com/maps/documentation/javascript/reference\#DirectionsRenderer
 
--   -   []{#constructor.summary}
-
-        ### Constructor Summary
+-   -   ### Constructor Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -17650,17 +15483,11 @@ Class MPDirectionsRenderer {#class-mpdirectionsrenderer .title title="Class MPDi
         |                                   | Sets text color.                  |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#MPDirectionsRenderer-android.content.Context-com.mapspeople.routing.OnLegSelectedListener-}
+-   -   ### Constructor Detail
 
         -   #### MPDirectionsRenderer
 
@@ -17673,11 +15500,7 @@ Class MPDirectionsRenderer {#class-mpdirectionsrenderer .title title="Class MPDi
             :   `legSelectedListener` - the leg selected listener
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#setPrimaryColor-int-}
+    -   ### Method Detail
 
         -   #### setPrimaryColor
 
@@ -17691,8 +15514,7 @@ Class MPDirectionsRenderer {#class-mpdirectionsrenderer .title title="Class MPDi
             [Parameters:]{.paramLabel}
             :   `primaryColor` - the primary color
 
-        []{#setAccentColor-int-}
-
+        &nbsp;
         -   #### setAccentColor
 
                 public void setAccentColor(int accentColor)
@@ -17705,8 +15527,7 @@ Class MPDirectionsRenderer {#class-mpdirectionsrenderer .title title="Class MPDi
             [Parameters:]{.paramLabel}
             :   `accentColor` - the accent color
 
-        []{#setTextColor-int-}
-
+        &nbsp;
         -   #### setTextColor
 
                 public void setTextColor(int textColor)
@@ -17719,8 +15540,7 @@ Class MPDirectionsRenderer {#class-mpdirectionsrenderer .title title="Class MPDi
             [Parameters:]{.paramLabel}
             :   `textColor` - the text color
 
-        []{#setMap-GoogleMap-}
-
+        &nbsp;
         -   #### setMap
 
                 public void setMap(GoogleMap map)
@@ -17733,8 +15553,7 @@ Class MPDirectionsRenderer {#class-mpdirectionsrenderer .title title="Class MPDi
             [Parameters:]{.paramLabel}
             :   `map` - the map
 
-        []{#animate-int-}
-
+        &nbsp;
         -   #### animate
 
                 public void animate(int millis)
@@ -17747,8 +15566,7 @@ Class MPDirectionsRenderer {#class-mpdirectionsrenderer .title title="Class MPDi
             [Parameters:]{.paramLabel}
             :   `millis` - the millis
 
-        []{#onAnimationUpdate-android.animation.ValueAnimator-}
-
+        &nbsp;
         -   #### onAnimationUpdate
 
                 public void onAnimationUpdate(android.animation.ValueAnimator animation)
@@ -17762,8 +15580,7 @@ Class MPDirectionsRenderer {#class-mpdirectionsrenderer .title title="Class MPDi
             [Parameters:]{.paramLabel}
             :   `animation` - the animation
 
-        []{#setRoute-com.mapspeople.routing.Route-}
-
+        &nbsp;
         -   #### setRoute
 
                 public void setRoute(Route route)
@@ -17776,8 +15593,7 @@ Class MPDirectionsRenderer {#class-mpdirectionsrenderer .title title="Class MPDi
             [Parameters:]{.paramLabel}
             :   `route` - the route
 
-        []{#setRouteLegIndex-int-}
-
+        &nbsp;
         -   #### setRouteLegIndex
 
                 public void setRouteLegIndex(int index)
@@ -17790,8 +15606,7 @@ Class MPDirectionsRenderer {#class-mpdirectionsrenderer .title title="Class MPDi
             [Parameters:]{.paramLabel}
             :   `index` - the index
 
-        []{#clear--}
-
+        &nbsp;
         -   #### clear
 
                 public void clear()
@@ -17801,8 +15616,7 @@ Class MPDirectionsRenderer {#class-mpdirectionsrenderer .title title="Class MPDi
             [Specified by:]{.overrideSpecifyLabel}
             :   `clear` in interface `DirectionsRenderer`
 
-        []{#setAlpha-int-}
-
+        &nbsp;
         -   #### setAlpha
 
                 public void setAlpha(int alpha)
@@ -17815,8 +15629,7 @@ Class MPDirectionsRenderer {#class-mpdirectionsrenderer .title title="Class MPDi
             [Parameters:]{.paramLabel}
             :   `alpha` - the alpha
 
-        []{#getCurrentFloor--}
-
+        &nbsp;
         -   #### getCurrentFloor
 
                 public int getCurrentFloor()
@@ -17826,8 +15639,7 @@ Class MPDirectionsRenderer {#class-mpdirectionsrenderer .title title="Class MPDi
             [Returns:]{.returnLabel}
             :   the current floor
 
-        []{#nextLeg--}
-
+        &nbsp;
         -   #### nextLeg
 
                 public boolean nextLeg()
@@ -17840,8 +15652,7 @@ Class MPDirectionsRenderer {#class-mpdirectionsrenderer .title title="Class MPDi
             [Returns:]{.returnLabel}
             :   the boolean
 
-        []{#previousLeg--}
-
+        &nbsp;
         -   #### previousLeg
 
                 public boolean previousLeg()
@@ -17854,8 +15665,7 @@ Class MPDirectionsRenderer {#class-mpdirectionsrenderer .title title="Class MPDi
             [Returns:]{.returnLabel}
             :   the boolean
 
-        []{#getLegFloor--}
-
+        &nbsp;
         -   #### getLegFloor
 
                 public int getLegFloor()
@@ -17879,7 +15689,7 @@ Class MPRoutingProvider.MPRoutingQuery {#class-mproutingprovider.mproutingquery 
 -   
 
     Enclosing class:
-    :   [MPRoutingProvider](../../../com/mapspeople/routing/MPRoutingProvider.html "class in com.mapspeople.routing")
+    :   MPRoutingProvider
 
     ------------------------------------------------------------------------
 
@@ -17889,9 +15699,7 @@ Class MPRoutingProvider.MPRoutingQuery {#class-mproutingprovider.mproutingquery 
 
     The type Mp routing query.
 
--   -   []{#field.summary}
-
-        ### Field Summary
+-   -   ### Field Summary
 
         +-----------------------------------------------------------------------+
         | Constructor and Description                                           |
@@ -17902,21 +15710,13 @@ Class MPRoutingProvider.MPRoutingQuery {#class-mproutingprovider.mproutingquery 
         +-----------------------------------------------------------------------+
 
     &nbsp;
-    -   []{#method.summary}
+    -   ### Method Summary
 
-        ### Method Summary
-
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#field.detail}
-
-        ### Field Detail
-
-        []{#routeResult}
+-   -   ### Field Detail
 
         -   #### routeResult
 
@@ -17924,16 +15724,14 @@ Class MPRoutingProvider.MPRoutingQuery {#class-mproutingprovider.mproutingquery 
 
             The Route result.
 
-        []{#from}
-
+        &nbsp;
         -   #### from
 
                 public final Point from
 
             The From.
 
-        []{#to}
-
+        &nbsp;
         -   #### to
 
                 public final Point to
@@ -17941,11 +15739,7 @@ Class MPRoutingProvider.MPRoutingQuery {#class-mproutingprovider.mproutingquery 
             The To.
 
     &nbsp;
-    -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#MPRoutingQuery-com.mapspeople.routing.Route-com.mapspeople.models.Point-com.mapspeople.models.Point-}
+    -   ### Constructor Detail
 
         -   #### MPRoutingQuery
 
@@ -17969,7 +15763,7 @@ Class MPRoutingProvider {#class-mproutingprovider .title title="Class MPRoutingP
 -   
 
     All Implemented Interfaces:
-    :   [RoutingProvider](../../../com/mapspeople/routing/RoutingProvider.html "interface in com.mapspeople.routing")
+    :   RoutingProvider
 
     ------------------------------------------------------------------------
 
@@ -17979,9 +15773,7 @@ Class MPRoutingProvider {#class-mproutingprovider .title title="Class MPRoutingP
 
     The type Mp routing provider.
 
--   -   []{#nested.class.summary}
-
-        ### Nested Class Summary
+-   -   ### Nested Class Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -18030,17 +15822,11 @@ Class MPRoutingProvider {#class-mproutingprovider .title title="Class MPRoutingP
         |                                   | Store route.                      |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#MPRoutingProvider--}
+-   -   ### Constructor Detail
 
         -   #### MPRoutingProvider
 
@@ -18049,11 +15835,7 @@ Class MPRoutingProvider {#class-mproutingprovider .title title="Class MPRoutingP
             Instantiates a new Mp routing provider.
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#setOnRouteResultListener-com.mapspeople.routing.OnRouteResultListener-}
+    -   ### Method Detail
 
         -   #### setOnRouteResultListener
 
@@ -18068,8 +15850,7 @@ Class MPRoutingProvider {#class-mproutingprovider .title title="Class MPRoutingP
             [Parameters:]{.paramLabel}
             :   `listener` - the listener
 
-        []{#query-com.mapspeople.models.Point-com.mapspeople.models.Point-}
-
+        &nbsp;
         -   #### query
 
                 public void query(Point from,                  Point to)
@@ -18083,8 +15864,7 @@ Class MPRoutingProvider {#class-mproutingprovider .title title="Class MPRoutingP
             :   `from` - the from
             :   `to` - the to
 
-        []{#setGoogleServerKey-java.lang.String-}
-
+        &nbsp;
         -   #### setGoogleServerKey
 
                 public static void setGoogleServerKey(java.lang.String key)
@@ -18099,8 +15879,7 @@ Class MPRoutingProvider {#class-mproutingprovider .title title="Class MPRoutingP
             [Parameters:]{.paramLabel}
             :   `key` - Your Google Maps server API key
 
-        []{#setGoogleForWorkKey-java.lang.String-java.lang.String-}
-
+        &nbsp;
         -   #### setGoogleForWorkKey
 
                 public static void setGoogleForWorkKey(java.lang.String clientId,                                       java.lang.String key)
@@ -18112,8 +15891,7 @@ Class MPRoutingProvider {#class-mproutingprovider .title title="Class MPRoutingP
             :   `clientId` - Your Google client id.
             :   `key` - Your private cryptographic key from Google.
 
-        []{#queryMultipleDestinations-com.mapspeople.models.Point-java.util.List-}
-
+        &nbsp;
         -   #### queryMultipleDestinations
 
                 public void queryMultipleDestinations(Point from,                                      java.util.List<Point> destinations)
@@ -18128,8 +15906,7 @@ Class MPRoutingProvider {#class-mproutingprovider .title title="Class MPRoutingP
             :   `from` - the from
             :   `destinations` - the destinations
 
-        []{#setTravelMode-java.lang.String-}
-
+        &nbsp;
         -   #### setTravelMode
 
                 public void setTravelMode(java.lang.String mode)
@@ -18142,8 +15919,7 @@ Class MPRoutingProvider {#class-mproutingprovider .title title="Class MPRoutingP
             [Parameters:]{.paramLabel}
             :   `mode` - the mode
 
-        []{#addRouteRestriction-java.lang.String-}
-
+        &nbsp;
         -   #### addRouteRestriction
 
                 public void addRouteRestriction(java.lang.String restriction)
@@ -18156,8 +15932,7 @@ Class MPRoutingProvider {#class-mproutingprovider .title title="Class MPRoutingP
             [Parameters:]{.paramLabel}
             :   `restriction` - the restriction
 
-        []{#clearRouteRestrictions--}
-
+        &nbsp;
         -   #### clearRouteRestrictions
 
                 public void clearRouteRestrictions()
@@ -18167,8 +15942,7 @@ Class MPRoutingProvider {#class-mproutingprovider .title title="Class MPRoutingP
             [Specified by:]{.overrideSpecifyLabel}
             :   `clearRouteRestrictions` in interface `RoutingProvider`
 
-        []{#setDateTime-java.util.Calendar-boolean-}
-
+        &nbsp;
         -   #### setDateTime
 
                 public void setDateTime(java.util.Calendar date,                        boolean isDeparture)
@@ -18182,8 +15956,7 @@ Class MPRoutingProvider {#class-mproutingprovider .title title="Class MPRoutingP
             :   `date` - the date
             :   `isDeparture` - the is departure
 
-        []{#storeRoute-com.mapspeople.routing.MPRoutingProvider.MPRoutingQuery-}
-
+        &nbsp;
         -   #### storeRoute
 
                 public void storeRoute(MPRoutingProvider.MPRoutingQuery route)
@@ -18204,7 +15977,7 @@ Class MPRoutingProviderInternal.MPRoutingQuery {#class-mproutingproviderinternal
 -   
 
     Enclosing class:
-    :   [MPRoutingProviderInternal](../../../com/mapspeople/routing/MPRoutingProviderInternal.html "class in com.mapspeople.routing")
+    :   MPRoutingProviderInternal
 
     ------------------------------------------------------------------------
 
@@ -18214,9 +15987,7 @@ Class MPRoutingProviderInternal.MPRoutingQuery {#class-mproutingproviderinternal
 
     The type Mp routing query.
 
--   -   []{#field.summary}
-
-        ### Field Summary
+-   -   ### Field Summary
 
         +-----------------------------------------------------------------------+
         | Constructor and Description                                           |
@@ -18227,21 +15998,13 @@ Class MPRoutingProviderInternal.MPRoutingQuery {#class-mproutingproviderinternal
         +-----------------------------------------------------------------------+
 
     &nbsp;
-    -   []{#method.summary}
+    -   ### Method Summary
 
-        ### Method Summary
-
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#field.detail}
-
-        ### Field Detail
-
-        []{#routeResult}
+-   -   ### Field Detail
 
         -   #### routeResult
 
@@ -18249,16 +16012,14 @@ Class MPRoutingProviderInternal.MPRoutingQuery {#class-mproutingproviderinternal
 
             The Route result.
 
-        []{#from}
-
+        &nbsp;
         -   #### from
 
                 public final Point from
 
             The From.
 
-        []{#to}
-
+        &nbsp;
         -   #### to
 
                 public final Point to
@@ -18266,11 +16027,7 @@ Class MPRoutingProviderInternal.MPRoutingQuery {#class-mproutingproviderinternal
             The To.
 
     &nbsp;
-    -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#MPRoutingQuery-com.mapspeople.routing.RouteResult-com.mapspeople.models.Point-com.mapspeople.models.Point-}
+    -   ### Constructor Detail
 
         -   #### MPRoutingQuery
 
@@ -18294,7 +16051,7 @@ Class MPRoutingProviderInternal {#class-mproutingproviderinternal .title title="
 -   
 
     All Implemented Interfaces:
-    :   [RoutingProviderInternal](../../../com/mapspeople/routing/RoutingProviderInternal.html "interface in com.mapspeople.routing")
+    :   RoutingProviderInternal
 
     ------------------------------------------------------------------------
 
@@ -18304,9 +16061,7 @@ Class MPRoutingProviderInternal {#class-mproutingproviderinternal .title title="
 
     The type Mp routing provider internal.
 
--   -   []{#nested.class.summary}
-
-        ### Nested Class Summary
+-   -   ### Nested Class Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -18373,17 +16128,11 @@ Class MPRoutingProviderInternal {#class-mproutingproviderinternal .title title="
         |                                   | Store route.                      |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#MPRoutingProviderInternal-java.lang.String-java.lang.String-}
+-   -   ### Constructor Detail
 
         -   #### MPRoutingProviderInternal
 
@@ -18396,11 +16145,7 @@ Class MPRoutingProviderInternal {#class-mproutingproviderinternal .title title="
             :   `key` - the key
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#setOnRouteResultListener-com.mapspeople.routing.OnRouteResultListener-}
+    -   ### Method Detail
 
         -   #### setOnRouteResultListener
 
@@ -18415,8 +16160,7 @@ Class MPRoutingProviderInternal {#class-mproutingproviderinternal .title title="
             [Parameters:]{.paramLabel}
             :   `listener` - the listener
 
-        []{#setOnContainsResultListener-com.mapspeople.routing.OnDirectionContainsResultListener-}
-
+        &nbsp;
         -   #### setOnContainsResultListener
 
                 public void setOnContainsResultListener(OnDirectionContainsResultListener listener)
@@ -18430,8 +16174,7 @@ Class MPRoutingProviderInternal {#class-mproutingproviderinternal .title title="
             [Parameters:]{.paramLabel}
             :   `listener` - the listener
 
-        []{#setOnDirectionMatrixResultListener-com.mapspeople.routing.OnDirectionMatrixResultListener-}
-
+        &nbsp;
         -   #### setOnDirectionMatrixResultListener
 
                 public void setOnDirectionMatrixResultListener(OnDirectionMatrixResultListener listener)
@@ -18445,8 +16188,7 @@ Class MPRoutingProviderInternal {#class-mproutingproviderinternal .title title="
             [Parameters:]{.paramLabel}
             :   `listener` - the listener
 
-        []{#getMatrix-java.lang.String-java.util.List-java.util.List-java.lang.String-}
-
+        &nbsp;
         -   #### getMatrix
 
                 public void getMatrix(java.lang.String venue,                      java.util.List<Point> origins,                      java.util.List<Point> destinations,                      java.lang.String graphId)
@@ -18462,8 +16204,7 @@ Class MPRoutingProviderInternal {#class-mproutingproviderinternal .title title="
             :   `destinations` - the destinations
             :   `graphId` - the graph id
 
-        []{#getMatrixExternal-java.util.List-java.util.List-}
-
+        &nbsp;
         -   #### getMatrixExternal
 
                 public void getMatrixExternal(java.util.List<Point> origins,                              java.util.List<Point> destinations)
@@ -18478,8 +16219,7 @@ Class MPRoutingProviderInternal {#class-mproutingproviderinternal .title title="
             :   `origins` - the origins
             :   `destinations` - the destinations
 
-        []{#contains-java.util.List-}
-
+        &nbsp;
         -   #### contains
 
                 public void contains(java.util.List<Point> points)
@@ -18492,8 +16232,7 @@ Class MPRoutingProviderInternal {#class-mproutingproviderinternal .title title="
             [Parameters:]{.paramLabel}
             :   `points` - the points
 
-        []{#query-com.mapspeople.models.Point-com.mapspeople.models.Point-java.lang.String-}
-
+        &nbsp;
         -   #### query
 
                 public void query(Point from,                  Point to,                  java.lang.String graphId)
@@ -18508,8 +16247,7 @@ Class MPRoutingProviderInternal {#class-mproutingproviderinternal .title title="
             :   `to` - the to
             :   `graphId` - the graph id
 
-        []{#queryMultipleDestinations-com.mapspeople.models.Point-java.util.List-}
-
+        &nbsp;
         -   #### queryMultipleDestinations
 
                 public void queryMultipleDestinations(Point from,                                      java.util.List<Point> destinations)
@@ -18524,8 +16262,7 @@ Class MPRoutingProviderInternal {#class-mproutingproviderinternal .title title="
             :   `from` - the from
             :   `destinations` - the destinations
 
-        []{#setTravelMode-java.lang.String-}
-
+        &nbsp;
         -   #### setTravelMode
 
                 public void setTravelMode(java.lang.String mode)
@@ -18538,8 +16275,7 @@ Class MPRoutingProviderInternal {#class-mproutingproviderinternal .title title="
             [Parameters:]{.paramLabel}
             :   `mode` - the mode
 
-        []{#addRouteRestriction-java.lang.String-}
-
+        &nbsp;
         -   #### addRouteRestriction
 
                 public void addRouteRestriction(java.lang.String restriction)
@@ -18553,8 +16289,7 @@ Class MPRoutingProviderInternal {#class-mproutingproviderinternal .title title="
             [Parameters:]{.paramLabel}
             :   `restriction` - the restriction
 
-        []{#clearRouteRestrictions--}
-
+        &nbsp;
         -   #### clearRouteRestrictions
 
                 public void clearRouteRestrictions()
@@ -18565,8 +16300,7 @@ Class MPRoutingProviderInternal {#class-mproutingproviderinternal .title title="
             :   `clearRouteRestrictions` in
                 interface `RoutingProviderInternal`
 
-        []{#setDateTime-java.util.Calendar-boolean-}
-
+        &nbsp;
         -   #### setDateTime
 
                 public void setDateTime(java.util.Calendar date,                        boolean isDeparture)
@@ -18580,8 +16314,7 @@ Class MPRoutingProviderInternal {#class-mproutingproviderinternal .title title="
             :   `date` - the date
             :   `isDeparture` - the is departure
 
-        []{#storeRoute-com.mapspeople.routing.MPRoutingProviderInternal.MPRoutingQuery-}
-
+        &nbsp;
         -   #### storeRoute
 
                 public void storeRoute(MPRoutingProviderInternal.MPRoutingQuery route)
@@ -18609,30 +16342,20 @@ Class Maneuver {#class-maneuver .title title="Class Maneuver"}
 
     The type Maneuver.
 
--   -   []{#field.summary}
-
-        ### Field Summary
+-   -   ### Field Summary
 
           Constructor and Description
           -----------------------------
           `Maneuver()` 
 
     &nbsp;
-    -   []{#method.summary}
+    -   ### Method Summary
 
-        ### Method Summary
-
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#field.detail}
-
-        ### Field Detail
-
-        []{#STRAIGHT_AHEAD}
+-   -   ### Field Detail
 
         -   #### STRAIGHT\_AHEAD
 
@@ -18641,11 +16364,9 @@ Class Maneuver {#class-maneuver .title title="Class Maneuver"}
             The constant STRAIGHT\_AHEAD.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.routing.Maneuver.STRAIGHT_AHEAD)
+            :   Constant Field Values
 
-        []{#LEFT}
-
+        &nbsp;
         -   #### LEFT
 
                 public static final java.lang.String LEFT
@@ -18653,11 +16374,9 @@ Class Maneuver {#class-maneuver .title title="Class Maneuver"}
             The constant LEFT.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.routing.Maneuver.LEFT)
+            :   Constant Field Values
 
-        []{#RIGHT}
-
+        &nbsp;
         -   #### RIGHT
 
                 public static final java.lang.String RIGHT
@@ -18665,11 +16384,9 @@ Class Maneuver {#class-maneuver .title title="Class Maneuver"}
             The constant RIGHT.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.routing.Maneuver.RIGHT)
+            :   Constant Field Values
 
-        []{#LEFT_UP}
-
+        &nbsp;
         -   #### LEFT\_UP
 
                 public static final java.lang.String LEFT_UP
@@ -18677,11 +16394,9 @@ Class Maneuver {#class-maneuver .title title="Class Maneuver"}
             The constant LEFT\_UP.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.routing.Maneuver.LEFT_UP)
+            :   Constant Field Values
 
-        []{#RIGHT_UP}
-
+        &nbsp;
         -   #### RIGHT\_UP
 
                 public static final java.lang.String RIGHT_UP
@@ -18689,11 +16404,9 @@ Class Maneuver {#class-maneuver .title title="Class Maneuver"}
             The constant RIGHT\_UP.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.routing.Maneuver.RIGHT_UP)
+            :   Constant Field Values
 
-        []{#U_TURN}
-
+        &nbsp;
         -   #### U\_TURN
 
                 public static final java.lang.String U_TURN
@@ -18701,11 +16414,9 @@ Class Maneuver {#class-maneuver .title title="Class Maneuver"}
             The constant U\_TURN.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.routing.Maneuver.U_TURN)
+            :   Constant Field Values
 
-        []{#LEFT_DOWN}
-
+        &nbsp;
         -   #### LEFT\_DOWN
 
                 public static final java.lang.String LEFT_DOWN
@@ -18713,11 +16424,9 @@ Class Maneuver {#class-maneuver .title title="Class Maneuver"}
             The constant LEFT\_DOWN.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.routing.Maneuver.LEFT_DOWN)
+            :   Constant Field Values
 
-        []{#RIGHT_DOWN}
-
+        &nbsp;
         -   #### RIGHT\_DOWN
 
                 public static final java.lang.String RIGHT_DOWN
@@ -18725,11 +16434,9 @@ Class Maneuver {#class-maneuver .title title="Class Maneuver"}
             The constant RIGHT\_DOWN.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.routing.Maneuver.RIGHT_DOWN)
+            :   Constant Field Values
 
-        []{#UP}
-
+        &nbsp;
         -   #### UP
 
                 public static final java.lang.String UP
@@ -18737,11 +16444,9 @@ Class Maneuver {#class-maneuver .title title="Class Maneuver"}
             The constant UP.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.routing.Maneuver.UP)
+            :   Constant Field Values
 
-        []{#DOWN}
-
+        &nbsp;
         -   #### DOWN
 
                 public static final java.lang.String DOWN
@@ -18749,11 +16454,9 @@ Class Maneuver {#class-maneuver .title title="Class Maneuver"}
             The constant DOWN.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.routing.Maneuver.DOWN)
+            :   Constant Field Values
 
-        []{#START}
-
+        &nbsp;
         -   #### START
 
                 public static final java.lang.String START
@@ -18761,15 +16464,10 @@ Class Maneuver {#class-maneuver .title title="Class Maneuver"}
             The constant START.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.routing.Maneuver.START)
+            :   Constant Field Values
 
     &nbsp;
-    -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#Maneuver--}
+    -   ### Constructor Detail
 
         -   #### Maneuver
 
@@ -18790,9 +16488,7 @@ Interface OnDirectionContainsResultListener {#interface-ondirectioncontainsresul
 
     The interface On direction contains result listener.
 
--   -   []{#method.summary}
-
-        ### Method Summary
+-   -   ### Method Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -18802,11 +16498,7 @@ Interface OnDirectionContainsResultListener {#interface-ondirectioncontainsresul
         |                                   | On contains result.               |
         +-----------------------------------+-----------------------------------+
 
--   -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#onContainsResult-java.lang.String:A-}
+-   -   ### Method Detail
 
         -   #### onContainsResult
 
@@ -18832,9 +16524,7 @@ Interface OnDirectionMatrixResultListener {#interface-ondirectionmatrixresultlis
 
     The interface On direction matrix result listener.
 
--   -   []{#method.summary}
-
-        ### Method Summary
+-   -   ### Method Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -18844,11 +16534,7 @@ Interface OnDirectionMatrixResultListener {#interface-ondirectionmatrixresultlis
         |                                   | On on direction matrix result.    |
         +-----------------------------------+-----------------------------------+
 
--   -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#onOnDirectionMatrixResult-com.mapspeople.routing.DistanceMatrixResponse-}
+-   -   ### Method Detail
 
         -   #### onOnDirectionMatrixResult
 
@@ -18874,9 +16560,7 @@ Interface OnLegSelectedListener {#interface-onlegselectedlistener .title title="
 
     The interface On leg selected listener.
 
--   -   []{#method.summary}
-
-        ### Method Summary
+-   -   ### Method Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -18885,11 +16569,7 @@ Interface OnLegSelectedListener {#interface-onlegselectedlistener .title title="
         |                                   | On leg selected.                  |
         +-----------------------------------+-----------------------------------+
 
--   -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#onLegSelected-int-}
+-   -   ### Method Detail
 
         -   #### onLegSelected
 
@@ -18915,9 +16595,7 @@ Interface OnRouteResultListener {#interface-onrouteresultlistener .title title="
 
     The interface On route result listener.
 
--   -   []{#method.summary}
-
-        ### Method Summary
+-   -   ### Method Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -18930,11 +16608,7 @@ Interface OnRouteResultListener {#interface-onrouteresultlistener .title title="
         |                                   | On routing info result.           |
         +-----------------------------------+-----------------------------------+
 
--   -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#onRouteResult-com.mapspeople.routing.Route-}
+-   -   ### Method Detail
 
         -   #### onRouteResult
 
@@ -18945,8 +16619,7 @@ Interface OnRouteResultListener {#interface-onrouteresultlistener .title title="
             [Parameters:]{.paramLabel}
             :   `route` - the route
 
-        []{#onRoutingInfoResult-java.lang.Object-}
-
+        &nbsp;
         -   #### onRoutingInfoResult
 
                 void onRoutingInfoResult(java.lang.Object info)
@@ -18974,9 +16647,7 @@ Class Route {#class-route .title title="Class Route"}
 
     The type Route.
 
--   -   []{#constructor.summary}
-
-        ### Constructor Summary
+-   -   ### Constructor Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -19036,17 +16707,11 @@ Class Route {#class-route .title title="Class Route"}
         |                                   | Show full route.                  |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#Route-java.util.List-}
+-   -   ### Constructor Detail
 
         -   #### Route
 
@@ -19058,11 +16723,7 @@ Class Route {#class-route .title title="Class Route"}
             :   `legs` - the legs
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#getStyle--}
+    -   ### Method Detail
 
         -   #### getStyle
 
@@ -19073,8 +16734,7 @@ Class Route {#class-route .title title="Class Route"}
             [Returns:]{.returnLabel}
             :   the style
 
-        []{#setStyle-com.mapspeople.routing.RouteDisplayStyle-}
-
+        &nbsp;
         -   #### setStyle
 
                 public void setStyle(RouteDisplayStyle style)
@@ -19084,8 +16744,7 @@ Class Route {#class-route .title title="Class Route"}
             [Parameters:]{.paramLabel}
             :   `style` - the style
 
-        []{#getDuration--}
-
+        &nbsp;
         -   #### getDuration
 
                 public int getDuration()
@@ -19095,8 +16754,7 @@ Class Route {#class-route .title title="Class Route"}
             [Returns:]{.returnLabel}
             :   the duration
 
-        []{#getDistance--}
-
+        &nbsp;
         -   #### getDistance
 
                 public int getDistance()
@@ -19106,8 +16764,7 @@ Class Route {#class-route .title title="Class Route"}
             [Returns:]{.returnLabel}
             :   the distance
 
-        []{#addToMap-GoogleMap-int-}
-
+        &nbsp;
         -   #### addToMap
 
                 public java.util.List<Polyline> addToMap(GoogleMap map,                                         int floorIndex)
@@ -19121,8 +16778,7 @@ Class Route {#class-route .title title="Class Route"}
             [Returns:]{.returnLabel}
             :   the list
 
-        []{#addToMap-GoogleMap-}
-
+        &nbsp;
         -   #### addToMap
 
                 public java.util.List<Polyline> addToMap(GoogleMap map)
@@ -19135,24 +16791,21 @@ Class Route {#class-route .title title="Class Route"}
             [Returns:]{.returnLabel}
             :   the list
 
-        []{#showFullRoute--}
-
+        &nbsp;
         -   #### showFullRoute
 
                 public void showFullRoute()
 
             Show full route.
 
-        []{#removeFromMap--}
-
+        &nbsp;
         -   #### removeFromMap
 
                 public void removeFromMap()
 
             Remove from map.
 
-        []{#getAsRouteVertexList--}
-
+        &nbsp;
         -   #### getAsRouteVertexList
 
                 public java.util.List<RouteVertex> getAsRouteVertexList()
@@ -19162,8 +16815,7 @@ Class Route {#class-route .title title="Class Route"}
             [Returns:]{.returnLabel}
             :   the as route vertex list
 
-        []{#getCollapsedSteps--}
-
+        &nbsp;
         -   #### getCollapsedSteps
 
                 public java.util.List<RouteStep> getCollapsedSteps()
@@ -19173,8 +16825,7 @@ Class Route {#class-route .title title="Class Route"}
             [Returns:]{.returnLabel}
             :   the collapsed steps
 
-        []{#getFullPath--}
-
+        &nbsp;
         -   #### getFullPath
 
                 public java.util.List<LatLng> getFullPath()
@@ -19184,8 +16835,7 @@ Class Route {#class-route .title title="Class Route"}
             [Returns:]{.returnLabel}
             :   the full path
 
-        []{#getRouteLegs--}
-
+        &nbsp;
         -   #### getRouteLegs
 
                 public java.util.List<RouteLeg> getRouteLegs()
@@ -19195,8 +16845,7 @@ Class Route {#class-route .title title="Class Route"}
             [Returns:]{.returnLabel}
             :   the route legs
 
-        []{#getOverviewPolyline--}
-
+        &nbsp;
         -   #### getOverviewPolyline
 
                 public RoutePolyline getOverviewPolyline()
@@ -19206,8 +16855,7 @@ Class Route {#class-route .title title="Class Route"}
             [Returns:]{.returnLabel}
             :   the overview polyline
 
-        []{#getPolylines--}
-
+        &nbsp;
         -   #### getPolylines
 
                 public java.util.List<Polyline> getPolylines()
@@ -19217,8 +16865,7 @@ Class Route {#class-route .title title="Class Route"}
             [Returns:]{.returnLabel}
             :   the polylines
 
-        []{#getPolylineStrokes--}
-
+        &nbsp;
         -   #### getPolylineStrokes
 
                 public java.util.List<Polyline> getPolylineStrokes()
@@ -19228,8 +16875,7 @@ Class Route {#class-route .title title="Class Route"}
             [Returns:]{.returnLabel}
             :   the polyline strokes
 
-        []{#getRestrictions--}
-
+        &nbsp;
         -   #### getRestrictions
 
                 public java.lang.String[] getRestrictions()
@@ -19239,8 +16885,7 @@ Class Route {#class-route .title title="Class Route"}
             [Returns:]{.returnLabel}
             :   the string \[ \]
 
-        []{#setRestrictions-java.lang.String:A-}
-
+        &nbsp;
         -   #### setRestrictions
 
                 public void setRestrictions(java.lang.String[] restrictions)
@@ -19268,9 +16913,7 @@ Class RouteCoordinate {#class-routecoordinate .title title="Class RouteCoordinat
 
     The type Route coordinate.
 
--   -   []{#constructor.summary}
-
-        ### Constructor Summary
+-   -   ### Constructor Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -19301,17 +16944,11 @@ Class RouteCoordinate {#class-routecoordinate .title title="Class RouteCoordinat
         |                                   | Sets index.                       |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#RouteCoordinate-double-double-double-}
+-   -   ### Constructor Detail
 
         -   #### RouteCoordinate
 
@@ -19324,8 +16961,7 @@ Class RouteCoordinate {#class-routecoordinate .title title="Class RouteCoordinat
             :   `lng` - the lng
             :   `zLevel` - the z level
 
-        []{#RouteCoordinate-com.mapspeople.models.Point-}
-
+        &nbsp;
         -   #### RouteCoordinate
 
                 public RouteCoordinate(Point pos)
@@ -19336,11 +16972,7 @@ Class RouteCoordinate {#class-routecoordinate .title title="Class RouteCoordinat
             :   `pos` - the pos
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#getLat--}
+    -   ### Method Detail
 
         -   #### getLat
 
@@ -19351,8 +16983,7 @@ Class RouteCoordinate {#class-routecoordinate .title title="Class RouteCoordinat
             [Returns:]{.returnLabel}
             :   the lat
 
-        []{#setLat-double-}
-
+        &nbsp;
         -   #### setLat
 
                 public void setLat(double lat)
@@ -19362,8 +16993,7 @@ Class RouteCoordinate {#class-routecoordinate .title title="Class RouteCoordinat
             [Parameters:]{.paramLabel}
             :   `lat` - the lat
 
-        []{#getLng--}
-
+        &nbsp;
         -   #### getLng
 
                 public double getLng()
@@ -19373,8 +17003,7 @@ Class RouteCoordinate {#class-routecoordinate .title title="Class RouteCoordinat
             [Returns:]{.returnLabel}
             :   the lng
 
-        []{#setLng-double-}
-
+        &nbsp;
         -   #### setLng
 
                 public void setLng(double lng)
@@ -19384,8 +17013,7 @@ Class RouteCoordinate {#class-routecoordinate .title title="Class RouteCoordinat
             [Parameters:]{.paramLabel}
             :   `lng` - the lng
 
-        []{#getzIndex--}
-
+        &nbsp;
         -   #### getzIndex
 
                 public double getzIndex()
@@ -19395,8 +17023,7 @@ Class RouteCoordinate {#class-routecoordinate .title title="Class RouteCoordinat
             [Returns:]{.returnLabel}
             :   the index
 
-        []{#setzIndex-double-}
-
+        &nbsp;
         -   #### setzIndex
 
                 public void setzIndex(double zIndex)
@@ -19406,8 +17033,7 @@ Class RouteCoordinate {#class-routecoordinate .title title="Class RouteCoordinat
             [Parameters:]{.paramLabel}
             :   `zIndex` - the z index
 
-        []{#setFloorName-java.lang.String-}
-
+        &nbsp;
         -   #### setFloorName
 
                 public void setFloorName(java.lang.String floorName)
@@ -19417,8 +17043,7 @@ Class RouteCoordinate {#class-routecoordinate .title title="Class RouteCoordinat
             [Parameters:]{.paramLabel}
             :   `floorName` - the floor name
 
-        []{#getFloorName--}
-
+        &nbsp;
         -   #### getFloorName
 
                 public java.lang.String getFloorName()
@@ -19446,9 +17071,7 @@ Class RouteDisplayStyle {#class-routedisplaystyle .title title="Class RouteDispl
 
     The type Route display style.
 
--   -   []{#field.summary}
-
-        ### Field Summary
+-   -   ### Field Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -19481,17 +17104,11 @@ Class RouteDisplayStyle {#class-routedisplaystyle .title title="Class RouteDispl
         |                                   | Sets step icon.                   |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#field.detail}
-
-        ### Field Detail
-
-        []{#POLYLINE_COLOR_ACTIVE}
+-   -   ### Field Detail
 
         -   #### POLYLINE\_COLOR\_ACTIVE
 
@@ -19500,11 +17117,9 @@ Class RouteDisplayStyle {#class-routedisplaystyle .title title="Class RouteDispl
             The constant POLYLINE\_COLOR\_ACTIVE.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.routing.RouteDisplayStyle.POLYLINE_COLOR_ACTIVE)
+            :   Constant Field Values
 
-        []{#POLYLINE_COLOR_INACTIVE}
-
+        &nbsp;
         -   #### POLYLINE\_COLOR\_INACTIVE
 
                 public static final int POLYLINE_COLOR_INACTIVE
@@ -19512,11 +17127,9 @@ Class RouteDisplayStyle {#class-routedisplaystyle .title title="Class RouteDispl
             The constant POLYLINE\_COLOR\_INACTIVE.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.routing.RouteDisplayStyle.POLYLINE_COLOR_INACTIVE)
+            :   Constant Field Values
 
-        []{#POLYLINE_STROKE_ACTIVE}
-
+        &nbsp;
         -   #### POLYLINE\_STROKE\_ACTIVE
 
                 public static final int POLYLINE_STROKE_ACTIVE
@@ -19524,11 +17137,9 @@ Class RouteDisplayStyle {#class-routedisplaystyle .title title="Class RouteDispl
             The constant POLYLINE\_STROKE\_ACTIVE.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.routing.RouteDisplayStyle.POLYLINE_STROKE_ACTIVE)
+            :   Constant Field Values
 
-        []{#POLYLINE_STROKE_INACTIVE}
-
+        &nbsp;
         -   #### POLYLINE\_STROKE\_INACTIVE
 
                 public static final int POLYLINE_STROKE_INACTIVE
@@ -19536,11 +17147,9 @@ Class RouteDisplayStyle {#class-routedisplaystyle .title title="Class RouteDispl
             The constant POLYLINE\_STROKE\_INACTIVE.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.routing.RouteDisplayStyle.POLYLINE_STROKE_INACTIVE)
+            :   Constant Field Values
 
-        []{#POLYLINE_WALKING_ACTIVE}
-
+        &nbsp;
         -   #### POLYLINE\_WALKING\_ACTIVE
 
                 public static final int POLYLINE_WALKING_ACTIVE
@@ -19548,11 +17157,9 @@ Class RouteDisplayStyle {#class-routedisplaystyle .title title="Class RouteDispl
             The constant POLYLINE\_WALKING\_ACTIVE.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.routing.RouteDisplayStyle.POLYLINE_WALKING_ACTIVE)
+            :   Constant Field Values
 
-        []{#POLYLINE_WALKING_INACTIVE}
-
+        &nbsp;
         -   #### POLYLINE\_WALKING\_INACTIVE
 
                 public static final int POLYLINE_WALKING_INACTIVE
@@ -19560,15 +17167,10 @@ Class RouteDisplayStyle {#class-routedisplaystyle .title title="Class RouteDispl
             The constant POLYLINE\_WALKING\_INACTIVE.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.routing.RouteDisplayStyle.POLYLINE_WALKING_INACTIVE)
+            :   Constant Field Values
 
     &nbsp;
-    -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#RouteDisplayStyle--}
+    -   ### Constructor Detail
 
         -   #### RouteDisplayStyle
 
@@ -19577,11 +17179,7 @@ Class RouteDisplayStyle {#class-routedisplaystyle .title title="Class RouteDispl
             Instantiates a new Route display style.
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#getLineColor-int-}
+    -   ### Method Detail
 
         -   #### getLineColor
 
@@ -19595,8 +17193,7 @@ Class RouteDisplayStyle {#class-routedisplaystyle .title title="Class RouteDispl
             [Returns:]{.returnLabel}
             :   the line color
 
-        []{#setLineColor-int-int-}
-
+        &nbsp;
         -   #### setLineColor
 
                 public void setLineColor(int colorIndex,                         int value)
@@ -19607,8 +17204,7 @@ Class RouteDisplayStyle {#class-routedisplaystyle .title title="Class RouteDispl
             :   `colorIndex` - the color index
             :   `value` - the value
 
-        []{#getLineSize--}
-
+        &nbsp;
         -   #### getLineSize
 
                 public float getLineSize()
@@ -19618,8 +17214,7 @@ Class RouteDisplayStyle {#class-routedisplaystyle .title title="Class RouteDispl
             [Returns:]{.returnLabel}
             :   the line size
 
-        []{#setLineSize-float-}
-
+        &nbsp;
         -   #### setLineSize
 
                 public void setLineSize(float value)
@@ -19629,8 +17224,7 @@ Class RouteDisplayStyle {#class-routedisplaystyle .title title="Class RouteDispl
             [Parameters:]{.paramLabel}
             :   `value` - the value
 
-        []{#getLineStrokeSize--}
-
+        &nbsp;
         -   #### getLineStrokeSize
 
                 public float getLineStrokeSize()
@@ -19640,8 +17234,7 @@ Class RouteDisplayStyle {#class-routedisplaystyle .title title="Class RouteDispl
             [Returns:]{.returnLabel}
             :   the line stroke size
 
-        []{#setLineStrokeSize-float-}
-
+        &nbsp;
         -   #### setLineStrokeSize
 
                 public void setLineStrokeSize(float value)
@@ -19651,8 +17244,7 @@ Class RouteDisplayStyle {#class-routedisplaystyle .title title="Class RouteDispl
             [Parameters:]{.paramLabel}
             :   `value` - the value
 
-        []{#getStepIcon-boolean-}
-
+        &nbsp;
         -   #### getStepIcon
 
                 public android.graphics.Bitmap getStepIcon(boolean selected)
@@ -19665,8 +17257,7 @@ Class RouteDisplayStyle {#class-routedisplaystyle .title title="Class RouteDispl
             [Returns:]{.returnLabel}
             :   the step icon
 
-        []{#setStepIcon-boolean-android.graphics.Bitmap-}
-
+        &nbsp;
         -   #### setStepIcon
 
                 public void setStepIcon(boolean selected,                        android.graphics.Bitmap icon)
@@ -19695,9 +17286,7 @@ Class RouteLeg {#class-routeleg .title title="Class RouteLeg"}
 
     Route legs indoors are actions for each floor.
 
--   -   []{#constructor.summary}
-
-        ### Constructor Summary
+-   -   ### Constructor Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -19733,17 +17322,11 @@ Class RouteLeg {#class-routeleg .title title="Class RouteLeg"}
         |                                   | Gets steps.                       |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#RouteLeg-float-float-com.mapspeople.models.Point-com.mapspeople.models.Point-java.util.List-}
+-   -   ### Constructor Detail
 
         -   #### RouteLeg
 
@@ -19759,11 +17342,7 @@ Class RouteLeg {#class-routeleg .title title="Class RouteLeg"}
             :   `steps` - the steps
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#getDuration--}
+    -   ### Method Detail
 
         -   #### getDuration
 
@@ -19774,8 +17353,7 @@ Class RouteLeg {#class-routeleg .title title="Class RouteLeg"}
             [Returns:]{.returnLabel}
             :   the duration
 
-        []{#getDistance--}
-
+        &nbsp;
         -   #### getDistance
 
                 public float getDistance()
@@ -19785,8 +17363,7 @@ Class RouteLeg {#class-routeleg .title title="Class RouteLeg"}
             [Returns:]{.returnLabel}
             :   the distance
 
-        []{#getSteps--}
-
+        &nbsp;
         -   #### getSteps
 
                 public java.util.List<RouteStep> getSteps()
@@ -19796,8 +17373,7 @@ Class RouteLeg {#class-routeleg .title title="Class RouteLeg"}
             [Returns:]{.returnLabel}
             :   the steps
 
-        []{#getPoints--}
-
+        &nbsp;
         -   #### getPoints
 
                 public java.util.List<Point> getPoints()
@@ -19807,8 +17383,7 @@ Class RouteLeg {#class-routeleg .title title="Class RouteLeg"}
             [Returns:]{.returnLabel}
             :   the points
 
-        []{#getStartPoint--}
-
+        &nbsp;
         -   #### getStartPoint
 
                 public Point getStartPoint()
@@ -19818,8 +17393,7 @@ Class RouteLeg {#class-routeleg .title title="Class RouteLeg"}
             [Returns:]{.returnLabel}
             :   the start point
 
-        []{#getEndPoint--}
-
+        &nbsp;
         -   #### getEndPoint
 
                 public Point getEndPoint()
@@ -19829,8 +17403,7 @@ Class RouteLeg {#class-routeleg .title title="Class RouteLeg"}
             [Returns:]{.returnLabel}
             :   the end point
 
-        []{#getStartAddress--}
-
+        &nbsp;
         -   #### getStartAddress
 
                 public java.lang.String getStartAddress()
@@ -19840,8 +17413,7 @@ Class RouteLeg {#class-routeleg .title title="Class RouteLeg"}
             [Returns:]{.returnLabel}
             :   the start address
 
-        []{#getEndAddress--}
-
+        &nbsp;
         -   #### getEndAddress
 
                 public java.lang.String getEndAddress()
@@ -19851,8 +17423,7 @@ Class RouteLeg {#class-routeleg .title title="Class RouteLeg"}
             [Returns:]{.returnLabel}
             :   the end address
 
-        []{#getStartFloorname--}
-
+        &nbsp;
         -   #### getStartFloorname
 
                 public java.lang.String getStartFloorname()
@@ -19862,8 +17433,7 @@ Class RouteLeg {#class-routeleg .title title="Class RouteLeg"}
             [Returns:]{.returnLabel}
             :   the start floorname
 
-        []{#getEndFloorname--}
-
+        &nbsp;
         -   #### getEndFloorname
 
                 public java.lang.String getEndFloorname()
@@ -19891,9 +17461,7 @@ Class RoutePolyline {#class-routepolyline .title title="Class RoutePolyline"}
 
     The type Route polyline.
 
--   -   []{#constructor.summary}
-
-        ### Constructor Summary
+-   -   ### Constructor Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -19905,28 +17473,18 @@ Class RoutePolyline {#class-routepolyline .title title="Class RoutePolyline"}
         |                                   | Gets points encoded.              |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#RoutePolyline--}
+-   -   ### Constructor Detail
 
         -   #### RoutePolyline
 
                 public RoutePolyline()
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#getPointsEncoded--}
+    -   ### Method Detail
 
         -   #### getPointsEncoded
 
@@ -19937,8 +17495,7 @@ Class RoutePolyline {#class-routepolyline .title title="Class RoutePolyline"}
             [Returns:]{.returnLabel}
             :   the points encoded
 
-        []{#getPoints--}
-
+        &nbsp;
         -   #### getPoints
 
                 public java.util.List<Point> getPoints()
@@ -19966,9 +17523,7 @@ Class RouteProperty {#class-routeproperty .title title="Class RouteProperty"}
 
     The type Route property.
 
--   -   []{#constructor.summary}
-
-        ### Constructor Summary
+-   -   ### Constructor Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -19977,17 +17532,11 @@ Class RouteProperty {#class-routeproperty .title title="Class RouteProperty"}
         |                                   | Gets value.                       |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#RouteProperty-float-}
+-   -   ### Constructor Detail
 
         -   #### RouteProperty
 
@@ -19999,11 +17548,7 @@ Class RouteProperty {#class-routeproperty .title title="Class RouteProperty"}
             :   `value` - the value
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#getValue--}
+    -   ### Method Detail
 
         -   #### getValue
 
@@ -20029,9 +17574,7 @@ Interface RouteRenderer {#interface-routerenderer .title title="Interface RouteR
 
     RouteRenderer Created by JSM on 07/04/15.
 
--   -   []{#method.summary}
-
-        ### Method Summary
+-   -   ### Method Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -20048,11 +17591,7 @@ Interface RouteRenderer {#interface-routerenderer .title title="Interface RouteR
         |                                   | Render list.                      |
         +-----------------------------------+-----------------------------------+
 
--   -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#render-com.mapspeople.routing.Route-GoogleMap-int-}
+-   -   ### Method Detail
 
         -   #### render
 
@@ -20068,8 +17607,7 @@ Interface RouteRenderer {#interface-routerenderer .title title="Interface RouteR
             [Returns:]{.returnLabel}
             :   the list
 
-        []{#render-com.mapspeople.routing.Route-GoogleMap-}
-
+        &nbsp;
         -   #### render
 
                 java.util.List<Polyline> render(Route route,                                GoogleMap map)
@@ -20083,8 +17621,7 @@ Interface RouteRenderer {#interface-routerenderer .title title="Interface RouteR
             [Returns:]{.returnLabel}
             :   the list
 
-        []{#remove--}
-
+        &nbsp;
         -   #### remove
 
                 void remove()
@@ -20109,9 +17646,7 @@ Class RouteResult {#class-routeresult .title title="Class RouteResult"}
 
     The type Route result.
 
--   -   []{#constructor.summary}
-
-        ### Constructor Summary
+-   -   ### Constructor Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -20127,28 +17662,18 @@ Class RouteResult {#class-routeresult .title title="Class RouteResult"}
         |                                   | Sets routes.                      |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#RouteResult--}
+-   -   ### Constructor Detail
 
         -   #### RouteResult
 
                 public RouteResult()
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#getRoutes--}
+    -   ### Method Detail
 
         -   #### getRoutes
 
@@ -20159,8 +17684,7 @@ Class RouteResult {#class-routeresult .title title="Class RouteResult"}
             [Returns:]{.returnLabel}
             :   the routes
 
-        []{#setRoutes-java.util.List-}
-
+        &nbsp;
         -   #### setRoutes
 
                 public void setRoutes(java.util.List<Route> routes)
@@ -20170,8 +17694,7 @@ Class RouteResult {#class-routeresult .title title="Class RouteResult"}
             [Parameters:]{.paramLabel}
             :   `routes` - the routes
 
-        []{#getStatus--}
-
+        &nbsp;
         -   #### getStatus
 
                 public java.lang.String getStatus()
@@ -20199,9 +17722,7 @@ Class RouteStep {#class-routestep .title title="Class RouteStep"}
 
     The type Route step.
 
--   -   []{#constructor.summary}
-
-        ### Constructor Summary
+-   -   ### Constructor Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -20253,28 +17774,18 @@ Class RouteStep {#class-routestep .title title="Class RouteStep"}
         |                                   | Sets maneuver.                    |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#RouteStep--}
+-   -   ### Constructor Detail
 
         -   #### RouteStep
 
                 public RouteStep()
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#getAbutters--}
+    -   ### Method Detail
 
         -   #### getAbutters
 
@@ -20285,8 +17796,7 @@ Class RouteStep {#class-routestep .title title="Class RouteStep"}
             [Returns:]{.returnLabel}
             :   the abutters
 
-        []{#getHighway--}
-
+        &nbsp;
         -   #### getHighway
 
                 public java.lang.String getHighway()
@@ -20296,8 +17806,7 @@ Class RouteStep {#class-routestep .title title="Class RouteStep"}
             [Returns:]{.returnLabel}
             :   the highway
 
-        []{#getManeuver--}
-
+        &nbsp;
         -   #### getManeuver
 
                 public java.lang.String getManeuver()
@@ -20307,8 +17816,7 @@ Class RouteStep {#class-routestep .title title="Class RouteStep"}
             [Returns:]{.returnLabel}
             :   the maneuver
 
-        []{#setManeuver-java.lang.String-}
-
+        &nbsp;
         -   #### setManeuver
 
                 public void setManeuver(java.lang.String maneuver)
@@ -20318,8 +17826,7 @@ Class RouteStep {#class-routestep .title title="Class RouteStep"}
             [Parameters:]{.paramLabel}
             :   `maneuver` - the maneuver
 
-        []{#getStartPoint--}
-
+        &nbsp;
         -   #### getStartPoint
 
                 public Point getStartPoint()
@@ -20329,8 +17836,7 @@ Class RouteStep {#class-routestep .title title="Class RouteStep"}
             [Returns:]{.returnLabel}
             :   the start point
 
-        []{#getEndPoint--}
-
+        &nbsp;
         -   #### getEndPoint
 
                 public Point getEndPoint()
@@ -20340,8 +17846,7 @@ Class RouteStep {#class-routestep .title title="Class RouteStep"}
             [Returns:]{.returnLabel}
             :   the end point
 
-        []{#getDuration--}
-
+        &nbsp;
         -   #### getDuration
 
                 public float getDuration()
@@ -20351,8 +17856,7 @@ Class RouteStep {#class-routestep .title title="Class RouteStep"}
             [Returns:]{.returnLabel}
             :   the duration
 
-        []{#getDistance--}
-
+        &nbsp;
         -   #### getDistance
 
                 public float getDistance()
@@ -20362,8 +17866,7 @@ Class RouteStep {#class-routestep .title title="Class RouteStep"}
             [Returns:]{.returnLabel}
             :   the distance
 
-        []{#getPoints--}
-
+        &nbsp;
         -   #### getPoints
 
                 public java.util.Collection<? extends Point> getPoints()
@@ -20373,8 +17876,7 @@ Class RouteStep {#class-routestep .title title="Class RouteStep"}
             [Returns:]{.returnLabel}
             :   the points
 
-        []{#getHtmlInstructions--}
-
+        &nbsp;
         -   #### getHtmlInstructions
 
                 public java.lang.String getHtmlInstructions()
@@ -20384,8 +17886,7 @@ Class RouteStep {#class-routestep .title title="Class RouteStep"}
             [Returns:]{.returnLabel}
             :   the html instructions
 
-        []{#getTravelMode--}
-
+        &nbsp;
         -   #### getTravelMode
 
                 public java.lang.String getTravelMode()
@@ -20395,8 +17896,7 @@ Class RouteStep {#class-routestep .title title="Class RouteStep"}
             [Returns:]{.returnLabel}
             :   the travel mode
 
-        []{#getPolyline--}
-
+        &nbsp;
         -   #### getPolyline
 
                 public RoutePolyline getPolyline()
@@ -20406,16 +17906,14 @@ Class RouteStep {#class-routestep .title title="Class RouteStep"}
             [Returns:]{.returnLabel}
             :   the polyline
 
-        []{#replaceGeometryWithPolyline--}
-
+        &nbsp;
         -   #### replaceGeometryWithPolyline
 
                 public void replaceGeometryWithPolyline()
 
             Replace geometry with polyline.
 
-        []{#getStartFloorname--}
-
+        &nbsp;
         -   #### getStartFloorname
 
                 public java.lang.String getStartFloorname()
@@ -20425,8 +17923,7 @@ Class RouteStep {#class-routestep .title title="Class RouteStep"}
             [Returns:]{.returnLabel}
             :   the start floorname
 
-        []{#getEndFloorname--}
-
+        &nbsp;
         -   #### getEndFloorname
 
                 public java.lang.String getEndFloorname()
@@ -20454,9 +17951,7 @@ Class RouteVertex {#class-routevertex .title title="Class RouteVertex"}
 
     The type Route vertex.
 
--   -   []{#constructor.summary}
-
-        ### Constructor Summary
+-   -   ### Constructor Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -20480,17 +17975,11 @@ Class RouteVertex {#class-routevertex .title title="Class RouteVertex"}
         |                                   | Sets z level.                     |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#RouteVertex-double-double-int-}
+-   -   ### Constructor Detail
 
         -   #### RouteVertex
 
@@ -20503,8 +17992,7 @@ Class RouteVertex {#class-routevertex .title title="Class RouteVertex"}
             :   `longitude` - the longitude
             :   `zLevel` - the z level
 
-        []{#RouteVertex-double-double-double-}
-
+        &nbsp;
         -   #### RouteVertex
 
                 public RouteVertex(double latitude,                   double longitude,                   double zLevel)
@@ -20517,11 +18005,7 @@ Class RouteVertex {#class-routevertex .title title="Class RouteVertex"}
             :   `zLevel` - the z level
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#getLatitude--}
+    -   ### Method Detail
 
         -   #### getLatitude
 
@@ -20532,8 +18016,7 @@ Class RouteVertex {#class-routevertex .title title="Class RouteVertex"}
             [Returns:]{.returnLabel}
             :   the latitude
 
-        []{#setLatitude-double-}
-
+        &nbsp;
         -   #### setLatitude
 
                 public void setLatitude(double value)
@@ -20543,8 +18026,7 @@ Class RouteVertex {#class-routevertex .title title="Class RouteVertex"}
             [Parameters:]{.paramLabel}
             :   `value` - the value
 
-        []{#getLongitude--}
-
+        &nbsp;
         -   #### getLongitude
 
                 public double getLongitude()
@@ -20554,8 +18036,7 @@ Class RouteVertex {#class-routevertex .title title="Class RouteVertex"}
             [Returns:]{.returnLabel}
             :   the longitude
 
-        []{#setLongitude-double-}
-
+        &nbsp;
         -   #### setLongitude
 
                 public void setLongitude(double value)
@@ -20565,8 +18046,7 @@ Class RouteVertex {#class-routevertex .title title="Class RouteVertex"}
             [Parameters:]{.paramLabel}
             :   `value` - the value
 
-        []{#getZLevel--}
-
+        &nbsp;
         -   #### getZLevel
 
                 public int getZLevel()
@@ -20576,8 +18056,7 @@ Class RouteVertex {#class-routevertex .title title="Class RouteVertex"}
             [Returns:]{.returnLabel}
             :   the z level
 
-        []{#setZLevel-int-}
-
+        &nbsp;
         -   #### setZLevel
 
                 public void setZLevel(int value)
@@ -20605,30 +18084,20 @@ Class RoutingMode {#class-routingmode .title title="Class RoutingMode"}
 
     The type Routing mode.
 
--   -   []{#field.summary}
-
-        ### Field Summary
+-   -   ### Field Summary
 
           Constructor and Description
           -----------------------------
           `RoutingMode()` 
 
     &nbsp;
-    -   []{#method.summary}
+    -   ### Method Summary
 
-        ### Method Summary
-
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#field.detail}
-
-        ### Field Detail
-
-        []{#TURN_BY_TURN}
+-   -   ### Field Detail
 
         -   #### TURN\_BY\_TURN
 
@@ -20637,11 +18106,9 @@ Class RoutingMode {#class-routingmode .title title="Class RoutingMode"}
             The constant TURN\_BY\_TURN.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.routing.RoutingMode.TURN_BY_TURN)
+            :   Constant Field Values
 
-        []{#REALTIME}
-
+        &nbsp;
         -   #### REALTIME
 
                 public static final int REALTIME
@@ -20649,11 +18116,9 @@ Class RoutingMode {#class-routingmode .title title="Class RoutingMode"}
             The constant REALTIME.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.routing.RoutingMode.REALTIME)
+            :   Constant Field Values
 
-        []{#OVERVIEW_ONLY}
-
+        &nbsp;
         -   #### OVERVIEW\_ONLY
 
                 public static final int OVERVIEW_ONLY
@@ -20661,11 +18126,9 @@ Class RoutingMode {#class-routingmode .title title="Class RoutingMode"}
             The constant OVERVIEW\_ONLY.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.routing.RoutingMode.OVERVIEW_ONLY)
+            :   Constant Field Values
 
-        []{#NONE}
-
+        &nbsp;
         -   #### NONE
 
                 public static final int NONE
@@ -20673,15 +18136,10 @@ Class RoutingMode {#class-routingmode .title title="Class RoutingMode"}
             The constant NONE.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.routing.RoutingMode.NONE)
+            :   Constant Field Values
 
     &nbsp;
-    -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#RoutingMode--}
+    -   ### Constructor Detail
 
         -   #### RoutingMode
 
@@ -20695,7 +18153,7 @@ Interface RoutingProvider {#interface-routingprovider .title title="Interface Ro
 -   
 
     All Known Implementing Classes:
-    :   [MPRoutingProvider](../../../com/mapspeople/routing/MPRoutingProvider.html "class in com.mapspeople.routing")
+    :   MPRoutingProvider
 
     ------------------------------------------------------------------------
 
@@ -20706,9 +18164,7 @@ Interface RoutingProvider {#interface-routingprovider .title title="Interface Ro
     Routing provider interface. Specifies the query and setup methods
     that must be implemented when creating a subtype.
 
--   -   []{#method.summary}
-
-        ### Method Summary
+-   -   ### Method Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -20742,11 +18198,7 @@ Interface RoutingProvider {#interface-routingprovider .title title="Interface Ro
         |                                   | Sets travel mode.                 |
         +-----------------------------------+-----------------------------------+
 
--   -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#setOnRouteResultListener-com.mapspeople.routing.OnRouteResultListener-}
+-   -   ### Method Detail
 
         -   #### setOnRouteResultListener
 
@@ -20757,8 +18209,7 @@ Interface RoutingProvider {#interface-routingprovider .title title="Interface Ro
             [Parameters:]{.paramLabel}
             :   `listener` - the listener
 
-        []{#setTravelMode-java.lang.String-}
-
+        &nbsp;
         -   #### setTravelMode
 
                 void setTravelMode(java.lang.String mode)
@@ -20768,8 +18219,7 @@ Interface RoutingProvider {#interface-routingprovider .title title="Interface Ro
             [Parameters:]{.paramLabel}
             :   `mode` - the mode
 
-        []{#setDateTime-java.util.Calendar-boolean-}
-
+        &nbsp;
         -   #### setDateTime
 
                 void setDateTime(java.util.Calendar date,                 boolean isDeparture)
@@ -20780,8 +18230,7 @@ Interface RoutingProvider {#interface-routingprovider .title title="Interface Ro
             :   `date` - the date
             :   `isDeparture` - the is departure
 
-        []{#query-com.mapspeople.models.Point-com.mapspeople.models.Point-}
-
+        &nbsp;
         -   #### query
 
                 void query(Point from,           Point to)
@@ -20792,8 +18241,7 @@ Interface RoutingProvider {#interface-routingprovider .title title="Interface Ro
             :   `from` - the from
             :   `to` - the to
 
-        []{#queryMultipleDestinations-com.mapspeople.models.Point-java.util.List-}
-
+        &nbsp;
         -   #### queryMultipleDestinations
 
                 void queryMultipleDestinations(Point from,                               java.util.List<Point> destinations)
@@ -20804,8 +18252,7 @@ Interface RoutingProvider {#interface-routingprovider .title title="Interface Ro
             :   `from` - the from
             :   `destinations` - the destinations
 
-        []{#addRouteRestriction-java.lang.String-}
-
+        &nbsp;
         -   #### addRouteRestriction
 
                 void addRouteRestriction(java.lang.String restriction)
@@ -20815,8 +18262,7 @@ Interface RoutingProvider {#interface-routingprovider .title title="Interface Ro
             [Parameters:]{.paramLabel}
             :   `restriction` - the restriction
 
-        []{#clearRouteRestrictions--}
-
+        &nbsp;
         -   #### clearRouteRestrictions
 
                 void clearRouteRestrictions()
@@ -20831,7 +18277,7 @@ Interface RoutingProviderInternal {#interface-routingproviderinternal .title tit
 -   
 
     All Known Implementing Classes:
-    :   [MPRoutingProviderInternal](../../../com/mapspeople/routing/MPRoutingProviderInternal.html "class in com.mapspeople.routing")
+    :   MPRoutingProviderInternal
 
     ------------------------------------------------------------------------
 
@@ -20842,9 +18288,7 @@ Interface RoutingProviderInternal {#interface-routingproviderinternal .title tit
     Routing provider interface. Specifies the query and setup methods
     that must be implemented when creating a subtype.
 
--   -   []{#method.summary}
-
-        ### Method Summary
+-   -   ### Method Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -20907,11 +18351,7 @@ Interface RoutingProviderInternal {#interface-routingproviderinternal .title tit
         |                                   | Sets travel mode.                 |
         +-----------------------------------+-----------------------------------+
 
--   -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#setOnRouteResultListener-com.mapspeople.routing.OnRouteResultListener-}
+-   -   ### Method Detail
 
         -   #### setOnRouteResultListener
 
@@ -20922,8 +18362,7 @@ Interface RoutingProviderInternal {#interface-routingproviderinternal .title tit
             [Parameters:]{.paramLabel}
             :   `listener` - the listener
 
-        []{#setOnContainsResultListener-com.mapspeople.routing.OnDirectionContainsResultListener-}
-
+        &nbsp;
         -   #### setOnContainsResultListener
 
                 void setOnContainsResultListener(OnDirectionContainsResultListener listener)
@@ -20933,8 +18372,7 @@ Interface RoutingProviderInternal {#interface-routingproviderinternal .title tit
             [Parameters:]{.paramLabel}
             :   `listener` - the listener
 
-        []{#setOnDirectionMatrixResultListener-com.mapspeople.routing.OnDirectionMatrixResultListener-}
-
+        &nbsp;
         -   #### setOnDirectionMatrixResultListener
 
                 void setOnDirectionMatrixResultListener(OnDirectionMatrixResultListener listener)
@@ -20944,8 +18382,7 @@ Interface RoutingProviderInternal {#interface-routingproviderinternal .title tit
             [Parameters:]{.paramLabel}
             :   `listener` - the listener
 
-        []{#setTravelMode-java.lang.String-}
-
+        &nbsp;
         -   #### setTravelMode
 
                 void setTravelMode(java.lang.String mode)
@@ -20955,8 +18392,7 @@ Interface RoutingProviderInternal {#interface-routingproviderinternal .title tit
             [Parameters:]{.paramLabel}
             :   `mode` - the mode
 
-        []{#setDateTime-java.util.Calendar-boolean-}
-
+        &nbsp;
         -   #### setDateTime
 
                 void setDateTime(java.util.Calendar date,                 boolean isDeparture)
@@ -20967,8 +18403,7 @@ Interface RoutingProviderInternal {#interface-routingproviderinternal .title tit
             :   `date` - the date
             :   `isDeparture` - the is departure
 
-        []{#getMatrix-java.lang.String-java.util.List-java.util.List-java.lang.String-}
-
+        &nbsp;
         -   #### getMatrix
 
                 void getMatrix(java.lang.String venue,               java.util.List<Point> origins,               java.util.List<Point> destinations,               java.lang.String graphId)
@@ -20981,8 +18416,7 @@ Interface RoutingProviderInternal {#interface-routingproviderinternal .title tit
             :   `destinations` - the destinations
             :   `graphId` - the graph id
 
-        []{#getMatrixExternal-java.util.List-java.util.List-}
-
+        &nbsp;
         -   #### getMatrixExternal
 
                 void getMatrixExternal(java.util.List<Point> origins,                       java.util.List<Point> destinations)
@@ -20993,8 +18427,7 @@ Interface RoutingProviderInternal {#interface-routingproviderinternal .title tit
             :   `origins` - the origins
             :   `destinations` - the destinations
 
-        []{#contains-java.util.List-}
-
+        &nbsp;
         -   #### contains
 
                 void contains(java.util.List<Point> points)
@@ -21004,8 +18437,7 @@ Interface RoutingProviderInternal {#interface-routingproviderinternal .title tit
             [Parameters:]{.paramLabel}
             :   `points` - the points
 
-        []{#query-com.mapspeople.models.Point-com.mapspeople.models.Point-java.lang.String-}
-
+        &nbsp;
         -   #### query
 
                 void query(Point from,           Point to,           java.lang.String graphId)
@@ -21017,8 +18449,7 @@ Interface RoutingProviderInternal {#interface-routingproviderinternal .title tit
             :   `to` - the to
             :   `graphId` - the graph id
 
-        []{#queryMultipleDestinations-com.mapspeople.models.Point-java.util.List-}
-
+        &nbsp;
         -   #### queryMultipleDestinations
 
                 void queryMultipleDestinations(Point from,                               java.util.List<Point> destinations)
@@ -21029,8 +18460,7 @@ Interface RoutingProviderInternal {#interface-routingproviderinternal .title tit
             :   `from` - the from
             :   `destinations` - the destinations
 
-        []{#addRouteRestriction-java.lang.String-}
-
+        &nbsp;
         -   #### addRouteRestriction
 
                 void addRouteRestriction(java.lang.String restriction)
@@ -21040,8 +18470,7 @@ Interface RoutingProviderInternal {#interface-routingproviderinternal .title tit
             [Parameters:]{.paramLabel}
             :   `restriction` - the restriction
 
-        []{#clearRouteRestrictions--}
-
+        &nbsp;
         -   #### clearRouteRestrictions
 
                 void clearRouteRestrictions()
@@ -21066,30 +18495,20 @@ Class TravelMode {#class-travelmode .title title="Class TravelMode"}
 
     The type Travel mode.
 
--   -   []{#field.summary}
-
-        ### Field Summary
+-   -   ### Field Summary
 
           Constructor and Description
           -----------------------------
           `TravelMode()` 
 
     &nbsp;
-    -   []{#method.summary}
+    -   ### Method Summary
 
-        ### Method Summary
-
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#field.detail}
-
-        ### Field Detail
-
-        []{#TRAVEL_MODE_WALKING}
+-   -   ### Field Detail
 
         -   #### TRAVEL\_MODE\_WALKING
 
@@ -21098,11 +18517,9 @@ Class TravelMode {#class-travelmode .title title="Class TravelMode"}
             The constant TRAVEL\_MODE\_WALKING.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.routing.TravelMode.TRAVEL_MODE_WALKING)
+            :   Constant Field Values
 
-        []{#TRAVEL_MODE_BICYCLING}
-
+        &nbsp;
         -   #### TRAVEL\_MODE\_BICYCLING
 
                 public static final java.lang.String TRAVEL_MODE_BICYCLING
@@ -21110,11 +18527,9 @@ Class TravelMode {#class-travelmode .title title="Class TravelMode"}
             The constant TRAVEL\_MODE\_BICYCLING.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.routing.TravelMode.TRAVEL_MODE_BICYCLING)
+            :   Constant Field Values
 
-        []{#TRAVEL_MODE_DRIVING}
-
+        &nbsp;
         -   #### TRAVEL\_MODE\_DRIVING
 
                 public static final java.lang.String TRAVEL_MODE_DRIVING
@@ -21122,11 +18537,9 @@ Class TravelMode {#class-travelmode .title title="Class TravelMode"}
             The constant TRAVEL\_MODE\_DRIVING.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.routing.TravelMode.TRAVEL_MODE_DRIVING)
+            :   Constant Field Values
 
-        []{#TRAVEL_MODE_TRANSIT}
-
+        &nbsp;
         -   #### TRAVEL\_MODE\_TRANSIT
 
                 public static final java.lang.String TRAVEL_MODE_TRANSIT
@@ -21134,15 +18547,10 @@ Class TravelMode {#class-travelmode .title title="Class TravelMode"}
             The constant TRAVEL\_MODE\_TRANSIT.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.routing.TravelMode.TRAVEL_MODE_TRANSIT)
+            :   Constant Field Values
 
     &nbsp;
-    -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#TravelMode--}
+    -   ### Constructor Detail
 
         -   #### TravelMode
 
@@ -21170,9 +18578,7 @@ Class DownloadNotificationHelper {#class-downloadnotificationhelper .title title
     Helper class to manage the progress bar notifation of map downloads
     made using the SDK.
 
--   -   []{#constructor.summary}
-
-        ### Constructor Summary
+-   -   ### Constructor Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -21196,17 +18602,11 @@ Class DownloadNotificationHelper {#class-downloadnotificationhelper .title title
         |                                   | with an increment value           |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#DownloadNotificationHelper--}
+-   -   ### Constructor Detail
 
         -   #### DownloadNotificationHelper
 
@@ -21215,11 +18615,7 @@ Class DownloadNotificationHelper {#class-downloadnotificationhelper .title title
             Instantiates a new Download notification helper.
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#setupDownloadNotification-android.app.Activity-}
+    -   ### Method Detail
 
         -   #### setupDownloadNotification
 
@@ -21230,8 +18626,7 @@ Class DownloadNotificationHelper {#class-downloadnotificationhelper .title title
             [Parameters:]{.paramLabel}
             :   `activity` - the activity
 
-        []{#updateDownloadNotification-int-}
-
+        &nbsp;
         -   #### updateDownloadNotification
 
                 public void updateDownloadNotification(int incr)
@@ -21241,8 +18636,7 @@ Class DownloadNotificationHelper {#class-downloadnotificationhelper .title title
             [Parameters:]{.paramLabel}
             :   `incr` - the incr
 
-        []{#getMax--}
-
+        &nbsp;
         -   #### getMax
 
                 public int getMax()
@@ -21252,8 +18646,7 @@ Class DownloadNotificationHelper {#class-downloadnotificationhelper .title title
             [Returns:]{.returnLabel}
             :   The max integer value
 
-        []{#addToMax-int-}
-
+        &nbsp;
         -   #### addToMax
 
                 public void addToMax(int value)
@@ -21290,34 +18683,24 @@ Class FloorSelector {#class-floorselector .title title="Class FloorSelector"}
 
     View that holds the floor level buttons
 
--   -   []{#nested.class.summary}
+-   -   ### Nested Class Summary
 
-        ### Nested Class Summary
-
-        -   []{#nested.classes.inherited.from.class.android.widget.LinearLayout}
-
-            ### Nested classes/interfaces inherited from class android.widget.LinearLayout
+        -   ### Nested classes/interfaces inherited from class android.widget.LinearLayout
 
             `android.widget.LinearLayout.LayoutParams`
 
         &nbsp;
-        -   []{#nested.classes.inherited.from.class.android.view.ViewGroup}
-
-            ### Nested classes/interfaces inherited from class android.view.ViewGroup
+        -   ### Nested classes/interfaces inherited from class android.view.ViewGroup
 
             `android.view.ViewGroup.MarginLayoutParams, android.view.ViewGroup.OnHierarchyChangeListener`
 
         &nbsp;
-        -   []{#nested.classes.inherited.from.class.android.view.View}
-
-            ### Nested classes/interfaces inherited from class android.view.View
+        -   ### Nested classes/interfaces inherited from class android.view.View
 
             `android.view.View.AccessibilityDelegate, android.view.View.BaseSavedState, android.view.View.DragShadowBuilder, android.view.View.MeasureSpec, android.view.View.OnApplyWindowInsetsListener, android.view.View.OnAttachStateChangeListener, android.view.View.OnClickListener, android.view.View.OnContextClickListener, android.view.View.OnCreateContextMenuListener, android.view.View.OnDragListener, android.view.View.OnFocusChangeListener, android.view.View.OnGenericMotionListener, android.view.View.OnHoverListener, android.view.View.OnKeyListener, android.view.View.OnLayoutChangeListener, android.view.View.OnLongClickListener, android.view.View.OnScrollChangeListener, android.view.View.OnSystemUiVisibilityChangeListener, android.view.View.OnTouchListener`
 
     &nbsp;
-    -   []{#field.summary}
-
-        ### Field Summary
+    -   ### Field Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -21355,45 +18738,31 @@ Class FloorSelector {#class-floorselector .title title="Class FloorSelector"}
         |                                   | Update ui.                        |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.android.widget.LinearLayout}
-
-            ### Methods inherited from class android.widget.LinearLayout
+        -   ### Methods inherited from class android.widget.LinearLayout
 
             `generateLayoutParams, getAccessibilityClassName, getBaseline, getBaselineAlignedChildIndex, getDividerDrawable, getDividerPadding, getGravity, getOrientation, getShowDividers, getWeightSum, isBaselineAligned, isMeasureWithLargestChildEnabled, onRtlPropertiesChanged, setBaselineAligned, setBaselineAlignedChildIndex, setDividerDrawable, setDividerPadding, setGravity, setHorizontalGravity, setMeasureWithLargestChildEnabled, setOrientation, setShowDividers, setVerticalGravity, setWeightSum, shouldDelayChildPressedState`
 
         &nbsp;
-        -   []{#methods.inherited.from.class.android.view.ViewGroup}
-
-            ### Methods inherited from class android.view.ViewGroup
+        -   ### Methods inherited from class android.view.ViewGroup
 
             `addChildrenForAccessibility, addFocusables, addStatesFromChildren, addTouchables, addView, addView, addView, addView, addView, bringChildToFront, childDrawableStateChanged, childHasTransientStateChanged, clearChildFocus, clearDisappearingChildren, clearFocus, dispatchApplyWindowInsets, dispatchConfigurationChanged, dispatchDisplayHint, dispatchDragEvent, dispatchDrawableHotspotChanged, dispatchKeyEvent, dispatchKeyEventPreIme, dispatchKeyShortcutEvent, dispatchProvideStructure, dispatchSetActivated, dispatchSetSelected, dispatchSystemUiVisibilityChanged, dispatchTouchEvent, dispatchTrackballEvent, dispatchUnhandledMove, dispatchWindowFocusChanged, dispatchWindowSystemUiVisiblityChanged, dispatchWindowVisibilityChanged, endViewTransition, findFocus, findViewsWithText, focusableViewAvailable, focusSearch, gatherTransparentRegion, getChildAt, getChildCount, getChildMeasureSpec, getChildVisibleRect, getClipChildren, getClipToPadding, getDescendantFocusability, getFocusedChild, getLayoutAnimation, getLayoutAnimationListener, getLayoutMode, getLayoutTransition, getNestedScrollAxes, getOverlay, getPersistentDrawingCache, getTouchscreenBlocksFocus, hasFocus, hasFocusable, hasTransientState, indexOfChild, invalidateChild, invalidateChildInParent, isAlwaysDrawnWithCacheEnabled, isAnimationCacheEnabled, isMotionEventSplittingEnabled, isTransitionGroup, jumpDrawablesToCurrentState, layout, notifySubtreeAccessibilityStateChanged, offsetDescendantRectToMyCoords, offsetRectIntoDescendantCoords, onInterceptHoverEvent, onInterceptTouchEvent, onNestedFling, onNestedPreFling, onNestedPrePerformAccessibilityAction, onNestedPreScroll, onNestedScroll, onNestedScrollAccepted, onRequestSendAccessibilityEvent, onResolvePointerIcon, onStartNestedScroll, onStopNestedScroll, onViewAdded, onViewRemoved, recomputeViewAttributes, removeAllViews, removeAllViewsInLayout, removeView, removeViewAt, removeViewInLayout, removeViews, removeViewsInLayout, requestChildFocus, requestChildRectangleOnScreen, requestDisallowInterceptTouchEvent, requestFocus, requestSendAccessibilityEvent, requestTransparentRegion, scheduleLayoutAnimation, setAddStatesFromChildren, setAlwaysDrawnWithCacheEnabled, setAnimationCacheEnabled, setClipChildren, setClipToPadding, setDescendantFocusability, setLayoutAnimation, setLayoutAnimationListener, setLayoutMode, setLayoutTransition, setMotionEventSplittingEnabled, setOnHierarchyChangeListener, setPersistentDrawingCache, setTouchscreenBlocksFocus, setTransitionGroup, showContextMenuForChild, showContextMenuForChild, startActionModeForChild, startActionModeForChild, startLayoutAnimation, startViewTransition, updateViewLayout`
 
         &nbsp;
-        -   []{#methods.inherited.from.class.android.view.View}
-
-            ### Methods inherited from class android.view.View
+        -   ### Methods inherited from class android.view.View
 
             `addFocusables, addOnAttachStateChangeListener, addOnLayoutChangeListener, animate, announceForAccessibility, bringToFront, buildDrawingCache, buildDrawingCache, buildLayer, callOnClick, cancelDragAndDrop, cancelLongPress, cancelPendingInputEvents, canResolveLayoutDirection, canResolveTextAlignment, canResolveTextDirection, canScrollHorizontally, canScrollVertically, checkInputConnectionProxy, clearAnimation, combineMeasuredStates, computeScroll, computeSystemWindowInsets, createAccessibilityNodeInfo, createContextMenu, destroyDrawingCache, dispatchFinishTemporaryDetach, dispatchGenericMotionEvent, dispatchNestedFling, dispatchNestedPreFling, dispatchNestedPrePerformAccessibilityAction, dispatchNestedPreScroll, dispatchNestedScroll, dispatchPopulateAccessibilityEvent, dispatchStartTemporaryDetach, draw, drawableHotspotChanged, findViewById, findViewWithTag, focusSearch, forceHasOverlappingRendering, forceLayout, generateViewId, getAccessibilityLiveRegion, getAccessibilityNodeProvider, getAccessibilityTraversalAfter, getAccessibilityTraversalBefore, getAlpha, getAnimation, getApplicationWindowToken, getBackground, getBackgroundTintList, getBackgroundTintMode, getBottom, getCameraDistance, getClipBounds, getClipBounds, getClipToOutline, getContentDescription, getContext, getDefaultSize, getDisplay, getDrawableState, getDrawingCache, getDrawingCache, getDrawingCacheBackgroundColor, getDrawingCacheQuality, getDrawingRect, getDrawingTime, getElevation, getFilterTouchesWhenObscured, getFitsSystemWindows, getFocusables, getFocusedRect, getForeground, getForegroundGravity, getForegroundTintList, getForegroundTintMode, getGlobalVisibleRect, getGlobalVisibleRect, getHandler, getHasOverlappingRendering, getHeight, getHitRect, getHorizontalFadingEdgeLength, getId, getImportantForAccessibility, getKeepScreenOn, getKeyDispatcherState, getLabelFor, getLayerType, getLayoutDirection, getLayoutParams, getLeft, getLocalVisibleRect, getLocationInWindow, getLocationOnScreen, getMatrix, getMeasuredHeight, getMeasuredHeightAndState, getMeasuredState, getMeasuredWidth, getMeasuredWidthAndState, getMinimumHeight, getMinimumWidth, getNextFocusDownId, getNextFocusForwardId, getNextFocusLeftId, getNextFocusRightId, getNextFocusUpId, getOnFocusChangeListener, getOutlineProvider, getOverScrollMode, getPaddingBottom, getPaddingEnd, getPaddingLeft, getPaddingRight, getPaddingStart, getPaddingTop, getParent, getParentForAccessibility, getPivotX, getPivotY, getPointerIcon, getResources, getRevealOnFocusHint, getRight, getRootView, getRootWindowInsets, getRotation, getRotationX, getRotationY, getScaleX, getScaleY, getScrollBarDefaultDelayBeforeFade, getScrollBarFadeDuration, getScrollBarSize, getScrollBarStyle, getScrollIndicators, getScrollX, getScrollY, getSolidColor, getStateListAnimator, getSystemUiVisibility, getTag, getTag, getTextAlignment, getTextDirection, getTop, getTouchables, getTouchDelegate, getTransitionName, getTranslationX, getTranslationY, getTranslationZ, getVerticalFadingEdgeLength, getVerticalScrollbarPosition, getVerticalScrollbarWidth, getViewTreeObserver, getVisibility, getWidth, getWindowId, getWindowSystemUiVisibility, getWindowToken, getWindowVisibility, getWindowVisibleDisplayFrame, getX, getY, getZ, hasNestedScrollingParent, hasOnClickListeners, hasOverlappingRendering, hasWindowFocus, inflate, invalidate, invalidate, invalidate, invalidateDrawable, invalidateOutline, isAccessibilityFocused, isActivated, isAttachedToWindow, isClickable, isContextClickable, isDirty, isDrawingCacheEnabled, isDuplicateParentStateEnabled, isEnabled, isFocusable, isFocusableInTouchMode, isFocused, isHapticFeedbackEnabled, isHardwareAccelerated, isHorizontalFadingEdgeEnabled, isHorizontalScrollBarEnabled, isHovered, isImportantForAccessibility, isInEditMode, isInLayout, isInTouchMode, isLaidOut, isLayoutDirectionResolved, isLayoutRequested, isLongClickable, isNestedScrollingEnabled, isOpaque, isPaddingRelative, isPressed, isSaveEnabled, isSaveFromParentEnabled, isScrollbarFadingEnabled, isScrollContainer, isSelected, isShown, isSoundEffectsEnabled, isTemporarilyDetached, isTextAlignmentResolved, isTextDirectionResolved, isVerticalFadingEdgeEnabled, isVerticalScrollBarEnabled, measure, offsetLeftAndRight, offsetTopAndBottom, onApplyWindowInsets, onCancelPendingInputEvents, onCheckIsTextEditor, onCreateInputConnection, onDragEvent, onDrawForeground, onFilterTouchEventForSecurity, onFinishTemporaryDetach, onGenericMotionEvent, onHoverChanged, onHoverEvent, onInitializeAccessibilityEvent, onInitializeAccessibilityNodeInfo, onKeyDown, onKeyLongPress, onKeyMultiple, onKeyPreIme, onKeyShortcut, onKeyUp, onPopulateAccessibilityEvent, onProvideStructure, onProvideVirtualStructure, onScreenStateChanged, onStartTemporaryDetach, onTouchEvent, onTrackballEvent, onVisibilityAggregated, onWindowFocusChanged, onWindowSystemUiVisibilityChanged, performAccessibilityAction, performClick, performContextClick, performContextClick, performHapticFeedback, performHapticFeedback, performLongClick, performLongClick, playSoundEffect, post, postDelayed, postInvalidate, postInvalidate, postInvalidateDelayed, postInvalidateDelayed, postInvalidateOnAnimation, postInvalidateOnAnimation, postOnAnimation, postOnAnimationDelayed, refreshDrawableState, removeCallbacks, removeOnAttachStateChangeListener, removeOnLayoutChangeListener, requestApplyInsets, requestFitSystemWindows, requestFocus, requestFocus, requestFocusFromTouch, requestLayout, requestRectangleOnScreen, requestRectangleOnScreen, requestUnbufferedDispatch, resolveSize, resolveSizeAndState, restoreHierarchyState, saveHierarchyState, scheduleDrawable, scrollBy, scrollTo, sendAccessibilityEvent, sendAccessibilityEventUnchecked, setAccessibilityDelegate, setAccessibilityLiveRegion, setAccessibilityTraversalAfter, setAccessibilityTraversalBefore, setActivated, setAlpha, setAnimation, setBackground, setBackgroundColor, setBackgroundDrawable, setBackgroundResource, setBackgroundTintList, setBackgroundTintMode, setBottom, setCameraDistance, setClickable, setClipBounds, setClipToOutline, setContentDescription, setContextClickable, setDrawingCacheBackgroundColor, setDrawingCacheEnabled, setDrawingCacheQuality, setDuplicateParentStateEnabled, setElevation, setEnabled, setFadingEdgeLength, setFilterTouchesWhenObscured, setFitsSystemWindows, setFocusable, setFocusableInTouchMode, setForeground, setForegroundGravity, setForegroundTintList, setForegroundTintMode, setHapticFeedbackEnabled, setHasTransientState, setHorizontalFadingEdgeEnabled, setHorizontalScrollBarEnabled, setHovered, setId, setImportantForAccessibility, setKeepScreenOn, setLabelFor, setLayerPaint, setLayerType, setLayoutDirection, setLayoutParams, setLeft, setLongClickable, setMinimumHeight, setMinimumWidth, setNestedScrollingEnabled, setNextFocusDownId, setNextFocusForwardId, setNextFocusLeftId, setNextFocusRightId, setNextFocusUpId, setOnApplyWindowInsetsListener, setOnClickListener, setOnContextClickListener, setOnCreateContextMenuListener, setOnDragListener, setOnFocusChangeListener, setOnGenericMotionListener, setOnHoverListener, setOnKeyListener, setOnLongClickListener, setOnScrollChangeListener, setOnSystemUiVisibilityChangeListener, setOnTouchListener, setOutlineProvider, setOverScrollMode, setPadding, setPaddingRelative, setPivotX, setPivotY, setPointerIcon, setPressed, setRevealOnFocusHint, setRight, setRotation, setRotationX, setRotationY, setSaveEnabled, setSaveFromParentEnabled, setScaleX, setScaleY, setScrollBarDefaultDelayBeforeFade, setScrollBarFadeDuration, setScrollbarFadingEnabled, setScrollBarSize, setScrollBarStyle, setScrollContainer, setScrollIndicators, setScrollIndicators, setScrollX, setScrollY, setSelected, setSoundEffectsEnabled, setStateListAnimator, setSystemUiVisibility, setTag, setTag, setTextAlignment, setTextDirection, setTop, setTouchDelegate, setTransitionName, setTranslationX, setTranslationY, setTranslationZ, setVerticalFadingEdgeEnabled, setVerticalScrollBarEnabled, setVerticalScrollbarPosition, setVisibility, setWillNotCacheDrawing, setWillNotDraw, setX, setY, setZ, showContextMenu, showContextMenu, startActionMode, startActionMode, startAnimation, startDrag, startDragAndDrop, startNestedScroll, stopNestedScroll, toString, unscheduleDrawable, unscheduleDrawable, updateDragShadow, willNotCacheDrawing, willNotDraw`
 
         &nbsp;
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, wait, wait, wait`
 
         &nbsp;
-        -   []{#methods.inherited.from.class.android.view.ViewParent}
-
-            ### Methods inherited from interface android.view.ViewParent
+        -   ### Methods inherited from interface android.view.ViewParent
 
             `canResolveLayoutDirection, canResolveTextAlignment, canResolveTextDirection, createContextMenu, getLayoutDirection, getParent, getParentForAccessibility, getTextAlignment, getTextDirection, isLayoutDirectionResolved, isLayoutRequested, isTextAlignmentResolved, isTextDirectionResolved, requestFitSystemWindows, requestLayout`
 
--   -   []{#field.detail}
-
-        ### Field Detail
-
-        []{#POSITION_MARGIN}
+-   -   ### Field Detail
 
         -   #### POSITION\_MARGIN
 
@@ -21402,11 +18771,9 @@ Class FloorSelector {#class-floorselector .title title="Class FloorSelector"}
             The constant POSITION\_MARGIN.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.ui.FloorSelector.POSITION_MARGIN)
+            :   Constant Field Values
 
-        []{#POSITION_MARGIN_TOP}
-
+        &nbsp;
         -   #### POSITION\_MARGIN\_TOP
 
                 public static final int POSITION_MARGIN_TOP
@@ -21414,11 +18781,9 @@ Class FloorSelector {#class-floorselector .title title="Class FloorSelector"}
             The constant POSITION\_MARGIN\_TOP.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.ui.FloorSelector.POSITION_MARGIN_TOP)
+            :   Constant Field Values
 
-        []{#DEFAULT_WIDTH}
-
+        &nbsp;
         -   #### DEFAULT\_WIDTH
 
                 public static final int DEFAULT_WIDTH
@@ -21426,35 +18791,30 @@ Class FloorSelector {#class-floorselector .title title="Class FloorSelector"}
             The constant DEFAULT\_WIDTH.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.ui.FloorSelector.DEFAULT_WIDTH)
+            :   Constant Field Values
 
-        []{#DEFAULT_COLOR}
-
+        &nbsp;
         -   #### DEFAULT\_COLOR
 
                 public static int DEFAULT_COLOR
 
             The constant DEFAULT\_COLOR.
 
-        []{#DEFAULT_COLOR_ACTIVE}
-
+        &nbsp;
         -   #### DEFAULT\_COLOR\_ACTIVE
 
                 public static int DEFAULT_COLOR_ACTIVE
 
             The constant DEFAULT\_COLOR\_ACTIVE.
 
-        []{#DEFAULT_TEXT_COLOR}
-
+        &nbsp;
         -   #### DEFAULT\_TEXT\_COLOR
 
                 public static final int DEFAULT_TEXT_COLOR
 
             The constant DEFAULT\_TEXT\_COLOR.
 
-        []{#DEFAULT_TEXT_COLOR_ACTIVE}
-
+        &nbsp;
         -   #### DEFAULT\_TEXT\_COLOR\_ACTIVE
 
                 public static final int DEFAULT_TEXT_COLOR_ACTIVE
@@ -21462,11 +18822,7 @@ Class FloorSelector {#class-floorselector .title title="Class FloorSelector"}
             The constant DEFAULT\_TEXT\_COLOR\_ACTIVE.
 
     &nbsp;
-    -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#FloorSelector-android.content.Context-}
+    -   ### Constructor Detail
 
         -   #### FloorSelector
 
@@ -21478,11 +18834,7 @@ Class FloorSelector {#class-floorselector .title title="Class FloorSelector"}
             :   `context` - the context
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#setOnFloorSelectedListener-com.mapspeople.ui.OnFloorSelectedListener-}
+    -   ### Method Detail
 
         -   #### setOnFloorSelectedListener
 
@@ -21493,8 +18845,7 @@ Class FloorSelector {#class-floorselector .title title="Class FloorSelector"}
             [Parameters:]{.paramLabel}
             :   `callback` - The floor select listener object
 
-        []{#createFloors-java.util.List-}
-
+        &nbsp;
         -   #### createFloors
 
                 public void createFloors(java.util.List<Floor> floors)
@@ -21504,8 +18855,7 @@ Class FloorSelector {#class-floorselector .title title="Class FloorSelector"}
             [Parameters:]{.paramLabel}
             :   `floors` - The list of floors
 
-        []{#addToView-android.view.ViewGroup-}
-
+        &nbsp;
         -   #### addToView
 
                 public void addToView(android.view.ViewGroup view)
@@ -21516,8 +18866,7 @@ Class FloorSelector {#class-floorselector .title title="Class FloorSelector"}
             [Parameters:]{.paramLabel}
             :   `view` - The parent view
 
-        []{#setFloor-int-}
-
+        &nbsp;
         -   #### setFloor
 
                 public void setFloor(int floor)
@@ -21528,8 +18877,7 @@ Class FloorSelector {#class-floorselector .title title="Class FloorSelector"}
             [Parameters:]{.paramLabel}
             :   `floor` - The new floor to select
 
-        []{#updateUI-android.view.View-}
-
+        &nbsp;
         -   #### updateUI
 
                 public void updateUI(android.view.View button)
@@ -21539,8 +18887,7 @@ Class FloorSelector {#class-floorselector .title title="Class FloorSelector"}
             [Parameters:]{.paramLabel}
             :   `button` - the button
 
-        []{#createFloors-com.mapspeople.models.Building-}
-
+        &nbsp;
         -   #### createFloors
 
                 public void createFloors(Building currentBuilding)
@@ -21553,8 +18900,7 @@ Class FloorSelector {#class-floorselector .title title="Class FloorSelector"}
             :   `currentBuilding` - The building to create floor
                 selector from.
 
-        []{#clearUI--}
-
+        &nbsp;
         -   #### clearUI
 
                 public void clearUI()
@@ -21587,29 +18933,21 @@ Class IconView {#class-iconview .title title="Class IconView"}
 
     Creates a transparent quadrant text view using font awesome icons -
     see the available graphics at
-    <http://fortawesome.github.io/Font-Awesome/cheatsheet/>
+    http://fortawesome.github.io/Font-Awesome/cheatsheet/
 
--   -   []{#nested.class.summary}
+-   -   ### Nested Class Summary
 
-        ### Nested Class Summary
-
-        -   []{#nested.classes.inherited.from.class.android.widget.TextView}
-
-            ### Nested classes/interfaces inherited from class android.widget.TextView
+        -   ### Nested classes/interfaces inherited from class android.widget.TextView
 
             `android.widget.TextView.BufferType, android.widget.TextView.OnEditorActionListener, android.widget.TextView.SavedState`
 
         &nbsp;
-        -   []{#nested.classes.inherited.from.class.android.view.View}
-
-            ### Nested classes/interfaces inherited from class android.view.View
+        -   ### Nested classes/interfaces inherited from class android.view.View
 
             `android.view.View.AccessibilityDelegate, android.view.View.BaseSavedState, android.view.View.DragShadowBuilder, android.view.View.MeasureSpec, android.view.View.OnApplyWindowInsetsListener, android.view.View.OnAttachStateChangeListener, android.view.View.OnClickListener, android.view.View.OnContextClickListener, android.view.View.OnCreateContextMenuListener, android.view.View.OnDragListener, android.view.View.OnFocusChangeListener, android.view.View.OnGenericMotionListener, android.view.View.OnHoverListener, android.view.View.OnKeyListener, android.view.View.OnLayoutChangeListener, android.view.View.OnLongClickListener, android.view.View.OnScrollChangeListener, android.view.View.OnSystemUiVisibilityChangeListener, android.view.View.OnTouchListener`
 
     &nbsp;
-    -   []{#field.summary}
-
-        ### Field Summary
+    -   ### Field Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -21618,31 +18956,21 @@ Class IconView {#class-iconview .title title="Class IconView"}
         |                                   | Set the type of the icon view     |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.android.widget.TextView}
-
-            ### Methods inherited from class android.widget.TextView
+        -   ### Methods inherited from class android.widget.TextView
 
             `addTextChangedListener, append, append, beginBatchEdit, bringPointIntoView, cancelLongPress, clearComposingText, computeScroll, debug, didTouchFocusSelect, drawableHotspotChanged, endBatchEdit, extractText, findViewsWithText, getAccessibilityClassName, getAutoLinkMask, getBaseline, getBreakStrategy, getCompoundDrawablePadding, getCompoundDrawables, getCompoundDrawablesRelative, getCompoundDrawableTintList, getCompoundDrawableTintMode, getCompoundPaddingBottom, getCompoundPaddingEnd, getCompoundPaddingLeft, getCompoundPaddingRight, getCompoundPaddingStart, getCompoundPaddingTop, getCurrentHintTextColor, getCurrentTextColor, getCustomInsertionActionModeCallback, getCustomSelectionActionModeCallback, getEditableText, getEllipsize, getError, getExtendedPaddingBottom, getExtendedPaddingTop, getFilters, getFocusedRect, getFontFeatureSettings, getFreezesText, getGravity, getHighlightColor, getHint, getHintTextColors, getHyphenationFrequency, getImeActionId, getImeActionLabel, getImeHintLocales, getImeOptions, getIncludeFontPadding, getInputExtras, getInputType, getKeyListener, getLayout, getLetterSpacing, getLineBounds, getLineCount, getLineHeight, getLineSpacingExtra, getLineSpacingMultiplier, getLinksClickable, getLinkTextColors, getMarqueeRepeatLimit, getMaxEms, getMaxHeight, getMaxLines, getMaxWidth, getMinEms, getMinHeight, getMinLines, getMinWidth, getMovementMethod, getOffsetForPosition, getPaint, getPaintFlags, getPrivateImeOptions, getSelectionEnd, getSelectionStart, getShadowColor, getShadowDx, getShadowDy, getShadowRadius, getShowSoftInputOnFocus, getText, getTextColors, getTextLocale, getTextLocales, getTextScaleX, getTextSize, getTotalPaddingBottom, getTotalPaddingEnd, getTotalPaddingLeft, getTotalPaddingRight, getTotalPaddingStart, getTotalPaddingTop, getTransformationMethod, getTypeface, getUrls, hasOverlappingRendering, hasSelection, invalidateDrawable, isCursorVisible, isInputMethodTarget, isSuggestionsEnabled, isTextSelectable, jumpDrawablesToCurrentState, length, moveCursorToVisibleOffset, onBeginBatchEdit, onCheckIsTextEditor, onCommitCompletion, onCommitCorrection, onCreateInputConnection, onDragEvent, onEditorAction, onEndBatchEdit, onGenericMotionEvent, onKeyDown, onKeyMultiple, onKeyPreIme, onKeyShortcut, onKeyUp, onPreDraw, onPrivateIMECommand, onProvideStructure, onResolvePointerIcon, onRestoreInstanceState, onRtlPropertiesChanged, onSaveInstanceState, onScreenStateChanged, onTextContextMenuItem, onTouchEvent, onTrackballEvent, onWindowFocusChanged, performLongClick, removeTextChangedListener, setAllCaps, setAutoLinkMask, setBreakStrategy, setCompoundDrawablePadding, setCompoundDrawables, setCompoundDrawablesRelative, setCompoundDrawablesRelativeWithIntrinsicBounds, setCompoundDrawablesRelativeWithIntrinsicBounds, setCompoundDrawablesWithIntrinsicBounds, setCompoundDrawablesWithIntrinsicBounds, setCompoundDrawableTintList, setCompoundDrawableTintMode, setCursorVisible, setCustomInsertionActionModeCallback, setCustomSelectionActionModeCallback, setEditableFactory, setElegantTextHeight, setEllipsize, setEms, setEnabled, setError, setError, setExtractedText, setFilters, setFontFeatureSettings, setFreezesText, setGravity, setHeight, setHighlightColor, setHint, setHint, setHintTextColor, setHintTextColor, setHorizontallyScrolling, setHyphenationFrequency, setImeActionLabel, setImeHintLocales, setImeOptions, setIncludeFontPadding, setInputExtras, setInputType, setKeyListener, setLetterSpacing, setLines, setLineSpacing, setLinksClickable, setLinkTextColor, setLinkTextColor, setMarqueeRepeatLimit, setMaxEms, setMaxHeight, setMaxLines, setMaxWidth, setMinEms, setMinHeight, setMinLines, setMinWidth, setMovementMethod, setOnEditorActionListener, setPadding, setPaddingRelative, setPaintFlags, setPrivateImeOptions, setRawInputType, setScroller, setSelectAllOnFocus, setSelected, setShadowLayer, setShowSoftInputOnFocus, setSingleLine, setSingleLine, setSpannableFactory, setText, setText, setText, setText, setText, setTextAppearance, setTextAppearance, setTextColor, setTextColor, setTextIsSelectable, setTextKeepState, setTextKeepState, setTextLocale, setTextLocales, setTextScaleX, setTextSize, setTextSize, setTransformationMethod, setTypeface, setTypeface, setWidth, showContextMenu, showContextMenu`
 
         &nbsp;
-        -   []{#methods.inherited.from.class.android.view.View}
-
-            ### Methods inherited from class android.view.View
+        -   ### Methods inherited from class android.view.View
 
             `addChildrenForAccessibility, addFocusables, addFocusables, addOnAttachStateChangeListener, addOnLayoutChangeListener, addTouchables, animate, announceForAccessibility, bringToFront, buildDrawingCache, buildDrawingCache, buildLayer, callOnClick, cancelDragAndDrop, cancelPendingInputEvents, canResolveLayoutDirection, canResolveTextAlignment, canResolveTextDirection, canScrollHorizontally, canScrollVertically, checkInputConnectionProxy, clearAnimation, clearFocus, combineMeasuredStates, computeSystemWindowInsets, createAccessibilityNodeInfo, createContextMenu, destroyDrawingCache, dispatchApplyWindowInsets, dispatchConfigurationChanged, dispatchDisplayHint, dispatchDragEvent, dispatchDrawableHotspotChanged, dispatchFinishTemporaryDetach, dispatchGenericMotionEvent, dispatchKeyEvent, dispatchKeyEventPreIme, dispatchKeyShortcutEvent, dispatchNestedFling, dispatchNestedPreFling, dispatchNestedPrePerformAccessibilityAction, dispatchNestedPreScroll, dispatchNestedScroll, dispatchPopulateAccessibilityEvent, dispatchProvideStructure, dispatchStartTemporaryDetach, dispatchSystemUiVisibilityChanged, dispatchTouchEvent, dispatchTrackballEvent, dispatchUnhandledMove, dispatchWindowFocusChanged, dispatchWindowSystemUiVisiblityChanged, dispatchWindowVisibilityChanged, draw, findFocus, findViewById, findViewWithTag, focusSearch, forceHasOverlappingRendering, forceLayout, generateViewId, getAccessibilityLiveRegion, getAccessibilityNodeProvider, getAccessibilityTraversalAfter, getAccessibilityTraversalBefore, getAlpha, getAnimation, getApplicationWindowToken, getBackground, getBackgroundTintList, getBackgroundTintMode, getBottom, getCameraDistance, getClipBounds, getClipBounds, getClipToOutline, getContentDescription, getContext, getDefaultSize, getDisplay, getDrawableState, getDrawingCache, getDrawingCache, getDrawingCacheBackgroundColor, getDrawingCacheQuality, getDrawingRect, getDrawingTime, getElevation, getFilterTouchesWhenObscured, getFitsSystemWindows, getFocusables, getForeground, getForegroundGravity, getForegroundTintList, getForegroundTintMode, getGlobalVisibleRect, getGlobalVisibleRect, getHandler, getHasOverlappingRendering, getHeight, getHitRect, getHorizontalFadingEdgeLength, getId, getImportantForAccessibility, getKeepScreenOn, getKeyDispatcherState, getLabelFor, getLayerType, getLayoutDirection, getLayoutParams, getLeft, getLocalVisibleRect, getLocationInWindow, getLocationOnScreen, getMatrix, getMeasuredHeight, getMeasuredHeightAndState, getMeasuredState, getMeasuredWidth, getMeasuredWidthAndState, getMinimumHeight, getMinimumWidth, getNextFocusDownId, getNextFocusForwardId, getNextFocusLeftId, getNextFocusRightId, getNextFocusUpId, getOnFocusChangeListener, getOutlineProvider, getOverlay, getOverScrollMode, getPaddingBottom, getPaddingEnd, getPaddingLeft, getPaddingRight, getPaddingStart, getPaddingTop, getParent, getParentForAccessibility, getPivotX, getPivotY, getPointerIcon, getResources, getRevealOnFocusHint, getRight, getRootView, getRootWindowInsets, getRotation, getRotationX, getRotationY, getScaleX, getScaleY, getScrollBarDefaultDelayBeforeFade, getScrollBarFadeDuration, getScrollBarSize, getScrollBarStyle, getScrollIndicators, getScrollX, getScrollY, getSolidColor, getStateListAnimator, getSystemUiVisibility, getTag, getTag, getTextAlignment, getTextDirection, getTop, getTouchables, getTouchDelegate, getTransitionName, getTranslationX, getTranslationY, getTranslationZ, getVerticalFadingEdgeLength, getVerticalScrollbarPosition, getVerticalScrollbarWidth, getViewTreeObserver, getVisibility, getWidth, getWindowId, getWindowSystemUiVisibility, getWindowToken, getWindowVisibility, getWindowVisibleDisplayFrame, getX, getY, getZ, hasFocus, hasFocusable, hasNestedScrollingParent, hasOnClickListeners, hasTransientState, hasWindowFocus, inflate, invalidate, invalidate, invalidate, invalidateOutline, isAccessibilityFocused, isActivated, isAttachedToWindow, isClickable, isContextClickable, isDirty, isDrawingCacheEnabled, isDuplicateParentStateEnabled, isEnabled, isFocusable, isFocusableInTouchMode, isFocused, isHapticFeedbackEnabled, isHardwareAccelerated, isHorizontalFadingEdgeEnabled, isHorizontalScrollBarEnabled, isHovered, isImportantForAccessibility, isInEditMode, isInLayout, isInTouchMode, isLaidOut, isLayoutDirectionResolved, isLayoutRequested, isLongClickable, isNestedScrollingEnabled, isOpaque, isPaddingRelative, isPressed, isSaveEnabled, isSaveFromParentEnabled, isScrollbarFadingEnabled, isScrollContainer, isSelected, isShown, isSoundEffectsEnabled, isTemporarilyDetached, isTextAlignmentResolved, isTextDirectionResolved, isVerticalFadingEdgeEnabled, isVerticalScrollBarEnabled, layout, measure, offsetLeftAndRight, offsetTopAndBottom, onApplyWindowInsets, onCancelPendingInputEvents, onDrawForeground, onFilterTouchEventForSecurity, onFinishTemporaryDetach, onHoverChanged, onHoverEvent, onInitializeAccessibilityEvent, onInitializeAccessibilityNodeInfo, onKeyLongPress, onPopulateAccessibilityEvent, onProvideVirtualStructure, onStartTemporaryDetach, onVisibilityAggregated, onWindowSystemUiVisibilityChanged, performAccessibilityAction, performClick, performContextClick, performContextClick, performHapticFeedback, performHapticFeedback, performLongClick, playSoundEffect, post, postDelayed, postInvalidate, postInvalidate, postInvalidateDelayed, postInvalidateDelayed, postInvalidateOnAnimation, postInvalidateOnAnimation, postOnAnimation, postOnAnimationDelayed, refreshDrawableState, removeCallbacks, removeOnAttachStateChangeListener, removeOnLayoutChangeListener, requestApplyInsets, requestFitSystemWindows, requestFocus, requestFocus, requestFocus, requestFocusFromTouch, requestLayout, requestRectangleOnScreen, requestRectangleOnScreen, requestUnbufferedDispatch, resolveSize, resolveSizeAndState, restoreHierarchyState, saveHierarchyState, scheduleDrawable, scrollBy, scrollTo, sendAccessibilityEvent, sendAccessibilityEventUnchecked, setAccessibilityDelegate, setAccessibilityLiveRegion, setAccessibilityTraversalAfter, setAccessibilityTraversalBefore, setActivated, setAlpha, setAnimation, setBackground, setBackgroundColor, setBackgroundDrawable, setBackgroundResource, setBackgroundTintList, setBackgroundTintMode, setBottom, setCameraDistance, setClickable, setClipBounds, setClipToOutline, setContentDescription, setContextClickable, setDrawingCacheBackgroundColor, setDrawingCacheEnabled, setDrawingCacheQuality, setDuplicateParentStateEnabled, setElevation, setFadingEdgeLength, setFilterTouchesWhenObscured, setFitsSystemWindows, setFocusable, setFocusableInTouchMode, setForeground, setForegroundGravity, setForegroundTintList, setForegroundTintMode, setHapticFeedbackEnabled, setHasTransientState, setHorizontalFadingEdgeEnabled, setHorizontalScrollBarEnabled, setHovered, setId, setImportantForAccessibility, setKeepScreenOn, setLabelFor, setLayerPaint, setLayerType, setLayoutDirection, setLayoutParams, setLeft, setLongClickable, setMinimumHeight, setMinimumWidth, setNestedScrollingEnabled, setNextFocusDownId, setNextFocusForwardId, setNextFocusLeftId, setNextFocusRightId, setNextFocusUpId, setOnApplyWindowInsetsListener, setOnClickListener, setOnContextClickListener, setOnCreateContextMenuListener, setOnDragListener, setOnFocusChangeListener, setOnGenericMotionListener, setOnHoverListener, setOnKeyListener, setOnLongClickListener, setOnScrollChangeListener, setOnSystemUiVisibilityChangeListener, setOnTouchListener, setOutlineProvider, setOverScrollMode, setPivotX, setPivotY, setPointerIcon, setPressed, setRevealOnFocusHint, setRight, setRotation, setRotationX, setRotationY, setSaveEnabled, setSaveFromParentEnabled, setScaleX, setScaleY, setScrollBarDefaultDelayBeforeFade, setScrollBarFadeDuration, setScrollbarFadingEnabled, setScrollBarSize, setScrollBarStyle, setScrollContainer, setScrollIndicators, setScrollIndicators, setScrollX, setScrollY, setSoundEffectsEnabled, setStateListAnimator, setSystemUiVisibility, setTag, setTag, setTextAlignment, setTextDirection, setTop, setTouchDelegate, setTransitionName, setTranslationX, setTranslationY, setTranslationZ, setVerticalFadingEdgeEnabled, setVerticalScrollBarEnabled, setVerticalScrollbarPosition, setVisibility, setWillNotCacheDrawing, setWillNotDraw, setX, setY, setZ, startActionMode, startActionMode, startAnimation, startDrag, startDragAndDrop, startNestedScroll, stopNestedScroll, toString, unscheduleDrawable, unscheduleDrawable, updateDragShadow, willNotCacheDrawing, willNotDraw`
 
         &nbsp;
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, wait, wait, wait`
 
--   -   []{#field.detail}
-
-        ### Field Detail
-
-        []{#ICON_COLOR}
+-   -   ### Field Detail
 
         -   #### ICON\_COLOR
 
@@ -21651,11 +18979,9 @@ Class IconView {#class-iconview .title title="Class IconView"}
             The constant ICON\_COLOR.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.ui.IconView.ICON_COLOR)
+            :   Constant Field Values
 
-        []{#BACKGROUND_COLOR}
-
+        &nbsp;
         -   #### BACKGROUND\_COLOR
 
                 public static final int BACKGROUND_COLOR
@@ -21663,11 +18989,7 @@ Class IconView {#class-iconview .title title="Class IconView"}
             The constant BACKGROUND\_COLOR.
 
     &nbsp;
-    -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#IconView-android.content.Context-java.lang.String-int-int-}
+    -   ### Constructor Detail
 
         -   #### IconView
 
@@ -21677,15 +18999,13 @@ Class IconView {#class-iconview .title title="Class IconView"}
 
             [Parameters:]{.paramLabel}
             :   `context` - The context
-            :   `type` - The type of icon to use, use
-                [`IconType`](../../../com/mapspeople/models/IconType.html "class in com.mapspeople.models")
-                to reference the unicode or type the font icon unicode
+            :   `type` - The type of icon to use, use `IconType` to
+                reference the unicode or type the font icon unicode
             :   `color` - The color int value, as generated in `Color`
             :   `size` - The size of the font icon in SP (Scaled Pixel)
                 units
 
-        []{#IconView-android.content.Context-java.lang.String-}
-
+        &nbsp;
         -   #### IconView
 
                 public IconView(android.content.Context context,                java.lang.String type)
@@ -21694,12 +19014,10 @@ Class IconView {#class-iconview .title title="Class IconView"}
 
             [Parameters:]{.paramLabel}
             :   `context` - The context
-            :   `type` - The type of icon to use, use
-                [`IconType`](../../../com/mapspeople/models/IconType.html "class in com.mapspeople.models")
-                to reference the unicode or type the font icon unicode
+            :   `type` - The type of icon to use, use `IconType` to
+                reference the unicode or type the font icon unicode
 
-        []{#IconView-android.content.Context-java.lang.String-int-}
-
+        &nbsp;
         -   #### IconView
 
                 public IconView(android.content.Context context,                java.lang.String type,                int color)
@@ -21708,17 +19026,12 @@ Class IconView {#class-iconview .title title="Class IconView"}
 
             [Parameters:]{.paramLabel}
             :   `context` - The context
-            :   `type` - The type of icon to use, use
-                [`IconType`](../../../com/mapspeople/models/IconType.html "class in com.mapspeople.models")
-                to reference the unicode or type the font icon unicode
+            :   `type` - The type of icon to use, use `IconType` to
+                reference the unicode or type the font icon unicode
             :   `color` - The color int value, as generated in `Color`
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#setType-java.lang.String-}
+    -   ### Method Detail
 
         -   #### setType
 
@@ -21727,10 +19040,9 @@ Class IconView {#class-iconview .title title="Class IconView"}
             Set the type of the icon view
 
             [Parameters:]{.paramLabel}
-            :   `type` - The type of icon to use, use
-                [`IconType`](../../../com/mapspeople/models/IconType.html "class in com.mapspeople.models")
-                to lookup and reference the unicode or type the font
-                icon unicode
+            :   `type` - The type of icon to use, use `IconType` to
+                lookup and reference the unicode or type the font icon
+                unicode
 
 com.mapspeople.ui
 
@@ -21760,8 +19072,7 @@ Class InfoSnippetView {#class-infosnippetview .title title="Class InfoSnippetVie
 
     Creates an info-snippet view to hold basic information about a
     location. The view is used to place information on top of the map.
-    To place one manually use
-    [`addToView(ViewGroup)`](../../../com/mapspeople/ui/InfoSnippetView.html#addToView-android.view.ViewGroup-).
+    To place one manually use `addToView(ViewGroup)`.
     The view comes with 6 predefined "info slots":
 
       -------------------------- -------------------------- -------------------------
@@ -21773,37 +19084,26 @@ Class InfoSnippetView {#class-infosnippetview .title title="Class InfoSnippetVie
 
           InfoSnippetView v = new InfoSnippetView(context); v.setText("12.00 $", InfoSnippetView.POSITION_RIGHT_BOTTOM); * 
 
-    \* Must be enabled using
-    [`enableLeftView()`](../../../com/mapspeople/ui/InfoSnippetView.html#enableLeftView--)
+    \* Must be enabled using `enableLeftView()`
 
--   -   []{#nested.class.summary}
+-   -   ### Nested Class Summary
 
-        ### Nested Class Summary
-
-        -   []{#nested.classes.inherited.from.class.android.widget.LinearLayout}
-
-            ### Nested classes/interfaces inherited from class android.widget.LinearLayout
+        -   ### Nested classes/interfaces inherited from class android.widget.LinearLayout
 
             `android.widget.LinearLayout.LayoutParams`
 
         &nbsp;
-        -   []{#nested.classes.inherited.from.class.android.view.ViewGroup}
-
-            ### Nested classes/interfaces inherited from class android.view.ViewGroup
+        -   ### Nested classes/interfaces inherited from class android.view.ViewGroup
 
             `android.view.ViewGroup.MarginLayoutParams, android.view.ViewGroup.OnHierarchyChangeListener`
 
         &nbsp;
-        -   []{#nested.classes.inherited.from.class.android.view.View}
-
-            ### Nested classes/interfaces inherited from class android.view.View
+        -   ### Nested classes/interfaces inherited from class android.view.View
 
             `android.view.View.AccessibilityDelegate, android.view.View.BaseSavedState, android.view.View.DragShadowBuilder, android.view.View.MeasureSpec, android.view.View.OnApplyWindowInsetsListener, android.view.View.OnAttachStateChangeListener, android.view.View.OnClickListener, android.view.View.OnContextClickListener, android.view.View.OnCreateContextMenuListener, android.view.View.OnDragListener, android.view.View.OnFocusChangeListener, android.view.View.OnGenericMotionListener, android.view.View.OnHoverListener, android.view.View.OnKeyListener, android.view.View.OnLayoutChangeListener, android.view.View.OnLongClickListener, android.view.View.OnScrollChangeListener, android.view.View.OnSystemUiVisibilityChangeListener, android.view.View.OnTouchListener`
 
     &nbsp;
-    -   []{#field.summary}
-
-        ### Field Summary
+    -   ### Field Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -21901,45 +19201,31 @@ Class InfoSnippetView {#class-infosnippetview .title title="Class InfoSnippetVie
         |                                   | view                              |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.android.widget.LinearLayout}
-
-            ### Methods inherited from class android.widget.LinearLayout
+        -   ### Methods inherited from class android.widget.LinearLayout
 
             `generateLayoutParams, getAccessibilityClassName, getBaseline, getBaselineAlignedChildIndex, getDividerDrawable, getDividerPadding, getGravity, getOrientation, getShowDividers, getWeightSum, isBaselineAligned, isMeasureWithLargestChildEnabled, onRtlPropertiesChanged, setBaselineAligned, setBaselineAlignedChildIndex, setDividerDrawable, setDividerPadding, setGravity, setHorizontalGravity, setMeasureWithLargestChildEnabled, setOrientation, setShowDividers, setVerticalGravity, setWeightSum, shouldDelayChildPressedState`
 
         &nbsp;
-        -   []{#methods.inherited.from.class.android.view.ViewGroup}
-
-            ### Methods inherited from class android.view.ViewGroup
+        -   ### Methods inherited from class android.view.ViewGroup
 
             `addChildrenForAccessibility, addFocusables, addStatesFromChildren, addTouchables, addView, addView, addView, addView, addView, bringChildToFront, childDrawableStateChanged, childHasTransientStateChanged, clearChildFocus, clearDisappearingChildren, clearFocus, dispatchApplyWindowInsets, dispatchConfigurationChanged, dispatchDisplayHint, dispatchDragEvent, dispatchDrawableHotspotChanged, dispatchKeyEvent, dispatchKeyEventPreIme, dispatchKeyShortcutEvent, dispatchProvideStructure, dispatchSetActivated, dispatchSetSelected, dispatchSystemUiVisibilityChanged, dispatchTouchEvent, dispatchTrackballEvent, dispatchUnhandledMove, dispatchWindowFocusChanged, dispatchWindowSystemUiVisiblityChanged, dispatchWindowVisibilityChanged, endViewTransition, findFocus, findViewsWithText, focusableViewAvailable, focusSearch, gatherTransparentRegion, getChildAt, getChildCount, getChildMeasureSpec, getChildVisibleRect, getClipChildren, getClipToPadding, getDescendantFocusability, getFocusedChild, getLayoutAnimation, getLayoutAnimationListener, getLayoutMode, getLayoutTransition, getNestedScrollAxes, getOverlay, getPersistentDrawingCache, getTouchscreenBlocksFocus, hasFocus, hasFocusable, hasTransientState, indexOfChild, invalidateChild, invalidateChildInParent, isAlwaysDrawnWithCacheEnabled, isAnimationCacheEnabled, isMotionEventSplittingEnabled, isTransitionGroup, jumpDrawablesToCurrentState, layout, notifySubtreeAccessibilityStateChanged, offsetDescendantRectToMyCoords, offsetRectIntoDescendantCoords, onInterceptHoverEvent, onInterceptTouchEvent, onNestedFling, onNestedPreFling, onNestedPrePerformAccessibilityAction, onNestedPreScroll, onNestedScroll, onNestedScrollAccepted, onRequestSendAccessibilityEvent, onResolvePointerIcon, onStartNestedScroll, onStopNestedScroll, onViewAdded, onViewRemoved, recomputeViewAttributes, removeAllViews, removeAllViewsInLayout, removeView, removeViewAt, removeViewInLayout, removeViews, removeViewsInLayout, requestChildFocus, requestChildRectangleOnScreen, requestDisallowInterceptTouchEvent, requestFocus, requestSendAccessibilityEvent, requestTransparentRegion, scheduleLayoutAnimation, setAddStatesFromChildren, setAlwaysDrawnWithCacheEnabled, setAnimationCacheEnabled, setClipChildren, setClipToPadding, setDescendantFocusability, setLayoutAnimation, setLayoutAnimationListener, setLayoutMode, setLayoutTransition, setMotionEventSplittingEnabled, setOnHierarchyChangeListener, setPersistentDrawingCache, setTouchscreenBlocksFocus, setTransitionGroup, showContextMenuForChild, showContextMenuForChild, startActionModeForChild, startActionModeForChild, startLayoutAnimation, startViewTransition, updateViewLayout`
 
         &nbsp;
-        -   []{#methods.inherited.from.class.android.view.View}
-
-            ### Methods inherited from class android.view.View
+        -   ### Methods inherited from class android.view.View
 
             `addFocusables, addOnAttachStateChangeListener, addOnLayoutChangeListener, animate, announceForAccessibility, bringToFront, buildDrawingCache, buildDrawingCache, buildLayer, callOnClick, cancelDragAndDrop, cancelLongPress, cancelPendingInputEvents, canResolveLayoutDirection, canResolveTextAlignment, canResolveTextDirection, canScrollHorizontally, canScrollVertically, checkInputConnectionProxy, clearAnimation, combineMeasuredStates, computeScroll, computeSystemWindowInsets, createAccessibilityNodeInfo, createContextMenu, destroyDrawingCache, dispatchFinishTemporaryDetach, dispatchGenericMotionEvent, dispatchNestedFling, dispatchNestedPreFling, dispatchNestedPrePerformAccessibilityAction, dispatchNestedPreScroll, dispatchNestedScroll, dispatchPopulateAccessibilityEvent, dispatchStartTemporaryDetach, draw, drawableHotspotChanged, findViewById, findViewWithTag, focusSearch, forceHasOverlappingRendering, forceLayout, generateViewId, getAccessibilityLiveRegion, getAccessibilityNodeProvider, getAccessibilityTraversalAfter, getAccessibilityTraversalBefore, getAlpha, getAnimation, getApplicationWindowToken, getBackground, getBackgroundTintList, getBackgroundTintMode, getBottom, getCameraDistance, getClipBounds, getClipBounds, getClipToOutline, getContentDescription, getContext, getDefaultSize, getDisplay, getDrawableState, getDrawingCache, getDrawingCache, getDrawingCacheBackgroundColor, getDrawingCacheQuality, getDrawingRect, getDrawingTime, getElevation, getFilterTouchesWhenObscured, getFitsSystemWindows, getFocusables, getFocusedRect, getForeground, getForegroundGravity, getForegroundTintList, getForegroundTintMode, getGlobalVisibleRect, getGlobalVisibleRect, getHandler, getHasOverlappingRendering, getHeight, getHitRect, getHorizontalFadingEdgeLength, getId, getImportantForAccessibility, getKeepScreenOn, getKeyDispatcherState, getLabelFor, getLayerType, getLayoutDirection, getLayoutParams, getLeft, getLocalVisibleRect, getLocationInWindow, getLocationOnScreen, getMatrix, getMeasuredHeight, getMeasuredHeightAndState, getMeasuredState, getMeasuredWidth, getMeasuredWidthAndState, getMinimumHeight, getMinimumWidth, getNextFocusDownId, getNextFocusForwardId, getNextFocusLeftId, getNextFocusRightId, getNextFocusUpId, getOnFocusChangeListener, getOutlineProvider, getOverScrollMode, getPaddingBottom, getPaddingEnd, getPaddingLeft, getPaddingRight, getPaddingStart, getPaddingTop, getParent, getParentForAccessibility, getPivotX, getPivotY, getPointerIcon, getResources, getRevealOnFocusHint, getRight, getRootView, getRootWindowInsets, getRotation, getRotationX, getRotationY, getScaleX, getScaleY, getScrollBarDefaultDelayBeforeFade, getScrollBarFadeDuration, getScrollBarSize, getScrollBarStyle, getScrollIndicators, getScrollX, getScrollY, getSolidColor, getStateListAnimator, getSystemUiVisibility, getTag, getTag, getTextAlignment, getTextDirection, getTop, getTouchables, getTouchDelegate, getTransitionName, getTranslationX, getTranslationY, getTranslationZ, getVerticalFadingEdgeLength, getVerticalScrollbarPosition, getVerticalScrollbarWidth, getViewTreeObserver, getVisibility, getWidth, getWindowId, getWindowSystemUiVisibility, getWindowToken, getWindowVisibility, getWindowVisibleDisplayFrame, getX, getY, getZ, hasNestedScrollingParent, hasOnClickListeners, hasOverlappingRendering, hasWindowFocus, inflate, invalidate, invalidate, invalidate, invalidateDrawable, invalidateOutline, isAccessibilityFocused, isActivated, isAttachedToWindow, isClickable, isContextClickable, isDirty, isDrawingCacheEnabled, isDuplicateParentStateEnabled, isEnabled, isFocusable, isFocusableInTouchMode, isFocused, isHapticFeedbackEnabled, isHardwareAccelerated, isHorizontalFadingEdgeEnabled, isHorizontalScrollBarEnabled, isHovered, isImportantForAccessibility, isInEditMode, isInLayout, isInTouchMode, isLaidOut, isLayoutDirectionResolved, isLayoutRequested, isLongClickable, isNestedScrollingEnabled, isOpaque, isPaddingRelative, isPressed, isSaveEnabled, isSaveFromParentEnabled, isScrollbarFadingEnabled, isScrollContainer, isSelected, isSoundEffectsEnabled, isTemporarilyDetached, isTextAlignmentResolved, isTextDirectionResolved, isVerticalFadingEdgeEnabled, isVerticalScrollBarEnabled, measure, offsetLeftAndRight, offsetTopAndBottom, onApplyWindowInsets, onCancelPendingInputEvents, onCheckIsTextEditor, onCreateInputConnection, onDragEvent, onDrawForeground, onFilterTouchEventForSecurity, onFinishTemporaryDetach, onGenericMotionEvent, onHoverChanged, onHoverEvent, onInitializeAccessibilityEvent, onInitializeAccessibilityNodeInfo, onKeyDown, onKeyLongPress, onKeyMultiple, onKeyPreIme, onKeyShortcut, onKeyUp, onPopulateAccessibilityEvent, onProvideStructure, onProvideVirtualStructure, onScreenStateChanged, onStartTemporaryDetach, onTouchEvent, onTrackballEvent, onVisibilityAggregated, onWindowFocusChanged, onWindowSystemUiVisibilityChanged, performAccessibilityAction, performClick, performContextClick, performContextClick, performHapticFeedback, performHapticFeedback, performLongClick, performLongClick, playSoundEffect, post, postDelayed, postInvalidate, postInvalidate, postInvalidateDelayed, postInvalidateDelayed, postInvalidateOnAnimation, postInvalidateOnAnimation, postOnAnimation, postOnAnimationDelayed, refreshDrawableState, removeCallbacks, removeOnAttachStateChangeListener, removeOnLayoutChangeListener, requestApplyInsets, requestFitSystemWindows, requestFocus, requestFocus, requestFocusFromTouch, requestLayout, requestRectangleOnScreen, requestRectangleOnScreen, requestUnbufferedDispatch, resolveSize, resolveSizeAndState, restoreHierarchyState, saveHierarchyState, scheduleDrawable, scrollBy, scrollTo, sendAccessibilityEvent, sendAccessibilityEventUnchecked, setAccessibilityDelegate, setAccessibilityLiveRegion, setAccessibilityTraversalAfter, setAccessibilityTraversalBefore, setActivated, setAlpha, setAnimation, setBackground, setBackgroundColor, setBackgroundDrawable, setBackgroundResource, setBackgroundTintList, setBackgroundTintMode, setBottom, setCameraDistance, setClickable, setClipBounds, setClipToOutline, setContentDescription, setContextClickable, setDrawingCacheBackgroundColor, setDrawingCacheEnabled, setDrawingCacheQuality, setDuplicateParentStateEnabled, setElevation, setEnabled, setFadingEdgeLength, setFilterTouchesWhenObscured, setFitsSystemWindows, setFocusable, setFocusableInTouchMode, setForeground, setForegroundGravity, setForegroundTintList, setForegroundTintMode, setHapticFeedbackEnabled, setHasTransientState, setHorizontalFadingEdgeEnabled, setHorizontalScrollBarEnabled, setHovered, setId, setImportantForAccessibility, setKeepScreenOn, setLabelFor, setLayerPaint, setLayerType, setLayoutDirection, setLayoutParams, setLeft, setLongClickable, setMinimumHeight, setMinimumWidth, setNestedScrollingEnabled, setNextFocusDownId, setNextFocusForwardId, setNextFocusLeftId, setNextFocusRightId, setNextFocusUpId, setOnApplyWindowInsetsListener, setOnClickListener, setOnContextClickListener, setOnCreateContextMenuListener, setOnDragListener, setOnFocusChangeListener, setOnGenericMotionListener, setOnHoverListener, setOnKeyListener, setOnLongClickListener, setOnScrollChangeListener, setOnSystemUiVisibilityChangeListener, setOnTouchListener, setOutlineProvider, setOverScrollMode, setPadding, setPaddingRelative, setPivotX, setPivotY, setPointerIcon, setPressed, setRevealOnFocusHint, setRight, setRotation, setRotationX, setRotationY, setSaveEnabled, setSaveFromParentEnabled, setScaleX, setScaleY, setScrollBarDefaultDelayBeforeFade, setScrollBarFadeDuration, setScrollbarFadingEnabled, setScrollBarSize, setScrollBarStyle, setScrollContainer, setScrollIndicators, setScrollIndicators, setScrollX, setScrollY, setSelected, setSoundEffectsEnabled, setStateListAnimator, setSystemUiVisibility, setTag, setTag, setTextAlignment, setTextDirection, setTop, setTouchDelegate, setTransitionName, setTranslationX, setTranslationY, setTranslationZ, setVerticalFadingEdgeEnabled, setVerticalScrollBarEnabled, setVerticalScrollbarPosition, setVisibility, setWillNotCacheDrawing, setWillNotDraw, setX, setY, setZ, showContextMenu, showContextMenu, startActionMode, startActionMode, startAnimation, startDrag, startDragAndDrop, startNestedScroll, stopNestedScroll, toString, unscheduleDrawable, unscheduleDrawable, updateDragShadow, willNotCacheDrawing, willNotDraw`
 
         &nbsp;
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, wait, wait, wait`
 
         &nbsp;
-        -   []{#methods.inherited.from.class.android.view.ViewParent}
-
-            ### Methods inherited from interface android.view.ViewParent
+        -   ### Methods inherited from interface android.view.ViewParent
 
             `canResolveLayoutDirection, canResolveTextAlignment, canResolveTextDirection, createContextMenu, getLayoutDirection, getParent, getParentForAccessibility, getTextAlignment, getTextDirection, isLayoutDirectionResolved, isLayoutRequested, isTextAlignmentResolved, isTextDirectionResolved, requestFitSystemWindows, requestLayout`
 
--   -   []{#field.detail}
-
-        ### Field Detail
-
-        []{#POSITION_LEFT}
+-   -   ### Field Detail
 
         -   #### POSITION\_LEFT
 
@@ -21948,11 +19234,9 @@ Class InfoSnippetView {#class-infosnippetview .title title="Class InfoSnippetVie
             The constant POSITION\_LEFT.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.ui.InfoSnippetView.POSITION_LEFT)
+            :   Constant Field Values
 
-        []{#POSITION_RIGHT}
-
+        &nbsp;
         -   #### POSITION\_RIGHT
 
                 public static final int POSITION_RIGHT
@@ -21960,11 +19244,9 @@ Class InfoSnippetView {#class-infosnippetview .title title="Class InfoSnippetVie
             The constant POSITION\_RIGHT.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.ui.InfoSnippetView.POSITION_RIGHT)
+            :   Constant Field Values
 
-        []{#POSITION_CENTER}
-
+        &nbsp;
         -   #### POSITION\_CENTER
 
                 public static final int POSITION_CENTER
@@ -21972,11 +19254,9 @@ Class InfoSnippetView {#class-infosnippetview .title title="Class InfoSnippetVie
             The constant POSITION\_CENTER.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.ui.InfoSnippetView.POSITION_CENTER)
+            :   Constant Field Values
 
-        []{#POSITION_LEFT_TOP}
-
+        &nbsp;
         -   #### POSITION\_LEFT\_TOP
 
                 public static final int POSITION_LEFT_TOP
@@ -21984,11 +19264,9 @@ Class InfoSnippetView {#class-infosnippetview .title title="Class InfoSnippetVie
             The constant POSITION\_LEFT\_TOP.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.ui.InfoSnippetView.POSITION_LEFT_TOP)
+            :   Constant Field Values
 
-        []{#POSITION_RIGHT_TOP}
-
+        &nbsp;
         -   #### POSITION\_RIGHT\_TOP
 
                 public static final int POSITION_RIGHT_TOP
@@ -21996,11 +19274,9 @@ Class InfoSnippetView {#class-infosnippetview .title title="Class InfoSnippetVie
             The constant POSITION\_RIGHT\_TOP.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.ui.InfoSnippetView.POSITION_RIGHT_TOP)
+            :   Constant Field Values
 
-        []{#POSITION_CENTER_TOP}
-
+        &nbsp;
         -   #### POSITION\_CENTER\_TOP
 
                 public static final int POSITION_CENTER_TOP
@@ -22008,11 +19284,9 @@ Class InfoSnippetView {#class-infosnippetview .title title="Class InfoSnippetVie
             The constant POSITION\_CENTER\_TOP.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.ui.InfoSnippetView.POSITION_CENTER_TOP)
+            :   Constant Field Values
 
-        []{#POSITION_LEFT_BOTTOM}
-
+        &nbsp;
         -   #### POSITION\_LEFT\_BOTTOM
 
                 public static final int POSITION_LEFT_BOTTOM
@@ -22020,11 +19294,9 @@ Class InfoSnippetView {#class-infosnippetview .title title="Class InfoSnippetVie
             The constant POSITION\_LEFT\_BOTTOM.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.ui.InfoSnippetView.POSITION_LEFT_BOTTOM)
+            :   Constant Field Values
 
-        []{#POSITION_RIGHT_BOTTOM}
-
+        &nbsp;
         -   #### POSITION\_RIGHT\_BOTTOM
 
                 public static final int POSITION_RIGHT_BOTTOM
@@ -22032,11 +19304,9 @@ Class InfoSnippetView {#class-infosnippetview .title title="Class InfoSnippetVie
             The constant POSITION\_RIGHT\_BOTTOM.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.ui.InfoSnippetView.POSITION_RIGHT_BOTTOM)
+            :   Constant Field Values
 
-        []{#POSITION_CENTER_BOTTOM}
-
+        &nbsp;
         -   #### POSITION\_CENTER\_BOTTOM
 
                 public static final int POSITION_CENTER_BOTTOM
@@ -22044,11 +19314,9 @@ Class InfoSnippetView {#class-infosnippetview .title title="Class InfoSnippetVie
             The constant POSITION\_CENTER\_BOTTOM.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.ui.InfoSnippetView.POSITION_CENTER_BOTTOM)
+            :   Constant Field Values
 
-        []{#TEXT_COLOR}
-
+        &nbsp;
         -   #### TEXT\_COLOR
 
                 public static final int TEXT_COLOR
@@ -22056,15 +19324,10 @@ Class InfoSnippetView {#class-infosnippetview .title title="Class InfoSnippetVie
             The constant TEXT\_COLOR.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.ui.InfoSnippetView.TEXT_COLOR)
+            :   Constant Field Values
 
     &nbsp;
-    -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#InfoSnippetView-android.content.Context-}
+    -   ### Constructor Detail
 
         -   #### InfoSnippetView
 
@@ -22076,11 +19339,7 @@ Class InfoSnippetView {#class-infosnippetview .title title="Class InfoSnippetVie
             :   `context` - The context
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#addOnSnippetTappedListener-com.mapspeople.ui.OnSnippetTappedListener-}
+    -   ### Method Detail
 
         -   #### addOnSnippetTappedListener
 
@@ -22091,8 +19350,7 @@ Class InfoSnippetView {#class-infosnippetview .title title="Class InfoSnippetVie
             [Parameters:]{.paramLabel}
             :   `callback` - The listener object
 
-        []{#getLeftView--}
-
+        &nbsp;
         -   #### getLeftView
 
                 public android.view.View getLeftView()
@@ -22103,8 +19361,7 @@ Class InfoSnippetView {#class-infosnippetview .title title="Class InfoSnippetVie
             [Returns:]{.returnLabel}
             :   The view
 
-        []{#addLeftView-android.view.View-}
-
+        &nbsp;
         -   #### addLeftView
 
                 public void addLeftView(android.view.View view)
@@ -22114,8 +19371,7 @@ Class InfoSnippetView {#class-infosnippetview .title title="Class InfoSnippetVie
             [Parameters:]{.paramLabel}
             :   `view` - the view
 
-        []{#getCenterView--}
-
+        &nbsp;
         -   #### getCenterView
 
                 public android.view.View getCenterView()
@@ -22126,8 +19382,7 @@ Class InfoSnippetView {#class-infosnippetview .title title="Class InfoSnippetVie
             [Returns:]{.returnLabel}
             :   The view
 
-        []{#addCenterView-android.view.View-}
-
+        &nbsp;
         -   #### addCenterView
 
                 public void addCenterView(android.view.View view)
@@ -22137,8 +19392,7 @@ Class InfoSnippetView {#class-infosnippetview .title title="Class InfoSnippetVie
             [Parameters:]{.paramLabel}
             :   `view` - the view
 
-        []{#getRightView--}
-
+        &nbsp;
         -   #### getRightView
 
                 public android.view.View getRightView()
@@ -22149,16 +19403,14 @@ Class InfoSnippetView {#class-infosnippetview .title title="Class InfoSnippetVie
             [Returns:]{.returnLabel}
             :   The view
 
-        []{#enableLeftView--}
-
+        &nbsp;
         -   #### enableLeftView
 
                 public void enableLeftView()
 
             Enable left view (not enabled by default)
 
-        []{#addRightView-android.widget.TextView-}
-
+        &nbsp;
         -   #### addRightView
 
                 public void addRightView(android.widget.TextView view)
@@ -22168,8 +19420,7 @@ Class InfoSnippetView {#class-infosnippetview .title title="Class InfoSnippetVie
             [Parameters:]{.paramLabel}
             :   `view` - the view
 
-        []{#setText-java.lang.String-int-}
-
+        &nbsp;
         -   #### setText
 
                 public void setText(java.lang.String text,                    int position)
@@ -22179,10 +19430,9 @@ Class InfoSnippetView {#class-infosnippetview .title title="Class InfoSnippetVie
             [Parameters:]{.paramLabel}
             :   `text` - The text value
             :   `position` - The position - integer value, e.g.
-                [`POSITION_CENTER_BOTTOM`](../../../com/mapspeople/ui/InfoSnippetView.html#POSITION_CENTER_BOTTOM)
+                `POSITION_CENTER_BOTTOM`
 
-        []{#setText-android.text.Spanned-int-}
-
+        &nbsp;
         -   #### setText
 
                 public void setText(android.text.Spanned text,                    int position)
@@ -22193,16 +19443,14 @@ Class InfoSnippetView {#class-infosnippetview .title title="Class InfoSnippetVie
             :   `text` - the text
             :   `position` - the position
 
-        []{#show--}
-
+        &nbsp;
         -   #### show
 
                 public void show()
 
             Immediately show the info snippet view
 
-        []{#attachLocation-com.mapspeople.models.Location-boolean-}
-
+        &nbsp;
         -   #### attachLocation
 
                 public void attachLocation(Location location,                           boolean animate)
@@ -22214,16 +19462,14 @@ Class InfoSnippetView {#class-infosnippetview .title title="Class InfoSnippetVie
             :   `location` - the location
             :   `animate` - the animate
 
-        []{#detach--}
-
+        &nbsp;
         -   #### detach
 
                 public void detach()
 
             Detach/hide the the info snippet view
 
-        []{#attachLocation-com.mapspeople.models.Location-com.mapspeople.models.PositionIndicator-}
-
+        &nbsp;
         -   #### attachLocation
 
                 public void attachLocation(Location location,                           PositionIndicator positionIndicator)
@@ -22237,8 +19483,7 @@ Class InfoSnippetView {#class-infosnippetview .title title="Class InfoSnippetVie
             :   `location` - The location
             :   `positionIndicator` - The user position indicator
 
-        []{#addToView-android.view.ViewGroup-}
-
+        &nbsp;
         -   #### addToView
 
                 public void addToView(android.view.ViewGroup view)
@@ -22249,8 +19494,7 @@ Class InfoSnippetView {#class-infosnippetview .title title="Class InfoSnippetVie
             [Parameters:]{.paramLabel}
             :   `view` - The parent view
 
-        []{#onClick-android.view.View-}
-
+        &nbsp;
         -   #### onClick
 
                 public void onClick(android.view.View view)
@@ -22264,8 +19508,7 @@ Class InfoSnippetView {#class-infosnippetview .title title="Class InfoSnippetVie
             [Parameters:]{.paramLabel}
             :   `view` - the view
 
-        []{#setupNavigationButton--}
-
+        &nbsp;
         -   #### setupNavigationButton
 
                 public void setupNavigationButton()
@@ -22273,8 +19516,7 @@ Class InfoSnippetView {#class-infosnippetview .title title="Class InfoSnippetVie
             Setup navigation button, e.g. display a location arrow in
             top right child view.
 
-        []{#insertIcon-java.lang.String-int-}
-
+        &nbsp;
         -   #### insertIcon
 
                 public void insertIcon(java.lang.String iconType,                       int position)
@@ -22282,16 +19524,12 @@ Class InfoSnippetView {#class-infosnippetview .title title="Class InfoSnippetVie
             Insert font icon into the
 
             [Parameters:]{.paramLabel}
-            :   `iconType` - The type of icon to use, use
-                [`IconType`](../../../com/mapspeople/models/IconType.html "class in com.mapspeople.models")
-                to reference the unicode or type the font icon unicode
-            :   `position` - The position, either
-                [`POSITION_LEFT_TOP`](../../../com/mapspeople/ui/InfoSnippetView.html#POSITION_LEFT_TOP)
-                or
-                [`POSITION_RIGHT_TOP`](../../../com/mapspeople/ui/InfoSnippetView.html#POSITION_RIGHT_TOP)
+            :   `iconType` - The type of icon to use, use `IconType` to
+                reference the unicode or type the font icon unicode
+            :   `position` - The position, either `POSITION_LEFT_TOP` or
+                `POSITION_RIGHT_TOP`
 
-        []{#setOnAttachListener-com.mapspeople.ui.OnLocationAttachedListener-}
-
+        &nbsp;
         -   #### setOnAttachListener
 
                 public void setOnAttachListener(OnLocationAttachedListener onAttachListener)
@@ -22302,8 +19540,7 @@ Class InfoSnippetView {#class-infosnippetview .title title="Class InfoSnippetVie
             [Parameters:]{.paramLabel}
             :   `onAttachListener` - the on attach listener
 
-        []{#isShown--}
-
+        &nbsp;
         -   #### isShown
 
                 public boolean isShown()
@@ -22343,59 +19580,41 @@ Class LocationListItem {#class-locationlistitem .title title="Class LocationList
 
     The type Location list item.
 
--   -   []{#nested.class.summary}
+-   -   ### Nested Class Summary
 
-        ### Nested Class Summary
-
-        -   []{#nested.classes.inherited.from.class.android.widget.LinearLayout}
-
-            ### Nested classes/interfaces inherited from class android.widget.LinearLayout
+        -   ### Nested classes/interfaces inherited from class android.widget.LinearLayout
 
             `android.widget.LinearLayout.LayoutParams`
 
         &nbsp;
-        -   []{#nested.classes.inherited.from.class.android.view.ViewGroup}
-
-            ### Nested classes/interfaces inherited from class android.view.ViewGroup
+        -   ### Nested classes/interfaces inherited from class android.view.ViewGroup
 
             `android.view.ViewGroup.MarginLayoutParams, android.view.ViewGroup.OnHierarchyChangeListener`
 
         &nbsp;
-        -   []{#nested.classes.inherited.from.class.android.view.View}
-
-            ### Nested classes/interfaces inherited from class android.view.View
+        -   ### Nested classes/interfaces inherited from class android.view.View
 
             `android.view.View.AccessibilityDelegate, android.view.View.BaseSavedState, android.view.View.DragShadowBuilder, android.view.View.MeasureSpec, android.view.View.OnApplyWindowInsetsListener, android.view.View.OnAttachStateChangeListener, android.view.View.OnClickListener, android.view.View.OnContextClickListener, android.view.View.OnCreateContextMenuListener, android.view.View.OnDragListener, android.view.View.OnFocusChangeListener, android.view.View.OnGenericMotionListener, android.view.View.OnHoverListener, android.view.View.OnKeyListener, android.view.View.OnLayoutChangeListener, android.view.View.OnLongClickListener, android.view.View.OnScrollChangeListener, android.view.View.OnSystemUiVisibilityChangeListener, android.view.View.OnTouchListener`
 
     &nbsp;
-    -   []{#field.summary}
+    -   ### Field Summary
 
-        ### Field Summary
-
-        -   []{#fields.inherited.from.class.android.widget.LinearLayout}
-
-            ### Fields inherited from class android.widget.LinearLayout
+        -   ### Fields inherited from class android.widget.LinearLayout
 
             `HORIZONTAL, SHOW_DIVIDER_BEGINNING, SHOW_DIVIDER_END, SHOW_DIVIDER_MIDDLE, SHOW_DIVIDER_NONE, VERTICAL`
 
         &nbsp;
-        -   []{#fields.inherited.from.class.android.view.ViewGroup}
-
-            ### Fields inherited from class android.view.ViewGroup
+        -   ### Fields inherited from class android.view.ViewGroup
 
             `FOCUS_AFTER_DESCENDANTS, FOCUS_BEFORE_DESCENDANTS, FOCUS_BLOCK_DESCENDANTS, LAYOUT_MODE_CLIP_BOUNDS, LAYOUT_MODE_OPTICAL_BOUNDS, PERSISTENT_ALL_CACHES, PERSISTENT_ANIMATION_CACHE, PERSISTENT_NO_CACHE, PERSISTENT_SCROLLING_CACHE`
 
         &nbsp;
-        -   []{#fields.inherited.from.class.android.view.View}
-
-            ### Fields inherited from class android.view.View
+        -   ### Fields inherited from class android.view.View
 
             `ACCESSIBILITY_LIVE_REGION_ASSERTIVE, ACCESSIBILITY_LIVE_REGION_NONE, ACCESSIBILITY_LIVE_REGION_POLITE, ALPHA, DRAG_FLAG_GLOBAL, DRAG_FLAG_GLOBAL_PERSISTABLE_URI_PERMISSION, DRAG_FLAG_GLOBAL_PREFIX_URI_PERMISSION, DRAG_FLAG_GLOBAL_URI_READ, DRAG_FLAG_GLOBAL_URI_WRITE, DRAG_FLAG_OPAQUE, DRAWING_CACHE_QUALITY_AUTO, DRAWING_CACHE_QUALITY_HIGH, DRAWING_CACHE_QUALITY_LOW, FIND_VIEWS_WITH_CONTENT_DESCRIPTION, FIND_VIEWS_WITH_TEXT, FOCUS_BACKWARD, FOCUS_DOWN, FOCUS_FORWARD, FOCUS_LEFT, FOCUS_RIGHT, FOCUS_UP, FOCUSABLES_ALL, FOCUSABLES_TOUCH_MODE, GONE, HAPTIC_FEEDBACK_ENABLED, IMPORTANT_FOR_ACCESSIBILITY_AUTO, IMPORTANT_FOR_ACCESSIBILITY_NO, IMPORTANT_FOR_ACCESSIBILITY_NO_HIDE_DESCENDANTS, IMPORTANT_FOR_ACCESSIBILITY_YES, INVISIBLE, KEEP_SCREEN_ON, LAYER_TYPE_HARDWARE, LAYER_TYPE_NONE, LAYER_TYPE_SOFTWARE, LAYOUT_DIRECTION_INHERIT, LAYOUT_DIRECTION_LOCALE, LAYOUT_DIRECTION_LTR, LAYOUT_DIRECTION_RTL, MEASURED_HEIGHT_STATE_SHIFT, MEASURED_SIZE_MASK, MEASURED_STATE_MASK, MEASURED_STATE_TOO_SMALL, NO_ID, OVER_SCROLL_ALWAYS, OVER_SCROLL_IF_CONTENT_SCROLLS, OVER_SCROLL_NEVER, ROTATION, ROTATION_X, ROTATION_Y, SCALE_X, SCALE_Y, SCREEN_STATE_OFF, SCREEN_STATE_ON, SCROLL_AXIS_HORIZONTAL, SCROLL_AXIS_NONE, SCROLL_AXIS_VERTICAL, SCROLL_INDICATOR_BOTTOM, SCROLL_INDICATOR_END, SCROLL_INDICATOR_LEFT, SCROLL_INDICATOR_RIGHT, SCROLL_INDICATOR_START, SCROLL_INDICATOR_TOP, SCROLLBAR_POSITION_DEFAULT, SCROLLBAR_POSITION_LEFT, SCROLLBAR_POSITION_RIGHT, SCROLLBARS_INSIDE_INSET, SCROLLBARS_INSIDE_OVERLAY, SCROLLBARS_OUTSIDE_INSET, SCROLLBARS_OUTSIDE_OVERLAY, SOUND_EFFECTS_ENABLED, STATUS_BAR_HIDDEN, STATUS_BAR_VISIBLE, SYSTEM_UI_FLAG_FULLSCREEN, SYSTEM_UI_FLAG_HIDE_NAVIGATION, SYSTEM_UI_FLAG_IMMERSIVE, SYSTEM_UI_FLAG_IMMERSIVE_STICKY, SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN, SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION, SYSTEM_UI_FLAG_LAYOUT_STABLE, SYSTEM_UI_FLAG_LIGHT_STATUS_BAR, SYSTEM_UI_FLAG_LOW_PROFILE, SYSTEM_UI_FLAG_VISIBLE, SYSTEM_UI_LAYOUT_FLAGS, TEXT_ALIGNMENT_CENTER, TEXT_ALIGNMENT_GRAVITY, TEXT_ALIGNMENT_INHERIT, TEXT_ALIGNMENT_TEXT_END, TEXT_ALIGNMENT_TEXT_START, TEXT_ALIGNMENT_VIEW_END, TEXT_ALIGNMENT_VIEW_START, TEXT_DIRECTION_ANY_RTL, TEXT_DIRECTION_FIRST_STRONG, TEXT_DIRECTION_FIRST_STRONG_LTR, TEXT_DIRECTION_FIRST_STRONG_RTL, TEXT_DIRECTION_INHERIT, TEXT_DIRECTION_LOCALE, TEXT_DIRECTION_LTR, TEXT_DIRECTION_RTL, TRANSLATION_X, TRANSLATION_Y, TRANSLATION_Z, VISIBLE, X, Y, Z`
 
     &nbsp;
-    -   []{#constructor.summary}
-
-        ### Constructor Summary
+    -   ### Constructor Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -22422,45 +19641,31 @@ Class LocationListItem {#class-locationlistitem .title title="Class LocationList
         |                                   | Sets title view.                  |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.android.widget.LinearLayout}
-
-            ### Methods inherited from class android.widget.LinearLayout
+        -   ### Methods inherited from class android.widget.LinearLayout
 
             `generateLayoutParams, getAccessibilityClassName, getBaseline, getBaselineAlignedChildIndex, getDividerDrawable, getDividerPadding, getGravity, getOrientation, getShowDividers, getWeightSum, isBaselineAligned, isMeasureWithLargestChildEnabled, onRtlPropertiesChanged, setBaselineAligned, setBaselineAlignedChildIndex, setDividerDrawable, setDividerPadding, setGravity, setHorizontalGravity, setMeasureWithLargestChildEnabled, setOrientation, setShowDividers, setVerticalGravity, setWeightSum, shouldDelayChildPressedState`
 
         &nbsp;
-        -   []{#methods.inherited.from.class.android.view.ViewGroup}
-
-            ### Methods inherited from class android.view.ViewGroup
+        -   ### Methods inherited from class android.view.ViewGroup
 
             `addChildrenForAccessibility, addFocusables, addStatesFromChildren, addTouchables, addView, addView, addView, addView, addView, bringChildToFront, childDrawableStateChanged, childHasTransientStateChanged, clearChildFocus, clearDisappearingChildren, clearFocus, dispatchApplyWindowInsets, dispatchConfigurationChanged, dispatchDisplayHint, dispatchDragEvent, dispatchDrawableHotspotChanged, dispatchKeyEvent, dispatchKeyEventPreIme, dispatchKeyShortcutEvent, dispatchProvideStructure, dispatchSetActivated, dispatchSetSelected, dispatchSystemUiVisibilityChanged, dispatchTouchEvent, dispatchTrackballEvent, dispatchUnhandledMove, dispatchWindowFocusChanged, dispatchWindowSystemUiVisiblityChanged, dispatchWindowVisibilityChanged, endViewTransition, findFocus, findViewsWithText, focusableViewAvailable, focusSearch, gatherTransparentRegion, getChildAt, getChildCount, getChildMeasureSpec, getChildVisibleRect, getClipChildren, getClipToPadding, getDescendantFocusability, getFocusedChild, getLayoutAnimation, getLayoutAnimationListener, getLayoutMode, getLayoutTransition, getNestedScrollAxes, getOverlay, getPersistentDrawingCache, getTouchscreenBlocksFocus, hasFocus, hasFocusable, hasTransientState, indexOfChild, invalidateChild, invalidateChildInParent, isAlwaysDrawnWithCacheEnabled, isAnimationCacheEnabled, isMotionEventSplittingEnabled, isTransitionGroup, jumpDrawablesToCurrentState, layout, notifySubtreeAccessibilityStateChanged, offsetDescendantRectToMyCoords, offsetRectIntoDescendantCoords, onInterceptHoverEvent, onInterceptTouchEvent, onNestedFling, onNestedPreFling, onNestedPrePerformAccessibilityAction, onNestedPreScroll, onNestedScroll, onNestedScrollAccepted, onRequestSendAccessibilityEvent, onResolvePointerIcon, onStartNestedScroll, onStopNestedScroll, onViewAdded, onViewRemoved, recomputeViewAttributes, removeAllViews, removeAllViewsInLayout, removeView, removeViewAt, removeViewInLayout, removeViews, removeViewsInLayout, requestChildFocus, requestChildRectangleOnScreen, requestDisallowInterceptTouchEvent, requestFocus, requestSendAccessibilityEvent, requestTransparentRegion, scheduleLayoutAnimation, setAddStatesFromChildren, setAlwaysDrawnWithCacheEnabled, setAnimationCacheEnabled, setClipChildren, setClipToPadding, setDescendantFocusability, setLayoutAnimation, setLayoutAnimationListener, setLayoutMode, setLayoutTransition, setMotionEventSplittingEnabled, setOnHierarchyChangeListener, setPersistentDrawingCache, setTouchscreenBlocksFocus, setTransitionGroup, showContextMenuForChild, showContextMenuForChild, startActionModeForChild, startActionModeForChild, startLayoutAnimation, startViewTransition, updateViewLayout`
 
         &nbsp;
-        -   []{#methods.inherited.from.class.android.view.View}
-
-            ### Methods inherited from class android.view.View
+        -   ### Methods inherited from class android.view.View
 
             `addFocusables, addOnAttachStateChangeListener, addOnLayoutChangeListener, animate, announceForAccessibility, bringToFront, buildDrawingCache, buildDrawingCache, buildLayer, callOnClick, cancelDragAndDrop, cancelLongPress, cancelPendingInputEvents, canResolveLayoutDirection, canResolveTextAlignment, canResolveTextDirection, canScrollHorizontally, canScrollVertically, checkInputConnectionProxy, clearAnimation, combineMeasuredStates, computeScroll, computeSystemWindowInsets, createAccessibilityNodeInfo, createContextMenu, destroyDrawingCache, dispatchFinishTemporaryDetach, dispatchGenericMotionEvent, dispatchNestedFling, dispatchNestedPreFling, dispatchNestedPrePerformAccessibilityAction, dispatchNestedPreScroll, dispatchNestedScroll, dispatchPopulateAccessibilityEvent, dispatchStartTemporaryDetach, draw, drawableHotspotChanged, findViewById, findViewWithTag, focusSearch, forceHasOverlappingRendering, forceLayout, generateViewId, getAccessibilityLiveRegion, getAccessibilityNodeProvider, getAccessibilityTraversalAfter, getAccessibilityTraversalBefore, getAlpha, getAnimation, getApplicationWindowToken, getBackground, getBackgroundTintList, getBackgroundTintMode, getBottom, getCameraDistance, getClipBounds, getClipBounds, getClipToOutline, getContentDescription, getContext, getDefaultSize, getDisplay, getDrawableState, getDrawingCache, getDrawingCache, getDrawingCacheBackgroundColor, getDrawingCacheQuality, getDrawingRect, getDrawingTime, getElevation, getFilterTouchesWhenObscured, getFitsSystemWindows, getFocusables, getFocusedRect, getForeground, getForegroundGravity, getForegroundTintList, getForegroundTintMode, getGlobalVisibleRect, getGlobalVisibleRect, getHandler, getHasOverlappingRendering, getHeight, getHitRect, getHorizontalFadingEdgeLength, getId, getImportantForAccessibility, getKeepScreenOn, getKeyDispatcherState, getLabelFor, getLayerType, getLayoutDirection, getLayoutParams, getLeft, getLocalVisibleRect, getLocationInWindow, getLocationOnScreen, getMatrix, getMeasuredHeight, getMeasuredHeightAndState, getMeasuredState, getMeasuredWidth, getMeasuredWidthAndState, getMinimumHeight, getMinimumWidth, getNextFocusDownId, getNextFocusForwardId, getNextFocusLeftId, getNextFocusRightId, getNextFocusUpId, getOnFocusChangeListener, getOutlineProvider, getOverScrollMode, getPaddingBottom, getPaddingEnd, getPaddingLeft, getPaddingRight, getPaddingStart, getPaddingTop, getParent, getParentForAccessibility, getPivotX, getPivotY, getPointerIcon, getResources, getRevealOnFocusHint, getRight, getRootView, getRootWindowInsets, getRotation, getRotationX, getRotationY, getScaleX, getScaleY, getScrollBarDefaultDelayBeforeFade, getScrollBarFadeDuration, getScrollBarSize, getScrollBarStyle, getScrollIndicators, getScrollX, getScrollY, getSolidColor, getStateListAnimator, getSystemUiVisibility, getTag, getTag, getTextAlignment, getTextDirection, getTop, getTouchables, getTouchDelegate, getTransitionName, getTranslationX, getTranslationY, getTranslationZ, getVerticalFadingEdgeLength, getVerticalScrollbarPosition, getVerticalScrollbarWidth, getViewTreeObserver, getVisibility, getWidth, getWindowId, getWindowSystemUiVisibility, getWindowToken, getWindowVisibility, getWindowVisibleDisplayFrame, getX, getY, getZ, hasNestedScrollingParent, hasOnClickListeners, hasOverlappingRendering, hasWindowFocus, inflate, invalidate, invalidate, invalidate, invalidateDrawable, invalidateOutline, isAccessibilityFocused, isActivated, isAttachedToWindow, isClickable, isContextClickable, isDirty, isDrawingCacheEnabled, isDuplicateParentStateEnabled, isEnabled, isFocusable, isFocusableInTouchMode, isFocused, isHapticFeedbackEnabled, isHardwareAccelerated, isHorizontalFadingEdgeEnabled, isHorizontalScrollBarEnabled, isHovered, isImportantForAccessibility, isInEditMode, isInLayout, isInTouchMode, isLaidOut, isLayoutDirectionResolved, isLayoutRequested, isLongClickable, isNestedScrollingEnabled, isOpaque, isPaddingRelative, isPressed, isSaveEnabled, isSaveFromParentEnabled, isScrollbarFadingEnabled, isScrollContainer, isSelected, isShown, isSoundEffectsEnabled, isTemporarilyDetached, isTextAlignmentResolved, isTextDirectionResolved, isVerticalFadingEdgeEnabled, isVerticalScrollBarEnabled, measure, offsetLeftAndRight, offsetTopAndBottom, onApplyWindowInsets, onCancelPendingInputEvents, onCheckIsTextEditor, onCreateInputConnection, onDragEvent, onDrawForeground, onFilterTouchEventForSecurity, onFinishTemporaryDetach, onGenericMotionEvent, onHoverChanged, onHoverEvent, onInitializeAccessibilityEvent, onInitializeAccessibilityNodeInfo, onKeyDown, onKeyLongPress, onKeyMultiple, onKeyPreIme, onKeyShortcut, onKeyUp, onPopulateAccessibilityEvent, onProvideStructure, onProvideVirtualStructure, onScreenStateChanged, onStartTemporaryDetach, onTouchEvent, onTrackballEvent, onVisibilityAggregated, onWindowFocusChanged, onWindowSystemUiVisibilityChanged, performAccessibilityAction, performClick, performContextClick, performContextClick, performHapticFeedback, performHapticFeedback, performLongClick, performLongClick, playSoundEffect, post, postDelayed, postInvalidate, postInvalidate, postInvalidateDelayed, postInvalidateDelayed, postInvalidateOnAnimation, postInvalidateOnAnimation, postOnAnimation, postOnAnimationDelayed, refreshDrawableState, removeCallbacks, removeOnAttachStateChangeListener, removeOnLayoutChangeListener, requestApplyInsets, requestFitSystemWindows, requestFocus, requestFocus, requestFocusFromTouch, requestLayout, requestRectangleOnScreen, requestRectangleOnScreen, requestUnbufferedDispatch, resolveSize, resolveSizeAndState, restoreHierarchyState, saveHierarchyState, scheduleDrawable, scrollBy, scrollTo, sendAccessibilityEvent, sendAccessibilityEventUnchecked, setAccessibilityDelegate, setAccessibilityLiveRegion, setAccessibilityTraversalAfter, setAccessibilityTraversalBefore, setActivated, setAlpha, setAnimation, setBackground, setBackgroundColor, setBackgroundDrawable, setBackgroundResource, setBackgroundTintList, setBackgroundTintMode, setBottom, setCameraDistance, setClickable, setClipBounds, setClipToOutline, setContentDescription, setContextClickable, setDrawingCacheBackgroundColor, setDrawingCacheEnabled, setDrawingCacheQuality, setDuplicateParentStateEnabled, setElevation, setEnabled, setFadingEdgeLength, setFilterTouchesWhenObscured, setFitsSystemWindows, setFocusable, setFocusableInTouchMode, setForeground, setForegroundGravity, setForegroundTintList, setForegroundTintMode, setHapticFeedbackEnabled, setHasTransientState, setHorizontalFadingEdgeEnabled, setHorizontalScrollBarEnabled, setHovered, setId, setImportantForAccessibility, setKeepScreenOn, setLabelFor, setLayerPaint, setLayerType, setLayoutDirection, setLayoutParams, setLeft, setLongClickable, setMinimumHeight, setMinimumWidth, setNestedScrollingEnabled, setNextFocusDownId, setNextFocusForwardId, setNextFocusLeftId, setNextFocusRightId, setNextFocusUpId, setOnApplyWindowInsetsListener, setOnClickListener, setOnContextClickListener, setOnCreateContextMenuListener, setOnDragListener, setOnFocusChangeListener, setOnGenericMotionListener, setOnHoverListener, setOnKeyListener, setOnLongClickListener, setOnScrollChangeListener, setOnSystemUiVisibilityChangeListener, setOnTouchListener, setOutlineProvider, setOverScrollMode, setPadding, setPaddingRelative, setPivotX, setPivotY, setPointerIcon, setPressed, setRevealOnFocusHint, setRight, setRotation, setRotationX, setRotationY, setSaveEnabled, setSaveFromParentEnabled, setScaleX, setScaleY, setScrollBarDefaultDelayBeforeFade, setScrollBarFadeDuration, setScrollbarFadingEnabled, setScrollBarSize, setScrollBarStyle, setScrollContainer, setScrollIndicators, setScrollIndicators, setScrollX, setScrollY, setSelected, setSoundEffectsEnabled, setStateListAnimator, setSystemUiVisibility, setTag, setTag, setTextAlignment, setTextDirection, setTop, setTouchDelegate, setTransitionName, setTranslationX, setTranslationY, setTranslationZ, setVerticalFadingEdgeEnabled, setVerticalScrollBarEnabled, setVerticalScrollbarPosition, setVisibility, setWillNotCacheDrawing, setWillNotDraw, setX, setY, setZ, showContextMenu, showContextMenu, startActionMode, startActionMode, startAnimation, startDrag, startDragAndDrop, startNestedScroll, stopNestedScroll, toString, unscheduleDrawable, unscheduleDrawable, updateDragShadow, willNotCacheDrawing, willNotDraw`
 
         &nbsp;
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, wait, wait, wait`
 
         &nbsp;
-        -   []{#methods.inherited.from.class.android.view.ViewParent}
-
-            ### Methods inherited from interface android.view.ViewParent
+        -   ### Methods inherited from interface android.view.ViewParent
 
             `canResolveLayoutDirection, canResolveTextAlignment, canResolveTextDirection, createContextMenu, getLayoutDirection, getParent, getParentForAccessibility, getTextAlignment, getTextDirection, isLayoutDirectionResolved, isLayoutRequested, isTextAlignmentResolved, isTextDirectionResolved, requestFitSystemWindows, requestLayout`
 
--   -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#LocationListItem-android.content.Context-}
+-   -   ### Constructor Detail
 
         -   #### LocationListItem
 
@@ -22472,11 +19677,7 @@ Class LocationListItem {#class-locationlistitem .title title="Class LocationList
             :   `context` - the context
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#getIconView--}
+    -   ### Method Detail
 
         -   #### getIconView
 
@@ -22487,8 +19688,7 @@ Class LocationListItem {#class-locationlistitem .title title="Class LocationList
             [Returns:]{.returnLabel}
             :   the icon view
 
-        []{#setIconView-android.view.View-}
-
+        &nbsp;
         -   #### setIconView
 
                 public void setIconView(android.view.View iconView)
@@ -22498,8 +19698,7 @@ Class LocationListItem {#class-locationlistitem .title title="Class LocationList
             [Parameters:]{.paramLabel}
             :   `iconView` - the icon view
 
-        []{#getTitleView--}
-
+        &nbsp;
         -   #### getTitleView
 
                 public android.widget.TextView getTitleView()
@@ -22509,8 +19708,7 @@ Class LocationListItem {#class-locationlistitem .title title="Class LocationList
             [Returns:]{.returnLabel}
             :   the title view
 
-        []{#setTitleView-android.widget.TextView-}
-
+        &nbsp;
         -   #### setTitleView
 
                 public void setTitleView(android.widget.TextView titleView)
@@ -22520,8 +19718,7 @@ Class LocationListItem {#class-locationlistitem .title title="Class LocationList
             [Parameters:]{.paramLabel}
             :   `titleView` - the title view
 
-        []{#getSubTitleView--}
-
+        &nbsp;
         -   #### getSubTitleView
 
                 public android.widget.TextView getSubTitleView()
@@ -22531,8 +19728,7 @@ Class LocationListItem {#class-locationlistitem .title title="Class LocationList
             [Returns:]{.returnLabel}
             :   the sub title view
 
-        []{#setSubTitleView-android.widget.TextView-}
-
+        &nbsp;
         -   #### setSubTitleView
 
                 public void setSubTitleView(android.widget.TextView subTitleView)
@@ -22557,9 +19753,7 @@ Interface OnFloorSelectedListener {#interface-onfloorselectedlistener .title tit
 
     Floor level select event listener
 
--   -   []{#method.summary}
-
-        ### Method Summary
+-   -   ### Method Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -22569,11 +19763,7 @@ Interface OnFloorSelectedListener {#interface-onfloorselectedlistener .title tit
         |                                   | method                            |
         +-----------------------------------+-----------------------------------+
 
--   -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#onFloorSelected-int-}
+-   -   ### Method Detail
 
         -   #### onFloorSelected
 
@@ -22600,9 +19790,7 @@ Interface OnLocationAttachedListener {#interface-onlocationattachedlistener .tit
     Event listener to catch whenever a locations details are displayed
     in a view.
 
--   -   []{#method.summary}
-
-        ### Method Summary
+-   -   ### Method Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -22615,11 +19803,7 @@ Interface OnLocationAttachedListener {#interface-onlocationattachedlistener .tit
         |                                   | displayed in a view.              |
         +-----------------------------------+-----------------------------------+
 
--   -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#onLocationAttached-com.mapspeople.models.Location-android.view.ViewGroup-}
+-   -   ### Method Detail
 
         -   #### onLocationAttached
 
@@ -22647,9 +19831,7 @@ Interface OnSnippetTappedListener {#interface-onsnippettappedlistener .title tit
 
     Event listener to catch whenever a info snippet view is tapped
 
--   -   []{#method.summary}
-
-        ### Method Summary
+-   -   ### Method Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -22661,11 +19843,7 @@ Interface OnSnippetTappedListener {#interface-onsnippettappedlistener .title tit
         |                                   | tapped                            |
         +-----------------------------------+-----------------------------------+
 
--   -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#onSnippetTapped-int-com.mapspeople.models.Location-}
+-   -   ### Method Detail
 
         -   #### onSnippetTapped
 
@@ -22690,7 +19868,7 @@ Interface RoutingControl.OnRouteStepListener {#interface-routingcontrol.onroutes
 -   
 
     Enclosing class:
-    :   [RoutingControl](../../../com/mapspeople/ui/RoutingControl.html "class in com.mapspeople.ui")
+    :   RoutingControl
 
     ------------------------------------------------------------------------
 
@@ -22700,9 +19878,7 @@ Interface RoutingControl.OnRouteStepListener {#interface-routingcontrol.onroutes
 
     Event listener interface to catch routing events
 
--   -   []{#method.summary}
-
-        ### Method Summary
+-   -   ### Method Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -22725,11 +19901,7 @@ Interface RoutingControl.OnRouteStepListener {#interface-routingcontrol.onroutes
         |                                   | when a routing session is closed  |
         +-----------------------------------+-----------------------------------+
 
--   -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#onAfterRouteStep-com.mapspeople.routing.RouteStep-}
+-   -   ### Method Detail
 
         -   #### onAfterRouteStep
 
@@ -22741,8 +19913,7 @@ Interface RoutingControl.OnRouteStepListener {#interface-routingcontrol.onroutes
             [Parameters:]{.paramLabel}
             :   `action` - The completed route action
 
-        []{#onBeforeRouteStep-com.mapspeople.routing.RouteStep-}
-
+        &nbsp;
         -   #### onBeforeRouteStep
 
                 void onBeforeRouteStep(RouteStep action)
@@ -22753,8 +19924,7 @@ Interface RoutingControl.OnRouteStepListener {#interface-routingcontrol.onroutes
             [Parameters:]{.paramLabel}
             :   `action` - The current route action
 
-        []{#onRoutingClose-com.mapspeople.models.Location-}
-
+        &nbsp;
         -   #### onRoutingClose
 
                 void onRoutingClose(Location currentDestination)
@@ -22782,8 +19952,7 @@ Class RoutingControl {#class-routingcontrol .title title="Class RoutingControl"}
     :   android.graphics.drawable.Drawable.Callback,
         android.view.accessibility.AccessibilityEventSource,
         android.view.KeyEvent.Callback, android.view.ViewManager,
-        android.view.ViewParent,
-        [OnPositionUpdateListener](../../../com/mapspeople/position/OnPositionUpdateListener.html "interface in com.mapspeople.position")
+        android.view.ViewParent, OnPositionUpdateListener
 
     ------------------------------------------------------------------------
 
@@ -22795,9 +19964,7 @@ Class RoutingControl {#class-routingcontrol .title title="Class RoutingControl"}
     class adds navigation to the map by tilting the map and placing
     routes, buttons and views on the map
 
--   -   []{#nested.class.summary}
-
-        ### Nested Class Summary
+-   -   ### Nested Class Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -22870,45 +20037,31 @@ Class RoutingControl {#class-routingcontrol .title title="Class RoutingControl"}
         |                                   | turn, as the user tabs the screen |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.android.widget.LinearLayout}
-
-            ### Methods inherited from class android.widget.LinearLayout
+        -   ### Methods inherited from class android.widget.LinearLayout
 
             `generateLayoutParams, getAccessibilityClassName, getBaseline, getBaselineAlignedChildIndex, getDividerDrawable, getDividerPadding, getGravity, getOrientation, getShowDividers, getWeightSum, isBaselineAligned, isMeasureWithLargestChildEnabled, onRtlPropertiesChanged, setBaselineAligned, setBaselineAlignedChildIndex, setDividerDrawable, setDividerPadding, setGravity, setHorizontalGravity, setMeasureWithLargestChildEnabled, setOrientation, setShowDividers, setVerticalGravity, setWeightSum, shouldDelayChildPressedState`
 
         &nbsp;
-        -   []{#methods.inherited.from.class.android.view.ViewGroup}
-
-            ### Methods inherited from class android.view.ViewGroup
+        -   ### Methods inherited from class android.view.ViewGroup
 
             `addChildrenForAccessibility, addFocusables, addStatesFromChildren, addTouchables, addView, addView, addView, addView, addView, bringChildToFront, childDrawableStateChanged, childHasTransientStateChanged, clearChildFocus, clearDisappearingChildren, clearFocus, dispatchApplyWindowInsets, dispatchConfigurationChanged, dispatchDisplayHint, dispatchDragEvent, dispatchDrawableHotspotChanged, dispatchKeyEvent, dispatchKeyEventPreIme, dispatchKeyShortcutEvent, dispatchProvideStructure, dispatchSetActivated, dispatchSetSelected, dispatchSystemUiVisibilityChanged, dispatchTouchEvent, dispatchTrackballEvent, dispatchUnhandledMove, dispatchWindowFocusChanged, dispatchWindowSystemUiVisiblityChanged, dispatchWindowVisibilityChanged, endViewTransition, findFocus, findViewsWithText, focusableViewAvailable, focusSearch, gatherTransparentRegion, getChildAt, getChildCount, getChildMeasureSpec, getChildVisibleRect, getClipChildren, getClipToPadding, getDescendantFocusability, getFocusedChild, getLayoutAnimation, getLayoutAnimationListener, getLayoutMode, getLayoutTransition, getNestedScrollAxes, getOverlay, getPersistentDrawingCache, getTouchscreenBlocksFocus, hasFocus, hasFocusable, hasTransientState, indexOfChild, invalidateChild, invalidateChildInParent, isAlwaysDrawnWithCacheEnabled, isAnimationCacheEnabled, isMotionEventSplittingEnabled, isTransitionGroup, jumpDrawablesToCurrentState, layout, notifySubtreeAccessibilityStateChanged, offsetDescendantRectToMyCoords, offsetRectIntoDescendantCoords, onInterceptHoverEvent, onInterceptTouchEvent, onNestedFling, onNestedPreFling, onNestedPrePerformAccessibilityAction, onNestedPreScroll, onNestedScroll, onNestedScrollAccepted, onRequestSendAccessibilityEvent, onResolvePointerIcon, onStartNestedScroll, onStopNestedScroll, onViewAdded, onViewRemoved, recomputeViewAttributes, removeAllViews, removeAllViewsInLayout, removeView, removeViewAt, removeViewInLayout, removeViews, removeViewsInLayout, requestChildFocus, requestChildRectangleOnScreen, requestDisallowInterceptTouchEvent, requestFocus, requestSendAccessibilityEvent, requestTransparentRegion, scheduleLayoutAnimation, setAddStatesFromChildren, setAlwaysDrawnWithCacheEnabled, setAnimationCacheEnabled, setClipChildren, setClipToPadding, setDescendantFocusability, setLayoutAnimation, setLayoutAnimationListener, setLayoutMode, setLayoutTransition, setMotionEventSplittingEnabled, setOnHierarchyChangeListener, setPersistentDrawingCache, setTouchscreenBlocksFocus, setTransitionGroup, showContextMenuForChild, showContextMenuForChild, startActionModeForChild, startActionModeForChild, startLayoutAnimation, startViewTransition, updateViewLayout`
 
         &nbsp;
-        -   []{#methods.inherited.from.class.android.view.View}
-
-            ### Methods inherited from class android.view.View
+        -   ### Methods inherited from class android.view.View
 
             `addFocusables, addOnAttachStateChangeListener, addOnLayoutChangeListener, animate, announceForAccessibility, bringToFront, buildDrawingCache, buildDrawingCache, buildLayer, callOnClick, cancelDragAndDrop, cancelLongPress, cancelPendingInputEvents, canResolveLayoutDirection, canResolveTextAlignment, canResolveTextDirection, canScrollHorizontally, canScrollVertically, checkInputConnectionProxy, clearAnimation, combineMeasuredStates, computeScroll, computeSystemWindowInsets, createAccessibilityNodeInfo, createContextMenu, destroyDrawingCache, dispatchFinishTemporaryDetach, dispatchGenericMotionEvent, dispatchNestedFling, dispatchNestedPreFling, dispatchNestedPrePerformAccessibilityAction, dispatchNestedPreScroll, dispatchNestedScroll, dispatchPopulateAccessibilityEvent, dispatchStartTemporaryDetach, draw, drawableHotspotChanged, findViewById, findViewWithTag, focusSearch, forceHasOverlappingRendering, forceLayout, generateViewId, getAccessibilityLiveRegion, getAccessibilityNodeProvider, getAccessibilityTraversalAfter, getAccessibilityTraversalBefore, getAlpha, getAnimation, getApplicationWindowToken, getBackground, getBackgroundTintList, getBackgroundTintMode, getBottom, getCameraDistance, getClipBounds, getClipBounds, getClipToOutline, getContentDescription, getContext, getDefaultSize, getDisplay, getDrawableState, getDrawingCache, getDrawingCache, getDrawingCacheBackgroundColor, getDrawingCacheQuality, getDrawingRect, getDrawingTime, getElevation, getFilterTouchesWhenObscured, getFitsSystemWindows, getFocusables, getFocusedRect, getForeground, getForegroundGravity, getForegroundTintList, getForegroundTintMode, getGlobalVisibleRect, getGlobalVisibleRect, getHandler, getHasOverlappingRendering, getHeight, getHitRect, getHorizontalFadingEdgeLength, getId, getImportantForAccessibility, getKeepScreenOn, getKeyDispatcherState, getLabelFor, getLayerType, getLayoutDirection, getLayoutParams, getLeft, getLocalVisibleRect, getLocationInWindow, getLocationOnScreen, getMatrix, getMeasuredHeight, getMeasuredHeightAndState, getMeasuredState, getMeasuredWidth, getMeasuredWidthAndState, getMinimumHeight, getMinimumWidth, getNextFocusDownId, getNextFocusForwardId, getNextFocusLeftId, getNextFocusRightId, getNextFocusUpId, getOnFocusChangeListener, getOutlineProvider, getOverScrollMode, getPaddingBottom, getPaddingEnd, getPaddingLeft, getPaddingRight, getPaddingStart, getPaddingTop, getParent, getParentForAccessibility, getPivotX, getPivotY, getPointerIcon, getResources, getRevealOnFocusHint, getRight, getRootView, getRootWindowInsets, getRotation, getRotationX, getRotationY, getScaleX, getScaleY, getScrollBarDefaultDelayBeforeFade, getScrollBarFadeDuration, getScrollBarSize, getScrollBarStyle, getScrollIndicators, getScrollX, getScrollY, getSolidColor, getStateListAnimator, getSystemUiVisibility, getTag, getTag, getTextAlignment, getTextDirection, getTop, getTouchables, getTouchDelegate, getTransitionName, getTranslationX, getTranslationY, getTranslationZ, getVerticalFadingEdgeLength, getVerticalScrollbarPosition, getVerticalScrollbarWidth, getViewTreeObserver, getVisibility, getWidth, getWindowId, getWindowSystemUiVisibility, getWindowToken, getWindowVisibility, getWindowVisibleDisplayFrame, getX, getY, getZ, hasNestedScrollingParent, hasOnClickListeners, hasOverlappingRendering, hasWindowFocus, inflate, invalidate, invalidate, invalidate, invalidateDrawable, invalidateOutline, isAccessibilityFocused, isActivated, isAttachedToWindow, isClickable, isContextClickable, isDirty, isDrawingCacheEnabled, isDuplicateParentStateEnabled, isEnabled, isFocusable, isFocusableInTouchMode, isFocused, isHapticFeedbackEnabled, isHardwareAccelerated, isHorizontalFadingEdgeEnabled, isHorizontalScrollBarEnabled, isHovered, isImportantForAccessibility, isInEditMode, isInLayout, isInTouchMode, isLaidOut, isLayoutDirectionResolved, isLayoutRequested, isLongClickable, isNestedScrollingEnabled, isOpaque, isPaddingRelative, isPressed, isSaveEnabled, isSaveFromParentEnabled, isScrollbarFadingEnabled, isScrollContainer, isSelected, isShown, isSoundEffectsEnabled, isTemporarilyDetached, isTextAlignmentResolved, isTextDirectionResolved, isVerticalFadingEdgeEnabled, isVerticalScrollBarEnabled, measure, offsetLeftAndRight, offsetTopAndBottom, onApplyWindowInsets, onCancelPendingInputEvents, onCheckIsTextEditor, onCreateInputConnection, onDragEvent, onDrawForeground, onFilterTouchEventForSecurity, onFinishTemporaryDetach, onGenericMotionEvent, onHoverChanged, onHoverEvent, onInitializeAccessibilityEvent, onInitializeAccessibilityNodeInfo, onKeyDown, onKeyLongPress, onKeyMultiple, onKeyPreIme, onKeyShortcut, onKeyUp, onPopulateAccessibilityEvent, onProvideStructure, onProvideVirtualStructure, onScreenStateChanged, onStartTemporaryDetach, onTouchEvent, onTrackballEvent, onVisibilityAggregated, onWindowFocusChanged, onWindowSystemUiVisibilityChanged, performAccessibilityAction, performClick, performContextClick, performContextClick, performHapticFeedback, performHapticFeedback, performLongClick, performLongClick, playSoundEffect, post, postDelayed, postInvalidate, postInvalidate, postInvalidateDelayed, postInvalidateDelayed, postInvalidateOnAnimation, postInvalidateOnAnimation, postOnAnimation, postOnAnimationDelayed, refreshDrawableState, removeCallbacks, removeOnAttachStateChangeListener, removeOnLayoutChangeListener, requestApplyInsets, requestFitSystemWindows, requestFocus, requestFocus, requestFocusFromTouch, requestLayout, requestRectangleOnScreen, requestRectangleOnScreen, requestUnbufferedDispatch, resolveSize, resolveSizeAndState, restoreHierarchyState, saveHierarchyState, scheduleDrawable, scrollBy, scrollTo, sendAccessibilityEvent, sendAccessibilityEventUnchecked, setAccessibilityDelegate, setAccessibilityLiveRegion, setAccessibilityTraversalAfter, setAccessibilityTraversalBefore, setActivated, setAlpha, setAnimation, setBackground, setBackgroundColor, setBackgroundDrawable, setBackgroundResource, setBackgroundTintList, setBackgroundTintMode, setBottom, setCameraDistance, setClickable, setClipBounds, setClipToOutline, setContentDescription, setContextClickable, setDrawingCacheBackgroundColor, setDrawingCacheEnabled, setDrawingCacheQuality, setDuplicateParentStateEnabled, setElevation, setEnabled, setFadingEdgeLength, setFilterTouchesWhenObscured, setFitsSystemWindows, setFocusable, setFocusableInTouchMode, setForeground, setForegroundGravity, setForegroundTintList, setForegroundTintMode, setHapticFeedbackEnabled, setHasTransientState, setHorizontalFadingEdgeEnabled, setHorizontalScrollBarEnabled, setHovered, setId, setImportantForAccessibility, setKeepScreenOn, setLabelFor, setLayerPaint, setLayerType, setLayoutDirection, setLayoutParams, setLeft, setLongClickable, setMinimumHeight, setMinimumWidth, setNestedScrollingEnabled, setNextFocusDownId, setNextFocusForwardId, setNextFocusLeftId, setNextFocusRightId, setNextFocusUpId, setOnApplyWindowInsetsListener, setOnClickListener, setOnContextClickListener, setOnCreateContextMenuListener, setOnDragListener, setOnFocusChangeListener, setOnGenericMotionListener, setOnHoverListener, setOnKeyListener, setOnLongClickListener, setOnScrollChangeListener, setOnSystemUiVisibilityChangeListener, setOnTouchListener, setOutlineProvider, setOverScrollMode, setPadding, setPaddingRelative, setPivotX, setPivotY, setPointerIcon, setPressed, setRevealOnFocusHint, setRight, setRotation, setRotationX, setRotationY, setSaveEnabled, setSaveFromParentEnabled, setScaleX, setScaleY, setScrollBarDefaultDelayBeforeFade, setScrollBarFadeDuration, setScrollbarFadingEnabled, setScrollBarSize, setScrollBarStyle, setScrollContainer, setScrollIndicators, setScrollIndicators, setScrollX, setScrollY, setSelected, setSoundEffectsEnabled, setStateListAnimator, setSystemUiVisibility, setTag, setTag, setTextAlignment, setTextDirection, setTop, setTouchDelegate, setTransitionName, setTranslationX, setTranslationY, setTranslationZ, setVerticalFadingEdgeEnabled, setVerticalScrollBarEnabled, setVerticalScrollbarPosition, setVisibility, setWillNotCacheDrawing, setWillNotDraw, setX, setY, setZ, showContextMenu, showContextMenu, startActionMode, startActionMode, startAnimation, startDrag, startDragAndDrop, startNestedScroll, stopNestedScroll, toString, unscheduleDrawable, unscheduleDrawable, updateDragShadow, willNotCacheDrawing, willNotDraw`
 
         &nbsp;
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, wait, wait, wait`
 
         &nbsp;
-        -   []{#methods.inherited.from.class.android.view.ViewParent}
-
-            ### Methods inherited from interface android.view.ViewParent
+        -   ### Methods inherited from interface android.view.ViewParent
 
             `canResolveLayoutDirection, canResolveTextAlignment, canResolveTextDirection, createContextMenu, getLayoutDirection, getParent, getParentForAccessibility, getTextAlignment, getTextDirection, isLayoutDirectionResolved, isLayoutRequested, isTextAlignmentResolved, isTextDirectionResolved, requestFitSystemWindows, requestLayout`
 
--   -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#RoutingControl-android.content.Context-}
+-   -   ### Constructor Detail
 
         -   #### RoutingControl
 
@@ -22920,11 +20073,7 @@ Class RoutingControl {#class-routingcontrol .title title="Class RoutingControl"}
             :   `context` - the context
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#setOnRouteStepListener-com.mapspeople.ui.RoutingControl.OnRouteStepListener-}
+    -   ### Method Detail
 
         -   #### setOnRouteStepListener
 
@@ -22935,8 +20084,7 @@ Class RoutingControl {#class-routingcontrol .title title="Class RoutingControl"}
             [Parameters:]{.paramLabel}
             :   `listener` - The listener
 
-        []{#getCurrentStep--}
-
+        &nbsp;
         -   #### getCurrentStep
 
                 public RouteStep getCurrentStep()
@@ -22946,8 +20094,7 @@ Class RoutingControl {#class-routingcontrol .title title="Class RoutingControl"}
             [Returns:]{.returnLabel}
             :   The current route action
 
-        []{#turnByTurn-com.mapspeople.routing.Route-com.mapspeople.models.Location-GoogleMap-}
-
+        &nbsp;
         -   #### turnByTurn
 
                 public void turnByTurn(Route route,                       Location destination,                       GoogleMap map)
@@ -22960,8 +20107,7 @@ Class RoutingControl {#class-routingcontrol .title title="Class RoutingControl"}
             :   `destination` - The destination
             :   `map` - The Google map to interoperate with
 
-        []{#overviewRoute-com.mapspeople.routing.Route-com.mapspeople.models.Location-GoogleMap-}
-
+        &nbsp;
         -   #### overviewRoute
 
                 public void overviewRoute(Route route,                          Location destination,                          GoogleMap map)
@@ -22973,8 +20119,7 @@ Class RoutingControl {#class-routingcontrol .title title="Class RoutingControl"}
             :   `destination` - the destination
             :   `map` - the map
 
-        []{#overviewRoute-com.mapspeople.routing.Route-com.mapspeople.models.Location-GoogleMap-android.graphics.Bitmap-android.graphics.Bitmap-}
-
+        &nbsp;
         -   #### overviewRoute
 
                 public void overviewRoute(Route route,                          Location destination,                          GoogleMap map,                          android.graphics.Bitmap bmp,                          android.graphics.Bitmap bmpUnselected)
@@ -22988,8 +20133,7 @@ Class RoutingControl {#class-routingcontrol .title title="Class RoutingControl"}
             :   `bmp` - the bmp
             :   `bmpUnselected` - the bmp unselected
 
-        []{#realtimeNavigation-com.mapspeople.routing.Route-com.mapspeople.models.Location-GoogleMap-}
-
+        &nbsp;
         -   #### realtimeNavigation
 
                 public void realtimeNavigation(Route route,                               Location destination,                               GoogleMap map)
@@ -23002,8 +20146,7 @@ Class RoutingControl {#class-routingcontrol .title title="Class RoutingControl"}
             :   `destination` - The destination
             :   `map` - The Google map to interoperate with
 
-        []{#showStep-com.mapspeople.routing.RouteStep-}
-
+        &nbsp;
         -   #### showStep
 
                 public boolean showStep(RouteStep step)
@@ -23016,8 +20159,7 @@ Class RoutingControl {#class-routingcontrol .title title="Class RoutingControl"}
             [Returns:]{.returnLabel}
             :   the boolean
 
-        []{#doStep-com.mapspeople.routing.RouteStep-}
-
+        &nbsp;
         -   #### doStep
 
                 public boolean doStep(RouteStep action)
@@ -23030,8 +20172,7 @@ Class RoutingControl {#class-routingcontrol .title title="Class RoutingControl"}
             [Returns:]{.returnLabel}
             :   the boolean
 
-        []{#addToView-android.view.ViewGroup-}
-
+        &nbsp;
         -   #### addToView
 
                 public void addToView(android.view.ViewGroup googleMapView)
@@ -23041,16 +20182,14 @@ Class RoutingControl {#class-routingcontrol .title title="Class RoutingControl"}
             [Parameters:]{.paramLabel}
             :   `googleMapView` - the google map view
 
-        []{#close--}
-
+        &nbsp;
         -   #### close
 
                 public void close()
 
             Close.
 
-        []{#setCurrentPosition-com.mapspeople.models.PositionUpdate-}
-
+        &nbsp;
         -   #### setCurrentPosition
 
                 public void setCurrentPosition(PositionUpdate currentPosition)
@@ -23060,8 +20199,7 @@ Class RoutingControl {#class-routingcontrol .title title="Class RoutingControl"}
             [Parameters:]{.paramLabel}
             :   `currentPosition` - the current position
 
-        []{#onPositionUpdate-com.mapspeople.position.PositionResult-}
-
+        &nbsp;
         -   #### onPositionUpdate
 
                 public void onPositionUpdate(PositionResult pos)
@@ -23075,8 +20213,7 @@ Class RoutingControl {#class-routingcontrol .title title="Class RoutingControl"}
             [Parameters:]{.paramLabel}
             :   `pos` - the pos
 
-        []{#showStep-Marker-}
-
+        &nbsp;
         -   #### showStep
 
                 public void showStep(Marker marker)
@@ -23086,8 +20223,7 @@ Class RoutingControl {#class-routingcontrol .title title="Class RoutingControl"}
             [Parameters:]{.paramLabel}
             :   `marker` - the marker
 
-        []{#onPositionFailed-com.mapspeople.position.PositionProvider-}
-
+        &nbsp;
         -   #### onPositionFailed
 
                 public void onPositionFailed(PositionProvider provider)
@@ -23101,8 +20237,7 @@ Class RoutingControl {#class-routingcontrol .title title="Class RoutingControl"}
             [Parameters:]{.paramLabel}
             :   `provider` - the provider
 
-        []{#onPositioningStarted-com.mapspeople.position.PositionProvider-}
-
+        &nbsp;
         -   #### onPositioningStarted
 
                 public void onPositioningStarted(PositionProvider provider)
@@ -23137,9 +20272,7 @@ Class BitmapLabel {#class-bitmaplabel .title title="Class BitmapLabel"}
 
     The type Bitmap label.
 
--   -   []{#constructor.summary}
-
-        ### Constructor Summary
+-   -   ### Constructor Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -23150,28 +20283,18 @@ Class BitmapLabel {#class-bitmaplabel .title title="Class BitmapLabel"}
         |                                   | Draw label bitmap.                |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#BitmapLabel--}
+-   -   ### Constructor Detail
 
         -   #### BitmapLabel
 
                 public BitmapLabel()
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#drawLabel-java.lang.String-android.graphics.Bitmap-}
+    -   ### Method Detail
 
         -   #### drawLabel
 
@@ -23204,30 +20327,20 @@ Class ConversionFactors {#class-conversionfactors .title title="Class Conversion
 
     This class holds fixed conversion factors.
 
--   -   []{#field.summary}
-
-        ### Field Summary
+-   -   ### Field Summary
 
           Constructor and Description
           -----------------------------
           `ConversionFactors()` 
 
     &nbsp;
-    -   []{#method.summary}
+    -   ### Method Summary
 
-        ### Method Summary
-
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#field.detail}
-
-        ### Field Detail
-
-        []{#DegreesToRadians}
+-   -   ### Field Detail
 
         -   #### DegreesToRadians
 
@@ -23236,11 +20349,9 @@ Class ConversionFactors {#class-conversionfactors .title title="Class Conversion
             Conversion factor from degrees to radians.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.util.ConversionFactors.DegreesToRadians)
+            :   Constant Field Values
 
-        []{#GonToRadians}
-
+        &nbsp;
         -   #### GonToRadians
 
                 public static final double GonToRadians
@@ -23248,11 +20359,9 @@ Class ConversionFactors {#class-conversionfactors .title title="Class Conversion
             Conversion factor from gon to radians.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.util.ConversionFactors.GonToRadians)
+            :   Constant Field Values
 
-        []{#RadiansToDegrees}
-
+        &nbsp;
         -   #### RadiansToDegrees
 
                 public static final double RadiansToDegrees
@@ -23260,11 +20369,9 @@ Class ConversionFactors {#class-conversionfactors .title title="Class Conversion
             Conversion factor from radians to degrees.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.util.ConversionFactors.RadiansToDegrees)
+            :   Constant Field Values
 
-        []{#RadiansToGon}
-
+        &nbsp;
         -   #### RadiansToGon
 
                 public static final double RadiansToGon
@@ -23272,15 +20379,10 @@ Class ConversionFactors {#class-conversionfactors .title title="Class Conversion
             Conversion factor from radians to gon.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.util.ConversionFactors.RadiansToGon)
+            :   Constant Field Values
 
     &nbsp;
-    -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#ConversionFactors--}
+    -   ### Constructor Detail
 
         -   #### ConversionFactors
 
@@ -23304,9 +20406,7 @@ Class Convert {#class-convert .title title="Class Convert"}
 
     The type Convert.
 
--   -   []{#constructor.summary}
-
-        ### Constructor Summary
+-   -   ### Constructor Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -23328,28 +20428,18 @@ Class Convert {#class-convert .title title="Class Convert"}
         |                                   | Init.                             |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#Convert--}
+-   -   ### Constructor Detail
 
         -   #### Convert
 
                 public Convert()
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#init-android.content.Context-}
+    -   ### Method Detail
 
         -   #### init
 
@@ -23360,8 +20450,7 @@ Class Convert {#class-convert .title title="Class Convert"}
             [Parameters:]{.paramLabel}
             :   `appContext` - the app context
 
-        []{#getPixels-float-android.content.Context-}
-
+        &nbsp;
         -   #### getPixels
 
                 public static int getPixels(float densityIndependentPixels,                            android.content.Context appContext)
@@ -23376,8 +20465,7 @@ Class Convert {#class-convert .title title="Class Convert"}
             [Returns:]{.returnLabel}
             :   the pixels
 
-        []{#getPixels-float-}
-
+        &nbsp;
         -   #### getPixels
 
                 public static int getPixels(float densityIndependentPixels)
@@ -23391,8 +20479,7 @@ Class Convert {#class-convert .title title="Class Convert"}
             [Returns:]{.returnLabel}
             :   the pixels
 
-        []{#getContext--}
-
+        &nbsp;
         -   #### getContext
 
                 public static android.content.Context getContext()
@@ -23420,9 +20507,7 @@ Class FilePathHelper {#class-filepathhelper .title title="Class FilePathHelper"}
 
     The type File path helper.
 
--   -   []{#constructor.summary}
-
-        ### Constructor Summary
+-   -   ### Constructor Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -23432,28 +20517,18 @@ Class FilePathHelper {#class-filepathhelper .title title="Class FilePathHelper"}
         |                                   | Gets path.                        |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#FilePathHelper--}
+-   -   ### Constructor Detail
 
         -   #### FilePathHelper
 
                 public FilePathHelper()
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#getPath-android.content.Context-}
+    -   ### Method Detail
 
         -   #### getPath
 
@@ -23485,9 +20560,7 @@ Class GeoAnimator {#class-geoanimator .title title="Class GeoAnimator"}
 
     The type Geo animator.
 
--   -   []{#constructor.summary}
-
-        ### Constructor Summary
+-   -   ### Constructor Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -23498,28 +20571,18 @@ Class GeoAnimator {#class-geoanimator .title title="Class GeoAnimator"}
         |                                   | Do animation.                     |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#GeoAnimator--}
+-   -   ### Constructor Detail
 
         -   #### GeoAnimator
 
                 public GeoAnimator()
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#doAnimation-Marker-LatLng-int-}
+    -   ### Method Detail
 
         -   #### doAnimation
 
@@ -23550,9 +20613,7 @@ Class JsonUtil {#class-jsonutil .title title="Class JsonUtil"}
 
     The type Json util.
 
--   -   []{#constructor.summary}
-
-        ### Constructor Summary
+-   -   ### Constructor Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -23568,28 +20629,18 @@ Class JsonUtil {#class-jsonutil .title title="Class JsonUtil"}
         |                                   | To json string.                   |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#JsonUtil--}
+-   -   ### Constructor Detail
 
         -   #### JsonUtil
 
                 public JsonUtil()
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#deserialize-java.lang.String-java.lang.reflect.Type-}
+    -   ### Method Detail
 
         -   #### deserialize
 
@@ -23607,8 +20658,7 @@ Class JsonUtil {#class-jsonutil .title title="Class JsonUtil"}
             [Returns:]{.returnLabel}
             :   the t
 
-        []{#toJson-java.lang.Object-java.lang.reflect.Type-}
-
+        &nbsp;
         -   #### toJson
 
                 public java.lang.String toJson(java.lang.Object src,                               java.lang.reflect.Type typeOfSrc)
@@ -23640,30 +20690,20 @@ Class MathUtil {#class-mathutil .title title="Class MathUtil"}
 
     Utility functions that are used my both PolyUtil and SphericalUtil.
 
--   -   []{#field.summary}
-
-        ### Field Summary
+-   -   ### Field Summary
 
           Constructor and Description
           -----------------------------
           `MathUtil()` 
 
     &nbsp;
-    -   []{#method.summary}
+    -   ### Method Summary
 
-        ### Method Summary
-
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#field.detail}
-
-        ### Field Detail
-
-        []{#EARTH_RADIUS}
+-   -   ### Field Detail
 
         -   #### EARTH\_RADIUS
 
@@ -23673,15 +20713,10 @@ Class MathUtil {#class-mathutil .title title="Class MathUtil"}
             IUGG.
 
             [See Also:]{.seeLabel}
-            :   [Constant Field
-                Values](../../../constant-values.html#com.mapspeople.util.MathUtil.EARTH_RADIUS)
+            :   Constant Field Values
 
     &nbsp;
-    -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#MathUtil--}
+    -   ### Constructor Detail
 
         -   #### MathUtil
 
@@ -23705,9 +20740,7 @@ Class PolyUtil {#class-polyutil .title title="Class PolyUtil"}
 
     The type Poly util.
 
--   -   []{#method.summary}
-
-        ### Method Summary
+-   -   ### Method Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -23735,11 +20768,8 @@ Class PolyUtil {#class-polyutil .title title="Class PolyUtil"}
         |                                   | ng> polygon,                boole |
         |                                   | an geodesic)`                     |
         |                                   | Same as                           |
-        |                                   | [`isLocationOnEdge(LatLng, List,  |
-        |                                   | boolean, double)`](../../../com/m |
-        |                                   | apspeople/util/PolyUtil.html#isLo |
-        |                                   | cationOnEdge-LatLng-java.util.Lis |
-        |                                   | t-boolean-double-)                |
+        |                                   | `isLocationOnEdge(LatLng, List, b |
+        |                                   | oolean, double)`                  |
         |                                   | with a default tolerance of 0.1   |
         |                                   | meters.                           |
         +-----------------------------------+-----------------------------------+
@@ -23758,11 +20788,8 @@ Class PolyUtil {#class-polyutil .title title="Class PolyUtil"}
         |                                   | ng> polyline,                bool |
         |                                   | ean geodesic)`                    |
         |                                   | Same as                           |
-        |                                   | [`isLocationOnPath(LatLng, List,  |
-        |                                   | boolean, double)`](../../../com/m |
-        |                                   | apspeople/util/PolyUtil.html#isLo |
-        |                                   | cationOnPath-LatLng-java.util.Lis |
-        |                                   | t-boolean-double-)                |
+        |                                   | `isLocationOnPath(LatLng, List, b |
+        |                                   | oolean, double)`                  |
         +-----------------------------------+-----------------------------------+
         | `static boolean`                  | `isLocationOnPath(LatLng point,   |
         |                                   |               java.util.List<LatL |
@@ -23775,17 +20802,11 @@ Class PolyUtil {#class-polyutil .title title="Class PolyUtil"}
         |                                   | meters.                           |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#containsLocation-LatLng-java.util.List-boolean-}
+-   -   ### Method Detail
 
         -   #### containsLocation
 
@@ -23807,8 +20828,7 @@ Class PolyUtil {#class-polyutil .title title="Class PolyUtil"}
             [Returns:]{.returnLabel}
             :   the boolean
 
-        []{#isLocationOnEdge-LatLng-java.util.List-boolean-double-}
-
+        &nbsp;
         -   #### isLocationOnEdge
 
                 public static boolean isLocationOnEdge(LatLng point,                                       java.util.List<LatLng> polygon,                                       boolean geodesic,                                       double tolerance)
@@ -23829,14 +20849,12 @@ Class PolyUtil {#class-polyutil .title title="Class PolyUtil"}
             [Returns:]{.returnLabel}
             :   the boolean
 
-        []{#isLocationOnEdge-LatLng-java.util.List-boolean-}
-
+        &nbsp;
         -   #### isLocationOnEdge
 
                 public static boolean isLocationOnEdge(LatLng point,                                       java.util.List<LatLng> polygon,                                       boolean geodesic)
 
-            Same as
-            [`isLocationOnEdge(LatLng, List, boolean, double)`](../../../com/mapspeople/util/PolyUtil.html#isLocationOnEdge-LatLng-java.util.List-boolean-double-)
+            Same as `isLocationOnEdge(LatLng, List, boolean, double)`
             with a default tolerance of 0.1 meters.
 
             [Parameters:]{.paramLabel}
@@ -23847,8 +20865,7 @@ Class PolyUtil {#class-polyutil .title title="Class PolyUtil"}
             [Returns:]{.returnLabel}
             :   the boolean
 
-        []{#isLocationOnPath-LatLng-java.util.List-boolean-double-}
-
+        &nbsp;
         -   #### isLocationOnPath
 
                 public static boolean isLocationOnPath(LatLng point,                                       java.util.List<LatLng> polyline,                                       boolean geodesic,                                       double tolerance)
@@ -23869,14 +20886,12 @@ Class PolyUtil {#class-polyutil .title title="Class PolyUtil"}
             [Returns:]{.returnLabel}
             :   the boolean
 
-        []{#isLocationOnPath-LatLng-java.util.List-boolean-}
-
+        &nbsp;
         -   #### isLocationOnPath
 
                 public static boolean isLocationOnPath(LatLng point,                                       java.util.List<LatLng> polyline,                                       boolean geodesic)
 
-            Same as
-            [`isLocationOnPath(LatLng, List, boolean, double)`](../../../com/mapspeople/util/PolyUtil.html#isLocationOnPath-LatLng-java.util.List-boolean-double-)
+            Same as `isLocationOnPath(LatLng, List, boolean, double)`
             with a default tolerance of 0.1 meters.
 
             [Parameters:]{.paramLabel}
@@ -23887,8 +20902,7 @@ Class PolyUtil {#class-polyutil .title title="Class PolyUtil"}
             [Returns:]{.returnLabel}
             :   the boolean
 
-        []{#decode-java.lang.String-}
-
+        &nbsp;
         -   #### decode
 
                 public static java.util.List<LatLng> decode(java.lang.String encodedPath)
@@ -23901,8 +20915,7 @@ Class PolyUtil {#class-polyutil .title title="Class PolyUtil"}
             [Returns:]{.returnLabel}
             :   the list
 
-        []{#encode-java.util.List-}
-
+        &nbsp;
         -   #### encode
 
                 public static java.lang.String encode(java.util.List<LatLng> path)
@@ -23933,9 +20946,7 @@ Class SphericalUtil {#class-sphericalutil .title title="Class SphericalUtil"}
 
     The type Spherical util.
 
--   -   []{#method.summary}
-
-        ### Method Summary
+-   -   ### Method Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -23993,17 +21004,11 @@ Class SphericalUtil {#class-sphericalutil .title title="Class SphericalUtil"}
         |                                   | destination LatLng.               |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#computeHeading-LatLng-LatLng-}
+-   -   ### Method Detail
 
         -   #### computeHeading
 
@@ -24020,8 +21025,7 @@ Class SphericalUtil {#class-sphericalutil .title title="Class SphericalUtil"}
             [Returns:]{.returnLabel}
             :   The heading in degrees clockwise from north.
 
-        []{#computeOffset-LatLng-double-double-}
-
+        &nbsp;
         -   #### computeOffset
 
                 public static LatLng computeOffset(LatLng from,                                   double distance,                                   double heading)
@@ -24038,8 +21042,7 @@ Class SphericalUtil {#class-sphericalutil .title title="Class SphericalUtil"}
             [Returns:]{.returnLabel}
             :   the lat lng
 
-        []{#computeOffsetOrigin-LatLng-double-double-}
-
+        &nbsp;
         -   #### computeOffsetOrigin
 
                 public static LatLng computeOffsetOrigin(LatLng to,                                         double distance,                                         double heading)
@@ -24057,8 +21060,7 @@ Class SphericalUtil {#class-sphericalutil .title title="Class SphericalUtil"}
             [Returns:]{.returnLabel}
             :   the lat lng
 
-        []{#interpolate-LatLng-LatLng-double-}
-
+        &nbsp;
         -   #### interpolate
 
                 public static LatLng interpolate(LatLng from,                                 LatLng to,                                 double fraction)
@@ -24074,8 +21076,7 @@ Class SphericalUtil {#class-sphericalutil .title title="Class SphericalUtil"}
             [Returns:]{.returnLabel}
             :   The interpolated LatLng.
 
-        []{#computeDistanceBetween-LatLng-LatLng-}
-
+        &nbsp;
         -   #### computeDistanceBetween
 
                 public static double computeDistanceBetween(LatLng from,                                            LatLng to)
@@ -24089,8 +21090,7 @@ Class SphericalUtil {#class-sphericalutil .title title="Class SphericalUtil"}
             [Returns:]{.returnLabel}
             :   the double
 
-        []{#computeLength-java.util.List-}
-
+        &nbsp;
         -   #### computeLength
 
                 public static double computeLength(java.util.List<LatLng> path)
@@ -24103,8 +21103,7 @@ Class SphericalUtil {#class-sphericalutil .title title="Class SphericalUtil"}
             [Returns:]{.returnLabel}
             :   the double
 
-        []{#computeArea-java.util.List-}
-
+        &nbsp;
         -   #### computeArea
 
                 public static double computeArea(java.util.List<LatLng> path)
@@ -24117,8 +21116,7 @@ Class SphericalUtil {#class-sphericalutil .title title="Class SphericalUtil"}
             [Returns:]{.returnLabel}
             :   The path's area in square meters.
 
-        []{#computeSignedArea-java.util.List-}
-
+        &nbsp;
         -   #### computeSignedArea
 
                 public static double computeSignedArea(java.util.List<LatLng> path)
@@ -24152,9 +21150,7 @@ Class ThreadUtil {#class-threadutil .title title="Class ThreadUtil"}
 
     ThreadUtil created by mh on 09-02-2016.
 
--   -   []{#constructor.summary}
-
-        ### Constructor Summary
+-   -   ### Constructor Summary
 
         +-----------------------------------+-----------------------------------+
         | Modifier and Type                 | Method and Description            |
@@ -24163,28 +21159,18 @@ Class ThreadUtil {#class-threadutil .title title="Class ThreadUtil"}
         |                                   | Sleep.                            |
         +-----------------------------------+-----------------------------------+
 
-        -   []{#methods.inherited.from.class.java.lang.Object}
-
-            ### Methods inherited from class java.lang.Object
+        -   ### Methods inherited from class java.lang.Object
 
             `equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait`
 
--   -   []{#constructor.detail}
-
-        ### Constructor Detail
-
-        []{#ThreadUtil--}
+-   -   ### Constructor Detail
 
         -   #### ThreadUtil
 
                 public ThreadUtil()
 
     &nbsp;
-    -   []{#method.detail}
-
-        ### Method Detail
-
-        []{#sleep-int-}
+    -   ### Method Detail
 
         -   #### sleep
 
