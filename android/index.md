@@ -11,7 +11,7 @@ Add the MapsIndoors SDK as a dependency to your project.
 The AAR for the MapsIndoors SDK contains both Java classes, SDK resources and AndroidManifest.xml template which gets merged into your application’s AndroidManifest.xml during build process.
 Add or merge in the following to your app’s build gradle file (usually called build.gradle).
 
-```json
+```
 dependencies {
    compile 'com.google.android.gms:play-services-maps:9.8.0'
    
