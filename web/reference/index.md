@@ -32,14 +32,14 @@ locate(options:locateOptions)
 ```
 
 ### Events
-| ready |
-| map_changed |
-| floor_changed |
-| building_changed |
-| venue_changed |
-| style_changed |
-| locations_visible_changed |
-| location_click |
+| ready 
+| map_changed 
+| floor_changed 
+| building_changed 
+| venue_changed 
+| style_changed 
+| locations_visible_changed 
+| location_click 
 
 ### MapsIndoorsOptions Literal
 ```
