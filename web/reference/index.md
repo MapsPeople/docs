@@ -32,14 +32,14 @@ locate(options:locateOptions)
 ```
 
 ### Events
-| ready 
-| map_changed 
-| floor_changed 
-| building_changed 
-| venue_changed 
-| style_changed 
-| locations_visible_changed 
-| location_click 
+* ready
+* map_changed
+* floor_changed
+* building_changed
+* venue_changed
+* style_changed
+* locations_visible_cshanged
+* location_click
 
 ### MapsIndoorsOptions Literal
 ```
@@ -192,11 +192,11 @@ getMap()
 ```
 
 ### Events
-| directions_changed | 
-| map_changed | 
-| floor_changed | 
-| legIndex_changed | 
-| mapsindoors_changed | 
+* directions_changed 
+* map_changed 
+* floor_changed 
+* legIndex_changed 
+* mapsindoors_changed 
 
 ### DirectionsRendererOptions Literal
 ```
