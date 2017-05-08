@@ -32,7 +32,6 @@ locate(options:locateOptions)
 ```
 
 ### Events
-| --- |
 | ready |
 | map_changed |
 | floor_changed |
