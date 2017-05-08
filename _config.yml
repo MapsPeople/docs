@@ -35,7 +35,6 @@ themeColor: blue # green, blue, orange, purple, grey
 fixedNav: 'true' # true or false
 
 permalink: /:title/
-markdown: markdown
 include: [_pages]
 exclude: [_site, CHANGELOG.md, LICENSE, README.md]
 sass:
