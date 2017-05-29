@@ -6,6 +6,8 @@ layout: page
 
 You will find in the [link](https://github.com/namine92/mapsIndooriOSTut) an up and running project that contains the minimum code to start a MapsIndoors project.
 
+You can also follow the steps below to start your app from scratch or to enhance the minimum source code, more advanced feature will be explained in the [part 2](/ios/guidepart2) of this tutorial with a demo app that gives a showcase of the mapsIndoors in a complete app that you can test also.
+
 ## Setup CocoaPods
 
 If you haven’t already, install CocoaPods:

@@ -9,6 +9,7 @@ You need to setup the google maps API in your project by following the steps in 
 ## Get a Solution key
 
 In order to include the mapsIndoors in your app you need a solution key that we provide to our customer so they can access their data, if you are not a customer you can use this solution id:( `550c26a864617400a40f0000`) to follow this guide.
+You can find more informations about how to get a solution ID and becoming a partner by visiting this [link](https://www.mapspeople.com/become-a-partner)
 
 ## Choose your platform
 

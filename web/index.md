@@ -15,6 +15,7 @@ Then
 ```javascript
 node app.js
 ```
+You can also follow the steps below to start your app from scratch or to enhance the minimum source code, more advanced feature will be explained in the [part 2](/web/guidepart2) of this tutorial with a demo app that gives a showcase of the mapsIndoors in a complete app that you can test also.
 
 ## Script Loading
 
