@@ -3,6 +3,10 @@ title: MapsIndoors for Android - Getting Started
 layout: page
 ---
 
+## Minimum source code
+
+You will find in the [link](https://github.com/namine92/mapsIndoorAndroidTut) an up and running project that contains the minimum code to start a MapsIndoors project.
+
 ## Setup MapsIndoors dependencies
 
 Add the MapsIndoors SDK as a dependency to your project.
