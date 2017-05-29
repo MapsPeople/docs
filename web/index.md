@@ -3,20 +3,6 @@ title: MapsIndoors for Web - Getting started
 layout: page
 ---
 
-## Trying the Showcase Web App
-
-A [showcase app is available on GitHub](https://github.com/MapsIndoors/Showcase-Web-App), free to use and adapt to your needs.
-
-### To try it out right away:
-Make sure nodejs, npm and gulp is installed on your system
-Using a terminal/shell in the project folder, run the following commands:
-
-* npm install -g browser-sync
-* gulp build
-* browser-sync start --server
-* If on Windows and prompted, allow server to use your PC network
-* Open your browser at http://localhost:3000/app (or whatever port browser-sync chooses per default)
-
 ## Script Loading
 
 Include the following scripts in your document. MapsIndoors depend on jQuery and Google Maps API v3, so if it’s not present on script load, MapsIndoors will not be able to initialize.
@@ -44,34 +30,25 @@ Then add the following script code somewhere on your HTML page.
 var myGoogleMap, myMapsIndoors;
 
 var init = function () {
- 
+
    // Setup google map
    myGoogleMap = new google.maps.Map(document.getElementById('map'), { center: { lat: 57.085809, lng: 9.9573899 }, zoom: 17 });
- 
+
    // Setup MapsIndoors
    myMapsIndoors= new mapsindoors.MapsIndoors({ map: myGoogleMap });
- 
+
    // Add a floor selector
    var div = document.createElement('div');
    var floorSelector = new mapsindoors.FloorSelector(div, myMapsIndoors);
    myGoogleMap.controls[google.maps.ControlPosition.RIGHT_TOP].push(div);
- 
+
 };
- 
+
 google.maps.event.addDomListener(window, 'load', init);
 ```
 
-In the sample code above, replace `MY_MAPSINDOORS_SOLUTION_ID` with your MapsIndoors solution id. Your solution id is 24 character hex-string that gives access to your solution data. If you are not a customer or you have not received a solution id yet, you can use this demo solution id: `5583d36c2a91e00f1cc4ecb2`. 
-Using Display Rules
 
-Icons will by default show for all types of locations on the map. In order to control whether or not to display icons, labels and choose on which zoom levels to display locations, you need to setup display rules for your locations on the map.
-
-```javascript
-mapsIndoors.displayRules.set("info", {from:16, icon:"http://myiconhost.com/info.png" });
-```
-
-Please refer to our documentation on display rules for a thorough introduction.
-Using Events
+## Using Events
 
 MapsIndoors uses the Google Maps built-in event handling system, so listening for event on various object is straight-forward. Here are some examples.
 
@@ -79,23 +56,23 @@ MapsIndoors uses the Google Maps built-in event handling system, so listening fo
 google.maps.event.addListener(myMapsIndoors, "ready", function (result) {
    console.log(result);
 });
- 
-google.maps.event.addListener(myMapsIndoors, 'building_changed', function () { 
-   console.log(this); 
-});
- 
-google.maps.event.addListener(myMapsIndoors, 'floor_changed', function () { 
- console.log(this); 
+
+google.maps.event.addListener(myMapsIndoors, 'building_changed', function () {
+   console.log(this);
 });
 
-google.maps.event.addListener(myMapsIndoors, 'location_click', function () { 
- console.log(this); 
+google.maps.event.addListener(myMapsIndoors, 'floor_changed', function () {
+ console.log(this);
 });
- 
+
+google.maps.event.addListener(myMapsIndoors, 'location_click', function () {
+ console.log(this);
+});
+
 google.maps.event.addListener(directionsRenderer, 'before_action_rendered', function () {
    console.log(arguments);
 });
- 
+
 google.maps.event.addListener(marker, 'click', function () {
    console.dir(this);
 });
@@ -109,7 +86,7 @@ The event names and their targets are as follows:
 | "building_changed" | MapsIndoors | Current building object |
 | "floor_changed" | MapsIndoors | Current floor index |
 | "location_click" | MapsIndoors | Selected location | 	 	 
- 
+
 ## Create an Infobox
 
 Most often you might want to display location content when a user clicks or taps on an icon. You can use the simple Infobox UI component for this. Add the infobox stylesheet as a starting point for the design.
@@ -118,7 +95,7 @@ Most often you might want to display location content when a user clicks or taps
 <link href="https://app.mapsindoors.com/mapsindoors/js/sdk/ui/Infobox.css" rel="stylesheet" />
 ```
 
-Provide the following html code in your document. For templating we use Markup.js.
+Provide the following html code in your document. For templating we use [Markup.js](https://github.com/adammark/Markup.js/).
 
 ```html
 <div id="infobox" class="mapsindoors infobox">
@@ -137,53 +114,130 @@ Here is an example on how to setup the component.
 ```javascript
 // Div containing an input search element
 var infoDiv = document.getElementById('infobox');
- 
+
 // Optionally insert the Infobox UI-component into google maps
 googleMap.controls[google.maps.ControlPosition.BOTTOM_LEFT].push(infoDiv);
 // Instantiate infobox
 var infobox = new mapsindoors.Infobox(infoDiv);
- 
+
 locationsService.getLocationDetails("SOME-MAPSINDOORS-ID").then(function (location) {
    // Show location content in infobox
    infobox.show(location);
    // if <a data-close>x</a> is present in your infobox element, user can close the infobox, or it can be closed programmatically
-   setTimeout(function() { 
-      infobox.close(); 
+   setTimeout(function() {
+      infobox.close();
    }, 5000);
 });
 ```
-  
-## Create a Search and Suggestions box
+## Using the mapsIndoors
 
-If you need to facilitate search functionality to your MapsIndoors solution, you can use the Suggestions UI component. Add the suggestions stylesheet as a starting point for the design.
-
-```html
-<link href="https://app.mapsindoors.com/mapsindoors/js/sdk/ui/Suggestions.css" rel="stylesheet" />
-```
-
-Add the following html somewhere in your document.
-
-```html
-<div id="search-box" class="mapsindoors search-container">
-    <input type="search" placeholder="Search rooms and facilites..." class="mapsindoors search">
-    <ul class="mapsindoors suggestions"></ul>
-</div>
-```
-
-Given the above code, here is a simple example on how to use the component.
+Constructor.
 
 ```javascript
-// Div containing an input search element
-var searchDiv = document.getElementById('search-box');
- 
-// If needed, insert the div element as a map control
-googleMap.controls[google.maps.ControlPosition.TOP_LEFT].push(searchDiv);
- 
-// Instantiates suggestions object
-var suggestions = new mapsindoors.Suggestions(searchDiv);
- 
-// Listen for user interaction - returns the selected location
-google.maps.event.addListener(suggestions, 'location_changed', function (location) {
-    console.dir(location);
+var googleMap = new google.maps.Map(...);
+
+var mapsIndoors = new mapsindoors.MapsIndoors(
+   {
+      map: googleMap
+   }
+)
+```
+## Using the Display rules
+
+Display rules use the following structure:
+
+```javascript
+{
+   from: zoom_level,             // Optional - defaults to 0
+   to: zoom_level,               // Optional - defaults to 21
+   icon: google.maps.icon|"url"  // Optional - defaults to current location icon url (dynamically set)
+   visible: boolean              // Optional - defaults to true
+};
+```
+
+To add your own custom icons for locations (point-of-interest, rooms, etc.), setup display rule(s) and make it known to your MapsIndoors object.
+
+```javascript
+var googleMap = new google.maps.Map(...);
+var mapsIndoors = new mapsindoors.MapsIndoors({map: googleMap});
+
+mapsIndoors.setDisplayRule("info", {from:16, icon:"http://myiconhost.com/info.png" });
+```
+
+Display rules are based on POI/Location types. Every location has one type `propertylocation.properties.type`. A set of types is defined/used in the MapsIndoors CMS. The current list of types can be listed using the LocationService:
+
+```javascript
+var locations = new mapsindoors.LocationService();
+
+locations.getTypes().then(function(types) {
+   // returns array of types with format { name:string, icon:string }
 });
-```  
+```
+
+Two of these types could be of name “Parking” and “Office”, which indicates that these types are used for parking lots and offices respectively. In most cases, you might want to display parking icons on zoom-levels above office icons. Based on this intention you could set these rules:
+
+```javascript
+mapsIndoors.setDisplayRule("parking", { from:16 }); // Using default type icon
+mapsIndoors.setDisplayRule("office", { from:20 });  // Using default type icon
+```
+
+
+## Using locate
+
+Use the locate method to find and highlight different elements of the MapsIndoors content. An example is given below. Note: The example shows all options, but only one of building, venue, locationId and location is necessary.
+
+```javascript
+var googleMap = new google.maps.Map(...);
+
+var mapsIndoors = new mapsindoors.MapsIndoors({map:googleMap});
+
+mapsIndoors.locate(
+   {
+      building: "34"          // Optional - Using the administrative id for building
+      venue: "VenueA"         // Optional - Using name for venue
+      locationId: "id"        // Optional - Mapsindoors location id string
+      locations: {            
+         q: "lounge",         // Optional - Search for matches in location name or aliases
+         building: "34",      // Optional - Fetch from specific building, using the administrative id of the building
+         venue: "VenueA",     // Optional - Fetch from specific venue, using name of venue
+         floor: 1,                     // Optional - Fetch from 1st floor only
+         take: 10,                     // Optional - Fetch only 10 locations
+         skip: 10,                     // Optional - Skip first 10 in result
+         near: {lat:57.5, lng: 12.9}   // Optional - Sort by proximity to geographic point
+         radius: 50           // Optional - Fetch only nearest within meters from near
+         orderBy: "name"      // Optional - Sort by name (possible values are Name, Floor
+                              // Building, Venue, Type and RoomId)
+      },
+      fitBounds: true,        // Optional - Suppress display of other
+                              // existing locations on the map
+      fitBounds: true,        // Optional - Center map around result    
+      displayRule: {          // Optional - Set a display rule for the resulting content
+         from:16,
+         icon: "http://myiconhost.com/searchresult.png"
+      }
+   }
+);
+```
+
+## Setting the map
+
+Set the Google map that needs to be MapsIndoors-enabled.
+
+```javascript
+mapsIndoors.setMap(googleMap)
+```
+## Getting the map
+
+Returns the Google Maps object.
+
+```javascript
+mapsIndoors.getMap()
+```
+
+### Reset the style of the map
+
+Resets the map to the appearance defined by the provided display rules. Displayed floor, map center and zoom-level will remain untouched.
+
+```javascript
+mapsIndoors.reset()
+```

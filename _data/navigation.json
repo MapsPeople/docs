@@ -1,6 +1,7 @@
 {
     "main": [
         { "title":"Home", "url": "/" },
+        { "title":"First Steps", "url": "/firststeps" },
         { "title":"Web", "url": "/web" },
         { "title":"Android", "url": "/android" },
         { "title":"IOS", "url": "/ios" },
@@ -17,6 +18,11 @@
         { "title":"Changelog", "url": "/changelog" }
     ],
     "/ios": [
+        { "title":"Guides", "url": "/guides" },
+        { "title":"Reference", "url": "/reference" },
+        { "title":"Changelog", "url": "/changelog" }
+    ],
+    "/firststeps": [
         { "title":"Guides", "url": "/guides" },
         { "title":"Reference", "url": "/reference" },
         { "title":"Changelog", "url": "/changelog" }

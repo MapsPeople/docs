@@ -1,0 +1,41 @@
+- title: "Home"
+  href: "/"
+
+- title: "First Steps"
+  href: "/firststeps"
+
+- title: "Web"
+  href: "/web"
+  subcategories:
+    - subtitle: "Guide - getting started"
+      subhref: "/web"
+    - subtitle: "Guide - part 2"
+      subhref: "/web/guidepart2"
+    - subtitle: "Reference"
+      subhref: "/web/reference"
+    - subtitle: "Changelog"
+      subhref: "/"
+
+- title: "Android"
+  href: "/android"
+  subcategories:
+    - subtitle: "Guide - getting started"
+      subhref: "/android"
+    - subtitle: "Guide - part 2"
+      subhref: "/android/guidepart2"
+    - subtitle: "Reference"
+      subhref: "/android/reference"
+    - subtitle: "Changelog"
+      subhref: "/"
+
+- title: "iOS"
+  href: "/ios"
+  subcategories:
+    - subtitle: "Guide - getting started"
+      subhref: "/ios"
+    - subtitle: "Guide - part 2"
+      subhref: "/ios/guidepart2"
+    - subtitle: "Reference"
+      subhref: "/ios/reference"
+    - subtitle: "Changelog"
+      subhref: "/"
