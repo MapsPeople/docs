@@ -41,8 +41,13 @@ Indoor navigation for iOS provides you with a seamless transition from outdoor t
 
 Like for iOS, indoor navigation for Android provides your users with a great indoor wayfinding experience in the palm of their hand. It is easy to integrate into your app and can be interfaced with your indoor positioning system. By doing so, you get a better accuracy which you can use for location-based services while your users will get better indoor navigation.
 
-* Built on top of Google Maps SDK for Android
-* Easy integration using Gradle dependencies
-* AAR-Library ready to be included into your App
+* Built on top of Google Maps SDK for Android.
+* Easy integration using Gradle dependencies.
+* AAR-Library ready to be included into your App.
 * Online documentation and getting-started guide
-* Cutting-edge MapsIndoors application source code for both phones, phablets and tablets
+* Cutting-edge MapsIndoors application source code for both phones, phablets and tablets.
+
+##  Building an application using mapsIndoors SDK
+
+You want to use the mapsIndoors SDK to build your own application?
+Just start from the [first steps](/firststeps)!!
