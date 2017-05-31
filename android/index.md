@@ -3,11 +3,12 @@ title: MapsIndoors for Android - Getting Started
 layout: page
 ---
 
-## Minimum source code
+## Basic Example
 
 You will find in the [link](https://github.com/namine92/mapsIndoorAndroidTut) an up and running project that contains the minimum code to start a MapsIndoors project.
 
-You can also follow the steps below to start your app from scratch or to enhance the minimum source code, more advanced feature will be explained in the [part 2](/android/guidepart2) of this tutorial with a demo app that gives a showcase of the mapsIndoors in a complete app that you can test also.
+You can also follow the steps below to start your app from scratch or to enhance the Basic Example, more advanced feature will be explained in the [part 2](/android/guidepart2) of this tutorial with a demo app that gives a showcase of the mapsIndoors in a complete app that you can test also.
+
 ## Setup MapsIndoors dependencies
 
 Add the MapsIndoors SDK as a dependency to your project.
@@ -28,7 +29,7 @@ repositories{
 ```
 
 If you somehow downloaded an AAR file, the above does not apply.
-To add the MapsIndoors Library to an existing Android Studio project add a new Module. First select Android from the project tap, then right click and select `App -> New -> Module`. See the picture below for reference.
+To add the MapsIndoors Library to an existing Android Studio project add a new Module. First select Android from the project tap, then right click and select `App -> New -> Module`.
 
 A “create new Module” window will open. Browse to the .aar file from the SDK, select it and press ‘finish’ to add the MapsIndoors module.
 Finally, your app will need a dependency on the MapsIndoors module. To do that open the module settings from the Project tab where you just added the module (default hotkey is F4).

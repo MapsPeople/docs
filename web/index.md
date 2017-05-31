@@ -2,7 +2,7 @@
 title: MapsIndoors for Web - Getting started
 layout: page
 ---
-## Minimum source code
+## Basic Example
 
 You will find in the [link](https://github.com/namine92/mapsIndoorwebTut) an up and running project that contains the minimum code to start a MapsIndoors project.
 You can only run the project inside a web server, it's already inside a static nodejs server so you have to install nodejs and npm before, then run :
@@ -15,7 +15,7 @@ Then
 ```javascript
 node app.js
 ```
-You can also follow the steps below to start your app from scratch or to enhance the minimum source code, more advanced feature will be explained in the [part 2](/web/guidepart2) of this tutorial with a demo app that gives a showcase of the mapsIndoors in a complete app that you can test also.
+You can also follow the steps below to start your app from scratch or to enhance the Basic Example, more advanced feature will be explained in the [part 2](/web/guidepart2) of this tutorial with a demo app that gives a showcase of the mapsIndoors in a complete app that you can test also.
 
 ## Script Loading
 

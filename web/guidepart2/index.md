@@ -89,17 +89,17 @@ var directionsRenderer = new mapsindoors.DirectionsRenderer(
 
 Sets the directions rendering style. For twaeking style of route polylines we use the [Google Maps v3 API PolylineOptions](https://developers.google.com/maps/documentation/javascript/reference#PolylineOptions) format. The methods first parameter refers to a style type that can be either the travel mode for outdoor routes or the type of way for indoor routes. The possible style types include:
 
-* default – The default style, will be used for all non-specified styles
-* driving – Style for driving travel mode
-* walking – Style for walking travel mode
-* transit – Style for transit travel mode
-* bicycling – Style for transit travel mode
-* footway – Style for regular indoor ways
-* steps – Style for steps/stairs
-* elevator – Style for elevators
-* escalator – Style for elevators
-* travellator – Style for travellators
-* residential – Style for roads at a venue
+* default – The default style, will be used for all non-specified styles.
+* driving – Style for driving travel mode.
+* walking – Style for walking travel mode.
+* transit – Style for transit travel mode.
+* bicycling – Style for transit travel mode.
+* footway – Style for regular indoor ways.
+* steps – Style for steps/stairs.
+* elevator – Style for elevators.
+* escalator – Style for elevators.
+* travellator – Style for travellators.
+* residential – Style for roads at a venue.
 
 ```javascript
 var directionsRenderer = new mapsindoors.DirectionsRenderer();
