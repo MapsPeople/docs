@@ -49,5 +49,5 @@ Like for iOS, indoor navigation for Android provides your users with a great ind
 
 ##  Building an application using mapsIndoors SDK
 
-You want to use the mapsIndoors SDK to build your own application?
+You want to use the mapsIndoors SDK to build your own application?   
 Just start from the [first steps](/firststeps)!!
