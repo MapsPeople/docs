@@ -60,10 +60,14 @@ locs.setOnLocationsReadyListener(new OnLocationsReadyListener() {
    @Override
    public void onLocationsReady(List<Location> locations) {
 
+     // Here you can do your work with the locations
+
    }
 
    @Override
    public void onLocationDetailsReady(Location location) {
+     
+     // Here you can do your work with the locations details
 
    }
 });

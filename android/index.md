@@ -97,7 +97,22 @@ Your activity should implement the `OnDataReadyListener` class then overriding a
 
    }
 ```
+You should be aware if you want to deal with UI objects or using a method that do so inside the callbacks, you need to run it on the UIThread like this way :
 
+```java
+  @Override
+  public void onLocationsReady(final List<Location> locations) {
+     runOnUiThread(new Runnable() {
+        @Override
+        public void run()
+        {  // After querying POIs, the code below will show a route between the 2 first locations so we need to do it in the UIThread because both of the setMapPosition and the route methods uses UI objects
+           mapControl.setRoutingProvider(new MPRoutingProvider());
+           mapControl.setMapPosition(locations.get(0).getPoint(), 17f, false);
+           mapControl.route(locations.get(0), locations.get(1), TravelMode.TRAVEL_MODE_WALKING, null, null, null);
+        }
+     });
+  }
+```
 
 ## Using Map Icon Display Rules
 
