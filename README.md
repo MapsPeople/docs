@@ -1,1 +1,1 @@
-# namine92.github.io
+# mapsindoors.github.io
