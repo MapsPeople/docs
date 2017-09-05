@@ -1,0 +1,21 @@
+{
+    "data":[
+        {
+            "name":"Android",
+            "path":"/android",
+            "weight":10,
+            "menu": [
+                {
+                    "name":"Getting Started",
+                    "path":"/android",
+                    "weight":10
+                },
+                {
+                    "name":"Guide",
+                    "path":"/android/guide",
+                    "weight":10
+                }
+            ]
+        }
+    ]
+}

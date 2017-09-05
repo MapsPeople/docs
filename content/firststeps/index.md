@@ -1,6 +1,6 @@
 ---
 title: MapsIndoors first steps
-
+layout: page
 ---
 ## Setup Google maps API
 
