@@ -1,4 +1,4 @@
-#baseurl = "https://mapsindoors.github.io/"
+baseurl = "https://mapsindoors.github.io/"
 languageCode = "en-us"
 title = "MapsIndoors Developer"
 theme = "hugo-material-docs"
@@ -9,15 +9,15 @@ googleAnalytics = ""
 
 [params]
 	# General information
-	author = "MapsIndoors"
-	description = "A material design theme for documentations."
-	copyright = "Released under the MIT license"
+	author = "MapsPeople"
+	description = "Everything you need to get started with MapsIndoors."
+	copyright = "MapsIndoors &copy;2017"
 
 	# Repository
 	provider = "GitHub"
 	repo_url = "https://github.com/MapsIndoors/"
 
-	version = "1.11.1"
+	version = "1.0"
 	logo = "images/logo.png"
 	favicon = ""
 
