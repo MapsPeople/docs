@@ -1,10 +1,10 @@
 ---
-title: MapsIndoors first steps
-layout: page
+title: MapsIndoors First Steps
 ---
+
 ## Setup Google maps API
 
-You need to setup the google maps API in your project by following the steps in this links below depending on which platform you are using :
+You need to setup the Google Maps API in your project by following the steps in this links below depending on which platform you are using :
 
 * Web : You will need the [Google Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/tutorial).
 * Android : You will need the [Google Maps Android API](https://developers.google.com/maps/documentation/android-api/start).
@@ -27,16 +27,13 @@ Now you have to choose the platform that you are working on to continue the step
 
 * Web
   * [Guide - getting started](/web)
-  * [Guide - part 2](/web/guidepart2)
+  * [Guide - part 2](/web/guide-part2)
   * [Reference](/web/reference)
-  * [Changelog](/)
 * Android
   * [Guide - getting started](/android)
-  * [Guide - part 2](/android/guidepart2)
+  * [Guide - part 2](/android/guide-part2)
   * [Reference](/android/reference)
-  * [Changelog](/)
 * iOS
   * [Guide - getting started](/ios)
-  * [Guide - part 2](/ios/guidepart2)
+  * [Guide - part 2](/ios/guide-part2)
   * [Reference](/ios/reference)
-  * [Changelog](/)

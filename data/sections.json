@@ -3,17 +3,54 @@
         {
             "name":"Android",
             "path":"/android",
-            "weight":10,
             "menu": [
                 {
                     "name":"Getting Started",
-                    "path":"/android",
-                    "weight":10
+                    "path":"/android"
                 },
                 {
-                    "name":"Guide",
-                    "path":"/android/guide",
-                    "weight":10
+                    "name":"Next Steps",
+                    "path":"/android/guide-part2"
+                },
+                {
+                    "name":"Reference Docs",
+                    "path":"https://app.mapsindoors.com/mapsindoors/reference/android/index.html"
+                }
+            ]
+        },
+        {
+            "name":"iOS",
+            "path":"/ios",
+            "menu": [
+                {
+                    "name":"Getting Started",
+                    "path":"/ios"
+                },
+                {
+                    "name":"Next Steps",
+                    "path":"/ios/guide-part2"
+                },
+                {
+                    "name":"Reference Docs",
+                    "path":"https://app.mapsindoors.com/mapsindoors/reference/ios/index.html"
+                }
+            ]
+        },
+        {
+            "name":"Web",
+            "path":"/web",
+            "menu": [
+                {
+                    "name":"Getting Started",
+                    "path":"/web"
+                },
+                {
+                    "name":"Next Steps",
+                    "path":"/web/guide-part2"
+                },
+                {
+                    "name":"Reference Docs",
+                    "path":"/web/reference"
                 }
             ]
         }

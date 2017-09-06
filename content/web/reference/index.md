@@ -1,10 +1,6 @@
 ---
 title: MapsIndoors for Web - Reference Guide
-
 ---
-
-* TOC
-{:toc}
 
 ## MapsIndoors
 `mapsindoors.MapsIndoors(opts:MapsIndoorsOptions)`
