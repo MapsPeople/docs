@@ -1,6 +1,6 @@
 baseurl = "https://mapsindoors.github.io/"
 languageCode = "en-us"
-title = "MapsIndoors Developer"
+title = "MapsIndoors Developers"
 theme = "hugo-material-docs"
 metadataformat = "yaml"
 canonifyurls = true
@@ -12,7 +12,7 @@ publishDir = "docs"
 	# General information
 	author = "MapsPeople"
 	description = "Everything you need to get started with MapsIndoors."
-	copyright = "MapsIndoors &copy;2017"
+	copyright = "MapsIndoors (c)2017"
 
 	# Repository
 	provider = "GitHub"
@@ -25,7 +25,7 @@ publishDir = "docs"
 	permalink = "#"
 
 	# Custom assets
-	custom_css = []
+	custom_css = ["style.css"]
 	custom_js  = []
 
 	# Syntax highlighting theme
@@ -44,6 +44,7 @@ publishDir = "docs"
 	twitter = ""
 	github  = "MapsIndoors"
 	email   = "support@mapspeople.com"
+	support = "https://mapspeople.com/support"
 
 
 [blackfriday]

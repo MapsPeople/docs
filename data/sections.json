@@ -59,6 +59,13 @@
                     "path":"/web/reference"
                 }
             ]
+        },
+        {
+            "name":"CMS",
+            "path":"/cms",
+            "version":"2.0.0",
+            "logo":"/logos/cms.png",
+            "menu": []
         }
     ]
 }

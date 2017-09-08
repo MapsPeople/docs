@@ -56,10 +56,10 @@
           </li>
           {{ end }}
 
-          {{ with $.Site.Social.email }}
+          {{ with $.Site.Social.support }}
           <li>
-            <a href="mailto:{{ . }}" title="Email of {{ . }}">
-              Contact via email
+            <a href="{{ . }}" title="Contact Support">
+              Contact Support
             </a>
           </li>
           {{ end }}
