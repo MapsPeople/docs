@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ios on MapsIndoors Developers</title>
+    <link>https://mapsindoors.github.io/ios/</link>
+    <description>Recent content in Ios on MapsIndoors Developers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>MapsIndoors (c)2017</copyright>
+    
+	<atom:link href="https://mapsindoors.github.io/ios/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>https://mapsindoors.github.io/ios/guides/search-and-directions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/ios/guides/search-and-directions/</guid>
+      <description>MPLocationsProvider* locationsProvider = [[MPLocationsProvider alloc] init]; MPDirectonsRenderer* renderer = [[MPDirectonsRenderer alloc] init]; MPDirectionsService* directionsService = [[MPDirectionsService alloc] initWithMapsIndoorsSolutionId: sID googleApiKey: gApiKey];
+MPLocationQuery* q1 = [[MPLocationQuery alloc] init]; q1.solutionId = sID; q1.query = @&amp;quot;location-name&amp;quot;; q1.max = 1; MPLocationQuery* q2 = [[MPLocationQuery alloc] init]; q2.solutionId = sID; q2.query = @&amp;quot;other-location-name&amp;quot;; q2.max = 1; [locationsProvider getLocationsUsingQueryAsync:q1 language:@&amp;quot;en&amp;quot; completionHandler:^(MPLocationDataset *locationData, NSError *error) { MPLocation* from = locationData.list.firstObject; [locationsProvider getLocationsUsingQueryAsync:q2 language:@&amp;quot;en&amp;quot; completionHandler:^(MPLocationDataset *locationData, NSError *error) { MPLocation* to = locationData.</description>
+    </item>
+    
+    <item>
+      <title>MapsIndoors for iOS - Getting Started</title>
+      <link>https://mapsindoors.github.io/ios/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/ios/</guid>
+      <description>Basic Example You will find in the link an up and running project that contains the minimum code to start a MapsIndoors project.
+You can also follow the steps below to start your app from scratch or to enhance the Basic Example, more advanced feature will be explained in the part 2 of this tutorial with a demo app that gives a showcase of the mapsIndoors in a complete app that you can test also.</description>
+    </item>
+    
+    <item>
+      <title>MapsIndoors for iOS - Part 2</title>
+      <link>https://mapsindoors.github.io/ios/guide-part2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/ios/guide-part2/</guid>
+      <description>Trying the demo App Open your Terminal and run
+pod try MapsIndoors  This will install and fire up the full-featured SDK Demo Project. Remember to add your own key Google Maps iOS API key in AppDelegate:
+GMSServices.provideAPIKey(&amp;quot;YOUR_GOOGLE_KEY&amp;quot;)  Using Routing Routing is requested with at least an origin, a destination and a transit mode – transit mode corresponds directly to Google Maps transit modes: Walking, bicycling, driving and transit (public transportation).</description>
+    </item>
+    
+    <item>
+      <title>MapsIndoors for iOS Reference Guide</title>
+      <link>https://mapsindoors.github.io/ios/reference/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/ios/reference/</guid>
+      <description>Please head to this reference manual.</description>
+    </item>
+    
+  </channel>
+</rss>
