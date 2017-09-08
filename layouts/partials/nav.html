@@ -1,0 +1,12 @@
+{{ $scratch := .}}
+{{ $section := .Get "CurrentSection"}}
+{{ $page := .Get "CurrentPage"}}
+<li>
+    <span class="section">{{ $section.name }}</span>
+    <ul>
+      {{ range $section.menu }}
+        {{ $scratch.Set "CurrentMenuItem" . }}
+        {{ partial "nav_link" $scratch }}
+      {{ end }}
+    </ul>
+</li>
