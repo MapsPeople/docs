@@ -18,7 +18,7 @@ Add or merge in the following to your app’s build gradle file (usually called 
 dependencies {
    compile 'com.google.android.gms:play-services-maps:9.8.0'
    compile 'com.google.code.gson:gson:2.4'
-   compile 'com.mapspeople.mapsindoors:mapsindoorssdk:1.8.3@aar'
+   compile 'com.mapspeople.mapsindoors:mapsindoorssdk:1.8.5@aar'
 }
 repositories{
    maven {

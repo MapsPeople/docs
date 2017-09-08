@@ -3,7 +3,7 @@
         {
             "name":"Android SDK",
             "path":"/android",
-            "version":"1.8.6",
+            "version":"1.8.5",
             "logo":"/logos/android-logo.svg",
             "menu": [
                 {
@@ -23,7 +23,7 @@
         {
             "name":"iOS SDK",
             "path":"/ios",
-            "version":"1.11.1-beta4",
+            "version":"1.11.1",
             "logo":"/logos/apple-logo.svg",
             "menu": [
                 {
@@ -63,7 +63,7 @@
         {
             "name":"CMS",
             "path":"/cms",
-            "version":"2.0.0",
+            "version":"2.2.3",
             "logo":"/logos/cms.png",
             "menu": []
         }
