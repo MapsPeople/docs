@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Androids on MapsIndoors Developers</title>
+    <link>https://mapsindoors.github.io/android/</link>
+    <description>Recent content in Androids on MapsIndoors Developers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>MapsIndoors (c)2017</copyright>
+    
+	<atom:link href="https://mapsindoors.github.io/android/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>https://mapsindoors.github.io/android/guides/searching-and-directions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/android/guides/searching-and-directions/</guid>
+      <description>//Locations provider, used for search MPLocationsProvider locs = new MPLocationsProvider(this);
+//Directions renderer, used to display route on map DirectionsRenderer directionsRenderer = new DirectionsRenderer(this, selectionListener);
+//Listen for query results locs.setOnLocationsReadyListener(new OnLocationsReadyListener() { @Override public void onLocationsReady(List locations) {
+ //Origin hard-coded here Location origin = new MPLocation(new Point(57.956, 8.667, 0), &amp;quot;My location&amp;quot;); //Destination is first location in list Location destination = locations.get(0); RoutingProvider routingProvider = new MPRoutingProvider(); //Add listener routingProvider.setOnRouteResultListener(new OnRouteResultListener() { @Override public void onRouteResult(final Route newRoute) { //Render the route you get from the service (you need to create a selectionListener too) directionsRenderer.</description>
+    </item>
+    
+    <item>
+      <title>MapsIndoors for Android - Getting Started</title>
+      <link>https://mapsindoors.github.io/android/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/android/</guid>
+      <description>Basic Example You will find in the link an up and running project that contains the minimum code to start a MapsIndoors project.
+You can also follow the steps below to start your app from scratch or to enhance the Basic Example, more advanced feature will be explained in the part 2 of this tutorial with a demo app that gives a showcase of the mapsIndoors in a complete app that you can test also.</description>
+    </item>
+    
+    <item>
+      <title>MapsIndoors for Android - Part 2</title>
+      <link>https://mapsindoors.github.io/android/guide-part2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/android/guide-part2/</guid>
+      <description>Trying the demo App You can download the demo app from our github repository: Demo App Then run it and don&amp;rsquo;t forget to do a Gradle sync before and download all the required dependencies.
+Using Routing Routing is requested with at least an origin, a destination and a transit mode – transit mode corresponds directly to Google Maps transit modes: Walking, bicycling, driving and transit (public transportation).
+RoutingProvider routingProvider = new MPRoutingProvider(); routingProvider.</description>
+    </item>
+    
+    <item>
+      <title>MapsIndoors for Android Reference Guide</title>
+      <link>https://mapsindoors.github.io/android/reference/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/android/reference/</guid>
+      <description>Please head to this reference manual.</description>
+    </item>
+    
+  </channel>
+</rss>
