@@ -163,7 +163,7 @@
           <img src="https://mapsindoors.github.io//logos/cms.png" style="padding:10px">
         </div>
         <div class="name">
-          <strong>CMS <span class="version">2.2.3</span></strong>
+          <strong>CMS <span class="version">3.0</span></strong>
           
         </div>
       </div>
@@ -238,269 +238,184 @@
 
 			
 
-<h2 id="working-with-locations">Working with Locations</h2>
+<h2 id="about-the-user-roles">About the User Roles</h2>
 
-<p>There are 3 different roles in the system:</p>
+<p>There are 2 roles in the system:</p>
 
-<ul>
-<li><p><strong>Editor</strong> - Editors can create new locations, make changes to and remove existing locations</p></li>
+<p><strong>Editor</strong> - Editors can create new locations, make changes to and remove existing locations</p>
 
-<li><p><strong>Publisher</strong> – Publishers have editor rights and can publish those changes to the live site</p></li>
-
-<li><p><strong>Admin</strong> – Administrators have editor and publishing rights and have access to icon settings, push, and users</p></li>
-</ul>
+<p><strong>Admin</strong> - Administrators also have access to types, categories and users management, network visualisation and app configuration.</p>
 
 <p><strong>Logging In</strong></p>
 
-<p>Login by visiting <a href="https://cms.mapsindoors.com/">cms.mapsindoors.com</a></p>
+<p>Visit <a href="https://cms.mapsindoors.com/">cms.mapsindoors.com</a></p>
 
-<p>Log in using your email address and the provided password.</p>
+<p>Log in using a google account or by typing your email and password<img src="image_1.png" alt="image alt text" /></p>
 
-<p><img src="image_0.png" alt="image alt text" /></p>
+<h2 id="locations">Locations</h2>
 
-<h3 id="the-map">The Map</h3>
-
-<p>After logging in, the map will appear.</p>
-
-<p><img src="image_1.png" alt="image alt text" /></p>
+<p>After logging in, the map will appear. <img src="image_2.png" alt="image alt text" /></p>
 
 <p>There are a number of key elements on the map:</p>
 
 <ol>
-<li><p><strong>Menu Bar</strong>: The Menu bar changes depending on who is logged in and what role they have. As an Editor or Publisher there is:</p>
+<li><p><strong>Solutions:</strong> if you have access to more than one solution, you can change the active solution here.</p></li>
 
-<ol>
-<li><p><strong>Map</strong>: See above</p></li>
+<li><p><strong>Venues:</strong> if there are multiple venues in the current solution you can select the active one here.</p></li>
 
-<li><p><strong>[Lis</strong>t](#heading=h.2s8eyo1): A list of locations in the currently selected Venue</p></li>
+<li><p><strong>Menu:</strong> navigate between the pages you have access to here. Pages that show content based on the selected venue are grouped first (teal background).</p></li>
 
-<li><p><strong>About</strong>: information about current version, MapsPeople and copyright notices.</p></li>
+<li><p><strong>Toggle map or list:</strong> view locations on a map or display a list of locations.</p></li>
 
-<li><p><strong>Feedback</strong>: Here you can give feedback to the developers if you find a bug or have suggestions on how to improve the system.</p></li>
-</ol></li>
+<li><p><strong>Filter and search:</strong> search for locations and/or use one or more filters. Applies to both map and list.</p></li>
 
-<li><p><strong>Venues</strong>: Venues reflect different areas of the University.  Each venue may contain multiple points of interest such as University buildings.</p></li>
+<li><p><strong>Floor selector:</strong> change which floor is displayed on the map.</p></li>
 
-<li><p>**Building selection: **Drop down menus showing buildings that are part of the selected Venue. Selecting a Building is important before adding a POI related to that building - as it otherwise would be set as a outdoor POI or related to the incorrect building.</p></li>
+<li><p><strong>Building:</strong> all buildings belonging to the selected venue will be displayed on the map</p></li>
 
-<li><p><strong>Icon &amp; category filter</strong>: Drop down menus, used to filter what is displayed on the map with in the CMS - a specific set of locations filtered by their icon or category type.</p></li>
-
-<li><p><strong>Search</strong>: Search for a location</p></li>
-
-<li><p><strong>Account</strong>: Click here to logout or change the password.</p></li>
-
-<li><p><strong>Floor selector</strong>: The floor selector shows the floors available, click on the desired floor to switch floor.</p></li>
-
-<li><p><strong>Buildings</strong>: The buildings listed in the specified venue are shown on the map<strong>.</strong></p></li>
+<li><p><strong>User menu:</strong> change password or log out.</p></li>
 </ol>
 
-<h4 id="creating-a-location">Creating a Location</h4>
+<h3 id="creating-a-location">Creating a Location</h3>
 
-<p>To create a new location, first make it clear if this is a outdoor POI or placed inside inside a Building. If inside a Building, select the desired building from the drop down menu. Now click on the place on the map where it should be added. Select &ldquo;Create new Location here&rdquo;. The placement doesn’t have to be 100% precise, it can be moved afterwards.</p>
+<p>To create a new location, click anywhere on the map - do not worry if the position is a bit off, it can be moved afterwards.</p>
 
-<p><img src="image_2.png" alt="image alt text" /></p>
+<p>After clicking, the create form will open over the left side of the map.</p>
 
-<p>After clicking on the box, you will be asked to select an Icon that will represent the new location.</p>
+<h3 id="create-edit-location-form">Create/edit location form</h3>
 
-<p><img src="image_3.png" alt="image alt text" /></p>
+<p><strong>1 - Translated texts</strong>:</p>
 
-<p>Select the icon for the location that you wish to edit and then select Create</p>
+<p>Properties like name (required for default language), aliases, description and any custom defined values.</p>
 
-<h4 id="edit-location-form">Edit Location Form</h4>
+<p>Aliases are alternative names used to match the location to searches.</p>
 
-<p>Select the icon for the location that you wish to edit</p>
+<p><strong>2 - Type &amp; Categories</strong>:</p>
 
-<p>and the Edit Location Form will appear.</p>
+<p>A location requires a type. Types define things like icon, template, label format and zoom levels the location is displayed at. Types are created and controlled elsewhere in the CMS - see more under Types</p>
 
-<p>In the Edit Location Form you can:</p>
+<p>A location can belong to any number of categories. - see more under Categories</p>
 
-<ol>
-<li><p><strong>Icon Settings</strong>: Change the Icon associated with the location</p></li>
+<p><strong>3 - Location</strong>:</p>
 
-<li><p><strong>Floor &amp; Categories</strong>: Set/change which floor the location is on and/or what category it belongs to.</p></li>
+<p>Building, floor and Room ID (if applicable) can be set here. Building and floor will be set automatically but you should always verify that these properties are correct.</p>
 
-<li><p><strong>Translations</strong>:</p>
+<p>**4 - **<strong>More:</strong></p>
 
-<ol>
-<li><p><strong>Name</strong>: Set/change the name of the location.  This is shown when the location is selected in the app.</p></li>
+<p>Active from/to define when the location is displayed and searchable in the app(s).</p>
 
-<li><p><strong>Alias</strong>: Add alternative search phrases, for example a restaurant might have aliases of café, dinner, food, lunch etc.  Insert a comma between each phrase. By double clicking on the text, you are able to edit the alias and the ‘X’ at the end will delete that particular alias.</p></li>
+<p><strong>5 - Image</strong>:</p>
 
-<li><p><strong>Description</strong>: Provide a description of the location.</p></li>
-</ol></li>
+<p>Upload an image or provide a link (https). If you link to content outside the MapsIndoors CMS we can not take responsibility for changes or availability.</p>
 
-<li><p>**More: **You can add more fields to your location. Please read the coming section for more information.</p></li>
+<h4 id="save-changes">Save changes</h4>
 
-<li><p><strong>Scheduled display</strong>: If required, select a time period during which the location will be visible, leave empty if it should always be shown.</p></li>
-</ol>
-
-<h5 id="save-changes">Save changes</h5>
-
-<p>Remember to save before clicking on another location or changing the page, otherwise your changes will be lost. To save the changes,  press &ldquo;Save&rdquo;-button in the top of the location edit form.
-<strong>Note</strong>: Saving changes does not publish them on the map, for that you need to press the publish button</p>
-
-<h5 id="fields">Fields</h5>
-
-<p>Under the section of ‘More’, it’s possible to add new fields. Click on the ‘Add Fields’ and a drop down menu will appear.
-Currently you can choose between phone, website-url and email.
-<strong>Note</strong>: For website-urls, please provide secure (https) urls to ensure that all end user links work properly.</p>
-
-<p>When you add a new field, they are added below the description - please see the images below.</p>
-
-<p>In the first image we have a standard setup, where in the second a field for a phonenumber was added</p>
-
-<p>This can be useful for e.g. offices or shops where their email or phonenumber needs to visible within the app.</p>
+<p>Remember to save before clicking on another location or changing the page, otherwise your changes will be lost. To save the changes,  press the &ldquo;Save&rdquo;-button in the top of the location edit form.</p>
 
 <h3 id="list">List</h3>
 
-<p>To view a list of all locations in a certain venue, select ‘List’<img src="image_4.png" alt="image alt text" /></p>
+<p>As previously mentioned you can toggle between map and list. Switching to list-view will present the locations in a table as shown below:<img src="image_3.png" alt="image alt text" /></p>
 
 <ul>
-<li><p>To sort the data, click on the column title.</p></li>
+<li><p>To edit a location, click the pencil</p></li>
 
-<li><p>To edit a location, click the pencil (right hand column, highlighted red above)</p></li>
+<li><p>To edit multiple locations, tick each one</p></li>
 
-<li><p>To edit multiple locations, tick each one (left hand column, highlighted blue above)</p></li>
-
-<li><p>Once a location/locations are selected, the following options appear (highlighted red below):</p></li>
+<li><p>Once locations are selected, a new toolbar appears:</p></li>
 </ul>
+
+<p><img src="image_4.png" alt="image alt text" /></p>
+
+<p>**Edit **opens a menu with some of the properties also seen when editing one location.</p>
+
+<p><strong>Delete</strong> deletes all the selected locations (a prompt will open to ensure a delete is requested).</p>
+
+<h2 id="types">Types</h2>
+
+<p>At the types page you can manage the different types of locations.</p>
 
 <p><img src="image_5.png" alt="image alt text" /></p>
 
-<p>When selecting one a more locations using the checkboxes, the options indicated by the red square above will appear.</p>
+<p>The page is split in two views:</p>
 
-<p>**Manage **opens a menu (picture to the left), with the same parameters as seen in &ldquo;<a href="#heading=h.3dy6vkm">Edit Location</a>&rdquo; but this enables changes to all the selected locations instead of one.</p>
+<ul>
+<li><p><strong>Preview map</strong>, this allows you to see the changes you make to viewing distance, visibility, icon and label format. The map should give a good indication of how the location is displayed in the end-user app.</p></li>
 
-<p><strong>Publish</strong> publishes the data (only those with Publisher or Admin access).</p>
+<li><p><strong>Types table</strong> displaying the name, icon path, icon preview, viewing distance, label format and whether the type is visible.</p></li>
+</ul>
 
-<p><strong>Copy</strong> will make a copy of the selected locations.</p>
+<p>Once a type has been created and saved, it will show up in the type selector, when creating or editing a location. Remember to save before leaving the page, or changes will be lost.</p>
 
-<p><strong>Delete</strong> deletes all the selected locations (a prompt will open to ensure a delete is required)</p>
+<h2 id="categories">Categories</h2>
 
-<h1 id="publishing">Publishing</h1>
+<p>A location can belong to any number of categories. Once a category has been created it is selectable when creating or editing a location.</p>
 
-<h3 id="map">Map</h3>
+<p><img src="image_6.png" alt="image alt text" /></p>
 
-<p>If a location is selected or a <a href="#heading=h.tyjcwt">new one is created</a> on the map this menu appears (image on the right).</p>
-
-<p>Select ‘Publish’ to ensure that the location is visible on the live map for all to see.</p>
-
-<p>Select ‘Delete’ to remove the location.</p>
-
-<h3 id="list-1">List</h3>
-
-<p>Under list it is possible to publish changes and delete locations.  This can be done for individual locations or multiple locations.</p>
-
-<p>If sorted by the &ldquo;Last Modified&rdquo; column, the new changes will be listed at the top - and unpublished changes will be marked with this small icon <img src="image_6.png" alt="image alt text" />,  (see image below)</p>
+<p>The category page shows the existing categories with all translations. Click the pencil to edit a category or &ldquo;Add category&rdquo; to create a new one. In both cases the edit panel opens:</p>
 
 <p><img src="image_7.png" alt="image alt text" /></p>
 
-<h2 id="admin">Admin</h2>
+<p>You are required to fill in all languages. Google Translate is integrated to give you automatic suggestions filling in the name in one language.</p>
+
+<h1 id="admin">Admin</h1>
 
 <p>Admin allows access to the following sections:</p>
 
 <ol>
-<li><p><strong>Icon Settings</strong></p></li>
+<li><p><strong>Network</strong></p></li>
 
-<li><p><strong>Push</strong></p></li>
+<li><p><strong>App configuration</strong></p></li>
 
 <li><p><strong>Users</strong></p></li>
 </ol>
 
-<h2 id="icon-settings">Icon Settings</h2>
+<h2 id="network">Network</h2>
 
-<p>Use these settings to control how Icons are shown on the map, and what additional information is shown with it. *<a href="https://docs.google.com/document/d/1LjB1hTApA6_XshuwJAol2XKXtVZdrOBFhiuEy4bjOB4/edit#heading=h.2xcytpi">More information about Icon*s</a></p>
-
-<ul>
-<li><p>**Name *<strong>(</strong>Red square)*: The name of the Icon</p></li>
-
-<li><p>**Icon *<strong>(</strong>Orange square)*<strong>:</strong> Selecting the Icon, which is do with a <a href="https://docs.google.com/document/d/1LjB1hTApA6_XshuwJAol2XKXtVZdrOBFhiuEy4bjOB4/edit#heading=h.2xcytpi">https</a> link</p></li>
-
-<li><p>**ZoomLevel *<strong>(</strong>Green square)*<strong>:</strong> How much should people zoom in to see the Icon.</p></li>
-
-<li><p>**Label *<strong>(</strong>Blue square)*<strong>:</strong> It’s possible to show a label next to the Icon. Either</p>
-
-<ul>
-<li><p>Location Name</p></li>
-
-<li><p>Room ID &amp; Location Name</p></li>
-
-<li><p>Location Name &amp; Room ID</p></li>
-</ul></li>
-</ul>
+<p>At this point the network page is really simple as it does not (yet) allow you to change anything but rather lets you see a visualisation of the underlying network that is used for navigation.</p>
 
 <p><img src="image_8.png" alt="image alt text" /></p>
 
-<p>Press <strong>SAVE</strong>, in order to store and publish changes.</p>
+<p>Display settings will allow you to select what to display. Currently only entry points and doors are available.</p>
 
-<h3 id="push">Push</h3>
+<p>The path size controls how thick the lines are and can be useful when zooming in or out.</p>
 
-<p>It’s also possible to send out Push Notifications to the users of the map on native platforms, Android and iOS. This needs to be configured when developing a new native app.</p>
+<h2 id="app-configuration">App configuration</h2>
 
-<p>To setup a Push Notification, first &ldquo;Create New Message&rdquo; (<em>Blue square)</em>, then the following parameters needs to filled:</p>
-
-<ul>
-<li><p>**Title *<strong>(</strong>Pink square)*: The headline of the message</p></li>
-
-<li><p>**Content *<strong>(</strong>Orange square)*: The content of the message</p></li>
-
-<li><p>**Push Settings *<strong>(</strong>Green square)*: Do you need to be in a specific location to receive the message? More on this later.</p></li>
-
-<li><p>**Active *<strong>(</strong>Red square)*: When should the push messages be available, set a start date and end date.</p></li>
-</ul>
+<p>This page contains basic settings for your standard app. If you do not use the standard app these settings can still be used for your tailored app but they are not required.</p>
 
 <p><img src="image_9.png" alt="image alt text" /></p>
 
-<p>If you click the Manage Push (<em>green square above</em>), this menu will open.</p>
+<p>Use this module to set the title, primary color and secondary color. It is recommended to set the correct colors even though this will not yet(!) change the color in the app(s), as we will be updating the apps to use these colors in the near future.</p>
 
-<p>Here it’s possible to control how many times and how often the messages should be received by a unique user.</p>
+<h2 id="users">Users</h2>
 
-<p>Where it’s received, either by beacon (if that’s available) or from GPS location.</p>
-
-<h3 id="users">Users</h3>
-
-<p>Allows Admins, to control who has access and what roles they have (<em>Blue square)</em>, or create new users (<em>Red Square)</em>.</p>
+<p>Here you can manage who has access to your content and with what access level.</p>
 
 <p><img src="image_10.png" alt="image alt text" /></p>
 
-<p>When changing access to an already existing user, the menu to the left will open.</p>
+<p>If you manage multiple solutions you can filter users by solution or search for a specific user. Admin users have a shield icon next to their username (email)</p>
 
-<p>Here it’s possible to see:</p>
+<p>Use the pencil to edit or delete an existing user.</p>
 
-<ul>
-<li><p><strong>Roles</strong>: What role(s) the user has been granted.</p></li>
-
-<li><p><strong>Content Access</strong>: What Content is available. The Content refers to the project in question, where a client might have multiple available - but the various CMS users should maybe only have access to a few.</p></li>
-</ul>
-
-<p>When creating a new user provide the following information:</p>
+<p>When creating a user provide the following information:</p>
 
 <ul>
 <li><p><strong>Email</strong>: The user&rsquo;s email address, this is used as a username</p></li>
 
-<li><p><strong>Password</strong>: The password for the user, this can be changed by the user</p></li>
-
-<li><p><strong>User Roles</strong>: What role(s) should be granted.</p></li>
+<li><p><strong>User Role</strong>: What role should be granted.</p></li>
 
 <li><p><strong>Content Access</strong>: Which Content should be accessible.</p></li>
 </ul>
 
-<h1 id="known-limitations">Known limitations</h1>
+<p><img src="image_11.png" alt="image alt text" /></p>
+
+<p>It is possible to create multiple users with the same role and access by typing multiple emails separated by &ldquo;,&rdquo; (comma). Once a user is created an email will be sent with a temporary password.</p>
+
+<h1 id="glossary">Glossary</h1>
 
 <ul>
-<li><p>It is currently not possible through the CMS to upload new icons for locations.  This is done outside the system.</p></li>
-
-<li><p>Changing the Icon in the App, top left corner. (*See picture) *is currently done outside the system.</p></li>
-</ul>
-
-<h2 id="glossary">Glossary</h2>
-
-<ul>
-<li><p><strong>Icons</strong>: cons are used for various Locations on the map, e.g. POI, Rooms.  Having a unified representation for specific types of locations makes the system easier for users to engage with .</p></li>
-
-<li><p><strong>Https</strong>: This is needed for security and safety reasons.</p></li>
-
-<li><p><strong>Live</strong>: When data is available for the public users of the map.</p></li>
+<li><p><strong>Types</strong>: are used for various Locations on the map, e.g. POIs, Rooms.  Having a unified representation for specific types of locations makes the system easier for users to engage with. The type defines the icon drawn on the map. Types are initially set via the data provided in the <a href="https://docs.google.com/document/d/1Ew9hUNOBVwJ7gj21cDMvYHQzf9B-ZuGxJG1dyl3-Plg/edit#heading=h.39cxbb5fydt8">Datasheet</a></p></li>
 
 <li><p><strong>Location</strong>: A term used in the system for all Rooms and POI</p></li>
 
@@ -508,7 +423,7 @@ Currently you can choose between phone, website-url and email.
 
 <li><p><strong>RoomID</strong>: The number for the Room, more information can be found in the <a href="https://docs.google.com/document/d/1Ew9hUNOBVwJ7gj21cDMvYHQzf9B-ZuGxJG1dyl3-Plg/edit#heading=h.39cxbb5fydt8">Datasheet</a></p></li>
 
-<li><p><strong>RoomType</strong>: This comes from the <a href="https://docs.google.com/document/d/1Ew9hUNOBVwJ7gj21cDMvYHQzf9B-ZuGxJG1dyl3-Plg/edit#heading=h.519vha5ahtob">Datasheet</a> that is provided, and determines what type of Room it is. E.g. Lecture Hall, Cafe, Office, Stairwell etc.</p></li>
+<li><p><strong>Https</strong>: This is needed for security and safety reasons.</p></li>
 </ul>
 
 

@@ -17,13 +17,12 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://mapsindoors.github.io/cms/</guid>
-      <description>Working with Locations There are 3 different roles in the system:
- Editor - Editors can create new locations, make changes to and remove existing locations
- Publisher – Publishers have editor rights and can publish those changes to the live site
- Admin – Administrators have editor and publishing rights and have access to icon settings, push, and users
-  Logging In
-Login by visiting cms.mapsindoors.com
-Log in using your email address and the provided password.</description>
+      <description>About the User Roles There are 2 roles in the system:
+Editor - Editors can create new locations, make changes to and remove existing locations
+Admin - Administrators also have access to types, categories and users management, network visualisation and app configuration.
+Logging In
+Visit cms.mapsindoors.com
+Log in using a google account or by typing your email and passwordLocations After logging in, the map will appear. There are a number of key elements on the map:</description>
     </item>
     
   </channel>
