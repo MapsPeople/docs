@@ -25,6 +25,18 @@
   </url>
   
   <url>
+    <loc>https://mapsindoors.github.io/android/changelog/</loc>
+  </url>
+  
+  <url>
+    <loc>https://mapsindoors.github.io/cms/changelog/</loc>
+  </url>
+  
+  <url>
+    <loc>https://mapsindoors.github.io/ios/changelog/</loc>
+  </url>
+  
+  <url>
     <loc>https://mapsindoors.github.io/cms/</loc>
     <priority>0</priority>
   </url>
@@ -66,6 +78,10 @@
   
   <url>
     <loc>https://mapsindoors.github.io/android/reference/</loc>
+  </url>
+  
+  <url>
+    <loc>https://mapsindoors.github.io/web/changelog/</loc>
   </url>
   
   <url>

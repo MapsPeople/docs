@@ -24,6 +24,18 @@
     </item>
     
     <item>
+      <title>Changelog</title>
+      <link>https://mapsindoors.github.io/android/changelog/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/android/changelog/</guid>
+      <description> Changelog for MapsIndoors for Android. This document structure is based on Keep a Changelog and the project adheres to Semantic Versioning.
+## [2.0.0-beta1] - 2017-10-04 ### Changed - Put something in here&amp;hellip; - Fix MPLocation.copy() results in nil MPLocation.descr.
+### Fixed - Fix geometry property nil when copying MPLocation - Fix unlabeled icons not respecting MapsIndoors.mapIconSize
+Added  Support for statically adding a position provider, optionally by setting MapsIndoors.positionProvider  </description>
+    </item>
+    
+    <item>
       <title>MapsIndoors for Android - Getting Started</title>
       <link>https://mapsindoors.github.io/android/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

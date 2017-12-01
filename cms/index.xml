@@ -12,6 +12,16 @@
     
     
     <item>
+      <title>Changelog</title>
+      <link>https://mapsindoors.github.io/cms/changelog/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/cms/changelog/</guid>
+      <description>[3.1.1] - 16-11-2017 Added Changed Fixed  Only use localstorage to check solution when reloading. Collapsing the sidebar updates the map-size, preventing grey areas with no tiles. Fixed an error when trying to save a location with no name set for one or more languages.         develop
+[3.1.0] - 14-11-2017 Added  Zoom level indcator. Modified and modified by to the location list.</description>
+    </item>
+    
+    <item>
       <title>Guide to the MapsIndoors CMS</title>
       <link>https://mapsindoors.github.io/cms/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -20,9 +30,7 @@
       <description>About the User Roles There are 2 roles in the system:
 Editor - Editors can create new locations, make changes to and remove existing locations
 Admin - Administrators also have access to types, categories and users management, network visualisation and app configuration.
-Logging In
-Visit cms.mapsindoors.com
-Log in using a google account or by typing your email and passwordLocations After logging in, the map will appear. There are a number of key elements on the map:</description>
+Regarding the transition to MapsIndoors CMS 3.0 If you are using the CMS to manage push messaging or beacons you have to continue using the previous CMS version.</description>
     </item>
     
   </channel>

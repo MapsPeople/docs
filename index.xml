@@ -43,6 +43,40 @@ MPLocationQuery* q1 = [[MPLocationQuery alloc] init]; q1.solutionId = sID; q1.qu
     </item>
     
     <item>
+      <title>Changelog</title>
+      <link>https://mapsindoors.github.io/android/changelog/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/android/changelog/</guid>
+      <description> Changelog for MapsIndoors for Android. This document structure is based on Keep a Changelog and the project adheres to Semantic Versioning.
+## [2.0.0-beta1] - 2017-10-04 ### Changed - Put something in here&amp;hellip; - Fix MPLocation.copy() results in nil MPLocation.descr.
+### Fixed - Fix geometry property nil when copying MPLocation - Fix unlabeled icons not respecting MapsIndoors.mapIconSize
+Added  Support for statically adding a position provider, optionally by setting MapsIndoors.positionProvider  </description>
+    </item>
+    
+    <item>
+      <title>Changelog</title>
+      <link>https://mapsindoors.github.io/cms/changelog/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/cms/changelog/</guid>
+      <description>[3.1.1] - 16-11-2017 Added Changed Fixed  Only use localstorage to check solution when reloading. Collapsing the sidebar updates the map-size, preventing grey areas with no tiles. Fixed an error when trying to save a location with no name set for one or more languages.         develop
+[3.1.0] - 14-11-2017 Added  Zoom level indcator. Modified and modified by to the location list.</description>
+    </item>
+    
+    <item>
+      <title>Changelog</title>
+      <link>https://mapsindoors.github.io/ios/changelog/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/ios/changelog/</guid>
+      <description>Changelog for MapsIndoors for iOS. This document structure is based on Keep a Changelog and the project adheres to Semantic Versioning.
+[1.12.2-beta15] - 2017-11-03 Fixed  Fixed issues related to language code validation.  [1.12.2-beta13] - 2017-11-02 Fixed  Fixed problems related to offline/flight-mode.
+Changed Search algorithm improvement.
+  [1.12.1-beta1] - 2017-10-13 Fixed  Fixed possible calling of callback block twice in MPMessageProvider  [1.12.0-beta3] - 2017-10-09 Added  Added a MPRouteLeg.</description>
+    </item>
+    
+    <item>
       <title>Guide to the MapsIndoors CMS</title>
       <link>https://mapsindoors.github.io/cms/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -51,9 +85,7 @@ MPLocationQuery* q1 = [[MPLocationQuery alloc] init]; q1.solutionId = sID; q1.qu
       <description>About the User Roles There are 2 roles in the system:
 Editor - Editors can create new locations, make changes to and remove existing locations
 Admin - Administrators also have access to types, categories and users management, network visualisation and app configuration.
-Logging In
-Visit cms.mapsindoors.com
-Log in using a google account or by typing your email and passwordLocations After logging in, the map will appear. There are a number of key elements on the map:</description>
+Regarding the transition to MapsIndoors CMS 3.0 If you are using the CMS to manage push messaging or beacons you have to continue using the previous CMS version.</description>
     </item>
     
     <item>
@@ -103,6 +135,17 @@ RoutingProvider routingProvider = new MPRoutingProvider(); routingProvider.</des
       
       <guid>https://mapsindoors.github.io/android/reference/</guid>
       <description>Please head to this reference manual.</description>
+    </item>
+    
+    <item>
+      <title>MapsIndoors for Web - Getting started</title>
+      <link>https://mapsindoors.github.io/web/changelog/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/web/changelog/</guid>
+      <description>Basic Example You will find in the link an up and running project that contains the minimum code to start a MapsIndoors project. You can only run the project inside a web server, it&amp;rsquo;s already inside a static nodejs server so you have to install nodejs and npm before, then run :
+npm install  Then
+node app.js  You can also follow the steps below to start your app from scratch or to enhance the Basic Example, more advanced feature will be explained in the part 2 of this tutorial with a demo app that gives a showcase of the mapsIndoors in a complete app that you can test also.</description>
     </item>
     
     <item>

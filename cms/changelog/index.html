@@ -9,18 +9,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>MapsIndoors for Web - Part 2 - MapsIndoors Developers</title>
+    <title>Changelog - MapsIndoors Developers</title>
     <meta name="generator" content="Hugo 0.26" />
 
     
     <meta name="description" content="Everything you need to get started with MapsIndoors.">
     
-    <link rel="canonical" href="https://mapsindoors.github.io/web/guide-part2/">
+    <link rel="canonical" href="https://mapsindoors.github.io/cms/changelog/">
     
     <meta name="author" content="MapsPeople">
     
 
-    <meta property="og:url" content="https://mapsindoors.github.io/web/guide-part2/">
+    <meta property="og:url" content="https://mapsindoors.github.io/cms/changelog/">
     <meta property="og:title" content="MapsIndoors Developers">
     <meta property="og:image" content="https://mapsindoors.github.io/images/logo.png">
     <meta name="apple-mobile-web-app-title" content="MapsIndoors Developers">
@@ -106,7 +106,7 @@
     </div>
     <div class="stretch">
       <div class="title">
-        MapsIndoors for Web - Part 2
+        Changelog
       </div>
     </div>
 
@@ -161,27 +161,30 @@
     
     
     
-    <a href="https://mapsindoors.github.io/web" class="project">
+  
+    
+    
+    
+    <a href="https://mapsindoors.github.io/cms" class="project">
       <div class="banner">
         <div class="logo">
-          <img src="https://mapsindoors.github.io//logos/web-logo.svg" style="padding:10px">
+          <img src="https://mapsindoors.github.io//logos/cms.png" style="padding:10px">
         </div>
         <div class="name">
-          <strong>Web SDK <span class="version">1.4.1</span></strong>
+          <strong>CMS <span class="version">3.0</span></strong>
           
         </div>
       </div>
     </a>
     
   
-    
-    
-    
-  
   <hr />
   <div class="scrollable">
     <div class="wrapper">
       <div class="toc">
+          
+          
+          
           
           
           
@@ -197,7 +200,7 @@
 
 
 <li>
-    <span class="section">Web SDK</span>
+    <span class="section">CMS</span>
     <ul>
       
         
@@ -205,9 +208,9 @@
 
 
 
-<a  title="Getting Started" href="https://mapsindoors.github.io/web">
+<a  title="Guide" href="https://mapsindoors.github.io/cms">
 	
-	Getting Started
+	Guide
 </a>
 
 
@@ -218,9 +221,9 @@
 
 
 
-<a class="current" title="Next Steps" href="https://mapsindoors.github.io/web/guide-part2">
+<a class="current" title="Changelog" href="https://mapsindoors.github.io/cms/changelog">
 	
-	Next Steps
+	Changelog
 </a>
 
 
@@ -229,38 +232,9 @@
 
 
       
-        
-        
-
-
-
-<a  title="Reference Docs" href="https://mapsindoors.github.io/web/reference">
-	
-	Reference Docs
-</a>
-
-
-
-      
-        
-        
-
-
-
-<a  title="Changelog" href="https://mapsindoors.github.io/web/changelog">
-	
-	Changelog
-</a>
-
-
-
-      
     </ul>
 </li>
           </ul>
-          
-          
-          
           
         
 
@@ -302,252 +276,114 @@
 
 	<article class="article">
 		<div class="wrapper">
-			<h1>MapsIndoors for Web - Part 2 </h1>
+			<h1>Changelog </h1>
 
 			
 
-<h2 id="trying-the-showcase-web-app">Trying the Showcase Web App</h2>
+<h2 id="3-1-1-16-11-2017">[3.1.1] - 16-11-2017</h2>
 
-<p>A <a href="https://github.com/MapsIndoors/Showcase-Web-App">showcase app is available on GitHub</a>, free to use and adapt to your needs.</p>
+<h3 id="added">Added</h3>
 
-<h3 id="to-try-it-out-right-away">To try it out right away:</h3>
+<h3 id="changed">Changed</h3>
 
-<p>Make sure nodejs, npm and gulp is installed on your system
-Using a terminal/shell in the project folder, run the following commands:</p>
-
-<ul>
-<li>npm install -g browser-sync</li>
-<li>gulp build</li>
-<li>browser-sync start &ndash;server</li>
-<li>If on Windows and prompted, allow server to use your PC network</li>
-<li>Open your browser at <a href="http://localhost:3000/app">http://localhost:3000/app</a> (or whatever port browser-sync chooses per default)</li>
-</ul>
-
-<h2 id="create-a-search-and-suggestions-box">Create a Search and Suggestions box</h2>
-
-<p>If you need to facilitate search functionality to your MapsIndoors solution, you can use the Suggestions UI component. Add the suggestions stylesheet as a starting point for the design.</p>
-
-<pre><code class="language-html">&lt;link href=&quot;https://app.mapsindoors.com/mapsindoors/js/sdk/ui/Suggestions.css&quot; rel=&quot;stylesheet&quot; /&gt;
-</code></pre>
-
-<p>Add the following html somewhere in your document.</p>
-
-<pre><code class="language-html">&lt;div id=&quot;search-box&quot; class=&quot;mapsindoors search-container&quot;&gt;
-    &lt;input type=&quot;search&quot; placeholder=&quot;Search rooms and facilites...&quot; class=&quot;mapsindoors search&quot;&gt;
-    &lt;ul class=&quot;mapsindoors suggestions&quot;&gt;&lt;/ul&gt;
-&lt;/div&gt;
-</code></pre>
-
-<p>Given the above code, here is a simple example on how to use the component.</p>
-
-<pre><code class="language-javascript">// Div containing an input search element
-var searchDiv = document.getElementById('search-box');
-
-// If needed, insert the div element as a map control
-googleMap.controls[google.maps.ControlPosition.TOP_LEFT].push(searchDiv);
-
-// Instantiates suggestions object
-var suggestions = new mapsindoors.Suggestions(searchDiv);
-
-// Listen for user interaction - returns the selected location
-google.maps.event.addListener(suggestions, 'location_changed', function (location) {
-    console.dir(location);
-});
-</code></pre>
-
-<h3 id="setting-the-floor">Setting the floor</h3>
-
-<p>Sets the current visible floor. This will make visible the corresponding floorplans and the icons on top of it. If the floor index provided does not correlate to any building floor, then the “nearest” floor will be activated. E.g. providing <code>setFloor(4)</code> on a three story building (with floor-indexes 0, 1, 2) will make the topmost floorplan visible (with floor-index 2).
-Although floors may have names (“G” for 0, “M1” for 1, “M2” for 2 etc.) you need to set the floor using the index-value.</p>
-
-<pre><code class="language-javascript">mapsIndoors.setFloor(4)
-</code></pre>
-
-<h3 id="getting-the-floor">Getting the floor</h3>
-
-<p>Returns current floor index number (integer), e.g. 0 for ground floor, -1 for basement.</p>
-
-<pre><code class="language-javascript">mapsIndoors.getFloor()
-</code></pre>
-
-<h2 id="using-the-directionsrenderer">Using the directionsRenderer</h2>
-
-<p>Constructor. Takes directions render options as required parameter.</p>
-
-<pre><code class="language-javascript">var directionsRenderer = new mapsindoors.DirectionsRenderer(
-{
-   map: googleMap,               // The Google map on which to render
-   mapsindoors: mapsIndoors,     // The MapsIndoors instance
-   suppressMarkers: boolean,     // Optional - If true, action/step point markers will not be rendered
-   directions: directionsObject, // Optional - the actual directions object containing the directions data
-   legIndex: number              // Optional - the part of the route which should render (0, 1, 2, n), defaults to 0. Highest index is directionsObject.legs.length - 1.
-}
-);
-</code></pre>
-
-<h3 id="setting-the-style-of-the-direction-renderer">setting the style of the direction renderer</h3>
-
-<p>Sets the directions rendering style. For twaeking style of route polylines we use the <a href="https://developers.google.com/maps/documentation/javascript/reference#PolylineOptions">Google Maps v3 API PolylineOptions</a> format. The methods first parameter refers to a style type that can be either the travel mode for outdoor routes or the type of way for indoor routes. The possible style types include:</p>
+<h3 id="fixed">Fixed</h3>
 
 <ul>
-<li>default – The default style, will be used for all non-specified styles.</li>
-<li>driving – Style for driving travel mode.</li>
-<li>walking – Style for walking travel mode.</li>
-<li>transit – Style for transit travel mode.</li>
-<li>bicycling – Style for transit travel mode.</li>
-<li>footway – Style for regular indoor ways.</li>
-<li>steps – Style for steps/stairs.</li>
-<li>elevator – Style for elevators.</li>
-<li>escalator – Style for elevators.</li>
-<li>travellator – Style for travellators.</li>
-<li>residential – Style for roads at a venue.</li>
+<li>Only use localstorage to check solution when reloading.</li>
+<li>Collapsing the sidebar updates the map-size, preventing grey areas with no tiles.</li>
+<li>Fixed an error when trying to save a location with no name set for one or more languages.</li>
 </ul>
 
-<pre><code class="language-javascript">var directionsRenderer = new mapsindoors.DirectionsRenderer();
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>develop</p>
 
-directionsRenderer.setStyle('default',
-{
-   clickable:  boolean                                 // Indicates whether this Polyline handles mouse events. Defaults to true.
-   icons: Array&lt;IconSequence&gt;                          // The icons to be rendered along the polyline.
-   path: MVCArray&lt;LatLng&gt;|Array&lt;LatLng|LatLngLiteral&gt;  // The ordered sequence of coordinates of the Polyline. This path may be specified using either a simple array of LatLngs, or an MVCArray of LatLngs. Note that if you pass a simple array, it will be converted to an MVCArray Inserting or removing LatLngs in the MVCArray will automatically update the polyline on the map.
-   strokeColor: string                                 // The stroke color. All CSS3 colors are supported except for extended named colors.
-   strokeOpacity: number                               // The stroke opacity between 0.0 and 1.0.
-   strokeWeight: number                                // The stroke width in pixels.
-   visible: boolean                                    // Whether this polyline is visible on the map. Defaults to true.
-   zIndex: number                                      // The rendering index in relation to other polylines
-}
-);
-</code></pre>
+<h2 id="3-1-0-14-11-2017">[3.1.0] - 14-11-2017</h2>
 
-<h3 id="setting-the-direction">Setting the direction</h3>
+<h3 id="added-1">Added</h3>
 
-<p>Renders the route result using the applied render options. Used in conjunction with a DirectionsService, this is an example of displaying a route on the map.</p>
+<ul>
+<li>Zoom level indcator.</li>
+<li>Modified and modified by to the location list.</li>
+</ul>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
 
-<pre><code class="language-javascript">var googleMap = new google.maps.Map(...);
+<h3 id="changed-1">Changed</h3>
 
-var directionsService = new mapsindoors.DirectionsService();
-var renderer = new mapsindoors.DirectionsRenderer({ map: googleMap });
+<ul>
+<li>Updated to Angular 5.</li>
+<li>Types has a create/edit panel.</li>
+<li>Types page changed to focus more on display settings.</li>
+</ul>
 
-directionsService.route(
-   {
-      origin: {
-         lat: 55.687791059149376,
-         lng: 12.571580452361996,
-         floor: 0
-      },
-      destination: {
-         lat: 55.687476568798,
-         lng: 12.568619293609554,
-         floor: 0
-      },
-      travelMode: &quot;WALKING&quot;
-      avoidStairs: true
-   }
-).then(function (result) {
-   renderer.setDirections(result);
-});
-</code></pre>
+<h3 id="fixed-1">Fixed</h3>
 
-<h3 id="getting-the-location-using-queries">Getting the location using queries</h3>
+<ul>
+<li>Bug where categories would not be set on locations.</li>
+<li>Bug where new locations with categories would not be created.</li>
+<li>Login issues when using the email/password form.</li>
+</ul>
 
-<p>Get locations from MapsIndoors using a query object (optional). With no query parameter, all published locations will be fetched.</p>
+<h2 id="3-0-0-06-11-2017">[3.0.0] - 06-11-2017</h2>
 
-<pre><code class="language-javascript">var locations = new mapsindoors.LocationsService();
+<h3 id="added-2">Added</h3>
 
-locations.getLocations(
-{
-   q: &quot;lounge&quot;,         //Search for matches in location name or aliases
-   building: &quot;34&quot;,      //Fetch from specific building, using the administrative id of the building
-   venue: &quot;VenueA&quot;,     //Fetch from specific venue, using name of venue
-   floor: 1,                     //Fetch from 1st floor
-   take: 10,                     //Fetch only 10 locations
-   skip: 10,                     //Skip first 10 in result
-   near: {lat:57.5, lng: 12.9}   //Sort by proximity to geographic point
-   radius: 50,           //Fetch only nearest within meters from near
-   orderBy: &quot;name&quot;      //Sort by name (possible values are Name, Floor,
-                        //Building, Venue, Type and RoomId)
-}
-).then(function(data) {
-   // returns an array of locations that matches the criteria
-});
-</code></pre>
+<ul>
+<li>Customer and partners page.</li>
+<li>App configurations page.</li>
+<li>Network visualiser.</li>
+<li>Categories management. It is now possible to create, edit and delete categories.</li>
+<li>Entering a category name when multiple languages are present in a solution will try to translate via Google translate API.</li>
+<li>Import graphs.</li>
+<li>Automatic user invitaions.</li>
+<li>Reset password.</li>
+<li>Solutions management.</li>
+<li>New filters for locations.</li>
+</ul>
 
-<h3 id="clearing">Clearing</h3>
+<h3 id="changed-2">Changed</h3>
 
-<p>Clear the current route rendering.</p>
+<ul>
+<li>Locations are now managed on venue level.</li>
+<li>Menu is split into venue mangement, general settings and administration.</li>
+<li>Top level venue select.</li>
+<li>Type settings has a new layout which is easier to use and takes up less space.</li>
+<li>Venue and buildings became the Master data page.</li>
+<li>Locations is now one page with view settings for map and list.</li>
+<li>User management for customers now lives in a solution limited space.</li>
+<li>User management reworked.</li>
+<li>New bulk edit.</li>
+<li>New export map.</li>
+</ul>
 
-<pre><code class="language-javascript">directionsRenderer.clear();
-</code></pre>
+<h3 id="fixed-2">Fixed</h3>
 
-<h2 id="using-the-directionsservice">Using the directionsService</h2>
+<ul>
+<li>Remember last solution.</li>
+<li>Custom fields update when changing type of a location.</li>
+<li>Location search now works as intended.</li>
+<li>Hundreds of bugs. Too many to list, the codebase is entirely new.</li>
+</ul>
 
-<p>Constructor. Instantiates a service that can be used for making route requests.</p>
+<h3 id="removed">Removed</h3>
 
-<pre><code class="language-javascript">route( request:DirectionsRequest )
-</code></pre>
-
-<p>Request routing from a point to another. The request object aligns to the <a href="https://developers.google.com/maps/documentation/javascript/3.exp/reference#DirectionsRequest">Google Maps V3 API DirectionsRequest object specification</a>, but with floor properties on origin and destination. Furthermore, avoidStairs boolean can be set to request routes for both disabled users and users without disabilities.</p>
-
-<pre><code class="language-javascript">var directionsService = new mapsindoors.DirectionsService();
-
-directionsService.route(
-{
-   origin: {lat:57.5, lng: 12.9, floor: 0},
-   destination: {lat:57.5, lng: 12.9, floor: 0},
-   // MapsIndoors options
-   avoidStairs: true,
-   // Google Directions options
-   travelMode: google.maps.TravelMode,
-   transitOptions: {...},
-   avoidFerries: true,
-   ...
-}
-).then(function(routeResult) {
-   // Result will contain possible routes or none if routing failed.
-});
-</code></pre>
-
-<h2 id="using-the-locationservice">Using the LocationService</h2>
-
-<p>Constructor.</p>
-
-<pre><code class="language-javascript">LocationsService()
-</code></pre>
-
-<h3 id="getting-the-categories">Getting the categories</h3>
-
-<p>Get the unique categories and their translation used by published locations. Typically, this can be used to build a menu for list or map filtering of locations.</p>
-
-<pre><code class="language-javascript">var locations = new mapsindoors.LocationsService();
-
-locations.getCategories().then(function(categories) {
-   // Returns localized category list with structure { office: &quot;Office&quot;, ... } e.g. for english.
-});
-</code></pre>
-
-<h3 id="getting-the-types">Getting the types</h3>
-
-<p>A set of location types is defined for every MapsIndoors solution. The current list of types can be retrieved like this:</p>
-
-<pre><code class="language-javascript">var locations = new mapsindoors.LocationService();
-
-locations.getTypes().then(function(types) {
-   // returns array of types with format { name:string, icon:string }
-});
-</code></pre>
-
-<h3 id="getting-the-location-details">Getting the location details</h3>
-
-<p>Get the full details object of a single location. Pass the MapsIndoors id string present in any location object at <code>location.id</code>.</p>
-
-<pre><code class="language-javascript">var locations = new mapsindoors.LocationsService();
-// Get all locations
-locations.getLocations().then(function(data) {
-   locations.getLocationDetails(data[0].id).then(function(detailedData) {
-      // Returns a full-detail location object
-   });
-});
-</code></pre>
+<ul>
+<li>AngularJS.</li>
+<li>Bootstrap 3.0.</li>
+<li>Unused libraries.</li>
+<li>Complexity.</li>
+</ul>
 
 
 			<aside class="copyright" role="note">
@@ -566,7 +402,7 @@ locations.getLocations().then(function(data) {
 <nav class="pagination" aria-label="Footer">
   <div class="previous">
   
-      <a href="https://mapsindoors.github.io/web/" title="MapsIndoors for Web - Getting started">
+      <a href="https://mapsindoors.github.io/android/changelog/" title="Changelog">
         <span class="direction">
           Previous
         </span>
@@ -576,7 +412,7 @@ locations.getLocations().then(function(data) {
           </div>
           <div class="stretch">
             <div class="title">
-              MapsIndoors for Web - Getting started
+              Changelog
             </div>
           </div>
         </div>
@@ -586,14 +422,14 @@ locations.getLocations().then(function(data) {
 
   <div class="next">
   
-      <a href="https://mapsindoors.github.io/web/reference/" title="MapsIndoors for Web - Reference Guide">
+      <a href="https://mapsindoors.github.io/ios/changelog/" title="Changelog">
         <span class="direction">
           Next
         </span>
         <div class="page">
           <div class="stretch">
             <div class="title">
-              MapsIndoors for Web - Reference Guide
+              Changelog
             </div>
           </div>
           <div class="button button-next" role="button" aria-label="Next">
