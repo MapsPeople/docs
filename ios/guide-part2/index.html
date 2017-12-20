@@ -73,7 +73,7 @@
     
 
   </head>
-  <body class="palette-primary-light-blue palette-accent-orange">
+  <body class="palette-primary-green palette-accent-orange">
 
 
 
@@ -422,8 +422,9 @@ func onRouteResultReady(_ route: MPRoute!) {
   myMapControl.setupMap(with: &quot;YOUR_SOLUTION_ID&quot;, site: &quot;YOUR_SITE_ID&quot;, locations: myProvider, venues: nil, routing: nil)
 </code></pre>
 
-<p>## Route restrictions
- Add a restriction to the route by setting the avoid argument. Avoid stairs on the route using the following restriction parameter:</p>
+<h2 id="route-restrictions">Route restrictions</h2>
+
+<p>Add a restriction to the route by setting the avoid argument. Avoid stairs on the route using the following restriction parameter:</p>
 
 <pre><code class="language-swift"> // restrictions table
  let restrictions = [&quot;stairs&quot;]
@@ -535,6 +536,29 @@ func onRouteResultReady(_ route: MPRoute!) {
 <pre><code class="language-swift"> directionRenderer.nextRouteLegButton.addTarget(self, action: #selector(showNextRouteLeg), for: UIControlEventTouchUpInside)
  directionRenderer.previousRouteLegButton.addTarget(self, action: #selector(showPreviousRouteLeg), for: UIControlEventTouchUpInside)
 </code></pre>
+
+<h2 id="determining-and-setting-a-user-location">Determining and setting a user location</h2>
+
+<p>MapsIndoors can show the user position, but to do that it needs to know the user’s position. This can either be set manually by the app or using a position provider. To set it manually, simply call the map control directly with a location and floor, for this case we are going to set it as the venue position:</p>
+
+<pre><code class="language-swift">let position = MPPositionIndicator.init(point: MPPoint.init(lat: 57.0, lon: 10.0, zValue: 1), andName: &quot;My location&quot;);
+myMapControl.currentPosition = position
+</code></pre>
+
+<p>A position provider is normally easier to use for real time positioning. To create a position provider make a class that implements the PositionProvider interface and add it to your MapControl like this:</p>
+
+<h3 id="using-a-positioning-provider">Using a positioning provider</h3>
+
+<p>The GPS provider is part of the demo app: GPSPositionProvider.</p>
+
+<pre><code class="language-swift">//Add a position provider in able to track the user's position.
+gpsProvider = GPSPositionProvider(MapsIndoors.getSolutionId())
+//Telling map control about our provider
+myMapControl.addPositionProvider(gpsProvider)
+gpsProvider.startPositioning()
+</code></pre>
+
+<p>To know more about this subject, please read this <a href="https://mapsindoors.github.io/introductions/indoor-positioning">Introduction to the field of Indoor Positioning</a>.</p>
 
 
 			<aside class="copyright" role="note">

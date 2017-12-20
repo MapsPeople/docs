@@ -9,18 +9,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>About - MapsIndoors Developers</title>
+    <title>Indoor Positioning with MapsIndoors - MapsIndoors Developers</title>
     <meta name="generator" content="Hugo 0.26" />
 
     
     <meta name="description" content="Everything you need to get started with MapsIndoors.">
     
-    <link rel="canonical" href="https://mapsindoors.github.io/about/">
+    <link rel="canonical" href="https://mapsindoors.github.io/introductions/indoor-positioning/">
     
     <meta name="author" content="MapsPeople">
     
 
-    <meta property="og:url" content="https://mapsindoors.github.io/about/">
+    <meta property="og:url" content="https://mapsindoors.github.io/introductions/indoor-positioning/">
     <meta property="og:title" content="MapsIndoors Developers">
     <meta property="og:image" content="https://mapsindoors.github.io/images/logo.png">
     <meta name="apple-mobile-web-app-title" content="MapsIndoors Developers">
@@ -106,7 +106,7 @@
     </div>
     <div class="stretch">
       <div class="title">
-        About
+        Indoor Positioning with MapsIndoors
       </div>
     </div>
 
@@ -222,9 +222,22 @@
 
 	<article class="article">
 		<div class="wrapper">
-			<h1>About </h1>
+			<h1>Indoor Positioning with MapsIndoors </h1>
 
-			
+			<p>To get an introduction to the field of indoor positioning, we recommend <a href="https://www.mapspeople.com/blog/mapsindoors/indoor-positioning-101/">this blog post</a> for a start.</p>
+
+<p>MapsIndoors SDK is not an IPS (Indoor Positioning Service). MapsIndoors provides indoor maps and indoor directions, and since it is based on Google Maps, we also provide seamless indoor/outdoor integration.</p>
+
+<p>With this in mind you need to find an IPS and then use the location from that IPS in MapsIndoors. To some extend iOS CoreLocation and Android Location Services can fulfill the role of an IPS, depending on the building infrastructure. So you might try this in your first iteration. You will need some basic knowledge of the LocationManager on Android and the CLLocationManager on iOS.</p>
+
+<p>We have made implementations for the platform LocationManagers in demo apps shipped with the MapsIndoors SDK:</p>
+
+<p><a href="https://github.com/MapsIndoors/MapsIndoorsAndroid/blob/master/app/src/main/java/com/mapsindoors/positionprovider/GPSPositionProvider.java">GPSPositionProvider for Android</a></p>
+
+<p><a href="https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/MapsIndoors/Services/GPSPositionProvider.m">GPSPositionProvider for iOS</a></p>
+
+<p>This provider is then passed to the MapsIndoors&rsquo; MapControl instance using a method set/addPositionProvider on a MapControl instance, like explained <a href="https://mapsindoors.github.io/android/guide-part2/#using-a-positioning-provider">here for Android</a> and here for <a href="https://mapsindoors.github.io/ios/guide-part2/#using-a-positioning-provider">here for iOS</a>.</p>
+
 
 			<aside class="copyright" role="note">
 				
@@ -242,7 +255,7 @@
 <nav class="pagination" aria-label="Footer">
   <div class="previous">
   
-      <a href="https://mapsindoors.github.io/ios/guides/search-and-directions/" title="">
+      <a href="https://mapsindoors.github.io/" title="Indoor Navigation Built with Google Maps">
         <span class="direction">
           Previous
         </span>
@@ -252,7 +265,7 @@
           </div>
           <div class="stretch">
             <div class="title">
-              
+              Indoor Navigation Built with Google Maps
             </div>
           </div>
         </div>
@@ -262,14 +275,14 @@
 
   <div class="next">
   
-      <a href="https://mapsindoors.github.io/android/changelog/" title="Changelog">
+      <a href="https://mapsindoors.github.io/firststeps/" title="MapsIndoors First Steps">
         <span class="direction">
           Next
         </span>
         <div class="page">
           <div class="stretch">
             <div class="title">
-              Changelog
+              MapsIndoors First Steps
             </div>
           </div>
           <div class="button button-next" role="button" aria-label="Next">

@@ -55,6 +55,15 @@
   </url>
   
   <url>
+    <loc>https://mapsindoors.github.io/introductions/indoor-positioning/</loc>
+  </url>
+  
+  <url>
+    <loc>https://mapsindoors.github.io/introductions/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://mapsindoors.github.io/ios/</loc>
     <priority>0</priority>
   </url>
