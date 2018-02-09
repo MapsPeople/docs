@@ -9,18 +9,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>MapsIndoors for iOS - Getting Started - MapsIndoors Developers</title>
+    <title>Changelog - MapsIndoors Developers</title>
     <meta name="generator" content="Hugo 0.26" />
 
     
     <meta name="description" content="Everything you need to get started with MapsIndoors.">
     
-    <link rel="canonical" href="https://mapsindoors.github.io/ios/v2/">
+    <link rel="canonical" href="https://mapsindoors.github.io/ios/v2/changelog/">
     
     <meta name="author" content="MapsPeople">
     
 
-    <meta property="og:url" content="https://mapsindoors.github.io/ios/v2/">
+    <meta property="og:url" content="https://mapsindoors.github.io/ios/v2/changelog/">
     <meta property="og:title" content="MapsIndoors Developers">
     <meta property="og:image" content="https://mapsindoors.github.io/images/logo.png">
     <meta name="apple-mobile-web-app-title" content="MapsIndoors Developers">
@@ -106,7 +106,7 @@
     </div>
     <div class="stretch">
       <div class="title">
-        MapsIndoors for iOS - Getting Started
+        Changelog
       </div>
     </div>
 
@@ -218,14 +218,11 @@
 
 
 
-<a class="current" title="Getting Started" href="https://mapsindoors.github.io/ios/v2">
+<a  title="Getting Started" href="https://mapsindoors.github.io/ios/v2">
 	
 	Getting Started
 </a>
 
-
-<ul id="scrollspy">
-</ul>
 
 
       
@@ -295,99 +292,292 @@
 
 	<article class="article">
 		<div class="wrapper">
-			<h1>MapsIndoors for iOS - Getting Started </h1>
+			<h1>Changelog </h1>
 
 			
 
-<h2 id="basic-example">Basic Example</h2>
+<p>Changelog for MapsIndoors for iOS. This document structure is based on <a href="http://keepachangelog.com/en/1.0.0/">Keep a Changelog</a> and the project adheres to <a href="http://semver.org/spec/v2.0.0.html">Semantic Versioning</a>.</p>
 
-<p>You will find in the <a href="https://github.com/namine92/mapsIndooriOSTut">link</a> an up and running project that contains the minimum code to start a MapsIndoors project.</p>
+<!---
+ ## [Unreleased]
+ -->
 
-<p>You can also follow the steps below to start your app from scratch or to enhance the Basic Example, more features will be explained in the <a href="https://mapsindoors.github.io/ios/v2/guides">guides</a>.</p>
+<h2 id="1-12-3-beta1-2018-01-12">[1.12.3-beta1] - 2018-01-12</h2>
 
-<h2 id="setup-cocoapods">Setup CocoaPods</h2>
-
-<p>If you haven’t already, install CocoaPods:
-<a href="https://guides.cocoapods.org/using/getting-started.html">Getting Started with CocoaPods</a></p>
-
-<h2 id="setup-mapsindoors">Setup MapsIndoors</h2>
+<h3 id="fixed">Fixed</h3>
 
 <ul>
-<li>If you don&rsquo;t have an Xcode project yet, create one now and save it to your local machine. (If you&rsquo;re new to iOS development, create a Single View Application.)</li>
-<li>Create a file named Podfile in your project directory. This file defines your project&rsquo;s dependencies.</li>
-<li>Edit the Podfile and add your dependencies. Here is an example:</li>
+<li>Fixed issue causing <code>MPVenueProvider</code> not to return any buildings once in a while</li>
 </ul>
 
-<pre><code>source 'https://github.com/CocoaPods/Specs.git'
-target 'YOUR_APPLICATION_TARGET_NAME_HERE' do
-  pod 'MapsIndoors' '2.0.0-alpha39'
-end
-</code></pre>
+<h2 id="1-12-2-beta17-2017-11-03">[1.12.2-beta17] - 2017-11-03</h2>
+
+<h3 id="fixed-1">Fixed</h3>
 
 <ul>
-<li>Save the Podfile.</li>
-<li>Open a terminal and go to the directory containing the Podfile:</li>
-<li><code>cd &lt;path-to-project&gt;</code></li>
-<li>Run the <code>pod install</code> command. This will install the APIs specified in the Podfile, along with any dependencies they may have.</li>
-<li>Close Xcode, and then open (double-click) your project&rsquo;s .xcworkspace file to launch Xcode. From this time onwards, you must use the .xcworkspace file to open the project.</li>
+<li>Fixed issue causing <code>MPDirectionsService</code> not to return proper callbacks</li>
 </ul>
 
-<p>Add your credentials to your <code>AppDelegate.swift</code> as follows:</p>
+<h2 id="1-12-2-beta15-2017-11-03">[1.12.2-beta15] - 2017-11-03</h2>
 
-<p>Add the following import statements:</p>
-
-<pre><code>import GoogleMaps
-import MapsIndoors
-</code></pre>
-
-<p>Add the following to your <code>application(_:didFinishLaunchingWithOptions:)</code> method:</p>
-
-<pre><code>GMSServices.provideAPIKey(      &quot;YOUR_GOOGLE_API_KEY&quot;)
-MapsIndoors.provideAPIKey(      &quot;YOUR_MAPSINDOORS_API_KEY&quot;, 
-                googleAPIKey:   &quot;YOUR_GOOGLE_API_KEY&quot;, 
-                contentKey:     &quot;YOUR_MAPSINDOORS_CONTENT_KEY&quot;)
-</code></pre>
-
-<p>Replace:</p>
+<h3 id="fixed-2">Fixed</h3>
 
 <ul>
-<li><code>YOUR_GOOGLE_API_KEY</code> with your Google API key</li>
-<li><code>YOUR_MAPSINDOORS_API_KEY</code> with your MapsIndoors API key. Some MapsIndoors solutions is deployed with open APIs, in this case, you may pass <code>nil</code> as the parameter value</li>
-<li><code>YOUR_MAPSINDOORS_CONTENT_KEY</code> with your Google API key</li>
+<li>Fixed issues related to language code validation.</li>
 </ul>
 
-<h2 id="setup-a-google-map-with-mapsindoors">Setup a Google Map with MapsIndoors</h2>
+<h2 id="1-12-2-beta13-2017-11-02">[1.12.2-beta13] - 2017-11-02</h2>
 
-<p>Use the <code>MPMapControl</code> class to set up a Google map with MapsPeople venues, buildings &amp; locations. Place the following code in the <code>viewDidLoad</code> method in your view controller displaying the Google map.</p>
-
-<pre><code>// Place the map above the demo-building
-let camera = GMSCameraPosition.camera(withLatitude: 57.08585, longitude: 9.95751, zoom: 17)
-// Initialise the Google map
-mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
-view = mapView
-let myMapControl = MPMapControl.init(map: mapView)!
-</code></pre>
-
-<p>Head to the <a href="https://mapsindoors.github.io/ios/v2/guides">guides</a> to learn about searching, getting directions, display settings and more.</p>
-
-<h2 id="download-and-bundle-offline-content">Download and Bundle Offline Content</h2>
-
-<p>If needed, it is possible to bundle MapsIndoors content to make your app work better in offline or poor network conditions. (Please note that while MapsIndoors content can be used offline, Google Maps does not provide offline features. Outdoor wayfinding, google places searches will be unavailable and the surrounding map may be unavailable unless it has been cached.)</p>
-
-<p>In your app targets build phases, add a &ldquo;Run Script&rdquo; build phase containing the following command:</p>
-
-<pre><code>${SRCROOT}/Pods/MapsIndoors/Scripts/derive_ressources.sh --content-key=YOUR_MAPSINDOORS_CONTENT_KEY --api-key=YOUR_MAPSINDOORS_API_KEY --language=en
-</code></pre>
-
-<p>Replace:</p>
+<h3 id="fixed-3">Fixed</h3>
 
 <ul>
-<li><code>YOUR_MAPSINDOORS_CONTENT_KEY</code> with your own MapsIndoors content key</li>
-<li><code>YOUR_MAPSINDOORS_API_KEY</code> with your MapsIndoors API key. Some MapsIndoors solutions is deployed with open APIs, in this case, you may remove this input parameter entirely</li>
-<li><code>en</code> with any one of the languages that your MapsIndoors solution supports (Two letter ISO-639-1 language code). If you only have one language deployed you may remove this input parameter entirely</li>
+<li><p>Fixed problems related to offline/flight-mode.</p>
+
+<h3 id="changed">Changed</h3></li>
+
+<li><p>Search algorithm improvement.</p></li>
 </ul>
 
-<p>Depending on the overall size of your MapsIndoors deployment, this may take some time, so during development you might want to check the &ldquo;Run script only when installing&rdquo; option. This means that content will only be bundled when archiving for e.g. a release.</p>
+<h2 id="1-12-1-beta1-2017-10-13">[1.12.1-beta1] - 2017-10-13</h2>
+
+<h3 id="fixed-4">Fixed</h3>
+
+<ul>
+<li>Fixed possible calling of callback block twice in <code>MPMessageProvider</code></li>
+</ul>
+
+<h2 id="1-12-0-beta3-2017-10-09">[1.12.0-beta3] - 2017-10-09</h2>
+
+<h3 id="added">Added</h3>
+
+<ul>
+<li><p>Added a <code>MPRouteLeg.legType</code>  property</p>
+
+<h3 id="changed-1">Changed</h3></li>
+
+<li><p>Internal works: More backend resolving improvements and SDK session handling</p></li>
+</ul>
+
+<h2 id="1-11-3-beta3-2017-09-26">[1.11.3-beta3] - 2017-09-26</h2>
+
+<h3 id="changed-2">Changed</h3>
+
+<ul>
+<li>Internal works: Backend resolving improvements</li>
+</ul>
+
+<h2 id="1-11-2-beta1-2017-09-15">[1.11.2-beta1] - 2017-09-15</h2>
+
+<h3 id="changed-3">Changed</h3>
+
+<ul>
+<li>Improved the internal works of <code>[MPVenuesProvider getBuildingWithinBoundsAsync]</code>.</li>
+</ul>
+
+<h2 id="1-11-1-beta8-2017-09-14">[1.11.1-beta8] - 2017-09-14</h2>
+
+<h3 id="fixed-5">Fixed</h3>
+
+<ul>
+<li>Fixed multi-language issue in ´MPCategoriesProvider´.</li>
+</ul>
+
+<h2 id="1-11-1-beta7-2017-09-12">[1.11.1-beta7] - 2017-09-12</h2>
+
+<h3 id="changed-4">Changed</h3>
+
+<ul>
+<li>Internal refactoring.</li>
+</ul>
+
+<h2 id="1-11-1-beta6-2017-09-12">[1.11.1-beta6] - 2017-09-12</h2>
+
+<h3 id="changed-5">Changed</h3>
+
+<ul>
+<li>Avoid auto-switching current building&rsquo;s floor if a non-empty search result is not visible on that new floor.</li>
+</ul>
+
+<h3 id="fixed-6">Fixed</h3>
+
+<ul>
+<li>Fixed missing call to completionHandler in rare occations using <code>MPLocationsProvider</code>.</li>
+</ul>
+
+<h2 id="1-11-1-beta4-2017-09-05">[1.11.1-beta4] - 2017-09-05</h2>
+
+<h3 id="fixed-7">Fixed</h3>
+
+<ul>
+<li>Added missing call to completionHandler when route not found using <code>MPDirectionsService</code>.</li>
+</ul>
+
+<h2 id="1-11-1-beta3-2017-09-05">[1.11.1-beta3] - 2017-09-05</h2>
+
+<h3 id="fixed-8">Fixed</h3>
+
+<ul>
+<li>Fixed an crash occuring when the floorselector is initially set hidden <code>MPMapControl.floorSelectorHidden = YES</code>, and subsequently shown via <code>MPMapControl.floorSelectorHidden = NO</code>.</li>
+</ul>
+
+<h2 id="1-11-1-beta2-2017-08-29">[1.11.1-beta2] - 2017-08-29</h2>
+
+<h3 id="fixed-9">Fixed</h3>
+
+<ul>
+<li>Fixed issue getting multiple delegate or completionHandler calls from <code>MPVenueProvider</code>.</li>
+</ul>
+
+<h2 id="1-11-1-beta1-2017-08-29">[1.11.1-beta1] - 2017-08-29</h2>
+
+<h3 id="fixed-10">Fixed</h3>
+
+<ul>
+<li>Fixed issue getting no route results when creating a directions request before initialising <code>MPMapControl</code>.</li>
+</ul>
+
+<h2 id="1-11-0-beta2-2017-08-29">[1.11.0-beta2] - 2017-08-29</h2>
+
+<h3 id="changed-6">Changed</h3>
+
+<ul>
+<li>Internal refactoring.</li>
+</ul>
+
+<h2 id="1-11-0-beta1-2017-08-29">[1.11.0-beta1] - 2017-08-29</h2>
+
+<h3 id="fixed-11">Fixed</h3>
+
+<ul>
+<li>Fixed issue with <code>MPLocationsProvider</code> fired in parallel.</li>
+<li>Added property queryMode to <code>MPLocationsQuery</code>, can be set to <code>MPLocationsQueryModeAutocomplete</code> or <code>MPLocationsQueryModeNormal</code> (default).</li>
+</ul>
+
+<h2 id="1-10-5-beta2-2017-08-24">[1.10.5-beta2] - 2017-08-24</h2>
+
+<h3 id="fixed-12">Fixed</h3>
+
+<ul>
+<li>MPFloorSelector: Fixed a few layout issues.</li>
+</ul>
+
+<h2 id="1-10-5-beta1-2017-08-24">[1.10.5-beta1] - 2017-08-24</h2>
+
+<h3 id="fixed-13">Fixed</h3>
+
+<ul>
+<li>MPLocationsProvider: Unable to filter by Type in some cases.</li>
+</ul>
+
+<h2 id="1-10-4-beta1-2017-08-18">[1.10.4-beta1] - 2017-08-18</h2>
+
+<h3 id="fixed-14">Fixed</h3>
+
+<ul>
+<li>TileService: Only report error when we cant get tileUrlData <em>and</em> we dont have cached data.</li>
+<li>Prevent multiple calls to completionHandler from -[MapsIndoors fetchDataForOfflineUse:]</li>
+<li>Calls to -[MPSolutionProvider getSolutionAsync:completionHandler:] while a call is already ongoing would fail to call completion handler.</li>
+</ul>
+
+<h2 id="1-10-3-beta1-2017-08-09">[1.10.3-beta1] - 2017-08-09</h2>
+
+<h3 id="changed-7">Changed</h3>
+
+<ul>
+<li>Updated Google Maps SDK dependency.</li>
+</ul>
+
+<h2 id="1-10-2-beta6-2017-08-09">[1.10.2-beta6] - 2017-08-09</h2>
+
+<h3 id="changed-8">Changed</h3>
+
+<ul>
+<li>Optimized tile loading performance.</li>
+</ul>
+
+<h2 id="1-10-2-beta5-2017-08-09">[1.10.2-beta5] - 2017-08-09</h2>
+
+<h2 id="1-10-2-beta4-2017-07-14">[1.10.2-beta4] - 2017-07-14</h2>
+
+<h3 id="changed-9">Changed</h3>
+
+<ul>
+<li>Internal works, optimizing network requests and caching mechanisms.</li>
+</ul>
+
+<h2 id="1-10-1-2017-07-14">[1.10.1] - 2017-07-14</h2>
+
+<h3 id="fixed-15">Fixed</h3>
+
+<ul>
+<li>Fix <code>MPLocation.copy()</code> results in nil <code>MPLocation.descr</code>.</li>
+</ul>
+
+<h2 id="1-10-0-2017-07-14">[1.10.0] - 2017-07-14</h2>
+
+<h3 id="fixed-16">Fixed</h3>
+
+<ul>
+<li>Fix geometry property nil when copying <code>MPLocation</code></li>
+<li>Fix unlabeled icons not respecting <code>MapsIndoors.mapIconSize</code></li>
+</ul>
+
+<h3 id="added-1">Added</h3>
+
+<ul>
+<li>Support for statically adding a position provider, optionally by setting <code>MapsIndoors.positionProvider</code></li>
+</ul>
+
+<h2 id="1-10-0-beta5-2017-07-13">[1.10.0-beta5] - 2017-07-13</h2>
+
+<h3 id="fixed-17">Fixed</h3>
+
+<ul>
+<li>Fix geometry property nil when copying <code>MPLocation</code></li>
+<li>Fix unlabeled icons not respecting <code>MapsIndoors.mapIconSize</code></li>
+</ul>
+
+<h2 id="1-10-0-beta-2017-07-12">[1.10.0-beta] - 2017-07-12</h2>
+
+<h3 id="added-2">Added</h3>
+
+<ul>
+<li>Support for statically adding a position provider, optionally by setting <code>MapsIndoors.positionProvider</code></li>
+</ul>
+
+<h2 id="1-9-1-beta1-2017-07-09">[1.9.1-beta1] - 2017-07-09</h2>
+
+<h3 id="added-3">Added</h3>
+
+<ul>
+<li>Support for custom image provider, optionally by setting <code>MapsIndoors.imageProvider</code></li>
+</ul>
+
+<h2 id="1-9-0-beta2-2017-07-08">[1.9.0-beta2] - 2017-07-08</h2>
+
+<h3 id="fixed-18">Fixed</h3>
+
+<ul>
+<li>Fix image streching on non-quadratic marker icons</li>
+</ul>
+
+<h2 id="1-9-0-beta-2017-07-05">[1.9.0-beta] - 2017-07-05</h2>
+
+<h3 id="added-4">Added</h3>
+
+<ul>
+<li>Support for venue display rules (optional)</li>
+<li>Support for venue markers (optional), enabled by a display rule called &ldquo;venue&rdquo;</li>
+<li>Property iconSize to <code>MPLocationDisplayRule</code></li>
+<li>Static properties <code>mapLabelColor</code> and <code>mapLabelFont</code> to <code>MapsIndoors</code></li>
+<li>Default click handling to venue markers</li>
+</ul>
+
+<h3 id="fixed-19">Fixed</h3>
+
+<ul>
+<li>Internal bugfixing</li>
+</ul>
 
 
 			<aside class="copyright" role="note">
@@ -406,7 +596,7 @@ let myMapControl = MPMapControl.init(map: mapView)!
 <nav class="pagination" aria-label="Footer">
   <div class="previous">
   
-      <a href="https://mapsindoors.github.io/ios/v1/" title="MapsIndoors for iOS - Getting Started">
+      <a href="https://mapsindoors.github.io/ios/v1/changelog/" title="Changelog">
         <span class="direction">
           Previous
         </span>
@@ -416,7 +606,7 @@ let myMapControl = MPMapControl.init(map: mapView)!
           </div>
           <div class="stretch">
             <div class="title">
-              MapsIndoors for iOS - Getting Started
+              Changelog
             </div>
           </div>
         </div>
@@ -426,14 +616,14 @@ let myMapControl = MPMapControl.init(map: mapView)!
 
   <div class="next">
   
-      <a href="https://mapsindoors.github.io/ios/v1/guide-part2/" title="MapsIndoors for iOS - Part 2">
+      <a href="https://mapsindoors.github.io/cms/" title="Guide to the MapsIndoors CMS">
         <span class="direction">
           Next
         </span>
         <div class="page">
           <div class="stretch">
             <div class="title">
-              MapsIndoors for iOS - Part 2
+              Guide to the MapsIndoors CMS
             </div>
           </div>
           <div class="button button-next" role="button" aria-label="Next">

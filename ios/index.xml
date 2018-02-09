@@ -13,6 +13,15 @@
     
     <item>
       <title></title>
+      <link>https://mapsindoors.github.io/ios/changelog/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/ios/changelog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>https://mapsindoors.github.io/ios/v1/guides/search-and-directions/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -28,9 +37,17 @@ MPLocationQuery* q1 = [[MPLocationQuery alloc] init]; q1.solutionId = sID; q1.qu
       
       <guid>https://mapsindoors.github.io/ios/v1/changelog/</guid>
       <description>Changelog for MapsIndoors for iOS. This document structure is based on Keep a Changelog and the project adheres to Semantic Versioning.
-[1.12.2-beta15] - 2017-11-03 Fixed  Fixed issues related to language code validation.  [1.12.2-beta13] - 2017-11-02 Fixed  Fixed problems related to offline/flight-mode.
-Changed Search algorithm improvement.
-  [1.12.1-beta1] - 2017-10-13 Fixed  Fixed possible calling of callback block twice in MPMessageProvider  [1.12.0-beta3] - 2017-10-09 Added  Added a MPRouteLeg.</description>
+[1.12.3-beta1] - 2018-01-12 Fixed  Fixed issue causing MPVenueProvider not to return any buildings once in a while  [1.12.2-beta17] - 2017-11-03 Fixed  Fixed issue causing MPDirectionsService not to return proper callbacks  [1.12.2-beta15] - 2017-11-03 Fixed  Fixed issues related to language code validation.  [1.12.2-beta13] - 2017-11-02 Fixed  Fixed problems related to offline/flight-mode.</description>
+    </item>
+    
+    <item>
+      <title>Changelog</title>
+      <link>https://mapsindoors.github.io/ios/v2/changelog/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/ios/v2/changelog/</guid>
+      <description>Changelog for MapsIndoors for iOS. This document structure is based on Keep a Changelog and the project adheres to Semantic Versioning.
+[1.12.3-beta1] - 2018-01-12 Fixed  Fixed issue causing MPVenueProvider not to return any buildings once in a while  [1.12.2-beta17] - 2017-11-03 Fixed  Fixed issue causing MPDirectionsService not to return proper callbacks  [1.12.2-beta15] - 2017-11-03 Fixed  Fixed issues related to language code validation.  [1.12.2-beta13] - 2017-11-02 Fixed  Fixed problems related to offline/flight-mode.</description>
     </item>
     
     <item>

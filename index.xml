@@ -25,12 +25,31 @@
     
     <item>
       <title></title>
+      <link>https://mapsindoors.github.io/ios/changelog/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/ios/changelog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>https://mapsindoors.github.io/ios/v1/guides/search-and-directions/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://mapsindoors.github.io/ios/v1/guides/search-and-directions/</guid>
       <description>MPLocationsProvider* locationsProvider = [[MPLocationsProvider alloc] init]; MPDirectonsRenderer* renderer = [[MPDirectonsRenderer alloc] init]; MPDirectionsService* directionsService = [[MPDirectionsService alloc] initWithMapsIndoorsSolutionId: sID googleApiKey: gApiKey];
 MPLocationQuery* q1 = [[MPLocationQuery alloc] init]; q1.solutionId = sID; q1.query = @&amp;quot;location-name&amp;quot;; q1.max = 1; MPLocationQuery* q2 = [[MPLocationQuery alloc] init]; q2.solutionId = sID; q2.query = @&amp;quot;other-location-name&amp;quot;; q2.max = 1; [locationsProvider getLocationsUsingQueryAsync:q1 language:@&amp;quot;en&amp;quot; completionHandler:^(MPLocationDataset *locationData, NSError *error) { MPLocation* from = locationData.list.firstObject; [locationsProvider getLocationsUsingQueryAsync:q2 language:@&amp;quot;en&amp;quot; completionHandler:^(MPLocationDataset *locationData, NSError *error) { MPLocation* to = locationData.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://mapsindoors.github.io/web/changelog/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/web/changelog/</guid>
+      <description> Changelog Changelog for MapsIndoors SDK for JavaScript. This document structure is based on Keep a Changelog and the project adheres to Semantic Versioning.
+[Unreleased] [1.4.3] - 2017-10-10 Added  Changelog was added.  Fixed  Fixed a bug in the way the Google Directions is merged together with MapsIndoors Directions when origin or destination is outside on venue.  </description>
     </item>
     
     <item>
@@ -71,9 +90,17 @@ Added  Support for statically adding a position provider, optionally by setting 
       
       <guid>https://mapsindoors.github.io/ios/v1/changelog/</guid>
       <description>Changelog for MapsIndoors for iOS. This document structure is based on Keep a Changelog and the project adheres to Semantic Versioning.
-[1.12.2-beta15] - 2017-11-03 Fixed  Fixed issues related to language code validation.  [1.12.2-beta13] - 2017-11-02 Fixed  Fixed problems related to offline/flight-mode.
-Changed Search algorithm improvement.
-  [1.12.1-beta1] - 2017-10-13 Fixed  Fixed possible calling of callback block twice in MPMessageProvider  [1.12.0-beta3] - 2017-10-09 Added  Added a MPRouteLeg.</description>
+[1.12.3-beta1] - 2018-01-12 Fixed  Fixed issue causing MPVenueProvider not to return any buildings once in a while  [1.12.2-beta17] - 2017-11-03 Fixed  Fixed issue causing MPDirectionsService not to return proper callbacks  [1.12.2-beta15] - 2017-11-03 Fixed  Fixed issues related to language code validation.  [1.12.2-beta13] - 2017-11-02 Fixed  Fixed problems related to offline/flight-mode.</description>
+    </item>
+    
+    <item>
+      <title>Changelog</title>
+      <link>https://mapsindoors.github.io/ios/v2/changelog/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/ios/v2/changelog/</guid>
+      <description>Changelog for MapsIndoors for iOS. This document structure is based on Keep a Changelog and the project adheres to Semantic Versioning.
+[1.12.3-beta1] - 2018-01-12 Fixed  Fixed issue causing MPVenueProvider not to return any buildings once in a while  [1.12.2-beta17] - 2017-11-03 Fixed  Fixed issue causing MPDirectionsService not to return proper callbacks  [1.12.2-beta15] - 2017-11-03 Fixed  Fixed issues related to language code validation.  [1.12.2-beta13] - 2017-11-02 Fixed  Fixed problems related to offline/flight-mode.</description>
     </item>
     
     <item>
@@ -157,17 +184,6 @@ RoutingProvider routingProvider = new MPRoutingProvider(); routingProvider.</des
       
       <guid>https://mapsindoors.github.io/android/reference/</guid>
       <description>Please head to this reference manual.</description>
-    </item>
-    
-    <item>
-      <title>MapsIndoors for Web - Getting started</title>
-      <link>https://mapsindoors.github.io/web/changelog/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://mapsindoors.github.io/web/changelog/</guid>
-      <description>Basic Example You will find in the link an up and running project that contains the minimum code to start a MapsIndoors project. You can only run the project inside a web server, it&amp;rsquo;s already inside a static nodejs server so you have to install nodejs and npm before, then run :
-npm install  Then
-node app.js  You can also follow the steps below to start your app from scratch or to enhance the Basic Example, more advanced feature will be explained in the part 2 of this tutorial with a demo app that gives a showcase of the mapsIndoors in a complete app that you can test also.</description>
     </item>
     
     <item>
