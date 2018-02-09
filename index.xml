@@ -79,8 +79,7 @@ Added  Support for statically adding a position provider, optionally by setting 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://mapsindoors.github.io/cms/changelog/</guid>
-      <description>[3.1.1] - 16-11-2017 Added Changed Fixed  Only use localstorage to check solution when reloading. Collapsing the sidebar updates the map-size, preventing grey areas with no tiles. Fixed an error when trying to save a location with no name set for one or more languages.         develop
-[3.1.0] - 14-11-2017 Added  Zoom level indcator. Modified and modified by to the location list.</description>
+      <description>[3.3.0] - ??-12-2017 Added  Venue bounds, network visualiser. Edit venue bounds. Remember last venue (until changing solution). Create new venue. Delete venue. Toggle labels for locations map.  Changed  Moved from Angular Http to Angular HttpClient. Buildings moved to separate page.  Fixed [3.2.0] - 29-11-2017 Added  Label rotation and type for export map. Icon size for export map. Master data (venue, buildings) page. Tooltip for type and image in edit panel for locations.</description>
     </item>
     
     <item>
