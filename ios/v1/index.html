@@ -9,18 +9,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>MapsIndoors for Web - Reference Guide - MapsIndoors Developers</title>
+    <title>MapsIndoors for iOS - Getting Started - MapsIndoors Developers</title>
     <meta name="generator" content="Hugo 0.26" />
 
     
     <meta name="description" content="Everything you need to get started with MapsIndoors.">
     
-    <link rel="canonical" href="https://mapsindoors.github.io/web/reference/">
+    <link rel="canonical" href="https://mapsindoors.github.io/ios/v1/">
     
     <meta name="author" content="MapsPeople">
     
 
-    <meta property="og:url" content="https://mapsindoors.github.io/web/reference/">
+    <meta property="og:url" content="https://mapsindoors.github.io/ios/v1/">
     <meta property="og:title" content="MapsIndoors Developers">
     <meta property="og:image" content="https://mapsindoors.github.io/images/logo.png">
     <meta name="apple-mobile-web-app-title" content="MapsIndoors Developers">
@@ -106,7 +106,7 @@
     </div>
     <div class="stretch">
       <div class="title">
-        MapsIndoors for Web - Reference Guide
+        MapsIndoors for iOS - Getting Started
       </div>
     </div>
 
@@ -157,25 +157,37 @@
     
     
     
-  
-    
-    
-    
-  
-    
-    
-    
-    <a href="https://mapsindoors.github.io/web" class="project">
+    <a href="https://mapsindoors.github.io/ios/v2" class="project">
       <div class="banner">
         <div class="logo">
-          <img src="https://mapsindoors.github.io//logos/web-logo.svg" style="padding:10px">
+          <img src="https://mapsindoors.github.io//logos/apple-logo.svg" style="padding:10px">
         </div>
         <div class="name">
-          <strong>Web SDK <br /><span class="version">1.4.1</span></strong>
+          <strong>iOS SDK <br /><span class="version">2.0.0-alpha39</span></strong>
           
         </div>
       </div>
     </a>
+    
+  
+    
+    
+    
+    <a href="https://mapsindoors.github.io/ios/v1" class="project">
+      <div class="banner">
+        <div class="logo">
+          <img src="https://mapsindoors.github.io//logos/apple-logo.svg" style="padding:10px">
+        </div>
+        <div class="name">
+          <strong>iOS SDK <br /><span class="version">1.11.1</span></strong>
+          
+        </div>
+      </div>
+    </a>
+    
+  
+    
+    
     
   
     
@@ -194,9 +206,6 @@
           
           
           
-          
-          
-          
                   
           <ul>
             
@@ -204,7 +213,7 @@
 
 
 <li>
-    <span class="section">Web SDK</span>
+    <span class="section">iOS SDK</span>
     <ul>
       
         
@@ -212,35 +221,9 @@
 
 
 
-<a  title="Getting Started" href="https://mapsindoors.github.io/web">
+<a class="current" title="Getting Started" href="https://mapsindoors.github.io/ios/v1">
 	
 	Getting Started
-</a>
-
-
-
-      
-        
-        
-
-
-
-<a  title="Next Steps" href="https://mapsindoors.github.io/web/guide-part2">
-	
-	Next Steps
-</a>
-
-
-
-      
-        
-        
-
-
-
-<a class="current" title="Reference Docs" href="https://mapsindoors.github.io/web/reference">
-	
-	Reference Docs
 </a>
 
 
@@ -254,7 +237,33 @@
 
 
 
-<a  title="Changelog" href="https://mapsindoors.github.io/web/changelog">
+<a  title="Next Steps" href="https://mapsindoors.github.io/ios/v1/guide-part2">
+	
+	Next Steps
+</a>
+
+
+
+      
+        
+        
+
+
+
+<a  title="Reference Docs" href="https://app.mapsindoors.com/mapsindoors/reference/ios/index.html">
+	
+	Reference Docs
+</a>
+
+
+
+      
+        
+        
+
+
+
+<a  title="Changelog" href="https://mapsindoors.github.io/ios/v1/changelog">
 	
 	Changelog
 </a>
@@ -265,6 +274,9 @@
     </ul>
 </li>
           </ul>
+          
+          
+          
           
           
           
@@ -309,404 +321,120 @@
 
 	<article class="article">
 		<div class="wrapper">
-			<h1>MapsIndoors for Web - Reference Guide </h1>
+			<h1>MapsIndoors for iOS - Getting Started </h1>
 
 			
 
-<h2 id="mapsindoors">MapsIndoors</h2>
+<h2 id="basic-example">Basic Example</h2>
 
-<p><code>mapsindoors.MapsIndoors(opts:MapsIndoorsOptions)</code></p>
+<p>You will find in the <a href="https://github.com/namine92/mapsIndooriOSTut">link</a> an up and running project that contains the minimum code to start a MapsIndoors project.</p>
 
-<h3 id="methods">Methods</h3>
+<p>You can also follow the steps below to start your app from scratch or to enhance the Basic Example, more advanced feature will be explained in the <a href="https://mapsindoors.github.io/ios/guidepart2">part 2</a> of this tutorial with a demo app that gives a showcase of the mapsIndoors in a complete app that you can test also.</p>
 
-<pre><code>clear()
-find(args:string|FindOptions) : Promise(Location)
-fitBuilding(buildingId:string)
-fitVenue(venueId?:string)
-getBuilding() : Building
-getDisplayRule(type:string) : DisplayRuleLiteral
-getFloor() : number
-getLocationsVisible() : bool
-getMap() : google.maps.Map
-getStyles() : VenueStyle[]
-getVenue() : Venue
-setDisplayRule(rule: DisplayRuleLiteral)
-setLanguage(language:string)
-setFloor(floor:number)
-setMap(map:google.maps.Map)
-setStyle(style:string) //style folder
-setVenue(venue:string|Venue)
-locate(options:locateOptions)
+<h2 id="setup-cocoapods">Setup CocoaPods</h2>
+
+<p>If you haven’t already, install CocoaPods:
+<a href="https://guides.cocoapods.org/using/getting-started.html">Getting Started with CocoaPods</a></p>
+
+<h2 id="setup-mapsindoors">Setup MapsIndoors</h2>
+
+<ol>
+<li>Add pod &lsquo;MapsIndoors&rsquo; to your pod file.</li>
+<li>Run pod install with your terminal at project root.</li>
+<li>Add <code>import MapsIndoors</code> in your view controller displaying the Google map.</li>
+</ol>
+
+<h2 id="using-mapcontrol">Using MapControl</h2>
+
+<p>Use the <code>MPMapControl</code> convenience class for setting up a Google map with MapsPeople venues, buildings, locations and routing. Place the following code in the <code>viewDidLoad</code> method in your view controller displaying the Google map.</p>
+
+<pre><code class="language-swift">// Place the map above the demo-building
+let camera = GMSCameraPosition.camera(withLatitude: 57.08585, longitude: 9.95751, zoom: 17)
+// Initialise the Google map
+mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
+view = mapView
+let myMapControl = MPMapControl.init(map: mapView)!
+// Use your solution id
+myMapControl.setupMap(with: &quot;YOUR_SOLUTION_ID&quot;)
 </code></pre>
 
-<h3 id="events">Events</h3>
+<h2 id="using-the-mapcontrol-delegate">Using the MapControl delegate</h2>
 
-<ul>
-<li>ready</li>
-<li>map_changed</li>
-<li>floor_changed</li>
-<li>building_changed</li>
-<li>venue_changed</li>
-<li>style_changed</li>
-<li>locations_visible_cshanged</li>
-<li>location_click</li>
-</ul>
+<p>The MapControl delegate can also inform you when the various data from the server are loaded through it&rsquo;s <code>MPMapControlDelegate</code> so you should set the delegate in most of the case with the current UIViewController :</p>
 
-<h3 id="mapsindoorsoptions-literal">MapsIndoorsOptions Literal</h3>
-
-<pre><code>MapsIndoorsOptions {
-  map: google.maps.Map,
-  floor: number,
-  locationVisible: boolean
-}
+<pre><code class="language-swift">myMapControl.delegate = self
 </code></pre>
 
-<h3 id="displayrule-literal">DisplayRule Literal</h3>
+<p>And don&rsquo;t forget to make sure that the UIViewController conforms to the <code>MPMapControlDelegate</code> :</p>
 
-<pre><code>DisplayRule
-{
-  from?: number,
-  to?: number,
-  icon?: { 
-    url: string,
-    anchor?: google.maps.Point,
-    scaledSize?: google.maps.Size
-  },
-  title?: string,
-  label?: string,
-  visible?: boolean
-}
+<pre><code class="language-swift">class ViewController: UIViewController, MPMapControlDelegate
 </code></pre>
 
-<h3 id="venue-literal">Venue Literal</h3>
+<p>Then implementing the methods below :</p>
 
-<pre><code>Venue 
-{
-  anchor: GeoJson.Point,
-  defaultFloor: number,
-  entryPoints: GeoJson.Point[],
-  geometry: GeoJson.Polygon
-  graphId: string,
-  id: string,
-  name: string,
-  styles: VenueStyle[],
-  solutionId: string,
-  tilesUrl: string,
-  venueInfo: VenueInfo
-}
-</code></pre>
+<pre><code class="language-swift">  func onLocationsReady(_ locationData: MPLocationDataset!){
 
-<h3 id="venuestyle-literal">VenueStyle Literal</h3>
-
-<pre><code>VenueStyle
-{
-  displayName: string,
-  folder: string
-}
-</code></pre>
-
-<h3 id="venueinfo-literal">VenueInfo Literal</h3>
-
-<pre><code>VenueInfo 
-{
-  aliases: string[],
-  language: string,
-  name: string
-}
-</code></pre>
-
-<h3 id="building-literal">Building Literal</h3>
-
-<pre><code>Building 
-{
-  anchor: GeoJson.Point
-  buildingInfo: BuildingInfo,
-  floors: BuildingFloor,
-  geometry: GeoJson.Polygon,
-  id: string
-}
-</code></pre>
-
-<h3 id="buildinginfo-literal">BuildingInfo Literal</h3>
-
-<pre><code>BuildingInfo 
-{
-  aliases: string[],
-  language: string,
-  name: string
-}
-</code></pre>
-
-<h3 id="buildingfloor-literal">BuildingFloor Literal</h3>
-
-<pre><code>BuildingFloor 
-{
-  geometry: GeoJson.Polygon,
-  name: string
-}
-</code></pre>
-
-<h3 id="findoptions-literal">FindOptions Literal</h3>
-
-<pre><code>FindOptions
-{
-  q:string,
-  venue?: string,
-  floor?: number,
-  roomId?, string,
-  building?: string //building name
-}
-</code></pre>
-
-<h3 id="location-literal">Location Literal</h3>
-
-<pre><code>Location
-{
-  geometry: GeoJson.Point,
-  id: string,
-  properties: {
-    aliases: string[],
-    building: string,
-    categories: ???,
-    contact: {
-      email: string,
-      phone: string,
-      website: string
-    },
-    description: string,
-    displayRule: DisplayRuleLiteral,
-    fields: Object,
-    floor: number,
-    floorName: string,
-    type: string,
-    venue: string,
-    venueId: string,
-    type: string
-  },
-  type: string
-}
-</code></pre>
-
-<h2 id="directionsrenderer">DirectionsRenderer</h2>
-
-<p><code>mapsindoors.DirectionsRenderer(opts:DirectionsRendererOptions)</code></p>
-
-<h3 id="methods-1">Methods</h3>
-
-<pre><code>setDirections(DirectionsResult)
-setStyle(type:string, style:DirectionsStyle)
-setLegIndex(index:number)
-nextLeg()
-previousLeg(),
-getDirections(),
-getLegIndex(),
-getMap()
-</code></pre>
-
-<h3 id="events-1">Events</h3>
-
-<ul>
-<li>directions_changed</li>
-<li>map_changed</li>
-<li>floor_changed</li>
-<li>legIndex_changed</li>
-<li>mapsindoors_changed</li>
-</ul>
-
-<h3 id="directionsrendereroptions-literal">DirectionsRendererOptions Literal</h3>
-
-<pre><code>DirectionsRendererOptions
-{
-  map: google.maps.Map,
-  mapsindoors: mapsindoors.MapsIndoors,
-  suppressMarkers: boolean,
-  directions: DirectionsResult,
-  legIndex: number
-}
-</code></pre>
-
-<h3 id="directionsstyle-literal">DirectionsStyle Literal</h3>
-
-<pre><code>DirectionsStyle 
-{
-  icons: google.maps.IconSequence[],
-  strokeColor: string
-  strokeOpacity: number
-  strokeWeight: number
-  visible: booleean
-}
-</code></pre>
-
-<h2 id="directionsservice">DirectionsService</h2>
-
-<p><code>mapsindoors.DirectionsService()</code></p>
-
-<h3 id="methods-2">Methods</h3>
-
-<pre><code>route(args: RouteRequest): Promise(result:DirectionsResult)
-getDetails(graphId:string): GraphDetails
-</code></pre>
-
-<h3 id="routerequest-literal">RouteRequest Literal</h3>
-
-<pre><code>RouteRequest 
-{
-  origin: {
-    lat: float,
-    lng: float,
-    floor: number
-  },
-  destination: {
-    lat: float,
-    lng: float,
-    floor: number
-  },
-  travelMode: string,
-  transitOptions?: {
-    arrival: DateTime,
-    departure: DateTime
-  },
-  avoidStairs?: boolean
-}
-</code></pre>
-
-<h3 id="directionsresult">DirectionsResult</h3>
-
-<p>See <a href="https://developers.google.com/maps/documentation/directions/intro#DirectionsResponses">Google Maps Javascript API DirectionsResult</a></p>
-
-<h2 id="label">Label</h2>
-
-<p><code>mapsindoors.Label(opts:LabelOptions)</code></p>
-
-<h3 id="methods-3">Methods</h3>
-
-<pre><code>setText(text:string),
-setVisible(visible:boolean),
-setClickable(clickable:boolean),
-setPosition(position:google.maps.LatLng),
-setMap(map:google.maps.Map),
-getAlign() : string,
-getVisible() : boolean,
-getPosition() : google.maps.LatLng,
-getText() : string
-getMap() : google.maps.Map
-</code></pre>
-
-<h3 id="labeloptions">LabelOptions</h3>
-
-<pre><code>LabelOptions Literal
-{
-  align:string ['left', 'center', 'right],
-  color:string,
-  fontFamily: string,
-  fontSize: string,
-  fontWeight: string,
-  strokeStyle: string,
-  strokeWeight: number,
-  pixelOffset: google.maps.Size,
-  visible: boolean,
-  clickable: boolean,
-  shadowBlur: number,
-  shadowColor: string,
-  text: string
-}
-</code></pre>
-
-<h2 id="distancematrixservice">DistanceMatrixService</h2>
-
-<p><code>mapsindoors.DistanceMatrixService()</code></p>
-
-<h3 id="methods-4">Methods</h3>
-
-<pre><code>getDistanceMatrix(request:DistanceMatrixRequest)
-</code></pre>
-
-<h3 id="distancematrixrequest-literal">DistanceMatrixRequest Literal</h3>
-
-<pre><code>DistanceMatrixRequest {
-  graphId: string,
-  origins: GeoJson.Point[],
-  destinations: GeoJson.Point[],
-  mode: string (travelMode),
-}
-</code></pre>
-
-<h3 id="directionsresult-1">DirectionsResult</h3>
-
-<p>See <a href="https://developers.google.com/maps/documentation/distance-matrix/intro#DistanceMatrixResponses">Google Maps Javascript API DistanceMatrixResponse</a></p>
-
-<h2 id="geocodeservice">GeoCodeService</h2>
-
-<p><code>mapsindoors.GeoCodeService()</code></p>
-
-<h3 id="methods-5">Methods</h3>
-
-<pre><code>reverseGeoCode(points: GeoJson.Point[]) : ReverseGeoCodeResponse[]
-</code></pre>
-
-<h3 id="reversegeocoderesponse-literal">ReverseGeoCodeResponse Literal</h3>
-
-<pre><code>ReverseGeoCodeResponse
-{
-  building: {
-    id:string,
-    name: string,
-  },
-  venue:
-  {
-    id:string,
-    name: string
   }
+
+
+  func solutionDataReady(_ solution: MPSolution!){
+
+  }
+
+  public func venueDataReady( _ venueCollection: MPVenueCollection!) {
+
+  }
+
+
+
+  public func appDataReady(_ appData: MPAppData!) {
+
+  }
+
+
+  public func locationDataReady(_ locations: MPLocationDataset!){
+
+  }
+</code></pre>
+
+<h2 id="getting-a-marker-from-a-location-and-vice-versa">Getting a marker from a location and vice versa</h2>
+
+<p>If a location is currently displayed on a map, the marker can be retrieved using <code>location.marker</code>. On the opposite, get a location from a marker using <code>getLocation(marker: GMSMarker)</code>:</p>
+
+<pre><code class="language-swift">myMapControl.getLocation(marker : GMSMarker!)
+</code></pre>
+
+<h2 id="handling-marker-selections-and-other-user-events">Handling marker selections and other user events</h2>
+
+<p>Detecting the user tapping a marker or an infowindow is part of the Google Maps SDK for iOS. Assign <code>myGMSMapView.delegate</code> and implementing the methods: <code>mapView.didTapMarker(marker: GMSMarker)</code> and <code>mapView.didTapInfoWindowOfMarker(marker: GMSMarker)</code></p>
+
+<p>By default, if the user taps on a marker, an infosnippet will appear in the bottom of the map. Subscribe for the info-snippet events using <code>MPMapDelegate</code>:</p>
+
+<pre><code class="language-swift">func infoSnippetTapped(_ location: MPLocation!, tapPosition position: String!){
+
+    if position == kTapPositionRIGHT {
+        // Tapped on right side of info snippet
+    }
+    else if position == kTapPositionCENTER {
+        // If tapped on the location name
+    }
+
 }
 </code></pre>
 
-<h3 id="locationsservice">LocationsService</h3>
+<h2 id="using-display-rules">Using Display Rules</h2>
 
-<p><code>mapsindoors.LocationsService()</code></p>
+<p>When working with MapsIndoors locations, you need to set display rules that defines when, where and how to show a location.
+To add display rules, you need to know the categories in your location dataset. The display rule name corresponds to the location category we want the rule to apply for.</p>
 
-<h3 id="methods-6">Methods</h3>
+<pre><code class="language-swift">  // Adding a rule with name nil, will apply generally to all categories
+  myMapControl.add(MPLocationDisplayRule(name: nil, andIcon: UIImage(named : &quot;info&quot;), andZoomLevelOn: 17))
+  // Adding a rule with a name, will override a more general rule
+   myMapControl.add(MPLocationDisplayRule(name: &quot;info&quot;, andIcon: UIImage(named : &quot;info&quot;), andZoomLevelOn: 17))
+   myMapControl.add(MPLocationDisplayRule(name: &quot;parking&quot;, andIcon: UIImage(named : &quot;parking&quot;), andZoomLevelOn: 17))
+   myMapControl.add(MPLocationDisplayRule(name: &quot;staircase&quot;, andIcon: UIImage(named : &quot;staircase&quot;), andZoomLevelOn: 18))
 
-<pre><code>getLocations(args?: LocationsRequest) : Location[],
-getLocation(string: id) : Location,
-getTypes() : Type[],
-getCategories(): Category[]
 </code></pre>
-
-<h3 id="locationsrequest-literal">LocationsRequest Literal</h3>
-
-<pre><code>LocationsRequest
-{
-  q: string,      
-  building?: string,     
-  venue?: string,    
-  floor?: 1,              
-  take?: 10,                    
-  skip?: number,      
-  near?: {
-    lat:double, 
-    lng: double
-  }, 
-  radius?:number,           
-  orderBy?: string                     
-}
-</code></pre>
-
-<h2 id="venuesservice">VenuesService</h2>
-
-<p><code>mapsindoors.VenuesService()</code></p>
-
-<h3 id="methods-7">Methods</h3>
-
-<pre><code>getVenues() : Venue[]
-getVenue() : Venue
-getBuildings() : Building[]
-getBuilding() Bulding
-getBuildingInView() : BuildingInViewResponse
-</code></pre>
-
-<h2 id="floorselector">FloorSelector</h2>
-
-<p><code>mapsindoors.FloorSelector(element:HtmlElement,mapsindoors: mapsindoors.MapsIndoors)</code></p>
 
 
 			<aside class="copyright" role="note">
@@ -725,7 +453,7 @@ getBuildingInView() : BuildingInViewResponse
 <nav class="pagination" aria-label="Footer">
   <div class="previous">
   
-      <a href="https://mapsindoors.github.io/web/guide-part2/" title="MapsIndoors for Web - Part 2">
+      <a href="https://mapsindoors.github.io/web/reference/" title="MapsIndoors for Web - Reference Guide">
         <span class="direction">
           Previous
         </span>
@@ -735,7 +463,7 @@ getBuildingInView() : BuildingInViewResponse
           </div>
           <div class="stretch">
             <div class="title">
-              MapsIndoors for Web - Part 2
+              MapsIndoors for Web - Reference Guide
             </div>
           </div>
         </div>
@@ -745,7 +473,7 @@ getBuildingInView() : BuildingInViewResponse
 
   <div class="next">
   
-      <a href="https://mapsindoors.github.io/ios/v1/" title="MapsIndoors for iOS - Getting Started">
+      <a href="https://mapsindoors.github.io/ios/v2/" title="MapsIndoors for iOS - Getting Started">
         <span class="direction">
           Next
         </span>

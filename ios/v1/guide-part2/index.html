@@ -9,18 +9,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>MapsIndoors for Android - Part 2 - MapsIndoors Developers</title>
+    <title>MapsIndoors for iOS - Part 2 - MapsIndoors Developers</title>
     <meta name="generator" content="Hugo 0.26" />
 
     
     <meta name="description" content="Everything you need to get started with MapsIndoors.">
     
-    <link rel="canonical" href="https://mapsindoors.github.io/android/guide-part2/">
+    <link rel="canonical" href="https://mapsindoors.github.io/ios/v1/guide-part2/">
     
     <meta name="author" content="MapsPeople">
     
 
-    <meta property="og:url" content="https://mapsindoors.github.io/android/guide-part2/">
+    <meta property="og:url" content="https://mapsindoors.github.io/ios/v1/guide-part2/">
     <meta property="og:title" content="MapsIndoors Developers">
     <meta property="og:image" content="https://mapsindoors.github.io/images/logo.png">
     <meta name="apple-mobile-web-app-title" content="MapsIndoors Developers">
@@ -106,7 +106,7 @@
     </div>
     <div class="stretch">
       <div class="title">
-        MapsIndoors for Android - Part 2
+        MapsIndoors for iOS - Part 2
       </div>
     </div>
 
@@ -153,13 +153,17 @@
     
     
     
-    <a href="https://mapsindoors.github.io/android" class="project">
+  
+    
+    
+    
+    <a href="https://mapsindoors.github.io/ios/v2" class="project">
       <div class="banner">
         <div class="logo">
-          <img src="https://mapsindoors.github.io//logos/android-logo.svg" style="padding:10px">
+          <img src="https://mapsindoors.github.io//logos/apple-logo.svg" style="padding:10px">
         </div>
         <div class="name">
-          <strong>Android SDK <br /><span class="version">1.8.7</span></strong>
+          <strong>iOS SDK <br /><span class="version">2.0.0-alpha39</span></strong>
           
         </div>
       </div>
@@ -169,9 +173,17 @@
     
     
     
-  
-    
-    
+    <a href="https://mapsindoors.github.io/ios/v1" class="project">
+      <div class="banner">
+        <div class="logo">
+          <img src="https://mapsindoors.github.io//logos/apple-logo.svg" style="padding:10px">
+        </div>
+        <div class="name">
+          <strong>iOS SDK <br /><span class="version">1.11.1</span></strong>
+          
+        </div>
+      </div>
+    </a>
     
   
     
@@ -188,6 +200,12 @@
       <div class="toc">
           
           
+          
+          
+          
+          
+          
+          
                   
           <ul>
             
@@ -195,7 +213,7 @@
 
 
 <li>
-    <span class="section">Android SDK</span>
+    <span class="section">iOS SDK</span>
     <ul>
       
         
@@ -203,7 +221,7 @@
 
 
 
-<a  title="Getting Started" href="https://mapsindoors.github.io/android">
+<a  title="Getting Started" href="https://mapsindoors.github.io/ios/v1">
 	
 	Getting Started
 </a>
@@ -216,7 +234,7 @@
 
 
 
-<a class="current" title="Next Steps" href="https://mapsindoors.github.io/android/guide-part2">
+<a class="current" title="Next Steps" href="https://mapsindoors.github.io/ios/v1/guide-part2">
 	
 	Next Steps
 </a>
@@ -232,7 +250,7 @@
 
 
 
-<a  title="Reference Docs" href="https://app.mapsindoors.com/mapsindoors/reference/android/index.html">
+<a  title="Reference Docs" href="https://app.mapsindoors.com/mapsindoors/reference/ios/index.html">
 	
 	Reference Docs
 </a>
@@ -245,7 +263,7 @@
 
 
 
-<a  title="Changelog" href="https://mapsindoors.github.io/android/changelog">
+<a  title="Changelog" href="https://mapsindoors.github.io/ios/v1/changelog">
 	
 	Changelog
 </a>
@@ -256,12 +274,6 @@
     </ul>
 </li>
           </ul>
-          
-          
-          
-          
-          
-          
           
           
           
@@ -309,138 +321,260 @@
 
 	<article class="article">
 		<div class="wrapper">
-			<h1>MapsIndoors for Android - Part 2 </h1>
+			<h1>MapsIndoors for iOS - Part 2 </h1>
 
 			
 
 <h2 id="trying-the-demo-app">Trying the demo App</h2>
 
-<p>You can download the demo app from our github repository: <a href="https://github.com/MapsIndoors/MapsIndoorsAndroid">Demo App</a>
-Then run it and don&rsquo;t forget to do a Gradle sync before and download all the required dependencies.</p>
+<p>Open your Terminal and run</p>
+
+<pre><code class="language-swift">pod try MapsIndoors
+</code></pre>
+
+<p>This will install and fire up the full-featured SDK Demo Project. Remember to add your own key Google Maps iOS API key in AppDelegate:</p>
+
+<pre><code class="language-swift">GMSServices.provideAPIKey(&quot;YOUR_GOOGLE_KEY&quot;)
+</code></pre>
 
 <h2 id="using-routing">Using Routing</h2>
 
-<p>Routing is requested with at least an origin, a destination and a transit mode – transit mode corresponds directly to Google Maps transit modes: Walking, bicycling, driving and transit (public transportation).</p>
+<p>Routing is requested with at least an origin, a destination and a transit mode – transit mode corresponds directly to Google Maps transit modes: Walking, bicycling, driving and transit (public transportation).
+The <code>MPDirectionsService</code> class will handle routing and its delegate will receive the resulting <code>MPRoute</code> object. First set up the service:</p>
 
-<pre><code class="language-java">    RoutingProvider routingProvider = new MPRoutingProvider();
-    routingProvider.setOnRouteResultListener(new OnRouteResultListener()
-    {
-        @Override
-        public void onRouteResult(final Route newRoute)
-        {
-            // Getting route object result
-        }
+<pre><code class="language-swift">// the origin of the route that we wont to draw
+let origin = MPLocation.init(point: MPPoint.init(lat: 57.08585, lon: 9.95751), andName: &quot;My location&quot;)
+// the destination of the route that we wont to draw
+let destination = MPLocation.init(point: MPPoint.init(lat: 57.0853743, lon: 9.957698), andName: &quot;Destination&quot;)
+// Instantiate the direction service
+let directionsService = MPDirectionsService.init(mapsIndoorsSolutionId: clientId, googleApiKey: &quot;YOUR_SOLUTION_ID&quot;)!
+directionsService.delegate = self as MPRoutingProviderDelegate ;
+directionsService.routing(from: origin, to: destination, by: &quot;WALKING&quot;)
 
-        @Override
-        public void onRoutingInfoResult(Object info)
-        {
-
-        }
-    });
-    routingProvider.query(myOriginLocation.getPoint(), myDestinationLocation.getPoint());
 </code></pre>
 
-<p>When requesting only indoor routes, the travel mode is always WALKING - regardless of what you assign it to.</p>
+<p>Then make sure the delegate object, typically one of <code>UIViewController</code>, conforms to <code>MPRoutingProviderDelegate</code>:</p>
 
-<h3 id="route-restrictions">Route restrictions</h3>
-
-<p>Add a restriction to the route by setting the avoid argument. A list of possible restrictions can be found in the com.mapspeople.routing.RouteRestriction class. Avoid stairs on the route using the following restriction parameter:</p>
-
-<pre><code class="language-java">routingProvider.addRouteRestriction(RouteRestriction.AVOID_STAIRS);
+<pre><code class="language-swift">ViewController: UIViewController, MPRoutingProviderDelegate
 </code></pre>
 
-<h3 id="public-transit-travel-mode">Public transit travel mode</h3>
+<p>Hence, by implementing the following method:</p>
 
-<p>Using TRANSIT mode requires either a departure date or an arrival date.</p>
+<pre><code class="language-swift">
+func onRouteResultReady(_ route: MPRoute!) {
+      // show the route on the mapView already instantiated with the floor
+     route.add(toMap: mapView, highlightFloor: 0)
 
-<pre><code class="language-java">routingProvider.setDateTime(Calendar.getInstance(), false);
+
+ }
+
 </code></pre>
 
-<h3 id="rendering-a-route-on-the-map">Rendering a route on the map</h3>
-
-<p>Using the DirectionsRenderer it is possible to easily render the route retrieved from the RoutingProvider. The route is parted in segments called legs, and legs are again parted in steps. The route will be rendered one leg or step at a time. This is an example of rendering the first leg of a route on a google map. Total number of legs is <code>route.getLegs().size()</code>.</p>
-
-<pre><code class="language-java">DirectionsRenderer directionsRenderer = new DirectionsRenderer(ctx, selectionListener); directionsRenderer.setMap(myGoogleMap); directionsRenderer.setRoute(myRoute); directionsRenderer.setRouteLegIndex(0); //
-</code></pre>
-
-<h2 id="working-with-mapped-poi-s-locations">Working with mapped POI’s / Locations</h2>
-
-<h3 id="querying-poi-s-locations">Querying POI&rsquo;s / Locations</h3>
+<h2 id="querying-poi-s-locations">Querying POI&rsquo;s / Locations</h2>
 
 <p>This example will show you the possible ways of querying the POI’s on your venue(s). You need to provide your solution id as a mandatory property to the query.</p>
 
-<pre><code class="language-java">MPLocationsProvider locs = new MPLocationsProvider(this); //Provide context
-
-locs.setOnLocationsReadyListener(new OnLocationsReadyListener() {
-   @Override
-   public void onLocationsReady(List&lt;Location&gt; locations) {
-
-     // Here you can do your work with the locations
-
-   }
-
-   @Override
-   public void onLocationDetailsReady(Location location) {
-     
-     // Here you can do your work with the locations details
-
-   }
-});
-
-LocationQuery lc = new LocationQuery();
-
-lc.arg = &quot;YOUR_SOLUTION_ID&quot;;
-lc.setQuery(&quot;lo&quot;);
-
-//Sorting will override &quot;near/radius&quot;
-lc.orderBy = LocationQuery.OrderBy.NAME;
-lc.sortOrder = LocationQuery.SortOrder.DESC;
-
-lc.near = new Point(55.6377969,12.5787581);
-lc.radius = 200;
-lc.max = 1;
-
-// query multiple (not all data is fetched)
-locs.getLocationsUsingQueryAsync(lc, Locale.ENGLISH);
-// or single get (all data is fetched)
-locs.getLocationDetailsAsync(&quot;YOUR_SOLUTION_ID&quot;, &quot;locationId&quot;);
+<pre><code class="language-swift">  var locationsProvider = MPLocationsProvider()
+  locationsProvider?.delegate = self
+  var q = MPLocationQuery()
+  q.solutionId = &quot;YOUR_SOLUTION_ID&quot; // MapsIndoors solution ID / client ID
+  q.query = &quot;lo&quot; //Searches in room ID, name and aliases
+  q.max = 10
+  q.orderBy = &quot;name&quot; // Possible values are
+                       // name, relevance, roomId, floor, building, venue
+  q.sortOrder = &quot;desc&quot; // Sorting will override &quot;near/radius&quot;
+  q.near = MPPoint(lat: 55.6377969, lon: 12.5787581)
+  q.radius = 60 //get nearest locations within 60 metres
+  q.max = 1 //get the nearest (a list of one location). Note: To be sure to get at least 1 result, don't set radius
+  locationsProvider?.getLocationsUsingQueryAsync(q, language: &quot;en&quot;)
+  // or single query
+  locationsProvider?.getLocationDetailsAsync(&quot;YOUR_SOLUTION_ID&quot;, withId: &quot;locationID&quot;, language: &quot;en&quot;)
 </code></pre>
-
-<h3 id="show-a-location-on-map">Show a Location on map</h3>
 
 <p>To show a single POI on a map you can use this method:</p>
 
-<pre><code class="language-java">myMapControl.displaySingleLocation(Location location);
+<pre><code class="language-swift">  mapControl.selectedLocation = (MPLocation) location
+</code></pre>
+
+<p>Implement <code>MPLocationsProviderDelegate</code> and its <code>onLocationsReady</code> method in order to receive the locations result:</p>
+
+<pre><code class="language-swift">  func onLocationsReady( locationData: MPLocationDataset!){
+
+    }
 </code></pre>
 
 <h2 id="using-custom-providers">Using Custom Providers</h2>
 
-<p>To setup with e.g. locations from your own backend, make an implementation of the LocationsProvider interface, and pass the provider as parameter to the initMap method:</p>
+<p>It is possible to setup MapsIndoors with locations, venues or routing from your own backend. E.g. to use your own locations backend, let your custom provider conform to the MPLocationsProvider protocol (or make a subclass of the interface of same name):</p>
 
-<pre><code class="language-java">MyLocationsProvider myLocationsProvider = new MyLocationsProvider();
-mapControl.initMap(&quot;YOUR_SOLUTION_KEY&quot;, &quot;rtx&quot;, myLocationsProvider, null, null, null);
+<pre><code class="language-swift">
+ class MyCustomLocationsProvider : MPLocationsProvider {
+
+     public override func getLocationsAsync(_ solutionId: String!, language: String!){
+
+     }
+
+     public override func getLocationDetailsAsync(_ solutionId: String!, withId locationId: String!, language: String!){
+
+
+     }
+
+     public override func getLocationsUsingQueryAsync(_ locationQuery: MPLocationQuery!, language: String!) {
+
+
+     }
+
+ }
+
+</code></pre>
+
+<p>In cunjunction with your setup code, make <code>MPMapControl</code> use your provider.</p>
+
+<pre><code class="language-swift"> let myProvider = MyCustomLocationsProvider()
+ // Place the map above the demo-building
+ let camera = GMSCameraPosition.camera(withLatitude: 57.08585, longitude: 9.95751, zoom: 17)
+ // Initialise the Google map
+ mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
+ view = mapView
+ let myMapControl = MPMapControl.init(map: mapView)!
+ // Use your solution id, site id and the location provider that you instantiated
+  myMapControl.setupMap(with: &quot;YOUR_SOLUTION_ID&quot;, site: &quot;YOUR_SITE_ID&quot;, locations: myProvider, venues: nil, routing: nil)
+</code></pre>
+
+<h2 id="route-restrictions">Route restrictions</h2>
+
+<p>Add a restriction to the route by setting the avoid argument. Avoid stairs on the route using the following restriction parameter:</p>
+
+<pre><code class="language-swift"> // restrictions table
+ let restrictions = [&quot;stairs&quot;]
+ directionsService.routing(from: origin, to: destination, by: &quot;WALKING&quot;, avoid: restrictions, depart: nil, arrive: nil)
+
+</code></pre>
+
+<h2 id="using-custom-providers-1">Using Custom Providers</h2>
+
+<p>It is possible to setup MapsIndoors with locations, venues or routing from your own backend. E.g. to use your own locations backend, let your custom provider conform to the MPLocationsProvider protocol (or make a subclass of the interface of same name):</p>
+
+<pre><code class="language-swift">
+ class MyCustomLocationsProvider : MPLocationsProvider {
+
+     public override func getLocationsAsync(_ solutionId: String!, language: String!){
+
+     }
+
+     public override func getLocationDetailsAsync(_ solutionId: String!, withId locationId: String!, language: String!){
+
+
+     }
+
+     public override func getLocationsUsingQueryAsync(_ locationQuery: MPLocationQuery!, language: String!) {
+
+
+     }
+
+ }
+
+</code></pre>
+
+<p>In cunjunction with your setup code, make <code>MPMapControl</code> use your provider.</p>
+
+<pre><code class="language-swift"> let myProvider = MyCustomLocationsProvider()
+ // Place the map above the demo-building
+ let camera = GMSCameraPosition.camera(withLatitude: 57.08585, longitude: 9.95751, zoom: 17)
+ // Initialise the Google map
+ mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
+ view = mapView
+ let myMapControl = MPMapControl.init(map: mapView)!
+ // Use your solution id, site id and the location provider that you instantiated
+  myMapControl.setupMap(with: &quot;YOUR_SOLUTION_ID&quot;, site: &quot;YOUR_SITE_ID&quot;, locations: myProvider, venues: nil, routing: nil)
+</code></pre>
+
+<p>## Route restrictions
+ Add a restriction to the route by setting the avoid argument. Avoid stairs on the route using the following restriction parameter:</p>
+
+<pre><code class="language-swift"> // restrictions table
+ let restrictions = [&quot;stairs&quot;]
+ directionsService.routing(from: origin, to: destination, by: &quot;WALKING&quot;, avoid: restrictions, depart: nil, arrive: nil)
+
+</code></pre>
+
+<h2 id="route-rendering">Route rendering</h2>
+
+<p>Once a route result is received, you might want to render the route on a map. The <code>MPDirectionsRenderer</code> will handle this for you. This example will setup a renderer and do some initial but optional settings.</p>
+
+<pre><code class="language-swift">
+ var directionRenderer = MPDirectionsRenderer()
+ let blueColor = UIColor.blue
+ directionRenderer.delegate = self
+ directionRenderer.map = mapView
+ directionRenderer.fitBounds = false
+ directionRenderer.solidColor = blueColor
+ directionRenderer.backgroundColor = blueColor.withAlphaComponent(0.5)
+</code></pre>
+
+<p>So in your onRouteResultReady delegate method, set the route property to trigger the renderer:</p>
+
+<pre><code class="language-swift"> func onRouteResultReady(_ route: MPRoute!) {
+   directionsRenderer.route = route;
+  }
+</code></pre>
+
+<p>Clear the rendering by setting either map or route to nil:</p>
+
+<pre><code class="language-swift"> directionsRenderer.route = nil; // or
+ directionsRenderer.map = nil;
+</code></pre>
+
+<p>The renderer will split the route in logical parts, called route legs, based on information on context such as indoor/outdoor, access levels etc., but also floor level and transportation type. By default, the first route leg will be shown. Here are examples of rendering other parts of the route.</p>
+
+<pre><code class="language-swift"> directionsRenderer.routeLegIndex = 1 // Render second route leg, if exists
+ directionsRenderer.routeLegIndex += 1 // Render next route leg, if exists
+ directionsRenderer.routeLegIndex -= 1 // Render previous route leg, if exists
+</code></pre>
+
+<p>Given an instance of <code>MPRoute</code>, you can get the number of legs by reading the length of its legs property:</p>
+
+<pre><code class="language-swift"> int numberOfLegs = route.legs.count;
+</code></pre>
+
+<p>The rendering can be animated using the animate method just after invoking a rendering.</p>
+
+<pre><code class="language-swift"> directionsRenderer.routeLegIndex = 1;
+ directionsRenderer.animate(4) // Animate drawing of route line with 4 seconds duration
+</code></pre>
+
+<p>If the rendering of a route leg happens on a new floor level, you might want to get notified, so you can update the current visible floor plan (<code>mapControl.currentFloor</code>). For this purpose you can implement the <code>MPDirectionsRendererDelegate</code> method:</p>
+
+<pre><code class="language-swift"> func floorDidChange(floor: NSNumber!) {
+   mapControl.currentFloor = floor
+ }
+</code></pre>
+
+<p>The route renderer will render a route line and two buttons. In fact they become markers on the <code>GMSMapWiew</code>, but for your convenience we treat them as buttons. In this way you can add target selectors for them:</p>
+
+<pre><code class="language-swift"> directionRenderer.nextRouteLegButton.addTarget(self, action: #selector(showNextRouteLeg), for: UIControlEventTouchUpInside)
+ directionRenderer.previousRouteLegButton.addTarget(self, action: #selector(showPreviousRouteLeg), for: UIControlEventTouchUpInside)
 </code></pre>
 
 <h2 id="determining-and-setting-a-user-location">Determining and setting a user location</h2>
 
-<p>MapsIndoors can show the user position, but to do that it needs to know the user&rsquo;s position. This can either be set manually by the app or using a position provider.
-To set it manually, simply call the map control directly with a location and floor, for this case we are going to set it as the venue position:</p>
+<p>MapsIndoors can show the user position, but to do that it needs to know the user’s position. This can either be set manually by the app or using a position provider. To set it manually, simply call the map control directly with a location and floor, for this case we are going to set it as the venue position:</p>
 
-<pre><code class="language-java">//the point on the map and the floor
-mMapControl.setCurrentPosition( new Point(57.08585, 9.95751), 0);
+<pre><code class="language-swift">let position = MPPositionIndicator.init(point: MPPoint.init(lat: 57.0, lon: 10.0, zValue: 1), andName: &quot;My location&quot;);
+myMapControl.currentPosition = position
 </code></pre>
 
 <p>A position provider is normally easier to use for real time positioning. To create a position provider make a class that implements the PositionProvider interface and add it to your MapControl like this:</p>
 
 <h3 id="using-a-positioning-provider">Using a positioning provider</h3>
 
-<p>The GPS provider is part of the demo app: <a href="https://github.com/MapsIndoors/MapsIndoorsAndroid/blob/master/app/src/main/java/com/mapsindoors/positionprovider/GPSPositionProvider.java">GPSPositionProvider</a>.</p>
+<p>The GPS provider is part of the demo app: GPSPositionProvider.</p>
 
-<pre><code class="language-java">//Add a position provider in able to track the user's position.
-gpsProvider = new GPSPositionProvider(this.getApplicationContext());
+<pre><code class="language-swift">//Add a position provider in able to track the user's position.
+gpsProvider = GPSPositionProvider(MapsIndoors.getSolutionId())
 //Telling map control about our provider
-mMapControl.addPositionProvider(gpsProvider);
-mMapControl.startPositioning();
+myMapControl.addPositionProvider(gpsProvider)
+gpsProvider.startPositioning()
 </code></pre>
 
 <p>To know more about this subject, please read this <a href="https://mapsindoors.github.io/introductions/indoor-positioning">Introduction to the field of Indoor Positioning</a>.</p>
@@ -462,7 +596,7 @@ mMapControl.startPositioning();
 <nav class="pagination" aria-label="Footer">
   <div class="previous">
   
-      <a href="https://mapsindoors.github.io/android/" title="MapsIndoors for Android - Getting Started">
+      <a href="https://mapsindoors.github.io/ios/v2/" title="MapsIndoors for iOS - Getting Started">
         <span class="direction">
           Previous
         </span>
@@ -472,7 +606,7 @@ mMapControl.startPositioning();
           </div>
           <div class="stretch">
             <div class="title">
-              MapsIndoors for Android - Getting Started
+              MapsIndoors for iOS - Getting Started
             </div>
           </div>
         </div>
@@ -482,14 +616,14 @@ mMapControl.startPositioning();
 
   <div class="next">
   
-      <a href="https://mapsindoors.github.io/android/reference/" title="MapsIndoors for Android Reference Guide">
+      <a href="https://mapsindoors.github.io/ios/v1/reference/" title="MapsIndoors for iOS Reference Guide">
         <span class="direction">
           Next
         </span>
         <div class="page">
           <div class="stretch">
             <div class="title">
-              MapsIndoors for Android Reference Guide
+              MapsIndoors for iOS Reference Guide
             </div>
           </div>
           <div class="button button-next" role="button" aria-label="Next">

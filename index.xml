@@ -25,10 +25,10 @@
     
     <item>
       <title></title>
-      <link>https://mapsindoors.github.io/ios/guides/search-and-directions/</link>
+      <link>https://mapsindoors.github.io/ios/v1/guides/search-and-directions/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://mapsindoors.github.io/ios/guides/search-and-directions/</guid>
+      <guid>https://mapsindoors.github.io/ios/v1/guides/search-and-directions/</guid>
       <description>MPLocationsProvider* locationsProvider = [[MPLocationsProvider alloc] init]; MPDirectonsRenderer* renderer = [[MPDirectonsRenderer alloc] init]; MPDirectionsService* directionsService = [[MPDirectionsService alloc] initWithMapsIndoorsSolutionId: sID googleApiKey: gApiKey];
 MPLocationQuery* q1 = [[MPLocationQuery alloc] init]; q1.solutionId = sID; q1.query = @&amp;quot;location-name&amp;quot;; q1.max = 1; MPLocationQuery* q2 = [[MPLocationQuery alloc] init]; q2.solutionId = sID; q2.query = @&amp;quot;other-location-name&amp;quot;; q2.max = 1; [locationsProvider getLocationsUsingQueryAsync:q1 language:@&amp;quot;en&amp;quot; completionHandler:^(MPLocationDataset *locationData, NSError *error) { MPLocation* from = locationData.list.firstObject; [locationsProvider getLocationsUsingQueryAsync:q2 language:@&amp;quot;en&amp;quot; completionHandler:^(MPLocationDataset *locationData, NSError *error) { MPLocation* to = locationData.</description>
     </item>
@@ -66,10 +66,10 @@ Added  Support for statically adding a position provider, optionally by setting 
     
     <item>
       <title>Changelog</title>
-      <link>https://mapsindoors.github.io/ios/changelog/</link>
+      <link>https://mapsindoors.github.io/ios/v1/changelog/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://mapsindoors.github.io/ios/changelog/</guid>
+      <guid>https://mapsindoors.github.io/ios/v1/changelog/</guid>
       <description>Changelog for MapsIndoors for iOS. This document structure is based on Keep a Changelog and the project adheres to Semantic Versioning.
 [1.12.2-beta15] - 2017-11-03 Fixed  Fixed issues related to language code validation.  [1.12.2-beta13] - 2017-11-02 Fixed  Fixed problems related to offline/flight-mode.
 Changed Search algorithm improvement.
@@ -116,6 +116,17 @@ With this in mind you need to find an IPS and then use the location from that IP
       <guid>https://mapsindoors.github.io/firststeps/</guid>
       <description>Setup Google maps API You need to setup the Google Maps API in your project by following the steps in this links below depending on which platform you are using :
  Web : You will need the Google Maps JavaScript API. Android : You will need the Google Maps Android API. iOS : You will need the Google Maps SDK for iOS.  Some Web Service APIs are needed also for the mapsIndoors SDK so make sure to enable them when getting your key :</description>
+    </item>
+    
+    <item>
+      <title>MapsIndoors SDK for iOS v2 - Guides</title>
+      <link>https://mapsindoors.github.io/ios/v2/guides/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/ios/v2/guides/</guid>
+      <description>Searching for Locations and Displaying the Results on a Map Use the MPLocationsProvider class to search for content in your MapsIndoors solution.
+This example shows how to setup a query for the nearest single best matching location and display the result on the map:
+let locations = MPLocationsProvider.init() let queryObj = MPLocationQuery.init() queryObj.query = &amp;quot;Toilet&amp;quot; queryObj.near = MPPoint.init(lat: 57.057964, lon: 9.9504112) queryObj.max = 1 locations.getLocationsUsing(queryObj) { (locationData, error) in if error == nil { let location = locationData?</description>
     </item>
     
     <item>
@@ -193,20 +204,32 @@ Methods clear() find(args:string|FindOptions) : Promise(Location) fitBuilding(bu
     
     <item>
       <title>MapsIndoors for iOS - Getting Started</title>
-      <link>https://mapsindoors.github.io/ios/</link>
+      <link>https://mapsindoors.github.io/ios/v1/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://mapsindoors.github.io/ios/</guid>
+      <guid>https://mapsindoors.github.io/ios/v1/</guid>
       <description>Basic Example You will find in the link an up and running project that contains the minimum code to start a MapsIndoors project.
 You can also follow the steps below to start your app from scratch or to enhance the Basic Example, more advanced feature will be explained in the part 2 of this tutorial with a demo app that gives a showcase of the mapsIndoors in a complete app that you can test also.</description>
     </item>
     
     <item>
-      <title>MapsIndoors for iOS - Part 2</title>
-      <link>https://mapsindoors.github.io/ios/guide-part2/</link>
+      <title>MapsIndoors for iOS - Getting Started</title>
+      <link>https://mapsindoors.github.io/ios/v2/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://mapsindoors.github.io/ios/guide-part2/</guid>
+      <guid>https://mapsindoors.github.io/ios/v2/</guid>
+      <description>Basic Example You will find in the link an up and running project that contains the minimum code to start a MapsIndoors project.
+You can also follow the steps below to start your app from scratch or to enhance the Basic Example, more features will be explained in the guides.
+Setup CocoaPods If you haven’t already, install CocoaPods: Getting Started with CocoaPods
+Setup MapsIndoors  If you don&amp;rsquo;t have an Xcode project yet, create one now and save it to your local machine.</description>
+    </item>
+    
+    <item>
+      <title>MapsIndoors for iOS - Part 2</title>
+      <link>https://mapsindoors.github.io/ios/v1/guide-part2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/ios/v1/guide-part2/</guid>
       <description>Trying the demo App Open your Terminal and run
 pod try MapsIndoors  This will install and fire up the full-featured SDK Demo Project. Remember to add your own key Google Maps iOS API key in AppDelegate:
 GMSServices.provideAPIKey(&amp;quot;YOUR_GOOGLE_KEY&amp;quot;)  Using Routing Routing is requested with at least an origin, a destination and a transit mode – transit mode corresponds directly to Google Maps transit modes: Walking, bicycling, driving and transit (public transportation).</description>
@@ -214,10 +237,10 @@ GMSServices.provideAPIKey(&amp;quot;YOUR_GOOGLE_KEY&amp;quot;)  Using Routing Ro
     
     <item>
       <title>MapsIndoors for iOS Reference Guide</title>
-      <link>https://mapsindoors.github.io/ios/reference/</link>
+      <link>https://mapsindoors.github.io/ios/v1/reference/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://mapsindoors.github.io/ios/reference/</guid>
+      <guid>https://mapsindoors.github.io/ios/v1/reference/</guid>
       <description>Please head to this reference manual.</description>
     </item>
     

@@ -7,7 +7,7 @@
   </url>
   
   <url>
-    <loc>https://mapsindoors.github.io/ios/guides/search-and-directions/</loc>
+    <loc>https://mapsindoors.github.io/ios/v1/guides/search-and-directions/</loc>
   </url>
   
   <url>
@@ -33,7 +33,7 @@
   </url>
   
   <url>
-    <loc>https://mapsindoors.github.io/ios/changelog/</loc>
+    <loc>https://mapsindoors.github.io/ios/v1/changelog/</loc>
   </url>
   
   <url>
@@ -78,6 +78,10 @@
   </url>
   
   <url>
+    <loc>https://mapsindoors.github.io/ios/v2/guides/</loc>
+  </url>
+  
+  <url>
     <loc>https://mapsindoors.github.io/android/</loc>
   </url>
   
@@ -106,15 +110,19 @@
   </url>
   
   <url>
-    <loc>https://mapsindoors.github.io/ios/</loc>
+    <loc>https://mapsindoors.github.io/ios/v1/</loc>
   </url>
   
   <url>
-    <loc>https://mapsindoors.github.io/ios/guide-part2/</loc>
+    <loc>https://mapsindoors.github.io/ios/v2/</loc>
   </url>
   
   <url>
-    <loc>https://mapsindoors.github.io/ios/reference/</loc>
+    <loc>https://mapsindoors.github.io/ios/v1/guide-part2/</loc>
+  </url>
+  
+  <url>
+    <loc>https://mapsindoors.github.io/ios/v1/reference/</loc>
   </url>
   
   <url>

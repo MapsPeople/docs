@@ -96,7 +96,7 @@
       
       
       <div class="button button-back" role="button" aria-label="Back">
-        <a href="../" title="Back" class="toggle-button icon icon-back"></a>
+        <a href="#" onclick="window.history.back()" title="Back" class="toggle-button icon icon-back"></a>
       </div>
       
     <div class="button button-menu" role="button" aria-label="Menu">
@@ -161,13 +161,17 @@
     
     
     
+  
+    
+    
+    
     <a href="https://mapsindoors.github.io/web" class="project">
       <div class="banner">
         <div class="logo">
           <img src="https://mapsindoors.github.io//logos/web-logo.svg" style="padding:10px">
         </div>
         <div class="name">
-          <strong>Web SDK <span class="version">1.4.1</span></strong>
+          <strong>Web SDK <br /><span class="version">1.4.1</span></strong>
           
         </div>
       </div>
@@ -182,6 +186,9 @@
   <div class="scrollable">
     <div class="wrapper">
       <div class="toc">
+          
+          
+          
           
           
           
@@ -328,7 +335,7 @@ If you need to use a floor selector (most projects do), just add a css reference
 
 <pre><code class="language-html">&lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js&quot;&gt;&lt;/script&gt;
 &lt;script type=&quot;text/javascript&quot; src=&quot;https://maps.googleapis.com/maps/api/js?libraries=geometry&quot;&gt;&lt;/script&gt;
-&lt;script type=&quot;text/javascript&quot; src=&quot;https://app.mapsindoors.com/mapsindoors/js/sdk/MapsIndoors-1.1.1.js?solutionId=MY_MAPSINDOORS_SOLUTION_ID&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;https://app.mapsindoors.com/mapsindoors/js/sdk/MapsIndoors-1.4.1.js?solutionId=MY_MAPSINDOORS_SOLUTION_ID&quot;&gt;&lt;/script&gt;
 // Load css for default floor selector
 &lt;link href=&quot;https://app.mapsindoors.com/mapsindoors/js/sdk/ui/FloorSelector.css&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; /&gt;
 </code></pre>
@@ -577,7 +584,7 @@ mapsIndoors.locate(
 
 			<aside class="copyright" role="note">
 				
-				&copy; 2017 MapsIndoors (c)2017 &ndash;
+				&copy; 2018 MapsIndoors (c)2017 &ndash;
 				
 				Documentation built with
 				<a href="https://www.gohugo.io" target="_blank">Hugo</a>
