@@ -79,7 +79,7 @@ Added  Support for statically adding a position provider, optionally by setting 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://mapsindoors.github.io/cms/changelog/</guid>
-      <description>[3.3.0] - ??-12-2017 Added  Venue bounds, network visualiser. Edit venue bounds. Remember last venue (until changing solution). Create new venue. Delete venue. Toggle labels for locations map.  Changed  Moved from Angular Http to Angular HttpClient. Buildings moved to separate page.  Fixed [3.2.0] - 29-11-2017 Added  Label rotation and type for export map. Icon size for export map. Master data (venue, buildings) page. Tooltip for type and image in edit panel for locations.</description>
+      <description>[3.4.0] - 20-02-2018 Added  Select all/deselect all, locations table. Graph bounds and editing.  Changed  Refactored locations list. Improved ordering of locations. Improved database performance greatly improving system responsiveness when loading many locations. Ordered types by viewdistance.  Fixed  In some situations custom fields on locations would not save correctly. Error message when trying to add an existing user.  [3.3.1] - 19-01-2018 Added Changed Fixed  Deleting locations now works.</description>
     </item>
     
     <item>
@@ -89,7 +89,8 @@ Added  Support for statically adding a position provider, optionally by setting 
       
       <guid>https://mapsindoors.github.io/ios/v1/changelog/</guid>
       <description>Changelog for MapsIndoors for iOS. This document structure is based on Keep a Changelog and the project adheres to Semantic Versioning.
-[1.12.3-beta1] - 2018-01-12 Fixed  Fixed issue causing MPVenueProvider not to return any buildings once in a while  [1.12.2-beta17] - 2017-11-03 Fixed  Fixed issue causing MPDirectionsService not to return proper callbacks  [1.12.2-beta15] - 2017-11-03 Fixed  Fixed issues related to language code validation.  [1.12.2-beta13] - 2017-11-02 Fixed  Fixed problems related to offline/flight-mode.</description>
+## [1.12.5] - 2018-01-15 ### Fixed - Fixed issue causing blue dot to disappear in some cases
+## [1.12.4] - 2018-01-12 ### Fixed - Fixed issue causing MPVenueProvider not to return any buildings once in a while - Fixed issue causing MPDirectionsService not to return proper callbacks - Fixed issues related to language code validation.</description>
     </item>
     
     <item>
@@ -99,7 +100,8 @@ Added  Support for statically adding a position provider, optionally by setting 
       
       <guid>https://mapsindoors.github.io/ios/v2/changelog/</guid>
       <description>Changelog for MapsIndoors for iOS. This document structure is based on Keep a Changelog and the project adheres to Semantic Versioning.
-[1.12.3-beta1] - 2018-01-12 Fixed  Fixed issue causing MPVenueProvider not to return any buildings once in a while  [1.12.2-beta17] - 2017-11-03 Fixed  Fixed issue causing MPDirectionsService not to return proper callbacks  [1.12.2-beta15] - 2017-11-03 Fixed  Fixed issues related to language code validation.  [1.12.2-beta13] - 2017-11-02 Fixed  Fixed problems related to offline/flight-mode.</description>
+## [1.12.5] - 2018-01-15 ### Fixed - Fixed issue causing blue dot to disappear in some cases
+## [1.12.4] - 2018-01-12 ### Fixed - Fixed issue causing MPVenueProvider not to return any buildings once in a while - Fixed issue causing MPDirectionsService not to return proper callbacks - Fixed issues related to language code validation.</description>
     </item>
     
     <item>

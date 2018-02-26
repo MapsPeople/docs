@@ -302,6 +302,42 @@
  ## [Unreleased]
  -->
 
+<p>## [1.12.5] - 2018-01-15
+ ### Fixed
+ - Fixed issue causing blue dot to disappear in some cases</p>
+
+<p>## [1.12.4] - 2018-01-12
+ ### Fixed
+- Fixed issue causing <code>MPVenueProvider</code> not to return any buildings once in a while
+- Fixed issue causing <code>MPDirectionsService</code> not to return proper callbacks
+- Fixed issues related to language code validation.
+- Fixed problems related to offline/flight-mode.
+- Fixed possible calling of callback block twice in <code>MPMessageProvider</code>
+- Fixed multi-language issue in ´MPCategoriesProvider´.
+- Fixed missing call to completionHandler in rare occations using <code>MPLocationsProvider</code>.
+- Fixed missing call to completionHandler when route not found using <code>MPDirectionsService</code>.
+- Fixed an crash occuring when the floorselector is initially set hidden <code>MPMapControl.floorSelectorHidden = YES</code>, and subsequently shown via <code>MPMapControl.floorSelectorHidden = NO</code>.
+- Fixed issue getting multiple delegate or completionHandler calls from <code>MPVenueProvider</code>.
+- Fixed issue getting no route results when creating a directions request before initialising <code>MPMapControl</code>.
+- Fixed issue with <code>MPLocationsProvider</code> fired in parallel.
+- MPFloorSelector: Fixed a few layout issues.
+- TileService: Only report error when we cant get tileUrlData <em>and</em> we dont have cached data.
+- Prevent multiple calls to completionHandler from -[MapsIndoors fetchDataForOfflineUse:]
+- Calls to -[MPSolutionProvider getSolutionAsync:completionHandler:] while a call is already ongoing would fail to call completion handler.</p>
+
+<p>### Added
+ - Added a <code>MPRouteLeg.legType</code>  property
+ - Added property queryMode to <code>MPLocationsQuery</code>, can be set to <code>MPLocationsQueryModeAutocomplete</code> or <code>MPLocationsQueryModeNormal</code> (default).</p>
+
+<p>### Changed
+ - Search algorithm improvement.
+ - Internal works: Backend resolving improvements and SDK session handling
+ - Improved the internal works of <code>[MPVenuesProvider getBuildingWithinBoundsAsync]</code>.
+ - Internal refactoring.
+ - Avoid auto-switching current building&rsquo;s floor if a non-empty search result is not visible on that new floor.
+ - Internal refactoring.
+ - Updated Google Maps SDK dependency.</p>
+
 <h2 id="1-12-3-beta1-2018-01-12">[1.12.3-beta1] - 2018-01-12</h2>
 
 <h3 id="fixed">Fixed</h3>
@@ -494,8 +530,6 @@
 <ul>
 <li>Optimized tile loading performance.</li>
 </ul>
-
-<h2 id="1-10-2-beta5-2017-08-09">[1.10.2-beta5] - 2017-08-09</h2>
 
 <h2 id="1-10-2-beta4-2017-07-14">[1.10.2-beta4] - 2017-07-14</h2>
 

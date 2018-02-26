@@ -37,7 +37,8 @@ MPLocationQuery* q1 = [[MPLocationQuery alloc] init]; q1.solutionId = sID; q1.qu
       
       <guid>https://mapsindoors.github.io/ios/v1/changelog/</guid>
       <description>Changelog for MapsIndoors for iOS. This document structure is based on Keep a Changelog and the project adheres to Semantic Versioning.
-[1.12.3-beta1] - 2018-01-12 Fixed  Fixed issue causing MPVenueProvider not to return any buildings once in a while  [1.12.2-beta17] - 2017-11-03 Fixed  Fixed issue causing MPDirectionsService not to return proper callbacks  [1.12.2-beta15] - 2017-11-03 Fixed  Fixed issues related to language code validation.  [1.12.2-beta13] - 2017-11-02 Fixed  Fixed problems related to offline/flight-mode.</description>
+## [1.12.5] - 2018-01-15 ### Fixed - Fixed issue causing blue dot to disappear in some cases
+## [1.12.4] - 2018-01-12 ### Fixed - Fixed issue causing MPVenueProvider not to return any buildings once in a while - Fixed issue causing MPDirectionsService not to return proper callbacks - Fixed issues related to language code validation.</description>
     </item>
     
     <item>
@@ -47,7 +48,8 @@ MPLocationQuery* q1 = [[MPLocationQuery alloc] init]; q1.solutionId = sID; q1.qu
       
       <guid>https://mapsindoors.github.io/ios/v2/changelog/</guid>
       <description>Changelog for MapsIndoors for iOS. This document structure is based on Keep a Changelog and the project adheres to Semantic Versioning.
-[1.12.3-beta1] - 2018-01-12 Fixed  Fixed issue causing MPVenueProvider not to return any buildings once in a while  [1.12.2-beta17] - 2017-11-03 Fixed  Fixed issue causing MPDirectionsService not to return proper callbacks  [1.12.2-beta15] - 2017-11-03 Fixed  Fixed issues related to language code validation.  [1.12.2-beta13] - 2017-11-02 Fixed  Fixed problems related to offline/flight-mode.</description>
+## [1.12.5] - 2018-01-15 ### Fixed - Fixed issue causing blue dot to disappear in some cases
+## [1.12.4] - 2018-01-12 ### Fixed - Fixed issue causing MPVenueProvider not to return any buildings once in a while - Fixed issue causing MPDirectionsService not to return proper callbacks - Fixed issues related to language code validation.</description>
     </item>
     
     <item>

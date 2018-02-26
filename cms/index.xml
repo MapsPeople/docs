@@ -17,7 +17,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://mapsindoors.github.io/cms/changelog/</guid>
-      <description>[3.3.0] - ??-12-2017 Added  Venue bounds, network visualiser. Edit venue bounds. Remember last venue (until changing solution). Create new venue. Delete venue. Toggle labels for locations map.  Changed  Moved from Angular Http to Angular HttpClient. Buildings moved to separate page.  Fixed [3.2.0] - 29-11-2017 Added  Label rotation and type for export map. Icon size for export map. Master data (venue, buildings) page. Tooltip for type and image in edit panel for locations.</description>
+      <description>[3.4.0] - 20-02-2018 Added  Select all/deselect all, locations table. Graph bounds and editing.  Changed  Refactored locations list. Improved ordering of locations. Improved database performance greatly improving system responsiveness when loading many locations. Ordered types by viewdistance.  Fixed  In some situations custom fields on locations would not save correctly. Error message when trying to add an existing user.  [3.3.1] - 19-01-2018 Added Changed Fixed  Deleting locations now works.</description>
     </item>
     
     <item>
