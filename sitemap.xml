@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://mapsindoors.github.io/android/guides/searching-and-directions/</loc>
+    <loc>https://mapsindoors.github.io/android/v1/guides/searching-and-directions/</loc>
   </url>
   
   <url>
@@ -34,6 +34,14 @@
   
   <url>
     <loc>https://mapsindoors.github.io/android/changelog/</loc>
+  </url>
+  
+  <url>
+    <loc>https://mapsindoors.github.io/android/v1/changelog/</loc>
+  </url>
+  
+  <url>
+    <loc>https://mapsindoors.github.io/android/v2/changelog/</loc>
   </url>
   
   <url>
@@ -90,19 +98,27 @@
   </url>
   
   <url>
+    <loc>https://mapsindoors.github.io/android/v2/guides/</loc>
+  </url>
+  
+  <url>
     <loc>https://mapsindoors.github.io/ios/v2/guides/</loc>
   </url>
   
   <url>
-    <loc>https://mapsindoors.github.io/android/</loc>
+    <loc>https://mapsindoors.github.io/android/v1/</loc>
   </url>
   
   <url>
-    <loc>https://mapsindoors.github.io/android/guide-part2/</loc>
+    <loc>https://mapsindoors.github.io/android/v2/</loc>
   </url>
   
   <url>
-    <loc>https://mapsindoors.github.io/android/reference/</loc>
+    <loc>https://mapsindoors.github.io/android/v1/guide-part2/</loc>
+  </url>
+  
+  <url>
+    <loc>https://mapsindoors.github.io/android/v1/reference/</loc>
   </url>
   
   <url>

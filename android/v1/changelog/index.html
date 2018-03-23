@@ -9,18 +9,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>MapsIndoors for Web - Reference Guide - MapsIndoors Developers</title>
+    <title>Changelog - MapsIndoors Developers</title>
     <meta name="generator" content="Hugo 0.26" />
 
     
     <meta name="description" content="Everything you need to get started with MapsIndoors.">
     
-    <link rel="canonical" href="https://mapsindoors.github.io/web/reference/">
+    <link rel="canonical" href="https://mapsindoors.github.io/android/v1/changelog/">
     
     <meta name="author" content="MapsPeople">
     
 
-    <meta property="og:url" content="https://mapsindoors.github.io/web/reference/">
+    <meta property="og:url" content="https://mapsindoors.github.io/android/v1/changelog/">
     <meta property="og:title" content="MapsIndoors Developers">
     <meta property="og:image" content="https://mapsindoors.github.io/images/logo.png">
     <meta name="apple-mobile-web-app-title" content="MapsIndoors Developers">
@@ -106,7 +106,7 @@
     </div>
     <div class="stretch">
       <div class="title">
-        MapsIndoors for Web - Reference Guide
+        Changelog
       </div>
     </div>
 
@@ -153,33 +153,45 @@
     
     
     
-  
-    
-    
-    
-  
-    
-    
-    
-  
-    
-    
-    
-  
-    
-    
-    
-    <a href="https://mapsindoors.github.io/web" class="project">
+    <a href="https://mapsindoors.github.io/android/v1" class="project">
       <div class="banner">
         <div class="logo">
-          <img src="https://mapsindoors.github.io//logos/web-logo.svg" style="padding:10px">
+          <img src="https://mapsindoors.github.io//logos/android-logo.svg" style="padding:10px">
         </div>
         <div class="name">
-          <strong>Web SDK <br /><span class="version">1.4.1</span></strong>
+          <strong>Android SDK <br /><span class="version">1.8.7</span></strong>
           
         </div>
       </div>
     </a>
+    
+  
+    
+    
+    
+    <a href="https://mapsindoors.github.io/android/v2" class="project">
+      <div class="banner">
+        <div class="logo">
+          <img src="https://mapsindoors.github.io//logos/android-logo.svg" style="padding:10px">
+        </div>
+        <div class="name">
+          <strong>Android SDK <br /><span class="version">2.0.0-beta03</span></strong>
+          
+        </div>
+      </div>
+    </a>
+    
+  
+    
+    
+    
+  
+    
+    
+    
+  
+    
+    
     
   
     
@@ -192,18 +204,6 @@
       <div class="toc">
           
           
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
                   
           <ul>
             
@@ -211,7 +211,7 @@
 
 
 <li>
-    <span class="section">Web SDK</span>
+    <span class="section">Android SDK</span>
     <ul>
       
         
@@ -219,7 +219,7 @@
 
 
 
-<a  title="Getting Started" href="https://mapsindoors.github.io/web">
+<a  title="Getting Started" href="https://mapsindoors.github.io/android/v1">
 	
 	Getting Started
 </a>
@@ -232,7 +232,7 @@
 
 
 
-<a  title="Next Steps" href="https://mapsindoors.github.io/web/guide-part2">
+<a  title="Next Steps" href="https://mapsindoors.github.io/android/v1/guide-part2">
 	
 	Next Steps
 </a>
@@ -245,9 +245,22 @@
 
 
 
-<a class="current" title="Reference Docs" href="https://mapsindoors.github.io/web/reference">
+<a  title="Reference Docs" href="https://app.mapsindoors.com/mapsindoors/reference/android/index.html">
 	
 	Reference Docs
+</a>
+
+
+
+      
+        
+        
+
+
+
+<a class="current" title="Changelog" href="https://mapsindoors.github.io/android/v1/changelog">
+	
+	Changelog
 </a>
 
 
@@ -256,22 +269,21 @@
 
 
       
-        
-        
-
-
-
-<a  title="Changelog" href="https://mapsindoors.github.io/web/changelog">
-	
-	Changelog
-</a>
-
-
-
-      
     </ul>
 </li>
           </ul>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
           
           
           
@@ -316,404 +328,38 @@
 
 	<article class="article">
 		<div class="wrapper">
-			<h1>MapsIndoors for Web - Reference Guide </h1>
+			<h1>Changelog </h1>
 
 			
 
-<h2 id="mapsindoors">MapsIndoors</h2>
+<p>Changelog for MapsIndoors for Android. This document structure is based on <a href="http://keepachangelog.com/en/1.0.0/">Keep a Changelog</a> and the project adheres to <a href="http://semver.org/spec/v2.0.0.html">Semantic Versioning</a>.</p>
 
-<p><code>mapsindoors.MapsIndoors(opts:MapsIndoorsOptions)</code></p>
+<p><!-- ### Added        for new features. -->
+  <!-- ### Changed      for changes in existing functionality.  -->
+  <!-- ### Deprecated   for soon-to-be removed features.  -->
+  <!-- ### Removed      for now removed features.  -->
+  <!-- ### Fixed        for any bug fixes.  -->
+  <!-- ### Security     in case of vulnerabilities. --></p>
 
-<h3 id="methods">Methods</h3>
+<!---
+ ## [Unreleased]
+ - Tweaks and fixes to search algorithm.
+ -->
 
-<pre><code>clear()
-find(args:string|FindOptions) : Promise(Location)
-fitBuilding(buildingId:string)
-fitVenue(venueId?:string)
-getBuilding() : Building
-getDisplayRule(type:string) : DisplayRuleLiteral
-getFloor() : number
-getLocationsVisible() : bool
-getMap() : google.maps.Map
-getStyles() : VenueStyle[]
-getVenue() : Venue
-setDisplayRule(rule: DisplayRuleLiteral)
-setLanguage(language:string)
-setFloor(floor:number)
-setMap(map:google.maps.Map)
-setStyle(style:string) //style folder
-setVenue(venue:string|Venue)
-locate(options:locateOptions)
-</code></pre>
+<p>## [2.0.0-beta1] - 2017-10-04
+ ### Changed
+ - Put something in here&hellip;
+ - Fix <code>MPLocation.copy()</code> results in nil <code>MPLocation.descr</code>.</p>
 
-<h3 id="events">Events</h3>
+<p>### Fixed
+- Fix geometry property nil when copying <code>MPLocation</code>
+- Fix unlabeled icons not respecting <code>MapsIndoors.mapIconSize</code></p>
+
+<h3 id="added">Added</h3>
 
 <ul>
-<li>ready</li>
-<li>map_changed</li>
-<li>floor_changed</li>
-<li>building_changed</li>
-<li>venue_changed</li>
-<li>style_changed</li>
-<li>locations_visible_cshanged</li>
-<li>location_click</li>
+<li>Support for statically adding a position provider, optionally by setting <code>MapsIndoors.positionProvider</code></li>
 </ul>
-
-<h3 id="mapsindoorsoptions-literal">MapsIndoorsOptions Literal</h3>
-
-<pre><code>MapsIndoorsOptions {
-  map: google.maps.Map,
-  floor: number,
-  locationVisible: boolean
-}
-</code></pre>
-
-<h3 id="displayrule-literal">DisplayRule Literal</h3>
-
-<pre><code>DisplayRule
-{
-  from?: number,
-  to?: number,
-  icon?: { 
-    url: string,
-    anchor?: google.maps.Point,
-    scaledSize?: google.maps.Size
-  },
-  title?: string,
-  label?: string,
-  visible?: boolean
-}
-</code></pre>
-
-<h3 id="venue-literal">Venue Literal</h3>
-
-<pre><code>Venue 
-{
-  anchor: GeoJson.Point,
-  defaultFloor: number,
-  entryPoints: GeoJson.Point[],
-  geometry: GeoJson.Polygon
-  graphId: string,
-  id: string,
-  name: string,
-  styles: VenueStyle[],
-  solutionId: string,
-  tilesUrl: string,
-  venueInfo: VenueInfo
-}
-</code></pre>
-
-<h3 id="venuestyle-literal">VenueStyle Literal</h3>
-
-<pre><code>VenueStyle
-{
-  displayName: string,
-  folder: string
-}
-</code></pre>
-
-<h3 id="venueinfo-literal">VenueInfo Literal</h3>
-
-<pre><code>VenueInfo 
-{
-  aliases: string[],
-  language: string,
-  name: string
-}
-</code></pre>
-
-<h3 id="building-literal">Building Literal</h3>
-
-<pre><code>Building 
-{
-  anchor: GeoJson.Point
-  buildingInfo: BuildingInfo,
-  floors: BuildingFloor,
-  geometry: GeoJson.Polygon,
-  id: string
-}
-</code></pre>
-
-<h3 id="buildinginfo-literal">BuildingInfo Literal</h3>
-
-<pre><code>BuildingInfo 
-{
-  aliases: string[],
-  language: string,
-  name: string
-}
-</code></pre>
-
-<h3 id="buildingfloor-literal">BuildingFloor Literal</h3>
-
-<pre><code>BuildingFloor 
-{
-  geometry: GeoJson.Polygon,
-  name: string
-}
-</code></pre>
-
-<h3 id="findoptions-literal">FindOptions Literal</h3>
-
-<pre><code>FindOptions
-{
-  q:string,
-  venue?: string,
-  floor?: number,
-  roomId?, string,
-  building?: string //building name
-}
-</code></pre>
-
-<h3 id="location-literal">Location Literal</h3>
-
-<pre><code>Location
-{
-  geometry: GeoJson.Point,
-  id: string,
-  properties: {
-    aliases: string[],
-    building: string,
-    categories: ???,
-    contact: {
-      email: string,
-      phone: string,
-      website: string
-    },
-    description: string,
-    displayRule: DisplayRuleLiteral,
-    fields: Object,
-    floor: number,
-    floorName: string,
-    type: string,
-    venue: string,
-    venueId: string,
-    type: string
-  },
-  type: string
-}
-</code></pre>
-
-<h2 id="directionsrenderer">DirectionsRenderer</h2>
-
-<p><code>mapsindoors.DirectionsRenderer(opts:DirectionsRendererOptions)</code></p>
-
-<h3 id="methods-1">Methods</h3>
-
-<pre><code>setDirections(DirectionsResult)
-setStyle(type:string, style:DirectionsStyle)
-setLegIndex(index:number)
-nextLeg()
-previousLeg(),
-getDirections(),
-getLegIndex(),
-getMap()
-</code></pre>
-
-<h3 id="events-1">Events</h3>
-
-<ul>
-<li>directions_changed</li>
-<li>map_changed</li>
-<li>floor_changed</li>
-<li>legIndex_changed</li>
-<li>mapsindoors_changed</li>
-</ul>
-
-<h3 id="directionsrendereroptions-literal">DirectionsRendererOptions Literal</h3>
-
-<pre><code>DirectionsRendererOptions
-{
-  map: google.maps.Map,
-  mapsindoors: mapsindoors.MapsIndoors,
-  suppressMarkers: boolean,
-  directions: DirectionsResult,
-  legIndex: number
-}
-</code></pre>
-
-<h3 id="directionsstyle-literal">DirectionsStyle Literal</h3>
-
-<pre><code>DirectionsStyle 
-{
-  icons: google.maps.IconSequence[],
-  strokeColor: string
-  strokeOpacity: number
-  strokeWeight: number
-  visible: booleean
-}
-</code></pre>
-
-<h2 id="directionsservice">DirectionsService</h2>
-
-<p><code>mapsindoors.DirectionsService()</code></p>
-
-<h3 id="methods-2">Methods</h3>
-
-<pre><code>route(args: RouteRequest): Promise(result:DirectionsResult)
-getDetails(graphId:string): GraphDetails
-</code></pre>
-
-<h3 id="routerequest-literal">RouteRequest Literal</h3>
-
-<pre><code>RouteRequest 
-{
-  origin: {
-    lat: float,
-    lng: float,
-    floor: number
-  },
-  destination: {
-    lat: float,
-    lng: float,
-    floor: number
-  },
-  travelMode: string,
-  transitOptions?: {
-    arrival: DateTime,
-    departure: DateTime
-  },
-  avoidStairs?: boolean
-}
-</code></pre>
-
-<h3 id="directionsresult">DirectionsResult</h3>
-
-<p>See <a href="https://developers.google.com/maps/documentation/directions/intro#DirectionsResponses">Google Maps Javascript API DirectionsResult</a></p>
-
-<h2 id="label">Label</h2>
-
-<p><code>mapsindoors.Label(opts:LabelOptions)</code></p>
-
-<h3 id="methods-3">Methods</h3>
-
-<pre><code>setText(text:string),
-setVisible(visible:boolean),
-setClickable(clickable:boolean),
-setPosition(position:google.maps.LatLng),
-setMap(map:google.maps.Map),
-getAlign() : string,
-getVisible() : boolean,
-getPosition() : google.maps.LatLng,
-getText() : string
-getMap() : google.maps.Map
-</code></pre>
-
-<h3 id="labeloptions">LabelOptions</h3>
-
-<pre><code>LabelOptions Literal
-{
-  align:string ['left', 'center', 'right],
-  color:string,
-  fontFamily: string,
-  fontSize: string,
-  fontWeight: string,
-  strokeStyle: string,
-  strokeWeight: number,
-  pixelOffset: google.maps.Size,
-  visible: boolean,
-  clickable: boolean,
-  shadowBlur: number,
-  shadowColor: string,
-  text: string
-}
-</code></pre>
-
-<h2 id="distancematrixservice">DistanceMatrixService</h2>
-
-<p><code>mapsindoors.DistanceMatrixService()</code></p>
-
-<h3 id="methods-4">Methods</h3>
-
-<pre><code>getDistanceMatrix(request:DistanceMatrixRequest)
-</code></pre>
-
-<h3 id="distancematrixrequest-literal">DistanceMatrixRequest Literal</h3>
-
-<pre><code>DistanceMatrixRequest {
-  graphId: string,
-  origins: GeoJson.Point[],
-  destinations: GeoJson.Point[],
-  mode: string (travelMode),
-}
-</code></pre>
-
-<h3 id="directionsresult-1">DirectionsResult</h3>
-
-<p>See <a href="https://developers.google.com/maps/documentation/distance-matrix/intro#DistanceMatrixResponses">Google Maps Javascript API DistanceMatrixResponse</a></p>
-
-<h2 id="geocodeservice">GeoCodeService</h2>
-
-<p><code>mapsindoors.GeoCodeService()</code></p>
-
-<h3 id="methods-5">Methods</h3>
-
-<pre><code>reverseGeoCode(points: GeoJson.Point[]) : ReverseGeoCodeResponse[]
-</code></pre>
-
-<h3 id="reversegeocoderesponse-literal">ReverseGeoCodeResponse Literal</h3>
-
-<pre><code>ReverseGeoCodeResponse
-{
-  building: {
-    id:string,
-    name: string,
-  },
-  venue:
-  {
-    id:string,
-    name: string
-  }
-}
-</code></pre>
-
-<h3 id="locationsservice">LocationsService</h3>
-
-<p><code>mapsindoors.LocationsService()</code></p>
-
-<h3 id="methods-6">Methods</h3>
-
-<pre><code>getLocations(args?: LocationsRequest) : Location[],
-getLocation(string: id) : Location,
-getTypes() : Type[],
-getCategories(): Category[]
-</code></pre>
-
-<h3 id="locationsrequest-literal">LocationsRequest Literal</h3>
-
-<pre><code>LocationsRequest
-{
-  q: string,      
-  building?: string,     
-  venue?: string,    
-  floor?: 1,              
-  take?: 10,                    
-  skip?: number,      
-  near?: {
-    lat:double, 
-    lng: double
-  }, 
-  radius?:number,           
-  orderBy?: string                     
-}
-</code></pre>
-
-<h2 id="venuesservice">VenuesService</h2>
-
-<p><code>mapsindoors.VenuesService()</code></p>
-
-<h3 id="methods-7">Methods</h3>
-
-<pre><code>getVenues() : Venue[]
-getVenue() : Venue
-getBuildings() : Building[]
-getBuilding() Bulding
-getBuildingInView() : BuildingInViewResponse
-</code></pre>
-
-<h2 id="floorselector">FloorSelector</h2>
-
-<p><code>mapsindoors.FloorSelector(element:HtmlElement,mapsindoors: mapsindoors.MapsIndoors)</code></p>
 
 
 			<aside class="copyright" role="note">
@@ -732,7 +378,7 @@ getBuildingInView() : BuildingInViewResponse
 <nav class="pagination" aria-label="Footer">
   <div class="previous">
   
-      <a href="https://mapsindoors.github.io/web/guide-part2/" title="MapsIndoors for Web - Part 2">
+      <a href="https://mapsindoors.github.io/android/changelog/" title="Changelog">
         <span class="direction">
           Previous
         </span>
@@ -742,7 +388,7 @@ getBuildingInView() : BuildingInViewResponse
           </div>
           <div class="stretch">
             <div class="title">
-              MapsIndoors for Web - Part 2
+              Changelog
             </div>
           </div>
         </div>
@@ -752,14 +398,14 @@ getBuildingInView() : BuildingInViewResponse
 
   <div class="next">
   
-      <a href="https://mapsindoors.github.io/ios/v1/" title="MapsIndoors for iOS - Getting Started">
+      <a href="https://mapsindoors.github.io/android/v2/changelog/" title="Changelog">
         <span class="direction">
           Next
         </span>
         <div class="page">
           <div class="stretch">
             <div class="title">
-              MapsIndoors for iOS - Getting Started
+              Changelog
             </div>
           </div>
           <div class="button button-next" role="button" aria-label="Next">

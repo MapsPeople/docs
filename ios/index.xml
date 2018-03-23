@@ -37,7 +37,9 @@ MPLocationQuery* q1 = [[MPLocationQuery alloc] init]; q1.solutionId = sID; q1.qu
       
       <guid>https://mapsindoors.github.io/ios/v1/changelog/</guid>
       <description>Changelog for MapsIndoors for iOS. This document structure is based on Keep a Changelog and the project adheres to Semantic Versioning.
-[1.12.5] - 2018-01-15 Fixed  Fixed issue causing blue dot to disappear in some cases  [1.12.4] - 2018-01-12 Fixed  Fixed issue causing MPVenueProvider not to return any buildings once in a while Fixed issue causing MPDirectionsService not to return proper callbacks Fixed issues related to language code validation.</description>
+## [1.12.6] - 2018-03-13 ### Fixed - Fixed issue with disappearing building graphics if the internal urls was invalid
+## [1.12.5] - 2018-01-15 ### Fixed - Fixed issue causing blue dot to disappear in some cases
+## [1.12.4] - 2018-01-12 ### Fixed - Fixed issue causing MPVenueProvider not to return any buildings once in a while - Fixed issue causing MPDirectionsService not to return proper callbacks - Fixed issues related to language code validation.</description>
     </item>
     
     <item>
@@ -47,7 +49,9 @@ MPLocationQuery* q1 = [[MPLocationQuery alloc] init]; q1.solutionId = sID; q1.qu
       
       <guid>https://mapsindoors.github.io/ios/v2/changelog/</guid>
       <description>Changelog for MapsIndoors for iOS. This document structure is based on Keep a Changelog and the project adheres to Semantic Versioning.
-[1.12.5] - 2018-01-15 Fixed  Fixed issue causing blue dot to disappear in some cases  [1.12.4] - 2018-01-12 Fixed  Fixed issue causing MPVenueProvider not to return any buildings once in a while Fixed issue causing MPDirectionsService not to return proper callbacks Fixed issues related to language code validation.</description>
+## [1.12.6] - 2018-03-13 ### Fixed - Fixed issue with disappearing building graphics if the internal urls was invalid
+## [1.12.5] - 2018-01-15 ### Fixed - Fixed issue causing blue dot to disappear in some cases
+## [1.12.4] - 2018-01-12 ### Fixed - Fixed issue causing MPVenueProvider not to return any buildings once in a while - Fixed issue causing MPDirectionsService not to return proper callbacks - Fixed issues related to language code validation.</description>
     </item>
     
     <item>
@@ -77,10 +81,8 @@ You can also follow the steps below to start your app from scratch or to enhance
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://mapsindoors.github.io/ios/v2/</guid>
-      <description>Basic Example You will find in the link an up and running project that contains the minimum code to start a MapsIndoors project.
-You can also follow the steps below to start your app from scratch or to enhance the Basic Example, more features will be explained in the guides.
-Setup CocoaPods If you haven’t already, install CocoaPods: Getting Started with CocoaPods
-Setup MapsIndoors  If you don&amp;rsquo;t have an Xcode project yet, create one now and save it to your local machine.</description>
+      <description>Basic Example For basic examples of a MapsIndoors implementation, run pod try MapsIndoors (see below for setting up CocoaPods or just clone this repository) and run the XCode Scheme called Demos. The code for these samples are to find in the /Example/DemoSamples folder.
+You can also follow the steps below to start your app from scratch or to enhance the basic examples, more features will be explained in the guides.</description>
     </item>
     
     <item>

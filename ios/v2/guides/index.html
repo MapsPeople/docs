@@ -157,13 +157,17 @@
     
     
     
+  
+    
+    
+    
     <a href="https://mapsindoors.github.io/ios/v2" class="project">
       <div class="banner">
         <div class="logo">
           <img src="https://mapsindoors.github.io//logos/apple-logo.svg" style="padding:10px">
         </div>
         <div class="name">
-          <strong>iOS SDK <br /><span class="version">2.0.0-alpha39</span></strong>
+          <strong>iOS SDK <br /><span class="version">2.0.0-beta12</span></strong>
           
         </div>
       </div>
@@ -198,6 +202,9 @@
   <div class="scrollable">
     <div class="wrapper">
       <div class="toc">
+          
+          
+          
           
           
           
@@ -239,6 +246,19 @@
 
 <ul id="scrollspy">
 </ul>
+
+
+      
+        
+        
+
+
+
+<a  title="Changelog" href="https://mapsindoors.github.io/ios/v2/changelog">
+	
+	Changelog
+</a>
+
 
 
       
@@ -305,7 +325,7 @@
 
 <p>This example shows how to setup a query for the nearest single best matching location and display the result on the map:</p>
 
-<pre><code>let locations = MPLocationsProvider.init()
+<pre><code class="language-swift">let locations = MPLocationsProvider.init()
 let queryObj = MPLocationQuery.init()
 
 queryObj.query = &quot;Toilet&quot;
@@ -314,7 +334,7 @@ queryObj.max = 1
 
 locations.getLocationsUsing(queryObj) { (locationData, error) in
     if error == nil {
-        let location = locationData?.list.first as! MPLocation
+        let location = locationData?.list.first
         self.mapControl?.go(to: location)
     }
 }
@@ -322,7 +342,7 @@ locations.getLocationsUsing(queryObj) { (locationData, error) in
 
 <p>This example shows how to setup a query for a group of locations and display the result on the map:</p>
 
-<pre><code>let locations = MPLocationsProvider.init()
+<pre><code class="language-swift">let locations = MPLocationsProvider.init()
 let queryObj = MPLocationQuery.init()
 
 queryObj.categories = [&quot;Toilet&quot;]
@@ -331,11 +351,13 @@ queryObj.max = 50
 locations.getLocationsUsing(queryObj) { (locationData, error) in
     if error == nil {
         self.mapControl?.searchResult = locationData!.list
-        let firstLocation = locationData?.list.first as! MPLocation
-        self.mapControl?.currentFloor = firstLocation.floor         // You are not guaranteed that the visible floor contains any search results, so that is why we change floor
+        let firstLocation = locationData?.list.first
+        self.mapControl?.currentFloor = firstLocation.floor
     }
 }
 </code></pre>
+
+<p>Please note that you are not guaranteed that the visible floor contains any search results, so that is why we change floor in the above example.</p>
 
 <h2 id="getting-directions-and-displaying-a-route-result-on-a-map">Getting Directions and Displaying a Route Result on a Map</h2>
 
@@ -343,7 +365,7 @@ locations.getLocationsUsing(queryObj) { (locationData, error) in
 
 <p>This example shows how to setup a query for a route and display the result on the map:</p>
 
-<pre><code>let directions = MPDirectionsService.init()
+<pre><code class="language-swift">let directions = MPDirectionsService.init()
 let renderer = MPDirectionsRenderer.init()
 renderer.delegate = self
 
@@ -362,7 +384,7 @@ directions.routing(with: directionsQuery) { (route, error) in
 
 <p>The route object is seperated into objects of <code>MPRouteLeg</code> and these legs are again seperated indo objects of <code>MPRouteStep</code>. A specific part of the route can be rendered by setting the <code>routeLegIndex</code> and/or <code>routeStepIndex</code> properties.</p>
 
-<pre><code>let renderer = MPDirectionsRenderer.init()
+<pre><code class="language-swift">let renderer = MPDirectionsRenderer.init()
 renderer.routeLegIndex = 0
 renderer.routeStepIndex = 1
 </code></pre>
@@ -373,7 +395,7 @@ renderer.routeStepIndex = 1
 
 <p>Assigning a <code>MPDirectionsRenderer</code> delegate will make it possible to know which floor the currently rendered part of the route belongs to:</p>
 
-<pre><code>func floorDidChange(_ floor: NSNumber!) {
+<pre><code class="language-swift">func floorDidChange(_ floor: NSNumber!) {
     mapControl?.currentFloor = floor
 }
 </code></pre>
@@ -382,13 +404,13 @@ renderer.routeStepIndex = 1
 
 <p>Avoid certain <strong>way types</strong> on the route using the <code>avoidWayTypes</code> property.</p>
 
-<pre><code>let directionsQuery = MPDirectionsQuery.init(originPoint: origin!, destination: destination!)
+<pre><code class="language-swift">let directionsQuery = MPDirectionsQuery.init(originPoint: origin!, destination: destination!)
 directionsQuery.avoidWayTypes = [&quot;stairs&quot;]
 </code></pre>
 
 <p>Set a <strong>departure date</strong> or an <strong>arrival date</strong> on the route using the <code>departure</code> or <code>arrival</code> property. It will only make sense to set one of these properties at a time.</p>
 
-<pre><code>let directionsQuery = MPDirectionsQuery.init(originPoint: origin!, destination: destination!)
+<pre><code class="language-swift">let directionsQuery = MPDirectionsQuery.init(originPoint: origin!, destination: destination!)
 directionsQuery.departure = Date.init()
 </code></pre>
 
@@ -396,17 +418,17 @@ directionsQuery.departure = Date.init()
 
 <p>The MapControl delegate can inform you when the various data from the MapsIndoors services are loaded through it&rsquo;s <code>MPMapControlDelegate</code> so you should set the delegate, in most of the cases with the current UIViewController:</p>
 
-<pre><code>myMapControl.delegate = self
+<pre><code class="language-swift">myMapControl.delegate = self
 </code></pre>
 
 <p>Implement the <code>onMapDataReady</code> method :</p>
 
-<pre><code>class ViewController: UIViewController, MPMapControlDelegate
+<pre><code class="language-swift">class ViewController: UIViewController, MPMapControlDelegate
 </code></pre>
 
 <p>Then implementing the methods below :</p>
 
-<pre><code>func onMapDataReady(){
+<pre><code class="language-swift">func onMapDataReady(){
     
 }
 </code></pre>
@@ -415,17 +437,20 @@ directionsQuery.departure = Date.init()
 
 <p>Detecting the user tapping a marker or an infowindow is part of the Google Maps SDK for iOS. Assign <code>myGMSMapView.delegate</code> and implementing the methods: <code>mapView.didTapMarker(marker: GMSMarker)</code> and <code>mapView.didTapInfoWindowOfMarker(marker: GMSMarker)</code></p>
 
-<p>By default, if the user taps on a marker, an infosnippet will appear in the bottom of the map. Subscribe for the info-snippet events using <code>MPMapDelegate</code>:</p>
-
-<pre><code>func infoSnippetTapped(_ location: MPLocation!, tapPosition position: String!){
-
-    if position == kTapPositionRIGHT {
-        // Tapped on right side of info snippet
+<pre><code class="language-swift">func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -&gt; Bool {
+    let location = mapControl?.getLocation(marker)
+    if location != nil {
+        myTextLabel.text = location!.name
     }
-    else if position == kTapPositionCENTER {
-        // If tapped on the location name
-    }
+    return false
+}
 
+func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) -&gt; Bool {
+    let location = mapControl?.getLocation(marker)
+    if location != nil {
+        myTextLabel.text = location!.name
+    }
+    return false
 }
 </code></pre>
 
@@ -433,7 +458,7 @@ directionsQuery.departure = Date.init()
 
 <p>If a <code>MPLocation</code> has been displayed on a map, the marker can be retrieved using <code>location.marker</code>. On the opposite, get a <code>MPLocation</code> from a <code>GMSMarker</code> using <code>getLocation(marker: GMSMarker)</code> on <code>MPMapControl</code>:</p>
 
-<pre><code>myMapControl.getLocation(marker : GMSMarker!)
+<pre><code class="language-swift">myMapControl.getLocation(marker : GMSMarker!)
 </code></pre>
 
 <h2 id="using-display-rules">Using Display Rules</h2>
@@ -444,7 +469,7 @@ directionsQuery.departure = Date.init()
 
 <p>To add display rules, you need to know the types in your location dataset, so look these up in the CMS. The display rule name corresponds to the location type we want the rule to apply for.</p>
 
-<pre><code>// Adding a rule with name nil, will apply generally to all type of locations
+<pre><code class="language-swift">// Adding a rule with name nil, will apply generally to all type of locations
 myMapControl.add(MPLocationDisplayRule(name: nil, andIcon: UIImage(named : &quot;info&quot;), andZoomLevelOn: 17))
 
 // Adding a rule with a name, will override a more general rule
@@ -453,7 +478,7 @@ myMapControl.add(MPLocationDisplayRule(name: &quot;parking&quot;, andIcon: UIIma
 myMapControl.add(MPLocationDisplayRule(name: &quot;staircase&quot;, andIcon: UIImage(named : &quot;staircase&quot;), andZoomLevelOn: 18))
 </code></pre>
 
-<p># Create Custom UI</p>
+<p>## Create Custom UI</p>
 
 <p>You can create your own UI based on the MapsIndoors data models given from <code>MPDirectionsService</code> or <code>MPLocationsProvider</code>. E.g. build a list of instructions based on the <code>MPRouteLeg</code> and <code>MPRouteStep</code> models given from a <code>MPRoute</code> object. Or build a content page based on the properties on an <code>MPLocation</code> object. You can see an example of this in the <code>DetailsViewController</code> and <code>DirectionsController</code> classes in the app code that is <a href="https://github.com/MapsIndoors/MapsIndoorsIOS/tree/master/Example">distributed along with the MapsIndoors SDK</a>.</p>
 
@@ -474,7 +499,7 @@ myMapControl.add(MPLocationDisplayRule(name: &quot;staircase&quot;, andIcon: UII
 <nav class="pagination" aria-label="Footer">
   <div class="previous">
   
-      <a href="https://mapsindoors.github.io/firststeps/" title="MapsIndoors First Steps">
+      <a href="https://mapsindoors.github.io/android/v2/guides/" title="MapsIndoors SDK for iOS v2 - Guides">
         <span class="direction">
           Previous
         </span>
@@ -484,7 +509,7 @@ myMapControl.add(MPLocationDisplayRule(name: &quot;staircase&quot;, andIcon: UII
           </div>
           <div class="stretch">
             <div class="title">
-              MapsIndoors First Steps
+              MapsIndoors SDK for iOS v2 - Guides
             </div>
           </div>
         </div>
@@ -494,7 +519,7 @@ myMapControl.add(MPLocationDisplayRule(name: &quot;staircase&quot;, andIcon: UII
 
   <div class="next">
   
-      <a href="https://mapsindoors.github.io/android/" title="MapsIndoors for Android - Getting Started">
+      <a href="https://mapsindoors.github.io/android/v1/" title="MapsIndoors for Android - Getting Started">
         <span class="direction">
           Next
         </span>

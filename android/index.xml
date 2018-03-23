@@ -13,10 +13,10 @@
     
     <item>
       <title></title>
-      <link>https://mapsindoors.github.io/android/guides/searching-and-directions/</link>
+      <link>https://mapsindoors.github.io/android/v1/guides/searching-and-directions/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://mapsindoors.github.io/android/guides/searching-and-directions/</guid>
+      <guid>https://mapsindoors.github.io/android/v1/guides/searching-and-directions/</guid>
       <description>//Locations provider, used for search MPLocationsProvider locs = new MPLocationsProvider(this);
 //Directions renderer, used to display route on map DirectionsRenderer directionsRenderer = new DirectionsRenderer(this, selectionListener);
 //Listen for query results locs.setOnLocationsReadyListener(new OnLocationsReadyListener() { @Override public void onLocationsReady(List locations) {
@@ -36,21 +36,65 @@ Added  Support for statically adding a position provider, optionally by setting 
     </item>
     
     <item>
-      <title>MapsIndoors for Android - Getting Started</title>
-      <link>https://mapsindoors.github.io/android/</link>
+      <title>Changelog</title>
+      <link>https://mapsindoors.github.io/android/v1/changelog/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://mapsindoors.github.io/android/</guid>
+      <guid>https://mapsindoors.github.io/android/v1/changelog/</guid>
+      <description> Changelog for MapsIndoors for Android. This document structure is based on Keep a Changelog and the project adheres to Semantic Versioning.
+## [2.0.0-beta1] - 2017-10-04 ### Changed - Put something in here&amp;hellip; - Fix MPLocation.copy() results in nil MPLocation.descr.
+### Fixed - Fix geometry property nil when copying MPLocation - Fix unlabeled icons not respecting MapsIndoors.mapIconSize
+Added  Support for statically adding a position provider, optionally by setting MapsIndoors.positionProvider  </description>
+    </item>
+    
+    <item>
+      <title>Changelog</title>
+      <link>https://mapsindoors.github.io/android/v2/changelog/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/android/v2/changelog/</guid>
+      <description>Changelog for MapsIndoors for iOS. This document structure is based on Keep a Changelog and the project adheres to Semantic Versioning.
+[1.12.5] - 2018-01-15 Fixed  Fixed issue causing blue dot to disappear in some cases  [1.12.4] - 2018-01-12 Fixed  Fixed issue causing MPVenueProvider not to return any buildings once in a while Fixed issue causing MPDirectionsService not to return proper callbacks Fixed issues related to language code validation.</description>
+    </item>
+    
+    <item>
+      <title>MapsIndoors SDK for iOS v2 - Guides</title>
+      <link>https://mapsindoors.github.io/android/v2/guides/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/android/v2/guides/</guid>
+      <description>Searching for Locations and Displaying the Results on a Map Use the MPLocationsProvider class to search for content in your MapsIndoors solution.
+This example shows how to setup a query for the nearest single best matching location and display the result on the map:
+mLocationsProvider = new MPLocationsProvider(); mLocationQueryBuilder = new LocationQuery.Builder(); // init the query builder, in this case we will query the coffee machine in our office mLocationQueryBuilder.</description>
+    </item>
+    
+    <item>
+      <title>MapsIndoors for Android - Getting Started</title>
+      <link>https://mapsindoors.github.io/android/v1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/android/v1/</guid>
       <description>Basic Example You will find in the link an up and running project that contains the minimum code to start a MapsIndoors project.
 You can also follow the steps below to start your app from scratch or to enhance the Basic Example, more advanced feature will be explained in the part 2 of this tutorial with a demo app that gives a showcase of the mapsIndoors in a complete app that you can test also.</description>
     </item>
     
     <item>
-      <title>MapsIndoors for Android - Part 2</title>
-      <link>https://mapsindoors.github.io/android/guide-part2/</link>
+      <title>MapsIndoors for Android - Getting Started</title>
+      <link>https://mapsindoors.github.io/android/v2/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://mapsindoors.github.io/android/guide-part2/</guid>
+      <guid>https://mapsindoors.github.io/android/v2/</guid>
+      <description>Basic Example You will find in the link a repo that contains the minimum code to start a MapsIndoors project.
+You can also follow the steps below to start your app from scratch or to enhance the Basic Examples, more features will be explained in the guides.
+Setup MapsIndoors Add the MapsIndoors SDK as a dependency to your project. The AAR for the MapsIndoors SDK contains both Java classes, SDK resources and AndroidManifest.</description>
+    </item>
+    
+    <item>
+      <title>MapsIndoors for Android - Part 2</title>
+      <link>https://mapsindoors.github.io/android/v1/guide-part2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/android/v1/guide-part2/</guid>
       <description>Trying the demo App You can download the demo app from our github repository: Demo App Then run it and don&amp;rsquo;t forget to do a Gradle sync before and download all the required dependencies.
 Using Routing Routing is requested with at least an origin, a destination and a transit mode – transit mode corresponds directly to Google Maps transit modes: Walking, bicycling, driving and transit (public transportation).
 RoutingProvider routingProvider = new MPRoutingProvider(); routingProvider.</description>
@@ -58,10 +102,10 @@ RoutingProvider routingProvider = new MPRoutingProvider(); routingProvider.</des
     
     <item>
       <title>MapsIndoors for Android Reference Guide</title>
-      <link>https://mapsindoors.github.io/android/reference/</link>
+      <link>https://mapsindoors.github.io/android/v1/reference/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://mapsindoors.github.io/android/reference/</guid>
+      <guid>https://mapsindoors.github.io/android/v1/reference/</guid>
       <description>Please head to this reference manual.</description>
     </item>
     

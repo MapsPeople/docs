@@ -13,10 +13,10 @@
     
     <item>
       <title></title>
-      <link>https://mapsindoors.github.io/android/guides/searching-and-directions/</link>
+      <link>https://mapsindoors.github.io/android/v1/guides/searching-and-directions/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://mapsindoors.github.io/android/guides/searching-and-directions/</guid>
+      <guid>https://mapsindoors.github.io/android/v1/guides/searching-and-directions/</guid>
       <description>//Locations provider, used for search MPLocationsProvider locs = new MPLocationsProvider(this);
 //Directions renderer, used to display route on map DirectionsRenderer directionsRenderer = new DirectionsRenderer(this, selectionListener);
 //Listen for query results locs.setOnLocationsReadyListener(new OnLocationsReadyListener() { @Override public void onLocationsReady(List locations) {
@@ -75,11 +75,33 @@ Added  Support for statically adding a position provider, optionally by setting 
     
     <item>
       <title>Changelog</title>
+      <link>https://mapsindoors.github.io/android/v1/changelog/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/android/v1/changelog/</guid>
+      <description> Changelog for MapsIndoors for Android. This document structure is based on Keep a Changelog and the project adheres to Semantic Versioning.
+## [2.0.0-beta1] - 2017-10-04 ### Changed - Put something in here&amp;hellip; - Fix MPLocation.copy() results in nil MPLocation.descr.
+### Fixed - Fix geometry property nil when copying MPLocation - Fix unlabeled icons not respecting MapsIndoors.mapIconSize
+Added  Support for statically adding a position provider, optionally by setting MapsIndoors.positionProvider  </description>
+    </item>
+    
+    <item>
+      <title>Changelog</title>
+      <link>https://mapsindoors.github.io/android/v2/changelog/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/android/v2/changelog/</guid>
+      <description>Changelog for MapsIndoors for iOS. This document structure is based on Keep a Changelog and the project adheres to Semantic Versioning.
+[1.12.5] - 2018-01-15 Fixed  Fixed issue causing blue dot to disappear in some cases  [1.12.4] - 2018-01-12 Fixed  Fixed issue causing MPVenueProvider not to return any buildings once in a while Fixed issue causing MPDirectionsService not to return proper callbacks Fixed issues related to language code validation.</description>
+    </item>
+    
+    <item>
+      <title>Changelog</title>
       <link>https://mapsindoors.github.io/cms/changelog/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://mapsindoors.github.io/cms/changelog/</guid>
-      <description>[3.4.0] - 20-02-2018 Added  Select all/deselect all, locations table. Graph bounds and editing.  Changed  Refactored locations list. Improved ordering of locations. Improved database performance greatly improving system responsiveness when loading many locations. Ordered types by viewdistance.  Fixed  In some situations custom fields on locations would not save correctly. Error message when trying to add an existing user.  [3.3.1] - 19-01-2018 Added Changed Fixed  Deleting locations now works.</description>
+      <description>[3.5.0] - 20-03-2018 Added  Navigate between buildings or reset the venue view in export map. Filter locations by floor (list view). New Map (google maps js api 3.32).  Changed  Moved location type to the top to better indicate its importance. The name of a location is now automatically set to the type. Can still be changed if needed. Split display settings and types in two pages. Improved analytics.</description>
     </item>
     
     <item>
@@ -89,7 +111,9 @@ Added  Support for statically adding a position provider, optionally by setting 
       
       <guid>https://mapsindoors.github.io/ios/v1/changelog/</guid>
       <description>Changelog for MapsIndoors for iOS. This document structure is based on Keep a Changelog and the project adheres to Semantic Versioning.
-[1.12.5] - 2018-01-15 Fixed  Fixed issue causing blue dot to disappear in some cases  [1.12.4] - 2018-01-12 Fixed  Fixed issue causing MPVenueProvider not to return any buildings once in a while Fixed issue causing MPDirectionsService not to return proper callbacks Fixed issues related to language code validation.</description>
+## [1.12.6] - 2018-03-13 ### Fixed - Fixed issue with disappearing building graphics if the internal urls was invalid
+## [1.12.5] - 2018-01-15 ### Fixed - Fixed issue causing blue dot to disappear in some cases
+## [1.12.4] - 2018-01-12 ### Fixed - Fixed issue causing MPVenueProvider not to return any buildings once in a while - Fixed issue causing MPDirectionsService not to return proper callbacks - Fixed issues related to language code validation.</description>
     </item>
     
     <item>
@@ -99,7 +123,9 @@ Added  Support for statically adding a position provider, optionally by setting 
       
       <guid>https://mapsindoors.github.io/ios/v2/changelog/</guid>
       <description>Changelog for MapsIndoors for iOS. This document structure is based on Keep a Changelog and the project adheres to Semantic Versioning.
-[1.12.5] - 2018-01-15 Fixed  Fixed issue causing blue dot to disappear in some cases  [1.12.4] - 2018-01-12 Fixed  Fixed issue causing MPVenueProvider not to return any buildings once in a while Fixed issue causing MPDirectionsService not to return proper callbacks Fixed issues related to language code validation.</description>
+## [1.12.6] - 2018-03-13 ### Fixed - Fixed issue with disappearing building graphics if the internal urls was invalid
+## [1.12.5] - 2018-01-15 ### Fixed - Fixed issue causing blue dot to disappear in some cases
+## [1.12.4] - 2018-01-12 ### Fixed - Fixed issue causing MPVenueProvider not to return any buildings once in a while - Fixed issue causing MPDirectionsService not to return proper callbacks - Fixed issues related to language code validation.</description>
     </item>
     
     <item>
@@ -146,6 +172,17 @@ With this in mind you need to find an IPS and then use the location from that IP
     
     <item>
       <title>MapsIndoors SDK for iOS v2 - Guides</title>
+      <link>https://mapsindoors.github.io/android/v2/guides/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/android/v2/guides/</guid>
+      <description>Searching for Locations and Displaying the Results on a Map Use the MPLocationsProvider class to search for content in your MapsIndoors solution.
+This example shows how to setup a query for the nearest single best matching location and display the result on the map:
+mLocationsProvider = new MPLocationsProvider(); mLocationQueryBuilder = new LocationQuery.Builder(); // init the query builder, in this case we will query the coffee machine in our office mLocationQueryBuilder.</description>
+    </item>
+    
+    <item>
+      <title>MapsIndoors SDK for iOS v2 - Guides</title>
       <link>https://mapsindoors.github.io/ios/v2/guides/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -157,20 +194,31 @@ let locations = MPLocationsProvider.init() let queryObj = MPLocationQuery.init()
     
     <item>
       <title>MapsIndoors for Android - Getting Started</title>
-      <link>https://mapsindoors.github.io/android/</link>
+      <link>https://mapsindoors.github.io/android/v1/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://mapsindoors.github.io/android/</guid>
+      <guid>https://mapsindoors.github.io/android/v1/</guid>
       <description>Basic Example You will find in the link an up and running project that contains the minimum code to start a MapsIndoors project.
 You can also follow the steps below to start your app from scratch or to enhance the Basic Example, more advanced feature will be explained in the part 2 of this tutorial with a demo app that gives a showcase of the mapsIndoors in a complete app that you can test also.</description>
     </item>
     
     <item>
-      <title>MapsIndoors for Android - Part 2</title>
-      <link>https://mapsindoors.github.io/android/guide-part2/</link>
+      <title>MapsIndoors for Android - Getting Started</title>
+      <link>https://mapsindoors.github.io/android/v2/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://mapsindoors.github.io/android/guide-part2/</guid>
+      <guid>https://mapsindoors.github.io/android/v2/</guid>
+      <description>Basic Example You will find in the link a repo that contains the minimum code to start a MapsIndoors project.
+You can also follow the steps below to start your app from scratch or to enhance the Basic Examples, more features will be explained in the guides.
+Setup MapsIndoors Add the MapsIndoors SDK as a dependency to your project. The AAR for the MapsIndoors SDK contains both Java classes, SDK resources and AndroidManifest.</description>
+    </item>
+    
+    <item>
+      <title>MapsIndoors for Android - Part 2</title>
+      <link>https://mapsindoors.github.io/android/v1/guide-part2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/android/v1/guide-part2/</guid>
       <description>Trying the demo App You can download the demo app from our github repository: Demo App Then run it and don&amp;rsquo;t forget to do a Gradle sync before and download all the required dependencies.
 Using Routing Routing is requested with at least an origin, a destination and a transit mode – transit mode corresponds directly to Google Maps transit modes: Walking, bicycling, driving and transit (public transportation).
 RoutingProvider routingProvider = new MPRoutingProvider(); routingProvider.</description>
@@ -178,10 +226,10 @@ RoutingProvider routingProvider = new MPRoutingProvider(); routingProvider.</des
     
     <item>
       <title>MapsIndoors for Android Reference Guide</title>
-      <link>https://mapsindoors.github.io/android/reference/</link>
+      <link>https://mapsindoors.github.io/android/v1/reference/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://mapsindoors.github.io/android/reference/</guid>
+      <guid>https://mapsindoors.github.io/android/v1/reference/</guid>
       <description>Please head to this reference manual.</description>
     </item>
     
@@ -233,10 +281,8 @@ You can also follow the steps below to start your app from scratch or to enhance
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://mapsindoors.github.io/ios/v2/</guid>
-      <description>Basic Example You will find in the link an up and running project that contains the minimum code to start a MapsIndoors project.
-You can also follow the steps below to start your app from scratch or to enhance the Basic Example, more features will be explained in the guides.
-Setup CocoaPods If you haven’t already, install CocoaPods: Getting Started with CocoaPods
-Setup MapsIndoors  If you don&amp;rsquo;t have an Xcode project yet, create one now and save it to your local machine.</description>
+      <description>Basic Example For basic examples of a MapsIndoors implementation, run pod try MapsIndoors (see below for setting up CocoaPods or just clone this repository) and run the XCode Scheme called Demos. The code for these samples are to find in the /Example/DemoSamples folder.
+You can also follow the steps below to start your app from scratch or to enhance the basic examples, more features will be explained in the guides.</description>
     </item>
     
     <item>

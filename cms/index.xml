@@ -17,7 +17,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://mapsindoors.github.io/cms/changelog/</guid>
-      <description>[3.4.0] - 20-02-2018 Added  Select all/deselect all, locations table. Graph bounds and editing.  Changed  Refactored locations list. Improved ordering of locations. Improved database performance greatly improving system responsiveness when loading many locations. Ordered types by viewdistance.  Fixed  In some situations custom fields on locations would not save correctly. Error message when trying to add an existing user.  [3.3.1] - 19-01-2018 Added Changed Fixed  Deleting locations now works.</description>
+      <description>[3.5.0] - 20-03-2018 Added  Navigate between buildings or reset the venue view in export map. Filter locations by floor (list view). New Map (google maps js api 3.32).  Changed  Moved location type to the top to better indicate its importance. The name of a location is now automatically set to the type. Can still be changed if needed. Split display settings and types in two pages. Improved analytics.</description>
     </item>
     
     <item>

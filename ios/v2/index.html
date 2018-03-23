@@ -157,13 +157,17 @@
     
     
     
+  
+    
+    
+    
     <a href="https://mapsindoors.github.io/ios/v2" class="project">
       <div class="banner">
         <div class="logo">
           <img src="https://mapsindoors.github.io//logos/apple-logo.svg" style="padding:10px">
         </div>
         <div class="name">
-          <strong>iOS SDK <br /><span class="version">2.0.0-alpha39</span></strong>
+          <strong>iOS SDK <br /><span class="version">2.0.0-beta12</span></strong>
           
         </div>
       </div>
@@ -203,6 +207,9 @@
           
           
           
+          
+          
+          
                   
           <ul>
             
@@ -237,6 +244,19 @@
 <a  title="Guides" href="https://mapsindoors.github.io/ios/v2/guides">
 	
 	Guides
+</a>
+
+
+
+      
+        
+        
+
+
+
+<a  title="Changelog" href="https://mapsindoors.github.io/ios/v2/changelog">
+	
+	Changelog
 </a>
 
 
@@ -301,9 +321,9 @@
 
 <h2 id="basic-example">Basic Example</h2>
 
-<p>You will find in the <a href="https://github.com/namine92/mapsIndooriOSTut">link</a> an up and running project that contains the minimum code to start a MapsIndoors project.</p>
+<p>For basic examples of a MapsIndoors implementation, run <code>pod try MapsIndoors</code> (see below for setting up CocoaPods or just clone <a href="https://github.com/MapsIndoors/MapsIndoorsIOS/tree/SDK_V2">this repository</a>) and run the XCode Scheme called <em>Demos</em>. The code for these samples are to find in the <em>/Example/DemoSamples</em> folder.</p>
 
-<p>You can also follow the steps below to start your app from scratch or to enhance the Basic Example, more features will be explained in the <a href="https://mapsindoors.github.io/ios/v2/guides">guides</a>.</p>
+<p>You can also follow the steps below to start your app from scratch or to enhance the basic examples, more features will be explained in the <a href="https://mapsindoors.github.io/ios/v2/guides">guides</a>.</p>
 
 <h2 id="setup-cocoapods">Setup CocoaPods</h2>
 
@@ -320,7 +340,7 @@
 
 <pre><code>source 'https://github.com/CocoaPods/Specs.git'
 target 'YOUR_APPLICATION_TARGET_NAME_HERE' do
-  pod 'MapsIndoors' '2.0.0-alpha39'
+  pod 'MapsIndoors' '2.0.0-beta12'
 end
 </code></pre>
 
@@ -329,7 +349,7 @@ end
 <li>Open a terminal and go to the directory containing the Podfile:</li>
 <li><code>cd &lt;path-to-project&gt;</code></li>
 <li>Run the <code>pod install</code> command. This will install the APIs specified in the Podfile, along with any dependencies they may have.</li>
-<li>Close Xcode, and then open (double-click) your project&rsquo;s .xcworkspace file to launch Xcode. From this time onwards, you must use the .xcworkspace file to open the project.</li>
+<li>Close Xcode, and then open (double-click) your project&rsquo;s <em>.xcworkspace</em> file to launch Xcode. From this time onwards, you must use the <em>.xcworkspace</em> file to open the project.</li>
 </ul>
 
 <p>Add your credentials to your <code>AppDelegate.swift</code> as follows:</p>
@@ -344,16 +364,14 @@ import MapsIndoors
 
 <pre><code>GMSServices.provideAPIKey(      &quot;YOUR_GOOGLE_API_KEY&quot;)
 MapsIndoors.provideAPIKey(      &quot;YOUR_MAPSINDOORS_API_KEY&quot;, 
-                googleAPIKey:   &quot;YOUR_GOOGLE_API_KEY&quot;, 
-                contentKey:     &quot;YOUR_MAPSINDOORS_CONTENT_KEY&quot;)
+            googleAPIKey:       &quot;YOUR_GOOGLE_API_KEY&quot;)
 </code></pre>
 
 <p>Replace:</p>
 
 <ul>
 <li><code>YOUR_GOOGLE_API_KEY</code> with your Google API key</li>
-<li><code>YOUR_MAPSINDOORS_API_KEY</code> with your MapsIndoors API key. Some MapsIndoors solutions is deployed with open APIs, in this case, you may pass <code>nil</code> as the parameter value</li>
-<li><code>YOUR_MAPSINDOORS_CONTENT_KEY</code> with your Google API key</li>
+<li><code>YOUR_MAPSINDOORS_API_KEY</code> with your MapsIndoors API key. (In version 1, this key was known as your Solution Id)</li>
 </ul>
 
 <h2 id="setup-a-google-map-with-mapsindoors">Setup a Google Map with MapsIndoors</h2>
@@ -376,14 +394,13 @@ let myMapControl = MPMapControl.init(map: mapView)!
 
 <p>In your app targets build phases, add a &ldquo;Run Script&rdquo; build phase containing the following command:</p>
 
-<pre><code>${SRCROOT}/Pods/MapsIndoors/Scripts/derive_ressources.sh --content-key=YOUR_MAPSINDOORS_CONTENT_KEY --api-key=YOUR_MAPSINDOORS_API_KEY --language=en
+<pre><code>${SRCROOT}/Pods/MapsIndoors/Scripts/derive_ressources.sh --api-key=YOUR_MAPSINDOORS_API_KEY --language=en
 </code></pre>
 
 <p>Replace:</p>
 
 <ul>
-<li><code>YOUR_MAPSINDOORS_CONTENT_KEY</code> with your own MapsIndoors content key</li>
-<li><code>YOUR_MAPSINDOORS_API_KEY</code> with your MapsIndoors API key. Some MapsIndoors solutions is deployed with open APIs, in this case, you may remove this input parameter entirely</li>
+<li><code>YOUR_MAPSINDOORS_API_KEY</code> with your MapsIndoors API key.</li>
 <li><code>en</code> with any one of the languages that your MapsIndoors solution supports (Two letter ISO-639-1 language code). If you only have one language deployed you may remove this input parameter entirely</li>
 </ul>
 

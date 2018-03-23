@@ -9,18 +9,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>MapsIndoors for Web - Reference Guide - MapsIndoors Developers</title>
+    <title>MapsIndoors for Android - Part 2 - MapsIndoors Developers</title>
     <meta name="generator" content="Hugo 0.26" />
 
     
     <meta name="description" content="Everything you need to get started with MapsIndoors.">
     
-    <link rel="canonical" href="https://mapsindoors.github.io/web/reference/">
+    <link rel="canonical" href="https://mapsindoors.github.io/android/v1/guide-part2/">
     
     <meta name="author" content="MapsPeople">
     
 
-    <meta property="og:url" content="https://mapsindoors.github.io/web/reference/">
+    <meta property="og:url" content="https://mapsindoors.github.io/android/v1/guide-part2/">
     <meta property="og:title" content="MapsIndoors Developers">
     <meta property="og:image" content="https://mapsindoors.github.io/images/logo.png">
     <meta name="apple-mobile-web-app-title" content="MapsIndoors Developers">
@@ -106,7 +106,7 @@
     </div>
     <div class="stretch">
       <div class="title">
-        MapsIndoors for Web - Reference Guide
+        MapsIndoors for Android - Part 2
       </div>
     </div>
 
@@ -153,33 +153,45 @@
     
     
     
-  
-    
-    
-    
-  
-    
-    
-    
-  
-    
-    
-    
-  
-    
-    
-    
-    <a href="https://mapsindoors.github.io/web" class="project">
+    <a href="https://mapsindoors.github.io/android/v1" class="project">
       <div class="banner">
         <div class="logo">
-          <img src="https://mapsindoors.github.io//logos/web-logo.svg" style="padding:10px">
+          <img src="https://mapsindoors.github.io//logos/android-logo.svg" style="padding:10px">
         </div>
         <div class="name">
-          <strong>Web SDK <br /><span class="version">1.4.1</span></strong>
+          <strong>Android SDK <br /><span class="version">1.8.7</span></strong>
           
         </div>
       </div>
     </a>
+    
+  
+    
+    
+    
+    <a href="https://mapsindoors.github.io/android/v2" class="project">
+      <div class="banner">
+        <div class="logo">
+          <img src="https://mapsindoors.github.io//logos/android-logo.svg" style="padding:10px">
+        </div>
+        <div class="name">
+          <strong>Android SDK <br /><span class="version">2.0.0-beta03</span></strong>
+          
+        </div>
+      </div>
+    </a>
+    
+  
+    
+    
+    
+  
+    
+    
+    
+  
+    
+    
     
   
     
@@ -192,18 +204,6 @@
       <div class="toc">
           
           
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
                   
           <ul>
             
@@ -211,7 +211,7 @@
 
 
 <li>
-    <span class="section">Web SDK</span>
+    <span class="section">Android SDK</span>
     <ul>
       
         
@@ -219,7 +219,7 @@
 
 
 
-<a  title="Getting Started" href="https://mapsindoors.github.io/web">
+<a  title="Getting Started" href="https://mapsindoors.github.io/android/v1">
 	
 	Getting Started
 </a>
@@ -232,22 +232,9 @@
 
 
 
-<a  title="Next Steps" href="https://mapsindoors.github.io/web/guide-part2">
+<a class="current" title="Next Steps" href="https://mapsindoors.github.io/android/v1/guide-part2">
 	
 	Next Steps
-</a>
-
-
-
-      
-        
-        
-
-
-
-<a class="current" title="Reference Docs" href="https://mapsindoors.github.io/web/reference">
-	
-	Reference Docs
 </a>
 
 
@@ -261,7 +248,20 @@
 
 
 
-<a  title="Changelog" href="https://mapsindoors.github.io/web/changelog">
+<a  title="Reference Docs" href="https://app.mapsindoors.com/mapsindoors/reference/android/index.html">
+	
+	Reference Docs
+</a>
+
+
+
+      
+        
+        
+
+
+
+<a  title="Changelog" href="https://mapsindoors.github.io/android/v1/changelog">
 	
 	Changelog
 </a>
@@ -272,6 +272,18 @@
     </ul>
 </li>
           </ul>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
           
           
           
@@ -316,404 +328,141 @@
 
 	<article class="article">
 		<div class="wrapper">
-			<h1>MapsIndoors for Web - Reference Guide </h1>
+			<h1>MapsIndoors for Android - Part 2 </h1>
 
 			
 
-<h2 id="mapsindoors">MapsIndoors</h2>
+<h2 id="trying-the-demo-app">Trying the demo App</h2>
 
-<p><code>mapsindoors.MapsIndoors(opts:MapsIndoorsOptions)</code></p>
+<p>You can download the demo app from our github repository: <a href="https://github.com/MapsIndoors/MapsIndoorsAndroid">Demo App</a>
+Then run it and don&rsquo;t forget to do a Gradle sync before and download all the required dependencies.</p>
 
-<h3 id="methods">Methods</h3>
+<h2 id="using-routing">Using Routing</h2>
 
-<pre><code>clear()
-find(args:string|FindOptions) : Promise(Location)
-fitBuilding(buildingId:string)
-fitVenue(venueId?:string)
-getBuilding() : Building
-getDisplayRule(type:string) : DisplayRuleLiteral
-getFloor() : number
-getLocationsVisible() : bool
-getMap() : google.maps.Map
-getStyles() : VenueStyle[]
-getVenue() : Venue
-setDisplayRule(rule: DisplayRuleLiteral)
-setLanguage(language:string)
-setFloor(floor:number)
-setMap(map:google.maps.Map)
-setStyle(style:string) //style folder
-setVenue(venue:string|Venue)
-locate(options:locateOptions)
+<p>Routing is requested with at least an origin, a destination and a transit mode – transit mode corresponds directly to Google Maps transit modes: Walking, bicycling, driving and transit (public transportation).</p>
+
+<pre><code class="language-java">    RoutingProvider routingProvider = new MPRoutingProvider();
+    routingProvider.setOnRouteResultListener(new OnRouteResultListener()
+    {
+        @Override
+        public void onRouteResult(final Route newRoute)
+        {
+            // Getting route object result
+        }
+
+        @Override
+        public void onRoutingInfoResult(Object info)
+        {
+
+        }
+    });
+    routingProvider.query(myOriginLocation.getPoint(), myDestinationLocation.getPoint());
 </code></pre>
 
-<h3 id="events">Events</h3>
+<p>When requesting only indoor routes, the travel mode is always WALKING - regardless of what you assign it to.</p>
 
-<ul>
-<li>ready</li>
-<li>map_changed</li>
-<li>floor_changed</li>
-<li>building_changed</li>
-<li>venue_changed</li>
-<li>style_changed</li>
-<li>locations_visible_cshanged</li>
-<li>location_click</li>
-</ul>
+<h3 id="route-restrictions">Route restrictions</h3>
 
-<h3 id="mapsindoorsoptions-literal">MapsIndoorsOptions Literal</h3>
+<p>Add a restriction to the route by setting the avoid argument. A list of possible restrictions can be found in the com.mapspeople.routing.RouteRestriction class. Avoid stairs on the route using the following restriction parameter:</p>
 
-<pre><code>MapsIndoorsOptions {
-  map: google.maps.Map,
-  floor: number,
-  locationVisible: boolean
-}
+<pre><code class="language-java">routingProvider.addRouteRestriction(RouteRestriction.AVOID_STAIRS);
 </code></pre>
 
-<h3 id="displayrule-literal">DisplayRule Literal</h3>
+<h3 id="public-transit-travel-mode">Public transit travel mode</h3>
 
-<pre><code>DisplayRule
-{
-  from?: number,
-  to?: number,
-  icon?: { 
-    url: string,
-    anchor?: google.maps.Point,
-    scaledSize?: google.maps.Size
-  },
-  title?: string,
-  label?: string,
-  visible?: boolean
-}
+<p>Using TRANSIT mode requires either a departure date or an arrival date.</p>
+
+<pre><code class="language-java">routingProvider.setDateTime(Calendar.getInstance(), false);
 </code></pre>
 
-<h3 id="venue-literal">Venue Literal</h3>
+<h3 id="rendering-a-route-on-the-map">Rendering a route on the map</h3>
 
-<pre><code>Venue 
-{
-  anchor: GeoJson.Point,
-  defaultFloor: number,
-  entryPoints: GeoJson.Point[],
-  geometry: GeoJson.Polygon
-  graphId: string,
-  id: string,
-  name: string,
-  styles: VenueStyle[],
-  solutionId: string,
-  tilesUrl: string,
-  venueInfo: VenueInfo
-}
+<p>Using the DirectionsRenderer it is possible to easily render the route retrieved from the RoutingProvider. The route is parted in segments called legs, and legs are again parted in steps. The route will be rendered one leg or step at a time. This is an example of rendering the first leg of a route on a google map. Total number of legs is <code>route.getLegs().size()</code>.</p>
+
+<pre><code class="language-java">DirectionsRenderer directionsRenderer = new DirectionsRenderer(ctx, selectionListener); directionsRenderer.setMap(myGoogleMap); directionsRenderer.setRoute(myRoute); directionsRenderer.setRouteLegIndex(0); //
 </code></pre>
 
-<h3 id="venuestyle-literal">VenueStyle Literal</h3>
+<h2 id="working-with-mapped-poi-s-locations">Working with mapped POI’s / Locations</h2>
 
-<pre><code>VenueStyle
-{
-  displayName: string,
-  folder: string
-}
+<h3 id="querying-poi-s-locations">Querying POI&rsquo;s / Locations</h3>
+
+<p>This example will show you the possible ways of querying the POI’s on your venue(s). You need to provide your solution id as a mandatory property to the query.</p>
+
+<pre><code class="language-java">MPLocationsProvider locs = new MPLocationsProvider(this); //Provide context
+
+locs.setOnLocationsReadyListener(new OnLocationsReadyListener() {
+   @Override
+   public void onLocationsReady(List&lt;Location&gt; locations) {
+
+     // Here you can do your work with the locations
+
+   }
+
+   @Override
+   public void onLocationDetailsReady(Location location) {
+     
+     // Here you can do your work with the locations details
+
+   }
+});
+
+LocationQuery lc = new LocationQuery();
+
+lc.arg = &quot;YOUR_SOLUTION_ID&quot;;
+lc.setQuery(&quot;lo&quot;);
+
+//Sorting will override &quot;near/radius&quot;
+lc.orderBy = LocationQuery.OrderBy.NAME;
+lc.sortOrder = LocationQuery.SortOrder.DESC;
+
+lc.near = new Point(55.6377969,12.5787581);
+lc.radius = 200;
+lc.max = 1;
+
+// query multiple (not all data is fetched)
+locs.getLocationsUsingQueryAsync(lc, Locale.ENGLISH);
+// or single get (all data is fetched)
+locs.getLocationDetailsAsync(&quot;YOUR_SOLUTION_ID&quot;, &quot;locationId&quot;);
 </code></pre>
 
-<h3 id="venueinfo-literal">VenueInfo Literal</h3>
+<h3 id="show-a-location-on-map">Show a Location on map</h3>
 
-<pre><code>VenueInfo 
-{
-  aliases: string[],
-  language: string,
-  name: string
-}
+<p>To show a single POI on a map you can use this method:</p>
+
+<pre><code class="language-java">myMapControl.displaySingleLocation(Location location);
 </code></pre>
 
-<h3 id="building-literal">Building Literal</h3>
+<h2 id="using-custom-providers">Using Custom Providers</h2>
 
-<pre><code>Building 
-{
-  anchor: GeoJson.Point
-  buildingInfo: BuildingInfo,
-  floors: BuildingFloor,
-  geometry: GeoJson.Polygon,
-  id: string
-}
+<p>To setup with e.g. locations from your own backend, make an implementation of the LocationsProvider interface, and pass the provider as parameter to the initMap method:</p>
+
+<pre><code class="language-java">MyLocationsProvider myLocationsProvider = new MyLocationsProvider();
+mapControl.initMap(&quot;YOUR_SOLUTION_KEY&quot;, &quot;rtx&quot;, myLocationsProvider, null, null, null);
 </code></pre>
 
-<h3 id="buildinginfo-literal">BuildingInfo Literal</h3>
+<h2 id="determining-and-setting-a-user-location">Determining and setting a user location</h2>
 
-<pre><code>BuildingInfo 
-{
-  aliases: string[],
-  language: string,
-  name: string
-}
+<p>MapsIndoors can show the user position, but to do that it needs to know the user&rsquo;s position. This can either be set manually by the app or using a position provider.
+To set it manually, simply call the map control directly with a location and floor, for this case we are going to set it as the venue position:</p>
+
+<pre><code class="language-java">//the point on the map and the floor
+mMapControl.setCurrentPosition( new Point(57.08585, 9.95751), 0);
 </code></pre>
 
-<h3 id="buildingfloor-literal">BuildingFloor Literal</h3>
+<p>A position provider is normally easier to use for real time positioning. To create a position provider make a class that implements the PositionProvider interface and add it to your MapControl like this:</p>
 
-<pre><code>BuildingFloor 
-{
-  geometry: GeoJson.Polygon,
-  name: string
-}
+<h3 id="using-a-positioning-provider">Using a positioning provider</h3>
+
+<p>The GPS provider is part of the demo app: <a href="https://github.com/MapsIndoors/MapsIndoorsAndroid/blob/master/app/src/main/java/com/mapsindoors/positionprovider/GPSPositionProvider.java">GPSPositionProvider</a>.</p>
+
+<pre><code class="language-java">//Add a position provider in able to track the user's position.
+gpsProvider = new GPSPositionProvider(this.getApplicationContext());
+//Telling map control about our provider
+mMapControl.addPositionProvider(gpsProvider);
+mMapControl.startPositioning();
 </code></pre>
 
-<h3 id="findoptions-literal">FindOptions Literal</h3>
-
-<pre><code>FindOptions
-{
-  q:string,
-  venue?: string,
-  floor?: number,
-  roomId?, string,
-  building?: string //building name
-}
-</code></pre>
-
-<h3 id="location-literal">Location Literal</h3>
-
-<pre><code>Location
-{
-  geometry: GeoJson.Point,
-  id: string,
-  properties: {
-    aliases: string[],
-    building: string,
-    categories: ???,
-    contact: {
-      email: string,
-      phone: string,
-      website: string
-    },
-    description: string,
-    displayRule: DisplayRuleLiteral,
-    fields: Object,
-    floor: number,
-    floorName: string,
-    type: string,
-    venue: string,
-    venueId: string,
-    type: string
-  },
-  type: string
-}
-</code></pre>
-
-<h2 id="directionsrenderer">DirectionsRenderer</h2>
-
-<p><code>mapsindoors.DirectionsRenderer(opts:DirectionsRendererOptions)</code></p>
-
-<h3 id="methods-1">Methods</h3>
-
-<pre><code>setDirections(DirectionsResult)
-setStyle(type:string, style:DirectionsStyle)
-setLegIndex(index:number)
-nextLeg()
-previousLeg(),
-getDirections(),
-getLegIndex(),
-getMap()
-</code></pre>
-
-<h3 id="events-1">Events</h3>
-
-<ul>
-<li>directions_changed</li>
-<li>map_changed</li>
-<li>floor_changed</li>
-<li>legIndex_changed</li>
-<li>mapsindoors_changed</li>
-</ul>
-
-<h3 id="directionsrendereroptions-literal">DirectionsRendererOptions Literal</h3>
-
-<pre><code>DirectionsRendererOptions
-{
-  map: google.maps.Map,
-  mapsindoors: mapsindoors.MapsIndoors,
-  suppressMarkers: boolean,
-  directions: DirectionsResult,
-  legIndex: number
-}
-</code></pre>
-
-<h3 id="directionsstyle-literal">DirectionsStyle Literal</h3>
-
-<pre><code>DirectionsStyle 
-{
-  icons: google.maps.IconSequence[],
-  strokeColor: string
-  strokeOpacity: number
-  strokeWeight: number
-  visible: booleean
-}
-</code></pre>
-
-<h2 id="directionsservice">DirectionsService</h2>
-
-<p><code>mapsindoors.DirectionsService()</code></p>
-
-<h3 id="methods-2">Methods</h3>
-
-<pre><code>route(args: RouteRequest): Promise(result:DirectionsResult)
-getDetails(graphId:string): GraphDetails
-</code></pre>
-
-<h3 id="routerequest-literal">RouteRequest Literal</h3>
-
-<pre><code>RouteRequest 
-{
-  origin: {
-    lat: float,
-    lng: float,
-    floor: number
-  },
-  destination: {
-    lat: float,
-    lng: float,
-    floor: number
-  },
-  travelMode: string,
-  transitOptions?: {
-    arrival: DateTime,
-    departure: DateTime
-  },
-  avoidStairs?: boolean
-}
-</code></pre>
-
-<h3 id="directionsresult">DirectionsResult</h3>
-
-<p>See <a href="https://developers.google.com/maps/documentation/directions/intro#DirectionsResponses">Google Maps Javascript API DirectionsResult</a></p>
-
-<h2 id="label">Label</h2>
-
-<p><code>mapsindoors.Label(opts:LabelOptions)</code></p>
-
-<h3 id="methods-3">Methods</h3>
-
-<pre><code>setText(text:string),
-setVisible(visible:boolean),
-setClickable(clickable:boolean),
-setPosition(position:google.maps.LatLng),
-setMap(map:google.maps.Map),
-getAlign() : string,
-getVisible() : boolean,
-getPosition() : google.maps.LatLng,
-getText() : string
-getMap() : google.maps.Map
-</code></pre>
-
-<h3 id="labeloptions">LabelOptions</h3>
-
-<pre><code>LabelOptions Literal
-{
-  align:string ['left', 'center', 'right],
-  color:string,
-  fontFamily: string,
-  fontSize: string,
-  fontWeight: string,
-  strokeStyle: string,
-  strokeWeight: number,
-  pixelOffset: google.maps.Size,
-  visible: boolean,
-  clickable: boolean,
-  shadowBlur: number,
-  shadowColor: string,
-  text: string
-}
-</code></pre>
-
-<h2 id="distancematrixservice">DistanceMatrixService</h2>
-
-<p><code>mapsindoors.DistanceMatrixService()</code></p>
-
-<h3 id="methods-4">Methods</h3>
-
-<pre><code>getDistanceMatrix(request:DistanceMatrixRequest)
-</code></pre>
-
-<h3 id="distancematrixrequest-literal">DistanceMatrixRequest Literal</h3>
-
-<pre><code>DistanceMatrixRequest {
-  graphId: string,
-  origins: GeoJson.Point[],
-  destinations: GeoJson.Point[],
-  mode: string (travelMode),
-}
-</code></pre>
-
-<h3 id="directionsresult-1">DirectionsResult</h3>
-
-<p>See <a href="https://developers.google.com/maps/documentation/distance-matrix/intro#DistanceMatrixResponses">Google Maps Javascript API DistanceMatrixResponse</a></p>
-
-<h2 id="geocodeservice">GeoCodeService</h2>
-
-<p><code>mapsindoors.GeoCodeService()</code></p>
-
-<h3 id="methods-5">Methods</h3>
-
-<pre><code>reverseGeoCode(points: GeoJson.Point[]) : ReverseGeoCodeResponse[]
-</code></pre>
-
-<h3 id="reversegeocoderesponse-literal">ReverseGeoCodeResponse Literal</h3>
-
-<pre><code>ReverseGeoCodeResponse
-{
-  building: {
-    id:string,
-    name: string,
-  },
-  venue:
-  {
-    id:string,
-    name: string
-  }
-}
-</code></pre>
-
-<h3 id="locationsservice">LocationsService</h3>
-
-<p><code>mapsindoors.LocationsService()</code></p>
-
-<h3 id="methods-6">Methods</h3>
-
-<pre><code>getLocations(args?: LocationsRequest) : Location[],
-getLocation(string: id) : Location,
-getTypes() : Type[],
-getCategories(): Category[]
-</code></pre>
-
-<h3 id="locationsrequest-literal">LocationsRequest Literal</h3>
-
-<pre><code>LocationsRequest
-{
-  q: string,      
-  building?: string,     
-  venue?: string,    
-  floor?: 1,              
-  take?: 10,                    
-  skip?: number,      
-  near?: {
-    lat:double, 
-    lng: double
-  }, 
-  radius?:number,           
-  orderBy?: string                     
-}
-</code></pre>
-
-<h2 id="venuesservice">VenuesService</h2>
-
-<p><code>mapsindoors.VenuesService()</code></p>
-
-<h3 id="methods-7">Methods</h3>
-
-<pre><code>getVenues() : Venue[]
-getVenue() : Venue
-getBuildings() : Building[]
-getBuilding() Bulding
-getBuildingInView() : BuildingInViewResponse
-</code></pre>
-
-<h2 id="floorselector">FloorSelector</h2>
-
-<p><code>mapsindoors.FloorSelector(element:HtmlElement,mapsindoors: mapsindoors.MapsIndoors)</code></p>
+<p>To know more about this subject, please read this <a href="https://mapsindoors.github.io/introductions/indoor-positioning">Introduction to the field of Indoor Positioning</a>.</p>
 
 
 			<aside class="copyright" role="note">
@@ -732,7 +481,7 @@ getBuildingInView() : BuildingInViewResponse
 <nav class="pagination" aria-label="Footer">
   <div class="previous">
   
-      <a href="https://mapsindoors.github.io/web/guide-part2/" title="MapsIndoors for Web - Part 2">
+      <a href="https://mapsindoors.github.io/android/v2/" title="MapsIndoors for Android - Getting Started">
         <span class="direction">
           Previous
         </span>
@@ -742,7 +491,7 @@ getBuildingInView() : BuildingInViewResponse
           </div>
           <div class="stretch">
             <div class="title">
-              MapsIndoors for Web - Part 2
+              MapsIndoors for Android - Getting Started
             </div>
           </div>
         </div>
@@ -752,14 +501,14 @@ getBuildingInView() : BuildingInViewResponse
 
   <div class="next">
   
-      <a href="https://mapsindoors.github.io/ios/v1/" title="MapsIndoors for iOS - Getting Started">
+      <a href="https://mapsindoors.github.io/android/v1/reference/" title="MapsIndoors for Android Reference Guide">
         <span class="direction">
           Next
         </span>
         <div class="page">
           <div class="stretch">
             <div class="title">
-              MapsIndoors for iOS - Getting Started
+              MapsIndoors for Android Reference Guide
             </div>
           </div>
           <div class="button button-next" role="button" aria-label="Next">
