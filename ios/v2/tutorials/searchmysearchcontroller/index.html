@@ -9,18 +9,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>MapsIndoors for iOS Reference Guide - MapsIndoors Developers</title>
+    <title>Create a Search Experience with MapsIndoors - Part 1 - MapsIndoors Developers</title>
     <meta name="generator" content="Hugo 0.26" />
 
     
     <meta name="description" content="Everything you need to get started with MapsIndoors.">
     
-    <link rel="canonical" href="https://mapsindoors.github.io/ios/v1/reference/">
+    <link rel="canonical" href="https://mapsindoors.github.io/ios/v2/tutorials/searchmysearchcontroller/">
     
     <meta name="author" content="MapsPeople">
     
 
-    <meta property="og:url" content="https://mapsindoors.github.io/ios/v1/reference/">
+    <meta property="og:url" content="https://mapsindoors.github.io/ios/v2/tutorials/searchmysearchcontroller/">
     <meta property="og:title" content="MapsIndoors Developers">
     <meta property="og:image" content="https://mapsindoors.github.io/images/logo.png">
     <meta name="apple-mobile-web-app-title" content="MapsIndoors Developers">
@@ -106,7 +106,7 @@
     </div>
     <div class="stretch">
       <div class="title">
-        MapsIndoors for iOS Reference Guide
+        Create a Search Experience with MapsIndoors - Part 1
       </div>
     </div>
 
@@ -210,9 +210,6 @@
           
           
           
-          
-          
-          
                   
           <ul>
             
@@ -228,7 +225,7 @@
 
 
 
-<a  title="Getting Started" href="https://mapsindoors.github.io/ios/v1">
+<a  title="Getting Started" href="https://mapsindoors.github.io/ios/v2">
 	
 	Getting Started
 </a>
@@ -241,9 +238,9 @@
 
 
 
-<a  title="Next Steps" href="https://mapsindoors.github.io/ios/v1/guide-part2">
+<a  title="Guides" href="https://mapsindoors.github.io/ios/v2/guides">
 	
-	Next Steps
+	Guides
 </a>
 
 
@@ -254,7 +251,20 @@
 
 
 
-<a  title="Reference Docs" href="https://app.mapsindoors.com/mapsindoors/reference/ios/index.html">
+<a  title="Tutorials" href="https://mapsindoors.github.io/ios/v2/tutorials">
+	
+	Tutorials
+</a>
+
+
+
+      
+        
+        
+
+
+
+<a  title="Reference Docs" href="https://app.mapsindoors.com/mapsindoors/reference/ios/v2/index.html">
 	
 	Reference Docs
 </a>
@@ -267,7 +277,7 @@
 
 
 
-<a  title="Changelog" href="https://mapsindoors.github.io/ios/v1/changelog">
+<a  title="Changelog" href="https://mapsindoors.github.io/ios/v2/changelog">
 	
 	Changelog
 </a>
@@ -278,6 +288,9 @@
     </ul>
 </li>
           </ul>
+          
+          
+          
           
           
           
@@ -325,9 +338,120 @@
 
 	<article class="article">
 		<div class="wrapper">
-			<h1>MapsIndoors for iOS Reference Guide </h1>
+			<h1>Create a Search Experience with MapsIndoors - Part 1 </h1>
 
-			<p>Please head to <a href="https://app.mapsindoors.com/mapsindoors/reference/ios/index.html">this reference manual</a>.</p>
+			<p>This is an example of creating a simple search experience using MapsIndoors. We will create a map with a search button that leads to another view controller that handles the search and selection. On selection of a location, we go back to the map and shows the selected location on the map.</p>
+
+<p>We will start by creating a simple search controller that handles search and selection of MapsIndoors locations</p>
+
+<p>Declare a protocol for our location selection with a <code>didSelectLocation</code> method</p>
+
+<pre><code>protocol MySearchControllerDelegate {
+    func didSelectLocation(location:MPLocation)
+}
+</code></pre>
+
+<p>Define <code>MySearchController</code>. In this tutorial our search controller is a <code>UIViewController</code> that implements the protocols <code>UISearchBarDelegate</code>, <code>UITableViewDelegate</code> and <code>UITableViewDataSource</code></p>
+
+<pre><code>class MySearchController: UIViewController, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource {
+</code></pre>
+
+<p>Setup member variables for <code>MySearchController</code>:</p>
+
+<ul>
+<li>An instance of type <code>MPLocationsProvider</code> (the service)</li>
+<li>An instance of type <code>MPLocationQuery</code></li>
+<li>An array of <code>MPLocation</code> to hold your list of results</li>
+<li>Your delegate object</li>
+<li>A search bar view</li>
+
+<li><p>A table view</p>
+
+<pre><code>let locationsProvider = MPLocationsProvider.init()
+let query = MPLocationQuery.init()
+var locations:[MPLocation] = []
+var delegate:MySearchControllerDelegate? = nil
+let tableView = UITableView.init()
+let searchBar = UISearchBar.init()
+</code></pre>
+
+<p>In <code>viewDidLoad</code>, wire up your view controller to the tableview and search bar.</p>
+
+<pre><code>searchBar.delegate = self
+tableView.delegate = self
+tableView.dataSource = self
+</code></pre>
+
+<p>Register a class for the reusable table view cell.</p>
+
+<pre><code>tableView.register(UITableViewCell.self, forCellReuseIdentifier: &quot;reuseIdentifier&quot;)
+</code></pre>
+
+<p>Arrange the search bar and the table view in a stack view.</p>
+
+<pre><code>let stackView = UIStackView.init(arrangedSubviews: [searchBar, tableView])
+stackView.axis = .vertical
+view = stackView
+</code></pre>
+
+<p>In <code>MySearchController</code>, implement the <code>numberOfSections</code> method, return 1.</p>
+
+<pre><code>func numberOfSections(in tableView: UITableView) -&gt; Int {
+return 1
+}
+</code></pre>
+
+<p>Implement the <code>numberOfRowsInSection</code> method, return the length of your locations array.</p>
+
+<pre><code>func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -&gt; Int {
+return locations.count
+}
+</code></pre>
+
+<p>Implement the <code>textDidChange</code> method:</p></li>
+
+<li><p>Change the query objects query property to reflect the current search text</p></li>
+
+<li><p>Call <code>getLocationsUsing</code> with the modified query</p></li>
+
+<li><p>In the callback block, reset the locations array with new results</p></li>
+
+<li><p>Reload table view</p>
+
+<pre><code>func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+query.query = searchText
+query.queryMode = .autocomplete
+locationsProvider.getLocationsUsing(query) { (locationData, error) in
+    if error == nil {
+        self.locations = locationData!.list!
+        self.tableView.reloadData()
+    }
+}
+}
+</code></pre>
+
+<p>Implement the <code>tableView:cellForRowAt</code> method. Set the <code>cell.textLabel.text</code> to reflect the <em>name</em> of the location of same index.</p>
+
+<pre><code>func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -&gt; UITableViewCell {
+let cell = tableView.dequeueReusableCell(withIdentifier: &quot;reuseIdentifier&quot;, for: indexPath)
+cell.textLabel?.text = locations[indexPath.row].name
+return cell
+}
+</code></pre>
+
+<p>Implement the <code>tableView:didSelectRowAt</code> method. In this example we just call the delegate method and dismiss the view controller.
+Delegate method will be handled by <a href="searchsearchmapcontroller">SearchMapController</a></p>
+
+<pre><code>func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+delegate?.didSelectLocation(location: locations[indexPath.row])
+self.dismiss(animated: true, completion: nil)
+}
+</code></pre>
+
+<p>In <a href="searchsearchmapcontroller">Part 2</a> we will create the map view controller that displays the blue dot.</p></li>
+</ul>
+
+<p><a href="https://github.com/MapsIndoors/MapsIndoorsIOS-Demo-Samples/blob/master/Search/MySearchController.swift">See the sample in MySearchController.swift</a></p>
 
 
 			<aside class="copyright" role="note">
@@ -346,7 +470,7 @@
 <nav class="pagination" aria-label="Footer">
   <div class="previous">
   
-      <a href="https://mapsindoors.github.io/ios/v1/guide-part2/" title="MapsIndoors for iOS - Part 2">
+      <a href="https://mapsindoors.github.io/ios/v1/changelog/" title="Changelog">
         <span class="direction">
           Previous
         </span>
@@ -356,7 +480,7 @@
           </div>
           <div class="stretch">
             <div class="title">
-              MapsIndoors for iOS - Part 2
+              Changelog
             </div>
           </div>
         </div>
@@ -366,14 +490,14 @@
 
   <div class="next">
   
-      <a href="https://mapsindoors.github.io/ios/v2/tutorials/locationdetailslocationdetailscontroller/" title="Show Location Details">
+      <a href="https://mapsindoors.github.io/cms/" title="Guide to the MapsIndoors CMS">
         <span class="direction">
           Next
         </span>
         <div class="page">
           <div class="stretch">
             <div class="title">
-              Show Location Details
+              Guide to the MapsIndoors CMS
             </div>
           </div>
           <div class="button button-next" role="button" aria-label="Next">

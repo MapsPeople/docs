@@ -9,18 +9,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>MapsIndoors for iOS Reference Guide - MapsIndoors Developers</title>
+    <title> - MapsIndoors Developers</title>
     <meta name="generator" content="Hugo 0.26" />
 
     
     <meta name="description" content="Everything you need to get started with MapsIndoors.">
     
-    <link rel="canonical" href="https://mapsindoors.github.io/ios/v1/reference/">
+    <link rel="canonical" href="https://mapsindoors.github.io/ios/v2/tutorials/showmultiplelocationsshowmultiplelocationscontroller/">
     
     <meta name="author" content="MapsPeople">
     
 
-    <meta property="og:url" content="https://mapsindoors.github.io/ios/v1/reference/">
+    <meta property="og:url" content="https://mapsindoors.github.io/ios/v2/tutorials/showmultiplelocationsshowmultiplelocationscontroller/">
     <meta property="og:title" content="MapsIndoors Developers">
     <meta property="og:image" content="https://mapsindoors.github.io/images/logo.png">
     <meta name="apple-mobile-web-app-title" content="MapsIndoors Developers">
@@ -106,7 +106,7 @@
     </div>
     <div class="stretch">
       <div class="title">
-        MapsIndoors for iOS Reference Guide
+        
       </div>
     </div>
 
@@ -210,9 +210,6 @@
           
           
           
-          
-          
-          
                   
           <ul>
             
@@ -228,7 +225,7 @@
 
 
 
-<a  title="Getting Started" href="https://mapsindoors.github.io/ios/v1">
+<a  title="Getting Started" href="https://mapsindoors.github.io/ios/v2">
 	
 	Getting Started
 </a>
@@ -241,9 +238,9 @@
 
 
 
-<a  title="Next Steps" href="https://mapsindoors.github.io/ios/v1/guide-part2">
+<a  title="Guides" href="https://mapsindoors.github.io/ios/v2/guides">
 	
-	Next Steps
+	Guides
 </a>
 
 
@@ -254,7 +251,20 @@
 
 
 
-<a  title="Reference Docs" href="https://app.mapsindoors.com/mapsindoors/reference/ios/index.html">
+<a  title="Tutorials" href="https://mapsindoors.github.io/ios/v2/tutorials">
+	
+	Tutorials
+</a>
+
+
+
+      
+        
+        
+
+
+
+<a  title="Reference Docs" href="https://app.mapsindoors.com/mapsindoors/reference/ios/v2/index.html">
 	
 	Reference Docs
 </a>
@@ -267,7 +277,7 @@
 
 
 
-<a  title="Changelog" href="https://mapsindoors.github.io/ios/v1/changelog">
+<a  title="Changelog" href="https://mapsindoors.github.io/ios/v2/changelog">
 	
 	Changelog
 </a>
@@ -278,6 +288,9 @@
     </ul>
 </li>
           </ul>
+          
+          
+          
           
           
           
@@ -325,9 +338,36 @@
 
 	<article class="article">
 		<div class="wrapper">
-			<h1>MapsIndoors for iOS Reference Guide </h1>
+			<h1> </h1>
 
-			<p>Please head to <a href="https://app.mapsindoors.com/mapsindoors/reference/ios/index.html">this reference manual</a>.</p>
+			<p>Show map</p>
+
+<pre><code>self.map = GMSMapView.init(frame: CGRect.zero)
+
+self.view = self.map
+self.map?.camera = .camera(withLatitude: 57.057964, longitude: 9.9504112, zoom: 17)
+
+self.mapControl = MPMapControl.init(map: self.map)
+</code></pre>
+
+<p>Show search on map</p>
+
+<pre><code>let locations = MPLocationsProvider.init()
+let queryObj = MPLocationQuery.init()
+
+queryObj.categories = [&quot;Toilet&quot;]
+queryObj.max = 50
+
+locations.getLocationsUsing(queryObj) { (locationData, error) in
+    if error == nil {
+        self.mapControl?.searchResult = locationData!.list
+        let firstLocation = locationData?.list.first
+        self.mapControl?.currentFloor = firstLocation?.floor         // You are not guaranteed that the visible floor contains any search results, so that is why we change floor
+    }
+}
+</code></pre>
+
+<p><a href="https://github.com/MapsIndoors/MapsIndoorsIOS-Demo-Samples/blob/master/Show Multiple Locations/ShowMultipleLocationsController.swift">See the sample in ShowMultipleLocationsController.swift</a></p>
 
 
 			<aside class="copyright" role="note">
@@ -346,7 +386,7 @@
 <nav class="pagination" aria-label="Footer">
   <div class="previous">
   
-      <a href="https://mapsindoors.github.io/ios/v1/guide-part2/" title="MapsIndoors for iOS - Part 2">
+      <a href="https://mapsindoors.github.io/ios/v2/tutorials/searchsearchmapcontroller/" title="">
         <span class="direction">
           Previous
         </span>
@@ -356,7 +396,7 @@
           </div>
           <div class="stretch">
             <div class="title">
-              MapsIndoors for iOS - Part 2
+              
             </div>
           </div>
         </div>
@@ -366,14 +406,14 @@
 
   <div class="next">
   
-      <a href="https://mapsindoors.github.io/ios/v2/tutorials/locationdetailslocationdetailscontroller/" title="Show Location Details">
+      <a href="https://mapsindoors.github.io/web/changelog/" title="">
         <span class="direction">
           Next
         </span>
         <div class="page">
           <div class="stretch">
             <div class="title">
-              Show Location Details
+              
             </div>
           </div>
           <div class="button button-next" role="button" aria-label="Next">

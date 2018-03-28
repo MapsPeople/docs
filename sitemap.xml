@@ -15,6 +15,22 @@
   </url>
   
   <url>
+    <loc>https://mapsindoors.github.io/ios/v2/changelog/</loc>
+  </url>
+  
+  <url>
+    <loc>https://mapsindoors.github.io/ios/v2/reference/</loc>
+  </url>
+  
+  <url>
+    <loc>https://mapsindoors.github.io/ios/v2/tutorials/searchsearchmapcontroller/</loc>
+  </url>
+  
+  <url>
+    <loc>https://mapsindoors.github.io/ios/v2/tutorials/showmultiplelocationsshowmultiplelocationscontroller/</loc>
+  </url>
+  
+  <url>
     <loc>https://mapsindoors.github.io/web/changelog/</loc>
   </url>
   
@@ -53,12 +69,12 @@
   </url>
   
   <url>
-    <loc>https://mapsindoors.github.io/ios/v2/changelog/</loc>
+    <loc>https://mapsindoors.github.io/cms/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://mapsindoors.github.io/cms/</loc>
-    <priority>0</priority>
+    <loc>https://mapsindoors.github.io/ios/v2/tutorials/searchmysearchcontroller/</loc>
   </url>
   
   <url>
@@ -95,6 +111,10 @@
   
   <url>
     <loc>https://mapsindoors.github.io/firststeps/</loc>
+  </url>
+  
+  <url>
+    <loc>https://mapsindoors.github.io/ios/v2/tutorials/</loc>
   </url>
   
   <url>
@@ -147,6 +167,18 @@
   
   <url>
     <loc>https://mapsindoors.github.io/ios/v1/reference/</loc>
+  </url>
+  
+  <url>
+    <loc>https://mapsindoors.github.io/ios/v2/tutorials/locationdetailslocationdetailscontroller/</loc>
+  </url>
+  
+  <url>
+    <loc>https://mapsindoors.github.io/ios/v2/tutorials/showmylocationmypositionprovider/</loc>
+  </url>
+  
+  <url>
+    <loc>https://mapsindoors.github.io/ios/v2/tutorials/showmylocationshowmylocationcontroller/</loc>
   </url>
   
   <url>

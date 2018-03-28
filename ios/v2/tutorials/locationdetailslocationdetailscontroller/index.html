@@ -9,18 +9,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>MapsIndoors for iOS Reference Guide - MapsIndoors Developers</title>
+    <title>Show Location Details - MapsIndoors Developers</title>
     <meta name="generator" content="Hugo 0.26" />
 
     
     <meta name="description" content="Everything you need to get started with MapsIndoors.">
     
-    <link rel="canonical" href="https://mapsindoors.github.io/ios/v1/reference/">
+    <link rel="canonical" href="https://mapsindoors.github.io/ios/v2/tutorials/locationdetailslocationdetailscontroller/">
     
     <meta name="author" content="MapsPeople">
     
 
-    <meta property="og:url" content="https://mapsindoors.github.io/ios/v1/reference/">
+    <meta property="og:url" content="https://mapsindoors.github.io/ios/v2/tutorials/locationdetailslocationdetailscontroller/">
     <meta property="og:title" content="MapsIndoors Developers">
     <meta property="og:image" content="https://mapsindoors.github.io/images/logo.png">
     <meta name="apple-mobile-web-app-title" content="MapsIndoors Developers">
@@ -106,7 +106,7 @@
     </div>
     <div class="stretch">
       <div class="title">
-        MapsIndoors for iOS Reference Guide
+        Show Location Details
       </div>
     </div>
 
@@ -210,9 +210,6 @@
           
           
           
-          
-          
-          
                   
           <ul>
             
@@ -228,7 +225,7 @@
 
 
 
-<a  title="Getting Started" href="https://mapsindoors.github.io/ios/v1">
+<a  title="Getting Started" href="https://mapsindoors.github.io/ios/v2">
 	
 	Getting Started
 </a>
@@ -241,9 +238,9 @@
 
 
 
-<a  title="Next Steps" href="https://mapsindoors.github.io/ios/v1/guide-part2">
+<a  title="Guides" href="https://mapsindoors.github.io/ios/v2/guides">
 	
-	Next Steps
+	Guides
 </a>
 
 
@@ -254,7 +251,20 @@
 
 
 
-<a  title="Reference Docs" href="https://app.mapsindoors.com/mapsindoors/reference/ios/index.html">
+<a  title="Tutorials" href="https://mapsindoors.github.io/ios/v2/tutorials">
+	
+	Tutorials
+</a>
+
+
+
+      
+        
+        
+
+
+
+<a  title="Reference Docs" href="https://app.mapsindoors.com/mapsindoors/reference/ios/v2/index.html">
 	
 	Reference Docs
 </a>
@@ -267,7 +277,7 @@
 
 
 
-<a  title="Changelog" href="https://mapsindoors.github.io/ios/v1/changelog">
+<a  title="Changelog" href="https://mapsindoors.github.io/ios/v2/changelog">
 	
 	Changelog
 </a>
@@ -278,6 +288,9 @@
     </ul>
 </li>
           </ul>
+          
+          
+          
           
           
           
@@ -325,9 +338,78 @@
 
 	<article class="article">
 		<div class="wrapper">
-			<h1>MapsIndoors for iOS Reference Guide </h1>
+			<h1>Show Location Details </h1>
 
-			<p>Please head to <a href="https://app.mapsindoors.com/mapsindoors/reference/ios/index.html">this reference manual</a>.</p>
+			<p>This is an example of displaying some details of a MapsIndoors location</p>
+
+<p>Start by creating a <code>UIViewController</code> class that conforms to the <code>GMSMapViewDelegate</code> protocol</p>
+
+<pre><code>class LocationDetailsController: UIViewController, GMSMapViewDelegate { 
+</code></pre>
+
+<p>Add a <code>GMSMapView</code> and a <code>MPMapControl</code> to the class</p>
+
+<pre><code>var map: GMSMapView? = nil
+var mapControl: MPMapControl? = nil
+</code></pre>
+
+<p>Add other views needed for this example</p>
+
+<pre><code>var detailsView:UIStackView = UIStackView.init()
+var mainView:UIStackView = UIStackView.init()
+var nameLabel = UILabel.init()
+var descrLabel = UILabel.init()
+</code></pre>
+
+<p>Inside <code>viewDidLoad</code>, setup the map and the mapControl instance</p>
+
+<pre><code>self.map = GMSMapView.init(frame: CGRect.zero)
+self.map?.delegate = self
+self.map?.camera = .camera(withLatitude: 57.057964, longitude: 9.9504112, zoom: 20)
+self.mapControl = MPMapControl.init(map: self.map)
+</code></pre>
+
+<p>Setup the label views</p>
+
+<pre><code>nameLabel = UILabel.init()
+descrLabel = UILabel.init()
+nameLabel.backgroundColor = UIColor.white
+descrLabel.backgroundColor = UIColor.white
+</code></pre>
+
+<p>Arrange the labels inside a stackview</p>
+
+<pre><code>detailsView = UIStackView.init(arrangedSubviews: [nameLabel, descrLabel])
+detailsView.axis = .vertical
+</code></pre>
+
+<p>Arrange the map and the stackview inside another stackview</p>
+
+<pre><code>mainView = UIStackView.init(arrangedSubviews: [map!, detailsView])
+mainView.axis = .vertical
+</code></pre>
+
+<p>When marker is tapped, get related MapsIndoors location object and set label text, based on the name and description of the location</p>
+
+<pre><code>func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -&gt; Bool {
+    let location = mapControl?.getLocation(marker)
+    if location != nil {
+        self.nameLabel.text = location?.name
+        self.descrLabel.text = location?.descr
+    }
+    return false
+}
+</code></pre>
+
+<p>When map is tapped, reset label text</p>
+
+<pre><code>func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
+    self.nameLabel.text = nil
+    self.descrLabel.text = nil
+}
+</code></pre>
+
+<p><a href="https://github.com/MapsIndoors/MapsIndoorsIOS-Demo-Samples/blob/master/Location Details/LocationDetailsController.swift">See the sample in LocationDetailsController.swift</a></p>
 
 
 			<aside class="copyright" role="note">
@@ -346,7 +428,7 @@
 <nav class="pagination" aria-label="Footer">
   <div class="previous">
   
-      <a href="https://mapsindoors.github.io/ios/v1/guide-part2/" title="MapsIndoors for iOS - Part 2">
+      <a href="https://mapsindoors.github.io/ios/v1/reference/" title="MapsIndoors for iOS Reference Guide">
         <span class="direction">
           Previous
         </span>
@@ -356,7 +438,7 @@
           </div>
           <div class="stretch">
             <div class="title">
-              MapsIndoors for iOS - Part 2
+              MapsIndoors for iOS Reference Guide
             </div>
           </div>
         </div>
@@ -366,14 +448,14 @@
 
   <div class="next">
   
-      <a href="https://mapsindoors.github.io/ios/v2/tutorials/locationdetailslocationdetailscontroller/" title="Show Location Details">
+      <a href="https://mapsindoors.github.io/ios/v2/tutorials/showmylocationmypositionprovider/" title="Show the Blue Dot with MapsIndoors - Part 1">
         <span class="direction">
           Next
         </span>
         <div class="page">
           <div class="stretch">
             <div class="title">
-              Show Location Details
+              Show the Blue Dot with MapsIndoors - Part 1
             </div>
           </div>
           <div class="button button-next" role="button" aria-label="Next">

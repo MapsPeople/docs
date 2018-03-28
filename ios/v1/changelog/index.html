@@ -338,49 +338,67 @@
  ## [Unreleased]
  -->
 
-<p>## [1.12.6] - 2018-03-13
- ### Fixed
- - Fixed issue with disappearing building graphics if the internal urls was invalid</p>
+<h2 id="1-12-6-2018-03-13">[1.12.6] - 2018-03-13</h2>
 
-<p>## [1.12.5] - 2018-01-15
- ### Fixed
- - Fixed issue causing blue dot to disappear in some cases</p>
+<h3 id="fixed">Fixed</h3>
 
-<p>## [1.12.4] - 2018-01-12
- ### Fixed
-- Fixed issue causing <code>MPVenueProvider</code> not to return any buildings once in a while
-- Fixed issue causing <code>MPDirectionsService</code> not to return proper callbacks
-- Fixed issues related to language code validation.
-- Fixed problems related to offline/flight-mode.
-- Fixed possible calling of callback block twice in <code>MPMessageProvider</code>
-- Fixed multi-language issue in ´MPCategoriesProvider´.
-- Fixed missing call to completionHandler in rare occations using <code>MPLocationsProvider</code>.
-- Fixed missing call to completionHandler when route not found using <code>MPDirectionsService</code>.
-- Fixed an crash occuring when the floorselector is initially set hidden <code>MPMapControl.floorSelectorHidden = YES</code>, and subsequently shown via <code>MPMapControl.floorSelectorHidden = NO</code>.
-- Fixed issue getting multiple delegate or completionHandler calls from <code>MPVenueProvider</code>.
-- Fixed issue getting no route results when creating a directions request before initialising <code>MPMapControl</code>.
-- Fixed issue with <code>MPLocationsProvider</code> fired in parallel.
-- MPFloorSelector: Fixed a few layout issues.
-- TileService: Only report error when we cant get tileUrlData <em>and</em> we dont have cached data.
-- Prevent multiple calls to completionHandler from -[MapsIndoors fetchDataForOfflineUse:]
-- Calls to -[MPSolutionProvider getSolutionAsync:completionHandler:] while a call is already ongoing would fail to call completion handler.</p>
+<ul>
+<li>Fixed issue with disappearing building graphics if the internal urls was invalid</li>
+</ul>
 
-<p>### Added
- - Added a <code>MPRouteLeg.legType</code>  property
- - Added property queryMode to <code>MPLocationsQuery</code>, can be set to <code>MPLocationsQueryModeAutocomplete</code> or <code>MPLocationsQueryModeNormal</code> (default).</p>
+<h2 id="1-12-5-2018-01-15">[1.12.5] - 2018-01-15</h2>
 
-<p>### Changed
- - Search algorithm improvement.
- - Internal works: Backend resolving improvements and SDK session handling
- - Improved the internal works of <code>[MPVenuesProvider getBuildingWithinBoundsAsync]</code>.
- - Internal refactoring.
- - Avoid auto-switching current building&rsquo;s floor if a non-empty search result is not visible on that new floor.
- - Internal refactoring.
- - Updated Google Maps SDK dependency.</p>
+<h3 id="fixed-1">Fixed</h3>
+
+<ul>
+<li>Fixed issue causing blue dot to disappear in some cases</li>
+</ul>
+
+<h2 id="1-12-4-2018-01-12">[1.12.4] - 2018-01-12</h2>
+
+<h3 id="fixed-2">Fixed</h3>
+
+<ul>
+<li>Fixed issue causing <code>MPVenueProvider</code> not to return any buildings once in a while</li>
+<li>Fixed issue causing <code>MPDirectionsService</code> not to return proper callbacks</li>
+<li>Fixed issues related to language code validation.</li>
+<li>Fixed problems related to offline/flight-mode.</li>
+<li>Fixed possible calling of callback block twice in <code>MPMessageProvider</code></li>
+<li>Fixed multi-language issue in ´MPCategoriesProvider´.</li>
+<li>Fixed missing call to completionHandler in rare occations using <code>MPLocationsProvider</code>.</li>
+<li>Fixed missing call to completionHandler when route not found using <code>MPDirectionsService</code>.</li>
+<li>Fixed an crash occuring when the floorselector is initially set hidden <code>MPMapControl.floorSelectorHidden = YES</code>, and subsequently shown via <code>MPMapControl.floorSelectorHidden = NO</code>.</li>
+<li>Fixed issue getting multiple delegate or completionHandler calls from <code>MPVenueProvider</code>.</li>
+<li>Fixed issue getting no route results when creating a directions request before initialising <code>MPMapControl</code>.</li>
+<li>Fixed issue with <code>MPLocationsProvider</code> fired in parallel.</li>
+<li>MPFloorSelector: Fixed a few layout issues.</li>
+<li>TileService: Only report error when we cant get tileUrlData <em>and</em> we dont have cached data.</li>
+<li>Prevent multiple calls to completionHandler from -[MapsIndoors fetchDataForOfflineUse:]</li>
+<li>Calls to -[MPSolutionProvider getSolutionAsync:completionHandler:] while a call is already ongoing would fail to call completion handler.</li>
+</ul>
+
+<h3 id="added">Added</h3>
+
+<ul>
+<li>Added a <code>MPRouteLeg.legType</code>  property</li>
+<li>Added property queryMode to <code>MPLocationsQuery</code>, can be set to <code>MPLocationsQueryModeAutocomplete</code> or <code>MPLocationsQueryModeNormal</code> (default).</li>
+</ul>
+
+<h3 id="changed">Changed</h3>
+
+<ul>
+<li>Search algorithm improvement.</li>
+<li>Internal works: Backend resolving improvements and SDK session handling</li>
+<li>Improved the internal works of <code>[MPVenuesProvider getBuildingWithinBoundsAsync]</code>.</li>
+<li>Internal refactoring.</li>
+<li>Avoid auto-switching current building&rsquo;s floor if a non-empty search result is not visible on that new floor.</li>
+<li>Internal refactoring.</li>
+<li>Updated Google Maps SDK dependency.</li>
+</ul>
 
 <h2 id="1-12-3-beta1-2018-01-12">[1.12.3-beta1] - 2018-01-12</h2>
 
-<h3 id="fixed">Fixed</h3>
+<h3 id="fixed-3">Fixed</h3>
 
 <ul>
 <li>Fixed issue causing <code>MPVenueProvider</code> not to return any buildings once in a while</li>
@@ -388,7 +406,7 @@
 
 <h2 id="1-12-2-beta17-2017-11-03">[1.12.2-beta17] - 2017-11-03</h2>
 
-<h3 id="fixed-1">Fixed</h3>
+<h3 id="fixed-4">Fixed</h3>
 
 <ul>
 <li>Fixed issue causing <code>MPDirectionsService</code> not to return proper callbacks</li>
@@ -396,7 +414,7 @@
 
 <h2 id="1-12-2-beta15-2017-11-03">[1.12.2-beta15] - 2017-11-03</h2>
 
-<h3 id="fixed-2">Fixed</h3>
+<h3 id="fixed-5">Fixed</h3>
 
 <ul>
 <li>Fixed issues related to language code validation.</li>
@@ -404,19 +422,19 @@
 
 <h2 id="1-12-2-beta13-2017-11-02">[1.12.2-beta13] - 2017-11-02</h2>
 
-<h3 id="fixed-3">Fixed</h3>
+<h3 id="fixed-6">Fixed</h3>
 
 <ul>
 <li><p>Fixed problems related to offline/flight-mode.</p>
 
-<h3 id="changed">Changed</h3></li>
+<h3 id="changed-1">Changed</h3></li>
 
 <li><p>Search algorithm improvement.</p></li>
 </ul>
 
 <h2 id="1-12-1-beta1-2017-10-13">[1.12.1-beta1] - 2017-10-13</h2>
 
-<h3 id="fixed-4">Fixed</h3>
+<h3 id="fixed-7">Fixed</h3>
 
 <ul>
 <li>Fixed possible calling of callback block twice in <code>MPMessageProvider</code></li>
@@ -424,19 +442,19 @@
 
 <h2 id="1-12-0-beta3-2017-10-09">[1.12.0-beta3] - 2017-10-09</h2>
 
-<h3 id="added">Added</h3>
+<h3 id="added-1">Added</h3>
 
 <ul>
 <li><p>Added a <code>MPRouteLeg.legType</code>  property</p>
 
-<h3 id="changed-1">Changed</h3></li>
+<h3 id="changed-2">Changed</h3></li>
 
 <li><p>Internal works: More backend resolving improvements and SDK session handling</p></li>
 </ul>
 
 <h2 id="1-11-3-beta3-2017-09-26">[1.11.3-beta3] - 2017-09-26</h2>
 
-<h3 id="changed-2">Changed</h3>
+<h3 id="changed-3">Changed</h3>
 
 <ul>
 <li>Internal works: Backend resolving improvements</li>
@@ -444,7 +462,7 @@
 
 <h2 id="1-11-2-beta1-2017-09-15">[1.11.2-beta1] - 2017-09-15</h2>
 
-<h3 id="changed-3">Changed</h3>
+<h3 id="changed-4">Changed</h3>
 
 <ul>
 <li>Improved the internal works of <code>[MPVenuesProvider getBuildingWithinBoundsAsync]</code>.</li>
@@ -452,7 +470,7 @@
 
 <h2 id="1-11-1-beta8-2017-09-14">[1.11.1-beta8] - 2017-09-14</h2>
 
-<h3 id="fixed-5">Fixed</h3>
+<h3 id="fixed-8">Fixed</h3>
 
 <ul>
 <li>Fixed multi-language issue in ´MPCategoriesProvider´.</li>
@@ -460,7 +478,7 @@
 
 <h2 id="1-11-1-beta7-2017-09-12">[1.11.1-beta7] - 2017-09-12</h2>
 
-<h3 id="changed-4">Changed</h3>
+<h3 id="changed-5">Changed</h3>
 
 <ul>
 <li>Internal refactoring.</li>
@@ -468,13 +486,13 @@
 
 <h2 id="1-11-1-beta6-2017-09-12">[1.11.1-beta6] - 2017-09-12</h2>
 
-<h3 id="changed-5">Changed</h3>
+<h3 id="changed-6">Changed</h3>
 
 <ul>
 <li>Avoid auto-switching current building&rsquo;s floor if a non-empty search result is not visible on that new floor.</li>
 </ul>
 
-<h3 id="fixed-6">Fixed</h3>
+<h3 id="fixed-9">Fixed</h3>
 
 <ul>
 <li>Fixed missing call to completionHandler in rare occations using <code>MPLocationsProvider</code>.</li>
@@ -482,7 +500,7 @@
 
 <h2 id="1-11-1-beta4-2017-09-05">[1.11.1-beta4] - 2017-09-05</h2>
 
-<h3 id="fixed-7">Fixed</h3>
+<h3 id="fixed-10">Fixed</h3>
 
 <ul>
 <li>Added missing call to completionHandler when route not found using <code>MPDirectionsService</code>.</li>
@@ -490,7 +508,7 @@
 
 <h2 id="1-11-1-beta3-2017-09-05">[1.11.1-beta3] - 2017-09-05</h2>
 
-<h3 id="fixed-8">Fixed</h3>
+<h3 id="fixed-11">Fixed</h3>
 
 <ul>
 <li>Fixed an crash occuring when the floorselector is initially set hidden <code>MPMapControl.floorSelectorHidden = YES</code>, and subsequently shown via <code>MPMapControl.floorSelectorHidden = NO</code>.</li>
@@ -498,7 +516,7 @@
 
 <h2 id="1-11-1-beta2-2017-08-29">[1.11.1-beta2] - 2017-08-29</h2>
 
-<h3 id="fixed-9">Fixed</h3>
+<h3 id="fixed-12">Fixed</h3>
 
 <ul>
 <li>Fixed issue getting multiple delegate or completionHandler calls from <code>MPVenueProvider</code>.</li>
@@ -506,7 +524,7 @@
 
 <h2 id="1-11-1-beta1-2017-08-29">[1.11.1-beta1] - 2017-08-29</h2>
 
-<h3 id="fixed-10">Fixed</h3>
+<h3 id="fixed-13">Fixed</h3>
 
 <ul>
 <li>Fixed issue getting no route results when creating a directions request before initialising <code>MPMapControl</code>.</li>
@@ -514,7 +532,7 @@
 
 <h2 id="1-11-0-beta2-2017-08-29">[1.11.0-beta2] - 2017-08-29</h2>
 
-<h3 id="changed-6">Changed</h3>
+<h3 id="changed-7">Changed</h3>
 
 <ul>
 <li>Internal refactoring.</li>
@@ -522,7 +540,7 @@
 
 <h2 id="1-11-0-beta1-2017-08-29">[1.11.0-beta1] - 2017-08-29</h2>
 
-<h3 id="fixed-11">Fixed</h3>
+<h3 id="fixed-14">Fixed</h3>
 
 <ul>
 <li>Fixed issue with <code>MPLocationsProvider</code> fired in parallel.</li>
@@ -531,7 +549,7 @@
 
 <h2 id="1-10-5-beta2-2017-08-24">[1.10.5-beta2] - 2017-08-24</h2>
 
-<h3 id="fixed-12">Fixed</h3>
+<h3 id="fixed-15">Fixed</h3>
 
 <ul>
 <li>MPFloorSelector: Fixed a few layout issues.</li>
@@ -539,7 +557,7 @@
 
 <h2 id="1-10-5-beta1-2017-08-24">[1.10.5-beta1] - 2017-08-24</h2>
 
-<h3 id="fixed-13">Fixed</h3>
+<h3 id="fixed-16">Fixed</h3>
 
 <ul>
 <li>MPLocationsProvider: Unable to filter by Type in some cases.</li>
@@ -547,7 +565,7 @@
 
 <h2 id="1-10-4-beta1-2017-08-18">[1.10.4-beta1] - 2017-08-18</h2>
 
-<h3 id="fixed-14">Fixed</h3>
+<h3 id="fixed-17">Fixed</h3>
 
 <ul>
 <li>TileService: Only report error when we cant get tileUrlData <em>and</em> we dont have cached data.</li>
@@ -557,7 +575,7 @@
 
 <h2 id="1-10-3-beta1-2017-08-09">[1.10.3-beta1] - 2017-08-09</h2>
 
-<h3 id="changed-7">Changed</h3>
+<h3 id="changed-8">Changed</h3>
 
 <ul>
 <li>Updated Google Maps SDK dependency.</li>
@@ -565,7 +583,7 @@
 
 <h2 id="1-10-2-beta6-2017-08-09">[1.10.2-beta6] - 2017-08-09</h2>
 
-<h3 id="changed-8">Changed</h3>
+<h3 id="changed-9">Changed</h3>
 
 <ul>
 <li>Optimized tile loading performance.</li>
@@ -573,7 +591,7 @@
 
 <h2 id="1-10-2-beta4-2017-07-14">[1.10.2-beta4] - 2017-07-14</h2>
 
-<h3 id="changed-9">Changed</h3>
+<h3 id="changed-10">Changed</h3>
 
 <ul>
 <li>Internal works, optimizing network requests and caching mechanisms.</li>
@@ -581,7 +599,7 @@
 
 <h2 id="1-10-1-2017-07-14">[1.10.1] - 2017-07-14</h2>
 
-<h3 id="fixed-15">Fixed</h3>
+<h3 id="fixed-18">Fixed</h3>
 
 <ul>
 <li>Fix <code>MPLocation.copy()</code> results in nil <code>MPLocation.descr</code>.</li>
@@ -589,14 +607,14 @@
 
 <h2 id="1-10-0-2017-07-14">[1.10.0] - 2017-07-14</h2>
 
-<h3 id="fixed-16">Fixed</h3>
+<h3 id="fixed-19">Fixed</h3>
 
 <ul>
 <li>Fix geometry property nil when copying <code>MPLocation</code></li>
 <li>Fix unlabeled icons not respecting <code>MapsIndoors.mapIconSize</code></li>
 </ul>
 
-<h3 id="added-1">Added</h3>
+<h3 id="added-2">Added</h3>
 
 <ul>
 <li>Support for statically adding a position provider, optionally by setting <code>MapsIndoors.positionProvider</code></li>
@@ -604,7 +622,7 @@
 
 <h2 id="1-10-0-beta5-2017-07-13">[1.10.0-beta5] - 2017-07-13</h2>
 
-<h3 id="fixed-17">Fixed</h3>
+<h3 id="fixed-20">Fixed</h3>
 
 <ul>
 <li>Fix geometry property nil when copying <code>MPLocation</code></li>
@@ -613,7 +631,7 @@
 
 <h2 id="1-10-0-beta-2017-07-12">[1.10.0-beta] - 2017-07-12</h2>
 
-<h3 id="added-2">Added</h3>
+<h3 id="added-3">Added</h3>
 
 <ul>
 <li>Support for statically adding a position provider, optionally by setting <code>MapsIndoors.positionProvider</code></li>
@@ -621,7 +639,7 @@
 
 <h2 id="1-9-1-beta1-2017-07-09">[1.9.1-beta1] - 2017-07-09</h2>
 
-<h3 id="added-3">Added</h3>
+<h3 id="added-4">Added</h3>
 
 <ul>
 <li>Support for custom image provider, optionally by setting <code>MapsIndoors.imageProvider</code></li>
@@ -629,7 +647,7 @@
 
 <h2 id="1-9-0-beta2-2017-07-08">[1.9.0-beta2] - 2017-07-08</h2>
 
-<h3 id="fixed-18">Fixed</h3>
+<h3 id="fixed-21">Fixed</h3>
 
 <ul>
 <li>Fix image streching on non-quadratic marker icons</li>
@@ -637,7 +655,7 @@
 
 <h2 id="1-9-0-beta-2017-07-05">[1.9.0-beta] - 2017-07-05</h2>
 
-<h3 id="added-4">Added</h3>
+<h3 id="added-5">Added</h3>
 
 <ul>
 <li>Support for venue display rules (optional)</li>
@@ -647,7 +665,7 @@
 <li>Default click handling to venue markers</li>
 </ul>
 
-<h3 id="fixed-19">Fixed</h3>
+<h3 id="fixed-22">Fixed</h3>
 
 <ul>
 <li>Internal bugfixing</li>
@@ -690,14 +708,14 @@
 
   <div class="next">
   
-      <a href="https://mapsindoors.github.io/ios/v2/changelog/" title="Changelog">
+      <a href="https://mapsindoors.github.io/ios/v2/tutorials/searchmysearchcontroller/" title="Create a Search Experience with MapsIndoors - Part 1">
         <span class="direction">
           Next
         </span>
         <div class="page">
           <div class="stretch">
             <div class="title">
-              Changelog
+              Create a Search Experience with MapsIndoors - Part 1
             </div>
           </div>
           <div class="button button-next" role="button" aria-label="Next">

@@ -31,27 +31,76 @@ MPLocationQuery* q1 = [[MPLocationQuery alloc] init]; q1.solutionId = sID; q1.qu
     </item>
     
     <item>
+      <title></title>
+      <link>https://mapsindoors.github.io/ios/v2/changelog/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/ios/v2/changelog/</guid>
+      <description>Changelog Changelog for MapsIndoors for iOS. This document structure is based on Keep a Changelog and the project adheres to Semantic Versioning.
+[2.0.0-beta11] 2018-03-21 Fixed  Less strict internal data parsing, ensuring that some location properties can be omitted  [2.0.0-beta10] 2018-03-21 Added  On-device route calculation optionally with routing-data embedded into the app. Fetching of all MapsIndoors content now possible using [MapsIndoors synchroniseContent:] Fetching and bundling of all MapsIndoors content now possible using build run script phase  Fixed  Fixed an error where directions service would crash if no API key was properly set Fixed an error where map graphics was not loaded properly Fixed an error where updating of a display rule would unintentionally persist across initialisations of MPMapControl Fixed an error where fetching of messages failed because of mal-formatted language Fixed callback issues when calling multiple route requests simultaneously  Changed  Changed initialisation steps, see Getting Started Added MPDirectionsQuery and new method to query routes on MPDirectionsService Deprecations introduced on various methods Deprecations introduced on various UI controls  Removed  All beacon positioning related logic (moved to public app code) Made peripheral code private that was public before  [2.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://mapsindoors.github.io/ios/v2/reference/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/ios/v2/reference/</guid>
+      <description>class FAImageView class FAImageView : public UIImageView  Summary    Members Descriptions     {property} UIColor *defaultIconColorUI_APPEARANCE_SELECTOR    {property} NSString *defaultIconIdentifier    {property} FAIcondefaultIcon    {property} UILabel *defaultView     Members {property} UIColor *defaultIconColorUI_APPEARANCE_SELECTOR {property} NSString *defaultIconIdentifier {property} FAIcondefaultIcon {property} UILabel *defaultView class MapsIndoors class MapsIndoors : public NSObject  Summary    Members Descriptions     {property} UIFont *mapLabelFont The font that MapsIndoors should use when rendering labels on the map.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://mapsindoors.github.io/ios/v2/tutorials/searchsearchmapcontroller/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/ios/v2/tutorials/searchsearchmapcontroller/</guid>
+      <description>Add a GMSMapView and a MPMapControl to the class
+var map: GMSMapView? = nil var mapControl: MPMapControl? = nil  Setup map so that it shows the demo venue and initialise mapControl
+self.map = GMSMapView.init(frame: CGRect.zero) self.map?.camera = .camera(withLatitude: 57.057964, longitude: 9.9504112, zoom: 20) self.mapControl = MPMapControl.init(map: self.map)  Setup a button that targets a method (openSearch) in your class
+let button = UIButton.init() button.setTitle(&amp;quot;Search&amp;quot;, for: .normal) button.addTarget(self, action: #selector(openSearch), for: .</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://mapsindoors.github.io/ios/v2/tutorials/showmultiplelocationsshowmultiplelocationscontroller/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/ios/v2/tutorials/showmultiplelocationsshowmultiplelocationscontroller/</guid>
+      <description>Show map
+self.map = GMSMapView.init(frame: CGRect.zero) self.view = self.map self.map?.camera = .camera(withLatitude: 57.057964, longitude: 9.9504112, zoom: 17) self.mapControl = MPMapControl.init(map: self.map)  Show search on map
+let locations = MPLocationsProvider.init() let queryObj = MPLocationQuery.init() queryObj.categories = [&amp;quot;Toilet&amp;quot;] queryObj.max = 50 locations.getLocationsUsing(queryObj) { (locationData, error) in if error == nil { self.mapControl?.searchResult = locationData!.list let firstLocation = locationData?.list.first self.mapControl?.currentFloor = firstLocation?.floor // You are not guaranteed that the visible floor contains any search results, so that is why we change floor } }  See the sample in ShowMultipleLocationsController.</description>
+    </item>
+    
+    <item>
       <title>Changelog</title>
       <link>https://mapsindoors.github.io/ios/v1/changelog/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://mapsindoors.github.io/ios/v1/changelog/</guid>
       <description>Changelog for MapsIndoors for iOS. This document structure is based on Keep a Changelog and the project adheres to Semantic Versioning.
-## [1.12.6] - 2018-03-13 ### Fixed - Fixed issue with disappearing building graphics if the internal urls was invalid
-## [1.12.5] - 2018-01-15 ### Fixed - Fixed issue causing blue dot to disappear in some cases
-## [1.12.4] - 2018-01-12 ### Fixed - Fixed issue causing MPVenueProvider not to return any buildings once in a while - Fixed issue causing MPDirectionsService not to return proper callbacks - Fixed issues related to language code validation.</description>
+[1.12.6] - 2018-03-13 Fixed  Fixed issue with disappearing building graphics if the internal urls was invalid  [1.12.5] - 2018-01-15 Fixed  Fixed issue causing blue dot to disappear in some cases  [1.12.4] - 2018-01-12 Fixed  Fixed issue causing MPVenueProvider not to return any buildings once in a while Fixed issue causing MPDirectionsService not to return proper callbacks Fixed issues related to language code validation.</description>
     </item>
     
     <item>
-      <title>Changelog</title>
-      <link>https://mapsindoors.github.io/ios/v2/changelog/</link>
+      <title>Create a Search Experience with MapsIndoors - Part 1</title>
+      <link>https://mapsindoors.github.io/ios/v2/tutorials/searchmysearchcontroller/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://mapsindoors.github.io/ios/v2/changelog/</guid>
-      <description>Changelog for MapsIndoors for iOS. This document structure is based on Keep a Changelog and the project adheres to Semantic Versioning.
-## [1.12.6] - 2018-03-13 ### Fixed - Fixed issue with disappearing building graphics if the internal urls was invalid
-## [1.12.5] - 2018-01-15 ### Fixed - Fixed issue causing blue dot to disappear in some cases
-## [1.12.4] - 2018-01-12 ### Fixed - Fixed issue causing MPVenueProvider not to return any buildings once in a while - Fixed issue causing MPDirectionsService not to return proper callbacks - Fixed issues related to language code validation.</description>
+      <guid>https://mapsindoors.github.io/ios/v2/tutorials/searchmysearchcontroller/</guid>
+      <description>This is an example of creating a simple search experience using MapsIndoors. We will create a map with a search button that leads to another view controller that handles the search and selection. On selection of a location, we go back to the map and shows the selected location on the map.
+We will start by creating a simple search controller that handles search and selection of MapsIndoors locations
+Declare a protocol for our location selection with a didSelectLocation method</description>
+    </item>
+    
+    <item>
+      <title>MapsIndoors SDK for iOS - Tutorials</title>
+      <link>https://mapsindoors.github.io/ios/v2/tutorials/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/ios/v2/tutorials/</guid>
+      <description>With these simple tutorials, each reflecting common use cases, you can get more hands on experience with MapsIndoors on iOS.
+ Show Details for a Tapped Location Create a Search Experience Showing a Blue Dot / User Location  </description>
     </item>
     
     <item>
@@ -103,6 +152,43 @@ GMSServices.provideAPIKey(&amp;quot;YOUR_GOOGLE_KEY&amp;quot;)  Using Routing Ro
       
       <guid>https://mapsindoors.github.io/ios/v1/reference/</guid>
       <description>Please head to this reference manual.</description>
+    </item>
+    
+    <item>
+      <title>Show Location Details</title>
+      <link>https://mapsindoors.github.io/ios/v2/tutorials/locationdetailslocationdetailscontroller/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/ios/v2/tutorials/locationdetailslocationdetailscontroller/</guid>
+      <description>This is an example of displaying some details of a MapsIndoors location
+Start by creating a UIViewController class that conforms to the GMSMapViewDelegate protocol
+class LocationDetailsController: UIViewController, GMSMapViewDelegate {  Add a GMSMapView and a MPMapControl to the class
+var map: GMSMapView? = nil var mapControl: MPMapControl? = nil  Add other views needed for this example
+var detailsView:UIStackView = UIStackView.init() var mainView:UIStackView = UIStackView.init() var nameLabel = UILabel.init() var descrLabel = UILabel.</description>
+    </item>
+    
+    <item>
+      <title>Show the Blue Dot with MapsIndoors - Part 1</title>
+      <link>https://mapsindoors.github.io/ios/v2/tutorials/showmylocationmypositionprovider/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/ios/v2/tutorials/showmylocationmypositionprovider/</guid>
+      <description>In this tutorial we will show how you can show a blue dot on the map, representing the users location. The position will be served from a mocked positioning provider and displayed on a map in a view controller.
+We will start by creating our implementation of a positioning provider.
+Create a class MyPositionProvider that inherits from NSObject and implements MPPositionProvider.
+class MyPositionProvider : NSObject, MPPositionProvider {  Add some member variables to MyPositionProvider.</description>
+    </item>
+    
+    <item>
+      <title>Show the Blue Dot with MapsIndoors - Part 2</title>
+      <link>https://mapsindoors.github.io/ios/v2/tutorials/showmylocationshowmylocationcontroller/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/ios/v2/tutorials/showmylocationshowmylocationcontroller/</guid>
+      <description>This is part 2 of the tutorial of managing a blue dot on the map. In Part 1 we created the position provider. Now we will create a view controller displaying a map that shows the users (mock) location.
+Create a class ShowMyLocationController that inherits from UIViewController.
+class ShowMyLocationController: UIViewController {  Add a GMSMapView and a MPMapControl to the class
+var map: GMSMapView? = nil var mapControl: MPMapControl? = nil override func viewDidLoad() { super.</description>
     </item>
     
   </channel>
