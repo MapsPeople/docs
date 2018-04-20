@@ -95,8 +95,8 @@
   <div class="bar default">
       
       
-      <div class="button button-back" role="button" aria-label="Back">
-        <a href="#" onclick="window.history.back()" title="Back" class="toggle-button icon icon-back"></a>
+      <div class="button button-home" role="button" aria-label="Back">
+        <a href="https://mapsindoors.github.io/" title="Back" class="toggle-button icon icon-close"></a>
       </div>
       
     <div class="button button-menu" role="button" aria-label="Menu">
@@ -167,7 +167,7 @@
           <img src="https://mapsindoors.github.io//logos/apple-logo.svg" style="padding:10px">
         </div>
         <div class="name">
-          <strong>iOS SDK <br /><span class="version">2.0.0-beta12</span></strong>
+          <strong>iOS SDK <br /><span class="version">2.0.0</span></strong>
           
         </div>
       </div>
@@ -355,11 +355,28 @@
 ### Fixed
 ### Changed
 ### Removed
- -->
+-->
+
+<h2 id="2-0-0-beta16-2018-04-10">[2.0.0-beta16] 2018-04-10</h2>
+
+<h3 id="fixed">Fixed</h3>
+
+<ul>
+<li>Performance improvements by delegating image rendering to background queue.</li>
+<li>Improvements in CPU load and battery consumption.</li>
+</ul>
+
+<h2 id="2-0-0-beta14-2018-03-21">[2.0.0-beta14] 2018-03-21</h2>
+
+<h3 id="fixed-1">Fixed</h3>
+
+<ul>
+<li>MPDirectionsRenderer: exposed a property to indicate whether a route is rendered or not.</li>
+</ul>
 
 <h2 id="2-0-0-beta11-2018-03-21">[2.0.0-beta11] 2018-03-21</h2>
 
-<h3 id="fixed">Fixed</h3>
+<h3 id="fixed-2">Fixed</h3>
 
 <ul>
 <li>Less strict internal data parsing, ensuring that some location properties can be omitted</li>
@@ -375,7 +392,7 @@
 <li>Fetching and bundling of all MapsIndoors content now possible using build run script phase</li>
 </ul>
 
-<h3 id="fixed-1">Fixed</h3>
+<h3 id="fixed-3">Fixed</h3>
 
 <ul>
 <li>Fixed an error where directions service would crash if no API key was properly set</li>
@@ -403,7 +420,7 @@
 
 <h2 id="2-0-0-alpha94-2018-03-17">[2.0.0-alpha94] - 2018-03-17</h2>
 
-<h3 id="fixed-2">Fixed</h3>
+<h3 id="fixed-4">Fixed</h3>
 
 <ul>
 <li>Fixed an error where directions service would crash if no API key was properly set</li>
@@ -411,7 +428,7 @@
 
 <h2 id="2-0-0-alpha93-2018-03-15">[2.0.0-alpha93] - 2018-03-15</h2>
 
-<h3 id="fixed-3">Fixed</h3>
+<h3 id="fixed-5">Fixed</h3>
 
 <ul>
 <li>Fixed an error where map graphics was not loaded properly</li>
@@ -425,7 +442,7 @@
 <ul>
 <li><p>Added <code>MPDirectionsQuery</code> and new method to query routes on <code>MPDirectionsService</code></p>
 
-<h3 id="fixed-4">Fixed</h3></li>
+<h3 id="fixed-6">Fixed</h3></li>
 
 <li><p>Fixed an error where fetching of messages failed because of mal-formatted language</p></li>
 
@@ -470,7 +487,7 @@
 
 <h2 id="1-12-2-beta15-2017-11-03">[1.12.2-beta15] - 2017-11-03</h2>
 
-<h3 id="fixed-5">Fixed</h3>
+<h3 id="fixed-7">Fixed</h3>
 
 <ul>
 <li>Fixed issues related to language code validation.</li>
@@ -478,7 +495,7 @@
 
 <h2 id="1-12-2-beta13-2017-11-02">[1.12.2-beta13] - 2017-11-02</h2>
 
-<h3 id="fixed-6">Fixed</h3>
+<h3 id="fixed-8">Fixed</h3>
 
 <ul>
 <li><p>Fixed problems related to offline/flight-mode.</p>
@@ -490,7 +507,7 @@
 
 <h2 id="1-12-1-beta1-2017-10-13">[1.12.1-beta1] - 2017-10-13</h2>
 
-<h3 id="fixed-7">Fixed</h3>
+<h3 id="fixed-9">Fixed</h3>
 
 <ul>
 <li>Fixed possible calling of callback block twice in <code>MPMessageProvider</code></li>
@@ -526,7 +543,7 @@
 
 <h2 id="1-11-1-beta8-2017-09-14">[1.11.1-beta8] - 2017-09-14</h2>
 
-<h3 id="fixed-8">Fixed</h3>
+<h3 id="fixed-10">Fixed</h3>
 
 <ul>
 <li>Fixed multi-language issue in <code>MPCategoriesProvider</code>.</li>
@@ -548,7 +565,7 @@
 <li>Avoid auto-switching current building&rsquo;s floor if a non-empty search result is not visible on that new floor.</li>
 </ul>
 
-<h3 id="fixed-9">Fixed</h3>
+<h3 id="fixed-11">Fixed</h3>
 
 <ul>
 <li>Fixed missing call to completionHandler in rare occations using <code>MPLocationsProvider</code>.</li>
@@ -556,7 +573,7 @@
 
 <h2 id="1-11-1-beta4-2017-09-05">[1.11.1-beta4] - 2017-09-05</h2>
 
-<h3 id="fixed-10">Fixed</h3>
+<h3 id="fixed-12">Fixed</h3>
 
 <ul>
 <li>Added missing call to completionHandler when route not found using <code>MPDirectionsService</code>.</li>
@@ -564,7 +581,7 @@
 
 <h2 id="1-11-1-beta3-2017-09-05">[1.11.1-beta3] - 2017-09-05</h2>
 
-<h3 id="fixed-11">Fixed</h3>
+<h3 id="fixed-13">Fixed</h3>
 
 <ul>
 <li>Fixed an crash occuring when the floorselector is initially set hidden <code>MPMapControl.floorSelectorHidden = YES</code>, and subsequently shown via <code>MPMapControl.floorSelectorHidden = NO</code>.</li>
@@ -572,7 +589,7 @@
 
 <h2 id="1-11-1-beta2-2017-08-29">[1.11.1-beta2] - 2017-08-29</h2>
 
-<h3 id="fixed-12">Fixed</h3>
+<h3 id="fixed-14">Fixed</h3>
 
 <ul>
 <li>Fixed issue getting multiple delegate or completionHandler calls from <code>MPVenueProvider</code>.</li>
@@ -580,7 +597,7 @@
 
 <h2 id="1-11-1-beta1-2017-08-29">[1.11.1-beta1] - 2017-08-29</h2>
 
-<h3 id="fixed-13">Fixed</h3>
+<h3 id="fixed-15">Fixed</h3>
 
 <ul>
 <li>Fixed issue getting no route results when creating a directions request before initialising <code>MPMapControl</code>.</li>
@@ -596,7 +613,7 @@
 
 <h2 id="1-11-0-beta1-2017-08-29">[1.11.0-beta1] - 2017-08-29</h2>
 
-<h3 id="fixed-14">Fixed</h3>
+<h3 id="fixed-16">Fixed</h3>
 
 <ul>
 <li>Fixed issue with <code>MPLocationsProvider</code> fired in parallel.</li>
@@ -605,7 +622,7 @@
 
 <h2 id="1-10-5-beta2-2017-08-24">[1.10.5-beta2] - 2017-08-24</h2>
 
-<h3 id="fixed-15">Fixed</h3>
+<h3 id="fixed-17">Fixed</h3>
 
 <ul>
 <li>MPFloorSelector: Fixed a few layout issues.</li>
@@ -613,7 +630,7 @@
 
 <h2 id="1-10-5-beta1-2017-08-24">[1.10.5-beta1] - 2017-08-24</h2>
 
-<h3 id="fixed-16">Fixed</h3>
+<h3 id="fixed-18">Fixed</h3>
 
 <ul>
 <li>MPLocationsProvider: Unable to filter by Type in some cases.</li>
@@ -621,7 +638,7 @@
 
 <h2 id="1-10-4-beta1-2017-08-18">[1.10.4-beta1] - 2017-08-18</h2>
 
-<h3 id="fixed-17">Fixed</h3>
+<h3 id="fixed-19">Fixed</h3>
 
 <ul>
 <li>TileService: Only report error when we cant get tileUrlData <em>and</em> we dont have cached data.</li>
@@ -657,7 +674,7 @@
 
 <h2 id="1-10-1-2017-07-14">[1.10.1] - 2017-07-14</h2>
 
-<h3 id="fixed-18">Fixed</h3>
+<h3 id="fixed-20">Fixed</h3>
 
 <ul>
 <li>Fix <code>MPLocation.copy()</code> results in nil <code>MPLocation.descr</code>.</li>
@@ -665,7 +682,7 @@
 
 <h2 id="1-10-0-2017-07-14">[1.10.0] - 2017-07-14</h2>
 
-<h3 id="fixed-19">Fixed</h3>
+<h3 id="fixed-21">Fixed</h3>
 
 <ul>
 <li>Fix geometry property nil when copying <code>MPLocation</code></li>
@@ -680,7 +697,7 @@
 
 <h2 id="1-10-0-beta5-2017-07-13">[1.10.0-beta5] - 2017-07-13</h2>
 
-<h3 id="fixed-20">Fixed</h3>
+<h3 id="fixed-22">Fixed</h3>
 
 <ul>
 <li>Fix geometry property nil when copying <code>MPLocation</code></li>
@@ -705,7 +722,7 @@
 
 <h2 id="1-9-0-beta2-2017-07-08">[1.9.0-beta2] - 2017-07-08</h2>
 
-<h3 id="fixed-21">Fixed</h3>
+<h3 id="fixed-23">Fixed</h3>
 
 <ul>
 <li>Fix image streching on non-quadratic marker icons</li>
@@ -723,7 +740,7 @@
 <li>Default click handling to venue markers</li>
 </ul>
 
-<h3 id="fixed-22">Fixed</h3>
+<h3 id="fixed-24">Fixed</h3>
 
 <ul>
 <li>Internal bugfixing</li>

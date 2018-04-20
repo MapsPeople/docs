@@ -22,6 +22,16 @@
     
     <item>
       <title></title>
+      <link>https://mapsindoors.github.io/ios/v1/changelog/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/ios/v1/changelog/</guid>
+      <description>Changelog Changelog for MapsIndoors for iOS. This document structure is based on Keep a Changelog and the project adheres to Semantic Versioning.
+[2.0.0-beta16] 2018-04-10 Fixed  Performance improvements by delegating image rendering to background queue. Improvements in CPU load and battery consumption.  [2.0.0-beta14] 2018-03-21 Fixed  MPDirectionsRenderer: exposed a property to indicate whether a route is rendered or not.  [2.0.0-beta11] 2018-03-21 Fixed  Less strict internal data parsing, ensuring that some location properties can be omitted  [2.</description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>https://mapsindoors.github.io/ios/v1/guides/search-and-directions/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -37,7 +47,7 @@ MPLocationQuery* q1 = [[MPLocationQuery alloc] init]; q1.solutionId = sID; q1.qu
       
       <guid>https://mapsindoors.github.io/ios/v2/changelog/</guid>
       <description>Changelog Changelog for MapsIndoors for iOS. This document structure is based on Keep a Changelog and the project adheres to Semantic Versioning.
-[2.0.0-beta11] 2018-03-21 Fixed  Less strict internal data parsing, ensuring that some location properties can be omitted  [2.0.0-beta10] 2018-03-21 Added  On-device route calculation optionally with routing-data embedded into the app. Fetching of all MapsIndoors content now possible using [MapsIndoors synchroniseContent:] Fetching and bundling of all MapsIndoors content now possible using build run script phase  Fixed  Fixed an error where directions service would crash if no API key was properly set Fixed an error where map graphics was not loaded properly Fixed an error where updating of a display rule would unintentionally persist across initialisations of MPMapControl Fixed an error where fetching of messages failed because of mal-formatted language Fixed callback issues when calling multiple route requests simultaneously  Changed  Changed initialisation steps, see Getting Started Added MPDirectionsQuery and new method to query routes on MPDirectionsService Deprecations introduced on various methods Deprecations introduced on various UI controls  Removed  All beacon positioning related logic (moved to public app code) Made peripheral code private that was public before  [2.</description>
+[2.0.0-beta16] 2018-04-10 Fixed  Performance improvements by delegating image rendering to background queue. Improvements in CPU load and battery consumption.  [2.0.0-beta14] 2018-03-21 Fixed  MPDirectionsRenderer: exposed a property to indicate whether a route is rendered or not.  [2.0.0-beta11] 2018-03-21 Fixed  Less strict internal data parsing, ensuring that some location properties can be omitted  [2.</description>
     </item>
     
     <item>
@@ -70,16 +80,6 @@ let button = UIButton.init() button.setTitle(&amp;quot;Search&amp;quot;, for: .n
       <description>Show map
 self.map = GMSMapView.init(frame: CGRect.zero) self.view = self.map self.map?.camera = .camera(withLatitude: 57.057964, longitude: 9.9504112, zoom: 17) self.mapControl = MPMapControl.init(map: self.map)  Show search on map
 let locations = MPLocationsProvider.init() let queryObj = MPLocationQuery.init() queryObj.categories = [&amp;quot;Toilet&amp;quot;] queryObj.max = 50 locations.getLocationsUsing(queryObj) { (locationData, error) in if error == nil { self.mapControl?.searchResult = locationData!.list let firstLocation = locationData?.list.first self.mapControl?.currentFloor = firstLocation?.floor // You are not guaranteed that the visible floor contains any search results, so that is why we change floor } }  See the sample in ShowMultipleLocationsController.</description>
-    </item>
-    
-    <item>
-      <title>Changelog</title>
-      <link>https://mapsindoors.github.io/ios/v1/changelog/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://mapsindoors.github.io/ios/v1/changelog/</guid>
-      <description>Changelog for MapsIndoors for iOS. This document structure is based on Keep a Changelog and the project adheres to Semantic Versioning.
-[1.12.6] - 2018-03-13 Fixed  Fixed issue with disappearing building graphics if the internal urls was invalid  [1.12.5] - 2018-01-15 Fixed  Fixed issue causing blue dot to disappear in some cases  [1.12.4] - 2018-01-12 Fixed  Fixed issue causing MPVenueProvider not to return any buildings once in a while Fixed issue causing MPDirectionsService not to return proper callbacks Fixed issues related to language code validation.</description>
     </item>
     
     <item>
@@ -120,7 +120,8 @@ let locations = MPLocationsProvider.init() let queryObj = MPLocationQuery.init()
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://mapsindoors.github.io/ios/v1/</guid>
-      <description>Basic Example You will find in the link an up and running project that contains the minimum code to start a MapsIndoors project.
+      <description>This guide explains how to start using a MapsIndoors map in your iOS application. Make sure that you have read the prerequisites.
+Basic Example You will find in the link an up and running project that contains the minimum code to start a MapsIndoors project.
 You can also follow the steps below to start your app from scratch or to enhance the Basic Example, more advanced feature will be explained in the part 2 of this tutorial with a demo app that gives a showcase of the mapsIndoors in a complete app that you can test also.</description>
     </item>
     
@@ -130,8 +131,10 @@ You can also follow the steps below to start your app from scratch or to enhance
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://mapsindoors.github.io/ios/v2/</guid>
-      <description>Basic Example For basic examples of a MapsIndoors implementation, run pod try MapsIndoors (see below for setting up CocoaPods or just clone this repository) and run the XCode Scheme called Demos. The code for these samples are to find in the /Example/DemoSamples folder.
-You can also follow the steps below to start your app from scratch or to enhance the basic examples, more features will be explained in the guides.</description>
+      <description>This guide explains how to start using a MapsIndoors map in your iOS application. Make sure that you have read the prerequisites.
+To benefit from the guides, you will need basic knowledge about:
+ iOS Development Google Maps iOS SDK  You can get started in two ways, either by reviewing and modifying the basic examples or do the clean setup.
+Basic Examples For simple examples of MapsIndoors implementations, run pod try MapsIndoors (see below for setting up CocoaPods or just clone this repository) and run the XCode Scheme called Demos.</description>
     </item>
     
     <item>

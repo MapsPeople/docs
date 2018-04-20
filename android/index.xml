@@ -74,7 +74,8 @@ mLocationsProvider = new MPLocationsProvider(); mLocationQueryBuilder = new Loca
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://mapsindoors.github.io/android/v1/</guid>
-      <description>Basic Example You will find in the link an up and running project that contains the minimum code to start a MapsIndoors project.
+      <description>This guide explains how to start using a MapsIndoors map in your Android application. Make sure that you have read the prerequisites.
+Basic Example You will find in the link an up and running project that contains the minimum code to start a MapsIndoors project.
 You can also follow the steps below to start your app from scratch or to enhance the Basic Example, more advanced feature will be explained in the part 2 of this tutorial with a demo app that gives a showcase of the mapsIndoors in a complete app that you can test also.</description>
     </item>
     
@@ -84,9 +85,10 @@ You can also follow the steps below to start your app from scratch or to enhance
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://mapsindoors.github.io/android/v2/</guid>
-      <description>Basic Example You will find in the link a repo that contains the minimum code to start a MapsIndoors project.
-You can also follow the steps below to start your app from scratch or to enhance the Basic Examples, more features will be explained in the guides.
-Setup MapsIndoors Add the MapsIndoors SDK as a dependency to your project. The AAR for the MapsIndoors SDK contains both Java classes, SDK resources and AndroidManifest.</description>
+      <description>This guide explains how to start using a MapsIndoors map in your Android application. Make sure that you have read the prerequisites.
+To benefit from the guides, you will need basic knowledge about:
+ Android Development Google Maps Android API  You can get started in two ways, either by reviewing and modifying the basic example or do the clean setup.
+Basic Example You will find in the link a repo that contains the minimum code to start a MapsIndoors project.</description>
     </item>
     
     <item>
