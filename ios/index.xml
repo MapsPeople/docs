@@ -22,32 +22,12 @@
     
     <item>
       <title></title>
-      <link>https://mapsindoors.github.io/ios/v1/changelog/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://mapsindoors.github.io/ios/v1/changelog/</guid>
-      <description>Changelog Changelog for MapsIndoors for iOS. This document structure is based on Keep a Changelog and the project adheres to Semantic Versioning.
-[2.0.0-beta16] 2018-04-10 Fixed  Performance improvements by delegating image rendering to background queue. Improvements in CPU load and battery consumption.  [2.0.0-beta14] 2018-03-21 Fixed  MPDirectionsRenderer: exposed a property to indicate whether a route is rendered or not.  [2.0.0-beta11] 2018-03-21 Fixed  Less strict internal data parsing, ensuring that some location properties can be omitted  [2.</description>
-    </item>
-    
-    <item>
-      <title></title>
       <link>https://mapsindoors.github.io/ios/v1/guides/search-and-directions/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://mapsindoors.github.io/ios/v1/guides/search-and-directions/</guid>
       <description>MPLocationsProvider* locationsProvider = [[MPLocationsProvider alloc] init]; MPDirectonsRenderer* renderer = [[MPDirectonsRenderer alloc] init]; MPDirectionsService* directionsService = [[MPDirectionsService alloc] initWithMapsIndoorsSolutionId: sID googleApiKey: gApiKey];
 MPLocationQuery* q1 = [[MPLocationQuery alloc] init]; q1.solutionId = sID; q1.query = @&amp;quot;location-name&amp;quot;; q1.max = 1; MPLocationQuery* q2 = [[MPLocationQuery alloc] init]; q2.solutionId = sID; q2.query = @&amp;quot;other-location-name&amp;quot;; q2.max = 1; [locationsProvider getLocationsUsingQueryAsync:q1 language:@&amp;quot;en&amp;quot; completionHandler:^(MPLocationDataset *locationData, NSError *error) { MPLocation* from = locationData.list.firstObject; [locationsProvider getLocationsUsingQueryAsync:q2 language:@&amp;quot;en&amp;quot; completionHandler:^(MPLocationDataset *locationData, NSError *error) { MPLocation* to = locationData.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://mapsindoors.github.io/ios/v2/changelog/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://mapsindoors.github.io/ios/v2/changelog/</guid>
-      <description>Changelog Changelog for MapsIndoors for iOS. This document structure is based on Keep a Changelog and the project adheres to Semantic Versioning.
-[2.0.0-beta16] 2018-04-10 Fixed  Performance improvements by delegating image rendering to background queue. Improvements in CPU load and battery consumption.  [2.0.0-beta14] 2018-03-21 Fixed  MPDirectionsRenderer: exposed a property to indicate whether a route is rendered or not.  [2.0.0-beta11] 2018-03-21 Fixed  Less strict internal data parsing, ensuring that some location properties can be omitted  [2.</description>
     </item>
     
     <item>
@@ -80,6 +60,29 @@ let button = UIButton.init() button.setTitle(&amp;quot;Search&amp;quot;, for: .n
       <description>Show map
 self.map = GMSMapView.init(frame: CGRect.zero) self.view = self.map self.map?.camera = .camera(withLatitude: 57.057964, longitude: 9.9504112, zoom: 17) self.mapControl = MPMapControl.init(map: self.map)  Show search on map
 let locations = MPLocationsProvider.init() let queryObj = MPLocationQuery.init() queryObj.categories = [&amp;quot;Toilet&amp;quot;] queryObj.max = 50 locations.getLocationsUsing(queryObj) { (locationData, error) in if error == nil { self.mapControl?.searchResult = locationData!.list let firstLocation = locationData?.list.first self.mapControl?.currentFloor = firstLocation?.floor // You are not guaranteed that the visible floor contains any search results, so that is why we change floor } }  See the sample in ShowMultipleLocationsController.</description>
+    </item>
+    
+    <item>
+      <title>Changelog</title>
+      <link>https://mapsindoors.github.io/ios/v1/changelog/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/ios/v1/changelog/</guid>
+      <description>Changelog for MapsIndoors for iOS. This document structure is based on Keep a Changelog and the project adheres to Semantic Versioning.
+[1.12.6] - 2018-03-13 Fixed  Fixed issue with disappearing building graphics if the internal urls was invalid  [1.12.5] - 2018-01-15 Fixed  Fixed issue causing blue dot to disappear in some cases  [1.12.4] - 2018-01-12 Fixed  Fixed issue causing MPVenueProvider not to return any buildings once in a while Fixed issue causing MPDirectionsService not to return proper callbacks Fixed issues related to language code validation.</description>
+    </item>
+    
+    <item>
+      <title>Changelog</title>
+      <link>https://mapsindoors.github.io/ios/v2/changelog/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/ios/v2/changelog/</guid>
+      <description>Changelog for MapsIndoors for iOS. This document structure is based on Keep a Changelog and the project adheres to Semantic Versioning.
+[2.0.2-rc1] 2018-05-02 Added Fixed  Fixed logic that selects the current building in focus
+Changed Improved map graphics used for cases when there are no bundled map graphics
+ Improved Google Maps directions integration / handover from Google Maps to MapsIndoors
+Removed  [2.0.1-rc6] 2018-05-02 Added Fixed  POI Labels were not shown on the map.</description>
     </item>
     
     <item>
