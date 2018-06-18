@@ -9,18 +9,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>Create a Search Experience with MapsIndoors - Part 1 - MapsIndoors Developers</title>
+    <title>MapsIndoors SDK for Android - Tutorials - MapsIndoors Developers</title>
     <meta name="generator" content="Hugo 0.26" />
 
     
     <meta name="description" content="Everything you need to get started with MapsIndoors.">
     
-    <link rel="canonical" href="https://mapsindoors.github.io/ios/v2/tutorials/searchmysearchcontroller/">
+    <link rel="canonical" href="https://mapsindoors.github.io/android/v2/tutorials/">
     
     <meta name="author" content="MapsPeople">
     
 
-    <meta property="og:url" content="https://mapsindoors.github.io/ios/v2/tutorials/searchmysearchcontroller/">
+    <meta property="og:url" content="https://mapsindoors.github.io/android/v2/tutorials/">
     <meta property="og:title" content="MapsIndoors Developers">
     <meta property="og:image" content="https://mapsindoors.github.io/images/logo.png">
     <meta name="apple-mobile-web-app-title" content="MapsIndoors Developers">
@@ -106,7 +106,7 @@
     </div>
     <div class="stretch">
       <div class="title">
-        Create a Search Experience with MapsIndoors - Part 1
+        MapsIndoors SDK for Android - Tutorials
       </div>
     </div>
 
@@ -153,21 +153,13 @@
     
     
     
-  
-    
-    
-    
-  
-    
-    
-    
-    <a href="https://mapsindoors.github.io/ios/v2" class="project">
+    <a href="https://mapsindoors.github.io/android/v2" class="project">
       <div class="banner">
         <div class="logo">
-          <img src="https://mapsindoors.github.io//logos/apple-logo.svg" style="padding:10px">
+          <img src="https://mapsindoors.github.io//logos/android-logo.svg" style="padding:10px">
         </div>
         <div class="name">
-          <strong>iOS SDK <br /><span class="version">2.0.1</span></strong>
+          <strong>Android SDK <br /><span class="version">2.0.0</span></strong>
           
         </div>
       </div>
@@ -177,17 +169,25 @@
     
     
     
-    <a href="https://mapsindoors.github.io/ios/v1" class="project">
+    <a href="https://mapsindoors.github.io/android/v1" class="project">
       <div class="banner">
         <div class="logo">
-          <img src="https://mapsindoors.github.io//logos/apple-logo.svg" style="padding:10px">
+          <img src="https://mapsindoors.github.io//logos/android-logo.svg" style="padding:10px">
         </div>
         <div class="name">
-          <strong>iOS SDK <br /><span class="version">1.12.6</span></strong>
+          <strong>Android SDK <br /><span class="version">1.8.8</span></strong>
           
         </div>
       </div>
     </a>
+    
+  
+    
+    
+    
+  
+    
+    
     
   
     
@@ -204,12 +204,6 @@
       <div class="toc">
           
           
-          
-          
-          
-          
-          
-          
                   
           <ul>
             
@@ -217,7 +211,7 @@
 
 
 <li>
-    <span class="section">iOS SDK</span>
+    <span class="section">Android SDK</span>
     <ul>
       
         
@@ -225,7 +219,7 @@
 
 
 
-<a  title="Getting Started" href="https://mapsindoors.github.io/ios/v2">
+<a  title="Getting Started" href="https://mapsindoors.github.io/android/v2">
 	
 	Getting Started
 </a>
@@ -238,7 +232,7 @@
 
 
 
-<a  title="Guides" href="https://mapsindoors.github.io/ios/v2/guides">
+<a  title="Guides" href="https://mapsindoors.github.io/android/v2/guides">
 	
 	Guides
 </a>
@@ -251,11 +245,14 @@
 
 
 
-<a  title="Tutorials" href="https://mapsindoors.github.io/ios/v2/tutorials">
+<a class="current" title="Tutorials" href="https://mapsindoors.github.io/android/v2/tutorials">
 	
 	Tutorials
 </a>
 
+
+<ul id="scrollspy">
+</ul>
 
 
       
@@ -264,7 +261,7 @@
 
 
 
-<a  title="Reference Docs" href="https://app.mapsindoors.com/mapsindoors/reference/ios/v2/index.html">
+<a  title="Reference Docs" href="https://app.mapsindoors.com/mapsindoors/reference/android/v2/index.html">
 	
 	Reference Docs
 </a>
@@ -277,7 +274,7 @@
 
 
 
-<a  title="Changelog" href="https://mapsindoors.github.io/ios/v2/changelog">
+<a  title="Changelog" href="https://mapsindoors.github.io/android/v2/changelog">
 	
 	Changelog
 </a>
@@ -288,6 +285,12 @@
     </ul>
 </li>
           </ul>
+          
+          
+          
+          
+          
+          
           
           
           
@@ -338,120 +341,15 @@
 
 	<article class="article">
 		<div class="wrapper">
-			<h1>Create a Search Experience with MapsIndoors - Part 1 </h1>
+			<h1>MapsIndoors SDK for Android - Tutorials </h1>
 
-			<p>This is an example of creating a simple search experience using MapsIndoors. We will create a map with a search button that leads to another view controller that handles the search and selection. On selection of a location, we go back to the map and shows the selected location on the map.</p>
-
-<p>We will start by creating a simple search controller that handles search and selection of MapsIndoors locations</p>
-
-<p>Declare a protocol for our location selection with a <code>didSelectLocation</code> method</p>
-
-<pre><code>protocol MySearchControllerDelegate {
-    func didSelectLocation(location:MPLocation)
-}
-</code></pre>
-
-<p>Define <code>MySearchController</code>. In this tutorial our search controller is a <code>UIViewController</code> that implements the protocols <code>UISearchBarDelegate</code>, <code>UITableViewDelegate</code> and <code>UITableViewDataSource</code></p>
-
-<pre><code>class MySearchController: UIViewController, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource {
-</code></pre>
-
-<p>Setup member variables for <code>MySearchController</code>:</p>
+			<p>With these simple tutorials, each reflecting common use cases, you can get more hands on experience with MapsIndoors on Android.</p>
 
 <ul>
-<li>An instance of type <code>MPLocationsProvider</code> (the service)</li>
-<li>An instance of type <code>MPLocationQuery</code></li>
-<li>An array of <code>MPLocation</code> to hold your list of results</li>
-<li>Your delegate object</li>
-<li>A search bar view</li>
-
-<li><p>A table view</p>
-
-<pre><code>let locationsProvider = MPLocationsProvider.init()
-let query = MPLocationQuery.init()
-var locations:[MPLocation] = []
-var delegate:MySearchControllerDelegate? = nil
-let tableView = UITableView.init()
-let searchBar = UISearchBar.init()
-</code></pre>
-
-<p>In <code>viewDidLoad</code>, wire up your view controller to the tableview and search bar.</p>
-
-<pre><code>searchBar.delegate = self
-tableView.delegate = self
-tableView.dataSource = self
-</code></pre>
-
-<p>Register a class for the reusable table view cell.</p>
-
-<pre><code>tableView.register(UITableViewCell.self, forCellReuseIdentifier: &quot;reuseIdentifier&quot;)
-</code></pre>
-
-<p>Arrange the search bar and the table view in a stack view.</p>
-
-<pre><code>let stackView = UIStackView.init(arrangedSubviews: [searchBar, tableView])
-stackView.axis = .vertical
-view = stackView
-</code></pre>
-
-<p>In <code>MySearchController</code>, implement the <code>numberOfSections</code> method, return 1.</p>
-
-<pre><code>func numberOfSections(in tableView: UITableView) -&gt; Int {
-return 1
-}
-</code></pre>
-
-<p>Implement the <code>numberOfRowsInSection</code> method, return the length of your locations array.</p>
-
-<pre><code>func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -&gt; Int {
-return locations.count
-}
-</code></pre>
-
-<p>Implement the <code>textDidChange</code> method:</p></li>
-
-<li><p>Change the query objects query property to reflect the current search text</p></li>
-
-<li><p>Call <code>getLocationsUsing</code> with the modified query</p></li>
-
-<li><p>In the callback block, reset the locations array with new results</p></li>
-
-<li><p>Reload table view</p>
-
-<pre><code>func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-query.query = searchText
-query.queryMode = .autocomplete
-locationsProvider.getLocationsUsing(query) { (locationData, error) in
-    if error == nil {
-        self.locations = locationData!.list!
-        self.tableView.reloadData()
-    }
-}
-}
-</code></pre>
-
-<p>Implement the <code>tableView:cellForRowAt</code> method. Set the <code>cell.textLabel.text</code> to reflect the <em>name</em> of the location of same index.</p>
-
-<pre><code>func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -&gt; UITableViewCell {
-let cell = tableView.dequeueReusableCell(withIdentifier: &quot;reuseIdentifier&quot;, for: indexPath)
-cell.textLabel?.text = locations[indexPath.row].name
-return cell
-}
-</code></pre>
-
-<p>Implement the <code>tableView:didSelectRowAt</code> method. In this example we just call the delegate method and dismiss the view controller.
-Delegate method will be handled by <a href="searchsearchmapcontroller">SearchMapController</a></p>
-
-<pre><code>func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-delegate?.didSelectLocation(location: locations[indexPath.row])
-self.dismiss(animated: true, completion: nil)
-}
-</code></pre>
-
-<p>In <a href="../searchsearchmapcontroller">Part 2</a> we will create the map view controller that displays the blue dot.</p></li>
+<li><a href="locationdetailsdemolocationdetailsfragment">Show Details for a Tapped Location</a></li>
+<li><a href="searchmapdemosearchfragment">Create a Search Experience</a></li>
+<li><a href="showuserlocationdemopositionprovider">Showing a Blue Dot / User Location</a></li>
 </ul>
-
-<p><a href="https://github.com/MapsIndoors/MapsIndoorsIOS-Demo-Samples/blob/master/Search/MySearchController.swift">See the sample in MySearchController.swift</a></p>
 
 
 			<aside class="copyright" role="note">
@@ -470,7 +368,7 @@ self.dismiss(animated: true, completion: nil)
 <nav class="pagination" aria-label="Footer">
   <div class="previous">
   
-      <a href="https://mapsindoors.github.io/android/v2/tutorials/searchmapdemosearchfragment/" title="Create a Search Experience with MapsIndoors - Part 1">
+      <a href="https://mapsindoors.github.io/firststeps/" title="MapsIndoors First Steps">
         <span class="direction">
           Previous
         </span>
@@ -480,7 +378,7 @@ self.dismiss(animated: true, completion: nil)
           </div>
           <div class="stretch">
             <div class="title">
-              Create a Search Experience with MapsIndoors - Part 1
+              MapsIndoors First Steps
             </div>
           </div>
         </div>
@@ -490,14 +388,14 @@ self.dismiss(animated: true, completion: nil)
 
   <div class="next">
   
-      <a href="https://mapsindoors.github.io/android/v2/tutorials/searchmapdemosearchmapfragment/" title="Create a Search Experience with MapsIndoors - Part 2">
+      <a href="https://mapsindoors.github.io/ios/v2/tutorials/" title="MapsIndoors SDK for iOS - Tutorials">
         <span class="direction">
           Next
         </span>
         <div class="page">
           <div class="stretch">
             <div class="title">
-              Create a Search Experience with MapsIndoors - Part 2
+              MapsIndoors SDK for iOS - Tutorials
             </div>
           </div>
           <div class="button button-next" role="button" aria-label="Next">
