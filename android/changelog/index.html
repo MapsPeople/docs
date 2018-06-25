@@ -264,33 +264,182 @@
 
 			
 
-<p>Changelog for MapsIndoors for Android. This document structure is based on <a href="http://keepachangelog.com/en/1.0.0/">Keep a Changelog</a> and the project adheres to <a href="http://semver.org/spec/v2.0.0.html">Semantic Versioning</a>.</p>
+<p>Changelog for the MapsIndoors Android SDK. This document structure is based on <a href="http://keepachangelog.com/en/1.0.0/">Keep a Changelog</a> and the project adheres to <a href="http://semver.org/spec/v2.0.0.html">Semantic Versioning</a>.</p>
 
-<p><!-- ### Added        for new features. -->
-  <!-- ### Changed      for changes in existing functionality.  -->
-  <!-- ### Deprecated   for soon-to-be removed features.  -->
-  <!-- ### Removed      for now removed features.  -->
-  <!-- ### Fixed        for any bug fixes.  -->
-  <!-- ### Security     in case of vulnerabilities. --></p>
+<!--
+### Added        for new features.
+### Changed      for changes in existing functionality.
+### Deprecated   for soon-to-be removed features.
+### Removed      for now removed features.
+### Fixed        for any bug fixes.
+### Security     in case of vulnerabilities.
+-->
 
-<!---
- ## [Unreleased]
- - Tweaks and fixes to search algorithm.
- -->
-
-<p>## [2.0.0-beta1] - 2017-10-04
- ### Changed
- - Put something in here&hellip;
- - Fix <code>MPLocation.copy()</code> results in nil <code>MPLocation.descr</code>.</p>
-
-<p>### Fixed
-- Fix geometry property nil when copying <code>MPLocation</code>
-- Fix unlabeled icons not respecting <code>MapsIndoors.mapIconSize</code></p>
+<h2 id="2-0-3-2018-06">[2.0.3] - 2018-06-??</h2>
 
 <h3 id="added">Added</h3>
 
 <ul>
-<li>Support for statically adding a position provider, optionally by setting <code>MapsIndoors.positionProvider</code></li>
+<li><code>MapsIndoors.getAvailableLanguages()</code> returns a list of the solution&rsquo;s available languages or just <code>null</code> if data isn&rsquo;t available</li>
+<li><code>MIConnectivityUtils.isOnline()</code> replaces <code>UrlLoader.isOnline()</code></li>
+<li><code>MapControl.setOnMarkerInfoWindowLongClickListener()</code></li>
+</ul>
+
+<h3 id="changed">Changed</h3>
+
+<ul>
+<li><code>MapsIndoors.getDefaultLanguage()</code> will return now the solution&rsquo;s default language instead of the library&rsquo;s fallback one. If there is no data available yet, this method will now return <code>null</code></li>
+</ul>
+
+<h3 id="deprecated">Deprecated</h3>
+
+<ul>
+<li><code>UrlLoader.isOnline()</code>. Use <code>MIConnectivityUtils.isOnline()</code> instead</li>
+</ul>
+
+<h2 id="2-0-2-2018-06-20">[2.0.2] - 2018-06-20</h2>
+
+<h3 id="changed-1">Changed</h3>
+
+<ul>
+<li><code>Point.equals()</code> will return true if the distance between them is less than 1m. It also takes into account its Z value (altitude)</li>
+<li>Graph data is be now available by default. This will enable offline routing when indoors</li>
+</ul>
+
+<h3 id="fixed">Fixed</h3>
+
+<ul>
+<li>Fixed a crash in <code>MapsIndoors.setLocationsProvider</code> when trying to set a custom locations provider</li>
+</ul>
+
+<h2 id="2-0-1-2018-06-11">[2.0.1] - 2018-06-11</h2>
+
+<h3 id="fixed-1">Fixed</h3>
+
+<ul>
+<li>The blue dot (current user location) didn&rsquo;t move after the first time it was set.</li>
+</ul>
+
+<h2 id="2-0-0-2018-06-07">[2.0.0] - 2018-06-07</h2>
+
+<h2 id="2-0-0-rc9-2018-06-07">[2.0.0-rc9] - 2018-06-07</h2>
+
+<h3 id="deprecated-1">Deprecated</h3>
+
+<ul>
+<li><code>MPRoutingProvider.setGoogleServerKey()</code>: Set the Google API Key with <code>MapsIndoors.setGoogleAPIKey()</code> and retrieve it via <code>MapsIndoors.getGoogleAPIKey()</code></li>
+</ul>
+
+<h2 id="2-0-0-rc8-2018-06-04">[2.0.0-rc8] - 2018-06-04</h2>
+
+<h3 id="fixed-2">Fixed</h3>
+
+<ul>
+<li><code>MPLocationsAsyncLoader</code>: Internal cache not properly updated on multi-solution projects</li>
+</ul>
+
+<h2 id="2-0-0-rc7-2018-06-04">[2.0.0-rc7] - 2018-06-04</h2>
+
+<h3 id="added-1">Added</h3>
+
+<ul>
+<li><code>LocationQuery.Builder.setDataSync()</code>: Sets the location provider in &ldquo;data sync mode&rdquo;</li>
+</ul>
+
+<h2 id="2-0-0-rc6-2018-05-30">[2.0.0-rc6] - 2018-05-30</h2>
+
+<h3 id="added-2">Added</h3>
+
+<ul>
+<li><code>MapsIndoors.enableOfflineTilesUpdates()</code>: Only used in projects with offline data enabled and set to get indoor tiles embedded in the app</li>
+<li><code>MapControl.setDisplayRuleLabelDefaultMaxCharLength()</code>: This caps all display rule label string lenghts at the given value at render time</li>
+</ul>
+
+<h3 id="deprecated-2">Deprecated</h3>
+
+<ul>
+<li>Use the new <code>MPDirectionsRenderer( Context context, GoogleMap map, MapControl mapControl, OnLegSelectedListener legSelectedListener )</code> which takes an instance of MapControl</li>
+</ul>
+
+<h3 id="fixed-3">Fixed</h3>
+
+<ul>
+<li>Routing: &ldquo;Next&rdquo; labels on the map not clickable</li>
+</ul>
+
+<h2 id="2-0-0-rc5-2018-05-28">[2.0.0-rc5] - 2018-05-28</h2>
+
+<h3 id="changed-2">Changed</h3>
+
+<ul>
+<li>Changed MapsPeople&rsquo;s logo (watermark) to the right (right side in LTR, left on RTL languages)</li>
+</ul>
+
+<h2 id="2-0-0-rc4-2018-05-23">[2.0.0-rc4] - 2018-05-23</h2>
+
+<h3 id="fixed-4">Fixed</h3>
+
+<ul>
+<li>Fixed issue in <code>MapsIndoors.MIImageProvider</code></li>
+</ul>
+
+<h3 id="deprecated-3">Deprecated</h3>
+
+<ul>
+<li>In the <code>dbglog</code> class deprecated <code>SetLoglevel()</code>, <code>startTimer()</code> and <code>startTimer()</code></li>
+<li>Use the Kotlin friendly <code>MPDirectionsRenderer( Context context, GoogleMap map, OnLegSelectedListener legSelectedListener )</code> constructor instead of <code>MPDirectionsRenderer( Context context, OnLegSelectedListener legSelectedListener, GoogleMap map )</code></li>
+</ul>
+
+<h2 id="2-0-0-rc3-2018-05-17">[2.0.0-rc3] - 2018-05-17</h2>
+
+<h3 id="added-3">Added</h3>
+
+<ul>
+<li><p>Implemented <code>MapsIndoors.getLocationById()</code></p></li>
+
+<li><p>Added <code>MapsIndoors.isOnline()</code></p></li>
+
+<li><p>Added <code>MapsIndoors.allowToDownloadData()</code> and <code>MapsIndoors.isAllowedToDownloadData()</code></p></li>
+</ul>
+
+<h3 id="changed-3">Changed</h3>
+
+<ul>
+<li>Non-sync backend location queries will now return a list of local data references</li>
+</ul>
+
+<h2 id="2-0-0-rc2-2018-05-15">[2.0.0-rc2] - 2018-05-15</h2>
+
+<h3 id="fixed-5">Fixed</h3>
+
+<ul>
+<li>Fixed crash in <code>MapControl</code> when a devices&rsquo;s orientation changed (portrait &lt;-&gt; landscape)</li>
+</ul>
+
+<h3 id="added-4">Added</h3>
+
+<ul>
+<li>Added two new methods to the <code>Floor</code> model (<code>getOutline()</code> and <code>getOutlineAsLatLngList()</code>)</li>
+</ul>
+
+<h2 id="2-0-0-rc1-2018-05-14">[2.0.0-rc1] - 2018-05-14</h2>
+
+<h3 id="added-5">Added</h3>
+
+<ul>
+<li>Floorplan tile sizes can be now set with <code>MapControl.setTileSize( tileSize )</code>. Tile sizes depend on the Solution (it is not mandatory for all MapsIndoors solutions to support all tile sizes)</li>
+</ul>
+
+<h3 id="changed-4">Changed</h3>
+
+<ul>
+<li>Changed <code>MPRoutingProvider</code> method signature from <code>setDateTime( Calendar date, boolean isDeparture )</code> to <code>setDateTime( int date, boolean isDeparture )</code>.</li>
+</ul>
+
+<h3 id="deprecated-4">Deprecated</h3>
+
+<ul>
+<li>All <code>MapControl.setMapPosition</code>. These were just wrapper methods around <code>GoogleMap.animateCamera</code> and <code>MapControl.moveCamera</code></li>
 </ul>
 
 
