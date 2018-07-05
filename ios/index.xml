@@ -79,7 +79,7 @@ let locations = MPLocationsProvider.init() let queryObj = MPLocationQuery.init()
       
       <guid>https://mapsindoors.github.io/ios/v2/changelog/</guid>
       <description>Changelog for MapsIndoors for iOS. This document structure is based on Keep a Changelog and the project adheres to Semantic Versioning.
-[2.0.4] 2018-06-27 Fixed  Fixed a major bug that caused the generated Swift interface in XCode to expose assumed nonnull properties in various areas of the interface Fixed an issue that was causing MPDirectionsService to return routes with duplicate legs for some routes between different venues Fixed an issue where in rare cases one of the internal callbacks in MapControl was not called causing the map to not fire the optional [MPMapControlDelegate mapContentReady]</description>
+[2.0.3] 2018-06-15 Fixed  Fixed logic that selects the current building in focus POI Labels were not shown on the map Selected location not cleared after clearing map -[MPMapControl clearMap]. Fixed route animation graphics glitch Fixed casing intolerance when retrieving route networks for route calculation Fixed internal geometry calculation that could cause MPDirectionsRenderer to crash when rendering Fixed inconsistent map search state caused by passing zero length array to MPMapControl.</description>
     </item>
     
     <item>
