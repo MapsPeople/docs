@@ -356,8 +356,8 @@ You can only run the project inside a web server, it&rsquo;s already inside a st
 <p>If you need to use a floor selector (most projects do), just add a css reference as in the sample. This will provide a basic CSS-layout for the floor selector.</p>
 
 <pre><code class="language-html">&lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js&quot;&gt;&lt;/script&gt;
-&lt;script type=&quot;text/javascript&quot; src=&quot;https://maps.googleapis.com/maps/api/js?libraries=geometry&amp;key=MY_GOOGLE_API_KEY&amp;callback=init&quot; async defer&gt;&lt;/script&gt;
-&lt;script type=&quot;text/javascript&quot; src=&quot;https://app.mapsindoors.com/mapsindoors/js/sdk/MapsIndoors-2.0.0.min.js?solutionId=MY_MAPSINDOORS_API_KEY&quot; async defer&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;https://maps.googleapis.com/maps/api/js?libraries=geometry&amp;key=MY_GOOGLE_API_KEY&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;https://app.mapsindoors.com/mapsindoors/js/sdk/MapsIndoors-2.0.0.min.js?solutionId=MY_MAPSINDOORS_API_KEY&quot;&gt;&lt;/script&gt;
 // Load css for default floor selector
 &lt;link href=&quot;https://app.mapsindoors.com/mapsindoors/js/sdk/ui/FloorSelector.css&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; /&gt;
 </code></pre>
@@ -368,8 +368,6 @@ You can only run the project inside a web server, it&rsquo;s already inside a st
 <li><code>MY_GOOGLE_API_KEY</code> with your own Google api key</li>
 <li><code>MY_MAPSINDOORS_API_KEY</code> with your MapsIndoors api key (formerly known as a solution id)</li>
 </ul>
-
-<p><strong>Note:</strong> This example is using the <em>deferred</em> loading of the scripts. You can also use the synchronous loading by removing the <code>async defer</code> attributes. If you do this, it is recommended to place the scripts just before the closing <code>&lt;/body&gt;</code> tag.</p>
 
 <p>As always when setting up Google Maps, create a div with defined width and height.</p>
 
@@ -397,6 +395,7 @@ var init = function () {
 
 };
 
+google.maps.event.addDomListener(window, 'load', init);
 </code></pre>
 
 <h2 id="using-events">Using Events</h2>
