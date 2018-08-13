@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Webs on MapsIndoors Developers</title>
+    <title>Webs on Indoor Navigation Built with Google Maps</title>
     <link>https://mapsindoors.github.io/web/</link>
-    <description>Recent content in Webs on MapsIndoors Developers</description>
+    <description>Recent content in Webs on Indoor Navigation Built with Google Maps</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>MapsIndoors (c)2017</copyright>

@@ -9,7 +9,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title> - MapsIndoors Developers</title>
+    <title> - Indoor Navigation Built with Google Maps</title>
     <meta name="generator" content="Hugo 0.26" />
 
     
@@ -21,9 +21,9 @@
     
 
     <meta property="og:url" content="https://mapsindoors.github.io/android/v2/changelog/">
-    <meta property="og:title" content="MapsIndoors Developers">
+    <meta property="og:title" content="Indoor Navigation Built with Google Maps">
     <meta property="og:image" content="https://mapsindoors.github.io/images/logo.png">
-    <meta name="apple-mobile-web-app-title" content="MapsIndoors Developers">
+    <meta name="apple-mobile-web-app-title" content="Indoor Navigation Built with Google Maps">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
@@ -358,38 +358,77 @@
 ### Security     in case of vulnerabilities.
 -->
 
-<h2 id="2-0-3-2018-06">[2.0.3] - 2018-06-??</h2>
+<h2 id="2-0-4-2018-07-26">[2.0.4] - 2018-07-26</h2>
 
 <h3 id="added">Added</h3>
 
 <ul>
-<li><code>MapsIndoors.getAvailableLanguages()</code> returns a list of the solution&rsquo;s available languages or just <code>null</code> if data isn&rsquo;t available</li>
-<li><code>MIConnectivityUtils.isOnline()</code> replaces <code>UrlLoader.isOnline()</code></li>
-<li><code>MapControl.setOnMarkerInfoWindowLongClickListener()</code></li>
+<li><code>MapsIndoors.getMessages()</code>: Gets all the localized messages (beacon related) for the current solution</li>
+<li><code>MapsIndoors.synchronizeMessages()</code>: Will pull message data from MapsIndoors backend servers</li>
+<li><code>Venue.getGeometry()</code>: added missing getter</li>
 </ul>
 
 <h3 id="changed">Changed</h3>
 
 <ul>
+<li><code>MapControl.selectFloor()</code>: added validation of the given parameter (floor Z index). It will now throw <code>IllegalArgumentException</code> (if <code>dbglog.useDebug( true )</code>) if an invalid floor Z index was used.</li>
+</ul>
+
+<h3 id="fixed">Fixed</h3>
+
+<ul>
+<li><code>MapControl.displaySearchResults()</code> did show all POIs on the current floor shown regardless their own</li>
+<li>MapsPeople watermark not keeping the same padding on both portrait and landscape modes</li>
+</ul>
+
+<h2 id="2-0-3-2018-07-11">[2.0.3] - 2018-07-11</h2>
+
+<h3 id="added-1">Added</h3>
+
+<ul>
+<li><code>MapsIndoors.getAvailableLanguages()</code> returns a list of the solution&rsquo;s available languages or just <code>null</code> if data isn&rsquo;t available</li>
+<li><code>MIConnectivityUtils.isOnline()</code> replaces <code>UrlLoader.isOnline()</code></li>
+<li><code>MapControl.setOnMarkerInfoWindowLongClickListener()</code></li>
+<li><code>LocationDisplayRule.Builder.setBitmapDrawableIcon( bitmapDrawableResId )</code></li>
+<li><code>LocationDisplayRule.Builder.setBitmapDrawableIcon( bitmapDrawableResId, with, height )</code></li>
+<li><code>LocationDisplayRule.Builder.setVectorDrawableIcon( bitmapDrawableResId, with, height )</code></li>
+<li><code>LocationDisplayRule.Builder.setIconSize( size )</code></li>
+<li><code>MapControl.setUserLocationIconFromDisplayRule( locationDisplayRule )</code></li>
+</ul>
+
+<h3 id="changed-1">Changed</h3>
+
+<ul>
 <li><code>MapsIndoors.getDefaultLanguage()</code> will return now the solution&rsquo;s default language instead of the library&rsquo;s fallback one. If there is no data available yet, this method will now return <code>null</code></li>
+<li><code>LocationDisplayRule.Builder.setIconURL( iconURL )</code> is now an &ldquo;internal&rdquo; method and should not be used. Please use any of the other ways to set display rule icon</li>
 </ul>
 
 <h3 id="deprecated">Deprecated</h3>
 
 <ul>
 <li><code>UrlLoader.isOnline()</code>. Use <code>MIConnectivityUtils.isOnline()</code> instead</li>
+<li><code>LocationDisplayRule.Builder.setIcon( bitmapDrawableResId )</code>. Use <code>LocationDisplayRule.Builder.setBitmapDrawableIcon( bitmapDrawableResId )</code> or <code>LocationDisplayRule.Builder.setBitmapDrawableIcon( bitmapDrawableResId, with, height )</code> instead</li>
+<li><code>LocationDisplayRule.Builder.setIcon( vectorDrawableResId, with, height )</code>. Use <code>LocationDisplayRule.Builder.setVectorDrawableIcon( vectorDrawableResId, with, height )</code> instead</li>
+<li><code>LocationDisplayRule.Builder.setPOISize( size )</code>. Use <code>LocationDisplayRule.Builder.setIconSize( size )</code> instead</li>
+<li><code>MapControl.setUserLocationIcon( bitmapDrawableResId )</code> and <code>MapControl.setUserLocationIcon( vectorDrawableResId, color, width, height )</code>. Use <code>MapControl.setUserLocationIconFromDisplayRule( locationDisplayRule )</code> instead</li>
+</ul>
+
+<h3 id="fixed-1">Fixed</h3>
+
+<ul>
+<li>Custom display rules set on locations now working</li>
 </ul>
 
 <h2 id="2-0-2-2018-06-20">[2.0.2] - 2018-06-20</h2>
 
-<h3 id="changed-1">Changed</h3>
+<h3 id="changed-2">Changed</h3>
 
 <ul>
 <li><code>Point.equals()</code> will return true if the distance between them is less than 1m. It also takes into account its Z value (altitude)</li>
 <li>Graph data is be now available by default. This will enable offline routing when indoors</li>
 </ul>
 
-<h3 id="fixed">Fixed</h3>
+<h3 id="fixed-2">Fixed</h3>
 
 <ul>
 <li>Fixed a crash in <code>MapsIndoors.setLocationsProvider</code> when trying to set a custom locations provider</li>
@@ -397,7 +436,7 @@
 
 <h2 id="2-0-1-2018-06-11">[2.0.1] - 2018-06-11</h2>
 
-<h3 id="fixed-1">Fixed</h3>
+<h3 id="fixed-3">Fixed</h3>
 
 <ul>
 <li>The blue dot (current user location) didn&rsquo;t move after the first time it was set.</li>
@@ -415,7 +454,7 @@
 
 <h2 id="2-0-0-rc8-2018-06-04">[2.0.0-rc8] - 2018-06-04</h2>
 
-<h3 id="fixed-2">Fixed</h3>
+<h3 id="fixed-4">Fixed</h3>
 
 <ul>
 <li><code>MPLocationsAsyncLoader</code>: Internal cache not properly updated on multi-solution projects</li>
@@ -423,7 +462,7 @@
 
 <h2 id="2-0-0-rc7-2018-06-04">[2.0.0-rc7] - 2018-06-04</h2>
 
-<h3 id="added-1">Added</h3>
+<h3 id="added-2">Added</h3>
 
 <ul>
 <li><code>LocationQuery.Builder.setDataSync()</code>: Sets the location provider in &ldquo;data sync mode&rdquo;</li>
@@ -431,7 +470,7 @@
 
 <h2 id="2-0-0-rc6-2018-05-30">[2.0.0-rc6] - 2018-05-30</h2>
 
-<h3 id="added-2">Added</h3>
+<h3 id="added-3">Added</h3>
 
 <ul>
 <li><code>MapsIndoors.enableOfflineTilesUpdates()</code>: Only used in projects with offline data enabled and set to get indoor tiles embedded in the app</li>
@@ -444,7 +483,7 @@
 <li>Use the new <code>MPDirectionsRenderer( Context context, GoogleMap map, MapControl mapControl, OnLegSelectedListener legSelectedListener )</code> which takes an instance of MapControl</li>
 </ul>
 
-<h3 id="fixed-3">Fixed</h3>
+<h3 id="fixed-5">Fixed</h3>
 
 <ul>
 <li>Routing: &ldquo;Next&rdquo; labels on the map not clickable</li>
@@ -452,7 +491,7 @@
 
 <h2 id="2-0-0-rc5-2018-05-28">[2.0.0-rc5] - 2018-05-28</h2>
 
-<h3 id="changed-2">Changed</h3>
+<h3 id="changed-3">Changed</h3>
 
 <ul>
 <li>Changed MapsPeople&rsquo;s logo (watermark) to the right (right side in LTR, left on RTL languages)</li>
@@ -460,7 +499,7 @@
 
 <h2 id="2-0-0-rc4-2018-05-23">[2.0.0-rc4] - 2018-05-23</h2>
 
-<h3 id="fixed-4">Fixed</h3>
+<h3 id="fixed-6">Fixed</h3>
 
 <ul>
 <li>Fixed issue in <code>MapsIndoors.MIImageProvider</code></li>
@@ -475,7 +514,7 @@
 
 <h2 id="2-0-0-rc3-2018-05-17">[2.0.0-rc3] - 2018-05-17</h2>
 
-<h3 id="added-3">Added</h3>
+<h3 id="added-4">Added</h3>
 
 <ul>
 <li><p>Implemented <code>MapsIndoors.getLocationById()</code></p></li>
@@ -485,7 +524,7 @@
 <li><p>Added <code>MapsIndoors.allowToDownloadData()</code> and <code>MapsIndoors.isAllowedToDownloadData()</code></p></li>
 </ul>
 
-<h3 id="changed-3">Changed</h3>
+<h3 id="changed-4">Changed</h3>
 
 <ul>
 <li>Non-sync backend location queries will now return a list of local data references</li>
@@ -493,13 +532,13 @@
 
 <h2 id="2-0-0-rc2-2018-05-15">[2.0.0-rc2] - 2018-05-15</h2>
 
-<h3 id="fixed-5">Fixed</h3>
+<h3 id="fixed-7">Fixed</h3>
 
 <ul>
 <li>Fixed crash in <code>MapControl</code> when a devices&rsquo;s orientation changed (portrait &lt;-&gt; landscape)</li>
 </ul>
 
-<h3 id="added-4">Added</h3>
+<h3 id="added-5">Added</h3>
 
 <ul>
 <li>Added two new methods to the <code>Floor</code> model (<code>getOutline()</code> and <code>getOutlineAsLatLngList()</code>)</li>
@@ -507,13 +546,13 @@
 
 <h2 id="2-0-0-rc1-2018-05-14">[2.0.0-rc1] - 2018-05-14</h2>
 
-<h3 id="added-5">Added</h3>
+<h3 id="added-6">Added</h3>
 
 <ul>
 <li>Floorplan tile sizes can be now set with <code>MapControl.setTileSize( tileSize )</code>. Tile sizes depend on the Solution (it is not mandatory for all MapsIndoors solutions to support all tile sizes)</li>
 </ul>
 
-<h3 id="changed-4">Changed</h3>
+<h3 id="changed-5">Changed</h3>
 
 <ul>
 <li>Changed <code>MPRoutingProvider</code> method signature from <code>setDateTime( Calendar date, boolean isDeparture )</code> to <code>setDateTime( int date, boolean isDeparture )</code>.</li>

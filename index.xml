@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>MapsIndoors Developers</title>
+    <title>Indoor Navigation Built with Google Maps</title>
     <link>https://mapsindoors.github.io/</link>
-    <description>Recent content on MapsIndoors Developers</description>
+    <description>Recent content on Indoor Navigation Built with Google Maps</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>MapsIndoors (c)2017</copyright>
@@ -30,7 +30,7 @@
       
       <guid>https://mapsindoors.github.io/android/v2/changelog/</guid>
       <description>Changelog Changelog for the MapsIndoors Android SDK. This document structure is based on Keep a Changelog and the project adheres to Semantic Versioning.
-[2.0.3] - 2018-06-?? Added  MapsIndoors.getAvailableLanguages() returns a list of the solution&amp;rsquo;s available languages or just null if data isn&amp;rsquo;t available MIConnectivityUtils.isOnline() replaces UrlLoader.isOnline() MapControl.setOnMarkerInfoWindowLongClickListener()  Changed  MapsIndoors.getDefaultLanguage() will return now the solution&amp;rsquo;s default language instead of the library&amp;rsquo;s fallback one. If there is no data available yet, this method will now return null  Deprecated  UrlLoader.</description>
+[2.0.4] - 2018-07-26 Added  MapsIndoors.getMessages(): Gets all the localized messages (beacon related) for the current solution MapsIndoors.synchronizeMessages(): Will pull message data from MapsIndoors backend servers Venue.getGeometry(): added missing getter  Changed  MapControl.selectFloor(): added validation of the given parameter (floor Z index). It will now throw IllegalArgumentException (if dbglog.</description>
     </item>
     
     <item>
