@@ -403,6 +403,14 @@ repositories{
 }
 </code></pre>
 
+<p>Put those lines in your proguard-rules files :</p>
+
+<pre><code class="language-groovy">-keep interface com.mapsindoors.mapssdk.** { *; }
+-keep class com.mapsindoors.mapssdk.errors.** { *; }
+-keepclassmembers class com.mapsindoors.mapssdk.models.** { &lt;fields&gt;; }
+-keep class com.mapsindoors.mapssdk.dbglog
+</code></pre>
+
 <p>Sync your project with gradle files.</p>
 
 <h2 id="setup-google-maps">Setup Google Maps</h2>
