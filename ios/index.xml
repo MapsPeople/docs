@@ -47,8 +47,18 @@ MPLocationQuery* q1 = [[MPLocationQuery alloc] init]; q1.solutionId = sID; q1.qu
       <guid>https://mapsindoors.github.io/ios/v2/tutorials/searchsearchmapcontroller/</guid>
       <description>Add a GMSMapView and a MPMapControl to the class
 var map: GMSMapView? = nil var mapControl: MPMapControl? = nil  Setup map so that it shows the demo venue and initialise mapControl
-self.map = GMSMapView.init(frame: CGRect.zero) self.map?.camera = .camera(withLatitude: 57.057964, longitude: 9.9504112, zoom: 20) self.mapControl = MPMapControl.init(map: self.map)  Setup a button that targets a method (openSearch) in your class
+self.map = GMSMapView.init(frame: CGRect.zero) self.map?.camera = .camera(withLatitude: 57.057964, longitude: 9.9504112, zoom: 20) self.mapControl = MPMapControl.init(map: self.map!)  Setup a button that targets a method (openSearch) in your class
 let button = UIButton.init() button.setTitle(&amp;quot;Search&amp;quot;, for: .normal) button.addTarget(self, action: #selector(openSearch), for: .</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://mapsindoors.github.io/ios/v2/tutorials/showlocationshowlocationcontroller/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/ios/v2/tutorials/showlocationshowlocationcontroller/</guid>
+      <description>Show map
+self.map = GMSMapView.init(frame: CGRect.zero) self.view = self.map self.map?.camera = .camera(withLatitude: 57.057964, longitude: 9.9504112, zoom: 20) self.mapControl = MPMapControl.init(map: self.map!) let locations = MPLocationsProvider.init() let queryObj = MPLocationQuery.init() queryObj.query = &amp;quot;info&amp;quot; queryObj.max = 1 locations.getLocationsUsing(queryObj) { (locationData, error) in if error == nil { let firstLocation = locationData?.list?.first self.mapControl?.selectedLocation = firstLocation self.mapControl?.currentFloor = firstLocation?.floor // You are not guaranteed that the visible floor contains any search results, so that is why we change floor } }  See the sample in ShowLocationController.</description>
     </item>
     
     <item>
@@ -58,8 +68,8 @@ let button = UIButton.init() button.setTitle(&amp;quot;Search&amp;quot;, for: .n
       
       <guid>https://mapsindoors.github.io/ios/v2/tutorials/showmultiplelocationsshowmultiplelocationscontroller/</guid>
       <description>Show map
-self.map = GMSMapView.init(frame: CGRect.zero) self.view = self.map self.map?.camera = .camera(withLatitude: 57.057964, longitude: 9.9504112, zoom: 17) self.mapControl = MPMapControl.init(map: self.map)  Show search on map
-let locations = MPLocationsProvider.init() let queryObj = MPLocationQuery.init() queryObj.categories = [&amp;quot;Toilet&amp;quot;] queryObj.max = 50 locations.getLocationsUsing(queryObj) { (locationData, error) in if error == nil { self.mapControl?.searchResult = locationData!.list let firstLocation = locationData?.list.first self.mapControl?.currentFloor = firstLocation?.floor // You are not guaranteed that the visible floor contains any search results, so that is why we change floor } }  See the sample in ShowMultipleLocationsController.</description>
+self.map = GMSMapView.init(frame: CGRect.zero) self.view = self.map self.map?.camera = .camera(withLatitude: 57.057964, longitude: 9.9504112, zoom: 17) self.mapControl = MPMapControl.init(map: self.map!)  Show search on map
+let locations = MPLocationsProvider.init() let queryObj = MPLocationQuery.init() queryObj.categories = [&amp;quot;Toilet&amp;quot;] queryObj.max = 50 locations.getLocationsUsing(queryObj) { (locationData, error) in if error == nil { self.mapControl?.searchResult = locationData!.list let firstLocation = locationData?.list?.first self.mapControl?.currentFloor = firstLocation?.floor // You are not guaranteed that the visible floor contains any search results, so that is why we change floor } }  See the sample in ShowMultipleLocationsController.</description>
     </item>
     
     <item>
@@ -79,7 +89,7 @@ let locations = MPLocationsProvider.init() let queryObj = MPLocationQuery.init()
       
       <guid>https://mapsindoors.github.io/ios/v2/changelog/</guid>
       <description>Changelog for MapsIndoors for iOS. This document structure is based on Keep a Changelog and the project adheres to Semantic Versioning.
-[2.0.4] 2018-06-27 Fixed  Fixed a major bug that caused the generated Swift interface in XCode to expose assumed nonnull properties in various areas of the interface Fixed an issue that was causing MPDirectionsService to return routes with duplicate legs for some routes between different venues Fixed an issue where in rare cases one of the internal callbacks in MapControl was not called causing the map to not fire the optional [MPMapControlDelegate mapContentReady]</description>
+[2.1.1] 2018-09-07 Fixed  Fixed an issue where occasionally rendered routes where not fitted properly inside the screen. Fixed an issue where occasionally the selected location and search results would fail to appear. Heading indicator on the &amp;ldquo;my position&amp;rdquo; marker is now only shown when heading data is available; would point straight north previously.</description>
     </item>
     
     <item>
@@ -91,6 +101,26 @@ let locations = MPLocationsProvider.init() let queryObj = MPLocationQuery.init()
       <description>This is an example of creating a simple search experience using MapsIndoors. We will create a map with a search button that leads to another view controller that handles the search and selection. On selection of a location, we go back to the map and shows the selected location on the map.
 We will start by creating a simple search controller that handles search and selection of MapsIndoors locations
 Declare a protocol for our location selection with a didSelectLocation method</description>
+    </item>
+    
+    <item>
+      <title>Get Directions and Show the Result on a Map - Part 1</title>
+      <link>https://mapsindoors.github.io/ios/v2/tutorials/showrouteshowrouteonmapcontroller/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/ios/v2/tutorials/showrouteshowrouteonmapcontroller/</guid>
+      <description>In this tutorial we will request a route, list the route parts and render these on a Google Map. A MapsIndoors route is made of one or more legs, each containing one or more steps.
+We will start by making the controller that renders the route from the input of a route, a leg index and optionally a step index. Start by creating a UIViewController implementation that conforms to MPDirectionsRendererDelegate</description>
+    </item>
+    
+    <item>
+      <title>Get Directions and Show the Result on a Map - Part 2</title>
+      <link>https://mapsindoors.github.io/ios/v2/tutorials/showrouteshowroutecontroller/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/ios/v2/tutorials/showrouteshowroutecontroller/</guid>
+      <description>This is part 2 of the tutorial of requesting directions and showing the route result on a map. In Part 1 we created the controller that can display the map and route, and in this part we will create the controller that requests the route and list the route in a table. A MapsIndoors route is made of one or more legs, each containing one or more steps.
+Start by creating a UIViewController implementation</description>
     </item>
     
     <item>

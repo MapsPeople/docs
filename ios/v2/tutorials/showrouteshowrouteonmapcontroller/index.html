@@ -9,18 +9,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>Changelog - Indoor Navigation Built with Google Maps</title>
+    <title>Get Directions and Show the Result on a Map - Part 1 - Indoor Navigation Built with Google Maps</title>
     <meta name="generator" content="Hugo 0.26" />
 
     
     <meta name="description" content="Everything you need to get started with MapsIndoors.">
     
-    <link rel="canonical" href="https://mapsindoors.github.io/ios/v2/changelog/">
+    <link rel="canonical" href="https://mapsindoors.github.io/ios/v2/tutorials/showrouteshowrouteonmapcontroller/">
     
     <meta name="author" content="MapsPeople">
     
 
-    <meta property="og:url" content="https://mapsindoors.github.io/ios/v2/changelog/">
+    <meta property="og:url" content="https://mapsindoors.github.io/ios/v2/tutorials/showrouteshowrouteonmapcontroller/">
     <meta property="og:title" content="Indoor Navigation Built with Google Maps">
     <meta property="og:image" content="https://mapsindoors.github.io/images/logo.png">
     <meta name="apple-mobile-web-app-title" content="Indoor Navigation Built with Google Maps">
@@ -106,7 +106,7 @@
     </div>
     <div class="stretch">
       <div class="title">
-        Changelog
+        Get Directions and Show the Result on a Map - Part 1
       </div>
     </div>
 
@@ -277,14 +277,11 @@
 
 
 
-<a class="current" title="Changelog" href="https://mapsindoors.github.io/ios/v2/changelog">
+<a  title="Changelog" href="https://mapsindoors.github.io/ios/v2/changelog">
 	
 	Changelog
 </a>
 
-
-<ul id="scrollspy">
-</ul>
 
 
       
@@ -341,176 +338,71 @@
 
 	<article class="article">
 		<div class="wrapper">
-			<h1>Changelog </h1>
+			<h1>Get Directions and Show the Result on a Map - Part 1 </h1>
 
-			
+			<p>In this tutorial we will request a route, list the route parts and render these on a Google Map. A MapsIndoors route is made of one or more legs, each containing one or more steps.</p>
 
-<p>Changelog for MapsIndoors for iOS. This document structure is based on <a href="http://keepachangelog.com/en/1.0.0/">Keep a Changelog</a> and the project adheres to <a href="http://semver.org/spec/v2.0.0.html">Semantic Versioning</a>.</p>
+<p>We will start by making the controller that renders the route from the input of a route, a leg index and optionally a step index. Start by creating a <code>UIViewController</code> implementation that conforms to <code>MPDirectionsRendererDelegate</code></p>
 
-<!---
-## [Unreleased]
-### Added
-### Fixed
-### Changed
-### Removed
--->
+<pre><code>class ShowRouteOnMapController: UIViewController, MPDirectionsRendererDelegate {
+</code></pre>
 
-<h2 id="2-1-1-2018-09-07">[2.1.1] 2018-09-07</h2>
-
-<h3 id="fixed">Fixed</h3>
+<p>Setup member variables for <code>MySearchController</code>:</p>
 
 <ul>
-<li>Fixed an issue where occasionally rendered routes where not fitted properly inside the screen.</li>
-<li>Fixed an issue where occasionally the selected location and search results would fail to appear.</li>
-<li>Heading indicator on the &ldquo;my position&rdquo; marker is now only shown when heading data is available; would point straight north previously.</li>
+<li>An instance of type <code>GMSMapView</code></li>
+<li>An instance of type <code>MPMapControl</code></li>
+<li>An instance of type <code>MPRoute</code> (the route object)</li>
+<li>A leg index</li>
+<li>A step index
+<code>
+var map: GMSMapView? = nil
+var mapControl: MPMapControl? = nil
+var route:MPRoute? = nil
+var leg:Int = -1
+var step:Int = -1
+</code>
+Create an initializer for your input parameters
+<code>
+convenience init(_ route:MPRoute, _ leg:Int, _ step:Int) {
+self.init(nibName:nil, bundle:nil)
+self.route = route
+self.leg = leg
+self.step = step
+}
+</code>
+Setup the Google map and your <code>MPMapControl</code> instance
+<code>
+self.map = GMSMapView.init(frame: CGRect.zero)
+self.view = self.map
+self.map?.camera = .camera(withLatitude: 57.057964, longitude: 9.9504112, zoom: 20)
+self.mapControl = MPMapControl.init(map: self.map!)
+</code>
+Inside <code>viewDidAppear</code>, setup a directions renderer and assign the Google map, route object and leg/step indices. Eventually, call the animate method to make it animate from the start to end of the leg/step
+```
+let renderer = MPDirectionsRenderer.init()</li>
 </ul>
 
-<h2 id="2-1-0-2018-08-21">[2.1.0] 2018-08-21</h2>
+<p>renderer.delegate = self
+renderer.fitBounds = true</p>
 
-<h3 id="changed">Changed</h3>
+<p>renderer.map = self.map
+renderer.route = route</p>
 
-<ul>
-<li>Changed how icons and labels are shown on the map, so that no labels or icons are shown on top of each other (Icon &amp; label collision handling)</li>
-<li>Now supporting different icon sizes as recieved from CMS</li>
+<p>renderer.routeLegIndex = leg
+renderer.routeStepIndex = step
+renderer.animate(5)</p>
 
-<li><p>Now able to show outlines of rooms and areas if the dataset is prepared for this</p>
+<pre><code>In the `floorDidChange` delegate method change the floor on your `MPMapControl instance`
+</code></pre>
 
-<h3 id="added">Added</h3></li>
+<p>func floorDidChange(_ floor: NSNumber) {
+    mapControl?.currentFloor = floor
+}
+```
+ In <a href="searchsearchmapcontroller">Part 2</a> we will create the map view controller that displays the blue dot.</p>
 
-<li><p>Basic voiceover/accessibility support.</p>
-
-<h3 id="fixed-1">Fixed</h3></li>
-
-<li><p>Fixed MPLocationQuery.orderBy was not respected.</p></li>
-</ul>
-
-<h2 id="2-0-4-2018-06-27">[2.0.4] 2018-06-27</h2>
-
-<h3 id="fixed-2">Fixed</h3>
-
-<ul>
-<li>Fixed a major bug that caused the generated Swift interface in XCode to expose assumed nonnull properties in various areas of the interface</li>
-<li>Fixed an issue that was causing <code>MPDirectionsService</code> to return routes with duplicate legs for some routes between different venues</li>
-
-<li><p>Fixed an issue where in rare cases one of the internal callbacks in MapControl was not called causing the map to not fire the optional <code>[MPMapControlDelegate mapContentReady]</code></p>
-
-<h3 id="changed-1">Changed</h3></li>
-
-<li><p>A lot of properties have now become nullable because of the FIX needed above</p></li>
-</ul>
-
-<h2 id="2-0-3-2018-06-15">[2.0.3] 2018-06-15</h2>
-
-<h3 id="fixed-3">Fixed</h3>
-
-<ul>
-<li>Fixed logic that selects the current building in focus</li>
-<li>POI Labels were not shown on the map</li>
-<li>Selected location not cleared after clearing map <code>-[MPMapControl clearMap]</code>.</li>
-<li>Fixed route animation graphics glitch</li>
-<li>Fixed casing intolerance when retrieving route networks for route calculation</li>
-<li>Fixed internal geometry calculation that could cause <code>MPDirectionsRenderer</code> to crash when rendering</li>
-
-<li><p>Fixed inconsistent map search state caused by passing zero length array to <code>MPMapControl.searchResult</code></p>
-
-<h3 id="changed-2">Changed</h3></li>
-
-<li><p>Improved map graphics used for cases when there are no bundled map graphics</p></li>
-
-<li><p>Improved Google Maps directions integration / handover from Google Maps to MapsIndoors</p></li>
-
-<li><p>Animation speed when showing directions is now adapting the the amount of movement and rotation needed for transitioning between steps.</p></li>
-
-<li><p>Moved MapsPeople logo to the lower right side of the map.</p></li>
-</ul>
-
-<h2 id="2-0-2-rc1-2018-05-02">[2.0.2-rc1] 2018-05-02</h2>
-
-<h3 id="added-1">Added</h3>
-
-<h3 id="fixed-4">Fixed</h3>
-
-<ul>
-<li><p>Fixed logic that selects the current building in focus</p>
-
-<h3 id="changed-3">Changed</h3></li>
-
-<li><p>Improved map graphics used for cases when there are no bundled map graphics</p></li>
-
-<li><p>Improved Google Maps directions integration / handover from Google Maps to MapsIndoors</p>
-
-<h3 id="removed">Removed</h3></li>
-</ul>
-
-<h2 id="2-0-1-rc6-2018-05-02">[2.0.1-rc6] 2018-05-02</h2>
-
-<h3 id="added-2">Added</h3>
-
-<h3 id="fixed-5">Fixed</h3>
-
-<ul>
-<li>POI Labels were not shown on the map.</li>
-
-<li><p>Selected location not cleared after clearing map <code>-[MPMapControl clearMap]</code>.</p>
-
-<h3 id="changed-4">Changed</h3></li>
-
-<li><p>Animation speed when showing directions is now adapting the the amount of movement and rotation needed for transitioning between steps.</p>
-
-<h3 id="removed-1">Removed</h3></li>
-</ul>
-
-<h2 id="2-0-0-2018-04-10">[2.0.0] 2018-04-10</h2>
-
-<h3 id="added-3">Added</h3>
-
-<ul>
-<li>On-device route calculation optionally with routing-data embedded into the app.</li>
-<li>Fetching of all MapsIndoors content now possible using <code>[MapsIndoors synchroniseContent:]</code></li>
-<li>Fetching and bundling of all MapsIndoors content now possible using build run script phase</li>
-<li>On-device route calculation optionally with routing-data embedded into the app.</li>
-<li>Fetching of all MapsIndoors content now possible using <code>[MapsIndoors synchroniseContent:]</code></li>
-</ul>
-
-<h3 id="fixed-6">Fixed</h3>
-
-<ul>
-<li>Performance improvements by delegating image rendering to background queue.</li>
-<li>Improvements in CPU load and battery consumption.</li>
-<li>MPDirectionsRenderer: exposed a property to indicate whether a route is rendered or not.</li>
-<li>Less strict internal data parsing, ensuring that some location properties can be omitted</li>
-<li>Fixed an error where directions service would crash if no API key was properly set</li>
-<li>Fixed an error where map graphics was not loaded properly</li>
-<li>Fixed an error where updating of a display rule would unintentionally persist across initialisations of <code>MPMapControl</code></li>
-<li>Fixed an error where fetching of messages failed because of mal-formatted language</li>
-<li>Fixed callback issues when calling multiple route requests simultaneously</li>
-<li>Fixed an error where directions service would crash if no API key was properly set</li>
-<li>Fixed an error where map graphics was not loaded properly</li>
-<li>Fixed an error where updating of a display rule was persistent across initialisations of <code>MPMapControl</code></li>
-<li>Fixed an error where fetching of messages failed because of mal-formatted language</li>
-<li>Fixed callback issues when calling multiple route requests simultaneously</li>
-</ul>
-
-<h3 id="changed-5">Changed</h3>
-
-<ul>
-<li>Changed initialisation steps, see <a href="https://mapsindoors.github.io/ios/v2">Getting Started</a></li>
-<li>Added <code>MPDirectionsQuery</code> and new method to query routes on <code>MPDirectionsService</code></li>
-<li>Deprecations introduced on various methods</li>
-<li>Deprecations introduced on various UI controls</li>
-<li>Added <code>MPDirectionsQuery</code> and new method to query routes on <code>MPDirectionsService</code></li>
-<li>Deprecations introduced on various UI controls</li>
-<li>Deprecations introduced on various methods</li>
-</ul>
-
-<h3 id="removed-2">Removed</h3>
-
-<ul>
-<li>All beacon positioning related logic (moved to public app code)</li>
-<li>Made peripheral code private that was public before</li>
-<li>All beacon positioning related logic (moved to public app code)</li>
-<li>Made peripheral code private that was public before</li>
-</ul>
+<p><a href="https://github.com/MapsIndoors/MapsIndoorsIOS-Demo-Samples/blob/master/Show Route/ShowRouteOnMapController.swift">See the sample in ShowRouteOnMapController.swift</a></p>
 
 
 			<aside class="copyright" role="note">
@@ -529,7 +421,7 @@
 <nav class="pagination" aria-label="Footer">
   <div class="previous">
   
-      <a href="https://mapsindoors.github.io/ios/v1/changelog/" title="Changelog">
+      <a href="https://mapsindoors.github.io/android/v2/tutorials/searchmapdemosearchmapfragment/" title="Create a Search Experience with MapsIndoors - Part 2">
         <span class="direction">
           Previous
         </span>
@@ -539,7 +431,7 @@
           </div>
           <div class="stretch">
             <div class="title">
-              Changelog
+              Create a Search Experience with MapsIndoors - Part 2
             </div>
           </div>
         </div>
@@ -549,14 +441,14 @@
 
   <div class="next">
   
-      <a href="https://mapsindoors.github.io/android/v2/tutorials/searchmapdemosearchfragment/" title="Create a Search Experience with MapsIndoors - Part 1">
+      <a href="https://mapsindoors.github.io/ios/v2/tutorials/showrouteshowroutecontroller/" title="Get Directions and Show the Result on a Map - Part 2">
         <span class="direction">
           Next
         </span>
         <div class="page">
           <div class="stretch">
             <div class="title">
-              Create a Search Experience with MapsIndoors - Part 1
+              Get Directions and Show the Result on a Map - Part 2
             </div>
           </div>
           <div class="button button-next" role="button" aria-label="Next">

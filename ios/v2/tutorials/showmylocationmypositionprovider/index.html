@@ -167,7 +167,7 @@
           <img src="https://mapsindoors.github.io//logos/apple-logo.svg" style="padding:10px">
         </div>
         <div class="name">
-          <strong>iOS SDK <br /><span class="version">2.1.0</span></strong>
+          <strong>iOS SDK <br /><span class="version">2.1.1</span></strong>
           
         </div>
       </div>
@@ -360,9 +360,9 @@
 
 <li><p><code>providerType</code>: A provider type enum, convenient when working with multiple positioning providers in the same application</p>
 
-<pre><code>var delegate: MPPositionProviderDelegate!
+<pre><code>var delegate: MPPositionProviderDelegate?
 private var running = false
-var latestPositionResult: MPPositionResult!
+var latestPositionResult: MPPositionResult?
 var preferAlwaysLocationPermission: Bool = false
 var locationServicesActive: Bool = false
 var providerType: MPPositionProviderType = .GPS_POSITION_PROVIDER
@@ -381,11 +381,11 @@ var providerType: MPPositionProviderType = .GPS_POSITION_PROVIDER
 <pre><code>private func updatePosition() {
 if running {
     latestPositionResult = MPPositionResult.init()
-    latestPositionResult.geometry = MPPoint.init(lat: 57.057964, lon: 9.9504112)
-    latestPositionResult.provider = self
+    latestPositionResult?.geometry = MPPoint.init(lat: 57.057964, lon: 9.9504112)
+    latestPositionResult?.provider = self
         
-    if self.delegate != nil {
-        self.delegate.onPositionUpdate(self.latestPositionResult)
+    if let delegate = self.delegate, let latestPositionResult = self.latestPositionResult {
+        delegate.onPositionUpdate(latestPositionResult)
     }
         
     DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
@@ -411,7 +411,7 @@ locationServicesActive = true
 
 <p>Implement the <code>startPositioning</code> method. We set the <code>running</code> boolean to true and call <code>updatePos</code>.</p>
 
-<pre><code>func startPositioning(_ arg: String!) {
+<pre><code>func startPositioning(_ arg: String?) {
 running = true
 updatePosition()
 }
@@ -419,14 +419,14 @@ updatePosition()
 
 <p>Implement the <code>stopPositioning</code> method. We set the <code>running</code> boolean to false.</p>
 
-<pre><code>func stopPositioning(_ arg: String!) {
+<pre><code>func stopPositioning(_ arg: String?) {
 running = false
 }
 </code></pre>
 
 <p>Implement the <code>startPositioningAfter</code> method. This is just a convenience method that should support a delayed start.</p>
 
-<pre><code>func startPositioning(after millis: Int32, arg: String!) {
+<pre><code>func startPositioning(after millis: Int32, arg: String?) {
 DispatchQueue.main.asyncAfter(deadline: .now() + (0.001 * Double(millis))) {
     self.startPositioning(arg)
 }
@@ -440,7 +440,7 @@ return running
 }
 </code></pre>
 
-<p>In <a href="../showmylocationshowmylocationcontroller">Part 2</a> we will create the map view controller that displays the blue dot.</p></li>
+<p>In <a href="showmylocationshowmylocationcontroller">Part 2</a> we will create the map view controller that displays the blue dot.</p></li>
 </ul>
 
 <p><a href="https://github.com/MapsIndoors/MapsIndoorsIOS-Demo-Samples/blob/master/Show My Location/MyPositionProvider.swift">See the sample in MyPositionProvider.swift</a></p>

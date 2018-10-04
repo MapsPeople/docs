@@ -167,7 +167,7 @@
           <img src="https://mapsindoors.github.io//logos/apple-logo.svg" style="padding:10px">
         </div>
         <div class="name">
-          <strong>iOS SDK <br /><span class="version">2.1.0</span></strong>
+          <strong>iOS SDK <br /><span class="version">2.1.1</span></strong>
           
         </div>
       </div>
@@ -350,7 +350,7 @@ var mapControl: MPMapControl? = nil
 
 <pre><code>self.map = GMSMapView.init(frame: CGRect.zero)
 self.map?.camera = .camera(withLatitude: 57.057964, longitude: 9.9504112, zoom: 20)
-self.mapControl = MPMapControl.init(map: self.map)
+self.mapControl = MPMapControl.init(map: self.map!)
 </code></pre>
 
 <p>Setup a button that targets a method (<code>openSearch</code>) in your class</p>
@@ -428,7 +428,7 @@ mapControl?.go(to: location)
 
   <div class="next">
   
-      <a href="https://mapsindoors.github.io/ios/v2/tutorials/showmultiplelocationsshowmultiplelocationscontroller/" title="">
+      <a href="https://mapsindoors.github.io/ios/v2/tutorials/showlocationshowlocationcontroller/" title="">
         <span class="direction">
           Next
         </span>

@@ -30,7 +30,7 @@
       
       <guid>https://mapsindoors.github.io/android/v2/changelog/</guid>
       <description>Changelog Changelog for the MapsIndoors Android SDK. This document structure is based on Keep a Changelog and the project adheres to Semantic Versioning.
-[2.0.4] - 2018-07-26 Added  MapsIndoors.getMessages(): Gets all the localized messages (beacon related) for the current solution MapsIndoors.synchronizeMessages(): Will pull message data from MapsIndoors backend servers Venue.getGeometry(): added missing getter  Changed  MapControl.selectFloor(): added validation of the given parameter (floor Z index). It will now throw IllegalArgumentException (if dbglog.</description>
+[2.0.7] - 2018-09-05 Added  MapControl.setDisplayRuleDefaultIconSize(): Overwrites the display rules default icon size. Applies only to those display rules that don&amp;rsquo;t specify the size. LocationDisplayRule.Builder.setVectorDrawableIcon( vectorDrawableResId ): Sets the icon using a VectorDrawable at the default size (either the current base - 20dp or the one set with MapControl.</description>
     </item>
     
     <item>

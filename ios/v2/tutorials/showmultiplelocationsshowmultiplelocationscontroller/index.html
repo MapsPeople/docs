@@ -167,7 +167,7 @@
           <img src="https://mapsindoors.github.io//logos/apple-logo.svg" style="padding:10px">
         </div>
         <div class="name">
-          <strong>iOS SDK <br /><span class="version">2.1.0</span></strong>
+          <strong>iOS SDK <br /><span class="version">2.1.1</span></strong>
           
         </div>
       </div>
@@ -347,7 +347,7 @@
 self.view = self.map
 self.map?.camera = .camera(withLatitude: 57.057964, longitude: 9.9504112, zoom: 17)
 
-self.mapControl = MPMapControl.init(map: self.map)
+self.mapControl = MPMapControl.init(map: self.map!)
 </code></pre>
 
 <p>Show search on map</p>
@@ -361,7 +361,7 @@ queryObj.max = 50
 locations.getLocationsUsing(queryObj) { (locationData, error) in
     if error == nil {
         self.mapControl?.searchResult = locationData!.list
-        let firstLocation = locationData?.list.first
+        let firstLocation = locationData?.list?.first
         self.mapControl?.currentFloor = firstLocation?.floor         // You are not guaranteed that the visible floor contains any search results, so that is why we change floor
     }
 }
@@ -386,7 +386,7 @@ locations.getLocationsUsing(queryObj) { (locationData, error) in
 <nav class="pagination" aria-label="Footer">
   <div class="previous">
   
-      <a href="https://mapsindoors.github.io/ios/v2/tutorials/searchsearchmapcontroller/" title="">
+      <a href="https://mapsindoors.github.io/ios/v2/tutorials/showlocationshowlocationcontroller/" title="">
         <span class="direction">
           Previous
         </span>

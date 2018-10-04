@@ -159,7 +159,7 @@
           <img src="https://mapsindoors.github.io//logos/android-logo.svg" style="padding:10px">
         </div>
         <div class="name">
-          <strong>Android SDK <br /><span class="version">2.0.2</span></strong>
+          <strong>Android SDK <br /><span class="version">2.0.7</span></strong>
           
         </div>
       </div>
@@ -358,9 +358,78 @@
 ### Security     in case of vulnerabilities.
 -->
 
-<h2 id="2-0-4-2018-07-26">[2.0.4] - 2018-07-26</h2>
+<h2 id="2-0-7-2018-09-05">[2.0.7] - 2018-09-05</h2>
 
 <h3 id="added">Added</h3>
+
+<ul>
+<li><code>MapControl.setDisplayRuleDefaultIconSize()</code>: Overwrites the display rules default icon size. Applies only to those display rules that don&rsquo;t specify the size.</li>
+<li><code>LocationDisplayRule.Builder.setVectorDrawableIcon(  vectorDrawableResId  )</code>: Sets the icon using a <code>VectorDrawable</code> at the default size (either the current base - 20dp or the one set with <code>MapControl.setDisplayRuleDefaultIconSize()</code>)</li>
+<li>Exposed <code>PositionIndicator.USER_POSITION_DISPLAY_RULE_NAME</code></li>
+</ul>
+
+<h2 id="2-0-6-2018-08-31">[2.0.6] - 2018-08-31</h2>
+
+<h3 id="added-1">Added</h3>
+
+<ul>
+<li><code>LocationDisplayRule.Builder.setLabel()</code>.</li>
+<li><code>MapControl.refreshMap()</code>: Triggers a refresh on the visible part of the map (POIs, etc.).</li>
+</ul>
+
+<h3 id="changed">Changed</h3>
+
+<ul>
+<li>Moved all classes under the <code>com.mapsindoors.mapssdk.models</code> package up to <code>com.mapsindoors.mapssdk</code>.</li>
+<li><code>DisplayRule</code> fields are now public for internal reasons. To read their values, please use the provided getters.</li>
+
+<li><p>Made <code>LocationDisplayRule.setZoomLevelOn()</code> and <code>LocationDisplayRule.setZoomLevelOff()</code> package private.</p></li>
+
+<li><p>Proguard rules:</p>
+
+<pre><code>-keep interface com.mapsindoors.mapssdk.** { *; }
+-keepclassmembers class * implements com.mapsindoors.mapssdk.MIModelBase { \&lt;fields&gt;; }
+</code></pre></li>
+</ul>
+
+<h3 id="deprecated">Deprecated</h3>
+
+<ul>
+<li><code>LocationDisplayRule.Builder.setPoiTypeDisplayRuleLabel()</code>: Use <code>LocationDisplayRule.Builder.setLabel()</code> instead.</li>
+</ul>
+
+<h3 id="removed">Removed</h3>
+
+<ul>
+<li><code>BitmapLoader</code> which was already replaced by <code>MIImageProvider</code></li>
+</ul>
+
+<h2 id="2-0-5-2018-08-27">[2.0.5] - 2018-08-27</h2>
+
+<h3 id="added-2">Added</h3>
+
+<ul>
+<li><code>Mapcontrol.setGoogleMap( GoogleMap, View )</code>: Sets the GoogleMap object and its parent view. Use it along the basic constructor (<code>MapControl( Context )</code>)</li>
+</ul>
+
+<h3 id="changed-1">Changed</h3>
+
+<ul>
+<li>Annotated <code>MapControl.selectFloor()</code> as to be run on the UIThread</li>
+<li>The user&rsquo;s location marker (aka blue dot) will fade 50% when the current floor the user is at is different than the one highlighted in the floor selector</li>
+</ul>
+
+<h3 id="deprecated-1">Deprecated</h3>
+
+<ul>
+<li><code>LocationQuery.getFloor()</code>, <code>LocationQuery.setFloor()</code>, <code>LocationQuery.Builder.setFloor()</code>: Use the floor index getters/setters instead</li>
+<li><code>Mapcontrol.MapControl( Context, SupportMapFragment, GoogleMap )</code>: Use <code>MapControl( Context )</code> together with <code>MapControl.setGoogleMap( GoogleMap, View )</code></li>
+<li><code>Mapcontrol.setGoogleMap( GoogleMap, SupportMapFragment )</code>, <code>Mapcontrol.setGoogleMap( GoogleMap, MapView )</code>: Use <code>MapControl.setGoogleMap( GoogleMap, View )</code> instead</li>
+</ul>
+
+<h2 id="2-0-4-2018-07-26">[2.0.4] - 2018-07-26</h2>
+
+<h3 id="added-3">Added</h3>
 
 <ul>
 <li><code>MapsIndoors.getMessages()</code>: Gets all the localized messages (beacon related) for the current solution</li>
@@ -368,7 +437,7 @@
 <li><code>Venue.getGeometry()</code>: added missing getter</li>
 </ul>
 
-<h3 id="changed">Changed</h3>
+<h3 id="changed-2">Changed</h3>
 
 <ul>
 <li><code>MapControl.selectFloor()</code>: added validation of the given parameter (floor Z index). It will now throw <code>IllegalArgumentException</code> (if <code>dbglog.useDebug( true )</code>) if an invalid floor Z index was used.</li>
@@ -383,7 +452,7 @@
 
 <h2 id="2-0-3-2018-07-11">[2.0.3] - 2018-07-11</h2>
 
-<h3 id="added-1">Added</h3>
+<h3 id="added-4">Added</h3>
 
 <ul>
 <li><code>MapsIndoors.getAvailableLanguages()</code> returns a list of the solution&rsquo;s available languages or just <code>null</code> if data isn&rsquo;t available</li>
@@ -396,14 +465,14 @@
 <li><code>MapControl.setUserLocationIconFromDisplayRule( locationDisplayRule )</code></li>
 </ul>
 
-<h3 id="changed-1">Changed</h3>
+<h3 id="changed-3">Changed</h3>
 
 <ul>
 <li><code>MapsIndoors.getDefaultLanguage()</code> will return now the solution&rsquo;s default language instead of the library&rsquo;s fallback one. If there is no data available yet, this method will now return <code>null</code></li>
 <li><code>LocationDisplayRule.Builder.setIconURL( iconURL )</code> is now an &ldquo;internal&rdquo; method and should not be used. Please use any of the other ways to set display rule icon</li>
 </ul>
 
-<h3 id="deprecated">Deprecated</h3>
+<h3 id="deprecated-2">Deprecated</h3>
 
 <ul>
 <li><code>UrlLoader.isOnline()</code>. Use <code>MIConnectivityUtils.isOnline()</code> instead</li>
@@ -421,7 +490,7 @@
 
 <h2 id="2-0-2-2018-06-20">[2.0.2] - 2018-06-20</h2>
 
-<h3 id="changed-2">Changed</h3>
+<h3 id="changed-4">Changed</h3>
 
 <ul>
 <li><code>Point.equals()</code> will return true if the distance between them is less than 1m. It also takes into account its Z value (altitude)</li>
@@ -446,7 +515,7 @@
 
 <h2 id="2-0-0-rc9-2018-06-07">[2.0.0-rc9] - 2018-06-07</h2>
 
-<h3 id="deprecated-1">Deprecated</h3>
+<h3 id="deprecated-3">Deprecated</h3>
 
 <ul>
 <li><code>MPRoutingProvider.setGoogleServerKey()</code>: Set the Google API Key with <code>MapsIndoors.setGoogleAPIKey()</code> and retrieve it via <code>MapsIndoors.getGoogleAPIKey()</code></li>
@@ -462,7 +531,7 @@
 
 <h2 id="2-0-0-rc7-2018-06-04">[2.0.0-rc7] - 2018-06-04</h2>
 
-<h3 id="added-2">Added</h3>
+<h3 id="added-5">Added</h3>
 
 <ul>
 <li><code>LocationQuery.Builder.setDataSync()</code>: Sets the location provider in &ldquo;data sync mode&rdquo;</li>
@@ -470,14 +539,14 @@
 
 <h2 id="2-0-0-rc6-2018-05-30">[2.0.0-rc6] - 2018-05-30</h2>
 
-<h3 id="added-3">Added</h3>
+<h3 id="added-6">Added</h3>
 
 <ul>
 <li><code>MapsIndoors.enableOfflineTilesUpdates()</code>: Only used in projects with offline data enabled and set to get indoor tiles embedded in the app</li>
 <li><code>MapControl.setDisplayRuleLabelDefaultMaxCharLength()</code>: This caps all display rule label string lenghts at the given value at render time</li>
 </ul>
 
-<h3 id="deprecated-2">Deprecated</h3>
+<h3 id="deprecated-4">Deprecated</h3>
 
 <ul>
 <li>Use the new <code>MPDirectionsRenderer( Context context, GoogleMap map, MapControl mapControl, OnLegSelectedListener legSelectedListener )</code> which takes an instance of MapControl</li>
@@ -491,7 +560,7 @@
 
 <h2 id="2-0-0-rc5-2018-05-28">[2.0.0-rc5] - 2018-05-28</h2>
 
-<h3 id="changed-3">Changed</h3>
+<h3 id="changed-5">Changed</h3>
 
 <ul>
 <li>Changed MapsPeople&rsquo;s logo (watermark) to the right (right side in LTR, left on RTL languages)</li>
@@ -505,7 +574,7 @@
 <li>Fixed issue in <code>MapsIndoors.MIImageProvider</code></li>
 </ul>
 
-<h3 id="deprecated-3">Deprecated</h3>
+<h3 id="deprecated-5">Deprecated</h3>
 
 <ul>
 <li>In the <code>dbglog</code> class deprecated <code>SetLoglevel()</code>, <code>startTimer()</code> and <code>startTimer()</code></li>
@@ -514,7 +583,7 @@
 
 <h2 id="2-0-0-rc3-2018-05-17">[2.0.0-rc3] - 2018-05-17</h2>
 
-<h3 id="added-4">Added</h3>
+<h3 id="added-7">Added</h3>
 
 <ul>
 <li><p>Implemented <code>MapsIndoors.getLocationById()</code></p></li>
@@ -524,7 +593,7 @@
 <li><p>Added <code>MapsIndoors.allowToDownloadData()</code> and <code>MapsIndoors.isAllowedToDownloadData()</code></p></li>
 </ul>
 
-<h3 id="changed-4">Changed</h3>
+<h3 id="changed-6">Changed</h3>
 
 <ul>
 <li>Non-sync backend location queries will now return a list of local data references</li>
@@ -538,7 +607,7 @@
 <li>Fixed crash in <code>MapControl</code> when a devices&rsquo;s orientation changed (portrait &lt;-&gt; landscape)</li>
 </ul>
 
-<h3 id="added-5">Added</h3>
+<h3 id="added-8">Added</h3>
 
 <ul>
 <li>Added two new methods to the <code>Floor</code> model (<code>getOutline()</code> and <code>getOutlineAsLatLngList()</code>)</li>
@@ -546,19 +615,19 @@
 
 <h2 id="2-0-0-rc1-2018-05-14">[2.0.0-rc1] - 2018-05-14</h2>
 
-<h3 id="added-6">Added</h3>
+<h3 id="added-9">Added</h3>
 
 <ul>
 <li>Floorplan tile sizes can be now set with <code>MapControl.setTileSize( tileSize )</code>. Tile sizes depend on the Solution (it is not mandatory for all MapsIndoors solutions to support all tile sizes)</li>
 </ul>
 
-<h3 id="changed-5">Changed</h3>
+<h3 id="changed-7">Changed</h3>
 
 <ul>
 <li>Changed <code>MPRoutingProvider</code> method signature from <code>setDateTime( Calendar date, boolean isDeparture )</code> to <code>setDateTime( int date, boolean isDeparture )</code>.</li>
 </ul>
 
-<h3 id="deprecated-4">Deprecated</h3>
+<h3 id="deprecated-6">Deprecated</h3>
 
 <ul>
 <li>All <code>MapControl.setMapPosition</code>. These were just wrapper methods around <code>GoogleMap.animateCamera</code> and <code>MapControl.moveCamera</code></li>
