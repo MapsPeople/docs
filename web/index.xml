@@ -13,32 +13,64 @@
     
     <item>
       <title></title>
-      <link>https://mapsindoors.github.io/web/changelog/</link>
+      <link>https://mapsindoors.github.io/web/v2/changelog/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://mapsindoors.github.io/web/changelog/</guid>
+      <guid>https://mapsindoors.github.io/web/v2/changelog/</guid>
       <description> Changelog Changelog for MapsIndoors SDK for JavaScript. This document structure is based on Keep a Changelog and the project adheres to Semantic Versioning.
 [Unreleased] [1.4.3] - 2017-10-10 Added  Changelog was added.  Fixed  Fixed a bug in the way the Google Directions is merged together with MapsIndoors Directions when origin or destination is outside on venue.  </description>
     </item>
     
     <item>
-      <title>MapsIndoors for Web - Getting started</title>
-      <link>https://mapsindoors.github.io/web/</link>
+      <title></title>
+      <link>https://mapsindoors.github.io/web/v3/changelog/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://mapsindoors.github.io/web/</guid>
+      <guid>https://mapsindoors.github.io/web/v3/changelog/</guid>
+      <description>Changelog Changelog for MapsIndoors SDK for JavaScript. This document structure is based on Keep a Changelog and the project adheres to Semantic Versioning.
+[3.0.0] - 2018-10-23 Changed  Script must now be loaded with apikey parameter instead of solutionId, e.g. https://app.mapsindoors.com/mapsindoors/js/sdk/mapsindoors-3.0.0-rc0.js?apikey=57e4e4992e74800ef8b69718 All services are now shared instances, so they cannot be newed. E.g. you must rewrite let directionsService = new mapsindoors.DirectionsService(); to let miDirectionsService = mapsindoors.DirectionsService; Location click events for a MapsIndoors instance are now subscribable with the event name click instead of location_click, e.</description>
+    </item>
+    
+    <item>
+      <title>MapsIndoors for Web - Getting started</title>
+      <link>https://mapsindoors.github.io/web/v2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/web/v2/</guid>
+      <description>Note! A newer version of the MapsIndoors SDK for Web is available. The legacy version will not receive new features and will only get bugfix and security updates.
+ This guide explains how to start using a MapsIndoors map in your HTML application. Make sure that you have read the prerequisites.
+To benefit from the guides, you will need basic knowledge about:
+ JavaScript HTML/CSS Google Maps Javascript API V3  You can get started in two ways, either by reviewing and modifying the basic example or do the clean setup.</description>
+    </item>
+    
+    <item>
+      <title>MapsIndoors for Web - Getting started</title>
+      <link>https://mapsindoors.github.io/web/v3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/web/v3/</guid>
       <description>This guide explains how to start using a MapsIndoors map in your HTML application. Make sure that you have read the prerequisites.
 To benefit from the guides, you will need basic knowledge about:
  JavaScript HTML/CSS Google Maps Javascript API V3  You can get started in two ways, either by reviewing and modifying the basic example or do the clean setup.
-Basic Example You will find in the link an up and running project that contains the minimum code to start a MapsIndoors project.</description>
+Basic Example You will find in the link an up and running website sample that demonstrates the common use cases like mapping, search &amp;amp; directions in MapsIndoors.</description>
+    </item>
+    
+    <item>
+      <title>MapsIndoors for Web - Guides</title>
+      <link>https://mapsindoors.github.io/web/v3/guides/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/web/v3/guides/</guid>
+      <description>Using Events MapsIndoors uses the Google Maps built-in event handling system, so listening for event on various object is straight-forward. Here are some examples.
+google.maps.event.addListener(myMapsIndoors, &amp;quot;ready&amp;quot;, function (result) { console.log(result); }); google.maps.event.addListener(myMapsIndoors, &#39;building_changed&#39;, function () { console.log(this); }); google.maps.event.addListener(myMapsIndoors, &#39;floor_changed&#39;, function () { console.log(this); }); google.maps.event.addListener(myMapsIndoors, &#39;click&#39;, function () { console.log(this); }); google.maps.event.addListener(marker, &#39;click&#39;, function () { console.dir(this); });  The event names and their targets are as follows:</description>
     </item>
     
     <item>
       <title>MapsIndoors for Web - Part 2</title>
-      <link>https://mapsindoors.github.io/web/guide-part2/</link>
+      <link>https://mapsindoors.github.io/web/v2/guide-part2/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://mapsindoors.github.io/web/guide-part2/</guid>
+      <guid>https://mapsindoors.github.io/web/v2/guide-part2/</guid>
       <description>Trying the Showcase Web App A showcase app is available on GitHub, free to use and adapt to your needs.
 To try it out right away: Make sure nodejs, npm and gulp is installed on your system Using a terminal/shell in the project folder, run the following commands:
  npm install -g browser-sync gulp build browser-sync start &amp;ndash;server If on Windows and prompted, allow server to use your PC network Open your browser at http://localhost:3000/app (or whatever port browser-sync chooses per default)  Create a Search and Suggestions box If you need to facilitate search functionality to your MapsIndoors solution, you can use the Suggestions UI component.</description>
@@ -46,12 +78,25 @@ To try it out right away: Make sure nodejs, npm and gulp is installed on your sy
     
     <item>
       <title>MapsIndoors for Web - Reference Guide</title>
-      <link>https://mapsindoors.github.io/web/reference/</link>
+      <link>https://mapsindoors.github.io/web/v2/reference/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://mapsindoors.github.io/web/reference/</guid>
+      <guid>https://mapsindoors.github.io/web/v2/reference/</guid>
       <description>MapsIndoors mapsindoors.MapsIndoors(opts:MapsIndoorsOptions)
 Methods clear() find(args:string|FindOptions) : Promise(Location) fitBuilding(buildingId:string) fitVenue(venueId?:string) getBuilding() : Building getDisplayRule(type:string) : DisplayRuleLiteral getFloor() : number getLocationsVisible() : bool getMap() : google.maps.Map getStyles() : VenueStyle[] getVenue() : Venue setDisplayRule(rule: DisplayRuleLiteral) setLanguage(language:string) setFloor(floor:number) setMap(map:google.maps.Map) setStyle(style:string) //style folder setVenue(venue:string|Venue) locate(options:locateOptions)  Events  ready map_changed floor_changed building_changed venue_changed style_changed locations_visible_cshanged location_click  MapsIndoorsOptions Literal MapsIndoorsOptions { map: google.maps.Map, floor: number, locationVisible: boolean }  DisplayRule Literal DisplayRule { from?: number, to?</description>
+    </item>
+    
+    <item>
+      <title>MapsIndoors for Web - Reference Guide</title>
+      <link>https://mapsindoors.github.io/web/v3/reference/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/web/v3/reference/</guid>
+      <description>Table of Contents  MapsIndoors  getBuilding fitBuilding filter setBuildingOutlineOptions getBuildingOutlineOptions setDisplayRule getDisplayRule setFloor getFloor setMap getMap setVenue getVenue fitVenue setLabelOptions getLabelOptions  DataLayer DirectionsRenderer  pLine  FloorSelector AppConfig MenuItem Building BuildingOutlineOptions Category DisplayRule LabelOptions Location MapsIndoorsOptions Solution Type Venue  MapsIndoors Creates an instance of MapsIndoors.
+Parameters
+ opts MapsIndoorsOptions  getBuilding Gets the building that currently is in focus
+Returns Building Building
+fitBuilding Fits the building&amp;rsquo;s geometry in the map&amp;rsquo;s bounding box</description>
     </item>
     
   </channel>

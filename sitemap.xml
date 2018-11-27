@@ -39,7 +39,11 @@
   </url>
   
   <url>
-    <loc>https://mapsindoors.github.io/web/changelog/</loc>
+    <loc>https://mapsindoors.github.io/web/v2/changelog/</loc>
+  </url>
+  
+  <url>
+    <loc>https://mapsindoors.github.io/web/v3/changelog/</loc>
   </url>
   
   <url>
@@ -170,15 +174,27 @@
   </url>
   
   <url>
-    <loc>https://mapsindoors.github.io/web/</loc>
+    <loc>https://mapsindoors.github.io/web/v2/</loc>
   </url>
   
   <url>
-    <loc>https://mapsindoors.github.io/web/guide-part2/</loc>
+    <loc>https://mapsindoors.github.io/web/v3/</loc>
   </url>
   
   <url>
-    <loc>https://mapsindoors.github.io/web/reference/</loc>
+    <loc>https://mapsindoors.github.io/web/v3/guides/</loc>
+  </url>
+  
+  <url>
+    <loc>https://mapsindoors.github.io/web/v2/guide-part2/</loc>
+  </url>
+  
+  <url>
+    <loc>https://mapsindoors.github.io/web/v2/reference/</loc>
+  </url>
+  
+  <url>
+    <loc>https://mapsindoors.github.io/web/v3/reference/</loc>
   </url>
   
   <url>

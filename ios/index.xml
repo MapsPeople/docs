@@ -150,9 +150,9 @@ let locations = MPLocationsProvider.init() let queryObj = MPLocationQuery.init()
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://mapsindoors.github.io/ios/v1/</guid>
-      <description>This guide explains how to start using a MapsIndoors map in your iOS application. Make sure that you have read the prerequisites.
-Basic Example You will find in the link an up and running project that contains the minimum code to start a MapsIndoors project.
-You can also follow the steps below to start your app from scratch or to enhance the Basic Example, more advanced feature will be explained in the part 2 of this tutorial with a demo app that gives a showcase of the mapsIndoors in a complete app that you can test also.</description>
+      <description>Note! A newer version of the MapsIndoors SDK for iOS is available. The legacy version will not receive new features and will only get bugfix and security updates.
+ This guide explains how to start using a MapsIndoors map in your iOS application. Make sure that you have read the prerequisites.
+Basic Example You will find in the link an up and running project that contains the minimum code to start a MapsIndoors project.</description>
     </item>
     
     <item>
