@@ -15,12 +15,12 @@
     
     <meta name="description" content="Everything you need to get started with MapsIndoors.">
     
-    <link rel="canonical" href="https://mapsindoors.github.io/web/v2/changelog/">
+    <link rel="canonical" href="https://mapsindoors.github.io/ios/v3/tutorials/searchsearchmapcontroller/">
     
     <meta name="author" content="MapsPeople">
     
 
-    <meta property="og:url" content="https://mapsindoors.github.io/web/v2/changelog/">
+    <meta property="og:url" content="https://mapsindoors.github.io/ios/v3/tutorials/searchsearchmapcontroller/">
     <meta property="og:title" content="Indoor Navigation Built with Google Maps">
     <meta property="og:image" content="https://mapsindoors.github.io/images/logo.png">
     <meta name="apple-mobile-web-app-title" content="Indoor Navigation Built with Google Maps">
@@ -161,21 +161,13 @@
     
     
     
-  
-    
-    
-    
-  
-    
-    
-    
-    <a href="https://mapsindoors.github.io/web/v3" class="project">
+    <a href="https://mapsindoors.github.io/ios/v2" class="project">
       <div class="banner">
         <div class="logo">
-          <img src="https://mapsindoors.github.io//logos/web-logo.svg" style="padding:10px">
+          <img src="https://mapsindoors.github.io//logos/apple-logo.svg" style="padding:10px">
         </div>
         <div class="name">
-          <strong>Web SDK <br /><span class="version">3.x.x</span></strong>
+          <strong>iOS SDK <br /><span class="version">2.1.1</span></strong>
           
         </div>
       </div>
@@ -185,17 +177,25 @@
     
     
     
-    <a href="https://mapsindoors.github.io/web/v2" class="project">
+    <a href="https://mapsindoors.github.io/ios/v1" class="project">
       <div class="banner">
         <div class="logo">
-          <img src="https://mapsindoors.github.io//logos/web-logo.svg" style="padding:10px">
+          <img src="https://mapsindoors.github.io//logos/apple-logo.svg" style="padding:10px">
         </div>
         <div class="name">
-          <strong>Web SDK <br /><span class="version">2.x.x</span></strong>
+          <strong>iOS SDK <br /><span class="version">1.12.6</span></strong>
           
         </div>
       </div>
     </a>
+    
+  
+    
+    
+    
+  
+    
+    
     
   
     
@@ -223,74 +223,6 @@
           
           
           
-                  
-          <ul>
-            
-            
-
-
-<li>
-    <span class="section">Web SDK</span>
-    <ul>
-      
-        
-        
-
-
-
-<a  title="Getting Started" href="https://mapsindoors.github.io/web/v2">
-	
-	Getting Started
-</a>
-
-
-
-      
-        
-        
-
-
-
-<a  title="Next Steps" href="https://mapsindoors.github.io/web/v2/guide-part2">
-	
-	Next Steps
-</a>
-
-
-
-      
-        
-        
-
-
-
-<a  title="Reference Docs" href="https://mapsindoors.github.io/web/v2/reference">
-	
-	Reference Docs
-</a>
-
-
-
-      
-        
-        
-
-
-
-<a class="current" title="Changelog" href="https://mapsindoors.github.io/web/v2/changelog">
-	
-	Changelog
-</a>
-
-
-<ul id="scrollspy">
-</ul>
-
-
-      
-    </ul>
-</li>
-          </ul>
           
           
           
@@ -337,27 +269,58 @@
 		<div class="wrapper">
 			<h1> </h1>
 
-			
+			<p>Add a <code>GMSMapView</code> and a <code>MPMapControl</code> to the class</p>
 
-<h1 id="changelog">Changelog</h1>
+<pre><code>var map: GMSMapView? = nil
+var mapControl: MPMapControl? = nil
+var center: MPPoint = MPPoint.init(lat: 0, lon: 0)
+</code></pre>
 
-<p>Changelog for MapsIndoors SDK for JavaScript. This document structure is based on <a href="http://keepachangelog.com/en/1.0.0/">Keep a Changelog</a> and the project adheres to <a href="http://semver.org/spec/v2.0.0.html">Semantic Versioning</a>.</p>
+<p>Setup map so that it shows the demo venue and initialise mapControl</p>
 
-<h2 id="unreleased">[Unreleased]</h2>
+<pre><code>self.map = GMSMapView.init(frame: CGRect.zero)
+self.map?.delegate = self
+self.map?.camera = .camera(withLatitude: 57.057964, longitude: 9.9504112, zoom: 20)
+self.mapControl = MPMapControl.init(map: self.map!)
+</code></pre>
 
-<h2 id="1-4-3-2017-10-10">[1.4.3] - 2017-10-10</h2>
+<p>Setup a button that targets a method (<code>openSearch</code>) in your class</p>
 
-<h3 id="added">Added</h3>
+<pre><code>let button = UIButton.init()
+button.setTitle(&quot;Search&quot;, for: .normal)
+button.addTarget(self, action: #selector(openSearch), for: .allTouchEvents)
+button.backgroundColor = UIColor.blue
+</code></pre>
+
+<p>Arrange the map view and the button in a stackview</p>
+
+<pre><code>let stackView = UIStackView.init(arrangedSubviews: [map!, button])
+stackView.axis = .vertical
+view = stackView
+</code></pre>
+
+<p>Define an objective-c method <code>openSearch</code> that will receive events from your button, and handle them:</p>
 
 <ul>
-<li>Changelog was added.</li>
+<li>Initialise <code>MySearchController</code></li>
+<li>Assign self as delegate</li>
+<li>Present the new view controller
+<code>
+@objc func openSearch() {
+let searchController = MySearchController.init(near:self.center)
+searchController.delegate = self
+self.present(searchController, animated: true, completion: nil)
+}
+</code>
+Implement the method <code>didSelectLocation</code> required from <code>MySearchControllerDelegate</code> delegate. In this example we will just go to the selected location in the map.
+<code>
+func didSelectLocation(location: MPLocation) {
+mapControl?.go(to: location)    
+}
+</code></li>
 </ul>
 
-<h3 id="fixed">Fixed</h3>
-
-<ul>
-<li>Fixed a bug in the way the Google Directions is merged together with MapsIndoors Directions when origin or destination is outside on venue.</li>
-</ul>
+<p><a href="https://github.com/MapsIndoors/MapsIndoorsIOS-Demo-Samples/blob/develop/Search/SearchMapController.swift">See the sample in SearchMapController.swift</a></p>
 
 
 			<aside class="copyright" role="note">
@@ -376,7 +339,7 @@
 <nav class="pagination" aria-label="Footer">
   <div class="previous">
   
-      <a href="https://mapsindoors.github.io/ios/v3/tutorials/showmultiplelocationsshowmultiplelocationscontroller/" title="">
+      <a href="https://mapsindoors.github.io/ios/v2/tutorials/showmultiplelocationsshowmultiplelocationscontroller/" title="">
         <span class="direction">
           Previous
         </span>
@@ -396,7 +359,7 @@
 
   <div class="next">
   
-      <a href="https://mapsindoors.github.io/web/v3/changelog/" title="">
+      <a href="https://mapsindoors.github.io/ios/v3/tutorials/showlocationshowlocationcontroller/" title="">
         <span class="direction">
           Next
         </span>

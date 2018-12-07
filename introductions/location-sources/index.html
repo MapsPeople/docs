@@ -9,18 +9,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title> - Indoor Navigation Built with Google Maps</title>
+    <title>Location Data Sources - Indoor Navigation Built with Google Maps</title>
     <meta name="generator" content="Hugo 0.26" />
 
     
     <meta name="description" content="Everything you need to get started with MapsIndoors.">
     
-    <link rel="canonical" href="https://mapsindoors.github.io/web/v2/changelog/">
+    <link rel="canonical" href="https://mapsindoors.github.io/introductions/location-sources/">
     
     <meta name="author" content="MapsPeople">
     
 
-    <meta property="og:url" content="https://mapsindoors.github.io/web/v2/changelog/">
+    <meta property="og:url" content="https://mapsindoors.github.io/introductions/location-sources/">
     <meta property="og:title" content="Indoor Navigation Built with Google Maps">
     <meta property="og:image" content="https://mapsindoors.github.io/images/logo.png">
     <meta name="apple-mobile-web-app-title" content="Indoor Navigation Built with Google Maps">
@@ -106,7 +106,7 @@
     </div>
     <div class="stretch">
       <div class="title">
-        
+        Location Data Sources
       </div>
     </div>
 
@@ -169,33 +169,9 @@
     
     
     
-    <a href="https://mapsindoors.github.io/web/v3" class="project">
-      <div class="banner">
-        <div class="logo">
-          <img src="https://mapsindoors.github.io//logos/web-logo.svg" style="padding:10px">
-        </div>
-        <div class="name">
-          <strong>Web SDK <br /><span class="version">3.x.x</span></strong>
-          
-        </div>
-      </div>
-    </a>
-    
   
     
     
-    
-    <a href="https://mapsindoors.github.io/web/v2" class="project">
-      <div class="banner">
-        <div class="logo">
-          <img src="https://mapsindoors.github.io//logos/web-logo.svg" style="padding:10px">
-        </div>
-        <div class="name">
-          <strong>Web SDK <br /><span class="version">2.x.x</span></strong>
-          
-        </div>
-      </div>
-    </a>
     
   
     
@@ -223,74 +199,6 @@
           
           
           
-                  
-          <ul>
-            
-            
-
-
-<li>
-    <span class="section">Web SDK</span>
-    <ul>
-      
-        
-        
-
-
-
-<a  title="Getting Started" href="https://mapsindoors.github.io/web/v2">
-	
-	Getting Started
-</a>
-
-
-
-      
-        
-        
-
-
-
-<a  title="Next Steps" href="https://mapsindoors.github.io/web/v2/guide-part2">
-	
-	Next Steps
-</a>
-
-
-
-      
-        
-        
-
-
-
-<a  title="Reference Docs" href="https://mapsindoors.github.io/web/v2/reference">
-	
-	Reference Docs
-</a>
-
-
-
-      
-        
-        
-
-
-
-<a class="current" title="Changelog" href="https://mapsindoors.github.io/web/v2/changelog">
-	
-	Changelog
-</a>
-
-
-<ul id="scrollspy">
-</ul>
-
-
-      
-    </ul>
-</li>
-          </ul>
           
           
           
@@ -335,29 +243,66 @@
 
 	<article class="article">
 		<div class="wrapper">
-			<h1> </h1>
+			<h1>Location Data Sources </h1>
 
 			
 
-<h1 id="changelog">Changelog</h1>
+<blockquote>
+<p>Note! This document describes a pre-release feature. We reserve the right to change this feature and the corresponding interfaces without further notice. Any mentioned SDK versions are not intended for production use.</p>
+</blockquote>
 
-<p>Changelog for MapsIndoors SDK for JavaScript. This document structure is based on <a href="http://keepachangelog.com/en/1.0.0/">Keep a Changelog</a> and the project adheres to <a href="http://semver.org/spec/v2.0.0.html">Semantic Versioning</a>.</p>
+<p>At MapsPeople we are in the process of shaping up a new feature in MapsIndoors SDK for Android and iOS called Location Data Sources. Basically we are making it possible to register your own custom data source, adhering to a very simple interface.</p>
 
-<h2 id="unreleased">[Unreleased]</h2>
+<p>The Location Data Sources feature is expected to be released medio Q1 2019. If you are interested in evaluating this feature in a pre-release stage, please read on&hellip;</p>
 
-<h2 id="1-4-3-2017-10-10">[1.4.3] - 2017-10-10</h2>
+<h2 id="the-concepts">The Concepts</h2>
 
-<h3 id="added">Added</h3>
+<p>The central concepts in this feature are Location Sources and Location Observers, and they are best described in the following illustration:</p>
 
-<ul>
-<li>Changelog was added.</li>
-</ul>
+<p><img src="source_observer.png" alt="Location Data Sources, Observers and their relation" /></p>
 
-<h3 id="fixed">Fixed</h3>
+<h3 id="location-source">Location Source</h3>
 
-<ul>
-<li>Fixed a bug in the way the Google Directions is merged together with MapsIndoors Directions when origin or destination is outside on venue.</li>
-</ul>
+<p>Maintains an array of locations and notifies its Location Observers about location and status updates.</p>
+
+<h3 id="location-observer">Location Observer</h3>
+
+<p>Can observe a Location Source for status changes and location updates.</p>
+
+<h2 id="creating-your-own-location-source">Creating your own Location Source</h2>
+
+<p>See a <a href="#ios-demo-and-tutorial-for-location-sources">demo and tutorial of this feature for iOS</a> (Android coming soon). Of course there is more to it than just these interfaces, but assuming that working with the actual 3rd party data is an isolated problem, the setup steps is as follows:</p>
+
+<ol>
+<li>Implement a <code>LocationSource</code> that pulls data from your own or a 3rd party database, API or backend and convert this data into MapsIndoors <code>Location</code>&rsquo;s</li>
+<li>Pass the Locations as updates to MapsIndoors through the interface methods of the subscribing <code>LocationObserver</code>&rsquo;s in your <code>LocationSource</code> implementation.</li>
+</ol>
+
+<p>This feature is present in the MapsIndoors SDK for iOS version 3.0.0-alpha. To install this version, just follow the <a href="https://mapsindoors.github.io/ios/v2">latest version 2.1.6 install guide</a>. Replace the pod version to <code>3.0.0-alpha10</code> and run <code>pod install</code>.</p>
+
+<p>Create an implementation of the <code>MPLocationSource</code> interface, implementing all the required methods. When you call <code>MPLocationObserver.onLocationsUpdate()</code> and provide results in <code>MPLocationSource.getLocations()</code> you need to create instances of <code>MPLocation</code>&rsquo;s. This is done using a builder called <code>MPLocationUpdate</code>. See an example here:</p>
+
+<pre><code>let locationUpdate = MPLocationUpdate.init(id: 134, from: self)                         //Set unique id
+locationUpdate.setType(&quot;ViewPoints&quot;)                                                    //Set type
+locationUpdate.addPropertyValue(&quot;Empire State Building&quot;, forKey: MPLocationFieldName)   //Set name
+locationUpdate.setFloor(86)                                                             //Set floor index
+locationUpdate.setPosition(CLLocationCoordinate2DMake(40.7484445, -73.9878584))         //Set position
+let location = locationUpdate.location()                                                //Generate location
+</code></pre>
+
+<p>While the location ID needs to be unique within your own Location Source, the ID does not need to be unique across all Location Sources.</p>
+
+<p>When you have implemented all methods of your Location Source, you must register the source using the static method <code>MapsIndoors.register()</code>. The following example adds the MapsIndoors default location source as well:</p>
+
+<pre><code>MapsIndoors.register([
+            MPMapsIndoorsLocationSource.init(),
+            MyLocationsDataSource.init()
+        ])
+</code></pre>
+
+<h2 id="ios-demo-and-tutorial-for-location-sources">IOS Demo and Tutorial for Location Sources</h2>
+
+<p>A full demo example and tutorial is available <a href="https://mapsindoors.github.io/ios/v3/tutorials/locationdatasourcespeoplelocationsdatasource/">here</a> (Android resources are coming soon as well).</p>
 
 
 			<aside class="copyright" role="note">
@@ -376,7 +321,7 @@
 <nav class="pagination" aria-label="Footer">
   <div class="previous">
   
-      <a href="https://mapsindoors.github.io/ios/v3/tutorials/showmultiplelocationsshowmultiplelocationscontroller/" title="">
+      <a href="https://mapsindoors.github.io/introductions/indoor-positioning/" title="Indoor Positioning with MapsIndoors">
         <span class="direction">
           Previous
         </span>
@@ -386,7 +331,7 @@
           </div>
           <div class="stretch">
             <div class="title">
-              
+              Indoor Positioning with MapsIndoors
             </div>
           </div>
         </div>
@@ -396,14 +341,14 @@
 
   <div class="next">
   
-      <a href="https://mapsindoors.github.io/web/v3/changelog/" title="">
+      <a href="https://mapsindoors.github.io/firststeps/" title="MapsIndoors First Steps">
         <span class="direction">
           Next
         </span>
         <div class="page">
           <div class="stretch">
             <div class="title">
-              
+              MapsIndoors First Steps
             </div>
           </div>
           <div class="button button-next" role="button" aria-label="Next">

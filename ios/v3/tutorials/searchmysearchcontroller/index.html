@@ -9,18 +9,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title> - Indoor Navigation Built with Google Maps</title>
+    <title>Create a Search Experience with MapsIndoors - Part 1 - Indoor Navigation Built with Google Maps</title>
     <meta name="generator" content="Hugo 0.26" />
 
     
     <meta name="description" content="Everything you need to get started with MapsIndoors.">
     
-    <link rel="canonical" href="https://mapsindoors.github.io/web/v2/changelog/">
+    <link rel="canonical" href="https://mapsindoors.github.io/ios/v3/tutorials/searchmysearchcontroller/">
     
     <meta name="author" content="MapsPeople">
     
 
-    <meta property="og:url" content="https://mapsindoors.github.io/web/v2/changelog/">
+    <meta property="og:url" content="https://mapsindoors.github.io/ios/v3/tutorials/searchmysearchcontroller/">
     <meta property="og:title" content="Indoor Navigation Built with Google Maps">
     <meta property="og:image" content="https://mapsindoors.github.io/images/logo.png">
     <meta name="apple-mobile-web-app-title" content="Indoor Navigation Built with Google Maps">
@@ -106,7 +106,7 @@
     </div>
     <div class="stretch">
       <div class="title">
-        
+        Create a Search Experience with MapsIndoors - Part 1
       </div>
     </div>
 
@@ -161,21 +161,13 @@
     
     
     
-  
-    
-    
-    
-  
-    
-    
-    
-    <a href="https://mapsindoors.github.io/web/v3" class="project">
+    <a href="https://mapsindoors.github.io/ios/v2" class="project">
       <div class="banner">
         <div class="logo">
-          <img src="https://mapsindoors.github.io//logos/web-logo.svg" style="padding:10px">
+          <img src="https://mapsindoors.github.io//logos/apple-logo.svg" style="padding:10px">
         </div>
         <div class="name">
-          <strong>Web SDK <br /><span class="version">3.x.x</span></strong>
+          <strong>iOS SDK <br /><span class="version">2.1.1</span></strong>
           
         </div>
       </div>
@@ -185,17 +177,25 @@
     
     
     
-    <a href="https://mapsindoors.github.io/web/v2" class="project">
+    <a href="https://mapsindoors.github.io/ios/v1" class="project">
       <div class="banner">
         <div class="logo">
-          <img src="https://mapsindoors.github.io//logos/web-logo.svg" style="padding:10px">
+          <img src="https://mapsindoors.github.io//logos/apple-logo.svg" style="padding:10px">
         </div>
         <div class="name">
-          <strong>Web SDK <br /><span class="version">2.x.x</span></strong>
+          <strong>iOS SDK <br /><span class="version">1.12.6</span></strong>
           
         </div>
       </div>
     </a>
+    
+  
+    
+    
+    
+  
+    
+    
     
   
     
@@ -223,74 +223,6 @@
           
           
           
-                  
-          <ul>
-            
-            
-
-
-<li>
-    <span class="section">Web SDK</span>
-    <ul>
-      
-        
-        
-
-
-
-<a  title="Getting Started" href="https://mapsindoors.github.io/web/v2">
-	
-	Getting Started
-</a>
-
-
-
-      
-        
-        
-
-
-
-<a  title="Next Steps" href="https://mapsindoors.github.io/web/v2/guide-part2">
-	
-	Next Steps
-</a>
-
-
-
-      
-        
-        
-
-
-
-<a  title="Reference Docs" href="https://mapsindoors.github.io/web/v2/reference">
-	
-	Reference Docs
-</a>
-
-
-
-      
-        
-        
-
-
-
-<a class="current" title="Changelog" href="https://mapsindoors.github.io/web/v2/changelog">
-	
-	Changelog
-</a>
-
-
-<ul id="scrollspy">
-</ul>
-
-
-      
-    </ul>
-</li>
-          </ul>
           
           
           
@@ -335,29 +267,114 @@
 
 	<article class="article">
 		<div class="wrapper">
-			<h1> </h1>
+			<h1>Create a Search Experience with MapsIndoors - Part 1 </h1>
 
-			
+			<p>This is an example of creating a simple search experience using MapsIndoors. We will create a map with a search button that leads to another view controller that handles the search and selection. On selection of a location, we go back to the map and shows the selected location on the map.</p>
 
-<h1 id="changelog">Changelog</h1>
+<p>We will start by creating a simple search controller that handles search and selection of MapsIndoors locations</p>
 
-<p>Changelog for MapsIndoors SDK for JavaScript. This document structure is based on <a href="http://keepachangelog.com/en/1.0.0/">Keep a Changelog</a> and the project adheres to <a href="http://semver.org/spec/v2.0.0.html">Semantic Versioning</a>.</p>
+<p>Declare a protocol for our location selection with a <code>didSelectLocation</code> method</p>
 
-<h2 id="unreleased">[Unreleased]</h2>
+<pre><code>protocol MySearchControllerDelegate {
+    func didSelectLocation(location:MPLocation)
+}
+</code></pre>
 
-<h2 id="1-4-3-2017-10-10">[1.4.3] - 2017-10-10</h2>
+<p>Define <code>MySearchController</code>. In this tutorial our search controller is a <code>UIViewController</code> that implements the protocols <code>UISearchBarDelegate</code>, <code>UITableViewDelegate</code> and <code>UITableViewDataSource</code></p>
 
-<h3 id="added">Added</h3>
+<pre><code>class MySearchController: UIViewController, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource {
+</code></pre>
+
+<p>Setup member variables for <code>MySearchController</code>:</p>
 
 <ul>
-<li>Changelog was added.</li>
+<li>An instance of type <code>MPLocationsProvider</code> (the service)</li>
+<li>An instance of type <code>MPLocationQuery</code></li>
+<li>An array of <code>MPLocation</code> to hold your list of results</li>
+<li>Your delegate object</li>
+<li>A search bar view</li>
+
+<li><p>A table view</p>
+
+<pre><code>let locationsProvider = MPLocationService.init()
+let query = MPQuery.init()
+var locations:[MPLocation] = []
+var delegate:MySearchControllerDelegate? = nil
+let tableView = UITableView.init()
+let searchBar = UISearchBar.init()
+</code></pre>
+
+<p>In <code>viewDidLoad</code>, wire up your view controller to the tableview and search bar.</p>
+
+<pre><code>searchBar.delegate = self
+tableView.delegate = self
+tableView.dataSource = self
+</code></pre>
+
+<p>Register a class for the reusable table view cell.</p>
+
+<pre><code>tableView.register(UITableViewCell.self, forCellReuseIdentifier: &quot;reuseIdentifier&quot;)
+</code></pre>
+
+<p>Arrange the search bar and the table view in a stack view.</p>
+
+<pre><code>let stackView = UIStackView.init(arrangedSubviews: [searchBar, tableView])
+stackView.axis = .vertical
+view = stackView
+</code></pre>
+
+<p>In <code>MySearchController</code>, implement the <code>numberOfSections</code> method, return 1.</p>
+
+<pre><code>func numberOfSections(in tableView: UITableView) -&gt; Int {
+return 1
+}
+</code></pre>
+
+<p>Implement the <code>numberOfRowsInSection</code> method, return the length of your locations array.</p>
+
+<pre><code>func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -&gt; Int {
+return locations.count
+}
+</code></pre>
+
+<p>Implement the <code>textDidChange</code> method:</p></li>
+
+<li><p>Change the query objects query property to reflect the current search text</p></li>
+
+<li><p>Call <code>getLocationsUsing</code> with the modified query</p></li>
+
+<li><p>In the callback block, reset the locations array with new results</p></li>
+
+<li><p>Reload table view</p>
+
+<pre><code>func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+query.query = searchText
+</code></pre>
+
+<p>Implement the <code>tableView:cellForRowAt</code> method. Set the <code>cell.textLabel.text</code> to reflect the <em>name</em> of the location of same index.</p>
+
+<pre><code>func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -&gt; UITableViewCell {
+let cell = tableView.dequeueReusableCell(withIdentifier: &quot;reuseIdentifier&quot;, for: indexPath)
+cell.textLabel?.text = locations[indexPath.row].name
+let defaultValue = &quot;&quot;
+cell.textLabel?.text?.append(&quot;, \(locations[indexPath.row].roomId ?? defaultValue), \(locations[indexPath.row].building ?? defaultValue), \(locations[indexPath.row].venue ?? defaultValue)&quot;)
+return cell
+}
+</code></pre>
+
+<p>Implement the <code>tableView:didSelectRowAt</code> method. In this example we just call the delegate method and dismiss the view controller.
+Delegate method will be handled by <a href="searchsearchmapcontroller">SearchMapController</a></p>
+
+<pre><code>func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+delegate?.didSelectLocation(location: locations[indexPath.row])
+self.dismiss(animated: true, completion: nil)
+}
+</code></pre>
+
+<p>In <a href="../searchsearchmapcontroller">Part 2</a> we will create the map view controller that displays the search selection.</p></li>
 </ul>
 
-<h3 id="fixed">Fixed</h3>
-
-<ul>
-<li>Fixed a bug in the way the Google Directions is merged together with MapsIndoors Directions when origin or destination is outside on venue.</li>
-</ul>
+<p><a href="https://github.com/MapsIndoors/MapsIndoorsIOS-Demo-Samples/blob/develop/Search/MySearchController.swift">See the sample in MySearchController.swift</a></p>
 
 
 			<aside class="copyright" role="note">
@@ -376,7 +393,7 @@
 <nav class="pagination" aria-label="Footer">
   <div class="previous">
   
-      <a href="https://mapsindoors.github.io/ios/v3/tutorials/showmultiplelocationsshowmultiplelocationscontroller/" title="">
+      <a href="https://mapsindoors.github.io/ios/v2/tutorials/searchmysearchcontroller/" title="Create a Search Experience with MapsIndoors - Part 1">
         <span class="direction">
           Previous
         </span>
@@ -386,7 +403,7 @@
           </div>
           <div class="stretch">
             <div class="title">
-              
+              Create a Search Experience with MapsIndoors - Part 1
             </div>
           </div>
         </div>
@@ -396,14 +413,14 @@
 
   <div class="next">
   
-      <a href="https://mapsindoors.github.io/web/v3/changelog/" title="">
+      <a href="https://mapsindoors.github.io/android/v2/tutorials/searchmapdemosearchmapfragment/" title="Create a Search Experience with MapsIndoors - Part 2">
         <span class="direction">
           Next
         </span>
         <div class="page">
           <div class="stretch">
             <div class="title">
-              
+              Create a Search Experience with MapsIndoors - Part 2
             </div>
           </div>
           <div class="button button-next" role="button" aria-label="Next">

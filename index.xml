@@ -109,6 +109,38 @@ let locations = MPLocationsProvider.init() let queryObj = MPLocationQuery.init()
     
     <item>
       <title></title>
+      <link>https://mapsindoors.github.io/ios/v3/tutorials/searchsearchmapcontroller/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/ios/v3/tutorials/searchsearchmapcontroller/</guid>
+      <description>Add a GMSMapView and a MPMapControl to the class
+var map: GMSMapView? = nil var mapControl: MPMapControl? = nil var center: MPPoint = MPPoint.init(lat: 0, lon: 0)  Setup map so that it shows the demo venue and initialise mapControl
+self.map = GMSMapView.init(frame: CGRect.zero) self.map?.delegate = self self.map?.camera = .camera(withLatitude: 57.057964, longitude: 9.9504112, zoom: 20) self.mapControl = MPMapControl.init(map: self.map!)  Setup a button that targets a method (openSearch) in your class</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://mapsindoors.github.io/ios/v3/tutorials/showlocationshowlocationcontroller/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/ios/v3/tutorials/showlocationshowlocationcontroller/</guid>
+      <description>Show map
+self.map = GMSMapView.init(frame: CGRect.zero) self.view = self.map self.map?.camera = .camera(withLatitude: 57.057964, longitude: 9.9504112, zoom: 20) self.mapControl = MPMapControl.init(map: self.map!) let locations = MPLocationsProvider.init() let queryObj = MPLocationQuery.init() queryObj.query = &amp;quot;Paris&amp;quot; queryObj.max = 1 locations.getLocationsUsing(queryObj) { (locationData, error) in if error == nil { let firstLocation = locationData?.list?.first self.mapControl?.selectedLocation = firstLocation self.mapControl?.currentFloor = firstLocation?.floor } }  See the sample in ShowLocationController.swift</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://mapsindoors.github.io/ios/v3/tutorials/showmultiplelocationsshowmultiplelocationscontroller/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/ios/v3/tutorials/showmultiplelocationsshowmultiplelocationscontroller/</guid>
+      <description>Show map
+self.map = GMSMapView.init(frame: CGRect.zero) self.view = self.map self.map?.camera = .camera(withLatitude: 57.057964, longitude: 9.9504112, zoom: 17) self.mapControl = MPMapControl.init(map: self.map!)  Show search on map
+let locations = MPLocationsProvider.init() let queryObj = MPLocationQuery.init() queryObj.categories = [&amp;quot;Toilet&amp;quot;] queryObj.max = 50 locations.getLocationsUsing(queryObj) { (locationData, error) in if error == nil { self.mapControl?.searchResult = locationData!.list let firstLocation = locationData?.list?.first self.mapControl?.currentFloor = firstLocation?.floor // You are not guaranteed that the visible floor contains any search results, so that is why we change floor } }  See the sample in ShowMultipleLocationsController.</description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>https://mapsindoors.github.io/web/v2/changelog/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -211,6 +243,17 @@ Declare a protocol for our location selection with a didSelectLocation method</d
     </item>
     
     <item>
+      <title>Create a Search Experience with MapsIndoors - Part 1</title>
+      <link>https://mapsindoors.github.io/ios/v3/tutorials/searchmysearchcontroller/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/ios/v3/tutorials/searchmysearchcontroller/</guid>
+      <description>This is an example of creating a simple search experience using MapsIndoors. We will create a map with a search button that leads to another view controller that handles the search and selection. On selection of a location, we go back to the map and shows the selected location on the map.
+We will start by creating a simple search controller that handles search and selection of MapsIndoors locations
+Declare a protocol for our location selection with a didSelectLocation method</description>
+    </item>
+    
+    <item>
       <title>Create a Search Experience with MapsIndoors - Part 2</title>
       <link>https://mapsindoors.github.io/android/v2/tutorials/searchmapdemosearchmapfragment/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -220,6 +263,26 @@ Declare a protocol for our location selection with a didSelectLocation method</d
 Start by creating a Fragment
 public class SearchMapFragment extends Fragment  Add a GoogleMap and a MapControl to the class
 MapControl mMapControl; GoogleMap mGoogleMap;  Add other needed views for this example</description>
+    </item>
+    
+    <item>
+      <title>Creating your own Location Source - Part 1</title>
+      <link>https://mapsindoors.github.io/ios/v3/tutorials/locationdatasourcespeoplelocationsdatasource/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/ios/v3/tutorials/locationdatasourcespeoplelocationsdatasource/</guid>
+      <description>Note! This document describes a pre-release feature. We reserve the right to change this feature and the corresponding interfaces without further notice. Any mentioned SDK versions are not intended for production use.
+ In this tutorial we will show how you can build a custom Location Source, representing locations of people. The people locations will be served from a mocked list in the source and displayed on a map in a view controller.</description>
+    </item>
+    
+    <item>
+      <title>Creating your own Location Source - Part 2</title>
+      <link>https://mapsindoors.github.io/ios/v3/tutorials/locationdatasourceslocationdatasourcescontroller/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/ios/v3/tutorials/locationdatasourceslocationdatasourcescontroller/</guid>
+      <description>Note! This document describes a pre-release feature. We reserve the right to change this feature and the corresponding interfaces without further notice. Any mentioned SDK versions are not intended for production use.
+ This is part 2 of the tutorial of building a custom Location Source, representing locations of people. In Part 1 we created the Location Source. Now we will create a view controller displaying a map that shows the mocked people locations on top of a MapsIndoors map.</description>
     </item>
     
     <item>
@@ -233,11 +296,31 @@ We will start by making the controller that renders the route from the input of 
     </item>
     
     <item>
+      <title>Get Directions and Show the Result on a Map - Part 1</title>
+      <link>https://mapsindoors.github.io/ios/v3/tutorials/showrouteshowrouteonmapcontroller/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/ios/v3/tutorials/showrouteshowrouteonmapcontroller/</guid>
+      <description>In this tutorial we will request a route, list the route parts and render these on a Google Map. A MapsIndoors route is made of one or more legs, each containing one or more steps.
+We will start by making the controller that renders the route from the input of a route, a leg index and optionally a step index. Start by creating a UIViewController implementation that conforms to MPDirectionsRendererDelegate</description>
+    </item>
+    
+    <item>
       <title>Get Directions and Show the Result on a Map - Part 2</title>
       <link>https://mapsindoors.github.io/ios/v2/tutorials/showrouteshowroutecontroller/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://mapsindoors.github.io/ios/v2/tutorials/showrouteshowroutecontroller/</guid>
+      <description>This is part 2 of the tutorial of requesting directions and showing the route result on a map. In Part 1 we created the controller that can display the map and route, and in this part we will create the controller that requests the route and list the route in a table. A MapsIndoors route is made of one or more legs, each containing one or more steps.
+Start by creating a UIViewController implementation</description>
+    </item>
+    
+    <item>
+      <title>Get Directions and Show the Result on a Map - Part 2</title>
+      <link>https://mapsindoors.github.io/ios/v3/tutorials/showrouteshowroutecontroller/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/ios/v3/tutorials/showrouteshowroutecontroller/</guid>
       <description>This is part 2 of the tutorial of requesting directions and showing the route result on a map. In Part 1 we created the controller that can display the map and route, and in this part we will create the controller that requests the route and list the route in a table. A MapsIndoors route is made of one or more legs, each containing one or more steps.
 Start by creating a UIViewController implementation</description>
     </item>
@@ -275,6 +358,16 @@ With this in mind you need to find an IPS and then use the location from that IP
     </item>
     
     <item>
+      <title>Location Data Sources</title>
+      <link>https://mapsindoors.github.io/introductions/location-sources/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/introductions/location-sources/</guid>
+      <description>Note! This document describes a pre-release feature. We reserve the right to change this feature and the corresponding interfaces without further notice. Any mentioned SDK versions are not intended for production use.
+ At MapsPeople we are in the process of shaping up a new feature in MapsIndoors SDK for Android and iOS called Location Data Sources. Basically we are making it possible to register your own custom data source, adhering to a very simple interface.</description>
+    </item>
+    
+    <item>
       <title>MapsIndoors First Steps</title>
       <link>https://mapsindoors.github.io/firststeps/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -302,6 +395,16 @@ With this in mind you need to find an IPS and then use the location from that IP
       <guid>https://mapsindoors.github.io/ios/v2/tutorials/</guid>
       <description>With these simple tutorials, each reflecting common use cases, you can get more hands on experience with MapsIndoors on iOS.
  Show Details for a Tapped Location Create a Search Experience Showing a Blue Dot / User Location  </description>
+    </item>
+    
+    <item>
+      <title>MapsIndoors SDK for iOS - Tutorials</title>
+      <link>https://mapsindoors.github.io/ios/v3/tutorials/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/ios/v3/tutorials/</guid>
+      <description>With these simple tutorials, each reflecting common use cases, you can get more hands on experience with MapsIndoors on iOS.
+ Show Details for a Tapped Location Create a Search Experience Showing a Blue Dot / User Location Create a custom Location Source  </description>
     </item>
     
     <item>
@@ -508,6 +611,19 @@ var detailsView:UIStackView = UIStackView.init() var mainView:UIStackView = UISt
     </item>
     
     <item>
+      <title>Show Location Details</title>
+      <link>https://mapsindoors.github.io/ios/v3/tutorials/locationdetailslocationdetailscontroller/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/ios/v3/tutorials/locationdetailslocationdetailscontroller/</guid>
+      <description>This is an example of displaying some details of a MapsIndoors location
+Start by creating a UIViewController class that conforms to the GMSMapViewDelegate protocol
+class LocationDetailsController: UIViewController, GMSMapViewDelegate {  Add a GMSMapView and a MPMapControl to the class
+var map: GMSMapView? = nil var mapControl: MPMapControl? = nil  Add other views needed for this example
+var detailsView:UIStackView = UIStackView.init() var mainView:UIStackView = UIStackView.init() var nameLabel = UILabel.init() var descrLabel = UILabel.</description>
+    </item>
+    
+    <item>
       <title>Show the Blue Dot with MapsIndoors - Part 1</title>
       <link>https://mapsindoors.github.io/android/v2/tutorials/showuserlocationdemopositionprovider/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -533,6 +649,18 @@ class MyPositionProvider : NSObject, MPPositionProvider {  Add some member varia
     </item>
     
     <item>
+      <title>Show the Blue Dot with MapsIndoors - Part 1</title>
+      <link>https://mapsindoors.github.io/ios/v3/tutorials/showmylocationmypositionprovider/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/ios/v3/tutorials/showmylocationmypositionprovider/</guid>
+      <description>In this tutorial we will show how you can show a blue dot on the map, representing the users location. The position will be served from a mocked positioning provider and displayed on a map in a view controller.
+We will start by creating our implementation of a positioning provider.
+Create a class MyPositionProvider that inherits from NSObject and implements MPPositionProvider.
+class MyPositionProvider : NSObject, MPPositionProvider {  Add some member variables to MyPositionProvider.</description>
+    </item>
+    
+    <item>
       <title>Show the Blue Dot with MapsIndoors - Part 2</title>
       <link>https://mapsindoors.github.io/android/v2/tutorials/showuserlocationshowuserlocationfragment/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -550,6 +678,18 @@ GoogleMap mGoogleMap; MapControl mMapControl;  Add a map fragment</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://mapsindoors.github.io/ios/v2/tutorials/showmylocationshowmylocationcontroller/</guid>
+      <description>This is part 2 of the tutorial of managing a blue dot on the map. In Part 1 we created the position provider. Now we will create a view controller displaying a map that shows the users (mock) location.
+Create a class ShowMyLocationController that inherits from UIViewController.
+class ShowMyLocationController: UIViewController {  Add a GMSMapView and a MPMapControl to the class
+var map: GMSMapView? = nil var mapControl: MPMapControl? = nil override func viewDidLoad() { super.</description>
+    </item>
+    
+    <item>
+      <title>Show the Blue Dot with MapsIndoors - Part 2</title>
+      <link>https://mapsindoors.github.io/ios/v3/tutorials/showmylocationshowmylocationcontroller/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/ios/v3/tutorials/showmylocationshowmylocationcontroller/</guid>
       <description>This is part 2 of the tutorial of managing a blue dot on the map. In Part 1 we created the position provider. Now we will create a view controller displaying a map that shows the users (mock) location.
 Create a class ShowMyLocationController that inherits from UIViewController.
 class ShowMyLocationController: UIViewController {  Add a GMSMapView and a MPMapControl to the class

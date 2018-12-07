@@ -9,18 +9,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title> - Indoor Navigation Built with Google Maps</title>
+    <title>Get Directions and Show the Result on a Map - Part 1 - Indoor Navigation Built with Google Maps</title>
     <meta name="generator" content="Hugo 0.26" />
 
     
     <meta name="description" content="Everything you need to get started with MapsIndoors.">
     
-    <link rel="canonical" href="https://mapsindoors.github.io/web/v2/changelog/">
+    <link rel="canonical" href="https://mapsindoors.github.io/ios/v3/tutorials/showrouteshowrouteonmapcontroller/">
     
     <meta name="author" content="MapsPeople">
     
 
-    <meta property="og:url" content="https://mapsindoors.github.io/web/v2/changelog/">
+    <meta property="og:url" content="https://mapsindoors.github.io/ios/v3/tutorials/showrouteshowrouteonmapcontroller/">
     <meta property="og:title" content="Indoor Navigation Built with Google Maps">
     <meta property="og:image" content="https://mapsindoors.github.io/images/logo.png">
     <meta name="apple-mobile-web-app-title" content="Indoor Navigation Built with Google Maps">
@@ -106,7 +106,7 @@
     </div>
     <div class="stretch">
       <div class="title">
-        
+        Get Directions and Show the Result on a Map - Part 1
       </div>
     </div>
 
@@ -161,21 +161,13 @@
     
     
     
-  
-    
-    
-    
-  
-    
-    
-    
-    <a href="https://mapsindoors.github.io/web/v3" class="project">
+    <a href="https://mapsindoors.github.io/ios/v2" class="project">
       <div class="banner">
         <div class="logo">
-          <img src="https://mapsindoors.github.io//logos/web-logo.svg" style="padding:10px">
+          <img src="https://mapsindoors.github.io//logos/apple-logo.svg" style="padding:10px">
         </div>
         <div class="name">
-          <strong>Web SDK <br /><span class="version">3.x.x</span></strong>
+          <strong>iOS SDK <br /><span class="version">2.1.1</span></strong>
           
         </div>
       </div>
@@ -185,17 +177,25 @@
     
     
     
-    <a href="https://mapsindoors.github.io/web/v2" class="project">
+    <a href="https://mapsindoors.github.io/ios/v1" class="project">
       <div class="banner">
         <div class="logo">
-          <img src="https://mapsindoors.github.io//logos/web-logo.svg" style="padding:10px">
+          <img src="https://mapsindoors.github.io//logos/apple-logo.svg" style="padding:10px">
         </div>
         <div class="name">
-          <strong>Web SDK <br /><span class="version">2.x.x</span></strong>
+          <strong>iOS SDK <br /><span class="version">1.12.6</span></strong>
           
         </div>
       </div>
     </a>
+    
+  
+    
+    
+    
+  
+    
+    
     
   
     
@@ -223,74 +223,6 @@
           
           
           
-                  
-          <ul>
-            
-            
-
-
-<li>
-    <span class="section">Web SDK</span>
-    <ul>
-      
-        
-        
-
-
-
-<a  title="Getting Started" href="https://mapsindoors.github.io/web/v2">
-	
-	Getting Started
-</a>
-
-
-
-      
-        
-        
-
-
-
-<a  title="Next Steps" href="https://mapsindoors.github.io/web/v2/guide-part2">
-	
-	Next Steps
-</a>
-
-
-
-      
-        
-        
-
-
-
-<a  title="Reference Docs" href="https://mapsindoors.github.io/web/v2/reference">
-	
-	Reference Docs
-</a>
-
-
-
-      
-        
-        
-
-
-
-<a class="current" title="Changelog" href="https://mapsindoors.github.io/web/v2/changelog">
-	
-	Changelog
-</a>
-
-
-<ul id="scrollspy">
-</ul>
-
-
-      
-    </ul>
-</li>
-          </ul>
           
           
           
@@ -335,29 +267,71 @@
 
 	<article class="article">
 		<div class="wrapper">
-			<h1> </h1>
+			<h1>Get Directions and Show the Result on a Map - Part 1 </h1>
 
-			
+			<p>In this tutorial we will request a route, list the route parts and render these on a Google Map. A MapsIndoors route is made of one or more legs, each containing one or more steps.</p>
 
-<h1 id="changelog">Changelog</h1>
+<p>We will start by making the controller that renders the route from the input of a route, a leg index and optionally a step index. Start by creating a <code>UIViewController</code> implementation that conforms to <code>MPDirectionsRendererDelegate</code></p>
 
-<p>Changelog for MapsIndoors SDK for JavaScript. This document structure is based on <a href="http://keepachangelog.com/en/1.0.0/">Keep a Changelog</a> and the project adheres to <a href="http://semver.org/spec/v2.0.0.html">Semantic Versioning</a>.</p>
+<pre><code>class ShowRouteOnMapController: UIViewController, MPDirectionsRendererDelegate {
+</code></pre>
 
-<h2 id="unreleased">[Unreleased]</h2>
-
-<h2 id="1-4-3-2017-10-10">[1.4.3] - 2017-10-10</h2>
-
-<h3 id="added">Added</h3>
+<p>Setup member variables for <code>MySearchController</code>:</p>
 
 <ul>
-<li>Changelog was added.</li>
+<li>An instance of type <code>GMSMapView</code></li>
+<li>An instance of type <code>MPMapControl</code></li>
+<li>An instance of type <code>MPRoute</code> (the route object)</li>
+<li>A leg index</li>
+<li>A step index
+<code>
+var map: GMSMapView? = nil
+var mapControl: MPMapControl? = nil
+var route:MPRoute? = nil
+var leg:Int = -1
+var step:Int = -1
+</code>
+Create an initializer for your input parameters
+<code>
+convenience init(_ route:MPRoute, _ leg:Int, _ step:Int) {
+self.init(nibName:nil, bundle:nil)
+self.route = route
+self.leg = leg
+self.step = step
+}
+</code>
+Setup the Google map and your <code>MPMapControl</code> instance
+<code>
+self.map = GMSMapView.init(frame: CGRect.zero)
+self.view = self.map
+self.map?.camera = .camera(withLatitude: 57.057964, longitude: 9.9504112, zoom: 20)
+self.mapControl = MPMapControl.init(map: self.map!)
+</code>
+Inside <code>viewDidAppear</code>, setup a directions renderer and assign the Google map, route object and leg/step indices. Eventually, call the animate method to make it animate from the start to end of the leg/step
+```
+let renderer = MPDirectionsRenderer.init()</li>
 </ul>
 
-<h3 id="fixed">Fixed</h3>
+<p>renderer.delegate = self
+renderer.fitBounds = true</p>
 
-<ul>
-<li>Fixed a bug in the way the Google Directions is merged together with MapsIndoors Directions when origin or destination is outside on venue.</li>
-</ul>
+<p>renderer.map = self.map
+renderer.route = route</p>
+
+<p>renderer.routeLegIndex = leg
+renderer.routeStepIndex = step
+renderer.animate(5)</p>
+
+<pre><code>In the `floorDidChange` delegate method change the floor on your `MPMapControl instance`
+</code></pre>
+
+<p>func floorDidChange(_ floor: NSNumber) {
+    mapControl?.currentFloor = floor
+}
+```
+ In <a href="searchsearchmapcontroller">Part 2</a> we will create the map view controller that displays the blue dot.</p>
+
+<p><a href="https://github.com/MapsIndoors/MapsIndoorsIOS-Demo-Samples/blob/develop/Show Route/ShowRouteOnMapController.swift">See the sample in ShowRouteOnMapController.swift</a></p>
 
 
 			<aside class="copyright" role="note">
@@ -376,7 +350,7 @@
 <nav class="pagination" aria-label="Footer">
   <div class="previous">
   
-      <a href="https://mapsindoors.github.io/ios/v3/tutorials/showmultiplelocationsshowmultiplelocationscontroller/" title="">
+      <a href="https://mapsindoors.github.io/ios/v2/tutorials/showrouteshowrouteonmapcontroller/" title="Get Directions and Show the Result on a Map - Part 1">
         <span class="direction">
           Previous
         </span>
@@ -386,7 +360,7 @@
           </div>
           <div class="stretch">
             <div class="title">
-              
+              Get Directions and Show the Result on a Map - Part 1
             </div>
           </div>
         </div>
@@ -396,14 +370,14 @@
 
   <div class="next">
   
-      <a href="https://mapsindoors.github.io/web/v3/changelog/" title="">
+      <a href="https://mapsindoors.github.io/ios/v2/tutorials/showrouteshowroutecontroller/" title="Get Directions and Show the Result on a Map - Part 2">
         <span class="direction">
           Next
         </span>
         <div class="page">
           <div class="stretch">
             <div class="title">
-              
+              Get Directions and Show the Result on a Map - Part 2
             </div>
           </div>
           <div class="button button-next" role="button" aria-label="Next">
