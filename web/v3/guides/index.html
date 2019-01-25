@@ -198,10 +198,6 @@
     </a>
     
   
-    
-    
-    
-  
   <hr />
   <div class="scrollable">
     <div class="wrapper">
@@ -248,11 +244,14 @@
 
 
 
-<a  title="Next Steps" href="https://mapsindoors.github.io/web/v3/guide-part2">
+<a class="current" title="Guides" href="https://mapsindoors.github.io/web/v3/guides">
 	
-	Next Steps
+	Guides
 </a>
 
+
+<ul id="scrollspy">
+</ul>
 
 
       
@@ -285,9 +284,6 @@
     </ul>
 </li>
           </ul>
-          
-          
-          
           
           
           
@@ -399,46 +395,6 @@ google.maps.event.addListener(marker, 'click', function () {
 </tbody>
 </table>
 
-<h2 id="create-an-infobox">Create an Infobox</h2>
-
-<p>Most often you might want to display location content when a user clicks or taps on an icon. You can use the simple Infobox UI component for this. Add the infobox stylesheet as a starting point for the design.</p>
-
-<pre><code class="language-html">&lt;link href=&quot;https://app.mapsindoors.com/mapsindoors/js/sdk/ui/Infobox.css&quot; rel=&quot;stylesheet&quot; /&gt;
-</code></pre>
-
-<p>Provide the following html code in your document. For templating we use <a href="https://github.com/adammark/Markup.js/">Markup.js</a>.</p>
-
-<pre><code class="language-html">&lt;div id=&quot;infobox&quot; class=&quot;mapsindoors infobox&quot;&gt;
-   &lt;a data-close&gt;x&lt;/a&gt;
-   &lt;table&gt;
-      &lt;tr&gt;&lt;td&gt;&lt;i class=&quot;fa fa-map-marker&quot;&gt;&lt;/i&gt;&lt;/td&gt;&lt;td&gt;&lt;h3&gt;{{ if properties.roomid properties.roomid }} {{ properties.name }}&lt;/h3&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td&gt;&lt;i class=&quot;fa fa-building-o&quot;&gt;&lt;/i&gt;&lt;/td&gt;&lt;td&gt;Building {{ properties.building }}&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td&gt;&lt;i class=&quot;fa fa-arrows-v&quot;&gt;&lt;/i&gt;&lt;/td&gt;&lt;td&gt;Floor {{ properties.floor }}&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td&gt;&lt;i class=&quot;fa fa-info&quot;&gt;&lt;/i&gt;&lt;/td&gt;&lt;td&gt;{{ if properties.description properties.description }}&lt;/td&gt;&lt;/tr&gt;
-   &lt;/table&gt;
-&lt;/div&gt;
-</code></pre>
-
-<p>Here is an example on how to setup the component.</p>
-
-<pre><code class="language-javascript">// Div containing an input search element
-var infoDiv = document.getElementById('infobox');
-
-// Optionally insert the Infobox UI-component into google maps
-googleMap.controls[google.maps.ControlPosition.BOTTOM_LEFT].push(infoDiv);
-// Instantiate infobox
-var infobox = new mapsindoors.Infobox(infoDiv);
-
-locationsService.getLocationDetails(&quot;SOME-MAPSINDOORS-ID&quot;).then(function (location) {
-   // Show location content in infobox
-   infobox.show(location);
-   // if &lt;a data-close&gt;x&lt;/a&gt; is present in your infobox element, user can close the infobox, or it can be closed programmatically
-   setTimeout(function() {
-      infobox.close();
-   }, 5000);
-});
-</code></pre>
-
 <h2 id="using-the-display-rules">Using the Display rules</h2>
 
 <p>Display rules use the following structure:</p>
@@ -500,44 +456,7 @@ mapsindoors.LocationService.getLocations(
     });
 </code></pre>
 
-<h2 id="reset-the-style-of-the-map">Reset the style of the map</h2>
-
-<p>Resets the map to the appearance defined by the provided display rules. Displayed floor, map center and zoom-level will remain untouched.</p>
-
-<pre><code class="language-javascript">mapsIndoors.reset()
-</code></pre>
-
-<h2 id="create-a-search-and-suggestions-box">Create a Search and Suggestions box</h2>
-
-<p>If you need to facilitate search functionality to your MapsIndoors solution, you can use the Suggestions UI component. Add the suggestions stylesheet as a starting point for the design.</p>
-
-<pre><code class="language-html">&lt;link href=&quot;https://app.mapsindoors.com/mapsindoors/js/sdk/ui/Suggestions.css&quot; rel=&quot;stylesheet&quot; /&gt;
-</code></pre>
-
-<p>Add the following html somewhere in your document.</p>
-
-<pre><code class="language-html">&lt;div id=&quot;search-box&quot; class=&quot;mapsindoors search-container&quot;&gt;
-    &lt;input type=&quot;search&quot; placeholder=&quot;Search rooms and facilites...&quot; class=&quot;mapsindoors search&quot;&gt;
-    &lt;ul class=&quot;mapsindoors suggestions&quot;&gt;&lt;/ul&gt;
-&lt;/div&gt;
-</code></pre>
-
-<p>Given the above code, here is a simple example on how to use the component.</p>
-
-<pre><code class="language-javascript">// Div containing an input search element
-var searchDiv = document.getElementById('search-box');
-
-// If needed, insert the div element as a map control
-googleMap.controls[google.maps.ControlPosition.TOP_LEFT].push(searchDiv);
-
-// Instantiates suggestions object
-var suggestions = new mapsindoors.Suggestions(searchDiv);
-
-// Listen for user interaction - returns the selected location
-google.maps.event.addListener(suggestions, 'location_changed', function (location) {
-    console.dir(location);
-});
-</code></pre>
+<h2 id="map-rendering">Map Rendering</h2>
 
 <h3 id="setting-the-floor">Setting the floor</h3>
 
@@ -552,6 +471,13 @@ Although floors may have names (“G” for 0, “M1” for 1, “M2” for 2 et
 <p>Returns current floor index number (integer), e.g. 0 for ground floor, -1 for basement.</p>
 
 <pre><code class="language-javascript">mapsIndoors.getFloor()
+</code></pre>
+
+<h3 id="resetting-the-map">Resetting the map</h3>
+
+<p>Resets the map to the appearance defined by the provided display rules. Displayed floor, map center and zoom-level will remain untouched.</p>
+
+<pre><code class="language-javascript">mapsIndoors.reset()
 </code></pre>
 
 <h2 id="using-the-directionsrenderer">Using the directionsRenderer</h2>
@@ -730,7 +656,7 @@ locations.getLocations().then(function(data) {
 
 			<aside class="copyright" role="note">
 				
-				&copy; 2018 MapsIndoors (c)2017 &ndash;
+				&copy; 2019 MapsIndoors (c)2017 &ndash;
 				
 				Documentation built with
 				<a href="https://www.gohugo.io" target="_blank">Hugo</a>

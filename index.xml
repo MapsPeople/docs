@@ -217,8 +217,7 @@ Added  Support for statically adding a position provider, optionally by setting 
       
       <guid>https://mapsindoors.github.io/ios/v2/changelog/</guid>
       <description>Changelog for MapsIndoors for iOS. This document structure is based on Keep a Changelog and the project adheres to Semantic Versioning.
-[2.1.6] 2018-11-27 Added  Support for extra time penalties in the directions service
-Fixed When in flightmode, the routenetwork service would make two callbacks to the app: first callback with cached data and second callback with an error. The second callback would result in no route being produced</description>
+[2.1.8] 2019-01-03 Fixed  The last segment of a route object returned from a directions request sometimes had an unexpected - and wrong - end location. Search engine sometimes returned some unexpected results.  [2.1.7] 2018-12-10 Fixed  In some cases the &amp;ldquo;next&amp;rdquo;-button on MPDirectionsRenderer would display &amp;ldquo;Level (null)&amp;rdquo;.</description>
     </item>
     
     <item>
