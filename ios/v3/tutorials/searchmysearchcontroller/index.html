@@ -161,13 +161,13 @@
     
     
     
-    <a href="https://mapsindoors.github.io/ios/v2" class="project">
+    <a href="https://mapsindoors.github.io/ios/v3" class="project">
       <div class="banner">
         <div class="logo">
           <img src="https://mapsindoors.github.io//logos/apple-logo.svg" style="padding:10px">
         </div>
         <div class="name">
-          <strong>iOS SDK <br /><span class="version">2.1.8</span></strong>
+          <strong>iOS SDK <br /><span class="version">3.0.0-rc0</span></strong>
           
         </div>
       </div>
@@ -177,13 +177,13 @@
     
     
     
-    <a href="https://mapsindoors.github.io/ios/v1" class="project">
+    <a href="https://mapsindoors.github.io/ios/v2" class="project">
       <div class="banner">
         <div class="logo">
           <img src="https://mapsindoors.github.io//logos/apple-logo.svg" style="padding:10px">
         </div>
         <div class="name">
-          <strong>iOS SDK <br /><span class="version">1.12.6</span></strong>
+          <strong>iOS SDK <br /><span class="version">2.1.8</span></strong>
           
         </div>
       </div>
@@ -210,6 +210,84 @@
           
           
           
+                  
+          <ul>
+            
+            
+
+
+<li>
+    <span class="section">iOS SDK</span>
+    <ul>
+      
+        
+        
+
+
+
+<a  title="Getting Started" href="https://mapsindoors.github.io/ios/v3">
+	
+	Getting Started
+</a>
+
+
+
+      
+        
+        
+
+
+
+<a  title="Guides" href="https://mapsindoors.github.io/ios/v3/guides">
+	
+	Guides
+</a>
+
+
+
+      
+        
+        
+
+
+
+<a  title="Tutorials" href="https://mapsindoors.github.io/ios/v3/tutorials">
+	
+	Tutorials
+</a>
+
+
+
+      
+        
+        
+
+
+
+<a  title="Reference Docs" href="https://app.mapsindoors.com/mapsindoors/reference/ios/v3/index.html">
+	
+	Reference Docs
+</a>
+
+
+
+      
+        
+        
+
+
+
+<a  title="Changelog" href="https://mapsindoors.github.io/ios/v3/changelog">
+	
+	Changelog
+</a>
+
+
+
+      
+    </ul>
+</li>
+          </ul>
           
           
           
@@ -281,15 +359,15 @@
 <p>Setup member variables for <code>MySearchController</code>:</p>
 
 <ul>
-<li>An instance of type <code>MPLocationsProvider</code> (the service)</li>
-<li>An instance of type <code>MPLocationQuery</code></li>
+<li>An instance of type <code>MPLocationService</code></li>
+<li>An instance of type <code>MPQuery</code></li>
 <li>An array of <code>MPLocation</code> to hold your list of results</li>
 <li>Your delegate object</li>
 <li>A search bar view</li>
 
 <li><p>A table view</p>
 
-<pre><code>let locationsProvider = MPLocationService.init()
+<pre><code>let locationService = MPLocationService.sharedInstance()
 let query = MPQuery.init()
 var locations:[MPLocation] = []
 var delegate:MySearchControllerDelegate? = nil
@@ -367,7 +445,7 @@ self.dismiss(animated: true, completion: nil)
 <p>In <a href="../searchsearchmapcontroller">Part 2</a> we will create the map view controller that displays the search selection.</p></li>
 </ul>
 
-<p><a href="https://github.com/MapsIndoors/MapsIndoorsIOS-Demo-Samples/blob/develop/Search/MySearchController.swift">See the sample in MySearchController.swift</a></p>
+<p><a href="https://github.com/MapsIndoors/MapsIndoorsIOS-Demo-Samples/blob/master/Search/MySearchController.swift">See the sample in MySearchController.swift</a></p>
 
 
 			<aside class="copyright" role="note">

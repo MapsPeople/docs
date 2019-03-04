@@ -109,6 +109,15 @@ let locations = MPLocationsProvider.init() let queryObj = MPLocationQuery.init()
     
     <item>
       <title></title>
+      <link>https://mapsindoors.github.io/ios/v3/reference/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/ios/v3/reference/</guid>
+      <description>class FAImageView class FAImageView : public UIImageView  Summary    Members Descriptions     {property} UIColor *defaultIconColorUI_APPEARANCE_SELECTOR    {property} NSString *defaultIconIdentifier    {property} FAIcondefaultIcon    {property} UILabel *defaultView     Members {property} UIColor *defaultIconColorUI_APPEARANCE_SELECTOR {property} NSString *defaultIconIdentifier {property} FAIcondefaultIcon {property} UILabel *defaultView class MapsIndoors class MapsIndoors : public NSObject  Summary    Members Descriptions     {property} UIFont *mapLabelFont The font that MapsIndoors should use when rendering labels on the map.</description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>https://mapsindoors.github.io/ios/v3/tutorials/searchsearchmapcontroller/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -217,7 +226,17 @@ Added  Support for statically adding a position provider, optionally by setting 
       
       <guid>https://mapsindoors.github.io/ios/v2/changelog/</guid>
       <description>Changelog for MapsIndoors for iOS. This document structure is based on Keep a Changelog and the project adheres to Semantic Versioning.
-[2.1.8] 2019-01-03 Fixed  The last segment of a route object returned from a directions request sometimes had an unexpected - and wrong - end location. Search engine sometimes returned some unexpected results.  [2.1.7] 2018-12-10 Fixed  In some cases the &amp;ldquo;next&amp;rdquo;-button on MPDirectionsRenderer would display &amp;ldquo;Level (null)&amp;rdquo;.</description>
+[2.1.9] 2019-02-15 Fixed  Fixed an occasional crash in MPVenueProvider, reported in github. Fixed an issue causing infowindow to pop up every time map is panned around with searchResult of 1 location Fixed a data synchronisation issue that could occur with two datasets that has offline capabilities Fixed MapsPeople logo so it respects MapView padding Fixed occasional crashes when running simulator builds  Added  Added some classes that were not present in reference guide  [2.</description>
+    </item>
+    
+    <item>
+      <title>Changelog</title>
+      <link>https://mapsindoors.github.io/ios/v3/changelog/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/ios/v3/changelog/</guid>
+      <description>Changelog for MapsIndoors for iOS. This document structure is based on Keep a Changelog and the project adheres to Semantic Versioning.
+[3.0.0] 2019-03-04 Added  Support for external location data sources using [MapsIndoors registerLocationSources:sources] New location service MPLocationService to replace MPLocationsProvider Location clustering support using MPMapControl.locationClusteringEnabled Added building and venues to the search experience  Changed  MPLocation properties are now read only  Removed  Removed a number of deprecated methods that was introduced in V1  [2.</description>
     </item>
     
     <item>
@@ -404,7 +423,7 @@ With this in mind you need to find an IPS and then use the location from that IP
       
       <guid>https://mapsindoors.github.io/ios/v3/tutorials/</guid>
       <description>With these simple tutorials, each reflecting common use cases, you can get more hands on experience with MapsIndoors on iOS.
- Show Details for a Tapped Location Create a Search Experience Showing a Blue Dot / User Location Create a custom Location Source  </description>
+ Show Details for a Tapped Location Create a Search Experience Showing a Blue Dot / User Location Create a custom Location Source Work with grouped / clustered locations  </description>
     </item>
     
     <item>
@@ -424,6 +443,17 @@ mLocationsProvider = new MPLocationsProvider(); mLocationQueryBuilder = new Loca
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://mapsindoors.github.io/ios/v2/guides/</guid>
+      <description>Searching for Locations and Displaying the Results on a Map Use the MPLocationsProvider class to search for content in your MapsIndoors solution.
+This example shows how to setup a query for the nearest single best matching location and display the result on the map:
+let locations = MPLocationsProvider.init() let queryObj = MPLocationQuery.init() queryObj.query = &amp;quot;Toilet&amp;quot; queryObj.near = MPPoint.init(lat: 57.057964, lon: 9.9504112) queryObj.max = 1 locations.getLocationsUsing(queryObj) { (locationData, error) in if error == nil { let location = locationData?</description>
+    </item>
+    
+    <item>
+      <title>MapsIndoors SDK for iOS v2 - Guides</title>
+      <link>https://mapsindoors.github.io/ios/v3/guides/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/ios/v3/guides/</guid>
       <description>Searching for Locations and Displaying the Results on a Map Use the MPLocationsProvider class to search for content in your MapsIndoors solution.
 This example shows how to setup a query for the nearest single best matching location and display the result on the map:
 let locations = MPLocationsProvider.init() let queryObj = MPLocationQuery.init() queryObj.query = &amp;quot;Toilet&amp;quot; queryObj.near = MPPoint.init(lat: 57.057964, lon: 9.9504112) queryObj.max = 1 locations.getLocationsUsing(queryObj) { (locationData, error) in if error == nil { let location = locationData?</description>
@@ -557,6 +587,18 @@ Basic Example You will find in the link an up and running project that contains 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://mapsindoors.github.io/ios/v2/</guid>
+      <description>Note! A newer version of the MapsIndoors SDK for iOS is available. The legacy version will not receive new features and will only get bugfix and security updates.
+ This guide explains how to start using a MapsIndoors map in your iOS application. Make sure that you have read the prerequisites.
+To benefit from the guides, you will need basic knowledge about:
+ iOS Development Google Maps iOS SDK  You can get started in two ways, either by reviewing and modifying the basic examples or do the clean setup.</description>
+    </item>
+    
+    <item>
+      <title>MapsIndoors for iOS - Getting Started</title>
+      <link>https://mapsindoors.github.io/ios/v3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/ios/v3/</guid>
       <description>This guide explains how to start using a MapsIndoors map in your iOS application. Make sure that you have read the prerequisites.
 To benefit from the guides, you will need basic knowledge about:
  iOS Development Google Maps iOS SDK  You can get started in two ways, either by reviewing and modifying the basic examples or do the clean setup.
@@ -694,6 +736,18 @@ var map: GMSMapView? = nil var mapControl: MPMapControl? = nil override func vie
 Create a class ShowMyLocationController that inherits from UIViewController.
 class ShowMyLocationController: UIViewController {  Add a GMSMapView and a MPMapControl to the class
 var map: GMSMapView? = nil var mapControl: MPMapControl? = nil override func viewDidLoad() { super.</description>
+    </item>
+    
+    <item>
+      <title>Work with location grouping / clustering</title>
+      <link>https://mapsindoors.github.io/ios/v3/tutorials/clusteringclusteringcontroller/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/ios/v3/tutorials/clusteringclusteringcontroller/</guid>
+      <description>This is an example of enabling and disabling location grouping on the map as well as providing custom cluster tapping behavior and custom cluster images.
+Start by creating a UIViewController class that conforms to the MPMapControlDelegate protocol
+class ClusteringController: UIViewController, MPMapControlDelegate {  Add a GMSMapView and a MPMapControl to the class Also define a clustering enabling/disabling button and a dictionary to store the clustering images for reuse
+var map: GMSMapView?</description>
     </item>
     
   </channel>

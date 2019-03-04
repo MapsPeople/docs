@@ -9,18 +9,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>Get Directions and Show the Result on a Map - Part 2 - Indoor Navigation Built with Google Maps</title>
+    <title>Work with location grouping / clustering - Indoor Navigation Built with Google Maps</title>
     <meta name="generator" content="Hugo 0.26" />
 
     
     <meta name="description" content="Everything you need to get started with MapsIndoors.">
     
-    <link rel="canonical" href="https://mapsindoors.github.io/ios/v2/tutorials/showrouteshowroutecontroller/">
+    <link rel="canonical" href="https://mapsindoors.github.io/ios/v3/tutorials/clusteringclusteringcontroller/">
     
     <meta name="author" content="MapsPeople">
     
 
-    <meta property="og:url" content="https://mapsindoors.github.io/ios/v2/tutorials/showrouteshowroutecontroller/">
+    <meta property="og:url" content="https://mapsindoors.github.io/ios/v3/tutorials/clusteringclusteringcontroller/">
     <meta property="og:title" content="Indoor Navigation Built with Google Maps">
     <meta property="og:image" content="https://mapsindoors.github.io/images/logo.png">
     <meta name="apple-mobile-web-app-title" content="Indoor Navigation Built with Google Maps">
@@ -106,7 +106,7 @@
     </div>
     <div class="stretch">
       <div class="title">
-        Get Directions and Show the Result on a Map - Part 2
+        Work with location grouping / clustering
       </div>
     </div>
 
@@ -210,9 +210,6 @@
           
           
           
-          
-          
-          
                   
           <ul>
             
@@ -228,7 +225,7 @@
 
 
 
-<a  title="Getting Started" href="https://mapsindoors.github.io/ios/v2">
+<a  title="Getting Started" href="https://mapsindoors.github.io/ios/v3">
 	
 	Getting Started
 </a>
@@ -241,7 +238,7 @@
 
 
 
-<a  title="Guides" href="https://mapsindoors.github.io/ios/v2/guides">
+<a  title="Guides" href="https://mapsindoors.github.io/ios/v3/guides">
 	
 	Guides
 </a>
@@ -254,7 +251,7 @@
 
 
 
-<a  title="Tutorials" href="https://mapsindoors.github.io/ios/v2/tutorials">
+<a  title="Tutorials" href="https://mapsindoors.github.io/ios/v3/tutorials">
 	
 	Tutorials
 </a>
@@ -267,7 +264,7 @@
 
 
 
-<a  title="Reference Docs" href="https://app.mapsindoors.com/mapsindoors/reference/ios/v2/index.html">
+<a  title="Reference Docs" href="https://app.mapsindoors.com/mapsindoors/reference/ios/v3/index.html">
 	
 	Reference Docs
 </a>
@@ -280,7 +277,7 @@
 
 
 
-<a  title="Changelog" href="https://mapsindoors.github.io/ios/v2/changelog">
+<a  title="Changelog" href="https://mapsindoors.github.io/ios/v3/changelog">
 	
 	Changelog
 </a>
@@ -291,6 +288,9 @@
     </ul>
 </li>
           </ul>
+          
+          
+          
           
           
           
@@ -338,87 +338,126 @@
 
 	<article class="article">
 		<div class="wrapper">
-			<h1>Get Directions and Show the Result on a Map - Part 2 </h1>
+			<h1>Work with location grouping / clustering </h1>
 
-			<p>This is part 2 of the tutorial of requesting directions and showing the route result on a map. In <a href="showrouteshowrouteonmapcontroller">Part 1</a> we created the controller that can display the map and route, and in this part we will create the controller that requests the route and list the route in a table. A MapsIndoors route is made of one or more legs, each containing one or more steps.</p>
+			<p>This is an example of enabling and disabling location grouping on the map as well as providing custom cluster tapping behavior and custom cluster images.</p>
 
-<p>Start by creating a <code>UIViewController</code> implementation</p>
+<p>Start by creating a <code>UIViewController</code> class that conforms to the <code>MPMapControlDelegate</code> protocol</p>
 
-<pre><code>class ShowRouteController: UITableViewController {
+<pre><code>class ClusteringController: UIViewController, MPMapControlDelegate {
 </code></pre>
 
-<p>Add a <code>MPRoute</code> property to the class</p>
+<p>Add a <code>GMSMapView</code> and a <code>MPMapControl</code> to the class
+Also define a clustering enabling/disabling button and a dictionary to store the clustering images for reuse</p>
 
-<pre><code>var route:MPRoute? = nil
+<pre><code>var map: GMSMapView? = nil
+var mapControl: MPMapControl? = nil
+let clusteringButton = UIButton.init()
+var clusteringImageDictionary = Dictionary&lt;String, UIImage&gt;()
 </code></pre>
 
-<p>Inside <code>viewDidLoad</code>, setup a directions service, call the directions service and save the route result to your <code>MPRoute</code> property</p>
+<p>Setup map so that it shows the demo venue and initialise mapControl</p>
 
-<pre><code>let directions = MPDirectionsService.init()
+<pre><code>self.map = GMSMapView.init(frame: CGRect.zero)
+self.map?.camera = .camera(withLatitude: 57.057964, longitude: 9.9504112, zoom: 20)
+self.mapControl = MPMapControl.init(map: self.map!)
+self.mapControl?.delegate = self
+</code></pre>
 
-let origin = MPPoint.init(lat: 57.057917, lon: 9.950361, zValue:0)
-let destination = MPPoint.init(lat: 57.058038, lon: 9.950509, zValue:1)
+<p>Setup a button that enables/disables the location grouping / clustering mechanism</p>
 
-let directionsQuery = MPDirectionsQuery.init(originPoint: origin!, destination: destination!)
+<pre><code>clusteringButton.setTitle(&quot;Clustering disabled&quot;, for: .normal)
+clusteringButton.setTitle(&quot;Clustering enabled&quot;, for: .selected)
+clusteringButton.addTarget(self, action: #selector(toggleClustering), for: .touchUpInside)
+clusteringButton.backgroundColor = UIColor.blue
+</code></pre>
 
-directions.routing(with: directionsQuery) { (route, error) in
-    self.route = route
-    self.tableView.reloadData()
+<p>Arrange the map view and the button in a stackview</p>
+
+<pre><code>let stackView = UIStackView.init(arrangedSubviews: [map!, clusteringButton])
+stackView.axis = .vertical
+view = stackView
+</code></pre>
+
+<p>Define an objective-c method <code>toggleClustering</code> that will receive events from your button, and toggle the clustering flag:</p>
+
+<ul>
+<li>Check current state</li>
+<li>Swap state</li>
+
+<li><p>Make button reflect the state</p>
+
+<pre><code>@objc func toggleClustering() {
+if MapsIndoors.enableMarkerOverlapResolutionByGrouping {
+    MapsIndoors.enableMarkerOverlapResolutionByGrouping = false
+} else {
+    MapsIndoors.enableMarkerOverlapResolutionByGrouping = true
+}
+clusteringButton.isSelected = MapsIndoors.enableMarkerOverlapResolutionByGrouping
 }
 </code></pre>
 
-<p>Override <code>numberOfRowsInSection</code> to return the number of steps in the current leg plus the leg itself</p>
+<p>Define the delegate method <code>didTap</code> that will receive tap events from a cluster marker</p></li>
 
-<pre><code>override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -&gt; Int {
-    if let leg:MPRouteLeg = route?.legs?[section] as? MPRouteLeg {
-        return leg.steps!.count + 1
+<li><p>Check if zoom is possible and increment map zoom</p></li>
+
+<li><p>Return true to indicate that you handle the event and do not want default behavior to happen</p>
+
+<pre><code>func didTap(_ marker: GMSMarker, forPoiGroup locations: [MPLocation]?, moreZoomPossible: Bool) -&gt; Bool {
+if moreZoomPossible {
+    self.map?.animate(toZoom: self.map!.camera.zoom + 1)
+}
+return true
+}
+</code></pre>
+
+<p>Define the delegate method <code>getImageSizeForPoiGroup</code> that provides the size of the potential cluster</p></li>
+
+<li><p>Check if zoom is possible and increment map zoom</p></li>
+
+<li><p>Return true to indicate that you handle the event and do not want default behavior to happen</p>
+
+<pre><code>func getImageSizeForPoiGroup(withCount count: UInt, clusterId: String) -&gt; CGSize {
+let width = 48 * (Int(log10(Double(count))) + 1)
+let height = 48
+return CGSize.init(width: width, height: height)
+}
+</code></pre>
+
+<p>Define the delegate method <code>getImageForPoiGroup</code> that asynchronously provides the image of the potential cluster</p>
+
+<pre><code>func getImageForPoiGroup(_ poiGroup: [MPLocation], imageSize: CGSize, clusterId: String, completion: @escaping (UIImage?) -&gt; Void) -&gt; Bool {
+</code></pre>
+
+<p>In <code>getImageForPoiGroup</code> create a string hash for the image</p>
+
+<pre><code>let imgHash = &quot;img\(poiGroup.count)\(clusterId)&quot;
+</code></pre>
+
+<p>In <code>getImageForPoiGroup</code> check if image already exists. If image does not exist, go in a background thread to get a dummy image and call the completion handler. Return true to indicate that you handle the clustering image.</p>
+
+<pre><code>var img = clusteringImageDictionary[imgHash]
+if img == nil {
+DispatchQueue.global().async {
+    let imgUrlString = &quot;https://placem.at/people?txt=\(poiGroup.count)&amp;random=\(Int.random(in: 0 ..&lt; 10))&amp;w=\(imageSize.width*2)&amp;h=\(imageSize.height*2)&quot;
+    let imgUrl = URL(string: imgUrlString)
+    do {
+        let imgData = try Data.init(contentsOf: imgUrl!)
+        img = UIImage(data: imgData, scale: 2)
+        completion(img)
+        self.clusteringImageDictionary[imgHash] = img
+    } catch {
+        completion(nil)
     }
-    return 0
 }
-</code></pre>
-
-<p>Override <code>numberOfSections</code> to return the number of legs</p>
-
-<pre><code>override func numberOfSections(in tableView: UITableView) -&gt; Int {
-    if let legs = route?.legs?.count {
-        return legs
-    }
-    return 0
+} else {
+completion(img)
 }
-</code></pre>
+return true
+</code></pre></li>
+</ul>
 
-<p>Override <code>titleForHeaderInSection</code> to return the leg index</p>
-
-<pre><code>override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -&gt; String? {
-    return &quot;Route Leg \(section)&quot;
-}
-</code></pre>
-
-<p>Override <code>tableView:cellForRowAt</code> to return leg index and step index if applicable</p>
-
-<pre><code>override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -&gt; UITableViewCell {
-    let cell = UITableViewCell.init()
-    
-    if indexPath.row &gt; 0 {
-        cell.textLabel?.text = &quot;Show leg \(indexPath.section), step \(indexPath.row - 1)&quot;
-    } else {
-        cell.textLabel?.text = &quot;Show leg \(indexPath.section), all steps&quot;
-    }
-    cell.accessibilityIdentifier = cell.textLabel?.text
-    
-    return cell
-}
-</code></pre>
-
-<p>Override <code>tableView:didSelectRowAt</code> to push a new view controller</p>
-
-<pre><code>override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    let vc = ShowRouteOnMapController.init(route!, indexPath.section, indexPath.row - 1)
-    navigationController?.pushViewController(vc, animated: true)
-}
-</code></pre>
-
-<p><a href="https://github.com/MapsIndoors/MapsIndoorsIOS-Demo-Samples/blob/master/Show Route/ShowRouteController.swift">See the sample in ShowRouteController.swift</a></p>
+<p><a href="https://github.com/MapsIndoors/MapsIndoorsIOS-Demo-Samples/blob/master/Clustering/ClusteringController.swift">See the sample in ClusteringController.swift</a></p>
 
 
 			<aside class="copyright" role="note">
@@ -437,7 +476,7 @@ directions.routing(with: directionsQuery) { (route, error) in
 <nav class="pagination" aria-label="Footer">
   <div class="previous">
   
-      <a href="https://mapsindoors.github.io/ios/v3/tutorials/showrouteshowrouteonmapcontroller/" title="Get Directions and Show the Result on a Map - Part 1">
+      <a href="https://mapsindoors.github.io/ios/v3/tutorials/showmylocationshowmylocationcontroller/" title="Show the Blue Dot with MapsIndoors - Part 2">
         <span class="direction">
           Previous
         </span>
@@ -447,7 +486,7 @@ directions.routing(with: directionsQuery) { (route, error) in
           </div>
           <div class="stretch">
             <div class="title">
-              Get Directions and Show the Result on a Map - Part 1
+              Show the Blue Dot with MapsIndoors - Part 2
             </div>
           </div>
         </div>
@@ -456,22 +495,6 @@ directions.routing(with: directionsQuery) { (route, error) in
   </div>
 
   <div class="next">
-  
-      <a href="https://mapsindoors.github.io/ios/v3/tutorials/showrouteshowroutecontroller/" title="Get Directions and Show the Result on a Map - Part 2">
-        <span class="direction">
-          Next
-        </span>
-        <div class="page">
-          <div class="stretch">
-            <div class="title">
-              Get Directions and Show the Result on a Map - Part 2
-            </div>
-          </div>
-          <div class="button button-next" role="button" aria-label="Next">
-            <i class="icon icon-forward"></i>
-          </div>
-        </div>
-      </a>
   
   </div>
 </nav>

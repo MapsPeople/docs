@@ -161,13 +161,13 @@
     
     
     
-    <a href="https://mapsindoors.github.io/ios/v2" class="project">
+    <a href="https://mapsindoors.github.io/ios/v3" class="project">
       <div class="banner">
         <div class="logo">
           <img src="https://mapsindoors.github.io//logos/apple-logo.svg" style="padding:10px">
         </div>
         <div class="name">
-          <strong>iOS SDK <br /><span class="version">2.1.8</span></strong>
+          <strong>iOS SDK <br /><span class="version">3.0.0-rc0</span></strong>
           
         </div>
       </div>
@@ -177,13 +177,13 @@
     
     
     
-    <a href="https://mapsindoors.github.io/ios/v1" class="project">
+    <a href="https://mapsindoors.github.io/ios/v2" class="project">
       <div class="banner">
         <div class="logo">
           <img src="https://mapsindoors.github.io//logos/apple-logo.svg" style="padding:10px">
         </div>
         <div class="name">
-          <strong>iOS SDK <br /><span class="version">1.12.6</span></strong>
+          <strong>iOS SDK <br /><span class="version">2.1.8</span></strong>
           
         </div>
       </div>
@@ -210,6 +210,84 @@
           
           
           
+                  
+          <ul>
+            
+            
+
+
+<li>
+    <span class="section">iOS SDK</span>
+    <ul>
+      
+        
+        
+
+
+
+<a  title="Getting Started" href="https://mapsindoors.github.io/ios/v3">
+	
+	Getting Started
+</a>
+
+
+
+      
+        
+        
+
+
+
+<a  title="Guides" href="https://mapsindoors.github.io/ios/v3/guides">
+	
+	Guides
+</a>
+
+
+
+      
+        
+        
+
+
+
+<a  title="Tutorials" href="https://mapsindoors.github.io/ios/v3/tutorials">
+	
+	Tutorials
+</a>
+
+
+
+      
+        
+        
+
+
+
+<a  title="Reference Docs" href="https://app.mapsindoors.com/mapsindoors/reference/ios/v3/index.html">
+	
+	Reference Docs
+</a>
+
+
+
+      
+        
+        
+
+
+
+<a  title="Changelog" href="https://mapsindoors.github.io/ios/v3/changelog">
+	
+	Changelog
+</a>
+
+
+
+      
+    </ul>
+</li>
+          </ul>
           
           
           
@@ -318,13 +396,13 @@ for locId in 0 ..&lt; numberOfPeople {
         
     let locationUpdate = MPLocationUpdate.init(id: locId, from: self)
         
-    locationUpdate.setType(type)
-    locationUpdate.addPropertyValue(&quot;John Doe&quot;, forKey: MPLocationFieldName)
-    locationUpdate.setFloor(1)
+    locationUpdate.type = type
+    locationUpdate.addPropertyValue(&quot;John Doe #\(locId)&quot;, forKey: MPLocationFieldName)
+    locationUpdate.floor = 1
     let p = getRandomPoint()
     locationPoints.append(p)
     locationDirs.append(Double.random(in: 0 ..&lt; 360))
-    locationUpdate.setPosition(p.getCoordinate())
+    locationUpdate.position = p.getCoordinate()
     locationUpdates.append(locationUpdate)
         
 }
@@ -347,7 +425,7 @@ var updatedLocations = [MPLocation]()
 for locId in 0 ..&lt; numberOfPeople {
     let locationUpdate = locationUpdates[locId]
     let newPos = GMSGeometryOffset(locationPoints[locId].getCoordinate(), 0.5, locationDirs[locId])
-    locationUpdate.setPosition(newPos)
+    locationUpdate.position = newPos
     locationDirs[locId] = locationDirs[locId] + Double.random(in: -22 ..&lt; 22)
     locationPoints[locId] = MPPoint.init(lat: newPos.latitude, lon: newPos.longitude)
     updatedLocations.append(locationUpdate.location())
@@ -384,21 +462,21 @@ startMockingPositions()
 
 <p>Implement the MPLocationSource method <code>getAllLocations</code>. For this demo just return an empty array as each update will also contain the full list of locations.</p>
 
-<pre><code>func getAllLocations() -&gt; [MPLocation] {
+<pre><code>func getLocations() -&gt; [MPLocation] {
 return []
 }
 </code></pre>
 
 <p>Implement the MPLocationSource method <code>addLocationObserver</code>.</p>
 
-<pre><code>func addLocationObserver(_ observer: MPLocationsObserver) {
+<pre><code>func add(_ observer: MPLocationsObserver) {
 observers.append(observer)
 }
 </code></pre>
 
 <p>Implement the MPLocationSource method <code>removeLocationObserver</code>.</p>
 
-<pre><code>func removeLocationObserver(_ observer: MPLocationsObserver) {
+<pre><code>func remove(_ observer: MPLocationsObserver) {
 observers = observers.filter({ (obsvr) -&gt; Bool in
     return obsvr === observer
 })
@@ -407,14 +485,14 @@ observers = observers.filter({ (obsvr) -&gt; Bool in
 
 <p>Implement the MPLocationSource method <code>sourceStatus</code>.</p>
 
-<pre><code>func sourceStatus() -&gt; MPLocationSourceStatus {
+<pre><code>func status() -&gt; MPLocationSourceStatus {
 return .available
 }
 </code></pre>
 
 <p>Implement the MPLocationSource method <code>sourceIdentifier</code>.</p>
 
-<pre><code>func sourceIdentifier() -&gt; Int32 {
+<pre><code>func sourceId() -&gt; Int32 {
 return 0;
 }
 </code></pre>
@@ -422,7 +500,7 @@ return 0;
 <p>In <a href="../locationdatasourceslocationdatasourcescontroller">Part 2</a> we will create a view controller displaying a map that shows the mocked people locations on top of a MapsIndoors map.</p></li>
 </ul>
 
-<p><a href="https://github.com/MapsIndoors/MapsIndoorsIOS-Demo-Samples/blob/develop/Location Data Sources/PeopleLocationsDataSource.swift">See the sample in PeopleLocationsDataSource.swift</a></p>
+<p><a href="https://github.com/MapsIndoors/MapsIndoorsIOS-Demo-Samples/blob/master/Location Data Sources/PeopleLocationsDataSource.swift">See the sample in PeopleLocationsDataSource.swift</a></p>
 
 
 			<aside class="copyright" role="note">

@@ -39,6 +39,10 @@
   </url>
   
   <url>
+    <loc>https://mapsindoors.github.io/ios/v3/reference/</loc>
+  </url>
+  
+  <url>
     <loc>https://mapsindoors.github.io/ios/v3/tutorials/searchsearchmapcontroller/</loc>
   </url>
   
@@ -90,6 +94,10 @@
   
   <url>
     <loc>https://mapsindoors.github.io/ios/v2/changelog/</loc>
+  </url>
+  
+  <url>
+    <loc>https://mapsindoors.github.io/ios/v3/changelog/</loc>
   </url>
   
   <url>
@@ -198,6 +206,10 @@
   </url>
   
   <url>
+    <loc>https://mapsindoors.github.io/ios/v3/guides/</loc>
+  </url>
+  
+  <url>
     <loc>https://mapsindoors.github.io/android/v1/</loc>
   </url>
   
@@ -243,6 +255,10 @@
   
   <url>
     <loc>https://mapsindoors.github.io/ios/v2/</loc>
+  </url>
+  
+  <url>
+    <loc>https://mapsindoors.github.io/ios/v3/</loc>
   </url>
   
   <url>
@@ -297,6 +313,10 @@
   <url>
     <loc>https://mapsindoors.github.io/web/</loc>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mapsindoors.github.io/ios/v3/tutorials/clusteringclusteringcontroller/</loc>
   </url>
   
 </urlset>
