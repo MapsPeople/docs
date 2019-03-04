@@ -494,21 +494,7 @@ Although floors may have names (“G” for 0, “M1” for 1, “M2” for 2 et
 
 <h3 id="setting-the-style-of-the-direction-renderer">Setting the style of the direction renderer</h3>
 
-<p>Sets the directions rendering style. For twaeking style of route polylines we use the <a href="https://developers.google.com/maps/documentation/javascript/reference#PolylineOptions">Google Maps v3 API PolylineOptions</a> format. The methods first parameter refers to a style type that can be either the travel mode for outdoor routes or the type of way for indoor routes. The possible style types include:</p>
-
-<ul>
-<li>default – The default style, will be used for all non-specified styles.</li>
-<li>driving – Style for driving travel mode.</li>
-<li>walking – Style for walking travel mode.</li>
-<li>transit – Style for transit travel mode.</li>
-<li>bicycling – Style for transit travel mode.</li>
-<li>footway – Style for regular indoor ways.</li>
-<li>steps – Style for steps/stairs.</li>
-<li>elevator – Style for elevators.</li>
-<li>escalator – Style for elevators.</li>
-<li>travellator – Style for travellators.</li>
-<li>residential – Style for roads at a venue.</li>
-</ul>
+<p>Sets the directions rendering style. For twaeking style of route polylines we use the <a href="https://developers.google.com/maps/documentation/javascript/reference#PolylineOptions">Google Maps v3 API PolylineOptions</a> format.</p>
 
 <pre><code class="language-javascript">var directionsRenderer = new mapsindoors.DirectionsRenderer();
 
@@ -629,14 +615,15 @@ locations.getCategories().then(function(categories) {
 });
 </code></pre>
 
-<h3 id="getting-the-types">Getting the types</h3>
+<h3 id="getting-icons-from-location-types">Getting Icons from Location Types</h3>
 
 <p>A set of location types is defined for every MapsIndoors solution. The current list of types can be retrieved like this:</p>
 
-<pre><code class="language-javascript">var locations = new mapsindoors.LocationService();
+<pre><code class="language-javascript">var solutionData = new mapsindoors.SolutionService();
 
-locations.getTypes().then(function(types) {
-   // returns array of types with format { name:string, icon:string }
+solutionData.getTypes().then(function(types) {
+   // returns array of types with format { name:string, displayRule: { icon:'https://icon.url' } }
+   console.log(types[0].displayRule.icon);
 });
 </code></pre>
 
