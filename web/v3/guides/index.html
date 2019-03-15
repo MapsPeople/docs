@@ -460,41 +460,41 @@ mapsindoors.LocationService.getLocations(
 
 <h3 id="setting-the-floor">Setting the floor</h3>
 
-<p>Sets the current visible floor. This will make visible the corresponding floorplans and the icons on top of it. If the floor index provided does not correlate to any building floor, then the “nearest” floor will be activated. E.g. providing <code>setFloor(4)</code> on a three story building (with floor-indexes 0, 1, 2) will make the topmost floorplan visible (with floor-index 2).
-Although floors may have names (“G” for 0, “M1” for 1, “M2” for 2 etc.) you need to set the floor using the index-value.</p>
+<p>Sets the current visible floor. This will make visible the corresponding floorplans and the icons on top of it. If the floor index provided does not correlate to any building floor, then the “nearest” floor will be activated. E.g. providing <code>setFloor(4)</code> on a three story building (with floor-indexes 0, 1, 2) will make the topmost floorplan visible (with floor-index 2).</p>
 
-<pre><code class="language-javascript">mapsIndoors.setFloor(4)
+<p>Although floors may have names (“G” for 0, “M1” for 1, “M2” for 2 etc.) you need to set the floor using the index-value.</p>
+
+<pre><code class="language-javascript">myMapsIndoors.setFloor(4)
 </code></pre>
 
 <h3 id="getting-the-floor">Getting the floor</h3>
 
 <p>Returns current floor index number (integer), e.g. 0 for ground floor, -1 for basement.</p>
 
-<pre><code class="language-javascript">mapsIndoors.getFloor()
+<pre><code class="language-javascript">myMapsIndoors.getFloor()
 </code></pre>
 
 <h3 id="resetting-the-map">Resetting the map</h3>
 
 <p>Resets the map to the appearance defined by the provided display rules. Displayed floor, map center and zoom-level will remain untouched.</p>
 
-<pre><code class="language-javascript">mapsIndoors.reset()
+<pre><code class="language-javascript">myMapsIndoors.reset()
 </code></pre>
 
-<h2 id="using-the-directionsrenderer">Using the directionsRenderer</h2>
+<h2 id="using-the-directions-renderer">Using the Directions Renderer</h2>
 
 <p>Constructor. Takes directions render options as required parameter.</p>
 
 <pre><code class="language-javascript">var directionsRenderer = new mapsindoors.DirectionsRenderer(
 {
-   map: googleMap,               // The Google map on which to render
    mapsindoors: mapsIndoors,     // The MapsIndoors instance
 }
 );
 </code></pre>
 
-<h3 id="setting-the-style-of-the-direction-renderer">Setting the style of the direction renderer</h3>
+<h3 id="setting-the-options-of-the-directions-renderer">Setting the Options of the Directions Renderer</h3>
 
-<p>Sets the directions rendering style. For twaeking style of route polylines we use the <a href="https://developers.google.com/maps/documentation/javascript/reference#PolylineOptions">Google Maps v3 API PolylineOptions</a> format.</p>
+<p>Customizing style of route polylines is done using the <code>setOptions</code> method.</p>
 
 <pre><code class="language-javascript">var directionsRenderer = new mapsindoors.DirectionsRenderer();
 
@@ -513,10 +513,9 @@ directionsRenderer.setOptions(
 
 <p>Renders the route result using the applied render options. Used in conjunction with a DirectionsService, this is an example of displaying a route on the map.</p>
 
-<pre><code class="language-javascript">var googleMap = new google.maps.Map(...);
-
+<pre><code class="language-javascript">
 var directionsService = new mapsindoors.DirectionsService();
-var renderer = new mapsindoors.DirectionsRenderer({ map: googleMap });
+var renderer = new mapsindoors.DirectionsRenderer({ mapsIndoors: myMapsIndoors });
 
 directionsService.getRoute(
    {
@@ -538,7 +537,7 @@ directionsService.getRoute(
 });
 </code></pre>
 
-<h3 id="getting-the-location-using-queries">Getting the location using queries</h3>
+<h3 id="getting-the-location-using-queries">Getting the Location using Queries</h3>
 
 <p>Get locations from MapsIndoors using a query object (optional). With no query parameter, all published locations will be fetched.</p>
 
@@ -569,7 +568,7 @@ locations.getLocations(
 <pre><code class="language-javascript">directionsRenderer.clear();
 </code></pre>
 
-<h2 id="using-the-directionsservice">Using the directionsService</h2>
+<h2 id="using-the-directions-service">Using the Directions Service</h2>
 
 <p>Constructor. Instantiates a service that can be used for making route requests.</p>
 
@@ -597,14 +596,14 @@ directionsService.route(
 });
 </code></pre>
 
-<h2 id="using-the-locationservice">Using the LocationService</h2>
+<h2 id="using-the-location-service">Using the Location Service</h2>
 
 <p>Constructor.</p>
 
 <pre><code class="language-javascript">LocationsService()
 </code></pre>
 
-<h3 id="getting-the-categories">Getting the categories</h3>
+<h3 id="getting-the-categories">Getting the Categories</h3>
 
 <p>Get the unique categories and their translation used by published locations. Typically, this can be used to build a menu for list or map filtering of locations.</p>
 
@@ -627,7 +626,7 @@ solutionData.getTypes().then(function(types) {
 });
 </code></pre>
 
-<h3 id="getting-the-location-details">Getting the location details</h3>
+<h3 id="getting-the-location-details">Getting the Location Details</h3>
 
 <p>Get the full details object of a single location. Pass the MapsIndoors id string present in any location object at <code>location.id</code>.</p>
 
@@ -637,6 +636,36 @@ locations.getLocations().then(function(data) {
    locations.getLocationDetails(data[0].id).then(function(detailedData) {
       // Returns a full-detail location object
    });
+});
+</code></pre>
+
+<h2 id="map-styles">Map Styles</h2>
+
+<p>A MapsIndoors map may have multiple styles/layouts. This is how a mapStyle object is structured.</p>
+
+<pre><code class="language-javascript">let mapStyle = {
+    folder: 'styleFolder', 
+    displayName: 'styleDisplayName' // Optional when created
+}
+</code></pre>
+
+<p>When a new instance of MapsIndoors is created, it is created with the google map as an argument. It is also possible to set the map style in the constructor.</p>
+
+<pre><code class="language-javascript">let mapsIndoors = new mapsindoors.MapsIndoors({
+    map: googleMap,
+    mapStyle: MapStyle
+});
+</code></pre>
+
+<p>It is also posible to set or get the map style at a later time, after MapsIndoors has been instantiated.</p>
+
+<pre><code class="language-javascript">google.maps.event.addListener(mapsIndoors, 'ready', function () {
+    /* Get all avalible styles. */
+    let styles = mapsIndoors.getMapStyles();
+    /* Set the first style in the list as the one to be shown on the map. */
+    mapsIndoors.setMapStyle(styles[0]);
+    /* Get the current map style. */
+    let style = mapsIndoors.getMapStyle();
 });
 </code></pre>
 
