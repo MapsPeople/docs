@@ -338,9 +338,64 @@
 
 <!-- ## [Unreleased] -->
 
-<h2 id="3-0-0-2018-10-23">[3.0.0] - 2018-10-23</h2>
+<h2 id="3-1-2-2019-03-20">[3.1.2] - 2019-03-20</h2>
 
 <h3 id="changed">Changed</h3>
+
+<ul>
+<li>The SDK now selects the fastest backend server based on a latency test.</li>
+<li>A list of known backends is stored in localStorage for the SDK to choose from.
+The list of known backends are updated automatically as part of the latency test.</li>
+</ul>
+
+<h2 id="3-1-1-2019-03-14">[3.1.1] - 2019-03-14</h2>
+
+<h3 id="fixed">Fixed</h3>
+
+<ul>
+<li>Fixed a crash caused by setting mapStyle via the MapsIndoors constructor.</li>
+</ul>
+
+<h2 id="3-1-0-2019-03-13">[3.1.0] - 2019-03-13</h2>
+
+<h3 id="changed-1">Changed</h3>
+
+<ul>
+<li>It&rsquo;s now posible to set a displayRule for a list of location ids or types. <code>myMapsIndoors.setDisplayRule([&quot;abc&quot;, &quot;cde&quot;, &quot;fgh&quot;], { visible: false });</code>
+<br /></li>
+</ul>
+
+<h3 id="added">Added</h3>
+
+<ul>
+<li>Added the functions setMapStyle, getMapStyle and getMapStyles to MapsIndoors.
+
+<ul>
+<li>setMapStyle() set a new indoor map style.</li>
+<li>getMapStyle() get the current style of the indoors map.</li>
+<li>getMapStyles() get a list of availeble indoor map styles.</li>
+</ul></li>
+</ul>
+
+<h2 id="3-0-5-2019-02-27">[3.0.5] - 2019-02-27</h2>
+
+<h3 id="fixed-1">Fixed</h3>
+
+<ul>
+<li>Optimized map performance by reducing the amount POIs</li>
+</ul>
+
+<h2 id="3-0-2-2019-02-19">[3.0.2] - 2019-02-19</h2>
+
+<h3 id="fixed-2">Fixed</h3>
+
+<ul>
+<li>Support for IE 11</li>
+</ul>
+
+<h2 id="3-0-0-2018-10-23">[3.0.0] - 2018-10-23</h2>
+
+<h3 id="changed-2">Changed</h3>
 
 <ul>
 <li>Script must now be loaded with apikey parameter instead of solutionId, e.g. <code>https://app.mapsindoors.com/mapsindoors/js/sdk/mapsindoors-3.0.0-rc0.js?apikey=57e4e4992e74800ef8b69718</code></li>
@@ -360,13 +415,13 @@
 <li>Removed <code>MapsIndoors.locate()</code>, use <code>MapsIndoors.filter()</code> instead</li>
 </ul>
 
-<h3 id="added">Added</h3>
+<h3 id="added-1">Added</h3>
 
 <ul>
 <li>Icons for single Locations can now be updated independantly, by referencing the location id. E.g. <code>myMapsIndoors.setDisplayRule('some-location-id', { icon: { url: 'https://icon.url' } });</code></li>
 </ul>
 
-<h3 id="fixed">Fixed</h3>
+<h3 id="fixed-3">Fixed</h3>
 
 <ul>
 <li>Fixed a rendering bug that was causing MapsIndoors&rsquo; map markers to occasionally disappear</li>

@@ -130,7 +130,7 @@ let locations = MPLocationsProvider.init() let queryObj = MPLocationQuery.init()
       
       <guid>https://mapsindoors.github.io/ios/v2/changelog/</guid>
       <description>Changelog for MapsIndoors for iOS. This document structure is based on Keep a Changelog and the project adheres to Semantic Versioning.
-[2.1.9] 2019-02-15 Fixed  Fixed an occasional crash in MPVenueProvider, reported in github. Fixed an issue causing infowindow to pop up every time map is panned around with searchResult of 1 location Fixed a data synchronisation issue that could occur with two datasets that has offline capabilities Fixed MapsPeople logo so it respects MapView padding Fixed occasional crashes when running simulator builds  Added  Added some classes that were not present in reference guide  [2.</description>
+[2.2.0] 2019-03-22 Added  Now possible to set map style (layout) using MPMapControl.mapStyle = MPMapStyle(string:&amp;quot;my-style&amp;quot;). Only applies for data sets that has multiple defined styles.  [2.1.10] 2019-03-05 Fixed  Fixed an issue causing map graphics not to show after a synchronisation followed by an app kill  [2.</description>
     </item>
     
     <item>

@@ -165,7 +165,7 @@ let locations = MPLocationsProvider.init() let queryObj = MPLocationQuery.init()
       
       <guid>https://mapsindoors.github.io/web/v3/changelog/</guid>
       <description>Changelog Changelog for MapsIndoors SDK for JavaScript. This document structure is based on Keep a Changelog and the project adheres to Semantic Versioning.
-[3.0.0] - 2018-10-23 Changed  Script must now be loaded with apikey parameter instead of solutionId, e.g. https://app.mapsindoors.com/mapsindoors/js/sdk/mapsindoors-3.0.0-rc0.js?apikey=57e4e4992e74800ef8b69718 All services are now shared instances, so they cannot be newed. E.g. you must rewrite let directionsService = new mapsindoors.DirectionsService(); to let miDirectionsService = mapsindoors.DirectionsService; Location click events for a MapsIndoors instance are now subscribable with the event name click instead of location_click, e.</description>
+[3.1.2] - 2019-03-20 Changed  The SDK now selects the fastest backend server based on a latency test. A list of known backends is stored in localStorage for the SDK to choose from. The list of known backends are updated automatically as part of the latency test.</description>
     </item>
     
     <item>
@@ -226,7 +226,7 @@ Added  Support for statically adding a position provider, optionally by setting 
       
       <guid>https://mapsindoors.github.io/ios/v2/changelog/</guid>
       <description>Changelog for MapsIndoors for iOS. This document structure is based on Keep a Changelog and the project adheres to Semantic Versioning.
-[2.1.9] 2019-02-15 Fixed  Fixed an occasional crash in MPVenueProvider, reported in github. Fixed an issue causing infowindow to pop up every time map is panned around with searchResult of 1 location Fixed a data synchronisation issue that could occur with two datasets that has offline capabilities Fixed MapsPeople logo so it respects MapView padding Fixed occasional crashes when running simulator builds  Added  Added some classes that were not present in reference guide  [2.</description>
+[2.2.0] 2019-03-22 Added  Now possible to set map style (layout) using MPMapControl.mapStyle = MPMapStyle(string:&amp;quot;my-style&amp;quot;). Only applies for data sets that has multiple defined styles.  [2.1.10] 2019-03-05 Fixed  Fixed an issue causing map graphics not to show after a synchronisation followed by an app kill  [2.</description>
     </item>
     
     <item>
