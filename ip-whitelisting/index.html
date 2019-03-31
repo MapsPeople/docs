@@ -9,18 +9,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>Show the Blue Dot with MapsIndoors - Part 1 - Indoor Navigation Built with Google Maps</title>
+    <title>White-listing of IP-adresses - Indoor Navigation Built with Google Maps</title>
     <meta name="generator" content="Hugo 0.26" />
 
     
     <meta name="description" content="Everything you need to get started with MapsIndoors.">
     
-    <link rel="canonical" href="https://mapsindoors.github.io/ios/v3/tutorials/showmylocationmypositionprovider/">
+    <link rel="canonical" href="https://mapsindoors.github.io/ip-whitelisting/">
     
     <meta name="author" content="MapsPeople">
     
 
-    <meta property="og:url" content="https://mapsindoors.github.io/ios/v3/tutorials/showmylocationmypositionprovider/">
+    <meta property="og:url" content="https://mapsindoors.github.io/ip-whitelisting/">
     <meta property="og:title" content="Indoor Navigation Built with Google Maps">
     <meta property="og:image" content="https://mapsindoors.github.io/images/logo.png">
     <meta name="apple-mobile-web-app-title" content="Indoor Navigation Built with Google Maps">
@@ -106,7 +106,7 @@
     </div>
     <div class="stretch">
       <div class="title">
-        Show the Blue Dot with MapsIndoors - Part 1
+        White-listing of IP-adresses
       </div>
     </div>
 
@@ -161,33 +161,9 @@
     
     
     
-    <a href="https://mapsindoors.github.io/ios/v3" class="project">
-      <div class="banner">
-        <div class="logo">
-          <img src="https://mapsindoors.github.io//logos/apple-logo.svg" style="padding:10px">
-        </div>
-        <div class="name">
-          <strong>iOS SDK <br /><span class="version">3.0.0</span></strong>
-          
-        </div>
-      </div>
-    </a>
-    
   
     
     
-    
-    <a href="https://mapsindoors.github.io/ios/v2" class="project">
-      <div class="banner">
-        <div class="logo">
-          <img src="https://mapsindoors.github.io//logos/apple-logo.svg" style="padding:10px">
-        </div>
-        <div class="name">
-          <strong>iOS SDK <br /><span class="version">2.1.8</span></strong>
-          
-        </div>
-      </div>
-    </a>
     
   
     
@@ -210,84 +186,6 @@
           
           
           
-                  
-          <ul>
-            
-            
-
-
-<li>
-    <span class="section">iOS SDK</span>
-    <ul>
-      
-        
-        
-
-
-
-<a  title="Getting Started" href="https://mapsindoors.github.io/ios/v3">
-	
-	Getting Started
-</a>
-
-
-
-      
-        
-        
-
-
-
-<a  title="Guides" href="https://mapsindoors.github.io/ios/v3/guides">
-	
-	Guides
-</a>
-
-
-
-      
-        
-        
-
-
-
-<a  title="Tutorials" href="https://mapsindoors.github.io/ios/v3/tutorials">
-	
-	Tutorials
-</a>
-
-
-
-      
-        
-        
-
-
-
-<a  title="Reference Docs" href="https://app.mapsindoors.com/mapsindoors/reference/ios/v3/index.html">
-	
-	Reference Docs
-</a>
-
-
-
-      
-        
-        
-
-
-
-<a  title="Changelog" href="https://mapsindoors.github.io/ios/v3/changelog">
-	
-	Changelog
-</a>
-
-
-
-      
-    </ul>
-</li>
-          </ul>
           
           
           
@@ -338,112 +236,28 @@
 
 	<article class="article">
 		<div class="wrapper">
-			<h1>Show the Blue Dot with MapsIndoors - Part 1 </h1>
+			<h1>White-listing of IP-adresses </h1>
 
-			<p>In this tutorial we will show how you can show a blue dot on the map, representing the users location. The position will be served from a mocked positioning provider and displayed on a map in a view controller.</p>
+			<p>If you have issues with reaching content from within your secured internal build system or your internal network in general, you might need to white-list the below IP adresses in your firewall configurations:</p>
 
-<p>We will start by creating our implementation of a positioning provider.</p>
-
-<p>Create a class <code>MyPositionProvider</code> that inherits from NSObject and implements <code>MPPositionProvider</code>.</p>
-
-<pre><code>class MyPositionProvider : NSObject, MPPositionProvider {
+<pre><code>104.210.150.133/32
+13.93.78.131/32
+104.215.146.147/32
+52.166.232.21/32 
+52.174.49.244/32 
+52.232.5.1/32
+40.117.168.13/32 
+213.83.173.5/32
+13.93.106.94/32 	
+40.76.91.185/32 	
+13.84.172.245/32 
+13.93.3.67/32
+13.76.230.74/32 	
+51.144.101.238/32 
+104.46.47.24/32 	
+13.94.211.152/32 
+13.81.8.54/32
 </code></pre>
-
-<p>Add some member variables to <code>MyPositionProvider</code>.</p>
-
-<ul>
-<li><code>delegate</code>: The delegate object</li>
-<li><code>running</code>: A running state boolean flag</li>
-<li><code>latestPositionResult</code>: The latest positioning result</li>
-<li><code>preferAlwaysLocationPermission</code>: A boolean that indicates whether this provider requires Apple Location Services to always be active</li>
-<li><code>locationServicesActive</code>: A boolean that indicates whether Apple Location Services is currently active</li>
-
-<li><p><code>providerType</code>: A provider type enum, convenient when working with multiple positioning providers in the same application</p>
-
-<pre><code>var delegate: MPPositionProviderDelegate?
-private var running = false
-var latestPositionResult: MPPositionResult?
-var preferAlwaysLocationPermission: Bool = false
-var locationServicesActive: Bool = false
-var providerType: MPPositionProviderType = .GPS_POSITION_PROVIDER
-</code></pre>
-
-<p>Create a method called <code>updatePosition</code>. This will be our &ldquo;loop&rdquo; constantly posting a new position to the delegate.</p></li>
-
-<li><p>Check if the provider has a running state</p></li>
-
-<li><p>Assign a new <code>MPPositionResult</code> to <code>latestPositionResult</code></p></li>
-
-<li><p>Notify the delegate by calling <code>onPositionUpdate</code> passing the new position as argument</p></li>
-
-<li><p>Schedule a new delayed call of this method</p>
-
-<pre><code>private func updatePosition() {
-if running {
-    latestPositionResult = MPPositionResult.init()
-    latestPositionResult?.geometry = MPPoint.init(lat: 57.057964, lon: 9.9504112)
-    latestPositionResult?.provider = self
-        
-    if let delegate = self.delegate, let latestPositionResult = self.latestPositionResult {
-        delegate.onPositionUpdate(latestPositionResult)
-    }
-        
-    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-        self.updatePosition()
-    }
-}
-}
-</code></pre>
-
-<p>Implement the <code>requestLocationPermissions</code> method. In this example we will just set the <code>locationServicesActive</code> to true.</p>
-
-<pre><code>func requestLocationPermissions() {
-locationServicesActive = true
-}
-</code></pre>
-
-<p>Implement the <code>updateLocationPermissionStatus</code> method. In this example we will just set the <code>locationServicesActive</code> to true.</p>
-
-<pre><code>func updateLocationPermissionStatus() {
-locationServicesActive = true
-}
-</code></pre>
-
-<p>Implement the <code>startPositioning</code> method. We set the <code>running</code> boolean to true and call <code>updatePos</code>.</p>
-
-<pre><code>func startPositioning(_ arg: String?) {
-running = true
-updatePosition()
-}
-</code></pre>
-
-<p>Implement the <code>stopPositioning</code> method. We set the <code>running</code> boolean to false.</p>
-
-<pre><code>func stopPositioning(_ arg: String?) {
-running = false
-}
-</code></pre>
-
-<p>Implement the <code>startPositioningAfter</code> method. This is just a convenience method that should support a delayed start.</p>
-
-<pre><code>func startPositioning(after millis: Int32, arg: String?) {
-DispatchQueue.main.asyncAfter(deadline: .now() + (0.001 * Double(millis))) {
-    self.startPositioning(arg)
-}
-}
-</code></pre>
-
-<p>Implement the <code>isRunning</code> method. Return the value of <code>running</code>.</p>
-
-<pre><code>func isRunning() -&gt; Bool {
-return running
-}
-</code></pre>
-
-<p>In <a href="../showmylocationshowmylocationcontroller">Part 2</a> we will create the map view controller that displays the blue dot.</p></li>
-</ul>
-
-<p><a href="https://github.com/MapsIndoors/MapsIndoorsIOS-Demo-Samples/blob/master/Show My Location/MyPositionProvider.swift">See the sample in MyPositionProvider.swift</a></p>
 
 
 			<aside class="copyright" role="note">
@@ -462,7 +276,7 @@ return running
 <nav class="pagination" aria-label="Footer">
   <div class="previous">
   
-      <a href="https://mapsindoors.github.io/ios/v2/tutorials/showmylocationmypositionprovider/" title="Show the Blue Dot with MapsIndoors - Part 1">
+      <a href="https://mapsindoors.github.io/ios/v3/tutorials/showmylocationshowmylocationcontroller/" title="Show the Blue Dot with MapsIndoors - Part 2">
         <span class="direction">
           Previous
         </span>
@@ -472,7 +286,7 @@ return running
           </div>
           <div class="stretch">
             <div class="title">
-              Show the Blue Dot with MapsIndoors - Part 1
+              Show the Blue Dot with MapsIndoors - Part 2
             </div>
           </div>
         </div>
@@ -482,14 +296,14 @@ return running
 
   <div class="next">
   
-      <a href="https://mapsindoors.github.io/android/v2/tutorials/showuserlocationshowuserlocationfragment/" title="Show the Blue Dot with MapsIndoors - Part 2">
+      <a href="https://mapsindoors.github.io/ios/v3/tutorials/clusteringclusteringcontroller/" title="Work with location grouping / clustering">
         <span class="direction">
           Next
         </span>
         <div class="page">
           <div class="stretch">
             <div class="title">
-              Show the Blue Dot with MapsIndoors - Part 2
+              Work with location grouping / clustering
             </div>
           </div>
           <div class="button button-next" role="button" aria-label="Next">
