@@ -338,6 +338,20 @@
 
 <!-- ## [Unreleased] -->
 
+<h2 id="3-2-0-2019-04-29">[3.2.0] - 2019-04-29</h2>
+
+<h3 id="added">Added</h3>
+
+<ul>
+<li>Added the ability to change the api key at runtime via <code>mapsindoors.setApiKey(key);</code></li>
+<li>Added the functions to get and set the language at runtime:
+
+<ul>
+<li><code>mapsindoors.setLanguage(language);</code></li>
+<li><code>mapsindoors.getLanguage();</code></li>
+</ul></li>
+</ul>
+
 <h2 id="3-1-3-2019-03-26">[3.1.3] - 2019-03-26</h2>
 
 <h3 id="changed">Changed</h3>
@@ -365,7 +379,7 @@ The list of known backends are updated automatically as part of the latency test
 <br /></li>
 </ul>
 
-<h3 id="added">Added</h3>
+<h3 id="added-1">Added</h3>
 
 <ul>
 <li>Added the functions setMapStyle, getMapStyle and getMapStyles to MapsIndoors.
@@ -415,7 +429,7 @@ The list of known backends are updated automatically as part of the latency test
 <li>Removed <code>MapsIndoors.locate()</code>, use <code>MapsIndoors.filter()</code> instead</li>
 </ul>
 
-<h3 id="added-1">Added</h3>
+<h3 id="added-2">Added</h3>
 
 <ul>
 <li>Icons for single Locations can now be updated independantly, by referencing the location id. E.g. <code>myMapsIndoors.setDisplayRule('some-location-id', { icon: { url: 'https://icon.url' } });</code></li>

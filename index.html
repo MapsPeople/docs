@@ -178,7 +178,7 @@
           <img src="https://mapsindoors.github.io//logos/apple-logo.svg" style="padding:10px">
         </div>
         <div class="name">
-          <strong>iOS SDK <br /><span class="version">3.0.0</span></strong>
+          <strong>iOS SDK <br /><span class="version">3.0.4</span></strong>
           
         </div>
       </div>
@@ -300,8 +300,9 @@
 
 <h3 id="get-a-mapsindoors-content-key-and-api-key">Get a MapsIndoors Content Key and API Key</h3>
 
-<p>In order to include the mapsIndoors in your app you need a content key and possibly an API key that we provide to our customer so they can access their data, if you are not a customer you can use this content key <code>57e4e4992e74800ef8b69718</code> to follow this guide.
-You can find more information about how to get a solution ID and becoming a partner by visiting this <a href="https://www.mapspeople.com/become-a-partner">link</a>.</p>
+<p>In order to include the mapsIndoors in your app you need a content key and possibly an API key that we provide to our customer so they can access their data, if you are not a customer you can use this content key <code>57e4e4992e74800ef8b69718</code> to follow this guide.</p>
+
+<p>In order to include MapsIndoors in your own app with your own content, you need to <a href="https://resources.mapspeople.com/contact-us">contact MapsPeople</a> to get your building drawings processed and hosted in the system. You will receive a unique content API key to use when access has been granted. If you are exploring how this service can become part of your own product, you can read about <a href="https://www.mapspeople.com/become-a-partner">partnering with MapsPeople here</a>.</p>
 
 <h2 id="choose-your-platform">Choose your platform</h2>
 
@@ -447,6 +448,18 @@ You can find more information about how to get a solution ID and becoming a part
         query.addEventListener('blur', function() {
           if (this.value) {
             var path = document.location.pathname;
+            ga('send', 'pageview', path + '?q=' + this.value);
+          }
+        });
+      </script>
+    
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
+
+ path = document.location.pathname;
             ga('send', 'pageview', path + '?q=' + this.value);
           }
         });

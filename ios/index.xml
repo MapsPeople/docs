@@ -140,7 +140,7 @@ let locations = MPLocationsProvider.init() let queryObj = MPLocationQuery.init()
       
       <guid>https://mapsindoors.github.io/ios/v3/changelog/</guid>
       <description>Changelog for MapsIndoors for iOS. This document structure is based on Keep a Changelog and the project adheres to Semantic Versioning.
-[3.0.0] 2019-03-04 Added  Support for external location data sources using [MapsIndoors registerLocationSources:sources] New location service MPLocationService to replace MPLocationsProvider Location clustering support using MPMapControl.locationClusteringEnabled Added building and venues to the search experience  Changed  MPLocation properties are now read only  Removed  Removed a number of deprecated methods that was introduced in V1  [2.</description>
+[3.0.4] 2019-04-29 Fixed  Fixed an issue with directions only returning routes on ground floor. Fixed issue with the directions service not resorting to offline even in case of cached route-networks. Fixed an issue where would return more than expected results when perfect match(es) was found.  [3.0.3] 2019-04-11 Fixed  Fixed an issue changing MapsIndoors.</description>
     </item>
     
     <item>
