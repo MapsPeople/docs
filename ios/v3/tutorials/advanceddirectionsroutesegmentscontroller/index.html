@@ -9,18 +9,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>MapsIndoors SDK for iOS - Tutorials - Indoor Navigation Built with Google Maps</title>
+    <title>Get Directions and Show Wayfinding Instructions - Part 2 - Indoor Navigation Built with Google Maps</title>
     <meta name="generator" content="Hugo 0.26" />
 
     
     <meta name="description" content="Everything you need to get started with MapsIndoors.">
     
-    <link rel="canonical" href="https://mapsindoors.github.io/ios/v3/tutorials/">
+    <link rel="canonical" href="https://mapsindoors.github.io/ios/v3/tutorials/advanceddirectionsroutesegmentscontroller/">
     
     <meta name="author" content="MapsPeople">
     
 
-    <meta property="og:url" content="https://mapsindoors.github.io/ios/v3/tutorials/">
+    <meta property="og:url" content="https://mapsindoors.github.io/ios/v3/tutorials/advanceddirectionsroutesegmentscontroller/">
     <meta property="og:title" content="Indoor Navigation Built with Google Maps">
     <meta property="og:image" content="https://mapsindoors.github.io/images/logo.png">
     <meta name="apple-mobile-web-app-title" content="Indoor Navigation Built with Google Maps">
@@ -106,7 +106,7 @@
     </div>
     <div class="stretch">
       <div class="title">
-        MapsIndoors SDK for iOS - Tutorials
+        Get Directions and Show Wayfinding Instructions - Part 2
       </div>
     </div>
 
@@ -251,14 +251,11 @@
 
 
 
-<a class="current" title="Tutorials" href="https://mapsindoors.github.io/ios/v3/tutorials">
+<a  title="Tutorials" href="https://mapsindoors.github.io/ios/v3/tutorials">
 	
 	Tutorials
 </a>
 
-
-<ul id="scrollspy">
-</ul>
 
 
       
@@ -341,18 +338,135 @@
 
 	<article class="article">
 		<div class="wrapper">
-			<h1>MapsIndoors SDK for iOS - Tutorials </h1>
+			<h1>Get Directions and Show Wayfinding Instructions - Part 2 </h1>
 
-			<p>With these simple tutorials, each reflecting common use cases, you can get more hands on experience with MapsIndoors on iOS.</p>
+			
 
-<ul>
-<li><a href="locationdetailslocationdetailscontroller">Show Details for a Tapped Location</a></li>
-<li><a href="searchmysearchcontroller">Create a Search Experience</a></li>
-<li><a href="showmylocationmypositionprovider">Showing a Blue Dot / User Location</a></li>
-<li><a href="advanceddirectionsroutesegmentview">Advanced Directions</a></li>
-<li><a href="locationsourcespeoplelocationsource">Create custom Location Sources</a></li>
-<li><a href="clusteringclusteringcontroller">Work with grouped / clustered locations</a></li>
-</ul>
+<p>This is part 2 of <a href="../advanceddirectionsroutesegmentview">the directions tutorial</a> showing you how to work with the route model returned from a directions service call. In this part we will create the controller that displays generated textual instructions segment by segment.</p>
+
+<p>We use a collection view to do this but you can of course use whatever view that fits your use case best.</p>
+
+<p>First we will define a protocol called <code>RouteSegmentsControllerDelegate</code> that will be used to handle the selection of each represented route segment. The method <code>didSelectRouteSegment</code> will be delegating the handling of route segment selections.</p>
+
+<pre><code>protocol RouteSegmentsControllerDelegate {
+    func didSelectRouteSegment(segment:MPRouteSegmentPath)
+}
+</code></pre>
+
+<h2 id="the-route-segments-controller">The Route Segments Controller</h2>
+
+<p>Create a controller class called <code>RouteSegmentsController</code> that inherits from <code>UIViewController</code>.</p>
+
+<pre><code>class RouteSegmentsController : UIViewController {
+</code></pre>
+
+<p>Add some properties to the controller
+*<code>startingScrollingOffset</code> We will do a side-ways scroll in the collection, so we will add a private point property to keep track of that
+*<code>tableView</code> the actual table view property.
+*<code>delegate</code> the delegate property.</p>
+
+<pre><code>private var startingScrollingOffset = CGPoint.zero
+private var tableView:UITableView!
+var delegate:RouteSegmentsControllerDelegate?
+</code></pre>
+
+<p>Add a <code>route</code> property to the class</p>
+
+<pre><code>var route:MPRoute = MPRoute() {
+    didSet {
+        self.tableView.reloadData()
+    }
+}
+</code></pre>
+
+<p>Add a <code>currentSegment</code> property to the class</p>
+
+<pre><code>var currentSegment:MPRouteSegmentPath = MPRouteSegmentPath() {
+    didSet {
+        if oldValue.legIndex != currentSegment.legIndex {
+            self.tableView.reloadData()
+        }
+    }
+}
+</code></pre>
+
+<p>Implement <code>viewDidLoad</code> method, creating the horizontal collection view and assigning delegates to the collection view. Make sure that you register your own custom <code>RouteSegmentView</code> here.</p>
+
+<pre><code>override func viewDidLoad() {
+    self.tableView = UITableView.init(frame: view.frame)
+</code></pre>
+
+<p>Create a method &lsquo;updateRouteSegmentSelection&rsquo; that notifies the delegate</p>
+
+<pre><code>func updateRouteSegmentSelection(segment: MPRouteSegmentPath) {
+    delegate?.didSelectRouteSegment(segment: segment)
+    currentSegment = segment
+}
+</code></pre>
+
+<h2 id="the-route-segments-controller-data-source">The Route Segments Controller Data Source</h2>
+
+<p>Create an extension of <code>RouteSegmentsController</code> that implements <code>UICollectionViewDataSource</code> protocol.</p>
+
+<pre><code>extension RouteSegmentsController : UITableViewDataSource {
+</code></pre>
+
+<p>In the <code>collectionView numberOfItemsInSection</code> method, let the item count reflect the number of legs in the current route.</p>
+
+<pre><code>func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -&gt; Int {
+    let leg = route.legs?[section] as? MPRouteLeg
+    return leg?.steps?.count ?? 0
+}
+</code></pre>
+
+<p>In the <code>collectionView cellForItemAt indexPath</code> method, create a segment based on the index paths row (leg) index. Dequeue a cell view and update the <code>route</code> and <code>segment</code> properties accordingly.</p>
+
+<pre><code>func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -&gt; UITableViewCell {
+    let segment = MPRouteSegmentPath(legIndex: indexPath.section, stepIndex: indexPath.row)
+    let tvCell:RouteSegmentView = tableView.dequeueReusableCell(withIdentifier: &quot;TVC&quot;, for: indexPath) as! RouteSegmentView
+    tvCell.renderRouteInstructions(route, for: segment)
+    return tvCell
+}
+</code></pre>
+
+<p>In the <code>titleForHeaderInSection</code> method, return the number of legs in the current route.</p>
+
+<pre><code>func numberOfSections(in tableView: UITableView) -&gt; Int {
+    return route.legs?.count ?? 0
+}
+</code></pre>
+
+<p>Implement the <code>heightForRowAtIndexPath</code> method.</p>
+
+<pre><code>func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -&gt; CGFloat {
+    return 80
+}
+</code></pre>
+
+<p>Optionally implement the <code>titleForHeaderInSection</code> method.</p>
+
+<pre><code>func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -&gt; String? {
+    if let leg = route.legs?[section] as? MPRouteLeg {
+        let meters = leg.distance?.intValue ?? 0
+        return &quot;\(meters) meters&quot;
+    }
+    return &quot;&quot;
+}
+</code></pre>
+
+<h2 id="table-view-delegate">Table View Delegate</h2>
+
+<p>Create an extension of <code>RouteSegmentsController</code> that implements <code>UITableViewDelegate</code> protocol. In method <code>didSelectRowAtIndexPath</code> update the current route segment.</p>
+
+<pre><code>extension RouteSegmentsController : UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        updateRouteSegmentSelection(segment: MPRouteSegmentPath(legIndex: indexPath.section, stepIndex: indexPath.row))
+    }
+</code></pre>
+
+<p>In <a href="../advanceddirectionsadvanceddirectionscontroller">the next part we will create a controller</a> we will create a controller that renders a map and utilizes interaction between a route rendered on the map and the selected instructions.</p>
+
+<p><a href="https://github.com/MapsIndoors/MapsIndoorsIOS-Demo-Samples/blob/master/Advanced Directions/RouteSegmentsController.swift">See the sample in RouteSegmentsController.swift</a></p>
 
 
 			<aside class="copyright" role="note">
@@ -371,7 +485,7 @@
 <nav class="pagination" aria-label="Footer">
   <div class="previous">
   
-      <a href="https://mapsindoors.github.io/ios/v2/tutorials/" title="MapsIndoors SDK for iOS - Tutorials">
+      <a href="https://mapsindoors.github.io/ios/v3/tutorials/advanceddirectionsroutesegmentview/" title="Get Directions and Show Wayfinding Instructions">
         <span class="direction">
           Previous
         </span>
@@ -381,7 +495,7 @@
           </div>
           <div class="stretch">
             <div class="title">
-              MapsIndoors SDK for iOS - Tutorials
+              Get Directions and Show Wayfinding Instructions
             </div>
           </div>
         </div>
@@ -391,14 +505,14 @@
 
   <div class="next">
   
-      <a href="https://mapsindoors.github.io/android/v2/guides/" title="MapsIndoors SDK for iOS v2 - Guides">
+      <a href="https://mapsindoors.github.io/ios/v2/tutorials/showrouteshowrouteonmapcontroller/" title="Get Directions and Show the Result on a Map - Part 1">
         <span class="direction">
           Next
         </span>
         <div class="page">
           <div class="stretch">
             <div class="title">
-              MapsIndoors SDK for iOS v2 - Guides
+              Get Directions and Show the Result on a Map - Part 1
             </div>
           </div>
           <div class="button button-next" role="button" aria-label="Next">

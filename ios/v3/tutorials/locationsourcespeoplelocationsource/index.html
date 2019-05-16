@@ -9,18 +9,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>MapsIndoors SDK for iOS - Tutorials - Indoor Navigation Built with Google Maps</title>
+    <title>Creating your own Location Sources - Part 1 - Indoor Navigation Built with Google Maps</title>
     <meta name="generator" content="Hugo 0.26" />
 
     
     <meta name="description" content="Everything you need to get started with MapsIndoors.">
     
-    <link rel="canonical" href="https://mapsindoors.github.io/ios/v3/tutorials/">
+    <link rel="canonical" href="https://mapsindoors.github.io/ios/v3/tutorials/locationsourcespeoplelocationsource/">
     
     <meta name="author" content="MapsPeople">
     
 
-    <meta property="og:url" content="https://mapsindoors.github.io/ios/v3/tutorials/">
+    <meta property="og:url" content="https://mapsindoors.github.io/ios/v3/tutorials/locationsourcespeoplelocationsource/">
     <meta property="og:title" content="Indoor Navigation Built with Google Maps">
     <meta property="og:image" content="https://mapsindoors.github.io/images/logo.png">
     <meta name="apple-mobile-web-app-title" content="Indoor Navigation Built with Google Maps">
@@ -106,7 +106,7 @@
     </div>
     <div class="stretch">
       <div class="title">
-        MapsIndoors SDK for iOS - Tutorials
+        Creating your own Location Sources - Part 1
       </div>
     </div>
 
@@ -251,14 +251,11 @@
 
 
 
-<a class="current" title="Tutorials" href="https://mapsindoors.github.io/ios/v3/tutorials">
+<a  title="Tutorials" href="https://mapsindoors.github.io/ios/v3/tutorials">
 	
 	Tutorials
 </a>
 
-
-<ul id="scrollspy">
-</ul>
 
 
       
@@ -341,18 +338,165 @@
 
 	<article class="article">
 		<div class="wrapper">
-			<h1>MapsIndoors SDK for iOS - Tutorials </h1>
+			<h1>Creating your own Location Sources - Part 1 </h1>
 
-			<p>With these simple tutorials, each reflecting common use cases, you can get more hands on experience with MapsIndoors on iOS.</p>
+			<p>In this tutorial we will show how you can build a custom Location Source, representing locations of people. The people locations will be served from a mocked list in the source and displayed on a map in a view controller.</p>
+
+<p>We will start by creating our implementation of a location source.</p>
+
+<p>Create a class <code>PeopleLocationsDataSource</code> that inherits from NSObject and implements <code>MPLocationSource</code>.</p>
+
+<pre><code>class PeopleLocationSource : NSObject, MPLocationSource {
+</code></pre>
+
+<p>Add some member variables to <code>PeopleLocationsDataSource</code>.</p>
 
 <ul>
-<li><a href="locationdetailslocationdetailscontroller">Show Details for a Tapped Location</a></li>
-<li><a href="searchmysearchcontroller">Create a Search Experience</a></li>
-<li><a href="showmylocationmypositionprovider">Showing a Blue Dot / User Location</a></li>
-<li><a href="advanceddirectionsroutesegmentview">Advanced Directions</a></li>
-<li><a href="locationsourcespeoplelocationsource">Create custom Location Sources</a></li>
-<li><a href="clusteringclusteringcontroller">Work with grouped / clustered locations</a></li>
+<li><code>observers</code>: The observer objects that we will notify about changes</li>
+<li><code>locationUpdates</code>: A list of MPLocationUpdate - the MPLocation builders</li>
+<li><code>locationPoints</code>: A list of MPPoint - the positions that we will mock</li>
+<li><code>locationDirs</code>: A list of directions - the walking direction for each &ldquo;person&rdquo;</li>
+<li><code>queue</code>: A backround queue</li>
+
+<li><p><code>numberOfPeople</code>: The number of people to mock</p>
+
+<pre><code>private var observers = [MPLocationsObserver]()
+private var locationUpdates = [MPLocationUpdate]()
+private var locationPoints = [MPPoint]()
+private var locationDirs = [Double]()
+private let queue = DispatchQueue.init(label: &quot;UpdatePositions&quot;)
+private let numberOfPeople = 100
+</code></pre>
+
+<p>Create a method called <code>getRandomPoint</code> that simply just returns a random point (here within proximity of the demo venue)</p>
+
+<pre><code>func getRandomPoint() -&gt; MPPoint {
+let lat = 57.058037 + Double.random(in: -0.0004 ..&lt; 0.0004)
+let lng = 9.950572 + Double.random(in: -0.0004 ..&lt; 0.0004)
+return MPPoint.init(lat: lat, lon: lng, zValue: 1)
+}
+</code></pre>
+
+<p>Create a method called <code>createPeople</code> that takes a type string. Iterate numberOfPeople and for each iteration create:</p></li>
+
+<li><p>An MPLocationUpdate with an id and a source (self)</p></li>
+
+<li><p>A type - later used to style the location</p></li>
+
+<li><p>A floor</p></li>
+
+<li><p>A random point and initial direction for the person</p>
+
+<pre><code>func createPeople(_ type: String) {
+for locId in 0 ..&lt; numberOfPeople {
+        
+    let locationUpdate = MPLocationUpdate.init(id: locId, from: self)
+        
+    locationUpdate.type = type
+    locationUpdate.addPropertyValue(&quot;John Doe #\(locId)&quot;, forKey: MPLocationFieldName)
+    locationUpdate.floor = 1
+    let p = getRandomPoint()
+    locationPoints.append(p)
+    locationDirs.append(Double.random(in: 0 ..&lt; 360))
+    locationUpdate.position = p.getCoordinate()
+    locationUpdates.append(locationUpdate)
+        
+}
+}
+</code></pre>
+
+<p>Create a method called <code>updatePositions</code>. Iterate numberOfPeople again and for each iteration:</p></li>
+
+<li><p>Get the corresponding MPLocationUpdate</p></li>
+
+<li><p>Set a new position using Google Maps&rsquo; offsetting function</p></li>
+
+<li><p>Save a new heading and position</p></li>
+
+<li><p>Generate MPLocation from the MPLocationUpdate
+After iteration, notify each observer about the updates locations</p>
+
+<pre><code>func updatePositions() {
+var updatedLocations = [MPLocation]()
+for locId in 0 ..&lt; numberOfPeople {
+    let locationUpdate = locationUpdates[locId]
+    let newPos = GMSGeometryOffset(locationPoints[locId].getCoordinate(), 0.5, locationDirs[locId])
+    locationUpdate.position = newPos
+    locationDirs[locId] = locationDirs[locId] + Double.random(in: -22 ..&lt; 22)
+    locationPoints[locId] = MPPoint.init(lat: newPos.latitude, lon: newPos.longitude)
+    updatedLocations.append(locationUpdate.location())
+}
+for observer in observers {
+    observer.onLocationsUpdate(updatedLocations, source: self)
+}
+queue.asyncAfter(deadline: .now() + 0.5) {
+    self.updatePositions()
+}
+}
+</code></pre>
+
+<p>Create a method called <code>startMockingPositions</code> that simply just calls <code>updatePositions</code> in the future.</p>
+
+<pre><code>func startMockingPositions() {
+DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+    self.updatePositions()
+}
+}
+</code></pre>
+
+<p>Create an initialiser that takes a type string. Call <code>createPeople</code> and <code>startMockingPositions</code>.</p>
+
+<pre><code>convenience init(type:String) {
+    
+self.init()
+    
+createPeople(type)
+    
+startMockingPositions()
+}
+</code></pre>
+
+<p>Implement the MPLocationSource method <code>getAllLocations</code>. For this demo just return an empty array as each update will also contain the full list of locations.</p>
+
+<pre><code>func getLocations() -&gt; [MPLocation] {
+return []
+}
+</code></pre>
+
+<p>Implement the MPLocationSource method <code>addLocationObserver</code>.</p>
+
+<pre><code>func add(_ observer: MPLocationsObserver) {
+observers.append(observer)
+}
+</code></pre>
+
+<p>Implement the MPLocationSource method <code>removeLocationObserver</code>.</p>
+
+<pre><code>func remove(_ observer: MPLocationsObserver) {
+observers = observers.filter({ (obsvr) -&gt; Bool in
+    return obsvr === observer
+})
+}
+</code></pre>
+
+<p>Implement the MPLocationSource method <code>sourceStatus</code>.</p>
+
+<pre><code>func status() -&gt; MPLocationSourceStatus {
+return .available
+}
+</code></pre>
+
+<p>Implement the MPLocationSource method <code>sourceIdentifier</code>.</p>
+
+<pre><code>func sourceId() -&gt; Int32 {
+return 0;
+}
+</code></pre>
+
+<p>In <a href="../locationsourcesroomavailabilitysource">Part 2</a> we will create a view controller displaying a map that shows the mocked people locations on top of a MapsIndoors map.</p></li>
 </ul>
+
+<p><a href="https://github.com/MapsIndoors/MapsIndoorsIOS-Demo-Samples/blob/master/Location Sources/PeopleLocationSource.swift">See the sample in PeopleLocationSource.swift</a></p>
 
 
 			<aside class="copyright" role="note">
@@ -371,7 +515,7 @@
 <nav class="pagination" aria-label="Footer">
   <div class="previous">
   
-      <a href="https://mapsindoors.github.io/ios/v2/tutorials/" title="MapsIndoors SDK for iOS - Tutorials">
+      <a href="https://mapsindoors.github.io/android/v2/tutorials/searchmapdemosearchmapfragment/" title="Create a Search Experience with MapsIndoors - Part 2">
         <span class="direction">
           Previous
         </span>
@@ -381,7 +525,7 @@
           </div>
           <div class="stretch">
             <div class="title">
-              MapsIndoors SDK for iOS - Tutorials
+              Create a Search Experience with MapsIndoors - Part 2
             </div>
           </div>
         </div>
@@ -391,14 +535,14 @@
 
   <div class="next">
   
-      <a href="https://mapsindoors.github.io/android/v2/guides/" title="MapsIndoors SDK for iOS v2 - Guides">
+      <a href="https://mapsindoors.github.io/ios/v3/tutorials/locationsourcesroomavailabilitysource/" title="Creating your own Location Sources - Part 2">
         <span class="direction">
           Next
         </span>
         <div class="page">
           <div class="stretch">
             <div class="title">
-              MapsIndoors SDK for iOS v2 - Guides
+              Creating your own Location Sources - Part 2
             </div>
           </div>
           <div class="button button-next" role="button" aria-label="Next">

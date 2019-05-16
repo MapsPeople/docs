@@ -389,9 +389,17 @@ tableView.dataSource = self
 
 <p>Arrange the search bar and the table view in a stack view.</p>
 
-<pre><code>let stackView = UIStackView.init(arrangedSubviews: [searchBar, tableView])
+<pre><code>let topFiller = UIView.init()
+let stackView = UIStackView.init(arrangedSubviews: [topFiller, searchBar, tableView])
 stackView.axis = .vertical
 view = stackView
+let kw = UIApplication.shared.keyWindow
+topFiller.heightAnchor.constraint(equalToConstant:kw?.safeAreaInsets.top ?? 0).isActive = true
+topFiller.backgroundColor = .blue
+searchBar.barTintColor = .blue
+searchBar.tintColor = .white
+searchBar.showsCancelButton = true
+searchBar.becomeFirstResponder()
 </code></pre>
 
 <p>In <code>MySearchController</code>, implement the <code>numberOfSections</code> method, return 1.</p>
@@ -419,7 +427,28 @@ return locations.count
 <li><p>Reload table view</p>
 
 <pre><code>func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-query.query = searchText
+if searchText.count &gt; 0 {
+    query.query = searchText
+    let filter = MPFilter()
+    filter.take = 10
+    locationService.getLocationsUsing(query, filter: filter) { (locations, error) in
+        if error == nil {
+            self.locations = locations!
+            self.tableView.reloadData()
+        }
+    }
+} else {
+    self.locations = []
+    self.tableView.reloadData()
+}
+}
+</code></pre>
+
+<p>Implement the <code>searchBarCancelButtonClicked</code> method, with dismissal of the view controller.</p>
+
+<pre><code>func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+self.dismiss(animated: true, completion: nil)
+}
 </code></pre>
 
 <p>Implement the <code>tableView:cellForRowAt</code> method. Set the <code>cell.textLabel.text</code> to reflect the <em>name</em> of the location of same index.</p>

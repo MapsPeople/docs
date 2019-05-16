@@ -386,7 +386,8 @@ self.present(searchController, animated: true, completion: nil)
 Implement the method <code>didSelectLocation</code> required from <code>MySearchControllerDelegate</code> delegate. In this example we will just go to the selected location in the map.
 <code>
 func didSelectLocation(location: MPLocation) {
-mapControl?.go(to: location)    
+mapControl?.go(to: location)
+mapControl?.selectedLocation = location
 }
 </code></li>
 </ul>
@@ -410,7 +411,7 @@ mapControl?.go(to: location)
 <nav class="pagination" aria-label="Footer">
   <div class="previous">
   
-      <a href="https://mapsindoors.github.io/ios/v3/reference/" title="">
+      <a href="https://mapsindoors.github.io/ios/v3/tutorials/offlineofflinecontroller/" title="">
         <span class="direction">
           Previous
         </span>

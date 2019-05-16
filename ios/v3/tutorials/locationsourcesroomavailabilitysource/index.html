@@ -9,18 +9,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>MapsIndoors SDK for iOS - Tutorials - Indoor Navigation Built with Google Maps</title>
+    <title>Creating your own Location Sources - Part 2 - Indoor Navigation Built with Google Maps</title>
     <meta name="generator" content="Hugo 0.26" />
 
     
     <meta name="description" content="Everything you need to get started with MapsIndoors.">
     
-    <link rel="canonical" href="https://mapsindoors.github.io/ios/v3/tutorials/">
+    <link rel="canonical" href="https://mapsindoors.github.io/ios/v3/tutorials/locationsourcesroomavailabilitysource/">
     
     <meta name="author" content="MapsPeople">
     
 
-    <meta property="og:url" content="https://mapsindoors.github.io/ios/v3/tutorials/">
+    <meta property="og:url" content="https://mapsindoors.github.io/ios/v3/tutorials/locationsourcesroomavailabilitysource/">
     <meta property="og:title" content="Indoor Navigation Built with Google Maps">
     <meta property="og:image" content="https://mapsindoors.github.io/images/logo.png">
     <meta name="apple-mobile-web-app-title" content="Indoor Navigation Built with Google Maps">
@@ -106,7 +106,7 @@
     </div>
     <div class="stretch">
       <div class="title">
-        MapsIndoors SDK for iOS - Tutorials
+        Creating your own Location Sources - Part 2
       </div>
     </div>
 
@@ -251,14 +251,11 @@
 
 
 
-<a class="current" title="Tutorials" href="https://mapsindoors.github.io/ios/v3/tutorials">
+<a  title="Tutorials" href="https://mapsindoors.github.io/ios/v3/tutorials">
 	
 	Tutorials
 </a>
 
-
-<ul id="scrollspy">
-</ul>
 
 
       
@@ -341,18 +338,134 @@
 
 	<article class="article">
 		<div class="wrapper">
-			<h1>MapsIndoors SDK for iOS - Tutorials </h1>
+			<h1>Creating your own Location Sources - Part 2 </h1>
 
-			<p>With these simple tutorials, each reflecting common use cases, you can get more hands on experience with MapsIndoors on iOS.</p>
+			<p>This is part 2 of the tutorial of building custom Location Sources. In <a href="locationsourcespeoplelocationsource">Part 1</a> we created a people location source that mocks locations of people. Now we will create another location source that mocks the availability of meeting rooms or work desks.</p>
 
-<ul>
-<li><a href="locationdetailslocationdetailscontroller">Show Details for a Tapped Location</a></li>
-<li><a href="searchmysearchcontroller">Create a Search Experience</a></li>
-<li><a href="showmylocationmypositionprovider">Showing a Blue Dot / User Location</a></li>
-<li><a href="advanceddirectionsroutesegmentview">Advanced Directions</a></li>
-<li><a href="locationsourcespeoplelocationsource">Create custom Location Sources</a></li>
-<li><a href="clusteringclusteringcontroller">Work with grouped / clustered locations</a></li>
-</ul>
+<p>This location source rely on MapsIndoors data, so we will consume the locations of <code>MPMapsIndoorsLocationSource</code> and relay them as this source&rsquo;s own locations. Thus we need to observe the <code>MPMapsIndoorsLocationSource</code> and act as a LocationSource at the same time.</p>
+
+<p>Create a class <code>RoomAvailabilitySource</code> that inherits from NSObject and implements <code>MPLocationSource</code> and <code>MPLocationsObserver</code>.</p>
+
+<pre><code>class RoomAvailabilitySource : NSObject, MPLocationSource, MPLocationsObserver {
+</code></pre>
+
+<p>Add some member variables to <code>RoomAvailabilitySource</code>.
+* <code>observers</code>: The observer objects that we will notify about changes
+* <code>locationUpdates</code>: A dictionary of reusable <code>MPLocationUpdate</code> models
+* <code>miMapsIndoorsSource</code>: The MapsIndoors source to observe</p>
+
+<pre><code>private var observers = [MPLocationsObserver]()
+private var locationUpdates = Dictionary&lt;String, MPLocationUpdate&gt;()
+private let miMapsIndoorsSource:MPLocationSource = MPMapsIndoorsLocationSource()
+</code></pre>
+
+<p>In the initialiser, add this instance as observer for The MapsIndoors source.</p>
+
+<pre><code>override init() {
+    super.init()
+    self.miMapsIndoorsSource.add(self)
+}
+</code></pre>
+
+<p>Create a method <code>updateIconForLocation</code> that takes a location and grabs or creates a location update object. Randomly modify the icon of that location so it looks occupied.</p>
+
+<pre><code>func updateIconForLocation(location:MPLocation) -&gt; MPLocationUpdate? {
+    if locationUpdates[location.locationId!] == nil {
+        locationUpdates[location.locationId!] = MPLocationUpdate.init(location: location)
+    }
+    let locUpdate = locationUpdates[location.locationId!]
+    
+    if (Int.random(in: 0...1) == 0) {
+        locUpdate?.icon = UIImage(named: &quot;closed&quot;)!
+    }
+    return locUpdate
+}
+</code></pre>
+
+<p>Create a method <code>updateLocations</code> that runs through a list of locations add creates location update objects.</p>
+
+<pre><code>func updateLocations(locations:[MPLocation]) -&gt; [MPLocation] {
+    
+    var updatedLocations = [MPLocation]()
+    
+    for location in locations {
+        if let locUpdate = updateIconForLocation(location: location) {
+            updatedLocations.append(locUpdate.location())
+        }
+    }
+    
+    return updatedLocations
+}
+</code></pre>
+
+<p>Implement the MPLocationSource method <code>getLocations</code>. For this demo just return the full list of MapsIndoors&rsquo; locations.</p>
+
+<pre><code>func getLocations() -&gt; [MPLocation] {
+    return miMapsIndoorsSource.getLocations()
+}
+</code></pre>
+
+<p>Implement the MPLocationSource method <code>addLocationObserver</code>.</p>
+
+<pre><code>func add(_ observer: MPLocationsObserver) {
+    observers.append(observer)
+}
+</code></pre>
+
+<p>Implement the MPLocationSource method <code>removeLocationObserver</code>.</p>
+
+<pre><code>func remove(_ observer: MPLocationsObserver) {
+    observers = observers.filter({ (obsvr) -&gt; Bool in
+        return obsvr !== observer
+    })
+}
+</code></pre>
+
+<p>Implement the MPLocationSource method <code>sourceStatus</code>.</p>
+
+<pre><code>func status() -&gt; MPLocationSourceStatus {
+    return .available
+}
+</code></pre>
+
+<p>Implement the MPLocationSource method <code>sourceIdentifier</code>.</p>
+
+<pre><code>func sourceId() -&gt; Int32 {
+    return 2;
+}
+</code></pre>
+
+<p>Relay <code>onLocationsDelete</code> events to this sources own observers.</p>
+
+<pre><code>func onLocationsDelete(_ locations: [String], source: MPLocationSource) {
+    for obsvr in observers {
+        obsvr.onLocationsDelete(locations, source: self)
+    }
+}
+</code></pre>
+
+<p>In <code>onLocationsUpdate</code> create new modified locations objects and call the observers.</p>
+
+<pre><code>func onLocationsUpdate(_ locationUpdates: [MPLocation], source: MPLocationSource) {
+    let locations = updateLocations(locations: locationUpdates)
+    for obsvr in observers {
+        obsvr.onLocationsUpdate(locations, source: self)
+    }
+}
+</code></pre>
+
+<p>Relay <code>onStatusChange</code> events to this sources own observers.</p>
+
+<pre><code>func onStatusChange(_ status: MPLocationSourceStatus, source: MPLocationSource) {
+    for obsvr in observers {
+        obsvr.onStatusChange(status, source: self)
+    }
+}
+</code></pre>
+
+<p>In <a href="../locationsourceslocationsourcesmapcontroller">Part 3</a> we will create a view controller that shows the people and room locations on top of a MapsIndoors map.</p>
+
+<p><a href="https://github.com/MapsIndoors/MapsIndoorsIOS-Demo-Samples/blob/master/Location Sources/RoomAvailabilitySource.swift">See the sample in RoomAvailabilitySource.swift</a></p>
 
 
 			<aside class="copyright" role="note">
@@ -371,7 +484,7 @@
 <nav class="pagination" aria-label="Footer">
   <div class="previous">
   
-      <a href="https://mapsindoors.github.io/ios/v2/tutorials/" title="MapsIndoors SDK for iOS - Tutorials">
+      <a href="https://mapsindoors.github.io/ios/v3/tutorials/locationsourcespeoplelocationsource/" title="Creating your own Location Sources - Part 1">
         <span class="direction">
           Previous
         </span>
@@ -381,7 +494,7 @@
           </div>
           <div class="stretch">
             <div class="title">
-              MapsIndoors SDK for iOS - Tutorials
+              Creating your own Location Sources - Part 1
             </div>
           </div>
         </div>
@@ -391,14 +504,14 @@
 
   <div class="next">
   
-      <a href="https://mapsindoors.github.io/android/v2/guides/" title="MapsIndoors SDK for iOS v2 - Guides">
+      <a href="https://mapsindoors.github.io/ios/v3/tutorials/locationsourceslocationsourcesmapcontroller/" title="Creating your own Location Sources - Part 3">
         <span class="direction">
           Next
         </span>
         <div class="page">
           <div class="stretch">
             <div class="title">
-              MapsIndoors SDK for iOS v2 - Guides
+              Creating your own Location Sources - Part 3
             </div>
           </div>
           <div class="button button-next" role="button" aria-label="Next">

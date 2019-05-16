@@ -9,18 +9,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>MapsIndoors SDK for iOS - Tutorials - Indoor Navigation Built with Google Maps</title>
+    <title>Get Directions and Show the Result on a Map - Part 3 - Indoor Navigation Built with Google Maps</title>
     <meta name="generator" content="Hugo 0.26" />
 
     
     <meta name="description" content="Everything you need to get started with MapsIndoors.">
     
-    <link rel="canonical" href="https://mapsindoors.github.io/ios/v3/tutorials/">
+    <link rel="canonical" href="https://mapsindoors.github.io/ios/v3/tutorials/advanceddirectionsadvanceddirectionscontroller/">
     
     <meta name="author" content="MapsPeople">
     
 
-    <meta property="og:url" content="https://mapsindoors.github.io/ios/v3/tutorials/">
+    <meta property="og:url" content="https://mapsindoors.github.io/ios/v3/tutorials/advanceddirectionsadvanceddirectionscontroller/">
     <meta property="og:title" content="Indoor Navigation Built with Google Maps">
     <meta property="og:image" content="https://mapsindoors.github.io/images/logo.png">
     <meta name="apple-mobile-web-app-title" content="Indoor Navigation Built with Google Maps">
@@ -106,7 +106,7 @@
     </div>
     <div class="stretch">
       <div class="title">
-        MapsIndoors SDK for iOS - Tutorials
+        Get Directions and Show the Result on a Map - Part 3
       </div>
     </div>
 
@@ -251,14 +251,11 @@
 
 
 
-<a class="current" title="Tutorials" href="https://mapsindoors.github.io/ios/v3/tutorials">
+<a  title="Tutorials" href="https://mapsindoors.github.io/ios/v3/tutorials">
 	
 	Tutorials
 </a>
 
-
-<ul id="scrollspy">
-</ul>
 
 
       
@@ -341,18 +338,225 @@
 
 	<article class="article">
 		<div class="wrapper">
-			<h1>MapsIndoors SDK for iOS - Tutorials </h1>
+			<h1>Get Directions and Show the Result on a Map - Part 3 </h1>
 
-			<p>With these simple tutorials, each reflecting common use cases, you can get more hands on experience with MapsIndoors on iOS.</p>
+			
+
+<p>This is part 3 of <a href="../advanceddirectionsroutesegmentview">the directions tutorial</a> showing you how to work with the route model returned from a directions service call. In this part we will create a controller that renders a map and utilizes interaction between a route rendered on the map and the selected instructions.</p>
+
+<p>Start by creating a controller class <code>AdvancedDirectionsController</code> that inherits from <code>UIViewController</code></p>
+
+<pre><code>class AdvancedDirectionsController: UIViewController {
+</code></pre>
+
+<p>Setup map-related member variables for <code>AdvancedDirectionsController</code>:</p>
 
 <ul>
-<li><a href="locationdetailslocationdetailscontroller">Show Details for a Tapped Location</a></li>
-<li><a href="searchmysearchcontroller">Create a Search Experience</a></li>
-<li><a href="showmylocationmypositionprovider">Showing a Blue Dot / User Location</a></li>
-<li><a href="advanceddirectionsroutesegmentview">Advanced Directions</a></li>
-<li><a href="locationsourcespeoplelocationsource">Create custom Location Sources</a></li>
-<li><a href="clusteringclusteringcontroller">Work with grouped / clustered locations</a></li>
+<li>A Google Maps <code>map</code> property</li>
+<li>A MapsIndoors <code>mapControl</code> property</li>
+<li>A MapsIndoors <code>renderer</code> property</li>
+
+<li><p>A <code>routeVC</code> property used as a child view controller to this VC</p>
+
+<pre><code>var map: GMSMapView! = nil
+var mapControl: MPMapControl! = nil
+var renderer: MPDirectionsRenderer! = nil
+var stepWiseRenderer: MPDirectionsRenderer! = nil
+</code></pre>
+
+<p>Setup directions related member variables for <code>AdvancedDirectionsController</code>:</p></li>
+
+<li><p>A <code>routeVC</code> property used as a child view controller to this VC</p></li>
+
+<li><p>A <code>heightConstraintForRouteView</code> property that can control the visibility of the route view</p></li>
+
+<li><p>A <code>directionsVisible</code> bool that can control the visibility of the route view by affecting the height of the route view</p></li>
+
+<li><p>A <code>searchButton</code> that will open a search controller to choose your destination</p>
+
+<pre><code>var routeVC: RouteSegmentsController! = nil
+var heightConstraintForRouteView:NSLayoutConstraint! = nil
+var directionsVisible:Bool! {
+didSet {
+    heightConstraintForRouteView.constant = directionsVisible ? 240 : 0
+    UIView.animate(withDuration: 0.3) {
+        self.view.layoutIfNeeded()
+    }
+}
+}
+var searchButton:UIButton! = nil
+let directions = MPDirectionsService.init()
+var destinationLocation:MPLocation? {
+didSet {
+    updateDirections()
+    searchButton.setTitle(destinationLocation?.name, for: .normal)
+}
+}
+var originLocation:MPLocation?
+</code></pre>
+
+<p>Create a <code>setupMap</code> method that sets up the Google map and MapsIndoors Map Control object.</p>
+
+<pre><code>fileprivate func setupMap() {
+self.map = GMSMapView.init(frame: CGRect.zero)
+self.map.camera = .camera(withLatitude: 57.057964, longitude: 9.9504112, zoom: 20)
+self.mapControl = MPMapControl.init(map: self.map!)
+view.addSubview(self.map)
+}
+</code></pre>
+
+<p>Create a <code>setupSearchButton</code> method that sets up a button that can trigger the destination location selection.</p>
+
+<pre><code>fileprivate func setupSearchButton() {
+searchButton = UIButton.init()
+searchButton.setTitle(&quot;Search Destination&quot;, for: .normal)
+searchButton.addTarget(self, action: #selector(selectDestination), for: .touchUpInside)
+searchButton.backgroundColor = .blue
+view.addSubview(searchButton)
+}
+</code></pre>
+
+<p>Create a <code>setupConstraints</code> method that sets up all the layout constraints. In your projects you might do all this in a storyboard.</p>
+
+<pre><code>fileprivate func setupConstraints() {
+    
+map.translatesAutoresizingMaskIntoConstraints = false
+map.widthAnchor.constraint(equalTo:view.widthAnchor).isActive = true
+map.topAnchor.constraint(equalTo:view.topAnchor).isActive = true
+    
+searchButton.translatesAutoresizingMaskIntoConstraints = false
+searchButton.heightAnchor.constraint(equalToConstant: 68).isActive = true
+searchButton.widthAnchor.constraint(equalTo:view.widthAnchor).isActive = true
+searchButton.topAnchor.constraint(equalTo: map.bottomAnchor).isActive = true
+    
+routeVC.view.translatesAutoresizingMaskIntoConstraints = false
+routeVC.view.widthAnchor.constraint(equalTo:view.widthAnchor).isActive = true
+routeVC.view.bottomAnchor.constraint(equalTo:view.bottomAnchor).isActive = true
+routeVC.view.topAnchor.constraint(equalTo:searchButton.bottomAnchor).isActive = true
+    
+heightConstraintForRouteView = routeVC.view.heightAnchor.constraint(equalToConstant:0)
+heightConstraintForRouteView.isActive = true
+}
+</code></pre>
+
+<p>Create a <code>setupRouteNav</code> method that instantiates <code>RouteSegmentsController</code> and adds it as a child view controller. Assign this controller as its delegate.</p>
+
+<pre><code>fileprivate func setupRouteNav() {
+routeVC = RouteSegmentsController.init()
+self.addChildViewController(routeVC!)
+view.addSubview(routeVC.view)
+routeVC.didMove(toParentViewController: self)
+routeVC.delegate = self as RouteSegmentsControllerDelegate
+}
+</code></pre>
+
+<p>Create a <code>selectDestination</code> method that instantiates and presents <code>MySearchController</code>. Assign this controller as its delegate.</p>
+
+<pre><code>@objc fileprivate func selectDestination() {
+let searchController = MySearchController.init(near: nil)
+searchController.delegate = self
+self.present(searchController, animated: true, completion: nil)
+}
+</code></pre>
+
+<p>Create a <code>setupRenderer</code> method that instantiates <code>MPDirectionsRenderer</code> and adds it as a child view controller. Assign this controller as its delegate.</p>
+
+<pre><code>fileprivate func setupRenderer() {
+self.renderer = MPDirectionsRenderer.init()
+self.renderer.delegate = self as MPDirectionsRendererDelegate
+self.renderer.fitBounds = true
+self.renderer.solidColor = .clear
+self.renderer.map = self.map
+    
+self.stepWiseRenderer = MPDirectionsRenderer.init()
+self.stepWiseRenderer.fitBounds = false
+self.stepWiseRenderer.map = self.map
+self.stepWiseRenderer.nextRouteLegButton?.isHidden = true
+self.stepWiseRenderer.previousRouteLegButton?.isHidden = true
+}
+</code></pre>
+
+<p>Create a <code>setOriginLocation</code> method that mocks a origin location by searching for a random venue in MapsIndoors.</p>
+
+<pre><code>fileprivate func setOriginLocation() {
+let q = MPQuery()
+q.query = &quot;venue&quot;
+MPLocationService.sharedInstance().getLocationsUsing(q, filter: MPFilter()) { (locations, err) in
+    if let loc = locations?.first {
+        self.originLocation = loc
+        self.mapControl.go(to: loc)
+    }
+}
+}
+</code></pre>
+
+<p>In the <code>viewDidLoad</code> put the pieces together by calling the above methods.</p>
+
+<pre><code>override func viewDidLoad() {
+super.viewDidLoad()
+setupMap()
+setupSearchButton()
+setupRouteNav()
+setupRenderer()
+setupConstraints()
+setOriginLocation()
+}
+</code></pre>
+
+<p>Create a <code>updateDirections</code> method that sets up a MapsIndoors directions query. Execute a query and pass the resulting route object to the renderer.</p>
+
+<pre><code>fileprivate func updateDirections() {
+if let origin = originLocation, let destination = destinationLocation {
+    let directionsQuery = MPDirectionsQuery.init(origin: origin, destination: destination)
+    directions.routing(with: directionsQuery) { (route, error) in
+        if let route = route {
+            self.directionsVisible = true
+            self.routeVC!.route = route
+            self.renderer.route = route
+            self.renderer.routeLegIndex = 0
+            self.stepWiseRenderer.route = route
+        }
+    }
+}
+}
+</code></pre>
+
+<h2 id="map-interactions">Map interactions</h2>
+
+<p>Let&rsquo;s do a couple of extensions for the map interactions. First implement the <code>RouteSegmentsControllerDelegate</code> through an extension. In <code>didSelectRouteSegment</code> update the leg index for the directions renderer.</p>
+
+<pre><code>extension AdvancedDirectionsController : RouteSegmentsControllerDelegate {
+func didSelectRouteSegment(segment: MPRouteSegmentPath) {
+    renderer.routeLegIndex = segment.legIndex
+    renderer.fitBounds = false
+    stepWiseRenderer.routeLegIndex = segment.legIndex
+    stepWiseRenderer.routeStepIndex = segment.stepIndex
+    stepWiseRenderer.animate(3)
+    stepWiseRenderer.fitBounds = true
+}
+}
+</code></pre>
+
+<p>Implement the <code>MPDirectionsRendererDelegate</code> through an extension. In <code>floorDidChange</code> update the current visible floor on the map control object.</p>
+
+<pre><code>extension AdvancedDirectionsController : MPDirectionsRendererDelegate {
+func floorDidChange(_ floor: NSNumber) {
+    mapControl.currentFloor = floor
+}
+}
+</code></pre>
+
+<p>Implement the <code>MySearchControllerDelegate</code> through an extension. In <code>didSelectLocation</code> update the <code>destinationLocation</code> property.</p>
+
+<pre><code>extension AdvancedDirectionsController : MySearchControllerDelegate {
+func didSelectLocation(location: MPLocation) {
+    destinationLocation = location
+}
+}
+</code></pre></li>
 </ul>
+
+<p><a href="https://github.com/MapsIndoors/MapsIndoorsIOS-Demo-Samples/blob/master/Advanced Directions/AdvancedDirectionsController.swift">See the sample in AdvancedDirectionsController.swift</a></p>
 
 
 			<aside class="copyright" role="note">
@@ -371,7 +575,7 @@
 <nav class="pagination" aria-label="Footer">
   <div class="previous">
   
-      <a href="https://mapsindoors.github.io/ios/v2/tutorials/" title="MapsIndoors SDK for iOS - Tutorials">
+      <a href="https://mapsindoors.github.io/ios/v3/tutorials/showrouteshowroutecontroller/" title="Get Directions and Show the Result on a Map - Part 2">
         <span class="direction">
           Previous
         </span>
@@ -381,7 +585,7 @@
           </div>
           <div class="stretch">
             <div class="title">
-              MapsIndoors SDK for iOS - Tutorials
+              Get Directions and Show the Result on a Map - Part 2
             </div>
           </div>
         </div>
@@ -391,14 +595,14 @@
 
   <div class="next">
   
-      <a href="https://mapsindoors.github.io/android/v2/guides/" title="MapsIndoors SDK for iOS v2 - Guides">
+      <a href="https://mapsindoors.github.io/cms/" title="Guide to the MapsIndoors CMS">
         <span class="direction">
           Next
         </span>
         <div class="page">
           <div class="stretch">
             <div class="title">
-              MapsIndoors SDK for iOS v2 - Guides
+              Guide to the MapsIndoors CMS
             </div>
           </div>
           <div class="button button-next" role="button" aria-label="Next">

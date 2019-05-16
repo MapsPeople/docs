@@ -388,12 +388,12 @@ view = stackView
 <li><p>Make button reflect the state</p>
 
 <pre><code>@objc func toggleClustering() {
-if MapsIndoors.enableMarkerOverlapResolutionByGrouping {
-    MapsIndoors.enableMarkerOverlapResolutionByGrouping = false
+if MPMapControl.locationClusteringEnabled {
+    MPMapControl.locationClusteringEnabled = false
 } else {
-    MapsIndoors.enableMarkerOverlapResolutionByGrouping = true
+    MPMapControl.locationClusteringEnabled = true
 }
-clusteringButton.isSelected = MapsIndoors.enableMarkerOverlapResolutionByGrouping
+clusteringButton.isSelected = MPMapControl.locationClusteringEnabled
 }
 </code></pre>
 

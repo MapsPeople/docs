@@ -43,6 +43,14 @@
   </url>
   
   <url>
+    <loc>https://mapsindoors.github.io/ios/v3/tutorials/mapstylesmapstylescontroller/</loc>
+  </url>
+  
+  <url>
+    <loc>https://mapsindoors.github.io/ios/v3/tutorials/offlineofflinecontroller/</loc>
+  </url>
+  
+  <url>
     <loc>https://mapsindoors.github.io/ios/v3/tutorials/searchsearchmapcontroller/</loc>
   </url>
   
@@ -122,16 +130,28 @@
   </url>
   
   <url>
-    <loc>https://mapsindoors.github.io/ios/v3/tutorials/locationdatasourcespeoplelocationsdatasource/</loc>
+    <loc>https://mapsindoors.github.io/ios/v3/tutorials/locationsourcespeoplelocationsource/</loc>
   </url>
   
   <url>
-    <loc>https://mapsindoors.github.io/ios/v3/tutorials/locationdatasourceslocationdatasourcescontroller/</loc>
+    <loc>https://mapsindoors.github.io/ios/v3/tutorials/locationsourcesroomavailabilitysource/</loc>
+  </url>
+  
+  <url>
+    <loc>https://mapsindoors.github.io/ios/v3/tutorials/locationsourceslocationsourcesmapcontroller/</loc>
   </url>
   
   <url>
     <loc>https://mapsindoors.github.io/firststeps/</loc>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mapsindoors.github.io/ios/v3/tutorials/advanceddirectionsroutesegmentview/</loc>
+  </url>
+  
+  <url>
+    <loc>https://mapsindoors.github.io/ios/v3/tutorials/advanceddirectionsroutesegmentscontroller/</loc>
   </url>
   
   <url>
@@ -148,6 +168,10 @@
   
   <url>
     <loc>https://mapsindoors.github.io/ios/v3/tutorials/showrouteshowroutecontroller/</loc>
+  </url>
+  
+  <url>
+    <loc>https://mapsindoors.github.io/ios/v3/tutorials/advanceddirectionsadvanceddirectionscontroller/</loc>
   </url>
   
   <url>
