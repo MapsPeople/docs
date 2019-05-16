@@ -23,13 +23,14 @@ With this in mind you need to find an IPS and then use the location from that IP
     </item>
     
     <item>
-      <title>Location Data Sources</title>
+      <title>Location Sources in MapsIndoors</title>
       <link>https://mapsindoors.github.io/introductions/location-sources/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://mapsindoors.github.io/introductions/location-sources/</guid>
-      <description>Note! This document describes a pre-release feature. We reserve the right to change this feature and the corresponding interfaces without further notice. Any mentioned SDK versions are not intended for production use.
- At MapsPeople we are in the process of shaping up a new feature in MapsIndoors SDK for Android and iOS called Location Data Sources. Basically we are making it possible to register your own custom data source, adhering to a very simple interface.</description>
+      <description>Location Sources is a new feature introduced in version 3 of MapsIndoors SDK for Android and iOS. Basically we are making it possible to register your own custom location data source, adhering to a very simple interface.
+The Concepts The central concepts in this feature are Location Sources and Location Observers, and they are best described in the following illustration:
+Location Source Maintains an array of locations and notifies its Location Observers about location and status updates.</description>
     </item>
     
   </channel>
