@@ -9,18 +9,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>Create a Search Experience with MapsIndoors - Part 1 - Indoor Navigation Built with Google Maps</title>
+    <title>MapsIndoors Data API - Indoor Navigation Built with Google Maps</title>
     <meta name="generator" content="Hugo 0.26" />
 
     
     <meta name="description" content="Everything you need to get started with MapsIndoors.">
     
-    <link rel="canonical" href="https://mapsindoors.github.io/ios/v3/tutorials/searchmysearchcontroller/">
+    <link rel="canonical" href="https://mapsindoors.github.io/dataapi/v1/">
     
     <meta name="author" content="MapsPeople">
     
 
-    <meta property="og:url" content="https://mapsindoors.github.io/ios/v3/tutorials/searchmysearchcontroller/">
+    <meta property="og:url" content="https://mapsindoors.github.io/dataapi/v1/">
     <meta property="og:title" content="Indoor Navigation Built with Google Maps">
     <meta property="og:image" content="https://mapsindoors.github.io/images/logo.png">
     <meta name="apple-mobile-web-app-title" content="Indoor Navigation Built with Google Maps">
@@ -106,7 +106,7 @@
     </div>
     <div class="stretch">
       <div class="title">
-        Create a Search Experience with MapsIndoors - Part 1
+        MapsIndoors Data API
       </div>
     </div>
 
@@ -161,51 +161,51 @@
     
     
     
-    <a href="https://mapsindoors.github.io/ios/v3" class="project">
+  
+    
+    
+    
+  
+    
+    
+    
+  
+    
+    
+    
+  
+    
+    
+    
+    <a href="https://mapsindoors.github.io/dataapi/v1" class="project">
       <div class="banner">
         <div class="logo">
-          <img src="https://mapsindoors.github.io//logos/apple-logo.svg" style="padding:10px">
+          <img src="https://mapsindoors.github.io//logos/dataapi-logo.svg" style="padding:10px">
         </div>
         <div class="name">
-          <strong>iOS SDK <br /><span class="version">3.0.4</span></strong>
+          <strong>Data API <br /><span class="version">Version 1</span></strong>
           
         </div>
       </div>
     </a>
-    
-  
-    
-    
-    
-    <a href="https://mapsindoors.github.io/ios/v2" class="project">
-      <div class="banner">
-        <div class="logo">
-          <img src="https://mapsindoors.github.io//logos/apple-logo.svg" style="padding:10px">
-        </div>
-        <div class="name">
-          <strong>iOS SDK <br /><span class="version">2.1.8</span></strong>
-          
-        </div>
-      </div>
-    </a>
-    
-  
-    
-    
-    
-  
-    
-    
-    
-  
-    
-    
     
   
   <hr />
   <div class="scrollable">
     <div class="wrapper">
       <div class="toc">
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
           
           
           
@@ -221,7 +221,7 @@
 
 
 <li>
-    <span class="section">iOS SDK</span>
+    <span class="section">Data API</span>
     <ul>
       
         
@@ -229,61 +229,9 @@
 
 
 
-<a  title="Getting Started" href="https://mapsindoors.github.io/ios/v3">
+<a  title="Introduction" href="https://mapsindoors.github.io/web/v1">
 	
-	Getting Started
-</a>
-
-
-
-      
-        
-        
-
-
-
-<a  title="Guides" href="https://mapsindoors.github.io/ios/v3/guides">
-	
-	Guides
-</a>
-
-
-
-      
-        
-        
-
-
-
-<a  title="Tutorials" href="https://mapsindoors.github.io/ios/v3/tutorials">
-	
-	Tutorials
-</a>
-
-
-
-      
-        
-        
-
-
-
-<a  title="Reference Docs" href="https://app.mapsindoors.com/mapsindoors/reference/ios/v3/index.html">
-	
-	Reference Docs
-</a>
-
-
-
-      
-        
-        
-
-
-
-<a  title="Changelog" href="https://mapsindoors.github.io/ios/v3/changelog">
-	
-	Changelog
+	Introduction
 </a>
 
 
@@ -292,18 +240,6 @@
     </ul>
 </li>
           </ul>
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
           
         
 
@@ -345,143 +281,288 @@
 
 	<article class="article">
 		<div class="wrapper">
-			<h1>Create a Search Experience with MapsIndoors - Part 1 </h1>
+			<h1>MapsIndoors Data API </h1>
 
-			<p>This is an example of creating a simple search experience using MapsIndoors. We will create a map with a search button that leads to another view controller that handles the search and selection. On selection of a location, we go back to the map and shows the selected location on the map.</p>
+			
 
-<p>We will start by creating a simple search controller that handles search and selection of MapsIndoors locations</p>
+<h2 id="introduction-and-getting-started">Introduction and getting started</h2>
 
-<p>Declare a protocol for our location selection with a <code>didSelectLocation</code> method</p>
+<p>From the Mapsindoors API you can get, add, change and delete rooms and points of interest from your MapsIndoors™ solution via a REST service.</p>
 
-<pre><code>protocol MySearchControllerDelegate {
-    func didSelectLocation(location:MPLocation)
+<p>The Public API can be found here:</p>
+
+<p><a href="https://public.mapsindoors.com">https://public.mapsindoors.com</a></p>
+
+<p>There is a (swagger) interface definition here</p>
+
+<p><a href="https://public.mapsindoors.com/doc">https://public.mapsindoors.com/doc</a></p>
+
+<p><strong>Note that only https is supported.</strong></p>
+
+<h3 id="login-and-credentials">Login and credentials</h3>
+
+<p>The first thing needed is to log in to the service and get a security token used for the data endpoints.</p>
+
+<p>[HttpPost, Route(&ldquo;token&rdquo;)]</p>
+
+<p>The interface supports two ways to login. Via Google or via a simple username/password pair.</p>
+
+<pre><code>Login with username/password:
+
+
+Use the following headers
+
+
+Content-Type: application/x-www-form-urlencoded
+
+
+Use the following Key/Values
+
+
+Key: grant_type Value: password
+
+
+Key: username Value: &lt;your username&gt;
+
+
+Key: password Value: &lt;your password&gt;
+</code></pre>
+
+<p>The body of the request should end up containing a text like this:</p>
+
+<p>grant_type=password&amp;username=<your username>&amp;password=<your password></p>
+
+<p>To use Google login you will need to set grant_type to google_id_token instead.</p>
+
+<p>The <a href="https://developers.google.com/identity/protocols/OAuth2">google accounts API </a>is to be used to obtain a valid Google token. This is outside the scope of this document.</p>
+
+<p><strong>Use the following headers for login with username/password:</strong></p>
+
+<pre><code>Use the following headers
+
+
+Content-Type: application/x-www-form-urlencoded
+
+
+Use the following Key/Values
+
+
+Key: grant_type Value: google_id_token
+
+
+Key: id_token Value: &lt;your google token&gt;
+</code></pre>
+
+<h3 id="endpoints">Endpoints</h3>
+
+<p>The public data api consists on a number of endpoints to access the various data. The description of those can be found in <a href="https://public.mapsindoors.com/doc">swagger</a>.</p>
+
+<p>In swagger each GET method are pre-loaded with all mandatory fields needed for you to get a live example of data just by pressing the ‘_Try it now_’ button.</p>
+
+<h2 id="data-description">Data description</h2>
+
+<h3 id="dataset">Dataset</h3>
+
+<p>The main start point for your data is the dataset object. This object contains information about the entire data set such as languages and where to find more data.</p>
+
+<p>The demo dataset looks like this</p>
+
+<pre><code>{
+  &quot;id&quot;: &quot;550c26a864617400a40f0000&quot;,
+  &quot;name&quot;: &quot;RTX&quot;,
+  &quot;availableLanguages&quot;: [
+    &quot;en&quot;,
+    &quot;da&quot;
+  ],
+  &quot;baseLanguage&quot;: &quot;en&quot;,
+  &quot;rootObjects&quot;: [
+    &quot;550c286964617400a4100000&quot;
+  ]
 }
 </code></pre>
 
-<p>Define <code>MySearchController</code>. In this tutorial our search controller is a <code>UIViewController</code> that implements the protocols <code>UISearchBarDelegate</code>, <code>UITableViewDelegate</code> and <code>UITableViewDataSource</code></p>
+<p>It tells which languages are defined for this project, which language is the default one (english here) and it has a “<code>rootObjects</code>“ reference list which refers to the geospatial data that makes up the bulk of a mapsindoors solution the root objects are Geodata objects.</p>
 
-<pre><code>class MySearchController: UIViewController, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource {
-</code></pre>
+<h3 id="geodata">Geodata</h3>
 
-<p>Setup member variables for <code>MySearchController</code>:</p>
+<p>All geospasial data, geodata, is arranged in a simple tree. Each element has a parent ID (except the root) so as an example, a point of interest can have room parent. The room will typically be on a floor in a building on a venue. Venues are typical root object.</p>
+
+<p><img src="geodata-structure.png" alt="Geodata Structure" /></p>
+
+<p>The top three layers (venues, buildings and floors) are created and maintained by Mapspeople so data from these can be read but not altered via this API.</p>
 
 <ul>
-<li>An instance of type <code>MPLocationService</code></li>
-<li>An instance of type <code>MPQuery</code></li>
-<li>An array of <code>MPLocation</code> to hold your list of results</li>
-<li>Your delegate object</li>
-<li>A search bar view</li>
-
-<li><p>A table view</p>
-
-<pre><code>let locationService = MPLocationService.sharedInstance()
-let query = MPQuery.init()
-var locations:[MPLocation] = []
-var delegate:MySearchControllerDelegate? = nil
-let tableView = UITableView.init()
-let searchBar = UISearchBar.init()
-</code></pre>
-
-<p>In <code>viewDidLoad</code>, wire up your view controller to the tableview and search bar.</p>
-
-<pre><code>searchBar.delegate = self
-tableView.delegate = self
-tableView.dataSource = self
-</code></pre>
-
-<p>Register a class for the reusable table view cell.</p>
-
-<pre><code>tableView.register(UITableViewCell.self, forCellReuseIdentifier: &quot;reuseIdentifier&quot;)
-</code></pre>
-
-<p>Arrange the search bar and the table view in a stack view.</p>
-
-<pre><code>let topFiller = UIView.init()
-let stackView = UIStackView.init(arrangedSubviews: [topFiller, searchBar, tableView])
-stackView.axis = .vertical
-view = stackView
-let kw = UIApplication.shared.keyWindow
-topFiller.heightAnchor.constraint(equalToConstant:kw?.safeAreaInsets.top ?? 0).isActive = true
-topFiller.backgroundColor = .blue
-searchBar.barTintColor = .blue
-searchBar.tintColor = .white
-searchBar.showsCancelButton = true
-searchBar.becomeFirstResponder()
-</code></pre>
-
-<p>In <code>MySearchController</code>, implement the <code>numberOfSections</code> method, return 1.</p>
-
-<pre><code>func numberOfSections(in tableView: UITableView) -&gt; Int {
-return 1
-}
-</code></pre>
-
-<p>Implement the <code>numberOfRowsInSection</code> method, return the length of your locations array.</p>
-
-<pre><code>func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -&gt; Int {
-return locations.count
-}
-</code></pre>
-
-<p>Implement the <code>textDidChange</code> method:</p></li>
-
-<li><p>Change the query objects query property to reflect the current search text</p></li>
-
-<li><p>Call <code>getLocationsUsing</code> with the modified query</p></li>
-
-<li><p>In the callback block, reset the locations array with new results</p></li>
-
-<li><p>Reload table view</p>
-
-<pre><code>func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-if searchText.count &gt; 0 {
-    query.query = searchText
-    let filter = MPFilter()
-    filter.take = 10
-    locationService.getLocationsUsing(query, filter: filter) { (locations, error) in
-        if error == nil {
-            self.locations = locations!
-            self.tableView.reloadData()
-        }
-    }
-} else {
-    self.locations = []
-    self.tableView.reloadData()
-}
-}
-</code></pre>
-
-<p>Implement the <code>searchBarCancelButtonClicked</code> method, with dismissal of the view controller.</p>
-
-<pre><code>func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-self.dismiss(animated: true, completion: nil)
-}
-</code></pre>
-
-<p>Implement the <code>tableView:cellForRowAt</code> method. Set the <code>cell.textLabel.text</code> to reflect the <em>name</em> of the location of same index.</p>
-
-<pre><code>func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -&gt; UITableViewCell {
-let cell = tableView.dequeueReusableCell(withIdentifier: &quot;reuseIdentifier&quot;, for: indexPath)
-cell.textLabel?.text = locations[indexPath.row].name
-let defaultValue = &quot;&quot;
-cell.textLabel?.text?.append(&quot;, \(locations[indexPath.row].roomId ?? defaultValue), \(locations[indexPath.row].building ?? defaultValue), \(locations[indexPath.row].venue ?? defaultValue)&quot;)
-return cell
-}
-</code></pre>
-
-<p>Implement the <code>tableView:didSelectRowAt</code> method. In this example we just call the delegate method and dismiss the view controller.
-Delegate method will be handled by <a href="searchsearchmapcontroller">SearchMapController</a></p>
-
-<pre><code>func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-delegate?.didSelectLocation(location: locations[indexPath.row])
-self.dismiss(animated: true, completion: nil)
-}
-</code></pre>
-
-<p>In <a href="../searchsearchmapcontroller">Part 2</a> we will create the map view controller that displays the search selection.</p></li>
+<li>Rooms can be updated only</li>
+<li>POIs can be created, updated and deleted</li>
 </ul>
 
-<p><a href="https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Search/MySearchController.swift">See the sample in MySearchController.swift</a></p>
+<p>Rooms have a polygon that describes where it is on the map. POIs are noted with a single point on the map and is typically something inside a room - important things like the coffee machine.</p>
+
+<p>To read, change or delete geodata use the geo data endpoints described here</p>
+
+<p><a href="https://public.mapsindoors.com/doc/ui/index#/Geodata">https://public.mapsindoors.com/doc/ui/index#/Geodata</a></p>
+
+<p>Note that when you get data you only specify the datasetId hence you get the entire tree! The other Geodata endpoints works on individual Geodata objects.</p>
+
+<h2 id="detailed-data-description">Detailed data description</h2>
+
+<h3 id="geodata-1">Geodata</h3>
+
+<p>Each Geodata element has a number of properties. Let&rsquo;s look at an example - a coat hanger in a room from the demo solution.</p>
+
+<pre><code> {
+    &quot;id&quot;: &quot;573dc6f63fcacf0d88c56edd&quot;,
+    &quot;parentId&quot;: &quot;f43b931f09314f3f9dd796f9&quot;,
+    &quot;datasetId&quot;: &quot;550c26a864617400a40f0000&quot;,
+    &quot;baseType&quot;: &quot;poi&quot;,
+    &quot;displayTypeId&quot;: &quot;d7558711f7c64534972cc65f&quot;,
+    &quot;geometry&quot;: {
+      &quot;coordinates&quot;: [
+        9.956830884329975,
+        57.085763732415764
+      ],
+      &quot;type&quot;: &quot;Point&quot;
+    },
+    &quot;aliases&quot;: [],
+    &quot;categories&quot;: [],
+    &quot;status&quot;: 3,
+    &quot;properties&quot;: {
+      &quot;name@en&quot;: &quot;Coat stand (RT)&quot;,
+      &quot;name@da&quot;: &quot;Coat stand (RT)&quot;
+    }
+  }
+
+</code></pre>
+
+<ul>
+<li><p>Id and ParentId</p>
+
+<p>All elements has a unique 12 byte id. For elements (other than the root) there is also a parentId which links to the element it’s connected to - in this case the ground floor.</p></li>
+
+<li><p>baseType</p>
+
+<p>Tells what kind of data it is - it can be poi, room, floor, building, or venue</p></li>
+
+<li><p>displayTypeId</p>
+
+<p>Is a reference to the display type as described below. All rooms and poi geodata requires this to be set. As this is an ID, the reference is a 12 byte format as described above.</p></li>
+
+<li><p>Geometry</p>
+
+<p>Contains the actual geodata - where it is on the map. It’s borrowed from <a href="http://geojson.org">GeoJSON</a> - and in this case it’s a point to describe the poi.</p></li>
+
+<li><p>Aliases</p>
+
+<p>Is an optional list of aliases for this data written as a list of non-translated text. This can be used eg. if a building or room has a common nickname users could use when searching for it</p></li>
+
+<li><p>Categories</p>
+
+<p>Is a reference to the category data as described below. Geo data is not required to be part of a group - like in this example. As this is an ID, the reference is a 12 byte format as described above.</p></li>
+
+<li><p>Status</p>
+
+<p>Is a <a href="https://en.wikipedia.org/wiki/Bit_field">bitfield</a>.</p>
+
+<p>bit1: active. If an element is not active it will not be given to the apps.</p>
+
+<p>bit2: searchable. If an element is not searchable it might be shown on the map, but no show up in searches.</p>
+
+<p>As there are two bits, the final values can be:</p>
+
+<p>0: Not active, Not searchable</p>
+
+<p>1: active, Not searchable</p>
+
+<p>2: Not active, searchable (not a very useful combo)</p>
+
+<p>3: active, searchable</p></li>
+
+<li><p>Properties</p>
+
+<p>Contains other data about the geodata object such as names, description or even custom data like gate numbers, vendor id, exhibition id or other data needed.</p>
+
+<p>Name is mandatory - at least for the base language set for the dataset</p>
+
+<p>The key format is: <keyname>@<language></p>
+
+<p>Eg. name in english will be ‘name@en’ - in the example with a value of “Coat stand (RT)”</p>
+
+<p>As this is a dictionary setup, the keyname needs to be unique and it’s recommended to only use ascii chars here. Use of spaces and unicode chars here is discouraged as it makes it harder to use from the application code side. The char @ is not supported in the keyname as it’s used as a seperator. As example if you want to store opening hours here you could use the key openinghours@en as a keyname.</p></li>
+</ul>
+
+<h3 id="displaytypes">DisplayTypes</h3>
+
+<p>Common setup for geodata of different kinds (meeting room, hallway, &hellip;)</p>
+
+<pre><code> {
+    &quot;id&quot;: &quot;bb5410b32a5240d182ba50bb&quot;,
+    &quot;name&quot;: &quot;BreakOutArea&quot;,
+    &quot;displayRules&quot;: [
+      {
+        &quot;name&quot;: &quot;default&quot;,
+        &quot;zoomFrom&quot;: 19,
+        &quot;zoomTo&quot;: 21,
+        &quot;iconUrl&quot;: &quot;https://app.mapsindoors.com/mapsindoors/gfx/bella/80/BreakOutArea.png&quot;,
+        &quot;iconVisible&quot;: true
+      }
+    ],
+    &quot;propertyTemplates&quot;: [
+      {
+        &quot;text&quot;: &quot;phone&quot;,
+        &quot;type&quot;: &quot;text&quot;
+      }
+    ]
+  }
+
+</code></pre>
+
+<ul>
+<li><p>Id</p>
+
+<p>All elements has a unique 12 byte id. This is used when referencing - eg when referencing from individual geodata</p></li>
+
+<li><p>Name</p>
+
+<p>The name of a display type is a secondary ID. This can be used as an alternative to the main ID. Note that this is NOT a 12 byte id.</p></li>
+
+<li><p>DisplayRules</p>
+
+<p>Each type has roles that tells if and how geodata should be presented. Eg. which icon to use for meeting rooms, when it should be shown based on zoom level or if it should have a label. There are two parts to a rule: An <strong>evaluation</strong> part (zoom from/to) and a <strong>style</strong> part - the rest of the displayRule object. Zoom from and to is inclusive. In this example an icon will be shown from zoom level 19 to 21. A quick word on zoom levels: these are described in <a href="https://en.wikipedia.org/wiki/Web_Mercator_projection">web mercator</a> which is the system we use to show maps. In short zoom level 1 shows a map of earth in its entirety and a higher zoom level lets you get closer. The highest supported zoom level is 21 at the moment.</p></li>
+
+<li><p>PropertyTemplates</p>
+
+<p>The property templates is an option list of which extra properties new geodata of the given types should be made. In this case all pois of type “breakout areas” will have a field in the CMS to enter a phone number for the new poi. This will then be stored as a property on that geodata.</p></li>
+</ul>
+
+<p>Note that the display type data is split in the CMS; currently it can be found in the fans “Location types”, “Location type templates” and “Type visibility”</p>
+
+<h3 id="categories">Categories</h3>
+
+<p>Categories are used to group Geodata together. As an example rooms or POIs in some department - eg “development” or “marketing” can be set in each their group. Using groups are not mandatory and thus each geodata can link to “none to many” categories.</p>
+
+<p>This grouping is then used as a relevancy criteria when searching.</p>
+
+<p>As a simple example: All rooms across any building/venue related to entrances can be grouped using this example:</p>
+
+<pre><code> {
+    &quot;id&quot;: &quot;5823246d07215b23a02e3cdd&quot;,
+    &quot;name&quot;: {
+      &quot;en&quot;: &quot;Entrance&quot;,
+      &quot;da&quot;: &quot;Indgang&quot;
+    }
+  }
+
+</code></pre>
+
+<ul>
+<li><p>Id</p>
+
+<p>All elements has a unique 12 byte id. This is used when referencing - eg when referencing from individual geodata</p></li>
+
+<li><p>Name</p>
+
+<p>A translatable name for the category</p></li>
+</ul>
 
 
 			<aside class="copyright" role="note">
@@ -500,7 +581,7 @@ self.dismiss(animated: true, completion: nil)
 <nav class="pagination" aria-label="Footer">
   <div class="previous">
   
-      <a href="https://mapsindoors.github.io/ios/v2/tutorials/searchmysearchcontroller/" title="Create a Search Experience with MapsIndoors - Part 1">
+      <a href="https://mapsindoors.github.io/introductions/location-sources/" title="Location Sources in MapsIndoors">
         <span class="direction">
           Previous
         </span>
@@ -510,7 +591,7 @@ self.dismiss(animated: true, completion: nil)
           </div>
           <div class="stretch">
             <div class="title">
-              Create a Search Experience with MapsIndoors - Part 1
+              Location Sources in MapsIndoors
             </div>
           </div>
         </div>
@@ -520,14 +601,14 @@ self.dismiss(animated: true, completion: nil)
 
   <div class="next">
   
-      <a href="https://mapsindoors.github.io/android/v2/tutorials/searchmapdemosearchmapfragment/" title="Create a Search Experience with MapsIndoors - Part 2">
+      <a href="https://mapsindoors.github.io/firststeps/" title="MapsIndoors First Steps">
         <span class="direction">
           Next
         </span>
         <div class="page">
           <div class="stretch">
             <div class="title">
-              Create a Search Experience with MapsIndoors - Part 2
+              MapsIndoors First Steps
             </div>
           </div>
           <div class="button button-next" role="button" aria-label="Next">

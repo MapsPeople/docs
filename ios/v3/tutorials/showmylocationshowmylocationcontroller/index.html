@@ -198,6 +198,10 @@
     
     
   
+    
+    
+    
+  
   <hr />
   <div class="scrollable">
     <div class="wrapper">
@@ -298,6 +302,9 @@
           
           
           
+          
+          
+          
         
 
         
@@ -365,7 +372,14 @@ self.map?.camera = .camera(withLatitude: 57.057964, longitude: 9.9504112, zoom: 
 self.mapControl = MPMapControl.init(map: self.map!)
 </code></pre>
 
-<p>Inside <code>viewDidLoad</code></p>
+<p>Inside <code>viewDidLoad</code>, optionally add a special icon for the user location</p>
+
+<pre><code>let myLocationRule = MPLocationDisplayRule.init(name: &quot;my-location&quot;, andIcon: UIImage.init(named: &quot;MyLocationDirection&quot;), andZoomLevelOn: 0)
+myLocationRule?.iconSize = CGSize(width: 30, height: 30)
+self.mapControl?.add(myLocationRule!)
+</code></pre>
+
+<p>Inside <code>viewDidLoad</code>, finally</p>
 
 <ul>
 <li>Tell mapControl to show the users location</li>
@@ -378,7 +392,7 @@ MapsIndoors.positionProvider.startPositioning(nil)
 </code></li>
 </ul>
 
-<p><a href="https://github.com/MapsIndoors/MapsIndoorsIOS-Demo-Samples/blob/master/Show My Location/ShowMyLocationController.swift">See the sample in ShowMyLocationController.swift</a></p>
+<p><a href="https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Show My Location/ShowMyLocationController.swift">See the sample in ShowMyLocationController.swift</a></p>
 
 
 			<aside class="copyright" role="note">

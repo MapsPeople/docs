@@ -138,7 +138,16 @@
   </url>
   
   <url>
+    <loc>https://mapsindoors.github.io/ios/v3/tutorials/locationsourceslocationsourcescontroller/</loc>
+  </url>
+  
+  <url>
     <loc>https://mapsindoors.github.io/ios/v3/tutorials/locationsourceslocationsourcesmapcontroller/</loc>
+  </url>
+  
+  <url>
+    <loc>https://mapsindoors.github.io/dataapi/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -203,6 +212,10 @@
   
   <url>
     <loc>https://mapsindoors.github.io/introductions/location-sources/</loc>
+  </url>
+  
+  <url>
+    <loc>https://mapsindoors.github.io/dataapi/v1/</loc>
   </url>
   
   <url>

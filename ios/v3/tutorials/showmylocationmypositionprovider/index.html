@@ -198,6 +198,10 @@
     
     
   
+    
+    
+    
+  
   <hr />
   <div class="scrollable">
     <div class="wrapper">
@@ -298,6 +302,9 @@
           
           
           
+          
+          
+          
         
 
         
@@ -366,6 +373,7 @@ var latestPositionResult: MPPositionResult?
 var preferAlwaysLocationPermission: Bool = false
 var locationServicesActive: Bool = false
 var providerType: MPPositionProviderType = .GPS_POSITION_PROVIDER
+var heading:Double = 0
 </code></pre>
 
 <p>Create a method called <code>updatePosition</code>. This will be our &ldquo;loop&rdquo; constantly posting a new position to the delegate.</p></li>
@@ -373,6 +381,10 @@ var providerType: MPPositionProviderType = .GPS_POSITION_PROVIDER
 <li><p>Check if the provider has a running state</p></li>
 
 <li><p>Assign a new <code>MPPositionResult</code> to <code>latestPositionResult</code></p></li>
+
+<li><p>Assign a new position point</p></li>
+
+<li><p>Optionally specify that heading is available and set a heading</p></li>
 
 <li><p>Notify the delegate by calling <code>onPositionUpdate</code> passing the new position as argument</p></li>
 
@@ -383,6 +395,9 @@ if running {
     latestPositionResult = MPPositionResult.init()
     latestPositionResult?.geometry = MPPoint.init(lat: 57.057964, lon: 9.9504112)
     latestPositionResult?.provider = self
+    latestPositionResult?.headingAvailable = true
+    heading = (heading + 10).truncatingRemainder(dividingBy: 360)
+    latestPositionResult?.setHeadingDegrees(heading)
         
     if let delegate = self.delegate, let latestPositionResult = self.latestPositionResult {
         delegate.onPositionUpdate(latestPositionResult)
@@ -443,7 +458,7 @@ return running
 <p>In <a href="../showmylocationshowmylocationcontroller">Part 2</a> we will create the map view controller that displays the blue dot.</p></li>
 </ul>
 
-<p><a href="https://github.com/MapsIndoors/MapsIndoorsIOS-Demo-Samples/blob/master/Show My Location/MyPositionProvider.swift">See the sample in MyPositionProvider.swift</a></p>
+<p><a href="https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Show My Location/MyPositionProvider.swift">See the sample in MyPositionProvider.swift</a></p>
 
 
 			<aside class="copyright" role="note">

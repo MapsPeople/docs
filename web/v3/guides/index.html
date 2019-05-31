@@ -198,6 +198,10 @@
     </a>
     
   
+    
+    
+    
+  
   <hr />
   <div class="scrollable">
     <div class="wrapper">
@@ -284,6 +288,9 @@
     </ul>
 </li>
           </ul>
+          
+          
+          
           
           
           
@@ -442,6 +449,7 @@ mapsindoors.LocationService.getLocations(
          q: &quot;lounge&quot;,         // Optional - Search for matches in location name or aliases
          building: &quot;34&quot;,      // Optional - Fetch from specific building, using the administrative id of the building
          venue: &quot;VenueA&quot;,     // Optional - Fetch from specific venue, using name of venue
+         categories: [&quot;MEETINGROOM,LOUNGEAREAS&quot;]    // Optional - Fetch from specific categories, using the category keys
          floor: 1,                     // Optional - Fetch from 1st floor only
          take: 10,                     // Optional - Fetch only 10 locations
          skip: 10,                     // Optional - Skip first 10 in result
@@ -565,7 +573,7 @@ locations.getLocations(
 
 <p>Clear the current route rendering.</p>
 
-<pre><code class="language-javascript">directionsRenderer.clear();
+<pre><code class="language-javascript">directionsRenderer.setRoute(null);
 </code></pre>
 
 <h2 id="using-the-directions-service">Using the Directions Service</h2>

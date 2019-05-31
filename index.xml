@@ -188,7 +188,9 @@ let locations = MPLocationsProvider.init() let queryObj = MPLocationQuery.init()
       
       <guid>https://mapsindoors.github.io/web/v3/changelog/</guid>
       <description>Changelog Changelog for MapsIndoors SDK for JavaScript. This document structure is based on Keep a Changelog and the project adheres to Semantic Versioning.
-[3.2.0] - 2019-04-29 Added  Added the ability to change the api key at runtime via mapsindoors.setApiKey(key); Added the functions to get and set the language at runtime:  mapsindoors.setLanguage(language); mapsindoors.getLanguage();   [3.1.3] - 2019-03-26 Changed  The SDK now selects the fastest backend server based on a latency test.</description>
+[3.2.1] - 2019-05-24 Added  Added the ability to change the api key at runtime via mapsindoors.MapsIndoors.setApiKey(key); Added the functions to get and set the language at runtime:
+ mapsindoors.MapsIndoors.setLanguage(language); mapsindoors.MapsIndoors.getLanguage();
+Changed  The SDK now selects the fastest backend server based on a latency test.</description>
     </item>
     
     <item>
@@ -259,7 +261,7 @@ Added  Support for statically adding a position provider, optionally by setting 
       
       <guid>https://mapsindoors.github.io/ios/v3/changelog/</guid>
       <description>Changelog for MapsIndoors for iOS. This document structure is based on Keep a Changelog and the project adheres to Semantic Versioning.
-[3.0.4] 2019-04-29 Fixed  Fixed an issue with directions only returning routes on ground floor. Fixed issue with the directions service not resorting to offline even in case of cached route-networks. Fixed an issue where would return more than expected results when perfect match(es) was found.  [3.0.3] 2019-04-11 Fixed  Fixed an issue changing MapsIndoors.</description>
+[3.1.0] 2019-04-16 Added  Added a MPGeometryHelper class Added a way to get polygons for locations using MPGeometryHelper.polygonsForLocation(location:MPLocation)  [3.0.4] 2019-04-29 Fixed  Improved search functionality. Fixed an issue with directions only returning routes on ground floor. Fixed issue with the directions service not resorting to offline even in case of cached route-networks.</description>
     </item>
     
     <item>
@@ -327,6 +329,17 @@ class PeopleLocationSource : NSObject, MPLocationSource {  Add some member varia
       <guid>https://mapsindoors.github.io/ios/v3/tutorials/locationsourcesroomavailabilitysource/</guid>
       <description>This is part 2 of the tutorial of building custom Location Sources. In Part 1 we created a people location source that mocks locations of people. Now we will create another location source that mocks the availability of meeting rooms or work desks.
 This location source rely on MapsIndoors data, so we will consume the locations of MPMapsIndoorsLocationSource and relay them as this source&amp;rsquo;s own locations. Thus we need to observe the MPMapsIndoorsLocationSource and act as a LocationSource at the same time.</description>
+    </item>
+    
+    <item>
+      <title>Creating your own Location Sources - Part 3</title>
+      <link>https://mapsindoors.github.io/ios/v3/tutorials/locationsourceslocationsourcescontroller/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/ios/v3/tutorials/locationsourceslocationsourcescontroller/</guid>
+      <description>This is part 3 of the tutorial of building custom Location Sources. In Part 1 and 2 we created the Location Sources. Now we will create a view controller displaying a map that shows the mocked people locations and the mocked room availability on top of a MapsIndoors map.
+Create a class LocationSourcesController that inherits from UIViewController.
+class LocationSourcesController: UIViewController {  Add a GMSMapView and a MPMapControl to the class</description>
     </item>
     
     <item>
@@ -454,6 +467,21 @@ With this in mind you need to find an IPS and then use the location from that IP
       <description>Location Sources is a new feature introduced in version 3 of MapsIndoors SDK for Android and iOS. Basically we are making it possible to register your own custom location data source, adhering to a very simple interface.
 The Concepts The central concepts in this feature are Location Sources and Location Observers, and they are best described in the following illustration:
 Location Source Maintains an array of locations and notifies its Location Observers about location and status updates.</description>
+    </item>
+    
+    <item>
+      <title>MapsIndoors Data API</title>
+      <link>https://mapsindoors.github.io/dataapi/v1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/dataapi/v1/</guid>
+      <description>Introduction and getting started From the Mapsindoors API you can get, add, change and delete rooms and points of interest from your MapsIndoors™ solution via a REST service.
+The Public API can be found here:
+https://public.mapsindoors.com
+There is a (swagger) interface definition here
+https://public.mapsindoors.com/doc
+Note that only https is supported.
+Login and credentials The first thing needed is to log in to the service and get a security token used for the data endpoints.</description>
     </item>
     
     <item>

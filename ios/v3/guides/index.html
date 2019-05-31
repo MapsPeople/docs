@@ -198,6 +198,10 @@
     
     
   
+    
+    
+    
+  
   <hr />
   <div class="scrollable">
     <div class="wrapper">
@@ -291,6 +295,9 @@
     </ul>
 </li>
           </ul>
+          
+          
+          
           
           
           
@@ -486,6 +493,22 @@ func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) -&gt; 
 
 <pre><code class="language-swift">myMapControl.getLocation(marker : GMSMarker!)
 </code></pre>
+
+<h3 id="getting-a-polygon-from-a-location">Getting a polygon from a location</h3>
+
+<p>Some locations in MapsIndoors can have additional polygon information. These polygons can be used to render a room or area in a special way or make geofences, calculating whether another point or location is contained within the polygon. If a <code>MPLocation</code> has polygons, these can be retrieved using the <code>MPGeometryHelper</code> class.</p>
+
+<pre><code class="language-swift">let polygons = MPGeometryHelper.polygonsForLocation(location : MPLocation)
+let polygon = polygons.first
+let path = polygon.path
+let holes = polygon.holes
+for coordinate in path {
+    let lat = coordinate[1] 
+    let lng = coordinate[0]
+}
+</code></pre>
+
+<p>As demonstrated above, a polygon&rsquo;s outer ring/path as well as holes are arranged as [longitude, latitude] pairs. As not all locations has polygons, the polygon array may be empty. On the contrary, some locations, like entire building floors, might have more than polygon.</p>
 
 <h2 id="using-display-rules">Using Display Rules</h2>
 

@@ -163,7 +163,7 @@ let locations = MPLocationsProvider.init() let queryObj = MPLocationQuery.init()
       
       <guid>https://mapsindoors.github.io/ios/v3/changelog/</guid>
       <description>Changelog for MapsIndoors for iOS. This document structure is based on Keep a Changelog and the project adheres to Semantic Versioning.
-[3.0.4] 2019-04-29 Fixed  Fixed an issue with directions only returning routes on ground floor. Fixed issue with the directions service not resorting to offline even in case of cached route-networks. Fixed an issue where would return more than expected results when perfect match(es) was found.  [3.0.3] 2019-04-11 Fixed  Fixed an issue changing MapsIndoors.</description>
+[3.1.0] 2019-04-16 Added  Added a MPGeometryHelper class Added a way to get polygons for locations using MPGeometryHelper.polygonsForLocation(location:MPLocation)  [3.0.4] 2019-04-29 Fixed  Improved search functionality. Fixed an issue with directions only returning routes on ground floor. Fixed issue with the directions service not resorting to offline even in case of cached route-networks.</description>
     </item>
     
     <item>
@@ -208,6 +208,17 @@ class PeopleLocationSource : NSObject, MPLocationSource {  Add some member varia
       <guid>https://mapsindoors.github.io/ios/v3/tutorials/locationsourcesroomavailabilitysource/</guid>
       <description>This is part 2 of the tutorial of building custom Location Sources. In Part 1 we created a people location source that mocks locations of people. Now we will create another location source that mocks the availability of meeting rooms or work desks.
 This location source rely on MapsIndoors data, so we will consume the locations of MPMapsIndoorsLocationSource and relay them as this source&amp;rsquo;s own locations. Thus we need to observe the MPMapsIndoorsLocationSource and act as a LocationSource at the same time.</description>
+    </item>
+    
+    <item>
+      <title>Creating your own Location Sources - Part 3</title>
+      <link>https://mapsindoors.github.io/ios/v3/tutorials/locationsourceslocationsourcescontroller/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/ios/v3/tutorials/locationsourceslocationsourcescontroller/</guid>
+      <description>This is part 3 of the tutorial of building custom Location Sources. In Part 1 and 2 we created the Location Sources. Now we will create a view controller displaying a map that shows the mocked people locations and the mocked room availability on top of a MapsIndoors map.
+Create a class LocationSourcesController that inherits from UIViewController.
+class LocationSourcesController: UIViewController {  Add a GMSMapView and a MPMapControl to the class</description>
     </item>
     
     <item>
