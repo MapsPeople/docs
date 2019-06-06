@@ -163,7 +163,7 @@ let locations = MPLocationsProvider.init() let queryObj = MPLocationQuery.init()
       
       <guid>https://mapsindoors.github.io/ios/v3/changelog/</guid>
       <description>Changelog for MapsIndoors for iOS. This document structure is based on Keep a Changelog and the project adheres to Semantic Versioning.
-[3.1.0] 2019-04-16 Added  Added a MPGeometryHelper class Added a way to get polygons for locations using MPGeometryHelper.polygonsForLocation(location:MPLocation)  [3.0.4] 2019-04-29 Fixed  Improved search functionality. Fixed an issue with directions only returning routes on ground floor. Fixed issue with the directions service not resorting to offline even in case of cached route-networks.</description>
+[3.1.0] 2019-06-04 Added  Added a MPGeometryHelper class Added a way to get polygons for locations using MPGeometryHelper.polygonsForLocation(location:MPLocation) Updated Google Maps dependency to version 3.1.0 Optimizing outdoor/indoor directions. Filters entry points by new travel mode flag in SDK before doing calculations. Now possible to set map style (layout) using MPMapControl.</description>
     </item>
     
     <item>
