@@ -47,13 +47,15 @@ mLocationQueryBuilder. setQuery(&amp;quot;Toilet&amp;quot;). setOrderBy( Locatio
     </item>
     
     <item>
-      <title>Changelog</title>
-      <link>https://mapsindoors.github.io/android/changelog/</link>
+      <title></title>
+      <link>https://mapsindoors.github.io/android/v3/tutorials/showlocationdemoshowlocationfragment/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://mapsindoors.github.io/android/changelog/</guid>
-      <description>Changelog for the MapsIndoors Android SDK. This document structure is based on Keep a Changelog and the project adheres to Semantic Versioning.
-[2.0.3] - 2018-06-?? Added  MapsIndoors.getAvailableLanguages() returns a list of the solution&amp;rsquo;s available languages or just null if data isn&amp;rsquo;t available MIConnectivityUtils.isOnline() replaces UrlLoader.isOnline() MapControl.setOnMarkerInfoWindowLongClickListener()  Changed  MapsIndoors.getDefaultLanguage() will return now the solution&amp;rsquo;s default language instead of the library&amp;rsquo;s fallback one. If there is no data available yet, this method will now return null  Deprecated  UrlLoader.</description>
+      <guid>https://mapsindoors.github.io/android/v3/tutorials/showlocationdemoshowlocationfragment/</guid>
+      <description>Setup a query with the string &amp;ldquo;coffee machine&amp;rdquo;
+MPQuery query = new MPQuery.Builder(). setQuery( &amp;quot;coffee machine&amp;quot; ). build();  Get only coffee machines from the first floor, from any building and venue
+MPFilter filter = new MPFilter.Builder(). setFloorIndex( 1 ). build();  Query the data
+MapsIndoors.getLocationsAsync( query, filter, ( locs, err ) -&amp;gt; { if( locs != null &amp;amp;&amp;amp; locs.size() != 0 ) { mMapControl.displaySearchResults( locs, true ); } } ); l MPLocationSourceOnStatusChangedListener locationSourceOnStatusChangedListener = new MPLocationSourceOnStatusChangedListener() @Override public void onStatusChanged( @NonNull MPLocationSourceStatus status, int sourceId ) { if( status == MPLocationSourceStatus.</description>
     </item>
     
     <item>
@@ -66,6 +68,16 @@ mLocationQueryBuilder. setQuery(&amp;quot;Toilet&amp;quot;). setOrderBy( Locatio
 ## [2.0.0-beta1] - 2017-10-04 ### Changed - Put something in here&amp;hellip; - Fix MPLocation.copy() results in nil MPLocation.descr.
 ### Fixed - Fix geometry property nil when copying MPLocation - Fix unlabeled icons not respecting MapsIndoors.mapIconSize
 Added  Support for statically adding a position provider, optionally by setting MapsIndoors.positionProvider  </description>
+    </item>
+    
+    <item>
+      <title>Changelog</title>
+      <link>https://mapsindoors.github.io/android/v3/changelog/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/android/v3/changelog/</guid>
+      <description>Changelog for the MapsIndoors Android SDK. This document structure is based on Keep a Changelog and the project adheres to Semantic Versioning.
+[3.1.1] - 2019-05-27 Fixed  Fixed some issues related to the deinitialization of MapControl and MapsIndoors (class)  [3.1.0] - 2019-05-21 Added  Support for runtime (indoor tiles) map-style switching. Related methods added:  Venue.getMapStyles(): Gets a list of available map styles. Note that all venues share the map styles Venue.</description>
     </item>
     
     <item>
@@ -92,6 +104,40 @@ MapControl mMapControl; GoogleMap mGoogleMap;  Add other needed views for this e
     </item>
     
     <item>
+      <title>Creating your own Location Data Source - Part 1</title>
+      <link>https://mapsindoors.github.io/android/v3/tutorials/locationdatasourcespeoplelocationdatasource/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/android/v3/tutorials/locationdatasourcespeoplelocationdatasource/</guid>
+      <description>In this tutorial we will show how you can build a custom Location Source, representing locations of people. The people&amp;rsquo;s locations will be served from a mocked list in the source and displayed on a map.
+We will start by creating our implementation of a location source.
+Create the class PeopleLocationDataSource that implements MPLocationSource.
+public class PeopleLocationDataSource implements MPLocationSource {  First we need to predefine some attributes. * BASE_POSITION: We need a base position as a start for the Locations * RANGE_MAX_LAT_OFFSET: A max latitude offset to put a limit on how far the Locations can move on the latitude axis.</description>
+    </item>
+    
+    <item>
+      <title>Creating your own Location Data Source - Part 2</title>
+      <link>https://mapsindoors.github.io/android/v3/tutorials/locationdatasourcesbatterieslocationdatasource/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/android/v3/tutorials/locationdatasourcesbatterieslocationdatasource/</guid>
+      <description>In this tutorial we will show how you can build a custom Location Source. In Part 1 we created a people location source that mocks locations of people.
+Now we will create another location source that represents batteries. The power level of the batteries will be changing over time and it needs to be visible on the map realtime.
+We will start by creating our implementation of a location source.</description>
+    </item>
+    
+    <item>
+      <title>Creating your own Location Data Source - Part 3</title>
+      <link>https://mapsindoors.github.io/android/v3/tutorials/locationdatasourceslocationdatasourcesfragment/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/android/v3/tutorials/locationdatasourceslocationdatasourcesfragment/</guid>
+      <description>This is part 3 of the tutorial for building a custom Location Source. In Part 1 we created the People Location Source and In Part 2 we created the Batteries Location Source. Now we will create a Fragment displaying a map that shows the mocked people locations and the batteries on top of a MapsIndoors map.
+Create the class LocationDataSourcesFragment that extends Fragment.
+public class LocationDataSourcesFragment extends Fragment {  Add a GoogleMap and a MapControl to the class</description>
+    </item>
+    
+    <item>
       <title>MapsIndoors SDK for Android - Tutorials</title>
       <link>https://mapsindoors.github.io/android/v2/tutorials/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -99,6 +145,16 @@ MapControl mMapControl; GoogleMap mGoogleMap;  Add other needed views for this e
       <guid>https://mapsindoors.github.io/android/v2/tutorials/</guid>
       <description>With these simple tutorials, each reflecting common use cases, you can get more hands on experience with MapsIndoors on Android.
  Show Details for a Tapped Location Create a Search Experience Showing a Blue Dot / User Location  </description>
+    </item>
+    
+    <item>
+      <title>MapsIndoors SDK for Android - Tutorials</title>
+      <link>https://mapsindoors.github.io/android/v3/tutorials/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/android/v3/tutorials/</guid>
+      <description>With these simple tutorials, each reflecting common use cases, you can get more hands on experience with MapsIndoors on Android.
+ Show Details for a Tapped Location Create a Search Experience Showing a Blue Dot / User Location Create custom Location Sources Work with grouped / clustered locations  </description>
     </item>
     
     <item>
@@ -110,6 +166,17 @@ MapControl mMapControl; GoogleMap mGoogleMap;  Add other needed views for this e
       <description>Searching for Locations and Displaying the Results on a Map Use the MPLocationsProvider class to search for content in your MapsIndoors solution.
 This example shows how to setup a query for the nearest single best matching location and display the result on the map:
 mLocationsProvider = new MPLocationsProvider(); mLocationQueryBuilder = new LocationQuery.Builder(); // init the query builder, in this case we will query the coffee machine in our office mLocationQueryBuilder.</description>
+    </item>
+    
+    <item>
+      <title>MapsIndoors SDK for iOS v2 - Guides</title>
+      <link>https://mapsindoors.github.io/android/v3/guides/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/android/v3/guides/</guid>
+      <description>Searching for Locations and Displaying the Results on a Map Use the MapsIndoors.getLocationsAsync() method to search for content in your MapsIndoors solution.
+This example shows how to setup a query for the nearest single best matching location and display the result on the map:
+// Init the query builder and build a query, in this case we will query for coffee machines ***/ MPQuery query = new MPQuery.Builder(). setQuery(&amp;quot;coffee machine&amp;quot;).</description>
     </item>
     
     <item>
@@ -129,6 +196,18 @@ Basic Example You will find in the link an up and running project that contains 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://mapsindoors.github.io/android/v2/</guid>
+      <description>This guide explains how to start using a MapsIndoors map in your Android application. Make sure that you have read the prerequisites.
+To benefit from the guides, you will need basic knowledge about:
+ Android Development Google Maps Android API  You can get started in two ways, either by reviewing and modifying the basic example or do the clean setup.
+Basic Example You will find in the link a repo that contains the minimum code to start a MapsIndoors project.</description>
+    </item>
+    
+    <item>
+      <title>MapsIndoors for Android - Getting Started</title>
+      <link>https://mapsindoors.github.io/android/v3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/android/v3/</guid>
       <description>This guide explains how to start using a MapsIndoors map in your Android application. Make sure that you have read the prerequisites.
 To benefit from the guides, you will need basic knowledge about:
  Android Development Google Maps Android API  You can get started in two ways, either by reviewing and modifying the basic example or do the clean setup.
@@ -192,6 +271,20 @@ public class DemoPositionProvider implements PositionProvider  Add some member v
 Create a class ShowUserLocationFragment that inherits from Fragment.
 public class ShowUserLocationFragment extends Fragment {  Add a GoogleMap and a MapControl to the class
 GoogleMap mGoogleMap; MapControl mMapControl;  Add a map fragment</description>
+    </item>
+    
+    <item>
+      <title>Work with location grouping / clustering</title>
+      <link>https://mapsindoors.github.io/android/v3/tutorials/locationclusteringlocationclusteringfragment/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/android/v3/tutorials/locationclusteringlocationclusteringfragment/</guid>
+      <description>This is an example of enabling and disabling location clustering on the map as well as providing custom cluster tapping behaviour and custom cluster images.
+Create the class LocationClusteringFragment that extends Fragment.
+public class LocationClusteringFragment extends Fragment {  Add a GoogleMap and a MapControl to the class
+MapControl mMapControl; GoogleMap mGoogleMap;  Add other needed views for this example
+SupportMapFragment mMapFragment;  The Venue&amp;rsquo;s coordinates
+static final LatLng VENUE_LAT_LNG = new LatLng( 57.</description>
     </item>
     
   </channel>

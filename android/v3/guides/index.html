@@ -9,18 +9,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>MapsIndoors SDK for iOS - Tutorials - Indoor Navigation Built with Google Maps</title>
+    <title>MapsIndoors SDK for iOS v2 - Guides - Indoor Navigation Built with Google Maps</title>
     <meta name="generator" content="Hugo 0.26" />
 
     
     <meta name="description" content="Everything you need to get started with MapsIndoors.">
     
-    <link rel="canonical" href="https://mapsindoors.github.io/ios/v2/tutorials/">
+    <link rel="canonical" href="https://mapsindoors.github.io/android/v3/guides/">
     
     <meta name="author" content="MapsPeople">
     
 
-    <meta property="og:url" content="https://mapsindoors.github.io/ios/v2/tutorials/">
+    <meta property="og:url" content="https://mapsindoors.github.io/android/v3/guides/">
     <meta property="og:title" content="Indoor Navigation Built with Google Maps">
     <meta property="og:image" content="https://mapsindoors.github.io/images/logo.png">
     <meta name="apple-mobile-web-app-title" content="Indoor Navigation Built with Google Maps">
@@ -106,7 +106,7 @@
     </div>
     <div class="stretch">
       <div class="title">
-        MapsIndoors SDK for iOS - Tutorials
+        MapsIndoors SDK for iOS v2 - Guides
       </div>
     </div>
 
@@ -153,21 +153,13 @@
     
     
     
-  
-    
-    
-    
-  
-    
-    
-    
-    <a href="https://mapsindoors.github.io/ios/v3" class="project">
+    <a href="https://mapsindoors.github.io/android/v3" class="project">
       <div class="banner">
         <div class="logo">
-          <img src="https://mapsindoors.github.io//logos/apple-logo.svg" style="padding:10px">
+          <img src="https://mapsindoors.github.io//logos/android-logo.svg" style="padding:10px">
         </div>
         <div class="name">
-          <strong>iOS SDK <br /><span class="version">3.1.1</span></strong>
+          <strong>Android SDK <br /><span class="version">3.1.1</span></strong>
           
         </div>
       </div>
@@ -177,17 +169,25 @@
     
     
     
-    <a href="https://mapsindoors.github.io/ios/v2" class="project">
+    <a href="https://mapsindoors.github.io/android/v2" class="project">
       <div class="banner">
         <div class="logo">
-          <img src="https://mapsindoors.github.io//logos/apple-logo.svg" style="padding:10px">
+          <img src="https://mapsindoors.github.io//logos/android-logo.svg" style="padding:10px">
         </div>
         <div class="name">
-          <strong>iOS SDK <br /><span class="version">2.1.8</span></strong>
+          <strong>Android SDK <br /><span class="version">2.0.8</span></strong>
           
         </div>
       </div>
     </a>
+    
+  
+    
+    
+    
+  
+    
+    
     
   
     
@@ -208,15 +208,6 @@
       <div class="toc">
           
           
-          
-          
-          
-          
-          
-          
-          
-          
-          
                   
           <ul>
             
@@ -224,7 +215,7 @@
 
 
 <li>
-    <span class="section">iOS SDK</span>
+    <span class="section">Android SDK</span>
     <ul>
       
         
@@ -232,7 +223,7 @@
 
 
 
-<a  title="Getting Started" href="https://mapsindoors.github.io/ios/v2">
+<a  title="Getting Started" href="https://mapsindoors.github.io/android/v3">
 	
 	Getting Started
 </a>
@@ -245,22 +236,9 @@
 
 
 
-<a  title="Guides" href="https://mapsindoors.github.io/ios/v2/guides">
+<a class="current" title="Guides" href="https://mapsindoors.github.io/android/v3/guides">
 	
 	Guides
-</a>
-
-
-
-      
-        
-        
-
-
-
-<a class="current" title="Tutorials" href="https://mapsindoors.github.io/ios/v2/tutorials">
-	
-	Tutorials
 </a>
 
 
@@ -274,7 +252,20 @@
 
 
 
-<a  title="Reference Docs" href="https://app.mapsindoors.com/mapsindoors/reference/ios/v2/index.html">
+<a  title="Tutorials" href="https://mapsindoors.github.io/android/v3/tutorials">
+	
+	Tutorials
+</a>
+
+
+
+      
+        
+        
+
+
+
+<a  title="Reference Docs" href="https://app.mapsindoors.com/mapsindoors/reference/android/v3/index.html">
 	
 	Reference Docs
 </a>
@@ -287,7 +278,7 @@
 
 
 
-<a  title="Changelog" href="https://mapsindoors.github.io/ios/v2/changelog">
+<a  title="Changelog" href="https://mapsindoors.github.io/android/v3/changelog">
 	
 	Changelog
 </a>
@@ -298,6 +289,15 @@
     </ul>
 </li>
           </ul>
+          
+          
+          
+          
+          
+          
+          
+          
+          
           
           
           
@@ -348,15 +348,97 @@
 
 	<article class="article">
 		<div class="wrapper">
-			<h1>MapsIndoors SDK for iOS - Tutorials </h1>
+			<h1>MapsIndoors SDK for iOS v2 - Guides </h1>
 
-			<p>With these simple tutorials, each reflecting common use cases, you can get more hands on experience with MapsIndoors on iOS.</p>
+			
 
-<ul>
-<li><a href="locationdetailslocationdetailscontroller">Show Details for a Tapped Location</a></li>
-<li><a href="searchmysearchcontroller">Create a Search Experience</a></li>
-<li><a href="showmylocationmypositionprovider">Showing a Blue Dot / User Location</a></li>
-</ul>
+<h2 id="searching-for-locations-and-displaying-the-results-on-a-map">Searching for Locations and Displaying the Results on a Map</h2>
+
+<p>Use the <code>MapsIndoors.getLocationsAsync()</code> method to search for content in your MapsIndoors solution.</p>
+
+<p>This example shows how to setup a query for the nearest single best matching location and display the result on the map:</p>
+
+<pre><code>// Init the query builder and build a query, in this case we will query for coffee machines ***/
+MPQuery query = new MPQuery.Builder().
+        setQuery(&quot;coffee machine&quot;).
+        build();
+
+// Init the filter builder and build a filter, the criteria in this case we want 1 coffee machine from the 1st floor
+MPFilter filter = new MPFilter.Builder().
+        setFloorIndex(1).
+        build();
+
+// Query the data
+MapsIndoors.getLocationsAsync( query, filter, ( locs, err ) -&gt; {
+    if( locs != null &amp;&amp; locs.size() != 0 ) {
+        mMapControl.displaySearchResults( locs, true );
+    }
+} );
+</code></pre>
+
+<p>This example shows how to setup a query for a group of locations and display the result on the map:</p>
+
+<pre><code>// Init the query builder and build a query, in this case we will query for all to toilets
+MPQuery query = new MPQuery.Builder().
+        setQuery(&quot;Toilet&quot;).
+        build();
+
+// Init the filter builder and build a filter, the criteria in this case we want maximum 50 toilets from the 1st floor
+MPFilter filter = new MPFilter.Builder().
+        setTake( 50 ).
+        setFloorIndex( 1 ).
+        build();
+
+// Query the data
+MapsIndoors.getLocationsAsync(query, filter, (locs, err) -&gt; {
+    if(locs != null &amp;&amp; locs.size() != 0 ){
+        mMapControl.displaySearchResults( locs, true, 40 );
+    }
+});
+</code></pre>
+
+<p>Please note that you are not guaranteed that the visible floor contains any search results, so that is why we change floor in the above example.</p>
+
+<h2 id="getting-a-polygon-from-a-location">Getting a Polygon from a Location</h2>
+
+<p>Some locations in MapsIndoors can have additional polygon information. These polygons can be used to render a room or area in a special way or make geofences, calculating whether another point or location is contained within the polygon. If a <code>MPLocation</code> has polygons, these can be retrieved using:</p>
+
+<pre><code class="language-java">Geometry geometry = location.getGeometry();
+switch( geometry.getIType() ) {
+    case Geometry.TYPE_POINT: {
+        Point point = (Point) geometry;
+        break;
+    }
+    case Geometry.TYPE_POLYGON: {
+        PolygonGeometry polygon = (PolygonGeometry) geometry;
+
+        // Using GMS helper classes
+        // Get all the paths in the polygon
+        final List&lt;List&lt;LatLng&gt;&gt; paths = polygon.getGMSPath();
+
+        final int pathCount = paths.size();
+
+        // Outer ring (first)
+        List&lt;LatLng&gt; path = paths.get( 0 );
+        for( final LatLng coordinate : path ) {
+            double lat = coordinate.latitude;
+            double lng = coordinate.longitude;
+        }
+
+        // Optional: Inner rings (holes)
+        for( int i = 1; i &lt; pathCount; i++ ) {
+            List&lt;LatLng&gt; hole = paths.get( i );
+            for( final LatLng coordinate : hole ) {
+                double lat = coordinate.latitude;
+                double lng = coordinate.longitude;
+            }
+        }
+        break;
+    }
+}
+</code></pre>
+
+<p>As demonstrated above, a polygon&rsquo;s outer ring/path as well as holes are arranged as [longitude, latitude] pairs. As not all locations has polygons, the polygon array may be empty. On the contrary, some locations, like entire building floors, might have more than polygon.</p>
 
 
 			<aside class="copyright" role="note">
@@ -375,7 +457,7 @@
 <nav class="pagination" aria-label="Footer">
   <div class="previous">
   
-      <a href="https://mapsindoors.github.io/android/v3/tutorials/" title="MapsIndoors SDK for Android - Tutorials">
+      <a href="https://mapsindoors.github.io/android/v2/guides/" title="MapsIndoors SDK for iOS v2 - Guides">
         <span class="direction">
           Previous
         </span>
@@ -385,7 +467,7 @@
           </div>
           <div class="stretch">
             <div class="title">
-              MapsIndoors SDK for Android - Tutorials
+              MapsIndoors SDK for iOS v2 - Guides
             </div>
           </div>
         </div>
@@ -395,14 +477,14 @@
 
   <div class="next">
   
-      <a href="https://mapsindoors.github.io/ios/v3/tutorials/" title="MapsIndoors SDK for iOS - Tutorials">
+      <a href="https://mapsindoors.github.io/ios/v2/guides/" title="MapsIndoors SDK for iOS v2 - Guides">
         <span class="direction">
           Next
         </span>
         <div class="page">
           <div class="stretch">
             <div class="title">
-              MapsIndoors SDK for iOS - Tutorials
+              MapsIndoors SDK for iOS v2 - Guides
             </div>
           </div>
           <div class="button button-next" role="button" aria-label="Next">

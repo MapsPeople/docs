@@ -15,7 +15,7 @@
   </url>
   
   <url>
-    <loc>https://mapsindoors.github.io/ios/changelog/</loc>
+    <loc>https://mapsindoors.github.io/android/v3/tutorials/showlocationdemoshowlocationfragment/</loc>
   </url>
   
   <url>
@@ -85,11 +85,11 @@
   </url>
   
   <url>
-    <loc>https://mapsindoors.github.io/android/changelog/</loc>
+    <loc>https://mapsindoors.github.io/android/v1/changelog/</loc>
   </url>
   
   <url>
-    <loc>https://mapsindoors.github.io/android/v1/changelog/</loc>
+    <loc>https://mapsindoors.github.io/android/v3/changelog/</loc>
   </url>
   
   <url>
@@ -127,6 +127,18 @@
   
   <url>
     <loc>https://mapsindoors.github.io/android/v2/tutorials/searchmapdemosearchmapfragment/</loc>
+  </url>
+  
+  <url>
+    <loc>https://mapsindoors.github.io/android/v3/tutorials/locationdatasourcespeoplelocationdatasource/</loc>
+  </url>
+  
+  <url>
+    <loc>https://mapsindoors.github.io/android/v3/tutorials/locationdatasourcesbatterieslocationdatasource/</loc>
+  </url>
+  
+  <url>
+    <loc>https://mapsindoors.github.io/android/v3/tutorials/locationdatasourceslocationdatasourcesfragment/</loc>
   </url>
   
   <url>
@@ -227,6 +239,10 @@
   </url>
   
   <url>
+    <loc>https://mapsindoors.github.io/android/v3/tutorials/</loc>
+  </url>
+  
+  <url>
     <loc>https://mapsindoors.github.io/ios/v2/tutorials/</loc>
   </url>
   
@@ -236,6 +252,10 @@
   
   <url>
     <loc>https://mapsindoors.github.io/android/v2/guides/</loc>
+  </url>
+  
+  <url>
+    <loc>https://mapsindoors.github.io/android/v3/guides/</loc>
   </url>
   
   <url>
@@ -252,6 +272,10 @@
   
   <url>
     <loc>https://mapsindoors.github.io/android/v2/</loc>
+  </url>
+  
+  <url>
+    <loc>https://mapsindoors.github.io/android/v3/</loc>
   </url>
   
   <url>
@@ -354,6 +378,10 @@
   
   <url>
     <loc>https://mapsindoors.github.io/ip-whitelisting/</loc>
+  </url>
+  
+  <url>
+    <loc>https://mapsindoors.github.io/android/v3/tutorials/locationclusteringlocationclusteringfragment/</loc>
   </url>
   
   <url>

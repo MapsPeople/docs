@@ -9,18 +9,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>Show the Blue Dot with MapsIndoors - Part 2 - Indoor Navigation Built with Google Maps</title>
+    <title>Creating your own Location Data Source - Part 2 - Indoor Navigation Built with Google Maps</title>
     <meta name="generator" content="Hugo 0.26" />
 
     
     <meta name="description" content="Everything you need to get started with MapsIndoors.">
     
-    <link rel="canonical" href="https://mapsindoors.github.io/android/v2/tutorials/showuserlocationshowuserlocationfragment/">
+    <link rel="canonical" href="https://mapsindoors.github.io/android/v3/tutorials/locationdatasourcesbatterieslocationdatasource/">
     
     <meta name="author" content="MapsPeople">
     
 
-    <meta property="og:url" content="https://mapsindoors.github.io/android/v2/tutorials/showuserlocationshowuserlocationfragment/">
+    <meta property="og:url" content="https://mapsindoors.github.io/android/v3/tutorials/locationdatasourcesbatterieslocationdatasource/">
     <meta property="og:title" content="Indoor Navigation Built with Google Maps">
     <meta property="og:image" content="https://mapsindoors.github.io/images/logo.png">
     <meta name="apple-mobile-web-app-title" content="Indoor Navigation Built with Google Maps">
@@ -106,7 +106,7 @@
     </div>
     <div class="stretch">
       <div class="title">
-        Show the Blue Dot with MapsIndoors - Part 2
+        Creating your own Location Data Source - Part 2
       </div>
     </div>
 
@@ -208,9 +208,6 @@
       <div class="toc">
           
           
-          
-          
-          
                   
           <ul>
             
@@ -226,7 +223,7 @@
 
 
 
-<a  title="Getting Started" href="https://mapsindoors.github.io/android/v2">
+<a  title="Getting Started" href="https://mapsindoors.github.io/android/v3">
 	
 	Getting Started
 </a>
@@ -239,7 +236,7 @@
 
 
 
-<a  title="Guides" href="https://mapsindoors.github.io/android/v2/guides">
+<a  title="Guides" href="https://mapsindoors.github.io/android/v3/guides">
 	
 	Guides
 </a>
@@ -252,7 +249,7 @@
 
 
 
-<a  title="Tutorials" href="https://mapsindoors.github.io/android/v2/tutorials">
+<a  title="Tutorials" href="https://mapsindoors.github.io/android/v3/tutorials">
 	
 	Tutorials
 </a>
@@ -265,7 +262,7 @@
 
 
 
-<a  title="Reference Docs" href="https://app.mapsindoors.com/mapsindoors/reference/android/v2/index.html">
+<a  title="Reference Docs" href="https://app.mapsindoors.com/mapsindoors/reference/android/v3/index.html">
 	
 	Reference Docs
 </a>
@@ -278,7 +275,7 @@
 
 
 
-<a  title="Changelog" href="https://mapsindoors.github.io/android/v2/changelog">
+<a  title="Changelog" href="https://mapsindoors.github.io/android/v3/changelog">
 	
 	Changelog
 </a>
@@ -289,6 +286,9 @@
     </ul>
 </li>
           </ul>
+          
+          
+          
           
           
           
@@ -345,85 +345,304 @@
 
 	<article class="article">
 		<div class="wrapper">
-			<h1>Show the Blue Dot with MapsIndoors - Part 2 </h1>
+			<h1>Creating your own Location Data Source - Part 2 </h1>
 
-			<p>This is part 2 of the tutorial of managing a blue dot on the map. <a href="../showuserlocationdemopositionprovider">In Part 1 we created the position provider</a>. Now we will create a Fragment displaying a map that shows the users (mock) location.</p>
+			<p>In this tutorial we will show how you can build a custom Location Source. In <a href="locationsourcespeoplelocationsource">Part 1</a> we created a people location source that mocks locations of people.</p>
 
-<p>Create a class <code>ShowUserLocationFragment</code> that inherits from <code>Fragment</code>.</p>
+<p>Now we will create another location source that represents batteries. The power level of the batteries will be changing over time and it needs to be visible on the map realtime.</p>
 
-<pre><code>public class ShowUserLocationFragment extends Fragment {
+<p>We will start by creating our implementation of a location source.</p>
+
+<p>Create the class <code>BatteriesLocationDataSource</code> that implements <code>MPLocationSource</code>.</p>
+
+<pre><code>public class BatteriesLocationDataSource implements MPLocationSource {
 </code></pre>
 
-<p>Add a <code>GoogleMap</code> and a <code>MapControl</code> to the class</p>
+<p>First we need to predefine some attributes.
+* <code>BASE_POSITION</code>: We need a base position as a start for the Locations.
+* <code>LOCATIONS_COUNT</code>: The number of locations desired.
+* <code>LOCATION_SOURCE_ID</code>: a unique  location source ID.
+* <code>LOCATION_TYPE</code>: a type for the locations of this source.
+* <code>LOCATION_CLUSTER_ID</code>: A cluster ID that will let locations from this source cluster together on the map in case of overlap.
+* <code>DISPLAY_RULE</code>: The display rule for the locations of this source.</p>
 
-<pre><code>GoogleMap mGoogleMap;
-MapControl mMapControl;
+<pre><code>private static final LatLng BASE_POSITION       = new LatLng( 57.0579814, 9.9504668 );
+private static final int    LOCATIONS_COUNT     = 20;
+private static final int    LOCATION_SOURCE_ID  = 10000;
+private static final String LOCATION_TYPE       = &quot;BatteryLocationType&quot;;
+private static final int    LOCATION_CLUSTER_ID = 2;
+static final LocationDisplayRule DISPLAY_RULE = new LocationDisplayRule.Builder( LOCATION_TYPE ).
+        setVectorDrawableIcon( R.drawable.ic_battery_60_black_24dp ).
+        setVisible( true ).
+        setShowLabel( false ).
+        setZoomLevelOn( 16 ).
+        setLocationClusterId( LOCATION_CLUSTER_ID ).
+        setDisplayRank( 1 ).
+        build();
 </code></pre>
 
-<p>Add a map fragment</p>
+<p>Then we need to add some variables.
+* <code>observers</code>: The observer objects that we will notify about changes.
+* <code>locationsList</code>: A list of MPLocation - Will have the list of the MPLocations up to date.
+* <code>status</code>: holds the status of the location data source.
+* <code>random</code>: Used to generate some random values in the data creation and editing.
+* <code>mDataUpdateTimer</code>: Timer that we will need to plan some recurrent updates.
+* <code>iconCurrentIndex</code>: An index for icons so we can update the locations with the same icon each time.</p>
 
-<pre><code>SupportMapFragment mMapFragment;
-</code></pre>
-
-<p>The lat lng of the Venue</p>
-
-<pre><code>static final LatLng VENUE_LAT_LNG = new LatLng( 57.05813067, 9.95058065 );
-</code></pre>
-
-<p>Set the API key to the MI solution</p>
-
-<pre><code>if( !MapsIndoors.getAPIKey().equalsIgnoreCase( getString( R.string.mi_api_key ) ) )
-{
-    MapsIndoors.setAPIKey( getString( R.string.mi_api_key ) );
+<pre><code>@NonNull
+private List&lt;MPLocationsObserver&gt; observers;
+private List&lt;MPLocation&gt; locationsList;
+private MPLocationSourceStatus status;
+private Random random = new Random();
+private Timer mDataUpdateTimer;
+private int iconCurrentIndex = 0;
+BatteriesLocationDataSource() {
+    this.locationsList = new ArrayList&lt;&gt;( LOCATIONS_COUNT );
+    this.observers = new ArrayList&lt;&gt;();
+    this.status = MPLocationSourceStatus.NOT_INITIALIZED;
 }
-if( getActivity() == null )
-{
-    return;
-}
 </code></pre>
 
-<p>Instanciate and init the mapControl object</p>
+<p>Create the <code>startUpdatingIcons</code> method that simply calls <code>updateLocations</code> every half a second.</p>
 
-<pre><code>mMapControl = new MapControl( getActivity(), mMapFragment, mGoogleMap );
-mMapControl.init( miError -&gt; {
-    if( miError == null )
-    {
-        Activity context = getActivity();
-        if( context != null )
-        {
-            context.runOnUiThread( () -&gt; {
-                mMapControl.selectFloor( 1 );
-                mGoogleMap.animateCamera( CameraUpdateFactory.newLatLngZoom( VENUE_LAT_LNG, 20f ) );
-            });
-        }
+<pre><code>void startUpdatingIcons() {
+    if (!setup()) {
+        return;
     }
-});
+    if (mDataUpdateTimer != null) {
+        mDataUpdateTimer.cancel();
+        mDataUpdateTimer = null;
+    }
+    mDataUpdateTimer = new Timer();
+    mDataUpdateTimer.scheduleAtFixedRate(new TimerTask() {
+        @Override
+        public void run() {
+            updateLocations();
+        }
+    }, 2000, 500 );
+}
 </code></pre>
 
-<ul>
-<li>Create an instance of the &lsquo;DemoPositionProvider&rsquo; that we defined previously
-<code>
-DemoPositionProvider demoPositionProvider = new DemoPositionProvider();
-</code></li>
-<li>Assign the <code>DemoPositionProvider</code> instance to the <code>MapsIndoors.positionProvider</code> by calling the &lsquo;MapsIndoors.setPositionProvider&rsquo;
-<code>
-MapsIndoors.setPositionProvider(demoPositionProvider);
-</code></li>
-<li>Start positioning
-<code>
-demoPositionProvider.startPositioning(null);
-</code></li>
-<li>Tell the mapControl to show the users location
-<code>
-mMapControl.showUserPosition(true);
-</code>
-In the &lsquo;onDestroyView&rsquo; method, we need to free the MapsIndoors PositionProvider
-<code>
-MapsIndoors.setPositionProvider(null);
-</code></li>
-</ul>
+<p>Create a method that can stop the icons update at any time.</p>
 
-<p><a href="https://github.com/MapsIndoors/MapsIndoorsAndroid-Demo-Samples/blob/master/app/src/main/java/com/mapsindoors/showuserLocation/ShowUserLocationFragment.java">See the sample in ShowUserLocationFragment.java</a></p>
+<pre><code>void stopUpdatingIcons() {
+    if (mDataUpdateTimer != null) {
+        mDataUpdateTimer.cancel();
+        mDataUpdateTimer.purge();
+    }
+}
+</code></pre>
+
+<p>Create a method called <code>setup</code> that will:
+* Make sure that data source was not already initialized and data is loaded.
+* Create the locations.
+* Make the first notification.
+* Change the status to available.</p>
+
+<pre><code>private boolean setup()
+{
+    if( this.status != MPLocationSourceStatus.NOT_INITIALIZED ) {
+        return true;
+    }
+    final BuildingCollection buildingCollection = MapsIndoors.getBuildings();
+    final boolean gotBuildings = buildingCollection != null;
+    if( !gotBuildings ) {
+        return false;
+    }
+    locationsList.clear();
+    locationsList.addAll( generateLocations( true ) );
+    notifyUpdateLocations( locationsList );
+    setStatus( MPLocationSourceStatus.AVAILABLE );
+    return true;
+}
+// Icons
+@DrawableRes
+final int[] icons = new int[]{
+        R.drawable.ic_battery_20_black_24dp,
+        R.drawable.ic_battery_30_black_24dp,
+        R.drawable.ic_battery_50_black_24dp,
+        R.drawable.ic_battery_60_black_24dp,
+        R.drawable.ic_battery_80_black_24dp,
+        R.drawable.ic_battery_90_black_24dp,
+        R.drawable.ic_battery_full_black_24dp
+};
+</code></pre>
+
+<p>Create a method called <code>updateLocations</code>. Iterate number again and for each iteration:
+* Get the corresponding MPLocation Builder
+* Set a new position
+* Generate an MPLocation from a MPLocation.Builder
+* Call the notifyUpdateLocations with the updated list.</p>
+
+<pre><code>void updateLocations() {
+    if (!MapsIndoors.isReady()) {
+        return;
+    }
+    final int locCount = locationsList.size();
+    final List&lt;MPLocation&gt; updatedList = new ArrayList&lt;&gt;(locCount);
+    int iColor = 0;
+    @DrawableRes int currentIcon = 0;
+    // Icon and tint color (animated)
+    final int availableIconsCount = icons.length;
+    // the color tint will vary
+    iColor = ColorUtils.blendARGB(0xff2DD855, 0xffFF3700, ((1f * iconCurrentIndex) / availableIconsCount));
+    currentIcon = icons[iconCurrentIndex];
+    iconCurrentIndex = (iconCurrentIndex + 1) % availableIconsCount;
+    for (int i = 0, LocationCount = locationsList.size(); i &lt; LocationCount; i++) {
+        final MPLocation p = locationsList.get( i );
+        // &quot;Update&quot; an MPLocation by using the copy/edit builder
+        final MPLocation.Builder updatedLocation = new MPLocation.Builder( p );
+        // Change the icon &amp; tint color
+        updatedLocation.
+                // Specify a size
+                setVectorDrawableIcon( currentIcon, 32, 32 ).
+                // Specify the tint color
+                setTint( iColor );
+        updatedList.add( updatedLocation.build() );
+    }
+    locationsList.clear();
+    locationsList.addAll( updatedList );
+    notifyUpdateLocations( updatedList );
+}
+</code></pre>
+
+<p>Create a method called <code>generateLocations</code>:
+* An MPLocation.Builder with an id
+* A random position
+* A name
+* A type - later used to style the location
+* A floor Index
+* A building</p>
+
+<pre><code>@NonNull
+private List&lt;MPLocation&gt; generateLocations( boolean randomizeStartingPosition )
+{
+    final List&lt;MPLocation&gt; peopleLocations = new ArrayList&lt;&gt;( LOCATIONS_COUNT );
+    final BuildingCollection buildingCollection = MapsIndoors.getBuildings();
+    final boolean gotBuildingData = buildingCollection != null;
+    for ( int i = 0; i &lt; LOCATIONS_COUNT; i++) {
+        final LatLng personPosition;
+        if (randomizeStartingPosition) {
+            personPosition = getRandomPosition();
+        } else {
+            personPosition = BASE_POSITION;
+        }
+        final MPLocation.Builder locBuilder = new MPLocation.Builder( &quot;&quot; + LOCATION_SOURCE_ID + i );
+        locBuilder.setPosition( personPosition ).
+                setName( &quot;Battery&quot; + i ).
+                setType( LOCATION_TYPE );
+        if (gotBuildingData) {
+            // Find a building at this location (personPosition)
+            final Building building = buildingCollection.getBuilding(personPosition);
+            if (building != null) {
+                // Building found at this location, get the list of floors in it
+                final List&lt;Floor&gt; floors = building.getFloors();
+                // Choose a random floor
+                final Floor floor = floors.get((int) (Math.random() * (floors.size())));
+                // Set the Location floor
+                locBuilder.setFloor((floor != null) ? floor.getZIndex() : Floor.DEFAULT_GROUND_FLOOR_INDEX);
+                // Set the building name where this Location is in
+                locBuilder.setBuilding( building.getName() );
+            } else {
+                // If this location was outside a building, set its floor/z index to zero (ground floor)
+                locBuilder.setFloor( Floor.DEFAULT_GROUND_FLOOR_INDEX );
+            }
+        } else {
+            // If this location was outside a building, set its floor/z index to zero (ground floor)
+            locBuilder.setFloor( Floor.DEFAULT_GROUND_FLOOR_INDEX );
+        }
+        peopleLocations.add( locBuilder.build() );
+    }
+    return peopleLocations;
+}
+</code></pre>
+
+<p>Create a method called <code>getRandomPosition</code> that simply returns a random LatLng (here within proximity of the demo venue)</p>
+
+<pre><code>private LatLng getRandomPosition() {
+    final double lat = BASE_POSITION.latitude + (-4 + random.nextInt(20)) * 0.000005;
+    final double lng = BASE_POSITION.longitude + (-4 + random.nextInt(20)) * 0.000010;
+    return new LatLng(lat, lng);
+}
+</code></pre>
+
+<p>Create a method called <code>notifyUpdateLocations</code> to loop all the observers and notify them with an update</p>
+
+<pre><code>private void notifyUpdateLocations( List&lt;MPLocation&gt; updatedLocations ) {
+    for( int i = observers.size(); --i &gt;= 0; ) {
+        observers.get( i ).onLocationsUpdated( updatedLocations, this );
+    }
+}
+</code></pre>
+
+<p>The same thing for notifying observers with new status</p>
+
+<pre><code>private void notifyLocationStatusChanged( @NonNull MPLocationSourceStatus prevStatus, @NonNull MPLocationSourceStatus newStatus ) {
+    for( int i = observers.size(); --i &gt;= 0; ) {
+        observers.get( i ).onStatusChanged( newStatus, this );
+    }
+}
+</code></pre>
+
+<p>Sets the internal state and notifies a status changed message if applies</p>
+
+<pre><code>private void setStatus( @NonNull MPLocationSourceStatus newStatus ) {
+    MPLocationSourceStatus cStatus = status;
+    if (cStatus != newStatus) {
+        status = newStatus;
+        notifyLocationStatusChanged( cStatus, newStatus );
+    }
+}
+</code></pre>
+
+<p>Implement the MPLocationSource method <code>getLocations</code>. This List will always contain the up to date MPLocations</p>
+
+<pre><code>@NonNull
+@Override
+public List&lt;MPLocation&gt; getLocations() {
+    return locationsList;
+}
+</code></pre>
+
+<p>Implement the MPLocationSource method <code>addLocationObserver</code>.</p>
+
+<pre><code>@Override
+public void addLocationsObserver(@Nullable MPLocationsObserver observer) {
+    if (observer != null) {
+        observers.remove(observer);
+        observers.add(observer);
+    }
+}
+</code></pre>
+
+<p>Implement the MPLocationSource method <code>removeLocationObserver</code>.</p>
+
+<pre><code>@Override
+public void removeLocationsObserver(@Nullable MPLocationsObserver observer) {
+    if (observer != null) {
+        observers.remove(observer);
+    }
+}
+</code></pre>
+
+<p>Implement the MPLocationSource method <code>getStatus</code>.</p>
+
+<pre><code>@NonNull
+@Override
+public MPLocationSourceStatus getStatus() {
+    return status;
+}
+</code></pre>
+
+<p>Implement the MPLocationSource method <code>getSourceId</code>.</p>
+
+<pre><code>@Override
+public int getSourceId() {
+    return LOCATION_SOURCE_ID;
+}
+</code></pre>
+
+<p><a href="https://github.com/MapsIndoors/MapsIndoorsAndroid-Demo-Samples/blob/master/app/src/main/java/com/mapsindoors/locationdatasources/BatteriesLocationDataSource.java">See the sample in BatteriesLocationDataSource.java</a></p>
 
 
 			<aside class="copyright" role="note">
@@ -442,7 +661,7 @@ MapsIndoors.setPositionProvider(null);
 <nav class="pagination" aria-label="Footer">
   <div class="previous">
   
-      <a href="https://mapsindoors.github.io/ios/v3/tutorials/showmylocationmypositionprovider/" title="Show the Blue Dot with MapsIndoors - Part 1">
+      <a href="https://mapsindoors.github.io/android/v3/tutorials/locationdatasourcespeoplelocationdatasource/" title="Creating your own Location Data Source - Part 1">
         <span class="direction">
           Previous
         </span>
@@ -452,7 +671,7 @@ MapsIndoors.setPositionProvider(null);
           </div>
           <div class="stretch">
             <div class="title">
-              Show the Blue Dot with MapsIndoors - Part 1
+              Creating your own Location Data Source - Part 1
             </div>
           </div>
         </div>
@@ -462,14 +681,14 @@ MapsIndoors.setPositionProvider(null);
 
   <div class="next">
   
-      <a href="https://mapsindoors.github.io/ios/v2/tutorials/showmylocationshowmylocationcontroller/" title="Show the Blue Dot with MapsIndoors - Part 2">
+      <a href="https://mapsindoors.github.io/android/v3/tutorials/locationdatasourceslocationdatasourcesfragment/" title="Creating your own Location Data Source - Part 3">
         <span class="direction">
           Next
         </span>
         <div class="page">
           <div class="stretch">
             <div class="title">
-              Show the Blue Dot with MapsIndoors - Part 2
+              Creating your own Location Data Source - Part 3
             </div>
           </div>
           <div class="button button-next" role="button" aria-label="Next">

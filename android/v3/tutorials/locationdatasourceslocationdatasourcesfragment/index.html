@@ -9,18 +9,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>MapsIndoors SDK for iOS - Tutorials - Indoor Navigation Built with Google Maps</title>
+    <title>Creating your own Location Data Source - Part 3 - Indoor Navigation Built with Google Maps</title>
     <meta name="generator" content="Hugo 0.26" />
 
     
     <meta name="description" content="Everything you need to get started with MapsIndoors.">
     
-    <link rel="canonical" href="https://mapsindoors.github.io/ios/v2/tutorials/">
+    <link rel="canonical" href="https://mapsindoors.github.io/android/v3/tutorials/locationdatasourceslocationdatasourcesfragment/">
     
     <meta name="author" content="MapsPeople">
     
 
-    <meta property="og:url" content="https://mapsindoors.github.io/ios/v2/tutorials/">
+    <meta property="og:url" content="https://mapsindoors.github.io/android/v3/tutorials/locationdatasourceslocationdatasourcesfragment/">
     <meta property="og:title" content="Indoor Navigation Built with Google Maps">
     <meta property="og:image" content="https://mapsindoors.github.io/images/logo.png">
     <meta name="apple-mobile-web-app-title" content="Indoor Navigation Built with Google Maps">
@@ -106,7 +106,7 @@
     </div>
     <div class="stretch">
       <div class="title">
-        MapsIndoors SDK for iOS - Tutorials
+        Creating your own Location Data Source - Part 3
       </div>
     </div>
 
@@ -153,21 +153,13 @@
     
     
     
-  
-    
-    
-    
-  
-    
-    
-    
-    <a href="https://mapsindoors.github.io/ios/v3" class="project">
+    <a href="https://mapsindoors.github.io/android/v3" class="project">
       <div class="banner">
         <div class="logo">
-          <img src="https://mapsindoors.github.io//logos/apple-logo.svg" style="padding:10px">
+          <img src="https://mapsindoors.github.io//logos/android-logo.svg" style="padding:10px">
         </div>
         <div class="name">
-          <strong>iOS SDK <br /><span class="version">3.1.1</span></strong>
+          <strong>Android SDK <br /><span class="version">3.1.1</span></strong>
           
         </div>
       </div>
@@ -177,17 +169,25 @@
     
     
     
-    <a href="https://mapsindoors.github.io/ios/v2" class="project">
+    <a href="https://mapsindoors.github.io/android/v2" class="project">
       <div class="banner">
         <div class="logo">
-          <img src="https://mapsindoors.github.io//logos/apple-logo.svg" style="padding:10px">
+          <img src="https://mapsindoors.github.io//logos/android-logo.svg" style="padding:10px">
         </div>
         <div class="name">
-          <strong>iOS SDK <br /><span class="version">2.1.8</span></strong>
+          <strong>Android SDK <br /><span class="version">2.0.8</span></strong>
           
         </div>
       </div>
     </a>
+    
+  
+    
+    
+    
+  
+    
+    
     
   
     
@@ -208,15 +208,6 @@
       <div class="toc">
           
           
-          
-          
-          
-          
-          
-          
-          
-          
-          
                   
           <ul>
             
@@ -224,7 +215,7 @@
 
 
 <li>
-    <span class="section">iOS SDK</span>
+    <span class="section">Android SDK</span>
     <ul>
       
         
@@ -232,7 +223,7 @@
 
 
 
-<a  title="Getting Started" href="https://mapsindoors.github.io/ios/v2">
+<a  title="Getting Started" href="https://mapsindoors.github.io/android/v3">
 	
 	Getting Started
 </a>
@@ -245,7 +236,7 @@
 
 
 
-<a  title="Guides" href="https://mapsindoors.github.io/ios/v2/guides">
+<a  title="Guides" href="https://mapsindoors.github.io/android/v3/guides">
 	
 	Guides
 </a>
@@ -258,14 +249,11 @@
 
 
 
-<a class="current" title="Tutorials" href="https://mapsindoors.github.io/ios/v2/tutorials">
+<a  title="Tutorials" href="https://mapsindoors.github.io/android/v3/tutorials">
 	
 	Tutorials
 </a>
 
-
-<ul id="scrollspy">
-</ul>
 
 
       
@@ -274,7 +262,7 @@
 
 
 
-<a  title="Reference Docs" href="https://app.mapsindoors.com/mapsindoors/reference/ios/v2/index.html">
+<a  title="Reference Docs" href="https://app.mapsindoors.com/mapsindoors/reference/android/v3/index.html">
 	
 	Reference Docs
 </a>
@@ -287,7 +275,7 @@
 
 
 
-<a  title="Changelog" href="https://mapsindoors.github.io/ios/v2/changelog">
+<a  title="Changelog" href="https://mapsindoors.github.io/android/v3/changelog">
 	
 	Changelog
 </a>
@@ -298,6 +286,15 @@
     </ul>
 </li>
           </ul>
+          
+          
+          
+          
+          
+          
+          
+          
+          
           
           
           
@@ -348,15 +345,154 @@
 
 	<article class="article">
 		<div class="wrapper">
-			<h1>MapsIndoors SDK for iOS - Tutorials </h1>
+			<h1>Creating your own Location Data Source - Part 3 </h1>
 
-			<p>With these simple tutorials, each reflecting common use cases, you can get more hands on experience with MapsIndoors on iOS.</p>
+			<p>This is part 3 of the tutorial for building a custom Location Source. <a href="locationdatasourcespeoplelocationdatasource">In Part 1 we created the People Location Source</a> and <a href="locationdatasourcesbatterieslocationdatasource">In Part 2 we created the Batteries Location Source</a>. Now we will create a Fragment displaying a map that shows the mocked people locations and the batteries on top of a MapsIndoors map.</p>
 
-<ul>
-<li><a href="locationdetailslocationdetailscontroller">Show Details for a Tapped Location</a></li>
-<li><a href="searchmysearchcontroller">Create a Search Experience</a></li>
-<li><a href="showmylocationmypositionprovider">Showing a Blue Dot / User Location</a></li>
-</ul>
+<p>Create the class <code>LocationDataSourcesFragment</code> that extends <code>Fragment</code>.</p>
+
+<pre><code>public class LocationDataSourcesFragment extends Fragment {
+</code></pre>
+
+<p>Add a <code>GoogleMap</code> and a <code>MapControl</code> to the class</p>
+
+<pre><code>MapControl mMapControl;
+GoogleMap mGoogleMap;
+</code></pre>
+
+<p>Add other needed views for this example</p>
+
+<pre><code>SupportMapFragment mMapFragment;
+</code></pre>
+
+<p>The Venue&rsquo;s coordinates</p>
+
+<pre><code>static final LatLng VENUE_LAT_LNG = new LatLng(57.05813067, 9.95058065);
+</code></pre>
+
+<p>Location Data Sources objects</p>
+
+<pre><code>PeopleLocationDataSource peopleLocationDataSource;
+BatteriesLocationDataSource batteriesLocationDataSource;
+</code></pre>
+
+<p>Once the map is ready, move the camera to the venue&rsquo;s location and call setupMapsIndoors</p>
+
+<pre><code>OnMapReadyCallback mOnMapReadyCallback = new OnMapReadyCallback() {
+    @Override
+    public void onMapReady( GoogleMap googleMap )
+    {
+        mGoogleMap = googleMap;
+        mGoogleMap.moveCamera( CameraUpdateFactory.newLatLngZoom( VENUE_LAT_LNG, 13.0f ) );
+        setupMapsIndoors();
+    }
+};
+</code></pre>
+
+<p>Create a method <code>setupMapsIndoors</code> and:
+* Initialize MapsIndoors.
+* Set the Google API Key (used by the routing provider).
+* Set a listener on the internal location data source service. Location data is not available at the same time other data (building info, etc.) is
+* Invoke the location sources and call <code>setupMapControl</code> when ready</p>
+
+<pre><code>void setupMapsIndoors() {
+    final Activity context = getActivity();
+    if ((context == null) || (mMapFragment == null) || (mMapFragment.getView() == null)) {
+        return;
+    }
+    // Sets the SDK to a &quot;clean&quot; state. In most cases, this is not needed
+    MapsIndoors.onApplicationTerminate();
+    MapsIndoors.initialize( DemoApplication.getInstance(), getString( R.string.mi_api_key ) );
+    MapsIndoors.setGoogleAPIKey( getString( R.string.google_maps_key ) );
+    // Set a listener to observe for location source status changes. In this example, we need to know when locations are
+    // ready (MPLocationSourceStatus.AVAILABLE) so we can start updating/animating them
+    MapsIndoors.addLocationSourceOnStatusChangedListener( locationSourceOnStatusChangedListener );
+    setupLocationDataSources( error -&gt; setupMapControl() );
+}
+</code></pre>
+
+<p>Create a method <code>setupLocationDataSources</code>
+* Instantiate <code>PeopleLocationDataSource</code> and <code>BatteriesLocationDataSource</code>
+* Set/register the location sources</p>
+
+<pre><code>void setupLocationDataSources( @NonNull OnResultReadyListener listener ) {
+    Set&lt;MPLocationSource&gt; locationDataSources = new HashSet&lt;&gt;( 2 );
+    peopleLocationDataSource = new PeopleLocationDataSource();
+    locationDataSources.add( peopleLocationDataSource );
+    batteriesLocationDataSource = new BatteriesLocationDataSource();
+    locationDataSources.add( batteriesLocationDataSource );
+    MapsIndoors.setLocationSources( locationDataSources.toArray( new MPLocationSource[0] ), error -&gt; {
+        final FragmentActivity context = getActivity();
+        if (context != null) {
+            context.runOnUiThread(() -&gt; {
+                if (error != null) {
+                    Toast.makeText(context, &quot;Error occurred when setting the Datasources&quot;, Toast.LENGTH_SHORT).show();
+                }
+                listener.onResultReady(error);
+            });
+        }
+    });
+}
+</code></pre>
+
+<p>Create a method <code>setupMapControl</code>
+* Instantiate MapControl.
+* Add the custom display rules used by the location sources.
+* Initialize the <code>MapControl.init()</code> object which will synchronize the data.</p>
+
+<pre><code>void setupMapControl() {
+    final Activity activityContext = getActivity();
+    if ((activityContext == null) || (mMapFragment == null)) {
+        return;
+    }
+    mMapControl = new MapControl( activityContext );
+    mMapControl.setGoogleMap( mGoogleMap, mMapFragment.getView() );
+    mMapControl.addDisplayRule( PeopleLocationDataSource.DISPLAY_RULE );
+    mMapControl.addDisplayRule( BatteriesLocationDataSource.DISPLAY_RULE );
+    mMapControl.init( null );
+}
+</code></pre>
+
+<p>Add <code>locationSourceOnStatusChangedListener</code>
+* Once location data from our custom sources becomes available, start updating them
+* Select the first floor and move the camera to the Venue&rsquo;s position</p>
+
+<pre><code>final MPLocationSourceOnStatusChangedListener locationSourceOnStatusChangedListener = new MPLocationSourceOnStatusChangedListener() {
+    @Override
+    public void onStatusChanged( @NonNull MPLocationSourceStatus status, int sourceId ) {
+        if ( status == MPLocationSourceStatus.AVAILABLE ) {
+            final Activity context = getActivity();
+            if (context != null) {
+                context.runOnUiThread(() -&gt; {
+                    peopleLocationDataSource.startUpdatingPositions();
+                    batteriesLocationDataSource.startUpdatingIcons();
+                    // Select a floor and animate the camera to the venue's position
+                    mMapControl.selectFloor( 1 );
+                    mGoogleMap.animateCamera( CameraUpdateFactory.newLatLngZoom( VENUE_LAT_LNG, 20f ) );
+                });
+            }
+        }
+    }
+};
+</code></pre>
+
+<p>Implement the <code>onDestroyView</code> method to stop updating the location sources</p>
+
+<pre><code>@Override
+public void onDestroyView() {
+    if (mMapControl != null) {
+        peopleLocationDataSource.stopUpdatingPositions();
+        batteriesLocationDataSource.stopUpdatingIcons();
+        MapsIndoors.removeLocationSourceOnStatusChangedListener( locationSourceOnStatusChangedListener );
+        mMapControl.onDestroy();
+        MapsIndoors.onApplicationTerminate();
+        MapsIndoors.initialize( DemoApplication.getInstance(), getString( R.string.mi_api_key ) );
+    }
+    super.onDestroyView();
+}
+</code></pre>
+
+<p><a href="https://github.com/MapsIndoors/MapsIndoorsAndroid-Demo-Samples/blob/master/app/src/main/java/com/mapsindoors/locationdatasources/LocationDataSourcesFragment.java">See the sample in LocationDataSourcesFragment.java</a></p>
 
 
 			<aside class="copyright" role="note">
@@ -375,7 +511,7 @@
 <nav class="pagination" aria-label="Footer">
   <div class="previous">
   
-      <a href="https://mapsindoors.github.io/android/v3/tutorials/" title="MapsIndoors SDK for Android - Tutorials">
+      <a href="https://mapsindoors.github.io/android/v3/tutorials/locationdatasourcesbatterieslocationdatasource/" title="Creating your own Location Data Source - Part 2">
         <span class="direction">
           Previous
         </span>
@@ -385,7 +521,7 @@
           </div>
           <div class="stretch">
             <div class="title">
-              MapsIndoors SDK for Android - Tutorials
+              Creating your own Location Data Source - Part 2
             </div>
           </div>
         </div>
@@ -395,14 +531,14 @@
 
   <div class="next">
   
-      <a href="https://mapsindoors.github.io/ios/v3/tutorials/" title="MapsIndoors SDK for iOS - Tutorials">
+      <a href="https://mapsindoors.github.io/ios/v3/tutorials/locationsourcespeoplelocationsource/" title="Creating your own Location Sources - Part 1">
         <span class="direction">
           Next
         </span>
         <div class="page">
           <div class="stretch">
             <div class="title">
-              MapsIndoors SDK for iOS - Tutorials
+              Creating your own Location Sources - Part 1
             </div>
           </div>
           <div class="button button-next" role="button" aria-label="Next">

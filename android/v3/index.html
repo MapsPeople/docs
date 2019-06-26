@@ -9,18 +9,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>MapsIndoors SDK for iOS - Tutorials - Indoor Navigation Built with Google Maps</title>
+    <title>MapsIndoors for Android - Getting Started - Indoor Navigation Built with Google Maps</title>
     <meta name="generator" content="Hugo 0.26" />
 
     
     <meta name="description" content="Everything you need to get started with MapsIndoors.">
     
-    <link rel="canonical" href="https://mapsindoors.github.io/ios/v2/tutorials/">
+    <link rel="canonical" href="https://mapsindoors.github.io/android/v3/">
     
     <meta name="author" content="MapsPeople">
     
 
-    <meta property="og:url" content="https://mapsindoors.github.io/ios/v2/tutorials/">
+    <meta property="og:url" content="https://mapsindoors.github.io/android/v3/">
     <meta property="og:title" content="Indoor Navigation Built with Google Maps">
     <meta property="og:image" content="https://mapsindoors.github.io/images/logo.png">
     <meta name="apple-mobile-web-app-title" content="Indoor Navigation Built with Google Maps">
@@ -106,7 +106,7 @@
     </div>
     <div class="stretch">
       <div class="title">
-        MapsIndoors SDK for iOS - Tutorials
+        MapsIndoors for Android - Getting Started
       </div>
     </div>
 
@@ -153,21 +153,13 @@
     
     
     
-  
-    
-    
-    
-  
-    
-    
-    
-    <a href="https://mapsindoors.github.io/ios/v3" class="project">
+    <a href="https://mapsindoors.github.io/android/v3" class="project">
       <div class="banner">
         <div class="logo">
-          <img src="https://mapsindoors.github.io//logos/apple-logo.svg" style="padding:10px">
+          <img src="https://mapsindoors.github.io//logos/android-logo.svg" style="padding:10px">
         </div>
         <div class="name">
-          <strong>iOS SDK <br /><span class="version">3.1.1</span></strong>
+          <strong>Android SDK <br /><span class="version">3.1.1</span></strong>
           
         </div>
       </div>
@@ -177,17 +169,25 @@
     
     
     
-    <a href="https://mapsindoors.github.io/ios/v2" class="project">
+    <a href="https://mapsindoors.github.io/android/v2" class="project">
       <div class="banner">
         <div class="logo">
-          <img src="https://mapsindoors.github.io//logos/apple-logo.svg" style="padding:10px">
+          <img src="https://mapsindoors.github.io//logos/android-logo.svg" style="padding:10px">
         </div>
         <div class="name">
-          <strong>iOS SDK <br /><span class="version">2.1.8</span></strong>
+          <strong>Android SDK <br /><span class="version">2.0.8</span></strong>
           
         </div>
       </div>
     </a>
+    
+  
+    
+    
+    
+  
+    
+    
     
   
     
@@ -208,15 +208,6 @@
       <div class="toc">
           
           
-          
-          
-          
-          
-          
-          
-          
-          
-          
                   
           <ul>
             
@@ -224,7 +215,7 @@
 
 
 <li>
-    <span class="section">iOS SDK</span>
+    <span class="section">Android SDK</span>
     <ul>
       
         
@@ -232,35 +223,9 @@
 
 
 
-<a  title="Getting Started" href="https://mapsindoors.github.io/ios/v2">
+<a class="current" title="Getting Started" href="https://mapsindoors.github.io/android/v3">
 	
 	Getting Started
-</a>
-
-
-
-      
-        
-        
-
-
-
-<a  title="Guides" href="https://mapsindoors.github.io/ios/v2/guides">
-	
-	Guides
-</a>
-
-
-
-      
-        
-        
-
-
-
-<a class="current" title="Tutorials" href="https://mapsindoors.github.io/ios/v2/tutorials">
-	
-	Tutorials
 </a>
 
 
@@ -274,7 +239,33 @@
 
 
 
-<a  title="Reference Docs" href="https://app.mapsindoors.com/mapsindoors/reference/ios/v2/index.html">
+<a  title="Guides" href="https://mapsindoors.github.io/android/v3/guides">
+	
+	Guides
+</a>
+
+
+
+      
+        
+        
+
+
+
+<a  title="Tutorials" href="https://mapsindoors.github.io/android/v3/tutorials">
+	
+	Tutorials
+</a>
+
+
+
+      
+        
+        
+
+
+
+<a  title="Reference Docs" href="https://app.mapsindoors.com/mapsindoors/reference/android/v3/index.html">
 	
 	Reference Docs
 </a>
@@ -287,7 +278,7 @@
 
 
 
-<a  title="Changelog" href="https://mapsindoors.github.io/ios/v2/changelog">
+<a  title="Changelog" href="https://mapsindoors.github.io/android/v3/changelog">
 	
 	Changelog
 </a>
@@ -298,6 +289,15 @@
     </ul>
 </li>
           </ul>
+          
+          
+          
+          
+          
+          
+          
+          
+          
           
           
           
@@ -348,15 +348,140 @@
 
 	<article class="article">
 		<div class="wrapper">
-			<h1>MapsIndoors SDK for iOS - Tutorials </h1>
+			<h1>MapsIndoors for Android - Getting Started </h1>
 
-			<p>With these simple tutorials, each reflecting common use cases, you can get more hands on experience with MapsIndoors on iOS.</p>
+			
+
+<p>This guide explains how to start using a MapsIndoors map in your Android application. Make sure that you have read the <a href="../../#prerequisites">prerequisites</a>.</p>
+
+<p>To benefit from the guides, you will need basic knowledge about:</p>
 
 <ul>
-<li><a href="locationdetailslocationdetailscontroller">Show Details for a Tapped Location</a></li>
-<li><a href="searchmysearchcontroller">Create a Search Experience</a></li>
-<li><a href="showmylocationmypositionprovider">Showing a Blue Dot / User Location</a></li>
+<li>Android Development</li>
+<li>Google Maps Android API</li>
 </ul>
+
+<p>You can get started in two ways, either by reviewing and modifying the <a href="#basic-example">basic example</a> or do the <a href="#setup-mapsindoors">clean setup</a>.</p>
+
+<h2 id="basic-example">Basic Example</h2>
+
+<p>You will find in the <a href="https://github.com/MapsIndoors/MapsIndoorsAndroid-Demo">link</a> a repo that contains the minimum code to start a MapsIndoors project.</p>
+
+<p>You can also follow the steps below to start your app from scratch or to enhance the Basic Examples, more features will be explained in the <a href="https://mapsindoors.github.io/android/v2/guides">guides</a>.</p>
+
+<h2 id="setup-mapsindoors">Setup MapsIndoors</h2>
+
+<p>Add the MapsIndoors SDK as a dependency to your project. The AAR for the MapsIndoors SDK contains both Java classes, SDK resources and AndroidManifest.xml template which gets merged into your application’s AndroidManifest.xml during build process. Add or merge in the following to your app’s build gradle file (usually called build.gradle).</p>
+
+<p>Make sure that the minimum Android SDK version is 21 or above:</p>
+
+<pre><code class="language-groovy">android {
+    defaultConfig {
+        minSdkVersion 21
+    }
+    ...
+}
+</code></pre>
+
+<p>MapsIndoors rely on Java 8 features, so you must add the following compile options, also in <em>android</em> section of your <em>build.gradle</em> file:</p>
+
+<pre><code class="language-groovy">android {
+    ...
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+</code></pre>
+
+<p>Add the following dependencies and the MapsIndoors maven repository:</p>
+
+<pre><code class="language-groovy">dependencies {
+    ...
+    implementation 'com.android.support:support-v4:27.1.0'
+    implementation 'com.google.android.gms:play-services-maps:11.8.0'
+    implementation 'com.google.code.gson:gson:2.8.2'
+    implementation 'com.mapspeople.mapsindoors:mapsindoorssdk:3.1.1@aar'
+}
+repositories{
+    maven {
+        url 'http://maven.mapsindoors.com/'
+    }
+}
+</code></pre>
+
+<p>Put those lines in your proguard-rules files :</p>
+
+<pre><code class="language-groovy">-keep interface com.mapsindoors.mapssdk.** { *; }
+-keep class com.mapsindoors.mapssdk.errors.** { *; }
+-keepclassmembers class com.mapsindoors.mapssdk.models.** { &lt;fields&gt;; }
+-keep class com.mapsindoors.mapssdk.dbglog
+</code></pre>
+
+<p>Sync your project with gradle files.</p>
+
+<h2 id="setup-google-maps">Setup Google Maps</h2>
+
+<p>Learn how to setup Google Maps on Android in this <a href="https://developers.google.com/maps/documentation/android-api/start">Getting Started Guide</a>.</p>
+
+<h2 id="setup-a-google-map-with-mapsindoors">Setup a Google Map with MapsIndoors</h2>
+
+<p>Place the following inititalisation code in the <code>onCreate</code> method in the activity that should display the Google map:</p>
+
+<pre><code class="language-java">MapsIndoors.initialize(
+  getApplicationContext(),
+  &quot;YOUR_MAPSINDOORS_API_KEY&quot;,
+  &quot;YOUR_GOOGLE_MAPS_API_KEY&quot;
+);
+</code></pre>
+
+<p>In your <code>onMapReady</code> callback function, use the <code>MapControl</code> class to set up a Google map with MapsIndoors venues, buildings &amp; locations:</p>
+
+<pre><code class="language-java">// Create a new MapControl instance
+myMapControl = new MapControl( getApplicationContext(), mapFragment, mGoogleMap );
+
+// Initialize MapControl to get the locations on the map, etc.
+myMapControl.init( errorCode -&gt; {
+  if( errorCode == null ) {
+    runOnUiThread( () -&gt; {
+      // Animate the camera to show the venue
+      mGoogleMap.animateCamera( CameraUpdateFactory.newLatLngZoom( new LatLng( 57.05813067, 9.95058065 ), 19f ) );
+    });
+  }
+});
+</code></pre>
+
+<p>Head to the <a href="https://mapsindoors.github.io/android/v2/guides">guides</a> to learn about event handling, searching, getting directions, display settings and more.</p>
+
+<h2 id="download-and-bundle-offline-content">Download and Bundle Offline Content</h2>
+
+<p>If needed, it is possible to bundle MapsIndoors content to make your app work better in offline or poor network conditions. (Please note that while MapsIndoors content can be used offline, Google Maps does not provide offline features. Outdoor wayfinding, google places searches will be unavailable and the surrounding map may be unavailable unless it has been cached.)</p>
+
+<p>In your <em>/res/values</em> folder, create a file named <code>mapsindoors_api.xml</code> with the following content:</p>
+
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;resources&gt;
+	&lt;string name=&quot;mapsindoors_api_key&quot; translatable=&quot;false&quot;&gt;YOUR_MAPSINDOORS_API_KEY&lt;/string&gt;
+&lt;/resources&gt;
+</code></pre>
+
+<p>Replace:</p>
+
+<ul>
+<li><code>YOUR_MAPSINDOORS_API_KEY</code> with your MapsIndoors API key.</li>
+</ul>
+
+<p>In your apps build gradle file, add these two lines:</p>
+
+<pre><code class="language-groovy">apply from: 'https://raw.githubusercontent.com/MapsIndoors/MapsIndoorsAndroid/SDK_V2/scripts/gradle/MapsIndoorsOfflineDataSync.gradle'
+preBuild.dependsOn fetchData
+</code></pre>
+
+<p>Depending on the overall size of your MapsIndoors deployment, this may take some time, so during development you might want to comment out the script dependency.</p>
+
+<h2 id="work-with-mapsindoors-sdk-behind-a-firewall">Work with MapsIndoors SDK behind a Firewall</h2>
+
+<p>If you need to work with MapsIndoors SDK behind a firewall, you might need to <a href="../../ip-whitelisting">white-list some IP-adresses</a>.</p>
 
 
 			<aside class="copyright" role="note">
@@ -375,7 +500,7 @@
 <nav class="pagination" aria-label="Footer">
   <div class="previous">
   
-      <a href="https://mapsindoors.github.io/android/v3/tutorials/" title="MapsIndoors SDK for Android - Tutorials">
+      <a href="https://mapsindoors.github.io/android/v2/" title="MapsIndoors for Android - Getting Started">
         <span class="direction">
           Previous
         </span>
@@ -385,7 +510,7 @@
           </div>
           <div class="stretch">
             <div class="title">
-              MapsIndoors SDK for Android - Tutorials
+              MapsIndoors for Android - Getting Started
             </div>
           </div>
         </div>
@@ -395,14 +520,14 @@
 
   <div class="next">
   
-      <a href="https://mapsindoors.github.io/ios/v3/tutorials/" title="MapsIndoors SDK for iOS - Tutorials">
+      <a href="https://mapsindoors.github.io/android/v1/guide-part2/" title="MapsIndoors for Android - Part 2">
         <span class="direction">
           Next
         </span>
         <div class="page">
           <div class="stretch">
             <div class="title">
-              MapsIndoors SDK for iOS - Tutorials
+              MapsIndoors for Android - Part 2
             </div>
           </div>
           <div class="button button-next" role="button" aria-label="Next">
