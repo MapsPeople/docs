@@ -1,20 +1,12 @@
 ---
 layout: default
-title: Getting Started
-nav_order: 2
-slug: getting-started
+title: Tutorials
+permalink: /ios/v3/tutorials
+nav_order: 3
+has_children: true
 ---
 
 # {{ page.title }}
-{: .no_toc }
-
-## Table of contents
-{: .no_toc .text-delta }
-
-1. TOC
-{:toc}
-
----
 
 ## Headline 1
 
