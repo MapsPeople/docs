@@ -26,9 +26,7 @@ github_username: mapsindoors
 
 # Build settings
 markdown: kramdown
-remote_theme: pmarsceill/just-the-docs
-plugins:
-  - jekyll-remote-theme
+# plugins:
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
@@ -48,3 +46,4 @@ plugins:
 
 # Enable or disable the site search
 search_enabled: true
+theme: "just-the-docs"

@@ -33,4 +33,5 @@ end
 gem "wdm", "~> 0.1.0", :install_if => Gem.win_platform?
 
 gem "jekyll-remote-theme"
+gem "just-the-docs"
 gem "rake"
