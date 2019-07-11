@@ -14,16 +14,7 @@ previous_tutorial_name: Getting Started
 
 ## Headline 2
 
+
 ---
-<div class="parent">  
-  <div class="left" markdown="1">
-#### Previous Tutorial
 
-[{{ page.previous_tutorial_name }}]({{ site.url }}{{ site.baseurl }}{{ page.previous_tutorial_url }})
-  </div>
-  <div class="right" markdown="1">
-#### Next Tutorial
-
-[{{ page.next_tutorial_name }}]({{ site.url }}{{ site.baseurl }}{{ page.next_tutorial_url }})
-  </div>
-</div>
+{% include next.html %}

@@ -10,3 +10,6 @@ has_children: true
 # {{ page.title }}
 
 ## Headline 2
+---
+
+{% include next.html %}
