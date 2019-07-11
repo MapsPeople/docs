@@ -2,7 +2,7 @@
 layout: default
 title: Getting Started
 nav_order: 2
-slug: getting-started
+permalink: /getting-started
 ---
 
 # {{ page.title }}
