@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Set up your environment
-permalink: /ios/v3/tutorials/set-up-your-environment
+permalink: /tutorials/set-up-your-environment
 nav_order: 1
 parent: Tutorials
 ---
