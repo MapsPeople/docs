@@ -1,0 +1,77 @@
+ios-v3:
+  - page: Getting started
+    url: /getting-started
+  - title: Environment
+    subfolderitems:
+      - page: Set up your environment
+        url: set-up-your-environment
+  - title: Google Maps
+    subfolderitems:
+      - page: Get a Google Maps up and running
+        url: /get-a-google-maps-up-and-running
+      - page: Get your Google Maps API keys
+        url: /get-your-google-maps-keys
+  - title: Google Maps
+    subfolderitems:
+      - page: Get a MapsIndoors Solution up and running
+        url: /get-a-mapsindoors-solution-up-and-running
+      - page: Use the MapsIndoors SDK
+        url: /use-the-mapsindoors-sdk
+      - page: Set the MapsIndoors Content and API keys
+        url: /set-the-mapsindoors-content-api-keys
+      - page: Get configurations from file
+        url: /get-configs-from-file
+  - title: Venues
+    subfolderitems:
+    - page: Get Venues in a list
+      url: /get-venues-in-a-list
+  - title: Floor Selector
+    subfolderitems:
+    - page: Get Floors in Floor Selector
+      url: /get-floors-in-floor-selector
+  - title: Categories
+    subfolderitems:
+    - page: List Categories
+      url: /list-categories
+    - page: Filter Locations on map by Category
+      url: /filter-locations-on-map-by-category
+  - title: Search
+    subfolderitems:
+    - page: List Locations filtered by Search Query
+      url: /list-locations-filtered-by-search-query
+    - page: Filter Locations on map by Search Query
+      url: /filter-locations-on-map-by-search-query
+  - title: Search
+    subfolderitems:
+    - page: Get details for selected Location
+      url: /get-details-for-selected-location
+    - page: Display Custom Properties for Locations
+      url: /display-custom-properties-for-locations
+    - page: Get estimated travel time on details page
+      url: /get-estimated-travel-time-on-details
+    - page: Display custom info window
+      url: /display-custom-info-window
+    - page: Street View
+      url: /street-view
+  - title: Directions
+    subfolderitems:
+      - page: Get Directions steps and display in list
+        url: /get-directions-steps-and-display-in-list
+        subsubfolderitems:
+          - page: Split Directions response in legs and steps
+            url: /split-directions-response-in-legs-steps
+      - page: Include Google Places in search results
+        url: /include-google-places-search-results
+      - page: Display route on map
+        url: /display-route-on-map        
+      - page: Change travel mode
+        url: /change-travel-mode
+      - page: Avoid stairs
+        url: /avoid-stairs
+      - page: Add user position as Origin
+        url: /add-user-position-as-origin
+      - page: Display agency info
+        url: /display-agency-info
+      - page: Use App User Roles for directions
+        url: /use-app-user-roles-for-directions
+      

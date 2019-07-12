@@ -2,7 +2,7 @@
 layout: default
 title: Getting Started
 nav_order: 2
-permalink: /getting-started
+permalink: /ios/v3/getting-started
 ---
 
 ## Headline 1
