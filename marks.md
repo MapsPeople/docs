@@ -1,10 +1,14 @@
 ---
 layout: marks/default
-title: Home - iOS v3
-permalink: /ios/v3
+title: Home
+permalink: /marks
 author_name: Mark Hougaard Jensen
 date: 2019-07-10 12:34:56
 updated_date: 2019-07-10 23:45:12
 ---
 
 # {{ page.title }}
+
+## Headline 2
+
+{{ page.url }}
