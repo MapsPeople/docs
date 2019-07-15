@@ -48,3 +48,28 @@ plugins:
 # Enable or disable the site search
 search_enabled: true
 theme: "just-the-docs"
+
+exclude:
+  - README.md
+
+permalink: pretty
+
+collections_dir: collections
+
+collections:
+  ios-v3:
+    output: true
+    permalink: /ios/v3/:name
+  ios-v2:
+    output: true
+    permalink: /ios/v2/:name
+
+defaults:
+  - scope:
+      type: ios-v3
+    values:
+      layout: ios/v3/default
+  - scope:
+      type: ios-v2
+    values:
+      layout: ios/v2/default
