@@ -1,0 +1,10 @@
+---
+layout: ios/v3/default
+title: Get Floors in Floor Selector
+permalink: /ios/v3/get-floors-in-floor-selector
+published: true
+date: 2019-07-10
+last_modified_at: 2019-07-12
+---
+
+# {{ page.title }}
