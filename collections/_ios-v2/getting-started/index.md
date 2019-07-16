@@ -6,10 +6,6 @@ date: 2019-07-10
 last_modified_at: 2019-07-12
 ---
 
-# {{ page.title }}
-
-Created: {{ page.date | date: "%B %-d, %Y" }}. {% if page.last_modified_at %}Updated: {{ page.last_modified_at |date: "%B %-d, %Y" }} {% endif %}
-
 ## Headline 2
 
 ---
