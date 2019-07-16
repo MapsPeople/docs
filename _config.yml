@@ -55,8 +55,8 @@ defaults:
   - scope:
       type: ios-v3
     values:
-      layout: ios/v3/default
+      layout: tutorial
   - scope:
       type: ios-v2
     values:
-      layout: ios/v2/default
+      layout: tutorial
