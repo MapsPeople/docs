@@ -44,7 +44,7 @@ tutorials:
     url: /list-categories
   - page: Filter Locations on map by Category
     url: /filter-locations-on-map-by-category
-- title: Search
+- title: Locations
   subfolderitems:
   - page: List Locations filtered by Search Query
     url: /list-locations-filtered-by-search-query
