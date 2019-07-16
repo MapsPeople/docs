@@ -1,0 +1,5 @@
+side_nav:
+- title: Home
+  url: /
+- title: Getting Started
+  url: /getting-started

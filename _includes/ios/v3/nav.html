@@ -20,10 +20,6 @@
   </header>
   <section>
     <h2>{{ site.data.sdks.ios-v3.sdk_title }}</h2>
-    
-    {% for item in site.data.sdks.ios-v3.top_nav %}
-      <h3><a href="{{ site.url }}{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a></h3>
-    {% endfor %}
 
     {% for item in site.data.sdks.ios-v3.tutorials %}
       <h3>{{ item.title }}</h3>
@@ -46,5 +42,11 @@
       </ul>
       {% endif %}
     {% endfor %}
+    
+    {% for item in site.data.sdks.ios-v3.reference_docs %}
+      <h3>Reference docs</h3>
+        <ul class="pl0 lh-copy"><li class="list"><a href="{{ site.url }}{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a></li></ul>
+    {% endfor %}
+    
   </section>
 </div>

@@ -3,7 +3,7 @@
     <select id="sdk-selector" name="sdk-selector" onChange="window.location.replace(this.options[this.selectedIndex].value)">
       <optgroup label="iOS">
         <option value="{{ site.url }}{{ site.baseurl }}/ios/v2" selected>iOS v2</option>
-        <option value ="{{ site.url }}{{ site.baseurl }}/ios/v3">iOS v3</option>
+        <option value="{{ site.url }}{{ site.baseurl }}/ios/v3">iOS v3</option>
       </optgroup>
       <optgroup label="Android">
         <option value="{{ site.url }}{{ site.baseurl }}/android/v2">Android v2</option>
@@ -20,10 +20,6 @@
   </header>
   <section>
     <h2>{{ site.data.sdks.ios-v2.sdk_title }}</h2>
-    
-    {% for item in site.data.sdks.ios-v2.top_nav %}
-      <h3><a href="{{ site.url }}{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a></h3>
-    {% endfor %}
 
     {% for item in site.data.sdks.ios-v2.tutorials %}
       <h3>{{ item.title }}</h3>
@@ -46,5 +42,11 @@
       </ul>
       {% endif %}
     {% endfor %}
+    
+    {% for item in site.data.sdks.ios-v2.reference_docs %}
+      <h3>Reference docs</h3>
+        <ul class="pl0 lh-copy"><li class="list"><a href="{{ site.url }}{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a></li></ul>
+    {% endfor %}
+    
   </section>
 </div>

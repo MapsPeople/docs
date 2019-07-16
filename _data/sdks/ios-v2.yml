@@ -1,12 +1,7 @@
 platform: ios
 version: v2
 sdk_title: iOS SDK v2
-top_nav:
-- title: Home
-  url: /ios/v2
-- title: Getting Started
-  url: /ios/v2/getting-started
-referece_docs:
+reference_docs:
 - title: Reference Docs
   url: /ios/v2/reference-docs
 tutorials:
