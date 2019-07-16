@@ -1,0 +1,25 @@
+{% include head.html %}
+  <body class="sans-serif">
+    {% include top-nav.html %}
+    <div class="flex">
+      <aside class="w-25 pa3 br b--light-silver pt4">
+        {% if page.nav == "ios/v3" %}
+        {% include ios/v3/nav.html %}
+        {% elsif page.nav == "ios/v2" %}
+        {% include ios/v2/nav.html %}
+        {% else %}
+        {% include nav.html %}
+        {% endif %}
+      </aside>
+      <main role="main" class="w-75 pa3 measure-wide">
+        <h1>{{ page.title }}</h1>
+        <p class="lh-copy f6">
+          <span class="orange">{% if page.last_modified_at %}Updated on {{ page.last_modified_at |date: "%B %-d, %Y" }}. {% endif %}</span>
+          <span class="gray">{% if page.date %}Posted on {{ page.date | date: "%B %-d, %Y" }}. {% endif %}</span>
+        </p>
+        {{ content }}
+      </main>
+    </div>
+    {% include footer.html %}
+  </body>
+</html>
