@@ -1,0 +1,28 @@
+<div class="vh100">
+  <header class="pt2 mb4">
+    <select id="sdk-selector" name="sdk-selector" onChange="window.location.replace(this.options[this.selectedIndex].value)">
+      <optgroup label="iOS">
+        <option value="{{ site.url }}{{ site.baseurl }}/ios/v2">iOS v2</option>
+        <option value ="{{ site.url }}{{ site.baseurl }}/ios/v3" selected>iOS v3</option>
+      </optgroup>
+      <optgroup label="Android">
+        <option value="{{ site.url }}{{ site.baseurl }}/android/v2">Android v2</option>
+        <option value="{{ site.url }}{{ site.baseurl }}/android/v3">Android v3</option>
+      </optgroup>
+      <optgroup label="Web">
+        <option value="{{ site.url }}{{ site.baseurl }}/web/v2">Web v2</option>
+        <option value="{{ site.url }}{{ site.baseurl }}/web/v3">Web v3</option>
+      </optgroup>
+      <optgroup label="Public Api">
+        <option value="{{ site.url }}{{ site.baseurl }}/public-api/v1">Public API v1</option>
+      </optgroup>
+    </select>
+  </header>
+  <section>
+    <h2>{{ site.data.sdks.ios-v3.sdk_title }}</h2>
+    
+    {% for item in site.data.sdks.ios-v3.top_nav %}
+      <h3><a href="{{ site.url }}{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a></h3>
+    {% endfor %}
+  </section>
+</div>
