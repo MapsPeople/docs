@@ -1,5 +1,5 @@
 ---
-layout: ios/v2/default
+
 title: Get Directions Steps and display in list
 slug: get-directions-steps-and-display-in-list
 published: true

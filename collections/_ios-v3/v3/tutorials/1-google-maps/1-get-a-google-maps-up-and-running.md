@@ -1,5 +1,5 @@
 ---
-layout: ios/v3/default
+
 title: Get a Google Maps up and running
 slug: get-a-google-maps-up-and-running
 published: true

@@ -1,5 +1,5 @@
 ---
-layout: ios/v3/default
+
 title: Avoid Stairs
 slug: avoid-stairs
 published: true

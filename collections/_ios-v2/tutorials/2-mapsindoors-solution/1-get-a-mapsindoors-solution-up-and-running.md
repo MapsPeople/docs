@@ -1,5 +1,5 @@
 ---
-layout: ios/v2/default
+
 title: Get a MapsIndoors Solution up and running
 slug: get-a-mapsindoors-solution-up-and-running
 published: true

@@ -1,5 +1,5 @@
 ---
-layout: ios/v2/default
+
 title: Get estimated travel time on details page
 slug: get-estimated-travel-time-on-details
 published: true

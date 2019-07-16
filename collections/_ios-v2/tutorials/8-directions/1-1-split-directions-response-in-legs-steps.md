@@ -1,5 +1,5 @@
 ---
-layout: ios/v2/default
+
 title: Split Directions response in Legs and Steps
 slug: split-directions-response-in-legs-steps
 published: true

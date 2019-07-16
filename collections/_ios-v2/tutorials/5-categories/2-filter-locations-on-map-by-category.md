@@ -1,5 +1,5 @@
 ---
-layout: ios/v2/default
+
 title: Filter Locations on map by Category
 slug: filter-locations-on-map-by-category
 published: true

@@ -1,5 +1,5 @@
 ---
-layout: ios/v3/default
+
 title: Get Floors in Floor Selector
 slug: get-floors-in-floor-selector
 published: true

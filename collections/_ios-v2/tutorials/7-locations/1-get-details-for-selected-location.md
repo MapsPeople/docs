@@ -1,5 +1,5 @@
 ---
-layout: ios/v2/default
+
 title: Get details for selected Location
 slug: get-details-for-selected-location
 published: true

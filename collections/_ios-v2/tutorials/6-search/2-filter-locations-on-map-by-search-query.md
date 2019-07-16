@@ -1,5 +1,5 @@
 ---
-layout: ios/v2/default
+
 title: Filter Locatations on map by search query
 slug: filter-locations-on-map-by-search-query
 published: true

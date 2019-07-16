@@ -1,5 +1,5 @@
 ---
-layout: ios/v2/default
+
 title: Use the MapsIndoors SDK
 slug: use-the-mapsindoors-sdk
 published: true

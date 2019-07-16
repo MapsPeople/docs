@@ -1,5 +1,5 @@
 ---
-layout: ios/v2/default
+
 title: Display Route on map
 slug: display-route-on-map
 published: true

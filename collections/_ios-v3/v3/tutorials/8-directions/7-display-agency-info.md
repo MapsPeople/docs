@@ -1,5 +1,5 @@
 ---
-layout: ios/v3/default
+
 title: Display Agency info
 slug: display-agency-info
 published: true

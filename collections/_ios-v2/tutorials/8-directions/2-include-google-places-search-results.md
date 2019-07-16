@@ -1,5 +1,5 @@
 ---
-layout: ios/v2/default
+
 title: Include Google Places search results
 slug: include-google-places-search-results
 published: true

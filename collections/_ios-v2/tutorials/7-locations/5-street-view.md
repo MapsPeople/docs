@@ -1,5 +1,5 @@
 ---
-layout: ios/v2/default
+
 title: Street View
 slug: street-view
 published: true

@@ -1,5 +1,5 @@
 ---
-layout: ios/v3/default
+
 title: Display custom properties for Locations
 slug: display-custom-properties-for-locations
 published: true

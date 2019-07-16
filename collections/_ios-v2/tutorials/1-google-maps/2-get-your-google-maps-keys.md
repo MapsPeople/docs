@@ -1,5 +1,4 @@
 ---
-layout: ios/v2/default
 title: Get your Google Maps API keys
 slug: get-your-google-maps-keys
 published: true

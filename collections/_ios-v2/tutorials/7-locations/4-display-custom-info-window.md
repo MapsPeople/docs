@@ -1,5 +1,5 @@
 ---
-layout: ios/v2/default
+
 title: Display custom info window
 slug: display-custom-info-window
 published: true

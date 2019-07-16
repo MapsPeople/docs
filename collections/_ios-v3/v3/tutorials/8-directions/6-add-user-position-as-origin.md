@@ -1,5 +1,5 @@
 ---
-layout: ios/v3/default
+
 title: Add user position as Origin
 slug: add-user-position-as-origin
 published: true

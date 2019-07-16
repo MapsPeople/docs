@@ -1,5 +1,5 @@
 ---
-layout: ios/v3/default
+
 title: List Categories
 slug: list-categories
 published: true

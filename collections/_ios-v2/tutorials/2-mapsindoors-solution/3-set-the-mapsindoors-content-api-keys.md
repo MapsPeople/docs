@@ -1,5 +1,5 @@
 ---
-layout: ios/v2/default
+
 title: Set the MapsIndoors Content and API keys
 slug: set-the-mapsindoors-content-api-keys
 published: true

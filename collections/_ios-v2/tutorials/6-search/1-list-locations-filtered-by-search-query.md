@@ -1,5 +1,5 @@
 ---
-layout: ios/v2/default
+
 title: List Locations filtered by search query
 slug: list-locations-filtered-by-search-query
 published: true

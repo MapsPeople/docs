@@ -1,5 +1,5 @@
 ---
-layout: ios/v2/default
+
 title: Get configs from file
 slug: get-configs-from-file
 published: true

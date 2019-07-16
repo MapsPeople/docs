@@ -1,5 +1,4 @@
 ---
-layout: ios/v2/default
 title: Getting started
 slug: getting-started
 published: true

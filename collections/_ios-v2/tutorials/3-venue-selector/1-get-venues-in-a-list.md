@@ -1,5 +1,5 @@
 ---
-layout: ios/v2/default
+
 title: Get Venues in a list
 slug: get-venues-in-a-list
 published: true

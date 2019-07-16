@@ -1,5 +1,5 @@
 ---
-layout: mapsindoors/default
+layout: default
 title: Home
 permalink: /
 author_name: Mark Hougaard Jensen

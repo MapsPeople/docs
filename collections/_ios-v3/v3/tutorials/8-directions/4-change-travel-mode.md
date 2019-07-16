@@ -1,5 +1,5 @@
 ---
-layout: ios/v3/default
+
 title: Change Travel Mode
 slug: change-travel-mode
 published: true
