@@ -56,7 +56,9 @@ defaults:
       type: ios-v3
     values:
       layout: tutorial
+      nav: ios/v3
   - scope:
       type: ios-v2
     values:
       layout: tutorial
+      nav: ios/v2
