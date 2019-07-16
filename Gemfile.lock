@@ -90,7 +90,6 @@ PLATFORMS
 
 DEPENDENCIES
   jekyll (~> 3.8.6)
-  jekyll-feed (~> 0.6)
   jekyll-octicons
   jekyll-remote-theme
   just-the-docs
