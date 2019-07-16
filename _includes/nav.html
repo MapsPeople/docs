@@ -1,6 +1,6 @@
 <div class="vh100">
   <header class="pt2 mb4">
-    {% for item in site.data.side-nav.side_nav %}
+    {% for item in site.data.nav.side_nav %}
       <h3><a href="{{ site.url }}{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a></h3>
     {% endfor %}
   </header>
