@@ -59,10 +59,10 @@ collections_dir: collections
 collections:
   ios-v3:
     output: true
-    permalink: /ios/v3/:name
+    permalink: /ios/v3/:slug
   ios-v2:
     output: true
-    permalink: /ios/v2/:name
+    permalink: /ios/v2/:slug
 
 defaults:
   - scope:
