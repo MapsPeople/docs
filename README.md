@@ -95,13 +95,13 @@ Here are a few of them:
   bundle exec jekyll serve --watch --drafts --future --unpublished
   ```
 
-1. If serving locally is slow, use the experimental "Incremental build" that only rebuilds pages touched by changes: 
+2. If serving locally is slow, use the experimental "Incremental build" that only rebuilds pages touched by changes: 
 
   ```bash
   bundle exec jekyll serve --watch --incremental
   ```
 
-1. Do a one-off build to `./_site`:
+3. Do a one-off build to `./_site`:
 
   ```bash
   bundle exec jekyll build
