@@ -13,18 +13,14 @@ Jekyll automatically builds and deploys from the `gh-pages` branch in this repos
 ### Using Jekyll on your own machine to preview content
 
 1. Clone this repository to your machine: 
-
-  ```bash
-  git clone git@github.com:MapsPeople/MIDOCS-jekyll
-  cd MIDOCS-jekyll
-  ```
-
+```bash
+git clone git@github.com:MapsPeople/MIDOCS-jekyll
+cd MIDOCS-jekyll
+```
 1. Start Jekyll: 
-
-  ```bash
-  bundle exec jekyll serve --watch
-  ```
-
+```bash
+bundle exec jekyll serve --watch
+```
 1. Open `https://127.0.0.1:4000`
 
 ### Create a new post
