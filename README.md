@@ -13,15 +13,19 @@ Jekyll automatically builds and deploys from the `gh-pages` branch in this repos
 ### Using Jekyll on your own machine to preview content
 
 1. Clone this repository to your machine: 
-```bash
-git clone git@github.com:MapsPeople/MIDOCS-jekyll
-cd MIDOCS-jekyll
-```
-1. Start Jekyll: 
-```bash
-bundle exec jekyll serve --watch
-```
-1. Open `https://127.0.0.1:4000`
+
+  ```bash
+  git clone git@github.com:MapsPeople/MIDOCS-jekyll
+  cd MIDOCS-jekyll
+  ```
+
+2. Start Jekyll: 
+
+  ```bash
+  bundle exec jekyll serve --watch
+  ```
+
+3. Open `https://127.0.0.1:4000`
 
 ### Create a new post
 
@@ -31,8 +35,8 @@ bundle exec jekyll serve --watch
   git checkout -b feature/teleportation-tutorial
   ```
 
-1. Copy an existing `.md`-file from e.g. `./collections/ios-v3/tutorials/` and modify it.
-1. Make sure the [Front matter](https://jekyllrb.com/docs/step-by-step/03-front-matter/) at the top of the file is formatted like this:
+2. Copy an existing `.md`-file from e.g. `./collections/ios-v3/tutorials/` and modify it.
+3. Make sure the [Front matter](https://jekyllrb.com/docs/step-by-step/03-front-matter/) at the top of the file is formatted like this:
 
   ```yaml
   ---
@@ -44,9 +48,9 @@ bundle exec jekyll serve --watch
   ---
   ```
 
-1. Update the `date:` to today's date (perhaps using [a handy Snippet in VS Code](https://marketplace.visualstudio.com/items?itemName=jsynowiec.vscode-insertdatestring))
-1. `last_modified_at` is optional. If left empty, it won't be rendered on the tutorial-page.
-1. To add your new tutorial to the side-navigation, add it to the correct `data`-file. E.g. creating a new tutorial for iOS SDK v3, open `./_data/sdks/ios-v3.yml` and add the `page` and `url` to the right place like so:
+4. Update the `date:` to today's date (perhaps using [a handy Snippet in VS Code](https://marketplace.visualstudio.com/items?itemName=jsynowiec.vscode-insertdatestring))
+5. `last_modified_at` is optional. If left empty, it won't be rendered on the tutorial-page.
+6. To add your new tutorial to the side-navigation, add it to the correct `data`-file. E.g. creating a new tutorial for iOS SDK v3, open `./_data/sdks/ios-v3.yml` and add the `page` and `url` to the right place like so:
 
   ```yaml
   tutorials:
@@ -57,8 +61,8 @@ bundle exec jekyll serve --watch
       slug: open-teleportation-portal
   ```
 
-1. Run `bundle exec jekyll serve --watch` and navigate to your new tutorial to check it out.
-1. If all looks well, use `git` to add, commit and push your new tutorial:
+7. Run `bundle exec jekyll serve --watch` and navigate to your new tutorial to check it out.
+8. If all looks well, use `git` to add, commit and push your new tutorial:
 
   ```bash
   git status
@@ -67,7 +71,7 @@ bundle exec jekyll serve --watch
   git push -u origin feature/teleportation-tutorial
   ```
 
-1. Go to [mapsindoors.github.io](https://mapsindoors.github.io) to see your new tutorial live.
+9. Go to [mapsindoors.github.io](https://mapsindoors.github.io) to see your new tutorial live.
 
 #### Tips
 
