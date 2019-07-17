@@ -75,7 +75,8 @@ Jekyll automatically builds and deploys from the `gh-pages` branch in this repos
 
 #### Tips
 
-1. **Please use feature-branches.** That makes it much easier to review new tutorials before they're live.
+1. Please use feature-branches. That makes it much easier to review new tutorials before they're live.
+1. The folder structure and filenames inside `tutorials` don't affect the url of the tutorial; the `collection` and `slug` defines its url. The reason there are numbers on the tutorial-folders and -files is to make them more readable.
 
 ### Markdown
 
