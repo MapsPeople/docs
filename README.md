@@ -109,6 +109,6 @@ Here are a few of them:
 
 ### FAQ
 
-##### Why `bundle exec jekyll serve` and not `jekyll serve`?**
+#### Why `bundle exec jekyll serve` and not `jekyll serve`?
 
 `bundle exec` uses the Jekyll version defined for the project in the `Gemfile`, not just any version of Jekyll that might be lying around on the machine. [Stack Overflow](https://stackoverflow.com/questions/51157446/whats-the-difference-between-bundle-exec-jekyll-serve-and-jekyll-serve)
