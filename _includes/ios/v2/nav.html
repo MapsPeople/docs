@@ -27,12 +27,12 @@
       <ul class="pl0 lh-copy">
         {% for entry in item.subfolderitems %}
         <li class="list">
-          <a href="{{ site.url }}{{ site.baseurl }}/ios/v2{{ entry.url }}">{{ entry.page }}</a>
+          <a href="{{ site.url }}{{ site.baseurl }}/ios/v2/{{ entry.slug }}">{{ entry.page }}</a>
           {% if entry.subsubfolderitems[0] %}
           <ul>
              {% for subentry in entry.subsubfolderitems %}
             <li>
-              <a href="{{ site.url }}{{ site.baseurl }}/{{ sdk.platform }}/{{ sdk.version }}/{{ subentry.url }}">{{ subentry.page }}</a>
+              <a href="{{ site.url }}{{ site.baseurl }}/ios/v2/{{ subentry.slug }}">{{ subentry.page }}</a>
             </li>
             {% endfor %}
           </ul>
@@ -45,7 +45,7 @@
     
     {% for item in site.data.sdks.ios-v2.reference_docs %}
       <h3>Reference docs</h3>
-        <ul class="pl0 lh-copy"><li class="list"><a href="{{ site.url }}{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a></li></ul>
+        <ul class="pl0 lh-copy"><li class="list"><a href="{{ site.url }}{{ site.baseurl }}/ios/v2/{{ item.slug }}">{{ item.title }}</a></li></ul>
     {% endfor %}
     
   </section>
