@@ -19,6 +19,10 @@
   </url>
   
   <url>
+    <loc>https://mapsindoors.github.io/android/v3/tutorials/showmultiplelocationsshowmultiplelocationsfragment/</loc>
+  </url>
+  
+  <url>
     <loc>https://mapsindoors.github.io/ios/v1/guides/search-and-directions/</loc>
   </url>
   
@@ -118,6 +122,10 @@
   </url>
   
   <url>
+    <loc>https://mapsindoors.github.io/android/v3/tutorials/searchmapdemosearchfragment/</loc>
+  </url>
+  
+  <url>
     <loc>https://mapsindoors.github.io/ios/v2/tutorials/searchmysearchcontroller/</loc>
   </url>
   
@@ -127,6 +135,10 @@
   
   <url>
     <loc>https://mapsindoors.github.io/android/v2/tutorials/searchmapdemosearchmapfragment/</loc>
+  </url>
+  
+  <url>
+    <loc>https://mapsindoors.github.io/android/v3/tutorials/searchmapdemosearchmapfragment/</loc>
   </url>
   
   <url>
@@ -335,6 +347,10 @@
   </url>
   
   <url>
+    <loc>https://mapsindoors.github.io/android/v3/tutorials/locationdetailsdemolocationdetailsfragment/</loc>
+  </url>
+  
+  <url>
     <loc>https://mapsindoors.github.io/ios/v2/tutorials/locationdetailslocationdetailscontroller/</loc>
   </url>
   
@@ -347,6 +363,10 @@
   </url>
   
   <url>
+    <loc>https://mapsindoors.github.io/android/v3/tutorials/showuserlocationdemopositionprovider/</loc>
+  </url>
+  
+  <url>
     <loc>https://mapsindoors.github.io/ios/v2/tutorials/showmylocationmypositionprovider/</loc>
   </url>
   
@@ -356,6 +376,10 @@
   
   <url>
     <loc>https://mapsindoors.github.io/android/v2/tutorials/showuserlocationshowuserlocationfragment/</loc>
+  </url>
+  
+  <url>
+    <loc>https://mapsindoors.github.io/android/v3/tutorials/showuserlocationshowuserlocationfragment/</loc>
   </url>
   
   <url>

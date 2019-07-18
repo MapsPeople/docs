@@ -60,6 +60,17 @@ MapsIndoors.getLocationsAsync( query, filter, ( locs, err ) -&amp;gt; { if( locs
     
     <item>
       <title></title>
+      <link>https://mapsindoors.github.io/android/v3/tutorials/showmultiplelocationsshowmultiplelocationsfragment/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/android/v3/tutorials/showmultiplelocationsshowmultiplelocationsfragment/</guid>
+      <description>Add a GoogleMap and a MapControl to the class
+MapControl mMapControl; GoogleMap mGoogleMap;  The Venue&amp;rsquo;s coordinates
+static final LatLng VENUE_LAT_LNG = new LatLng( 57.05813067, 9.95058065 ); SupportMapFragment mMapFragment; public ShowMultipleLocationsFragment() { // Required empty public constructor } @NonNull public static ShowMultipleLocationsFragment newInstance() { return new ShowMultipleLocationsFragment(); } //region FRAGMENT LIFECYCLE @Override @Nullable public View onCreateView( @NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState ) { // Inflate the layout for this fragment return inflater.</description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>https://mapsindoors.github.io/ios/v1/guides/search-and-directions/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -280,6 +291,17 @@ Declare a listener for our location selection with a onUserSelectedLocation meth
     
     <item>
       <title>Create a Search Experience with MapsIndoors - Part 1</title>
+      <link>https://mapsindoors.github.io/android/v3/tutorials/searchmapdemosearchfragment/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/android/v3/tutorials/searchmapdemosearchfragment/</guid>
+      <description>srgergethre This is an example of creating a simple search experience using MapsIndoors. We will create a map with a search button that leads to another Fragment that handles the search and selection. On selection of a location, we go back to the map and shows the selected location on the map.
+We will start by creating a simple search controller that handles search and selection of MapsIndoors locations
+Declare a listener for our location selection with a onUserSelectedLocation method</description>
+    </item>
+    
+    <item>
+      <title>Create a Search Experience with MapsIndoors - Part 1</title>
       <link>https://mapsindoors.github.io/ios/v2/tutorials/searchmysearchcontroller/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -309,6 +331,18 @@ Declare a protocol for our location selection with a didSelectLocation method</d
       <description>This is part 2 of the tutorial of creating a simple search experience using MapsIndoors. In Part 1 we created the search Fragment. Now we will create the &amp;ldquo;main&amp;rdquo; controller displaying the map and eventually the selected location.
 Start by creating a Fragment
 public class SearchMapFragment extends Fragment  Add a GoogleMap and a MapControl to the class
+MapControl mMapControl; GoogleMap mGoogleMap;  Add other needed views for this example</description>
+    </item>
+    
+    <item>
+      <title>Create a Search Experience with MapsIndoors - Part 2</title>
+      <link>https://mapsindoors.github.io/android/v3/tutorials/searchmapdemosearchmapfragment/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/android/v3/tutorials/searchmapdemosearchmapfragment/</guid>
+      <description>This is part 2 of the tutorial of creating a simple search experience using MapsIndoors. In Part 1 we created the search Fragment. Now we will create the &amp;ldquo;main&amp;rdquo; controller displaying the map and eventually the selected location.
+Start by creating a Fragment
+public class SearchMapFragment extends Fragment // {  Add a GoogleMap and a MapControl to the class
 MapControl mMapControl; GoogleMap mGoogleMap;  Add other needed views for this example</description>
     </item>
     
@@ -809,6 +843,20 @@ static final LatLng VENUE_LAT_LNG = new LatLng( 57.</description>
     
     <item>
       <title>Show Location Details</title>
+      <link>https://mapsindoors.github.io/android/v3/tutorials/locationdetailsdemolocationdetailsfragment/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/android/v3/tutorials/locationdetailsdemolocationdetailsfragment/</guid>
+      <description>This is an example of displaying some details of a MapsIndoors location
+Start by creating a Fragment or an Activity class that contains the google map fragment
+public class LocationDetailsFragment extends Fragment // {  Add a GoogleMap and a MapControl to the class
+MapControl mMapControl; GoogleMap mGoogleMap;  Add other needed views for this example
+SupportMapFragment mMapFragment; TextView detailsTextView;  The Venue&amp;rsquo;s coordinates
+static final LatLng VENUE_LAT_LNG = new LatLng( 57.</description>
+    </item>
+    
+    <item>
+      <title>Show Location Details</title>
       <link>https://mapsindoors.github.io/ios/v2/tutorials/locationdetailslocationdetailscontroller/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -848,6 +896,18 @@ public class DemoPositionProvider implements PositionProvider  Add some member v
     
     <item>
       <title>Show the Blue Dot with MapsIndoors - Part 1</title>
+      <link>https://mapsindoors.github.io/android/v3/tutorials/showuserlocationdemopositionprovider/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/android/v3/tutorials/showuserlocationdemopositionprovider/</guid>
+      <description>In this tutorial we will show how you can show a blue dot on the map, representing the user&amp;rsquo;s location. The position will be served from a mocked positioning provider and displayed on a map in a view controller.
+We will start by creating our implementation of a positioning provider.
+Create the class DemoPositionProvider that implements PositionProvider.
+public class DemoPositionProvider implements PositionProvider  Add some member variables to DemoPositionProvider: * mPositionUpdateListener: The listener object * isRunning: A running state boolean flag * mLatestPosition: The latest positioning result * mPositionUpdateTimer: A timer so we can update the position of the user within an time interval</description>
+    </item>
+    
+    <item>
+      <title>Show the Blue Dot with MapsIndoors - Part 1</title>
       <link>https://mapsindoors.github.io/ios/v2/tutorials/showmylocationmypositionprovider/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -878,6 +938,18 @@ class MyPositionProvider : NSObject, MPPositionProvider {  Add some member varia
       <guid>https://mapsindoors.github.io/android/v2/tutorials/showuserlocationshowuserlocationfragment/</guid>
       <description>This is part 2 of the tutorial of managing a blue dot on the map. In Part 1 we created the position provider. Now we will create a Fragment displaying a map that shows the users (mock) location.
 Create a class ShowUserLocationFragment that inherits from Fragment.
+public class ShowUserLocationFragment extends Fragment {  Add a GoogleMap and a MapControl to the class
+GoogleMap mGoogleMap; MapControl mMapControl;  Add a map fragment</description>
+    </item>
+    
+    <item>
+      <title>Show the Blue Dot with MapsIndoors - Part 2</title>
+      <link>https://mapsindoors.github.io/android/v3/tutorials/showuserlocationshowuserlocationfragment/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/android/v3/tutorials/showuserlocationshowuserlocationfragment/</guid>
+      <description>This is part 2 of the tutorial of managing a blue dot on the map. In Part 1 we created the position provider. Now we will create a Fragment displaying a map that shows the users (mock) location.
+Create the class ShowUserLocationFragment that inherits from Fragment.
 public class ShowUserLocationFragment extends Fragment {  Add a GoogleMap and a MapControl to the class
 GoogleMap mGoogleMap; MapControl mMapControl;  Add a map fragment</description>
     </item>
