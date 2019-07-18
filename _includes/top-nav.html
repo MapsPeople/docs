@@ -1,16 +1,17 @@
-<header>
-	<div class="flex bg-green bb b--dark-green">
-		<div class="w-2 pa3 flex-auto">
+<header class="ph5 {% if page.path contains 'front' %}bg-dark-gray{% else %}bg-green{% endif %}">
+	<div class="flex">
+		<div class="w-2 pv3 flex-auto">
 			<a href="{{ site.url }}">
 				<img src="{{ site.baseurl }}/assets/mapspeople-logo-white.svg" alt="MapsPeople logo" width="200px">
 			</a>
 		</div>
-		<div class="pa3 inline-flex items-center">
+		<div class="pv3 inline-flex items-center">
 			<a class="pl4 dib v-mid link dim near-white" href="{{ site.url }}{{ site.baseurl }}/support">Support</a>
 			<a class="pl4 dib v-mid link dim near-white inline-flex items-center pl4" href="//github.com/mapsindoors">
 				{% octicon mark-github %}
 				<span class="ml2">MapsIndoors on GitHub</span>
 			</a>
+			<a class="pl4 dib v-mid link dim near-white" href="https://cms.mapsindoors.com">MapsIndoors CMS</a>
 		</div>
 	</div>
 </header>

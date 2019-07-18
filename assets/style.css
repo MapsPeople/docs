@@ -1,0 +1,11 @@
+body {
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.c-bg-seafoam {
+  background-color: #F5F5FE;
+}
+
+.sdk-button {
+  box-shadow: 0px 16px 32px #E5E5EA;
+}
