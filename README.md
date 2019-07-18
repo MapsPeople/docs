@@ -12,6 +12,12 @@ TODO: Jekyll automatically builds and deploys from the `gh-pages` branch in this
 
 ### Using Jekyll on your own machine to preview content
 
+#### Prerequisites
+
+Definitely Ruby, RubyGems, GCC and Make. Jekyll has [a quick guide to get set up](https://jekyllrb.com/docs/installation/).
+
+#### Clone repository and run Jekyll 
+
 1. Clone this repository to your machine: 
 
   ```bash
