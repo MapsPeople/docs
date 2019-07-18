@@ -6,9 +6,9 @@ This is the repository holding all documentation related to developing apps on t
 
 ## Getting started
 
-The documentation site is built with [Jekyll](https://jekyllrb.com) and hosted on GitHub Pages.
+TODO: The documentation site is built with [Jekyll](https://jekyllrb.com) and hosted on GitHub Pages.
 
-Jekyll automatically builds and deploys from the `gh-pages` branch in this repository. Only members of this organization can merge into the `gh-pages` branch.
+TODO: Jekyll automatically builds and deploys from the `gh-pages` branch in this repository. Only members of this organization can merge into the `gh-pages` branch.
 
 ### Using Jekyll on your own machine to preview content
 
