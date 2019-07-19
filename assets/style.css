@@ -1,0 +1,49 @@
+body {
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.mi-bg-seafoam {
+  background-color: #F5F5FE;
+}
+
+.mi-sdk-button {
+  box-shadow: 0px 16px 32px #E5E5EA;
+}
+
+blockquote {
+  border-left: 4px solid rgba(0, 0, 0, 0.16);
+  padding-left: 16px;
+  font-style: italic;
+  font-size: 1.25em;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+blockquote.mi-tip,
+blockquote.mi-careful,
+blockquote.mi-warning {
+  border-radius: 4px;
+  padding: 0px 24px;
+  font-size: 1em;
+  font-style: normal;
+  
+}
+
+blockquote.mi-tip {
+  background-color: rgba(79, 166, 120, 0.24);
+  border: 1px solid rgba(79, 166, 120, 0.48);  
+}
+
+blockquote.mi-careful {
+  background-color: rgba(245, 185, 64, 0.24);
+  border: 1px solid rgba(245, 185, 64, 0.48);
+}
+
+blockquote.mi-warning {
+  background-color: rgba(212, 46, 37, 0.24);
+  border: 1px solid rgba(212, 46, 37, 0.48);
+}
+
+code.hljs {
+  padding: 1em;
+}
