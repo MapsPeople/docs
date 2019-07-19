@@ -1,0 +1,45 @@
+{% include head.html %}
+  <body class="bg-dark-gray">
+    {% include top-nav.html %}
+    <div class="flex bb b--black-20 f4 ph5 bg-white">
+      <div class="flex-auto mid-gray">
+        <p>
+          {% if page.nav == "ios/v3" %}
+          <a href="{{ site.url }}{{ site.baseurl }}/ios/v3">iOS v3</a> &rsaquo; <a href="{{ site.url }}{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a>
+          {% elsif page.nav == "ios/v2" %}
+          <a href="{{ site.url }}{{ site.baseurl }}/ios/v2">iOS v2</a> &rsaquo; <a href="{{ site.url }}{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a>
+          {% endif %}
+        </p>
+      </div>
+      <div class="inline-flex items-center blue">
+        <!-- TODO: Link these correctly -->
+        <a href="#" class="pl4 dib v-mid link dim">Glossary</a>
+        <a href="#" class="pl4 dib v-mid link dim">Refrence Docs</a>
+        <a href="#" class="pl4 dib v-mid link dim">iOS SDK v3</a>
+      </div>
+    </div>
+    <main role="main">
+      <section class="bg-white mt0 pb5">
+        {% for item in site.data.sdks.ios-v3.tutorials %}
+          {% if item.title == page.title %}
+          <h1 class="f1 fw3 tc mv0 pt4">{{ item.title }}</h1>
+          <div class="mw7 center">
+            <ul class="pl0 f3 mt4">
+              {% for entry in item.subfolderitems %}
+              <li class="list mb3">
+                <a href="{{ site.url }}{{ site.baseurl }}/ios/v3/{{ entry.slug }}">{{ entry.page }}</a>
+              </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        {% endfor %}
+        
+          {{ content }}
+          
+          </div>
+        
+      </section>
+    </main>
+    {% include footer.html %}
+  </body>
+</html>
