@@ -1,0 +1,39 @@
+{% include head.html %}
+  <body class="bg-dark-gray">
+    {% include top-nav.html %}
+    <div class="flex bb b--black-20 f4 ph5 bg-white">
+      <div class="flex-auto mid-gray">
+        <p>
+          {% if page.nav == "ios/v3" %}
+          <a href="{{ site.url }}{{ site.baseurl }}/ios/v3">iOS v3</a>
+          {% elsif page.nav == "ios/v2" %}
+          <a href="{{ site.url }}{{ site.baseurl }}/ios/v2">iOS v2</a>
+          {% endif %}
+        </p>
+      </div>
+      <div class="inline-flex items-center blue">
+        <a href="#" class="pl4 dib v-mid link dim">Glossary</a>
+        <a href="#" class="pl4 dib v-mid link dim">Refrence Docs</a>
+        <a href="#" class="pl4 dib v-mid link dim">iOS SDK v3</a>
+      </div>
+    </div>
+    <main role="main">
+      <section class="bg-white mt0 pb5">
+        <h1 class="f1 fw3 tc mv0 pt4">{{ page.title }}</h1>
+        <div class="mw7 center">
+          <ul class="pl0 f3 mt4">
+            {% for item in site.data.sdks.ios-v3.tutorials %}
+            <li class="list mb3">
+              <a href="{{ site.url }}{{ site.baseurl }}/ios/v3/{{ item.title | slugify }}">{{ item.title }}</a>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+        
+          {{ content }}
+        
+      </section>
+    </main>
+    {% include footer.html %}
+  </body>
+</html>
