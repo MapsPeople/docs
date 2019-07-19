@@ -1,30 +1,25 @@
 {% include head.html %}
-  <body class="bg-dark-gray">
+  <body class="sans-serif">
     {% include top-nav.html %}
-    <div class="flex bb b--black-20 f4 ph5 bg-white">
-      <div class="flex-auto mid-gray">
-        <p><a href="">iOS v3</a> &rsaquo; <a href="">Directions</a> &rsaquo; <a href="">Split directions in legs and steps</a></p>
-      </div>
-      <div class="inline-flex items-center blue">
-        <a href="#" class="pl4 dib v-mid link dim">Glossary</a>
-        <a href="#" class="pl4 dib v-mid link dim">Refrence Docs</a>
-        <a href="#" class="pl4 dib v-mid link dim">iOS SDK v3</a>
-      </div>
+    <div class="flex">
+      <aside class="w-25 pa3 br b--light-silver pt4">
+        {% if page.nav == "ios/v3" %}
+        {% include ios/v3/nav.html %}
+        {% elsif page.nav == "ios/v2" %}
+        {% include ios/v2/nav.html %}
+        {% else %}
+        {% include nav.html %}
+        {% endif %}
+      </aside>
+      <main role="main" class="w-75 pa3 measure-wide">
+        <h1>{{ page.title }}</h1>
+        <p class="lh-copy f6">
+          <span class="orange">{% if page.last_modified_at %}Updated on {{ page.last_modified_at |date: "%B %-d, %Y" }}. {% endif %}</span>
+          <span class="gray">{% if page.date %}Posted on {{ page.date | date: "%B %-d, %Y" }}. {% endif %}</span>
+        </p>
+        {{ content }}
+      </main>
     </div>
-    <main role="main">
-      <article class="bg-white mt0 pb5">
-        <h1 class="f1 fw3 tc mv0 pt4">{{ page.title }}</h1>
-        <div class="center mw7">
-          <p class="f5 lh-copy tc">
-            <span class="orange">{% if page.last_modified_at %}Updated on {{ page.last_modified_at |date: "%B %-d, %Y" }} {% endif %}</span>
-            <span class="gray ml2">{% if page.date %}Posted on {{ page.date | date: "%B %-d, %Y" }} {% endif %}</span>
-          </p>
-          <section class="lh-copy f4">
-            {{ content }}
-          </section>
-        </div>
-      </article>
-    </main>
     {% include footer.html %}
   </body>
 </html>
