@@ -47,3 +47,7 @@ blockquote.mi-warning {
 code.hljs {
   padding: 1em;
 }
+
+.f1 {
+  letter-spacing: -0.04em;
+}
