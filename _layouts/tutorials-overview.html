@@ -19,20 +19,36 @@
       </div>
     </div>
     <main role="main">
-      <section class="bg-white mt0 pb5">
-        {% for item in site.data.sdks.ios-v3.tutorials %}
-          {% if item.title == page.title %}
-          <h1 class="f1 fw3 tc mv0 pt4">{{ item.title }}</h1>
-          <div class="mw7 center">
-            <ul class="pl0 f3 mt4">
-              {% for entry in item.subfolderitems %}
-              <li class="list mb3">
-                <a href="{{ site.url }}{{ site.baseurl }}/ios/v3/{{ entry.slug }}">{{ entry.page }}</a>
-              </li>
-              {% endfor %}
-            </ul>
-          {% endif %}
-        {% endfor %}
+      <section class="bg-white mt0 pb5">        
+        {% if page.nav == "ios/v3" %}
+          {% for item in site.data.sdks.ios-v3.tutorials %}
+            {% if item.title == page.title %}
+            <h1 class="f1 fw3 tc mv0 pt4">{{ item.title }}</h1>
+            <div class="mw7 center">
+              <ul class="pl0 f3 mt4">
+                {% for entry in item.subfolderitems %}
+                <li class="list mb3">
+                  <a href="{{ site.url }}{{ site.baseurl }}/ios/v3/{{ entry.slug }}">{{ entry.page }}</a>
+                </li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+          {% endfor %}        
+        {% elsif page.nav == "ios/v2" %}
+          {% for item in site.data.sdks.ios-v2.tutorials %}
+            {% if item.title == page.title %}
+            <h1 class="f1 fw3 tc mv0 pt4">{{ item.title }}</h1>
+            <div class="mw7 center">
+              <ul class="pl0 f3 mt4">
+                {% for entry in item.subfolderitems %}
+                <li class="list mb3">
+                  <a href="{{ site.url }}{{ site.baseurl }}/ios/v2/{{ entry.slug }}">{{ entry.page }}</a>
+                </li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+          {% endfor %}
+        {% endif %}
         
           {{ content }}
           
