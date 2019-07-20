@@ -1,6 +1,7 @@
 ---
 title: Set up your environment
 slug: set-up-your-environment
+category: environment
 published: true
 date: 2019-07-10
 last_modified_at: 2019-07-12
