@@ -5,9 +5,9 @@
       <div class="flex-auto mid-gray">
         <p>
           {% if page.nav == "ios/v3" %}
-          <a href="{{ site.url }}{{ site.baseurl }}/ios/v3">iOS v3</a> &rsaquo; <a href="{{ site.url }}{{ site.baseurl }}/ios/v3/directions">Directions</a> &rsaquo; <a href="{{ site.url }}{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a>
+          <a href="{{ site.url }}{{ site.baseurl }}/ios/v3">iOS v3</a> &rsaquo; <a href="{{ site.url }}{{ site.baseurl }}/ios/v3/{{ page.category | slugify }}">{{ page.category }}</a> &rsaquo; <a href="{{ site.url }}{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a>
           {% elsif page.nav == "ios/v2" %}
-          <a href="{{ site.url }}{{ site.baseurl }}/ios/v2">iOS v2</a> &rsaquo; <a href="{{ site.url }}{{ site.baseurl }}/ios/v2/directions">Directions</a> &rsaquo; <a href="{{ site.url }}{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a>
+          <a href="{{ site.url }}{{ site.baseurl }}/ios/v2">iOS v2</a> &rsaquo; <a href="{{ site.url }}{{ site.baseurl }}/ios/v2/{{ page.category }}">{{ page.category | capitalize }}</a> &rsaquo; <a href="{{ site.url }}{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a>
           {% endif %}
         </p>
       </div>
