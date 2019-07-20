@@ -48,6 +48,7 @@ Definitely Ruby, RubyGems, GCC and Make. Jekyll has [a quick guide to get set up
   ---
   title: Open a teleportation portal
   slug: open-teleportation-portal
+  category: "Teleportation"
   published: true
   date: 2019-07-10
   last_modified_at: 2019-07-12
