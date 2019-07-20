@@ -38,7 +38,7 @@ theme: "minima"
 exclude:
   - README.md
 
-# This is to ensure the permalinks below are respected as url + baseurl + permalink (e.g. https://mapsindoors.com/docs/ios/v3/set-up-your-enviroment).
+# This is to ensure the permalinks below are displayed as /slug/, not /slug/index.html (e.g. https://mapsindoors.com/docs/ios/v3/set-up-your-enviroment).
 permalink: pretty
 
 collections_dir: collections

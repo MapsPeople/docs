@@ -3,7 +3,7 @@ version: v2
 sdk_title: iOS SDK v2
 reference_docs:
 - title: Reference Docs
-  slug: ios/v2/reference-docs
+  slug: reference-docs
 tutorials:
 - title: Environment
   subfolderitems:
