@@ -666,10 +666,10 @@ Basic Example You will find in the link an up and running project that contains 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://mapsindoors.github.io/android/v2/</guid>
-      <description>This guide explains how to start using a MapsIndoors map in your Android application. Make sure that you have read the prerequisites.
+      <description>Note! A newer version of the MapsIndoors SDK for Android is available. The legacy version will not receive new features and will only get bugfix and security updates.
+ This guide explains how to start using a MapsIndoors map in your Android application. Make sure that you have read the prerequisites.
 To benefit from the guides, you will need basic knowledge about:
- Android Development Google Maps Android API  You can get started in two ways, either by reviewing and modifying the basic example or do the clean setup.
-Basic Example You will find in the link a repo that contains the minimum code to start a MapsIndoors project.</description>
+ Android Development Google Maps Android API  You can get started in two ways, either by reviewing and modifying the basic example or do the clean setup.</description>
     </item>
     
     <item>

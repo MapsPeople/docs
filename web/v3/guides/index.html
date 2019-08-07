@@ -464,6 +464,30 @@ mapsindoors.LocationService.getLocations(
     });
 </code></pre>
 
+<h3 id="getting-a-polygon-from-a-location">Getting a polygon from a location</h3>
+
+<p>Some locations in MapsIndoors can have additional polygon information. These polygons can be used to render a room or area in a special way or make geofences, calculating whether another point or location is contained within the polygon. If a <code>location</code> has polygons, these can be drawn onto the map this way:</p>
+
+<pre><code class="language-javascript">var polygon = new google.maps.Polygon();
+
+function drawPolygon(location) {
+    if (location.geometry &amp;&amp; location.geometry.type === &quot;Polygon&quot;) {
+        var paths = location.geometry.coordinates.map(function (ring) {
+            return ring.map(function (coordinate) {
+                return { lat: coordinate[1], lng: coordinate[0] };
+            });
+        });
+
+        polygon.setOptions({
+            map: googleMap,
+            paths: paths
+        });
+    }
+}
+</code></pre>
+
+<p>As demonstrated above, a polygon&rsquo;s outer ring/path as well as holes are arranged as [longitude, latitude] pairs. As not all locations have polygons, the polygon array may be empty. On the contrary, some locations, like entire building floors, might have more than polygon.</p>
+
 <h2 id="map-rendering">Map Rendering</h2>
 
 <h3 id="setting-the-floor">Setting the floor</h3>
@@ -545,31 +569,7 @@ directionsService.getRoute(
 });
 </code></pre>
 
-<h3 id="getting-the-location-using-queries">Getting the Location using Queries</h3>
-
-<p>Get locations from MapsIndoors using a query object (optional). With no query parameter, all published locations will be fetched.</p>
-
-<pre><code class="language-javascript">var locations = mapsindoors.LocationsService;
-
-locations.getLocations(
-{
-   q: &quot;lounge&quot;,         //Search for matches in location name or aliases
-   building: &quot;34&quot;,      //Fetch from specific building, using the administrative id of the building
-   venue: &quot;VenueA&quot;,     //Fetch from specific venue, using name of venue
-   floor: 1,                     //Fetch from 1st floor
-   take: 10,                     //Fetch only 10 locations
-   skip: 10,                     //Skip first 10 in result
-   near: {lat:57.5, lng: 12.9}   //Sort by proximity to geographic point
-   radius: 50,           //Fetch only nearest within meters from near
-   orderBy: &quot;name&quot;      //Sort by name (possible values are Name, Floor,
-                        //Building, Venue, Type and RoomId)
-}
-).then(function(data) {
-   // returns an array of locations that matches the criteria
-});
-</code></pre>
-
-<h3 id="clearing">Clearing</h3>
+<h3 id="clearing-a-route-rendering">Clearing a Route Rendering</h3>
 
 <p>Clear the current route rendering.</p>
 
