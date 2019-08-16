@@ -21,25 +21,27 @@
       <section class="bg-white mt0 pb5">
         <h1 class="f1 fw3 tc mv0 pt4">{{ page.title }}</h1>
         <div class="mw7 center">
-          <ul class="pl0 f3 mt4">
-            {% if page.nav == "ios/v3" %}
-              {% for item in site.data.sdks.ios-v3.tutorials %}
-              <li class="list mb3">
-                <a href="{{ site.url }}{{ site.baseurl }}/ios/v3/{{ item.title | slugify }}">{{ item.title }}</a>
-              </li>
-              {% endfor %}
-            {% elsif page.nav == "ios/v2" %}
-              {% for item in site.data.sdks.ios-v2.tutorials %}
-              <li class="list mb3">
-                <a href="{{ site.url }}{{ site.baseurl }}/ios/v2/{{ item.title | slugify }}">{{ item.title }}</a>
-              </li>
-              {% endfor %}
-            {% endif %}
-          </ul>
-        </div>
-        
+          <article class="pt2">
           {{ content }}
-        
+          </article>
+          <section>
+            <ul class="pl0 f3 mt4">
+              {% if page.nav == "ios/v3" %}
+                {% for item in site.data.sdks.ios-v3.tutorials %}
+                <li class="list mb3">
+                  <a href="{{ site.url }}{{ site.baseurl }}/ios/v3/{{ item.title | slugify }}">{{ item.title }}</a>
+                </li>
+                {% endfor %}
+              {% elsif page.nav == "ios/v2" %}
+                {% for item in site.data.sdks.ios-v2.tutorials %}
+                <li class="list mb3">
+                  <a href="{{ site.url }}{{ site.baseurl }}/ios/v2/{{ item.title | slugify }}">{{ item.title }}</a>
+                </li>
+                {% endfor %}
+              {% endif %}
+            </ul>
+          </section>
+        </div>        
       </section>
     </main>
     {% include footer.html %}
