@@ -25,6 +25,9 @@
             {% if item.title == page.title %}
             <h1 class="f1 fw3 tc mv0 pt4">{{ item.title }}</h1>
             <div class="mw7 center">
+              <article class="pt2">
+                {{ content }}
+              </article>
               <ul class="pl0 f3 mt4">
                 {% for entry in item.subfolderitems %}
                 <li class="list mb3">
@@ -48,10 +51,7 @@
               </ul>
             {% endif %}
           {% endfor %}
-        {% endif %}
-        
-          {{ content }}
-          
+        {% endif %}          
           </div>
         
       </section>
