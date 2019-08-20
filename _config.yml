@@ -44,21 +44,12 @@ permalink: pretty
 collections_dir: collections
 
 collections:
-  ios-v3:
+  ios:
     output: true
-    permalink: /ios/v3/:slug
-  ios-v2:
-    output: true
-    permalink: /ios/v2/:slug
-
-defaults:
-  - scope:
-      type: ios-v3
-    values:
-      layout: tutorial
-      nav: ios/v3
-  - scope:
-      type: ios-v2
-    values:
-      layout: tutorial
-      nav: ios/v2
+    # permalink: ios/:path/:name
+    # sort_by: nav_weight # choose either this or order below
+    # order:
+    #  - hello-world.md
+    #  - introduction.md
+    #  - concepts/basics.md
+    #  - concepts/advanced.md
