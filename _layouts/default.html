@@ -1,14 +1,17 @@
 {% include head.html %}
-  <body class="sans-serif">
+  <body class="bg-dark-gray">
     {% include top-nav.html %}
-    <div class="flex">
-      <aside class="w-25 pa3 br b--light-silver pt4">
-        {% include nav.html %}
-      </aside>
-      <main role="main" class="w-75 pa3 measure-wide">
-        {{ content }}
-      </main>
-    </div>
+    {% include nav.html %}
+    <main role="main">
+      <section class="bg-white mt0 pb5">
+        <div class="mw7 center">
+          <h1 class="f1 fw3 mv0 pt4">{{ page.title }}</h1>
+          <article class="pt2 lh-copy f4">
+          {{ content }}
+          </article>
+        </div>        
+      </section>
+    </main>
     {% include footer.html %}
   </body>
 </html>
