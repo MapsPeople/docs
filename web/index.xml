@@ -28,9 +28,7 @@
       
       <guid>https://mapsindoors.github.io/web/v3/changelog/</guid>
       <description>Changelog Changelog for MapsIndoors SDK for JavaScript. This document structure is based on Keep a Changelog and the project adheres to Semantic Versioning.
-[3.2.1] - 2019-05-24 Added  Added the ability to change the api key at runtime via mapsindoors.MapsIndoors.setApiKey(key); Added the functions to get and set the language at runtime:
- mapsindoors.MapsIndoors.setLanguage(language); mapsindoors.MapsIndoors.getLanguage();
-Changed  The SDK now selects the fastest backend server based on a latency test.</description>
+[3.3.2] - 2019-08-15 Fixed  App config cache is now based on solution to avoid misconfiguration when switching solution.  [3.3.1] - 2019-07-31 Fixed  No longer assume that location imageURL always is received in lowercase from the backend.  [3.3.0] - 2019-07-15 Added  SolutionsService.getUserRoles() gets a list of user roles that can be used for filtering the directions result.</description>
     </item>
     
     <item>

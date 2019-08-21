@@ -3,6 +3,10 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://mapsindoors.github.io/android/changelog/</loc>
+  </url>
+  
+  <url>
     <loc>https://mapsindoors.github.io/android/v1/guides/searching-and-directions/</loc>
   </url>
   
@@ -20,6 +24,10 @@
   
   <url>
     <loc>https://mapsindoors.github.io/android/v3/tutorials/showmultiplelocationsshowmultiplelocationsfragment/</loc>
+  </url>
+  
+  <url>
+    <loc>https://mapsindoors.github.io/ios/changelog/</loc>
   </url>
   
   <url>

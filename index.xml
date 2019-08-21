@@ -13,6 +13,15 @@
     
     <item>
       <title></title>
+      <link>https://mapsindoors.github.io/android/changelog/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/android/changelog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>https://mapsindoors.github.io/android/v1/guides/searching-and-directions/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -67,6 +76,15 @@ MapsIndoors.getLocationsAsync( query, filter, ( locs, err ) -&amp;gt; { if( locs
       <description>Add a GoogleMap and a MapControl to the class
 MapControl mMapControl; GoogleMap mGoogleMap;  The Venue&amp;rsquo;s coordinates
 static final LatLng VENUE_LAT_LNG = new LatLng( 57.05813067, 9.95058065 ); SupportMapFragment mMapFragment; public ShowMultipleLocationsFragment() { // Required empty public constructor } @NonNull public static ShowMultipleLocationsFragment newInstance() { return new ShowMultipleLocationsFragment(); } //region FRAGMENT LIFECYCLE @Override @Nullable public View onCreateView( @NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState ) { // Inflate the layout for this fragment return inflater.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://mapsindoors.github.io/ios/changelog/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/ios/changelog/</guid>
+      <description></description>
     </item>
     
     <item>
@@ -202,9 +220,7 @@ let locations = MPLocationsProvider.init() let queryObj = MPLocationQuery.init()
       
       <guid>https://mapsindoors.github.io/web/v3/changelog/</guid>
       <description>Changelog Changelog for MapsIndoors SDK for JavaScript. This document structure is based on Keep a Changelog and the project adheres to Semantic Versioning.
-[3.2.1] - 2019-05-24 Added  Added the ability to change the api key at runtime via mapsindoors.MapsIndoors.setApiKey(key); Added the functions to get and set the language at runtime:
- mapsindoors.MapsIndoors.setLanguage(language); mapsindoors.MapsIndoors.getLanguage();
-Changed  The SDK now selects the fastest backend server based on a latency test.</description>
+[3.3.2] - 2019-08-15 Fixed  App config cache is now based on solution to avoid misconfiguration when switching solution.  [3.3.1] - 2019-07-31 Fixed  No longer assume that location imageURL always is received in lowercase from the backend.  [3.3.0] - 2019-07-15 Added  SolutionsService.getUserRoles() gets a list of user roles that can be used for filtering the directions result.</description>
     </item>
     
     <item>
@@ -275,7 +291,8 @@ Added  Support for statically adding a position provider, optionally by setting 
       
       <guid>https://mapsindoors.github.io/ios/v3/changelog/</guid>
       <description>Changelog for MapsIndoors for iOS. This document structure is based on Keep a Changelog and the project adheres to Semantic Versioning.
-[3.1.1] 2019-06-21 Fixed  Fixed MPMapControl.go(to:MPLocation) so that the map now properly fits locations with polygons. Fixed dataset switching sometimes not working due to re-initialisation not properly executed behind the scenes. Fixed memory issues related to entering and leaving a MapsIndoors map multiple times in the same session. Adding custom MPLocationDisplayRule not affecting size and rank changes due to a race condition.</description>
+[3.2.0] 2019-08-21 Changed  Updated Google Maps SDK from 3.1.0 to 3.3.0 (see https://developers.google.com/maps/documentation/ios-sdk/releases for details) Default Google Maps styling is now applied to the map, so that we hide Google Maps icons that usually compete with, confuse or disturb the appearance of MapsIndoors location icons
+Added Support for building default floors.</description>
     </item>
     
     <item>

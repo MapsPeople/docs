@@ -167,7 +167,7 @@
           <img src="https://mapsindoors.github.io//logos/apple-logo.svg" style="padding:10px">
         </div>
         <div class="name">
-          <strong>iOS SDK <br /><span class="version">3.1.1</span></strong>
+          <strong>iOS SDK <br /><span class="version">3.2.0</span></strong>
           
         </div>
       </div>
@@ -362,9 +362,49 @@
 ### Removed
 -->
 
+<h2 id="3-2-0-2019-08-21">[3.2.0] 2019-08-21</h2>
+
+<h3 id="changed">Changed</h3>
+
+<ul>
+<li>Updated Google Maps SDK from 3.1.0 to 3.3.0 (see <a href="https://developers.google.com/maps/documentation/ios-sdk/releases">https://developers.google.com/maps/documentation/ios-sdk/releases</a> for details)</li>
+
+<li><p>Default Google Maps styling is now applied to the map, so that we hide Google Maps icons that usually compete with, confuse or disturb the appearance of MapsIndoors location icons</p>
+
+<h3 id="added">Added</h3></li>
+
+<li><p>Support for building default floors.</p></li>
+
+<li><p>Support for profile-based routing.</p></li>
+
+<li><p>Support for travelmode specific venue entrypoints, so f.ex. driving routes can go via parking lots (require data configuration).</p>
+
+<h3 id="fixed">Fixed</h3></li>
+
+<li><p>Fixed an issue with loading solution-data from the MapsIndoors backend.</p></li>
+
+<li><p>Fixed an issue with searching for location aliases.</p></li>
+
+<li><p>Fixed a memory issue that can happen when multiple map instances are created in one session.</p></li>
+
+<li><p>Fixed a rare race condition during initialization.</p></li>
+</ul>
+
+<h2 id="3-1-2-2019-06-27">[3.1.2] 2019-06-27</h2>
+
+<h3 id="fixed-1">Fixed</h3>
+
+<ul>
+<li>Fixed memory issue related to adding observers to <code>MPMapsIndoorsLocationSource</code>  in relation to entering and leaving a MapsIndoors map multiple times in the same session.</li>
+<li>Fixed occasional orphaned/ghost polyline from the <code>MPDirectionsRenderer</code>.</li>
+<li>Fixed wrong floor tiles showing in route step in some cases.</li>
+<li>Fixed an issue with route rendering.</li>
+<li>Fixed info window not appearing for selectedLocation after several api key switches.</li>
+</ul>
+
 <h2 id="3-1-1-2019-06-21">[3.1.1] 2019-06-21</h2>
 
-<h3 id="fixed">Fixed</h3>
+<h3 id="fixed-2">Fixed</h3>
 
 <ul>
 <li>Fixed <code>MPMapControl.go(to:MPLocation)</code> so that the map now properly fits locations with polygons.</li>
@@ -376,7 +416,7 @@
 
 <h2 id="3-1-0-2019-06-04">[3.1.0] 2019-06-04</h2>
 
-<h3 id="added">Added</h3>
+<h3 id="added-1">Added</h3>
 
 <ul>
 <li>Added a <code>MPGeometryHelper</code> class</li>
@@ -386,7 +426,7 @@
 
 <li><p>Now possible to set map style (layout) using <code>MPMapControl.mapStyle = MPMapStyle(string:&quot;my-style&quot;)</code>. Only applies for data sets that has multiple defined styles.</p>
 
-<h3 id="fixed-1">Fixed</h3></li>
+<h3 id="fixed-3">Fixed</h3></li>
 
 <li><p>Fixed map markers being anchored at the bottom of a square icon, not the center.</p></li>
 
@@ -399,7 +439,7 @@
 
 <h2 id="3-0-4-2019-04-29">[3.0.4] 2019-04-29</h2>
 
-<h3 id="fixed-2">Fixed</h3>
+<h3 id="fixed-4">Fixed</h3>
 
 <ul>
 <li>Improved search functionality.</li>
@@ -410,7 +450,7 @@
 
 <h2 id="3-0-3-2019-04-11">[3.0.3] 2019-04-11</h2>
 
-<h3 id="fixed-3">Fixed</h3>
+<h3 id="fixed-5">Fixed</h3>
 
 <ul>
 <li>Fixed an issue changing MapsIndoors.positionProvider during the runtime of the app.</li>
@@ -418,7 +458,7 @@
 
 <h2 id="3-0-2-2019-04-08">[3.0.2] 2019-04-08</h2>
 
-<h3 id="fixed-4">Fixed</h3>
+<h3 id="fixed-6">Fixed</h3>
 
 <ul>
 <li>Fixed an issue where MPMapControl would not update it&rsquo;s current location.</li>
@@ -426,18 +466,18 @@
 
 <h2 id="3-0-1-2019-04-03">[3.0.1] 2019-04-03</h2>
 
-<h3 id="added-1">Added</h3>
+<h3 id="added-2">Added</h3>
 
 <ul>
 <li>MPMapControlDelegate now has a new method for notifying about which building is focused on the map  <code>- [MPMapControlDelegate focusedBuildingDidChange:(nullable MPLocation*)building]</code></li>
 
 <li><p>MPMapControlDelegate now has a new method for notifying position updates  <code>- [MPMapControlDelegate onPositionUpdate:(nonnull MPPositionResult*)positionResult]</code></p>
 
-<h3 id="changed">Changed</h3></li>
+<h3 id="changed-1">Changed</h3></li>
 
 <li><p>MPMapControl.currentPosition has been deprecated; use MapsIndoors.positionProvider.latestPositionResult to know current position.</p>
 
-<h3 id="fixed-5">Fixed</h3></li>
+<h3 id="fixed-7">Fixed</h3></li>
 
 <li><p>Fixed an issue related to MPLocations using the default displayrule as well as their own icon.</p></li>
 
@@ -446,7 +486,7 @@
 
 <h2 id="3-0-0-2019-03-04">[3.0.0] 2019-03-04</h2>
 
-<h3 id="added-2">Added</h3>
+<h3 id="added-3">Added</h3>
 
 <ul>
 <li>Support for external location data sources using <code>[MapsIndoors registerLocationSources:sources]</code></li>
@@ -455,7 +495,7 @@
 <li>Added building and venues to the search experience</li>
 </ul>
 
-<h3 id="changed-1">Changed</h3>
+<h3 id="changed-2">Changed</h3>
 
 <ul>
 <li>MPLocation properties are now read only</li>
@@ -469,7 +509,7 @@
 
 <h2 id="2-2-0-2019-03-22">[2.2.0] 2019-03-22</h2>
 
-<h3 id="added-3">Added</h3>
+<h3 id="added-4">Added</h3>
 
 <ul>
 <li>Now possible to set map style (layout) using <code>MPMapControl.mapStyle = MPMapStyle(string:&quot;my-style&quot;)</code>. Only applies for data sets that has multiple defined styles.</li>
@@ -477,7 +517,7 @@
 
 <h2 id="2-1-10-2019-03-05">[2.1.10] 2019-03-05</h2>
 
-<h3 id="fixed-6">Fixed</h3>
+<h3 id="fixed-8">Fixed</h3>
 
 <ul>
 <li>Fixed an issue causing map graphics not to show after a synchronisation followed by an app kill</li>
@@ -485,7 +525,7 @@
 
 <h2 id="2-1-9-2019-02-15">[2.1.9] 2019-02-15</h2>
 
-<h3 id="fixed-7">Fixed</h3>
+<h3 id="fixed-9">Fixed</h3>
 
 <ul>
 <li>Fixed an occasional crash in MPVenueProvider, reported in <a href="https://github.com/MapsIndoors/MapsIndoorsIOS/issues/5">github</a>.</li>
@@ -495,7 +535,7 @@
 <li>Fixed occasional crashes when running simulator builds</li>
 </ul>
 
-<h3 id="added-4">Added</h3>
+<h3 id="added-5">Added</h3>
 
 <ul>
 <li>Added some classes that were not present in reference guide</li>
@@ -503,7 +543,7 @@
 
 <h2 id="2-1-8-2019-01-03">[2.1.8] 2019-01-03</h2>
 
-<h3 id="fixed-8">Fixed</h3>
+<h3 id="fixed-10">Fixed</h3>
 
 <ul>
 <li>The last segment of a route object returned from a directions request sometimes had an unexpected - and wrong - end location.</li>
@@ -512,7 +552,7 @@
 
 <h2 id="2-1-7-2018-12-10">[2.1.7] 2018-12-10</h2>
 
-<h3 id="fixed-9">Fixed</h3>
+<h3 id="fixed-11">Fixed</h3>
 
 <ul>
 <li>In some cases the &ldquo;next&rdquo;-button on <code>MPDirectionsRenderer</code> would display &ldquo;Level (null)&rdquo;.</li>
@@ -520,12 +560,12 @@
 
 <h2 id="2-1-6-2018-11-27">[2.1.6] 2018-11-27</h2>
 
-<h3 id="added-5">Added</h3>
+<h3 id="added-6">Added</h3>
 
 <ul>
 <li><p>Support for extra time penalties in the directions service</p>
 
-<h3 id="fixed-10">Fixed</h3></li>
+<h3 id="fixed-12">Fixed</h3></li>
 
 <li><p>When in flightmode, the routenetwork service would make two callbacks to the app: first callback with cached data and second callback with an error.
 The second callback would result in no route being produced</p></li>
@@ -533,7 +573,7 @@ The second callback would result in no route being produced</p></li>
 
 <h2 id="2-1-5-2018-11-06">[2.1.5] 2018-11-06</h2>
 
-<h3 id="added-6">Added</h3>
+<h3 id="added-7">Added</h3>
 
 <ul>
 <li>Support for multi-polygon floor geometry</li>
@@ -541,7 +581,7 @@ The second callback would result in no route being produced</p></li>
 
 <h2 id="2-1-4-2018-11-01">[2.1.4] 2018-11-01</h2>
 
-<h3 id="fixed-11">Fixed</h3>
+<h3 id="fixed-13">Fixed</h3>
 
 <ul>
 <li>Issues related to POI presentation.</li>
@@ -549,7 +589,7 @@ The second callback would result in no route being produced</p></li>
 
 <h2 id="2-1-3-2018-10-26">[2.1.3] 2018-10-26</h2>
 
-<h3 id="fixed-12">Fixed</h3>
+<h3 id="fixed-14">Fixed</h3>
 
 <ul>
 <li>Issues related to POI presentation.</li>
@@ -557,7 +597,7 @@ The second callback would result in no route being produced</p></li>
 
 <h2 id="2-1-2-2018-10-10">[2.1.2] 2018-10-10</h2>
 
-<h3 id="fixed-13">Fixed</h3>
+<h3 id="fixed-15">Fixed</h3>
 
 <ul>
 <li>Fixed a Route Rendering issue causing it not to fit path shape properly</li>
@@ -569,7 +609,7 @@ The second callback would result in no route being produced</p></li>
 
 <li><p>Fixed crash that was caused by GMSProjection occasionally not being in an operational state</p>
 
-<h3 id="added-7">Added</h3></li>
+<h3 id="added-8">Added</h3></li>
 
 <li><p>Support for multi-polygon floor geometry</p></li>
 
@@ -580,7 +620,7 @@ The second callback would result in no route being produced</p></li>
 
 <h2 id="2-1-1-2018-09-07">[2.1.1] 2018-09-07</h2>
 
-<h3 id="fixed-14">Fixed</h3>
+<h3 id="fixed-16">Fixed</h3>
 
 <ul>
 <li>Fixed an issue where occasionally rendered routes where not fitted properly inside the screen.</li>
@@ -590,7 +630,7 @@ The second callback would result in no route being produced</p></li>
 
 <h2 id="2-1-0-2018-08-21">[2.1.0] 2018-08-21</h2>
 
-<h3 id="changed-2">Changed</h3>
+<h3 id="changed-3">Changed</h3>
 
 <ul>
 <li>Changed how icons and labels are shown on the map, so that no labels or icons are shown on top of each other (Icon &amp; label collision handling)</li>
@@ -598,18 +638,18 @@ The second callback would result in no route being produced</p></li>
 
 <li><p>Now able to show outlines of rooms and areas if the dataset is prepared for this</p>
 
-<h3 id="added-8">Added</h3></li>
+<h3 id="added-9">Added</h3></li>
 
 <li><p>Basic voiceover/accessibility support.</p>
 
-<h3 id="fixed-15">Fixed</h3></li>
+<h3 id="fixed-17">Fixed</h3></li>
 
 <li><p>Fixed MPLocationQuery.orderBy was not respected.</p></li>
 </ul>
 
 <h2 id="2-0-4-2018-06-27">[2.0.4] 2018-06-27</h2>
 
-<h3 id="fixed-16">Fixed</h3>
+<h3 id="fixed-18">Fixed</h3>
 
 <ul>
 <li>Fixed a major bug that caused the generated Swift interface in XCode to expose assumed nonnull properties in various areas of the interface</li>
@@ -617,14 +657,14 @@ The second callback would result in no route being produced</p></li>
 
 <li><p>Fixed an issue where in rare cases one of the internal callbacks in MapControl was not called causing the map to not fire the optional <code>[MPMapControlDelegate mapContentReady]</code></p>
 
-<h3 id="changed-3">Changed</h3></li>
+<h3 id="changed-4">Changed</h3></li>
 
 <li><p>A lot of properties have now become nullable because of the FIX needed above</p></li>
 </ul>
 
 <h2 id="2-0-3-2018-06-15">[2.0.3] 2018-06-15</h2>
 
-<h3 id="fixed-17">Fixed</h3>
+<h3 id="fixed-19">Fixed</h3>
 
 <ul>
 <li>Fixed logic that selects the current building in focus</li>
@@ -636,7 +676,7 @@ The second callback would result in no route being produced</p></li>
 
 <li><p>Fixed inconsistent map search state caused by passing zero length array to <code>MPMapControl.searchResult</code></p>
 
-<h3 id="changed-4">Changed</h3></li>
+<h3 id="changed-5">Changed</h3></li>
 
 <li><p>Improved map graphics used for cases when there are no bundled map graphics</p></li>
 
@@ -649,14 +689,14 @@ The second callback would result in no route being produced</p></li>
 
 <h2 id="2-0-2-rc1-2018-05-02">[2.0.2-rc1] 2018-05-02</h2>
 
-<h3 id="added-9">Added</h3>
+<h3 id="added-10">Added</h3>
 
-<h3 id="fixed-18">Fixed</h3>
+<h3 id="fixed-20">Fixed</h3>
 
 <ul>
 <li><p>Fixed logic that selects the current building in focus</p>
 
-<h3 id="changed-5">Changed</h3></li>
+<h3 id="changed-6">Changed</h3></li>
 
 <li><p>Improved map graphics used for cases when there are no bundled map graphics</p></li>
 
@@ -667,16 +707,16 @@ The second callback would result in no route being produced</p></li>
 
 <h2 id="2-0-1-rc6-2018-05-02">[2.0.1-rc6] 2018-05-02</h2>
 
-<h3 id="added-10">Added</h3>
+<h3 id="added-11">Added</h3>
 
-<h3 id="fixed-19">Fixed</h3>
+<h3 id="fixed-21">Fixed</h3>
 
 <ul>
 <li>POI Labels were not shown on the map.</li>
 
 <li><p>Selected location not cleared after clearing map <code>-[MPMapControl clearMap]</code>.</p>
 
-<h3 id="changed-6">Changed</h3></li>
+<h3 id="changed-7">Changed</h3></li>
 
 <li><p>Animation speed when showing directions is now adapting the the amount of movement and rotation needed for transitioning between steps.</p>
 
@@ -685,7 +725,7 @@ The second callback would result in no route being produced</p></li>
 
 <h2 id="2-0-0-2018-04-10">[2.0.0] 2018-04-10</h2>
 
-<h3 id="added-11">Added</h3>
+<h3 id="added-12">Added</h3>
 
 <ul>
 <li>On-device route calculation optionally with routing-data embedded into the app.</li>
@@ -695,7 +735,7 @@ The second callback would result in no route being produced</p></li>
 <li>Fetching of all MapsIndoors content now possible using <code>[MapsIndoors synchroniseContent:]</code></li>
 </ul>
 
-<h3 id="fixed-20">Fixed</h3>
+<h3 id="fixed-22">Fixed</h3>
 
 <ul>
 <li>Performance improvements by delegating image rendering to background queue.</li>
@@ -714,7 +754,7 @@ The second callback would result in no route being produced</p></li>
 <li>Fixed callback issues when calling multiple route requests simultaneously</li>
 </ul>
 
-<h3 id="changed-7">Changed</h3>
+<h3 id="changed-8">Changed</h3>
 
 <ul>
 <li>Changed initialisation steps, see <a href="https://mapsindoors.github.io/ios/v2">Getting Started</a></li>
