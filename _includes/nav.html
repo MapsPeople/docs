@@ -1,7 +1,11 @@
-<div class="vh100">
-  <header class="pt2 mb4">
-    {% for item in site.data.nav.side_nav %}
-      <h3><a href="{{ site.url }}{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a></h3>
-    {% endfor %}
-  </header>
+<div class="flex bb b--black-20 f4 ph5 bg-white">
+  <div class="flex-auto mid-gray">
+    <p class="ttu f5 mi-tracked mi-breadcrumbs">
+      {% include breadcrumbs.html %}
+    </p>
+  </div>
+  <div class="inline-flex items-center blue f5">
+    <a href="#" class="pl4 dib v-mid link dim">Glossary</a>
+    <a href="#" class="pl4 dib v-mid link dim">Refrence Docs</a>
+  </div>
 </div>
