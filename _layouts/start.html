@@ -10,18 +10,17 @@
           {{ content }}
           </article>
           <section>
-            <ul class="pl0 f3 mt4">
-              {% if page.nav == "ios/v3" %}
-                {% for item in site.data.sdks.ios-v3.tutorials %}
-                <li class="list mb3">
-                  <a href="{{ site.url }}{{ site.baseurl }}/ios/v3/{{ item.title | slugify }}">{{ item.title }}</a>
-                </li>
+            <h2>Guides</h2>
+            <ul class="list pl0">
+              {% if page.url contains '/ios/v3' %}
+                {% assign ios-v3-guides = site.ios | where: "sdk_title", "ios-v3" | sort: 'nav_weight' %}
+                {% for item in ios-v3-guides %}
+                  <li class="f4 lh2 lh-copy"><a href="{{ item.url }}">{{ item.title }}</a></li>
                 {% endfor %}
-              {% elsif page.nav == "ios/v2" %}
-                {% for item in site.data.sdks.ios-v2.tutorials %}
-                <li class="list mb3">
-                  <a href="{{ site.url }}{{ site.baseurl }}/ios/v2/{{ item.title | slugify }}">{{ item.title }}</a>
-                </li>
+              {% elsif page.url contains '/ios/v2' %}
+                {% assign ios-v2-guides = site.ios | where: "sdk_title", "ios-v2" | sort: 'nav_weight' %}
+                {% for item in ios-v2-guides %}
+                  <li class="f4 lh2 lh-copy"><a href="{{ item.url }}">{{ item.title }}</a></li>
                 {% endfor %}
               {% endif %}
             </ul>
