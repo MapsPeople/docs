@@ -2,7 +2,7 @@
 layout: tutorial
 title: Get venues in a list
 permalink: ios/v3/venues/get-venues-in-a-list
-parent: venue
+parent: venues
 nav_weight: 1
 published: true
 date: 2019-07-10

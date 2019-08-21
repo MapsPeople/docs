@@ -3,7 +3,7 @@ title: Set up your environment
 permalink: ios/v3/environment/set-up-your-environment
 layout: tutorial
 parent: environment
-nav_weight: 1
+nav_weight: 1 
 published: true
 date: 2019-07-10
 last_modified_at: 2019-07-12
