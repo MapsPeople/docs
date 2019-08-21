@@ -1,8 +1,9 @@
 ---
 layout: guide
 title: Venues
+guide_title: venues
 permalink: ios/v3/venues/
-parent: v3
+sdk_title: ios-v3
 nav_weight: 4
 published: true
 date: 2019-07-10

@@ -1,8 +1,9 @@
 ---
 layout: guide
 title: Directions
+guide_title: directions
 permalink: ios/v3/directions/
-parent: v3
+sdk_title: ios-v3
 nav_weight: 9
 published: true
 date: 2019-07-10

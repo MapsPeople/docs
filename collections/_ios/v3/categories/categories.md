@@ -1,8 +1,9 @@
 ---
 layout: guide
 title: Categories
+guide_title: categories
 permalink: ios/v3/categories/
-parent: v3
+sdk_title: ios-v3
 nav_weight: 6
 published: true
 date: 2019-07-10

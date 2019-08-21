@@ -1,8 +1,9 @@
 ---
 layout: guide
 title: MapsIndoors
+guide_title: mapsindoors
 permalink: ios/v3/mapsindoors/
-parent: v3
+sdk_title: ios-v3
 nav_weight: 3
 published: true
 date: 2019-07-10
