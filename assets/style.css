@@ -51,6 +51,24 @@ code.hljs {
   padding: 1em;
 }
 
-.f1 {
-  letter-spacing: -0.04em;
+.f1, .f2 {
+  letter-spacing: -0.03em;
+}
+
+.mi-sticky {
+  position: -webkit-sticky; /* safari */
+  position: sticky;
+  top: 0;
+}
+
+.mi-tracked {
+  letter-spacing: 0.04em;
+}
+
+.mi-breadcrumbs a:visited {
+    color: #555;
+}
+
+.mi-breadcrumbs a:hover {
+  color: #357EDD;
 }
