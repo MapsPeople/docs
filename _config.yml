@@ -22,3 +22,25 @@ collections:
   ios:
     output: true
     permalink: :collection/:path
+
+defaults:
+  -
+    scope:
+      path: "" # targets all files in the collection
+    values:
+      layout: "default"  
+  -
+    scope:
+      path: "*/*" # targets e.g. sdk/
+    values:
+      layout: "start"
+  -
+    scope:
+      path: "*/*/*" # targets e.g. ios/v3/guide
+    values:
+      layout: "guide"
+  -
+    scope:
+      path: "*/*/*/*" # targets e.g. platform/sdk/guide/tutorial
+    values:
+      layout: "tutorial"
