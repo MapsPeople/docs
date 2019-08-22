@@ -21,10 +21,4 @@ collections_dir: collections
 collections:
   ios:
     output: true
-    # permalink: ios/:path/:name
-    # sort_by: nav_weight # choose either this or order below
-    # order:
-    #  - hello-world.md
-    #  - introduction.md
-    #  - concepts/basics.md
-    #  - concepts/advanced.md
+    permalink: :collection/:path
