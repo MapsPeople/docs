@@ -1,6 +1,5 @@
 ---
 title: Set up your environment
-permalink: ios/v3/environment/set-up-your-environment
 layout: tutorial
 parent: environment
 nav_weight: 1 

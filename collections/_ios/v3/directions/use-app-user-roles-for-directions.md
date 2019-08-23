@@ -1,7 +1,6 @@
 ---
 layout: tutorial
 title: Use App User Roles for Directions
-permalink: ios/v3/directions/use-app-user-roles-for-directions
 parent: directions
 nav_weight: 8
 published: true

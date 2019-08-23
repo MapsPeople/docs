@@ -1,7 +1,6 @@
 ---
 layout: tutorial
 title: Get Floors in Floor Selector
-permalink: ios/v3/floor-selector/get-floors-in-floor-selector
 parent: floor-selector
 nav_weight: 1
 published: true

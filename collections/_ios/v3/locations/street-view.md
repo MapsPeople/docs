@@ -1,7 +1,6 @@
 ---
 layout: tutorial
 title: Street View
-permalink: ios/v3/locations/street-view
 parent: locations
 nav_weight: 5
 published: true

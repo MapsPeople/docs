@@ -1,8 +1,6 @@
 ---
-layout: guide
 title: Environment
 guide_title: environment
-permalink: /ios/v3/environment
 sdk_title: ios-v3
 nav_weight: 1
 published: true

@@ -1,7 +1,6 @@
 ---
 layout: tutorial
 title: Get Directions Steps and display in list
-permalink: ios/v3/directions/get-directions-steps-and-display-in-list
 parent: directions
 nav_weight: 1
 published: true

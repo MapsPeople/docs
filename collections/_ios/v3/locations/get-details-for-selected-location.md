@@ -1,7 +1,6 @@
 ---
 layout: tutorial
 title: Get details for selected Location
-permalink: ios/v3/locations/get-details-for-selected-location
 parent: locations
 nav_weight: 1
 published: true

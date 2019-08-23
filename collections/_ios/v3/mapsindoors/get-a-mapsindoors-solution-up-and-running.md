@@ -1,7 +1,6 @@
 ---
 layout: tutorial
 title: Get a MapsIndoors Solution up and running
-permalink: ios/v3/mapsindoors/get-a-mapsindoors-solution-up-and-running
 parent: mapsindoors
 nav_weight: 1
 published: true

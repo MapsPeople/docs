@@ -1,7 +1,6 @@
 ---
 layout: tutorial
 title: List Categories
-permalink: ios/v3/categories/list-categories
 parent: categories
 nav_weight: 1
 published: true

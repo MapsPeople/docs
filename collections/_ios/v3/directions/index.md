@@ -1,8 +1,6 @@
 ---
-layout: guide
 title: Directions
 guide_title: directions
-permalink: ios/v3/directions/
 sdk_title: ios-v3
 nav_weight: 9
 published: true

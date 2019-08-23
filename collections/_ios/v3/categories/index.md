@@ -1,8 +1,6 @@
 ---
-layout: guide
 title: Categories
 guide_title: categories
-permalink: ios/v3/categories/
 sdk_title: ios-v3
 nav_weight: 6
 published: true

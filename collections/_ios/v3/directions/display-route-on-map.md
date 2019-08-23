@@ -1,7 +1,6 @@
 ---
 layout: tutorial
 title: Display Route on map
-permalink: ios/v3/directions/display-route-on-map
 parent: directions
 nav_weight: 4
 published: true

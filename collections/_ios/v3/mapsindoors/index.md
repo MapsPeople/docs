@@ -1,8 +1,6 @@
 ---
-layout: guide
 title: MapsIndoors
 guide_title: mapsindoors
-permalink: ios/v3/mapsindoors/
 sdk_title: ios-v3
 nav_weight: 3
 published: true

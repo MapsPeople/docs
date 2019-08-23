@@ -1,7 +1,6 @@
 ---
 layout: tutorial
 title: List Locations filtered by search query
-permalink: ios/v3/search/list-locations-filtered-by-search-query
 parent: search
 nav_weight: 1
 published: true

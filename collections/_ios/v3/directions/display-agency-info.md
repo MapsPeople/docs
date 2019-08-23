@@ -1,7 +1,6 @@
 ---
 layout: tutorial
 title: Display Agency info
-permalink: ios/v3/directions/display-agency-info
 parent: directions
 nav_weight: 8
 published: true

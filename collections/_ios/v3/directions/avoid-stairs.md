@@ -1,7 +1,6 @@
 ---
 layout: tutorial
 title: Avoid Stairs
-permalink: ios/v3/directions/avoid-stairs
 parent: directions
 nav_weight: 6
 published: true

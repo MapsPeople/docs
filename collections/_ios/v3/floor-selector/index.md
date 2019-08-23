@@ -1,8 +1,6 @@
 ---
-layout: guide
 title: Floor Selector
 guide_title: floor-selector
-permalink: ios/v3/floor-selector/
 sdk_title: ios-v3
 nav_weight: 5
 published: true

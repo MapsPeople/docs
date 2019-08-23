@@ -1,7 +1,6 @@
 ---
 layout: tutorial
 title: Include Google Places search results
-permalink: ios/v3/directions/include-google-places-search-results
 parent: directions
 nav_weight: 3
 published: true

@@ -1,7 +1,6 @@
 ---
 layout: tutorial
 title: Filter Locatations on map by search query
-permalink: ios/v3/search/filter-locations-on-map-by-search-query
 parent: search
 nav_weight: 2
 published: true

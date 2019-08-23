@@ -1,7 +1,6 @@
 ---
 layout: tutorial
 title: Use the MapsIndoors SDK
-permalink: ios/v3/mapsindoors/use-the-mapsindoors-sdk
 parent: mapsindoors
 nav_weight: 2
 published: true

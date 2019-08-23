@@ -1,7 +1,6 @@
 ---
 layout: tutorial
 title: Filter Locations on map by Category
-permalink: ios/v3/categories/filter-locations-on-map-by-category
 parent: categories
 nav_weight: 2
 published: true
