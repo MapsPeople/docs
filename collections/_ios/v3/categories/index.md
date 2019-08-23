@@ -2,6 +2,7 @@
 title: Categories
 guide_title: categories
 sdk_title: ios-v3
+layout: guide
 nav_weight: 6
 published: true
 date: 2019-07-10

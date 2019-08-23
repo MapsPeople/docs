@@ -2,6 +2,7 @@
 title: Floor Selector
 guide_title: floor-selector
 sdk_title: ios-v3
+layout: guide
 nav_weight: 5
 published: true
 date: 2019-07-10

@@ -2,6 +2,7 @@
 title: Directions
 guide_title: directions
 sdk_title: ios-v3
+layout: guide
 nav_weight: 9
 published: true
 date: 2019-07-10
