@@ -49,16 +49,21 @@ blockquote.mi-warning {
 
 code.hljs {
   padding: 1em;
+  font-size: .9em;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+code.highlighter-rouge {
+  background-color: rgba(248,248,248,1);
+  font-size: .9em;
+  border-radius: 4px;
+  padding: .1em .4em;
+  border: 1px solid #ddd;
 }
 
 .f1, .f2 {
   letter-spacing: -0.03em;
-}
-
-.mi-sticky {
-  position: -webkit-sticky; /* safari */
-  position: sticky;
-  top: 0;
 }
 
 .mi-tracked {
