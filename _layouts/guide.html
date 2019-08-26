@@ -9,10 +9,10 @@
           <article class="pt2 lh-copy f4">
           {{ content }}
           </article>
+          {% if page.tutorials != false %}
           <section>
             <h2>Tutorials</h2>
             <ul class="list pl0">
-              {% for item in site.ios %}
               {% assign tutorials = site.ios | where: "layout", "tutorial" | sort: 'nav_weight' %}
               {% for item in tutorials %}
                 {% if item.parent == page.guide_title %}
@@ -21,6 +21,7 @@
               {% endfor %}
             </ul>
           </section>
+          {% endif %}
         </div>
       </section>
     </main>
