@@ -1,10 +1,14 @@
 ---
 layout: start
-title: MapsIndoors iOS SDK v3
+title: Getting started with MapsIndoors for iOS SDK v3
 permalink: /ios/v3/
 published: true
-date: 2019-07-10
-last_modified_at: 2019-07-12
+date: 2019-08-26
 ---
 
-This is the getting started website at /ios/v3
+This guide explains how to start using a MapsIndoors map in your iOS application.
+
+To benefit from the guides, you will need basic knowledge about:
+
+* iOS Development
+* Google Maps iOS SDK
