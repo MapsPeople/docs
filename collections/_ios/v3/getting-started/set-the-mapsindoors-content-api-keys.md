@@ -3,9 +3,11 @@ layout: tutorial
 title: Set the MapsIndoors Content and API keys
 parent: getting-started
 nav_weight: 4
-published: true
+published: false
 date: 2019-08-26
 ---
+
+## Set the MapsIndoors Content and API keys
 
 In order to include MapsIndoors in your app, you need a content key. If you are not a customer you can use this content key `57e4e4992e74800ef8b69718` to follow this guide.
 

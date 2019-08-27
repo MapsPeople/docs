@@ -3,9 +3,10 @@ title: Set up your environment
 layout: tutorial
 parent: getting-started
 nav_weight: 1 
-published: true
+published: false
 date: 2019-08-26
 ---
+# Set up your environment
 
 ## Setup CocoaPods
 

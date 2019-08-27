@@ -3,9 +3,10 @@ layout: tutorial
 title: Get your Google Maps API keys
 parent: getting-started
 nav_weight: 2
-published: true
+published: false
 date: 2019-08-26
 ---
+# Get your Google Maps API keys
 
 You need to setup the Google Maps API in your project by following the steps in the link below:
 

@@ -3,9 +3,10 @@ layout: tutorial
 title: Get a Google Maps up and running
 parent: getting-started
 nav_weight: 3
-published: true
+published: false
 date: 2019-08-26
 ---
+## Get a Google Maps up and running
 
 Use the `MPMapControl` class to set up a Google map with MapsPeople venues, buildings & locations. Place the following code in the `viewDidLoad` method in your view controller displaying the Google map.
 
