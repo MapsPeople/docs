@@ -18,7 +18,7 @@ If you haven’t already, install CocoaPods:
 * Create a file named `Podfile` in your project directory. This file defines your project's dependencies.
 * Edit the `Podfile` and add your dependencies. Here is an example:
 
-```
+```swift
 {% raw %}source 'https://github.com/CocoaPods/Specs.git'
 target 'YOUR_APPLICATION_TARGET_NAME_HERE' do
   pod 'MapsIndoors' '{{%product-version%}}'
@@ -30,25 +30,19 @@ end{% endraw %}
 * `cd <path-to-project>`
 * Run the `pod install` command. This will install the APIs specified in the `Podfile`, along with any dependencies they may have.
 * Close Xcode, and then open (double-click) your project's *.xcworkspace* file to launch Xcode. From this time onwards, you must use the *.xcworkspace* file to open the project.
+* Add your credentials to your `AppDelegate.swift`
+  1. Add the following import statements:
+    ```swift
+    import GoogleMaps
+    import MapsIndoors
+    ```
+  1. Add the following to your `application(_:didFinishLaunchingWithOptions:)` method:
+    ```swift
+    GMSServices.provideAPIKey(      "YOUR_GOOGLE_API_KEY")
+    MapsIndoors.provideAPIKey(      "YOUR_MAPSINDOORS_API_KEY", 
+                googleAPIKey:       "YOUR_GOOGLE_API_KEY")
+    ```
+    Replace:
 
-Add your credentials to your `AppDelegate.swift` as follows:
-
-Add the following import statements:
-
-```swift
-import GoogleMaps
-import MapsIndoors
-```
-
-Add the following to your `application(_:didFinishLaunchingWithOptions:)` method:
-
-```swift
-GMSServices.provideAPIKey(      "YOUR_GOOGLE_API_KEY")
-MapsIndoors.provideAPIKey(      "YOUR_MAPSINDOORS_API_KEY", 
-            googleAPIKey:       "YOUR_GOOGLE_API_KEY")
-```
-
-Replace:
-
-* `YOUR_GOOGLE_API_KEY` with your Google API key
-* `YOUR_MAPSINDOORS_API_KEY` with your MapsIndoors API key. (In MapsIndoors iOS SDK v1, this key was known as your `Solution Id`)
+    * `YOUR_GOOGLE_API_KEY` with your Google API key
+    * `YOUR_MAPSINDOORS_API_KEY` with your MapsIndoors API key. (In MapsIndoors iOS SDK v1, this key was known as your `Solution Id`)
