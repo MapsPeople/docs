@@ -6,30 +6,32 @@ This is the repository holding all documentation related to developing apps on t
 
 ## Getting started
 
-TODO: The documentation site is built with [Jekyll](https://jekyllrb.com) and hosted on GitHub Pages.
+The documentation site is built with [Jekyll](https://jekyllrb.com) and hosted on GitHub Pages.
 
-TODO: Jekyll automatically builds and deploys from the `gh-pages` branch in this repository. Only members of this organization can merge into the `gh-pages` branch.
+Jekyll automatically builds and deploys from the `gh-pages` branch in this repository. Only members of this organization can merge into the `gh-pages` branch.
 
 ### Using Jekyll on your own machine to preview content
 
 #### Prerequisites
 
-Definitely Ruby, RubyGems, GCC and Make. Jekyll has [a quick guide to get set up](https://jekyllrb.com/docs/installation/).
+[Install Docker](https://www.docker.com/products/docker-desktop)—the desktop app is great for this purpose.
 
 #### Clone repository and run Jekyll 
 
 1. Clone this repository to your machine: 
 
   ```bash
-  git clone git@github.com:MapsPeople/MIDOCS-jekyll
-  cd MIDOCS-jekyll
+  $ git clone git@github.com:MapsPeople/MIDOCS-jekyll
+  $ cd MIDOCS-jekyll
   ```
 
-2. Start Jekyll: 
+2. Install the Docker container and serve Jekyll from it:
 
   ```bash
-  bundle exec jekyll serve --watch
+  $ export JEKYLL_VERSION=3.8 && docker run --name midocs --rm --volume="$PWD:/srv/jekyll" -p 4000:4000 -it jekyll/jekyll:$JEKYLL_VERSION jekyll serve --watch --drafts
   ```
+  
+  This command reads as "use Jekyll version 3.8, run it in a Docker container named `midocs`, remove the container after it's closed, serve Jekyll on localhost at port 4000, watch for changes in the Jekyll folder, include drafts"
 
 3. Open `https://127.0.0.1:4000`
 
@@ -60,7 +62,7 @@ Definitely Ruby, RubyGems, GCC and Make. Jekyll has [a quick guide to get set up
 4. Update the `date:` to today's date (perhaps using [a handy Snippet in VS Code](https://marketplace.visualstudio.com/items?itemName=jsynowiec.vscode-insertdatestring))
 5. `last_modified_at` is optional. If left empty, it won't be rendered on the tutorial-page.
 6. The new guide is automatically displayed on the SDK's start page when the front matter is configured correctly.
-7. Run `bundle exec jekyll serve --watch` and navigate to your new guide to check it out.
+7. Navigate to your new guide to check it out.
 8. If all looks well, use `git` to add, commit and push your new guide:
 
   ```bash
@@ -98,7 +100,7 @@ Definitely Ruby, RubyGems, GCC and Make. Jekyll has [a quick guide to get set up
 4. Update the `date:` to today's date (perhaps using [a handy Snippet in VS Code](https://marketplace.visualstudio.com/items?itemName=jsynowiec.vscode-insertdatestring))
 5. `last_modified_at` is optional. If left empty, it won't be rendered on the tutorial-page.
 6. The new tutorial is automatically displayed on the guide's start page when the front matter is configured correctly.
-7. Run `bundle exec jekyll serve --watch` and navigate to your new tutorial to check it out.
+7. Navigate to your new tutorial to check it out.
 8. If all looks well, use `git` to add, commit and push your new tutorial:
 
   ```bash
@@ -140,23 +142,11 @@ Here are a few of them:
 
 1. Include all drafts, future and unpublished posts:
   ```bash
-  bundle exec jekyll serve --watch --drafts --future --unpublished
-  ```
-
-2. If serving locally is slow, use the experimental "Incremental build" that only rebuilds pages touched by changes: 
-
-  ```bash
-  bundle exec jekyll serve --watch --incremental
-  ```
-
-3. Do a one-off build to `./_site`:
-
-  ```bash
-  bundle exec jekyll build
+  jekyll serve --watch --drafts --future --unpublished
   ```
 
 ### FAQ
 
-#### Why `bundle exec jekyll serve` and not `jekyll serve`?
+#### Why use Docker?
 
-`bundle exec` uses the Jekyll version defined for the project in the `Gemfile`, not just any version of Jekyll that might be lying around on the machine. [/via Stack Overflow](https://stackoverflow.com/questions/51157446/whats-the-difference-between-bundle-exec-jekyll-serve-and-jekyll-serve)
+Creating an identical environment for testing could only be done with Docker. Trying to get this to run on three machines spawned three different errors with Ruby, rvm, various Gems and their dependencies, and in the end this can be mitigated by running a container that has been tested end-to-end to work with a certain set of dependencies. Installing Docker is a small ask compared to the hours already wasted with debugging Ruby on macOS.
