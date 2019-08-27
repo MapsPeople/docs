@@ -4,3 +4,4 @@ Gemfile.lock
 .bundle
 .jekyll-metadata
 .DS_Store
+vendor
