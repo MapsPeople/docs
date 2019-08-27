@@ -14,6 +14,10 @@ exclude:
   - README.md
   - vendor
 
+kramdown:
+  # This is needed for the Table of Contents to work in Kramdown
+  parse_block_html: true
+
 # This is to ensure the permalinks below are displayed as /slug/, not /slug/index.html (e.g. https://mapsindoors.com/docs/ios/v3/set-up-your-enviroment).
 permalink: pretty
 

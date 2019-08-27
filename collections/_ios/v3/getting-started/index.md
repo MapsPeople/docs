@@ -8,6 +8,9 @@ published: true
 date: 2019-08-26
 ---
 
+* Table of contentsss
+{:toc}
+
 ## Basic Examples
 
 For simple examples of MapsIndoors implementations, run `pod try MapsIndoors` (follow the tutorials below for setting up CocoaPods, or just clone [this repository](https://github.com/MapsIndoors/MapsIndoorsIOS/tree/SDK_V3)) and run the XCode Scheme called *Demos*. The code for these samples are to find in the */Example/DemoSamples* folder.
