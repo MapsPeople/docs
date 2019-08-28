@@ -23,6 +23,9 @@ collections:
   ios:
     output: true
     permalink: :collection/:path
+  cms:
+    output: true
+    permalink: :collection/:path
 
 defaults:
   -

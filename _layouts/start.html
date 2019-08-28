@@ -22,6 +22,11 @@
                 {% for item in ios-v2-guides %}
                   <li class="f4 lh2 lh-copy"><a href="{{ item.url }}">{{ item.title }}</a></li>
                 {% endfor %}
+              {% elsif page.url contains '/cms' %}
+                {% assign cms-guides = site.cms | where: "sdk_title", "cms" | sort: 'nav_weight' %}
+                {% for item in cms-guides %}
+                  <li class="f4 lh2 lh-copy"><a href="{{ item.url }}">{{ item.title }}</a></li>
+                {% endfor %}
               {% endif %}
             </ul>
           </section>
