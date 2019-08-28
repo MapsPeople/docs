@@ -33,7 +33,7 @@ Jekyll automatically builds and deploys from the `gh-pages` branch in this repos
   
   This command reads as "use Jekyll version 3.8, run it in a Docker container named `midocs`, remove the container after it's closed, serve Jekyll on localhost at port 4000, watch for changes in the Jekyll folder, include drafts"
 
-3. Open `https://127.0.0.1:4000`
+3. Open `https://0.0.0.0:4000`
 
 ### Create a new guide
 
