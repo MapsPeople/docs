@@ -29,15 +29,15 @@ Jekyll automatically builds and deploys from the `gh-pages` branch in this repos
   
   **In macOS:**
   ```bash
-  $ docker run --name midocs --rm --volume="$PWD:/srv/jekyll" -p 4000:4000 -it jekyll/jekyll:3.8 jekyll serve --watch --drafts
+  $ docker run --name midocs --rm --volume="$PWD:/srv/jekyll" -p 4000:4000 -it jekyll/jekyll:4.0 jekyll serve --watch --drafts
   ```
   
   **In Windows:**
   ```bash
-  $ docker run --name midocs --rm --volume="%cd%:/srv/jekyll" -p 4000:4000 -it jekyll/jekyll:3.8 jekyll serve --watch --drafts
+  $ docker run --name midocs --rm --volume="%cd%:/srv/jekyll" -p 4000:4000 -it jekyll/jekyll:4.0 jekyll serve --watch --drafts
   ```
   
-  This command reads as "use Jekyll version 3.8, run it in a Docker container named `midocs`, remove the container after it's closed, serve Jekyll on localhost at port 4000, watch for changes in the Jekyll folder, include drafts"
+  This command reads as "use Jekyll version 4.0, run it in a Docker container named `midocs`, remove the container after it's closed, serve Jekyll on http://0.0.0.0 at port 4000, watch for changes in the Jekyll folder, include drafts"
 
 3. Open `https://0.0.0.0:4000`
 
