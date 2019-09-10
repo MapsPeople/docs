@@ -5,6 +5,16 @@ html { font-family: 'Inter', sans-serif; }
   html { font-family: 'Inter var', sans-serif; }
 }
 
+/* 
+This is an example of overriding a Tachyons-defined class:
+
+.bg-dark-red {
+  background-color: #9B0000;
+}
+
+Unless we compile the styles from scratch we can't use e.g. the "--dark-red" variable and have the changes cascade to bg-dark-red etc. so this is the way to go about it.
+*/
+
 .mi-bg-seafoam {
   background-color: #F5F5FE;
 }
