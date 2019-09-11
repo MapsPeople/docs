@@ -9,25 +9,17 @@
           <article class="pt2 lh-copy f4">
           {{ content }}
           </article>
-          {% if page.tutorials != false %}
           <section>
             <h2>Tutorials</h2>
             <ul class="list pl0">
-              {% assign tutorials = site.ios | where: "layout", "tutorial" | sort: 'nav_weight' %}
-              {% assign cms-tutorials = site.cms | where: "layout", "tutorial" | sort: 'nav_weight' %}
+              {% assign sdk = site.documents | where_exp: "item", "item.sdk == page.sdk" %}
+              {% assign sdk-version = sdk | where_exp: "item", "item.version == page.version" %}
+              {% assign tutorials = sdk-version | where_exp: "item", "item.parent == page.guide_title" | sort: 'nav_weight' %}
               {% for item in tutorials %}
-                {% if item.parent == page.guide_title %}
-                  <li class="f4 lh-copy"><a href="{{ item.url }}">{{ item.title }}</a></li>
-                {% endif %}
-              {% endfor %}
-              {% for item in cms-tutorials %}
-                {% if item.parent == page.guide_title %}
-                  <li class="f4 lh-copy"><a href="{{ item.url }}">{{ item.title }}</a></li>
-                {% endif %}
+                <li class="f4 lh-copy"><a href="{{ item.url }}">{{ item.title }}</a></li>
               {% endfor %}
             </ul>
           </section>
-          {% endif %}
         </div>
       </section>
     </main>
