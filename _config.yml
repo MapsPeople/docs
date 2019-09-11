@@ -13,6 +13,7 @@ plugins:
 exclude:
   - README.md
   - vendor
+  - TODO
 
 kramdown:
   # This is needed for the Table of Contents to work in Kramdown
@@ -30,6 +31,16 @@ collections:
   cms:
     output: true
     permalink: :collection/:path
+  android:
+    output: true
+    permalink: :collection/:path
+  public-api:
+    output: true
+    permalink: :collection/:path
+  web:
+    output: true
+    permalink: :collection/:path
+
 
 defaults:
   -
@@ -37,3 +48,82 @@ defaults:
       path: "" # targets all files in the collection
     values:
       layout: "default"
+  -
+    scope:
+      path: "_cms"
+    values:
+      platform: cms
+  -
+    scope:
+      path: "_ios"
+    values:
+      platform: ios
+  -
+    scope:
+      path: "_ios/v1"
+    values:
+      version: v1
+      layout: tutorial
+  -
+    scope:
+      path: "_ios/v2"
+    values:
+      version: v2
+      layout: tutorial
+  -
+    scope:
+      path: "_ios/v3"
+    values:
+      version: v3
+      layout: tutorial
+  -
+    scope:
+      path: "_android"
+    values:
+      platform: android
+  -
+    scope:
+      path: "_android/v1"
+    values:
+      version: v1
+      layout: tutorial
+  -
+    scope:
+      path: "_android/v2"
+    values:
+      version: v2
+      layout: tutorial
+  -
+    scope:
+      path: "_android/v3"
+    values:
+      version: v3
+      layout: tutorial
+  -
+    scope:
+      path: "_public-api"
+    values:
+      platform: public-api
+  -
+    scope:
+      path: "_public-api/v1"
+    values:
+      version: v1
+      layout: tutorial
+  -
+    scope:
+      path: "_web"
+    values:
+      platform: web
+  -
+    scope:
+      path: "_web/v2"
+    values:
+      version: v2
+      layout: tutorial
+  -
+    scope:
+      path: "_web/v3"
+    values:
+      version: v3
+      layout: tutorial
