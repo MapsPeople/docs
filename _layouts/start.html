@@ -12,22 +12,12 @@
           <section>
             <h2>Guides</h2>
             <ul class="list pl0">
-              {% if page.url contains '/ios/v3' %}
-                {% assign ios-v3-guides = site.ios | where: "sdk_title", "ios-v3" | sort: 'nav_weight' %}
-                {% for item in ios-v3-guides %}
-                  <li class="f4 lh2 lh-copy"><a href="{{ item.url }}">{{ item.title }}</a></li>
-                {% endfor %}
-              {% elsif page.url contains '/ios/v2' %}
-                {% assign ios-v2-guides = site.ios | where: "sdk_title", "ios-v2" | sort: 'nav_weight' %}
-                {% for item in ios-v2-guides %}
-                  <li class="f4 lh2 lh-copy"><a href="{{ item.url }}">{{ item.title }}</a></li>
-                {% endfor %}
-              {% elsif page.url contains '/cms' %}
-                {% assign cms-guides = site.cms | where: "sdk_title", "cms" | sort: 'nav_weight' %}
-                {% for item in cms-guides %}
-                  <li class="f4 lh2 lh-copy"><a href="{{ item.url }}">{{ item.title }}</a></li>
-                {% endfor %}
-              {% endif %}
+              {% assign sdk = site.documents | where_exp: "item", "item.sdk == page.sdk" %}
+              {% assign sdk-version = sdk | where_exp: "item", "item.version == page.version" %}
+              {% assign guides = sdk-version | where: "layout", "guide" | sort: 'nav_weight' %}
+              {% for item in guides %}
+                <li class="f4 lh-copy"><a href="{{ item.url | replace: 'index', ''}}">{{ item.title }}</a></li>
+              {% endfor %}
             </ul>
           </section>
         </div>        
