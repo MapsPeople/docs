@@ -5,9 +5,9 @@
           <section>
             <h2>Tutorials</h2>
             <ul class="list pl0">
-              {% assign sdk = site.documents | where_exp: "item", "item.sdk == page.sdk" %}
-              {% assign sdk-version = sdk | where_exp: "item", "item.version == page.version" %}
-              {% assign tutorials = sdk-version | where_exp: "item", "item.parent == page.guide_title" | sort: 'nav_weight' %}
+              {% assign platform = site.documents | where_exp: "item", "item.platform == page.platform" %}
+              {% assign platform-version = platform | where_exp: "item", "item.version == page.version" %}
+              {% assign tutorials = platform-version | where_exp: "item", "item.parent == page.guide_title" | sort: 'nav_weight' %}
               {% for item in tutorials %}
                 <li class="f4 lh-copy"><a href="{{ item.url }}">{{ item.title }}</a></li>
               {% endfor %}
