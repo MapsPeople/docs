@@ -1,9 +1,12 @@
 ---
-title: MapsIndoors for Web - Getting started
-
+layout: start
+title: MapsIndoors Web SDK v3
+permalink: /web/v3/
+published: true
+date: 2019-08-26
 ---
 
-This guide explains how to start using a MapsIndoors map in your HTML application. Make sure that you have read the [prerequisites](../#prerequisites).
+This guide explains how to start using a MapsIndoors map in your HTML application.
 
 To benefit from the guides, you will need basic knowledge about:
 
@@ -28,11 +31,11 @@ Include the following scripts in your HTML document. MapsIndoors depend on jQuer
 If you need to use a floor selector (most projects do), just add a css reference as in the sample. This will provide a basic CSS-layout for the floor selector.
 
 ```html
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+{% raw %}<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=geometry&key=MY_GOOGLE_API_KEY"></script>
 <script type="text/javascript" src="https://app.mapsindoors.com/mapsindoors/js/sdk/mapsindoors-{{%product-version%}}.js.gz?apikey=MY_MAPSINDOORS_API_KEY"></script>
 // Load css for default floor selector
-<link href="https://app.mapsindoors.com/mapsindoors/js/sdk/ui/FloorSelector.css" type="text/css" rel="stylesheet" />
+<link href="https://app.mapsindoors.com/mapsindoors/js/sdk/ui/FloorSelector.css" type="text/css" rel="stylesheet" />{% endraw %}
 ```
 
 Replace:

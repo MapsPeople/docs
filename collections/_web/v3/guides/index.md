@@ -1,6 +1,10 @@
 ---
-title: MapsIndoors for Web - Guides
-
+title: How to use the MapsIndoors Web SDK v3
+guide_title: guides
+layout: guide
+nav_weight: 1
+published: true
+date: 2019-08-26
 ---
 
 ## Using Events
@@ -320,7 +324,7 @@ let mapsIndoors = new mapsindoors.MapsIndoors({
 });
 ```
 
-It is also posible to set or get the map style at a later time, after MapsIndoors has been instantiated.
+It is also possible to set or get the map style at a later time, after MapsIndoors has been instantiated.
 
 ```javascript
 google.maps.event.addListener(mapsIndoors, 'ready', function () {
