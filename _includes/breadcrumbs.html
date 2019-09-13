@@ -1,5 +1,5 @@
 {% assign crumbs = page.url | remove:'/index.html' | replace :'index','' | split: '/' %}
-<a href="/" class="link">Home</a>
+<a href="{{ site.url }}" class="link">Home</a>
 {% for crumb in crumbs offset: 1 %}
   {% if forloop.last %}
     
