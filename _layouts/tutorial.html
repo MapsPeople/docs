@@ -1,21 +1,5 @@
-{% include head.html %}
-  <body class="bg-dark-gray">
-    {% include top-nav.html %}
-    {% include nav.html %}
-    <main role="main">
-      <article class="bg-white mt0 pb5">
-        <div class="center mw7">
-          <h1 class="f1 fw3 mv0 pt4">{{ page.title }}</h1>
-          <p class="f5 lh-copy">
-            {% if page.last_modified_at %}<span class="orange mr2">Updated on {{ page.last_modified_at |date: "%B %-d, %Y" }} </span>{% endif %}
-            <span class="gray">{% if page.date %}Posted on {{ page.date | date: "%B %-d, %Y" }} {% endif %}</span>
-          </p>
+{% include top.html %}
           <section class="lh-copy f4">
             {{ content }}
           </section>
-        </div>
-      </article>
-    </main>
-    {% include footer.html %}
-  </body>
-</html>
+{% include bottom.html %}
