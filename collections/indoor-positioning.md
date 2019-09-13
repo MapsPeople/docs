@@ -1,5 +1,8 @@
 ---
 title: Indoor Positioning with MapsIndoors
+published: true
+date: 2019-08-26
+permalink: /indoor-positioning-with-mapsindoors
 ---
 
 To get an introduction to the field of indoor positioning, we recommend [this blog post](https://www.mapspeople.com/blog/mapsindoors/indoor-positioning-101/) for a start.

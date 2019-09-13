@@ -1,8 +1,11 @@
 ---
-title: White-listing of IP-adresses
+title: Work with MapsIndoors SDK behind a firewall
+published: true
+date: 2019-08-26
+permalink: /ip-whitelisting
 ---
 
-If you have issues with reaching content from within your secured internal build system or your internal network in general, you might need to white-list the below IP adresses in your firewall configurations:
+If you need to work with MapsIndoors SDK behind a firewall, you might need to whitelist these IP-addresses:
 
 ```
 104.210.150.133/32
