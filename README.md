@@ -56,7 +56,6 @@ Jekyll automatically builds and deploys from the `gh-pages` branch in this repos
   ---
   title: Teleportation
   guide_title: teleportation
-  sdk_title: ios-v3
   layout: guide
   nav_weight: 10
   published: true
