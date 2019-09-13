@@ -3,7 +3,7 @@
           {{ content }}
           </article>
           <section>
-            <h2>Guides</h2>
+            <h2 class="f1 fw3 mv0 pt4">Guides</h2>
             <ul class="list pl0">
               {% assign platform = site.documents | where_exp: "item", "item.platform == page.platform" %}
               {% assign platform-version = platform | where_exp: "item", "item.version == page.version" %}
