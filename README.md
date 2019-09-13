@@ -49,7 +49,7 @@ Jekyll automatically builds and deploys from the `gh-pages` branch in this repos
   git checkout -b feature/teleportation-guide
   ```
 
-2. Copy an existing `index.md`-file from e.g. `./collections/_ios/v3/categories/` to `./collections/_ios/v3/teleportation/`.
+2. Copy an existing `index.md`-file from e.g. `./collections/_ios/v3/search/` to `./collections/_ios/v3/teleportation/`.
 3. Make sure the [Front matter](https://jekyllrb.com/docs/step-by-step/03-front-matter/) at the top of the file is formatted like this:
 
   ```yaml
@@ -93,7 +93,7 @@ Jekyll automatically builds and deploys from the `gh-pages` branch in this repos
   ```yaml
   ---
   layout: tutorial
-  title: Open a Inter-Universe Portal
+  title: Open an Inter-Universe Portal
   parent: teleportation
   nav_weight: 1
   published: true
@@ -120,13 +120,13 @@ Jekyll automatically builds and deploys from the `gh-pages` branch in this repos
 #### Tips
 
 1. Please use feature-branches. That makes it much easier to review new tutorials before they're live.
-1. The folder structure determines the url structure of the sdk, guide and tutorial pages, but setting the front matter is required for the links to be displayed in the right places. Look in `_config.yml` and `_layouts`-folder for more info.
+1. The folder structure determines the url structure of the platform, guide and tutorial pages, but setting the front matter is required for the links to be displayed in the right places. Look in `_config.yml` and `_layouts`-folder to familiarize with the code.
 
 ### Markdown
 
 Jekyll uses Markdown ([cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)) for rendering posts to html.
 
-It uses a converter called [kramdown](https://kramdown.gettalong.org/index.html), which works the same as [Commonmark](https://commonmark.org) or [GitHub-flavored Markdown](https://help.github.com/en/articles/basic-writing-and-formatting-syntax), with some extra sprinkle on top. The [kramdown Quick Reference](https://kramdown.gettalong.org/quickref.html) gives an overview of the options. The major difference is the ability to add [block attributes](https://kramdown.gettalong.org/quickref.html#block-attributes) (aka. css classes) to elements without writing html, which we use to display tips and warnings on tutorials like so:
+It uses a converter called [kramdown](https://kramdown.gettalong.org/index.html), which works the same as [Commonmark](https://commonmark.org) or [GitHub-flavored Markdown](https://help.github.com/en/articles/basic-writing-and-formatting-syntax), with some extra sprinkle on top. The [kramdown Quick Reference](https://kramdown.gettalong.org/quickref.html) gives an overview of the options. The major difference is the ability to add [block attributes](https://kramdown.gettalong.org/quickref.html#block-attributes) (aka. css classes) to elements without writing html, which we use to display table of contents blocks, as well as tips and warnings on tutorials like so:
 
 ```markdown
 > Tip: Drink plenty of water
@@ -146,6 +146,7 @@ Jekyll offers [some extra features](https://jekyllrb.com/docs/usage/) when previ
 Here are a few of them:
 
 1. Include all drafts, future and unpublished posts:
+
   ```bash
   jekyll serve --watch --drafts --future --unpublished
   ```
@@ -154,4 +155,10 @@ Here are a few of them:
 
 #### Why use Docker?
 
-Creating an identical environment for testing could only be done with Docker. Trying to get this to run on three machines spawned three different errors with Ruby, rvm, various Gems and their dependencies, and in the end this can be mitigated by running a container that has been tested end-to-end to work with a certain set of dependencies. Installing Docker is a small ask compared to the hours already wasted with debugging Ruby on macOS.
+Creating an identical environment for previewing on a local machine could only be done with Docker. Trying to get this to run on three machines spawned three different errors with Ruby, rvm, various Gems and their dependencies, and in the end this can be mitigated by running a container that has been tested end-to-end to work with a certain set of dependencies. Installing Docker is a small ask compared to the hours already wasted with debugging Ruby on macOS.
+
+#### Docker Tips
+
+1. Use bash in the Docker container:
+
+  Run `docker run --rm --volume="$PWD:/srv/jekyll" -p 4000:4000 -it jekyll/jekyll:4.0 /bin/bash` (swap `$PWD` for `%cd%` if you're using Windows) to open a `bash shell` in the Docker container. This is helpful if you want to change the Jekyll command you're running in the container often, as it doesn't destroy the container once you close the command.
