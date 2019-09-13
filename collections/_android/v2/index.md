@@ -1,11 +1,14 @@
 ---
-title: MapsIndoors for Android - Getting Started
-
+layout: start
+title: MapsIndoors Android SDK v2
+permalink: /android/v2/
+published: true
 ---
 
-> Note! A [newer version](../../android/v3) of the MapsIndoors SDK for Android is available. The legacy version will not receive new features and will only get bugfix and security updates.
+> A [newer version]({{ site.url }}/android/v3) of the MapsIndoors SDK for Android is available. The legacy version will not receive new features and will only get critical bugfix and security updates.
+{: .mi-warning}
 
-This guide explains how to start using a MapsIndoors map in your Android application. Make sure that you have read the [prerequisites](../../#prerequisites).
+This guide explains how to start using a MapsIndoors map in your Android application using the MapsIndoors Android SDK v2.
 
 To benefit from the guides, you will need basic knowledge about:
 
@@ -55,7 +58,7 @@ dependencies {
     implementation 'com.android.support:support-v4:27.1.0'
     implementation 'com.google.android.gms:play-services-maps:11.8.0'
     implementation 'com.google.code.gson:gson:2.8.2'
-    implementation 'com.mapspeople.mapsindoors:mapsindoorssdk:{{%product-version%}}@aar'
+    implementation 'com.mapspeople.mapsindoors:mapsindoorssdk:{% raw %}{{%product-version%}}{% endraw %}@aar'
 }
 repositories{
     maven {

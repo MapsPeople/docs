@@ -1,5 +1,8 @@
 ---
 title: Create a Search Experience with MapsIndoors - Part 2
+parent: tutorials
+nav_weight: 3
+published: true
 ---
 
 This is part 2 of the tutorial of creating a simple search experience using MapsIndoors. [In Part 1 we created the search Fragment](../searchmapdemosearchfragment). Now we will create the "main" controller displaying the map and eventually the selected location.

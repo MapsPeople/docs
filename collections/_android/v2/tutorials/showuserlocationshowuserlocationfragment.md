@@ -1,5 +1,8 @@
 ---
 title: Show the Blue Dot with MapsIndoors - Part 2
+parent: tutorials
+nav_weight: 5
+published: true
 ---
 
 This is part 2 of the tutorial of managing a blue dot on the map. [In Part 1 we created the position provider](../showuserlocationdemopositionprovider). Now we will create a Fragment displaying a map that shows the users (mock) location.

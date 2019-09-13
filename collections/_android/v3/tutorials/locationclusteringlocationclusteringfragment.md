@@ -1,28 +1,40 @@
 ---
 title: Work with location grouping / clustering
+parent: tutorials
+nav_weight: 4
+published: true
 ---
 
 This is an example of enabling and disabling location clustering on the map as well as providing custom cluster tapping behaviour and custom cluster images.
 
-Create the class `LocationClusteringFragment` that extends `Fragment`.
-```
+Create the class `LocationClusteringFragment` that extends `Fragment`:
+
+```java
 public class LocationClusteringFragment extends Fragment {
 ```
-Add a `GoogleMap` and a `MapControl` to the class
-```
+
+Add a `GoogleMap` and a `MapControl` to the class:
+
+```java
 MapControl mMapControl;
 GoogleMap mGoogleMap;
 ```
-Add other needed views for this example
-```
+
+Add other needed views for this example:
+
+```java
 SupportMapFragment mMapFragment;
 ```
-The Venue's coordinates
-```
+
+The Venue's coordinates:
+
+```java
 static final LatLng VENUE_LAT_LNG = new LatLng( 57.05813067, 9.95058065 );
 ```
+
 Once the map is ready, move the camera to the venue location and call setupMapsIndoors
-```
+
+```java
 OnMapReadyCallback mOnMapReadyCallback = new OnMapReadyCallback() {
     @Override
     public void onMapReady( GoogleMap googleMap )
@@ -33,8 +45,10 @@ OnMapReadyCallback mOnMapReadyCallback = new OnMapReadyCallback() {
     }
 };
 ```
-Add a `locationClusterImageAdapter` to customize the cluster marker icons and provide their sizes
-```
+
+Add a `locationClusterImageAdapter` to customize the cluster marker icons and provide their sizes:
+
+```java
 MPLocationClusterImageAdapter locationClusterImageAdapter = new MPLocationClusterImageAdapter() {
     @Nullable
     @Override
@@ -57,8 +71,10 @@ MPLocationClusterImageAdapter locationClusterImageAdapter = new MPLocationCluste
     }
 };
 ```
-Create a method `getCircularImageWithText` that creates the custom bitmaps for our cluster icons
-```
+
+Create a method `getCircularImageWithText` that creates the custom bitmaps for our cluster icons:
+
+```java
 @NonNull
 public static Bitmap getCircularImageWithText( @NonNull String text, int textSize, int width, int height )
 {
@@ -86,7 +102,9 @@ public static Bitmap getCircularImageWithText( @NonNull String text, int textSiz
     return result;
 }
 ```
+
 Create a method `setupMapsIndoors` that:
+
 * Sets the API key to the desired solution.
 * Sets the Google API key (required by our routing provider).
 * Instantiates MapControl.
@@ -95,7 +113,8 @@ Create a method `setupMapsIndoors` that:
 * Sets the LocationClusterImageAdapter.
 * Initializes the MapControl object which will synchronize the data.
 * When the MapControl's initialization is done, it selects a floor and animates the camera to the venue position.
-```
+
+```java
 void setupMapsIndoors()
 {
     final Activity context = getActivity();

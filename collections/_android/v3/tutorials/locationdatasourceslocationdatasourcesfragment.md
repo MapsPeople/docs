@@ -1,33 +1,47 @@
 ---
 title: Creating your own Location Data Source - Part 3
+parent: tutorials
+nav_weight: 3
+published: true
 ---
 
 This is part 3 of the tutorial for building a custom Location Source. [In Part 1 we created the People Location Source](locationdatasourcespeoplelocationdatasource) and [In Part 2 we created the Batteries Location Source](locationdatasourcesbatterieslocationdatasource). Now we will create a Fragment displaying a map that shows the mocked people locations and the batteries on top of a MapsIndoors map.
 
-Create the class `LocationDataSourcesFragment` that extends `Fragment`.
-```
+Create the class `LocationDataSourcesFragment` that extends `Fragment`:
+
+```java
 public class LocationDataSourcesFragment extends Fragment {
 ```
-Add a `GoogleMap` and a `MapControl` to the class
-```
+
+Add a `GoogleMap` and a `MapControl` to the class:
+
+```java
 MapControl mMapControl;
 GoogleMap mGoogleMap;
 ```
-Add other needed views for this example
-```
+
+Add other needed views for this example:
+
+```java
 SupportMapFragment mMapFragment;
 ```
-The Venue's coordinates
-```
+
+The Venue's coordinates:
+
+```java
 static final LatLng VENUE_LAT_LNG = new LatLng(57.05813067, 9.95058065);
 ```
-Location Data Sources objects
-```
+
+Location Data Sources objects:
+
+```java
 PeopleLocationDataSource peopleLocationDataSource;
 BatteriesLocationDataSource batteriesLocationDataSource;
 ```
-Once the map is ready, move the camera to the venue's location and call setupMapsIndoors
-```
+
+Once the map is ready, move the camera to the venue's location and call setupMapsIndoors:
+
+```java
 OnMapReadyCallback mOnMapReadyCallback = new OnMapReadyCallback() {
     @Override
     public void onMapReady( GoogleMap googleMap )
@@ -38,12 +52,15 @@ OnMapReadyCallback mOnMapReadyCallback = new OnMapReadyCallback() {
     }
 };
 ```
+
 Create a method `setupMapsIndoors` and:
+
 * Initialize MapsIndoors.
 * Set the Google API Key (used by the routing provider).
 * Set a listener on the internal location data source service. Location data is not available at the same time other data (building info, etc.) is
 * Invoke the location sources and call `setupMapControl` when ready
-```
+
+```java
 void setupMapsIndoors() {
     final Activity context = getActivity();
     if ((context == null) || (mMapFragment == null) || (mMapFragment.getView() == null)) {
@@ -59,10 +76,13 @@ void setupMapsIndoors() {
     setupLocationDataSources( error -> setupMapControl() );
 }
 ```
-Create a method `setupLocationDataSources`
+
+Create a method `setupLocationDataSources`:
+
 * Instantiate `PeopleLocationDataSource` and `BatteriesLocationDataSource`
 * Set/register the location sources
-```
+
+```java
 void setupLocationDataSources( @NonNull OnResultReadyListener listener ) {
     Set<MPLocationSource> locationDataSources = new HashSet<>( 2 );
     peopleLocationDataSource = new PeopleLocationDataSource();
@@ -82,11 +102,14 @@ void setupLocationDataSources( @NonNull OnResultReadyListener listener ) {
     });
 }
 ```
-Create a method `setupMapControl`
+
+Create a method `setupMapControl`:
+
 * Instantiate MapControl.
 * Add the custom display rules used by the location sources.
 * Initialize the `MapControl.init()` object which will synchronize the data.
-```
+
+```java
 void setupMapControl() {
     final Activity activityContext = getActivity();
     if ((activityContext == null) || (mMapFragment == null)) {
@@ -99,10 +122,13 @@ void setupMapControl() {
     mMapControl.init( null );
 }
 ```
-Add `locationSourceOnStatusChangedListener`
+
+Add `locationSourceOnStatusChangedListener`:
+
 * Once location data from our custom sources becomes available, start updating them
 * Select the first floor and move the camera to the Venue's position
-```
+
+```java
 final MPLocationSourceOnStatusChangedListener locationSourceOnStatusChangedListener = new MPLocationSourceOnStatusChangedListener() {
     @Override
     public void onStatusChanged( @NonNull MPLocationSourceStatus status, int sourceId ) {
@@ -121,8 +147,10 @@ final MPLocationSourceOnStatusChangedListener locationSourceOnStatusChangedListe
     }
 };
 ```
-Implement the `onDestroyView` method to stop updating the location sources
-```
+
+Implement the `onDestroyView` method to stop updating the location sources:
+
+```java
 @Override
 public void onDestroyView() {
     if (mMapControl != null) {

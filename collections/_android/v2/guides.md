@@ -1,7 +1,6 @@
 ---
-
-title: MapsIndoors SDK for iOS v2 - Guides
-
+title: Guides
+published: true
 ---
 
 ## Searching for Locations and Displaying the Results on a Map
@@ -10,7 +9,7 @@ Use the `MPLocationsProvider` class to search for content in your MapsIndoors so
 
 This example shows how to setup a query for the nearest single best matching location and display the result on the map:
 
-```
+```java
 mLocationsProvider = new MPLocationsProvider();
 
 mLocationQueryBuilder =     new LocationQuery.Builder();
@@ -39,7 +38,7 @@ mLocationsProvider.getLocationsAsync( mLocationQuery, new OnLocationsReadyListen
 
 This example shows how to setup a query for a group of locations and display the result on the map:
 
-```
+```java
 mLocationsProvider = new MPLocationsProvider();
 
 mLocationQueryBuilder =     new LocationQuery.Builder();

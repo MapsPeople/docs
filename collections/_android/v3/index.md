@@ -1,9 +1,11 @@
 ---
-title: MapsIndoors for Android - Getting Started
-
+layout: start
+title: MapsIndoors Android SDK v3
+permalink: /android/v3/
+published: true
 ---
 
-This guide explains how to start using a MapsIndoors map in your Android application. Make sure that you have read the [prerequisites](../../#prerequisites).
+This guide explains how to start using a MapsIndoors map in your Android application using the MapsIndoors Android SDK v3.
 
 To benefit from the guides, you will need basic knowledge about:
 
@@ -16,7 +18,7 @@ You can get started in two ways, either by reviewing and modifying the [basic ex
 
 You will find in the [link](https://github.com/MapsIndoors/MapsIndoorsAndroid-Demo-Samples) a repo that contains the minimum code to start a MapsIndoors project.
 
-You can also follow the steps below to start your app from scratch or to enhance the Basic Examples, more features will be explained in the [guides](/android/v2/guides).
+You can also follow the steps below to start your app from scratch or to enhance the Basic Examples, more features will be explained in the [guides](/android/v3/guides).
 
 ## Setup MapsIndoors
 
@@ -53,7 +55,7 @@ dependencies {
     implementation 'com.android.support:support-v4:27.1.0'
     implementation 'com.google.android.gms:play-services-maps:11.8.0'
     implementation 'com.google.code.gson:gson:2.8.2'
-    implementation 'com.mapspeople.mapsindoors:mapsindoorssdk:{{%product-version%}}@aar'
+    implementation 'com.mapspeople.mapsindoors:mapsindoorssdk:{% raw %}{{%product-version%}}{% endraw %}@aar'
 }
 repositories{
     maven {
@@ -106,7 +108,7 @@ myMapControl.init( errorCode -> {
 });
 ```
 
-Head to the [guides](/android/v2/guides) to learn about event handling, searching, getting directions, display settings and more.
+Head to the [guides](/android/v3/guides) to learn about event handling, searching, getting directions, display settings and more.
 
 ## Download and Bundle Offline Content
 

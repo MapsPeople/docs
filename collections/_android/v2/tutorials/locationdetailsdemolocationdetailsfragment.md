@@ -1,5 +1,8 @@
 ---
 title: Show Location Details
+parent: tutorials
+nav_weight: 1
+published: true
 ---
 
 This is an example of displaying some details of a MapsIndoors location

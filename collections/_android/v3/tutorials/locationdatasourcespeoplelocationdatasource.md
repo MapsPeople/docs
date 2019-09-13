@@ -1,16 +1,22 @@
 ---
 title: Creating your own Location Data Source - Part 1
+parent: tutorials
+nav_weight: 1
+published: true
 ---
 
 In this tutorial we will show how you can build a custom Location Source, representing locations of people. The people's locations will be served from a mocked list in the source and displayed on a map.
 
 We will start by creating our implementation of a location source.
 
-Create the class `PeopleLocationDataSource` that implements `MPLocationSource`.
-```
+Create the class `PeopleLocationDataSource` that implements `MPLocationSource`:
+
+```java
 public class PeopleLocationDataSource implements MPLocationSource {
 ```
-First we need to predefine some attributes.
+
+First we need to predefine some attributes:
+
 * `BASE_POSITION`: We need a base position as a start for the Locations
 * `RANGE_MAX_LAT_OFFSET`: A max latitude offset to put a limit on how far the Locations can move on the latitude axis.
 * `RANGE_MAX_LNG_OFFSET`: A max longitude offset to put a limit on how far the Locations can move on the longitude axis.
@@ -19,7 +25,8 @@ First we need to predefine some attributes.
 * `LOCATION_TYPE`: a type for the locations of this source
 * `LOCATION_CLUSTER_ID`: A cluster ID that will let locations from this source cluster together on the map in case of overlap.
 * `DISPLAY_RULE`: The display rule for the locations of this source.
-```
+
+```java
 private static final LatLng BASE_POSITION        = new LatLng( 57.0582502, 9.9504788 );
 private static final double RANGE_MAX_LAT_OFFSET = 0.000626 / 4;
 private static final double RANGE_MAX_LNG_OFFSET = 0.0003384 / 2;
@@ -45,14 +52,17 @@ private final int[] peopleAvatars = new int[]{
         R.drawable.ic_avatar_5
 };
 ```
-Then we need to add some variables.
+
+Then we need to add some variables:
+
 * `observers`: We need a base position as a start for the Locations.
 * `locationsList`: A max latitude offset to put a limit on how far the Locations can move on the latitude axis.
 * `status`: holds the status of the location data source.
 * `mDataUpdateTimer`: Timer that we will need to plan some recurrent updates.
 * `dynamicLocations`: a List of DynaLocations that will carry the dynamic side of the locations.
 * `random`: used to generate some random values in the data creation and editing.
-```
+
+```java
 @NonNull
 private List<MPLocationsObserver> observers;
 private List<MPLocation> locationsList;
@@ -61,8 +71,10 @@ private Timer mDataUpdateTimer;
 private List<DynaLocation> dynamicLocations;
 private Random random = new Random();
 ```
-Create the DynaLocation class that represents the moving Locations with a position and a heading
-```
+
+Create the DynaLocation class that represents the moving Locations with a position and a heading:
+
+```java
 class DynaLocation
 {
     LatLng pos;
@@ -79,8 +91,10 @@ PeopleLocationDataSource() {
     this.status = MPLocationSourceStatus.NOT_INITIALIZED;
 }
 ```
-Create the `startUpdatingPositions` method that simply calls `updateLocations` every second.
-```
+
+Create the `startUpdatingPositions` method that simply calls `updateLocations` every second:
+
+```java
 void startUpdatingPositions() {
     if (!setup()) {
         return;
@@ -98,8 +112,10 @@ void startUpdatingPositions() {
     }, 2000, 1000 );
 }
 ```
-Create a method that can stop the positions updates at any time
-```
+
+Create a method that can stop the positions updates at any time:
+
+```java
 void stopUpdatingPositions() {
     if (mDataUpdateTimer != null) {
         mDataUpdateTimer.cancel();
@@ -107,12 +123,15 @@ void stopUpdatingPositions() {
     }
 }
 ```
+
 Create a method called `setup` that will:
+
 * Make sure that the data source was not already initialized and data is loaded.
 * Create the locations.
 * Make the first notification.
 * Change the status to available
-```
+
+```java
 private boolean setup()
 {
     if( this.status != MPLocationSourceStatus.NOT_INITIALIZED ) {
@@ -130,8 +149,10 @@ private boolean setup()
     return true;
 }
 ```
-Create a method called `updateLocations` that will update the position of the Locations.
-```
+
+Create a method called `updateLocations` that will update the position of the Locations:
+
+```java
 void updateLocations() {
     // make sure that that the MapsIndoors is ready and that everything is well set
     if (!MapsIndoors.isReady()) {
@@ -178,14 +199,17 @@ void updateLocations() {
     notifyUpdateLocations(updatedList);
 }
 ```
+
 Create a method called `generateLocations`. Iterate numberOfPeople and for each iteration create:
+
 * An MPLocation Builder with an id
 * A random position according to the 'randomizeStartingPosition' parameter
 * A name
 * A type - later used to style the location
 * A floor Index
 * A building
-```
+
+```java
 @NonNull
 private List<MPLocation> generateLocations( boolean randomizeStartingPosition )
 {
@@ -235,8 +259,10 @@ private List<MPLocation> generateLocations( boolean randomizeStartingPosition )
     return peopleLocations;
 }
 ```
-Create a method called `getPersonName` that simply just returns a random name selected from the arrays below
-```
+
+Create a method called `getPersonName` that simply just returns a random name selected from the arrays below:
+
+```java
 // lists of names and last names
 private final String[] FIRST_NAMES = {"John", "Joe", "Javier", "Mike", "Janet", "Susan", "Cristina", "Michelle"};
 private final String[] LAST_NAMES = {"Smith", "Jones", "Andersson", "Perry", "Brown", "Hill", "Moore", "Baker"};
@@ -246,33 +272,40 @@ private String getPersonName() {
     return String.format("%1s %2s", FIRST_NAMES[firstNameIndex], LAST_NAMES[lastNameIndex]);
 }
 ```
-Create a method called `getRandomPosition` that simply just returns a random LatLng (here within proximity of the demo venue)
-```
+
+Create a method called `getRandomPosition` that simply just returns a random LatLng (here within proximity of the demo venue):
+
+```java
 private LatLng getRandomPosition() {
     final double lat = BASE_POSITION.latitude + (-4 + random.nextInt(20)) * 0.000005;
     final double lng = BASE_POSITION.longitude + (-4 + random.nextInt(20)) * 0.000010;
     return new LatLng(lat, lng);
 }
 ```
-Create a method called `notifyUpdateLocations` to loop all the observers and notify them with an update
-```
+
+Create a method called `notifyUpdateLocations` to loop all the observers and notify them with an update:
+
+```java
 private void notifyUpdateLocations(List<MPLocation> updatedLocations) {
     for (int i = observers.size(); --i >= 0; ) {
         observers.get(i).onLocationsUpdated(updatedLocations, this);
     }
 }
 ```
-The same thing for notifying observers with new status
-Create a method called `notifyLocationStatusChanged` to loop all the observers and notify them with a status change
-```
+
+The same thing for notifying observers with new status. Create a method called `notifyLocationStatusChanged` to loop all the observers and notify them with a status change:
+
+```java
 private void notifyLocationStatusChanged(@NonNull MPLocationSourceStatus prevStatus, @NonNull MPLocationSourceStatus newStatus) {
     for (int i = observers.size(); --i >= 0; ) {
         observers.get(i).onStatusChanged(newStatus, this);
     }
 }
 ```
-Sets the internal state and notifies a status changed message if applies
-```
+
+Sets the internal state and notifies a status changed message if applies:
+
+```java
 private void setStatus(@NonNull MPLocationSourceStatus newStatus) {
     MPLocationSourceStatus cStatus = status;
     if (cStatus != newStatus) {
@@ -281,16 +314,20 @@ private void setStatus(@NonNull MPLocationSourceStatus newStatus) {
     }
 }
 ```
-Implement the MPLocationSource method `getLocations`.
-```
+
+Implement the MPLocationSource method `getLocations`:
+
+```java
 @NonNull
 @Override
 public List<MPLocation> getLocations() {
     return locationsList;
 }
 ```
-Implement the MPLocationSource method `addLocationObserver`.
-```
+
+Implement the MPLocationSource method `addLocationObserver`:
+
+```java
 @Override
 public void addLocationsObserver(@Nullable MPLocationsObserver observer) {
     if (observer != null) {
@@ -299,8 +336,10 @@ public void addLocationsObserver(@Nullable MPLocationsObserver observer) {
     }
 }
 ```
-Implement the MPLocationSource method `removeLocationObserver`.
-```
+
+Implement the MPLocationSource method `removeLocationObserver`:
+
+```java
 @Override
 public void removeLocationsObserver(@Nullable MPLocationsObserver observer) {
     if (observer != null) {
@@ -308,16 +347,20 @@ public void removeLocationsObserver(@Nullable MPLocationsObserver observer) {
     }
 }
 ```
-Implement the MPLocationSource method `getStatus`.
-```
+
+Implement the MPLocationSource method `getStatus`:
+
+```java
 @NonNull
 @Override
 public MPLocationSourceStatus getStatus() {
     return status;
 }
 ```
-Implement the MPLocationSource method `getSourceId`.
-```
+
+Implement the MPLocationSource method `getSourceId`:
+
+```java
 @Override
 public int getSourceId() {
     return LOCATION_SOURCE_ID;
