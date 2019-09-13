@@ -87,3 +87,7 @@ code.highlighter-rouge {
 .mi-breadcrumbs a:hover {
   color: #357EDD;
 }
+
+h1 {
+  line-height: 1.25;
+}
