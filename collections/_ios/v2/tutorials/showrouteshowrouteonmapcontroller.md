@@ -1,5 +1,9 @@
 ---
 title: Get Directions and Show the Result on a Map - Part 1
+parent: tutorials
+nav_weight: 5
+date: 2019-08-26
+published: true
 ---
 
 In this tutorial we will request a route, list the route parts and render these on a Google Map. A MapsIndoors route is made of one or more legs, each containing one or more steps.

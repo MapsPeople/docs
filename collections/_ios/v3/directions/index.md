@@ -1,7 +1,6 @@
 ---
 title: Directions
 guide_title: directions
-sdk_title: ios-v3
 layout: guide
 nav_weight: 4
 published: true

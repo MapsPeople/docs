@@ -1,14 +1,16 @@
 ---
 layout: start
-title: Getting started with MapsIndoors for iOS SDK v2
+title: MapsIndoors iOS SDK v2
 permalink: /ios/v2/
-published: true
 date: 2019-08-26
+published: true
 ---
 
-> Note! A [newer version](../../ios/v3) of the MapsIndoors SDK for iOS is available. The legacy version will not receive new features and will only get bugfix and security updates.
+> A [newer version]({{ site.url }}/ios/v3) of the MapsIndoors SDK for iOS is available. The legacy version will not receive new features and will only get critical bugfix and security updates.
+{: .mi-warning}
 
-This guide explains how to start using a MapsIndoors map in your iOS application. Make sure that you have read the [prerequisites](../../#prerequisites).
+
+This guide explains how to start using a MapsIndoors map in your iOS application using the MapsIndoors iOS SDK v2.
 
 To benefit from the guides, you will need basic knowledge about:
 
@@ -37,7 +39,7 @@ If you haven’t already, install CocoaPods:
 ```
 source 'https://github.com/CocoaPods/Specs.git'
 target 'YOUR_APPLICATION_TARGET_NAME_HERE' do
-  pod 'MapsIndoors' '{{%product-version%}}'
+  pod 'MapsIndoors' '{% raw %}{{%product-version%}}{% endraw %}'
 end
 ```
 

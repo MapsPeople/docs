@@ -1,5 +1,9 @@
 ---
 title: Create a Search Experience with MapsIndoors - Part 1
+parent: tutorials
+nav_weight: 2
+date: 2019-08-26
+published: true
 ---
 
 This is an example of creating a simple search experience using MapsIndoors. We will create a map with a search button that leads to another view controller that handles the search and selection. On selection of a location, we go back to the map and shows the selected location on the map.

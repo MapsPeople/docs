@@ -1,7 +1,6 @@
 ---
 title: Locations
 guide_title: locations
-sdk_title: ios-v3
 layout: guide
 nav_weight: 3
 published: true

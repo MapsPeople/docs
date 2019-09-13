@@ -1,7 +1,6 @@
 ---
 title: Getting Started
 guide_title: getting-started
-sdk_title: ios-v3
 layout: guide
 nav_weight: 1
 published: true

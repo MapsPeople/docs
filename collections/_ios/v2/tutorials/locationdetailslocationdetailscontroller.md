@@ -1,5 +1,9 @@
 ---
-title: Show Location Details
+title: Show location details
+parent: tutorials
+nav_weight: 1
+date: 2019-08-26
+published: true
 ---
 
 This is an example of displaying some details of a MapsIndoors location

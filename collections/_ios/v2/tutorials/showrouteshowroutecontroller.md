@@ -1,5 +1,9 @@
 ---
 title: Get Directions and Show the Result on a Map - Part 2
+parent: tutorials
+nav_weight: 6
+date: 2019-08-26
+published: true
 ---
 
 This is part 2 of the tutorial of requesting directions and showing the route result on a map. In [Part 1](showrouteshowrouteonmapcontroller) we created the controller that can display the map and route, and in this part we will create the controller that requests the route and list the route in a table. A MapsIndoors route is made of one or more legs, each containing one or more steps.
