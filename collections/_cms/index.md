@@ -1,9 +1,9 @@
 ---
 layout: start
-title: Getting started with MapsIndoors CMS
+title: Getting started
 permalink: /cms/
-published: true
 date: 2019-08-26
+published: true
 ---
 ## Introduction
 
