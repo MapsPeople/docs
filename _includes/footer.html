@@ -1,10 +1,60 @@
-<footer class="flex bg-dark-gray near-white relative left-0 right-0 bottom-0 mh5">
-	<div class="w-50 pv3">
-		<p>&copy; <a href="https://mapspeople.com" title="MapsPeople" class="link dim near-white">MapsPeople</a> {{ 'now' | date: "%Y" }}</p>
+<footer class="bg-dark-gray near-white relative left-0 right-0 bottom-0 mh5">
+	<div class="flex">
+		<div class="w-50 pv3">
+			<p>&copy; <a href="https://mapspeople.com" title="MapsPeople" class="link dim near-white">MapsPeople</a> {{ 'now' | date: "%Y" }}</p>
+		</div>
+		<div class="w-50 pv3">
+			<p class="fr">
+				<a href="https://resources.mapspeople.com/get-support" title="Get support" class="link dim near-white">Get support</a> · <a href="https://blog.mapspeople.com" title="MapsPeople blog" class="link dim near-white">Blog</a>
+			</p>
+		</div>
 	</div>
-	<div class="w-50 pv3">
-		<p class="fr">
-			<a href="https://resources.mapspeople.com/get-support" title="Get support" class="link dim near-white">Get support</a> · <a href="https://blog.mapspeople.com" title="MapsPeople blog" class="link dim near-white">Blog</a>
-		</p>
+	<div class="flex">
+		
+		{% assign android_items = site.android | where_exp: "item", "item.version == 'v3'" | where_exp: "item", "item.layout != 'start'" | sort: 'nav_weight' %}
+		{% assign ios_items = site.ios | where_exp: "item", "item.version == 'v3'" | where_exp: "item", "item.layout != 'start'" | sort: 'nav_weight' %}
+		{% assign web_items = site.web | where_exp: "item", "item.version == 'v3'" | where_exp: "item", "item.layout != 'start'" | sort: 'nav_weight' %}
+		{% assign cms_items = site.cms | sort: 'nav_weight' %}
+		{% assign api_items = site.api | sort: 'nav_weight' %}
+		
+		<div class="w-25 mr4">
+			<h2><a href="/ios/v3" class="link dim near-white">iOS v3</a></h2>
+			{% for item in ios_items %}
+			<ul class="list pl0">
+				<li class="mb2 {% if item.layout == 'guide' %}b f4{% elsif item.title contains 'Changelog' %}b f4{% endif %}"><a class="link dim near-white" href="{{ item.url | replace: "/index", "/" }}">{{ item.title }}</a></li>
+			</ul>
+			{% endfor %}			
+		</div>
+		
+		<div class="w-25 mr4">
+			<h2><a href="/android/v3" class="link dim near-white">Android v3</a></h2>
+			{% for item in android_items %}
+			<ul class="list pl0">
+				<li class="mb2 {% if item.layout == 'guide' %}b f4{% elsif item.title contains 'Changelog' %}b f4{% endif %}"><a class="link dim near-white" href="{{ item.url }}">{{ item.title }}</a></li>
+			</ul>
+			{% endfor %}			
+		</div>
+		<div class="w-25 mr4">
+			<h2><a href="/web/v3" class="link dim near-white">Web v3</a></h2>
+			{% for item in web_items %}
+			<ul class="list pl0">
+				<li class="mb2 {% if item.layout == 'guide' %}b f4{% elsif item.title contains 'Changelog' %}b f4{% endif %}"><a class="link dim near-white" href="{{ item.url }}">{{ item.title }}</a></li>
+			</ul>
+			{% endfor %}			
+		</div>
+		<div class="w-25">
+			<h2><a href="/cms" class="link dim near-white">CMS</a></h2>
+			{% for item in cms_items %}
+			<ul class="list pl0">
+				<li class="mb2 {% if item.layout == 'guide' %}b f4{% endif %}"><a class="link dim near-white" href="{{ item.url }}">{{ item.title }}</a></li>
+			</ul>
+			{% endfor %}
+			<h2><a href="/api" class="link dim near-white">Public API</a></h2>
+			{% for item in api_items %}
+			<ul class="list pl0">
+				<li class="mb2 {% if item.layout == 'guide' %}b f4{% endif %}"><a class="link dim near-white" href="{{ item.url }}">{{ item.title }}</a></li>
+			</ul>
+			{% endfor %}
+		</div>
 	</div>
 </footer>
