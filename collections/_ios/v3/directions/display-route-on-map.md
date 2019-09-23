@@ -2,7 +2,7 @@
 layout: tutorial
 title: Display Route on map
 parent: directions
-nav_weight: 2
+nav_weight: 420
 published: true
 date: 2019-08-26
 ---

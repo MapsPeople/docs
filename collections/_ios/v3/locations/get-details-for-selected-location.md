@@ -2,7 +2,7 @@
 layout: tutorial
 title: Show details for selected Location
 parent: locations
-nav_weight: 1
+nav_weight: 310
 published: true
 date: 2019-08-26
 ---

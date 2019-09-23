@@ -1,7 +1,7 @@
 ---
 title: Show Location Details
 parent: tutorials
-nav_weight: 5
+nav_weight: 150
 published: true
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Work with location grouping / clustering
 parent: tutorials
-nav_weight: 4
+nav_weight: 140
 published: true
 ---
 

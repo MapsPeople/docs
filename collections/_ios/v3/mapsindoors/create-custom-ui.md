@@ -2,7 +2,7 @@
 layout: tutorial
 title: Create custom UI
 parent: mapsindoors
-nav_weight: 5
+nav_weight: 250
 published: true
 date: 2019-08-26
 ---

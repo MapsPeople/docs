@@ -2,7 +2,7 @@
 layout: tutorial
 title: Working with Location Grouping (Clustering)
 parent: locations
-nav_weight: 2
+nav_weight: 320
 published: true
 date: 2019-08-26
 ---

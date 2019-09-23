@@ -4,6 +4,7 @@ title: MapsIndoors iOS SDK v2
 permalink: /ios/v2/
 date: 2019-08-26
 published: true
+nav_weight: 1
 ---
 
 > A [newer version]({{ site.url }}/ios/v3) of the MapsIndoors SDK for iOS is available. The legacy version will not receive new features and will only get critical bugfix and security updates.

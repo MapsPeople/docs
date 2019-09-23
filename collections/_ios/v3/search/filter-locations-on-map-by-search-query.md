@@ -2,7 +2,7 @@
 layout: tutorial
 title: Filter Locations on map by search query
 parent: search
-nav_weight: 2
+nav_weight: 520
 published: true
 date: 2019-08-26
 ---

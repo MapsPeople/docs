@@ -2,7 +2,7 @@
 layout: tutorial
 title: Getting a polygon from a location
 parent: mapsindoors
-nav_weight: 3
+nav_weight: 230
 published: true
 date: 2019-08-26
 ---

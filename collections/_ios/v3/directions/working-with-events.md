@@ -2,7 +2,7 @@
 layout: tutorial
 title: Working with Events
 parent: directions
-nav_weight: 5
+nav_weight: 450
 published: true
 date: 2019-08-26
 ---

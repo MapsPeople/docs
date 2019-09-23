@@ -1,7 +1,7 @@
 ---
 title: Show the Blue Dot with MapsIndoors - Part 2
 parent: tutorials
-nav_weight: 9
+nav_weight: 190
 published: true
 ---
 

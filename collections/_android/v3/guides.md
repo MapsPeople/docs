@@ -1,6 +1,7 @@
 ---
 title: Guides
 published: true
+nav_weight: 10
 ---
 
 ## Searching for Locations and Displaying the Results on a Map

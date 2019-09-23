@@ -2,7 +2,7 @@
 title: Download and bundle offline content
 guide_title: offline
 layout: guide
-nav_weight: 6
+nav_weight: 600
 published: true
 date: 2019-08-26
 ---

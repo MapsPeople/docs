@@ -2,7 +2,7 @@
 layout: tutorial
 title: Get Directions and Show the Result on a Map
 parent: directions
-nav_weight: 3
+nav_weight: 430
 published: true
 date: 2019-08-26
 ---

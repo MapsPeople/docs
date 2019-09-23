@@ -2,7 +2,7 @@
 title: How to use the MapsIndoors Web SDK v3
 guide_title: guides
 layout: guide
-nav_weight: 1
+nav_weight: 100
 published: true
 date: 2019-08-26
 ---

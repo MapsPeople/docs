@@ -1,7 +1,7 @@
 ---
 title: Create a Search Experience with MapsIndoors - Part 1
 parent: tutorials
-nav_weight: 6
+nav_weight: 160
 published: true
 ---
 

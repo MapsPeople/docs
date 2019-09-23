@@ -2,7 +2,7 @@
 layout: tutorial
 title: Handling marker selections and other user events
 parent: mapsindoors
-nav_weight: 1
+nav_weight: 210
 published: true
 date: 2019-08-26
 ---

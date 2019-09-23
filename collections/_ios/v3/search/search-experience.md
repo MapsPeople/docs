@@ -2,7 +2,7 @@
 layout: tutorial
 title: Create a search experience with MapsIndoors
 parent: search
-nav_weight: 1
+nav_weight: 510
 published: true
 date: 2019-08-26
 ---

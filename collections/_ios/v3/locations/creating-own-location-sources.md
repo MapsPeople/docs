@@ -2,7 +2,7 @@
 layout: tutorial
 title: Creating your own Location Sources
 parent: locations
-nav_weight: 3
+nav_weight: 330
 published: true
 date: 2019-08-26
 ---

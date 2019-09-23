@@ -2,7 +2,7 @@
 title: Getting Started
 guide_title: getting-started
 layout: guide
-nav_weight: 1
+nav_weight: 100
 published: true
 date: 2019-08-26
 ---

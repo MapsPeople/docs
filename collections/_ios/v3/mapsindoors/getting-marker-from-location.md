@@ -2,7 +2,7 @@
 layout: tutorial
 title: Getting a marker from a location and vice versa
 parent: mapsindoors
-nav_weight: 2
+nav_weight: 220
 published: true
 date: 2019-08-26
 ---

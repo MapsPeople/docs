@@ -1,7 +1,7 @@
 ---
 title: Creating your own Location Data Source - Part 2
 parent: tutorials
-nav_weight: 2
+nav_weight: 120
 published: true
 ---
 

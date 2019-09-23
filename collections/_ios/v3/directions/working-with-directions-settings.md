@@ -2,7 +2,7 @@
 layout: tutorial
 title: Working with Directions Settings
 parent: directions
-nav_weight: 4
+nav_weight: 440
 published: true
 date: 2019-08-26
 ---

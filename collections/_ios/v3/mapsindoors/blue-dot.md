@@ -2,7 +2,7 @@
 layout: tutorial
 title: Show the user's location aka. Blue Dot
 parent: mapsindoors
-nav_weight: 4
+nav_weight: 240
 published: true
 date: 2019-08-26
 ---

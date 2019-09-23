@@ -2,6 +2,7 @@
 title: Changelog
 layout: default
 published: true
+nav_weight: 1000
 ---
 
 # Changelog

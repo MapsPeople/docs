@@ -3,6 +3,7 @@ title: iOS v2 - Guides
 permalink: /ios/v2/guides
 date: 2019-08-26
 published: true
+nav_weight: 2
 ---
 
 ## Searching for Locations and Displaying the Results on a Map
