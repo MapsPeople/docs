@@ -15,44 +15,42 @@
 		{% assign ios_items = site.ios | where_exp: "item", "item.version == 'v3'" | where_exp: "item", "item.layout != 'start'" | sort: 'nav_weight' %}
 		{% assign web_items = site.web | where_exp: "item", "item.version == 'v3'" | where_exp: "item", "item.layout != 'start'" | sort: 'nav_weight' %}
 		{% assign cms_items = site.cms | sort: 'nav_weight' %}
-		{% assign api_items = site.api | sort: 'nav_weight' %}
+		{% assign api_items = site.api | where_exp: "item", "item.layout != 'default'" | sort: 'nav_weight' %}
 		
-		<div class="w-25 mr4">
+		<div class="w-third mr4">
 			<h2><a href="/ios/v3" class="link dim near-white">iOS v3</a></h2>
 			{% for item in ios_items %}
 			<ul class="list pl0">
-				<li class="mb2 {% if item.layout == 'guide' %}b f4{% elsif item.title contains 'Changelog' %}b f4{% endif %}"><a class="link dim near-white" href="{{ item.url | replace: "/index", "/" }}">{{ item.title }}</a></li>
+				<li class="mb2 {% if item.layout == 'guide' %}b mt4{% elsif item.title contains 'Changelog' %}b mt4{% endif %}"><a class="link dim near-white" href="{{ item.url | replace: "/index", "/" }}">{{ item.title }}</a></li>
 			</ul>
 			{% endfor %}			
 		</div>
 		
-		<div class="w-25 mr4">
+		<div class="w-third mr4">
 			<h2><a href="/android/v3" class="link dim near-white">Android v3</a></h2>
 			{% for item in android_items %}
 			<ul class="list pl0">
-				<li class="mb2 {% if item.layout == 'guide' %}b f4{% elsif item.title contains 'Changelog' %}b f4{% endif %}"><a class="link dim near-white" href="{{ item.url }}">{{ item.title }}</a></li>
+				<li class="mb2 {% if item.layout == 'guide' %}b mt4{% elsif item.title contains 'Changelog' %}b mt4{% endif %}"><a class="link dim near-white" href="{{ item.url }}">{{ item.title }}</a></li>
 			</ul>
 			{% endfor %}			
 		</div>
-		<div class="w-25 mr4">
+		<div class="w-third mr4">
 			<h2><a href="/web/v3" class="link dim near-white">Web v3</a></h2>
 			{% for item in web_items %}
 			<ul class="list pl0">
-				<li class="mb2 {% if item.layout == 'guide' %}b f4{% elsif item.title contains 'Changelog' %}b f4{% endif %}"><a class="link dim near-white" href="{{ item.url }}">{{ item.title }}</a></li>
+				<li class="mb2 {% if item.layout == 'guide' %}b mt4{% elsif item.title contains 'Changelog' %}b mt4{% endif %}"><a class="link dim near-white" href="{{ item.url }}">{{ item.title }}</a></li>
 			</ul>
-			{% endfor %}			
-		</div>
-		<div class="w-25">
+			{% endfor %}
 			<h2><a href="/cms" class="link dim near-white">CMS</a></h2>
 			{% for item in cms_items %}
 			<ul class="list pl0">
-				<li class="mb2 {% if item.layout == 'guide' %}b f4{% endif %}"><a class="link dim near-white" href="{{ item.url }}">{{ item.title }}</a></li>
+				<li class="mb2 {% if item.layout == 'guide' %}b mt4{% endif %}"><a class="link dim near-white" href="{{ item.url }}">{{ item.title }}</a></li>
 			</ul>
 			{% endfor %}
 			<h2><a href="/api" class="link dim near-white">Public API</a></h2>
 			{% for item in api_items %}
 			<ul class="list pl0">
-				<li class="mb2 {% if item.layout == 'guide' %}b f4{% endif %}"><a class="link dim near-white" href="{{ item.url }}">{{ item.title }}</a></li>
+				<li class="mb2 {% if item.layout == 'guide' %}b mt4{% endif %}"><a class="link dim near-white" href="{{ item.url }}">{{ item.title }}</a></li>
 			</ul>
 			{% endfor %}
 		</div>
