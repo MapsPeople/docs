@@ -2,6 +2,7 @@
 title: MapsIndoors API v1
 layout: tutorial
 permalink: /api/v1/
+published: true
 ---
 
 * Table of contents
