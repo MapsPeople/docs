@@ -13,6 +13,9 @@ plugins:
 exclude:
   - README.md
   - vendor
+  - Gemfile
+  - Gemfile.lock
+  - package.json
 
 kramdown:
   # This is needed for the Table of Contents to work in Kramdown
@@ -26,20 +29,19 @@ collections_dir: collections
 collections:
   ios:
     output: true
-    permalink: :collection/:path
+    permalink: :collection/:path/
   cms:
     output: true
-    permalink: :collection/:path
+    permalink: :collection/:path/
   android:
     output: true
-    permalink: :collection/:path
+    permalink: :collection/:path/
   api:
     output: true
-    permalink: :collection/:path
+    permalink: :collection/:path/
   web:
     output: true
-    permalink: :collection/:path
-
+    permalink: :collection/:path/
 
 defaults:
   -
