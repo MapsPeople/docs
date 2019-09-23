@@ -5,6 +5,7 @@ layout: guide
 nav_weight: 100
 published: true
 date: 2019-08-26
+permalink: /ios/v3/getting-started/
 ---
 
 * Table of contentsss

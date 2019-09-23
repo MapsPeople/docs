@@ -5,6 +5,7 @@ layout: guide
 nav_weight: 100
 published: true
 date: 2019-08-26
+permalink: /web/v3/guides/
 ---
 
 ## Using Events

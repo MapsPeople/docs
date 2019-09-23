@@ -3,6 +3,7 @@ layout: default
 title: MapsIndoors SDK for iOS
 published: true
 date: 2019-08-26
+permalink: /ios/
 ---
 
 ## Choose an SDK version

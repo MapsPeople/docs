@@ -1,6 +1,6 @@
 ---
 title: iOS v2 - Guides
-permalink: /ios/v2/guides
+permalink: /ios/v2/guides/
 date: 2019-08-26
 published: true
 nav_weight: 2

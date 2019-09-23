@@ -3,15 +3,11 @@ layout: default
 title: MapsIndoors SDK for Web
 published: true
 date: 2019-08-26
+permalink: /web/
 ---
-
-## Choose an SDK version
 
 **Latest:** [Web SDK v3](/web/v3/)
 {: .f3 .link}
-
-Legacy: [Web SDK v2](/web/v2/)
-{: .f6 .link .mid-gray}
 
 Welcome to the documentation site for the MapsIndoors Web SDK by MapsPeople. 
 

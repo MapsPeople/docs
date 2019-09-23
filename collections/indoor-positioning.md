@@ -2,7 +2,7 @@
 title: Indoor Positioning with MapsIndoors
 published: true
 date: 2019-08-26
-permalink: /indoor-positioning-with-mapsindoors
+permalink: /indoor-positioning-with-mapsindoors/
 ---
 
 To get an introduction to the field of indoor positioning, we recommend [this blog post](https://www.mapspeople.com/blog/mapsindoors/indoor-positioning-101/) for a start.
@@ -17,4 +17,4 @@ We have made implementations for the platform LocationManagers in demo apps ship
 
 [GPSPositionProvider for iOS](https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/MIAIOS-SRC/GenericBase/Services/GPSPositionProvider.m)
 
-This provider is then passed to the MapsIndoors' MapControl instance using a method set/addPositionProvider on a MapControl instance, like explained [here for Android](/android/guide-part2/#using-a-positioning-provider) and here for [here for iOS](/ios/guide-part2/#using-a-positioning-provider).
+This provider is then passed to the MapsIndoors' MapControl instance using a method set/addPositionProvider on a MapControl instance.

@@ -1,7 +1,7 @@
 ---
 layout: guide
 title: iOS SDK v2 Tutorials
-permalink: /ios/v2/tutorials
+permalink: /ios/v2/tutorials/
 guide_title: tutorials
 published: true
 nav_weight: 100

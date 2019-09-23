@@ -2,7 +2,7 @@
 title: Work with MapsIndoors SDK behind a firewall
 published: true
 date: 2019-08-26
-permalink: /ip-whitelisting
+permalink: /ip-whitelisting/
 ---
 
 If you need to work with MapsIndoors SDK behind a firewall, you might need to whitelist these IP-addresses:

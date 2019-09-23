@@ -5,6 +5,7 @@ layout: guide
 nav_weight: 600
 published: true
 date: 2019-08-26
+permalink: /ios/v3/offline/
 ---
 
 If needed, it is possible to bundle MapsIndoors content to make your app work better in offline or poor network conditions. (Please note that while MapsIndoors content can be used offline, Google Maps does not provide offline features. Outdoor wayfinding and Google Places searches will be unavailable and the surrounding map may be unavailable unless it has been cached.)
