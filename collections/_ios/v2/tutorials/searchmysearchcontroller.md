@@ -91,13 +91,13 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
 }
 ```
 Implement the `tableView:didSelectRowAt` method. In this example we just call the delegate method and dismiss the view controller.
-Delegate method will be handled by [SearchMapController](searchsearchmapcontroller)
+Delegate method will be handled by [SearchMapController](../searchmysearchcontroller)
 ```
 func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     delegate?.didSelectLocation(location: locations[indexPath.row])
     self.dismiss(animated: true, completion: nil)
 }
 ```
- In [Part 2](searchsearchmapcontroller) we will create the map view controller that displays the search selection. 
+In [Part 2](../searchmysearchcontroller) we will create the map view controller that displays the search selection. 
 
-[See the sample in MySearchController.swift](https://github.com/MapsIndoors/MapsIndoorsIOS-Demo-Samples/blob/master/Search/MySearchController.swift)
+[See the sample in MySearchController.swift](https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Search/MySearchController.swift)

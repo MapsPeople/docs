@@ -136,7 +136,7 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
 
 Implement the `tableView:didSelectRowAt` method. In this example we just call the delegate method and dismiss the view controller.
 
-Delegate method will be handled by [SearchMapController](searchsearchmapcontroller)
+Delegate method will be handled by SearchMapController.
 
 ```swift
 func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

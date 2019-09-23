@@ -92,6 +92,6 @@ func isRunning() -> Bool {
     return running
 }
 ```
-In [Part 2](showmylocationshowmylocationcontroller) we will create the map view controller that displays the blue dot.
+In [Part 2](../showmylocationshowmylocationcontroller) we will create the map view controller that displays the blue dot.
 
-[See the sample in MyPositionProvider.swift](https://github.com/MapsIndoors/MapsIndoorsIOS-Demo-Samples/blob/master/Show My Location/MyPositionProvider.swift)
+[See the sample in MyPositionProvider.swift](https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Show%20My%20Location/MyPositionProvider.swift)

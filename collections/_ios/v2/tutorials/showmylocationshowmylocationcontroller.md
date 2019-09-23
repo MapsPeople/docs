@@ -6,7 +6,7 @@ date: 2019-08-26
 published: true
 ---
 
-This is part 2 of the tutorial of managing a blue dot on the map. [In Part 1 we created the position provider](showmylocationmypositionprovider). Now we will create a view controller displaying a map that shows the users (mock) location.
+This is part 2 of the tutorial of managing a blue dot on the map. [In Part 1 we created the position provider](../showmylocationmypositionprovider). Now we will create a view controller displaying a map that shows the users (mock) location.
 
 Create a class `ShowMyLocationController` that inherits from `UIViewController`.
 ```
@@ -39,4 +39,4 @@ MapsIndoors.positionProvider = MyPositionProvider()
 MapsIndoors.positionProvider.startPositioning(nil)
 ```
 
-[See the sample in ShowMyLocationController.swift](https://github.com/MapsIndoors/MapsIndoorsIOS-Demo-Samples/blob/master/Show My Location/ShowMyLocationController.swift)
+[See the sample in ShowMyLocationController.swift](https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Show%20My%20Location/ShowMyLocationController.swift)

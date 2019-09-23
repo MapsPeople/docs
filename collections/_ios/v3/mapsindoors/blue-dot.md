@@ -167,4 +167,4 @@ MapsIndoors.positionProvider = MyPositionProvider()
 MapsIndoors.positionProvider.startPositioning(nil)
 ```
 
-[See the sample in ShowMyLocationController.swift](https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Show My Location/ShowMyLocationController.swift)
+[See the sample in ShowMyLocationController.swift](https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Show%20My%20Location/ShowMyLocationController.swift)

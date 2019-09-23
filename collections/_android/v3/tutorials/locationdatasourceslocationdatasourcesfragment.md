@@ -5,7 +5,7 @@ nav_weight: 130
 published: true
 ---
 
-This is part 3 of the tutorial for building a custom Location Source. [In Part 1 we created the People Location Source](locationdatasourcespeoplelocationdatasource) and [In Part 2 we created the Batteries Location Source](locationdatasourcesbatterieslocationdatasource). Now we will create a Fragment displaying a map that shows the mocked people locations and the batteries on top of a MapsIndoors map.
+This is part 3 of the tutorial for building a custom Location Source. [In Part 1 we created the People Location Source](../locationdatasourcespeoplelocationdatasource) and [In Part 2 we created the Batteries Location Source](../locationdatasourcesbatterieslocationdatasource). Now we will create a Fragment displaying a map that shows the mocked people locations and the batteries on top of a MapsIndoors map.
 
 Create the class `LocationDataSourcesFragment` that extends `Fragment`:
 
