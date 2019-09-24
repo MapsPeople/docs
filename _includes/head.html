@@ -33,6 +33,9 @@
     <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css">
     <link rel="stylesheet" href="{{ site.url }}/assets/style.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/github.min.css">
+    {% if page.layout == 'front' %}
+    <link rel="stylesheet" href="{{ site.url }}/assets/front.css">
+    {% endif %}
     
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
