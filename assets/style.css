@@ -19,10 +19,6 @@ Unless we compile the styles from scratch we can't use e.g. the "--dark-red" var
   background-color: #F5F5FE;
 }
 
-.mi-sdk-button {
-  box-shadow: 0px 16px 32px #E5E5EA;
-}
-
 blockquote {
   border-left: 4px solid rgba(0, 0, 0, 0.16);
   padding-left: 16px;
@@ -90,4 +86,52 @@ code.highlighter-rouge {
 
 h1 {
   line-height: 1.25;
+}
+
+.mi-bg-dark-green {
+  background-color: #006440;
+}
+
+.mi-bg-darker-green {
+  background-color: #1E3C32;
+}
+
+.mi-bg-green {
+  background-color: #007848;
+}
+
+.mi-bg-green-light {
+  background-color: #D8E8E0;
+}
+
+.mi-bg-romance {
+  background-color: #F4F0E8;
+}
+
+.mi-bg-white-snow {
+  background-color: #F9F9F9;
+}
+
+.mi-dark-green {
+  color: #006440;
+}
+
+.mi-darker-green {
+  color: #1E3C32;
+}
+
+.mi-green {
+  color: #007848;
+}
+
+.mi-green-light {
+  color: #D8E8E0;
+}
+
+.mi-romance {
+  color: #F4F0E8;
+}
+
+.mi-white-snow {
+  color: #F9F9F9;
 }
