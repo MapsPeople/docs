@@ -15,10 +15,6 @@ This is an example of overriding a Tachyons-defined class:
 Unless we compile the styles from scratch we can't use e.g. the "--dark-red" variable and have the changes cascade to bg-dark-red etc. so this is the way to go about it.
 */
 
-.mi-bg-seafoam {
-  background-color: #F5F5FE;
-}
-
 blockquote {
   border-left: 4px solid rgba(0, 0, 0, 0.16);
   padding-left: 16px;
@@ -134,4 +130,17 @@ h1 {
 
 .mi-white-snow {
   color: #F9F9F9;
+}
+
+svg.mapspeople-logo path {
+  fill: white;
+}
+
+:root {
+  background-color: #1E3C32;
+}
+
+.gradient {
+  background-image: linear-gradient(to bottom right, #006440, #1E3C32);
+  color: #F4F0E8;
 }
