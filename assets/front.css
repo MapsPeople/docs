@@ -1,4 +1,4 @@
-.gradient {
+.front-gradient {
   background-image: linear-gradient(to bottom right, #F4F0E8, #D8E8E0);
   color: #006440;
   min-height: 100vh;
@@ -8,8 +8,12 @@
   color: #006440;
 }
 
+svg.mapspeople-logo path {
+  fill: #006440;
+}
+
 @media (prefers-color-scheme: dark) {
-  .gradient {
+  .front-gradient {
     background-image: linear-gradient(to bottom right, #1E3C32, #111111);
     color: #F4F0E8;
   }
