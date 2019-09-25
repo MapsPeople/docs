@@ -10,7 +10,7 @@
 			</p>
 		</div>
 	</div>
-	<div class="flex">
+	<div class="flex mt2 bt bw1 b--mi-dark-green">
 		
 		{% assign android_items = site.android | where_exp: "item", "item.version == 'v3'" | where_exp: "item", "item.layout != 'start'" | sort: 'nav_weight' %}
 		{% assign ios_items = site.ios | where_exp: "item", "item.version == 'v3'" | where_exp: "item", "item.layout != 'start'" | sort: 'nav_weight' %}
@@ -18,7 +18,7 @@
 		{% assign cms_items = site.cms | sort: 'nav_weight' %}
 		{% assign api_items = site.api | where_exp: "item", "item.layout != 'default'" | sort: 'nav_weight' %}
 		
-		<div class="w-third mr4">
+		<div class="w-third mr4 mt4">
 			<h2><a href="/ios/v3" class="link dim near-white">iOS v3</a></h2>
 			{% for item in ios_items %}
 			<ul class="list pl0">
@@ -27,7 +27,7 @@
 			{% endfor %}			
 		</div>
 		
-		<div class="w-third mr4">
+		<div class="w-third mr4 mt4">
 			<h2><a href="/android/v3" class="link dim near-white">Android v3</a></h2>
 			{% for item in android_items %}
 			<ul class="list pl0">
@@ -35,30 +35,39 @@
 			</ul>
 			{% endfor %}			
 		</div>
-		<div class="w-third mr4">
+		<div class="w-third mr4 mt4">
 			<h2><a href="/web/v3" class="link dim near-white">Web v3</a></h2>
 			{% for item in web_items %}
 			<ul class="list pl0">
 				<li class="mb2 {% if item.layout == 'guide' %}b mt4{% elsif item.title contains 'Changelog' %}b mt4{% endif %}"><a class="link dim near-white" href="{{ item.url }}">{{ item.title }}</a></li>
 			</ul>
 			{% endfor %}
-			<h2 class="pt4 mt4 bt bw1 b--mi-dark-green"><a href="/cms" class="link dim near-white">CMS</a></h2>
-			{% for item in cms_items %}
-			<ul class="list pl0">
-				<li class="mb2 {% if item.layout == 'guide' %}b mt4{% endif %}"><a class="link dim near-white" href="{{ item.url }}">{{ item.title }}</a></li>
-			</ul>
-			{% endfor %}
-			<h2 class="pt4 mt4 bt bw1 b--mi-dark-green"><a href="/api" class="link dim near-white">Public API</a></h2>
-			{% for item in api_items %}
-			<ul class="list pl0">
-				<li class="mb2 {% if item.layout == 'guide' %}b mt4{% endif %}"><a class="link dim near-white" href="{{ item.url }}">{{ item.title }}</a></li>
-			</ul>
-			{% endfor %}
-			<h2 class="pt4 mt4 bt bw1 b--mi-dark-green near-white">Legacy versions</h2>
-			<ul class="list pl0">
-				<li class="mb2 b"><a class="link dim near-white" href="/ios/v2">iOS v2</a></li>
-				<li class="mb2 b"><a class="link dim near-white" href="/android/v2">Android v2</a></li>
-			</ul>
 		</div>
+    
 	</div>
+  <div class="flex pb5 mt4 bt bw1 b--mi-dark-green">
+    <div class="w-third mr4">
+      <h2 class="pt4"><a href="/cms/" class="link dim near-white">CMS</a></h2>
+      {% for item in cms_items %}
+      <ul class="list pl0">
+        <li class="mb2 {% if item.layout == 'guide' %}b mt4{% endif %}"><a class="link dim near-white" href="{{ item.url }}">{{ item.title }}</a></li>
+      </ul>
+      {% endfor %}
+    </div>
+    <div class="w-third mr4">
+      <h2 class="pt4"><a href="/api/" class="link dim near-white">Public API</a></h2>
+      {% for item in api_items %}
+      <ul class="list pl0">
+        <li class="mb2 {% if item.layout == 'guide' %}b mt4{% endif %}"><a class="link dim near-white" href="{{ item.url }}">{{ item.title }}</a></li>
+      </ul>
+      {% endfor %}
+    </div>
+    <div class="w-third mr4">
+      <h2 class="pt4 near-white">Legacy versions</h2>
+      <ul class="list pl0">
+        <li class="mb2 b"><a class="link dim near-white" href="/ios/v2/">iOS v2</a></li>
+        <li class="mb2 b"><a class="link dim near-white" href="/android/v2/">Android v2</a></li>
+      </ul>
+    </div>
+  </div>
 </footer>
