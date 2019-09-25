@@ -71,7 +71,7 @@ Some Web Service APIs are needed also for the MapsIndoors SDK, so make sure to e
 * [Google Maps Directions API](https://developers.google.com/maps/documentation/directions/start).
 * [Google Places API Web Service](https://developers.google.com/places/web-service/intro)
 
-Remember to enable Maps for each project in the Google API Library and include the projects on each key as well.
+Remember to enable relevant Maps products (i.e. SDK for iOS) in your Google project and include these on your API key if you apply restrictions.
 
 # Get a Google Maps up and running
 
