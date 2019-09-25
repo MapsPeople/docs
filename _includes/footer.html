@@ -1,4 +1,5 @@
-<footer class="linear near-white relative left-0 right-0 bottom-0 ph5">
+<footer class="linear
+ near-white relative left-0 right-0 bottom-0 ph5">
 	<div class="flex">
 		<div class="w-50 pv3">
 			<p>&copy; <a href="https://mapspeople.com" title="MapsPeople" class="link dim near-white">MapsPeople</a> {{ 'now' | date: "%Y" }}</p>
@@ -41,19 +42,19 @@
 				<li class="mb2 {% if item.layout == 'guide' %}b mt4{% elsif item.title contains 'Changelog' %}b mt4{% endif %}"><a class="link dim near-white" href="{{ item.url }}">{{ item.title }}</a></li>
 			</ul>
 			{% endfor %}
-			<h2><a href="/cms" class="link dim near-white">CMS</a></h2>
+			<h2 class="pt4 mt4 bt bw1 b--mi-dark-green"><a href="/cms" class="link dim near-white">CMS</a></h2>
 			{% for item in cms_items %}
 			<ul class="list pl0">
 				<li class="mb2 {% if item.layout == 'guide' %}b mt4{% endif %}"><a class="link dim near-white" href="{{ item.url }}">{{ item.title }}</a></li>
 			</ul>
 			{% endfor %}
-			<h2><a href="/api" class="link dim near-white">Public API</a></h2>
+			<h2 class="pt4 mt4 bt bw1 b--mi-dark-green"><a href="/api" class="link dim near-white">Public API</a></h2>
 			{% for item in api_items %}
 			<ul class="list pl0">
 				<li class="mb2 {% if item.layout == 'guide' %}b mt4{% endif %}"><a class="link dim near-white" href="{{ item.url }}">{{ item.title }}</a></li>
 			</ul>
 			{% endfor %}
-			<h2 class="near-white">Legacy versions</h2>
+			<h2 class="pt4 mt4 bt bw1 b--mi-dark-green near-white">Legacy versions</h2>
 			<ul class="list pl0">
 				<li class="mb2 b"><a class="link dim near-white" href="/ios/v2">iOS v2</a></li>
 				<li class="mb2 b"><a class="link dim near-white" href="/android/v2">Android v2</a></li>
