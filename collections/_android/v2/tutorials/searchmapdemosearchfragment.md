@@ -5,6 +5,9 @@ nav_weight: 2
 published: true
 ---
 
+> A [newer version]({{ site.url }}/android/v3) of the MapsIndoors SDK for Android is available. The legacy version will not receive new features and will only get critical bugfix and security updates.
+{: .mi-warning}
+
 This is an example of creating a simple search experience using MapsIndoors. We will create a map with a search button that leads to another Fragment that handles the search and selection. On selection of a location, we go back to the map and shows the selected location on the map.
 
 We will start by creating a simple search controller that handles search and selection of MapsIndoors locations

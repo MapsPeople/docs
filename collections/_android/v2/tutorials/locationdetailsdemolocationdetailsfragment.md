@@ -5,6 +5,9 @@ nav_weight: 1
 published: true
 ---
 
+> A [newer version]({{ site.url }}/android/v3) of the MapsIndoors SDK for Android is available. The legacy version will not receive new features and will only get critical bugfix and security updates.
+{: .mi-warning}
+
 This is an example of displaying some details of a MapsIndoors location
 
 Start by creating a `Fragment or an Activity` class that contains the google map fragment
