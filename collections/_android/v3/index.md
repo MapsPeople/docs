@@ -79,6 +79,8 @@ Sync your project with gradle files.
 
 Learn how to setup Google Maps on Android in this [Getting Started Guide](https://developers.google.com/maps/documentation/android-api/start).
 
+When getting your Google Maps API keys, remember to enable relevant Maps products (i.e. SDK for Android) in your Google project and include these on your API key if you apply restrictions.
+
 ## Setup a Google Map with MapsIndoors
 
 Place the following inititalisation code in the `onCreate` method in the activity that should display the Google map:
