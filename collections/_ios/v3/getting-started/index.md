@@ -71,6 +71,8 @@ Some Web Service APIs are needed also for the MapsIndoors SDK, so make sure to e
 * [Google Maps Directions API](https://developers.google.com/maps/documentation/directions/start).
 * [Google Places API Web Service](https://developers.google.com/places/web-service/intro)
 
+Remember to enable Maps for each project in the Google API Library and include the projects on each key as well.
+
 # Get a Google Maps up and running
 
 Use the `MPMapControl` class to set up a Google map with MapsPeople venues, buildings & locations. Place the following code in the `viewDidLoad` method in your view controller displaying the Google map.
