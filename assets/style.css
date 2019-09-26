@@ -144,7 +144,7 @@ svg.mapspeople-logo path {
   background-color: #1E3C32;
 }
 
-.linear {
-  background-image: linear-gradient(to bottom right, #006440, #1E3C32);
+footer.linear {
+  background-image: linear-gradient(to bottom, #006440, #1E3C32);
   color: #F4F0E8;
 }
