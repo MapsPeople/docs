@@ -98,7 +98,7 @@ It tells which languages are defined for this project, which language is the def
 
 All geospasial data, Geodata, is arranged in a simple tree. Each element has a parent ID (except the root) so as an example, a point of interest (POI) can have a Room parent. The Room will typically be on a Floor in a Building on a Venue. Venues are always the root object (identified with parent ID is null), and is defined by "_An overall geographical area which typically comprises the area of one or more buildings and their relevant surrounding areas such as lawns and parking lots_".
 
-![alt_text](images/Copy-of0.png "image_tooltip")
+![Geodata Structure]({{ site.url }}/assets/api/geodata-structure.png)
 
 You can create, update, delete all Geodata types: Venue, Building, Floor, Room, Area and POI.
 
