@@ -8,8 +8,7 @@ date: 2019-08-26
 permalink: /ios/v3/getting-started/
 ---
 
-* Table of contentsss
-{:toc}
+{% include toc.md %}
 
 ## Basic Examples
 
@@ -17,14 +16,14 @@ For simple examples of MapsIndoors implementations, run `pod try MapsIndoors` (f
 
 You can follow the tutorials on this site to start your app from scratch or to enhance the basic examples.
 
-# Set up your environment
+## Set up your environment
 
-## Setup CocoaPods
+### Setup CocoaPods
 
 If you haven’t already, install CocoaPods:
 [Getting Started with CocoaPods](https://guides.cocoapods.org/using/getting-started.html)
 
-## Setup MapsIndoors
+### Setup MapsIndoors
 
 * If you don't have an Xcode project yet, create one now and save it to your local machine. (If you're new to iOS development, create a "Single View Application".)
 * Create a file named `Podfile` in your project directory. This file defines your project's dependencies.
@@ -59,7 +58,7 @@ end{% endraw %}
     * `YOUR_GOOGLE_API_KEY` with your Google API key
     * `YOUR_MAPSINDOORS_API_KEY` with your MapsIndoors API key. (In MapsIndoors iOS SDK v1, this key was known as your `Solution Id`)
 
-# Get your Google Maps API keys
+## Get your Google Maps API keys
 
 You need to setup the Google Maps API in your project by following the steps in the link below:
 
@@ -73,7 +72,7 @@ Some Web Service APIs are needed also for the MapsIndoors SDK, so make sure to e
 
 Remember to enable relevant Maps products (i.e. SDK for iOS) in your Google project and include these on your API key if you apply restrictions.
 
-# Get a Google Maps up and running
+## Get a Google Maps up and running
 
 Use the `MPMapControl` class to set up a Google map with MapsPeople venues, buildings & locations. Place the following code in the `viewDidLoad` method in your view controller displaying the Google map.
 
@@ -86,7 +85,7 @@ view = mapView
 let myMapControl = MPMapControl.init(map: mapView)!
 ```
 
-# Set the MapsIndoors Content and API keys
+## Set the MapsIndoors Content and API keys
 
 In order to include MapsIndoors in your app, you need a content key. If you are not a customer you can use this content key `57e4e4992e74800ef8b69718` to follow this guide.
 

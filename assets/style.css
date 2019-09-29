@@ -148,3 +148,51 @@ footer.linear {
   background-image: linear-gradient(to bottom, #006440, #1E3C32);
   color: #F4F0E8;
 }
+
+thead {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+tbody {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+td, th {
+  vertical-align: top;
+  text-align: left;
+  padding: 0.5rem;
+}
+
+tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+.text h1,
+.text h2,
+.text h3,
+.text h4,
+.text h5,
+.text h6,
+.text p,
+.text ul,
+.text ol,
+.text .highlighter-rouge {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 48rem;
+}
+
+.text article aside {
+  position: sticky;
+  top: 24px;
+  float: right;
+  margin-left: 1rem;
+  margin-right: 2rem;
+  width: 280px;
+  background-color: rgba(0, 0, 0, 0.04);
+  z-index: 10;
+}
+
+.text article aside ul ul {
+  list-style-type: disc;
+}

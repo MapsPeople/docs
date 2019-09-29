@@ -5,6 +5,9 @@ permalink: /cms/
 date: 2019-08-26
 published: true
 ---
+
+{% include toc.md %}
+
 ## Introduction
 
 The MapsIndoors Content Management System (CMS) allows you to maintain your data within the MapsIndoors platform.
@@ -242,65 +245,3 @@ If you have found a bug or encountered an issue you can not resolve, please reac
 **Do you have feedback for us?**
 
 Send us an email at [cms-feedback@mapspeople.com](mailto:cms-feedback@mapspeople.com)
-
-# Changelog
-
-## July 2019 - v.3.6.7
-
-### New
-
-* **Guide:** User guide for Google StreetView.
-* **Change Password:** When logged in with a google account, the change password button will not be available.
-
-## July 2019 - v.3.6.6
-
-### New
-
-* **Security:** A certificate file should now be uploaded for Single Sign-On with SAML Authentication.
-
-## May 2019 - v.3.6.0
-
-### New
-
-* **Locations:** If Google Street View is available for a location/POI, it can be enabled by setting a Street View image matching the POI. The image set will be shown in the web app for the user to access.
-
-## March 2019
-
-### New
-
-* **App configuration:** Fill in an app ID and save. You will now be able to access a standard web app on the link provided. A button will be shown in the sidebar to quickly preview changes made in the CMS.
-* **Type visibility:** Enable or disable clustering of POIs of the same type.
-* **Logs:** When editing locations, under advanced, a log of changes has been added. A new log tab is available upon request. (export to .csv)
-* **Security:** SAML and AAD login integration
-
-## December 2018
-
-### New
-
-* **Routes:** Wait time can be added to paths.
-
-## November 2018
-
-### New
-
-* **Guide and support panel**: A new panel for support, contact and release notes.
-* **Logos**: Advanced markers to emphasize some locations.
-* **Edit location:** User curated icon library.
-* Set the active tile style if there is more than one.
-* Floors can be named for each building.
-* Automatically suggest translations when creating new types.
-
-### Changed
-
-* New coat of paint.
-* Export map has been moved to tools and had a facelift. 
-
-## October 2018
-
-### New
-
-* **Routes**: Lock or unlock paths in the routing network.
-
-### Changed
-
-* Improved map interaction and styling.
