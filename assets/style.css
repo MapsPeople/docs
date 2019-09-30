@@ -176,6 +176,7 @@ tr:nth-child(even) {
 .text ul,
 .text ol,
 .text blockquote,
+.text table,
 .text .highlighter-rouge {
   margin-right: auto;
   margin-left: auto;
