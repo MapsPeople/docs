@@ -210,7 +210,7 @@ Venue, Building, Floor, Room and Area have a polygon that describes where its po
 
 To read, change or delete Geodata use the Geodata endpoints described here: [https://public.mapsindoors.com/doc/ui/index#/Geodata](https://public.mapsindoors.com/doc/ui/index#/Geodata)
 
-> Note: When you get data, you only specify the datasetId hence you get the entire tree! The other Geodata endpoints works on individual Geodata objects.
+> Note: When you get data, you only specify the `datasetId` hence you get the entire tree! The other Geodata endpoints works on individual Geodata objects.
 {: .mi-careful}
 
 ## Detailed data description
