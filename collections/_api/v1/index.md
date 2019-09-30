@@ -5,8 +5,7 @@ permalink: /api/v1/
 published: true
 ---
 
-* Table of contents
-{:toc}
+{% include toc.md %}
 
 ## Introduction and getting started
 
@@ -16,7 +15,8 @@ The Public API can be found here: [https://public.mapsindoors.com](https://publi
 
 There is a (Swagger) interface definition here: [https://public.mapsindoors.com/doc](https://public.mapsindoors.com/doc)
 
-**Note that only https is supported.**
+> Note: Only https is supported.
+{: .mi-careful}
 
 ### Login and credentials
 
@@ -98,7 +98,7 @@ It tells which languages are defined for this project, which language is the def
 
 All geospasial data, Geodata, is arranged in a simple tree. Each element has a parent ID (except the root) so as an example, a point of interest (POI) can have a Room parent. The Room will typically be on a Floor in a Building on a Venue. Venues are always the root object (identified with parent ID is null), and is defined by "_An overall geographical area which typically comprises the area of one or more buildings and their relevant surrounding areas such as lawns and parking lots_".
 
-![Geodata Structure]({{ site.url }}/assets/api/geodata-structure.png)
+![Geodata Structure]({{ site.url }}/assets/api/v1/geodata-structure.png)
 
 You can create, update, delete all Geodata types: Venue, Building, Floor, Room, Area and POI.
 
@@ -210,7 +210,8 @@ Venue, Building, Floor, Room and Area have a polygon that describes where its po
 
 To read, change or delete Geodata use the Geodata endpoints described here: [https://public.mapsindoors.com/doc/ui/index#/Geodata](https://public.mapsindoors.com/doc/ui/index#/Geodata)
 
-_Note: When you get data, you only specify the datasetId hence you get the entire tree! The other Geodata endpoints works on individual Geodata objects._
+> Note: When you get data, you only specify the datasetId hence you get the entire tree! The other Geodata endpoints works on individual Geodata objects.
+{: .mi-careful}
 
 ## Detailed data description
 
@@ -306,7 +307,8 @@ Each Geodata element has a number of properties. Let's look at an example - a co
       2: Not active, searchable (not a very useful combo)
       3: active, searchable
 
-    _Note: The implementation of this is currently pending for the SDKs, and is due September/October 2019._
+    > Note: The implementation of this is currently pending for the SDKs, and is due October 2019.
+    {: .mi-careful}
 
 * **Properties**
 
@@ -320,7 +322,8 @@ Each Geodata element has a number of properties. Let's look at an example - a co
 
     As this is a dictionary setup, the keyname needs to be unique and only contain the ascii chars [a-z] and [0-9]. Use of spaces and unicode chars here is discouraged as it makes it harder to use from the application code side. The char @ is not supported in the keyname as it’s used as a seperator. As an example, if you want to store opening hours here you could use the key openinghours@en as a keyname.
 
-    _Note: BaseType ‘Floor’ doesn’t support properties._
+    > Note: BaseType ‘Floor’ doesn’t support properties.
+    {: .mi-careful}
 
 #### Example: Area
 
@@ -481,7 +484,8 @@ Common setup for Geodata of different kinds (meeting room, hallway, ...)
 
     The name property must be specified for every language defined in the dataset.
 
-_Note: The display type data is split in the CMS; currently it can be found in the fans "Location types", "Location type templates" and "Type visibility"_
+> Note: The display type data is split in the CMS; currently it can be found in the fans "Location types", "Location type templates" and "Type visibility".
+{: .mi-careful}
 
 ### Categories
 
