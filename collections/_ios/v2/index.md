@@ -10,7 +10,6 @@ nav_weight: 1
 > A [newer version]({{ site.url }}/ios/v3) of the MapsIndoors SDK for iOS is available. The legacy version will not receive new features and will only get critical bugfix and security updates.
 {: .mi-warning}
 
-
 This guide explains how to start using a MapsIndoors map in your iOS application using the MapsIndoors iOS SDK v2.
 
 To benefit from the guides, you will need basic knowledge about:

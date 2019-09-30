@@ -6,6 +6,9 @@ date: 2019-08-26
 published: true
 ---
 
+> A [newer version]({{ site.url }}/ios/v3) of the MapsIndoors SDK for iOS is available. The legacy version will not receive new features and will only get critical bugfix and security updates.
+{: .mi-warning}
+
 This is part 2 of the tutorial of requesting directions and showing the route result on a map. In [Part 1](../showrouteshowrouteonmapcontroller) we created the controller that can display the map and route, and in this part we will create the controller that requests the route and list the route in a table. A MapsIndoors route is made of one or more legs, each containing one or more steps.
 
 Start by creating a `UIViewController` implementation

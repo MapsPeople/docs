@@ -6,6 +6,9 @@ date: 2019-08-26
 published: true
 ---
 
+> A [newer version]({{ site.url }}/ios/v3) of the MapsIndoors SDK for iOS is available. The legacy version will not receive new features and will only get critical bugfix and security updates.
+{: .mi-warning}
+
 In this tutorial we will show how you can show a blue dot on the map, representing the users location. The position will be served from a mocked positioning provider and displayed on a map in a view controller.
 
 We will start by creating our implementation of a positioning provider.

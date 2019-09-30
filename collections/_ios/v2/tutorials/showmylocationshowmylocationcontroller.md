@@ -6,6 +6,9 @@ date: 2019-08-26
 published: true
 ---
 
+> A [newer version]({{ site.url }}/ios/v3) of the MapsIndoors SDK for iOS is available. The legacy version will not receive new features and will only get critical bugfix and security updates.
+{: .mi-warning}
+
 This is part 2 of the tutorial of managing a blue dot on the map. [In Part 1 we created the position provider](../showmylocationmypositionprovider). Now we will create a view controller displaying a map that shows the users (mock) location.
 
 Create a class `ShowMyLocationController` that inherits from `UIViewController`.
