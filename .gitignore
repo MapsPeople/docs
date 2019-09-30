@@ -6,4 +6,3 @@ Gemfile.lock
 .DS_Store
 vendor
 .bundle
-Gemfile.lock
