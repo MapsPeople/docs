@@ -97,12 +97,12 @@ Jekyll automatically builds and deploys from the `gh-pages` branch in this repos
   parent: teleportation
   nav_weight: 1
   published: true
-  date: 2019-07-10
-  last_modified_at: 2019-07-12
+  date: 2019-09-29
+  last_modified_at: 2019-09-30
   ---
   ```
 
-4. Update the `date:` to today's date (perhaps using [a handy Snippet in VS Code](https://marketplace.visualstudio.com/items?itemName=jsynowiec.vscode-insertdatestring))
+4. Update the `date:` to today's date (perhaps using [a handy Snippet in VS Code](https://marketplace.visualstudio.com/items?itemName=jsynowiec.vscode-insertdatestring) or [Atom](https://atom.io/packages/date))
 5. `last_modified_at` is optional. If left empty, it won't be rendered on the tutorial-page.
 6. The new tutorial is automatically displayed on the guide's start page when the front matter is configured correctly.
 7. Navigate to your new tutorial to check it out.
@@ -119,14 +119,14 @@ Jekyll automatically builds and deploys from the `gh-pages` branch in this repos
 
 #### Tips
 
-1. Please use feature-branches. That makes it much easier to review new tutorials before they're live.
+1. Use feature-branches. That makes it much easier to review new tutorials before they're live.
 1. The folder structure determines the url structure of the platform, guide and tutorial pages, but setting the front matter is required for the links to be displayed in the right places. Look in `_config.yml` and `_layouts`-folder to familiarize with the code.
 
 ### Markdown
 
 Jekyll uses Markdown ([cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)) for rendering posts to html.
 
-It uses a converter called [kramdown](https://kramdown.gettalong.org/index.html), which works the same as [Commonmark](https://commonmark.org) or [GitHub-flavored Markdown](https://help.github.com/en/articles/basic-writing-and-formatting-syntax), with some extra sprinkle on top. The [kramdown Quick Reference](https://kramdown.gettalong.org/quickref.html) gives an overview of the options. The major difference is the ability to add [block attributes](https://kramdown.gettalong.org/quickref.html#block-attributes) (aka. css classes) to elements without writing html, which we use to display table of contents blocks, as well as tips and warnings on tutorials like so:
+Specifically, Jekyll uses a converter called [kramdown](https://kramdown.gettalong.org/index.html), which works the same as [Commonmark](https://commonmark.org) or [GitHub-flavored Markdown](https://help.github.com/en/articles/basic-writing-and-formatting-syntax), with some extra sprinkle on top. The [kramdown Quick Reference](https://kramdown.gettalong.org/quickref.html) gives an overview of the options. The major difference is the ability to add [block attributes](https://kramdown.gettalong.org/quickref.html#block-attributes) (aka. css classes) to elements without writing html, which we use to display tips and warnings on tutorials:
 
 ```markdown
 > Tip: Drink plenty of water
