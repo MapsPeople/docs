@@ -82,7 +82,7 @@ mapsIndoors.setDisplayRule("office", { from:20 });  // Using default type icon
 ```
 
 
-## Searching fo Locations and Displaying them on a Map
+## Searching for Locations and Displaying them on a Map
 
 Use the location service in conjunction with the filter method on a MapsIndoors instance to find and highlight different elements of the MapsIndoors content. An example is given below. Note: The example shows all options, but only one of building, venue, locationId and location is necessary.
 
