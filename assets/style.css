@@ -51,17 +51,16 @@ blockquote.mi-warning {
 
 code.hljs {
   padding: 1em;
-  font-size: .9em;
+  font-size: .85em;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
 
 code.highlighter-rouge {
-  background-color: rgba(248,248,248,1);
-  font-size: .9em;
+  background-color: rgba(0,0,0,0.04);
+  font-size: .8em;
   border-radius: 4px;
-  padding: .1em .4em;
-  border: 1px solid #ddd;
+  padding: .12em .6em;
 }
 
 .f1, .f2 {
@@ -176,6 +175,7 @@ tr:nth-child(even) {
 .text p,
 .text ul,
 .text ol,
+.text blockquote,
 .text .highlighter-rouge {
   margin-right: auto;
   margin-left: auto;
