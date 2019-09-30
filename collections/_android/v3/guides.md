@@ -2,6 +2,7 @@
 title: Guides
 published: true
 nav_weight: 10
+date: 2019-09-30
 ---
 
 ## Searching for Locations and Displaying the Results on a Map

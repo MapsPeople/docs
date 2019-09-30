@@ -1,5 +1,6 @@
 ---
 title: Changelog
+date: 2019-09-30
 ---
 
 # Changelog

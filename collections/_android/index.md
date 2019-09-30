@@ -2,8 +2,8 @@
 layout: default
 title: MapsIndoors SDK for Android
 published: true
-date: 2019-08-26
 permalink: /android/
+date: 2019-09-30
 ---
 
 ## Choose an SDK version

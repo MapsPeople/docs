@@ -2,7 +2,7 @@
 layout: start
 title: MapsIndoors iOS SDK v2
 permalink: /ios/v2/
-date: 2019-08-26
+date: 2019-09-30
 published: true
 nav_weight: 1
 ---

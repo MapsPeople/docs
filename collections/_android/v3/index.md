@@ -3,6 +3,7 @@ layout: start
 title: MapsIndoors Android SDK v3
 permalink: /android/v3/
 published: true
+date: 2019-09-30
 ---
 
 This guide explains how to start using a MapsIndoors map in your Android application using the MapsIndoors Android SDK v3.

@@ -3,6 +3,7 @@ title: Show the Blue Dot with MapsIndoors - Part 1
 parent: tutorials
 nav_weight: 180
 published: true
+date: 2019-09-30
 ---
 
 In this tutorial we will show how you can show a blue dot on the map, representing the user's location. The position will be served from a mocked positioning provider and displayed on a map in a view controller.

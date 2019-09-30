@@ -4,7 +4,7 @@ title: Getting a polygon from a location
 parent: mapsindoors
 nav_weight: 260
 published: true
-date: 2019-08-26
+date: 2019-09-30
 ---
 
 In the [MapsIndoors CMS](https://cms.mapsindoors.com/types) you can set display settings for the different types of locations in your MapsIndoors content.

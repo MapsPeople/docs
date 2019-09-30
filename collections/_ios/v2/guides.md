@@ -1,7 +1,7 @@
 ---
 title: iOS v2 - Guides
 permalink: /ios/v2/guides/
-date: 2019-08-26
+date: 2019-09-30
 published: true
 nav_weight: 2
 ---

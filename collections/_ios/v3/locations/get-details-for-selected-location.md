@@ -4,7 +4,7 @@ title: Show details for selected Location
 parent: locations
 nav_weight: 310
 published: true
-date: 2019-08-26
+date: 2019-09-30
 ---
 
 This is an example of displaying some details of a MapsIndoors location

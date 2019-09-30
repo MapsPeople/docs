@@ -3,6 +3,7 @@ title: MapsIndoors API v1
 layout: tutorial
 permalink: /api/v1/
 published: true
+date: 2019-09-30
 ---
 
 {% include toc.md %}

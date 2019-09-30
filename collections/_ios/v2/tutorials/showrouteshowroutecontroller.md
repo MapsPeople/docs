@@ -2,7 +2,7 @@
 title: Get Directions and Show the Result on a Map - Part 2
 parent: tutorials
 nav_weight: 160
-date: 2019-08-26
+date: 2019-09-30
 published: true
 ---
 

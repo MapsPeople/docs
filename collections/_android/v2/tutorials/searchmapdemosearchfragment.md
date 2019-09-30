@@ -3,6 +3,7 @@ title: Create a Search Experience with MapsIndoors - Part 1
 parent: tutorials
 nav_weight: 2
 published: true
+date: 2019-09-30
 ---
 
 > A [newer version]({{ site.url }}/android/v3) of the MapsIndoors SDK for Android is available. The legacy version will not receive new features and will only get critical bugfix and security updates.

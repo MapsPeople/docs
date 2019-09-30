@@ -1,7 +1,7 @@
 ---
 title: Location Sources in MapsIndoors
 published: true
-date: 2019-08-26
+date: 2019-09-30
 permalink: /location-sources-in-mapsindoors/
 ---
 

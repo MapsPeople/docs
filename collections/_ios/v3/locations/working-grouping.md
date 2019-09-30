@@ -4,7 +4,7 @@ title: Working with Location Grouping (Clustering)
 parent: locations
 nav_weight: 320
 published: true
-date: 2019-08-26
+date: 2019-09-30
 ---
 This is an example of enabling and disabling location grouping on the map as well as providing custom cluster tapping behavior and custom cluster images.
 

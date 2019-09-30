@@ -4,7 +4,7 @@ title: Filter Locations on map by search query
 parent: search
 nav_weight: 520
 published: true
-date: 2019-08-26
+date: 2019-09-30
 ---
 
 Use the `MPLocationsProvider` class to search for content in your MapsIndoors solution.

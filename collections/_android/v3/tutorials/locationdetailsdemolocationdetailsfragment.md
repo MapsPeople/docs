@@ -3,6 +3,7 @@ title: Show Location Details
 parent: tutorials
 nav_weight: 150
 published: true
+date: 2019-09-30
 ---
 
 This is an example of displaying some details of a MapsIndoors location

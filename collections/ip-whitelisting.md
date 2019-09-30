@@ -1,7 +1,7 @@
 ---
 title: Work with MapsIndoors SDK behind a firewall
 published: true
-date: 2019-08-26
+date: 2019-09-30
 permalink: /ip-whitelisting/
 ---
 

@@ -4,7 +4,7 @@ title: Get Directions and Show Wayfinding Instructions
 parent: directions
 nav_weight: 410
 published: true
-date: 2019-08-26
+date: 2019-09-30
 ---
 In this tutorial we will show how to work with the route model returned from a directions service call. We will also show how you can utilize interaction between the route rendering on the map and textual instructions showed in another view.
 

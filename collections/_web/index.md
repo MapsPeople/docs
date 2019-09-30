@@ -2,7 +2,7 @@
 layout: default
 title: MapsIndoors SDK for Web
 published: true
-date: 2019-08-26
+date: 2019-09-30
 permalink: /web/
 ---
 

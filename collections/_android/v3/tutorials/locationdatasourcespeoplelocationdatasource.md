@@ -3,6 +3,7 @@ title: Creating your own Location Data Source - Part 1
 parent: tutorials
 nav_weight: 110
 published: true
+date: 2019-09-30
 ---
 
 In this tutorial we will show how you can build a custom Location Source, representing locations of people. The people's locations will be served from a mocked list in the source and displayed on a map.

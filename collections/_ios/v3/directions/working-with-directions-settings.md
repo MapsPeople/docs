@@ -4,7 +4,7 @@ title: Working with Directions Settings
 parent: directions
 nav_weight: 440
 published: true
-date: 2019-08-26
+date: 2019-09-30
 ---
 
 Avoid certain **way types** on the route using the `avoidWayTypes` property.

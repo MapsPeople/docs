@@ -3,6 +3,7 @@ title: Creating your own Location Data Source - Part 2
 parent: tutorials
 nav_weight: 120
 published: true
+date: 2019-09-30
 ---
 
 In this tutorial we will show how you can build a custom Location Source. In [Part 1](../locationdatasourcespeoplelocationdatasource) we created a people location source that mocks locations of people.

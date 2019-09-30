@@ -3,7 +3,7 @@ layout: start
 title: MapsIndoors Web SDK v3
 permalink: /web/v3/
 published: true
-date: 2019-08-26
+date: 2019-09-30
 ---
 
 This guide explains how to start using a MapsIndoors map in your HTML application.

@@ -4,7 +4,7 @@ guide_title: guides
 layout: guide
 nav_weight: 100
 published: true
-date: 2019-08-26
+date: 2019-09-30
 permalink: /web/v3/guides/
 ---
 

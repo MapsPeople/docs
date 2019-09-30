@@ -1,6 +1,7 @@
 ---
 title: Changelog
 published: true
+date: 2019-09-30
 ---
 
 # Changelog

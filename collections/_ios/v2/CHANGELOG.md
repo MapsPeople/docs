@@ -2,7 +2,7 @@
 layout: default
 title: iOS v2 - Changelog
 permalink: /ios/v2/changelog
-date: 2019-08-26
+date: 2019-09-30
 published: true
 nav_weight: 1000
 ---

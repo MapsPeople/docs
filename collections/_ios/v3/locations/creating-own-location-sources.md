@@ -4,7 +4,7 @@ title: Creating your own Location Sources
 parent: locations
 nav_weight: 330
 published: true
-date: 2019-08-26
+date: 2019-09-30
 ---
 
 In this tutorial we will show how you can build a custom Location Source, representing locations of people. The people locations will be served from a mocked list in the source and displayed on a map in a view controller.

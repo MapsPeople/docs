@@ -2,8 +2,7 @@
 layout: start
 title: Getting started
 permalink: /cms/
-date: 2019-08-26
-published: true
+date: 2019-09-30
 ---
 
 {% include toc.md %}
