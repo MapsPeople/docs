@@ -7,8 +7,6 @@ url: "https://mapsindoors.github.io" # the base hostname & protocol for your sit
 
 # Build settings
 markdown: kramdown
-plugins:
-  - jekyll-octicons
 
 exclude:
   - README.md
