@@ -32,7 +32,7 @@ If you haven’t already, install CocoaPods:
 ```swift
 {% raw %}source 'https://github.com/CocoaPods/Specs.git'
 target 'YOUR_APPLICATION_TARGET_NAME_HERE' do
-  pod 'MapsIndoors' '{{%product-version%}}'
+pod 'MapsIndoors', '~>3.5'
 end{% endraw %}
 ```
 
@@ -85,10 +85,10 @@ view = mapView
 let myMapControl = MPMapControl.init(map: mapView)!
 ```
 
-## Set the MapsIndoors Content and API keys
+## Set the MapsIndoors API Key
 
-In order to include MapsIndoors in your app, you need a content key. If you are not a customer you can use this content key `57e4e4992e74800ef8b69718` to follow this guide.
+In order to include MapsIndoors in your app, you need an API key. If you are not a customer you can use this API key `57e4e4992e74800ef8b69718` to follow the above guide.
 
 In order to include MapsIndoors in your own app with your own content, you need to [contact MapsPeople](https://resources.mapspeople.com/contact-us) to get your building drawings processed and hosted by us.
 
-You will receive a unique content API key to use when access has been granted. If you are exploring how this service can become part of your own product, you can read about [partnering with MapsPeople here](https://www.mapspeople.com/become-a-partner).
+You will receive a unique API key to use when access has been granted. If you are exploring how this service can become part of your own product, you can read about [partnering with MapsPeople here](https://www.mapspeople.com/become-a-partner).
