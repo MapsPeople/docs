@@ -21,7 +21,7 @@ Jekyll automatically builds and deploys from the `gh-pages` branch in this repos
 1. Clone this repository to your machine: 
 
   ```bash
-  $ git clone git@github.com:MapsPeople/MIDOCS-jekyll
+  $ git clone git@github.com:MapsIndoors/mapsindoors.github.io
   $ cd MIDOCS-jekyll
   ```
 
