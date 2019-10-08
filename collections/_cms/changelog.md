@@ -1,9 +1,46 @@
 ---
 title: Changelog
-date: 2019-09-30
+date: 2019-10-07
 ---
 
 # Changelog
+
+## October 2019 - v3.7.3
+
+### New 
+							
+* **Venue:** It is possible to change the venue's default floor and sidebar is set to always be open.
+
+### Updates
+
+* **Location Types Templates:** This menu is accessible via the location types table because a template is created for a specific location.									
+
+### Bug Fixes
+
+* **Locations:** Shrinking locations list when filtering.
+
+## September 2019 - v3.7.2
+
+### New 
+							
+* **Type visibility:** Maximum zoom level can now be set per location type.
+
+### Updates
+
+* **Venue and buildings:** This menu has been split ip into two menus.
+* **Route access:** Path locking with three states.									
+
+### Bug Fixes
+
+* **Locations:** Clicking a room polygon opens the selected room's info window.
+
+## August 2019 - v3.7.1
+
+### New
+
+* **Venue and buildings:** A building can have a default floor.
+* **App configuration:** Manages app user roles, which ensure that specific user groups are not routed where they are not allowed or don’t have access to.
+* **Route access:** Parking lots can be created as entrypoint for cars and bikes, which means that a car or bike will be directed to the parking lot. When locking a path, an app user role can be selected to give some users access.
 
 ## July 2019 - v.3.6.7
 
