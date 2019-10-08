@@ -257,7 +257,7 @@ If you use Excel you can find a video on how to open a CSV file here: [https://w
 
 **Something not working?**
 
-If you have found a bug or encountered an issue you can not resolve, please reach out through our [support portal](https://www.mapspeople.com/support/]
+If you have found a bug or encountered an issue you can not resolve, please reach out through our [support portal](https://www.mapspeople.com/support/).
 
 ## Feedback
 
