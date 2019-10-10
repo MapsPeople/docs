@@ -145,8 +145,9 @@ Remember to save before clicking on another location or changing the page, other
 * Click on the pencil icon to the left of the building name. A new menu will appear 
 * Edit building name in the available languages 
 * Edit floor names
-* Select a default floor under "Show advanced"
-The building's default floor is used to manage panning across buildings in the apps. In order to improve  the user experience in the apps, the default floor is used when the building panned to doesn’t have the floor index of the floor selector.
+* Select a default floor under "Show advanced". 
+
+   The building's default floor is used to manage panning across buildings in the apps. In order to improve  the user experience in the apps, the default floor is used when the building panned to doesn’t have the floor index of the floor selector.
 
 ## Routes Access
 
@@ -162,7 +163,7 @@ To create a parking lot:
 
 To restrict access to a path:
 * Click on the path and a popup window will appear.
-* Choose between "Open for all" | "Open for specific app user roles" | "Closed for all".
+* Choose between "Open for all", "Open for specific app user roles", "Closed for all".
 * When Open for specific app user roles is chosen, a list of app user roles will appear and you can select which roles will be given access.
 * Set a delay and click "Save".
 
@@ -189,6 +190,7 @@ Ability to add new categories to the list. Click on New category, add name, clic
 * Click "Save" and the entered name should appear in the table.
 
 **App Categories**
+
 Clicking on the arrows to the left of the category name allows you to change the order. This category order will be on the app. You can also choose an icon to be displayed next to the category name.
 
 ## Type visibility
@@ -256,7 +258,7 @@ If you use Excel you can find a video on how to open a CSV file here: [https://w
 
 **Something not working?**
 
-If you have found a bug or encountered an issue you can not resolve, please reach out through our [support portal](https://www.mapspeople.com/support/]
+If you have found a bug or encountered an issue you can not resolve, please reach out through our [support portal](https://www.mapspeople.com/support/).
 
 ## Feedback
 
