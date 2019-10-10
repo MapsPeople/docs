@@ -190,7 +190,8 @@ Ability to add new categories to the list. Click on New category, add name, clic
 * Click "Save" and the entered name should appear in the table.
 
 **App Categories**
-  Clicking on the arrows to the left of the category name allows you to change the order. This category order will be on the app. You can also choose an icon to be displayed next to the category name.
+
+Clicking on the arrows to the left of the category name allows you to change the order. This category order will be on the app. You can also choose an icon to be displayed next to the category name.
 
 ## Type visibility
 
