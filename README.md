@@ -1,4 +1,4 @@
-# Docs for MapsIndoors iOS, Android, Web SDKs, and Public API
+# Docs for MapsIndoors iOS, Android, Web SDKs, and Integration API
 
 This is the repository holding all documentation related to developing apps on the [MapsIndoors](https://www.mapspeople.com/mapsindoors/) platform.
 

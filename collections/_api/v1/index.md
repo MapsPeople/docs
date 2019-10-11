@@ -10,11 +10,11 @@ date: 2019-09-30
 
 ## Introduction and getting started
 
-From the MapsIndoors API you can get, add, change and delete data related to your MapsIndoors™ solution via a REST service.
+From the MapsIndoors Integration API you can get, add, change and delete data related to your MapsIndoors™ solution via a REST service.
 
-The Public API can be found here: [https://public.mapsindoors.com](https://public.mapsindoors.com)
+The Integration API can be found here: [https://integration.mapsindoors.com](https://integration.mapsindoors.com)
 
-There is a (Swagger) interface definition here: [https://public.mapsindoors.com/doc](https://public.mapsindoors.com/doc)
+There is a (Swagger) interface definition here: [https://integration.mapsindoors.com/doc](https://integration.mapsindoors.com/doc)
 
 > Note: Only https is supported.
 {: .mi-careful}
@@ -66,7 +66,7 @@ Key: id_token Value: <your google token>
 
 ### Endpoints
 
-The Public data API consists of a number of endpoints to access the various data. The description of those can be found in [Swagger](https://public.mapsindoors.com/doc).
+The Integration API consists of a number of endpoints to access the various data. The description of those can be found in [Swagger](https://integration.mapsindoors.com/doc).
 
 In Swagger each GET method are pre-loaded with all mandatory fields needed for you to get a live example of data just by pressing the "_Try it now_" button.
 
@@ -209,7 +209,7 @@ All Geodata BaseTypes have some common keys that is available for all, and then 
 
 Venue, Building, Floor, Room and Area have a polygon that describes where its position is on the map. POIs are noted with a single point on the map and is typically located inside a Room or on a Floor - important things like the coffee machine. 
 
-To read, change or delete Geodata use the Geodata endpoints described here: [https://public.mapsindoors.com/doc/ui/index#/Geodata](https://public.mapsindoors.com/doc/ui/index#/Geodata)
+To read, change or delete Geodata use the Geodata endpoints described here: [https://integration.mapsindoors.com/doc/ui/index#/Geodata](https://integration.mapsindoors.com/doc/ui/index#/Geodata)
 
 > Note: When you get data, you only specify the `datasetId` hence you get the entire tree! The other Geodata endpoints works on individual Geodata objects.
 {: .mi-careful}
