@@ -22,7 +22,7 @@ Jekyll automatically builds and deploys from the `gh-pages` branch in this repos
 
   ```bash
   $ git clone git@github.com:MapsIndoors/mapsindoors.github.io
-  $ cd MIDOCS-jekyll
+  $ cd mapsindoors.github.io
   ```
 
 2. Install the Docker container and serve Jekyll from it:
