@@ -4,8 +4,6 @@ date: 2019-10-07
 published: true
 ---
 
-# Changelog
-
 ## October 2019 - v3.7.4
 
 ### Bug Fixes
