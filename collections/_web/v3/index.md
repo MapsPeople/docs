@@ -24,6 +24,14 @@ You can also follow the steps below to start your app from scratch or to enhance
 
 ## Setting up a map
 
+### Set the MapsIndoors API Key
+
+In order to include MapsIndoors in your app, you need an API key. If you are not a customer you can use this API key `57e4e4992e74800ef8b69718` to follow the guide.
+
+In order to include MapsIndoors in your own app with your own content, you need to [contact MapsPeople](https://resources.mapspeople.com/contact-us) to get your building drawings processed and hosted by us.
+
+You will receive a unique API key to use when access has been granted. If you are exploring how this service can become part of your own product, you can read about [partnering with MapsPeople here](https://www.mapspeople.com/become-a-partner).
+
 ### Setup Your HTML
 
 Include the following scripts in your HTML document. MapsIndoors depend on jQuery and Google Maps API v3, so if it’s not present on script load, MapsIndoors will not be able to initialize.
@@ -40,8 +48,8 @@ If you need to use a floor selector (most projects do), just add a css reference
 
 Replace:
 
-* `MY_GOOGLE_API_KEY` with your own Google api key
-* `MY_MAPSINDOORS_API_KEY` with your MapsIndoors api key (formerly known as a solution id)
+* `MY_GOOGLE_API_KEY` with your own Google API key
+* `MY_MAPSINDOORS_API_KEY` with your MapsIndoors API key
 
 As always when setting up Google Maps, create a div with defined width and height.
 
@@ -58,7 +66,7 @@ var myGoogleMap, myMapsIndoors;
 
 var init = function () {
 
-   // Setup google map
+   // Setup Google map
    myGoogleMap = new google.maps.Map(document.getElementById('map'), { center: { lat: 57.085809, lng: 9.9573899 }, zoom: 17 });
 
    // Setup MapsIndoors

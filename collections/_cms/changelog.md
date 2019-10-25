@@ -5,6 +5,12 @@ date: 2019-10-07
 
 # Changelog
 
+## October 2019 - v3.7.4
+
+### Bug Fixes
+
+* **Locations:** Styling of the location icon library has been fixed.
+
 ## October 2019 - v3.7.3
 
 ### New 
@@ -47,7 +53,7 @@ date: 2019-10-07
 ### New
 
 * **Guide:** User guide for Google StreetView.
-* **Change Password:** When logged in with a google account, the change password button will not be available.
+* **Change Password:** When logged in with a Google account, the change password button will not be available.
 
 ## July 2019 - v.3.6.6
 
@@ -109,7 +115,7 @@ date: 2019-10-07
 ### Added
  - Navigate between buildings or reset the venue view in export map.
  - Filter locations by floor (list view).
- - New Map (google maps js api 3.32).
+ - New Map (Google Maps JS API 3.32).
 
 ### Changed
  - Moved location type to the top to better indicate its importance. 

@@ -7,5 +7,5 @@ permalink: /api/
 sitemap: false
 ---
 
-**Latest:** [iOS API v1](/api/v1/)
+**Latest:** [Integration API v1](/api/v1/)
 {: .f3 .link}

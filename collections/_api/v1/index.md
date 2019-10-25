@@ -61,7 +61,7 @@ Use the following Key/Values
 
 ```
 Key: grant_type Value: google_id_token
-Key: id_token Value: <your google token>
+Key: id_token Value: <your Google token>
 ```
 
 ### Endpoints

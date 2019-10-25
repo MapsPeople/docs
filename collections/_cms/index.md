@@ -96,7 +96,7 @@ There is an option to add more information for this location. This can be done b
 Google Street View must be available in the building.
 
 1. Click “Set Street View image” 
-  - This will open a Google Street View window showing an image closest to this location. In the case an outside image is shown it can be because Google Street View is not available in your building - you need to check that with your organisation or examine using Google maps.
+  - This will open a Google Street View window showing an image closest to this location. In the case an outside image is shown it can be because Google Street View is not available in your building - you need to check that with your organisation or examine using Google Maps .
 1. Navigate Street View and find an image and viewing angle that is suitable
 1. Click “Set image”
 

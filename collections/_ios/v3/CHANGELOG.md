@@ -15,10 +15,38 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 ### Removed
 -->
 
-## [3.2.0] 2019-08-21
+## [3.6.0] 2019-10-10
+### IMPORTANT
+- If you are compiling with Xcode 11 with bitcode ON, you should either switch OFF bitcode or update to this version.  With bitcode ON, previous versions of the SDK could crash.
+### Fixed
+- `MPDirectionsQuery.init(originPoint:MPPoint, destPoint:MPPoint)` could produce origins and destinations on level 0, resulting in incorrect route results.
 ### Changed
-- Updated Google Maps SDK from 3.1.0 to 3.3.0 (see https://developers.google.com/maps/documentation/ios-sdk/releases for details)
-- Default Google Maps styling is now applied to the map, so that we hide Google Maps icons that usually compete with, confuse or disturb the appearance of MapsIndoors location icons
+- Compiled with Xcode 11 for iOS 13
+- Internal refactoring to improve memory and threading error resilience.
+
+## [3.5.0] 2019-09-25
+### Added
+- Added `depth` property to `MPFilter`, used with the `parents` property, making it possible to e.g. get all buildings and floors within a venue (depth 2) or get only floors within a building (depth 1).
+- Added the ability to control the visibility of map icons and map labels independently, through `MPLocationDisplayRule.showIcon` and  `MPLocationDisplayRule.showLabel`.
+- Added property `locationBaseType` on `MPLocation`, making it possible to dstinguish buildings from venues, floors from rooms, areas from POIs etc.
+### Fixed
+- Fixed issue with info window disappearing after location selection when search result is currently rendered.
+- Fixed some internal concurrency issues.
+
+## [3.3.1] 2019-09-15
+### Changed
+- InfoWindows presented on the map is now made fully visible if needed - this changes the presented map area.
+### Fixed
+- Fixed location data was only synced once per session, regardless of explicit calls to `MapsIndoors.synchronizeContent()`.
+
+## [3.3.0] 2019-08-30
+### Added
+- Support for custom fields on venues, buildings and categories (writable from the MapsIndoors Data API).
+
+## [3.2.0] 2019-08-20
+### Changed
+- Updated Google Maps SDK from 3.1.0 to 3.3.0 (see https://developers.google.com/maps/documentation/ios-sdk/releases for details).
+- Default Google Maps styling is now applied to the map, so that we hide Google Maps icons that usually compete with, confuse or disturb the appearance of MapsIndoors location icons.
 ### Added
 - Support for building default floors.
 - Support for profile-based routing.
@@ -36,7 +64,7 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 - Fixed occasional orphaned/ghost polyline from the `MPDirectionsRenderer`.
 - Fixed wrong floor tiles showing in route step in some cases.
 - Fixed an issue with route rendering.
-- Fixed info window not appearing for selectedLocation after several api key switches.
+- Fixed info window not appearing for selectedLocation after several API key switches.
 
 ## [3.1.1] 2019-06-21
 ### Fixed
@@ -48,9 +76,9 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 
 ## [3.1.0] 2019-06-04
 ### Added
-- Added a `MPGeometryHelper` class
-- Added a way to get polygons for locations using `MPGeometryHelper.polygonsForLocation(location:MPLocation)`
-- Updated Google Maps dependency to version 3.1.0
+- Added a `MPGeometryHelper` class.
+- Added a way to get polygons for locations using `MPGeometryHelper.polygonsForLocation(location:MPLocation)`.
+- Updated Google Maps dependency to version 3.1.0.
 - Optimizing outdoor/indoor directions. Filters entry points by new travel mode flag in SDK before doing calculations.
 - Now possible to set map style (layout) using `MPMapControl.mapStyle = MPMapStyle(string:"my-style")`. Only applies for data sets that has multiple defined styles.
 ### Fixed
@@ -254,3 +282,4 @@ The second callback would result in no route being produced
 - Made peripheral code private that was public before
 - All beacon positioning related logic (moved to public app code)
 - Made peripheral code private that was public before
+
