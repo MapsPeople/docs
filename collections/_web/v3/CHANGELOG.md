@@ -38,7 +38,7 @@ Changelog for MapsIndoors SDK for JavaScript. This document structure is based o
 
 ## [3.2.1] - 2019-05-24
 ### Added
-- Added the ability to change the api key at runtime via `mapsindoors.MapsIndoors.setApiKey(key);`
+- Added the ability to change the API key at runtime via `mapsindoors.MapsIndoors.setApiKey(key);`
 - Added the functions to get and set the language at runtime:
   - `mapsindoors.MapsIndoors.setLanguage(language);`
   - `mapsindoors.MapsIndoors.getLanguage();`

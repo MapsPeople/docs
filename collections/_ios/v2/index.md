@@ -86,7 +86,7 @@ Head to the [guides](/ios/v2/guides) to learn about searching, getting direction
 
 ## Download and Bundle Offline Content
 
-If needed, it is possible to bundle MapsIndoors content to make your app work better in offline or poor network conditions. (Please note that while MapsIndoors content can be used offline, Google Maps does not provide offline features. Outdoor wayfinding, google places searches will be unavailable and the surrounding map may be unavailable unless it has been cached.)
+If needed, it is possible to bundle MapsIndoors content to make your app work better in offline or poor network conditions. (Please note that while MapsIndoors content can be used offline, Google Maps does not provide offline features. Outdoor wayfinding, Google Places searches will be unavailable and the surrounding map may be unavailable unless it has been cached.)
 
 In your app targets build phases, add a "Run Script" build phase containing the following command:
 
