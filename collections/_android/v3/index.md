@@ -84,7 +84,17 @@ When getting your Google Maps API keys, remember to enable relevant Maps product
 
 ## Setup a Google Map with MapsIndoors
 
-Place the following inititalisation code in the `onCreate` method in the activity that should display the Google map:
+### Set the MapsIndoors API Key
+
+In order to include MapsIndoors in your app, you need an API key. If you are not a customer you can use this API key `57e4e4992e74800ef8b69718` to follow the guide.
+
+In order to include MapsIndoors in your own app with your own content, you need to [contact MapsPeople](https://resources.mapspeople.com/contact-us) to get your building drawings processed and hosted by us.
+
+You will receive a unique API key to use when access has been granted. If you are exploring how this service can become part of your own product, you can read about [partnering with MapsPeople here](https://www.mapspeople.com/become-a-partner).
+
+### Initialize MapsIndoors
+
+Place the following initialization code in the `onCreate` method in the activity that should display the Google map:
 
 ```java
 MapsIndoors.initialize(
