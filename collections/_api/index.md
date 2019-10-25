@@ -1,6 +1,6 @@
 ---
 layout: default
-title: MapsIndoors API
+title: Integration API
 published: true
 date: 2019-09-30
 permalink: /api/
