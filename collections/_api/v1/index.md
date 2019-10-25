@@ -1,5 +1,5 @@
 ---
-title: MapsIndoors API v1
+title: Integration API v1
 layout: tutorial
 permalink: /api/v1/
 published: true
