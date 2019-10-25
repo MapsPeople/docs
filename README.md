@@ -39,7 +39,7 @@ Jekyll automatically builds and deploys from the `master` branch in this reposit
   
   This command reads as "use Jekyll version 4.0, run it in a Docker container named `midocs`, remove the container after it's closed, serve Jekyll on http://0.0.0.0 at port 4000, watch for changes in the Jekyll folder, include drafts"
 
-3. Open `https://0.0.0.0:4000`
+3. Open `http://0.0.0.0:4000`
 
 ### Create a new guide
 
