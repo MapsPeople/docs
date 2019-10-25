@@ -316,7 +316,7 @@ let mapStyle = {
 }
 ```
 
-When a new instance of MapsIndoors is created, it is created with the google map as an argument. It is also possible to set the map style in the constructor.
+When a new instance of MapsIndoors is created, it is created with the Google map as an argument. It is also possible to set the map style in the constructor.
 
 ```javascript
 let mapsIndoors = new mapsindoors.MapsIndoors({

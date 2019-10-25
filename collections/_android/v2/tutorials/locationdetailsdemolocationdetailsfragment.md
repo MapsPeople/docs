@@ -11,7 +11,7 @@ date: 2019-09-30
 
 This is an example of displaying some details of a MapsIndoors location
 
-Start by creating a `Fragment or an Activity` class that contains the google map fragment
+Start by creating a `Fragment or an Activity` class that contains the Google map fragment
 ```
 public class LocationDetailsFragment extends Fragment
 ```

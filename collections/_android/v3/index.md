@@ -125,7 +125,7 @@ Head to the [guides](/android/v3/guides) to learn about event handling, searchin
 
 ## Download and Bundle Offline Content
 
-If needed, it is possible to bundle MapsIndoors content to make your app work better in offline or poor network conditions. (Please note that while MapsIndoors content can be used offline, Google Maps does not provide offline features. Outdoor wayfinding, google places searches will be unavailable and the surrounding map may be unavailable unless it has been cached.)
+If needed, it is possible to bundle MapsIndoors content to make your app work better in offline or poor network conditions. (Please note that while MapsIndoors content can be used offline, Google Maps does not provide offline features. Outdoor wayfinding, Google Places searches will be unavailable and the surrounding map may be unavailable unless it has been cached.)
 
 In your */res/values* folder, create a file named `mapsindoors_api.xml` with the following content:
 

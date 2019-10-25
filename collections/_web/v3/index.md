@@ -48,8 +48,8 @@ If you need to use a floor selector (most projects do), just add a css reference
 
 Replace:
 
-* `MY_GOOGLE_API_KEY` with your own Google api key
-* `MY_MAPSINDOORS_API_KEY` with your MapsIndoors api key (formerly known as a solution id)
+* `MY_GOOGLE_API_KEY` with your own Google API key
+* `MY_MAPSINDOORS_API_KEY` with your MapsIndoors API key
 
 As always when setting up Google Maps, create a div with defined width and height.
 
@@ -66,7 +66,7 @@ var myGoogleMap, myMapsIndoors;
 
 var init = function () {
 
-   // Setup google map
+   // Setup Google map
    myGoogleMap = new google.maps.Map(document.getElementById('map'), { center: { lat: 57.085809, lng: 9.9573899 }, zoom: 17 });
 
    // Setup MapsIndoors
