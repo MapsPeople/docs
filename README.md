@@ -8,21 +8,21 @@ This is the repository holding all documentation related to developing apps on t
 
 The documentation site is built with [Jekyll](https://jekyllrb.com) and hosted on GitHub Pages.
 
-Jekyll automatically builds and deploys from the `gh-pages` branch in this repository. Only members of this organization can merge into the `gh-pages` branch.
+Jekyll automatically builds and deploys from the `master` branch in this repository. Only members of this organization can approve Pull Requests into the `master` branch.
 
-### Using Jekyll on your own machine to preview content
+### Preview the site on your own machine
 
 #### Prerequisites
 
 [Install Docker](https://www.docker.com/products/docker-desktop)—the desktop app is great for this purpose.
 
-#### Clone repository and run Jekyll 
+#### Clone repository and run Jekyll in a temporary Docker container
 
 1. Clone this repository to your machine: 
 
   ```bash
   $ git clone git@github.com:MapsIndoors/mapsindoors.github.io
-  $ cd MIDOCS-jekyll
+  $ cd mapsindoors.github.io
   ```
 
 2. Install the Docker container and serve Jekyll from it:
