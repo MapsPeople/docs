@@ -180,7 +180,7 @@ Locations inherit templates from their types. These templates allow you to set u
 
 ![Categories](https://app.mapsindoors.com/mapsindoors/cms/assets/images/guide7.png)
 
-Ability to add new categories to the list. Click on New category, add name, click save. Once created, this category can be added to a specific location type. The categories can be chosen to be displayed in the app, as well as put in a specific order (this can be done under App Configuration).
+Ability to add new categories to the list. Click on New category, add name, click save. Once created, this category can be added to a specific location. The categories can be chosen to be displayed in the app, as well as put in a specific order (this can be done under App Configuration).
 
 ## App configuration
 
