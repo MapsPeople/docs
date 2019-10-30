@@ -12,7 +12,7 @@ published: true
 
 The MapsIndoors Content Management System (CMS) allows you to maintain your data within the MapsIndoors platform.
 
-Data is structured in a hierarchy where the top level is your solution which can contain multiple venues, which in turn can have multiple buildings and so on. The data-types in hierarchical order:
+Data is structured in a hierarchy where the top level is your Solution which can contain multiple Venues, which in turn can have multiple Buildings and so on. The data-types in hierarchical order:
 
 * Solution
 * Venues
@@ -20,7 +20,7 @@ Data is structured in a hierarchy where the top level is your solution which can
 * Floors
 * Locations (rooms and points of interest)
 
-Although a point of interest can be placed within a room, it is not required. Points of interest can also be placed “outside” on the ground level which is also the layer where the Google map exists. In this case the POI belongs to the venue directly.
+Although a point of interest can be placed within a room, it is not required. Points of interest can also be placed "outside” on the ground level which is also the layer where the Google map exists. In this case the POI belongs to the Venue directly.
 
 ## Navigating the CMS
 
@@ -28,7 +28,7 @@ The panel on the left lets you navigate the CMS.
 
 There are 2 different roles in the system:
 
-* **Editor** - Editors can create new locations, make changes to and remove existing locations
+* **Editor** - Editors can create new Locations, make changes to and remove existing Locations
 * **Admin** - Administrators have editor rights and have access to icon settings and users
 
 ## The Map
@@ -39,115 +39,116 @@ After logging in, the map will appear.
 
 There are a number of key elements:
 
-1. **Solution Name:** This is the name of your solution
-1. **Venue:** This is the name of your Venue. It’s possible to have several venues. Also, the arrow above the Venue can be clicked to hide the side panel
+1. **Solution Name:** This is the name of your Solution
+1. **Venue:** This is the name of your Venue. It’s possible to have several Venues. Also, the arrow above the Venue can be clicked to hide the side panel
 1. **CMS Guide:** High level guide on various areas to make changes
 1. **Venue and Buildings & Routes:**
-  - Change building names, enter aliases
+  - Change Building names, enter aliases
   - Routes will display on the map, along with the entry point to indoor navigation. There is also the ability to close part of the route network
 1. **General Settings:**
-  - **Location types:** List of locations with their icon - ability to edit. Add location types here
+  - **Location Types:** List of Locations with their icon - ability to edit. Add Location Types here
   - **Categories:** List of categories - ability to edit. Add new categories here. These will populate in an iOS or Android app
-  - **Location type templates:** Ability to add information to a specific location type, for example, business hours, email, phone number
+  - **Location Type templates:** Ability to add information to a specific Location Type, for example, business hours, email, phone number
 1. **App settings:** 
   - **App configuration:** App title, MapsIndoors API key, list of categories - editing of the order can be done here
-  - **Type visibility:** Set the zoom level of when location icon will appear. Can also “hide” icon via the eye icon
+  - **Type visibility:** Set the zoom level of when Location icon will appear. Can also "hide” icon via the eye icon
 1. **Administration:**
   - **Users:** Add, edit users for the CMS
 1. **Current User**
-1. **List:** A list of locations in the currently selected Venue, can edit from this list
+1. **List:** A list of Locations in the currently selected Venue, can edit from this list
 1. **Zoom In/Zoom Out**
 1. **Zoom Level:** Indicates which zoom level you are viewing
 1. **Filter:**
-  - **Type:** dropdown to select a specific location type to only see on the map
-  - **Category:** dropdown to select a specific category to only see on the map
-  - **Search:** search for locations
+  - **Type:** dropdown to select a specific Location Type to only see on the map
+  - **Category:** dropdown to select a specific Category to only see on the map
+  - **Search:** search for Locations
 1. **Floor selector:** The floor selector shows the floors available, click on the desired floor to switch floor
 1. **POI:** click on this icon to add a POI anywhere on the map
 
 ## Locations
 
-When Locations is selected, you see the map with all the icons that determine the location type.
+When Locations is selected, you see the map with all the icons that determine the Location Type.
 
-To create a new POI, first make it clear if this is an outdoor POI or placed inside a Building. If inside a Building, select the desired building from the drop down menu. Click on the POI icon in the bottom right corner, then click on the map where it should be added. The placement doesn’t have to be 100% precise, it can be moved afterwards.
+To create a new POI, first make it clear if this is an outdoor POI or placed inside a Building. If inside a Building, select the desired Building from the drop down menu. Click on the POI icon in the bottom right corner, then click on the map where it should be added. The placement doesn’t have to be 100% precise, it can be moved afterwards.
 
-![New location](https://app.mapsindoors.com/mapsindoors/cms/assets/images/guide2.png)
+![New Location](https://app.mapsindoors.com/mapsindoors/cms/assets/images/guide2.png)
 
-After clicking on the box, you will be asked to select a location Type and Name. The other choices; Description, Categories, Icon are optional.
+After clicking on the box, you will be asked to select a Location Type and Name. The other choices; Description, Categories, Icon are optional.
 
-Select the icon on the map for the location that you wish to edit, or click on Locations in the main navigation and then choose “View List”. From there you can choose which location you would like to edit by clicking on the pencil icon.
+Select the icon on the map for the Location that you wish to edit, or click on Locations in the main navigation and then choose "View List”. From there you can choose which Location you would like to edit by clicking on the pencil icon.
 
 In the Edit Location Form you can do the following:
 
-**Location Type:** This can be changed by clicking on the drop down menu with location types.
+**Location Type:** This can be changed by clicking on the drop down menu with Location Types.
 
-**Name:** Enter a new name if you want to change the name of the location. You also have the option of adding another language.
+**Name:** Enter a new name if you want to change the name of the Location. You also have the option of adding another language.
 
-**Description:** Provide a description of the location. 
-There is an option to add more information for this location. This can be done by clicking on Location type templates in the main navigation. From there you can add specific fields to a location type, those fields will then appear in the location form.
+**Description:** Provide a description of the Location. 
+There is an option to add more information for this Location. This can be done by clicking on Location Type templates in the main navigation. From there you can add specific fields to a Location Type, those fields will then appear in the Location form.
 
-**Categories:** Set/change what category it belongs to.
+**Categories:** Set/change what Category it belongs to.
 
-**Icon Settings:** Change the Icon associated with the location. An icon can be chosen from the library or an icon can be uploaded. Use square images in .png format, 40x40 pixels, or 20x20 - as lower screen resolutions will use this size.
+**Icon Settings:** Change the Icon associated with the Location. An icon can be chosen from the library or an icon can be uploaded. Use square images in .png format, 40x40 pixels, or 20x20 - as lower screen resolutions will use this size.
 
 **Image:** An image can be uploaded.
 
-**Google Street View:** It can be enabled for the web app at a location by setting a Street View image matching that location.
-Google Street View must be available in the building.
+**Google Street View:** It can be enabled for the web app at a Location by setting a Street View image matching that Location.
 
-1. Click “Set Street View image” 
-  - This will open a Google Street View window showing an image closest to this location. In the case an outside image is shown it can be because Google Street View is not available in your building - you need to check that with your organisation or examine using Google Maps .
+Google Street View must be available in the Building.
+
+1. Click "Set Street View image” 
+  - This will open a Google Street View window showing an image closest to this Location. In the case an outside image is shown it can be because Google Street View is not available in your Building - you need to check that with your organisation or examine using Google Maps.
 1. Navigate Street View and find an image and viewing angle that is suitable
-1. Click “Set image”
+1. Click "Set image”
 
 **Under show advanced**
 
-- **Alias:** Add alternative search phrases, for example a restaurant might have aliases of café, dinner, food, lunch etc.  Insert a comma between each phrase.
+- **Alias:** Add alternative search phrases, for example a restaurant might have aliases of café, dinner, food, lunch etc. Insert a comma between each phrase.
 
-- **Venue Details:** Change building and or floor.
+- **Venue Details:** Change Building and or floor.
 
 - **Room Identifier:** This can be edited.
 
-- **Active (display and searchable):** If required, select a time period during which the location will be visible, leave empty if it should always be shown.
+- **Active (display and searchable):** If required, select a time period during which the Location will be visible, leave empty if it should always be shown.
 
 - **Location History:** Contains a list of all changes made to a Location. Data comes from the MapsIndoors Audit Log functionality.
 
 **Save changes**
 
-Remember to save before clicking on another location or changing the page, otherwise your changes will be lost. To save the changes,  press “Save”-button in the top of the location edit form.
+Remember to save before clicking on another Location or changing the page, otherwise your changes will be lost. To save the changes, press "Save”-button in the top of the Location edit form.
 
 ![Locations](https://app.mapsindoors.com/mapsindoors/cms/assets/images/guide3.png)
 
-To view a list of all locations in a certain venue, select ‘List View”.
+To view a list of all Locations in a certain Venue, select ‘List View”.
 
 * To sort the data, click on the column title
-* To edit a location, click the pencil
-* To edit multiple locations, tick each one
-* To filter, click on the top right options: Type, Category, or Floor. You can also use the search box for a specific location
+* To edit a Location, click the pencil
+* To edit multiple Locations, tick each one
+* To filter, click on the top right options: Type, Category, or Floor. You can also use the search box for a specific Location
 
-When selecting one a more locations using the checkboxes, 2 options will appear: Edit locations or Delete Locations.
+When selecting one a more Locations using the checkboxes, 2 options will appear: Edit Locations or Delete Locations.
 
-- **Change type:** Opens a drop down menu to choose new location type
+- **Change type:** Opens a drop down menu to choose new Location Type
 
-- **Location:** Allows you to change the floor of the locations
+- **Location:** Allows you to change the floor of the Locations
 
-- **Active (display and searchable):** If required, select a time period during which the location will be visible, leave empty if it should always be shown
+- **Active (display and searchable):** If required, select a time period during which the Location will be visible, leave empty if it should always be shown
 
-Remember to save before clicking on another location or changing the page, otherwise your changes will be lost. To save the changes, click “Save”.
+Remember to save before clicking on another Location or changing the page, otherwise your changes will be lost. To save the changes, click "Save”.
 
 ## Venue
 
-* Edit the venue name in the available languages
+* Edit the Venue name in the available languages
 * Choose a default floor
 
 ## Buildings
 
-* Click on the pencil icon to the left of the building name. A new menu will appear 
-* Edit building name in the available languages 
+* Click on the pencil icon to the left of the Building name. A new menu will appear 
+* Edit Building name in the available languages 
 * Edit floor names
 * Select a default floor under "Show advanced". 
 
-   The building's default floor is used to manage panning across buildings in the apps. In order to improve  the user experience in the apps, the default floor is used when the building panned to doesn’t have the floor index of the floor selector.
+   The Building's default floor is used to manage panning across Buildings in the apps. In order to improve the user experience in the apps, the default floor is used when the Building panned to doesn’t have the floor index of the floor selector.
 
 ## Routes Access
 
@@ -169,9 +170,9 @@ To restrict access to a path:
 
 ## Location Types
 
-![Location types](https://app.mapsindoors.com/mapsindoors/cms/assets/images/guide6.png)
+![Location Types](https://app.mapsindoors.com/mapsindoors/cms/assets/images/guide6.png)
 
-This is a list of all the location types in the solution. From this list you can edit each location by clicking on the pencil.
+This is a list of all the Location Types in the Solution. From this list you can edit each Location by clicking on the pencil.
 
 **View Settings**
 
@@ -179,7 +180,7 @@ The *View settings* can be set for each Location Type. Use the settings to defin
 
 ![View Settings]({{ site.url }}/assets/cms/location-types/view-settings.png)
 
-**Location type templates**
+**Location Type templates**
 
 You can add custom data fields to Locations by adding templates to a Location Type defining the data fields. All Locations of a Type will inherit the templates defined for the Type. Add a template to a Location Type by clicking the template button to the right in the table.
 
@@ -189,7 +190,7 @@ To display or otherwise use the custom data, your app needs to be customized. Th
 
 ![Categories](https://app.mapsindoors.com/mapsindoors/cms/assets/images/guide7.png)
 
-Ability to add new categories to the list. Click on New category, add name, click save. Once created, this category can be added to a specific location. The categories can be chosen to be displayed in the app, as well as put in a specific order (this can be done under App Configuration).
+Ability to add new categories to the list. Click on New Category, add name, click save. Once created, this Category can be added to a specific Location. The categories can be chosen to be displayed in the app, as well as put in a specific order (this can be done under App Configuration).
 
 ## App configuration
 
@@ -200,7 +201,7 @@ Ability to add new categories to the list. Click on New category, add name, clic
 
 **App Categories**
 
-Clicking on the arrows to the left of the category name allows you to change the order. This category order will be on the app. You can also choose an icon to be displayed next to the category name.
+Clicking on the arrows to the left of the Category name allows you to change the order. This Category order will be reflected in the apps. You can also choose an icon to be displayed next to the category name.
 
 ## Type visibility
 
@@ -208,21 +209,21 @@ Use these settings to control how Icons are shown on the map
 
 **Zoom Level:** This can be edited by moving the dot on the line. The icon will appear in the chosen zoom level
 
-**Visible:** By clicking the eye, this will remove the icon from appearing in the solution
+**Visible:** By clicking the eye, this will remove the icon from appearing in the Solution
 
 ## Users
 
 Allows Admins, to control who has access and what roles they have, or create new users.
 
-A list appears with all users for the solution. You can also search for an email via the search box in the upper right.
+A list appears with all users for the Solution. You can also search for an email via the search box in the upper right.
 
-**Editing a user:** Click on the pencil to the left of the email. The user can be deleted, changed role or added to a solution. Click Save.
+**Editing a user:** Click on the pencil to the left of the email. The user can be deleted, changed role or added to a Solution. Click Save.
 
-**New user:** Click on new user bottom at top. Enter email, choose Editor or Administrator, and assign the appropriate solution. Click Create.
+**New user:** Click on new user bottom at top. Enter email, choose Editor or Administrator, and assign the appropriate Solution. Click Create.
 
 ## Logs
 
-The Audit Log functionality is a configurable feature in MapsIndoors and if not enabled on your solution it can be on request.
+The Audit Log functionality is a configurable feature in MapsIndoors and if not enabled on your Solution it can be on request.
 
 The Audit Log feature can be used to access the Audit log on MapsIndoor data objects, i.e. you can find or inspect the change history.
 
@@ -243,25 +244,25 @@ Time, User, Action, ObjectType, ObjectId and ObjectData
   - If data was changed, the 'Action' will be set to 'Changed'
   - If data was deleted, the 'Action' will be set to 'Deleted'
 - **ObjectType:** Tells what type of data was modified (eg. ‘building’, ‘location’, ‘user’, ‘graphdata’ ... )
-- **ObjectId:** Is a unique ID that represents the given data - building, location or whatever it is. 
-If you want to see a history of that specific location this ID can be used to filter by
-- **ObjectData:** Is a JSON formatted representation of the actual data stored in the Mapsindoors system. To see what changed you can compare this data to the previous change.
+- **ObjectId:** Is a unique ID that represents the given data - Building, Location or whatever it is. 
+If you want to see a history of that specific Location this ID can be used to filter by
+- **ObjectData:** Is a JSON formatted representation of the actual data stored in the MapsIndoors system. To see what changed you can compare this data to the previous change.
 
 Examples of use cases could be:
 
-* **How to do I get Network history?** Filter the ObjectType to ‘graphdata’’ to see these entries. To find a particular user history, filter ‘User’ to their email as well.
+* **How to do I get Network history?** Filter the ObjectType to ‘graphdata’ to see these entries. To find a particular user history, filter ‘User’ to their email as well.
 * **How to do I get Categories history?** Filter the ObjectType to ‘category’ to see these entries. To find a particular data history, filter ‘User’ to their email as well.
-* **How to do I get Location type/type template/visibility history?** Filter the ObjectType to ‘locationtype’ to see these entries. To find a particular data history, filter ‘User’ to their email as well. The type template is covered in the “LocationTypeField” section of the data. The visibility is covered in the “displayrule” section of the data
+* **How to do I get Location Type/type template/visibility history?** Filter the ObjectType to ‘locationtype’ to see these entries. To find a particular data history, filter ‘User’ to their email as well. The type template is covered in the "LocationTypeField” section of the data. The visibility is covered in the "displayrule” section of the data
 * **How to find user login activity?** When a user logs in, the corresponding user object will be changed too (the ‘last login field will be updated’). Filter the ObjectType to ‘user’ to see login entries. To find a particular user login history, filter ‘User’ to their email as well.
 
 If you use Excel you can find a video on how to open a CSV file here: [https://www.youtube.com/watch?v=z5Pxil4jVO4](https://www.youtube.com/watch?v=z5Pxil4jVO4)
 
-* **Icons:** Icons are used for various Locations on the map, e.g. POIs, Rooms. Having a unified representation for specific types of locations makes the system easier for users to engage with.
+* **Icons:** Icons are used for various Locations on the map, e.g. POIs, Rooms. Having a unified representation for specific types of Locations makes the system easier for users to engage with.
 * **Location**: A term used for all Rooms and points of interest (POI).
-* **POI**: “Point of interest” - is usually an object that isn’t tied to a room. E.g. Vending Machine, Locker, A Statue, ATM etc.
-* **Type**: All locations are of a type. Types serve as templates for locations to provide a basic setup. Many of the properties can later be overridden for specific locations.
-* **Venue**: Typically a collection of buildings that are close geographically.
-* **Search alias**: An alternative name for a location allowing users to search for the location by that name.
+* **POI**: "Point of interest” - is usually an object that isn’t tied to a room. E.g. Vending Machine, Locker, A Statue, ATM etc.
+* **Type**: All Locations are of a type. Types serve as templates for Locations to provide a basic setup. Many of the properties can later be overridden for specific Locations.
+* **Venue**: Typically a collection of Buildings that are close geographically.
+* **Search alias**: An alternative name for a Location allowing users to search for the Location by that name.
 
 ## Support
 
