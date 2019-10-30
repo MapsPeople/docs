@@ -173,8 +173,14 @@ To restrict access to a path:
 
 This is a list of all the location types in the solution. From this list you can edit each location by clicking on the pencil.
 
+**View Settings**
+
+The view settings can be set for each location type. The settings defines how the icon and label is displayed on the map.
+
+![View Settings]({{ site.url }}/assets/cms/location-types/view-settings.png)
+
 **Location type templates**
-Locations inherit templates from their types. These templates allow you to set up custom data fields. Note that these templates only add the properties. To display or otherwise use a property the app needs to be customized. Standard app users will not be able to use the properties.
+Locations inherit templates from their types – which can be edited by clicking the template button to the right. These templates allow you to set up custom data fields. Note that these templates only add the properties. To display or otherwise use a property the app needs to be customized. Standard app users will not be able to use the properties.
 
 ## Categories
 
