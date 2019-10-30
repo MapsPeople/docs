@@ -180,7 +180,10 @@ The view settings can be set for each location type. The settings defines how th
 ![View Settings]({{ site.url }}/assets/cms/location-types/view-settings.png)
 
 **Location type templates**
-Locations inherit templates from their types – which can be edited by clicking the template button to the right. These templates allow you to set up custom data fields. Note that these templates only add the properties. To display or otherwise use a property the app needs to be customized. Standard app users will not be able to use the properties.
+
+You can add custom data fields to Locations by adding templates to a Location Type defining the data fields. All Locations of a Type will inherit the templates defined for the Type. Add a template to a Location Type by clicking the template button to the right in the table.
+
+To display or otherwise use the custom data, your app needs to be customized. The properties are not available in the Standard app, only when building one using the SDK.
 
 ## Categories
 
