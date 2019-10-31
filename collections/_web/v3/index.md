@@ -40,7 +40,7 @@ If you need to use a floor selector (most projects do), just add a css reference
 Replace:
 
 * `MY_GOOGLE_API_KEY` with your own Google API key
-* `VERSION` with the wanted MapsIndoors version. See our <a href="https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/index.html">Reference Docs</a> for the latest version, and beware of the two occurrences of VERSION
+* `VERSION` with the wanted MapsIndoors version. See our <a href="https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/index.html">Reference Docs</a> for the latest version number. Please note there are two occurrences of `VERSION` to replace in the URL.
 * `MY_MAPSINDOORS_API_KEY` with your MapsIndoors API key
 
 As always when setting up Google Maps, create a div with defined width and height.
