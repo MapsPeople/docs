@@ -26,14 +26,13 @@ You will receive a unique API key to use when access has been granted. If you ar
 
 ### Setup Your HTML
 
-Include the following scripts in your HTML document. MapsIndoors depend on jQuery and Google Maps API v3, so if it’s not present on script load, MapsIndoors will not be able to initialize.
+Include the following scripts in your HTML document. MapsIndoors depends on Google Maps API v3, so if it’s not present on script load, MapsIndoors will not be able to initialize.
 
 If you need to use a floor selector (most projects do), just add a css reference as in the sample. This will provide a basic CSS-layout for the floor selector.
 
 ```html
-{% raw %}<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=geometry&key=MY_GOOGLE_API_KEY"></script>
-<script type="text/javascript" src="https://app.mapsindoors.com/mapsindoors/js/sdk/mapsindoors-{{%product-version%}}.js.gz?apikey=MY_MAPSINDOORS_API_KEY"></script>
+{% raw %}<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=geometry&key=MY_GOOGLE_API_KEY"></script>
+<script type="text/javascript" src="https://app.mapsindoors.com/mapsindoors/js/sdk/VERSION/mapsindoors-VERSION.js.gz?apikey=MY_MAPSINDOORS_API_KEY"></script>
 // Load css for default floor selector
 <link href="https://app.mapsindoors.com/mapsindoors/js/sdk/ui/FloorSelector.css" type="text/css" rel="stylesheet" />{% endraw %}
 ```
@@ -41,6 +40,7 @@ If you need to use a floor selector (most projects do), just add a css reference
 Replace:
 
 * `MY_GOOGLE_API_KEY` with your own Google API key
+* `VERSION` with the wanted MapsIndoors version. See our <a href="https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/index.html">Reference Docs</a> for the latest version, and beware of the two occurrences of VERSION
 * `MY_MAPSINDOORS_API_KEY` with your MapsIndoors API key
 
 As always when setting up Google Maps, create a div with defined width and height.
