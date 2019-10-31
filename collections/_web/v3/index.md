@@ -14,14 +14,6 @@ To benefit from the guides, you will need basic knowledge about:
 * HTML/CSS
 * Google Maps Javascript API V3
 
-You can get started in two ways, either by reviewing and modifying the [basic example](#basic-example) or do the [clean setup](#setting-up-a-map).
-
-## Basic Example
-
-You will find in the [link an up and running website sample](https://mapsindoors.github.io/js-samples) that demonstrates the common use cases like mapping, search & directions in MapsIndoors. See the [source code for the sample here](https://github.com/MapsIndoors/js-samples).
-
-You can also follow the steps below to start your app from scratch or to enhance the Basic Example, more advanced feature will be explained in the [guides](/web/v3/guides) of this tutorial with a demo app that gives a showcase of the mapsIndoors in a complete app that you can test also.
-
 ## Setting up a map
 
 ### Set the MapsIndoors API Key
