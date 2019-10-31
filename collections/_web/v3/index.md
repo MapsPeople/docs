@@ -14,14 +14,6 @@ To benefit from the guides, you will need basic knowledge about:
 * HTML/CSS
 * Google Maps Javascript API V3
 
-You can get started in two ways, either by reviewing and modifying the [basic example](#basic-example) or do the [clean setup](#setting-up-a-map).
-
-## Basic Example
-
-You will find in the [link an up and running website sample](https://mapsindoors.github.io/js-samples) that demonstrates the common use cases like mapping, search & directions in MapsIndoors. See the [source code for the sample here](https://github.com/MapsIndoors/js-samples).
-
-You can also follow the steps below to start your app from scratch or to enhance the Basic Example, more advanced feature will be explained in the [guides](/web/v3/guides) of this tutorial with a demo app that gives a showcase of the mapsIndoors in a complete app that you can test also.
-
 ## Setting up a map
 
 ### Set the MapsIndoors API Key
@@ -34,14 +26,13 @@ You will receive a unique API key to use when access has been granted. If you ar
 
 ### Setup Your HTML
 
-Include the following scripts in your HTML document. MapsIndoors depend on jQuery and Google Maps API v3, so if it’s not present on script load, MapsIndoors will not be able to initialize.
+Include the following scripts in your HTML document. MapsIndoors depends on Google Maps API v3, so if it’s not present on script load, MapsIndoors will not be able to initialize.
 
 If you need to use a floor selector (most projects do), just add a css reference as in the sample. This will provide a basic CSS-layout for the floor selector.
 
 ```html
-{% raw %}<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=geometry&key=MY_GOOGLE_API_KEY"></script>
-<script type="text/javascript" src="https://app.mapsindoors.com/mapsindoors/js/sdk/mapsindoors-{{%product-version%}}.js.gz?apikey=MY_MAPSINDOORS_API_KEY"></script>
+{% raw %}<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=geometry&key=MY_GOOGLE_API_KEY"></script>
+<script type="text/javascript" src="https://app.mapsindoors.com/mapsindoors/js/sdk/VERSION/mapsindoors-VERSION.js.gz?apikey=MY_MAPSINDOORS_API_KEY"></script>
 // Load css for default floor selector
 <link href="https://app.mapsindoors.com/mapsindoors/js/sdk/ui/FloorSelector.css" type="text/css" rel="stylesheet" />{% endraw %}
 ```
@@ -49,6 +40,7 @@ If you need to use a floor selector (most projects do), just add a css reference
 Replace:
 
 * `MY_GOOGLE_API_KEY` with your own Google API key
+* `VERSION` with the wanted MapsIndoors version. See our <a href="https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/index.html">Reference Docs</a> for the latest version number. Please note there are two occurrences of `VERSION` to replace in the URL.
 * `MY_MAPSINDOORS_API_KEY` with your MapsIndoors API key
 
 As always when setting up Google Maps, create a div with defined width and height.
