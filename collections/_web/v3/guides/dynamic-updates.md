@@ -22,11 +22,11 @@ function FakeRoomBookings() {
 
     function get(arr) {
       let n = Math.floor(Math.random() * arr.length - 1) + 1;
-      let length = arr.length;
-      let results = [];
+      const length = arr.length;
+      const results = [];
 
       while (n) {
-        var x = Math.floor(Math.random() * length);
+        const x = Math.floor(Math.random() * length);
         if (!results.includes(arr[x])) {
           results.push(arr[x]);
           --n;
@@ -59,8 +59,8 @@ Create a new instance of the FakeRoomBookings.
 
 ```javascript
 bookings.onUpdate = (rooms) => {
-    let booked = rooms.filter(room => room.isBooked).map(room => room.id);
-    let notBooked = rooms.filter(room => !room.isBooked).map(room => room.id);;
+    const booked = rooms.filter(room => room.isBooked).map(room => room.id);
+    const notBooked = rooms.filter(room => !room.isBooked).map(room => room.id);;
 
     mapsIndoors.setDisplayRule(booked, {
         fillColor: '#ff0000',
