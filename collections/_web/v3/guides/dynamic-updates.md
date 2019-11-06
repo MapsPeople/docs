@@ -76,5 +76,5 @@ Register the onUpdate callback.
 The callback is called with a list of rooms and their status. Based on the status the rooms are divided into two arrays.
 Then the display rules are updated for each location in thies arrays.
 
-Reference: [MapsIndoors]("https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/MapsIndoors.html"), [DisplayRule]("https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/global.html#DisplayRule")
+Reference: [MapsIndoors](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/MapsIndoors.html), [DisplayRule](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/global.html#DisplayRule)
 
