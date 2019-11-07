@@ -177,10 +177,15 @@ tr:nth-child(even) {
 .text ol,
 .text blockquote,
 .text table,
-.text .highlighter-rouge {
+.text .highlighter-rouge,
+iframe {
   margin-right: auto;
   margin-left: auto;
   max-width: 48rem;
+}
+
+iframe {
+  display: block;
 }
 
 .text article aside {

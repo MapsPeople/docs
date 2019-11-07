@@ -8,13 +8,18 @@ date: 2019-11-04
 ---
 
 ## Overview
-Learn how to dynamically update the pressentation of POIs on the map by changing display rules programmatically.
+
+Learn how to dynamically update the presentation of Locations on the map by changing `DisplayRule`s programmatically.
+
+The code needed to accomplish this, and a preview of what the map will look like, are in this JSFiddle (click on "Result" to see it in action):
 
 <script async src="//jsfiddle.net/mapspeople/7fzyqhn3/embed/html,result/"></script>
 
 ## Getting started
-In this tutorial we are giving an example on how to update the map based on external events. 
-For this demo we are using a fake service that will trigger a callback with a fixed interval.
+
+In this tutorial we show an example of how to update the map based on external events; in this case a service that sets a status on meeting rooms to either "booked" or "not booked".
+
+First we create a fake service that triggers a callback at a fixed interval, in this case one second:
 
 ```javascript
 function FakeRoomBookings() {
@@ -50,12 +55,14 @@ function FakeRoomBookings() {
     }, 1000);
 };
 ```
-The above shows the fake service that updates the map with changes to the status of the meeting rooms.
+
+The example above shows a service that updates the map with changes to the status of the meeting rooms.
 
 ```javascript
 const bookings = new FakeRoomBookings();
 ```
-Create a new instance of the FakeRoomBookings.
+
+Then we create a new instance of the `FakeRoomBookings`.
 
 ```javascript
 bookings.onUpdate = (rooms) => {
@@ -72,9 +79,13 @@ bookings.onUpdate = (rooms) => {
     });
 }
 ```
-Register the onUpdate callback. 
-The callback is called with a list of rooms and their status. Based on the status the rooms are divided into two arrays.
-Then the display rules are updated for each location in thies arrays.
+
+Now we register the `onUpdate` callback so we can update the map.
+
+The callback is provided with a list of rooms and their statuses. The rooms are then divided into two arrays based on their status (`booked` or `notBooked`).
+
+Then the `DisplayRule`s are updated for each location in the two arrays. Doing this, we can color the room either green (for `notBooked`) or red (indicating the `booked` status).
+
+---
 
 Reference: [MapsIndoors](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/MapsIndoors.html), [DisplayRule](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/global.html#DisplayRule)
-
