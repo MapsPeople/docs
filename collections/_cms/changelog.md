@@ -8,7 +8,7 @@ published: true
 
 ### Bug Fixes
 
-* **Route Access:** Fixed issue about parking spots not being shown in a specific solution with auto route.
+* **Route Access:** Fixed issue about parking spots not being shown.
 
 ## October 2019 - v3.7.4
 
