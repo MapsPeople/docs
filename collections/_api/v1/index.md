@@ -308,9 +308,6 @@ Each Geodata element has a number of properties. Let's look at an example - a co
       2: Not active, searchable (not a very useful combo)
       3: active, searchable
 
-    > Note: The implementation of this is currently pending for the SDKs, and is due October 2019.
-    {: .mi-careful}
-
 * **Properties**
 
     Contains other data about the Geodata object such as names, description or even custom data like gate numbers, vendor id, exhibition id or other data needed.
