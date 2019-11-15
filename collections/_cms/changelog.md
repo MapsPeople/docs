@@ -4,6 +4,12 @@ date: 2019-10-07
 published: true
 ---
 
+## November 2019 - v3.7.5
+
+### Bug Fixes
+
+* **Route Access:** Fixed issue about parking spots not being shown.
+
 ## October 2019 - v3.7.4
 
 ### Bug Fixes
