@@ -4,6 +4,13 @@ date: 2019-10-07
 published: true
 ---
 
+## November 2019 - v3.7.6
+
+### Updates
+
+* **New menu structure:** The menu structure is rearranged with new category titles.
+* **Icon and label visibility:** Location icon and label visibility can now be controlled individually and are being reflected in the table.
+
 ## November 2019 - v3.7.5
 
 ### Bug Fixes
