@@ -188,7 +188,7 @@ tr:nth-child(even) {
 .text iframe {
   margin-right: auto;
   margin-left: auto;
-  max-width: 50vw;
+  max-width: 48rem;
 }
 
 .text iframe {
