@@ -1,8 +1,13 @@
 @import url('https://rsms.me/inter/inter.css');
-  html { font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif; }
+
+html {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
 
 @supports (font-variation-settings: normal) {
-  html { font-family: 'Inter var', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif; }
+  html {
+    font-family: 'Inter var', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  }
 }
 
 /* 
@@ -31,12 +36,12 @@ blockquote.mi-warning {
   padding: 0px 24px;
   font-size: 1em;
   font-style: normal;
-  
+
 }
 
 blockquote.mi-tip {
   background-color: rgba(79, 166, 120, 0.24);
-  border: 1px solid rgba(79, 166, 120, 0.48);  
+  border: 1px solid rgba(79, 166, 120, 0.48);
 }
 
 blockquote.mi-careful {
@@ -57,13 +62,14 @@ code.hljs {
 }
 
 code.highlighter-rouge {
-  background-color: rgba(0,0,0,0.04);
+  background-color: rgba(0, 0, 0, 0.04);
   font-size: .8em;
   border-radius: 4px;
   padding: .12em .6em;
 }
 
-.f1, .f2 {
+.f1,
+.f2 {
   letter-spacing: -0.03em;
 }
 
@@ -72,7 +78,7 @@ code.highlighter-rouge {
 }
 
 .mi-breadcrumbs a:visited {
-    color: #555;
+  color: #555;
 }
 
 .mi-breadcrumbs a:hover {
@@ -156,7 +162,8 @@ tbody {
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
-td, th {
+td,
+th {
   vertical-align: top;
   text-align: left;
   padding: 0.5rem;
@@ -177,10 +184,15 @@ tr:nth-child(even) {
 .text ol,
 .text blockquote,
 .text table,
-.text .highlighter-rouge {
+.text .highlighter-rouge,
+.text iframe {
   margin-right: auto;
   margin-left: auto;
-  max-width: 48rem;
+  max-width: 50vw;
+}
+
+.text iframe {
+  display: block;
 }
 
 .text article aside {
