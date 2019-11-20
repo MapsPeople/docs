@@ -54,6 +54,89 @@ MapsIndoors.getLocationsAsync(query, filter, (locs, err) -> {
 
 Please note that you are not guaranteed that the visible floor contains any search results, so that is why we change floor in the above example.
 
+## Getting Directions and Displaying a Route Result on a Map
+
+Use the `RoutingProvider` class to search for directions.
+
+This example shows how to setup a query for a route and display the result on the map:
+
+```java
+
+mRoutingRenderer = new MPDirectionsRenderer( context, mGoogleMap, mMapControl, null );
+mRoutingRenderer.setAnimated( true );
+
+mRoutingProvider.setOnRouteResultListener( ( route, error ) -> {
+    if( route != null )
+    {
+        mRoutingRenderer.setRoute( route );
+
+        final Activity activity  = getActivity();
+        if( activity != null )
+        {
+            activity.runOnUiThread( () -> {
+                mRoutingRenderer.setRouteLegIndex( 0 );
+            });
+        }
+    } else
+    {
+        // Can't get a route between the given points
+    }
+});
+
+final Point origin = new Point( 57.057917, 9.950361, 1 );
+final Point destination = new Point( 57.058038, 9.950509, 1 );
+
+mRoutingProvider.setTravelMode( TravelMode.WALKING );
+mRoutingProvider.query( origin, destination );
+```
+
+The route object is seperated into objects of `MPRouteLeg` and these legs are again seperated indo objects of `MPRouteStep`. A specific part of the route can be rendered by setting the `routeLegIndex` property.
+
+```java
+mRoutingRenderer.setRouteLegIndex( 0 );
+```
+
+The length of the `legs` array determines the possible values of `routeLegIndex` (`0 ..< length`).
+
+### Avoiding Stairs
+
+Avoid certain **way types** on the route using the `addRouteRestriction` method.
+
+```java
+mRoutingProvider.addRouteRestriction("stairs")
+```
+
+### Departure and Arrival Times
+
+Set a **departure date** or an **arrival date** on the route using the `setDateTime` method. 
+
+```java
+isDeparture = true;
+mRoutingProvider.setDateTime( Calendar.getInstance().getTime(), isDeparture );
+```
+
+Assigning `isDeparture` to `false` means that the given date/time should be considered as the desired arrival date/time.
+
+### Specify Restricted Access for a User Role
+
+An indoor route network can be configured so that a given user role has access to directions in a given area.
+
+The list of available user roles can be retrieved from the `MPSolution` object:
+
+```java
+
+List<UserRole> userRoles = MapsIndoors.getSolution().getUserRoleCollection().getUserRoles();
+
+```
+
+To use the roles, assign one or more roles to the `MPDirectionsQuery` object:
+
+```java
+
+routingProvider.setUserRoles( userRoles ); 
+
+```
+
 ## Getting a Polygon from a Location
 
 Some locations in MapsIndoors can have additional polygon information. These polygons can be used to render a room or area in a special way or make geofences, calculating whether another point or location is contained within the polygon. If a `MPLocation` has polygons, these can be retrieved using:
