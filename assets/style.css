@@ -193,6 +193,7 @@ tr:nth-child(even) {
 
 .text iframe {
   display: block;
+  max-height: 48rem;
 }
 
 .text article aside {
