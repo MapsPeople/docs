@@ -28,8 +28,11 @@ The `apiKey` parameter contains your application's MapsIndoors API key.
 
 ## Setting up the map
 ```javascript
-const googleMap = new google.maps.Map(document.getElementById('googleMap'), {
-    center: { lat: 57.0588892, lng: 9.9479535 },
+const googleMap = new google.maps.Map(document.getElementById('map'), {
+    center: {
+        lat: 38.8976067,
+        lng: -77.0365872
+    },
     zoom: 19,
     maxZoom: 21
 });
