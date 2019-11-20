@@ -1,6 +1,6 @@
 ---
 layout: tutorial
-title: Getting a polygon from a location
+title: Using display rules
 parent: mapsindoors
 nav_weight: 260
 published: true

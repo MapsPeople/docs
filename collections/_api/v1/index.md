@@ -164,7 +164,7 @@ All Geodata BaseTypes have some common keys that is available for all, and then 
 
 #### BaseTypeProperties for Venue
 
-* `Administrativeid [string] - <span class="red">required</span>`
+* `Administrativeid [string]` - <span class="red">* required</span>
   - Unique ID for this Venue.
 * `Defaultfloor [nullable int]`
   - The AdministrativeId from a Floor that should be the default selected for the Venue.
@@ -177,7 +177,7 @@ All Geodata BaseTypes have some common keys that is available for all, and then 
 
 #### BaseTypeProperties for Building
 
-* `Administrativeid [string] - <span class="red">required</span>`
+* `Administrativeid [string]` - <span class="red">* required</span>
   - Unique ID for this Building.
 * `Defaultfloor [nullable int]`
   - The AdministrativeId from a floor that should be the default selected for this Building).
@@ -186,17 +186,17 @@ All Geodata BaseTypes have some common keys that is available for all, and then 
 
 #### BaseTypeProperties for Floor
 
-* `Name [string] - <span class="red">required</span>`
+* `Name [string]` - <span class="red">* required</span>
   - Floor identifier that will be used in the floor selector e.g. ‘0’, ‘42’, ‘B1’, etc.
 
     Keep it as short as possible. Recommendation is 1-3 characters.
 
-* `Administrativeid [int] - <span class="red">required</span>`
+* `Administrativeid [int]` - <span class="red">* required</span>
   - The index of the Floor inside of its parent Building.
 
 #### BaseTypeProperties for a Location (POI/Room/Area)
 
-* `Administrativeid [string] - <span class="red">required</span>`
+* `Administrativeid [string]` - <span class="red">* required</span>
   - Unique ID for this Location.
 * `Class [string]`
   - The MapsIndoors color class that the Location should follow.
@@ -307,9 +307,6 @@ Each Geodata element has a number of properties. Let's look at an example - a co
       1: active, Not searchable
       2: Not active, searchable (not a very useful combo)
       3: active, searchable
-
-    > Note: The implementation of this is currently pending for the SDKs, and is due October 2019.
-    {: .mi-careful}
 
 * **Properties**
 

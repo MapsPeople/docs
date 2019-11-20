@@ -209,3 +209,7 @@ tr:nth-child(even) {
 .text article aside ul ul {
   list-style-type: disc;
 }
+
+.red {
+  color: red;
+}
