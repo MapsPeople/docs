@@ -2,7 +2,7 @@
 title: Event handling
 parent: guides
 layout: tutorial
-nav_weight: 1000
+nav_weight: 1100
 published: true
 date: 2019-11-20
 ---
