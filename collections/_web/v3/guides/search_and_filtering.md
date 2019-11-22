@@ -70,4 +70,3 @@ In the filterMap helper function, we create a list of location ids to filter the
 The second parameter tells MapsIndoors not to change the viewport of the map.
 
 See [MapsIndoors.filter](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/MapsIndoors.html#filter)
-
