@@ -268,11 +268,11 @@ If you use Excel you can find a video on how to open a CSV file here: [https://w
 
 Anywhere in the CMS you can change icons for one or more markers on the map, you use the Icon Manager to do so. Click the "Change"-button to invoke it.
 
-In the Icon Manager, you can choose between a predefined set of MapsIndoors icons, and a list of your uploaded icons. Click on an icon in either place and set it to close the icon manager and preview the icon on the map. Don't worry, it won't be saved until you click "Save" in the details editor.
+In the Icon Manager, you can choose between a predefined set of MapsIndoors icons, and a list of your uploaded icons. We support uploads of image files in the PNG and SVG formats. Click on an icon in either place, and set it to close the icon manager and preview the icon on the map. Don't worry, it won't be saved until you click "Save" in the details editor.
 
-Remember to keep your icons at a reasonable size. We'll let you know if it's larger than 128x64px, as that would take up a large amount of space on the map, and we have a hard limit of 600x400px. Images can not be larger than 150kb, and should optimized and compressed to be as small as possible.
+Remember to keep your icons at a reasonable size. We'll let you know if it's larger than 128x64px, as that would take up a large amount of space on the map. There is a hard limit on the image size of 600x400px or 150kb. The images should also be optimized and compressed to be as small as possible.
 
-You can bulk upload icons, both SVGs and PNGs at the same time.
+You can bulk upload SVGs and PNGs at the same time.
 
 To delete an icon, click the "trash bin" on the image files you want to delete.
 
@@ -292,7 +292,7 @@ We only accept SVGs that conform to a very strict ruleset. If an uploaded SVG co
 
 - `<svg>` element
 - `viewbox` attribute
-- `path` child element
+- `<path>` child element
 - `<rect>` child element
 - `<title>` child element
 - `<desc>` child element
