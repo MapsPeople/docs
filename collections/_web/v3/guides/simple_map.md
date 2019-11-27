@@ -53,6 +53,6 @@ Now we create a new instance of the MapsIndoors class and assign the Google Map 
 const floorSelector = document.createElement('div');
 new mapsindoors.FloorSelector(floorSelector, mapsIndoors);
 googleMap.controls[google.maps.ControlPosition.RIGHT_TOP].push(floorSelector);
-```
-First a DOM element is needed for the floor selector, next a new instance of the FloorSelector is created  by parssing the DOM element and an instnace of MapsIndoors.
-Then it's added to the map.
+``` 
+A FloorSelector is created by calling the `new mapsindoors.FloorSelector(floorSelector, mapsIndoors);` passing in a DOM element and an instance of MapsIndoors.
+This `googleMap.controls[google.maps.ControlPosition.RIGHT_TOP].push(floorSelector);` adds the floor selector to the maps upper right corner as a map control.
