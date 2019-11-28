@@ -8,42 +8,6 @@ date: 2019-09-30
 permalink: /web/v3/guides/
 ---
 
-## Using Events
-
-MapsIndoors uses the Google Maps built-in event handling system, so listening for event on various object is straight-forward. Here are some examples.
-
-```javascript
-google.maps.event.addListener(myMapsIndoors, "ready", function (result) {
-   console.log(result);
-});
-
-google.maps.event.addListener(myMapsIndoors, 'building_changed', function () {
-   console.log(this);
-});
-
-google.maps.event.addListener(myMapsIndoors, 'floor_changed', function () {
- console.log(this);
-});
-
-google.maps.event.addListener(myMapsIndoors, 'click', function () {
- console.log(this);
-});
-
-google.maps.event.addListener(marker, 'click', function () {
-   console.dir(this);
-});
-```
-
-The event names and their targets are as follows:
-
-| Event Name | Target Object of Class | Returns |
-| --- | --- | --- |
-| "ready" | MapsIndoors | MapsIndoors object |
-| "building_changed" | MapsIndoors | Current building object |
-| "floor_changed" | MapsIndoors | Current floor index |
-| "location_click" | MapsIndoors | Selected location | 	 	 
-
-
 ## Using the Display rules
 
 Display rules use the following structure:
@@ -79,37 +43,6 @@ Two of these types could be of name “Parking” and “Office”, which indica
 ```javascript
 mapsIndoors.setDisplayRule("parking", { from:16 }); // Using default type icon
 mapsIndoors.setDisplayRule("office", { from:20 });  // Using default type icon
-```
-
-
-## Searching for Locations and Displaying them on a Map
-
-Use the location service in conjunction with the filter method on a MapsIndoors instance to find and highlight different elements of the MapsIndoors content. An example is given below. Note: The example shows all options, but only one of building, venue, locationId and location is necessary.
-
-```javascript
-var googleMap = new google.maps.Map(...);
-
-var mapsIndoors = new mapsindoors.MapsIndoors({map:googleMap});
-
-mapsindoors.LocationService.getLocations(
-   {
-                
-         q: "lounge",         // Optional - Search for matches in location name or aliases
-         building: "34",      // Optional - Fetch from specific building, using the administrative id of the building
-         venue: "VenueA",     // Optional - Fetch from specific venue, using name of venue
-         categories: ["MEETINGROOM,LOUNGEAREAS"]    // Optional - Fetch from specific categories, using the category keys
-         floor: 1,                     // Optional - Fetch from 1st floor only
-         take: 10,                     // Optional - Fetch only 10 locations
-         skip: 10,                     // Optional - Skip first 10 in result
-         near: {lat:57.5, lng: 12.9}   // Optional - Sort by proximity to geographic point
-         radius: 50           // Optional - Fetch only nearest within meters from near
-         orderBy: "name"      // Optional - Sort by name (possible values are Name, Floor
-                              // Building, Venue, Type and RoomId)
-    }).then(function(locations) {
-        //get all the ids
-        let filter = locations.map(location => location.id);
-        mapsIndoors.filter(filter, true);
-    });
 ```
 
 ### Getting a polygon from a location
@@ -157,14 +90,6 @@ Returns current floor index number (integer), e.g. 0 for ground floor, -1 for ba
 myMapsIndoors.getFloor()
 ```
 
-### Resetting the map
-
-Resets the map to the appearance defined by the provided display rules. Displayed floor, map center and zoom-level will remain untouched.
-
-```javascript
-myMapsIndoors.reset()
-```
-
 ## Using the Directions Renderer
 
 Constructor. Takes directions render options as required parameter.
@@ -200,8 +125,8 @@ Renders the route result using the applied render options. Used in conjunction w
 
 ```javascript
 
-var directionsService = new mapsindoors.DirectionsService();
-var renderer = new mapsindoors.DirectionsRenderer({ mapsIndoors: myMapsIndoors });
+var directionsService = mapsindoors.DirectionsService;
+var renderer = new mapsindoors.DirectionsRenderer({ mapsindoors: mapsIndoors });
 
 directionsService.getRoute(
    {
@@ -230,20 +155,21 @@ Clear the current route rendering.
 ```javascript
 directionsRenderer.setRoute(null);
 ```
+
 ## Using the Directions Service
 
 Constructor. Instantiates a service that can be used for making route requests.
 
 ```javascript
-route( request:DirectionsRequest )
+getRoute( request:DirectionsRequest )
 ```
 
 Request routing from a point to another. The request object aligns to the [Google Maps V3 API DirectionsRequest object specification](https://developers.google.com/maps/documentation/javascript/3.exp/reference#DirectionsRequest), but with floor properties on origin and destination. Furthermore, avoidStairs boolean can be set to request routes for both disabled users and users without disabilities.
 
 ```javascript
-var directionsService = new mapsindoors.DirectionsService();
+var directionsService = mapsindoors.DirectionsService
 
-directionsService.route(
+directionsService.getRoute(
 {
    origin: {lat:57.5, lng: 12.9, floor: 0},
    destination: {lat:57.5, lng: 12.9, floor: 0},
@@ -260,32 +186,14 @@ directionsService.route(
 });
 ```
 
-## Using the Location Service
-
-Constructor.
-
-```javascript
-LocationsService()
-```
-### Getting the Categories
-
-Get the unique categories and their translation used by published locations. Typically, this can be used to build a menu for list or map filtering of locations.
-
-```javascript
-var locations = new mapsindoors.LocationsService();
-
-locations.getCategories().then(function(categories) {
-   // Returns localized category list with structure { office: "Office", ... } e.g. for english.
-});
-```
 ### Getting Icons from Location Types
 
 A set of location types is defined for every MapsIndoors solution. The current list of types can be retrieved like this:
 
 ```javascript
-var solutionData = new mapsindoors.SolutionService();
+var solutionService = mapsindoors.SolutionService;
 
-solutionData.getTypes().then(function(types) {
+solutionService.getTypes().then(function(types) {
    // returns array of types with format { name:string, displayRule: { icon:'https://icon.url' } }
    console.log(types[0].displayRule.icon);
 });
