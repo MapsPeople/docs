@@ -503,7 +503,7 @@ Common setup for Geodata of different kinds (meeting room, hallway, ...)
 
     The name property must be specified for every language defined in the dataset.
 
-> Note: The display type data is split in the CMS; currently it can be found in the fans "Location types", "Location type templates" and "Type visibility".
+> Note: The display type data is split in the CMS; currently it can be found in the fans "Location Types" and "Type Visibility".
 {: .mi-careful}
 
 ### Categories
