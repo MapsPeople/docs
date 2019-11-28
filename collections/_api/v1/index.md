@@ -52,7 +52,7 @@ The body of the request should end up containing a query string like this:
 
 #### Login with Google
 
-The [Google Accounts API](https://developers.google.com/identity/protocols/OAuth2) is to be used to obtain a valid Google token. Explaning this in detail is outside the scope of this document. 
+The [Google Accounts API](https://developers.google.com/identity/protocols/OAuth2) is to be used to obtain a valid Google token. Explaining this in detail is outside the scope of this document. 
 
 When you got a valid response back from the Google Authorization Server, you need to send the token to the Auth API to authenticate you.
 
