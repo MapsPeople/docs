@@ -3,7 +3,7 @@ title: Integration API v1
 layout: tutorial
 permalink: /api/v1/
 published: true
-date: 2019-09-30
+date: 2019-11-28
 ---
 
 {% include toc.md %}
@@ -12,63 +12,84 @@ date: 2019-09-30
 
 From the MapsIndoors Integration API you can get, add, change and delete data related to your MapsIndoors™ solution via a REST service.
 
-The Integration API can be found here: [https://integration.mapsindoors.com](https://integration.mapsindoors.com)
-
-There is a (Swagger) interface definition here: [https://integration.mapsindoors.com/doc](https://integration.mapsindoors.com/doc)
+Requests to the Integration API should be made to the following endpoint: [https://integration.mapsindoors.com](https://integration.mapsindoors.com)
 
 > Note: Only https is supported.
 {: .mi-careful}
+
+The Integration API consists of a number of endpoints to access the various data. The description of those can be found in the Swagger interface definition available here: [https://integration.mapsindoors.com/doc](https://integration.mapsindoors.com/doc)
+
+In Swagger, each GET method are pre-loaded with all mandatory fields needed for you to get a live example of data just by pressing the "_Try it out_" button.
 
 ### Login and credentials
 
 The first thing needed is to log in to the service and get a security token used for the data endpoints.
 
-[HttpPost, Route("token")]
+This requires a POST request to our Auth API at the following endpoint: https://auth.mapsindoors.com/connect/token
 
-The interface supports two ways to login. Via Google or via a simple username/password pair.
-
-**Login with username/password**
-
-Use the following headers:
+The interface supports multiple ways to log in, but mostly commonly is via Google or a simple username/password pair.
+No matter what login method you choose, you will always need to use the following content-type header when talking to the Auth API:
 
 ```
 Content-Type: application/x-www-form-urlencoded
 ```
 
-Use the following Key/Values
+#### Login with MapsIndoors™ username/password
+
+To sign in with your MapsIndoors™ login, you will need to send them with the `grant_type` set to `password`.
+
+Use the following key/value set:
 
 ```
-Key: grant_type Value: password
-Key: username Value: <your username>
-Key: password Value: <your password>
+grant_type: password
+client_id: client
+username: <your username>
+password: <your password>
 ```
 
-The body of the request should end up containing a text like this:
+The body of the request should end up containing a query string like this:
+`grant_type=password&client_id=client&username=<your username>&password=<your password>`
 
-`grant_type=password&username=<your username>&password=<your password>`
+#### Login with Google
 
-To use Google login you will need to set `grant_type` to `google_id_token` instead.
+The [Google Accounts API](https://developers.google.com/identity/protocols/OAuth2) is to be used to obtain a valid Google token. Explaning this in detail is outside the scope of this document. 
 
-The [Google Accounts API ](https://developers.google.com/identity/protocols/OAuth2)is to be used to obtain a valid Google token. This is outside the scope of this document. 
+When you got a valid response back from the Google Authorization Server, you need to send the token to the Auth API to authenticate you.
 
-**Use the following headers for login with username/password:**
+You tell the Auth API that you are using Google login by setting `grant_type` to `google_id_token`.
 
-Use the following headers
-
-`Content-Type: application/x-www-form-urlencoded`
-
-Use the following Key/Values
+Use the following key/value set to achieve this:
 
 ```
-Key: grant_type Value: google_id_token
-Key: id_token Value: <your Google token>
+grant_type: google_id_token
+client_id: client
+id_token: <your Google token>
 ```
 
-### Endpoints
+The body of the request should end up containing a query string like this:
+`grant_type=google_id_token&client_id=client&id_token=<your Google token>`
 
-The Integration API consists of a number of endpoints to access the various data. The description of those can be found in [Swagger](https://integration.mapsindoors.com/doc).
+#### When you are authenticated
 
-In Swagger each GET method are pre-loaded with all mandatory fields needed for you to get a live example of data just by pressing the "_Try it now_" button.
+If you have sent valid credentials to the Auth API, you will receive a response looking like the following:
+
+```
+{
+    "access_token": "eyJhbGciOiJ...vmERrovsg",
+    "expires_in": 86400,
+    "token_type": "Bearer",
+    "scope": "integration"
+}
+``` 
+
+You will need the value from the key `access_token` for all your requests to the Integration API by adding the `Authorization` header like this:
+
+```
+authorization: Bearer eyJhbGciOiJ...vmERrovsg
+```
+
+> Note: The access token is valid for 24 hours. After that you will need to reauthenticate, following the same steps as explained above.
+{: .mi-careful}
 
 ## Data description
 
