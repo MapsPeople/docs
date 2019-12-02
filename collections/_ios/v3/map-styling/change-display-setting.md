@@ -1,6 +1,7 @@
 ---
 layout: tutorial
-title: Workin with Display Settings
+title: Working with Display Settings
+parent: map-styling
 nav_weight: 330
 published: true
 date: 2019-09-30

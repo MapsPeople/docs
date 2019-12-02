@@ -8,6 +8,8 @@ date: 2019-09-30
 permalink: /ios/v3/map-styling/
 ---
 
+{% include toc.md %}
+
 There are 2 ways to change the appearance of the map content in MapsIndoors and Google Maps.
 
 * Using Display Rules
@@ -15,7 +17,8 @@ There are 2 ways to change the appearance of the map content in MapsIndoors and 
 
 Each have its own purpose which will be explained below.
 
-# Style the Map using Display Rules
+## Style the Map using Display Rules
+
 In the [MapsIndoors CMS](https://cms.mapsindoors.com/types) you can set display settings for the different types of locations in your MapsIndoors content. The changes you make in the CMS will take effect whenever you app reboots or when you call `MapsIndoors.synchroniseContent()` within the app session.
 
 In some cases, you may also want to programmatically set display settings that defines when and how to show a location. Display settings are defined in a Display Rule object.
@@ -30,7 +33,8 @@ You can set display settings programatically in 3 ways:
 * Set a Display Rule for a single specific Location
 * Set a Display Rule for a multiple specific Location
 
-## Setting Display Rule for a Type
+### Setting Display Rule for a Type
+
 To set new display rules for a type of Location, you need to know the types of Locations in your Location dataset, so you may look these up in the CMS. The types can also be retrieved in code with `MPSolutionsProvider().getSolution()`. The type objects can be read from `mySolution.types`. The display rule name corresponds to the Location Type we want the rule to apply for. So in order to style a specific type of Locations differently, just put in the type name as the Display Rule name.
 
 ```swift
@@ -41,7 +45,8 @@ myMapControl.setDisplayRule(MPLocationDisplayRule(name: "staircase", andIcon: UI
 
 Setting a display rule for a type will persist the new display rule for that type throughout the whole app session and across instances of `MPMapControl`. 
 
-## Setting Display Rule for a Single and Multiple Locations
+### Setting Display Rule for a Single and Multiple Locations
+
 To set new display rules for a Location, you need to have the Location at hand. Locations can be queried for using the  `MPLocationService`.
 
 ```swift
@@ -66,7 +71,8 @@ myMapControl.setDisplayRule(myDisplayRule, for: myLocations)
 
 Setting a display rule for specific locations will *not* persist the new display rule for that type throughout the whole app session and across instances of `MPMapControl`. In other words, as soon as your instance of `MPMapControl` is deallocated, the overridden display rules for specific locations will reset to its original display rule.
 
-# Style the Map using Google Maps Styling
+## Style the Map using Google Maps Styling
+
 MapsIndoors is built on top of Google Maps which has its own way of styling the map. Google Maps styling will only affect the MapsIndoors map if Google Maps has Points of Interest placed inside or near the buildings that you build a MapsIndoors solution for. By default, MapsIndoors applies a Google Maps styling that hides most POI icons that may collide with MapsIndoors content.
 
 You can apply your own styling to Google Maps using `mapStyle` on `GMSMapView`. 
