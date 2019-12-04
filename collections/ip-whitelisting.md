@@ -1,28 +1,17 @@
 ---
 title: Work with MapsIndoors SDK behind a firewall
 published: true
-date: 2019-09-30
+date: 2019-12-04
 permalink: /ip-whitelisting/
 ---
 
-If you need to work with MapsIndoors SDK behind a firewall, you might need to whitelist these IP-addresses:
+If you need to work with MapsIndoors SDK from behind a firewall, you might need to whitelist these IP-addresses:
 
 ```
-104.210.150.133/32
-13.93.78.131/32
-104.215.146.147/32
-52.166.232.21/32 
-52.174.49.244/32 
-52.232.5.1/32
-40.117.168.13/32 
-213.83.173.5/32
-13.93.106.94/32 	
-40.76.91.185/32 	
-13.84.172.245/32 
-13.93.3.67/32
-13.76.230.74/32 	
-51.144.101.238/32 
-104.46.47.24/32 	
-13.94.211.152/32 
-13.81.8.54/32
+104.215.58.230
+52.187.36.104
+51.144.164.215
+13.89.172.4
+104.214.20.0
+13.93.220.109
 ```
