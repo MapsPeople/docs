@@ -274,7 +274,7 @@ Remember to keep your icons at a reasonable size. We'll let you know if it's lar
 
 You can bulk upload SVGs and PNGs at the same time.
 
-To delete an icon, click the "trash bin" on the image files you want to delete.
+To delete an icon, click the "trash bin" on the image files you want to delete. It is strongly advised to change icons on the Locations, Location Types or Categories before deleting their associated icon file. However, if you delete an icon that is already used by a Location, the Location will revert back to using the icon for its Location Type. If you delete an icon that is used by a Category or Location Type, it will revert to using a generic marker on the map.
 
 ### Uploading PNGs
 
