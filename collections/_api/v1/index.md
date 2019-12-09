@@ -12,18 +12,18 @@ date: 2019-11-28
 
 From the MapsIndoors Integration API you can get, add, change and delete data related to your MapsIndoors™ solution via a REST service.
 
-Requests to the Integration API should be made to the following endpoint: [https://integration.mapsindoors.com](https://integration.mapsindoors.com)
+Send your requests to this endpoint: [https://integration.mapsindoors.com](https://integration.mapsindoors.com)
 
 > Note: Only https is supported.
 {: .mi-careful}
 
-The Integration API consists of a number of endpoints to access the various data. The description of those can be found in the Swagger interface definition available here: [https://integration.mapsindoors.com/doc](https://integration.mapsindoors.com/doc)
+You can access data through the Integration API using a range of endpoints. The endpoints are described in the Swagger interface definition: [https://integration.mapsindoors.com/doc](https://integration.mapsindoors.com/doc)
 
-In Swagger, each GET method are pre-loaded with all mandatory fields needed for you to get a live example of data just by pressing the "_Try it out_" button.
+In Swagger, each `GET` method is pre-loaded with all mandatory fields needed to get a live example of data. Click the  "_Try it out_" button in Swagger to see the example data.
 
 ### Login and credentials
 
-The first thing needed is to log in to the service and get a security token used for the data endpoints.
+First, log in to the service to get an `access token` to access the data.
 
 This requires a POST request to our Auth API at the following endpoint: https://auth.mapsindoors.com/connect/token
 
@@ -48,13 +48,14 @@ password: <your password>
 ```
 
 The body of the request should end up containing a query string like this:
+
 `grant_type=password&client_id=client&username=<your username>&password=<your password>`
 
 #### Login with Google
 
 The [Google Accounts API](https://developers.google.com/identity/protocols/OAuth2) is to be used to obtain a valid Google token. Explaining this in detail is outside the scope of this document. 
 
-When you got a valid response back from the Google Authorization Server, you need to send the token to the Auth API to authenticate you.
+When you get a valid response from the Google Authorization Server, send the token to the Auth API to authenticate you.
 
 You tell the Auth API that you are using Google login by setting `grant_type` to `google_id_token`.
 
@@ -67,11 +68,12 @@ id_token: <your Google token>
 ```
 
 The body of the request should end up containing a query string like this:
+
 `grant_type=google_id_token&client_id=client&id_token=<your Google token>`
 
 #### When you are authenticated
 
-If you have sent valid credentials to the Auth API, you will receive a response looking like the following:
+If you sent valid credentials to the Auth API, you will receive a response like this:
 
 ```
 {
