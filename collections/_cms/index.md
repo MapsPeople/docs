@@ -264,6 +264,58 @@ If you use Excel you can find a video on how to open a CSV file here: [https://w
 * **Venue**: Typically a collection of Buildings that are close geographically.
 * **Search alias**: An alternative name for a Location allowing users to search for the Location by that name.
 
+## Managing icons
+
+Anywhere in the CMS you can change icons for one or more markers on the map, you use the Icon Manager to do so. Click the "Change"-button to invoke it.
+
+In the Icon Manager, you can choose between a predefined set of MapsIndoors icons, and a list of your uploaded icons. We support uploads of image files in the PNG and SVG formats. Click on an icon in either place, and set it to close the icon manager and preview the icon on the map. Don't worry, it won't be saved until you click "Save" in the details editor.
+
+Remember to keep your icons at a reasonable size. We'll let you know if it's larger than 128x64px, as that would take up a large amount of space on the map. There is a hard limit on the image size of 600x400px or 150kb. The images should also be optimized and compressed to be as small as possible.
+
+You can bulk upload SVGs and PNGs at the same time.
+
+To delete an icon, click the "trash bin" on the image files you want to delete. It is strongly advised to change icons on the Locations, Location Types or Categories before deleting their associated icon file. However, if you delete an icon that is already used by a Location, the Location will revert back to using the icon for its Location Type. If you delete an icon that is used by a Category or Location Type, it will revert to using a generic marker on the map.
+
+### Uploading PNGs
+
+When uploading a PNG image file, make sure you upload it in a 3x size to accommodate for it being scaled down on the map. For example, to display a 20x20px icon on the map, upload it in 60x60px.
+
+### Uploading SVGs
+
+SVG is a vector file format, which lets MapsIndoors convert your icon in a range of sizes to get the best looking icon in every situation.
+
+SVGs should be uploaded with a `width` and `height` that you want the SVG to be displayed on the map in. Make sure you define it in `px`, not `cm` or `%`. E.g., if you want to display a 32x24px icon on the map, upload an SVG with the attributes `width='32px'` and `height='24px'`. For consistency, it's good form to make the `viewport` the same size as the `width` and `height`.
+
+### Supported SVG elements
+
+We only accept SVGs that conform to a very strict ruleset. If an uploaded SVG contains anything other than the elements and attributes listed below, it's rejected. All child elements can be nested as supported by the SVG format.
+
+- `<svg>` element
+- `viewbox` attribute
+- `<path>` child element
+- `<rect>` child element
+- `<title>` child element
+- `<desc>` child element
+- `<circle>` child element
+- `<defs>` child element
+- `<ellipse>` child element
+- `<line>` child element
+- `<pattern>` child element
+- `<polygon>` child element
+- `<polyline>` child element
+- `<text>` child element
+- `<stop>` child element
+- `<use>` child element
+- `<linearGradient>` child element
+- `<radialGradient>` child element
+- `<symbol>` child element
+- `<style>` child element
+- `<tspan>` child element
+
+When you try to upload an SVG containing one or more of these elements and/or attributes, the upload is cancelled and you will see which files contain the unsupported elements.
+
+If your SVGs contain unsupported elements, you must remove them before they can be uploaded. One typical issue is embedded `base64` data in the SVG, which usually indicates the SVG will display raster image data (PNGs and the like) somewhere in it. That can lead to unintended consequences on the map.
+
 ## Support
 
 **Something not working?**
