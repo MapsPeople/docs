@@ -305,7 +305,6 @@ We only accept SVGs that conform to a very strict ruleset. If an uploaded SVG co
 - `<polyline>` child element
 - `<text>` child element
 - `<stop>` child element
-- `<clipPath>` child element
 - `<use>` child element
 - `<linearGradient>` child element
 - `<radialGradient>` child element
