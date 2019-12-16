@@ -270,7 +270,7 @@ Anywhere in the CMS you can change icons for one or more markers on the map, you
 
 In the Icon Manager, you can choose between a predefined set of MapsIndoors icons, and a list of your uploaded icons. We support uploads of image files in the PNG and SVG formats. Click on an icon in either place, and set it to close the icon manager and preview the icon on the map. Don't worry, it won't be saved until you click "Save" in the details editor.
 
-Remember to keep your icons at a reasonable size. We'll let you know if it's larger than 128x64px, as that would take up a large amount of space on the map. There is a hard limit on the image size of 600x400px or 150kb. The images should also be optimized and compressed to be as small as possible.
+Remember to keep your icons at a reasonable size. We'll let you know if it's larger than 128x64px, as that would take up a large amount of space on the map. There is a hard limit on the image size of 900x600px or 150kb. The images should also be optimized and compressed to be as small as possible.
 
 You can bulk upload SVGs and PNGs at the same time.
 
