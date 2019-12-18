@@ -4,6 +4,19 @@ date: 2019-10-07
 published: true
 ---
 
+## December 2019
+
+### New
+
+* **Icon manager:** Unified icon handling for Locations, Location Types and Categories.
+  * No more Icons, Custom Icons and Advanced Icons. Choose from MapsIndoors Icons and Uploads.
+  * Preview Location icon on map before saving Location.
+  * Improved validation of SVG uploads to avoid display errors.
+
+### Bug Fixes
+
+* Fixed letter casing bug where location floor could be invalidated when editing location.
+
 ## November 2019 - v3.7.6
 
 ### Updates
