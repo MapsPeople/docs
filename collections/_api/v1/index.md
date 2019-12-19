@@ -27,7 +27,7 @@ First, log in to the service to get an `access token` to access the data.
 
 This requires a POST request to our Auth API at the following endpoint: https://auth.mapsindoors.com/connect/token
 
-The interface supports multiple ways to log in, but mostly commonly is via Google or a simple username/password pair.
+The Auth API supports multiple ways to log in. The most common way is authenticating with Google, but you can also use your MapsIndoors username and password.
 No matter what login method you choose, you will always need to use the following content-type header when talking to the Auth API:
 
 ```
@@ -36,7 +36,7 @@ Content-Type: application/x-www-form-urlencoded
 
 #### Log in with MapsIndoors username/password
 
-To sign in with your MapsIndoors login, you will need to send them with the `grant_type` set to `password`.
+To log in with your MapsIndoors login, you will need to send them with the `grant_type` set to `password`.
 
 Use the following key/value set:
 
@@ -47,13 +47,13 @@ username: <your username>
 password: <your password>
 ```
 
-The body of the request should end up containing a query string like this:
+The body of the request must end up containing a query string like this:
 
 `grant_type=password&client_id=client&username=<your username>&password=<your password>`
 
-#### Login with Google
+#### Log in with Google
 
-The [Google Accounts API](https://developers.google.com/identity/protocols/OAuth2) is to be used to obtain a valid Google token. Explaining this in detail is outside the scope of this document. 
+The [Google Accounts API](https://developers.google.com/identity/protocols/OAuth2) is used to obtain a valid Google token. You can read more about how to do that here: [https://developers.google.com/identity/protocols/OAuth2](https://developers.google.com/identity/protocols/OAuth2).
 
 When you get a valid response from the Google Authorization Server, send the token to the Auth API to authenticate you.
 
