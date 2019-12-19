@@ -10,7 +10,7 @@ date: 2019-11-28
 
 ## Introduction and getting started
 
-From the MapsIndoors Integration API you can get, add, change and delete data related to your MapsIndoors™ solution via a REST service.
+From the MapsIndoors Integration API you can get, add, change and delete data related to your MapsIndoors solution via a REST service.
 
 Send your requests to this endpoint: [https://integration.mapsindoors.com](https://integration.mapsindoors.com)
 
@@ -34,9 +34,9 @@ No matter what login method you choose, you will always need to use the followin
 Content-Type: application/x-www-form-urlencoded
 ```
 
-#### Login with MapsIndoors™ username/password
+#### Log in with MapsIndoors username/password
 
-To sign in with your MapsIndoors™ login, you will need to send them with the `grant_type` set to `password`.
+To sign in with your MapsIndoors login, you will need to send them with the `grant_type` set to `password`.
 
 Use the following key/value set:
 
