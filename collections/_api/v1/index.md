@@ -36,7 +36,7 @@ Content-Type: application/x-www-form-urlencoded
 
 #### Log in with MapsIndoors username/password
 
-To log in with your MapsIndoors login, you will need to send them with the `grant_type` set to `password`.
+To log in with your MapsIndoors login, send them with the `grant_type` set to `password`.
 
 Use the following key/value set:
 
