@@ -4,13 +4,13 @@ title: Working with Display Settings
 parent: map-styling
 nav_weight: 330
 published: true
-date: 2019-09-30
+date: 2019-12-05
 permalink: /ios/v3/map-styling/work-with-display-settings
 ---
 
-This is an example of enabling and disabling different custom location display settings on a map.
+In this tutorial we will create a view controller that can enable and disable different custom location display settings on a MapsIndoors map. At the end you should be able to see a map of a building with some colored buttons below the map enabling custom display settings for specified locations.
 
-Start by creating a `UIImage` extension that can generate a mock icon for a color.
+Start by creating a `UIImage` extension that can generate a mock icon for a color. Alternatively you can refer to your own images instead.
 ```
 public extension UIImage {
     convenience init?(color: UIColor, size: CGSize = CGSize(width: 18, height: 18)) {
@@ -26,11 +26,11 @@ public extension UIImage {
   }
 }
 ```
-Create a `UIViewController` class.
+Create a `UIViewController` class that will contain all our code. 
 ```
 class ChangeDisplaySettingController: UIViewController {
 ```
-Add a `GMSMapView` and a `MPMapControl` to the class.
+Add a `GMSMapView` and a `MPMapControl` as properties to the class.
 ```
 var map: GMSMapView? = nil
 var mapControl: MPMapControl? = nil
@@ -141,7 +141,7 @@ MPLocationService.sharedInstance().getLocationsUsing(q, filter: f) { (locations,
     self.mapControl?.go(to: locations!.first!)
 }
 ```
-In your `viewDidLoad()` method, call `setupDisplaySettingButtons()` and `prepareData()`
+In your `viewDidLoad()` method, call `setupDisplaySettingButtons()` and `prepareData()` in order to setup the buttons and prepare the room data.
 ```
 setupDisplaySettingButtons()
 prepareData()
@@ -155,5 +155,6 @@ let stackView = UIStackView.init(arrangedSubviews: [map!, buttonStackView])
 stackView.axis = .vertical
 view = stackView
 ```
+At this point you should be able to run this view controller in your own application. You should see a map with some colored buttons below the map. Tapping each button should enable/disable the custom display settings for either a single locations, multiple locations or all locations belonging to a specific type.
 
 [See the sample in ChangeDisplaySettingController.swift](https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Change Display Setting/ChangeDisplaySettingController.swift)

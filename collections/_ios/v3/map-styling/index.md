@@ -4,7 +4,7 @@ title: Map Styling
 guide_title: map-styling
 nav_weight: 330
 published: true
-date: 2019-09-30
+date: 2019-12-05
 permalink: /ios/v3/map-styling/
 ---
 

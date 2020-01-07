@@ -18,7 +18,6 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 
 > Known Issues:
 1. If you are compiling with Xcode 11 with bitcode ON, you should either switch OFF bitcode or update to version 3.6.0 or later. With bitcode ON, previous versions of the SDK could crash. We are in dialog with Apple regarding the bitcode issue.
-2. [This issue](https://forums.developer.apple.com/thread/123003) makes our SDK crash if built with XCode 10 and below. We have implemented a workaround in 3.7.1. An immediate workaround for you is to build with XCode 11. 
 {: .mi-careful}
 
 ## [3.7.1] 2019-12-05
@@ -33,11 +32,11 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 - Fixed `MPMapControl` is now more resilient against `GMSMapView.delegate` being changed.
 - [This issue](https://forums.developer.apple.com/thread/123003) made our SDK crash if built with XCode 10 and below. We have implemented a workaround in this version. 
 - Fixed Restored previous behaviour where the map settles on a building and showing the floor selector initially.
-- Fixed Improved switching between different solutions / api keys.
+- Fixed Improved switching between different Solutions / API keys.
 
 ## [3.6.1] 2019-11-05
 ### Fixed
-- Fixed synchronisation issue, that sometimes caused map graphics to disappear, if the app was killed in the middle of a synchronisation.
+- Fixed synchronisation issue, that sometimes caused map graphics to disappear, if the app was shut down in the middle of a synchronisation.
 - Fixed directions rendering issue causing the map camera to display random parts of the Google map instead of the step or leg that was intended to be rendered.
 - Fixed some inconsistencies in how non-quadratic icons was anchored on the map.
 ### Changed
