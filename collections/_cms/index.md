@@ -218,7 +218,7 @@ Remember to save before clicking on another Location or changing the page, other
 
 * Click on the pencil icon to the left of the Building name. A new menu will appear
 * Edit Building name in the available languages
-* Edit floor names
+* Edit Floor names
 * Select a default floor under "Show advanced".
 
    The Building's default floor is used to manage panning across Buildings in the apps. In order to improve the user experience in the apps, the default floor is used when the Building panned to doesn’t have the floor index of the floor selector.
