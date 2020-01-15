@@ -221,7 +221,7 @@ Remember to save before clicking on another Location or changing the page, other
 * Edit Floor names
 * Select a default Floor under "Show advanced".
 
-   The Building's default floor is used to manage panning across Buildings in the apps. In order to improve the user experience in the apps, the default floor is used when the Building panned to doesn’t have the floor index of the floor selector.
+   The Building's default Floor is used to manage panning across Buildings in the apps. In order to improve the user experience in the apps, the default Floor is used when the Building panned to doesn't have the floor index of the floor selector.
 
 ## Routes Access
 
