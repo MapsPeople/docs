@@ -161,7 +161,7 @@ function initStreetView(streetViewConfig) {
 
 Please see the official [Google Street View Service documentation](https://developers.google.com/maps/documentation/javascript/streetview) for more information.
 
-**Private hosted:**
+**Privately hosted**
 
 As mentioned above the IndoorView feature only support public available Google Street View imagery but [here](https://developers.google.com/maps/documentation/javascript/streetview#CustomStreetView) you will find some well-written documentation on how to get up running with your private hosted panorama images and the Street View Service for the JavaScript API witch at the moment isn’t supported in the Google Maps SDK’s for iOS and Android.
 
