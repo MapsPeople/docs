@@ -163,7 +163,7 @@ Please see the official [Google Street View Service documentation](https://devel
 
 **Privately hosted**
 
-As mentioned above the IndoorView feature only support public available Google Street View imagery but [here](https://developers.google.com/maps/documentation/javascript/streetview#CustomStreetView) you will find some well-written documentation on how to get up running with your private hosted panorama images and the Street View Service for the JavaScript API witch at the moment isn’t supported in the Google Maps SDK’s for iOS and Android.
+As mentioned above, the IndoorView feature only supports publicly available Google Street View imagery but [in the Custom Street View documentation](https://developers.google.com/maps/documentation/javascript/streetview#CustomStreetView) you will find some well-written instructions on how to get up and running with your privately hosted panorama images and the Street View Service for the JavaScript API. At the moment, this is not supported in the Google Maps SDKs for iOS and Android.
 
 When the photographer is done all the panorama file names should include a `panoramaId`, `zoom`, `tileX` and `tileY` property, and the panorama can be called from the server like below. Please see the [sample link](https://developers.google.com/maps/documentation/javascript/examples/streetview-custom-simple) for much more information on this.
 
