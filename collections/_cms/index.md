@@ -168,12 +168,11 @@ As mentioned above the IndoorView feature only support public available Google S
 When the photographer is done all the panorama file names should include a `panoramaId`, `zoom`, `tileX` and `tileY` property, and the panorama can be called from the server like below. Please see the [sample link](https://developers.google.com/maps/documentation/javascript/examples/streetview-custom-simple) for much more information on this.
 
 ```javascript
-function getCustomPanoramaTileUrl(pano, zoom, tileX, tileY) {
+function getCustomPanoramaTileUrl(panoId, zoom, tileX, tileY) {
         return 'https://company/panorama/'
-            + pano + '-' + zoom + '-' + tileX + '-' + tileY + '.jpg';
+            + panoId + '-' + zoom + '-' + tileX + '-' + tileY + '.jpg';
 }
 ```
-
 
 ### Under show advanced
 
