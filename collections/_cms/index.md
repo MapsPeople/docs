@@ -103,7 +103,7 @@ Change the Icon associated with the Location. See [here](#managing-icons) for mo
 
 ### Image
 
-Take a picture of your location and uploaded it here. Pictures on locations makes it easier for end users to localize a locations in the real world.
+Take a photo of your Location and upload it here. Photos on Locations makes it easier for your users to find a location in the real world.
 
 ### Image with IndoorView
 
