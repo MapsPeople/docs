@@ -99,7 +99,7 @@ Add or remove Categories the Location belongs to.
 
 ### Icon Settings
 
-Change the Icon associated with the Location. See [here](#managing-icons) for more information.
+Change the Icon associated with the Location. See "[Managing Icons](#managing-icons)" for more information.
 
 ### Image
 
