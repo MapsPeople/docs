@@ -119,7 +119,7 @@ To get started using the IndoorView feature for your locations please make sure 
 
 **Developing your own app:**
 
-When developing your own app you can still use the MapsIndoors CMS to save the Google Street View image information to a location. When the Panorama image is set the location gets populated with a streetViewConfig property. Please see below for an example.
+When developing your own app you can still use the MapsIndoors CMS to save the Google Street View image information to a location. When the Panorama image is set the location gets populated with a `streetViewConfig property. Please see below for an example.
 
 Location Object:
 
@@ -165,7 +165,7 @@ Please see the official [Google Street View Service documentation](https://devel
 
 As mentioned above the IndoorView feature only support public available Google Street View imagery but [here](https://developers.google.com/maps/documentation/javascript/streetview#CustomStreetView) you will find some well-written documentation on how to get up running with your private hosted panorama images and the Street View Service for the JavaScript API witch at the moment isn’t supported in the Google Maps SDK’s for iOS and Android.
 
-When the photographer is done all the panorama file names should include a panorama Id, zoom, tileX and tileY property, and the panorama can be called from the server like below. Please see the [sample link](https://developers.google.com/maps/documentation/javascript/examples/streetview-custom-simple) for much more information on this.
+When the photographer is done all the panorama file names should include a `panoramaId`, `zoom`, `tileX` and `tileY` property, and the panorama can be called from the server like below. Please see the [sample link](https://developers.google.com/maps/documentation/javascript/examples/streetview-custom-simple) for much more information on this.
 
 ```javascript
 function getCustomPanoramaTileUrl(pano, zoom, tileX, tileY) {
