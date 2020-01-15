@@ -139,7 +139,7 @@ Location Object:
 }
 ```
 
-The parameters above can be used to show a static Street View image through the Street View Static API. Please see [the documentation](https://developers.google.com/maps/documentation/streetview/intro) for more information.
+The parameters above can be used to show a static Street View image through the Street View Static API. Please see [the Street View documentation](https://developers.google.com/maps/documentation/streetview/intro) for more information.
 
 A Street View panorama image can be initialized in a `<div>` the following way:
 
