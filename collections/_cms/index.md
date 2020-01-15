@@ -110,7 +110,7 @@ Take a picture of your location and uploaded it here. Pictures on locations make
 > IndoorView is only supported for web
 {: .mi-careful}
 
-To get started using the IndoorView feature for your locations please make sure that the Google Street View panorama images are publicly available for your building by examining [Google Maps](https://www.google.com/maps). If no imagery is available then please contact a certified Street View Photographer [here](https://www.google.com/streetview/contacts-tools/).
+To get started using the IndoorView feature for your Locations, please make sure that the _Google Street View panorama images_ are publicly available for your building by looking at [Google Maps](https://www.google.com/maps). If no imagery is available, please [contact a certified Street View Photographer](https://www.google.com/streetview/contacts-tools/).
 
 1. Click "Set Street View image”
   - This will open a Google Street View window showing an image closest to this Location. Please note that the MapsIndoors CMS look for panorama images within a certain radius from the location position, so make sure to have panorama images published in that area.
