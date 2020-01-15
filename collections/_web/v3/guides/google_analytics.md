@@ -6,11 +6,14 @@ nav_weight: 1100
 published: true
 date: 2020-01-15
 ---
+
 ## Overview
+
 In this, we will take a look at Google Analytics.
 Google Analytics is a free tools that gives you the opportunity to analyze data to get a deeper understanding of your customers and how they use your app.
 
 ### Get started
+
 To start seeing stats for your [standard web app](http://clients.mapsindoors.com/):
 
 1. Create or sign in to your Analytics account:
@@ -24,9 +27,8 @@ To start seeing stats for your [standard web app](http://clients.mapsindoors.com
 
 When done you will within 24 hours start receiving stats and events in your Google Analytics Dashboard.
 
-
-
 ### Events overview
+
 When a Property Id is added to MapsIndoors you will see the following events in Google Analytics.
 
 > Events seen below is only tracked in the Standard Web App.
@@ -47,6 +49,5 @@ When a Property Id is added to MapsIndoors you will see the following events in 
 | | | Avoided stairs enabled for directions to external location | Avoid stairs was enabled |
 | Map | Location clicked on map | "Main Canteen" - locationId | Location name and id |
 | | Cluster clicked on map | "type of locations" type | Location type for selected cluster |
-
 
 For more information please read this article: [https://support.google.com/analytics/answer/1008015](https://support.google.com/analytics/answer/1008015).
