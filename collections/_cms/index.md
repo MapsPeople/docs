@@ -119,7 +119,7 @@ To get started using the IndoorView feature for your Locations, please make sure
 
 **Developing your own app**
 
-When developing your own app you can still use the MapsIndoors CMS to save the Google Street View image information to a location. When the Panorama image is set the location gets populated with a `streetViewConfig property. Please see below for an example.
+When developing your own app, you can still use the MapsIndoors CMS to save the Google Street View image information to a Location. When the Panorama image is set, the Location gets populated with a `streetViewConfig` property. Please see below for an example.
 
 Location Object:
 
