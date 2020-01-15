@@ -174,7 +174,7 @@ function getCustomPanoramaTileUrl(panoId, zoom, tileX, tileY) {
 }
 ```
 
-### Under show advanced
+### Under "Show advanced"
 
 - **Alias:** Add alternative search phrases, for example a restaurant might have aliases of café, dinner, food, lunch etc. Insert a comma between each phrase.
 
