@@ -117,6 +117,19 @@ To get started using the IndoorView feature for your Locations, please make sure
 1. Navigate Street View and find an image and viewing angle that is suitable
 1. Click "Set image”
 
+
+**MapsIndoors support matrix**
+
+| MapsIndoors | Support for IndoorView | Private hosted panorama images|
+| - | - | - |
+|CMS|Yes|No|
+|Web App|Yes|No|
+|Android App|No|No|
+|iOS App|No|No|
+|Web SDK|Yes, through Google Maps Street View API or Static Street View API|No|
+|Android SDK|No|No|
+|iOS SDK|No|No|
+
 **Developing your own app**
 
 When developing your own app, you can still use the MapsIndoors CMS to save the Google Street View image information to a Location. When the Panorama image is set, the Location gets populated with a `streetViewConfig` property. Please see below for an example.
