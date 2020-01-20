@@ -229,12 +229,33 @@ Remember to save before clicking on another Location or changing the page, other
 
 ## Buildings
 
-* Click on the pencil icon to the left of the Building name. A new menu will appear
-* Edit Building name in the available languages
-* Edit Floor names
-* Select a default Floor under "Show advanced".
+**Adding a building**
+
+* Click on the "Add building" button at the top-right of the page and a popup window should appear.
+* Type a building name, search for the building address by typing in the search field or panning the map.
+* Place the red cross on the map at the center of the building's location.
+* Click "Add" and the popup window should close.
+* The building should now appear in the list.
+
+**Editing a building**
+
+* Click on the pencil icon to the left of the Building name. A new menu will appear 
+* Edit Building name in the available languages 
+* Edit floor names
+* Select a default floor under "Show advanced". 
 
    The Building's default Floor is used to manage panning across Buildings in the apps. In order to improve the user experience in the apps, the default Floor is used when the Building panned to doesn't have the floor index of the floor selector.
+
+**Uploading CAD files for a floor**
+
+* Click on the pencil icon to the left of the Building name and a sidebar should appear.
+* Click on "Add floor" or "Update floor" and a popup window should appear.
+* Type the floor name.
+* Select a CAD file.
+* Select any extra files. (optional)
+* Add any extra information in the text field.
+* Click on "Upload" and a spinner should appear with the upload progress.
+* When it is done uploading you should see an added/updated floor name in the list.
 
 ## Routes Access
 
