@@ -218,7 +218,7 @@ When selecting one a more Locations using the checkboxes, 2 options will appear:
 
 - **Location:** Allows you to change the floor of the Locations
 
-- **Active (display and searchable):** If required, select a time period during which the Location will be visible, leave empty if it should always be shown
+- **"Active to and from":** If required, select a time period during which the Location will be active. "Active" in this case means it is visible on the map, and shows up in search results. Leave the date fields empty if the Location should always be displayed  
 
 Remember to save before clicking on another Location or changing the page, otherwise your changes will be lost. To save the changes, click "Save”.
 
