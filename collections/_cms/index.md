@@ -195,7 +195,7 @@ function getCustomPanoramaTileUrl(panoId, zoom, tileX, tileY) {
 
 - **Room Identifier:** This can be edited.
 
-- **Active (display and searchable):** If required, select a time period during which the Location will be visible, leave empty if it should always be shown.
+- **"Active to and from":** If required, select a time period during which the Location will be active. "Active" in this case means it is visible on the map, and shows up in search results. Leave the date fields empty if the Location should always be displayed
 
 - **Location History:** Contains a list of all changes made to a Location. Data comes from the MapsIndoors Audit Log functionality.
 
