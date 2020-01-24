@@ -10,7 +10,8 @@ date: 2020-01-15
 ## Overview
 
 In this, we will take a look at Google Analytics.
-Google Analytics is a free tools that gives you the opportunity to analyze data to get a deeper understanding of your customers and how they use your app.
+Google Analytics is a free tool that gives you the opportunity to analyze data to get a deeper understanding of your customers and how they use your app. An example could be to figure out which places is hardest to find on your venue or what users typically search for when looking for a location.
+
 
 ### Get started
 
@@ -29,25 +30,25 @@ When done you will within 24 hours start receiving stats and events in your Goog
 
 ### Events overview
 
-When a Property Id is added to MapsIndoors you will see the following events in Google Analytics.
+When a Property Id is added to your MapsIndoors solution you will see the following events in Google Analytics.
 
 > Events seen below is only tracked in the Standard Web App.
 {: .mi-careful}
 
 | Category | Action | Label | Description
 | - | - | - | - |
-| Search | Pressed "Enter" key | "Cantee" search query | Entered search query when Enter Key is hit. |
-| | Selected Location in search results list | "Main Cannteen" – locationId ("Cantee" search query) | Location name and id followed by entered search query. |
-| Categories | Selected Category | "Canteens" – categoryId | Category name and id. |
+| Search | Pressed "Enter" key | "Cantee" search query | Entered search query when Enter Key is hit |
+| Search | Selected Location in search results list | "Main Cannteen" – locationId ("Cantee" search query) | Location name and id followed by the entered search query |
+| Categories | Selected Category | "Canteens" – categoryId | Category name and id |
 | Directions | Clicked "Get Directions" | "Main Canteen" – locationId | "Get directions" button was clicked for selected location" |
-| | Got directions | From "User location" to "Main Canteen" – locationId | Directions from users position to an internal location. |
-| | | From "Office" – locationId to "Main Canteen" – locationId | Directions from and too two internal locations. |
-| | | From "Main Canteen" – locationdId to external location | Directions from internal location to external location. |
-| | Clear input | Origin input field | Origin was cleared |
-| | | Destination input field | Destination was cleared |
-| | Selected avoid stairs | Avoided stairs enabled for directions to "Main Canteen" – locationId | Avoid stairs was enabled |
-| | | Avoided stairs enabled for directions to external location | Avoid stairs was enabled |
+| Directions | Got directions | From "User location" to "Main Canteen" – locationId | Directions from users position to an MapsIndoors location |
+| Directions | Got directions | From "Office" – locationId to "Main Canteen" – locationId | Directions between two MapsIndoors locations |
+| Directions | Got directions | From "Main Canteen" – locationdId to external location | Directions from MapsIndoors location to external location |
+| Directions | Clear input | Origin input field | Origin was cleared |
+| Directions | Clear input | Destination input field | Destination was cleared |
+| Directions | Selected avoid stairs | Avoided stairs enabled for directions to "Main Canteen" – locationId | Avoid stairs was enabled |
+| Directions | Selected avoid stairs | Avoided stairs enabled for directions to external location | Avoid stairs was enabled |
 | Map | Location clicked on map | "Main Canteen" - locationId | Location name and id |
-| | Cluster clicked on map | "type of locations" type | Location type for selected cluster |
+| Map | Cluster clicked on map | "type of locations" type | Location type for selected cluster |
 
-For more information please read this article: [https://support.google.com/analytics/answer/1008015](https://support.google.com/analytics/answer/1008015).
+For more information on how to get started with Google Analytics please read this article: [https://support.google.com/analytics/answer/1008015](https://support.google.com/analytics/answer/1008015).
