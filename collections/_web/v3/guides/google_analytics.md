@@ -13,7 +13,6 @@ In this, we will take a look at Google Analytics.
 
 Google Analytics is a free tool that gives you the opportunity to analyze data to get a deeper understanding of your customers and how they use your app. An example could be to figure out which places is hardest to find on your venue or what users typically search for when looking for a location.
 
-
 ### Get started
 
 To start seeing stats for your [standard web app](http://clients.mapsindoors.com/):
