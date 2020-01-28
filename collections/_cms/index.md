@@ -130,7 +130,7 @@ To get started using the IndoorView feature for your Locations, please make sure
 |Android SDK|No|No|
 |iOS SDK|No|No|
 
-IndoorView only supports publicly available Google Street View imagery. If you will like to know more about privately hosted panorama images please see [Googles Custom Street View documentation](https://developers.google.com/maps/documentation/javascript/streetview#CustomStreetView).
+IndoorView only supports **publicly** available Google Street View imagery. If you would like to know more about **privately** hosted panorama images, please see [Googles Custom Street View documentation](https://developers.google.com/maps/documentation/javascript/streetview#CustomStreetView).
 
 **Developing your own app**
 
