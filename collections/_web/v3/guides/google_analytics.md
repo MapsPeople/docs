@@ -21,7 +21,7 @@ To start seeing stats for your [standard web app](http://clients.mapsindoors.com
 * Go to [google.com/analytics](https://marketingplatform.google.com/about/analytics/)
 * Do one of the following:
   * To create an account, click "Start for free".
-  * To sign in to your account, Click Sign in to Analytics.
+  * To sign in to your account, Click "Sign in to Analytics".
 
 1. [Set up a property in your Analytics account](https://support.google.com/analytics/answer/1042508). A [property](https://support.google.com/analytics/answer/2649554?hl=en&ref_topic=1009620) represents your website, and is the collection point in Analytics for the data from your site.
 1. Provide your MapsIndoors project manager with your newly created Property ID.
