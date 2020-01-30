@@ -139,6 +139,15 @@ Specifically, Jekyll uses a converter called [kramdown](https://kramdown.gettalo
 {: .mi-warning}
 ```
 
+#### Linting Markdown
+
+To ensure consistency throughout the Markdown-files, we use a linter. The best linter for VS Code is the extension with the telling name "[VS Code Markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)".
+
+Two rules are turned off specifically:
+
+* [MD013 - Line length](https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md013)
+* [MD033 - No inline HTML](https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md033)
+
 ### Jekyll tips
 
 Jekyll offers [some extra features](https://jekyllrb.com/docs/usage/) when previewing content on your own machine.
