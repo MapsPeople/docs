@@ -16,9 +16,11 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 ### Fixed        for any bug fixes.
 ### Security     in case of vulnerabilities.
 -->
+
 ## [3.3.2] - 2020-01-29
 
 ### Fixed
+
 - Fix "Software rendering doesn't support hardware bitmaps" crash.
 
 ## [3.3.1] - 2020-01-13
@@ -134,7 +136,7 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 
 - Better handling of broken custom/advanced icon links.
 
-## [2.0.3] - 2018-06-??
+## [2.0.3] - 2018-06-
 
 ### Added
 
