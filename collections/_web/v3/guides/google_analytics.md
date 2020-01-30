@@ -18,6 +18,7 @@ Google Analytics is a free tool that gives you the opportunity to analyze data t
 To start seeing stats for your [standard web app](http://clients.mapsindoors.com/):
 
 1. Create or sign in to your Analytics account:
+
 * Go to [google.com/analytics](https://marketingplatform.google.com/about/analytics/)
 * Do one of the following:
   * To create an account, click "Start for free".
