@@ -8,6 +8,56 @@ nav_weight: 1000
 # Changelog
 Changelog for MapsIndoors SDK for JavaScript. This document structure is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and the project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [3.6.0] - 2020-01-02
+
+### Changed
+
+- `ShareService.directionsToPhone` now requires country code to be provided separately.
+
+## [3.5.1] - 2019-12-19
+
+### Changed
+
+- Changed the locations service to utilize the new backend APIs' new URL structure.
+
+### Fixed
+
+- Fixed a bug where `VenuesService.getBuildings` calls for Solutions/Venues with no Buildings caused rejection.
+
+## [3.5.0] - 2019-12-17
+
+### Added
+
+- Share service with function to send route directions via text message to phone.
+
+### Fixed
+
+- Fixed a bug where user roles were not passed along to distance matrix call.
+- Fixed bug where `getBuilding` returned `undefined` until the map had been moved.
+
+## [3.4.1] - 2019-10-30
+
+### Added
+
+- Client-side caching. Most requests are now cached in the browser.
+- Added support for separate visibility control of Label and Icon
+
+### Fixed
+
+- The `DirectionsService` will now return a route object with the status `ZERO_RESULTS` if no route could be calculated. Previously it threw an error.
+- Fixed a bug where the `imageURL` property on Locations sometimes would be named `imageurl`.
+
+## [3.4.0] - 2019-08-28
+
+### Changed
+
+- Floor calculation when Building comes into focus according to agreed upon strategy, including respecting default Floor of a Building.
+- The `filter` method now respects the `fitView` boolean also when clearing filter.
+
+### Fixed
+
+- Make sure selected/highlighted Floor is always visible (no need to scroll) when focusing Building.
+
 ## [3.3.2] - 2019-08-15
 ### Fixed
 - App config cache is now based on solution to avoid misconfiguration when switching solution.
