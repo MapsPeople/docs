@@ -343,8 +343,8 @@ Each Geodata element has a number of properties. Let's look at an example - a co
 
     As this is a dictionary setup, the keyname needs to be unique and only contain the ascii chars [a-z] and [0-9]. Use of spaces and unicode chars here is discouraged as it makes it harder to use from the application code side. The char @ is not supported in the keyname as it’s used as a seperator. As an example, if you want to store opening hours here you could use the key openinghours@en as a keyname.
 
-    > Note: BaseType ‘Floor’ doesn’t support properties.
-    {: .mi-careful}
+> Note: BaseType ‘Floor’ doesn’t support properties.
+{: .mi-careful}
 
 #### Example: Area
 
