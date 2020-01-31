@@ -2,9 +2,9 @@
 title: Google Analytics
 parent: guides
 layout: tutorial
-nav_weight: 1100
+nav_weight: 1300
 published: true
-date: 2020-01-15
+date: 2020-01-31
 ---
 
 ## Overview
