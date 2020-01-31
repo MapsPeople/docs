@@ -16,6 +16,20 @@ published: true
 * **User:** Newly created user had no roles and was treated as a legacy user by the CMS.
 * **Route Access:** When two edges on different floors had the same coordinates, it was only possible to create a route element on one of them.
 
+## January 2020 - v3.8.0
+
+### What’s New
+
+* **CAD file upload:** Ability to create new buildings and floors and upload CAD files (.dwg, .dxf) for the floors in the CMS. You can find [a guide in the documentation](https://mapsindoors.github.io/cms/#buildings).
+* **Icon Manager:** Added the option to "skip" uploading icons larger than 128x64px.
+  * When deleting an icon in the Icon Manager that is in use on the map, it is also removed from the map.
+
+### Bug Fixes
+
+* **Icon Manager:** Shows a more descriptive error message when an image fails.
+* **Locations:** Google Street View network now available inside The White House demo solution.
+* **Route Access:** Fixed issue where external doors showed up as elevator doors.
+
 ## January 2020 - v3.7.8
 
 ### Bug Fixes
