@@ -20,6 +20,8 @@ Data is structured in a hierarchy where the top level is your Solution which can
 * Floors
 * Locations (rooms and points of interest)
 
+[![](http://img.youtube.com/vi/1k_wAv8kEXg/0.jpg)](http://www.youtube.com/watch?v=1k_wAv8kEXg "CMS Concepts")
+
 Although a point of interest can be placed within a room, it is not required. Points of interest can also be placed "outside” on the ground level which is also the layer where the Google map exists. In this case the POI belongs to the Venue directly.
 
 ## Navigating the CMS
