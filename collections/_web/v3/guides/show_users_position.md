@@ -2,8 +2,8 @@
 title: Showing the user's location aka. Blue Dot
 parent: guides
 layout: tutorial
-nav_weight: 1300
-published: tru
+nav_weight: 1250
+published: true
 date: 2020-01-31
 ---
 ## Overview
@@ -14,7 +14,7 @@ The tutorial assumes knowledge of how to implement a MapsIndoors map with the Ma
 
 ## How the position is determined
 
-Positioning on the web is generally used by utilizing the [Geolocation API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API) that all modern browsers expose.
+The position is determined by utilizing the [Geolocation API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API), which all modern browsers expose.
 
 Behind the scenes, the browser determines your position based on a number of factors, including IP address, cell towers, GPS, Wifi access points etc. The implementation varies from browser to browser, and from device to device. There is currently no way to tweak the Geolocation API to use different positioning providers.
 
