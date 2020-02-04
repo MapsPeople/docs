@@ -10,7 +10,7 @@ html {
   }
 }
 
-/* 
+/*
 This is an example of overriding a Tachyons-defined class:
 
 .bg-dark-red {
@@ -194,6 +194,7 @@ tr:nth-child(even) {
 .text iframe {
   display: block;
   max-height: 48rem;
+  padding-left: 125px;
 }
 
 .text article aside {
