@@ -20,7 +20,7 @@ Behind the scenes, the browser determines your position based on a number of fac
 
 All browsers will ask the user for permission to share the location by displaying a prompt. This prompt is a part of the browser, thus not customizable.
 
-Also note that the Geolocation API will only work on https websites (and localhost for development).
+Also note that the Geolocation API will only work on `https` websites (and `localhost` for development).
 
 ## The MapsIndoors PositionControl class
 
@@ -33,9 +33,10 @@ An instantiation of this class will generate a button that, when clicked:
 * show a circle representing the position accuracy
 
 Clicking on the button will pan the map, so the current position is in the center of the map.
+
 The button will be blue whenever the position is in center of the map.
 
-If user has granted permission indefinetely, the map will pan to the current position when reloading the app *(this does not work in Internet Explorer 11 due to missing support of the [Permissions API](https://developer.mozilla.org/en-US/docs/Web/API/Permissions_API))*.
+If the user has granted permission indefinitely, the map will pan to the current position when reloading the app *(this does not work in Internet Explorer 11 due to missing support of the [Permissions API](https://developer.mozilla.org/en-US/docs/Web/API/Permissions_API))*.
 
 You will have to add the generated button to the map yourself.
 
