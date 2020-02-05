@@ -10,7 +10,7 @@ date: 2020-01-31
 
 In this tutorial, you will learn how to show a dot on the map, representing the user's current location.
 
-The tutorial assumes knowledge of how to implement a MapsIndoors map with the MapsIndoors JavsScript SDK.
+The tutorial assumes knowledge of how to [implement a MapsIndoors map](../simple_map) with the MapsIndoors JavsScript SDK.
 
 ## How the position is determined
 
