@@ -20,6 +20,8 @@ Data is structured in a hierarchy where the top level is your Solution which can
 * Floors
 * Locations (rooms and points of interest)
 
+View the tutorial video below for more information about terminology and hierarchy.
+
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/1k_wAv8kEXg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Although a point of interest can be placed within a room, it is not required. Points of interest can also be placed "outside” on the ground level which is also the layer where the Google map exists. In this case the POI belongs to the Venue directly.
@@ -32,6 +34,10 @@ There are 2 different roles in the system:
 
 * **Editor** - Editors can create new Locations, make changes to and remove existing Locations
 * **Admin** - Administrators have editor rights and have access to icon settings and users
+
+View the tutorial video below for more information about the menu structure and user roles.
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/sQHOb0llDk0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## The Map
 
@@ -88,6 +94,10 @@ To create a new POI, first make it clear if this is an outdoor POI or placed ins
 After clicking on the box, you will be asked to select a Location Type and Name. The other choices; Description, Categories, Icon are optional.
 
 Select the icon on the map for the Location that you wish to edit, or click on Locations in the main navigation and then choose "View List”. From there you can choose which Location you would like to edit by clicking on the pencil icon.
+
+View the tutorial video below for more information about managing POIs.
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/FejUy9-dhps" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 In the Edit Location Form you can do the following:
 
@@ -207,6 +217,10 @@ Remember to save before clicking on another Location or changing the page, other
 
 ![Locations](https://app.mapsindoors.com/mapsindoors/cms/assets/images/guide3.png)
 
+View the tutorial video below for more information about POI advanced settings.
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/YkvGQE3Fbtg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 To view a list of all Locations in a certain Venue, select ‘List View”.
 
 * To sort the data, click on the column title
@@ -297,11 +311,19 @@ You can add custom data fields to Locations by adding templates to a Location Ty
 
 To display or otherwise use the custom data, your app needs to be customized. The properties are not available in the Standard app, only when building one using the SDK.
 
+View the tutorial video below for more information about location types.
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/PyQOMnJP0Z8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## Categories
 
 ![Categories](https://app.mapsindoors.com/mapsindoors/cms/assets/images/guide7.png)
 
 Ability to add new categories to the list. Click on New Category, add name, click save. Once created, this Category can be added to a specific Location. The categories can be chosen to be displayed in the app, as well as put in a specific order (this can be done under App Configuration).
+
+View the tutorial video below for more information about categories.
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/FMIEJmJwogU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## App configuration
 
