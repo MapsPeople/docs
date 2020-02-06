@@ -97,7 +97,7 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 
 ### Changed
 
-- Updated Google Maps SDK from 3.1.0 to 3.3.0 (see <https://developers.google.com/maps/documentation/ios-sdk/releases> for details).
+- Updated Google Maps SDK from 3.1.0 to 3.3.0 (see [https://developers.google.com/maps/documentation/ios-sdk/releases](https://developers.google.com/maps/documentation/ios-sdk/releases) for details).
 - Default Google Maps styling is now applied to the map, so that we hide Google Maps icons that usually compete with, confuse or disturb the appearance of MapsIndoors location icons.
 
 ### Added

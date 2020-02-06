@@ -39,7 +39,7 @@ Jekyll automatically builds and deploys from the `master` branch in this reposit
     docker run --name midocs --rm --volume="%cd%:/srv/jekyll" -p 4000:4000 -it jekyll/jekyll:4.0 jekyll serve --watch --drafts --config _config.yml,_config-dev.yml
     ```
 
-    This command reads as "use Jekyll version 4.0, run it in a Docker container named `midocs`, remove the container after it's closed, serve Jekyll on <http://0.0.0.0> at port 4000, watch for changes in the Jekyll folder, include drafts"
+    This command reads as "use Jekyll version 4.0, run it in a Docker container named `midocs`, remove the container after it's closed, serve Jekyll on [http://0.0.0.0](http://0.0.0.0) at port 4000, watch for changes in the Jekyll folder, include drafts"
 
 1. Open `http://0.0.0.0:4000`
 

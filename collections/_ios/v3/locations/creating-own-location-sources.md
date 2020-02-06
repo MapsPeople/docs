@@ -164,7 +164,7 @@ func sourceId() -> Int32 {
 }
 ```
 
-[See the sample in PeopleLocationSource.swift](<https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Location> Sources/PeopleLocationSource.swift)
+[See the sample in PeopleLocationSource.swift](https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Location%20Sources/PeopleLocationSource.swift)
 
 ## Create another location source that mocks the availability of meeting rooms or work desks
 
@@ -303,7 +303,7 @@ func onStatusChange(_ status: MPLocationSourceStatus, source: MPLocationSource) 
 }
 ```
 
-[See the sample in RoomAvailabilitySource.swift](<https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Location> Sources/RoomAvailabilitySource.swift)
+[See the sample in RoomAvailabilitySource.swift](https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Location%20Sources/RoomAvailabilitySource.swift)
 
 ## Create a view controller displaying a map that shows the mocked people locations and the mocked room availability on top of a MapsIndoors map
 
@@ -357,4 +357,4 @@ override func viewDidDisappear(_ animated: Bool) {
 }
 ```
 
-[See the sample in LocationSourcesController.swift](<https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Location> Sources/LocationSourcesController.swift)
+[See the sample in LocationSourcesController.swift](https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Location%20Sources/LocationSourcesController.swift)

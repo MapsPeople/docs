@@ -203,7 +203,7 @@ extension String {
 }
 ```
 
-[See the sample in RouteSegmentView.swift](<https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Advanced> Directions/RouteSegmentView.swift)
+[See the sample in RouteSegmentView.swift](https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Advanced%20Directions/RouteSegmentView.swift)
 
 ## Create the controller that displays generated textual instructions segment by segment
 
@@ -342,7 +342,7 @@ extension RouteSegmentsController : UITableViewDelegate {
     }
 ```
 
-[See the sample in RouteSegmentsController.swift](<https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Advanced> Directions/RouteSegmentsController.swift)
+[See the sample in RouteSegmentsController.swift](https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Advanced%20Directions/RouteSegmentsController.swift)
 
 ## Create a controller that renders a map and utilizes interaction between a route rendered on the map and the selected instructions
 
@@ -567,4 +567,4 @@ extension AdvancedDirectionsController : MySearchControllerDelegate {
 }
 ```
 
-[See the sample in AdvancedDirectionsController.swift](<https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Advanced> Directions/AdvancedDirectionsController.swift)
+[See the sample in AdvancedDirectionsController.swift](https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Advanced%20Directions/AdvancedDirectionsController.swift)

@@ -86,11 +86,11 @@ Using a terminal/shell in the project folder, run the following commands:
 
 * Run `npm install` to install all dependencies.
 
-* Run `npm start` for a dev server and then enter a Solution ID in the URL, e.g. <http://localhost:4200/demo.> The app will automatically reload if you change any of the source files.
+* Run `npm start` for a dev server and then enter a Solution ID in the URL, e.g. [http://localhost:4200/demo](http://localhost:4200/demo). The app will automatically reload if you change any of the source files.
 
 ### Live Demo
 
-Check out a running version [here](https://demo.mapsindoors.com/demo).
+Check out a running version [at demo.mapsindoors.com/demo](https://demo.mapsindoors.com/demo).
 
 ## Work with MapsIndoors SDK behind a Firewall
 
