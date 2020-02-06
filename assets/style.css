@@ -208,8 +208,17 @@ tr:nth-child(even) {
   display: block;
 }
 
-.text article aside h4,
-.text article aside ul {
+.text ul li ul {
+    margin-left: .5rem;
+}
+
+.text aside h4,
+.text aside ul,
+.text aside ul li,
+.text aside ul li ul,
+.text aside ul li ul li p,
+.text ul li p,
+.text ul li ul p {
     margin-left: .5rem;
     margin-right: 1rem;
     padding: 0;
