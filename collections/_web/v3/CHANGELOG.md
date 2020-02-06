@@ -7,6 +7,22 @@ nav_weight: 1000
 
 Changelog for MapsIndoors SDK for JavaScript. This document structure is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and the project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [3.7.1] - 2020-02-06
+
+### Fixed
+
+- `PositionControl` no longer regards saved position permission as invoked by clicking on the position control.
+
+## [3.7.0] - 2020-02-03
+
+### Added
+
+- `PositionControl` to show device position on the map.
+
+### Fixed
+
+- Error response body is now relayed correctly.
+
 ## [3.6.0] - 2020-01-02
 
 ### Changed
