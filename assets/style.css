@@ -24,7 +24,6 @@ blockquote {
   border-left: 4px solid rgba(0, 0, 0, 0.16);
   padding-left: 16px;
   font-style: italic;
-  font-size: 1.25em;
   margin-left: 0;
   margin-right: 0;
 }
@@ -184,32 +183,40 @@ tr:nth-child(even) {
 .text ol,
 .text blockquote,
 .text table,
-.text .highlighter-rouge,
+.text div.highlighter-rouge,
 .text iframe {
-  margin-right: auto;
-  margin-left: auto;
+  margin-left: 64px;
   max-width: 48rem;
+}
+
+.text blockquote p {
+    margin-left: 0;
 }
 
 .text iframe {
   display: block;
   max-height: 48rem;
-  padding-left: 125px;
 }
 
 .text article aside {
-  position: sticky;
   top: 24px;
   float: right;
   margin-left: 1rem;
   margin-right: 2rem;
   width: 280px;
   background-color: rgba(0, 0, 0, 0.04);
-  z-index: 10;
+  display: block;
+}
+
+.text article aside h4,
+.text article aside ul {
+    margin-left: .5rem;
+    margin-right: 1rem;
+    padding: 0;
 }
 
 .text article aside ul ul {
-  list-style-type: disc;
+  list-style-type: none;
 }
 
 .red {
