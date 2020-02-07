@@ -311,7 +311,7 @@ You can add custom data fields to Locations by adding templates to a Location Ty
 
 To display or otherwise use the custom data, your app needs to be customized. The properties are not available in the Standard app, only when building one using the SDK.
 
-View the tutorial video below for more information about location types.
+View the tutorial video below for more information about Location Types.
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/PyQOMnJP0Z8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
