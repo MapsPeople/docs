@@ -217,7 +217,7 @@ Remember to save before clicking on another Location or changing the page, other
 
 ![Locations](https://app.mapsindoors.com/mapsindoors/cms/assets/images/guide3.png)
 
-View the tutorial video below for more information about POI advanced settings.
+View the tutorial video below for more information about advanced settings for POIs.
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/YkvGQE3Fbtg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
