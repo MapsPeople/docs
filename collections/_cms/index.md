@@ -321,7 +321,7 @@ View the tutorial video below for more information about location types.
 
 Ability to add new categories to the list. Click on New Category, add name, click save. Once created, this Category can be added to a specific Location. The categories can be chosen to be displayed in the app, as well as put in a specific order (this can be done under App Configuration).
 
-View the tutorial video below for more information about categories.
+View the tutorial video below for more information about Categories.
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/FMIEJmJwogU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
