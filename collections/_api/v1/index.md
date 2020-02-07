@@ -47,6 +47,8 @@ username: <your username>
 password: <your password>
 ```
 
+Replacing `<your username>` and `<your password>` with your own credentials, and leaving `grant_type` and `client_id` as stated above.
+
 The body of the request must end up containing a query string like this:
 
 `grant_type=password&client_id=client&username=<your username>&password=<your password>`
