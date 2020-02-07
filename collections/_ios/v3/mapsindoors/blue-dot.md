@@ -117,7 +117,7 @@ func isRunning() -> Bool {
 }
 ```
 
-[See the sample in MyPositionProvider.swift](<https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Show> My Location/MyPositionProvider.swift)
+[See the sample in MyPositionProvider.swift](https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Show%20My%20Location/MyPositionProvider.swift)
 
 ## Create a view controller displaying a map that shows the user's "mocked" location
 

@@ -185,4 +185,4 @@ view = stackView
 
 At this point you should be able to run this view controller in your own application. You should see a map with some colored buttons below the map. Tapping each button should enable/disable the custom display settings for either a single locations, multiple locations or all locations belonging to a specific type.
 
-[See the sample in ChangeDisplaySettingController.swift](<https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Change> Display Setting/ChangeDisplaySettingController.swift)
+[See the sample in ChangeDisplaySettingController.swift](https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Change%20Display%20Setting/ChangeDisplaySettingController.swift)

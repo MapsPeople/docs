@@ -25,7 +25,7 @@ In Swagger, each `GET` method is pre-loaded with all mandatory fields needed to 
 
 First, log in to the service to get an `access token` to access the data.
 
-This requires a POST request to our Auth API at the following endpoint: <https://auth.mapsindoors.com/connect/token>
+This requires a POST request to our Auth API at the following endpoint: [https://auth.mapsindoors.com/connect/token](https://auth.mapsindoors.com/connect/token)
 
 The Auth API supports multiple ways to log in. The most common way is authenticating with Google, but you can also use your MapsIndoors username and password.
 No matter what login method you choose, you will always need to use the following content-type header when talking to the Auth API:
