@@ -2,6 +2,8 @@
 title: MapsIndoors CMS
 date: 2019-09-30
 published: true
+permalink: cms/
+tags: cms
 eleventyNavigation:
   key: cms
   parent: index

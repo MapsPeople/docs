@@ -1,7 +1,8 @@
 ---
 title: Map Styling
 date: 2019-12-05
-permalink: /ios/v3/map-styling/
+permalink: ios/v3/map-styling/
+tags: ["ios", "v3", "guides"]
 eleventyNavigation:
   key: ios-v3-map-styling
   title: Map Styling

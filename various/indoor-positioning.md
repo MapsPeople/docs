@@ -2,7 +2,7 @@
 title: Indoor Positioning with MapsIndoors
 published: true
 date: 2019-09-30
-permalink: /indoor-positioning-with-mapsindoors/
+permalink: indoor-positioning-with-mapsindoors/
 eleventyNavigation:
   key: indoor-positioning
   parent: various

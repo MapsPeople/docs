@@ -2,7 +2,7 @@
 title: Location Sources in MapsIndoors
 published: true
 date: 2019-09-30
-permalink: /location-sources-in-mapsindoors/
+permalink: location-sources-in-mapsindoors/
 eleventyNavigation:
   key: location-sources
   parent: various

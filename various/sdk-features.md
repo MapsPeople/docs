@@ -1,10 +1,10 @@
 ---
 title: SDK Features
-permalink: /sdk-features/
+permalink: sdk-features/
 date: 2019-09-30
 eleventyNavigation:
   key: sdk-features
-  parent: index
+  parent: various
   title: SDK Features
   order: 50
 ---

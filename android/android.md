@@ -1,22 +1,23 @@
 ---
-title: MapsIndoors SDK for iOS
+title: MapsIndoors SDK for Android
 published: true
 date: 2019-09-30
+permalink: android/
 eleventyNavigation:
-  key: ios
+  key: android
   parent: index
-  title: MapsIndoors SDK for iOS
+  title: MapsIndoors SDK for Android
 ---
 
 ## Choose an SDK version
 
-**Latest:** [iOS SDK v3](/ios/v3/)
+**Latest:** [Android SDK v3](/android/v3/)
 {: .f3 .link}
 
-Legacy: [iOS SDK v2](/ios/v2/)
+Legacy: [Android SDK v2](/ios/v2/)
 {: .f6 .link .mid-gray}
 
-Welcome to the documentation site for the MapsIndoors iOS SDK by MapsPeople.
+Welcome to the documentation site for the MapsIndoors SDK for Android by MapsPeople.
 
 You can integrate MapsIndoors into apps, web solutions and/or information kiosks using the MapsIndoors SDK. Get your hands dirty by digging into our guides, code snippets and reference material for the MapsIndoors navigation platform.
 
