@@ -15,7 +15,7 @@ Please do the following before getting started:
 
 Log in to the CMS and create a new Location Type. Give it a name like e.g. "Kiosk".
 
-Create all your physical kiosks as Locations in the CMS with the Type you just created.
+Create all your physical kiosks as Locations in the CMS with the Location Type you just created.
 
 ## Configure the kiosk
 
@@ -44,7 +44,7 @@ Rememember that if you move the physical kiosk in your buildings you will have t
 
 ### `timeout` aka. "Reset kiosk"
 
-To make the kiosk reset after a fixed time interval, use the `timeout` URL parameter. The `timeout` value is in seconds.
+To make the kiosk reset after a fixed time of inactivity, use the `timeout` URL parameter. The `timeout` value is in seconds.
 
 ## Send SMS with link to route
 
