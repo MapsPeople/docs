@@ -1,59 +1,74 @@
 ---
 layout: tutorial
-title: Setting up a kiosk
+title: Setting your app up for Kiosk mode
 nav_weight: 1300
-date: 2020-01-31
+date: 2020-02-10
 published: false
 ---
 
-### Before getting started
-
 Please do the following before getting started:
 
-* Disabled the kiosk on-screen keyboard.
-
-* Disabled the browsers position.
+* Disable the on-screen keyboard in the operating system of the computer the kiosk will run on
+* Disable the browser's position
 
 ## Create all kiosk in the CMS
 
-Login to the CMS and create a Location Type named eg. "Kiosk".
-Create all kiosks as locations with the type just created.
+Log in to the CMS and create a new Location Type. Give it a name like e.g. "Kiosk".
 
-## Configure a kiosk
+Create all your physical kiosks as Locations in the CMS with the Type you just created.
 
-To enable kiosk mode you need to set a few parameters in the URL first time loading the app on a kiosk. The "?" symbol have to be in front of the first parameter and all the parameters are separated with a “&” symbol.
+## Configure the kiosk
 
-### Fixed origin
+To enable "kiosk mode" you need to set a few parameters in the URL. The `?` symbol have to be in front of the first parameter, and all other parameters are separated with an `&` symbol.
 
-The fixed origin is being configured with the `origin` URL parameter followed by the `location id` of the kiosk. The `location id` can be found in the CMS under the advanced panel. When moving a kiosk in real life the position of the `POI` will have to be updated in the CMS as well.
+This is what the full URL for an app in Kiosk mode will look like:
 
-### Reset kiosk
+[](https://clients.mapsindoors.com/demo/899cf628675f4b0695669529/search?origin=5a0d66192e33469c8909203d&timeout=20)
 
-The timeout time is being configured with the `timeout` URL parameter followed by a value in seconds. Timeout is only activated when the app runs on a device with touch.
+<a href="<https://clients.mapsindoors.com/>demo/899cf628675f4b0695669529/search?origin=5a0d66192e33469c8909203d&timeout=20"><p>https://clients.mapsindoors.com/<strong>demo</strong>/<strong>899cf628675f4b0695669529</strong>/<strong>search?origin=5a0d66192e33469c8909203d</strong><strong>&timeout=20</strong></p></a>
 
-### Send route link via SMS
+Deconstruction the URL, this is what it contains:
 
-The SMS feature needs to be activated from the Deployment CMS under modules. In the solutions `appConfig` the `phoneCountryCode` parameter needs to be set without the “+“ symbol like seen below.
+* **`demo`** is the `SolutionID` (or `Alias`) for your Solution
+* **`899cf628675f4b0695669529`** is the `VenueID`
+* **`?origin=5a0d66192e33469c8909203d`** is the location selected as "fixed origin"
+* **`&timeout=20`** is the timeout period before resetting
 
-```javascript
+### `origin` aka. "Fixed origin"
+
+The "fixed origin" is configured with the `origin` URL parameter followed by the `location id` of the kiosk. The `location id` can be found in the CMS on the Location under the "Advanced" panel.
+
+This is the place from which all directions will be given from.
+
+Make sure this Locations exists in the Venue you set with the `VenueID`.
+
+Rememember that if you move the physical kiosk in your buildings you will have to update the position of the `POI` in the CMS as well.
+
+### `timeout` aka. "Reset kiosk"
+
+To make the kiosk reset after a fixed time interval, use the `timeout` URL parameter. The `timeout` value is in seconds.
+
+## Send SMS with link to route
+
+For the SMS feature to work, MapsPeople needs to be activate it.
+
+Moreover, MapsPeople needs to set `phoneCountryCode` in the Solution's `appConfig` like so:
+
+```json
 {
     ...
     "appSettings": {
-        "phoneCountryCode": "45"
+        "phoneCountryCode": "45" // this is the country code for Denmark
     }
 }
 ```
 
-The "Send as SMS" button only shows when getting a route between two MapsIndoors Locations, but it is not a problem when the browser's position is disabled and a fixed origin is set.
+The "Send as SMS" button only shows when getting a route between two MapsIndoors Locations, but this will not be a problem when the browser's position is disabled, and a fixed origin is set.
 
-The limit for sending an SMS to the same phone number is 3 messages per 10 minutes from the first message send.
+The limit for sending an SMS to the same phone number is 3 messages per 10 minutes.
 
-## URL structure
+## Keeping "kiosk mode" active in the browser
 
-The URL should be structured like seen below.
-Remember to set a venue before setting any URL parameters.
+Once you have constructed the URL with the right parameters, paste it into the browser to see if it looks right.
 
-*<https://clients.mapsindoors.com/>`solutionId`/`venueId`/search?origin=`locationId`&timeout=20*
-
-The White House URL example with a fixed origin and timeout set to 20 seconds:
-[https://clients.mapsindoors.com/demo/899cf628675f4b0695669529/search?origin=5a0d66192e33469c8909203d&timeout=20](https://clients.mapsindoors.com/demo/899cf628675f4b0695669529/search?origin=5a0d66192e33469c8909203d&timeout=20 "Showcase app")
+At this point, do not refresh the browser. If you refresh, the browser will not use the URL parameters, and the app is out of Kiosk mode. To reactivate the Kiosk mode, you need to go to the URL with the parameters again.
