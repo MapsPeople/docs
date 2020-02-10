@@ -11,7 +11,7 @@ Please do the following before getting started:
 * Disable the on-screen keyboard in the operating system of the computer the kiosk will run on
 * Disable the browser's position
 
-## Create all kiosk in the CMS
+## Create kiosk Locations in the CMS
 
 Log in to the CMS and create a new Location Type. Give it a name like e.g. "Kiosk".
 
