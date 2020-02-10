@@ -1,0 +1,93 @@
+<p>This is an example of enabling and disabling location grouping on the map as well as providing custom cluster tapping behavior and custom cluster images.</p>
+<p>Start by creating a <code>UIViewController</code> class that conforms to the <code>MPMapControlDelegate</code> protocol</p>
+<pre><code class="language-swift">class ClusteringController: UIViewController, MPMapControlDelegate {
+</code></pre>
+<p>Add a <code>GMSMapView</code> and a <code>MPMapControl</code> to the class
+Also define a clustering enabling/disabling button and a dictionary to store the clustering images for reuse</p>
+<pre><code class="language-swift">var map: GMSMapView? = nil
+var mapControl: MPMapControl? = nil
+let clusteringButton = UIButton.init()
+var clusteringImageDictionary = Dictionary&lt;String, UIImage&gt;()
+</code></pre>
+<p>Setup map so that it shows the demo venue and initialise mapControl</p>
+<pre><code class="language-swift">self.map = GMSMapView.init(frame: CGRect.zero)
+self.map?.camera = .camera(withLatitude: 57.057964, longitude: 9.9504112, zoom: 20)
+self.mapControl = MPMapControl.init(map: self.map!)
+self.mapControl?.delegate = self
+</code></pre>
+<p>Setup a button that enables/disables the location grouping / clustering mechanism</p>
+<pre><code class="language-swift">clusteringButton.setTitle(&quot;Clustering disabled&quot;, for: .normal)
+clusteringButton.setTitle(&quot;Clustering enabled&quot;, for: .selected)
+clusteringButton.addTarget(self, action: #selector(toggleClustering), for: .touchUpInside)
+clusteringButton.backgroundColor = UIColor.blue
+</code></pre>
+<p>Arrange the map view and the button in a stackview</p>
+<pre><code class="language-swift">let stackView = UIStackView.init(arrangedSubviews: [map!, clusteringButton])
+stackView.axis = .vertical
+view = stackView
+</code></pre>
+<p>Define an objective-c method <code>toggleClustering</code> that will receive events from your button, and toggle the clustering flag:</p>
+<ul>
+<li>Check current state</li>
+<li>Swap state</li>
+<li>Make button reflect the state</li>
+</ul>
+<pre><code class="language-swift">@objc func toggleClustering() {
+    if MPMapControl.locationClusteringEnabled {
+        MPMapControl.locationClusteringEnabled = false
+    } else {
+        MPMapControl.locationClusteringEnabled = true
+    }
+    clusteringButton.isSelected = MPMapControl.locationClusteringEnabled
+}
+</code></pre>
+<p>Define the delegate method <code>didTap</code> that will receive tap events from a cluster marker</p>
+<ul>
+<li>Check if zoom is possible and increment map zoom</li>
+<li>Return true to indicate that you handle the event and do not want default behavior to happen</li>
+</ul>
+<pre><code class="language-swift">func didTap(_ marker: GMSMarker, forPoiGroup locations: [MPLocation]?, moreZoomPossible: Bool) -&gt; Bool {
+    if moreZoomPossible {
+        self.map?.animate(toZoom: self.map!.camera.zoom + 1)
+    }
+    return true
+}
+</code></pre>
+<p>Define the delegate method <code>getImageSizeForPoiGroup</code> that provides the size of the potential cluster</p>
+<ul>
+<li>Check if zoom is possible and increment map zoom</li>
+<li>Return true to indicate that you handle the event and do not want default behavior to happen</li>
+</ul>
+<pre><code class="language-swift">func getImageSizeForPoiGroup(withCount count: UInt, clusterId: String) -&gt; CGSize {
+    let width = 48 * (Int(log10(Double(count))) + 1)
+    let height = 48
+    return CGSize.init(width: width, height: height)
+}
+</code></pre>
+<p>Define the delegate method <code>getImageForPoiGroup</code> that asynchronously provides the image of the potential cluster</p>
+<pre><code class="language-swift">func getImageForPoiGroup(_ poiGroup: [MPLocation], imageSize: CGSize, clusterId: String, completion: @escaping (UIImage?) -&gt; Void) -&gt; Bool {
+</code></pre>
+<p>In <code>getImageForPoiGroup</code> create a string hash for the image</p>
+<pre><code class="language-swift">let imgHash = &quot;img\(poiGroup.count)\(clusterId)&quot;
+</code></pre>
+<p>In <code>getImageForPoiGroup</code> check if image already exists. If image does not exist, go in a background thread to get a dummy image and call the completion handler. Return true to indicate that you handle the clustering image.</p>
+<pre><code class="language-swift">var img = clusteringImageDictionary[imgHash]
+if img == nil {
+    DispatchQueue.global().async {
+        let imgUrlString = &quot;https://placem.at/people?txt=\(poiGroup.count)&amp;random=\(Int.random(in: 0 ..&lt; 10))&amp;w=\(imageSize.width*2)&amp;h=\(imageSize.height*2)&quot;
+        let imgUrl = URL(string: imgUrlString)
+        do {
+            let imgData = try Data.init(contentsOf: imgUrl!)
+            img = UIImage(data: imgData, scale: 2)
+            completion(img)
+            self.clusteringImageDictionary[imgHash] = img
+        } catch {
+            completion(nil)
+        }
+    }
+} else {
+    completion(img)
+}
+return true
+</code></pre>
+<p><a href="https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Clustering/ClusteringController.swift">See the sample in ClusteringController.swift</a></p>

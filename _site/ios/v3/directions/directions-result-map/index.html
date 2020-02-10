@@ -1,0 +1,114 @@
+<p>In this tutorial we will request a route, list the route parts and render these on a Google Map. A MapsIndoors route is made of one or more legs, each containing one or more steps.</p>
+<p>We will start by making the controller that renders the route from the input of a route, a leg index and optionally a step index. Start by creating a <code>UIViewController</code> implementation that conforms to <code>MPDirectionsRendererDelegate</code></p>
+<pre><code class="language-swift">class ShowRouteOnMapController: UIViewController, MPDirectionsRendererDelegate {
+</code></pre>
+<p>Setup member variables for <code>MySearchController</code>:</p>
+<ul>
+<li>An instance of type <code>GMSMapView</code></li>
+<li>An instance of type <code>MPMapControl</code></li>
+<li>An instance of type <code>MPRoute</code> (the route object)</li>
+<li>A leg index</li>
+<li>A step index</li>
+</ul>
+<pre><code class="language-swift">var map: GMSMapView? = nil
+var mapControl: MPMapControl? = nil
+var route:MPRoute? = nil
+var leg:Int = -1
+var step:Int = -1
+</code></pre>
+<p>Create an initializer for your input parameters</p>
+<pre><code class="language-swift">convenience init(_ route:MPRoute, _ leg:Int, _ step:Int) {
+    self.init(nibName:nil, bundle:nil)
+    self.route = route
+    self.leg = leg
+    self.step = step
+}
+</code></pre>
+<p>Setup the Google map and your <code>MPMapControl</code> instance</p>
+<pre><code class="language-swift">self.map = GMSMapView.init(frame: CGRect.zero)
+self.view = self.map
+self.map?.camera = .camera(withLatitude: 57.057964, longitude: 9.9504112, zoom: 20)
+self.mapControl = MPMapControl.init(map: self.map!)
+</code></pre>
+<p>Inside <code>viewDidAppear</code>, setup a directions renderer and assign the Google map, route object and leg/step indices. Eventually, call the animate method to make it animate from the start to end of the leg/step</p>
+<pre><code class="language-swift">let renderer = MPDirectionsRenderer.init()
+
+renderer.delegate = self
+renderer.fitBounds = true
+
+renderer.map = self.map
+renderer.route = route
+
+renderer.routeLegIndex = leg
+renderer.routeStepIndex = step
+renderer.animate(5)
+</code></pre>
+<p>In the <code>floorDidChange</code> delegate method change the floor on your <code>MPMapControl instance</code></p>
+<pre><code class="language-swift">func floorDidChange(_ floor: NSNumber) {
+    mapControl?.currentFloor = floor
+}
+</code></pre>
+<p><a href="https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Show%20Route/ShowRouteOnMapController.swift">See the sample in ShowRouteOnMapController.swift</a></p>
+<h2>Create the controller that requests the route, and list the route in a table</h2>
+<p>A MapsIndoors route is made of one or more legs, each containing one or more steps.</p>
+<p>Start by creating a <code>UIViewController</code> implementation</p>
+<pre><code class="language-swift">class ShowRouteController: UITableViewController {
+</code></pre>
+<p>Add a <code>MPRoute</code> property to the class</p>
+<pre><code class="language-swift">var route:MPRoute? = nil
+</code></pre>
+<p>Inside <code>viewDidLoad</code>, setup a directions service, call the directions service and save the route result to your <code>MPRoute</code> property</p>
+<pre><code class="language-swift">let directions = MPDirectionsService.init()
+
+let origin = MPPoint.init(lat: 57.057917, lon: 9.950361, zValue:0)
+let destination = MPPoint.init(lat: 57.058038, lon: 9.950509, zValue:1)
+
+let directionsQuery = MPDirectionsQuery.init(originPoint: origin!, destination: destination!)
+
+directions.routing(with: directionsQuery) { (route, error) in
+    self.route = route
+    self.tableView.reloadData()
+}
+</code></pre>
+<p>Override <code>numberOfRowsInSection</code> to return the number of steps in the current leg plus the leg itself</p>
+<pre><code class="language-swift">override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -&gt; Int {
+    if let leg:MPRouteLeg = route?.legs?[section] as? MPRouteLeg {
+        return leg.steps!.count + 1
+    }
+    return 0
+}
+</code></pre>
+<p>Override <code>numberOfSections</code> to return the number of legs</p>
+<pre><code class="language-swift">override func numberOfSections(in tableView: UITableView) -&gt; Int {
+    if let legs = route?.legs?.count {
+        return legs
+    }
+    return 0
+}
+</code></pre>
+<p>Override <code>titleForHeaderInSection</code> to return the leg index</p>
+<pre><code class="language-swift">override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -&gt; String? {
+    return &quot;Route Leg \(section)&quot;
+}
+</code></pre>
+<p>Override <code>tableView:cellForRowAt</code> to return leg index and step index if applicable</p>
+<pre><code class="language-swift">override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -&gt; UITableViewCell {
+    let cell = UITableViewCell.init()
+
+    if indexPath.row &gt; 0 {
+        cell.textLabel?.text = &quot;Show leg \(indexPath.section), step \(indexPath.row - 1)&quot;
+    } else {
+        cell.textLabel?.text = &quot;Show leg \(indexPath.section), all steps&quot;
+    }
+    cell.accessibilityIdentifier = cell.textLabel?.text
+
+    return cell
+}
+</code></pre>
+<p>Override <code>tableView:didSelectRowAt</code> to push a new view controller</p>
+<pre><code class="language-swift">override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let vc = ShowRouteOnMapController.init(route!, indexPath.section, indexPath.row - 1)
+    navigationController?.pushViewController(vc, animated: true)
+}
+</code></pre>
+<p><a href="https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Show%20Route/ShowRouteController.swift">See the sample in ShowRouteController.swift</a></p>

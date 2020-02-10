@@ -1,0 +1,68 @@
+<blockquote>
+<p>A <a href="https://www.markdownguide.org/android/v3">newer version</a> of the MapsIndoors SDK for Android is available. The legacy version will not receive new features and will only get critical bugfix and security updates.
+{: .mi-warning}</p>
+</blockquote>
+<p>This is part 2 of the tutorial of managing a blue dot on the map. <a href="../showuserlocationdemopositionprovider">In Part 1 we created the position provider</a>. Now we will create a Fragment displaying a map that shows the users (mock) location.</p>
+<p>Create a class <code>ShowUserLocationFragment</code> that inherits from <code>Fragment</code>.</p>
+<pre><code class="language-java">public class ShowUserLocationFragment extends Fragment {
+</code></pre>
+<p>Add a <code>GoogleMap</code> and a <code>MapControl</code> to the class</p>
+<pre><code class="language-java">GoogleMap mGoogleMap;
+MapControl mMapControl;
+</code></pre>
+<p>Add a map fragment</p>
+<pre><code class="language-java">SupportMapFragment mMapFragment;
+</code></pre>
+<p>The lat lng of the Venue</p>
+<pre><code class="language-java">static final LatLng VENUE_LAT_LNG = new LatLng( 57.05813067, 9.95058065 );
+</code></pre>
+<p>Set the API key to the MI solution</p>
+<pre><code class="language-java">if( !MapsIndoors.getAPIKey().equalsIgnoreCase( getString( R.string.mi_api_key ) ) )
+{
+    MapsIndoors.setAPIKey( getString( R.string.mi_api_key ) );
+}
+if( getActivity() == null )
+{
+    return;
+}
+</code></pre>
+<p>Instanciate and init the mapControl object</p>
+<pre><code class="language-java">mMapControl = new MapControl( getActivity(), mMapFragment, mGoogleMap );
+mMapControl.init( miError -&gt; {
+    if( miError == null )
+    {
+        Activity context = getActivity();
+        if( context != null )
+        {
+            context.runOnUiThread( () -&gt; {
+                mMapControl.selectFloor( 1 );
+                mGoogleMap.animateCamera( CameraUpdateFactory.newLatLngZoom( VENUE_LAT_LNG, 20f ) );
+            });
+        }
+    }
+});
+</code></pre>
+<ul>
+<li>Create an instance of the 'DemoPositionProvider' that we defined previously</li>
+</ul>
+<pre><code class="language-java">DemoPositionProvider demoPositionProvider = new DemoPositionProvider();
+</code></pre>
+<ul>
+<li>Assign the <code>DemoPositionProvider</code> instance to the <code>MapsIndoors.positionProvider</code> by calling the 'MapsIndoors.setPositionProvider'</li>
+</ul>
+<pre><code class="language-java">MapsIndoors.setPositionProvider(demoPositionProvider);
+</code></pre>
+<ul>
+<li>Start positioning</li>
+</ul>
+<pre><code class="language-java">demoPositionProvider.startPositioning(null);
+</code></pre>
+<ul>
+<li>Tell the mapControl to show the users location</li>
+</ul>
+<pre><code class="language-java">mMapControl.showUserPosition(true);
+</code></pre>
+<p>In the 'onDestroyView' method, we need to free the MapsIndoors PositionProvider</p>
+<pre><code class="language-java">MapsIndoors.setPositionProvider(null);
+</code></pre>
+<p><a href="https://github.com/MapsIndoors/MapsIndoorsAndroid-Demo-Samples/blob/master/app/src/main/java/com/mapsindoors/showuserLocation/ShowUserLocationFragment.java">See the sample in ShowUserLocationFragment.java</a></p>

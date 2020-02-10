@@ -1,0 +1,80 @@
+<blockquote>
+<p>A <a href="https://www.markdownguide.org/android/v3">newer version</a> of the MapsIndoors SDK for Android is available. The legacy version will not receive new features and will only get critical bugfix and security updates.
+{: .mi-warning}</p>
+</blockquote>
+<p>This is an example of creating a simple search experience using MapsIndoors. We will create a map with a search button that leads to another Fragment that handles the search and selection. On selection of a location, we go back to the map and shows the selected location on the map.</p>
+<p>We will start by creating a simple search controller that handles search and selection of MapsIndoors locations</p>
+<p>Declare a listener for our location selection with a <code>onUserSelectedLocation</code> method</p>
+<pre><code class="language-java">public class SearchFragment extends Fragment {
+</code></pre>
+<p>Setup member variables for <code>SearchFragment</code>:</p>
+<ul>
+<li>An instance of type <code>LocationQuery.Builder</code></li>
+<li>An instance of type <code>LocationQuery</code></li>
+<li>The selection listener</li>
+<li>A List View to show the search result</li>
+<li>Some view components</li>
+</ul>
+<pre><code class="language-java">LocationQuery.Builder iLocsQueryBuilder;
+LocationQuery mSearchQuery;
+OnFragmentInteractionListener mListener;
+ListView mMainMenuList;
+View mMainView;
+EditText mSearchEditTextView;
+ImageButton mSearchClearBtn;
+IconTextListAdapter mListAdapter;
+ViewFlipper mViewFlipper;
+ImageButton mBackButton;
+</code></pre>
+<p>Init and setup the listView.</p>
+<pre><code class="language-java">mListAdapter = new IconTextListAdapter(getContext(),new ArrayList&lt;&gt;());
+mMainMenuList.setAdapter(mListAdapter);
+mMainMenuList.setClickable( true );
+mMainMenuList.setOnItemClickListener(mAdapterViewOnItemClickListener);
+mMainMenuList.invalidate();
+</code></pre>
+<p>Instanciate the query builder</p>
+<pre><code class="language-java">iLocsQueryBuilder = new LocationQuery.Builder();
+</code></pre>
+<p>Init and setup the view components for a better search experience.</p>
+<p>Note: Creating a textwatcher as it's needed for software keyboard support.</p>
+<pre><code class="language-java">mSearchEditTextView.addTextChangedListener(mEditTextViewTextWatcher);
+mSearchEditTextView.setOnFocusChangeListener(mEditTextViewOnFocusChangeListener);
+</code></pre>
+<p>Close keyboard and search when user presses search on the keyboard:</p>
+<pre><code class="language-java">mSearchEditTextView.setOnEditorActionListener(mEditTextViewOnEditorActionListener);
+</code></pre>
+<p>Close keyboard and search when user presses enter:</p>
+<pre><code class="language-java">mSearchEditTextView.setOnKeyListener(mEditTextOnKeyListener);
+</code></pre>
+<p>Clear search button</p>
+<pre><code class="language-java">mSearchClearBtn.setOnClickListener(mClearSearchButtonClickListener);
+mSearchClearBtn.setOnFocusChangeListener(mClearSearchButtonFocusChangeListener);
+</code></pre>
+<p>Clear search button</p>
+<pre><code class="language-java">mCSearchLocationsProvider = new MPLocationsProvider();
+</code></pre>
+<p>Whenever a user clicks a search result the 'onUserSelectedLocation' of the FragmentInteractionListener is called .</p>
+<pre><code class="language-java">AdapterView.OnItemClickListener mAdapterViewOnItemClickListener = new AdapterView.OnItemClickListener() {
+    @Override
+    public void onItemClick( AdapterView&lt; ? &gt; parent, View view, int position, long id )
+    {
+        closeKeyboard();
+        if( mListener != null )
+        {
+            mListener.onUserSelectedLocation( (Location) mListAdapter.getItem( position ) );
+        }
+    }
+};
+</code></pre>
+<p>Declare an interface that will handle the communication between the fragment and the activity.</p>
+<pre><code class="language-java">public interface OnFragmentInteractionListener {
+    void onUserSelectedLocation(Location loc);
+}
+public static SearchFragment newInstance()
+{
+    return new SearchFragment();
+}
+</code></pre>
+<p>In <a href="../searchmapdemosearchmapfragment">Part 2</a> we will create the map fragment that displays the search result.</p>
+<p><a href="https://github.com/MapsIndoors/MapsIndoorsAndroid-Demo-Samples/blob/master/app/src/main/java/com/mapsindoors/searchmapdemo/SearchFragment.java">See the sample in SearchFragment.java</a></p>

@@ -1,0 +1,11 @@
+{
+  "title": "Markdown Guide",
+  "url": "https://www.markdownguide.org",
+  "baseurl": "",
+  "repo": "http://github.com/mattcone/markdown-guide",
+  "comments": false,
+  "author": {
+    "name": "Matt Cone"
+  },
+  "og_locale": "en_US"
+}

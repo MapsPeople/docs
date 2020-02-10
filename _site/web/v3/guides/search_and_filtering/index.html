@@ -1,0 +1,48 @@
+<h2>Search and filtering</h2>
+<script async src="https://jsfiddle.net/mapspeople/k2jynm47/embed/html,result/"></script>
+<h3>Search</h3>
+<p>The <code>mapsindoors.LocationsService</code> offers the <code>getLocations</code> function. This function can be used for searching for POIs.
+It will return a Promise that gets resolved when the query has executed.</p>
+<p>See <a href="https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/LocationsService.html#getLocations">LocationsService.getLocations</a> for more information.</p>
+<pre><code class="language-javascript">searchElement.addEventListener('input', debounce((e) =&gt; {
+    const value = e.target.value;
+    if (value &gt; '') {
+        mapsindoors.LocationsService.getLocations({ q: value, includeOutsidePOI: true })
+            .then(displayResults)
+            .then(filterMap);
+    } else {
+        clearResults();
+        clearFilter();
+    }
+}, 500));
+</code></pre>
+<p>The <code>debounce</code> method is there to ensure that the service is not being called too rapidly. This method delays the execution of the function by 500ms, unless <code>debounce</code> is called again within 500ms, in which case the timer is reset.</p>
+<p>See this article <a href="https://medium.com/@jamischarles/what-is-debouncing-2505c0648ff1">&quot;What is debouncing&quot; by Jamis Charles</a> for a more detailed description of the <code>debounce</code> concept.</p>
+<p>When the function executes, we check to see if the input is empty or not. If the input is not empty, we proceed to construct the request object.</p>
+<p>When the function executes, we check to see if the input is empty or not. If the input is not empty, we proceed to construct the request object.</p>
+<p>We pass the value as the <code>q</code> property and set the <code>includeOutsidePOI</code> property to <code>true</code>. When the Promise resolves the response is passed to the displayResults helper function.</p>
+<p>If the input is empty, we clear both the result list and reset the map filter by calling the helper functions <code>clearResults</code> and <code>clearFilter</code>.</p>
+<pre><code class="language-javascript">function displayResults(locations) {
+    clearResults();
+
+    if (locations.length &gt; 0) {
+        for (const location of locations) {
+            searchResults.innerHTML += `&lt;li&gt;${location.properties.name}&lt;/li&gt;`;
+        }
+    } else {
+        searchResults.innerHTML = '&lt;li class=&quot;no-results&quot;&gt;No results matched the query.&lt;/li&gt;';
+    }
+
+    return locations;
+}
+</code></pre>
+<p>Two things happen here. First, we clear the previous results. Next, we check if any locations were returned. If so, we loop through them and add them to the result list.</p>
+<p>If there are no locations returned, we show a message to the user stating &quot;No results matched the query.&quot;. Otherwise, we pass the locations on to the next handler called <code>filterMap</code></p>
+<pre><code class="language-javascript">function filterMap(locations) {
+    mapsIndoors.filter(locations.map(location =&gt; location.id), false);
+    return locations;
+}
+</code></pre>
+<p>In the <code>filterMap</code> helper function, we create a list of <code>location id</code>s we can use to filter the POIs on the map by.</p>
+<p>The second parameter tells MapsIndoors not to change the viewport of the map.</p>
+<p>For more information, see <a href="https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/MapsIndoors.html#filter">MapsIndoors.filter in the reference documentation</a></p>

@@ -1,0 +1,283 @@
+<p>Changelog for the MapsIndoors Android SDK. This document structure is based on <a href="http://keepachangelog.com/en/1.0.0/">Keep a Changelog</a> and the project adheres to <a href="http://semver.org/spec/v2.0.0.html">Semantic Versioning</a>.</p>
+<!--
+### Added        for new features.
+### Changed      for changes in existing functionality.
+### Deprecated   for soon-to-be removed features.
+### Removed      for now removed features.
+### Fixed        for any bug fixes.
+### Security     in case of vulnerabilities.
+-->
+<h2>[3.3.2] - 2020-01-29</h2>
+<h3>Fixed</h3>
+<ul>
+<li>Fix &quot;Software rendering doesn't support hardware bitmaps&quot; crash.</li>
+</ul>
+<h2>[3.3.1] - 2020-01-13</h2>
+<h3>Fixed</h3>
+<ul>
+<li>Fix default floor selector crash</li>
+<li>Fix icons loading failure for icons hosted in firebase storage.</li>
+</ul>
+<h2>[3.3.0] - 2019-12-20</h2>
+<h3>Added</h3>
+<ul>
+<li>
+<p>Support of searchable and activity bits for locations.</p>
+</li>
+<li>
+<p>Default floor on buildings:</p>
+<ul>
+<li><code>Building.getDefaultFloor()</code>: Returns a building's default <code>Floor</code>, if any has been set from the CMS.</li>
+<li><code>Building.getDefaultFloorIndex()</code>: Returns a building's default <strong>floor index</strong>, if any has been set from the CMS. It will return <code>Floor.NO_FLOOR_INDEX</code> if the default floor is not available (<code>Building.getDefaultFloor() == null</code>).</li>
+<li><code>Building.getFloorMap()</code>: Returns a list of floor indices and localized names for the given building.</li>
+</ul>
+</li>
+<li>
+<p>Custom fields, exposed in the following classes: <code>Venue</code>, <code>Building</code>, <code>MPLocation</code>, <code>Category</code>, <code>POIType</code>. If available, they can be retrieved by using <code>getField( fieldName )</code>.</p>
+</li>
+<li>
+<p>Status data. For detailed info, please refer to the <a href="https://mapsindoors.github.io/api/v1/#detailed-data-description">status bitfield description</a> in our Integration API documentation.</p>
+<ul>
+<li>The following methods are available in <code>MPLocation</code>:
+<ul>
+<li><code>getStatus()</code>: Returns a status bitfield. For more info, please check the above link.</li>
+<li><code>isActive()</code>: If an element <strong>is not</strong> active, it will <strong>not</strong> be given to the apps.</li>
+<li><code>isSearchable()</code>: If an element <strong>is not</strong> searchable it might be shown on the map, but <strong>is not</strong> show up <strong>in</strong> searches.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Better Display Rule icon and label visibility control by using:</p>
+<ul>
+<li><code>DisplayRule.getIconVisible()</code></li>
+<li><code>DisplayRule.getLabelVisible()</code></li>
+<li><code>LocationDisplayRule.Builder.setShowIcon( show )</code></li>
+<li><code>LocationDisplayRule.Builder.setShowLabel( show )</code></li>
+</ul>
+</li>
+<li>
+<p>New Floor selector:</p>
+<ul>
+<li>Use the new interface (<code>FloorSelectorInterface</code>) to create a custom floor selector.</li>
+<li>Turn on/off the floor selector (default or custom) using <code>MapControl.enableFloorSelector( enable )</code>.</li>
+<li>Query the its current status with <code>MapControl.isFloorSelectorEnabled()</code>.</li>
+</ul>
+</li>
+<li>
+<p>New <code>displaySearchResults</code> overloads in <code>MapControl</code> :</p>
+<ul>
+<li><code>displaySearchResults( inputLocations, animateCamera, cameraPadding, readyListener )</code>.</li>
+<li><code>displaySearchResults( inputLocations, animateCamera, cameraPadding, showInfoWindow, googleMapCameraUpdate, durationMs, googleMapCancelableCallback, readyListener )</code>.</li>
+</ul>
+</li>
+<li>
+<p><code>SolutionInfo.hasLanguage( language )</code> (usage: <code>MapsIndoors.getSolutionInfo().hasLanguage( language )</code>): Check if the given language is available in the current dataset.</p>
+</li>
+<li>
+<p><code>MPMapsIndoorsLocationSource.updateLocations( updatedLocations )</code>: Used to signal an update on the given <code>MPLocation</code> objects if the case the default Location Data Source is extended.</p>
+</li>
+<li>
+<p>New methods in the <code>Building</code> class:</p>
+<ul>
+<li><code>getFloorCount()</code>: Current building total floor count.</li>
+<li><code>getFloorMap()</code>:  A HashMap containing floor index (key), floor name (value) pairs. Note that the floor name is localized.</li>
+</ul>
+</li>
+<li>
+<p>New shortcut methods in <code>MPLocation</code> to query for its geometry type: <code>isLocationOfTypePOI()</code>, <code>isLocationOfTypeRoom()</code>, etc.</p>
+</li>
+</ul>
+<h3>Changed</h3>
+<ul>
+<li><code>MapControl.setFloorSelector( floorSelector )</code>: It takes now a <code>FloorSelectorInterface</code> instead of a <code>IFloorSelector</code>.</li>
+</ul>
+<h3>Deprecated</h3>
+<ul>
+<li>
+<p><code>dbglog.useDebug()</code>: Use <code>dbglog.enableDeveloperMode( enable )</code> or <code>dbglog.enableDeveloperMode( enable, customTagPrefix )</code>.</p>
+</li>
+<li>
+<p><code>dbglog.isDebugMode()</code>: Use <code>dbglog.isDeveloperMode()</code>.</p>
+</li>
+</ul>
+<h3>Removed</h3>
+<ul>
+<li><code>MapControl.setFloorSelectorType( FloorSelectorType )</code>: The new interface only provides Building data for the current visible in the Map View (or the closest to the camera target).</li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li>General bug fixing.</li>
+<li>Stabilizing many behaviours of the SDK.</li>
+</ul>
+<h2>[3.1.1] - 2019-05-27</h2>
+<h3>Fixed</h3>
+<ul>
+<li>Fixed some issues related to the deinitialization of MapControl and MapsIndoors (class)</li>
+</ul>
+<h2>[3.1.0] - 2019-05-21</h2>
+<h3>Added</h3>
+<ul>
+<li>Support for runtime (indoor tiles) map-style switching. Related methods added:
+<ul>
+<li><code>Venue.getMapStyles()</code>: Gets a list of available map styles. Note that all venues share the map styles</li>
+<li><code>Venue.getDefaultMapStyle()</code>: Gets the default map style used by the SDK.</li>
+<li><code>Venue.isMapStyleValid( MapStyle )</code>: Checks the validity of the given map style</li>
+<li><code>MapControl.getMapStyles()</code>: Gets a list of available map styles. Note that all venues share the map styles</li>
+<li><code>MapControl.getMapStyle()</code>:  Gets the current map style set with <code>MapControl.setMapStyle( MapStyle )</code></li>
+<li><code>MapControl.setMapStyle( MapStyle )</code>: Sets the given map style as the current one. It can be invoked before or after <code>MapControl.init()</code></li>
+</ul>
+</li>
+<li>Ability to change a Display Rule visibility at runtime. Related methods:
+<ul>
+<li><code>MapControl.getDisplayRules()</code>: Returns the aggregated display rules</li>
+<li><code>MapControl.getDisplayRule( type )</code>: Returns the display rule with the given name, if any found</li>
+<li><code>LocationDisplayRule.setVisible( show )</code>: Sets this Location Display Rule to be visible (based on the zoom on/off values) or not (marker icon not shown)</li>
+</ul>
+</li>
+<li>MPLocation now exposes its Geometry by using:
+<ul>
+<li><code>MPLocation.getGeometry()</code>: Retrieves the Geometry of an MPLocation (Point, PolygonGeometry, etc.)</li>
+<li><code>MPLocation.getGeometryType()</code>: Returns the Geometry type as a in integer value (Geometry.TYPE_POINT, (Geometry.TYPE_POLYGON, etc.)</li>
+<li><code>MPLocation.setGeometry( polygonGeometry )</code>: Sets the given PolygonGeometry as a location's Geometry</li>
+<li><code>MPLocation.setLocationType( locationType )</code>: Sets the location's type (poi, area, or room)</li>
+</ul>
+</li>
+<li>Location data status listener:
+<ul>
+<li>In version 3, POI data (Locations) loading is not in sync with other data such as buildings, venues, etc. Both <code>MapsIndoors.synchronizeContent()</code> and <code>MapControl.init()</code> callbacks will be invoked once all but Location data is ready to consume. We've added an separate method that sets a listener for Location data only (<code>MapsIndoors.addLocationSourceOnStatusChangedListener()</code>).</li>
+</ul>
+</li>
+</ul>
+<h3>Changed</h3>
+<ul>
+<li>Clustering:
+<ul>
+<li><code>MapControl.setLocationClusteringEnabled( enable )</code> can be only invoked <strong>BEFORE</strong> <code>MapControl.init()</code>; doing so afterwards will throw an exception (if <code>dbglog.useDebug()</code> is set to <code>true</code>)</li>
+</ul>
+</li>
+<li>Updated the network layer so in case of network errors, will serve cached data when/where possible</li>
+</ul>
+<h3>Deprecated</h3>
+<ul>
+<li><code>Venue.getStyles()</code>: Use <code>Venue.getMapStyles()</code> instead</li>
+<li><code>Venue.getDefaultStyle()</code>: Use <code>Venue.getDefaultMapStyle()</code> instead</li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li>Better handling of broken custom/advanced icon links.</li>
+</ul>
+<h2>[2.0.3] - 2018-06-</h2>
+<h3>Added</h3>
+<ul>
+<li><code>MapsIndoors.getAvailableLanguages()</code> returns a list of the solution's available languages or just <code>null</code> if data isn't available</li>
+<li><code>MIConnectivityUtils.isOnline()</code> replaces <code>UrlLoader.isOnline()</code></li>
+<li><code>MapControl.setOnMarkerInfoWindowLongClickListener()</code></li>
+</ul>
+<h3>Changed</h3>
+<ul>
+<li><code>MapsIndoors.getDefaultLanguage()</code> will return now the solution's default language instead of the library's fallback one. If there is no data available yet, this method will now return <code>null</code></li>
+</ul>
+<h3>Deprecated</h3>
+<ul>
+<li><code>UrlLoader.isOnline()</code>. Use <code>MIConnectivityUtils.isOnline()</code> instead</li>
+</ul>
+<h2>[2.0.2] - 2018-06-20</h2>
+<h3>Changed</h3>
+<ul>
+<li><code>Point.equals()</code> will return true if the distance between them is less than 1m. It also takes into account its Z value (altitude)</li>
+<li>Graph data is be now available by default. This will enable offline routing when indoors</li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li>Fixed a crash in <code>MapsIndoors.setLocationsProvider</code> when trying to set a custom locations provider</li>
+</ul>
+<h2>[2.0.1] - 2018-06-11</h2>
+<h3>Fixed</h3>
+<ul>
+<li>The blue dot (current user location) didn't move after the first time it was set.</li>
+</ul>
+<h2>[2.0.0] - 2018-06-07</h2>
+<h2>[2.0.0-rc9] - 2018-06-07</h2>
+<h3>Deprecated</h3>
+<ul>
+<li><code>MPRoutingProvider.setGoogleServerKey()</code>: Set the Google API Key with <code>MapsIndoors.setGoogleAPIKey()</code> and retrieve it via <code>MapsIndoors.getGoogleAPIKey()</code></li>
+</ul>
+<h2>[2.0.0-rc8] - 2018-06-04</h2>
+<h3>Fixed</h3>
+<ul>
+<li><code>MPLocationsAsyncLoader</code>: Internal cache not properly updated on multi-solution projects</li>
+</ul>
+<h2>[2.0.0-rc7] - 2018-06-04</h2>
+<h3>Added</h3>
+<ul>
+<li><code>LocationQuery.Builder.setDataSync()</code>: Sets the location provider in &quot;data sync mode&quot;</li>
+</ul>
+<h2>[2.0.0-rc6] - 2018-05-30</h2>
+<h3>Added</h3>
+<ul>
+<li><code>MapsIndoors.enableOfflineTilesUpdates()</code>: Only used in projects with offline data enabled and set to get indoor tiles embedded in the app</li>
+<li><code>MapControl.setDisplayRuleLabelDefaultMaxCharLength()</code>: This caps all display rule label string lenghts at the given value at render time</li>
+</ul>
+<h3>Deprecated</h3>
+<ul>
+<li>Use the new <code>MPDirectionsRenderer( Context context, GoogleMap map, MapControl mapControl, OnLegSelectedListener legSelectedListener )</code> which takes an instance of MapControl</li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li>Routing: &quot;Next&quot; labels on the map not clickable</li>
+</ul>
+<h2>[2.0.0-rc5] - 2018-05-28</h2>
+<h3>Changed</h3>
+<ul>
+<li>Changed MapsPeople's logo (watermark) to the right (right side in LTR, left on RTL languages)</li>
+</ul>
+<h2>[2.0.0-rc4] - 2018-05-23</h2>
+<h3>Fixed</h3>
+<ul>
+<li>Fixed issue in <code>MapsIndoors.MIImageProvider</code></li>
+</ul>
+<h3>Deprecated</h3>
+<ul>
+<li>In the <code>dbglog</code> class deprecated <code>SetLoglevel()</code>, <code>startTimer()</code> and <code>startTimer()</code></li>
+<li>Use the Kotlin friendly <code>MPDirectionsRenderer( Context context, GoogleMap map, OnLegSelectedListener legSelectedListener )</code> constructor instead of <code>MPDirectionsRenderer( Context context, OnLegSelectedListener legSelectedListener, GoogleMap map )</code></li>
+</ul>
+<h2>[2.0.0-rc3] - 2018-05-17</h2>
+<h3>Added</h3>
+<ul>
+<li>
+<p>Implemented <code>MapsIndoors.getLocationById()</code></p>
+</li>
+<li>
+<p>Added <code>MapsIndoors.isOnline()</code></p>
+</li>
+<li>
+<p>Added <code>MapsIndoors.allowToDownloadData()</code> and <code>MapsIndoors.isAllowedToDownloadData()</code></p>
+</li>
+</ul>
+<h3>Changed</h3>
+<ul>
+<li>Non-sync backend location queries will now return a list of local data references</li>
+</ul>
+<h2>[2.0.0-rc2] - 2018-05-15</h2>
+<h3>Fixed</h3>
+<ul>
+<li>Fixed crash in <code>MapControl</code> when a devices's orientation changed (portrait &lt;-&gt; landscape)</li>
+</ul>
+<h3>Added</h3>
+<ul>
+<li>Added two new methods to the <code>Floor</code> model (<code>getOutline()</code> and <code>getOutlineAsLatLngList()</code>)</li>
+</ul>
+<h2>[2.0.0-rc1] - 2018-05-14</h2>
+<h3>Added</h3>
+<ul>
+<li>Floorplan tile sizes can be now set with <code>MapControl.setTileSize( tileSize )</code>. Tile sizes depend on the Solution (it is not mandatory for all MapsIndoors solutions to support all tile sizes)</li>
+</ul>
+<h3>Changed</h3>
+<ul>
+<li>Changed <code>MPRoutingProvider</code> method signature from <code>setDateTime( Calendar date, boolean isDeparture )</code> to <code>setDateTime( int date, boolean isDeparture )</code>.</li>
+</ul>
+<h3>Deprecated</h3>
+<ul>
+<li>All <code>MapControl.setMapPosition</code>. These were just wrapper methods around <code>GoogleMap.animateCamera</code> and <code>MapControl.moveCamera</code></li>
+</ul>

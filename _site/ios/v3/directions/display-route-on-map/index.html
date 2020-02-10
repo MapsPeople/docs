@@ -1,0 +1,24 @@
+<p>Use the <code>MPDirectionsService</code> class to search for directions. You need to build a query using the <code>MPDirectionsQuery</code> class.</p>
+<p>This example shows how to setup a query for a route and display the result on the map:</p>
+<pre><code class="language-swift">let directions = MPDirectionsService.init()
+let renderer = MPDirectionsRenderer.init()
+renderer.delegate = self
+
+let origin = MPPoint.init(lat: 57.057917, lon: 9.950361, zValue:0)
+let destination = MPPoint.init(lat: 57.058038, lon: 9.950509, zValue:0)
+
+let directionsQuery = MPDirectionsQuery.init(originPoint: origin!, destination: destination!)
+
+directions.routing(with: directionsQuery) { (route, error) in
+    renderer.map = self.map
+    renderer.route = route
+    renderer.routeLegIndex = 0
+    renderer.animate(5)
+}
+</code></pre>
+<p>The route object is seperated into objects of <code>MPRouteLeg</code> and these legs are again seperated indo objects of <code>MPRouteStep</code>. A specific part of the route can be rendered by setting the <code>routeLegIndex</code> and/or <code>routeStepIndex</code> properties.</p>
+<pre><code class="language-swift">let renderer = MPDirectionsRenderer.init()
+renderer.routeLegIndex = 0
+renderer.routeStepIndex = 1
+</code></pre>
+<p>The length of the <code>legs</code> and <code>steps</code> arrays determines the possible values of <code>routeLegIndex</code> and <code>routeStepIndex</code> (<code>0 ..&lt; length</code>).</p>

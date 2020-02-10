@@ -1,0 +1,73 @@
+<blockquote>
+<p>A <a href="https://www.markdownguide.org/ios/v3">newer version</a> of the MapsIndoors SDK for iOS is available. The legacy version will not receive new features and will only get critical bugfix and security updates.
+{: .mi-warning}</p>
+</blockquote>
+<p>This guide explains how to start using a MapsIndoors map in your iOS application using the MapsIndoors iOS SDK v2.</p>
+<p>To benefit from the guides, you will need basic knowledge about:</p>
+<ul>
+<li>iOS Development</li>
+<li>Google Maps iOS SDK</li>
+</ul>
+<p>You can get started in two ways, either by reviewing and modifying the <a href="#basic-examples">basic examples</a> or do the <a href="#setup-cocoapods">clean setup</a>.</p>
+<h2>Basic Examples</h2>
+<p>For simple examples of MapsIndoors implementations, run <code>pod try MapsIndoors</code> (see below for setting up CocoaPods or just clone <a href="https://github.com/MapsIndoors/MapsIndoorsIOS/tree/SDK_V2">this repository</a>) and run the XCode Scheme called <em>Demos</em>. The code for these samples are to find in the <em>/Example/DemoSamples</em> folder.</p>
+<p>You can also follow the steps below to start your app from scratch or to enhance the basic examples, more features will be explained in the <a href="/ios/v2/guides">guides</a>.</p>
+<h2>Setup CocoaPods</h2>
+<p>If you haven’t already, install CocoaPods:
+<a href="https://guides.cocoapods.org/using/getting-started.html">Getting Started with CocoaPods</a></p>
+<h2>Setup MapsIndoors</h2>
+<ul>
+<li>If you don't have an Xcode project yet, create one now and save it to your local machine. (If you're new to iOS development, create a Single View Application.)</li>
+<li>Create a file named Podfile in your project directory. This file defines your project's dependencies.</li>
+<li>Edit the Podfile and add your dependencies. Here is an example:</li>
+</ul>
+<pre><code class="language-swift">source 'https://github.com/CocoaPods/Specs.git'
+target 'YOUR_APPLICATION_TARGET_NAME_HERE' do
+  pod 'MapsIndoors' '{{%product-version%}}'
+end
+</code></pre>
+<ul>
+<li>Save the Podfile.</li>
+<li>Open a terminal and go to the directory containing the Podfile:</li>
+<li><code>cd &lt;path-to-project&gt;</code></li>
+<li>Run the <code>pod install</code> command. This will install the APIs specified in the Podfile, along with any dependencies they may have.</li>
+<li>Close Xcode, and then open (double-click) your project's <em>.xcworkspace</em> file to launch Xcode. From this time onwards, you must use the <em>.xcworkspace</em> file to open the project.</li>
+</ul>
+<p>Add your credentials to your <code>AppDelegate.swift</code> as follows:</p>
+<p>Add the following import statements:</p>
+<pre><code class="language-swift">import GoogleMaps
+import MapsIndoors
+</code></pre>
+<p>Add the following to your <code>application(_:didFinishLaunchingWithOptions:)</code> method:</p>
+<pre><code class="language-swift">GMSServices.provideAPIKey(      &quot;YOUR_GOOGLE_API_KEY&quot;)
+MapsIndoors.provideAPIKey(      &quot;YOUR_MAPSINDOORS_API_KEY&quot;,
+            googleAPIKey:       &quot;YOUR_GOOGLE_API_KEY&quot;)
+</code></pre>
+<p>Replace:</p>
+<ul>
+<li><code>YOUR_GOOGLE_API_KEY</code> with your Google API key</li>
+<li><code>YOUR_MAPSINDOORS_API_KEY</code> with your MapsIndoors API key. (In version 1, this key was known as your Solution Id)</li>
+</ul>
+<h2>Setup a Google Map with MapsIndoors</h2>
+<p>Use the <code>MPMapControl</code> class to set up a Google map with MapsPeople venues, buildings &amp; locations. Place the following code in the <code>viewDidLoad</code> method in your view controller displaying the Google map.</p>
+<pre><code class="language-swift">// Place the map above the demo-building
+let camera = GMSCameraPosition.camera(withLatitude: 57.08585, longitude: 9.95751, zoom: 17)
+// Initialise the Google map
+mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
+view = mapView
+let myMapControl = MPMapControl.init(map: mapView)!
+</code></pre>
+<p>Head to the <a href="/ios/v2/guides">guides</a> to learn about searching, getting directions, display settings and more.</p>
+<h2>Download and Bundle Offline Content</h2>
+<p>If needed, it is possible to bundle MapsIndoors content to make your app work better in offline or poor network conditions. (Please note that while MapsIndoors content can be used offline, Google Maps does not provide offline features. Outdoor wayfinding, Google Places searches will be unavailable and the surrounding map may be unavailable unless it has been cached.)</p>
+<p>In your app targets build phases, add a &quot;Run Script&quot; build phase containing the following command:</p>
+<pre><code class="language-bash">{SRCROOT}/Pods/MapsIndoors/Scripts/derive_ressources.sh --api-key=YOUR_MAPSINDOORS_API_KEY --language=en
+</code></pre>
+<p>Replace:</p>
+<ul>
+<li><code>YOUR_MAPSINDOORS_API_KEY</code> with your MapsIndoors API key.</li>
+<li><code>en</code> with any one of the languages that your MapsIndoors solution supports (Two letter ISO-639-1 language code). If you only have one language deployed you may remove this input parameter entirely</li>
+</ul>
+<p>Depending on the overall size of your MapsIndoors deployment, this may take some time, so during development you might want to check the &quot;Run script only when installing&quot; option. This means that content will only be bundled when archiving for e.g. a release.</p>
+<h2>Work with MapsIndoors SDK behind a Firewall</h2>
+<p>If you need to work with MapsIndoors SDK behind a firewall, you might need to <a href="../../ip-whitelisting">white-list some IP-adresses</a>.</p>

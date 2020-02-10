@@ -1,0 +1,8 @@
+<p>Avoid certain <strong>way types</strong> on the route using the <code>avoidWayTypes</code> property.</p>
+<pre><code class="language-swift">let directionsQuery = MPDirectionsQuery.init(originPoint: origin!, destination: destination!)
+directionsQuery.avoidWayTypes = [&quot;stairs&quot;]
+</code></pre>
+<p>Set a <strong>departure date</strong> or an <strong>arrival date</strong> on the route using the <code>departure</code> or <code>arrival</code> property. It will only make sense to set one of these properties at a time.</p>
+<pre><code class="language-swift">let directionsQuery = MPDirectionsQuery.init(originPoint: origin!, destination: destination!)
+directionsQuery.departure = Date.init()
+</code></pre>

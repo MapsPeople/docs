@@ -1,0 +1,96 @@
+<blockquote>
+<p>A <a href="https://www.markdownguide.org/android/v3">newer version</a> of the MapsIndoors SDK for Android is available. The legacy version will not receive new features and will only get critical bugfix and security updates.
+{: .mi-warning}</p>
+</blockquote>
+<p>This is an example of displaying some details of a MapsIndoors location</p>
+<p>Start by creating a <code>Fragment or an Activity</code> class that contains the Google map fragment</p>
+<pre><code class="language-java">public class LocationDetailsFragment extends Fragment
+</code></pre>
+<p>Add a <code>GoogleMap</code> and a <code>MapControl</code> to the class</p>
+<pre><code class="language-java">MapControl mMapControl;
+GoogleMap mGoogleMap;
+</code></pre>
+<p>Add other needed views for this example</p>
+<pre><code class="language-java">SupportMapFragment mMapFragment;
+TextView detailsTextView;
+</code></pre>
+<p>The lat lng of the Venue</p>
+<pre><code class="language-java">static final LatLng VENUE_LAT_LNG = new LatLng( 57.05813067, 9.95058065 );
+</code></pre>
+<p>Setup the needed views for this example</p>
+<pre><code class="language-java">private void setupView( View rootView )
+{
+    FragmentManager fm = getChildFragmentManager();
+    detailsTextView = rootView.findViewById( R.id.details_text_view );
+    mMapFragment = (SupportMapFragment) fm.findFragmentById( R.id.mapfragment );
+    mMapFragment.getMapAsync( mOnMapReadyCallback );
+}
+</code></pre>
+<p>Once the map is ready move the camera to the venue location and call the setupMapsIndoors</p>
+<pre><code class="language-java">OnMapReadyCallback mOnMapReadyCallback = new OnMapReadyCallback() {
+    @Override
+    public void onMapReady( GoogleMap googleMap )
+    {
+        mGoogleMap = googleMap;
+        mGoogleMap.moveCamera( CameraUpdateFactory.newLatLngZoom( VENUE_LAT_LNG, 13.0f ) );
+        setupMapsIndoors();
+    }
+};
+</code></pre>
+<p>Setup MapsIndoors</p>
+<pre><code class="language-java">void setupMapsIndoors()
+{
+</code></pre>
+<p>Setting the API key to the desired solution</p>
+<pre><code class="language-java">if( !MapsIndoors.getAPIKey().equalsIgnoreCase( getString( R.string.mi_api_key ) ) )
+{
+    MapsIndoors.setAPIKey( getString( R.string.mi_api_key ) );
+}
+</code></pre>
+<p>Setting the Google API key</p>
+<pre><code class="language-java">MapsIndoors.setGoogleAPIKey( getString( R.string.google_maps_key ) );
+if( getActivity() == null )
+{
+    return;
+}
+</code></pre>
+<p>Instanciate and init the MapControl object which will sync data</p>
+<pre><code class="language-java">mMapControl = new MapControl( getActivity(), mMapFragment, mGoogleMap );
+mMapControl.init( miError -&gt; {
+    if( getActivity() != null )
+    {
+        getActivity().runOnUiThread(() -&gt; {
+</code></pre>
+<p>Select a floor and animate the camera to the venue position</p>
+<pre><code class="language-java">mMapControl.selectFloor( 1 );
+mGoogleMap.animateCamera( CameraUpdateFactory.newLatLngZoom( VENUE_LAT_LNG, 20f ) );
+</code></pre>
+<p>When a marker is clicked, get the related MapsIndoors location object and set the label text based on the name and description of the location</p>
+<pre><code class="language-java">mMapControl.setOnMarkerClickListener( marker -&gt; {
+    final Location loc = mMapControl.getLocation( marker );
+    if( loc != null )
+    {
+        marker.showInfoWindow();
+        if( detailsTextView.getVisibility() != View.VISIBLE )
+        {
+            detailsTextView.setVisibility( View.VISIBLE );
+        }
+</code></pre>
+<p>Show the Name and the description of a POI in a label</p>
+<pre><code class="language-java">detailsTextView.setText( &quot;Name: &quot; + loc.getName() + &quot;\nDescription: &quot; + loc.getStringProperty( LocationPropertyNames.DESCRIPTION ) );
+rn true;
+</code></pre>
+<p>Init the MapControl object which will sync data</p>
+<pre><code class="language-java">mMapControl.init( miError -&gt; {
+    if( miError == null )
+    {
+        Activity context = getActivity();
+        if( context != null )
+        {
+            context.runOnUiThread( () -&gt; {
+</code></pre>
+<p>Select a floor and animate the camera to the venue position</p>
+<pre><code class="language-java">mMapControl.selectFloor( 1 );
+mGoogleMap.animateCamera( CameraUpdateFactory.newLatLngZoom( VENUE_LAT_LNG, 20f ) );
+</code></pre>
+<p><a href="https://github.com/MapsIndoors/MapsIndoorsAndroid-Demo-Samples/blob/master/app/src/main/java/com/mapsindoors/locationdetailsdemo/LocationDetailsFragment.java">See the sample in LocationDetailsFragment.java</a></p>

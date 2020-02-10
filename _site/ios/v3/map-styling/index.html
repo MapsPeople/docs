@@ -1,0 +1,45 @@
+<p>There are 2 ways to change the appearance of the map content in MapsIndoors and Google Maps.</p>
+<ul>
+<li>Using Display Rules</li>
+<li>Using Google Maps styling</li>
+</ul>
+<p>Each have its own purpose which will be explained below.</p>
+<h2>Style the Map using Display Rules</h2>
+<p>In the <a href="https://cms.mapsindoors.com/types">MapsIndoors CMS</a> you can set display settings for the different types of locations in your MapsIndoors content. The changes you make in the CMS will take effect whenever you app reboots or when you call <code>MapsIndoors.synchroniseContent()</code> within the app session.</p>
+<p>In some cases, you may also want to programmatically set display settings that defines when and how to show a location. Display settings are defined in a Display Rule object.</p>
+<pre><code class="language-swift">let myDisplayRule = MPLocationDisplayRule(name: &quot;info&quot;, andIcon: UIImage(named : &quot;info&quot;), andZoomLevelOn: 17)
+</code></pre>
+<p>You can set display settings programatically in 3 ways:</p>
+<ul>
+<li>Set a Display Rule for a type of Location</li>
+<li>Set a Display Rule for a single specific Location</li>
+<li>Set a Display Rule for a multiple specific Location</li>
+</ul>
+<h3>Setting Display Rule for a Type</h3>
+<p>To set new display rules for a type of Location, you need to know the types of Locations in your Location dataset, so you may look these up in the CMS. The types can also be retrieved in code with <code>MPSolutionsProvider().getSolution()</code>. The type objects can be read from <code>mySolution.types</code>. The display rule name corresponds to the Location Type we want the rule to apply for. So in order to style a specific type of Locations differently, just put in the type name as the Display Rule name.</p>
+<pre><code class="language-swift">myMapControl.setDisplayRule(MPLocationDisplayRule(name: &quot;info&quot;, andIcon: UIImage(named : &quot;info&quot;), andZoomLevelOn: 17))
+myMapControl.setDisplayRule(MPLocationDisplayRule(name: &quot;parking&quot;, andIcon: UIImage(named : &quot;parking&quot;), andZoomLevelOn: 17))
+myMapControl.setDisplayRule(MPLocationDisplayRule(name: &quot;staircase&quot;, andIcon: UIImage(named : &quot;staircase&quot;), andZoomLevelOn: 18))
+</code></pre>
+<p>Setting a display rule for a type will persist the new display rule for that type throughout the whole app session and across instances of <code>MPMapControl</code>.</p>
+<h3>Setting Display Rule for a Single and Multiple Locations</h3>
+<p>To set new display rules for a Location, you need to have the Location at hand. Locations can be queried for using the  <code>MPLocationService</code>.</p>
+<pre><code class="language-swift">MPLocationService.sharedInstance().getLocationsUsing(myQuery, filter: myFilter) { (locations, error) in
+    let myLocation = locations?.first()
+}
+</code></pre>
+<p>Once you have a location, you can set a custom display rule for it.</p>
+<pre><code class="language-swift">let myDisplayRule = MPLocationDisplayRule.init(name: nil, andIcon: myImage, andZoomLevelOn: 15)!
+myMapControl.setDisplayRule(myDisplayRule, for: myLocation)
+</code></pre>
+<p>And for multiple locations, this is as simple as providing an array instead:</p>
+<pre><code class="language-swift">let myDisplayRule = MPLocationDisplayRule.init(name: nil, andIcon: myImage, andZoomLevelOn: 15)!
+myMapControl.setDisplayRule(myDisplayRule, for: myLocations)
+</code></pre>
+<p>Setting a display rule for specific locations will <em>not</em> persist the new display rule for that type throughout the whole app session and across instances of <code>MPMapControl</code>. In other words, as soon as your instance of <code>MPMapControl</code> is deallocated, the overridden display rules for specific locations will reset to its original display rule.</p>
+<h2>Style the Map using Google Maps Styling</h2>
+<p>MapsIndoors is built on top of Google Maps which has its own way of styling the map. Google Maps styling will only affect the MapsIndoors map if Google Maps has Points of Interest placed inside or near the buildings that you build a MapsIndoors solution for. By default, MapsIndoors applies a Google Maps styling that hides most POI icons that may collide with MapsIndoors content.</p>
+<p>You can apply your own styling to Google Maps using <code>mapStyle</code> on <code>GMSMapView</code>.</p>
+<pre><code class="language-swift">myMapView.mapStyle = GMSMapStyle.init(jsonString: myStyleJSON)
+</code></pre>
+<p>The JSON string that you apply in this case can be built using the <a href="https://mapstyle.withgoogle.com/">Google Maps Styling Wizard</a>. Read more about styling the Google Map in the <a href="https://developers.google.com/maps/documentation/ios-sdk/styling">Google Maps iOS SDK Docs</a>.</p>

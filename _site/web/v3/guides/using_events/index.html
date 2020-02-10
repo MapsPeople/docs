@@ -1,0 +1,37 @@
+<h2>Overview</h2>
+<p>In this, we will take a look at the events that MapsIndoors offers and how to utilize them.</p>
+<blockquote>
+<p>Events are actions or occurrences that happen in the system you are programming,
+which the system tells you about so you can respond to them in some way if desired.
+-- <cite><a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events">MDN web docs</a></cite></p>
+</blockquote>
+<p>For example, if the user clicks on a POI on the map, then you can react to that action by presenting the user with additional info about the POI.</p>
+ <script async src="//jsfiddle.net/mapspeople/s39hk8o7/embed/html,result/"></script>
+<h3>Ready</h3>
+<p>The ready event will be fired when MapsIndoors is done initializing and is ready to interact.</p>
+<pre><code class="language-javascript">google.maps.event.addListener(mapsIndoors, 'ready', (e) =&gt; {
+ log(`MapsIndoors: Ready`);
+});
+</code></pre>
+<h3>Building changed</h3>
+<p>The building changed will be fired when the map is moved around and a new building comes in focus.
+This is also related to the floor selector which will update its view to show the current building floors.</p>
+<p>The event handler is called with a <a href="https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/global.html#Building">building</a> object representing the building in focus.</p>
+<pre><code class="language-javascript">google.maps.event.addListener(mapsIndoors, 'building_changed', (e) =&gt; {
+ log(`Building changed: ${e.buildingInfo.name}`);
+});
+</code></pre>
+<h3>Floor changed</h3>
+<p>The floor changed will be fired when the floor is changed either by clicking the floor selector or by calling setFloor() on the MapsIndoors instance.</p>
+<p>The event handler is called with the floor index of the current floor.</p>
+<pre><code class="language-javascript">google.maps.event.addListener(mapsIndoors, 'floor_changed', (e) =&gt; {
+ log(`Floor changed: ${e}`);
+});
+</code></pre>
+<h3>Click</h3>
+<p>The click event will fire when the user clicks on a POI or area on the map.</p>
+<p>The event handler is called with a <a href="https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/global.html#Location">location</a> object representing the POI or area clicked.</p>
+<pre><code class="language-javascript">google.maps.event.addListener(mapsIndoors, 'click', (location) =&gt; {
+ log(`Clicked: ${location.properties.name}`);
+});
+</code></pre>

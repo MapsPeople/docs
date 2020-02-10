@@ -1,0 +1,18 @@
+{
+  "name": "eleventy-test",
+  "version": "0.0.1",
+  "description": "",
+  "main": "_site/index.html",
+  "dependencies": {},
+  "devDependencies": {
+    "@11ty/eleventy": "^0.10.0",
+    "@11ty/eleventy-navigation": "^0.1.4",
+    "@sanity/cli": "^0.147.8",
+    "del": "^5.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mark Hougaard Jensen",
+  "license": "MIT"
+}

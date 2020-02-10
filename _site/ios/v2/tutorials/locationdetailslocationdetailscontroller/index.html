@@ -1,0 +1,55 @@
+<blockquote>
+<p>A <a href="https://www.markdownguide.org/ios/v3">newer version</a> of the MapsIndoors SDK for iOS is available. The legacy version will not receive new features and will only get critical bugfix and security updates.
+{: .mi-warning}</p>
+</blockquote>
+<p>This is an example of displaying some details of a MapsIndoors location</p>
+<p>Start by creating a <code>UIViewController</code> class that conforms to the <code>GMSMapViewDelegate</code> protocol</p>
+<pre><code class="language-swift">class LocationDetailsController: UIViewController, GMSMapViewDelegate {
+</code></pre>
+<p>Add a <code>GMSMapView</code> and a <code>MPMapControl</code> to the class</p>
+<pre><code class="language-swift">var map: GMSMapView? = nil
+var mapControl: MPMapControl? = nil
+</code></pre>
+<p>Add other views needed for this example</p>
+<pre><code class="language-swift">var detailsView:UIStackView = UIStackView.init()
+var mainView:UIStackView = UIStackView.init()
+var nameLabel = UILabel.init()
+var descrLabel = UILabel.init()
+</code></pre>
+<p>Inside <code>viewDidLoad</code>, setup the map and the mapControl instance</p>
+<pre><code class="language-swift">self.map = GMSMapView.init(frame: CGRect.zero)
+self.map?.delegate = self
+self.map?.camera = .camera(withLatitude: 57.057964, longitude: 9.9504112, zoom: 20)
+self.mapControl = MPMapControl.init(map: self.map!)
+</code></pre>
+<p>Setup the label views</p>
+<pre><code class="language-swift">nameLabel = UILabel.init()
+descrLabel = UILabel.init()
+nameLabel.backgroundColor = UIColor.white
+descrLabel.backgroundColor = UIColor.white
+</code></pre>
+<p>Arrange the labels inside a stackview</p>
+<pre><code class="language-swift">detailsView = UIStackView.init(arrangedSubviews: [nameLabel, descrLabel])
+detailsView.axis = .vertical
+</code></pre>
+<p>Arrange the map and the stackview inside another stackview</p>
+<pre><code class="language-swift">mainView = UIStackView.init(arrangedSubviews: [map!, detailsView])
+mainView.axis = .vertical
+</code></pre>
+<p>When marker is tapped, get related MapsIndoors location object and set label text, based on the name and description of the location</p>
+<pre><code class="language-swift">func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -&gt; Bool {
+    let location = mapControl?.getLocation(marker)
+    if location != nil {
+        self.nameLabel.text = location?.name
+        self.descrLabel.text = location?.descr
+    }
+    return false
+}
+</code></pre>
+<p>When map is tapped, reset label text</p>
+<pre><code class="language-swift">func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
+    self.nameLabel.text = nil
+    self.descrLabel.text = nil
+}
+</code></pre>
+<p><a href="https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Location%20Details/LocationDetailsController.swift">See the sample in LocationDetailsController.swift</a></p>

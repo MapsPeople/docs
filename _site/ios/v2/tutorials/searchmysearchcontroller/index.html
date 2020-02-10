@@ -1,0 +1,87 @@
+<blockquote>
+<p>A <a href="https://www.markdownguide.org/ios/v3">newer version</a> of the MapsIndoors SDK for iOS is available. The legacy version will not receive new features and will only get critical bugfix and security updates.
+{: .mi-warning}</p>
+</blockquote>
+<p>This is an example of creating a simple search experience using MapsIndoors. We will create a map with a search button that leads to another view controller that handles the search and selection. On selection of a location, we go back to the map and shows the selected location on the map.</p>
+<p>We will start by creating a simple search controller that handles search and selection of MapsIndoors locations</p>
+<p>Declare a protocol for our location selection with a <code>didSelectLocation</code> method</p>
+<pre><code class="language-swift">protocol MySearchControllerDelegate {
+    func didSelectLocation(location:MPLocation)
+}
+</code></pre>
+<p>Define <code>MySearchController</code>. In this tutorial our search controller is a <code>UIViewController</code> that implements the protocols <code>UISearchBarDelegate</code>, <code>UITableViewDelegate</code> and <code>UITableViewDataSource</code></p>
+<pre><code class="language-swift">class MySearchController: UIViewController, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource {
+</code></pre>
+<p>Setup member variables for <code>MySearchController</code>:</p>
+<ul>
+<li>An instance of type <code>MPLocationsProvider</code> (the service)</li>
+<li>An instance of type <code>MPLocationQuery</code></li>
+<li>An array of <code>MPLocation</code> to hold your list of results</li>
+<li>Your delegate object</li>
+<li>A search bar view</li>
+<li>A table view</li>
+</ul>
+<pre><code class="language-swift">let locationsProvider = MPLocationsProvider.init()
+let query = MPLocationQuery.init()
+var locations:[MPLocation] = []
+var delegate:MySearchControllerDelegate? = nil
+let tableView = UITableView.init()
+let searchBar = UISearchBar.init()
+</code></pre>
+<p>In <code>viewDidLoad</code>, wire up your view controller to the tableview and search bar.</p>
+<pre><code class="language-swift">searchBar.delegate = self
+tableView.delegate = self
+tableView.dataSource = self
+</code></pre>
+<p>Register a class for the reusable table view cell.</p>
+<pre><code class="language-swift">tableView.register(UITableViewCell.self, forCellReuseIdentifier: &quot;reuseIdentifier&quot;)
+</code></pre>
+<p>Arrange the search bar and the table view in a stack view.</p>
+<pre><code class="language-swift">let stackView = UIStackView.init(arrangedSubviews: [searchBar, tableView])
+stackView.axis = .vertical
+view = stackView
+</code></pre>
+<p>In <code>MySearchController</code>, implement the <code>numberOfSections</code> method, return 1.</p>
+<pre><code class="language-swift">func numberOfSections(in tableView: UITableView) -&gt; Int {
+    return 1
+}
+</code></pre>
+<p>Implement the <code>numberOfRowsInSection</code> method, return the length of your locations array.</p>
+<pre><code class="language-swift">func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -&gt; Int {
+    return locations.count
+}
+</code></pre>
+<p>Implement the <code>textDidChange</code> method:</p>
+<ul>
+<li>Change the query objects query property to reflect the current search text</li>
+<li>Call <code>getLocationsUsing</code> with the modified query</li>
+<li>In the callback block, reset the locations array with new results</li>
+<li>Reload table view</li>
+</ul>
+<pre><code class="language-swift">func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+    query.query = searchText
+    query.queryMode = .autocomplete
+    locationsProvider.getLocationsUsing(query) { (locationData, error) in
+        if error == nil {
+            self.locations = locationData!.list!
+            self.tableView.reloadData()
+        }
+    }
+}
+</code></pre>
+<p>Implement the <code>tableView:cellForRowAt</code> method. Set the <code>cell.textLabel.text</code> to reflect the <em>name</em> of the location of same index.</p>
+<pre><code class="language-swift">func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -&gt; UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: &quot;reuseIdentifier&quot;, for: indexPath)
+    cell.textLabel?.text = locations[indexPath.row].name
+    return cell
+}
+</code></pre>
+<p>Implement the <code>tableView:didSelectRowAt</code> method. In this example we just call the delegate method and dismiss the view controller.
+Delegate method will be handled by <a href="../searchmysearchcontroller">SearchMapController</a></p>
+<pre><code class="language-swift">func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    delegate?.didSelectLocation(location: locations[indexPath.row])
+    self.dismiss(animated: true, completion: nil)
+}
+</code></pre>
+<p>In <a href="../searchmysearchcontroller">Part 2</a> we will create the map view controller that displays the search selection.</p>
+<p><a href="https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Search/MySearchController.swift">See the sample in MySearchController.swift</a></p>
