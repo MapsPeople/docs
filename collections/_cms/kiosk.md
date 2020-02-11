@@ -69,3 +69,5 @@ The limit for sending an SMS to the same phone number is 3 messages per 10 minut
 Once you have constructed the URL with the right parameters, paste it into the browser to see if it looks right.
 
 At this point, do not refresh the browser. If you refresh, the browser will not use the URL parameters, and the app is out of Kiosk mode. To reactivate the Kiosk mode, you need to go to the URL with the parameters again.
+
+Lastly, the computer the Kiosk app runs on needs to be as locked down as possible to avoid the user visiting unauthorized websites. Get in touch with your project manager at MapsPeople to go over the best practices for this.
