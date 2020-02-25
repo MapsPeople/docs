@@ -13,7 +13,6 @@ This will explain how to get started with getting MapsIndoors inside of your Xam
 > Please note: Xamarin support for MapsIndoors is currently in beta.
 {: .mi-careful}
 
-
 ## Getting started
 
 You should start by creating a new Solution containing an iOS and an Android project.
@@ -24,7 +23,7 @@ This is the only Xamarin specific setup you need to get started with MapsIndoors
 
 The rest of the setup will follow what each platform requires. This means that the initialization of MapsIndoors will look very similar to what you know from iOS and Android:
 
-#### iOS
+### iOS
 
 ```csharp
 using MapsIndoorsIos;
@@ -36,7 +35,7 @@ MapsIndoors.ProvideAPIKey("YOUR_MAPSINDOORS_API_KEY", "YOUR_GOOGLE_API_KEY");
 
 Continue reading the [Getting Started with iOS](/ios/v3/getting-started/).
 
-#### Android
+### Android
 
 ```csharp
 using MapsIndoorsAndroid;
