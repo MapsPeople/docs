@@ -26,6 +26,8 @@
             {% assign cms_items = site.cms | sort : 'nav_weight' %}
             {% assign api_items = site.api | where_exp : "item",
             "item.layout != 'default'" | sort : 'nav_weight' %}
+            {% assign xamarin_items = site.xamarin | where_exp : "item",
+            "item.layout != 'default'" | sort : 'nav_weight' %}
 
             <div class="w-third mr4 mt4">
                 <h2>
@@ -84,6 +86,16 @@
                     <a href="/api/" class="link dim near-white">Integration API</a>
                 </h2>
                 {% for item in api_items %}
+                    <ul class="list pl0">
+                        <li class="mb2 {% if item.layout == 'guide' %}b mt4{% endif %}">
+                            <a class="link dim near-white" href="{{ item.url }}">{{ item.title }}</a>
+                        </li>
+                    </ul>
+                {% endfor %}
+                <h2 class="pt4">
+                    <a href="/xamarin/" class="link dim near-white">Xamarin</a>
+                </h2>
+                {% for item in xamarin_items %}
                     <ul class="list pl0">
                         <li class="mb2 {% if item.layout == 'guide' %}b mt4{% endif %}">
                             <a class="link dim near-white" href="{{ item.url }}">{{ item.title }}</a>
