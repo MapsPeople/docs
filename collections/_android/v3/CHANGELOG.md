@@ -3,7 +3,7 @@ title: Changelog
 published: true
 nav_weight: 1000
 permalink: /android/v3/changelog/
-date: 2020-01-29
+date: 2020-02-25
 ---
 
 Changelog for the MapsIndoors Android SDK. This document structure is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and the project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
@@ -16,6 +16,10 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 ### Fixed        for any bug fixes.
 ### Security     in case of vulnerabilities.
 -->
+## [3.3.3] - 2020-02-25
+
+### Fixed
+- Fix the floor for venues, buildings and floors locations.
 
 ## [3.3.2] - 2020-01-29
 
