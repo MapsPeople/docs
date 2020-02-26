@@ -1,5 +1,5 @@
 ---
-title: Xamarin v3
+title: MapsIndoors Xamarin SDK v3
 layout: tutorial
 permalink: /xamarin/v3/
 published: true
