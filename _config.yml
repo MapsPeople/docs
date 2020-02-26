@@ -41,6 +41,9 @@ collections:
   web:
     output: true
     permalink: :collection/:path/
+  xamarin:
+    output: true
+    permalink: :collection/:path/
 
 defaults:
   -
@@ -125,6 +128,12 @@ defaults:
   -
     scope:
       path: "_web/v3"
+    values:
+      version: v3
+      layout: tutorial
+  -
+    scope:
+      path: "_xamarin/v3"
     values:
       version: v3
       layout: tutorial
