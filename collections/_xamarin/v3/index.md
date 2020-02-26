@@ -33,7 +33,7 @@ Google.Maps.MapServices.ProvideApiKey("YOUR_GOOGLE_API_KEY");
 MapsIndoors.ProvideAPIKey("YOUR_MAPSINDOORS_API_KEY", "YOUR_GOOGLE_API_KEY");
 ```
 
-Continue reading the [Getting Started with iOS](/ios/v3/getting-started/).
+Continue reading the [Getting Started with iOS](/ios/v3/getting-started/#get-your-google-maps-api-keys).
 
 ### Android
 
@@ -47,7 +47,7 @@ MapsIndoors.GoogleAPIKey = "YOUR_GOOGLE_API_KEY";
 
 _You will also need to setup your `AndroidManifest.xml` file in Xamarin, like you would for a normal Android project._
 
-Continue reading the [Getting Started with Android](/android/v3/).
+Continue reading the [Getting Started with Android](/android/v3/#setup-google-maps).
 
 ## Further reading
 
