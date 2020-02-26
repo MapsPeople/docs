@@ -19,7 +19,7 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 ## [3.3.3] - 2020-02-25
 
 ### Fixed
-- Fix the floor for venues, buildings and floors locations.
+- Populate the right floor index for venues, buildings, floors search results locations.
 
 ## [3.3.2] - 2020-01-29
 
