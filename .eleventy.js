@@ -1,19 +1,51 @@
 const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
+const inclusiveLangPlugin = require('@11ty/eleventy-plugin-inclusive-language');
+const embedYouTube = require("eleventy-plugin-youtube-embed");
+
+module.exports = function(eleventyConfig) {
+  eleventyConfig.addPlugin(embedYouTube);
+};
+
+module.exports = function(eleventyConfig) {
+  eleventyConfig.addPlugin(inclusiveLangPlugin, {
+    templateFormats: ['md'], // default, add more file extensions here
+
+    // accepts an array or a comma-delimited string
+    words:
+      'simply,obviously,basically,of course,clearly,just,everyone knows,however,easy'
+  });
+};
+
+module.exports = {
+  markdownTemplateEngine: 'njk',
+  htmlTemplateEngine: 'njk'
+};
+
+module.exports = function(eleventyConfig) {
+  eleventyConfig.addLinter('markdownlint', function(
+    content,
+    inputPath,
+    outputPath
+  ) {});
+};
 
 module.exports = function(eleventyConfig) {
   // Copy './assets/' to '_site/assets/'
   eleventyConfig.addPassthroughCopy('assets');
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
   eleventyConfig.setBrowserSyncConfig({
-    ui: false,
-    tunnel: true
+    ui: false
   });
 
   // Get only content that matches multiple tags
   eleventyConfig.addCollection('androidV3', function(collection) {
     return collection.getFilteredByTags('android', 'v3').sort((b, a) => {
-      if (a.data.eleventyNavigation.order > b.data.eleventyNavigation.order) return -1;
-      else if (a.data.eleventyNavigation.order < b.data.eleventyNavigation.order) return 1;
+      if (a.data.eleventyNavigation.order > b.data.eleventyNavigation.order)
+        return -1;
+      else if (
+        a.data.eleventyNavigation.order < b.data.eleventyNavigation.order
+      )
+        return 1;
       else return 0;
     });
   });
@@ -21,53 +53,69 @@ module.exports = function(eleventyConfig) {
     return collection
       .getFilteredByTags('android', 'v3', 'tutorials')
       .sort((b, a) => {
-        if (a.data.eleventyNavigation.order > b.data.eleventyNavigation.order) return -1;
-        else if (a.data.eleventyNavigation.order < b.data.eleventyNavigation.order) return 1;
+        if (a.data.eleventyNavigation.order > b.data.eleventyNavigation.order)
+          return -1;
+        else if (
+          a.data.eleventyNavigation.order < b.data.eleventyNavigation.order
+        )
+          return 1;
         else return 0;
       });
   });
   eleventyConfig.addCollection('iosV2Guides', function(collection) {
-    return collection
-      .getFilteredByTags('ios', 'v2', 'guides')
-      .sort((b, a) => {
-        if (a.data.eleventyNavigation.order > b.data.eleventyNavigation.order) return -1;
-        else if (a.data.eleventyNavigation.order < b.data.eleventyNavigation.order) return 1;
-        else return 0;
-      });
+    return collection.getFilteredByTags('ios', 'v2', 'guides').sort((b, a) => {
+      if (a.data.eleventyNavigation.order > b.data.eleventyNavigation.order)
+        return -1;
+      else if (
+        a.data.eleventyNavigation.order < b.data.eleventyNavigation.order
+      )
+        return 1;
+      else return 0;
+    });
   });
   eleventyConfig.addCollection('iosV3Guides', function(collection) {
-    return collection
-      .getFilteredByTags('ios', 'v3', 'guides')
-      .sort((b, a) => {
-        if (a.data.eleventyNavigation.order > b.data.eleventyNavigation.order) return -1;
-        else if (a.data.eleventyNavigation.order < b.data.eleventyNavigation.order) return 1;
-        else return 0;
-      });
+    return collection.getFilteredByTags('ios', 'v3', 'guides').sort((b, a) => {
+      if (a.data.eleventyNavigation.order > b.data.eleventyNavigation.order)
+        return -1;
+      else if (
+        a.data.eleventyNavigation.order < b.data.eleventyNavigation.order
+      )
+        return 1;
+      else return 0;
+    });
   });
   eleventyConfig.addCollection('iosV2', function(collection) {
-    return collection
-      .getFilteredByTags('ios', 'v2')
-      .sort((b, a) => {
-        if (a.data.eleventyNavigation.order > b.data.eleventyNavigation.order) return -1;
-        else if (a.data.eleventyNavigation.order < b.data.eleventyNavigation.order) return 1;
-        else return 0;
-      });
+    return collection.getFilteredByTags('ios', 'v2').sort((b, a) => {
+      if (a.data.eleventyNavigation.order > b.data.eleventyNavigation.order)
+        return -1;
+      else if (
+        a.data.eleventyNavigation.order < b.data.eleventyNavigation.order
+      )
+        return 1;
+      else return 0;
+    });
   });
   eleventyConfig.addCollection('iosV3', function(collection) {
-    return collection
-      .getFilteredByTags('ios', 'v3')
-      .sort((b, a) => {
-        if (a.data.eleventyNavigation.order > b.data.eleventyNavigation.order) return -1;
-        else if (a.data.eleventyNavigation.order < b.data.eleventyNavigation.order) return 1;
-        else return 0;
-      });
+    return collection.getFilteredByTags('ios', 'v3').sort((b, a) => {
+      if (a.data.eleventyNavigation.order > b.data.eleventyNavigation.order)
+        return -1;
+      else if (
+        a.data.eleventyNavigation.order < b.data.eleventyNavigation.order
+      )
+        return 1;
+      else return 0;
+    });
   });
   eleventyConfig.addCollection('iosV2Tutorials', function(collection) {
     return collection
       .getFilteredByTags('ios', 'v2', 'tutorials')
       .sort((b, a) => {
-        if (a.data.eleventyNavigation.order > b.data.eleventyNavigation.order) return -1;
-        else if (a.data.eleventyNavigation.order < b.data.eleventyNavigation.order) return 1;
+        if (a.data.eleventyNavigation.order > b.data.eleventyNavigation.order)
+          return -1;
+        else if (
+          a.data.eleventyNavigation.order < b.data.eleventyNavigation.order
+        )
+          return 1;
         else return 0;
       });
   });
@@ -75,55 +123,69 @@ module.exports = function(eleventyConfig) {
     return collection
       .getFilteredByTags('ios', 'v3', 'tutorials')
       .sort((b, a) => {
-        if (a.data.eleventyNavigation.order > b.data.eleventyNavigation.order) return -1;
-        else if (a.data.eleventyNavigation.order < b.data.eleventyNavigation.order) return 1;
+        if (a.data.eleventyNavigation.order > b.data.eleventyNavigation.order)
+          return -1;
+        else if (
+          a.data.eleventyNavigation.order < b.data.eleventyNavigation.order
+        )
+          return 1;
         else return 0;
       });
   });
   eleventyConfig.addCollection('webV3Guides', function(collection) {
-    return collection
-      .getFilteredByTags('web', 'v3', 'guides')
-      .sort((b, a) => {
-        if (a.data.eleventyNavigation.order > b.data.eleventyNavigation.order) return -1;
-        else if (a.data.eleventyNavigation.order < b.data.eleventyNavigation.order) return 1;
-        else return 0;
-      });
+    return collection.getFilteredByTags('web', 'v3', 'guides').sort((b, a) => {
+      if (a.data.eleventyNavigation.order > b.data.eleventyNavigation.order)
+        return -1;
+      else if (
+        a.data.eleventyNavigation.order < b.data.eleventyNavigation.order
+      )
+        return 1;
+      else return 0;
+    });
   });
   eleventyConfig.addCollection('webV3', function(collection) {
-    return collection
-      .getFilteredByTags('web', 'v3')
-      .sort((b, a) => {
-        if (a.data.eleventyNavigation.order > b.data.eleventyNavigation.order) return -1;
-        else if (a.data.eleventyNavigation.order < b.data.eleventyNavigation.order) return 1;
-        else return 0;
-      });
+    return collection.getFilteredByTags('web', 'v3').sort((b, a) => {
+      if (a.data.eleventyNavigation.order > b.data.eleventyNavigation.order)
+        return -1;
+      else if (
+        a.data.eleventyNavigation.order < b.data.eleventyNavigation.order
+      )
+        return 1;
+      else return 0;
+    });
   });
   eleventyConfig.addCollection('various', function(collection) {
-    return collection
-      .getFilteredByTags('various')
-      .sort((b, a) => {
-        if (a.data.eleventyNavigation.order > b.data.eleventyNavigation.order) return -1;
-        else if (a.data.eleventyNavigation.order < b.data.eleventyNavigation.order) return 1;
-        else return 0;
-      });
+    return collection.getFilteredByTags('various').sort((b, a) => {
+      if (a.data.eleventyNavigation.order > b.data.eleventyNavigation.order)
+        return -1;
+      else if (
+        a.data.eleventyNavigation.order < b.data.eleventyNavigation.order
+      )
+        return 1;
+      else return 0;
+    });
   });
   eleventyConfig.addCollection('api', function(collection) {
-    return collection
-      .getFilteredByTags('api')
-      .sort((b, a) => {
-        if (a.data.eleventyNavigation.order > b.data.eleventyNavigation.order) return -1;
-        else if (a.data.eleventyNavigation.order < b.data.eleventyNavigation.order) return 1;
-        else return 0;
-      });
+    return collection.getFilteredByTags('api').sort((b, a) => {
+      if (a.data.eleventyNavigation.order > b.data.eleventyNavigation.order)
+        return -1;
+      else if (
+        a.data.eleventyNavigation.order < b.data.eleventyNavigation.order
+      )
+        return 1;
+      else return 0;
+    });
   });
   eleventyConfig.addCollection('cms', function(collection) {
-    return collection
-      .getFilteredByTags('cms')
-      .sort((b, a) => {
-        if (a.data.eleventyNavigation.order > b.data.eleventyNavigation.order) return -1;
-        else if (a.data.eleventyNavigation.order < b.data.eleventyNavigation.order) return 1;
-        else return 0;
-      });
+    return collection.getFilteredByTags('cms').sort((b, a) => {
+      if (a.data.eleventyNavigation.order > b.data.eleventyNavigation.order)
+        return -1;
+      else if (
+        a.data.eleventyNavigation.order < b.data.eleventyNavigation.order
+      )
+        return 1;
+      else return 0;
+    });
   });
 
   // Universal Shortcodes (Adds to Liquid, Nunjucks, Handlebars)

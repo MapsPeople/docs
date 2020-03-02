@@ -11,7 +11,9 @@ eleventyNavigation:
 With these simple tutorials, each reflecting common use cases, you can get more hands on experience with MapsIndoors on Android.
 
 <ul>
-{% for post in collections.androidV3Tutorials %}
-  <li><a href="{{ post.url }}">{{ post.data.title }}</a></li>
-{% endfor %}
+  {%- for post in collections.androidV3Tutorials -%}
+    <li>
+      <a href="{{ post.data.permalink }}">{{ post.data.title }}</a>
+    </li>
+  {%- endfor -%}
 </ul>

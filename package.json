@@ -7,8 +7,10 @@
   "devDependencies": {
     "@11ty/eleventy": "^0.10.0",
     "@11ty/eleventy-navigation": "^0.1.4",
+    "@11ty/eleventy-plugin-inclusive-language": "^1.0.0",
     "@sanity/cli": "^0.147.8",
-    "del": "^5.1.0"
+    "del": "^5.1.0",
+    "eleventy-plugin-youtube-embed": "^1.2.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

@@ -1,8 +1,0 @@
-<nav>
-  {{ collections.all | eleventyNavigation | eleventyNavigationToHtml | safe }}
-</nav>
-
-<div>{{ collections.all | eleventyNavigationBreadcrumb("android-v3-guides") | eleventyNavigationToHtml | safe }}</div>
-<div>
-  {{ collections.all | eleventyNavigation("guides") | eleventyNavigationToHtml | safe }}
-</div>

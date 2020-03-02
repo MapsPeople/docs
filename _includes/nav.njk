@@ -1,0 +1,33 @@
+<nav>
+  {{ collections.all | eleventyNavigation | eleventyNavigationToHtml | safe }}
+</nav>
+
+<h2>Android v3 Tutorials</h2>
+
+<div>
+  <ul>
+    {%- for post in collections.androidV3Tutorials -%}
+      <li>
+        <a href="{{ post.data.permalink }}">{{ post.data.title }}</a>
+      </li>
+    {%- endfor -%}
+  </ul>
+</div>
+
+<h2>Guides only</h2>
+
+<div>
+  {{ collections.all | eleventyNavigation("guides") | eleventyNavigationToHtml | safe }}
+</div>
+
+<h2>CMS</h2>
+
+<div>
+  <ul>
+    {%- for post in collections.cms -%}
+      <li>
+        <a href="{{ post.data.permalink }}">{{ post.data.title }}</a>
+      </li>
+    {%- endfor -%}
+  </ul>
+</div>
