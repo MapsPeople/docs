@@ -69,7 +69,7 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 
 - Fixed a memory leak happening when switching solution / api-key.
 - Fixed `MPMapControl` is now more resilient against `GMSMapView.delegate` being changed.
-- [This issue](https://forums.developer.apple.com/thread/123003) made our SDK crash if built with XCode 10 and below. We have implemented a workaround in this version. 
+- [This issue](https://forums.developer.apple.com/thread/123003) made our SDK crash if built with XCode 10 and below. We have implemented a workaround in this version.
 - Fixed Restored previous behaviour where the map settles on a building and showing the floor selector initially.
 - Fixed Improved switching between different solutions / api keys.
 
@@ -145,7 +145,6 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 - Fixed a memory issue that can happen when multiple map instances are created in one session.
 - Fixed a rare race condition during initialization.
 
-
 ## [3.1.2] 2019-06-27
 
 ### Fixed
@@ -181,7 +180,7 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 - Fixed map markers being anchored at the bottom of a square icon, not the center.
 - Fixed a race condition in the initial data fetch causing locations search results to be initially empty.
 - Fixed error causing locations to show across all Floors when displaying as search result.
-- Fixed tapping on Information Window does not center view based on selected location. 
+- Fixed tapping on Information Window does not center view based on selected location.
 
 ## [3.0.4] 2019-04-29
 
