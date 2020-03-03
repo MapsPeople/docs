@@ -77,7 +77,7 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 
 ### Fixed
 
-- Fixed synchronisation issue, that sometimes caused map graphics to disappear, if the app was killed in the middle of a synchronisation.
+- Fixed synchronisation issue, that sometimes caused map graphics to disappear, if the app was shut down in the middle of a synchronisation.
 - Fixed directions rendering issue causing the map camera to display random parts of the Google map instead of the step or leg that was intended to be rendered.
 - Fixed some inconsistencies in how non-quadratic icons was anchored on the map.
 
