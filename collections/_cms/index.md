@@ -52,23 +52,23 @@ There are a number of key elements:
 1. **CMS Guide:** High level guide on various areas to make changes
 1. **Venue and Buildings & Routes:**
 
-* Change Building names, enter aliases
-* Routes will display on the map, along with the entry point to indoor navigation. There is also the ability to close part of the route network
+   * Change Building names, enter aliases
+   * Routes will display on the map, along with the entry point to indoor navigation. There is also the ability to close part of the route network
 
 1. **General Settings:**
 
-* **Location Types:** List of Locations with their icon - ability to edit. Add Location Types here
-* **Categories:** List of categories - ability to edit. Add new categories here. These will populate in an iOS or Android app
-* **Location Type templates:** Ability to add information to a specific Location Type, for example, business hours, email, phone number
+   * **Location Types:** List of Locations with their icon - ability to edit. Add Location Types here
+   * **Categories:** List of categories - ability to edit. Add new categories here. These will populate in an iOS or Android app
+   * **Location Type templates:** Ability to add information to a specific Location Type, for example, business hours, email, phone number
 
 1. **App settings:**
 
-* **App configuration:** App title, MapsIndoors API key, list of categories - editing of the order can be done here
-* **Type visibility:** Set the zoom level of when Location icon will appear. Can also "hide” icon via the eye icon
+   * **App configuration:** App title, MapsIndoors API key, list of categories - editing of the order can be done here
+   * **Type visibility:** Set the zoom level of when Location icon will appear. Can also "hide” icon via the eye icon
 
 1. **Administration:**
 
-* **Users:** Add, edit users for the CMS
+   * **Users:** Add, edit users for the CMS
 
 1. **Current User**
 1. **List:** A list of Locations in the currently selected Venue, can edit from this list
@@ -76,9 +76,9 @@ There are a number of key elements:
 1. **Zoom Level:** Indicates which zoom level you are viewing
 1. **Filter:**
 
-* **Type:** dropdown to select a specific Location Type to only see on the map
-* **Category:** dropdown to select a specific Category to only see on the map
-* **Search:** search for Locations
+   * **Type:** dropdown to select a specific Location Type to only see on the map
+   * **Category:** dropdown to select a specific Category to only see on the map
+   * **Search:** search for Locations
 
 1. **Floor selector:** The floor selector shows the floors available, click on the desired floor to switch floor
 1. **POI:** click on this icon to add a POI anywhere on the map
