@@ -16,16 +16,48 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 ### Removed
 -->
 
-> Known Issues:
+## [3.8.2] 2020-03-02
 
-1. If you are compiling with Xcode 11 with bitcode ON, you should either switch OFF bitcode or update to version 3.6.0 or later. With bitcode ON, previous versions of the SDK could crash. We are in dialog with Apple regarding the bitcode issue.
-{: .mi-careful}
+### Fixed
+
+- Fixed an issue where the rendered route part would sometimes not be fully visible.
+- Fixed a problem with loading maptiles embedded in apps at first launch of app.
+- Fixed an directions issue where the reversed directions request (swapping origin and destination) could sometimes not be calculated.
+
+### Added
+
+- Added an external id property `MPLocation.externalId`. This field is used for identifying each location on a matter that is external to MapsIndoors. The external id is maintained in MapsIndoors CMS.
+
+### Changed
+
+- Deprecated `MPLocation.roomId`. `MPLocation.externalId` is to be used instead.
+
+## [3.8.1] 2020-02-04
+
+### Fixed
+
+- Some searches unfortunately ended in a crash related to data inconsistency.
+- Directions completion handler was sometimes on the main queue.
+- Improved detection of start and end rooms on a route.
+- Script for embedding data for offline use would download all referenced URLs but should only download referenced images and maptiles.
+
+## [3.8.0] 2020-01-24
+
+### Changed
+
+- Improved route generation; improved detection of start and end rooms for indoor route, and improved rendering of route start and endpoints.
+
+## [3.7.2] 2019-01-09
+
+### Fixed
+
+- Applying  `MPMapControl.setDisplayRule(:forLocation:)` for one or more locations that was already hidden by default would not change the locations visibility. This is now fixed.
 
 ## [3.7.1] 2019-12-05
 
 ### Added
 
-- Added `MPMapControl` now has new functionality for temporarily changing the `MPDisplayRule` for individual `MPLocations`.  See `-[MPMapControl setDisplayRule:forLocation:]`, `-[MPMapControl resetDisplayRuleForLocation:]` and similar methods.
+- Added `MPMapControl` now has new functionality for temporarily changing the `MPDisplayRule` for individual `MPLocations`.  See `MPMapControl.setDisplayRule(:forLocation:)`, `MPMapControl.resetDisplayRuleForLocation()` and similar methods.
 
 ### Changed
 
@@ -97,7 +129,7 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 
 ### Changed
 
-- Updated Google Maps SDK from 3.1.0 to 3.3.0 (see [https://developers.google.com/maps/documentation/ios-sdk/releases](https://developers.google.com/maps/documentation/ios-sdk/releases) for details).
+- Updated Google Maps SDK from 3.1.0 to 3.3.0 (see <https://developers.google.com/maps/documentation/ios-sdk/releases> for details).
 - Default Google Maps styling is now applied to the map, so that we hide Google Maps icons that usually compete with, confuse or disturb the appearance of MapsIndoors location icons.
 
 ### Added
@@ -175,8 +207,8 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 
 ### Added
 
-- MPMapControlDelegate now has a new method for notifying about which building is focused on the map  `- [MPMapControlDelegate focusedBuildingDidChange:(nullable MPLocation*)building]`
-- MPMapControlDelegate now has a new method for notifying position updates  `- [MPMapControlDelegate onPositionUpdate:(nonnull MPPositionResult*)positionResult]`
+- MPMapControlDelegate now has a new method for notifying about which building is focused on the map  `MPMapControlDelegate.focusedBuildingDidChange()`
+- MPMapControlDelegate now has a new method for notifying position updates  `MPMapControlDelegate.onPositionUpdate()`
 
 ### Changed
 
@@ -191,7 +223,7 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 
 ### Added
 
-- Support for external location data sources using `[MapsIndoors registerLocationSources:sources]`
+- Support for external location data sources using `MapsIndoors.registerLocationSources()`
 - New location service `MPLocationService` to replace `MPLocationsProvider`
 - Location clustering support using `MPMapControl.locationClusteringEnabled`
 - Added building and venues to the search experience
