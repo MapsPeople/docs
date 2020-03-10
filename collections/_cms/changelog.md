@@ -1,8 +1,48 @@
 ---
 title: Changelog
-date: 2019-10-07
+date: 2019-03-10
 published: true
 ---
+
+## Mar 4th 2020 - v3.16.0
+
+### What’s new:
+* **Analytics Dashboard:** Export to CSV. Metric cards' tooltip.  Rooms and POIs cards have been split up.
+
+## Mar 2nd 2020 - v3.15.2
+
+### Bugfix: 
+* **Locations:** Close detail sidebar automatically after saving changes to a POI.
+* **Location Types:** Show selected location-type view settings.
+
+## Feb 27th 2020 - v3.15.0
+
+### What's New:
+
+* The analytics dashboard can be activated at a customer level, which is reflected in all solutions for that specific customer.
+* Analytics dashboard table.
+* Mapsindoors icon for handicapped parking
+* The client CMS has been updated to Angular 8.
+* Support for Address field on buildings.
+* Support for Custom Properties on locations, buildings and venues.
+* Support for Searchable/Non-searchable locations, buildings and venues.
+* Swiched Room IDs with External IDs.
+
+### Bug Fixes:
+
+* Single image upload issue for a POI.
+* POI creation issue.
+
+## Feb 11th 2020 - v3.9.1
+
+### What's New:
+
+* Support for login with OAuth for any customer that uses this standard.
+
+### Bug Fixes:
+
+* **User:** users with the editor role where set as publisher in the backend. This is now aligned so that it is called editor everywhere.
+* **Icon Manager:** info about file type has been added.
 
 ## Jan 28th 2020 - v3.8.3
 
