@@ -44,6 +44,9 @@ collections:
   xamarin:
     output: true
     permalink: :collection/:path/
+  various:
+    output: true
+    permalink: :path/
 
 defaults:
   -
@@ -137,3 +140,8 @@ defaults:
     values:
       version: v3
       layout: tutorial
+  -
+    scope:
+      path: "_various"
+    values:
+      layout: default
