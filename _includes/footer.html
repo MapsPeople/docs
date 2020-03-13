@@ -28,43 +28,45 @@
             "item.layout != 'default'" | sort : 'nav_weight' %}
             {% assign xamarin_items = site.xamarin | where_exp : "item",
             "item.layout != 'default'" | sort : 'nav_weight' %}
+            {% assign various_items = site.various | where_exp : "item",
+            "item.layout == 'default'" | sort : 'nav_weight' %}
 
             <div class="w-third mr4 mt4">
                 <h2>
                     <a href="/ios/v3" class="link dim near-white">iOS v3</a>
                 </h2>
-                {% for item in ios_items %}
                     <ul class="list pl0">
+                {% for item in ios_items %}
                         <li class="mb2 {% if item.layout == 'guide' %}b mt4{% elsif item.title contains 'Changelog' %}b mt4{% endif %}">
                             <a class="link dim near-white" href="{{ item.url | replace: "/index", "/" }}">{{ item.title }}</a>
                         </li>
-                    </ul>
                 {% endfor %}
+                    </ul>
             </div>
 
             <div class="w-third mr4 mt4">
                 <h2>
                     <a href="/android/v3" class="link dim near-white">Android v3</a>
                 </h2>
-                {% for item in android_items %}
                     <ul class="list pl0">
+                {% for item in android_items %}
                         <li class="mb2 {% if item.layout == 'guide' %}b mt4{% elsif item.title contains 'Changelog' %}b mt4{% endif %}">
                             <a class="link dim near-white" href="{{ item.url }}">{{ item.title }}</a>
                         </li>
-                    </ul>
                 {% endfor %}
+                    </ul>
             </div>
             <div class="w-third mr4 mt4">
                 <h2>
                     <a href="/web/v3" class="link dim near-white">Web v3</a>
                 </h2>
-                {% for item in web_items %}
                     <ul class="list pl0">
+                {% for item in web_items %}
                         <li class="mb2 {% if item.layout == 'guide' %}b mt4{% elsif item.title contains 'Changelog' %}b mt4{% endif %}">
                             <a class="link dim near-white" href="{{ item.url }}">{{ item.title }}</a>
                         </li>
-                    </ul>
                 {% endfor %}
+                    </ul>
             </div>
 
         </div>
@@ -73,38 +75,14 @@
                 <h2 class="pt4">
                     <a href="/cms/" class="link dim near-white">CMS</a>
                 </h2>
+                    <ul class="list pl0">
                 {% for item in cms_items %}
-                    <ul class="list pl0">
                         <li class="mb2 {% if item.layout == 'guide' %}b mt4{% endif %}">
                             <a class="link dim near-white" href="{{ item.url }}">{{ item.title }}</a>
                         </li>
-                    </ul>
                 {% endfor %}
-            </div>
-            <div class="w-third mr4">
-                <h2 class="pt4">
-                    <a href="/api/" class="link dim near-white">Integration API</a>
-                </h2>
-                {% for item in api_items %}
-                    <ul class="list pl0">
-                        <li class="mb2 {% if item.layout == 'guide' %}b mt4{% endif %}">
-                            <a class="link dim near-white" href="{{ item.url }}">{{ item.title }}</a>
-                        </li>
                     </ul>
-                {% endfor %}
-                <h2 class="pt4">
-                    <a href="/xamarin/" class="link dim near-white">Xamarin</a>
-                </h2>
-                {% for item in xamarin_items %}
-                    <ul class="list pl0">
-                        <li class="mb2 {% if item.layout == 'guide' %}b mt4{% endif %}">
-                            <a class="link dim near-white" href="{{ item.url }}">{{ item.title }}</a>
-                        </li>
-                    </ul>
-                {% endfor %}
-            </div>
-            <div class="w-third mr4">
-                <h2 class="pt4 near-white">Legacy versions</h2>
+            <h2 class="pt4 near-white">Legacy versions</h2>
                 <ul class="list pl0">
                     <li class="mb2 b">
                         <a class="link dim near-white" href="/ios/v2/">iOS v2</a>
@@ -112,6 +90,40 @@
                     <li class="mb2 b">
                         <a class="link dim near-white" href="/android/v2/">Android v2</a>
                     </li>
+                </ul>
+            </div>
+            <div class="w-third mr4">
+                <h2 class="pt4">
+                    <a href="/api/" class="link dim near-white">Integration API</a>
+                </h2>
+                    <ul class="list pl0">
+                {% for item in api_items %}
+                        <li class="mb2 {% if item.layout == 'guide' %}b mt4{% endif %}">
+                            <a class="link dim near-white" href="{{ item.url }}">{{ item.title }}</a>
+                        </li>
+                {% endfor %}
+                    </ul>
+                <h2 class="pt4">
+                    <a href="/xamarin/" class="link dim near-white">Xamarin</a>
+                </h2>
+                    <ul class="list pl0">
+                {% for item in xamarin_items %}
+                        <li class="mb2 {% if item.layout == 'guide' %}b mt4{% endif %}">
+                            <a class="link dim near-white" href="{{ item.url }}">{{ item.title }}</a>
+                        </li>
+                {% endfor %}
+                    </ul>
+            </div>
+            <div class="w-third mr4">
+                <h2 class="pt4 near-white">Various</h2>
+                <ul class="list pl0">
+                {% for item in various_items %}
+
+                        <li class="mb2">
+                            <a class="link dim near-white" href="{{ item.url }}">{{ item.title }}</a>
+                        </li>
+
+                {% endfor %}
                 </ul>
             </div>
         </div>
