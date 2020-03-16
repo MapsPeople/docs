@@ -9,7 +9,7 @@ The ExternalID is a reference from your real-life data to a piece of MapsIndoors
 
 In a large venue like a conference hall, headquarter, or university, every room will have a unique ID like `1.234AB` or `HALL_A` in a naming scheme that makes sense to that organisation.
 
-In MapsIndoors, we create all Rooms, Buildings, and Venues with an internal id that is a unique identifier, and it will not change. However, you might need to change the ID for a particular room in your physical building. It might be a large meeting room that is now split in two smaller rooms and one of them keeps that original ID. The ExternalID should then reflect your naming scheme, and not concern itself with the random identifier our database handed out to any of your rooms, as they will now be two new ones.
+In MapsIndoors, we create all Rooms, Buildings, and Venues with an internal id that is a unique identifier, and it will not change. However, you might need to change the ID for a particular room in your physical building. It might be a large meeting room that is now split in two smaller rooms and one of them keeps that original ID. The ExternalID should then reflect your naming scheme, and not concern itself with the internal random identifier our database handed out to any of your rooms, as they will now be two new ones.
 
 Previously, regardless of the type of geodata, we called it `RoomID`. This is less than optimal when a `RoomID` refers to a Building, or even a whole Venue, hence the change.
 
