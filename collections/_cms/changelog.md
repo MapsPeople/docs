@@ -22,7 +22,7 @@ published: true
 * The Analytics Dashboard can be activated at a Customer level, which is reflected in all Solutions for that specific Customer.
 * Analytics dashboard table.
 * Mapsindoors icon for handicapped parking
-* The client CMS has been updated to Angular 8.
+* The Client CMS has been updated to Angular 8.
 * Support for Address field on buildings.
 * Support for Custom Properties on locations, buildings and venues.
 * Support for Searchable/Non-searchable locations, buildings and venues.
