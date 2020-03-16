@@ -25,7 +25,7 @@ published: true
 * The Client CMS has been updated to Angular 8.
 * Support for Address field on Buildings.
 * Support for Custom Properties on Locations, Buildings and Venues.
-* Support for Searchable/Non-searchable locations, buildings and venues.
+* Support for setting Locations, Buildings and Venues as searchable or non-searchable
 * Swiched Room IDs with External IDs.
 
 ### Bug Fixes:
