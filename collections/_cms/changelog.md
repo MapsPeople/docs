@@ -19,7 +19,7 @@ published: true
 
 ### What's New:
 
-* The analytics dashboard can be activated at a customer level, which is reflected in all solutions for that specific customer.
+* The Analytics Dashboard can be activated at a Customer level, which is reflected in all Solutions for that specific Customer.
 * Analytics dashboard table.
 * Mapsindoors icon for handicapped parking
 * The client CMS has been updated to Angular 8.
