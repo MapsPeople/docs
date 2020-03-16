@@ -7,7 +7,7 @@ published: true
 ## Mar 4th 2020 - v3.16.0
 
 ### What’s new:
-* **Analytics Dashboard:** Export to CSV. Metric cards' tooltip.  Rooms and POIs cards have been split up.
+* **Analytics Dashboard:** Added "Export to CSV" functionality. Added "metric cards" tooltips.  Rooms and POIs cards have been split up.
 
 ## Mar 2nd 2020 - v3.15.2
 
