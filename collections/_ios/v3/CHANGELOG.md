@@ -26,7 +26,7 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 
 ### Added
 
-- Added an external id property `MPLocation.externalId`. This field is used for identifying each location on a matter that is external to MapsIndoors. The external id is maintained in MapsIndoors CMS.
+- Added an ExternalId property `MPLocation.externalId`. This field is used for identifying each location on a matter that is external to MapsIndoors. The ExternalId is maintained in MapsIndoors CMS.
 
 ### Changed
 
@@ -67,7 +67,7 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 
 ### Fixed
 
-- Fixed a memory leak happening when switching solution / api-key.
+- Fixed a memory leak happening when switching Solution or API key.
 - Fixed `MPMapControl` is now more resilient against `GMSMapView.delegate` being changed.
 - [This issue](https://forums.developer.apple.com/thread/123003) made our SDK crash if built with XCode 10 and below. We have implemented a workaround in this version.
 - Fixed Restored previous behaviour where the map settles on a building and showing the floor selector initially.
@@ -77,11 +77,11 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 
 ### Fixed
 
-- Fixed a memory leak happening when switching solution / api-key.
+- Fixed a memory leak happening when switching Solution or API key.
 - Fixed `MPMapControl` is now more resilient against `GMSMapView.delegate` being changed.
 - [This issue](https://forums.developer.apple.com/thread/123003) made our SDK crash if built with XCode 10 and below. We have implemented a workaround in this version.
 - Fixed Restored previous behaviour where the map settles on a building and showing the floor selector initially.
-- Fixed Improved switching between different solutions / api keys.
+- Fixed Improved switching between different Solutions / API keys.
 
 ## [3.6.1] 2019-11-05
 
@@ -146,11 +146,11 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 
 - Support for building default floors.
 - Support for profile-based routing.
-- Support for travelmode specific venue entrypoints, so f.ex. driving routes can go via parking lots (require data configuration).
+- Support for travelmode specific venue entrypoints, so e.g. driving routes can go via parking lots (require data configuration).
 
 ### Fixed
 
-- Fixed an issue with loading solution-data from the MapsIndoors backend.
+- Fixed an issue with loading Solution data from the MapsIndoors backend.
 - Fixed an issue with searching for location aliases.
 - Fixed a memory issue that can happen when multiple map instances are created in one session.
 - Fixed a rare race condition during initialization.
