@@ -37,7 +37,7 @@ published: true
 
 ### What's New:
 
-* Support for login with OAuth for any customer that uses this standard.
+* Support for login with OAuth for any Customer that uses this standard.
 
 ### Bug Fixes:
 
