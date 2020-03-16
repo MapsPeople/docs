@@ -13,7 +13,7 @@ published: true
 
 ### Bugfix: 
 * **Locations:** Close detail sidebar automatically after saving changes to a POI.
-* **Location Types:** Show selected location-type view settings.
+* **Location Types:** Show selected Location Type view settings.
 
 ## Feb 27th 2020 - v3.15.0
 
