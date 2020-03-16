@@ -3,72 +3,97 @@ title: Integration API v1
 layout: tutorial
 permalink: /api/v1/
 published: true
-date: 2019-09-30
+date: 2019-11-28
 ---
 
 {% include toc.md %}
 
 ## Introduction and getting started
 
-From the MapsIndoors Integration API you can get, add, change and delete data related to your MapsIndoors™ solution via a REST service.
+From the MapsIndoors Integration API you can get, add, change and delete data related to your MapsIndoors solution via a REST service.
 
-The Integration API can be found here: [https://integration.mapsindoors.com](https://integration.mapsindoors.com)
-
-There is a (Swagger) interface definition here: [https://integration.mapsindoors.com/doc](https://integration.mapsindoors.com/doc)
+Send your requests to this endpoint: [https://integration.mapsindoors.com](https://integration.mapsindoors.com)
 
 > Note: Only https is supported.
 {: .mi-careful}
 
+You can access data through the Integration API using a range of endpoints. The endpoints are described in the Swagger interface definition: [https://integration.mapsindoors.com/doc](https://integration.mapsindoors.com/doc)
+
+In Swagger, each `GET` method is pre-loaded with all mandatory fields needed to get a live example of data. Click the  "_Try it out_" button in Swagger to see the example data.
+
 ### Login and credentials
 
-The first thing needed is to log in to the service and get a security token used for the data endpoints.
+First, log in to the service to get an `access token` to access the data.
 
-[HttpPost, Route("token")]
+This requires a POST request to our Auth API at the following endpoint: [https://auth.mapsindoors.com/connect/token](https://auth.mapsindoors.com/connect/token)
 
-The interface supports two ways to login. Via Google or via a simple username/password pair.
+The Auth API supports multiple ways to log in. The most common way is authenticating with Google, but you can also use your MapsIndoors username and password.
+No matter what login method you choose, you will always need to use the following content-type header when talking to the Auth API:
 
-**Login with username/password**
-
-Use the following headers:
-
-```
+```bash
 Content-Type: application/x-www-form-urlencoded
 ```
 
-Use the following Key/Values
+#### Log in with MapsIndoors username/password
 
-```
-Key: grant_type Value: password
-Key: username Value: <your username>
-Key: password Value: <your password>
-```
+To log in with your MapsIndoors login, send them with the `grant_type` set to `password`.
 
-The body of the request should end up containing a text like this:
+Use the following key/value set:
 
-`grant_type=password&username=<your username>&password=<your password>`
-
-To use Google login you will need to set `grant_type` to `google_id_token` instead.
-
-The [Google Accounts API ](https://developers.google.com/identity/protocols/OAuth2)is to be used to obtain a valid Google token. This is outside the scope of this document. 
-
-**Use the following headers for login with username/password:**
-
-Use the following headers
-
-`Content-Type: application/x-www-form-urlencoded`
-
-Use the following Key/Values
-
-```
-Key: grant_type Value: google_id_token
-Key: id_token Value: <your Google token>
+```bash
+grant_type: password
+client_id: client
+username: <your username>
+password: <your password>
 ```
 
-### Endpoints
+Replacing `<your username>` and `<your password>` with your own credentials, and leaving `grant_type` and `client_id` as stated above.
 
-The Integration API consists of a number of endpoints to access the various data. The description of those can be found in [Swagger](https://integration.mapsindoors.com/doc).
+The body of the request must end up containing a query string like this:
 
-In Swagger each GET method are pre-loaded with all mandatory fields needed for you to get a live example of data just by pressing the "_Try it now_" button.
+`grant_type=password&client_id=client&username=<your username>&password=<your password>`
+
+#### Log in with Google
+
+The [Google Accounts API](https://developers.google.com/identity/protocols/OAuth2) is used to obtain a valid Google token. You can read more about how to do that here: [https://developers.google.com/identity/protocols/OAuth2](https://developers.google.com/identity/protocols/OAuth2).
+
+When you get a valid response from the Google Authorization Server, send the token to the Auth API to authenticate you.
+
+You tell the Auth API that you are using Google login by setting `grant_type` to `google_id_token`.
+
+Use the following key/value set to achieve this:
+
+```bash
+grant_type: google_id_token
+client_id: client
+id_token: <your Google token>
+```
+
+The body of the request should end up containing a query string like this:
+
+`grant_type=google_id_token&client_id=client&id_token=<your Google token>`
+
+#### When you are authenticated
+
+If you sent valid credentials to the Auth API, you will receive a response like this:
+
+```json
+{
+    "access_token": "eyJhbGciOiJ...vmERrovsg",
+    "expires_in": 86400,
+    "token_type": "Bearer",
+    "scope": "integration"
+}
+```
+
+You will need the value from the key `access_token` for all your requests to the Integration API by adding the `Authorization` header like this:
+
+```bash
+authorization: Bearer eyJhbGciOiJ...vmERrovsg
+```
+
+> Note: The access token is valid for 24 hours. After that you will need to reauthenticate, following the same steps as explained above.
+{: .mi-careful}
 
 ## Data description
 
@@ -78,7 +103,7 @@ The main starting point for your data is the dataset object. This object contain
 
 The demo dataset looks like this:
 
-```
+```json
 {
   "id": "550c26a864617400a40f0000",
   "name": "RTX",
@@ -110,104 +135,104 @@ All Geodata BaseTypes have some common keys that is available for all, and then 
 **A Geodata object contains the following:**
 
 * `Id [string(24)]`
-  - MapsIndoors generated ID. Should be _null_ if you are creating an object.
+  * MapsIndoors generated ID. Should be _null_ if you are creating an object.
 * `DatasetId [string]`
-  - The dataset ID of your MapsIndoors solution.
+  * The dataset ID of your MapsIndoors solution.
 * `ParentId [string(24)]`
-  - The MapsIndoors ID that this Geodata object is a child of.
+  * The MapsIndoors ID that this Geodata object is a child of.
 * `BaseType [string]`
-  - The BaseType this Geodata covers.
-  
+  * The BaseType this Geodata covers.
+
     _See more in the intro of the Geodata above._
 * `BaseTypeProperties [Dictionary]`
-  - Properties that directly changes the behaviour of the BaseType itself.
-    
+  * Properties that directly changes the behaviour of the BaseType itself.
+
     _See more details below._
 
-* `DisplayTypeId [string(24)] `
-  - ID of a Display Type to follow.
+* `DisplayTypeId [string(24)]`
+  * ID of a Display Type to follow.
 
     _Only relevant for POI/Room/Area._
 
 * `DisplaySetting [DisplayRule]`
-  - An overriding Display Rule to use, instead of the one from the Display Type. \
+  * An overriding Display Rule to use, instead of the one from the Display Type. \
 
-    See "DisplayRules" under Display Type. 
+    See "DisplayRules" under Display Type.
 
     _Only relevant for POI/Room/Area._
 
 * `Geometry [GeoJSON.Geometry]`
-  - The geometry related to the Geodata according to the [GeoJSON](https://geojson.org/) structure in the [WGS84](https://en.wikipedia.org/wiki/World_Geodetic_System) coordinate system.
+  * The geometry related to the Geodata according to the [GeoJSON](https://geojson.org/) structure in the [WGS84](https://en.wikipedia.org/wiki/World_Geodetic_System) coordinate system.
 * `Anchor [GeoJSON.Point]`
-  - Generally the anchor is the center of the Geometry itself.
+  * Generally the anchor is the center of the Geometry itself.
 * `Aliases [Array<string>]`
-  - A list of searchable aliases that should be associated with the Geodata.
+  * A list of searchable aliases that should be associated with the Geodata.
 * `Categories [Array<string>]`
-  - List of Only relevant for POI/Room/Area.
+  * List of Only relevant for POI/Room/Area.
 * `Status [bitfield]`
-  - Bit 1: Active. Bit 2: Searchable.
-    
+  * Bit 1: Active. Bit 2: Searchable.
+
     _See more details in the following example._
 
 * `Properties [Dictionary<string, string>]`
-  - Custom properties contains meta information related to the Geodata in a key-value structure.
-    
+  * Custom properties contains meta information related to the Geodata in a key-value structure.
+
     _See more details in the following examples._
 
 * `TilesUrl [string]`
-  - The URL where the tiles are located. These should be identical across Venues in the same Dataset.
-    
+  * The URL where the tiles are located. These should be identical across Venues in the same Dataset.
+
     _Only relevant for Venue._
 
 * `TileStyles [TileStyle]`
-  - How the tiles should Only relevant for Venue.
+  * How the tiles should Only relevant for Venue.
 
 #### BaseTypeProperties for Venue
 
 * `Administrativeid [string]` - <span class="red">* required</span>
-  - Unique ID for this Venue.
+  * Unique ID for this Venue.
 * `Defaultfloor [nullable int]`
-  - The AdministrativeId from a Floor that should be the default selected for the Venue.
+  * The AdministrativeId from a Floor that should be the default selected for the Venue.
 * `Imageurl [string]`
-  - URL for the image that should be displayed in relation to the Venue.
+  * URL for the image that should be displayed in relation to the Venue.
 * `Activestylefolder [string]`
-  - The default Style that should be used in the Tiles.
+  * The default Style that should be used in the Tiles.
 * `Graphid [string(24)]`
-  - The ID for the MapsIndoors Graph used to navigate in the building.
+  * The ID for the MapsIndoors Graph used to navigate in the building.
 
 #### BaseTypeProperties for Building
 
 * `Administrativeid [string]` - <span class="red">* required</span>
-  - Unique ID for this Building.
+  * Unique ID for this Building.
 * `Defaultfloor [nullable int]`
-  - The AdministrativeId from a floor that should be the default selected for this Building).
+  * The AdministrativeId from a floor that should be the default selected for this Building).
 * `Imageurl [string]`
-  - URL for the image that should be displayed in relation to the Building.
+  * URL for the image that should be displayed in relation to the Building.
 
 #### BaseTypeProperties for Floor
 
 * `Name [string]` - <span class="red">* required</span>
-  - Floor identifier that will be used in the floor selector e.g. ‘0’, ‘42’, ‘B1’, etc.
+  * Floor identifier that will be used in the floor selector e.g. ‘0’, ‘42’, ‘B1’, etc.
 
     Keep it as short as possible. Recommendation is 1-3 characters.
 
 * `Administrativeid [int]` - <span class="red">* required</span>
-  - The index of the Floor inside of its parent Building.
+  * The index of the Floor inside of its parent Building.
 
 #### BaseTypeProperties for a Location (POI/Room/Area)
 
 * `Administrativeid [string]` - <span class="red">* required</span>
-  - Unique ID for this Location.
+  * Unique ID for this Location.
 * `Class [string]`
-  - The MapsIndoors color class that the Location should follow.
+  * The MapsIndoors color class that the Location should follow.
 * `Imageurl [string]`
-  - URL for the image that should be displayed in relation to the Location.
+  * URL for the image that should be displayed in relation to the Location.
 * `Activefrom [Nullable Datetime]`
-  - A datetime of when it should be available from. Times are defined in UTC.
+  * A datetime of when it should be available from. Times are defined in UTC.
 * `Activeto [Nullable Datetime]`
-  - A datetime of when it should be available to. Times are defined in UTC.
+  * A datetime of when it should be available to. Times are defined in UTC.
 
-Venue, Building, Floor, Room and Area have a polygon that describes where its position is on the map. POIs are noted with a single point on the map and is typically located inside a Room or on a Floor - important things like the coffee machine. 
+Venue, Building, Floor, Room and Area have a polygon that describes where its position is on the map. POIs are noted with a single point on the map and is typically located inside a Room or on a Floor - important things like the coffee machine.
 
 To read, change or delete Geodata use the Geodata endpoints described here: [https://integration.mapsindoors.com/doc/ui/index#/Geodata](https://integration.mapsindoors.com/doc/ui/index#/Geodata)
 
@@ -218,11 +243,11 @@ To read, change or delete Geodata use the Geodata endpoints described here: [htt
 
 ### Geodata
 
-Each Geodata element has a number of properties. Let's look at an example - a coat hanger. 
+Each Geodata element has a number of properties. Let's look at an example - a coat hanger.
 
 #### Example: POI
 
-```
+```json
 {
   "id": "13889288f79d4abfb7021ad7",
   "parentId": "f43b931f09314f3f9dd796f9",
@@ -258,7 +283,7 @@ Each Geodata element has a number of properties. Let's look at an example - a co
 
 * **Id**
 
-    All elements have a unique 24 character string. 
+    All elements have a unique 24 character string.
 
     If you are creating, this should be `null`, since it will be generated upon saving the object.
 
@@ -280,7 +305,7 @@ Each Geodata element has a number of properties. Let's look at an example - a co
 
 * **DisplayTypeId**
 
-    Is a reference to the display type as described below. All rooms and poi geodata requires this to be set. As this is an ID, the reference is a 24 character string format as described above.  
+    Is a reference to the display type as described below. All rooms and poi geodata requires this to be set. As this is an ID, the reference is a 24 character string format as described above.
 
 * **Geometry**
 
@@ -298,10 +323,10 @@ Each Geodata element has a number of properties. Let's look at an example - a co
 
     Is a [bitfield](https://en.wikipedia.org/wiki/Bit_field).
 
-      bit1: active. If an element is not active, it will not be given to the apps.
-      bit2: searchable. If an element is not searchable it might be shown on the map, but not show up in searches.
+  * bit1: active. If an element is not active, it will not be given to the apps.
+  * bit2: searchable. If an element is not searchable it might be shown on the map, but not show up in searches.
 
-    As there are two bits, the final values can be: 
+    As there are two bits, the final values can be:
 
       0: Not active, Not searchable
       1: active, Not searchable
@@ -320,8 +345,8 @@ Each Geodata element has a number of properties. Let's look at an example - a co
 
     As this is a dictionary setup, the keyname needs to be unique and only contain the ascii chars [a-z] and [0-9]. Use of spaces and unicode chars here is discouraged as it makes it harder to use from the application code side. The char @ is not supported in the keyname as it’s used as a seperator. As an example, if you want to store opening hours here you could use the key openinghours@en as a keyname.
 
-    > Note: BaseType ‘Floor’ doesn’t support properties.
-    {: .mi-careful}
+> Note: BaseType ‘Floor’ doesn’t support properties.
+{: .mi-careful}
 
 #### Example: Area
 
@@ -333,7 +358,7 @@ It can be a part of a Room, Floor or Venue, but it can’t be a parent to any ot
 
 It will look a lot like the POI example, with a few differences:
 
-```
+```json
 {
 "id": "7b2fe3da61b34cd9991ba510",
 "parentId": "f43b931f09314f3f9dd796f9",
@@ -406,18 +431,18 @@ It will look a lot like the POI example, with a few differences:
 
 * **Geometry**
 
-    Like before, the structure is based on [GeoJSON](http://geojson.org) and is in this case, a polygon, that encapsulate were the Area is placed. 
+    Like before, the structure is based on [GeoJSON](http://geojson.org) and is in this case, a polygon, that encapsulate were the Area is placed.
     There is also a bounding box field called `bbox` as a part of the geometry. This is should define the box around the defined geometry. This is both for optimization purposes, and e.g. to easy navigate a camera to show the geometry when needed to.
 
 * **Anchor**
 
-    The anchor here should normally define the center of the polygon. This can be used for a variety of features, depending on the use case. 
+    The anchor here should normally define the center of the polygon. This can be used for a variety of features, depending on the use case.
 
 ### DisplayTypes
 
 Common setup for Geodata of different kinds (meeting room, hallway, ...)
 
-```
+```json
 {
   "id": "bb5410b32a5240d182ba50bb",
   "name": "BreakOutArea",
@@ -464,9 +489,9 @@ Common setup for Geodata of different kinds (meeting room, hallway, ...)
 
 * **DisplayRules**
 
-    Each type has a set of display rules that tells if and how geodata should be presented. E.g. which icon to use for meeting rooms, when it should be shown based on zoom level or if it should have a label. There are two parts to a rule: An **evaluation** part (zoom from/to) and a **style** part - the rest of the displayRule object. 
+    Each type has a set of display rules that tells if and how geodata should be presented. E.g. which icon to use for meeting rooms, when it should be shown based on zoom level or if it should have a label. There are two parts to a rule: An **evaluation** part (zoom from/to) and a **style** part - the rest of the displayRule object.
 
-    Zoom from and to is inclusive. In this example an icon will be shown from zoom level 19 to 21. A quick word on zoom levels: these are described in [web mercator](https://en.wikipedia.org/wiki/Web_Mercator_projection) which is the system we use to show maps. In short zoom level 1 shows a map of the earth in its entirety and a higher zoom level lets you get closer. The highest supported zoom level is generally 21, but some solutions support up to zoom level 22. 
+    Zoom from and to is inclusive. In this example an icon will be shown from zoom level 19 to 21. A quick word on zoom levels: these are described in [web mercator](https://en.wikipedia.org/wiki/Web_Mercator_projection) which is the system we use to show maps. In short zoom level 1 shows a map of the earth in its entirety and a higher zoom level lets you get closer. The highest supported zoom level is generally 21, but some solutions support up to zoom level 22.
 
     You will notice that there are 3 ‘visibility’ keys (visible, iconVisible, labelVisible). The first one, ‘visible’, is the main switch that will show and hide the whole element. The two others, ‘iconVisible’ and ‘labelVisible’, is changing the individual elements it is attached to. This way, you can toggle the ‘visible’ without having to remember the visible state for both the icon and label.
 
@@ -478,11 +503,11 @@ Common setup for Geodata of different kinds (meeting room, hallway, ...)
 
     Contains language specific data about the DisplayType object such as names, description etc. Each property has a key that follows this format:
 
-      <keyname>@<language>
+    `<keyname>@<language>`
 
     The name property must be specified for every language defined in the dataset.
 
-> Note: The display type data is split in the CMS; currently it can be found in the fans "Location types", "Location type templates" and "Type visibility".
+> Note: The display type data is split in the CMS; currently it can be found in the fans "Location Types" and "Type Visibility".
 {: .mi-careful}
 
 ### Categories
@@ -493,11 +518,10 @@ This grouping is then used as a relevancy criteria when searching.
 
 As a simple example: All rooms and areas across any building/venue related to entrances can be grouped using this example:
 
-
-```
+```json
 {
   "id": "5823246d07215b23a02e3cdd",
-  "key": "entrance",  
+  "key": "entrance",
   "name": {
     "en": "Entrance",
     "da": "Indgang"
@@ -525,6 +549,6 @@ As a simple example: All rooms and areas across any building/venue related to en
 
     Contains language specific data about the Category object such as numbers, description  etc. Each property has a key that follows this format:
 
-      <keyname>@<language>
+    `<keyname>@<language>`
 
     The name property must be specified for every language defined in the dataset.

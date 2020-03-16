@@ -20,6 +20,10 @@ Data is structured in a hierarchy where the top level is your Solution which can
 * Floors
 * Locations (rooms and points of interest)
 
+View the tutorial video below for more information about terminology and hierarchy.
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/1k_wAv8kEXg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 Although a point of interest can be placed within a room, it is not required. Points of interest can also be placed "outside” on the ground level which is also the layer where the Google map exists. In this case the POI belongs to the Venue directly.
 
 ## Navigating the CMS
@@ -30,6 +34,10 @@ There are 2 different roles in the system:
 
 * **Editor** - Editors can create new Locations, make changes to and remove existing Locations
 * **Admin** - Administrators have editor rights and have access to icon settings and users
+
+View the tutorial video below for more information about the menu structure and user roles.
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/sQHOb0llDk0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## The Map
 
@@ -43,25 +51,35 @@ There are a number of key elements:
 1. **Venue:** This is the name of your Venue. It’s possible to have several Venues. Also, the arrow above the Venue can be clicked to hide the side panel
 1. **CMS Guide:** High level guide on various areas to make changes
 1. **Venue and Buildings & Routes:**
-  - Change Building names, enter aliases
-  - Routes will display on the map, along with the entry point to indoor navigation. There is also the ability to close part of the route network
+
+   * Change Building names, enter aliases
+   * Routes will display on the map, along with the entry point to indoor navigation. There is also the ability to close part of the route network
+
 1. **General Settings:**
-  - **Location Types:** List of Locations with their icon - ability to edit. Add Location Types here
-  - **Categories:** List of categories - ability to edit. Add new categories here. These will populate in an iOS or Android app
-  - **Location Type templates:** Ability to add information to a specific Location Type, for example, business hours, email, phone number
-1. **App settings:** 
-  - **App configuration:** App title, MapsIndoors API key, list of categories - editing of the order can be done here
-  - **Type visibility:** Set the zoom level of when Location icon will appear. Can also "hide” icon via the eye icon
+
+   * **Location Types:** List of Locations with their icon - ability to edit. Add Location Types here
+   * **Categories:** List of categories - ability to edit. Add new categories here. These will populate in an iOS or Android app
+   * **Location Type templates:** Ability to add information to a specific Location Type, for example, business hours, email, phone number
+
+1. **App settings:**
+
+   * **App configuration:** App title, MapsIndoors API key, list of categories - editing of the order can be done here
+   * **Type visibility:** Set the zoom level of when Location icon will appear. Can also "hide” icon via the eye icon
+
 1. **Administration:**
-  - **Users:** Add, edit users for the CMS
+
+   * **Users:** Add, edit users for the CMS
+
 1. **Current User**
 1. **List:** A list of Locations in the currently selected Venue, can edit from this list
 1. **Zoom In/Zoom Out**
 1. **Zoom Level:** Indicates which zoom level you are viewing
 1. **Filter:**
-  - **Type:** dropdown to select a specific Location Type to only see on the map
-  - **Category:** dropdown to select a specific Category to only see on the map
-  - **Search:** search for Locations
+
+   * **Type:** dropdown to select a specific Location Type to only see on the map
+   * **Category:** dropdown to select a specific Category to only see on the map
+   * **Search:** search for Locations
+
 1. **Floor selector:** The floor selector shows the floors available, click on the desired floor to switch floor
 1. **POI:** click on this icon to add a POI anywhere on the map
 
@@ -77,47 +95,131 @@ After clicking on the box, you will be asked to select a Location Type and Name.
 
 Select the icon on the map for the Location that you wish to edit, or click on Locations in the main navigation and then choose "View List”. From there you can choose which Location you would like to edit by clicking on the pencil icon.
 
+View the tutorial video below for more information about managing POIs.
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/FejUy9-dhps" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 In the Edit Location Form you can do the following:
 
-**Location Type:** This can be changed by clicking on the drop down menu with Location Types.
+### Location Type
 
-**Name:** Enter a new name if you want to change the name of the Location. You also have the option of adding another language.
+This can be changed by clicking the drop down menu with Location Types.
 
-**Description:** Provide a description of the Location. 
+### Name
+
+Enter a new name for the Location. You can also add another language.
+
+### Description
+
+Provide a description of the Location.
+
 There is an option to add more information for this Location. This can be done by clicking on Location Type templates in the main navigation. From there you can add specific fields to a Location Type, those fields will then appear in the Location form.
 
-**Categories:** Set/change what Category it belongs to.
+### Categories
 
-**Icon Settings:** Change the Icon associated with the Location. An icon can be chosen from the library or an icon can be uploaded. Use square images in .png format, 40x40 pixels, or 20x20 - as lower screen resolutions will use this size.
+Add or remove Categories the Location belongs to.
 
-**Image:** An image can be uploaded.
+### Icon Settings
 
-**Google Street View:** It can be enabled for the web app at a Location by setting a Street View image matching that Location.
+Change the Icon associated with the Location. See "[Managing Icons](#managing-icons)" for more information.
 
-Google Street View must be available in the Building.
+### Image
 
-1. Click "Set Street View image” 
-  - This will open a Google Street View window showing an image closest to this Location. In the case an outside image is shown it can be because Google Street View is not available in your Building - you need to check that with your organisation or examine using Google Maps.
+Take a photo of your Location and upload it here. Photos on Locations makes it easier for your users to find a location in the real world.
+
+### Image with IndoorView
+
+> IndoorView is only supported for web
+{: .mi-careful}
+
+To get started using the IndoorView feature for your Locations, please make sure that the _Google Street View panorama images_ are publicly available for your building by looking at [Google Maps](https://www.google.com/maps). If no imagery is available, please [contact a certified Street View Photographer](https://www.google.com/streetview/contacts-tools/).
+
+1. Click "Set Street View image”
+
+   * This will open a Google Street View window showing the image closest to this Location. Please note that the MapsIndoors CMS looks for panorama images within a certain radius from the Location's position, so make sure to have panorama images published in that area.
+
 1. Navigate Street View and find an image and viewing angle that is suitable
 1. Click "Set image”
 
-**Under show advanced**
+#### MapsIndoors support matrix
 
-- **Alias:** Add alternative search phrases, for example a restaurant might have aliases of café, dinner, food, lunch etc. Insert a comma between each phrase.
+| MapsIndoors | Support for IndoorView | Private hosted panorama images|
+| - | - | - |
+|CMS|Yes|No|
+|Web App|Yes|No|
+|Android App|No|No|
+|iOS App|No|No|
+|Web SDK|Yes, through Google Maps Street View API or Static Street View API|No|
+|Android SDK|No|No|
+|iOS SDK|No|No|
 
-- **Venue Details:** Change Building and or floor.
+IndoorView only supports **publicly** available Google Street View imagery. If you would like to know more about **privately** hosted panorama images, please see [Googles Custom Street View documentation](https://developers.google.com/maps/documentation/javascript/streetview#CustomStreetView).
 
-- **Room Identifier:** This can be edited.
+##### Developing your own app
 
-- **Active (display and searchable):** If required, select a time period during which the Location will be visible, leave empty if it should always be shown.
+When developing your own app, you can still use the MapsIndoors CMS to save the Google Street View image information to a Location. When the Panorama image is set, the Location gets populated with a `streetViewConfig` property. Please see below for an example.
 
-- **Location History:** Contains a list of all changes made to a Location. Data comes from the MapsIndoors Audit Log functionality.
+Location Object:
 
-**Save changes**
+```javascript
+{
+  "id": "586ce41ebc1f571794b9e924",
+   ...
+  "properties": {
+    "name": "Copenhagen",
+     ...
+    "streetViewConfig": {
+      "panoramaId": "CAoSLEFGMVFpcE41dTZnVzNpVnU1WmliRjk0T2tpMENhZ3Fya3ljVFh3TjVzN2lY",
+      "povHeading": 203.1294893976259,
+      "povPitch": -13.068754012666432
+    }
+  }
+}
+```
+
+The parameters above can be used to show a static Street View image through the Street View Static API. Please see [the Street View documentation](https://developers.google.com/maps/documentation/streetview/intro) for more information.
+
+A Street View panorama image can be initialized in a `<div>` the following way:
+
+```javascript
+function initStreetView(streetViewConfig) {
+       const panorama = new google.maps.StreetViewPanorama(
+            document.getElementById('panorama'),
+            {
+                pano: streetViewConfig.panoramaId,
+                pov: {
+                    heading: streetViewConfig.povHeading,
+                    pitch: streetViewConfig.povPitch
+                },
+                zoom: 0,
+                visible: true
+            });
+}
+```
+
+Please see the official [Google Street View Service documentation](https://developers.google.com/maps/documentation/javascript/streetview) for more information.
+
+### Under "Show advanced"
+
+* **Alias:** Add alternative search phrases, for example a restaurant might have aliases of café, dinner, food, lunch etc. Insert a comma between each phrase.
+
+* **Venue Details:** Change Building and or floor.
+
+* **Room Identifier:** This can be edited.
+
+* **"Active to and from":** If required, select a time period during which the Location will be active. "Active" in this case means it is visible on the map, and shows up in search results. Leave the date fields empty if the Location should always be displayed
+
+* **Location History:** Contains a list of all changes made to a Location. Data comes from the MapsIndoors Audit Log functionality.
+
+* **Save changes**
 
 Remember to save before clicking on another Location or changing the page, otherwise your changes will be lost. To save the changes, press "Save”-button in the top of the Location edit form.
 
 ![Locations](https://app.mapsindoors.com/mapsindoors/cms/assets/images/guide3.png)
+
+View the tutorial video below for more information about advanced settings for POIs.
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/YkvGQE3Fbtg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 To view a list of all Locations in a certain Venue, select ‘List View”.
 
@@ -128,11 +230,11 @@ To view a list of all Locations in a certain Venue, select ‘List View”.
 
 When selecting one a more Locations using the checkboxes, 2 options will appear: Edit Locations or Delete Locations.
 
-- **Change type:** Opens a drop down menu to choose new Location Type
+* **Change type:** Opens a drop down menu to choose new Location Type
 
-- **Location:** Allows you to change the floor of the Locations
+* **Location:** Allows you to change the floor of the Locations
 
-- **Active (display and searchable):** If required, select a time period during which the Location will be visible, leave empty if it should always be shown
+* **"Active to and from":** If required, select a time period during which the Location will be active. "Active" in this case means it is visible on the map, and shows up in search results. Leave the date fields empty if the Location should always be displayed
 
 Remember to save before clicking on another Location or changing the page, otherwise your changes will be lost. To save the changes, click "Save”.
 
@@ -143,12 +245,33 @@ Remember to save before clicking on another Location or changing the page, other
 
 ## Buildings
 
-* Click on the pencil icon to the left of the Building name. A new menu will appear 
-* Edit Building name in the available languages 
-* Edit floor names
-* Select a default floor under "Show advanced". 
+### Adding a building
 
-   The Building's default floor is used to manage panning across Buildings in the apps. In order to improve the user experience in the apps, the default floor is used when the Building panned to doesn’t have the floor index of the floor selector.
+* Click on the "Add building" button at the top-right of the page and a popup window should appear.
+* Type a building name, search for the building address by typing in the search field or panning the map.
+* Place the red cross on the map at the center of the building's location.
+* Click "Add" and the popup window should close.
+* The building should now appear in the list.
+
+### Editing a building
+
+* Click on the pencil icon to the left of the Building name. A new menu will appear
+* Edit Building name in the available languages
+* Edit floor names
+* Select a default floor under "Show advanced".
+
+   The Building's default Floor is used to manage panning across Buildings in the apps. In order to improve the user experience in the apps, the default Floor is used when the Building panned to doesn't have the floor index of the floor selector.
+
+### Uploading CAD files for a floor
+
+* Click on the pencil icon to the left of the Building name and a sidebar should appear.
+* Click on "Add floor" or "Update floor" and a popup window should appear.
+* Type the floor name.
+* Select a CAD file.
+* Select any extra files. (optional)
+* Add any extra information in the text field.
+* Click on "Upload" and a spinner should appear with the upload progress.
+* When it is done uploading you should see an added/updated floor name in the list.
 
 ## Routes Access
 
@@ -157,12 +280,14 @@ Remember to save before clicking on another Location or changing the page, other
 The routes tab allows you to manipulate the network that powers the indoor navigation. It is useful for redirecting traffic by locking paths or isolating entire areas where navigation should be turned off entirely.
 
 To create a parking lot:
+
 * Click on "+ P" in the top right corner. If it is not enabled, zoom in higher than 17.
 * The mouse cursor will change to a "+". Click on the map where you want to add the parking lot and a popup window will appear.
 * Select a type: Car or Bike.
 * Enter a name and click "Save"
 
 To restrict access to a path:
+
 * Click on the path and a popup window will appear.
 * Choose between "Open for all", "Open for specific app user roles", "Closed for all".
 * When Open for specific app user roles is chosen, a list of app user roles will appear and you can select which roles will be given access.
@@ -174,17 +299,21 @@ To restrict access to a path:
 
 This is a list of all the Location Types in the Solution. From this list you can edit each Location by clicking on the pencil.
 
-**View Settings**
+### View Settings
 
 The *View settings* can be set for each Location Type. Use the settings to define how and when the icon and/or label is displayed on the map, and what is shown in the label.
 
 ![View Settings]({{ site.url }}/assets/cms/location-types/view-settings.png)
 
-**Location Type templates**
+#### Location Type templates
 
 You can add custom data fields to Locations by adding templates to a Location Type defining the data fields. All Locations of a Type will inherit the templates defined for the Type. Add a template to a Location Type by clicking the template button to the right in the table.
 
 To display or otherwise use the custom data, your app needs to be customized. The properties are not available in the Standard app, only when building one using the SDK.
+
+View the tutorial video below for more information about Location Types.
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/PyQOMnJP0Z8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Categories
 
@@ -192,14 +321,19 @@ To display or otherwise use the custom data, your app needs to be customized. Th
 
 Ability to add new categories to the list. Click on New Category, add name, click save. Once created, this Category can be added to a specific Location. The categories can be chosen to be displayed in the app, as well as put in a specific order (this can be done under App Configuration).
 
+View the tutorial video below for more information about Categories.
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/FMIEJmJwogU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## App configuration
 
-**App User Roles**
+### App User Roles
+
 * Click on "+ Add App User Roles" and a popup window will appear.
 * Enter the role name in all the languages. It's mandatory.
 * Click "Save" and the entered name should appear in the table.
 
-**App Categories**
+### App Categories
 
 Clicking on the arrows to the left of the Category name allows you to change the order. This Category order will be reflected in the apps. You can also choose an icon to be displayed next to the category name.
 
@@ -238,15 +372,15 @@ The log will be in CSV format, which can be opened by a spreadsheet program eg. 
 The headers represented are:
 Time, User, Action, ObjectType, ObjectId and ObjectData
 
-- **Time:** Tells which user did the change (The email representing the user logged in to the system)
-- **Action:** Tells what happened: 
-  - If data was added, the 'Action' will be set to 'Created'
-  - If data was changed, the 'Action' will be set to 'Changed'
-  - If data was deleted, the 'Action' will be set to 'Deleted'
-- **ObjectType:** Tells what type of data was modified (eg. ‘building’, ‘location’, ‘user’, ‘graphdata’ ... )
-- **ObjectId:** Is a unique ID that represents the given data - Building, Location or whatever it is. 
+* **Time:** Tells which user did the change (The email representing the user logged in to the system)
+* **Action:** Tells what happened:
+  * If data was added, the 'Action' will be set to 'Created'
+  * If data was changed, the 'Action' will be set to 'Changed'
+  * If data was deleted, the 'Action' will be set to 'Deleted'
+* **ObjectType:** Tells what type of data was modified (eg. ‘building’, ‘location’, ‘user’, ‘graphdata’ ... )
+* **ObjectId:** Is a unique ID that represents the given data - Building, Location or whatever it is.
 If you want to see a history of that specific Location this ID can be used to filter by
-- **ObjectData:** Is a JSON formatted representation of the actual data stored in the MapsIndoors system. To see what changed you can compare this data to the previous change.
+* **ObjectData:** Is a JSON formatted representation of the actual data stored in the MapsIndoors system. To see what changed you can compare this data to the previous change.
 
 Examples of use cases could be:
 
@@ -263,6 +397,64 @@ If you use Excel you can find a video on how to open a CSV file here: [https://w
 * **Type**: All Locations are of a type. Types serve as templates for Locations to provide a basic setup. Many of the properties can later be overridden for specific Locations.
 * **Venue**: Typically a collection of Buildings that are close geographically.
 * **Search alias**: An alternative name for a Location allowing users to search for the Location by that name.
+
+## Managing icons
+
+Anywhere in the CMS you can change icons for one or more markers on the map, you use the Icon Manager to do so. Click the "Change"-button to invoke it.
+
+In the Icon Manager, you can choose between a predefined set of MapsIndoors icons, and a list of your uploaded icons. We support uploads of image files in the PNG and SVG formats. Click on an icon in either place, and set it to close the icon manager and preview the icon on the map. Don't worry, it won't be saved until you click "Save" in the details editor.
+
+Remember to keep your icons at a reasonable size. We'll let you know if it's larger than 128x64px, as that would take up a large amount of space on the map. There is a hard limit on the image size of 900x600px or 150kb. The images should also be optimized and compressed to be as small as possible.
+
+You can bulk upload SVGs and PNGs at the same time.
+
+To delete an icon, click the "trash bin" on the image files you want to delete. It is strongly advised to change icons on the Locations, Location Types or Categories before deleting their associated icon file. However, if you delete an icon that is already used by a Location, the Location will revert back to using the icon for its Location Type. If you delete an icon that is used by a Category or Location Type, it will revert to using a generic marker on the map.
+
+### Uploading PNGs
+
+When uploading a PNG image file, make sure you upload it in a 3x size to accommodate for it being scaled down on the map. For example, to display a 20x20px icon on the map, upload it in 60x60px.
+
+### Uploading SVGs
+
+SVG is a vector file format, which lets MapsIndoors convert your icon in a range of sizes to get the best looking icon in every situation.
+
+SVGs should be uploaded with a `width` and `height` that you want the SVG to be displayed on the map in. Make sure you define it in `px`, not `cm` or `%`. E.g., if you want to display a 32x24px icon on the map, upload an SVG with the attributes `width='32px'` and `height='24px'`. For consistency, it's good form to make the `viewport` the same size as the `width` and `height`.
+
+### Supported SVG elements
+
+We only accept SVGs that conform to a very strict ruleset. If an uploaded SVG contains anything other than the elements and attributes listed below, it's rejected. All child elements can be nested as supported by the SVG format.
+
+* `<svg>` element
+* `viewbox` attribute
+* `<path>` child element
+* `<rect>` child element
+* `<title>` child element
+* `<desc>` child element
+* `<circle>` child element
+* `<defs>` child element
+* `<ellipse>` child element
+* `<line>` child element
+* `<pattern>` child element
+* `<polygon>` child element
+* `<polyline>` child element
+* `<text>` child element
+* `<stop>` child element
+* `<use>` child element
+* `<linearGradient>` child element
+* `<radialGradient>` child element
+* `<symbol>` child element
+* `<style>` child element
+* `<tspan>` child element
+
+When you try to upload an SVG containing one or more of these elements and/or attributes, the upload is cancelled and you will see which files contain the unsupported elements.
+
+If your SVGs contain unsupported elements, you must remove them before they can be uploaded. One typical issue is embedded `base64` data in the SVG, which usually indicates the SVG will display raster image data (PNGs and the like) somewhere in it. That can lead to unintended consequences on the map.
+
+### SVG help
+
+Michelle Barker has written [a terrific guide to optimizing SVGs for the web](https://css-irl.info/optimising-svgs-for-the-web/) on her site.
+
+A great tool to strip unnecesary elements from your SVG-file is [SVGOMG by Jake Archibald](https://jakearchibald.github.io/svgomg/).
 
 ## Support
 
