@@ -41,7 +41,7 @@ published: true
 
 ### Bug Fixes:
 
-* **User:** users with the editor role where set as publisher in the backend. This is now aligned so that it is called editor everywhere.
+* **User:** Users with the Editor role were set as Publisher in the backend. This is now aligned so that it is called Editor everywhere.
 * **Icon Manager:** info about file type has been added.
 
 ## Jan 28th 2020 - v3.8.3
