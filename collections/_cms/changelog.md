@@ -23,7 +23,7 @@ published: true
 * Analytics dashboard table.
 * Mapsindoors icon for handicapped parking
 * The Client CMS has been updated to Angular 8.
-* Support for Address field on buildings.
+* Support for Address field on Buildings.
 * Support for Custom Properties on locations, buildings and venues.
 * Support for Searchable/Non-searchable locations, buildings and venues.
 * Swiched Room IDs with External IDs.
