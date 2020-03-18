@@ -13,4 +13,4 @@ You are a conference organizer that needs to associate some pieces of data with 
 
 In general, your Custom Properties can contain any combination of letters, numbers and special characters. Moreover, if your Solution has multiple languages, you must provide a translation per language for each Custom Property. Adding Custom Properties through the CMS, we will help you do this, but you will need to input the translated names.
 
-You can also add Custom Properties through the Integration API with the exact same requirements and options as when adding via the MapsIndoors CMS.
+You can also add Custom Properties through the Integration API with the exact same requirements and options as when adding them via the MapsIndoors CMS.
