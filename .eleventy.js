@@ -12,7 +12,6 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.setBrowserSyncConfig({
     ui: false
   });
-  eleventyConfig.addLayoutAlias('default', 'default.njk');
 
   return {
     templateFormats: ['njk', 'md', '11ty.js'],

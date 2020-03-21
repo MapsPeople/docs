@@ -1,4 +1,4 @@
 {
   "tags": ["ios", "v3"],
-  "eleventyNavigation": { "parent": "ios-v3" }
+  "layout": "ios-v3"
 }

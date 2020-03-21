@@ -4,11 +4,6 @@
   {{ collections.all | eleventyNavigation | eleventyNavigationToHtml | safe }}
 </nav>
 
-<h2>iOS v3 only</h2>
-
-{% set navPages = collections.all | eleventyNavigation("ios-v3") %}
-{{ navPages | eleventyNavigationToHtml | safe }}
-
 <h2>Android v3 Tutorials</h2>
 
 <div>

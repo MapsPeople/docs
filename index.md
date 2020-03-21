@@ -7,5 +7,3 @@ eleventyNavigation:
 ---
 
 # {{ title }}
-
-{% include 'nav.njk' %}

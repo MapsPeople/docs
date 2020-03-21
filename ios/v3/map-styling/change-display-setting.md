@@ -1,7 +1,7 @@
 ---
 title: Working with Display Settings
 date: 2019-12-05
-permalink: /ios/v3/map-styling/work-with-display-settings
+permalink: /ios/v3/map-styling/work-with-display-settings/
 eleventyNavigation:
   key: ios-v3-locations-display
   title: Working with Display Settings

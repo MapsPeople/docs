@@ -1,4 +1,5 @@
 ---
+layout: ios-v3
 title: Getting Started
 published: true
 date: 2019-09-30
