@@ -1,4 +1,40 @@
-<p>Use the <code>MPLocationsProvider</code> class to search for content in your MapsIndoors solution.</p>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+  </head>
+  <body>
+    
+  <nav>
+    <h2>iOS v3</h2>
+    
+    <ul class="sidebar-nav"><li><a href="/ios/v3/getting-started/">Getting started</a></li>
+<li class="bold"><a href="/ios/v3/mapsindoors/">MapsIndoors</a><ul><li><a href="/ios/v3/mapsindoors/handling-marker-selections/">Handling marker selections and other user events</a></li>
+<li><a href="/ios/v3/mapsindoors/getting-marker-from-location/">Getting a marker from a location and vice versa</a></li>
+<li><a href="/ios/v3/mapsindoors/getting-polygon-from-location/">Getting a polygon from a location</a></li>
+<li><a href="/ios/v3/mapsindoors/blue-dot/">Show the user's location aka. Blue Dot</a></li>
+<li><a href="/ios/v3/mapsindoors/create-custom-ui/">Create custom UI</a></li></ul></li>
+<li class="bold"><a href="/ios/v3/locations/">Locations</a><ul><li><a href="/ios/v3/locations/get-details-for-selected-location/">Show details for selected Location</a></li>
+<li><a href="/ios/v3/locations/working-grouping/">Working with Location Grouping (Clustering)</a></li>
+<li><a href="/ios/v3/locations/creating-own-location-sources/">Creating your own Location Sources</a></li></ul></li>
+<li class="bold"><a href="/ios/v3/directions/">Directions</a><ul><li><a href="/ios/v3/directions/directions-wayfinding-instructions/">Get Directions and Show Wayfinding Instructions</a></li>
+<li><a href="/ios/v3/directions/display-route-on-map/">Display Route on map</a></li>
+<li><a href="/ios/v3/directions/directions-result-map/">Get Directions and Show the Result on a Map</a></li>
+<li><a href="/ios/v3/directions/working-with-directions-settings/">Subscribe to floor changes in the rendering</a></li>
+<li><a href="/ios/v3/directions/working-with-events/">Working with Events</a></li>
+<li><a href="/ios/v3/directions/subscribe-to-floor-changes/">Subscribe to floor changes in the rendering</a></li></ul></li>
+<li class="bold"><a href="/ios/v3/map-styling/">Map Styling</a><ul><li><a href="/ios/v3/map-styling/work-with-display-settings/">Working with Display Settings</a></li></ul></li>
+<li class="bold"><a href="/ios/v3/search/">Search</a><ul><li><a href="/ios/v3/search/search-experience/">Create a search experience with MapsIndoors</a></li>
+<li class="active"><a href="/ios/v3/search/filter-locations-on-map-by-search-query/">Filter Locations on map by search query</a></li></ul></li>
+<li><a href="/ios/v3/offline/">Download and bundle offline content</a></li>
+<li><a href="/ios/v3/changelog/">Changelog</a></li></ul>
+  </nav>
+
+    <main>
+      <p>Use the <code>MPLocationsProvider</code> class to search for content in your MapsIndoors solution.</p>
 <p>This example shows how to setup a query for the nearest single best matching location and display the result on the map:</p>
 <pre><code class="language-swift">let locations = MPLocationsProvider.init()
 let queryObj = MPLocationQuery.init()
@@ -30,3 +66,7 @@ locations.getLocationsUsing(queryObj) { (locationData, error) in
 }
 </code></pre>
 <p>Please note that you are not guaranteed that the visible floor contains any search results, so that is why we change floor in the above example.</p>
+
+    </main>
+  </body>
+</html>
