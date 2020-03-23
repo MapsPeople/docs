@@ -3,7 +3,7 @@ title: Changelog
 published: true
 eleventyNavigation:
   key: changelog
-  parent: web
+  parent: web-v3
   title: Changelog
 ---
 

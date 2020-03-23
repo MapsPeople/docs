@@ -2,8 +2,8 @@
 
 {% block nav %}
   <nav>
-    <h2>iOS v3</h2>
-    {% set navPages = collections.all | eleventyNavigation("ios-v3") %}
+    <h2>Various</h2>
+    {% set navPages = collections.all | eleventyNavigation("various") %}
     {{ navPages | eleventyNavigationToHtml({
       listClass: "sidebar-nav", listItemHasChildrenClass: "bold", activeListItemClass: "active", activeKey: eleventyNavigation.key}) | safe 
     }}

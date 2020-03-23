@@ -5,7 +5,7 @@ date: 2019-09-30
 eleventyNavigation:
   key: android-v3-grouping
   title: Work with location grouping / clustering
-  parent: android-v3-tutorials
+  parent: android-v3-guides
   order: 4
 ---
 

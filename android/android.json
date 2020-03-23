@@ -1,4 +1,3 @@
-{ 
-  "tags": "android",
-  "eleventyNavigation": {"parent": "index"}
- }
+{
+  "tags": "android"
+}

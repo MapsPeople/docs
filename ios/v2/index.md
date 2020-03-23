@@ -1,9 +1,7 @@
 ---
-layout: ios-v2
 title: MapsIndoors iOS SDK v2
 date: 2019-09-30
 published: true
-permalink: ios/v2/
 eleventyNavigation:
   key: ios-v2
   title: MapsIndoors iOS SDK v2

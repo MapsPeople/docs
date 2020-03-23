@@ -5,7 +5,7 @@ date: 2019-09-30
 eleventyNavigation:
   key: android-v2-blue-dot-2
   title: Show the Blue Dot with MapsIndoors - Part 2
-  parent: android-v2-tutorials
+  parent: android-v2-guides
   order: 5
 ---
 

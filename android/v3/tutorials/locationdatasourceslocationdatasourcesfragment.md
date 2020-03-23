@@ -5,7 +5,7 @@ date: 2019-09-30
 eleventyNavigation:
   key: android-v3-location-3
   title: Creating your own Location Data Source - Part 3
-  parent: android-v3-tutorials
+  parent: android-v3-guides
   order: 3
 ---
 

@@ -4,7 +4,7 @@ published: true
 date: 2019-09-30
 eleventyNavigation:
   key: web-sdk-v3
-  parent: web
+  parent: web-v3
   title: MapsIndoors Web SDK v3
 ---
 

@@ -1,3 +1,4 @@
-{ 
-  "tags": ["web", "v3"]
- }
+{
+  "tags": ["v3"],
+  "layout": "web-v3"
+}

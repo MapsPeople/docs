@@ -1,7 +1,6 @@
 ---
 title: How to use the MapsIndoors Web SDK v3
 date: 2019-09-30
-permalink: web/v3/guides/
 eleventyNavigation:
   key: guides
   parent: web-sdk-v3

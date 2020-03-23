@@ -1,9 +1,7 @@
 ---
-layout: ios-v3
 title: MapsIndoors iOS SDK v3
 published: true
 date: 2019-09-30
-permalink: ios/v3/
 eleventyNavigation:
   key: ios-v3
   title: MapsIndoors iOS SDK v3

@@ -1,4 +1,3 @@
-{ 
-  "tags": ["android", "v3", "tutorials"],
-  "eleventyNavigation": {"parent": "android-v3-tutorials"}
- }
+{
+  "tags": ["tutorials"]
+}

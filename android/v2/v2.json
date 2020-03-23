@@ -1,4 +1,4 @@
-{ 
-  "tags": ["android", "v2"],
-  "eleventyNavigation": {"parent": "android"}
- }
+{
+  "tags": ["v2"],
+  "layout": "android-v2"
+}

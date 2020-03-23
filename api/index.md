@@ -2,7 +2,6 @@
 title: Integration API v1
 published: true
 date: 2019-11-28
-permalink: api/
 tags: api
 eleventyNavigation:
   key: integration-api

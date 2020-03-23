@@ -1,7 +1,6 @@
 ---
 title: Download and bundle offline content
 date: 2019-09-30
-permalink: ios/v3/offline/
 eleventyNavigation:
   key: ios-v3-offline
   title: Download and bundle offline content

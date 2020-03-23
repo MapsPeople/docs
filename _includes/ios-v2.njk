@@ -2,7 +2,7 @@
 
 {% block nav %}
   <nav>
-    <h2>iOS v2 only</h2>
+    <h2>iOS v2</h2>
     {% set navPages = collections.all | eleventyNavigation("ios-v2") %}
     {{ navPages | eleventyNavigationToHtml({
       listClass: "sidebar-nav", listItemHasChildrenClass: "bold", activeListItemClass: "active", activeKey: eleventyNavigation.key}) | safe 

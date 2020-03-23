@@ -5,7 +5,7 @@ date: 2019-09-30
 eleventyNavigation:
   key: android-v3-search-2
   title: Create a Search Experience with MapsIndoors - Part 2
-  parent: android-v3-tutorials
+  parent: android-v3-guides
   order: 7
 ---
 

@@ -5,7 +5,7 @@ date: 2019-09-30
 eleventyNavigation:
   key: android-v2-location-details
   title: Show Location Details
-  parent: android-v2-tutorials
+  parent: android-v2-guides
   order: 1
 ---
 
