@@ -1,5 +1,6 @@
 ---
 title: MapsIndoors SDK for Web
+layout: default
 published: true
 date: 2019-09-30
 eleventyNavigation:

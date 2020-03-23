@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/assets/style.css">
     <title>Document</title>
   </head>
   <body>
-    
+    <section class="container">
+      
   <nav>
     <h2>iOS v3</h2>
     
@@ -33,8 +35,8 @@
 <li><a href="/ios/v3/changelog/">Changelog</a></li></ul>
   </nav>
 
-    <main>
-      <p>Use the <code>MPDirectionsService</code> class to search for directions. You need to build a query using the <code>MPDirectionsQuery</code> class.</p>
+      <main>
+        <p>Use the <code>MPDirectionsService</code> class to search for directions. You need to build a query using the <code>MPDirectionsQuery</code> class.</p>
 <p>This example shows how to setup a query for a route and display the result on the map:</p>
 <pre><code class="language-swift">let directions = MPDirectionsService.init()
 let renderer = MPDirectionsRenderer.init()
@@ -59,6 +61,7 @@ renderer.routeStepIndex = 1
 </code></pre>
 <p>The length of the <code>legs</code> and <code>steps</code> arrays determines the possible values of <code>routeLegIndex</code> and <code>routeStepIndex</code> (<code>0 ..&lt; length</code>).</p>
 
-    </main>
+      </main>
+    </section>
   </body>
 </html>

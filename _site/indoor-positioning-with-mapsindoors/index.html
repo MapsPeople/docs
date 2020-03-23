@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/assets/style.css">
     <title>Document</title>
   </head>
   <body>
-    
+    <section class="container">
+      
   <nav>
     <h2>Various</h2>
     
@@ -17,8 +19,8 @@
 <li><a href="/sdk-features/">SDK Features</a></li></ul>
   </nav>
 
-    <main>
-      <p>To get an introduction to the field of indoor positioning, we recommend <a href="https://www.mapspeople.com/blog/mapsindoors/indoor-positioning-101/">this blog post</a> for a start.</p>
+      <main>
+        <p>To get an introduction to the field of indoor positioning, we recommend <a href="https://www.mapspeople.com/blog/mapsindoors/indoor-positioning-101/">this blog post</a> for a start.</p>
 <p>MapsIndoors SDK is not an IPS (Indoor Positioning Service). MapsIndoors provides indoor maps and indoor directions, and since it is based on Google Maps, we also provide seamless indoor/outdoor integration.</p>
 <p>With this in mind you need to find an IPS and then use the location from that IPS in MapsIndoors. To some extend iOS CoreLocation and Android Location Services can fulfill the role of an IPS, depending on the building infrastructure. So you might try this in your first iteration. You will need some basic knowledge of the LocationManager on Android and the CLLocationManager on iOS.</p>
 <p>We have made implementations for the platform LocationManagers in demo apps shipped with the MapsIndoors SDK:</p>
@@ -26,6 +28,7 @@
 <p><a href="https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/MIAIOS-SRC/GenericBase/Services/GPSPositionProvider.m">GPSPositionProvider for iOS</a></p>
 <p>This provider is then passed to the MapsIndoors' MapControl instance using a method set/addPositionProvider on a MapControl instance.</p>
 
-    </main>
+      </main>
+    </section>
   </body>
 </html>

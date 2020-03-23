@@ -1,0 +1,105 @@
+@use '../node_modules/normalize.css/normalize.css';
+@use '../node_modules/@mapsindoors/midt/background-color';
+@use '../node_modules/@mapsindoors/midt/border';
+@use '../node_modules/@mapsindoors/midt/color';
+@use '../node_modules/@mapsindoors/midt/elevation';
+@use '../node_modules/@mapsindoors/midt/font';
+@use '../node_modules/@mapsindoors/midt/icons';
+@use '../node_modules/@mapsindoors/midt/margin';
+@use '../node_modules/@mapsindoors/midt/opacity';
+@use '../node_modules/@mapsindoors/midt/padding';
+@use '../node_modules/@mapsindoors/midt/sizing';
+@use '../node_modules/@mapsindoors/midt/transitions';
+@use '../node_modules/@mapsindoors/midt/z-index';
+
+@use '../node_modules/@mapsindoors/midt/build/scss/variables' as var;
+
+body {
+  @include font.family(sans-serif);
+  @include font.size(medium);
+  @include font.weight(medium);
+  @include font.leading(large);
+  @include font.tracking(medium);
+  @include font.color(base);
+}
+
+main {
+  @include font.measure(large);
+}
+
+nav {
+  min-width: 320px;
+  display: block;
+  @include margin.horizontal(large);
+  ul,
+  li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  ul {
+    @include font.weight(x-large);
+    @include font.size(medium);
+    @include font.leading(x-large);
+    li {
+      ul {
+        @include font.weight(medium);
+        @include font.size(medium);
+        @include margin.vertical(small);
+        @include margin.left(small);
+      }
+    }
+  }
+  li.active {
+    @include font.weight(large);
+    @include color.blue(70);
+    font-style: italic;
+
+    ul {
+      font-style: normal;
+    }
+  }
+}
+
+.container {
+  display: flex;
+  flex: 1 0;
+}
+
+a {
+  text-decoration: none;
+  @include color.blue(60);
+
+  &:hover {
+    text-decoration: underline;
+    @include color.blue(70);
+  }
+
+  &:active {
+    @include color.red(60);
+  }
+
+  // &:visited {
+  //   @include color.purple(60);
+  // }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    @include font.color(inverse);
+    @include background-color.gray(90);
+  }
+
+  a {
+    @include color.bronze(20);
+
+    &:hover {
+      text-decoration: underline;
+      @include color.bronze(30);
+    }
+
+    &:active {
+      @include color.red(30);
+    }
+  }
+}

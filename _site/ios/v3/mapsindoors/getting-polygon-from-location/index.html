@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/assets/style.css">
     <title>Document</title>
   </head>
   <body>
-    
+    <section class="container">
+      
   <nav>
     <h2>iOS v3</h2>
     
@@ -33,8 +35,8 @@
 <li><a href="/ios/v3/changelog/">Changelog</a></li></ul>
   </nav>
 
-    <main>
-      <p>Some locations in MapsIndoors can have additional polygon information. These polygons can be used to render a room or area in a special way or make geofences, calculating whether another point or location is contained within the polygon. If a <code>MPLocation</code> has polygons, these can be retrieved using the <code>MPGeometryHelper</code> class.</p>
+      <main>
+        <p>Some locations in MapsIndoors can have additional polygon information. These polygons can be used to render a room or area in a special way or make geofences, calculating whether another point or location is contained within the polygon. If a <code>MPLocation</code> has polygons, these can be retrieved using the <code>MPGeometryHelper</code> class.</p>
 <pre><code class="language-swift">let polygons = MPGeometryHelper.polygonsForLocation(location : MPLocation)
 let polygon = polygons.first
 let path = polygon.path
@@ -46,6 +48,7 @@ for coordinate in path {
 </code></pre>
 <p>As demonstrated above, a polygon's outer ring/path as well as holes are arranged as [longitude, latitude] pairs. As not all locations has polygons, the polygon array may be empty. On the contrary, some locations, like entire building floors, might have more than polygon.</p>
 
-    </main>
+      </main>
+    </section>
   </body>
 </html>

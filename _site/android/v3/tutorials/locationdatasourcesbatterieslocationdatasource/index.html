@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/assets/style.css">
     <title>Document</title>
   </head>
   <body>
-    
+    <section class="container">
+      
   <nav>
     <h2>Android v3</h2>
     
@@ -23,8 +25,8 @@
 <li><a href="/android/v3/changelog/">Changelog</a></li></ul>
   </nav>
 
-    <main>
-      <p>In this tutorial we will show how you can build a custom Location Source. In <a href="../locationdatasourcespeoplelocationdatasource">Part 1</a> we created a people location source that mocks locations of people.</p>
+      <main>
+        <p>In this tutorial we will show how you can build a custom Location Source. In <a href="../locationdatasourcespeoplelocationdatasource">Part 1</a> we created a people location source that mocks locations of people.</p>
 <p>Now we will create another location source that represents batteries. The power level of the batteries will be changing over time and it needs to be visible on the map realtime.</p>
 <p>We will start by creating our implementation of a location source.</p>
 <p>Create the class <code>BatteriesLocationDataSource</code> that implements <code>MPLocationSource</code>:</p>
@@ -295,6 +297,7 @@ public int getSourceId() {
 </code></pre>
 <p><a href="https://github.com/MapsIndoors/MapsIndoorsAndroid-Demo-Samples/blob/master/app/src/main/java/com/mapsindoors/locationdatasources/BatteriesLocationDataSource.java">See the sample in BatteriesLocationDataSource.java</a></p>
 
-    </main>
+      </main>
+    </section>
   </body>
 </html>

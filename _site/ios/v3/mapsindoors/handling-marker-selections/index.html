@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/assets/style.css">
     <title>Document</title>
   </head>
   <body>
-    
+    <section class="container">
+      
   <nav>
     <h2>iOS v3</h2>
     
@@ -33,8 +35,8 @@
 <li><a href="/ios/v3/changelog/">Changelog</a></li></ul>
   </nav>
 
-    <main>
-      <p>Detecting the user tapping a marker or an infowindow is part of the Google Maps SDK for iOS. Assign <code>myGMSMapView.delegate</code> and implementing the methods: <code>mapView.didTapMarker(marker: GMSMarker)</code> and <code>mapView.didTapInfoWindowOfMarker(marker: GMSMarker)</code></p>
+      <main>
+        <p>Detecting the user tapping a marker or an infowindow is part of the Google Maps SDK for iOS. Assign <code>myGMSMapView.delegate</code> and implementing the methods: <code>mapView.didTapMarker(marker: GMSMarker)</code> and <code>mapView.didTapInfoWindowOfMarker(marker: GMSMarker)</code></p>
 <pre><code class="language-swift">func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -&gt; Bool {
     let location = mapControl?.getLocation(marker)
     if location != nil {
@@ -52,6 +54,7 @@ func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) -&gt; 
 }
 </code></pre>
 
-    </main>
+      </main>
+    </section>
   </body>
 </html>

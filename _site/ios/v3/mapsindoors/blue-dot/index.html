@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/assets/style.css">
     <title>Document</title>
   </head>
   <body>
-    
+    <section class="container">
+      
   <nav>
     <h2>iOS v3</h2>
     
@@ -33,8 +35,8 @@
 <li><a href="/ios/v3/changelog/">Changelog</a></li></ul>
   </nav>
 
-    <main>
-      <p>In this tutorial we will show how you can show a blue dot on the map, representing the users location. The position will be served from a mocked positioning provider and displayed on a map in a view controller.</p>
+      <main>
+        <p>In this tutorial we will show how you can show a blue dot on the map, representing the users location. The position will be served from a mocked positioning provider and displayed on a map in a view controller.</p>
 <p>We will start by creating our implementation of a positioning provider.</p>
 <p>Create a class <code>MyPositionProvider</code> that inherits from NSObject and implements <code>MPPositionProvider</code>.</p>
 <pre><code class="language-swift">class MyPositionProvider : NSObject, MPPositionProvider {
@@ -153,6 +155,7 @@ MapsIndoors.positionProvider.startPositioning(nil)
 </code></pre>
 <p><a href="https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Show%20My%20Location/ShowMyLocationController.swift">See the sample in ShowMyLocationController.swift</a></p>
 
-    </main>
+      </main>
+    </section>
   </body>
 </html>
