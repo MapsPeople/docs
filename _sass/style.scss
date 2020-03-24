@@ -14,23 +14,58 @@
 
 @use '../node_modules/@mapsindoors/midt/build/scss/variables' as var;
 
+// * {
+//   border: 1px solid gold;
+// }
+
 body {
   @include font.family(sans-serif);
   @include font.size(medium);
   @include font.weight(medium);
-  @include font.leading(large);
+  @include font.leading(x-large);
   @include font.tracking(medium);
   @include font.color(base);
+  @include background-color.white(base);
 }
 
-main {
+.wrap {
+  max-width: 1248px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+header {
+  section {
+    display: flex;
+    .header-left {
+      @include padding.vertical(medium);
+      flex: 1 1 auto;
+      min-width: 0;
+      min-height: 0;
+    }
+
+    .header-right {
+      @include padding.vertical(medium);
+      align-items: center;
+      display: inline-flex;
+
+      a {
+        vertical-align: middle;
+        @include padding.left(medium);
+        display: inline-block;
+      }
+    }
+  }
+}
+
+main p {
   @include font.measure(large);
 }
 
 nav {
-  min-width: 320px;
+  width: 280px;
   display: block;
-  @include margin.horizontal(large);
+  @include margin.right(xx-large);
   ul,
   li {
     list-style: none;
@@ -59,6 +94,34 @@ nav {
       font-style: normal;
     }
   }
+  .select-sdk {
+    @include border.gray(40);
+    @include border.radius(medium);
+    @include border.style(solid);
+    @include border.width(medium);
+    @include color.black(base);
+    @include font.size(medium);
+    @include font.weight(large);
+    @include padding.horizontal(medium);
+    @include padding.vertical(small);
+    @include sizing.height(x-large);
+    align-items: center;
+    background: linear-gradient(var.$color-gray-10, var.$color-gray-20);
+    display: block;
+    display: inline-flex;
+    margin: 0;
+    max-width: 100%;
+    width: 100%;
+
+    &:not(:disabled):hover {
+      background: linear-gradient(var.$color-gray-20, var.$color-gray-30);
+      @include border.gray(50);
+    }
+
+    &:not(:disabled):active {
+      background: linear-gradient(var.$color-gray-30, var.$color-gray-20);
+    }
+  }
 }
 
 .container {
@@ -84,10 +147,29 @@ a {
   // }
 }
 
+h1 {
+  @include font.size(xxx-large);
+  @include font.weight(small);
+  @include font.leading(xxx-large);
+  @include margin.vertical(none);
+}
+
+pre code {
+  @include font.family(monospace);
+  @include border.radius(medium);
+  width: var.$font-measure-large;
+  &.hljs {
+    @include padding.all(medium);
+    @include border.gray(40);
+    @include border.style(solid);
+    @include border.width(medium);
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   body {
     @include font.color(inverse);
-    @include background-color.gray(90);
+    @include background-color.black(base);
   }
 
   a {
@@ -99,7 +181,18 @@ a {
     }
 
     &:active {
-      @include color.red(30);
+      @include color.bronze(40);
+    }
+  }
+  svg.mapspeople-logo path {
+    fill: white;
+  }
+  pre code.hljs {
+    @include border.style(none);
+  }
+  nav {
+    li.active a {
+      @include color.bronze(30);
     }
   }
 }
