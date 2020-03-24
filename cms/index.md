@@ -2,7 +2,7 @@
 title: MapsIndoors CMS
 date: 2019-09-30
 published: true
-permalink: cms/
+layout: default
 tags: cms
 eleventyNavigation:
   key: cms
@@ -145,15 +145,15 @@ To get started using the IndoorView feature for your Locations, please make sure
 
 #### MapsIndoors support matrix
 
-| MapsIndoors | Support for IndoorView | Private hosted panorama images|
-| - | - | - |
-|CMS|Yes|No|
-|Web App|Yes|No|
-|Android App|No|No|
-|iOS App|No|No|
-|Web SDK|Yes, through Google Maps Street View API or Static Street View API|No|
-|Android SDK|No|No|
-|iOS SDK|No|No|
+| MapsIndoors | Support for IndoorView                                             | Private hosted panorama images |
+| ----------- | ------------------------------------------------------------------ | ------------------------------ |
+| CMS         | Yes                                                                | No                             |
+| Web App     | Yes                                                                | No                             |
+| Android App | No                                                                 | No                             |
+| iOS App     | No                                                                 | No                             |
+| Web SDK     | Yes, through Google Maps Street View API or Static Street View API | No                             |
+| Android SDK | No                                                                 | No                             |
+| iOS SDK     | No                                                                 | No                             |
 
 IndoorView only supports **publicly** available Google Street View imagery. If you would like to know more about **privately** hosted panorama images, please see [Googles Custom Street View documentation](https://developers.google.com/maps/documentation/javascript/streetview#CustomStreetView).
 
