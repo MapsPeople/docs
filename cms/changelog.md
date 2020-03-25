@@ -2,6 +2,11 @@
 title: Changelog
 date: 2019-10-07
 published: true
+tags: cms
+eleventyNavigation:
+  key: cms-changelog
+  parent: cms
+  title: Changelog
 ---
 
 ## Jan 28th 2020 - v3.8.3

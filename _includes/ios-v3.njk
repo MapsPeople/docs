@@ -2,18 +2,7 @@
 
 {% block nav %}
   <nav>
-    <select onchange="location = this.value;" class="select-sdk">
-      <option value="">MapsIndoors SDKs</option>
-      <option value="">
-        ---</option>
-      <option value="/ios/v2">iOS v2</option>
-      <option value="/ios/v3">iOS v3</option>
-      <option value="">---
-      </option>
-      <option value="/android/v2">Android v2</option>
-      <option value="/android/v3">Android v3</option>
-    </select>
-    <h2>iOS v3</h2>
+    <h3>iOS v3</h3>
     {% set navPages = collections.all | eleventyNavigation("ios-v3") %}
     {{ navPages | eleventyNavigationToHtml({
       listClass: "sidebar-nav", listItemHasChildrenClass: "bold", activeListItemClass: "active", activeKey: eleventyNavigation.key}) | safe 

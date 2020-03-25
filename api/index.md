@@ -1,5 +1,6 @@
 ---
 title: Integration API v1
+layout: default
 published: true
 date: 2019-11-28
 tags: api

@@ -353,62 +353,18 @@ body {
   margin-right: auto;
 }
 
-header section {
-  display: flex;
-}
-header section .header-left {
-  padding-top: 16px;
-  padding-bottom: 16px;
-  flex: 1 1 auto;
-  min-width: 0;
-  min-height: 0;
-}
-header section .header-right {
-  padding-top: 16px;
-  padding-bottom: 16px;
-  align-items: center;
-  display: inline-flex;
-}
-header section .header-right a {
-  vertical-align: middle;
-  padding-left: 16px;
-  display: inline-block;
-}
-
-main p {
+main p,
+main ul,
+main ol,
+main blockquote {
   max-width: 34rem;
 }
 
 nav {
-  width: 280px;
+  min-width: 280px;
+  max-width: 280px;
   display: block;
   margin-right: 40px;
-}
-nav ul,
-nav li {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-nav ul {
-  font-weight: 600;
-  font-size: 1rem;
-  line-height: 1.5rem;
-}
-nav ul li ul {
-  font-weight: 400;
-  font-size: 1rem;
-  margin-top: 12px;
-  margin-bottom: 12px;
-  margin-left: 12px;
-}
-nav li.active {
-  font-weight: 500;
-  color: #1d5bbf;
-  font-style: italic;
-}
-nav li.active ul {
-  font-style: normal;
 }
 nav .select-sdk {
   border-color: #c8d0e0;
@@ -456,12 +412,56 @@ a:active {
   color: #de1b1b;
 }
 
-h1 {
-  font-size: 3rem;
-  font-weight: 300;
-  line-height: 3rem;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin-top: 0;
-  margin-bottom: 0;
+}
+
+h1 {
+  font-size: 2.25rem;
+  font-weight: 300;
+  line-height: 2.25rem;
+  margin-bottom: 24px;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+  margin-bottom: 24px;
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  margin-bottom: 24px;
+}
+
+h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1rem;
+  margin-bottom: 16px;
+}
+
+h5 {
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1rem;
+  margin-bottom: 12px;
+}
+
+h6 {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: normal;
+  margin-bottom: 12px;
+  text-transform: uppercase;
 }
 
 pre code {
@@ -476,10 +476,120 @@ pre code.hljs {
   border-width: 1px;
 }
 
+header .flex,
+footer .flex {
+  display: flex;
+}
+header .left,
+footer .left {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 0;
+}
+header .right,
+footer .right {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  align-items: center;
+  display: inline-flex;
+  text-align: right;
+}
+header .right a,
+footer .right a {
+  vertical-align: middle;
+  padding-left: 16px;
+  display: inline-block;
+}
+header a,
+footer a {
+  color: #fcfcfc;
+}
+header a:hover,
+footer a:hover {
+  text-decoration: underline;
+  color: #ebeff5;
+}
+header a:active,
+footer a:active {
+  color: #dee3ed;
+}
+
+header {
+  background-color: #1a5130;
+  margin-bottom: 24px;
+}
+
+svg.mapspeople-logo path {
+  fill: white;
+}
+
+footer {
+  color: #ebeff5;
+  margin-top: 24px;
+  background-image: linear-gradient(to bottom, #153d25, #112c1c);
+}
+footer .third {
+  width: 33.33333%;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+footer .third:first-of-type {
+  margin-right: 24px;
+}
+footer .third:last-of-type {
+  margin-left: 24px;
+}
+footer .legacy {
+  font-weight: bold;
+}
+
+footer ul,
+footer li,
+nav ul,
+nav li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+footer ul,
+nav ul {
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+footer ul li,
+nav ul li {
+  margin-top: 16px;
+}
+footer ul li ul,
+nav ul li ul {
+  font-weight: 400;
+  font-size: 1rem;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  margin-left: 12px;
+}
+footer ul li ul li,
+nav ul li ul li {
+  margin-top: 4px;
+}
+footer li.active,
+nav li.active {
+  font-weight: 500;
+  color: #1d5bbf;
+  font-style: italic;
+}
+footer li.active ul,
+nav li.active ul {
+  font-style: normal;
+}
+
 @media (prefers-color-scheme: dark) {
   body {
     color: #fcfcfc;
-    background-color: #1e2025;
+    background-color: #343941;
   }
 
   a {
@@ -493,15 +603,20 @@ pre code.hljs {
     color: #e99c3f;
   }
 
-  svg.mapspeople-logo path {
-    fill: white;
-  }
-
   pre code.hljs {
     border-style: none;
   }
 
   nav li.active a {
     color: #f5bb75;
+  }
+  nav li.active ul li a {
+    color: #fad7ae;
+  }
+
+  header,
+footer {
+    background-color: #1e2025;
+    background-image: none;
   }
 }

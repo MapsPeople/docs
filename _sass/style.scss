@@ -12,7 +12,7 @@
 @use '../node_modules/@mapsindoors/midt/transitions';
 @use '../node_modules/@mapsindoors/midt/z-index';
 
-@use '../node_modules/@mapsindoors/midt/build/scss/variables' as var;
+@use '../node_modules/@mapsindoors/midt/build/scss/variables' as *;
 
 // * {
 //   border: 1px solid gold;
@@ -34,66 +34,23 @@ body {
   margin-right: auto;
 }
 
-header {
-  section {
-    display: flex;
-    .header-left {
-      @include padding.vertical(medium);
-      flex: 1 1 auto;
-      min-width: 0;
-      min-height: 0;
-    }
-
-    .header-right {
-      @include padding.vertical(medium);
-      align-items: center;
-      display: inline-flex;
-
-      a {
-        vertical-align: middle;
-        @include padding.left(medium);
-        display: inline-block;
-      }
-    }
+main {
+  p,
+  ul,
+  ol,
+  blockquote {
+    @include font.measure(large);
   }
 }
 
-main p {
-  @include font.measure(large);
-}
+// Sidebar navigation
 
 nav {
-  width: 280px;
+  min-width: 280px;
+  max-width: 280px;
   display: block;
   @include margin.right(xx-large);
-  ul,
-  li {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  ul {
-    @include font.weight(x-large);
-    @include font.size(medium);
-    @include font.leading(x-large);
-    li {
-      ul {
-        @include font.weight(medium);
-        @include font.size(medium);
-        @include margin.vertical(small);
-        @include margin.left(small);
-      }
-    }
-  }
-  li.active {
-    @include font.weight(large);
-    @include color.blue(70);
-    font-style: italic;
 
-    ul {
-      font-style: normal;
-    }
-  }
   .select-sdk {
     @include border.gray(40);
     @include border.radius(medium);
@@ -106,7 +63,7 @@ nav {
     @include padding.vertical(small);
     @include sizing.height(x-large);
     align-items: center;
-    background: linear-gradient(var.$color-gray-10, var.$color-gray-20);
+    background: linear-gradient($color-gray-10, $color-gray-20);
     display: block;
     display: inline-flex;
     margin: 0;
@@ -114,12 +71,12 @@ nav {
     width: 100%;
 
     &:not(:disabled):hover {
-      background: linear-gradient(var.$color-gray-20, var.$color-gray-30);
+      background: linear-gradient($color-gray-20, $color-gray-30);
       @include border.gray(50);
     }
 
     &:not(:disabled):active {
-      background: linear-gradient(var.$color-gray-30, var.$color-gray-20);
+      background: linear-gradient($color-gray-30, $color-gray-20);
     }
   }
 }
@@ -147,17 +104,66 @@ a {
   // }
 }
 
-h1 {
-  @include font.size(xxx-large);
-  @include font.weight(small);
-  @include font.leading(xxx-large);
-  @include margin.vertical(none);
+// Headers
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @include margin.top(none);
 }
+
+h1 {
+  @include font.size(xx-large);
+  @include font.weight(small);
+  @include font.leading(xx-large);
+  @include margin.bottom(large);
+}
+
+h2 {
+  @include font.size(x-large);
+  @include font.weight(medium);
+  @include font.leading(x-large);
+  @include margin.bottom(large);
+}
+
+h3 {
+  @include font.size(large);
+  @include font.weight(x-large);
+  @include font.leading(large);
+  @include margin.bottom(large);
+}
+
+h4 {
+  @include font.size(medium);
+  @include font.weight(xx-large);
+  @include font.leading(medium);
+  @include margin.bottom(medium);
+}
+
+h5 {
+  @include font.size(small);
+  @include font.weight(xx-large);
+  @include font.leading(medium);
+  @include margin.bottom(small);
+}
+
+h6 {
+  @include font.size(x-small);
+  @include font.weight(xx-large);
+  @include font.tracking(x-large);
+  @include margin.bottom(small);
+  text-transform: uppercase;
+}
+
+// Code highlight styling. .hljs is a highlight.js-specific class.
 
 pre code {
   @include font.family(monospace);
   @include border.radius(medium);
-  width: var.$font-measure-large;
+  width: $font-measure-large;
   &.hljs {
     @include padding.all(medium);
     @include border.gray(40);
@@ -166,10 +172,124 @@ pre code {
   }
 }
 
+// header.njk, footer.njk
+
+header,
+footer {
+  .flex {
+    display: flex;
+  }
+  .left {
+    @include margin.vertical(medium);
+    flex: 1 1 auto;
+    min-width: 0;
+    min-height: 0;
+  }
+  .right {
+    @include margin.vertical(medium);
+    align-items: center;
+    display: inline-flex;
+    text-align: right;
+
+    a {
+      vertical-align: middle;
+      @include padding.left(medium);
+      display: inline-block;
+    }
+  }
+  a {
+    @include color.white(base);
+
+    &:hover {
+      text-decoration: underline;
+      @include color.gray(20);
+    }
+
+    &:active {
+      @include color.gray(30);
+    }
+  }
+}
+
+// header.njk
+
+header {
+  @include background-color.green(80);
+  @include margin.bottom(large);
+}
+
+svg.mapspeople-logo path {
+  fill: white;
+}
+
+// footer.njk
+footer {
+  @include color.gray(20);
+  @include margin.top(large);
+  background-image: linear-gradient(
+    to bottom,
+    $color-green-90,
+    $color-green-100
+  );
+  .third {
+    width: 33.33333%;
+    @include margin.vertical(large);
+
+    &:first-of-type {
+      @include margin.right(large);
+    }
+
+    &:last-of-type {
+      @include margin.left(large);
+    }
+  }
+  .legacy {
+    font-weight: bold;
+  }
+}
+
+// Lists in nav and footer
+footer,
+nav {
+  ul,
+  li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  ul {
+    @include font.weight(x-large);
+    @include font.size(medium);
+    @include font.leading(x-large);
+    li {
+      @include margin.top(medium);
+      ul {
+        @include font.weight(medium);
+        @include font.size(medium);
+        @include margin.vertical(small);
+        @include margin.left(small);
+        li {
+          @include margin.top(xx-small);
+        }
+      }
+    }
+  }
+  li.active {
+    @include font.weight(large);
+    @include color.blue(70);
+    font-style: italic;
+
+    ul {
+      font-style: normal;
+    }
+  }
+}
+
+// Dark theme overrides. Should always be at the bottom.
 @media (prefers-color-scheme: dark) {
   body {
     @include font.color(inverse);
-    @include background-color.black(base);
+    @include background-color.gray(100);
   }
 
   a {
@@ -184,15 +304,22 @@ pre code {
       @include color.bronze(40);
     }
   }
-  svg.mapspeople-logo path {
-    fill: white;
-  }
   pre code.hljs {
     @include border.style(none);
   }
   nav {
-    li.active a {
-      @include color.bronze(30);
+    li.active {
+      a {
+        @include color.bronze(30);
+      }
+      ul li a {
+        @include color.bronze(20);
+      }
     }
+  }
+  header,
+  footer {
+    @include background-color.black(base);
+    background-image: none;
   }
 }
