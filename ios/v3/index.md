@@ -4,7 +4,7 @@ published: true
 date: 2019-09-30
 eleventyNavigation:
   key: ios-v3
-  title: MapsIndoors iOS SDK v3
+  title: v3
   parent: ios
   order: 1
 ---

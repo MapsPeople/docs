@@ -5,7 +5,7 @@ date: 2019-09-30
 eleventyNavigation:
   key: ios
   parent: index
-  title: MapsIndoors SDK for iOS
+  title: iOS
 ---
 
 ## Choose an SDK version

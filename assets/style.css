@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -360,13 +361,13 @@ main blockquote {
   max-width: 34rem;
 }
 
-nav {
+nav.sidebar {
   min-width: 280px;
   max-width: 280px;
   display: block;
   margin-right: 40px;
 }
-nav .select-sdk {
+nav.sidebar .select-sdk {
   border-color: #c8d0e0;
   border-radius: 4px;
   border-style: solid;
@@ -387,11 +388,11 @@ nav .select-sdk {
   max-width: 100%;
   width: 100%;
 }
-nav .select-sdk:not(:disabled):hover {
+nav.sidebar .select-sdk:not(:disabled):hover {
   background: linear-gradient(#ebeff5, #dee3ed);
   border-color: #aeb9cb;
 }
-nav .select-sdk:not(:disabled):active {
+nav.sidebar .select-sdk:not(:disabled):active {
   background: linear-gradient(#dee3ed, #ebeff5);
 }
 
@@ -462,6 +463,10 @@ h6 {
   letter-spacing: normal;
   margin-bottom: 12px;
   text-transform: uppercase;
+}
+
+code {
+  font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
 }
 
 pre code {
@@ -579,11 +584,35 @@ footer li.active,
 nav li.active {
   font-weight: 500;
   color: #1d5bbf;
-  font-style: italic;
+  border-left: solid;
+  border-color: #3071d9;
+  margin-left: -12px;
+  padding-left: 8px;
 }
 footer li.active ul,
 nav li.active ul {
   font-style: normal;
+}
+
+ol.breadcrumb {
+  padding-left: 0;
+  margin-top: 0;
+}
+ol.breadcrumb .item a {
+  margin-right: 12px;
+  font-weight: 500;
+  font-size: 1rem;
+}
+ol.breadcrumb .item:not(:first-of-type) {
+  margin-left: 4px;
+}
+ol.breadcrumb .item:not(:last-of-type)::after {
+  content: "›";
+}
+
+q::after {
+  content: "»";
+  color: red;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -607,10 +636,13 @@ nav li.active ul {
     border-style: none;
   }
 
-  nav li.active a {
+  nav.sidebar li.active {
+    border-color: #fad7ae;
+  }
+  nav.sidebar li.active a {
     color: #f5bb75;
   }
-  nav li.active ul li a {
+  nav.sidebar li.active ul li a {
     color: #fad7ae;
   }
 

@@ -45,7 +45,7 @@ main {
 
 // Sidebar navigation
 
-nav {
+nav.sidebar {
   min-width: 280px;
   max-width: 280px;
   display: block;
@@ -156,6 +156,12 @@ h6 {
   @include font.tracking(x-large);
   @include margin.bottom(small);
   text-transform: uppercase;
+}
+
+// Text styles
+
+code {
+  @include font.family(monospace);
 }
 
 // Code highlight styling. .hljs is a highlight.js-specific class.
@@ -277,12 +283,39 @@ nav {
   li.active {
     @include font.weight(large);
     @include color.blue(70);
-    font-style: italic;
+    @include border.left(solid);
+    @include border.blue(60);
+    margin-left: -12px;
+    padding-left: 8px;
 
     ul {
       font-style: normal;
     }
   }
+}
+
+// Breadcrumb
+ol.breadcrumb {
+  @include padding.left(none);
+  @include margin.top(none);
+  .item {
+    a {
+      @include margin.right(small);
+      @include font.weight(large);
+      @include font.size(medium);
+    }
+  }
+  .item:not(:first-of-type) {
+    @include margin.left(xx-small);
+  }
+  .item:not(:last-of-type)::after {
+    content: '›';
+  }
+}
+
+q::after {
+  content: '»';
+  color: red;
 }
 
 // Dark theme overrides. Should always be at the bottom.
@@ -307,8 +340,9 @@ nav {
   pre code.hljs {
     @include border.style(none);
   }
-  nav {
+  nav.sidebar {
     li.active {
+      @include border.bronze(20);
       a {
         @include color.bronze(30);
       }
