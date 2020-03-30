@@ -254,6 +254,10 @@ footer {
   }
 }
 
+.various {
+  @include font.weight(normal);
+}
+
 // Lists in nav and footer
 footer,
 nav {
@@ -313,9 +317,12 @@ ol.breadcrumb {
   }
 }
 
-q::after {
-  content: '»';
-  color: red;
+p code {
+  @include background-color.gray(20);
+  @include border.radius(small);
+  @include padding.horizontal(xx-small);
+  @include padding.vertical(xxx-small);
+  @include font.size(small);
 }
 
 // Dark theme overrides. Should always be at the bottom.
@@ -355,5 +362,61 @@ q::after {
   footer {
     @include background-color.black(base);
     background-image: none;
+  }
+  p code {
+    @include background-color.gray(80);
+  }
+}
+
+// Front
+
+.front {
+  text-align: center;
+  section.sdks {
+    @include margin.top(xx-large);
+    @include margin.bottom(xxx-large);
+  }
+  p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  h1 {
+    @include font.size(xxxx-large);
+    @include font.leading(xxxx-large);
+    @include margin.vertical(xx-large);
+    font-family: Raleway;
+  }
+  h2 {
+    @include font.size(xx-large);
+    @include font.leading(xxx-large);
+    @include font.tracking(x-large);
+    @include font.weight(small);
+    font-style: italic;
+    @include margin.vertical(xx-large);
+  }
+  a.button-front {
+    @include font.size(x-large);
+    @include font.color(base);
+    @include background-color.white(base);
+    @include padding.vertical(medium);
+    @include padding.horizontal(x-large);
+    display: inline-flex;
+    align-items: center;
+    @include border.radius(medium);
+    @include margin.right(large);
+
+    &:hover {
+      @include background-color.gray(10);
+      @include elevation.elevation(medium);
+      transform: scale(1.05);
+    }
+
+    svg {
+      @include margin.right(medium);
+    }
+
+    &:last-of-type {
+      @include margin.right(none);
+    }
   }
 }

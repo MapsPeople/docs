@@ -1,37 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{{ '/assets/style.css' | url }}">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
-    <script>
-      hljs.initHighlightingOnLoad();
-    </script>
-    <script>
-      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.write('<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css">');
-      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
-        document.write('<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github-gist.min.css">');
-      }
-    </script>
-    <title>Document</title>
-  </head>
-  <body>
-    {% include "header.njk" %}
-    <div class="wrap">
-      <section class="container">
-        {% block nav %}{% endblock %}
-        <main>
-          <nav aria-label="Breadcrumb">
+{% include "head.njk" %}
+<body>
+  {% include "header.njk" %}
+  <div class="wrap">
+    <section class="container">
+      {% block nav %}{% endblock %}
+      <main>
+        <nav aria-label="Breadcrumb">
           {{ collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.parent) | eleventyNavigationToHtml({listElement: "ol", listItemElement: "span", listItemClass: "item", listClass: "breadcrumb", activeListItemClass: "active", activeKey: eleventyNavigation.key}) | safe }}
-          </nav>
-          <h1>{{ title }}</h1>
-          {{ content | safe }}
-        </main>
-      </section>
-    </div>
-    {% include "footer.njk" %}
-  </body>
+        </nav>
+        <h1>{{ title }} - MapsIndoors Documentation</h1>
+        {{ content | safe }}
+      </main>
+    </section>
+  </div>
+  {% include "footer.njk" %}
+</body>
 </html>

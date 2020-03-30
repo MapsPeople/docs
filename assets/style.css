@@ -610,9 +610,14 @@ ol.breadcrumb .item:not(:last-of-type)::after {
   content: "›";
 }
 
-q::after {
-  content: "»";
-  color: red;
+p code {
+  background-color: #ebeff5;
+  border-radius: 2px;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  font-size: 0.875rem;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -651,4 +656,59 @@ footer {
     background-color: #1e2025;
     background-image: none;
   }
+
+  p code {
+    background-color: #59616e;
+  }
+}
+.front {
+  text-align: center;
+}
+.front section.sdks {
+  margin-top: 40px;
+  margin-bottom: 48px;
+}
+.front p {
+  margin-left: auto;
+  margin-right: auto;
+}
+.front h1 {
+  font-size: 4.5rem;
+  line-height: 4.5rem;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  font-family: Raleway;
+}
+.front h2 {
+  font-size: 2.25rem;
+  line-height: 3rem;
+  letter-spacing: normal;
+  font-weight: 300;
+  font-style: italic;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.front a.button-front {
+  font-size: 1.5rem;
+  color: #1e2025;
+  background-color: #fcfcfc;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 32px;
+  padding-right: 32px;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 4px;
+  margin-right: 24px;
+}
+.front a.button-front:hover {
+  background-color: #f5f7fa;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075), 0 2px 2px rgba(0, 0, 0, 0.075), 0 4px 4px rgba(0, 0, 0, 0.075), 0 6px 6px rgba(0, 0, 0, 0.075), 0 8px 8px rgba(0, 0, 0, 0.075);
+  transform: scale(1.05);
+}
+.front a.button-front svg {
+  margin-right: 16px;
+}
+.front a.button-front:last-of-type {
+  margin-right: 0;
 }
