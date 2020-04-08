@@ -52,6 +52,7 @@ When a `Property ID` is added to your MapsIndoors solution you will see the foll
 | Map | Cluster clicked on map | "type of locations" type | Location type for selected cluster |
 
 ### General Statistics
+
 Using Google Analytics also gives you access to general website statistics such as:
  
 * Current active users and their geography
