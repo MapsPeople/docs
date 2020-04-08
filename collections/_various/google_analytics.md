@@ -54,6 +54,7 @@ When a `Property ID` is added to your MapsIndoors solution you will see the foll
 ### General Statistics
 
 Using Google Analytics also gives you access to general website statistics such as:
+
 * Current active users and their geography
 * Current active sessions by country
 * Users by time of day
