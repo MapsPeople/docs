@@ -7,6 +7,12 @@ nav_weight: 1000
 
 Changelog for MapsIndoors SDK for JavaScript. This document structure is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and the project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [3.8.1] - 2020-04-01
+
+### Fixed
+
+- Inaccessible localStorage in the browser will no longer crash the SDK.
+
 ## [3.8.0] - 2020-03-02
 
 ### Changed
