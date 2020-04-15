@@ -205,7 +205,7 @@ Please see the official [Google Street View Service documentation](https://devel
 
 * **Venue Details:** Change Building and or floor.
 
-* **Room Identifier:** This can be edited.
+* **External ID:** This can be edited. See "[ExternalID](https://mapsindoors.github.io/external-id/)" for more information.
 
 * **"Active to and from":** If required, select a time period during which the Location will be active. "Active" in this case means it is visible on the map, and shows up in search results. Leave the date fields empty if the Location should always be displayed
 
