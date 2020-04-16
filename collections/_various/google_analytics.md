@@ -3,7 +3,7 @@ title: Google Analytics
 nav_weight: 1300
 published: true
 date: 2020-01-31
-permalink: /google_analytics/
+permalink: /google-analytics/
 ---
 
 ## Overview
