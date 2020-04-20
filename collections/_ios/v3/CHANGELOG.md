@@ -16,6 +16,12 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 ### Removed
 -->
 
+## [3.8.3] 2020-03-05
+
+### Fixed
+
+- Fixed an issue that would make devices with iOS 10 crash occasionally.
+
 ## [3.8.2] 2020-03-02
 
 ### Fixed
