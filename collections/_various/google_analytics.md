@@ -1,17 +1,16 @@
 ---
 title: Google Analytics
-parent: guides
-layout: tutorial
 nav_weight: 1300
 published: true
 date: 2020-01-31
+permalink: /google-analytics/
 ---
 
 ## Overview
 
-In this, we will take a look at Google Analytics.
+Google Analytics is a free tool that gives you the opportunity to analyze data to get a deeper understanding of your customers and how they use your app. Examples include understanding which places are hardest to find in your venue or what users typically search for when looking for a location.
 
-Google Analytics is a free tool that gives you the opportunity to analyze data to get a deeper understanding of your customers and how they use your app. An example could be to figure out which places is hardest to find on your venue or what users typically search for when looking for a location.
+MapsPeople can enable event tracking for your [MapsIndoors Standard Web Application](http://clients.mapsindoors.com/demo). When implementing your own application using the MapsIndoors SDKs, you can implement event tracking using your analytics service of choice.
 
 ### Get started
 
@@ -33,7 +32,7 @@ After doing this, within 24 hours you will start receiving stats and events in y
 
 When a `Property ID` is added to your MapsIndoors solution you will see the following events in Google Analytics.
 
-> Events seen below is only tracked in the Standard Web App.
+> Events seen below are only tracked in the Standard Web App.
 {: .mi-careful}
 
 | Category | Action | Label | Description
@@ -51,5 +50,24 @@ When a `Property ID` is added to your MapsIndoors solution you will see the foll
 | Directions | Selected avoid stairs | Avoided stairs enabled for directions to external location | Avoid stairs was enabled |
 | Map | Location clicked on map | "Main Canteen" - locationId | Location name and id |
 | Map | Cluster clicked on map | "type of locations" type | Location type for selected cluster |
+
+### General Statistics
+
+Using Google Analytics also gives you access to general website statistics such as:
+
+* Current active users and their geography
+* Current active sessions by country
+* Users by time of day
+* Number of users and new users
+* Number of sessions and sessions per user
+* Page views
+* Pages per session
+* Average session duration
+* Bounce rate
+* Number of and percentage of users for each language
+* Browser type
+* Service provider
+* Mobile device type
+* ...and more
 
 For more information on how to get started with Google Analytics please read this article: [https://support.google.com/analytics/answer/1008015](https://support.google.com/analytics/answer/1008015).
