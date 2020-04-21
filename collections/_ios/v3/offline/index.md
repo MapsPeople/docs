@@ -75,6 +75,7 @@ Offline caching of multiple simultaneous datasets is fully supported, and is mos
 Management of multiple dataset is done via  `MapsIndoors.dataSetCacheManager`, which allows querying, adding, modifying and removing datasets.
 
 ### Listing managed datasets
+
 All datasets currently manager is accessible via the `MapsIndoors.dataSetCacheManager.managedDataSets` collection:
 
 ```swift
@@ -82,26 +83,32 @@ for ds in MapsIndoors.dataSetCacheManager.managedDataSets {
     print( "\(ds.name): size \(ds.cacheItem.syncSize)" )
 }
 ```
+
 This can be used to build a management user interface, and information about individual datasets can be access from the `MPDataSetCache` and `MPDataSetCacheItem` classes.
 
 ### Adding datasets for offline caching
+
 Datasets are scheduled for caching using one of the  `MapsIndoors.dataSetCacheManager.addDataSet()` variants:
 
 ```swift
 MapsIndoors.dataSetCacheManager.addDataSet("API Key")
 MapsIndoors.dataSetCacheManager.addDataSet("API Key", cachingScope: .cachingScope_Basic)
 ```
+
 The current MapsIndoors API key is automatically added as a managed dataset with `cachingScope_Basic`.
 
-### Removing datasets 
+### Removing datasets
+
 Datasets are removed from caching using `MapsIndoors.dataSetCacheManager.removeDataSet()`:
 
 ```swift
 MapsIndoors.dataSetCacheManager.removeDataSet(MPDataSetCache)
 ```
+
 Note: the currently active dataset is not removed.
 
 ### Changing caching parameters
+
 To change the extent of caching, for example in a management menu:
 
 ```swift
@@ -111,6 +118,7 @@ dataSetManager.setCachingScope( .cachingScope_Detailed, cacheItem: dataSet?.cach
 ```
 
 ### Determining the caching size of a dataset
+
 The estimated and cached size of a dataset is available via the datasets cacheitem:
 
 ```swift
@@ -123,9 +131,11 @@ To refesh or get the size of a synced dataset:
 ```swift
 dataSetManager.fetchSyncSizes(for: [dataSet], delegate: self)
 ```
+
 This is an asynchronous process, and a `MPDataSetCacheManagerSizeDelegate` is needed for getting information about progress and results.
 
 ### Synchronizing data with MPDataSetCacheManager
+
 The `MPDataSetCacheManager`allows for finegrained control which datasets are synchronized, and allows for cancellation:
 
 ```swift
