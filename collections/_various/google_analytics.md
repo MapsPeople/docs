@@ -12,6 +12,10 @@ Google Analytics is a free tool that gives you the opportunity to analyze data t
 
 MapsPeople can enable event tracking for your [MapsIndoors Standard Web Application](http://clients.mapsindoors.com/demo). When implementing your own application using the MapsIndoors SDKs, you can implement event tracking using your analytics service of choice.
 
+The following diagram represents the flow of information from MapsIndoors to Google Analytics.
+
+![Google Analytics Flow]({{ site.url }}/assets/various/Google_Analytics_Flow.png)
+
 ### Get started
 
 To start seeing stats for your [standard web app](http://clients.mapsindoors.com/):
