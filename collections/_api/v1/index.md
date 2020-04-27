@@ -122,7 +122,7 @@ It tells which languages are defined for this project, which language is the def
 
 ### Geodata
 
-All geospasial data, Geodata, is arranged in a simple tree. Each element has a parent ID (except the root) so as an example, a point of interest (POI) can have a Room parent. The Room will typically be on a Floor in a Building on a Venue. Venues are always the root object (identified with parent ID is null), and is defined by "_An overall geographical area which typically comprises the area of one or more buildings and their relevant surrounding areas such as lawns and parking lots_".
+All geospatial data, Geodata, is arranged in a simple tree. Each element has a parent ID (except the root) so as an example, a point of interest (POI) can have a Room parent. The Room will typically be on a Floor in a Building on a Venue. Venues are always the root object (identified with parent ID is null), and is defined by "_An overall geographical area which typically comprises the area of one or more buildings and their relevant surrounding areas such as lawns and parking lots_".
 
 ![Geodata Structure]({{ site.url }}/assets/api/v1/geodata-structure.png)
 
@@ -155,8 +155,7 @@ All Geodata BaseTypes have some common keys that is available for all, and then 
     _Only relevant for POI/Room/Area._
 
 * `DisplaySetting [DisplayRule]`
-  * An overriding Display Rule to use, instead of the one from the Display Type. \
-
+  * An overriding Display Rule to use, instead of the one from the Display Type. 
     See "DisplayRules" under Display Type.
 
     _Only relevant for POI/Room/Area._
