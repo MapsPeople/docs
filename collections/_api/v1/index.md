@@ -155,7 +155,9 @@ All Geodata BaseTypes have some common keys that is available for all, and then 
     _Only relevant for POI/Room/Area._
 
 * `DisplaySetting [DisplayRule]`
-  * An overriding Display Rule to use, instead of the one from the Display Type. 
+  * An overriding Display Rule to use, instead of the one from the Display Type.
+
+ 
     See "DisplayRules" under Display Type.
 
     _Only relevant for POI/Room/Area._
