@@ -14,7 +14,7 @@ permalink: /ios/v3/offline/
 
 MapsIndoors has three levels of caching:
 
-1. **Basic data**: all descriptions, geometries and in general all metadata about locations, buildings and venues.
+1. **Basic data**: all descriptions, geometries and in general all metadata about POIs, rooms, areas, buildings and venues.
 2. **Detailed data**: Images referenced by the data + basic data.
 3. **Full dataset**: Maptiles in addition to images and basic data.
 
