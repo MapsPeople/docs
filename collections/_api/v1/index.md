@@ -27,8 +27,8 @@ First, log in to the service to get an `access token` to access the data.
 
 This requires a POST request to our Auth API at the following endpoint: [https://auth.mapsindoors.com/connect/token](https://auth.mapsindoors.com/connect/token)
 
-The Auth API supports multiple ways to log in. The most common way is authenticating with Google, but you can also use your MapsIndoors username and password.
-No matter what login method you choose, you will always need to use the following content-type header when talking to the Auth API:
+The Auth API supports multiple ways to log in. The most common way is with your MapsIndoors username and password. If you need to sign in with other providers, please [contact support](https://mapspeople.com/support).
+No matter what login method you use, you will always need to use the following content-type header when talking to the Auth API:
 
 ```bash
 Content-Type: application/x-www-form-urlencoded
@@ -52,26 +52,6 @@ Replacing `<your username>` and `<your password>` with your own credentials, and
 The body of the request must end up containing a query string like this:
 
 `grant_type=password&client_id=client&username=<your username>&password=<your password>`
-
-#### Log in with Google
-
-The [Google Accounts API](https://developers.google.com/identity/protocols/OAuth2) is used to obtain a valid Google token. You can read more about how to do that here: [https://developers.google.com/identity/protocols/OAuth2](https://developers.google.com/identity/protocols/OAuth2).
-
-When you get a valid response from the Google Authorization Server, send the token to the Auth API to authenticate you.
-
-You tell the Auth API that you are using Google login by setting `grant_type` to `google_id_token`.
-
-Use the following key/value set to achieve this:
-
-```bash
-grant_type: google_id_token
-client_id: client
-id_token: <your Google token>
-```
-
-The body of the request should end up containing a query string like this:
-
-`grant_type=google_id_token&client_id=client&id_token=<your Google token>`
 
 #### When you are authenticated
 
