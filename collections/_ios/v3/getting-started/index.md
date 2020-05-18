@@ -12,7 +12,7 @@ permalink: /ios/v3/getting-started/
 
 ## Basic Examples
 
-For simple examples of MapsIndoors implementations, run `pod try MapsIndoors` (follow the tutorials below for setting up CocoaPods, or just clone [this repository](https://github.com/MapsIndoors/MapsIndoorsIOS/tree/SDK_V3)) and run the XCode Scheme called *Demos*. The code for these samples are to find in the */Example/DemoSamples* folder.
+For simple examples of MapsIndoors implementations, run `pod try MapsIndoors` (follow the tutorials below for setting up CocoaPods, or just clone [this repository](https://github.com/MapsIndoors/MapsIndoorsIOS/tree/master)) and run the XCode Scheme called *Demos*. The code for these samples are to find in the */Example/DemoSamples* folder.
 
 You can follow the tutorials on this site to start your app from scratch or to enhance the basic examples.
 
@@ -32,7 +32,7 @@ If you haven’t already, install CocoaPods:
 ```swift
 {% raw %}source 'https://github.com/CocoaPods/Specs.git'
 target 'YOUR_APPLICATION_TARGET_NAME_HERE' do
-pod 'MapsIndoors', '~>3.5'
+pod 'MapsIndoors', '~>3.9'      # Check CocoaPods for latest version
 end{% endraw %}
 ```
 
