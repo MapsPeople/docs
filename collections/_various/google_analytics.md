@@ -34,7 +34,7 @@ After doing this, within 24 hours you will start receiving stats and events in y
 
 ### Events overview
 
-When a `Property ID` is added to your MapsIndoors solution you will see the following events in Google Analytics.
+When a `Property ID` is added to your MapsIndoors Solution you will see the following events in Google Analytics.
 
 > Events seen below are only tracked in the Standard Web App.
 {: .mi-careful}

@@ -106,7 +106,7 @@ public static Bitmap getCircularImageWithText( @NonNull String text, int textSiz
 
 Create a method `setupMapsIndoors` that:
 
-* Sets the API key to the desired solution.
+* Sets the API key to the desired Solution.
 * Sets the Google API key (required by our routing provider).
 * Instantiates MapControl.
 * Enables clustering.

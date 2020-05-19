@@ -39,7 +39,7 @@ In the `onDestroyView` method, we need to free the MapsIndoors PositionProvider:
 MapsIndoors.setPositionProvider( null );
 ```
 
-Set the API key to the MI solution:
+Set the API key to the MapsIndoors Solution:
 
 ```java
 if( !MapsIndoors.getAPIKey().equalsIgnoreCase( getString( R.string.mi_api_key ) ) )

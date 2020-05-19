@@ -146,13 +146,13 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 
 ### Added
 
-- `MapsIndoors.getAvailableLanguages()` returns a list of the solution's available languages or just `null` if data isn't available
+- `MapsIndoors.getAvailableLanguages()` returns a list of the Solution's available languages or just `null` if data isn't available
 - `MIConnectivityUtils.isOnline()` replaces `UrlLoader.isOnline()`
 - `MapControl.setOnMarkerInfoWindowLongClickListener()`
 
 ### Changed
 
-- `MapsIndoors.getDefaultLanguage()` will return now the solution's default language instead of the library's fallback one. If there is no data available yet, this method will now return `null`
+- `MapsIndoors.getDefaultLanguage()` will return now the Solution's default language instead of the library's fallback one. If there is no data available yet, this method will now return `null`
 
 ### Deprecated
 
@@ -187,7 +187,7 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 
 ### Fixed
 
-- `MPLocationsAsyncLoader`: Internal cache not properly updated on multi-solution projects
+- `MPLocationsAsyncLoader`: Internal cache not properly updated on multi-Solution projects
 
 ## [2.0.0-rc7] - 2018-06-04
 
@@ -254,7 +254,7 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 
 ### Added
 
-- Floorplan tile sizes can be now set with `MapControl.setTileSize( tileSize )`. Tile sizes depend on the Solution (it is not mandatory for all MapsIndoors solutions to support all tile sizes)
+- Floorplan tile sizes can be now set with `MapControl.setTileSize( tileSize )`. Tile sizes depend on the Solution (it is not mandatory for all MapsIndoors Solutions to support all tile sizes)
 
 ### Changed
 

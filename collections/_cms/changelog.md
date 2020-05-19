@@ -145,7 +145,7 @@ published: true
 ### Bug Fixes
 
 * **Icon Manager:** Shows a more descriptive error message when an image fails.
-* **Locations:** Google Street View network now available inside The White House demo solution.
+* **Locations:** Google Street View network now available inside The White House demo Solution.
 * **Route Access:** Fixed issue where external doors showed up as elevator doors.
 
 ## January 2020 - v3.7.8
@@ -313,13 +313,13 @@ published: true
 
 ### Fixed
 
-* Creating a new location with custom properties did not work on all solutions.
+* Creating a new Location with Custom Properties did not work on all Solutions.
 
 ## [3.4.0] - 20-02-2018
 
 ### Added
 
-* Select all/deselect all, locations table.
+* Select all/deselect all, Locations table.
 * Graph bounds and editing.
 
 ### Changed
@@ -348,13 +348,13 @@ published: true
 
 ### Added
 
-* Venue bounds, network visualiser.
-* Edit venue bounds.
-* Remember last venue (until changing solution).
-* Create new venue.
-* Delete venue.
-* Toggle labels for locations map.
-* Solution types.
+* Venue bounds, Network visualiser.
+* Edit Venue bounds.
+* Remember last Venue (until changing Solution).
+* Create new Venue.
+* Delete Venue.
+* Toggle labels for Locations map.
+* Solution Types.
 * Solution expiration date.
 
 ### Changed
@@ -389,7 +389,7 @@ published: true
 
 ### Fixed
 
-* Only use localstorage to check solution when reloading.
+* Only use localstorage to check Solution when reloading.
 * Collapsing the sidebar updates the map-size, preventing grey areas with no tiles.
 * Fixed an error when trying to save a location with no name set for one or more languages.
 
@@ -420,7 +420,7 @@ published: true
 * App configurations page.
 * Network visualiser.
 * Categories management. It is now possible to create, edit and delete categories.
-* Entering a category name when multiple languages are present in a solution will try to translate via Google translate API.
+* Entering a category name when multiple languages are present in a Solution will try to translate via Google translate API.
 * Import graphs.
 * Automatic user invitaions.
 * Reset password.
@@ -435,14 +435,14 @@ published: true
 * Type settings has a new layout which is easier to use and takes up less space.
 * Venue and buildings became the Master data page.
 * Locations is now one page with view settings for map and list.
-* User management for customers now lives in a solution limited space.
+* User management for customers now lives in a Solution limited space.
 * User management reworked.
 * New bulk edit.
 * New export map.
 
 ### Fixed
 
-* Remember last solution.
+* Remember last Solution.
 * Custom fields update when changing type of a location.
 * Location search now works as intended.
 * Hundreds of bugs. Too many to list, the codebase is entirely new.

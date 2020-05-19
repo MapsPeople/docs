@@ -30,13 +30,13 @@ Add a map fragment
 SupportMapFragment mMapFragment;
 ```
 
-The lat lng of the Venue
+The latitude and longitude of the Venue
 
 ```java
 static final LatLng VENUE_LAT_LNG = new LatLng( 57.05813067, 9.95058065 );
 ```
 
-Set the API key to the MI solution
+Set the API key to the MapsIndoors Solution:
 
 ```java
 if( !MapsIndoors.getAPIKey().equalsIgnoreCase( getString( R.string.mi_api_key ) ) )
