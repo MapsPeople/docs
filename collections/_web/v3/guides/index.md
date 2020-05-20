@@ -189,7 +189,7 @@ directionsService.getRoute(
 
 ### Getting Icons from Location Types
 
-A set of location types is defined for every MapsIndoors solution. The current list of types can be retrieved like this:
+A set of Location Types is defined for every MapsIndoors Solution. The current list of Types can be retrieved like this:
 
 ```javascript
 var solutionService = mapsindoors.SolutionService;

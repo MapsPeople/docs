@@ -325,7 +325,17 @@ View the tutorial video below for more information about Categories.
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/FMIEJmJwogU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## App configuration
+## App Settings
+
+### API Keys
+
+To load your MapsIndoors data in your apps, you need an API key.
+
+You can create as many API keys as you want, and it's good practise to use one for each place you need to load data from MapsIndoors (each mobile platform, web app etc.).
+
+You can easily delete an API key if it is unused, or has been compromised in some way.
+
+Previously, you could use a `SolutionID` to load your data, but this is no longer supported. Only API keys is supported for loading data from your Solution.
 
 ### App User Roles
 

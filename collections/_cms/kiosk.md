@@ -28,7 +28,7 @@ This is what the full URL for an app in Kiosk mode will look like:
 
 Deconstruction the URL, this is what it contains:
 
-* **`demo`** is the `SolutionID` (or `Alias`) for your Solution
+* **`demo`** is the `Alias` for your Solution (you can use an API key in the same way if an Alias is not set)
 * **`899cf628675f4b0695669529`** is the `VenueID`
 * **`?origin=5a0d66192e33469c8909203d`** is the Location selected as "fixed origin"
 * **`&timeout=20`** is the timeout period before resetting

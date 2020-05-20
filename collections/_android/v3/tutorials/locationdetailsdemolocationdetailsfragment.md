@@ -74,7 +74,7 @@ void setupMapsIndoors()
     }
 ```
 
-Setting the API key to the desired solution. Needed here as we are switching solutions:
+Setting the API key to the desired Solution. Needed here as we are switching Solutions:
 
 ```java
 if( !MapsIndoors.getAPIKey().equalsIgnoreCase( getString( R.string.mi_api_key ) ) )

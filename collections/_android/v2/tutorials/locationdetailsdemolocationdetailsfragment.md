@@ -70,7 +70,7 @@ void setupMapsIndoors()
 {
 ```
 
-Setting the API key to the desired solution
+Setting the API key to the desired Solution
 
 ```java
 if( !MapsIndoors.getAPIKey().equalsIgnoreCase( getString( R.string.mi_api_key ) ) )

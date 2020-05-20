@@ -89,7 +89,7 @@ Changelog for MapsIndoors SDK for JavaScript. This document structure is based o
 
 ### Fixed
 
-- App config cache is now based on solution to avoid misconfiguration when switching solution.
+- App config cache is now based on Solution to avoid misconfiguration when switching Solution.
 
 ## [3.3.1] - 2019-07-31
 
@@ -172,7 +172,7 @@ Changelog for MapsIndoors SDK for JavaScript. This document structure is based o
 
 ### Changed
 
-- Script must now be loaded with apikey parameter instead of solutionId, e.g. `https://app.mapsindoors.com/mapsindoors/js/sdk/mapsindoors-3.0.0-rc0.js?apikey=57e4e4992e74800ef8b69718`
+- Script must now be loaded with `apikey` parameter instead of `solutionId`, e.g. `https://app.mapsindoors.com/mapsindoors/js/sdk/mapsindoors-3.0.0-rc0.js?apikey=57e4e4992e74800ef8b69718`
 - All services are now shared instances, so they cannot be newed. E.g. you must rewrite `let directionsService = new mapsindoors.DirectionsService();` to `let miDirectionsService =  mapsindoors.DirectionsService;`
 - Location click events for a MapsIndoors instance are now subscribable with the event name `click` instead of `location_click`, e.g.         `google.maps.event.addListener(myMapsIndoors, 'click', (poi) => { console.log(poi.id); });`
 - `DirectionService.route()` has been renamed to `DirectionService.getRoute()`.

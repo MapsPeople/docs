@@ -10,7 +10,7 @@ date: 2019-11-28
 
 ## Introduction and getting started
 
-From the MapsIndoors Integration API you can get, add, change and delete data related to your MapsIndoors solution via a REST service.
+From the MapsIndoors Integration API you can get, add, change and delete data related to your MapsIndoors Solution via a REST service.
 
 Send your requests to this endpoint: [https://integration.mapsindoors.com](https://integration.mapsindoors.com)
 
@@ -98,7 +98,7 @@ The demo dataset looks like this:
 }
 ```
 
-It tells which languages are defined for this project, which language is the default one (english in this case) and it has a `rootObjects` reference list which refers to the geospatial data that makes up the bulk of a MapsIndoors solution the root objects are Geodata objects.
+It tells which languages are defined for this project, which language is the default one (English in this case) and it has a `rootObjects` reference list which refers to the geospatial data that makes up the bulk of a MapsIndoors Solution the root objects are Geodata objects.
 
 ### Geodata
 
@@ -117,7 +117,7 @@ All Geodata BaseTypes have some common keys that is available for all, and then 
 * `Id [string(24)]`
   * MapsIndoors generated ID. Should be _null_ if you are creating an object.
 * `DatasetId [string]`
-  * The dataset ID of your MapsIndoors solution.
+  * The dataset ID of your MapsIndoors Solution.
 * `ParentId [string(24)]`
   * The MapsIndoors ID that this Geodata object is a child of.
 * `BaseType [string]`
@@ -471,7 +471,7 @@ Common setup for Geodata of different kinds (meeting room, hallway, ...)
 
     Each type has a set of display rules that tells if and how geodata should be presented. E.g. which icon to use for meeting rooms, when it should be shown based on zoom level or if it should have a label. There are two parts to a rule: An **evaluation** part (zoom from/to) and a **style** part - the rest of the displayRule object.
 
-    Zoom from and to is inclusive. In this example an icon will be shown from zoom level 19 to 21. A quick word on zoom levels: these are described in [web mercator](https://en.wikipedia.org/wiki/Web_Mercator_projection) which is the system we use to show maps. In short zoom level 1 shows a map of the earth in its entirety and a higher zoom level lets you get closer. The highest supported zoom level is generally 21, but some solutions support up to zoom level 22.
+    Zoom from and to is inclusive. In this example an icon will be shown from zoom level 19 to 21. A quick word on zoom levels: these are described in [web mercator](https://en.wikipedia.org/wiki/Web_Mercator_projection) which is the system we use to show maps. In short zoom level 1 shows a map of the earth in its entirety and a higher zoom level lets you get closer. The highest supported zoom level is generally 21, but some Solutions support up to zoom level 22.
 
     You will notice that there are 3 ‘visibility’ keys (visible, iconVisible, labelVisible). The first one, ‘visible’, is the main switch that will show and hide the whole element. The two others, ‘iconVisible’ and ‘labelVisible’, is changing the individual elements it is attached to. This way, you can toggle the ‘visible’ without having to remember the visible state for both the icon and label.
 
