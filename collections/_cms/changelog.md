@@ -4,6 +4,53 @@ date: 2019-04-21
 published: true
 ---
 
+## May 19th 2020 - v3.25.0
+
+### What’s new
+
+* **API Keys:** Previously, API keys were only available as part of the "Security module". All customers now have access to this. All Solutions get an API key (if they did not have one before), that is the same as the Solution ID (also called Dataset ID). This ensures backward compatibility.
+* **Single Sign-On:** This was also part of the "Security module" and is now its own module. It needs to be activated on a per-Solution basis.
+* **Security:** This module is now obsolete.
+
+## May 13th 2020 - v3.24.2
+
+### Bugfix
+
+* **Auto Route:** Fixes a bug where Doors were displayed on the wrong Floor.
+
+## May 12th 2020 - v3.24.1
+
+### Bugfix
+
+* **Reset Password:** Fixes a bug where an email was not sent if the email address contained special characters.
+
+## May 6th 2020 - v3.24.0
+
+### What’s new
+
+* New Google Cloud client ID and API Keys
+
+## Apr 30th 2020 - v3.23.3
+
+### Bugfix
+
+* **Customers:** Fixes the check for module activation.
+* **Areas:** Fixes a bug where the Venue's default Floor was not found.
+* **Areas:** The Areas module can be activated on a per-Customer basis.
+
+## Apr 29th 2020 - v3.23.0
+
+### What’s new
+
+* **Areas:** Areas can be managed under the new Areas menu.
+* **Locations' Table:** Multiple Locations can be set as "Searchable" with bulk editing.
+
+## Apr 23rd 2020 - v3.21.0
+
+### What’s new
+
+* On start up, the CMS determines the fastest Manager API to call for all subsequent requests.
+
 ## Apr 21st 2020 - v3.20.0
 
 ### What’s new
