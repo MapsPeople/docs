@@ -24,7 +24,7 @@ To enable "Kiosk mode" you need to set a few parameters in the URL. The `?` symb
 
 This is what the full URL for an app in Kiosk mode will look like:
 
-<a href="https://clients.mapsindoors.com/demo/899cf628675f4b0695669529/search?origin=5a0d66192e33469c8909203d&timeout=20"><p>https://clients.mapsindoors.com/<strong>demo</strong>/<strong>899cf628675f4b0695669529</strong>/<strong>search?origin=5a0d66192e33469c8909203d</strong><strong>&timeout=20</strong></p></a>
+<a href="https://clients.mapsindoors.com/demo/899cf628675f4b0695669529/search?origin=5a0d66192e33469c8909203d&timeout=20">https://clients.mapsindoors.com/<strong>demo</strong>/<strong>899cf628675f4b0695669529</strong>/<strong>search?origin=5a0d66192e33469c8909203d</strong><strong>&timeout=20</strong></a>
 
 Deconstruction the URL, this is what it contains:
 
