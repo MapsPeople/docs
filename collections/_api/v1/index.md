@@ -532,3 +532,25 @@ As a simple example: All rooms and areas across any building/venue related to en
     `<keyname>@<language>`
 
     The name property must be specified for every language defined in the dataset.
+
+
+## Interface descriptions
+
+### Reverse geocoding
+
+    HTTP Get
+    Path: /{datasetId}/api/geocode
+    Returns: A list of Geodata objects
+
+Decription:
+Given a latitude/logitude point on the map and a floor index, this endpoint will return a list of all geodata that intersects with this point.
+
+Note: 
+* Venue and Building geodata will disregard the floor index and will be given based on the latitude/logitude alone.
+* Floor and Room geodata will respect the floor index and will return if the latitude/logitude intersects AND the given floorindex matches
+* If no matches where found, an empty list will be returned
+
+Mandatory parameters:
+* **lat** Latitude of the point to examine. Valid range: +/- 90
+* **lng** Longitude of the point to examine. Valid range: +/- 180
+* **floor** Floor index to match for floor and room geodata
