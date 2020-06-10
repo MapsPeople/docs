@@ -239,7 +239,7 @@ Each Geodata element has a number of properties. Let's look at an example - a co
     "activefrom": null,
     "activeto": null,
     "administrativeid": "RTX"
-  }
+  },
   "displayTypeId": "d7558711f7c64534972cc65f",
   "geometry": {
     "coordinates": [
@@ -435,7 +435,7 @@ Common setup for Geodata of different kinds (meeting room, hallway, ...)
       "iconUrl": "https://app.mapsindoors.com/mapsindoors/gfx/bella/80/BreakOutArea.png",
       "labelZoomFrom": 19,
       "labelZoomTo": 20,
-      "visible": true
+      "visible": true,
       "iconVisible": true,
       "labelVisible": true
     }
@@ -563,10 +563,9 @@ Input values:
 * **floor** 0
 
 Output:
-A list of two geodata objects: A venue and a building:
+A list of 3 geodata objects: A venue and a building and a floor:
 
 ```json
-{
 [
   {
     "datasetId": "550c26a864617400a40f0000",
