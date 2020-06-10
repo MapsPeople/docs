@@ -435,7 +435,7 @@ Common setup for Geodata of different kinds (meeting room, hallway, ...)
       "iconUrl": "https://app.mapsindoors.com/mapsindoors/gfx/bella/80/BreakOutArea.png",
       "labelZoomFrom": 19,
       "labelZoomTo": 20,
-      "visible": true
+      "visible": true,
       "iconVisible": true,
       "labelVisible": true
     }
@@ -566,7 +566,6 @@ Output:
 A list of two geodata objects: A venue and a building:
 
 ```json
-{
 [
   {
     "datasetId": "550c26a864617400a40f0000",
