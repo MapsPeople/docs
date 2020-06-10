@@ -554,3 +554,119 @@ Mandatory parameters:
 * **lat** Latitude of the point to examine. Valid range: +/- 90
 * **lng** Longitude of the point to examine. Valid range: +/- 180
 * **floor** Floor index to match for floor and room geodata
+
+Example:
+
+Input values: 
+* **lat** 57.086001
+* **lng** 9.957824
+* **floor** 0
+
+Output:
+A list of two geodata objects: A venue and a building:
+
+```json
+{
+[
+  {
+    "datasetId": "550c26a864617400a40f0000",
+    "solutionId": "550c26a864617400a40f0000",
+    "baseType": "venue",
+    "geometry": {
+      "coordinates": ...,
+      "bbox": [
+        9.95564114204035,
+        57.0835223451902,
+        9.96209414582836,
+        57.0870561408498
+      ],
+      "type": "Polygon"
+    },
+    "anchor": {
+      "coordinates": [
+        9.95856635734435,
+        57.085466450128
+      ],
+      "type": "Point"
+    },
+    "aliases": [
+      "headquarter",
+      "hovedkvarter",
+      "hq2"
+    ],
+    "status": 3,
+    "baseTypeProperties": {},
+    "properties": {
+      "name@da": "RTX",
+      "name@en": "RTX"
+    },
+    "tilesUrl": "https://tiles.mapsindoors.com/tiles/indoor/rtx/{style}/l{floor}/z{z}/x{x}/y{y}.png",
+    "tileStyles": [
+      {
+        "displayName": "Live",
+        "style": "v2017.12"
+      },
+      {
+        "displayName": "Gray",
+        "style": "v2015.03/24"
+      },
+      {
+        "displayName": "Light gray",
+        "style": "v2015.03/23"
+      }
+    ]
+  },
+  {
+    "datasetId": "550c26a864617400a40f0000",
+    "solutionId": "550c26a864617400a40f0000",
+    "baseType": "building",
+    "geometry": {
+      "coordinates": ...,
+      "bbox": [
+        9.95609570100004,
+        57.0849003170001,
+        9.95865366900006,
+        57.0864697920001
+      ],
+      "type": "Polygon"
+    },
+    "anchor": {
+      "coordinates": [
+        9.9573117,
+        57.0857385
+      ],
+      "type": "Point"
+    },
+    "status": 3,
+    "baseTypeProperties": {},
+    "properties": {
+      "name@en": "Main building",
+      "name@da": "Main building"
+    }
+  },
+  {
+    "parentId": "5548c6583eb3c3080c4a92da",
+    "datasetId": "550c26a864617400a40f0000",
+    "solutionId": "550c26a864617400a40f0000",
+    "baseType": "floor",
+    "geometry": {
+      "coordinates": ...,
+      "bbox": [
+        9.95609570100004,
+        57.0849003170001,
+        9.95865366900006,
+        57.0864697920001
+      ],
+      "type": "Polygon"
+    },
+    "status": 3,
+    "baseTypeProperties": {
+      "name": "0",
+      "administrativeid": "0"
+    },
+    "properties": {},
+    "id": "f43b931f09314f3f9dd796f9",
+    "lastModified": "2020-03-25T13:29:50.995Z",
+  }
+]
+```
