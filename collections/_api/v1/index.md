@@ -239,7 +239,7 @@ Each Geodata element has a number of properties. Let's look at an example - a co
     "activefrom": null,
     "activeto": null,
     "administrativeid": "RTX"
-  }
+  },
   "displayTypeId": "d7558711f7c64534972cc65f",
   "geometry": {
     "coordinates": [
@@ -435,7 +435,7 @@ Common setup for Geodata of different kinds (meeting room, hallway, ...)
       "iconUrl": "https://app.mapsindoors.com/mapsindoors/gfx/bella/80/BreakOutArea.png",
       "labelZoomFrom": 19,
       "labelZoomTo": 20,
-      "visible": true
+      "visible": true,
       "iconVisible": true,
       "labelVisible": true
     }
@@ -532,3 +532,141 @@ As a simple example: All rooms and areas across any building/venue related to en
     `<keyname>@<language>`
 
     The name property must be specified for every language defined in the dataset.
+
+## Interface descriptions
+
+### Reverse geocoding
+
+    HTTP Get
+    Path: /{datasetId}/api/geocode
+    Returns: A list of Geodata objects
+
+Decription:
+Given a latitude/longitude point on the map and a floor index, this endpoint will return a list of all geodata that intersects with this point.
+
+Note:
+
+* Venue and Building geodata will disregard the floor index and will be given based on the latitude/logitude alone.
+* Floor and Room geodata will respect the floor index and will return if the latitude/logitude intersects AND the given floorindex matches
+* If no matches where found, an empty list will be returned
+
+Mandatory parameters:
+
+* **lat** Latitude of the point to examine. Valid range: +/- 90
+* **lng** Longitude of the point to examine. Valid range: +/- 180
+* **floor** Floor index to match for floor and room geodata
+
+Example:
+
+Input values:
+* **lat** 57.086001
+* **lng** 9.957824
+* **floor** 0
+
+Output:
+A list of 3 geodata objects: A venue a building and a floor:
+
+```json
+[
+  {
+    "datasetId": "550c26a864617400a40f0000",
+    "solutionId": "550c26a864617400a40f0000",
+    "baseType": "venue",
+    "geometry": {
+      "coordinates": ...,
+      "bbox": [
+        9.95564114204035,
+        57.0835223451902,
+        9.96209414582836,
+        57.0870561408498
+      ],
+      "type": "Polygon"
+    },
+    "anchor": {
+      "coordinates": [
+        9.95856635734435,
+        57.085466450128
+      ],
+      "type": "Point"
+    },
+    "aliases": [
+      "headquarter",
+      "hovedkvarter",
+      "hq2"
+    ],
+    "status": 3,
+    "baseTypeProperties": {},
+    "properties": {
+      "name@da": "RTX",
+      "name@en": "RTX"
+    },
+    "tilesUrl": "https://tiles.mapsindoors.com/tiles/indoor/rtx/{style}/l{floor}/z{z}/x{x}/y{y}.png",
+    "tileStyles": [
+      {
+        "displayName": "Live",
+        "style": "v2017.12"
+      },
+      {
+        "displayName": "Gray",
+        "style": "v2015.03/24"
+      },
+      {
+        "displayName": "Light gray",
+        "style": "v2015.03/23"
+      }
+    ]
+  },
+  {
+    "datasetId": "550c26a864617400a40f0000",
+    "solutionId": "550c26a864617400a40f0000",
+    "baseType": "building",
+    "geometry": {
+      "coordinates": ...,
+      "bbox": [
+        9.95609570100004,
+        57.0849003170001,
+        9.95865366900006,
+        57.0864697920001
+      ],
+      "type": "Polygon"
+    },
+    "anchor": {
+      "coordinates": [
+        9.9573117,
+        57.0857385
+      ],
+      "type": "Point"
+    },
+    "status": 3,
+    "baseTypeProperties": {},
+    "properties": {
+      "name@en": "Main building",
+      "name@da": "Main building"
+    }
+  },
+  {
+    "parentId": "5548c6583eb3c3080c4a92da",
+    "datasetId": "550c26a864617400a40f0000",
+    "solutionId": "550c26a864617400a40f0000",
+    "baseType": "floor",
+    "geometry": {
+      "coordinates": ...,
+      "bbox": [
+        9.95609570100004,
+        57.0849003170001,
+        9.95865366900006,
+        57.0864697920001
+      ],
+      "type": "Polygon"
+    },
+    "status": 3,
+    "baseTypeProperties": {
+      "name": "0",
+      "administrativeid": "0"
+    },
+    "properties": {},
+    "id": "f43b931f09314f3f9dd796f9",
+    "lastModified": "2020-03-25T13:29:50.995Z",
+  }
+]
+```
