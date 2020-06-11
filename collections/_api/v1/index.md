@@ -537,7 +537,7 @@ As a simple example: All rooms and areas across any building/venue related to en
 
 ### Reverse geocoding
 
-```
+```lisp
 HTTP Get
 Path: /{datasetId}/api/geocode
 Returns: A list of Geodata objects
