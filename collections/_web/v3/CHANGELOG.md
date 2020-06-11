@@ -7,6 +7,12 @@ nav_weight: 1000
 
 Changelog for MapsIndoors SDK for JavaScript. This document structure is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and the project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [3.10.0] - 2020-06-11
+
+### Added
+
+- Added option to DirectionsRenderer to control if the map's viewport will be fitted to the bounds of the rendered route.
+
 ## [3.9.0] - 2020-05-02
 
 ### Added
