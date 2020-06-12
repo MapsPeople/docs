@@ -24,6 +24,20 @@ In order to include MapsIndoors in your own app with your own content, you need 
 
 You will receive a unique API key to use when access has been granted. If you are exploring how this service can become part of your own product, you can read about [partnering with MapsPeople here](https://www.mapspeople.com/become-a-partner).
 
+### Get your Google Maps API Key
+
+You need to setup the Google Maps API in your project by following the steps in the link below:
+
+* Web: [Google Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/get-api-key)
+
+Some Web Service APIs are also needed for the MapsIndoors SDK, so make sure to enable them when getting your key:
+
+* [Google Maps Distance Matrix API](https://developers.google.com/maps/documentation/distance-matrix/start)
+* [Google Maps Directions API](https://developers.google.com/maps/documentation/directions/start)
+* [Google Places API Web Service](https://developers.google.com/places/web-service/intro)
+
+Remember to enable relevant Maps products (i.e. Maps JavaScript API) in your Google project and include these on your API key if you apply restrictions.
+
 ### Setup Your HTML
 
 Include the following scripts in your HTML document. MapsIndoors depends on Google Maps API v3, so if it’s not present on script load, MapsIndoors will not be able to initialize.
