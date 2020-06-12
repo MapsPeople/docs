@@ -537,9 +537,11 @@ As a simple example: All rooms and areas across any building/venue related to en
 
 ### Reverse geocoding
 
-    HTTP Get
-    Path: /{datasetId}/api/geocode
-    Returns: A list of Geodata objects
+```bash
+HTTP Get
+Path: /{datasetId}/api/geocode
+Returns: A list of Geodata objects
+```
 
 Decription:
 Given a latitude/longitude point on the map and a floor index, this endpoint will return a list of all geodata that intersects with this point.
@@ -559,6 +561,7 @@ Mandatory parameters:
 Example:
 
 Input values:
+
 * **lat** 57.086001
 * **lng** 9.957824
 * **floor** 0
