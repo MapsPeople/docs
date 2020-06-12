@@ -272,7 +272,7 @@ Remember to save before clicking on another Location or changing the page, other
 * Add any extra information in the text field.
 * Click on "Upload" and a spinner should appear with the upload progress.
 * When it is done uploading you should see an added/updated floor name in the list.
-* The CAD file and any extra files will be automatically sent to a MapsPeople project manager and a representative will contact you shortly to plan the digitization of the new or updated floor.
+* The CAD file, and any extra files, will be automatically sent to a MapsPeople project manager, and a representative will contact you shortly to plan the digitization of the new or updated Floor.
 
 ## Routes Access
 
