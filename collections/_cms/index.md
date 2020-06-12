@@ -265,7 +265,7 @@ Remember to save before clicking on another Location or changing the page, other
 ### Uploading CAD files for a floor
 
 * Click on the pencil icon to the left of the Building name and a sidebar should appear.
-* Click on "Add floor" (to add a new floor to the building) or "Update floor" (to update an existing floor in the building) and a popup window should appear.
+* Click on "Add floor" (to add a new Floor to the Building) or "Update floor" (to update an existing Floor in the Building) and a popup window appears.
 * Type the floor name.
 * Select a CAD file.
 * Select any extra files. (optional)
