@@ -80,6 +80,12 @@ Sync your project with gradle files.
 
 Learn how to setup Google Maps on Android in this [Getting Started Guide](https://developers.google.com/maps/documentation/android-api/start).
 
+Some Web Service APIs are needed also for the MapsIndoors SDK, so make sure to enable them when getting your key:
+
+* [Google Maps Distance Matrix API](https://developers.google.com/maps/documentation/distance-matrix/start)
+* [Google Maps Directions API](https://developers.google.com/maps/documentation/directions/start)
+* [Google Places API Web Service](https://developers.google.com/places/web-service/intro)
+
 When getting your Google Maps API keys, remember to enable relevant Maps products (i.e. SDK for Android) in your Google project and include these on your API key if you apply restrictions.
 
 ## Setup a Google Map with MapsIndoors
