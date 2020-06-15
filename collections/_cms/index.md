@@ -265,13 +265,14 @@ Remember to save before clicking on another Location or changing the page, other
 ### Uploading CAD files for a floor
 
 * Click on the pencil icon to the left of the Building name and a sidebar should appear.
-* Click on "Add floor" or "Update floor" and a popup window should appear.
+* Click on "Add floor" (to add a new Floor to the Building) or "Update floor" (to update an existing Floor in the Building) and a popup window appears.
 * Type the floor name.
 * Select a CAD file.
 * Select any extra files. (optional)
 * Add any extra information in the text field.
 * Click on "Upload" and a spinner should appear with the upload progress.
 * When it is done uploading you should see an added/updated floor name in the list.
+* The CAD file, and any extra files, will be automatically sent to a MapsPeople project manager, and a representative will contact you shortly to plan the digitization of the new or updated Floor.
 
 ## Routes Access
 
