@@ -22,7 +22,7 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 ### Added
 
 - Feature: Ability to override a Location's display rule at runtime (in version 2 this was achieved by using `Location.setType( type )`):
-  - `MapControl.setDisplayRule( displayRule, location | locations )`: Sets a display rule on the given location(s) that overrides the current ones being used.
+  - `MapControl.setDisplayRule( displayRule, location | locations )`: Sets a display rule on the given Location(s) that overrides the current ones being used.
   - `MapControl.setDisplayRule( displayRuleName, location | locations )`: Sets display rule (by its type - name) on the given location(s) that overrides the current ones being used.
   - `MapControl.getDisplayRule( location )`: Retrieves the current display rule being used by the given location.
   - `MapControl.resetDisplayRule( location | locations )`: Removes the override display rule on the given location(s).
