@@ -20,11 +20,12 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 ## [3.5.0] - 2020-06-16
 
 ### Added
-- Selection of default Floor when panning between buildings
+- Selection of default Floor when panning between Buildings
 
 ### Fixed
-- POIs disappear after applying Category Filter
-- Fixed an issue in the FloorSelector that prevented a floor selector to hide in some cases
+
+- Locations disappear after applying Category Filter
+- Fixed an issue in the Floor Selector that prevented it from hiding in some cases
 
 ### 
 
