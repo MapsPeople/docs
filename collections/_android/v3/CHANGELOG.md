@@ -27,7 +27,7 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
   - `MapControl.getDisplayRule( location )`: Retrieves the current display rule being used by the given Location.
   - `MapControl.resetDisplayRule( location | locations )`: Removes the override display rule on the given Location(s).
 
-- `MPFilter.Builder.setIgnoreLocationActiveStatus( ignoreActiveToFromStatus )`: Makes queries return location-results that are marked as inactive using the active from/to mechanism.
+- `MPFilter.Builder.setIgnoreLocationActiveStatus( ignoreActiveToFromStatus )`: Makes queries return Location that are marked as inactive using the "active from"/"active to" mechanism.
 - `MPApiKeyValidatorService`: added a couple of new methods:
   - `checkAPIKeyValidity( apiKey, listener )`: Checks the validity of the given MapsIndoors API key. The SDK doesn't need to be initialized in order to call this method.
   - `validateAPIKeyStringFormat( apiKey )`: Checks that the given API key string format is a valid one. This method only checks the string format.
