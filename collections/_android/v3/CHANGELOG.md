@@ -33,7 +33,7 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
   - `validateAPIKeyStringFormat( apiKey )`: Checks that the given API Key string format is a valid one. This method only checks the string format.
 - Feature: RoomId has been replaced by the ExternalId. The following methods have been added:
   - `MPLocation.getExternalId()`: Retrieves the externalId property, if available. Should be used instead of the now deprecated `MPLocation.getRoomId()`.
-  - `MPLocation.Builder.setExternalId( externalId )`: Sets a custom externalId (a db item id, etc.). This replaces `MPLocation.Builder.setRoomId( roomId )`.
+  - `MPLocation.Builder.setExternalId( externalId )`: Sets a custom `externalId` (a db item id, etc.). This replaces `MPLocation.Builder.setRoomId( roomId )`.
   - `Building.getExternalId()` and `Venue.getExternalId()`
 
 ### Deprecated
