@@ -29,7 +29,7 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 
 - `MPFilter.Builder.setIgnoreLocationActiveStatus( ignoreActiveToFromStatus )`: Makes queries return location-results that are marked as inactive using the active from/to mechanism.
 - `MPApiKeyValidatorService`: added a couple of new methods:
-  - `checkAPIKeyValidity( apiKey, listener )`: Checks the validity of the given MapsIndoors API Key. The SDK doesn't need to be initialized in order to call this method.
+  - `checkAPIKeyValidity( apiKey, listener )`: Checks the validity of the given MapsIndoors API key. The SDK doesn't need to be initialized in order to call this method.
   - `validateAPIKeyStringFormat( apiKey )`: Checks that the given API key string format is a valid one. This method only checks the string format.
 - Feature: `RoomId` has been replaced by `ExternalId`. The following methods have been added:
   - `MPLocation.getExternalId()`: Retrieves the `externalId` property, if available. Should be used instead of the now deprecated `MPLocation.getRoomId()`.
