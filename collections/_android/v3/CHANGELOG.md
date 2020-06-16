@@ -17,6 +17,33 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 ### Security     in case of vulnerabilities.
 -->
 
+## [3.4.0] - 2020-03-18
+
+### Added
+
+- Feature: Ability to override a Location's display rule at runtime (in version 2 this was achieved by using `Location.setType( type )`):
+  - `MapControl.setDisplayRule( displayRule, location | locations )`: Sets a display rule on the given location(s) that overrides the current ones being used.
+  - `MapControl.setDisplayRule( displayRuleName, location | locations )`: Sets display rule (by its type - name) on the given location(s) that overrides the current ones being used.
+  - `MapControl.getDisplayRule( location )`: Retrieves the current display rule being used by the given location.
+  - `MapControl.resetDisplayRule( location | locations )`: Removes the override display rule on the given location(s).
+
+- `MPFilter.Builder.setIgnoreLocationActiveStatus( ignoreActiveToFromStatus )`: Makes queries return location-results that are marked as inactive using the active from/to mechanism.
+- `MPApiKeyValidatorService`: added a couple of new methods:
+  - `checkAPIKeyValidity( apiKey, listener )`: Checks the validity of the given MapsIndoors API Key. The SDK doesn't need to be initialized in order to call this method.
+  - `validateAPIKeyStringFormat( apiKey )`: Checks that the given API Key string format is a valid one. This method only checks the string format.
+- Feature: RoomId has been replaced by the ExternalId. The following methods have been added:
+  - `MPLocation.getExternalId()`: Retrieves the externalId property, if available. Should be used instead of the now deprecated `MPLocation.getRoomId()`.
+  - `MPLocation.Builder.setExternalId( externalId )`: Sets a custom externalId (a db item id, etc.). This replaces `MPLocation.Builder.setRoomId( roomId )`.
+  - `Building.getExternalId()` and `Venue.getExternalId()`
+
+### Deprecated
+
+- `MPFilter.Builder.setIgnoreSearchableStatus( ignoreSearchableStatus )`: Use `MPFilter.Builder.setIgnoreLocationSearchableStatus( ignoreSearchableStatus )` instead.
+- `MPLocation.getRoomId()`: Use `MPLocation.getExternalId()` instead.
+- `MPLocation.Builder.setRoomId( roomId )`: Use `MPLocation.Builder.setExternalId( externalId )` instead
+
+### Fixed
+
 ## [3.3.3] - 2020-02-25
 
 ### Fixed
