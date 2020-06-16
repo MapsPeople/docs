@@ -20,6 +20,7 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 ## [3.5.0] - 2020-06-16
 
 ### Added
+
 - Selection of default Floor when panning between Buildings
 
 ### Fixed
