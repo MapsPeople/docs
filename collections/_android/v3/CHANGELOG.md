@@ -28,8 +28,6 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 - Locations disappear after applying Category Filter
 - Fixed an issue in the Floor Selector that prevented it from hiding in some cases
 
-### 
-
 ## [3.4.0] - 2020-03-18
 
 ### Added
