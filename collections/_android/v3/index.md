@@ -80,13 +80,19 @@ Sync your project with gradle files.
 
 Learn how to setup Google Maps on Android in this [Getting Started Guide](https://developers.google.com/maps/documentation/android-api/start).
 
+Some Web Service APIs are needed also for the MapsIndoors SDK, so make sure to enable them when getting your key:
+
+* [Google Maps Distance Matrix API](https://developers.google.com/maps/documentation/distance-matrix/start)
+* [Google Maps Directions API](https://developers.google.com/maps/documentation/directions/start)
+* [Google Places API Web Service](https://developers.google.com/places/web-service/intro)
+
 When getting your Google Maps API keys, remember to enable relevant Maps products (i.e. SDK for Android) in your Google project and include these on your API key if you apply restrictions.
 
 ## Setup a Google Map with MapsIndoors
 
 ### Set the MapsIndoors API Key
 
-In order to include MapsIndoors in your app, you need an API key. If you are not a customer you can use this API key `57e4e4992e74800ef8b69718` to follow the guide.
+In order to include MapsIndoors in your app, you need an API key. If you are not a customer you can use this API key `79f8e7daff76489dace4f9f9` to follow the guide.
 
 In order to include MapsIndoors in your own app with your own content, you need to [contact MapsPeople](https://resources.mapspeople.com/contact-us) to get your building drawings processed and hosted by us.
 
@@ -132,7 +138,7 @@ In your */res/values* folder, create a file named `mapsindoors_api.xml` with the
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="mapsindoors_api_key" translatable="false">YOUR_MAPSINDOORS_API_KEY</string>
+ <string name="mapsindoors_api_key" translatable="false">YOUR_MAPSINDOORS_API_KEY</string>
 </resources>
 ```
 
@@ -150,4 +156,5 @@ preBuild.dependsOn fetchData
 Depending on the overall size of your MapsIndoors deployment, this may take some time, so during development you might want to comment out the script dependency.
 
 ## Work with MapsIndoors SDK behind a Firewall
+
 If you need to work with MapsIndoors SDK behind a firewall, you might need to [white-list some IP-adresses](../../ip-whitelisting).

@@ -43,7 +43,7 @@ The Venue's coordinates:
 static final LatLng VENUE_LAT_LNG = new LatLng( 57.05813067, 9.95058065 );
 ```
 
-Setting the API key to the desired solution:
+Setting the API key to the desired Solution:
 
 ```java
 if( !MapsIndoors.getAPIKey().equalsIgnoreCase( getString( R.string.mi_api_key ) ) )

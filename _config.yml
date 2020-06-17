@@ -14,6 +14,7 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - package.json
+  - node_modules
 
 kramdown:
   # This is needed for the Table of Contents to work in Kramdown
@@ -40,6 +41,12 @@ collections:
   web:
     output: true
     permalink: :collection/:path/
+  xamarin:
+    output: true
+    permalink: :collection/:path/
+  various:
+    output: true
+    permalink: :path/
 
 defaults:
   -
@@ -127,3 +134,14 @@ defaults:
     values:
       version: v3
       layout: tutorial
+  -
+    scope:
+      path: "_xamarin/v3"
+    values:
+      version: v3
+      layout: tutorial
+  -
+    scope:
+      path: "_various"
+    values:
+      layout: default

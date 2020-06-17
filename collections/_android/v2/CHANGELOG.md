@@ -4,8 +4,6 @@ published: true
 date: 2019-09-30
 ---
 
-# Changelog
-
 Changelog for the MapsIndoors Android SDK. This document structure is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and the project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!--
@@ -16,6 +14,34 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 ### Fixed        for any bug fixes.
 ### Security     in case of vulnerabilities.
 -->
+
+## [2.1.2] - 2019-05-23
+
+### Fixed
+
+- Fixed MapsPeople logo not shown in the map
+
+## [2.1.1] - 2019-05-21
+
+### Fixed
+
+- Fixed memory leaks in `MapControl`
+
+## [2.1.0] - 2019-05-13
+
+### Added
+
+- Support for runtime (indoor tiles) map-style switching. Related methods added:
+  - `Venue.getMapStyles()`: Gets a list of available map styles. Note that all venues share the map styles
+  - `Venue.getDefaultMapStyle()`: Gets the default map style used by the SDK
+  - `Venue.isMapStyleValid( MapStyle )`: Checks the validity of the given map style
+  - `MapControl.getMapStyles()`: Gets a list of available map styles. Note that all venues share the map styles
+  - `MapControl.getMapStyle()`:  Gets the current map style set with `MapControl.setMapStyle( MapStyle )`
+  - `MapControl.setMapStyle( MapStyle )`: Sets the given map style as the current one. It can be invoked before or after `MapControl.init()`
+
+### Changed
+
+- Updated the network layer so in case of network errors, will serve cached data when/where possible
 
 ## [2.0.7] - 2018-09-05
 
@@ -39,9 +65,10 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 - Made `LocationDisplayRule.setZoomLevelOn()` and `LocationDisplayRule.setZoomLevelOff()` package private.
 
 - Proguard rules:
-```
-    -keep interface com.mapsindoors.mapssdk.** { *; }
-    -keepclassmembers class * implements com.mapsindoors.mapssdk.MIModelBase { \<fields>; }
+
+```java
+-keep interface com.mapsindoors.mapssdk.** { *; }
+-keepclassmembers class * implements com.mapsindoors.mapssdk.MIModelBase { \<fields>; }
 ```
 
 ### Deprecated

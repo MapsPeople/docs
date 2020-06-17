@@ -12,7 +12,7 @@ permalink: /ios/v3/getting-started/
 
 ## Basic Examples
 
-For simple examples of MapsIndoors implementations, run `pod try MapsIndoors` (follow the tutorials below for setting up CocoaPods, or just clone [this repository](https://github.com/MapsIndoors/MapsIndoorsIOS/tree/SDK_V3)) and run the XCode Scheme called *Demos*. The code for these samples are to find in the */Example/DemoSamples* folder.
+For simple examples of MapsIndoors implementations, run `pod try MapsIndoors` (follow the tutorials below for setting up CocoaPods, or just clone [this repository](https://github.com/MapsIndoors/MapsIndoorsIOS/tree/master)) and run the XCode Scheme called *Demos*. The code for these samples are to find in the */Example/DemoSamples* folder.
 
 You can follow the tutorials on this site to start your app from scratch or to enhance the basic examples.
 
@@ -32,7 +32,7 @@ If you haven’t already, install CocoaPods:
 ```swift
 {% raw %}source 'https://github.com/CocoaPods/Specs.git'
 target 'YOUR_APPLICATION_TARGET_NAME_HERE' do
-pod 'MapsIndoors', '~>3.5'
+pod 'MapsIndoors', '~>3.9'      # Check CocoaPods for latest version
 end{% endraw %}
 ```
 
@@ -43,20 +43,24 @@ end{% endraw %}
 * Close Xcode, and then open (double-click) your project's *.xcworkspace* file to launch Xcode. From this time onwards, you must use the *.xcworkspace* file to open the project.
 * Add your credentials to your `AppDelegate.swift`
   1. Add the following import statements:
+
     ```swift
     import GoogleMaps
     import MapsIndoors
     ```
+
   1. Add the following to your `application(_:didFinishLaunchingWithOptions:)` method:
+
     ```swift
     GMSServices.provideAPIKey(      "YOUR_GOOGLE_API_KEY")
-    MapsIndoors.provideAPIKey(      "YOUR_MAPSINDOORS_API_KEY", 
+    MapsIndoors.provideAPIKey(      "YOUR_MAPSINDOORS_API_KEY",
                 googleAPIKey:       "YOUR_GOOGLE_API_KEY")
     ```
+
     Replace:
 
-    * `YOUR_GOOGLE_API_KEY` with your Google API key
-    * `YOUR_MAPSINDOORS_API_KEY` with your MapsIndoors API key. (In MapsIndoors iOS SDK v1, this key was known as your `Solution Id`)
+  * `YOUR_GOOGLE_API_KEY` with your Google API key
+  * `YOUR_MAPSINDOORS_API_KEY` with your MapsIndoors API key. (In MapsIndoors iOS SDK v1, this key was known as your `Solution Id`)
 
 ## Get your Google Maps API keys
 
@@ -87,7 +91,7 @@ let myMapControl = MPMapControl.init(map: mapView)!
 
 ## Set the MapsIndoors API Key
 
-In order to include MapsIndoors in your app, you need an API key. If you are not a customer you can use this API key `57e4e4992e74800ef8b69718` to follow the above guide.
+In order to include MapsIndoors in your app, you need an API key. If you are not a customer you can use this API key `79f8e7daff76489dace4f9f9` to follow the above guide.
 
 In order to include MapsIndoors in your own app with your own content, you need to [contact MapsPeople](https://resources.mapspeople.com/contact-us) to get your building drawings processed and hosted by us.
 

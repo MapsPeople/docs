@@ -9,7 +9,7 @@ date: 2019-09-30
 
 ## Searching for Locations and Displaying the Results on a Map
 
-Use the `MPLocationsProvider` class to search for content in your MapsIndoors solution.
+Use the `MPLocationsProvider` class to search for content in your MapsIndoors Solution.
 
 This example shows how to setup a query for the nearest single best matching location and display the result on the map:
 
