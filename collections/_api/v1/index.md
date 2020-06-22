@@ -551,6 +551,8 @@ Note:
 * Venue and Building geodata will disregard the floor index and will be given based on the latitude/logitude alone.
 * Floor and Room geodata will respect the floor index and will return if the latitude/logitude intersects AND the given floorindex matches
 * If no matches where found, an empty list will be returned
+* Floor indexes can be viewed in the CMS under Data Management -> Buildings. 
+* For a geodata object of type `"floor"` its `baseTypeProperties.administrativeid` property contains the floor index.
 
 Mandatory parameters:
 
