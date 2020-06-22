@@ -562,114 +562,109 @@ Example:
 
 Input values:
 
-* **lat** 57.086001
-* **lng** 9.957824
-* **floor** 0
+* **lat** 57.0579386
+* **lng** 9.9502304
+* **floor** 10
 
 Output:
-A list of 3 geodata objects: A venue a building and a floor:
+A list of 4 geodata objects: a venue, a building, a floor and a room:
 
 ```json
 [
   {
-    "datasetId": "550c26a864617400a40f0000",
-    "solutionId": "550c26a864617400a40f0000",
+    "id": "586ca9f1bc1f5702406442b6",
+    "datasetId": "57e4e4992e74800ef8b69718",
     "baseType": "venue",
-    "geometry": {
-      "coordinates": ...,
-      "bbox": [
-        9.95564114204035,
-        57.0835223451902,
-        9.96209414582836,
-        57.0870561408498
-      ],
-      "type": "Polygon"
-    },
+    "geometry": ...,
     "anchor": {
       "coordinates": [
-        9.95856635734435,
-        57.085466450128
+        9.95033207518389,
+        57.0589850525
       ],
       "type": "Point"
     },
-    "aliases": [
-      "headquarter",
-      "hovedkvarter",
-      "hq2"
-    ],
+    "aliases": [],
     "status": 3,
-    "baseTypeProperties": {},
-    "properties": {
-      "name@da": "RTX",
-      "name@en": "RTX"
+    "baseTypeProperties": {
+      "defaultfloor": "0",
+      "administrativeid": "Stigsborgvej",
+      "graphid": "STIGSBORGVEJ_Graph"
     },
-    "tilesUrl": "https://tiles.mapsindoors.com/tiles/indoor/rtx/{style}/l{floor}/z{z}/x{x}/y{y}.png",
+    "properties": {
+      "name@en": "Aalborg Office",
+      "name@da": "Aalborg Kontor"
+    },
     "tileStyles": [
       {
-        "displayName": "Live",
-        "style": "v2017.12"
-      },
-      {
-        "displayName": "Gray",
-        "style": "v2015.03/24"
-      },
-      {
-        "displayName": "Light gray",
-        "style": "v2015.03/23"
+        "displayName": "default",
+        "style": "default"
       }
     ]
   },
   {
-    "datasetId": "550c26a864617400a40f0000",
-    "solutionId": "550c26a864617400a40f0000",
+    "id": "586caf3dbc1f5702406442b9",
+    "parentId": "586ca9f1bc1f5702406442b6",
+    "datasetId": "57e4e4992e74800ef8b69718",
     "baseType": "building",
-    "geometry": {
-      "coordinates": ...,
-      "bbox": [
-        9.95609570100004,
-        57.0849003170001,
-        9.95865366900006,
-        57.0864697920001
-      ],
-      "type": "Polygon"
-    },
+    "geometry": ...,
     "anchor": {
       "coordinates": [
-        9.9573117,
-        57.0857385
+        9.95071928922423,
+        57.0590494749439
       ],
       "type": "Point"
     },
     "status": 3,
-    "baseTypeProperties": {},
+    "baseTypeProperties": {
+      "administrativeid": "Stigsborgvej"
+    },
     "properties": {
-      "name@en": "Main building",
-      "name@da": "Main building"
+      "name@en": "Stigsborgvej",
+      "name@da": "Stigsborgvej"
     }
   },
   {
-    "parentId": "5548c6583eb3c3080c4a92da",
-    "datasetId": "550c26a864617400a40f0000",
-    "solutionId": "550c26a864617400a40f0000",
+    "id": "fadb5dbf31b442d1a5d6bb08",
+    "parentId": "586caf3dbc1f5702406442b9",
+    "datasetId": "57e4e4992e74800ef8b69718",
     "baseType": "floor",
-    "geometry": {
-      "coordinates": ...,
-      "bbox": [
-        9.95609570100004,
-        57.0849003170001,
-        9.95865366900006,
-        57.0864697920001
-      ],
-      "type": "Polygon"
-    },
+    "geometry": ...,
     "status": 3,
     "baseTypeProperties": {
-      "name": "0",
-      "administrativeid": "0"
+      "name": "1",
+      "administrativeid": "10"
     },
-    "properties": {},
-    "id": "f43b931f09314f3f9dd796f9",
-    "lastModified": "2020-03-25T13:29:50.995Z",
+    "properties": {}
+  },
+  {
+    "id": "bf4aac447b1148e198f48d7d",
+    "parentId": "fadb5dbf31b442d1a5d6bb08",
+    "datasetId": "57e4e4992e74800ef8b69718",
+    "externalId": "1.05.01",
+    "baseType": "room",
+    "displayTypeId": "Storage",
+    "displaySetting": {
+      "name": "default"
+    },
+    "geometry": ...,
+    "anchor": {
+      "coordinates": [
+        9.9502304,
+        57.0579386
+      ],
+      "type": "Point"
+    },
+    "aliases": [],
+    "categories": [],
+    "status": 3,
+    "baseTypeProperties": {
+      "administrativeid": "2120ABC7-A574-4950-A33B-E5F836EA91CF",
+      "class": "Lager"
+    },
+    "properties": {
+      "name@en": "IT storage",
+      "name@da": "IT lager"
+    }
   }
 ]
 ```
