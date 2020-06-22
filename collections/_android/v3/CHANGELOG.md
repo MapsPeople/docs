@@ -17,6 +17,17 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 ### Security     in case of vulnerabilities.
 -->
 
+## [3.5.0] - 2020-06-16
+
+### Added
+
+- Selection of default Floor when panning between Buildings
+
+### Fixed
+
+- Locations disappear after applying Category Filter
+- Fixed an issue in the Floor Selector that prevented it from hiding in some cases
+
 ## [3.4.0] - 2020-03-18
 
 ### Added
