@@ -569,7 +569,7 @@ Input values:
 * **floor** 10
 
 Output:
-A list of 4 geodata objects: a venue, a building, a floor and a room:
+A list of 4 geodata objects: a Venue, a Building, a Floor and a Room:
 
 ```json
 [
