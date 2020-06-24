@@ -33,26 +33,26 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 
 - Routes rendered on the map with `MPDirectionsRenderer` now has rounded curves when directions on the route change.
 
-### Fixed 
+### Fixed
 
 - Fixed a crash in `MPDirectionsRenderer` that happened when new routes are applied in quick succession.
 - Fixed a problem synchronising multiple datasets simultaneously.
 
 ## [3.9.2] 2020-06-02
 
-### Fixed 
+### Fixed
 
 - Synchronizing new data would not take in current app session..
 
 ## [3.9.1] 2020-05-18
 
-### Fixed 
+### Fixed
 
 - Too many wayfinding steps were emitted for routes with slight curvature.
 
 ## [3.9.0] 2020-05-04
 
-### Added 
+### Added
 
 - support for caching offline data for multiple datasets. See `MapsIndoors.dataSetCacheManager` and https://mapsindoors.github.io/ios/v3/offline/ for more details.
 
