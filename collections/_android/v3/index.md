@@ -56,7 +56,7 @@ dependencies {
     implementation 'com.android.support:support-v4:27.1.0'
     implementation 'com.google.android.gms:play-services-maps:11.8.0'
     implementation 'com.google.code.gson:gson:2.8.2'
-    implementation 'com.mapspeople.mapsindoors:mapsindoorssdk:{% raw %}{{%product-version%}}{% endraw %}@aar'
+    implementation 'com.mapspeople.mapsindoors:mapsindoorssdk:3.5.+@aar'
 }
 repositories{
     maven {
