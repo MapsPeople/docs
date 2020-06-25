@@ -31,7 +31,7 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 
 ### Changed
 
-- Routes rendered on the map with `MPDirectionsRenderer` now has rounded curves when directions on the route change.
+- Routes rendered on the map with `MPDirectionsRenderer` now have rounded curves when directions on the route change.
 
 ### Fixed
 
