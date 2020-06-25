@@ -54,7 +54,7 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 
 ### Added
 
-- support for caching offline data for multiple datasets. See `MapsIndoors.dataSetCacheManager` and https://mapsindoors.github.io/ios/v3/offline/ for more details.
+- Support for caching offline data for multiple datasets. See `MapsIndoors.dataSetCacheManager` and [https://mapsindoors.github.io/ios/v3/offline/](https://mapsindoors.github.io/ios/v3/offline/) for more details.
 
 ### Changed
 
