@@ -35,7 +35,7 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 
 ### Fixed
 
-- Fixed a crash in `MPDirectionsRenderer` that happened when new routes are applied in quick succession.
+- Fixed a crash in `MPDirectionsRenderer` that happened when new routes were applied in quick succession.
 - Fixed a problem synchronising multiple datasets simultaneously.
 
 ## [3.9.2] 2020-06-02
