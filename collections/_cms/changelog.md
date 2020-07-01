@@ -4,7 +4,7 @@ date: 2019-06-10
 published: true
 ---
 
-## July 1st 2020 - v3.28.8
+## July 1st 2020 - v3.28.7
 
 ### What’s new
 
