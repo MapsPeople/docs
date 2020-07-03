@@ -16,6 +16,12 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 ### Removed
 -->
 
+## [3.9.5] 2020-07-02
+
+### Added
+
+- Added a helper method on `MPLocation` to retrieve fields using case-insenitive keys: `location.getField(forKey: "key")`
+
 ## [3.9.4] 2020-06-24
 
 ### Fixed
