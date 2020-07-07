@@ -17,6 +17,12 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 ### Security     in case of vulnerabilities.
 -->
 
+## [3.5.1] - 2020-07-07
+
+### Fixed
+
+- Changed the getField() method in MPLocation to be case insensitive
+
 ## [3.5.0] - 2020-06-16
 
 ### Added
