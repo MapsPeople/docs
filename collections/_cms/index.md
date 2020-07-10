@@ -238,6 +238,29 @@ When selecting one a more Locations using the checkboxes, 2 options will appear:
 
 Remember to save before clicking on another Location or changing the page, otherwise your changes will be lost. To save the changes, click "Save”.
 
+## Export Map
+
+Export Map is an add-on feature that can be enabled for a Solution. Once enabled, it allows for PNG export of the MapsIndoors imagery for printing purposes. The export will not include the underlying Google Maps due to terms of use.
+
+The export service has a limit of 8000 x 8000 pixels. Clicking the Download icon button on the bottom right opens a new tab with the PNG.
+
+### Usage (scale)
+
+Sets the scale of the export imagery.
+* Web (1) will export the same pixel size as selected on-screen.
+* Retina (2) will export two times the pixels.
+* Print (4) will export four times the pixels.
+
+### Display Settings
+
+Allows toggling visible features on the export, such as icons, location types, and labels.
+
+You can also rotate the map and set the size of the screen selection. The max is 2000 x 2000.
+
+### Preview
+
+Preview is helpful especially when using rotation or larger-than-monitor exports.
+
 ## Venue
 
 * Edit the Venue name in the available languages
