@@ -247,6 +247,7 @@ The export service has a limit of 8000 x 8000 pixels. Clicking the Download icon
 ### Usage (scale)
 
 Sets the scale of the export imagery.
+
 * Web (1) will export the same pixel size as selected on-screen.
 * Retina (2) will export two times the pixels.
 * Print (4) will export four times the pixels.
