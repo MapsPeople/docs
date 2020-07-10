@@ -485,7 +485,7 @@ Michelle Barker has written [a terrific guide to optimizing SVGs for the web](ht
 
 A great tool to strip unnecesary elements from your SVG-file is [SVGOMG by Jake Archibald](https://jakearchibald.github.io/svgomg/).
 
-### Syncing icons to other Solutions
+### Syncing Icons to other Solutions
 
 If you have multiple Solutions, you can sync Icons across multiple Solutions to make sure you can use the same Icons in all of your Solutions.
 
