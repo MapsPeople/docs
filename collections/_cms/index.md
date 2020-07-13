@@ -242,7 +242,7 @@ Remember to save before clicking on another Location or changing the page, other
 
 Export Map is an add-on feature that can be enabled for a Solution. Once enabled, it allows for PNG export of the MapsIndoors imagery for printing purposes. The export will not include the underlying Google Maps due to terms of use.
 
-The export service has a limit of 8000 x 8000 pixels. Clicking the Download icon button on the bottom right opens a new tab with the PNG.
+The Export Map service has a limit of 8000 x 8000 pixels. Clicking the Download icon button on the bottom right opens a new tab with the PNG.
 
 ### Usage (scale)
 
@@ -254,13 +254,13 @@ Sets the scale of the export imagery.
 
 ### Display Settings
 
-Allows toggling visible features on the export, such as icons, location types, and labels.
+Allows toggling visible features on the exported map, such as Icons, Location Types, and Labels.
 
 You can also rotate the map and set the size of the screen selection. The max is 2000 x 2000.
 
 ### Preview
 
-Preview is helpful especially when using rotation or larger-than-monitor exports.
+Preview is especially helpful when using rotation or larger-than-monitor exports.
 
 ## Venue
 
