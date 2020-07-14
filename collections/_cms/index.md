@@ -143,15 +143,15 @@ To get started using the IndoorView feature for your Locations, please make sure
 
 #### MapsIndoors support matrix
 
-| MapsIndoors | Support for IndoorView | Private hosted panorama images|
-| - | - | - |
-|CMS|Yes|No|
-|Web App|Yes|No|
-|Android App|No|No|
-|iOS App|No|No|
-|Web SDK|Yes, through Google Maps Street View API or Static Street View API|No|
-|Android SDK|No|No|
-|iOS SDK|No|No|
+| MapsIndoors | Support for IndoorView                                             | Private hosted panorama images |
+| ----------- | ------------------------------------------------------------------ | ------------------------------ |
+| CMS         | Yes                                                                | No                             |
+| Web App     | Yes                                                                | No                             |
+| Android App | No                                                                 | No                             |
+| iOS App     | No                                                                 | No                             |
+| Web SDK     | Yes, through Google Maps Street View API or Static Street View API | No                             |
+| Android SDK | No                                                                 | No                             |
+| iOS SDK     | No                                                                 | No                             |
 
 IndoorView only supports **publicly** available Google Street View imagery. If you would like to know more about **privately** hosted panorama images, please see [Googles Custom Street View documentation](https://developers.google.com/maps/documentation/javascript/streetview#CustomStreetView).
 
@@ -300,6 +300,14 @@ To restrict access to a path:
 
 This is a list of all the Location Types in the Solution. From this list you can edit each Location by clicking on the pencil.
 
+### Syncing Types to other Solutions
+
+If you have multiple Solutions, you can update Location Types across multiple Solutions to keep them up to date with the latest changes.
+
+Click the "Sync to other Solutions"-button to select which of your other Solutions you want to sync this Location Type to.
+
+When you sync a Location Type, if the Location Type exists in the target Solution, you override the Location Type in the target Solution. If the Location Type does not exist in the target Solution, it is added.
+
 ### View Settings
 
 The *View settings* can be set for each Location Type. Use the settings to define how and when the icon and/or label is displayed on the map, and what is shown in the label.
@@ -325,6 +333,16 @@ Ability to add new categories to the list. Click on New Category, add name, clic
 View the tutorial video below for more information about Categories.
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/FMIEJmJwogU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+### Syncing Categories to other Solutions
+
+If you have multiple Solutions, you can update Categories across multiple Solutions to keep them up to date with the latest changes.
+
+Click the "Sync to other Solutions"-button to select which of your other Solutions you want to sync this Category to.
+
+When you sync a Category, if the Category exists in the target Solution, you override the Category in the target Solution. If the Category does not exist in the target Solution, it is added.
+
+Categories have icons, and the icon for the Category is synced to the target Solution as well, creating it if it does not exist already.
 
 ## App Settings
 
@@ -466,6 +484,14 @@ If your SVGs contain unsupported elements, you must remove them before they can 
 Michelle Barker has written [a terrific guide to optimizing SVGs for the web](https://css-irl.info/optimising-svgs-for-the-web/) on her site.
 
 A great tool to strip unnecesary elements from your SVG-file is [SVGOMG by Jake Archibald](https://jakearchibald.github.io/svgomg/).
+
+### Syncing Icons to other Solutions
+
+If you have multiple Solutions, you can sync Icons across multiple Solutions to make sure you can use the same Icons in all of your Solutions.
+
+Open the Icon Manager (you can find it on a Location Detail screen when you set the Icon for that Location). Find the Icon you want to sync to one or more Solutions, and click the "Sync"-icon next to the filename of the Icon. Then you can select which other Solutions you want to sync this Icon to.
+
+When you sync an Icon, if the Icon exists in the target Solution (i.e. an Icon with the exact same filename), you override the Icon in the target Solution. If the Icon does not exist in the target Solution, it is added.
 
 ## Support
 
