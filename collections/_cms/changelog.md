@@ -13,7 +13,7 @@ published: true
 
 ### Bugfix
 
-* **Location Types:** Fixes a bug that logged the user out when trying to translate a Type's name using google translate api.
+* **Location Types:** Fixes a bug that logged the user out when trying to translate a Type's name using the Google Translate API.
 
 ## June 18th 2020 - v3.28.0
 
