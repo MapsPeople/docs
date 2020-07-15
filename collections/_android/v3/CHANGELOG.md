@@ -17,6 +17,16 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 ### Security     in case of vulnerabilities.
 -->
 
+## [3.5.2] - 2020-07-15
+
+### Fixed
+
+- Fixed an issue that could cause an IndexOutOfBoundsException if data got corrupted.
+- Issue causing MPApiKeyValidatorService to always return true, no matter the validity.
+- Fixed an issue that caused the FloorSelector to occasionally show outside the selected venue.
+- Fixed an issue that caused selections to be shown across floors.
+- An issue that occationally caused a crash when switching between travel modes in offline routing
+
 ## [3.5.1] - 2020-07-07
 
 ### Fixed
