@@ -20,6 +20,7 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 ## [3.5.2] - 2020-07-15
 
 ### Fixed
+
 - Fixed an issue that could cause an IndexOutOfBoundsException if data got corrupted.
 - Issue causing MPApiKeyValidatorService to always return true, no matter the validity.
 - Fixed an issue that caused the FloorSelector to occasionally show outside the selected venue.
