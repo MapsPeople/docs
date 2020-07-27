@@ -20,7 +20,7 @@ published: true
 
 ### What’s new
 
-* **Sync Feature:** Categories, Location Types and Icons can now be synchronised from one solution to another, given that a customer has multiple solutions. 
+* **Sync Feature:** Categories, Location Types and Icons can now be synchronised from one solution to another, given that a customer has multiple solutions.
 * Icon-images hosted in the CMS have finally been moved to Amazon S3 and all the links have been updated in the backend.
 
 ### Bugfix
