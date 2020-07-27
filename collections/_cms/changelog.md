@@ -4,6 +4,29 @@ date: 2019-06-10
 published: true
 ---
 
+## July 27th 2020 - v3.30.0
+
+### What’s new
+
+* **Booking Provider Feature:** This feature is going to allow customers to setup credentials to a booking service provider, that will allow their app users to book meeting rooms. It will be available for LinkedIn as a start, but it is a module that can be activated for any customer. It is a requirement that the customer has a booking service provider, such as TEEM from Microsoft, already in place.
+
+### Bugfix
+
+* **App Config:** Fixes duplicated Categories under App Configuration page when switching Solutions.
+* **Locations:** Fixes case sensitivity issue when comparing Locations and the Building’s administrative ID.
+* **Locations:** Updates a Location’s path  when moving it in or out of a Building.
+
+## July 16th 2020 - v3.29.0
+
+### What’s new
+
+* **Sync Feature:** Categories, Location Types and Icons can now be synchronised from one solution to another, given that a customer has multiple solutions. 
+* Icon-images hosted in the CMS have finally been moved to Amazon S3 and all the links have been updated in the backend.
+
+### Bugfix
+
+* **Locations:** a Venue with no Buildings, hence no Floors, would cause the Tiles to not be visible. Floor 0 tiles are now shown in this case.
+
 ## June 18th 2020 - v3.28.0
 
 ### What’s new
