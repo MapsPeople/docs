@@ -8,7 +8,7 @@ published: true
 
 ### What’s new
 
-* **Booking Provider Feature:** This feature is about setting up credentials to a booking service provider, which will allow app users to book meeting rooms. It is a module that is activated per Customer. The Customer should have a booking service provider, already in place.
+* **Booking Provider Feature:** This feature is about setting up credentials to a booking service provider, which will allow app users to book meeting rooms. The Customer should already have a booking service provider in place.
 
 ### Bugfix
 
