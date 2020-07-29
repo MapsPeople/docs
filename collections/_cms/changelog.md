@@ -8,7 +8,7 @@ published: true
 
 ### What’s new
 
-* **Booking Provider Feature:** This feature is going to allow customers to setup credentials to a booking service provider, that will allow their app users to book meeting rooms. It will be available for LinkedIn as a start, but it is a module that can be activated for any customer. It is a requirement that the customer has a booking service provider, such as TEEM from Microsoft, already in place.
+* **Booking Provider Feature:** This feature is about setting up credentials to a booking service provider, which will app users to book meeting rooms. It is a module that is activated per Customer. The Customer should have a booking service provider, already in place.
 
 ### Bugfix
 
