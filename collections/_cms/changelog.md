@@ -4,6 +4,7 @@ date: 2019-06-10
 published: true
 ---
 
+
 ## July 27th 2020 - v3.30.0
 
 ### What’s new
@@ -26,6 +27,17 @@ published: true
 ### Bugfix
 
 * **Locations:** a Venue with no Buildings, hence no Floors, would cause the Tiles to not be visible. Floor 0 tiles are now shown in this case.
+
+## July 1st 2020 - v3.28.7
+
+### What’s new
+
+* **Location Type Template:** Adds a check that prevents calling a property-key "name" because one already exists.
+* **Custom Properties:** Custom properties are not case-sensitive.
+
+### Bugfix
+
+* **Location Types:** Fixes a bug that logged the user out when trying to translate a Type's name using the Google Translate API.
 
 ## June 18th 2020 - v3.28.0
 
