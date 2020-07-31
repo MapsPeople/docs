@@ -1,9 +1,15 @@
 ---
 title: Changelog
-date: 2019-06-10
+date: 2019-07-30
 published: true
 ---
 
+## July 30th 2020 - v3.31.0
+
+### What’s new
+
+* **Location Types:** Types can be deleted in bulk.
+* **Locations:** Search for a Location by ID or ExternalID.
 
 ## July 27th 2020 - v3.30.0
 
