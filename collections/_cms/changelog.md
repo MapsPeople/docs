@@ -4,6 +4,30 @@ date: 2019-06-10
 published: true
 ---
 
+
+## July 27th 2020 - v3.30.0
+
+### What’s new
+
+* **Booking Provider Feature:** This feature is about setting up credentials to a booking service provider, which will allow app users to book meeting rooms. The Customer should already have a booking service provider in place.
+
+### Bugfix
+
+* **App Config:** Fixes duplicated Categories under App Configuration page when switching Solutions.
+* **Locations:** Fixes case sensitivity issue when comparing Locations and the Building’s administrative ID.
+* **Locations:** Updates a Location’s path  when moving it in or out of a Building.
+
+## July 16th 2020 - v3.29.0
+
+### What’s new
+
+* **Sync Feature:** Categories, Location Types and Icons can now be synchronised from one solution to another, given that a customer has multiple solutions.
+* Icon-images hosted in the CMS have finally been moved to Amazon S3 and all the links have been updated in the backend.
+
+### Bugfix
+
+* **Locations:** a Venue with no Buildings, hence no Floors, would cause the Tiles to not be visible. Floor 0 tiles are now shown in this case.
+
 ## July 1st 2020 - v3.28.7
 
 ### What’s new

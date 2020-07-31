@@ -7,6 +7,16 @@ nav_weight: 1000
 
 Changelog for MapsIndoors SDK for JavaScript. This document structure is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and the project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [3.11.0] - 2020-07-27
+
+### Added
+
+- Added support for [OpenID Connect](https://openid.net/connect/) authentication flow.
+
+### Fixed
+
+- Fixed issue where the SDK would throw an error if locations were requested before data had been loaded.
+
 ## [3.10.0] - 2020-06-11
 
 ### Added
