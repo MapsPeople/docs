@@ -214,7 +214,7 @@ All Geodata BaseTypes have some common keys that is available for all, and then 
 
 Venue, Building, Floor, Room and Area have a polygon that describes where its position is on the map. POIs are noted with a single point on the map and is typically located inside a Room or on a Floor - important things like the coffee machine.
 
-To read, change or delete Geodata use the Geodata endpoints described here: [https://integration.mapsindoors.com/doc/ui/index#/Geodata](https://integration.mapsindoors.com/doc/ui/index#/Geodata)
+To read, change or delete Geodata use the Geodata endpoints described here: [https://integration.mapsindoors.com/doc/index.html#/Geodata](https://integration.mapsindoors.com/doc/index.html#/Geodata)
 
 > Note: When you get data, you only specify the `datasetId` hence you get the entire tree! The other Geodata endpoints works on individual Geodata objects.
 {: .mi-careful}
