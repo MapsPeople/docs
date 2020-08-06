@@ -216,7 +216,7 @@ Venue, Building, Floor, Room and Area have a polygon that describes where its po
 
 To read, change or delete Geodata use the Geodata endpoints described here: [https://integration.mapsindoors.com/doc/index.html#/Geodata](https://integration.mapsindoors.com/doc/index.html#/Geodata)
 
-> Note: When you get data, you only specify the `datasetId` hence you get the entire tree! The other Geodata endpoints works on individual Geodata objects.
+> Note: When you get data, you only specify the `apiKey` hence you get the entire tree! The other Geodata endpoints works on individual Geodata objects.
 {: .mi-careful}
 
 ## Detailed data description
@@ -539,7 +539,7 @@ As a simple example: All rooms and areas across any building/venue related to en
 
 ```bash
 HTTP Get
-Path: /{datasetId}/api/geocode
+Path: /{apiKey}/api/geocode
 Returns: A list of Geodata objects
 ```
 
