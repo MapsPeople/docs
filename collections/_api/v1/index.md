@@ -407,7 +407,7 @@ It will look a lot like the POI example, with a few differences:
 
 * **ParentId**
 
-    The area’s ParentId could be either a Venue, a Floor, or a Room. In this case, it is in the same parent as the Goat Hanger POI.
+    The area’s ParentId could be either a Venue, a Floor, or a Room. In this case, it is in the same parent as the Coat Hanger POI.
 
 * **Geometry**
 
