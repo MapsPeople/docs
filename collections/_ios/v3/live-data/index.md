@@ -17,6 +17,7 @@ Common use-cases are:
 Support for live data requires that server-side integrations are in place. For example, visualizing live occupancy data requires that a calendar or booking system integration is in place. An integration like that is set up in [collaboration with MapsPeople](https://www.mapspeople.com/mapsindoors-integrations/).
 
 ## Live Topics
+
 All live data is ordered in so called _topics_. A MapsIndoors topic is hierarchical in the way it is defined, and its relation to MapsIndoors data is derivable by its 7 components:
 
 1. Dataset
@@ -33,9 +34,9 @@ As a minimum, all topics relate to a dataset, also known as a solution in MapsIn
 
 The Domain Type describes what kind of conceptual domain the Live Data belongs to. Here are some examples of Domain Types:
 
-- Availability - The current availability state of a particular bookable room or workspace
-- Occupancy - The current known occupancy of a given capacity for example in a meeting room 
-- Position - The current geo-spatial position and related floor
+* Availability - The current availability state of a particular bookable room or workspace
+* Occupancy - The current known occupancy of a given capacity for example in a meeting room
+* Position - The current geo-spatial position and related floor
 
 The Domain Type is not bound to be one of the above, but could be very specific to a particular use-case, source of data and technical integration.
 
@@ -49,11 +50,11 @@ A live update is the model for a message carrying one piece of live data, for ex
 
 ## Enable Live Data in an App
 
-To enable live data in an application, a subscription to one or more topics is needed. Once subscribed, the application can be notified about changes and can decide what to do. The application is in control of what should happen on live data updates, and the MapsIndoors SDKs provide mechanisms to efficiently make updates to the map representation of locations. The central class to carry out these tasks is the ```LiveDataManager```. 
+To enable live data in an application, a subscription to one or more topics is needed. Once subscribed, the application can be notified about changes and can decide what to do. The application is in control of what should happen on live data updates, and the MapsIndoors SDKs provide mechanisms to efficiently make updates to the map representation of locations. The central class to carry out these tasks is the ```LiveDataManager```.
 
 The only Live Updates that is also directly notified to the SDK internally are Live Updates with the Position Domain Type. By consequense, if you have already set up your map with MapsIndoors, an additional few lines of code can enable moving locations on the map. Here is an example in Swift:
 
-```
+```swift
     self.mapControl = MPMapControl.init(map: self.map!)
     
     let liveManager = MapsIndoors.liveDataManager()
