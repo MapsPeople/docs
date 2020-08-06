@@ -11,6 +11,7 @@ permalink: /ios/v3/live-data/
 This guide gives an overview of how to work with live data in the MapsIndoors iOS SDK. As opposed to static data that does not change unless data is synchronized, Live Data can change in real time and these changes can be instantly reflected on the map and in searches.
 
 Common use-cases are:
+
 * Changing the appearance of meeting rooms or workspace desks on a map or in a list, based on occupancy information.
 * Changing the position of a POI representing a vehicle.
 
@@ -55,11 +56,11 @@ To enable live data in an application, a subscription to one or more topics is n
 The only Live Updates that is also directly notified to the SDK internally are Live Updates with the Position Domain Type. By consequense, if you have already set up your map with MapsIndoors, an additional few lines of code can enable moving locations on the map. Here is an example in Swift:
 
 ```swift
-    self.mapControl = MPMapControl.init(map: self.map!)
-    
-    let liveManager = MapsIndoors.liveDataManager()
-    let topic = MPLiveUpdateTopic.domainType("position")
-    liveManager.subscribe(topic)
+  self.mapControl = MPMapControl.init(map: self.map!)
+
+  let liveManager = MapsIndoors.liveDataManager()
+  let topic = MPLiveUpdateTopic.domainType("position")
+  liveManager.subscribe(topic)
 ```
 
 In the example the Topic was created with only the Domain Type. This will subscribe to all coming position updates for the dataset and if the updates are relevant for the particular view of the map, you will see moving icons on the map.
