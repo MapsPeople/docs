@@ -65,4 +65,4 @@ The only Live Updates that is also directly notified to the SDK internally are L
 
 In the example the Topic was created with only the Domain Type. This will subscribe to all coming position updates for the dataset and if the updates are relevant for the particular view of the map, you will see moving icons on the map.
 
-This is of course a very simplistic example, and there are a lot more handles that are relevant to create a robust and user-friendly real-time map experience. This will be covered in the guides for iOS, Android and Web.
+This is of course a very simplistic example, and there are more handles that are relevant to create a robust and user-friendly real-time map experience. To learn more, visit the [Live Data tutorial for iOS](/ios/v3/live-data/live-data-tutorial) and the [reference guide](https://app.mapsindoors.com/mapsindoors/reference/ios/v3/interface_m_p_live_data_manager.html).
