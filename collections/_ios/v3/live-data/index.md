@@ -67,16 +67,16 @@ In the example the Topic was created with only the Domain Type. This will subscr
 
 ## Handling Live Data Events
 
-While only a few lines of code can get things moving around on a map, there are of course more handles that are relevant to create a robust and user-friendly real-time map experience. 
+While only a few lines of code can get things moving around on a map, there are of course more handles that are relevant to create a robust and user-friendly real-time map experience.
 
 ### Listening for Live Updates
 
-There are two ways to be notified about Live Updates. 
+There are two ways to be notified about Live Updates.
 
-1. On a general level through `MPLiveDataManagerDelegate`, which is suitable in scenarios where all Live Updates might potentially affect the end users decisions, for example when searching broadly for an available meeting room. 
+1. On a general level through `MPLiveDataManagerDelegate`, which is suitable in scenarios where all Live Updates might potentially affect the end users decisions, for example when searching broadly for an available meeting room.
 2. On a map-specific level through `MPMapControlDelegate`, which is suitable in scenarios where the map is the context for the users actions, for example when browsing the map for an available meeting room nearby.
 
-To get Live Updates on a general level the `MPLiveDataManagerDelegate` protocol method `didReceive(_ liveUpdate: MPLiveUpdate)` must be implemented: 
+To get Live Updates on a general level the `MPLiveDataManagerDelegate` protocol method `didReceive(_ liveUpdate: MPLiveUpdate)` must be implemented:
 
 ```swift
 extension MyClass : MPLiveDataManagerDelegate {
@@ -87,7 +87,7 @@ extension MyClass : MPLiveDataManagerDelegate {
 }
 ```
 
-To get Live Updates on a map-specific level the `MPMapControlDelegate` protocol method `willUpdateLocationsOnMap(locations: [MPLocation])` must be implemented: 
+To get Live Updates on a map-specific level the `MPMapControlDelegate` protocol method `willUpdateLocationsOnMap(locations: [MPLocation])` must be implemented:
 
 ```swift
 extension MyClass : MPMapControlDelegate {
@@ -106,27 +106,27 @@ In order to get notified about state changes and errors happening in the Live Da
 
 ```swift
 extension MyClass : MPLiveDataManagerDelegate {
-    
+
     func didUpdate(_ state: MPLiveDataManagerState) {
         print("Manager state changed to \(state)")
     }
-    
+
     func didSubscribe(_ topic: MPLiveTopicCriteria) {
         print("Started Live Updates for \(topic.topicString)")
     }
-    
+
     func didUnsubscribe(_ topic: MPLiveTopicCriteria) {
         print("Stopped Live Updates for \(topic.topicString)")
     }
-    
+
     func onSubscriptionError(_ error: Error, topic: MPLiveTopicCriteria) {
         print("Could not subscribe Live Updates for \(topic.topicString)")
     }
-    
+
     func onError(_ error: Error) {
         print("We got an error")
     }
-    
+
 }
 ```
 

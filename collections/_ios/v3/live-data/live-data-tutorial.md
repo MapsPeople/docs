@@ -215,4 +215,4 @@ func stopFlash() {
 }
 ```
 
-This completes the tutorial on Live Data. [See the sample in LiveDataController.swift](https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Live Data/LiveDataController.swift).
+This completes the tutorial on Live Data. [See the sample in LiveDataController.swift](<https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Live Data/LiveDataController.swift>).
