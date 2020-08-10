@@ -49,7 +49,7 @@ Knowing that updates is ordered in Topics, it is possible to subscribe to update
 
 A live update is the model for a message carrying one piece of live data, for example that a particular room is now occupied. It contains the topic for the live update and the actual live properties as a dictionary of strings.
 
-## Enable Live Data in an App
+## Enable Live Data in Your App
 
 To enable live data in an application, a subscription to one or more topics is needed. Once subscribed, the application can be notified about changes and can decide what to do. The application is in control of what should happen on live data updates, and the MapsIndoors SDKs provide mechanisms to efficiently make updates to the map representation of locations. The central class to carry out these tasks is the ```LiveDataManager```.
 
@@ -65,4 +65,71 @@ The only Live Updates that is also directly notified to the SDK internally are L
 
 In the example the Topic was created with only the Domain Type. This will subscribe to all coming position updates for the dataset and if the updates are relevant for the particular view of the map, you will see moving icons on the map.
 
-This is of course a very simplistic example, and there are more handles that are relevant to create a robust and user-friendly real-time map experience. To learn more, visit the [Live Data tutorial for iOS](/ios/v3/live-data/live-data-tutorial) and the [reference guide](https://app.mapsindoors.com/mapsindoors/reference/ios/v3/interface_m_p_live_data_manager.html).
+## Handling Live Data Events
+
+While only a few lines of code can get things moving around on a map, there are of course more handles that are relevant to create a robust and user-friendly real-time map experience. 
+
+### Listening for Live Updates
+
+There are two ways to be notified about Live Updates. 
+
+1. On a general level through `MPLiveDataManagerDelegate`, which is suitable in scenarios where all Live Updates might potentially affect the end users decisions, for example when searching broadly for an available meeting room. 
+2. On a map-specific level through `MPMapControlDelegate`, which is suitable in scenarios where the map is the context for the users actions, for example when browsing the map for an available meeting room nearby.
+
+To get Live Updates on a general level the `MPLiveDataManagerDelegate` protocol method `didReceive(_ liveUpdate: MPLiveUpdate)` must be implemented: 
+
+```swift
+extension MyClass : MPLiveDataManagerDelegate {
+    func didReceive(_ liveUpdate: MPLiveUpdate) {
+        let numberOfPeople = liveUpdate.getLiveValue(forKey: "nrOfPeople")
+        ...
+    }
+}
+```
+
+To get Live Updates on a map-specific level the `MPMapControlDelegate` protocol method `willUpdateLocationsOnMap(locations: [MPLocation])` must be implemented: 
+
+```swift
+extension MyClass : MPMapControlDelegate {
+    func willUpdateLocationsOnMap(locations: [MPLocation]) {
+        for location in locations {
+            let numberOfPeople = location.getLiveValue(forKey: "nrOfPeople", domainType: "occupancy")
+            ...
+        }
+    }
+}
+```
+
+### Handling State Changes and Errors
+
+In order to get notified about state changes and errors happening in the Live Data Manager, `MPLiveDataManagerDelegate` utilizes other methods as shown in below example:
+
+```swift
+extension MyClass : MPLiveDataManagerDelegate {
+    
+    func didUpdate(_ state: MPLiveDataManagerState) {
+        print("Manager state changed to \(state)")
+    }
+    
+    func didSubscribe(_ topic: MPLiveTopicCriteria) {
+        print("Started Live Updates for \(topic.topicString)")
+    }
+    
+    func didUnsubscribe(_ topic: MPLiveTopicCriteria) {
+        print("Stopped Live Updates for \(topic.topicString)")
+    }
+    
+    func onSubscriptionError(_ error: Error, topic: MPLiveTopicCriteria) {
+        print("Could not subscribe Live Updates for \(topic.topicString)")
+    }
+    
+    func onError(_ error: Error) {
+        print("We got an error")
+    }
+    
+}
+```
+
+Live Updates are of course dependent on network connectivity, so the Live Data Manager will try to recover from common errors like network dropout. On the contrary, the Live Data Manager will not try to recover from subscription errors alone as this could be caused by a non-existing topic for a given Dataset, thus it does not make sense retrying the failing subscription.
+
+To learn more, visit the [Live Data tutorial for iOS](/ios/v3/live-data/live-data-tutorial) and the [reference guide](https://app.mapsindoors.com/mapsindoors/reference/ios/v3/interface_m_p_live_data_manager.html).
