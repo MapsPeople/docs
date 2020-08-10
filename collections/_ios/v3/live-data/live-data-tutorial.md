@@ -176,7 +176,7 @@ private func handleLiveUpdate(_ forLocation: MPLocation) {
 In the `LiveDataController` extension, add the method `willUpdateLocations()`. This is the actual delegate method that recieves all `MPLocation` objects that was updated on the map. Iterate through these locations and skip the ones that have the `position` Domain Type. Call the `handleLiveUpdate()` method for all others.
 
 ```swift
-func willUpdateLocations(onMap locations: [MPLocation]) {
+func willUpdateLocationsOnMap(locations: [MPLocation]) {
     for loc in locations {
         let positionUpdate = loc.getLiveUpdate(forDomainType: MPLiveDomainType.position)
         if positionUpdate == nil {
