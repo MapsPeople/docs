@@ -1,11 +1,11 @@
 {
-  "title": "Markdown Guide",
-  "url": "https://www.markdownguide.org",
+  "title": "MapsIndoors SDK Documentation",
+  "url": "https://mapsindoors.github.io",
   "baseurl": "",
-  "repo": "http://github.com/mattcone/markdown-guide",
+  "repo": "http://github.com/mapsindoors/mapsindoors.github.io",
   "comments": false,
   "author": {
-    "name": "Matt Cone"
+    "name": "MapsPeople A/S"
   },
   "og_locale": "en_US"
 }

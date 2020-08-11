@@ -1,0 +1,12 @@
+{% extends "default.njk" %}
+
+{% block nav %}
+  <nav class="sidebar">
+    <h3>Features</h3>
+    {% set navPages = collections.all | eleventyNavigation("features") %}
+    {{ navPages | eleventyNavigationToHtml({
+      listClass: "sidebar-nav", activeListItemClass: "active", activeKey: eleventyNavigation.key}) | safe 
+    }}
+
+  </nav>
+{% endblock %}
