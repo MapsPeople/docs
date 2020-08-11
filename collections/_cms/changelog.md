@@ -9,6 +9,7 @@ published: true
 ### What’s new
 
 * The sidebar is replaced by a top bar.
+* A "What's new" section with the latest updates.
 
 ## July 30th 2020 - v3.31.0
 
