@@ -4,6 +4,12 @@ date: 2019-07-30
 published: true
 ---
 
+## August 11th 2020 - v3.32.0
+
+### What’s new
+
+* The sidebar is replaced by a top bar.
+
 ## July 30th 2020 - v3.31.0
 
 ### What’s new
