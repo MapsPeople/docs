@@ -1,6 +1,5 @@
 ---
 title: Rotate map
-published: true
 date: 2019-09-30
 eleventyNavigation:
   key: rotate

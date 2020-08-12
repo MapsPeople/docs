@@ -1,7 +1,6 @@
 ---
 title: Changelog
 date: 2019-10-07
-published: true
 tags: cms
 eleventyNavigation:
   key: cms-changelog

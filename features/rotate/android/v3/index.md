@@ -1,6 +1,5 @@
 ---
 title: Rotate - Android v3
-published: true
 date: 2019-09-30
 eleventyNavigation:
   key: rotate-android-v3

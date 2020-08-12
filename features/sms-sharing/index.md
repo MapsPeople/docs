@@ -1,6 +1,5 @@
 ---
 title: SMS Sharing
-published: true
 date: 2019-09-30
 eleventyNavigation:
   key: sms-sharing

@@ -1,6 +1,5 @@
 ---
 title: Work with MapsIndoors SDK behind a firewall
-published: true
 date: 2019-12-04
 permalink: ip-whitelisting/
 eleventyNavigation:

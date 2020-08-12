@@ -1,13 +1,12 @@
 ---
-title: Integration API v1
-layout: default
-published: true
+title: Integration API
 date: 2019-11-28
 tags: api
 eleventyNavigation:
   key: integration-api
   parent: index
-  title: Integration API v1
+  title: Integration API
+  order: 100
 ---
 
 ## Introduction and getting started

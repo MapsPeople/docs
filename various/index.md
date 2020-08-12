@@ -1,5 +1,5 @@
 ---
-title: Various articles on MapsIndoors
+title: Various
 date: 2019-09-30
 eleventyNavigation:
   key: various
