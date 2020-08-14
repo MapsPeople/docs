@@ -4,6 +4,12 @@ date: 2019-07-30
 published: true
 ---
 
+## August 14th 2020 - v3.34.0
+
+### What's new
+
+* Added ´title´ to Solution and Venue switcher list items for increased usability
+
 ## August 11th 2020 - v3.32.0
 
 ### What’s new
