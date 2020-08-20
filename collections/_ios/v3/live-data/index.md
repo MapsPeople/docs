@@ -102,7 +102,7 @@ extension MyClass : MPMapControlDelegate {
 
 ### Handling State Changes and Errors
 
-In order to get notified about state changes and errors happening in the Live Data Manager, `MPLiveDataManagerDelegate` utilizes other methods as shown in below example:
+In order to get notified about state changes and errors happening in the Live Data Manager, `MPLiveDataManagerDelegate` utilizes other methods as shown in the example below:
 
 ```swift
 extension MyClass : MPLiveDataManagerDelegate {
