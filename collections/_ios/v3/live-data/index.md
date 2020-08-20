@@ -8,7 +8,7 @@ date: 2020-07-29
 permalink: /ios/v3/live-data/
 ---
 
-This guide gives an overview of how to work with live data in the MapsIndoors iOS SDK. As opposed to static data that does not change unless data is synchronized, Live Data can change in real time and these changes can be instantly reflected on the map and in searches.
+This guide gives an overview of how to work with _Live Data_ in the MapsIndoors iOS SDK. As opposed to _static data_, which does not change unless data is synchronized, Live Data can change in real time, and these changes can be instantly reflected on the map and in searches.
 
 Common use-cases are:
 
