@@ -29,7 +29,7 @@ All Live Data is ordered in so-called _Topics_. A MapsIndoors Topic is _hierarch
 1. Location
 1. Domain Type
 
-As a minimum, all topics relate to a dataset, also known as a solution in MapsIndoors, a Domain Type and one or more of the other components.
+As a minimum, all Topics relate to a Data Set (also known as a "Solution" in MapsIndoors), a Domain Type and one (or more) of the other components.
 
 ### Domain Type
 
