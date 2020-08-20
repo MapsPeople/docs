@@ -47,7 +47,7 @@ Knowing that updates is ordered in Topics, it is possible to subscribe to update
 
 ## Live Updates
 
-A live update is the model for a message carrying one piece of live data, for example that a particular room is now occupied. It contains the topic for the live update and the actual live properties as a dictionary of strings.
+A live update is the model for a message carrying one piece of Live Data, for example that a particular room is now occupied. It contains the Topic for the live update and the actual live properties as a _dictionary_ of _strings_.
 
 ## Enable Live Data in Your App
 
