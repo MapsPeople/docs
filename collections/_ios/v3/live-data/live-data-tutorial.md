@@ -101,7 +101,7 @@ self.mapControl = MPMapControl.init(map: self.map!)
 self.mapControl?.delegate = self as MPMapControlDelegate
 ```
 
-Inside `viewDidLoad()`, also request a building and go to this building on the map.
+Inside `viewDidLoad()`, also request a Building and go to this Building on the map.
 
 ```swift
 let q = MPQuery.init()
