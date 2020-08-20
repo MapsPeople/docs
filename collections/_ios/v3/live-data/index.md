@@ -19,7 +19,7 @@ Support for live data requires that server-side integrations are in place. For e
 
 ## Live Topics
 
-All live data is ordered in so called _topics_. A MapsIndoors topic is hierarchical in the way it is defined, and its relation to MapsIndoors data is derivable by its 7 components:
+All Live Data is ordered in so-called _Topics_. A MapsIndoors Topic is _hierarchical_ in the way it is defined, and its relation to MapsIndoors data is derivable by its 7 components:
 
 1. Dataset
 1. Venue
