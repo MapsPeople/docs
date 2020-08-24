@@ -15,6 +15,8 @@
           {{ collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.parent) | eleventyNavigationToHtml({listElement: "ol", listItemElement: "span", listItemClass: "item", listClass: "breadcrumb", activeListItemClass: "active", activeKey: eleventyNavigation.key}) | safe }}
         </nav>
         <h1>{{ title }}</h1>
+        <p class="time">Last updated: <time>{{ page.date.toLocaleDateString() }}</time>
+        </p>
         {{ content | safe }}
       </main>
     </section>
