@@ -6,15 +6,13 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(embedYouTube);
   eleventyConfig.addPassthroughCopy('src/assets');
   eleventyConfig.addPassthroughCopy({
-    './node_modules/@mapsindoors/components/': 'src/assets/components',
+    './node_modules/@mapsindoors/components/': 'assets/components',
   });
 
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
   eleventyConfig.setBrowserSyncConfig({
     ui: false,
   });
-
-  eleventyConfig.setDataDeepMerge(true);
 
   return {
     dir: {
