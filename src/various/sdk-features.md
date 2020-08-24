@@ -1,11 +1,8 @@
 ---
 title: SDK Features
-permalink: sdk-features/
-date: 2019-09-30
 eleventyNavigation:
-  parent: Various
   key: SDK Features
-  order: 50
+  parent: Various
 ---
 
 The MapsIndoors SDK is a collection of software libraries, guides and documentation that enables developers to create applications with the indoor wayfinding capabilities facilitated by MapsIndoors from MapsPeople. MapsIndoors SDK is available on iOS, Android and Web platforms.

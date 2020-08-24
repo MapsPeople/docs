@@ -1,7 +1,7 @@
 ---
-permalink: /cms/api-keys/
 title: API Keys
-layout: default
+eleventyNavigation:
+  key: cms API Keys
+  title: API Keys
+  parent: MapsIndoors CMS
 ---
-
-{{ eleventyNavigation.key }}

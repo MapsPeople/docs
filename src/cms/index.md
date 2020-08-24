@@ -3,9 +3,8 @@ title: MapsIndoors CMS
 date: 2019-09-30
 tags: cms
 eleventyNavigation:
-  key: cms
+  key: MapsIndoors CMS
   parent: index
-  title: MapsIndoors CMS
   order: 20
 ---
 

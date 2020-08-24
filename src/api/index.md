@@ -1,11 +1,8 @@
 ---
 title: Integration API
-date: 2019-11-28
-tags: api
 eleventyNavigation:
-  key: integration-api
   parent: index
-  title: Integration API
+  key: Integration API
   order: 100
 ---
 
@@ -123,7 +120,7 @@ It tells which languages are defined for this project, which language is the def
 
 All geospasial data, Geodata, is arranged in a simple tree. Each element has a parent ID (except the root) so as an example, a point of interest (POI) can have a Room parent. The Room will typically be on a Floor in a Building on a Venue. Venues are always the root object (identified with parent ID is null), and is defined by "_An overall geographical area which typically comprises the area of one or more buildings and their relevant surrounding areas such as lawns and parking lots_".
 
-![Geodata Structure]({{ site.url }}/assets/api/v1/geodata-structure.png)
+[![Geodata Structure]({{ site.url }}/assets/api/v1/geodata-structure.png)]({{ site.url }}/assets/api/v1/geodata-structure.png)
 
 You can create, update, delete all Geodata types: Venue, Building, Floor, Room, Area and POI.
 

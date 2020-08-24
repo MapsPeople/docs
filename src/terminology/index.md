@@ -1,12 +1,9 @@
 ---
 title: Terminology
-date: 2019-11-28
-tags: terminology
 eleventyNavigation:
-  key: terminology
+  key: Terminology
   parent: index
-  title: Terminology
-  order: 90
+  order: 9000
 ---
 
 ## MapsIndoors CMS

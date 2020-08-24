@@ -1,6 +1,5 @@
 ---
 title: MapsIndoors is the indoor wayfinding platform built on top of Google Maps
-layout: default
 tags: 
   - front
 eleventyNavigation:

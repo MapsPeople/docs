@@ -1,11 +1,10 @@
 ---
 title: Changelog
-date: 2019-10-07
-tags: cms
+date: Last Modified
 eleventyNavigation:
-  key: cms-changelog
-  parent: cms
+  key: cms Changelog
   title: Changelog
+  parent: MapsIndoors CMS
 ---
 
 ## Jan 28th 2020 - v3.8.3
