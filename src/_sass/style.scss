@@ -420,3 +420,16 @@ p code {
     }
   }
 }
+
+p.time {
+  @include color.gray(60);
+  @include font.size(x-small);
+  @include font.weight(xx-large);
+  @include font.tracking(x-large);
+  @include margin.bottom(large);
+  text-transform: uppercase;
+}
+
+main img {
+  max-width: 100%;
+}
