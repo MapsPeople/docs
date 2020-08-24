@@ -1,0 +1,24 @@
+{% include "head.njk" %}
+<body>
+  {% include "header.njk" %}
+  <div class="wrap">
+    <section class="container">
+      <nav class="sidebar">
+        {# <h3>{{ 'hello world' if 'front' in page.tags }}</h3> #}
+
+        {% set navPages = collections.all | eleventyNavigation("index") %}
+        {{ navPages | eleventyNavigationToHtml({listClass: "sidebar-nav", activeListItemClass: "active", activeKey: eleventyNavigation.key}) | safe }}
+
+      </nav>
+      <main>
+        <nav aria-label="Breadcrumb">
+          {{ collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.parent) | eleventyNavigationToHtml({listElement: "ol", listItemElement: "span", listItemClass: "item", listClass: "breadcrumb", activeListItemClass: "active", activeKey: eleventyNavigation.key}) | safe }}
+        </nav>
+        <h1>{{ title }}</h1>
+        {{ content | safe }}
+      </main>
+    </section>
+  </div>
+  {% include "footer.njk" %}
+</body>
+</html>
