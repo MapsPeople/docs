@@ -12,7 +12,7 @@
       </nav>
       <main>
         <nav aria-label="Breadcrumb">
-          {{ collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.parent) | eleventyNavigationToHtml({listElement: "ol", listItemElement: "span", listItemClass: "item", listClass: "breadcrumb", activeListItemClass: "active", activeKey: eleventyNavigation.key}) | safe }}
+          {{ collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key) | eleventyNavigationToHtml({listElement: "ol", listItemElement: "span", listItemClass: "item", listClass: "breadcrumb", activeListItemClass: "active", activeKey: eleventyNavigation.key}) | safe }}
         </nav>
         <a href="{{ page.url }}">
           <h1>{{ title }}</h1>
