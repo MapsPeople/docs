@@ -586,7 +586,7 @@ nav li.active {
   color: #1d5bbf;
   border-left: solid;
   border-color: #3071d9;
-  margin-left: -12px;
+  margin-left: -11px;
   padding-left: 8px;
 }
 footer li.active ul,
@@ -711,4 +711,17 @@ footer {
 }
 .front a.button-front:last-of-type {
   margin-right: 0;
+}
+
+p.time {
+  color: #8d98aa;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: normal;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+}
+
+main img {
+  max-width: 100%;
 }
