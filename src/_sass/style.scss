@@ -75,8 +75,9 @@ nav.sidebar {
 
 h1 {
   @include font.size(xx-large);
+  @include font.leading(xx-large);
   @include font.weight(large);
-  @include margin.top(x-large);
+  @include margin.top(medium);
   @include margin.bottom(large);
 
   a {
@@ -94,6 +95,7 @@ h1 {
 
 h2 {
   @include font.size(x-large);
+  @include font.leading(x-large);
   @include font.weight(x-large);
   @include margin.top(x-large);
   @include margin.bottom(large);
@@ -101,6 +103,7 @@ h2 {
 
 h3 {
   @include font.size(large);
+  @include font.leading(large);
   @include font.weight(x-large);
   @include margin.top(x-large);
   @include margin.bottom(large);
@@ -108,6 +111,7 @@ h3 {
 
 h4 {
   @include font.size(medium);
+  @include font.leading(medium);
   @include font.weight(xx-large);
   @include margin.top(large);
   @include margin.bottom(medium);
@@ -226,6 +230,7 @@ nav {
     @include font.leading(x-large);
     li {
       @include margin.top(medium);
+      @include font.size(large);
       ul {
         @include font.weight(medium);
         @include font.size(medium);
@@ -233,6 +238,7 @@ nav {
         @include margin.left(small);
         li {
           @include margin.top(xx-small);
+          @include font.size(medium);
         }
       }
     }
@@ -276,6 +282,7 @@ p.time {
   @include font.weight(xx-large);
   @include font.tracking(x-large);
   @include margin.bottom(large);
+  margin-top: -12px;
   text-transform: uppercase;
 }
 
@@ -327,5 +334,19 @@ main img {
   }
   p code {
     @include background-color.gray(90);
+    @include font.color(inverse);
+  }
+  h1 {
+    a {
+      @include font.color(inverse);
+
+      &:visited {
+        @include font.color(inverse);
+      }
+
+      &:hover {
+        @include color.bronze(30);
+      }
+    }
   }
 }
