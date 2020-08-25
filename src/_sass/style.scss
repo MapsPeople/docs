@@ -14,10 +14,6 @@
 
 @use '../../node_modules/@mapsindoors/midt/build/scss/variables' as *;
 
-// * {
-//   border: 1px solid gold;
-// }
-
 body {
   @include font.family(sans-serif);
   @include font.size(medium);
@@ -32,58 +28,20 @@ body {
   max-width: 1248px;
   margin-left: auto;
   margin-right: auto;
+  .container {
+    display: flex;
+    flex: 1 0;
+  }
 }
 
 main {
+  @include margin.top(medium);
   p,
   ul,
   ol,
   blockquote {
     @include font.measure(large);
   }
-}
-
-// Sidebar navigation
-
-nav.sidebar {
-  min-width: 280px;
-  max-width: 280px;
-  display: block;
-  @include margin.right(xx-large);
-
-  .select-sdk {
-    @include border.gray(40);
-    @include border.radius(medium);
-    @include border.style(solid);
-    @include border.width(medium);
-    @include color.black(base);
-    @include font.size(medium);
-    @include font.weight(large);
-    @include padding.horizontal(medium);
-    @include padding.vertical(small);
-    @include sizing.height(x-large);
-    align-items: center;
-    background: linear-gradient($color-gray-10, $color-gray-20);
-    display: block;
-    display: inline-flex;
-    margin: 0;
-    max-width: 100%;
-    width: 100%;
-
-    &:not(:disabled):hover {
-      background: linear-gradient($color-gray-20, $color-gray-30);
-      @include border.gray(50);
-    }
-
-    &:not(:disabled):active {
-      background: linear-gradient($color-gray-30, $color-gray-20);
-    }
-  }
-}
-
-.container {
-  display: flex;
-  flex: 1 0;
 }
 
 a {
@@ -99,54 +57,54 @@ a {
     @include color.red(60);
   }
 
-  // &:visited {
-  //   @include color.purple(60);
-  // }
+  &:visited {
+    @include color.purple(60);
+  }
+}
+
+// Sidebar navigation
+
+nav.sidebar {
+  min-width: 280px;
+  max-width: 280px;
+  display: block;
+  @include margin.right(xx-large);
 }
 
 // Headers
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  @include margin.top(none);
-}
-
 h1 {
   @include font.size(xx-large);
-  @include font.weight(small);
-  @include font.leading(xx-large);
+  @include font.weight(large);
+  @include margin.top(x-large);
   @include margin.bottom(large);
 }
 
 h2 {
   @include font.size(x-large);
-  @include font.weight(medium);
-  @include font.leading(x-large);
+  @include font.weight(x-large);
+  @include margin.top(x-large);
   @include margin.bottom(large);
 }
 
 h3 {
   @include font.size(large);
   @include font.weight(x-large);
-  @include font.leading(large);
+  @include margin.top(x-large);
   @include margin.bottom(large);
 }
 
 h4 {
   @include font.size(medium);
   @include font.weight(xx-large);
-  @include font.leading(medium);
+  @include margin.top(large);
   @include margin.bottom(medium);
 }
 
 h5 {
   @include font.size(small);
   @include font.weight(xx-large);
-  @include font.leading(medium);
+  @include margin.top(medium);
   @include margin.bottom(small);
 }
 
@@ -154,14 +112,9 @@ h6 {
   @include font.size(x-small);
   @include font.weight(xx-large);
   @include font.tracking(x-large);
+  @include margin.top(medium);
   @include margin.bottom(small);
   text-transform: uppercase;
-}
-
-// Text styles
-
-code {
-  @include font.family(monospace);
 }
 
 // Code highlight styling. .hljs is a highlight.js-specific class.
@@ -182,6 +135,11 @@ pre code {
 
 header,
 footer {
+  background-image: linear-gradient(
+    to bottom,
+    $color-green-90,
+    $color-green-100
+  );
   .flex {
     display: flex;
   }
@@ -217,13 +175,6 @@ footer {
   }
 }
 
-// header.njk
-
-header {
-  @include background-color.green(80);
-  @include margin.bottom(large);
-}
-
 svg.mapspeople-logo path {
   fill: white;
 }
@@ -232,26 +183,6 @@ svg.mapspeople-logo path {
 footer {
   @include color.gray(20);
   @include margin.top(large);
-  background-image: linear-gradient(
-    to bottom,
-    $color-green-90,
-    $color-green-100
-  );
-  .third {
-    width: 33.33333%;
-    @include margin.vertical(large);
-
-    &:first-of-type {
-      @include margin.right(large);
-    }
-
-    &:last-of-type {
-      @include margin.left(large);
-    }
-  }
-  .legacy {
-    font-weight: bold;
-  }
 }
 
 .various {
@@ -317,14 +248,6 @@ ol.breadcrumb {
   }
 }
 
-p code {
-  @include background-color.gray(20);
-  @include border.radius(small);
-  @include padding.horizontal(xx-small);
-  @include padding.vertical(xxx-small);
-  @include font.size(small);
-}
-
 // Dark theme overrides. Should always be at the bottom.
 @media (prefers-color-scheme: dark) {
   body {
@@ -365,59 +288,6 @@ p code {
   }
   p code {
     @include background-color.gray(80);
-  }
-}
-
-// Front
-
-.front {
-  text-align: center;
-  section.sdks {
-    @include margin.top(xx-large);
-    @include margin.bottom(xxx-large);
-  }
-  p {
-    margin-left: auto;
-    margin-right: auto;
-  }
-  h1 {
-    @include font.size(xxxx-large);
-    @include font.leading(xxxx-large);
-    @include margin.vertical(xx-large);
-    font-family: Raleway;
-  }
-  h2 {
-    @include font.size(xx-large);
-    @include font.leading(xxx-large);
-    @include font.tracking(x-large);
-    @include font.weight(small);
-    font-style: italic;
-    @include margin.vertical(xx-large);
-  }
-  a.button-front {
-    @include font.size(x-large);
-    @include font.color(base);
-    @include background-color.white(base);
-    @include padding.vertical(medium);
-    @include padding.horizontal(x-large);
-    display: inline-flex;
-    align-items: center;
-    @include border.radius(medium);
-    @include margin.right(large);
-
-    &:hover {
-      @include background-color.gray(10);
-      @include elevation.elevation(medium);
-      transform: scale(1.05);
-    }
-
-    svg {
-      @include margin.right(medium);
-    }
-
-    &:last-of-type {
-      @include margin.right(none);
-    }
   }
 }
 
