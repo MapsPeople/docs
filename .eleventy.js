@@ -25,17 +25,4 @@ module.exports = function (eleventyConfig) {
     htmlTemplateEngine: 'njk',
     markdownTemplateEngine: 'njk',
   };
-
-  // Get only content that matches multiple tags
-  // eleventyConfig.addCollection('androidV3', function(collection) {
-  //   return collection.getFilteredByTags('android', 'v3').sort((b, a) => {
-  //     if (a.data.eleventyNavigation.order > b.data.eleventyNavigation.order)
-  //       return -1;
-  //     else if (
-  //       a.data.eleventyNavigation.order < b.data.eleventyNavigation.order
-  //     )
-  //       return 1;
-  //     else return 0;
-  //   });
-  // });
 };
