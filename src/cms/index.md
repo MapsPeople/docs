@@ -1,11 +1,9 @@
 ---
 title: MapsIndoors CMS
-date: 2019-09-30
-tags: cms
 eleventyNavigation:
   key: MapsIndoors CMS
   parent: index
-  order: 20
+  order: 30
 ---
 
 ## Introduction

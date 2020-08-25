@@ -3,7 +3,7 @@ title: Terminology
 eleventyNavigation:
   key: Terminology
   parent: index
-  order: 9000
+  order: 60
 ---
 
 ## MapsIndoors CMS

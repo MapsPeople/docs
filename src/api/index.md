@@ -3,7 +3,7 @@ title: Integration API
 eleventyNavigation:
   parent: index
   key: Integration API
-  order: 100
+  order: 40
 ---
 
 ## Introduction and getting started

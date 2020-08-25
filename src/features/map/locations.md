@@ -1,6 +1,7 @@
 ---
-title: Locations
+title: Display Locations (POIs and Rooms)
 eleventyNavigation:
-  key: Locations
+  key: Display Locations
   parent: Map
+  order: 10
 ---
