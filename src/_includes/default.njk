@@ -11,9 +11,9 @@
         <nav aria-label="Breadcrumb">
           {{ collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key) | eleventyNavigationToHtml({listElement: "ol", listItemElement: "span", listItemClass: "item", listClass: "breadcrumb", activeListItemClass: "active", activeKey: eleventyNavigation.key}) | safe }}
         </nav>
-        <a href="{{ page.url }}">
-          <h1>{{ title }}</h1>
-        </a>
+        <h1>
+          <a href="{{ page.url }}">{{ title }}</a>
+        </h1>
         <p class="time">Last updated: <time>{{ page.date.toLocaleDateString() }}</time>
         </p>
         {{ content | safe }}

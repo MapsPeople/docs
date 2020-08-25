@@ -78,6 +78,18 @@ h1 {
   @include font.weight(large);
   @include margin.top(x-large);
   @include margin.bottom(large);
+
+  a {
+    @include font.color(base);
+
+    &:visited {
+      @include font.color(base);
+    }
+
+    &:hover {
+      @include color.blue(60);
+    }
+  }
 }
 
 h2 {
@@ -119,6 +131,18 @@ h6 {
 
 // Code highlight styling. .hljs is a highlight.js-specific class.
 
+code {
+  font-size: 0.95rem;
+}
+
+p code {
+  @include padding.vertical(xxx-small);
+  @include padding.horizontal(x-small);
+  @include border.radius(medium);
+  @include background-color.gray(10);
+  @include color.gray(90);
+}
+
 pre code {
   @include font.family(monospace);
   @include border.radius(medium);
@@ -132,9 +156,11 @@ pre code {
 }
 
 // header.njk, footer.njk
-
 header,
 footer {
+  svg.mapspeople-logo path {
+    fill: white;
+  }
   background-image: linear-gradient(
     to bottom,
     $color-green-90,
@@ -172,21 +198,17 @@ footer {
     &:active {
       @include color.gray(30);
     }
-  }
-}
 
-svg.mapspeople-logo path {
-  fill: white;
+    &:visited {
+      @include color.white(base);
+    }
+  }
 }
 
 // footer.njk
 footer {
   @include color.gray(20);
   @include margin.top(large);
-}
-
-.various {
-  @include font.weight(normal);
 }
 
 // Lists in nav and footer
@@ -248,6 +270,19 @@ ol.breadcrumb {
   }
 }
 
+p.time {
+  @include color.gray(60);
+  @include font.size(x-small);
+  @include font.weight(xx-large);
+  @include font.tracking(x-large);
+  @include margin.bottom(large);
+  text-transform: uppercase;
+}
+
+main img {
+  max-width: 100%;
+}
+
 // Dark theme overrides. Should always be at the bottom.
 @media (prefers-color-scheme: dark) {
   body {
@@ -265,6 +300,10 @@ ol.breadcrumb {
 
     &:active {
       @include color.bronze(40);
+    }
+
+    &:visited {
+      @include color.magenta(10);
     }
   }
   pre code.hljs {
@@ -287,19 +326,6 @@ ol.breadcrumb {
     background-image: none;
   }
   p code {
-    @include background-color.gray(80);
+    @include background-color.gray(90);
   }
-}
-
-p.time {
-  @include color.gray(60);
-  @include font.size(x-small);
-  @include font.weight(xx-large);
-  @include font.tracking(x-large);
-  @include margin.bottom(large);
-  text-transform: uppercase;
-}
-
-main img {
-  max-width: 100%;
 }

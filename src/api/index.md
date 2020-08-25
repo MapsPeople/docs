@@ -12,8 +12,7 @@ From the MapsIndoors Integration API you can get, add, change and delete data re
 
 Send your requests to this endpoint: [https://integration.mapsindoors.com](https://integration.mapsindoors.com)
 
-> Note: Only https is supported.
-{: .mi-careful}
+> **Note: Only https is supported.**
 
 You can access data through the Integration API using a range of endpoints. The endpoints are described in the Swagger interface definition: [https://integration.mapsindoors.com/doc](https://integration.mapsindoors.com/doc)
 
