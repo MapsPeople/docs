@@ -5,3 +5,26 @@ eleventyNavigation:
   parent: Directions
   order: 60
 ---
+
+With MapsIndoors, it is possible to set restrictions on parts of your Venue for specific App User Roles.
+
+An example could be a part of a hospital that is closed off for visitors, but accessible to medical staff, or a concert venue only guests with a particular ticket can access.
+
+App User Roles are defined in the CMS, and each Route Element on the Route Graph can have an App User Role assigned.
+
+## Implementing App User Roles
+
+<mi-tabs>
+    <mi-tab label="Android" tab-for="android"></mi-tab>
+    <mi-tab label="iOS" tab-for="ios"></mi-tab>
+    <mi-tab label="Web" tab-for="web"></mi-tab>
+    <mi-tab-panel id="android">
+        <h1>Android</h1>
+    </mi-tab-panel>
+    <mi-tab-panel id="ios">
+        <h1>iOS</h1>
+    </mi-tab-panel>
+    <mi-tab-panel id="web">
+        <h1>Web</h1>
+    </mi-tab-panel>
+</mi-tabs>

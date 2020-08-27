@@ -5,3 +5,5 @@ eleventyNavigation:
   parent: Directions
   order: 20
 ---
+
+Within the MapsIndoors Route Graph, the user is always given Directions using Walking instructions.
