@@ -19,12 +19,12 @@ App User Roles are defined in the CMS, and each Route Element on the Route Graph
     <mi-tab label="iOS" tab-for="ios"></mi-tab>
     <mi-tab label="Web" tab-for="web"></mi-tab>
     <mi-tab-panel id="android">
-        <h1>Android</h1>
+        <h3>Android</h3>
     </mi-tab-panel>
     <mi-tab-panel id="ios">
-        <h1>iOS</h1>
+        <h3>iOS</h3>
     </mi-tab-panel>
     <mi-tab-panel id="web">
-        <h1>Web</h1>
+        <h3>Web</h3>
     </mi-tab-panel>
 </mi-tabs>
