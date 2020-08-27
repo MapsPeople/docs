@@ -291,62 +291,62 @@ main img {
 }
 
 // Dark theme overrides. Should always be at the bottom.
-@media (prefers-color-scheme: dark) {
-  body {
-    @include font.color(inverse);
-    @include background-color.gray(100);
-  }
+// @media (prefers-color-scheme: dark) {
+//   body {
+//     @include font.color(inverse);
+//     @include background-color.gray(100);
+//   }
 
-  a {
-    @include color.bronze(20);
+//   a {
+//     @include color.bronze(20);
 
-    &:hover {
-      text-decoration: underline;
-      @include color.bronze(30);
-    }
+//     &:hover {
+//       text-decoration: underline;
+//       @include color.bronze(30);
+//     }
 
-    &:active {
-      @include color.bronze(40);
-    }
+//     &:active {
+//       @include color.bronze(40);
+//     }
 
-    &:visited {
-      @include color.magenta(10);
-    }
-  }
-  pre code.hljs {
-    @include border.style(none);
-  }
-  nav.sidebar {
-    li.active {
-      @include border.bronze(20);
-      a {
-        @include color.bronze(30);
-      }
-      ul li a {
-        @include color.bronze(20);
-      }
-    }
-  }
-  header,
-  footer {
-    @include background-color.black(base);
-    background-image: none;
-  }
-  p code {
-    @include background-color.gray(90);
-    @include font.color(inverse);
-  }
-  h1 {
-    a {
-      @include font.color(inverse);
+//     &:visited {
+//       @include color.magenta(10);
+//     }
+//   }
+//   pre code.hljs {
+//     @include border.style(none);
+//   }
+//   nav.sidebar {
+//     li.active {
+//       @include border.bronze(20);
+//       a {
+//         @include color.bronze(30);
+//       }
+//       ul li a {
+//         @include color.bronze(20);
+//       }
+//     }
+//   }
+//   header,
+//   footer {
+//     @include background-color.black(base);
+//     background-image: none;
+//   }
+//   p code {
+//     @include background-color.gray(90);
+//     @include font.color(inverse);
+//   }
+//   h1 {
+//     a {
+//       @include font.color(inverse);
 
-      &:visited {
-        @include font.color(inverse);
-      }
+//       &:visited {
+//         @include font.color(inverse);
+//       }
 
-      &:hover {
-        @include color.bronze(30);
-      }
-    }
-  }
-}
+//       &:hover {
+//         @include color.bronze(30);
+//       }
+//     }
+//   }
+// }
