@@ -12,6 +12,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.setBrowserSyncConfig({
     ui: false,
   });
+  eleventyConfig.setUseGitIgnore(false);
 
   return {
     dir: {
