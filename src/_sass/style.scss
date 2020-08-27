@@ -54,11 +54,7 @@ a {
   }
 
   &:active {
-    @include color.red(60);
-  }
-
-  &:visited {
-    @include color.purple(60);
+    @include color.magenta(60);
   }
 }
 
@@ -69,6 +65,10 @@ nav.sidebar {
   max-width: 280px;
   display: block;
   @include margin.right(xx-large);
+  // @include background-color.gray(20);
+  @include margin.top(medium);
+  @include border.radius(medium);
+  @include padding.horizontal(medium);
 }
 
 // Headers
@@ -229,27 +229,27 @@ nav {
     @include font.size(medium);
     @include font.leading(x-large);
     li {
-      @include margin.top(medium);
-      @include font.size(large);
+      @include margin.top(x-small);
       ul {
         @include font.weight(medium);
         @include font.size(medium);
         @include margin.vertical(small);
-        @include margin.left(small);
+        @include margin.left(medium);
         li {
-          @include margin.top(xx-small);
+          @include margin.top(x-small);
           @include font.size(medium);
         }
       }
     }
   }
-  li.active {
+
+  .active > a {
+    @include background-color.blue(10);
+    @include padding.horizontal(small);
+    @include padding.vertical(x-small);
+    @include border.radius(medium);
     @include font.weight(large);
-    @include color.blue(70);
-    @include border.left(solid);
-    @include border.blue(60);
-    margin-left: -11px;
-    padding-left: 8px;
+    margin-left: -12px;
 
     ul {
       font-style: normal;
