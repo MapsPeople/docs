@@ -58,6 +58,62 @@ a {
   }
 }
 
+// Front page
+
+.front {
+  background-image: linear-gradient(to bottom right, #f4f0e8, #d8e8e0);
+  color: #006440;
+  min-height: 100vh;
+
+  .front-content {
+    display: grid;
+    place-items: center;
+  }
+  .headline {
+    @include font.family(raleway);
+    @include font.size(xxxx-large);
+    @include font.leading(xxxx-large);
+    @include margin.top(xxx-large);
+    max-width: 38ch;
+    font-weight: 300;
+  }
+  .subheadline {
+    @include font.size(xx-large);
+    @include font.leading(xx-large);
+    @include font.weight(small);
+    font-style: italic;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    @include margin.top(xx-large);
+    li {
+      display: inline;
+      @include margin.right(medium);
+    }
+  }
+  a.front-button {
+    @include font.size(x-large);
+    @include padding.vertical(medium);
+    @include padding.horizontal(large);
+    @include color.gray(100);
+    @include border.radius(large);
+    @include border.width(large);
+    @include border.style(solid);
+    @include border.green(60);
+    box-shadow: 0px 16px 32px rgba(0, 120, 72, 0.16);
+    @include background-color.white(base);
+    @include font.weight(large);
+    min-width: 180px;
+    display: inline-block;
+    text-align: center;
+    &:hover {
+      @include background-color.blue(10);
+      text-decoration: none;
+    }
+  }
+}
+
 // Sidebar navigation
 
 nav.sidebar {
@@ -65,7 +121,6 @@ nav.sidebar {
   max-width: 280px;
   display: block;
   @include margin.right(xx-large);
-  // @include background-color.gray(20);
   @include margin.top(medium);
   @include border.radius(medium);
   @include padding.horizontal(medium);
