@@ -76,7 +76,7 @@ While only a few lines of code can get things moving around on a map, there are 
 
 There are two ways to be notified about Live Updates.
 
-1. On a general level through `MPLiveDataManagerDelegate`, which is suitable in scenarios where all Live Updates might potentially affect the end users decisions, for example when searching broadly for an available meeting room.
+1. On a general level through `MPLiveDataManagerDelegate`, which is suitable in scenarios where all Live Updates might potentially affect the end user's decisions, for example when searching broadly for an available meeting room.
 2. On a map-specific level through `MPMapControlDelegate`, which is suitable in scenarios where the map is the context for the users actions, for example when browsing the map for an available meeting room nearby.
 
 To get Live Updates on a general level the `MPLiveDataManagerDelegate` protocol method `didReceive(_ liveUpdate: MPLiveUpdate)` must be implemented:
