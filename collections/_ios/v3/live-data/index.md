@@ -66,7 +66,7 @@ The only Live Updates that is also directly notified to the SDK internally are L
   liveManager.subscribe(topic)
 ```
 
-In the example the Topic was created with only the Domain Type. This will subscribe to all coming position updates for the dataset and if the updates are relevant for the particular view of the map, you will see moving icons on the map.
+In the example the Topic was created with only the Domain Type. This will subscribe to all coming position updates for the dataset, and if the updates are relevant for the particular view of the map, you will see moving icons on the map.
 
 ## Handling Live Data Events
 
