@@ -39,7 +39,7 @@ As a minimum, all Topics relate to a Data Set (also known as a "Solution" in Map
 The Domain Type describes what kind of conceptual Domain the Live Data belongs to. Here are some examples of Domain Types:
 
 * Availability - The current availability state of a particular bookable room or workspace
-* Occupancy - The current known occupancy of a given capacity for example in a meeting room
+* Occupancy - The current known occupancy of a given capacity, for example in a meeting room
 * Position - The current geo-spatial position and related floor
 
 The Domain Type is not bound to be one of the above, but could be very specific to a particular use-case, source of data and technical integration.
