@@ -4,9 +4,12 @@ title: Working with Live Updates / Real Time Data in MapsIndoors for iOS
 parent: live-data
 nav_weight: 330
 published: true
-date: 2020-08-07
+date: 2020-09-01
 permalink: /ios/v3/live-data/live-data-tutorial
 ---
+
+> The "Live Data" feature is in beta and subject to change.
+{: .mi-warning}
 
 In this tutorial you will learn to work with Live Updates / real-time data in MapsIndoors. It is recommended that you read the [Live Data Introduction](/ios/v3/live-data) before continuing.
 
