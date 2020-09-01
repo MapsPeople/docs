@@ -54,7 +54,7 @@ A live update is the model for a message carrying one piece of Live Data, for ex
 
 ## Enable Live Data in Your App
 
-To enable live data in an application, a subscription to one or more topics is needed. Once subscribed, the application can be notified about changes and can decide what to do. The application is in control of what should happen on live data updates, and the MapsIndoors SDKs provide mechanisms to efficiently make updates to the map representation of locations. The central class to carry out these tasks is the ```LiveDataManager```.
+To enable Live Data in an application, a subscription to one or more Topics is needed. Once subscribed, the application can be notified about changes and decide what to do. The application is in control of what should happen on Live Data updates, and the MapsIndoors SDKs provide mechanisms to efficiently make updates to the map representation of locations. The central class to carry out these tasks is the `LiveDataManager`.
 
 The only Live Updates that is also directly notified to the SDK internally are Live Updates with the Position Domain Type. By consequense, if you have already set up your map with MapsIndoors, an additional few lines of code can enable moving locations on the map. Here is an example in Swift:
 
