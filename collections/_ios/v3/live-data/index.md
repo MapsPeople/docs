@@ -46,7 +46,7 @@ The Domain Type is not bound to be one of the above, but could be very specific 
 
 ### Topic Criterias
 
-Knowing that updates is ordered in Topics, it is possible to subscribe to updates using a Topic Criteria. Filtering out Live Updates can be done on all levels of the Topic Criteria. For example, you might want to subscribe to all position updates but only for a particular floor in a particular building. This can be done by setting the correct ids on the floor and building component. Leaving out a component means that we will get all updates, regardless of what relation the updates have at that level. Continueing the example, leaving out the Floor component means that we get all position updates on all floors but still only for a particular building.
+Knowing that updates is ordered in Topics, it is possible to subscribe to updates using a Topic Criteria. Filtering out live updates can be done on all levels of the Topic Criteria. For example, you might want to subscribe to all position updates but only for a particular Floor in a particular Building. This can be done by setting the correct IDs on the Floor and Building component. Leaving out a component means that we will get all updates, regardless of what relation the updates have at that level. Continuing the example, leaving out the Floor component means that we get all position updates on all Floors, but still only for a particular Building.
 
 ## Live Updates
 
@@ -56,7 +56,7 @@ A live update is the model for a message carrying one piece of Live Data, for ex
 
 To enable Live Data in an application, a subscription to one or more Topics is needed. Once subscribed, the application can be notified about changes and decide what to do. The application is in control of what should happen upon receiving live data updates, and the MapsIndoors SDKs provide mechanisms to efficiently make updates to the map representation of locations. The central class to carry out these tasks is the `LiveDataManager`.
 
-The only Live Updates that is also directly notified to the SDK internally are Live Updates with the Position Domain Type. By consequense, if you have already set up your map with MapsIndoors, an additional few lines of code can enable moving locations on the map. Here is an example in Swift:
+The only Live Data updates that are also directly notified to the SDK internally are Live Data updates of the "Position" Domain Type. By consequense, if you have already set up your map with MapsIndoors, an additional few lines of code can enable moving locations on the map. Here is an example in Swift:
 
 ```swift
   self.mapControl = MPMapControl.init(map: self.map!)
