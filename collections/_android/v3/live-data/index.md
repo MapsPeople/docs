@@ -96,7 +96,7 @@ To get Live Updates on a map-specific level, the `OnWillUpdateLocationsOnMap` mu
 ```java
 mapControl.setOnWillUpdateLocationsOnMap(locations -> {
     for(MPLocation location : locations){
-        LiveUpdate liveUpdate = location.getLiveUpdates().get("nrOfPeople");
+        LiveUpdate liveUpdate = location.getLiveUpdate("occupancy");
         ...
     }
 }
