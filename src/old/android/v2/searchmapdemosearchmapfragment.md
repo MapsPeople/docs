@@ -2,9 +2,6 @@
 title: Create a Search Experience with MapsIndoors - Part 2
 ---
 
-> A [newer version]({{ site.url }}/android/v3) of the MapsIndoors SDK for Android is available. The legacy version will not receive new features and will only get critical bugfix and security updates.
-{: .mi-warning}
-
 This is part 2 of the tutorial of creating a simple search experience using MapsIndoors. [In Part 1 we created the search Fragment](../searchmapdemosearchfragment). Now we will create the "main" controller displaying the map and eventually the selected location.
 
 Start by creating a Fragment

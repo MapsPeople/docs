@@ -126,6 +126,11 @@ nav.sidebar {
   @include margin.top(medium);
   @include border.radius(medium);
   @include padding.horizontal(medium);
+
+  hr {
+    @include margin.vertical(medium);
+    border-top: 1px solid $color-gray-50;
+  }
 }
 
 // Headers

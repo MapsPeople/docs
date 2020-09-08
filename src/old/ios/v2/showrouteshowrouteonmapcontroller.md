@@ -2,9 +2,6 @@
 title: Get Directions and Show the Result on a Map - Part 1
 ---
 
-> A [newer version]({{ site.url }}/ios/v3) of the MapsIndoors SDK for iOS is available. The legacy version will not receive new features and will only get critical bugfix and security updates.
-{: .mi-warning}
-
 In this tutorial we will request a route, list the route parts and render these on a Google Map. A MapsIndoors route is made of one or more legs, each containing one or more steps.
 
 We will start by making the controller that renders the route from the input of a route, a leg index and optionally a step index. Start by creating a `UIViewController` implementation that conforms to `MPDirectionsRendererDelegate`

@@ -2,9 +2,6 @@
 title: Searching for Locations and Displaying the Results on a Map
 ---
 
-> A [newer version]({{ site.url }}/ios/v3) of the MapsIndoors SDK for iOS is available. The legacy version will not receive new features and will only get critical bugfix and security updates.
-{: .mi-warning}
-
 ## Searching for Locations and Displaying the Results on a Map
 
 Use the `MPLocationsProvider` class to search for content in your MapsIndoors Solution.

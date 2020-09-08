@@ -1,7 +1,5 @@
 ---
-title: Changelog
-date: 2019-07-30
-published: true
+title: MapsIndoors CMS Changelog
 ---
 
 ## August 14th 2020 - v3.34.0

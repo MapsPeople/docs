@@ -14,35 +14,25 @@ module.exports = function (eleventyConfig) {
   });
   eleventyConfig.setUseGitIgnore(false);
 
-  module.exports = function (eleventyConfig) {
-    eleventyConfig.addCollection('androidv2', function (collectionApi) {
-      return collectionApi.getFilteredByTags('android', 'v2');
-    });
-  };
+  eleventyConfig.addCollection('androidv2', function (collectionApi) {
+    return collectionApi.getFilteredByTags('android', 'v2');
+  });
 
-  module.exports = function (eleventyConfig) {
-    eleventyConfig.addCollection('androidv3', function (collectionApi) {
-      return collectionApi.getFilteredByTags('android', 'v3');
-    });
-  };
+  eleventyConfig.addCollection('androidv3', function (collectionApi) {
+    return collectionApi.getFilteredByTags('android', 'v3');
+  });
 
-  module.exports = function (eleventyConfig) {
-    eleventyConfig.addCollection('iosv2', function (collectionApi) {
-      return collectionApi.getFilteredByTags('ios', 'v2');
-    });
-  };
+  eleventyConfig.addCollection('iosv2', function (collectionApi) {
+    return collectionApi.getFilteredByTags('ios', 'v2');
+  });
 
-  module.exports = function (eleventyConfig) {
-    eleventyConfig.addCollection('iosv3', function (collectionApi) {
-      return collectionApi.getFilteredByTags('ios', 'v3');
-    });
-  };
+  eleventyConfig.addCollection('iosv3', function (collectionApi) {
+    return collectionApi.getFilteredByTags('ios', 'v3');
+  });
 
-  module.exports = function (eleventyConfig) {
-    eleventyConfig.addCollection('webv3', function (collectionApi) {
-      return collectionApi.getFilteredByTags('web', 'v3');
-    });
-  };
+  eleventyConfig.addCollection('webv3', function (collectionApi) {
+    return collectionApi.getFilteredByTags('web', 'v3');
+  });
 
   return {
     dir: {

@@ -2,9 +2,6 @@
 title: Show location details
 ---
 
-> A [newer version]({{ site.url }}/ios/v3) of the MapsIndoors SDK for iOS is available. The legacy version will not receive new features and will only get critical bugfix and security updates.
-{: .mi-warning}
-
 This is an example of displaying some details of a MapsIndoors location
 
 Start by creating a `UIViewController` class that conforms to the `GMSMapViewDelegate` protocol
