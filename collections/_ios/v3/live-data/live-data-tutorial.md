@@ -55,8 +55,8 @@ fileprivate func setupSubscriptionButtons() {
     occupancyButton.addTarget(self, action: #selector(toggleOccupancy), for: .touchUpInside)
     occupancyButton.backgroundColor = UIColor.red
 }
+```
 
-```swift
 Add a method `toggleSubscription()` that does the actual toggling of a subscription for a button based on the buttons `isSelected` flag. Swap current selected state for button. If the flag is true and the button is selected, call the Live Data Manager's `subscribe()` method with the given Topic Criteria. We will also call a `startFlash()`method that should make the button flash. More on this later. If the flag is false and the button is not selected, call the Live Data Manager's `unsubscribe()` method with the given Topic Criteria. Similarly we will call a `stopFlash()`method that should stop the button flash.
 
 ```swift
