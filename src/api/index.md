@@ -8,11 +8,12 @@ eleventyNavigation:
 
 ## Introduction and getting started
 
-From the MapsIndoors Integration API you can get, add, change and delete data related to your MapsIndoors solution via a REST service.
+From the MapsIndoors Integration API you can get, add, change and delete data related to your MapsIndoors Solution via a REST service.
 
 Send your requests to this endpoint: [https://integration.mapsindoors.com](https://integration.mapsindoors.com)
 
-> **Note: Only https is supported.**
+> Note: Only https is supported.
+{: .mi-careful}
 
 You can access data through the Integration API using a range of endpoints. The endpoints are described in the Swagger interface definition: [https://integration.mapsindoors.com/doc](https://integration.mapsindoors.com/doc)
 
@@ -24,8 +25,8 @@ First, log in to the service to get an `access token` to access the data.
 
 This requires a POST request to our Auth API at the following endpoint: [https://auth.mapsindoors.com/connect/token](https://auth.mapsindoors.com/connect/token)
 
-The Auth API supports multiple ways to log in. The most common way is authenticating with Google, but you can also use your MapsIndoors username and password.
-No matter what login method you choose, you will always need to use the following content-type header when talking to the Auth API:
+The Auth API supports multiple ways to log in. The most common way is with your MapsIndoors username and password. If you need to sign in with other providers, please [contact support](https://mapspeople.com/support).
+No matter what login method you use, you will always need to use the following content-type header when talking to the Auth API:
 
 ```bash
 Content-Type: application/x-www-form-urlencoded
@@ -44,29 +45,11 @@ username: <your username>
 password: <your password>
 ```
 
+Replacing `<your username>` and `<your password>` with your own credentials, and leaving `grant_type` and `client_id` as stated above.
+
 The body of the request must end up containing a query string like this:
 
 `grant_type=password&client_id=client&username=<your username>&password=<your password>`
-
-#### Log in with Google
-
-The [Google Accounts API](https://developers.google.com/identity/protocols/OAuth2) is used to obtain a valid Google token. You can read more about how to do that here: [https://developers.google.com/identity/protocols/OAuth2](https://developers.google.com/identity/protocols/OAuth2).
-
-When you get a valid response from the Google Authorization Server, send the token to the Auth API to authenticate you.
-
-You tell the Auth API that you are using Google login by setting `grant_type` to `google_id_token`.
-
-Use the following key/value set to achieve this:
-
-```bash
-grant_type: google_id_token
-client_id: client
-id_token: <your Google token>
-```
-
-The body of the request should end up containing a query string like this:
-
-`grant_type=google_id_token&client_id=client&id_token=<your Google token>`
 
 #### When you are authenticated
 
@@ -113,13 +96,13 @@ The demo dataset looks like this:
 }
 ```
 
-It tells which languages are defined for this project, which language is the default one (english in this case) and it has a `rootObjects` reference list which refers to the geospatial data that makes up the bulk of a MapsIndoors solution the root objects are Geodata objects.
+It tells which languages are defined for this project, which language is the default one (English in this case) and it has a `rootObjects` reference list which refers to the geospatial data that makes up the bulk of a MapsIndoors Solution the root objects are Geodata objects.
 
 ### Geodata
 
-All geospasial data, Geodata, is arranged in a simple tree. Each element has a parent ID (except the root) so as an example, a point of interest (POI) can have a Room parent. The Room will typically be on a Floor in a Building on a Venue. Venues are always the root object (identified with parent ID is null), and is defined by "_An overall geographical area which typically comprises the area of one or more buildings and their relevant surrounding areas such as lawns and parking lots_".
+All geospatial data, Geodata, is arranged in a simple tree. Each element has a parent ID (except the root) so as an example, a point of interest (POI) can have a Room parent. The Room will typically be on a Floor in a Building on a Venue. Venues are always the root object (identified with parent ID is null), and is defined by "_An overall geographical area which typically comprises the area of one or more buildings and their relevant surrounding areas such as lawns and parking lots_".
 
-[![Geodata Structure]({{ site.url }}/assets/api/v1/geodata-structure.png)]({{ site.url }}/assets/api/v1/geodata-structure.png)
+![Geodata Structure]({{ site.url }}/assets/api/v1/geodata-structure.png)
 
 You can create, update, delete all Geodata types: Venue, Building, Floor, Room, Area and POI.
 
@@ -132,7 +115,7 @@ All Geodata BaseTypes have some common keys that is available for all, and then 
 * `Id [string(24)]`
   * MapsIndoors generated ID. Should be _null_ if you are creating an object.
 * `DatasetId [string]`
-  * The dataset ID of your MapsIndoors solution.
+  * The dataset ID of your MapsIndoors Solution.
 * `ParentId [string(24)]`
   * The MapsIndoors ID that this Geodata object is a child of.
 * `BaseType [string]`
@@ -150,7 +133,7 @@ All Geodata BaseTypes have some common keys that is available for all, and then 
     _Only relevant for POI/Room/Area._
 
 * `DisplaySetting [DisplayRule]`
-  * An overriding Display Rule to use, instead of the one from the Display Type. \
+  * An overriding Display Rule to use, instead of the one from the Display Type.
 
     See "DisplayRules" under Display Type.
 
@@ -229,7 +212,7 @@ All Geodata BaseTypes have some common keys that is available for all, and then 
 
 Venue, Building, Floor, Room and Area have a polygon that describes where its position is on the map. POIs are noted with a single point on the map and is typically located inside a Room or on a Floor - important things like the coffee machine.
 
-To read, change or delete Geodata use the Geodata endpoints described here: [https://integration.mapsindoors.com/doc/ui/index#/Geodata](https://integration.mapsindoors.com/doc/ui/index#/Geodata)
+To read, change or delete Geodata use the Geodata endpoints described here: [https://integration.mapsindoors.com/doc/index.html#/Geodata](https://integration.mapsindoors.com/doc/index.html#/Geodata)
 
 > Note: When you get data, you only specify the `datasetId` hence you get the entire tree! The other Geodata endpoints works on individual Geodata objects.
 {: .mi-careful}
@@ -254,7 +237,7 @@ Each Geodata element has a number of properties. Let's look at an example - a co
     "activefrom": null,
     "activeto": null,
     "administrativeid": "RTX"
-  }
+  },
   "displayTypeId": "d7558711f7c64534972cc65f",
   "geometry": {
     "coordinates": [
@@ -450,7 +433,7 @@ Common setup for Geodata of different kinds (meeting room, hallway, ...)
       "iconUrl": "https://app.mapsindoors.com/mapsindoors/gfx/bella/80/BreakOutArea.png",
       "labelZoomFrom": 19,
       "labelZoomTo": 20,
-      "visible": true
+      "visible": true,
       "iconVisible": true,
       "labelVisible": true
     }
@@ -486,7 +469,7 @@ Common setup for Geodata of different kinds (meeting room, hallway, ...)
 
     Each type has a set of display rules that tells if and how geodata should be presented. E.g. which icon to use for meeting rooms, when it should be shown based on zoom level or if it should have a label. There are two parts to a rule: An **evaluation** part (zoom from/to) and a **style** part - the rest of the displayRule object.
 
-    Zoom from and to is inclusive. In this example an icon will be shown from zoom level 19 to 21. A quick word on zoom levels: these are described in [web mercator](https://en.wikipedia.org/wiki/Web_Mercator_projection) which is the system we use to show maps. In short zoom level 1 shows a map of the earth in its entirety and a higher zoom level lets you get closer. The highest supported zoom level is generally 21, but some solutions support up to zoom level 22.
+    Zoom from and to is inclusive. In this example an icon will be shown from zoom level 19 to 21. A quick word on zoom levels: these are described in [web mercator](https://en.wikipedia.org/wiki/Web_Mercator_projection) which is the system we use to show maps. In short zoom level 1 shows a map of the earth in its entirety and a higher zoom level lets you get closer. The highest supported zoom level is generally 21, but some Solutions support up to zoom level 22.
 
     You will notice that there are 3 ‘visibility’ keys (visible, iconVisible, labelVisible). The first one, ‘visible’, is the main switch that will show and hide the whole element. The two others, ‘iconVisible’ and ‘labelVisible’, is changing the individual elements it is attached to. This way, you can toggle the ‘visible’ without having to remember the visible state for both the icon and label.
 
@@ -547,3 +530,141 @@ As a simple example: All rooms and areas across any building/venue related to en
     `<keyname>@<language>`
 
     The name property must be specified for every language defined in the dataset.
+
+## Interface descriptions
+
+### Reverse geocoding
+
+```bash
+HTTP Get
+Path: /{datasetId}/api/geocode
+Returns: A list of Geodata objects
+```
+
+Decription:
+Given a latitude/longitude point on the map and a floor index, this endpoint will return a list of all geodata that intersects with this point.
+
+Note:
+
+* Venue and Building geodata will disregard the floor index and will be given based on the latitude/logitude alone.
+* Floor and Room geodata will respect the floor index and will return if the latitude/logitude intersects AND the given floorindex matches
+* If no matches where found, an empty list will be returned
+* Floor indexes can be viewed in the CMS under the Building's detail page.
+* For a geodata object of type `"floor"` its `baseTypeProperties.administrativeid` property contains the floor index.
+
+Mandatory parameters:
+
+* **lat** Latitude of the point to examine. Valid range: +/- 90
+* **lng** Longitude of the point to examine. Valid range: +/- 180
+* **floor** Floor index to match for floor and room geodata
+
+Example:
+
+Input values:
+
+* **lat** 57.0579386
+* **lng** 9.9502304
+* **floor** 10
+
+Output:
+A list of 4 geodata objects: a Venue, a Building, a Floor and a Room:
+
+```json
+[
+  {
+    "id": "586ca9f1bc1f5702406442b6",
+    "datasetId": "57e4e4992e74800ef8b69718",
+    "baseType": "venue",
+    "geometry": ...,
+    "anchor": {
+      "coordinates": [
+        9.95033207518389,
+        57.0589850525
+      ],
+      "type": "Point"
+    },
+    "aliases": [],
+    "status": 3,
+    "baseTypeProperties": {
+      "defaultfloor": "0",
+      "administrativeid": "Stigsborgvej",
+      "graphid": "STIGSBORGVEJ_Graph"
+    },
+    "properties": {
+      "name@en": "Aalborg Office",
+      "name@da": "Aalborg Kontor"
+    },
+    "tileStyles": [
+      {
+        "displayName": "default",
+        "style": "default"
+      }
+    ]
+  },
+  {
+    "id": "586caf3dbc1f5702406442b9",
+    "parentId": "586ca9f1bc1f5702406442b6",
+    "datasetId": "57e4e4992e74800ef8b69718",
+    "baseType": "building",
+    "geometry": ...,
+    "anchor": {
+      "coordinates": [
+        9.95071928922423,
+        57.0590494749439
+      ],
+      "type": "Point"
+    },
+    "status": 3,
+    "baseTypeProperties": {
+      "administrativeid": "Stigsborgvej"
+    },
+    "properties": {
+      "name@en": "Stigsborgvej",
+      "name@da": "Stigsborgvej"
+    }
+  },
+  {
+    "id": "fadb5dbf31b442d1a5d6bb08",
+    "parentId": "586caf3dbc1f5702406442b9",
+    "datasetId": "57e4e4992e74800ef8b69718",
+    "baseType": "floor",
+    "geometry": ...,
+    "status": 3,
+    "baseTypeProperties": {
+      "name": "1",
+      "administrativeid": "10"
+    },
+    "properties": {}
+  },
+  {
+    "id": "bf4aac447b1148e198f48d7d",
+    "parentId": "fadb5dbf31b442d1a5d6bb08",
+    "datasetId": "57e4e4992e74800ef8b69718",
+    "externalId": "1.05.01",
+    "baseType": "room",
+    "displayTypeId": "Storage",
+    "displaySetting": {
+      "name": "default"
+    },
+    "geometry": ...,
+    "anchor": {
+      "coordinates": [
+        9.9502304,
+        57.0579386
+      ],
+      "type": "Point"
+    },
+    "aliases": [],
+    "categories": [],
+    "status": 3,
+    "baseTypeProperties": {
+      "administrativeid": "2120ABC7-A574-4950-A33B-E5F836EA91CF",
+      "class": "Lager"
+    },
+    "properties": {
+      "name@en": "IT storage",
+      "name@da": "IT lager"
+    }
+  }
+]
+```

@@ -17,7 +17,7 @@
   "scripts": {
     "sass-watch": "sass --watch src/_sass:src/assets --no-source-map",
     "sass": "sass src/_sass:src/assets --no-source-map",
-    "watch": "npm run sass-watch & eleventy --serve"
+    "start": "npm run sass-watch & eleventy --serve"
   },
   "author": "MapsPeople A/S",
   "license": "MIT"

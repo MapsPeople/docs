@@ -50,23 +50,23 @@ There are a number of key elements:
 1. **CMS Guide:** High level guide on various areas to make changes
 1. **Venue and Buildings & Routes:**
 
-* Change Building names, enter aliases
-* Routes will display on the map, along with the entry point to indoor navigation. There is also the ability to close part of the route network
+   * Change Building names, enter aliases
+   * Routes will display on the map, along with the entry point to indoor navigation. There is also the ability to close part of the route network
 
 1. **General Settings:**
 
-* **Location Types:** List of Locations with their icon - ability to edit. Add Location Types here
-* **Categories:** List of categories - ability to edit. Add new categories here. These will populate in an iOS or Android app
-* **Location Type templates:** Ability to add information to a specific Location Type, for example, business hours, email, phone number
+   * **Location Types:** List of Locations with their icon - ability to edit. Add Location Types here
+   * **Categories:** List of categories - ability to edit. Add new categories here. These will populate in an iOS or Android app
+   * **Location Type templates:** Ability to add information to a specific Location Type, for example, business hours, email, phone number
 
 1. **App settings:**
 
-* **App configuration:** App title, MapsIndoors API key, list of categories - editing of the order can be done here
-* **Type visibility:** Set the zoom level of when Location icon will appear. Can also "hide” icon via the eye icon
+   * **App configuration:** App title, MapsIndoors API key, list of categories - editing of the order can be done here
+   * **Type visibility:** Set the zoom level of when Location icon will appear. Can also "hide” icon via the eye icon
 
 1. **Administration:**
 
-* **Users:** Add, edit users for the CMS
+   * **Users:** Add, edit users for the CMS
 
 1. **Current User**
 1. **List:** A list of Locations in the currently selected Venue, can edit from this list
@@ -74,9 +74,9 @@ There are a number of key elements:
 1. **Zoom Level:** Indicates which zoom level you are viewing
 1. **Filter:**
 
-* **Type:** dropdown to select a specific Location Type to only see on the map
-* **Category:** dropdown to select a specific Category to only see on the map
-* **Search:** search for Locations
+   * **Type:** dropdown to select a specific Location Type to only see on the map
+   * **Category:** dropdown to select a specific Category to only see on the map
+   * **Search:** search for Locations
 
 1. **Floor selector:** The floor selector shows the floors available, click on the desired floor to switch floor
 1. **POI:** click on this icon to add a POI anywhere on the map
@@ -203,7 +203,7 @@ Please see the official [Google Street View Service documentation](https://devel
 
 * **Venue Details:** Change Building and or floor.
 
-* **Room Identifier:** This can be edited.
+* **External ID:** This can be edited. See "[ExternalID](https://mapsindoors.github.io/external-id/)" for more information.
 
 * **"Active to and from":** If required, select a time period during which the Location will be active. "Active" in this case means it is visible on the map, and shows up in search results. Leave the date fields empty if the Location should always be displayed
 
@@ -215,7 +215,7 @@ Remember to save before clicking on another Location or changing the page, other
 
 ![Locations](https://app.mapsindoors.com/mapsindoors/cms/assets/images/guide3.png)
 
-View the tutorial video below for more information about POI advanced settings.
+View the tutorial video below for more information about advanced settings for POIs.
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/YkvGQE3Fbtg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -235,6 +235,30 @@ When selecting one a more Locations using the checkboxes, 2 options will appear:
 * **"Active to and from":** If required, select a time period during which the Location will be active. "Active" in this case means it is visible on the map, and shows up in search results. Leave the date fields empty if the Location should always be displayed
 
 Remember to save before clicking on another Location or changing the page, otherwise your changes will be lost. To save the changes, click "Save”.
+
+## Export Map
+
+Export Map is an add-on feature that can be enabled for a Solution. Once enabled, it allows for PNG export of the MapsIndoors imagery for printing purposes. The export will not include the underlying Google Maps due to terms of use.
+
+The Export Map service has a limit of 8000 x 8000 pixels. Clicking the Download icon button on the bottom right opens a new tab with the PNG.
+
+### Usage (scale)
+
+Sets the scale of the export imagery.
+
+* Web (1) will export the same pixel size as selected on-screen.
+* Retina (2) will export two times the pixels.
+* Print (4) will export four times the pixels.
+
+### Display Settings
+
+Allows toggling visible features on the exported map, such as Icons, Location Types, and Labels.
+
+You can also rotate the map and set the size of the screen selection. The max is 2000 x 2000.
+
+### Preview
+
+Preview is especially helpful when using rotation or larger-than-monitor exports.
 
 ## Venue
 
@@ -263,13 +287,14 @@ Remember to save before clicking on another Location or changing the page, other
 ### Uploading CAD files for a floor
 
 * Click on the pencil icon to the left of the Building name and a sidebar should appear.
-* Click on "Add floor" or "Update floor" and a popup window should appear.
+* Click on "Add floor" (to add a new Floor to the Building) or "Update floor" (to update an existing Floor in the Building) and a popup window appears.
 * Type the floor name.
 * Select a CAD file.
 * Select any extra files. (optional)
 * Add any extra information in the text field.
 * Click on "Upload" and a spinner should appear with the upload progress.
 * When it is done uploading you should see an added/updated floor name in the list.
+* The CAD file, and any extra files, will be automatically sent to a MapsPeople project manager, and a representative will contact you shortly to plan the digitization of the new or updated Floor.
 
 ## Routes Access
 
@@ -297,6 +322,14 @@ To restrict access to a path:
 
 This is a list of all the Location Types in the Solution. From this list you can edit each Location by clicking on the pencil.
 
+### Syncing Types to other Solutions
+
+If you have multiple Solutions, you can update Location Types across multiple Solutions to keep them up to date with the latest changes.
+
+Click the "Sync to other Solutions"-button to select which of your other Solutions you want to sync this Location Type to.
+
+When you sync a Location Type, if the Location Type exists in the target Solution, you override the Location Type in the target Solution. If the Location Type does not exist in the target Solution, it is added.
+
 ### View Settings
 
 The *View settings* can be set for each Location Type. Use the settings to define how and when the icon and/or label is displayed on the map, and what is shown in the label.
@@ -309,7 +342,7 @@ You can add custom data fields to Locations by adding templates to a Location Ty
 
 To display or otherwise use the custom data, your app needs to be customized. The properties are not available in the Standard app, only when building one using the SDK.
 
-View the tutorial video below for more information about location types.
+View the tutorial video below for more information about Location Types.
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/PyQOMnJP0Z8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -319,11 +352,31 @@ View the tutorial video below for more information about location types.
 
 Ability to add new categories to the list. Click on New Category, add name, click save. Once created, this Category can be added to a specific Location. The categories can be chosen to be displayed in the app, as well as put in a specific order (this can be done under App Configuration).
 
-View the tutorial video below for more information about categories.
+View the tutorial video below for more information about Categories.
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/FMIEJmJwogU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## App configuration
+### Syncing Categories to other Solutions
+
+If you have multiple Solutions, you can update Categories across multiple Solutions to keep them up to date with the latest changes.
+
+Click the "Sync to other Solutions"-button to select which of your other Solutions you want to sync this Category to.
+
+When you sync a Category, if the Category exists in the target Solution, you override the Category in the target Solution. If the Category does not exist in the target Solution, it is added.
+
+Categories have icons, and the icon for the Category is synced to the target Solution as well, creating it if it does not exist already.
+
+## App Settings
+
+### API Keys
+
+To load your MapsIndoors data in your apps, you need an API key.
+
+You can create as many API keys as you want, and it's good practise to use one for each place you need to load data from MapsIndoors (each mobile platform, web app etc.).
+
+You can easily delete an API key if it is unused, or has been compromised in some way.
+
+Previously, you could use a `SolutionID` to load your data, but this is no longer supported. Only API keys is supported for loading data from your Solution.
 
 ### App User Roles
 
@@ -453,6 +506,14 @@ If your SVGs contain unsupported elements, you must remove them before they can 
 Michelle Barker has written [a terrific guide to optimizing SVGs for the web](https://css-irl.info/optimising-svgs-for-the-web/) on her site.
 
 A great tool to strip unnecesary elements from your SVG-file is [SVGOMG by Jake Archibald](https://jakearchibald.github.io/svgomg/).
+
+### Syncing Icons to other Solutions
+
+If you have multiple Solutions, you can sync Icons across multiple Solutions to make sure you can use the same Icons in all of your Solutions.
+
+Open the Icon Manager (you can find it on a Location Detail screen when you set the Icon for that Location). Find the Icon you want to sync to one or more Solutions, and click the "Sync"-icon next to the filename of the Icon. Then you can select which other Solutions you want to sync this Icon to.
+
+When you sync an Icon, if the Icon exists in the target Solution (i.e. an Icon with the exact same filename), you override the Icon in the target Solution. If the Icon does not exist in the target Solution, it is added.
 
 ## Support
 
