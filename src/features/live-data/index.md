@@ -56,38 +56,37 @@ To enable Live Data in an application, a subscription to one or more Topics is n
 The only Live Data updates that are also directly notified to the SDK internally are Live Data updates of the "Position" Domain Type. By consequence, if you have already set up your map with MapsIndoors, an additional few lines of code can enable moving locations on the map. Here is an example:
 
 <mi-tabs>
-    <mi-tab label="Android" tab-for="android"></mi-tab>
-    <mi-tab label="iOS" tab-for="ios"></mi-tab>
-    <mi-tab label="Web" tab-for="web"></mi-tab>
-    <mi-tab-panel id="android">
-        ```java
-        LiveDataManagerInterface liveDataManager = LiveDataManager.getInstance();
-        liveDataManager.setOnLiveDataManagerStateChangedListener(state -> Log.d(TAG,"Live data manager state changed to: “+state.toString()));
+<mi-tab label="Android" tab-for="android"></mi-tab>
+<mi-tab label="iOS" tab-for="ios"></mi-tab>
+<mi-tab-panel id="android">
 
-        LiveTopicCriteria liveTopicCriteria = LiveTopicCriteria.getBuilder("datasetId")
-                .setMultiLevelWildcard()
-                .build();
+```java
+LiveDataManagerInterface liveDataManager = LiveDataManager.getInstance();
+liveDataManager.setOnLiveDataManagerStateChangedListener(state -> Log.d(TAG,"Live data manager state changed to: “+state.toString()));
 
-        liveDataManager.subscribeTopic(liveTopicCriteria);
+LiveTopicCriteria liveTopicCriteria = LiveTopicCriteria.getBuilder("datasetId")
+        .setMultiLevelWildcard()
+        .build();
 
-        ```
+liveDataManager.subscribeTopic(liveTopicCriteria);
+```
 
-        In the example, the Topic is created using the `datasetId` and a multilevel wildcard, which will return all Live Data in the Solution.
-    </mi-tab-panel>
-    <mi-tab-panel id="ios">
-        ```swift
-          self.mapControl = MPMapControl.init(map: self.map!)
+In the example, the Topic is created using the `datasetId` and a multilevel wildcard, which will return all Live Data in the Solution.
 
-          let liveManager = MapsIndoors.liveDataManager()
-          let topic = MPLiveUpdateTopic.domainType("position")
-          liveManager.subscribe(topic)
-        ```
+</mi-tab-panel>
+<mi-tab-panel id="ios">
 
-        In the example the Topic was created with only the Domain Type. This will subscribe to all coming position updates for the dataset, and if the updates are relevant for the particular view of the map, you will see moving icons on the map.
-    </mi-tab-panel>
-    <mi-tab-panel id="web">
-        <h3>Web</h3>
-    </mi-tab-panel>
+```swift
+    self.mapControl = MPMapControl.init(map: self.map!)
+
+    let liveManager = MapsIndoors.liveDataManager()
+    let topic = MPLiveUpdateTopic.domainType("position")
+    liveManager.subscribe(topic)
+```
+
+In the example the Topic was created with only the Domain Type. This will subscribe to all coming position updates for the dataset, and if the updates are relevant for the particular view of the map, you will see moving icons on the map.
+
+</mi-tab-panel>
 </mi-tabs>
 
 ## Handling Live Data Events
@@ -106,7 +105,8 @@ There are two ways to be notified about Live Updates:
     <mi-tab label="iOS" tab-for="ios"></mi-tab>
     <mi-tab label="Web" tab-for="web"></mi-tab>
     <mi-tab-panel id="android">
-        To get Live Updates on a general level the `OnReceivedLiveUpdateListener` must be set on the `LiveDataManager`:
+
+To get Live Updates on a general level the `OnReceivedLiveUpdateListener` must be set on the `LiveDataManager`:
 
 ```java
 liveDataManager.setOnReceivedLiveUpdateListener((topic, message) -> {
@@ -126,9 +126,10 @@ mapControl.setOnWillUpdateLocationsOnMap(locations -> {
 }
 ```
 
-    </mi-tab-panel>
-    <mi-tab-panel id="ios">
-        To get Live Updates on a general level the `MPLiveDataManagerDelegate` protocol method `didReceive(_ liveUpdate: MPLiveUpdate)` must be implemented:
+</mi-tab-panel>
+<mi-tab-panel id="ios">
+
+To get Live Updates on a general level the `MPLiveDataManagerDelegate` protocol method `didReceive(_ liveUpdate: MPLiveUpdate)` must be implemented:
 
 ```swift
 extension MyClass : MPLiveDataManagerDelegate {
@@ -152,10 +153,10 @@ extension MyClass : MPMapControlDelegate {
 }
 ```
 
-    </mi-tab-panel>
-    <mi-tab-panel id="web">
-        <h3>Web</h3>
-    </mi-tab-panel>
+</mi-tab-panel>
+<mi-tab-panel id="web">
+<h3>Web</h3>
+</mi-tab-panel>
 </mi-tabs>
 
 ### Handling State Changes and Errors
@@ -163,9 +164,10 @@ extension MyClass : MPMapControlDelegate {
 Live Updates are dependent on network connectivity, so the Live Data Manager will try to recover from common errors like e.g. a network dropout. The Live Data Manager will not try to recover from subscription errors alone, as this could be caused by a non-existing Topic for a given Dataset, thus it does not make sense retrying the failing subscription.
 
 <mi-tabs>
-    <mi-tab label="Android" tab-for="android"></mi-tab>
-    <mi-tab-panel id="android">
-         In order to get notified about state changes and errors related to Live Data, a number of listeners can be set on the `LiveDataManager` using the following methods and interfaces:
+<mi-tab label="Android" tab-for="android"></mi-tab>
+<mi-tab-panel id="android">
+
+In order to get notified about state changes and errors related to Live Data, a number of listeners can be set on the `LiveDataManager` using the following methods and interfaces:
 
 - `setOnReceivedLiveUpdateListener(OnReceivedLiveUpdateListener listener);`
 - `setOnTopicSubscribedListener(OnTopicSubscribedListener listener);`
@@ -175,8 +177,7 @@ Live Updates are dependent on network connectivity, so the Live Data Manager wil
 - `setOnLiveDataManagerStateChangedListener(OnLiveDataManagerStateChangedListener listener);`
 - `setOnErrorListener(OnErrorListener listener);`
 
-    </mi-tab-panel>
-
+</mi-tab-panel>
 </mi-tabs>
 
 ### Useful links
