@@ -26,7 +26,7 @@ Add the MapsIndoors SDK as a dependency to your project. The AAR for the MapsInd
 
 Make sure that the minimum Android SDK version is 21 (aka. "Android Lollipop", version 5.0) or above:
 
-```groovy
+```java
 android {
     defaultConfig {
         minSdkVersion 21
@@ -37,7 +37,7 @@ android {
 
 MapsIndoors rely on Java 8 features, so you must add the following compile options, also in *android* section of your *build.gradle* file:
 
-```groovy
+```java
 android {
     ...
     compileOptions {
@@ -49,7 +49,7 @@ android {
 
 Add the following dependencies and the MapsIndoors maven repository:
 
-```groovy
+```java
 dependencies {
     ...
     implementation 'com.android.support:support-v4:27.1.0'
@@ -66,7 +66,7 @@ repositories{
 
 Put those lines in your proguard-rules files :
 
-```groovy
+```java
 -keep interface com.mapsindoors.mapssdk.** { *; }
 -keep class com.mapsindoors.mapssdk.errors.** { *; }
 -keepclassmembers class com.mapsindoors.mapssdk.models.** { <fields>; }
@@ -147,7 +147,7 @@ Replace:
 
 In your apps build gradle file, add these two lines:
 
-```groovy
+```java
 apply from: 'https://raw.githubusercontent.com/MapsIndoors/MapsIndoorsAndroid/SDK_V2/scripts/gradle/MapsIndoorsOfflineDataSync.gradle'
 preBuild.dependsOn fetchData
 ```
