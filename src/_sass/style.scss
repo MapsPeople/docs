@@ -1,4 +1,5 @@
 @use '../../node_modules/normalize.css/normalize.css';
+
 @use '../../node_modules/@mapsindoors/midt/background-color';
 @use '../../node_modules/@mapsindoors/midt/border';
 @use '../../node_modules/@mapsindoors/midt/color';
@@ -22,6 +23,7 @@ body {
   @include font.tracking(medium);
   @include font.color(base);
   @include background-color.white(base);
+  @include margin.bottom(x-large);
 }
 
 .wrap {
@@ -126,9 +128,54 @@ nav.sidebar {
   @include margin.top(medium);
   @include border.radius(medium);
   @include padding.horizontal(medium);
+
+  hr {
+    @include margin.vertical(medium);
+    border-top: 1px solid $color-gray-50;
+  }
 }
 
-// Headers
+nav {
+  ul,
+  li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  ul {
+    @include font.weight(x-large);
+    @include font.size(medium);
+    @include font.leading(x-large);
+    li {
+      @include margin.top(x-small);
+      ul {
+        @include font.weight(medium);
+        @include font.size(medium);
+        @include margin.vertical(small);
+        @include margin.left(medium);
+        li {
+          @include margin.top(x-small);
+          @include font.size(medium);
+        }
+      }
+    }
+  }
+
+  .active > a {
+    @include background-color.blue(10);
+    @include padding.horizontal(small);
+    @include padding.vertical(x-small);
+    @include border.radius(medium);
+    @include font.weight(large);
+    margin-left: -12px;
+
+    ul {
+      font-style: normal;
+    }
+  }
+}
+
+// Headlines
 
 h1 {
   @include font.size(xx-large);
@@ -216,9 +263,9 @@ pre code {
   }
 }
 
-// header.njk, footer.njk
-header,
-footer {
+// header.njk
+
+header {
   svg.mapspeople-logo path {
     fill: white;
   }
@@ -266,55 +313,8 @@ footer {
   }
 }
 
-// footer.njk
-footer {
-  @include color.gray(20);
-  @include margin.top(large);
-}
-
-// Lists in nav and footer
-footer,
-nav {
-  ul,
-  li {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  ul {
-    @include font.weight(x-large);
-    @include font.size(medium);
-    @include font.leading(x-large);
-    li {
-      @include margin.top(x-small);
-      ul {
-        @include font.weight(medium);
-        @include font.size(medium);
-        @include margin.vertical(small);
-        @include margin.left(medium);
-        li {
-          @include margin.top(x-small);
-          @include font.size(medium);
-        }
-      }
-    }
-  }
-
-  .active > a {
-    @include background-color.blue(10);
-    @include padding.horizontal(small);
-    @include padding.vertical(x-small);
-    @include border.radius(medium);
-    @include font.weight(large);
-    margin-left: -12px;
-
-    ul {
-      font-style: normal;
-    }
-  }
-}
-
 // Breadcrumb
+
 ol.breadcrumb {
   @include padding.left(none);
   @include margin.top(none);
@@ -347,7 +347,8 @@ main img {
   max-width: 100%;
 }
 
-// Dark theme overrides. Should always be at the bottom.
+// // Dark theme overrides. Should always be at the bottom. Not possible until mi-tabs has dark mode too...
+
 // @media (prefers-color-scheme: dark) {
 //   body {
 //     @include font.color(inverse);
@@ -355,7 +356,7 @@ main img {
 //   }
 
 //   a {
-//     @include color.bronze(20);
+//     @include color.bronze(30);
 
 //     &:hover {
 //       text-decoration: underline;
@@ -366,31 +367,27 @@ main img {
 //       @include color.bronze(40);
 //     }
 
-//     &:visited {
-//       @include color.magenta(10);
-//     }
+//     // &:visited {
+//     //   @include color.bronze(20);
+//     // }
 //   }
 //   pre code.hljs {
 //     @include border.style(none);
 //   }
+//   nav {
+//     .active > a {
+//       @include background-color.gray(90);
+//     }
+//   }
 //   nav.sidebar {
 //     li.active {
 //       @include border.bronze(20);
-//       a {
-//         @include color.bronze(30);
-//       }
-//       ul li a {
-//         @include color.bronze(20);
-//       }
 //     }
 //   }
 //   header,
-//   footer {
-//     @include background-color.black(base);
-//     background-image: none;
-//   }
 //   p code {
 //     @include background-color.gray(90);
+//     background-image: none;
 //     @include font.color(inverse);
 //   }
 //   h1 {

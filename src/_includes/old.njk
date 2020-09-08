@@ -1,0 +1,67 @@
+{% include "head.njk" %}
+<body>
+  {% include "header.njk" %}
+  <div class="wrap">
+    <section class="container">
+      <nav class="sidebar">
+        {% set navPages = collections.published | eleventyNavigation("index") %}
+        {{ navPages | eleventyNavigationToHtml({listClass: "sidebar-nav", activeListItemClass: "active", activeKey: eleventyNavigation.key}) | safe }}
+      </nav>
+      <main>
+        <nav aria-label="Breadcrumb">
+          {{ collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key) | eleventyNavigationToHtml({listElement: "ol", listItemElement: "span", listItemClass: "item", listClass: "breadcrumb", activeListItemClass: "active", activeKey: eleventyNavigation.key}) | safe }}
+        </nav>
+        <h1>
+          <a href="{{ page.url }}">{{ title }}</a>
+        </h1>
+        <p class="time">Last updated: <time>{{ page.date.toLocaleDateString() }}</time>
+        </p>
+        <h3>Android v2</h3>
+        <ul>
+          {%- for post in collections.androidv2 -%}
+            <li>
+              <a href="{{ post.url }}">{{ post.data.title }}</a>
+            </li>
+          {%- endfor -%}
+        </ul>
+
+        <h3>Android v3</h3>
+        <ul>
+          {%- for post in collections.androidv3 -%}
+            <li>
+              <a href="{{ post.url }}">{{ post.data.title }}</a>
+            </li>
+          {%- endfor -%}
+        </ul>
+
+        <h3>iOS v2</h3>
+        <ul>
+          {%- for post in collections.iosv2 -%}
+            <li>
+              <a href="{{ post.url }}">{{ post.data.title }}</a>
+            </li>
+          {%- endfor -%}
+        </ul>
+
+        <h3>iOS v3</h3>
+        <ul>
+          {%- for post in collections.iosv3 -%}
+            <li>
+              <a href="{{ post.url }}">{{ post.data.title }}</a>
+            </li>
+          {%- endfor -%}
+        </ul>
+
+        <h3>Web v3</h3>
+        <ul>
+          {%- for post in collections.webv3 -%}
+            <li>
+              <a href="{{ post.url }}">{{ post.data.title }}</a>
+            </li>
+          {%- endfor -%}
+        </ul>
+      </main>
+    </section>
+  </div>
+</body>
+</html>
