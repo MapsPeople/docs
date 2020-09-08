@@ -49,6 +49,12 @@ module.exports = function (eleventyConfig) {
     return collectionApi.getFilteredByTags('web', 'v3');
   });
 
+  eleventyConfig.addCollection('published', function (collectionApi) {
+    return [...collectionApi.getFilteredByGlob('./src/**/*.md')].filter(
+      (post) => !post.data.draft
+    );
+  });
+
   return {
     dir: {
       input: `src`,

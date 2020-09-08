@@ -1,5 +1,7 @@
 ---
 title: Terminology
+permalink: false
+draft: true
 eleventyNavigation:
   key: Terminology
   parent: index

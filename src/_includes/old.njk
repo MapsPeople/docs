@@ -4,7 +4,7 @@
   <div class="wrap">
     <section class="container">
       <nav class="sidebar">
-        {% set navPages = collections.all | eleventyNavigation("index") %}
+        {% set navPages = collections.published | eleventyNavigation("index") %}
         {{ navPages | eleventyNavigationToHtml({listClass: "sidebar-nav", activeListItemClass: "active", activeKey: eleventyNavigation.key}) | safe }}
       </nav>
       <main>
