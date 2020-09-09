@@ -266,7 +266,8 @@ Preview is especially helpful when using rotation or larger-than-monitor exports
 
 * Edit the Venue name in the available languages
 * Choose a default floor
-* Add an image of the Venue. Upload in a 600w x 300h size to make it look its best in our Standard Apps.
+
+_A note about Venue images:_ You can get MapsPeople to add an image of the Venue. It should be in a 600w x 300h size to make it look its best in our Standard Apps.
 
 ## Buildings
 
