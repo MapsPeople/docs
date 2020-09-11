@@ -3,7 +3,7 @@ name: K8S Release
 on:
     push:
         branches:
-            - feature/mhj/k8s
+            - main
         paths-ignore:
             - "package.json"
 

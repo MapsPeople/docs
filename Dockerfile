@@ -11,7 +11,7 @@ COPY package*.json ./
 RUN npm ci
 COPY . .
 
-# Production build without source-map
+# Build site
 RUN npm run sass
 RUN npm run build
 
