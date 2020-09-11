@@ -12,9 +12,11 @@
     "@mapsindoors/midt": "^10.2.3",
     "del": "^5.1.0",
     "eleventy-plugin-youtube-embed": "^1.2.0",
-    "normalize.css": "^8.0.1"
+    "normalize.css": "^8.0.1",
+    "sass": "^1.26.10"
   },
   "scripts": {
+    "build": "eleventy",
     "sass-watch": "sass --watch src/_sass:src/assets --no-source-map",
     "sass": "sass src/_sass:src/assets --no-source-map",
     "start": "npm run sass-watch & eleventy --serve"
