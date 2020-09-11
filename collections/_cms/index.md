@@ -267,6 +267,8 @@ Preview is especially helpful when using rotation or larger-than-monitor exports
 * Edit the Venue name in the available languages
 * Choose a default floor
 
+_A note about Venue images:_ You can request MapsPeople to add an image of the Venue. It should be in a 600w x 300h size to make it look its best in our Standard Apps.
+
 ## Buildings
 
 ### Adding a building
@@ -455,17 +457,17 @@ If you use Excel you can find a video on how to open a CSV file here: [https://w
 
 Anywhere in the CMS you can change icons for one or more markers on the map, you use the Icon Manager to do so. Click the "Change"-button to invoke it.
 
-In the Icon Manager, you can choose between a predefined set of MapsIndoors icons, and a list of your uploaded icons. We support uploads of image files in the PNG and SVG formats. Click on an icon in either place, and set it to close the icon manager and preview the icon on the map. Don't worry, it won't be saved until you click "Save" in the details editor.
+In the Icon Manager, you can choose between a predefined set of MapsIndoors icons, and a list of your uploaded icons. We support uploads of files in the PNG and SVG formats. Click on an icon in either place, and set it to close the icon manager and preview the icon on the map. Don't worry, it won't be saved until you click "Save" in the details editor.
 
-Remember to keep your icons at a reasonable size. We'll let you know if it's larger than 128x64px, as that would take up a large amount of space on the map. There is a hard limit on the image size of 900x600px or 150kb. The images should also be optimized and compressed to be as small as possible.
+Remember to keep your icons at a reasonable size. The Icon Manager will prompt you if an icon is larger than 128x64px, as that would take up a large amount of space on the map. There is a hard limit on the size of 900x600px or 150kb. The icon files should also be optimized and compressed to be as small as possible.
 
 You can bulk upload SVGs and PNGs at the same time.
 
-To delete an icon, click the "trash bin" on the image files you want to delete. It is strongly advised to change icons on the Locations, Location Types or Categories before deleting their associated icon file. However, if you delete an icon that is already used by a Location, the Location will revert back to using the icon for its Location Type. If you delete an icon that is used by a Category or Location Type, it will revert to using a generic marker on the map.
+To delete an icon, click the "trash bin" on the icons you want to delete. It is strongly advised to change icons on the Locations, Location Types or Categories before deleting their associated icon file. However, if you delete an icon that is already used by a Location, the Location will revert back to using the icon for its Location Type. If you delete an icon that is used by a Category or Location Type, it will revert to using a generic marker on the map.
 
 ### Uploading PNGs
 
-When uploading a PNG image file, make sure you upload it in a 3x size to accommodate for it being scaled down on the map. For example, to display a 20x20px icon on the map, upload it in 60x60px.
+When uploading an icon in the PNG format, make sure you upload it in a 3x size to accommodate for it being scaled down on the map. For example, to display a 20x20px icon on the map, upload it in 60x60px.
 
 ### Uploading SVGs
 
@@ -475,7 +477,7 @@ SVGs should be uploaded with a `width` and `height` that you want the SVG to be 
 
 ### Supported SVG elements
 
-We only accept SVGs that conform to a very strict ruleset. If an uploaded SVG contains anything other than the elements and attributes listed below, it's rejected. All child elements can be nested as supported by the SVG format.
+We only accept SVGs that conform to a very strict ruleset. If an uploaded SVG contains anything other than the elements and attributes listed below, it will be rejected. All child elements can be nested as supported by the SVG format.
 
 * `<svg>` element
 * `viewbox` attribute
