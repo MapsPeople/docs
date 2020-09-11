@@ -267,7 +267,7 @@ Preview is especially helpful when using rotation or larger-than-monitor exports
 * Edit the Venue name in the available languages
 * Choose a default floor
 
-_A note about Venue images:_ You can get MapsPeople to add an image of the Venue. It should be in a 600w x 300h size to make it look its best in our Standard Apps.
+_A note about Venue images:_ You can request MapsPeople to add an image of the Venue. It should be in a 600w x 300h size to make it look its best in our Standard Apps.
 
 ## Buildings
 
@@ -459,7 +459,7 @@ Anywhere in the CMS you can change icons for one or more markers on the map, you
 
 In the Icon Manager, you can choose between a predefined set of MapsIndoors icons, and a list of your uploaded icons. We support uploads of files in the PNG and SVG formats. Click on an icon in either place, and set it to close the icon manager and preview the icon on the map. Don't worry, it won't be saved until you click "Save" in the details editor.
 
-Remember to keep your icons at a reasonable size. We'll let you know if it's larger than 128x64px, as that would take up a large amount of space on the map. There is a hard limit on the size of 900x600px or 150kb. The icon files should also be optimized and compressed to be as small as possible.
+Remember to keep your icons at a reasonable size. The Icon Manager will prompt you if an icon larger than 128x64px, as that would take up a large amount of space on the map. There is a hard limit on the size of 900x600px or 150kb. The icon files should also be optimized and compressed to be as small as possible.
 
 You can bulk upload SVGs and PNGs at the same time.
 
