@@ -16,7 +16,7 @@
     "sass": "^1.26.10"
   },
   "scripts": {
-    "build": "sass src/_sass:src/assets --no-source-map & eleventy",
+    "build": "eleventy",
     "sass-watch": "sass --watch src/_sass:src/assets --no-source-map",
     "sass": "sass src/_sass:src/assets --no-source-map",
     "start": "npm run sass-watch & eleventy --serve"

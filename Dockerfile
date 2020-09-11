@@ -12,6 +12,7 @@ RUN npm ci
 COPY . .
 
 # Production build without source-map
+RUN npm run sass
 RUN npm run build
 
 
