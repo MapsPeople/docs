@@ -683,22 +683,27 @@ The route elements defined can be seen in the CMS in Map -> Route Access
 
 Using the endpoint at /{apiKey}/api/routing/routeelements you can find and change the route elements in your solution.
 
-At the moment 3 things can be modified: 
-- WaitTime (in seconds)
-- OnewayDirection (Optional)
-- Restrictions (optional)
+At the moment 3 things can be modified:
+
+* WaitTime (in seconds)
+* OnewayDirection (Optional)
+* Restrictions (optional)
 
 #### WaitTime
+
 Wait time is set in seconds and affects how long it takes to walk past this point.
 This is given as a natural number and thus may not be negative (but may be 0 if no extra wait time should occur at this point).
 
 #### OnewayDirection
+
 Oneway direction is an [absolute_bearing](https://en.wikipedia.org/wiki/Absolute_bearing) and can be set to any number between 0 and 360 (degrees).
 Oneway is not mandatory, but can be used in situations where users can only walk in one direction. IF set - end users may only walk in the direction stated within the area (+/- 90 degrees)
 
 #### Restrictions
+
 With this setting you can restrict if users are allowed to go though this point.
 Restriction is not mandatory, but IF used it can used in two ways:
+
 1) It can be set to "locked" which implies that it's not possible to go though this point for anyone
 2) It can be set to one or more App User Roles (refered by ID). App User Roles can be defined via the CMS in App Settings -> App Configuration:
 
@@ -725,7 +730,3 @@ An example of a route element from the  demo dataset looks like this:
     "waitTime": 0
   }
   ```
-
-
-
-
