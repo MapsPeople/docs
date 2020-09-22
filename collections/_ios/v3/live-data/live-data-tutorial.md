@@ -88,12 +88,6 @@ Define an objective-c method `toggleOccupancy()` that will receive events from y
     let topic = MPLiveTopicCriteria.domainType(MPLiveDomainType.occupancy)
     toggleSubscription(button, topic)
 }
-
-override func viewDidLoad() {
-
-    super.viewDidLoad()
-
-    MapsIndoors.provideAPIKey("e4e4dcc9b98a4730b426c269", googleAPIKey: nil)
 ```
 
 Inside `viewDidLoad()`, initialise your instance of `GMSMapView` and `MPMapControl`. Set the delegate to be able to get notified about Live Updates for the map.
