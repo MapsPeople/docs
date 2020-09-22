@@ -22,8 +22,8 @@ Each has its own purpose which will be explained below.
 In the [MapsIndoors CMS](https://cms.mapsindoors.com/types) you can set display settings for the different types of locations in your MapsIndoors content. The changes you make in the CMS will take effect whenever your app reboots or when you call `MapsIndoors.synchroniseContent()` within the app session.
 
 A Display Rule encapsulates both what, how and when a Location should be displayed on the map.
-A Location is presented on the map using a combination of icon, text and polygon.  Each of these can appear at different, independent ranges of zoomlevels.
-For example a venue can appear as a marker-icon on low zoomlevels, when zooming in the venuename can appear, and zooming even more in the venua polygon can appear. 
+A Location is presented on the map using a combination of icon, text and polygon. Each of these can appear at different, independent ranges of zoomlevels.
+For example a venue can appear as a marker-icon on low zoomlevels, when zooming in the venuename can appear, and zooming even more in the venua polygon can appear.
 
 In some cases, you may also want to programmatically set display settings that define when and how to show a location. Display settings are defined in a Display Rule object.
 
@@ -78,6 +78,7 @@ Setting a display rule for specific locations will *not* persist the new display
 ### Presenting Locations using polygons
 
 To present a polygon, either configure the Display Rule using the CMS, or configure a Display Rule programatically:
+
 ```swift
 let polygonDisplayRule = MPLocationDisplayRule.init(name: nil, andIcon: myImage, andZoomLevelOn: 15)!
 polygonDisplayRule.showPolygon = true
