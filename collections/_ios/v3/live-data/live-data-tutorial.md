@@ -8,7 +8,7 @@ date: 2020-09-01
 permalink: /ios/v3/live-data/live-data-tutorial
 ---
 
-> The "Live Data" feature is in beta and subject to change.
+> The "Live Data" feature is in beta and subject to change. Current supported version is 3.10.0-beta1.
 {: .mi-warning}
 
 In this tutorial you will learn to work with Live Updates / real-time data in MapsIndoors. It is recommended that you read the [Live Data Introduction](/ios/v3/live-data) before continuing.
