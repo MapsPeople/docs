@@ -23,7 +23,7 @@ In the [MapsIndoors CMS](https://cms.mapsindoors.com/types) you can set display 
 
 A Display Rule encapsulates both what, how and when a Location should be displayed on the map.
 A Location is presented on the map using a combination of icon, text and polygon. Each of these can appear at different, independent ranges of zoomlevels.
-For example a venue can appear as a marker-icon on low zoomlevels, when zooming in the venuename can appear, and zooming even more in the venua polygon can appear.
+For example a venue can appear as a marker-icon on low zoomlevels, when zooming in the venuename can appear, and zooming even more in the venue polygon can appear.
 
 In some cases, you may also want to programmatically set display settings that define when and how to show a location. Display settings are defined in a Display Rule object.
 
