@@ -20,7 +20,7 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 
 ### Info
 
-- Please note that the Live Data feature is not included in production versions yet. The latest version with Live Data is 3.10.0-beta1.
+- Please note that the [Live Data](https://mapsindoors.github.io/ios/v3/live-data/) feature is not included in production versions yet. The latest version with Live Data is 3.10.0-beta1.
 
 ### Added
 
