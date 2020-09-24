@@ -35,7 +35,7 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 - Fixed a search issue that caused the search engine to ignore `MPLocation.externalId`.
 - Fixed a routing issue that caused the `MPDirectionsRenderer` to show a wrong the next leg marker.
 - Fixed an issue causing the Info Window of `MPMapControl.selectedLocation` to not show up in some cases.
-- Fixed an internal issue with the map marker collision handling. 
+- Fixed an internal issue with the map marker collision handling.
 - Some internal refactorings and optimizations.
 
 ## [3.10.0-beta1] 2020-09-04
