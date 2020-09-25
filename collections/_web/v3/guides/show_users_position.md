@@ -1,18 +1,19 @@
 ---
-title: Showing the user's location aka. Blue Dot
+title: Show user location on the map (Blue Dot)
 parent: guides
-layout: tutorial
-nav_weight: 1250
+nav_weight: 600
 published: true
 date: 2020-01-31
 ---
 ## Overview
 
-In this tutorial, you will learn how to show a dot on the map, representing the user's current location.
+In this guide, you will learn how to show a dot on the map, representing the user's current location.
 
-The tutorial assumes knowledge of how to [implement a MapsIndoors map](../simple_map) with the MapsIndoors JavsScript SDK.
+The Fiddle example below draws a MapsIndoors map, and adds a position control. Whenever position is received or updated, the map is always panned to that position. The code will be run through bit by bit in this guide.
 
-## How the position is determined
+<script async src="//jsfiddle.net/ammapspeople/4qxL90ta/embed/html,result/"></script>
+
+### How the position is determined
 
 The position is determined by utilizing the [Geolocation API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API), which all modern browsers expose.
 
@@ -22,7 +23,7 @@ All browsers will ask the user for permission to share the location by displayin
 
 Also note that the Geolocation API will only work on `https` websites (and `localhost` for development).
 
-## The MapsIndoors PositionControl class
+### The MapsIndoors PositionControl class
 
 The MapsIndoors JavaScript SDK exposes a `PositionControl` class.
 
@@ -63,12 +64,20 @@ Since browsers sometimes give inaccurate positions, you can use the `maxAccuracy
 new mapsindoors.PositionControl(myPositionControlElm, { mapsIndoors: myMapsIndoors, maxAccuracy: 80 });
 ```
 
-#### Other options
+### Other options
 
 See the [options description](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/global.html#PositionControlOptions) to see how you can configure [Geolocation PositionOptions](https://developer.mozilla.org/en-US/docs/Web/API/PositionOptions), dot and circle marker styles.
 
-## Full example
+<br>
 
-This example draws a MapsIndoors map, and adds a position control. Whenever position is received or updated, the map is always panned to that position.
+******
 
-<script async src="//jsfiddle.net/ammapspeople/4qxL90ta/embed/html,result/"></script>
+![guides](/assets/various/Guides.png "guides")
+
+[Create a simple map with MapsIndoors](/../web/v3/guides/simple_map/)
+
+[Update display rules dynamically](/../web/v3/guides/dynamic-updates/)
+
+[Event handling](/../web/v3/guides/using_events/)
+
+[Search and filtering](/../web/v3/guides/search_and_filtering/)
