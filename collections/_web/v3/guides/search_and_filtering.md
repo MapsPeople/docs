@@ -8,7 +8,7 @@ date: 2019-11-25
 
 ## Overview
 
-In this guide you will see an example of how to search for locations. The full code example is shown in the Fiddle below, but will be run through bit by bit in this guide.
+In this guide you will see an example of how to search for Locations. The full code example is shown in the JSFiddle below, but will be run through bit by bit in this guide.
 
 <script async src="https://jsfiddle.net/mapspeople/k2jynm47/embed/html,result/"></script>
 
