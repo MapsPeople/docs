@@ -94,7 +94,6 @@ All Locations have an Icon displaying its presence on the map.
 
 Locations use the Icon from the Type they belong to, unless it is overwritten on the Location itself.
 
-Locations can have a Standard Icon or Advanced Icon. An Advanced Icon is larger than a Standard Icon and can be used to indicate that a particular Location is more prominent than the otherwise similar Locations.
 
 Icons can be uploaded in the CMS, or a set of standard icons from MapsIndoors can be used.
 
