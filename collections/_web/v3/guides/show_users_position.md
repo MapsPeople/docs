@@ -9,7 +9,7 @@ date: 2020-01-31
 
 In this guide, you will learn how to show a dot on the map, representing the user's current location.
 
-The Fiddle example below draws a MapsIndoors map, and adds a position control. Whenever position is received or updated, the map is always panned to that position. The code will be run through bit by bit in this guide.
+The JSFiddle example below draws a MapsIndoors map, and adds a position control. Whenever position is received or updated, the map is always panned to that position. The code will be run through bit by bit in this guide.
 
 <script async src="//jsfiddle.net/ammapspeople/4qxL90ta/embed/html,result/"></script>
 
