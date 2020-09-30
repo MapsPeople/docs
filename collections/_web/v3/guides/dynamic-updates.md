@@ -87,7 +87,7 @@ Then the `DisplayRule`s are updated for each location in the two arrays. Doing t
 
 ---
 
-![guides](/assets/various/Guides.png "guides")
+## Guides
 
 - [Create a simple map with MapsIndoors](/../web/v3/guides/simple_map/)
 - [Event handling](/../web/v3/guides/using_events/)
