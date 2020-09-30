@@ -85,9 +85,7 @@ The callback is provided with a list of rooms and their statuses. The rooms are 
 
 Then the `DisplayRule`s are updated for each location in the two arrays. Doing this, we can color the room either green (for `notBooked`) or red (indicating the `booked` status).
 
-<br>
-
-******
+---
 
 ![guides](/assets/various/Guides.png "guides")
 
