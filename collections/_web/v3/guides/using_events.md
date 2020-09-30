@@ -15,7 +15,7 @@ In this, we will take a look at the events that MapsIndoors offers and how to ut
 
 For example, if the user clicks on a POI on the map, then you can react to that action by presenting the user with additional info about the POI.
 
-A code example is shown in the Fiddle below, but will be run through bit by bit in this guide.
+A code example is shown in the JSFiddle below, but will be run through bit by bit in this guide.
 
  <script async src="//jsfiddle.net/mapspeople/s39hk8o7/embed/html,result/"></script>
 

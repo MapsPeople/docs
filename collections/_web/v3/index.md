@@ -5,7 +5,7 @@ published: true
 date: 2019-09-30
 ---
 
-Welcome to the documentation site for the MapsIndoors JavaScript SDK. On this page you will get an overview of the Mapsindoors web application and what prerequisits you need in order to start playing around with the SDK yourself. In the bottom of this page you will find an overview of our guides to get you started.
+Welcome to the documentation site for the MapsIndoors JavaScript SDK. On this page you will get an overview of the MapsIndoors web application and which prerequisites you need in order to start playing around with the SDK yourself. In the bottom of this page you will find an overview of our guides to get you started.
 
 This guide explains how to start using a MapsIndoors map in your HTML application.
 
@@ -17,7 +17,7 @@ To benefit from the guides, you will need basic knowledge about:
 
 ## Live Demo
 
-To get an overview of the MapsIndoors webapp capabilities check out a [running version of MapsIndoors here](https://clients.mapsindoors.com/demo).
+To get an overview of the MapsIndoors web app capabilities check out a [running version of MapsIndoors here](https://clients.mapsindoors.com/demo).
 
 ## Prerequisits before getting your hands dirty
 
