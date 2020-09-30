@@ -6,7 +6,6 @@ published: true
 date: 2019-09-30
 ---
 
-
 ## Overview
 
 In this guide you will learn to load a Google map with a MapsIndoors map on top. The full code example is shown in the JSFiddle below, but will be run through bit by bit in this guide.
@@ -71,16 +70,11 @@ googleMap.controls[google.maps.ControlPosition.RIGHT_TOP].push(floorSelector);
 A FloorSelector is created by calling the `new mapsindoors.FloorSelector(floorSelector, mapsIndoors);` passing in a DOM element and an instance of MapsIndoors.
 This `googleMap.controls[google.maps.ControlPosition.RIGHT_TOP].push(floorSelector);` adds the floor selector to the maps upper right corner as a map control.
 
-<br>
+---
 
-******
+## Guides
 
-![guides](/assets/various/Guides.png "guides")
-
-[Update display rules dynamically](/../web/v3/guides/dynamic-updates/)
-
-[Event handling](/../web/v3/guides/using_events/)
-
-[Search and filtering](/../web/v3/guides/search_and_filtering/)
-
-[Show user location on the map (Blue dot)](/../web/v3/guides/show_users_position/)
+* [Update display rules dynamically](/../web/v3/guides/dynamic-updates/)
+* [Event handling](/../web/v3/guides/using_events/)
+* [Search and filtering](/../web/v3/guides/search_and_filtering/)
+* [Show user location on the map (Blue dot)](/../web/v3/guides/show_users_position/)

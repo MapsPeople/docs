@@ -80,16 +80,11 @@ The second parameter tells MapsIndoors not to change the viewport of the map.
 
 For more information, see `MapsIndoors.filter` in the [reference documentation](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/MapsIndoors.html#filter)
 
-<br>
+---
 
-******
+## Guides
 
-![guides](/assets/various/Guides.png "guides")
-
-[Create a simple map with MapsIndoors](/../web/v3/guides/simple_map/)
-
-[Update display rules dynamically](/../web/v3/guides/dynamic-updates/)
-
-[Event handling](/../web/v3/guides/using_events/)
-
-[Show user location on the map (Blue dot)](/../web/v3/guides/show_users_position/)
+* [Create a simple map with MapsIndoors](/../web/v3/guides/simple_map/)
+* [Update display rules dynamically](/../web/v3/guides/dynamic-updates/)
+* [Event handling](/../web/v3/guides/using_events/)
+* [Show user location on the map (Blue dot)](/../web/v3/guides/show_users_position/)

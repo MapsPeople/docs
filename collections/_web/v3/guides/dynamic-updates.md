@@ -16,7 +16,7 @@ The full code example is shown in full below, but will be run through bit by bit
 
 ### External events
 
-In order to mimic external events we create a fake service that triggers a callback at a fixed interval, in this case one second. 
+In order to mimic external events we create a fake service that triggers a callback at a fixed interval, in this case one second.
 
 The example below shows a service that updates the map with changes to the status of the meeting rooms.
 

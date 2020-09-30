@@ -11,7 +11,6 @@ The image below is a simplified overview of how the system is comprised.
 
 ![MIoverview](/assets/various/Glossary_overview.png)
 
-
 ### Solution
 
 A Solution is a project for a MapsIndoors Customer.
@@ -96,7 +95,6 @@ All Locations have an Icon displaying its presence on the map.
 
 Locations use the Icon from the Type they belong to, unless it is overwritten on the Location itself.
 
-
 Icons can be uploaded in the CMS, or a set of standard icons from MapsIndoors can be used.
 
 #### Label
@@ -138,6 +136,7 @@ An Edge can be manipulated so a person getting Directions that include that Edge
 This can be helpful on large Venues where certain hallways are preferred for a simple Route over what might computationally be the faster Route.
 
 ### Directions
+
 Directions is the set of instructions for travelling from an Origin to a Destination.
 
 You can get Directions for a Route using the four Travel Modes: “Walking”, “Driving”, “Biking” and “Public Transportation”.
