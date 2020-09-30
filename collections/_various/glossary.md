@@ -16,7 +16,7 @@ The image below is a simplified overview of how the system is comprised.
 
 A Solution is a project for a MapsIndoors Customer.
 
-A Solution contains one or more Venues. Each Venue is made up of one or more Buildings. Each Building has one or more Floors. Each Floor has one or more Polygons that make up the Locations in the form of Rooms or stand-alone points.
+A Solution contains one or more Venues. Each Venue is made up of one or more Buildings. Each Building has one or more Floors. Each Floor has one or more Locations in the form of Rooms or stand-alone Points of Interest.
 
 A Solution also contains the Map tiles, and the Route Graph (which is either manually or automatically drawn).
 Venue
