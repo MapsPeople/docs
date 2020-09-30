@@ -13,7 +13,7 @@ In this guide you will learn to load a Google map with a MapsIndoors map on top.
 
 <script async src="//jsfiddle.net/mapspeople/asr3mnzb/embed/html,result/"></script>
 
-### Loading the Maps JavaScript API
+### Loading the Google Maps JavaScript API
 
 The Google Maps API are loaded using a script tag like so:
 
