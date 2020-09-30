@@ -72,12 +72,11 @@ See the [options description](https://app.mapsindoors.com/mapsindoors/js/sdk/lat
 
 ******
 
-![guides](/assets/various/Guides.png "guides")
+---
 
-[Create a simple map with MapsIndoors](/../web/v3/guides/simple_map/)
+## Guides
 
-[Update display rules dynamically](/../web/v3/guides/dynamic-updates/)
-
-[Event handling](/../web/v3/guides/using_events/)
-
-[Search and filtering](/../web/v3/guides/search_and_filtering/)
+- [Create a simple map with MapsIndoors](/../web/v3/guides/simple_map/)
+- [Update display rules dynamically](/../web/v3/guides/dynamic-updates/)
+- [Event handling](/../web/v3/guides/using_events/)
+- [Search and filtering](/../web/v3/guides/search_and_filtering/)
