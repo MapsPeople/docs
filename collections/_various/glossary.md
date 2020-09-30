@@ -55,6 +55,7 @@ See also Rooms.
 ### Room
 
 A Room is a Location with polygon data.
+
 A Room might have one or more Doors connecting it with another or multiple other Rooms.
 
 ### Area
