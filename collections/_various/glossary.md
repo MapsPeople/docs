@@ -58,7 +58,7 @@ A Room might have one or more Doors connecting it with another or multiple other
 
 ### Area
 
-An Area is a geographic area covering a part of a Room’s polygon. It is not a Location, but a TK.
+An Area is a polygon like a Room, but it doesn't have Doors. It is the third kind of Location next to Room and POI. An Area can cover as little or as much of a Room, Floor or Building as makes sense.
 
 ### Door
 
