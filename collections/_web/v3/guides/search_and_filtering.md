@@ -47,7 +47,7 @@ If the input is empty, we clear both the result list and reset the map filter by
 
 ### Checking for results
 
-First, we need to clear the previous results. Next, we check if any locations were returned. If so, we loop through them and add them to the result list.
+First, we need to clear the previous results. Next, we check if any Locations were returned. If so, we loop through them and add them to the result list.
 
 ```javascript
 function displayResults(locations) {
