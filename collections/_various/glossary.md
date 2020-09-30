@@ -41,6 +41,7 @@ A Building covers an area within a Venue. A Building consists of one or more Flo
 ### Connector
 
 A Connector is the point at which a person can get from one Floor to another in a Building.
+
 The Connectors can be an Elevator, Stairs or Escalator.
 
 ### Location / Place / POI
