@@ -23,7 +23,7 @@ All browsers will ask the user for permission to share the location by displayin
 
 Also note that the Geolocation API will only work on `https` websites (and `localhost` for development).
 
-### The MapsIndoors PositionControl class
+### The MapsIndoors `PositionControl` class
 
 The MapsIndoors JavaScript SDK exposes a `PositionControl` class.
 
