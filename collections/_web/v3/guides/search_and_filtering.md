@@ -1,13 +1,14 @@
 ---
 title: Search and filtering
 parent: guides
-layout: tutorial
-nav_weight: 1200
+nav_weight: 500
 published: true
 date: 2019-11-25
 ---
 
-## Search and filtering
+## Overview
+
+In this guide you will see an example of how to search for Locations. The full code example is shown in the JSFiddle below, but will be run through bit by bit in this guide.
 
 <script async src="https://jsfiddle.net/mapspeople/k2jynm47/embed/html,result/"></script>
 
@@ -44,6 +45,10 @@ We pass the value as the `q` property and set the `includeOutsidePOI` property t
 
 If the input is empty, we clear both the result list and reset the map filter by calling the helper functions `clearResults` and `clearFilter`.
 
+### Checking for results
+
+First, we need to clear the previous results. Next, we check if any Locations were returned. If so, we loop through them and add them to the result list.
+
 ```javascript
 function displayResults(locations) {
     clearResults();
@@ -60,8 +65,6 @@ function displayResults(locations) {
 }
 ```
 
-Two things happen here. First, we clear the previous results. Next, we check if any locations were returned. If so, we loop through them and add them to the result list.
-
 If there are no locations returned, we show a message to the user stating "No results matched the query.". Otherwise, we pass the locations on to the next handler called `filterMap`
 
 ```javascript
@@ -75,4 +78,13 @@ In the `filterMap` helper function, we create a list of `location id`s we can us
 
 The second parameter tells MapsIndoors not to change the viewport of the map.
 
-For more information, see [MapsIndoors.filter in the reference documentation](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/MapsIndoors.html#filter)
+For more information, see `MapsIndoors.filter` in the [reference documentation](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/MapsIndoors.html#filter)
+
+---
+
+## Guides
+
+* [Create a simple map with MapsIndoors](/../web/v3/guides/simple_map/)
+* [Update display rules dynamically](/../web/v3/guides/dynamic-updates/)
+* [Event handling](/../web/v3/guides/using_events/)
+* [Show user location on the map (Blue dot)](/../web/v3/guides/show_users_position/)
