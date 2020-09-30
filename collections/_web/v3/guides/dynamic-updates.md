@@ -91,10 +91,9 @@ Then the `DisplayRule`s are updated for each location in the two arrays. Doing t
 
 ![guides](/assets/various/Guides.png "guides")
 
-[Create a simple map with MapsIndoors](/../web/v3/guides/simple_map/)
-
-[Event handling](/../web/v3/guides/using_events/)
-
-[Search and filtering](/../web/v3/guides/search_and_filtering/)
+- [Create a simple map with MapsIndoors](/../web/v3/guides/simple_map/)
+- [Event handling](/../web/v3/guides/using_events/)
+- [Search and filtering](/../web/v3/guides/search_and_filtering/)
+- [Show user location on the map (Blue dot)](/../web/v3/guides/show_users_position/)
 
 [Show user location on the map (Blue dot)](/../web/v3/guides/show_users_position/)
