@@ -10,7 +10,7 @@ date: 2019-11-04
 
 In this guide you will learn how to update the map based on external events; in this case a service that sets a status on meeting rooms to either "booked" or "not booked" by changing `DisplayRule`s programmatically.
 
-The full code example is shown in the Fiddle below, but will be run through bit by bit in this guide.
+The full code example is shown in full below, but will be run through bit by bit in this guide.
 
 <script async src="//jsfiddle.net/mapspeople/m62t9zyc/embed/html,result/"></script>
 
