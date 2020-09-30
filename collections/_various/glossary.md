@@ -62,7 +62,7 @@ An Area is a polygon like a Room, but it doesn't have Doors. It is the third kin
 
 ### Door
 
-A Door is a connection between two Rooms, or from outside a Building and into it..
+A Door is a connection between two Rooms, or from outside a Building and into it.
 
 Automatically calculating the Route from an Origin to a Destination in reality means calculating how to get from Door to Door between the Origin and Destination while avoiding all Walls.
 
