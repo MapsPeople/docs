@@ -23,6 +23,7 @@ A Solution also contains the Map tiles, and the Route Graph (which is either man
 ### Tiles
 
 Tiles are the drawings made by MapsIndoors overlaid on the Google Maps map.
+
 Tiles are served as .pngs.
 
 ### Venue
