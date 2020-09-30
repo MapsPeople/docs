@@ -9,7 +9,7 @@ In order to get an understanding of the concepts used when working with MapsIndo
 
 The image below is a simplified overview of how the system is comprised.
 
-![MIoverview](/assets/various/Glossary_overview.png "MIoverview")
+![MIoverview](/assets/various/Glossary_overview.png)
 
 
 ### Solution
