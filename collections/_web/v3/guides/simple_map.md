@@ -7,9 +7,6 @@ date: 2019-09-30
 ---
 
 
-
-
-
 ## Overview
 
 In this guide you will learn to load a Google map with a MapsIndoors map on top. The full code example is shown in the JSFiddle below, but will be run through bit by bit in this guide.
