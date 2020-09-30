@@ -72,7 +72,7 @@ A specific type of Door that has the same properties as a regular Door, i.e. tha
 
 #### Building Entrance
 
-A Building Entrance is a Door at the outer edge of a Building. It is not different from all other Doors.
+A Building Entrance is a Door at the outer edge of a Building.
 
 ### Category
 
