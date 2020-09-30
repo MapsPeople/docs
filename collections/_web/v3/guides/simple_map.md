@@ -60,7 +60,7 @@ const mapsIndoors = new mapsindoors.MapsIndoors({
 
 Now we create a new instance of the MapsIndoors class and assign the Google Map to the `map` parameter.
 
-### Adding a floor selector
+### Adding a Floor Selector
 
 ```javascript
 const floorSelector = document.createElement('div');
