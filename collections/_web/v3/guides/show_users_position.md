@@ -68,9 +68,7 @@ new mapsindoors.PositionControl(myPositionControlElm, { mapsIndoors: myMapsIndoo
 
 See the [options description](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/global.html#PositionControlOptions) to see how you can configure [Geolocation PositionOptions](https://developer.mozilla.org/en-US/docs/Web/API/PositionOptions), dot and circle marker styles.
 
-<br>
 
-******
 
 ---
 
