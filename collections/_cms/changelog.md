@@ -4,6 +4,16 @@ date: 2019-07-30
 published: true
 ---
 
+## October 8th 2020 - v3.35.0
+
+### What's new
+
+- Display all Solutions for a User on /users page
+
+### Bugfix
+
+- Typos and updated links
+
 ## August 14th 2020 - v3.34.0
 
 ### What's new
