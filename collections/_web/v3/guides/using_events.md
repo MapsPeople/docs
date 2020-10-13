@@ -15,7 +15,7 @@ In this, we will take a look at the events that MapsIndoors offers and how to ut
 
 For example, if the user clicks on a POI on the map, then you can react to that action by presenting the user with additional info about the POI.
 
-A code example is shown in the Fiddle below, but will be run through bit by bit in this guide.
+A code example is shown in the JSFiddle below, but will be run through bit by bit in this guide.
 
  <script async src="//jsfiddle.net/mapspeople/s39hk8o7/embed/html,result/"></script>
 
@@ -65,16 +65,12 @@ google.maps.event.addListener(mapsIndoors, 'click', (location) => {
  log(`Clicked: ${location.properties.name}`);
 });
 ```
-<br>
 
-******
+---
 
-![guides](/assets/various/Guides.png "guides")
+## Guides
 
-[Create a simple map with MapsIndoors](/../web/v3/guides/simple_map/)
-
-[Update display rules dynamically](/../web/v3/guides/dynamic-updates/)
-
-[Search and filtering](/../web/v3/guides/search_and_filtering/)
-
-[Show user location on the map (Blue dot)](/../web/v3/guides/show_users_position/)
+* [Create a simple map with MapsIndoors](/../web/v3/guides/simple_map/)
+* [Update display rules dynamically](/../web/v3/guides/dynamic-updates/)
+* [Search and filtering](/../web/v3/guides/search_and_filtering/)
+* [Show user location on the map (Blue dot)](/../web/v3/guides/show_users_position/)

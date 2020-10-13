@@ -9,7 +9,7 @@ date: 2020-01-31
 
 In this guide, you will learn how to show a dot on the map, representing the user's current location.
 
-The Fiddle example below draws a MapsIndoors map, and adds a position control. Whenever position is received or updated, the map is always panned to that position. The code will be run through bit by bit in this guide.
+The JSFiddle example below draws a MapsIndoors map, and adds a position control. Whenever position is received or updated, the map is always panned to that position. The code will be run through bit by bit in this guide.
 
 <script async src="//jsfiddle.net/ammapspeople/4qxL90ta/embed/html,result/"></script>
 
@@ -23,7 +23,7 @@ All browsers will ask the user for permission to share the location by displayin
 
 Also note that the Geolocation API will only work on `https` websites (and `localhost` for development).
 
-### The MapsIndoors PositionControl class
+### The MapsIndoors `PositionControl` class
 
 The MapsIndoors JavaScript SDK exposes a `PositionControl` class.
 
@@ -68,16 +68,11 @@ new mapsindoors.PositionControl(myPositionControlElm, { mapsIndoors: myMapsIndoo
 
 See the [options description](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/global.html#PositionControlOptions) to see how you can configure [Geolocation PositionOptions](https://developer.mozilla.org/en-US/docs/Web/API/PositionOptions), dot and circle marker styles.
 
-<br>
+---
 
-******
+## Guides
 
-![guides](/assets/various/Guides.png "guides")
-
-[Create a simple map with MapsIndoors](/../web/v3/guides/simple_map/)
-
-[Update display rules dynamically](/../web/v3/guides/dynamic-updates/)
-
-[Event handling](/../web/v3/guides/using_events/)
-
-[Search and filtering](/../web/v3/guides/search_and_filtering/)
+* [Create a simple map with MapsIndoors](/../web/v3/guides/simple_map/)
+* [Update display rules dynamically](/../web/v3/guides/dynamic-updates/)
+* [Event handling](/../web/v3/guides/using_events/)
+* [Search and filtering](/../web/v3/guides/search_and_filtering/)
