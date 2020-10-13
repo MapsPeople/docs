@@ -50,7 +50,6 @@ collections:
   various:
     output: true
     permalink: :path/
-    
 
 defaults:
   -
