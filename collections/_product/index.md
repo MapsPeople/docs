@@ -48,7 +48,7 @@ MapsIndoors Standard Apps are built on top of the SDKs and visualises some of th
 
 ![WebApp](/assets/product/webApp.png)
 
-The MapsIndoors Standard App Suite also includes a plug and play Kiosk solution. The solution can be run on a kiosk stand and help one-time users of a facility to find their way without having an app - for example at a Hospital.
+The MapsIndoors Standard App suite also includes a plug-and-play Kiosk web app. The app can be run on an information stand and help one-time users of a facility find their way without having an app - for example at a hospital.
 
 ![Kiosk](/assets/product/Kiosk1.png "Kiosk")
 
