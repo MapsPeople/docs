@@ -36,7 +36,7 @@ The CMS is used for day-to-day management if a Location needs to be moved (could
 
 ## SDKs
 
-The SDKs enable you to build your own custom app on top or as an integral part of your existing app. The MapsIndoors SDKs are available for:
+The SDKs enable you to build your own custom app on top of, or as an integral part of, your existing app. The MapsIndoors SDKs are available for:
 
 ![Platforms](/assets/product/Platforms.png "Platforms")
 
