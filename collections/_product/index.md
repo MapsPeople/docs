@@ -32,7 +32,7 @@ When you have a custom MapsIndoors Solution you also get access to the MapsIndoo
 
 The CMS is used for day-to-day management if a Location needs to be moved (could be a printer or a coffee machine), if Rooms get new names (meeting rooms for example), if access needs to be restricted to some Locations etc.
 
-![MapsIndoors CMS](/assets/product/CMS.png "MapsIndoors CMS")
+![MapsIndoors CMS](/assets/product/CMS.png)
 
 ## SDKs
 
