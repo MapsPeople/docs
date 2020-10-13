@@ -24,7 +24,7 @@ All of these will be presented below.
 
 When you buy MapsIndoors your organisation needs to provide MapsPeople with floor plans for each of the buildings you want to have indoor navigation for.
 
-When we receive these they will be digitised and positioned correctly in “the world” aka on the underlying Google Map. This is what we define as a solution, for which you will get a MapsIndoors API key. Using this API key when working with the SDKs will unlock your custom solution.
+When we receive these they will be digitised and positioned correctly in “the world”. This is what we define as a Solution, for which you will get a MapsIndoors API key. Use this API key when working with the SDKs to access your data.
 
 ## Content Management System
 
