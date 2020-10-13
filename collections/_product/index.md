@@ -7,7 +7,7 @@ permalink: /product/
 
 MapsIndoors is an Indoor Wayfinding Platform, which you can build your map experience on top of.
 
-MapsIndoors consist of:
+MapsIndoors consists of:
 
 * A Content Management System (CMS)
 * Three SDKs
