@@ -6,17 +6,17 @@ date: 2019-09-30
 permalink: /product/
 ---
 
-MapsIndoors is an Indoor Wayfinding Platform, which you can build your map experience on top of. 
+MapsIndoors is an Indoor Wayfinding Platform, which you can build your map experience on top of.
 
 MapsIndoors consist of:
 
-* A Content Management System (CMS) 
+* A Content Management System (CMS)
 * Three SDKs
 * Three standard apps
 * A webkiosk solution
-* An integration API 
+* An integration API
 
-All of these will be presented below. 
+All of these will be presented below.
 
 ## Prerequisites for a Custom MapsIndoors Solution
 
@@ -27,17 +27,15 @@ When we receive these they will be digitised and positioned correctly in “the 
 
 When you have a custom MapsIndoors Solution you also get access to the MapsIndoors CMS. Within the CMS you can manage locations within your solution; create, remove, update locations such as rooms, coffee machines etc. The content created within the CMS is the content that can be accessed and controlled via the SDKs (see the next section).
 
-The CMS is used for day to day management if a location needs to be moved (could be a printer or a coffee machine), if rooms get new names (meeting rooms for example), if access needs to be restricted to some locations etc.   
+The CMS is used for day to day management if a location needs to be moved (could be a printer or a coffee machine), if rooms get new names (meeting rooms for example), if access needs to be restricted to some locations etc.
 
 ![MapsIndoors CMS](/assets/product/CMS.png "MapsIndoors CMS")
 
-## SDKs 
+## SDKs
 
 The SDKs enable you to build your own custom app on top or as an integral part of your existing app. The MapsIndoors SDKs are available for:
 
-
 ![Platforms](/assets/product/Platforms.png "Platforms")
-
 
 The MapsIndoors SDKs are the engine that makes sure that you can create a route from a Google location to one of your Indoor locations, it enables you to search in your indoor locations, set the present relevant information for specific locations by calling the room IDs from the CMS etc. An exhaustive list of features within the SDKs can be found in reference documentation for each platform.
 
@@ -45,15 +43,15 @@ The MapsIndoors SDKs are the engine that makes sure that you can create a route 
 
 MapsIndoors Standard Apps are built on top of the SDKs and visualises some of the SDK capabilities. They are more or less plug and play and provide a good basic indoor navigation app with a map, category overview of locations, search, directions and routing.
 
-![WebApp](/assets/product/webApp.png "WebApp") 
+![WebApp](/assets/product/webApp.png "WebApp")
 
-The MapsIndoors Standard App Suite also includes a plug and play Kiosk solution. The solution can be run on a kiosk stand and help one-time users of a facility to find their way without having an app - for example at a Hospital. 
+The MapsIndoors Standard App Suite also includes a plug and play Kiosk solution. The solution can be run on a kiosk stand and help one-time users of a facility to find their way without having an app - for example at a Hospital.
 
 ![Kiosk](/assets/product/Kiosk1.png "Kiosk")
 
 ## Integration API
 
-The MapsIndoors Integration API is used to connect 3rd party systems with MapsIndoors in order to feed data into the MapsIndoors solution. It could be live data from a bus service driving around an airport, a meeting room booking service, parking lot vacancy information etc. The Integration API offers updates of rooms, buildings, floors, areas, categories etc. Currently there are two types of integration supported; Real-time and Booking integrations. 
+The MapsIndoors Integration API is used to connect 3rd party systems with MapsIndoors in order to feed data into the MapsIndoors solution. It could be live data from a bus service driving around an airport, a meeting room booking service, parking lot vacancy information etc. The Integration API offers updates of rooms, buildings, floors, areas, categories etc. Currently there are two types of integration supported; Real-time and Booking integrations.
 
 Real-time integrations are characterised by displaying data “live” on the map (< 1 min delay). The data is read-only and gathered and distributed on the specific solution, but is never saved/cached for more than 30 minutes. This could be a bus moving around an airport, which could be shown live on the map.
 
@@ -61,13 +59,8 @@ Booking integrations are characterised by data flowing in and out of MapsIndoors
 
 ## Indoor Positioning System
 
-MapsIndoors is primarily an Indoor Navigation Provider that can provide directions and guide users as well as present relevant information on the map. 
+MapsIndoors is primarily an Indoor Navigation Provider that can provide directions and guide users as well as present relevant information on the map.
 In order to get precise user position indoors, dynamic turn-by-turn routing, location based advertising etc. an IPS should be put in place in the relevant building(s).
 MapsPeople do not sell Indoor Positioning Systems, but MapsIndoors integrate with them. If your organisation wants to have precise positioning there is a range of different technologies to consider such as Beacons, WiFi, ultra-sound etc. You can [read more here](https://blog.mapspeople.com/mapsindoors/indoor-positioning-101).
 
 If you want to know more about how to get your own Mapsindoors Solution [contact us here](https://resources.mapspeople.com/contact-us)
-
-
-
-
-
