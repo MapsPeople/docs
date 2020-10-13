@@ -1,5 +1,4 @@
 ---
-layout: default
 title: MapsIndoors Product Overview
 published: true
 date: 2019-09-30
