@@ -40,7 +40,7 @@ The SDKs enable you to build your own custom app on top of, or as an integral pa
 
 ![Platforms](/assets/product/Platforms.png)
 
-The MapsIndoors SDKs are the engine that makes sure that you can create a route from a Google location to one of your Indoor locations, it enables you to search in your indoor locations, set the present relevant information for specific locations by calling the room IDs from the CMS etc. An exhaustive list of features within the SDKs can be found in reference documentation for each platform.
+The MapsIndoors SDKs are the engines that makes sure you can create a route from a location in the world to one of your indoor locations, search your indoor locations, show the relevant information for a specific location etc. An exhaustive list of features within the SDKs can be found in the reference documentation for each platform.
 
 ## Standard Apps & Kiosk
 
