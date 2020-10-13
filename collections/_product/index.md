@@ -65,6 +65,7 @@ Booking integrations are characterised by data flowing in and out of MapsIndoors
 MapsIndoors is an Indoor Navigation Provider that provides directions and guide users as well as present relevant information on the map.
 
 In order to get a precise user position indoors, dynamic turn-by-turn routing, location-based advertising etc. an Indoor Positioning System (IPS) should be put in place in the relevant building(s).
-MapsPeople do not sell Indoor Positioning Systems, but MapsIndoors integrate with them. If your organisation wants to have precise positioning there is a range of different technologies to consider such as Beacons, WiFi, ultra-sound etc. You can [read more here](https://blog.mapspeople.com/mapsindoors/indoor-positioning-101).
+
+MapsPeople do not sell Indoor Positioning Systems, but MapsIndoors integrate with them. If your organisation wants to have precise positioning there are a range of different technologies to consider such as Beacons, WiFi, ultra-sound etc. You can [read more here](https://blog.mapspeople.com/mapsindoors/indoor-positioning-101).
 
 If you want to know more about how to get your own Mapsindoors Solution [contact us here](https://resources.mapspeople.com/contact-us)
