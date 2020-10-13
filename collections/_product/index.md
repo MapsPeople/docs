@@ -14,7 +14,7 @@ MapsIndoors consists of:
   * Android
   * iOS
   * JavaScript
-* Standard apps built on top of each SDK 
+* Standard apps built on top of each SDK
 * A kiosk web app
 * An Integration API
 
