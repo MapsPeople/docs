@@ -46,7 +46,7 @@ The MapsIndoors SDKs are the engines that makes sure you can create a route from
 
 MapsIndoors Standard Apps are built on top of the SDKs and visualises some of the SDK capabilities. They are more or less plug-and-play and provide a good basic indoor navigation app with a map, Category overview of Locations, search, directions and routing.
 
-![WebApp](/assets/product/webApp.png "WebApp")
+![WebApp](/assets/product/webApp.png)
 
 The MapsIndoors Standard App Suite also includes a plug and play Kiosk solution. The solution can be run on a kiosk stand and help one-time users of a facility to find their way without having an app - for example at a Hospital.
 
