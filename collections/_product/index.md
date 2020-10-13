@@ -10,10 +10,13 @@ MapsIndoors is an Indoor Wayfinding Platform, which you can build your map exper
 MapsIndoors consists of:
 
 * A Content Management System (CMS)
-* Three SDKs
-* Three standard apps
-* A webkiosk solution
-* An integration API
+* Three SDKs:
+  * Android
+  * iOS
+  * JavaScript
+* Standard apps built on top of each SDK 
+* A kiosk web app
+* An Integration API
 
 All of these will be presented below.
 
