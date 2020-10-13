@@ -8,15 +8,15 @@ date: 2019-11-04
 
 ## Overview
 
-In this guide you will learn how to update the map based on external events; in this case a service that sets a status on meeting rooms to either "booked" or "not booked" by changing `DisplayRules` programmatically.
+In this guide you will learn how to update the map based on external events; in this case a service that sets a status on meeting rooms to either "booked" or "not booked" by changing `DisplayRule`s programmatically.
 
-The full code example is shown in the Fiddle below, but will be run through bit by bit in this guide.
+The full code example is shown in full below, but will be run through bit by bit in this guide.
 
 <script async src="//jsfiddle.net/mapspeople/m62t9zyc/embed/html,result/"></script>
 
 ### External events
 
-In order to mimic external events we create a fake service that triggers a callback at a fixed interval, in this case one second. 
+In order to mimic external events we create a fake service that triggers a callback at a fixed interval, in this case one second.
 
 The example below shows a service that updates the map with changes to the status of the meeting rooms.
 
@@ -85,16 +85,13 @@ The callback is provided with a list of rooms and their statuses. The rooms are 
 
 Then the `DisplayRule`s are updated for each location in the two arrays. Doing this, we can color the room either green (for `notBooked`) or red (indicating the `booked` status).
 
-<br>
+---
 
-******
+## Guides
 
-![guides](/assets/various/Guides.png "guides")
-
-[Create a simple map with MapsIndoors](/../web/v3/guides/simple_map/)
-
-[Event handling](/../web/v3/guides/using_events/)
-
-[Search and filtering](/../web/v3/guides/search_and_filtering/)
+- [Create a simple map with MapsIndoors](/../web/v3/guides/simple_map/)
+- [Event handling](/../web/v3/guides/using_events/)
+- [Search and filtering](/../web/v3/guides/search_and_filtering/)
+- [Show user location on the map (Blue dot)](/../web/v3/guides/show_users_position/)
 
 [Show user location on the map (Blue dot)](/../web/v3/guides/show_users_position/)

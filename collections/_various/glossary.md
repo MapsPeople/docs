@@ -9,21 +9,20 @@ In order to get an understanding of the concepts used when working with MapsIndo
 
 The image below is a simplified overview of how the system is comprised.
 
-![MIoverview](/assets/various/Glossary_overview.png "MIoverview")
-
+![MIoverview](/assets/various/Glossary_overview.png)
 
 ### Solution
 
 A Solution is a project for a MapsIndoors Customer.
 
-A Solution contains one or more Venues. Each Venue is made up of one or more Buildings. Each Building has one or more Floors. Each Floor has one or more Polygons that make up the Locations in the form of Rooms or stand-alone points.
+A Solution contains one or more Venues. Each Venue is made up of one or more Buildings. Each Building has one or more Floors. Each Floor has one or more Locations in the form of Rooms or stand-alone Points of Interest.
 
 A Solution also contains the Map tiles, and the Route Graph (which is either manually or automatically drawn).
-Venue
 
 ### Tiles
 
 Tiles are the drawings made by MapsIndoors overlaid on the Google Maps map.
+
 Tiles are served as .pngs.
 
 ### Venue
@@ -41,6 +40,7 @@ A Building covers an area within a Venue. A Building consists of one or more Flo
 ### Connector
 
 A Connector is the point at which a person can get from one Floor to another in a Building.
+
 The Connectors can be an Elevator, Stairs or Escalator.
 
 ### Location / Place / POI
@@ -54,15 +54,16 @@ See also Rooms.
 ### Room
 
 A Room is a Location with polygon data.
+
 A Room might have one or more Doors connecting it with another or multiple other Rooms.
 
 ### Area
 
-An Area is a geographic area covering a part of a Room’s polygon. It is not a Location, but a TK.
+An Area is a polygon like a Room, but it doesn't have Doors. It is the third kind of Location next to Room and POI. An Area can cover as little or as much of a Room, Floor or Building as makes sense.
 
 ### Door
 
-A Door is a connection between two Rooms, or from outside a Building and into it..
+A Door is a connection between two Rooms, or from outside a Building and into it.
 
 Automatically calculating the Route from an Origin to a Destination in reality means calculating how to get from Door to Door between the Origin and Destination while avoiding all Walls.
 
@@ -72,7 +73,7 @@ A specific type of Door that has the same properties as a regular Door, i.e. tha
 
 #### Building Entrance
 
-A Building Entrance is a Door at the outer edge of a Building. It is not different from all other Doors.
+A Building Entrance is a Door at the outer edge of a Building.
 
 ### Category
 
@@ -91,9 +92,8 @@ Generally, higher zoom levels (i.e. 1-17) are good for displaying general featur
 #### Marker / Icon
 
 All Locations have an Icon displaying its presence on the map.
-Locations use the Icon from the Type they belong to, unless it is overwritten on the Location itself.
 
-Locations can have a Standard Icon or Advanced Icon. An Advanced Icon is larger than a Standard Icon and can be used to indicate that a particular Location is more prominent than the otherwise similar Locations.
+Locations use the Icon from the Type they belong to, unless it is overwritten on the Location itself.
 
 Icons can be uploaded in the CMS, or a set of standard icons from MapsIndoors can be used.
 
@@ -136,6 +136,7 @@ An Edge can be manipulated so a person getting Directions that include that Edge
 This can be helpful on large Venues where certain hallways are preferred for a simple Route over what might computationally be the faster Route.
 
 ### Directions
+
 Directions is the set of instructions for travelling from an Origin to a Destination.
 
 You can get Directions for a Route using the four Travel Modes: “Walking”, “Driving”, “Biking” and “Public Transportation”.

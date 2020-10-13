@@ -5,7 +5,7 @@ published: true
 date: 2019-09-30
 ---
 
-Welcome to the documentation site for the MapsIndoors JavaScript SDK. On this page you will get an overview of the Mapsindoors web application and what prerequisits you need in order to start playing around with the SDK yourself. In the bottom of this page you will find an overview of our guides to get you started.
+Welcome to the documentation site for the MapsIndoors JavaScript SDK. On this page you will get an overview of the MapsIndoors web application and which prerequisites you need in order to start playing around with the SDK yourself. In the bottom of this page you will find an overview of our guides to get you started.
 
 This guide explains how to start using a MapsIndoors map in your HTML application.
 
@@ -17,11 +17,11 @@ To benefit from the guides, you will need basic knowledge about:
 
 ## Live Demo
 
-To get an overview of the MapsIndoors webapp capabilities check out a [running version of MapsIndoors here](https://clients.mapsindoors.com/demo).
+To get an overview of the MapsIndoors web app capabilities check out a [running version of MapsIndoors here](https://clients.mapsindoors.com/demo).
 
 ## Prerequisits before getting your hands dirty
 
-The MapsIndoors web application is build on top of Google Maps. You therefore need to get a Google Maps API key. 
+The MapsIndoors web application is build on top of Google Maps. You therefore need to get a Google Maps API key.
 
 You also need a MapsIndoors API key in order to see indoor floor plans.
 
@@ -61,23 +61,16 @@ Using a terminal/shell in the project folder, run the following commands:
 
 * Run `npm start` for a dev server and then enter an API key or Alias from your Solution in the URL, e.g. [http://localhost:4200/demo](http://localhost:4200/demo). The app will automatically reload if you change any of the source files.
 
-
 ## Work with MapsIndoors SDK behind a Firewall
 
 If you need to work with MapsIndoors SDK behind a firewall, you might need to [white-list some IP-adresses](../../ip-whitelisting).
 
-<br>
+---
 
-******
+## Guides
 
-![guides](/assets/various/Guides.png "guides")
-
-[Create a simple map with MapsIndoors](guides/simple_map/)
-
-[Update display rules dynamically](guides/dynamic-updates/)
-
-[Event handling](guides/using_events/)
-
-[Search and filtering](guides/search_and_filtering/)
-
-[Show user location on the map (Blue dot)](guides/show_users_position/)
+* [Create a simple map with MapsIndoors](guides/simple_map/)
+* [Update display rules dynamically](guides/dynamic-updates/)
+* [Event handling](guides/using_events/)
+* [Search and filtering](guides/search_and_filtering/)
+* [Show user location on the map (Blue dot)](guides/show_users_position/)
