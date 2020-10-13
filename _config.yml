@@ -41,12 +41,16 @@ collections:
   web:
     output: true
     permalink: :collection/:path/
+  product:
+    output: true
+    permalink: :collection/:path/
   xamarin:
     output: true
     permalink: :collection/:path/
   various:
     output: true
     permalink: :path/
+    
 
 defaults:
   -
