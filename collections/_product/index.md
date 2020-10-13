@@ -22,7 +22,8 @@ All of these will be presented below.
 
 ## Prerequisites for a Custom MapsIndoors Solution
 
-When you order a MapsIndoors solution your organisation needs to provide MapsPeople with floor plans for each of the buildings you want to have indoor navigation for.
+When you buy MapsIndoors your organisation needs to provide MapsPeople with floor plans for each of the buildings you want to have indoor navigation for.
+
 When we receive these they will be digitised and positioned correctly in “the world” aka on the underlying Google Map. This is what we define as a solution, for which you will get a MapsIndoors API key. Using this API key when working with the SDKs will unlock your custom solution.
 
 ## Content Management System
