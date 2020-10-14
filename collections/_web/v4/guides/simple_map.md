@@ -1,0 +1,77 @@
+---
+title: Create a simple map with MapsIndoors
+guide_title: guides
+nav_weight: 200
+published: true
+date: 2019-09-30
+---
+
+## Overview
+
+In this guide you will learn to load a Google map with a MapsIndoors map on top. The full code example is shown in the JSFiddle below, but will be run through bit by bit in this guide.
+
+<script async src="https://jsfiddle.net/mapspeople/resg59jp/embed/html,result/"></script>
+
+### Loading the MapsIndoors SDK
+
+The MapsIndoors SDK is loaded by using a script tag like so:
+
+```html
+<script src="https://app.mapsindoors.com/mapsindoors/js/sdk/DevelopmentReleases/4.0.0-rc.1/mapsindoors-4.0.0-rc.1.js?apikey=YOUR_MAPSINDOORS_API_KEY"></script>
+```
+The `apikey` parameter contains your application's MapsIndoors API key.
+
+For IE11 it's critical to load the MapsIndoors SDK before the Google Maps API due to some conflicting polyfills.
+
+### Loading the Google Maps JavaScript API
+
+The Google Maps API is loaded by using a script tag like so:
+
+```html
+<script src="https://maps.googleapis.com/maps/api/js?libraries=geometry&key=YOUR_GOOGLE_API_KEY"></script>
+```
+
+The `libraries` parameter is for loading additional libraries for Google Maps. The MapsIndoors SDK has a dependency on the geometry library.
+The `key` parameter contains your application's Google Maps API key. Look [here](https://developers-dot-devsite-v2-prod.appspot.com/maps/documentation/javascript/get-api-key) For more information about how to obtain a key.
+
+### Setting up the MapView
+
+```javascript
+const mapView = new mapsindoors.mapView.GoogleMapsView({
+    element: document.getElementById("map"),
+    center: {
+        lat: 38.8976067,
+        lng: -77.0365872,
+    },
+    zoom: 19,
+    maxZoom: 21,
+});
+```
+- Element is the DOM element on the page that will contain the map. `document.getElementById('map')`
+- Center is the geographical point on which the map is centered.
+- Zoom is the initial zoom level the map will be displayed at.
+- The `maxZoom` parameter is set to disable the map from zooming further in that level 21.
+
+### Initializing MapsIndoors
+
+```javascript
+const mapsIndoors = new mapsindoors.MapsIndoors({
+    mapView: mapView,
+});
+```
+
+Now we create a new instance of the MapsIndoors class and assign the GoogleMapsView to the `mapView` parameter.
+
+### Adding a Floor Selector
+
+```javascript
+const googleMap = mapView.getMap();
+const floorSelector = document.createElement("div");
+new mapsindoors.FloorSelector(floorSelector, mapsIndoors);
+googleMap.controls[google.maps.ControlPosition.RIGHT_TOP].push(floorSelector);
+```
+A reference to the Google Map is obtained by calling getMap on the MapView.
+The FloorSelector is created by calling the `new mapsindoors.FloorSelector(floor selector, mapsIndoors);` passing in a DOM element and an instance of MapsIndoors.
+This `googleMap.controls[google.maps.ControlPosition.RIGHT_TOP].push(floorSelector);` adds the floor selector to the maps upper right corner as a map control.
+
+---
