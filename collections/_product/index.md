@@ -54,9 +54,15 @@ The MapsIndoors Standard App suite also includes a plug-and-play Kiosk web app. 
 
 ## Integration API
 
-The MapsIndoors Integration API is used to connect 3rd party systems with MapsIndoors in order to feed data into the MapsIndoors solution. It could be live data from a bus service driving around an airport, a meeting room booking service, parking lot vacancy information etc. The Integration API offers updates of rooms, buildings, floors, areas, categories etc. Currently there are two types of integration supported; Real-time and Booking integrations.
+The MapsIndoors Integration API is used to connect 3rd party systems with MapsIndoors in order to feed data into the MapsIndoors solution. The API provides an interface to update data in MapsIndoors from an external source. An external source could be a Facility Management System that already contains relevant data for your MapsIndoors solution.
 
-Real-time integrations are characterised by displaying data “live” on the map (< 1 min delay). The data is read-only and gathered and distributed on the specific solution, but is never saved/cached for more than 30 minutes. This could be a bus moving around an airport, which could be shown live on the map.
+It is possible to update Locations, Rooms, Venues, Buildings, Floors, Areas etc. automatically instead of having to do it manually via the MapsIndoors CMS
+
+### Integration Modules
+
+Currently there are two types of integration modules supported; Real-time and Booking integrations.
+
+Real-time integrations are characterised by displaying data “live” on the map (< 1 min delay). The data is read-only and gathered and distributed on the specific solution, but is never saved/cached for more than 30 minutes. It could be live data from a bus service driving around an airport.
 
 Booking integrations are characterised by data flowing in and out of MapsIndoors (read/write). Room bookings can happen directly from MapsIndoors and/or be displayed on the MapsIndoors map. For example is it possible to call a room ID and change the color of the corresponding room’s polygon to e.g. visualise whether it is vacant or not based on a calendar integration.
 
