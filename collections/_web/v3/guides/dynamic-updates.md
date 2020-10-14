@@ -1,25 +1,24 @@
 ---
-title: Update DisplayRules dynamically
+title: Update Display Rules dynamically
 parent: guides
-layout: tutorial
-nav_weight: 1000
+nav_weight: 300
 published: true
 date: 2019-11-04
 ---
 
 ## Overview
 
-Learn how to dynamically update the presentation of Locations on the map by changing `DisplayRule`s programmatically.
+In this guide you will learn how to update the map based on external events; in this case a service that sets a status on meeting rooms to either "booked" or "not booked" by changing `DisplayRule`s programmatically.
 
-The code needed to accomplish this, and a preview of what the map will look like, are in this JSFiddle (click on "Result" to see it in action):
+The full code example is shown in full below, but will be run through bit by bit in this guide.
 
-<script async src="//jsfiddle.net/mapspeople/7fzyqhn3/embed/html,result/"></script>
+<script async src="//jsfiddle.net/mapspeople/m62t9zyc/embed/html,result/"></script>
 
-## Getting started
+### External events
 
-In this tutorial we show an example of how to update the map based on external events; in this case a service that sets a status on meeting rooms to either "booked" or "not booked".
+In order to mimic external events we create a fake service that triggers a callback at a fixed interval, in this case one second.
 
-First we create a fake service that triggers a callback at a fixed interval, in this case one second:
+The example below shows a service that updates the map with changes to the status of the meeting rooms.
 
 ```javascript
 function FakeRoomBookings() {
@@ -56,13 +55,15 @@ function FakeRoomBookings() {
 };
 ```
 
-The example above shows a service that updates the map with changes to the status of the meeting rooms.
+Then we create a new instance of the `FakeRoomBookings`.
 
 ```javascript
 const bookings = new FakeRoomBookings();
 ```
 
-Then we create a new instance of the `FakeRoomBookings`.
+### Updating the map
+
+Now we register the `onUpdate` callback so we can update the map.
 
 ```javascript
 bookings.onUpdate = (rooms) => {
@@ -80,12 +81,17 @@ bookings.onUpdate = (rooms) => {
 }
 ```
 
-Now we register the `onUpdate` callback so we can update the map.
-
 The callback is provided with a list of rooms and their statuses. The rooms are then divided into two arrays based on their status (`booked` or `notBooked`).
 
 Then the `DisplayRule`s are updated for each location in the two arrays. Doing this, we can color the room either green (for `notBooked`) or red (indicating the `booked` status).
 
 ---
 
-Reference: [MapsIndoors](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/MapsIndoors.html), [DisplayRule](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/global.html#DisplayRule)
+## Guides
+
+- [Create a simple map with MapsIndoors](/../web/v3/guides/simple_map/)
+- [Event handling](/../web/v3/guides/using_events/)
+- [Search and filtering](/../web/v3/guides/search_and_filtering/)
+- [Show user location on the map (Blue dot)](/../web/v3/guides/show_users_position/)
+
+[Show user location on the map (Blue dot)](/../web/v3/guides/show_users_position/)

@@ -8,12 +8,9 @@ date: 2020-09-01
 permalink: /ios/v3/live-data/live-data-tutorial
 ---
 
-> The "Live Data" feature is in beta and subject to change.
-{: .mi-warning}
-
 In this tutorial you will learn to work with Live Updates / real-time data in MapsIndoors. It is recommended that you read the [Live Data Introduction](/ios/v3/live-data) before continuing.
 
-We will create a view controller displaying a map that shows some dynamic changes that are initiated from Live Data sources known by MapsIndoors. The test data are of the Occupancy Domain Type and the Position Domain Type.
+We will create a view controller displaying a map that shows some dynamic changes that are initiated from Live Data sources known by MapsIndoors. If you do not have a Live Data integration in place for your MapsIndoors project, you can use API key `2ae7d137162642618b5ce555` for demo and test purposes. The test data are of the Occupancy Domain Type and the Position Domain Type.
 
 Create a class `LiveDataController` that inherits from `UIViewController`.
 
@@ -28,7 +25,7 @@ let positionButton = UIButton.init()
 let occupancyButton = UIButton.init()
 ```
 
-Add a `GMSMapView` and a `MPMapControl` to the class
+Add a `GMSMapView` and a `MPMapControl` to the class.
 
 ```swift
 var map: GMSMapView? = nil

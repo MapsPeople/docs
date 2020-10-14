@@ -1,8 +1,7 @@
 ---
 title: Event handling
 parent: guides
-layout: tutorial
-nav_weight: 1100
+nav_weight: 400
 published: true
 date: 2019-11-20
 ---
@@ -16,9 +15,11 @@ In this, we will take a look at the events that MapsIndoors offers and how to ut
 
 For example, if the user clicks on a POI on the map, then you can react to that action by presenting the user with additional info about the POI.
 
+A code example is shown in the JSFiddle below, but will be run through bit by bit in this guide.
+
  <script async src="//jsfiddle.net/mapspeople/s39hk8o7/embed/html,result/"></script>
 
-### Ready
+### Ready event
 
 The ready event will be fired when MapsIndoors is done initializing and is ready to interact.
 
@@ -28,10 +29,10 @@ google.maps.event.addListener(mapsIndoors, 'ready', (e) => {
 });
 ```
 
-### Building changed
+### Building changed event
 
-The building changed will be fired when the map is moved around and a new building comes in focus.
-This is also related to the floor selector which will update its view to show the current building floors.
+The building changed event will be fired when the map is moved around and a new building comes in focus.
+This is also related to the floor selector, which will update its view to show the current building floors.
 
 The event handler is called with a [building](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/global.html#Building) object representing the building in focus.
 
@@ -41,7 +42,7 @@ google.maps.event.addListener(mapsIndoors, 'building_changed', (e) => {
 });
 ```
 
-### Floor changed
+### Floor changed event
 
 The floor changed will be fired when the floor is changed either by clicking the floor selector or by calling setFloor() on the MapsIndoors instance.
 
@@ -53,7 +54,7 @@ google.maps.event.addListener(mapsIndoors, 'floor_changed', (e) => {
 });
 ```
 
-### Click
+### Click event
 
 The click event will fire when the user clicks on a POI or area on the map.
 
@@ -64,3 +65,12 @@ google.maps.event.addListener(mapsIndoors, 'click', (location) => {
  log(`Clicked: ${location.properties.name}`);
 });
 ```
+
+---
+
+## Guides
+
+* [Create a simple map with MapsIndoors](/../web/v3/guides/simple_map/)
+* [Update display rules dynamically](/../web/v3/guides/dynamic-updates/)
+* [Search and filtering](/../web/v3/guides/search_and_filtering/)
+* [Show user location on the map (Blue dot)](/../web/v3/guides/show_users_position/)

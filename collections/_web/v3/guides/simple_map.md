@@ -1,17 +1,18 @@
 ---
-title: How to create a simple map with MapsIndoors
-parent: guides
-layout: tutorial
-nav_weight: 1000
+title: Create a simple map with MapsIndoors
+guide_title: guides
+nav_weight: 200
 published: true
 date: 2019-09-30
 ---
 
-## Simple Map
+## Overview
+
+In this guide you will learn to load a Google map with a MapsIndoors map on top. The full code example is shown in the JSFiddle below, but will be run through bit by bit in this guide.
 
 <script async src="//jsfiddle.net/mapspeople/asr3mnzb/embed/html,result/"></script>
 
-## Loading the Maps JavaScript API
+### Loading the Google Maps JavaScript API
 
 The Google Maps API are loaded using a script tag like so:
 
@@ -22,7 +23,7 @@ The Google Maps API are loaded using a script tag like so:
 The `libraries` parameter is for loading additional libraries for Google Maps. The MapsIndoors SDK has a dependency on the geometry library.
 The `key` parameter contains your application's Google Maps API key. Look [here](https://developers-dot-devsite-v2-prod.appspot.com/maps/documentation/javascript/get-api-key) For more information about how to obtain a key.
 
-## Loading the MapsIndoors SDK
+### Loading the MapsIndoors SDK
 
 The MapsIndoors SDK are loaded afther the Google Maps API using a script tag like so:
 
@@ -32,7 +33,7 @@ The MapsIndoors SDK are loaded afther the Google Maps API using a script tag lik
 
 The `apiKey` parameter contains your application's MapsIndoors API key.
 
-## Setting up the map
+### Setting up the map
 
 ```javascript
 const googleMap = new google.maps.Map(document.getElementById('map'), {
@@ -48,7 +49,7 @@ const googleMap = new google.maps.Map(document.getElementById('map'), {
 First we need a DOM element for the map. `document.getElementById('googleMap')`
 Next we will configure the map by setting the center and a zoom level. The `maxZoom` parameter is set to disable the map from zooming further in that level 21.
 
-## Adding MapsIndoors
+### Adding MapsIndoors
 
 ```javascript
 const mapsIndoors = new mapsindoors.MapsIndoors({
@@ -58,7 +59,7 @@ const mapsIndoors = new mapsindoors.MapsIndoors({
 
 Now we create a new instance of the MapsIndoors class and assign the Google Map to the `map` parameter.
 
-## Adding a floor selector
+### Adding a Floor Selector
 
 ```javascript
 const floorSelector = document.createElement('div');
@@ -68,3 +69,12 @@ googleMap.controls[google.maps.ControlPosition.RIGHT_TOP].push(floorSelector);
 
 A FloorSelector is created by calling the `new mapsindoors.FloorSelector(floorSelector, mapsIndoors);` passing in a DOM element and an instance of MapsIndoors.
 This `googleMap.controls[google.maps.ControlPosition.RIGHT_TOP].push(floorSelector);` adds the floor selector to the maps upper right corner as a map control.
+
+---
+
+## Guides
+
+* [Update display rules dynamically](/../web/v3/guides/dynamic-updates/)
+* [Event handling](/../web/v3/guides/using_events/)
+* [Search and filtering](/../web/v3/guides/search_and_filtering/)
+* [Show user location on the map (Blue dot)](/../web/v3/guides/show_users_position/)
