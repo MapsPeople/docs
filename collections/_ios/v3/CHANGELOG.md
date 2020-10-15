@@ -29,7 +29,7 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 - Fixed a rare issue causing a Live Data session to freeze in the UI thread.
 - Fixed an issue causing some Live Updates to be discarded unintentionally.
 - Fixed an issue causing some Live Updates to be emitted unintentionally while they should have been discarded.
-- Fixed offline data script so that it better handles external ressources.
+- Fixed offline data script so that it handles external ressources better.
 - Fixed some general stability issues
 
 ## [3.12.0] 2020-09-30
