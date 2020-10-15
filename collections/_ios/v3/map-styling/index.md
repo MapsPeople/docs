@@ -21,6 +21,10 @@ Each has its own purpose which will be explained below.
 
 In the [MapsIndoors CMS](https://cms.mapsindoors.com/types) you can set display settings for the different types of locations in your MapsIndoors content. The changes you make in the CMS will take effect whenever your app reboots or when you call `MapsIndoors.synchroniseContent()` within the app session.
 
+A Display Rule encapsulates both what, how and when a Location should be displayed on the map.
+A Location is presented on the map using a combination of icon, text and polygon. Each of these can appear at different, independent ranges of zoomlevels.
+For example a venue can appear as a marker-icon on low zoomlevels, when zooming in the venuename can appear, and zooming even more in the venue polygon can appear.
+
 In some cases, you may also want to programmatically set display settings that define when and how to show a location. Display settings are defined in a Display Rule object.
 
 ```swift
@@ -31,7 +35,7 @@ You can set display settings programatically in three ways:
 
 * Set a Display Rule for a type of Location
 * Set a Display Rule for a single specific Location
-* Set a Display Rule for a multiple specific Location
+* Set a Display Rule for multiple Locations
 
 ### Setting Display Rule for a Type
 
@@ -70,6 +74,21 @@ myMapControl.setDisplayRule(myDisplayRule, for: myLocations)
 ```
 
 Setting a display rule for specific locations will *not* persist the new display rule for that type throughout the whole app session and across instances of `MPMapControl`. In other words, as soon as your instance of `MPMapControl` is deallocated, the overridden display rules for specific locations will reset to their original display rule.
+
+### Presenting Locations using polygons
+
+To present a polygon, either configure the Display Rule using the CMS, or configure a Display Rule programatically:
+
+```swift
+let polygonDisplayRule = MPLocationDisplayRule.init(name: nil, andIcon: myImage, andZoomLevelOn: 15)!
+polygonDisplayRule.showPolygon = true
+polygonDisplayRule.zOnPolygon = 17
+polygonDisplayRule.zOffPolygon = 21
+polygonDisplayRule.polygonStrokeWidth = 2
+polygonDisplayRule.polygonStrokeColor = UIColor.yellow
+polygonDisplayRule.polygonFillColor = UIColor.yellow.withAlphaComponent(0.45)
+myMapControl.setDisplayRule(polygonDisplayRule, for: myLocations)
+```
 
 ## Style the Map using Google Maps Styling
 
