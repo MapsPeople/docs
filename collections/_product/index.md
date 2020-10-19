@@ -64,7 +64,7 @@ Currently there are two types of integration modules supported; Real-time and Bo
 
 Real-time integrations are characterised by displaying data “live” on the map (< 1 min delay), for example a live-updating position from a shuttle bus service in an airport. The data is not saved for long-term storage, only briefly cached to ensure delivery to the apps.
 
-Booking integrations are characterised by data flowing in and out of MapsIndoors (read/write). Room bookings can happen directly from MapsIndoors and/or be displayed on the MapsIndoors map. For example is it possible to call a room ID and change the color of the corresponding room’s polygon to e.g. visualise whether it is vacant or not based on a calendar integration.
+Booking integrations are characterised by data flowing in and out of MapsIndoors (read/write). Room bookings can happen directly through your app built with MapsIndoors, and you can display the booking status of a meeting room directly on the map, i.e. whether it is vacant or not.
 
 ## Indoor Positioning System
 
