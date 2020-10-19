@@ -54,7 +54,7 @@ The MapsIndoors Standard App suite also includes a plug-and-play Kiosk web app. 
 
 ## Integration API
 
-The MapsIndoors Integration API is used to connect 3rd party systems with MapsIndoors in order to feed data into the MapsIndoors solution. The API provides an interface to update data in MapsIndoors from an external source. An external source could be a Facility Management System that already contains relevant data for your MapsIndoors solution.
+The MapsIndoors Integration API is used to connect 3rd party systems with MapsIndoors in order to feed data into your MapsIndoors Solution. The API provides an interface to update data in MapsIndoors from an external source. An external source could be a Facility Management System that already contains relevant data for your MapsIndoors Solution.
 
 It is possible to update Locations, Rooms, Venues, Buildings, Floors, Areas etc. automatically instead of having to do it manually via the MapsIndoors CMS
 
