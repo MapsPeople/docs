@@ -28,7 +28,7 @@ When we receive these they will be digitised and positioned correctly in “the 
 
 ## Content Management System
 
-When you have a custom MapsIndoors Solution you also get access to the MapsIndoors CMS. Within the CMS you can manage locations within your solution; create, remove, update locations such as rooms, coffee machines etc. The content created within the CMS is the content that can be accessed and controlled via the SDKs (see the next section).
+When you have a custom MapsIndoors Solution you also get access to the MapsIndoors CMS. Within the CMS you can manage Locations within your Solution; create, remove, update Locations such as rooms, coffee machines etc. The content created within the CMS is the content that can be accessed and controlled via the SDKs.
 
 The CMS is used for day-to-day management if a Location needs to be moved (could be a printer or a coffee machine), if Rooms get new names (meeting rooms for example), if access needs to be restricted to some Locations etc.
 
