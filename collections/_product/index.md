@@ -58,7 +58,7 @@ The MapsIndoors Integration API is used to connect 3rd party systems with MapsIn
 
 It is possible to update Locations, Rooms, Venues, Buildings, Floors, Areas etc. automatically instead of having to do it manually via the MapsIndoors CMS
 
-### Integration Modules
+## Integration Modules
 
 Currently there are two types of integration modules supported; Real-time and Booking integrations.
 
