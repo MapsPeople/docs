@@ -32,7 +32,7 @@ The Google Maps API is loaded by using a script tag like the one below:
 ```
 
 The `libraries` parameter is for loading additional libraries for Google Maps. The MapsIndoors SDK has a dependency on the geometry library.
-The `key` parameter contains your application's Google Maps API key. Look [here](https://developers-dot-devsite-v2-prod.appspot.com/maps/documentation/javascript/get-api-key) For more information about how to obtain a key.
+The `key` parameter contains your Google Maps API key. Look [here](https://developers-dot-devsite-v2-prod.appspot.com/maps/documentation/javascript/get-api-key) For more information about how to obtain a key.
 
 ### Setting up the MapView
 
