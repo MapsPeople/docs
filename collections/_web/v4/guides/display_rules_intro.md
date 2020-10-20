@@ -34,17 +34,19 @@ A Display Rule could looks like this:
 }
 ```
 
--   `icon` - A URL to an image to represent the POI on the map.
--   `iconVisible` - Controls the visibility of the icon.
--   `imageScale` - ????
--   `imageSize` - Specifies the size that the image will appear on the map.
--   `label` - Descriptive text for the POI. This can either be a static text or a dynamic text, retrieved from a property on the POI. E.g. `"{{ "{{ name " }}}}"` or a combination `"Room: {{ "{{ name " }}}}"`.
--   `labelVisible` - Controls the visibility of the label.
--   `labelZoomFrom` - The minimum zoom level the label will be visible on the map.
--   `labelZoomTo` - The maximum zoom level the label will be visible on the map.
--   `visible` - Controls the overall visibility of the POI on the map. If false both the label and icon will not be displayed.
--   `zoomFrom` - The minimum zoom level the image/icon will be visible on the map.
--   `zoomTo` - The maximum zoom level the image/icon will be visible on the map.
+| Properties    | Type    | Description                                                                                                                                                                                        |
+| ------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| icon          | string  | A URL to an image to represent the POI on the map.                                                                                                                                                 |
+| iconVisible   | boolean | Controls the visibility of the icon.                                                                                                                                                               |
+| imageScale    | number  | ????                                                                                                                                                                                               |
+| imageSize     | Size    | Specifies the size that the image will appear on the map.                                                                                                                                          |
+| label         | string  | Descriptive text for the POI. This can either be a static text or a dynamic text, retrieved from a property on the POI. E.g. `"{{ "{{ name " }}}}"` or a combination `"Room: {{ "{{ name " }}}}"`. |
+| labelVisible  | boolean | Controls the visibility of the label.                                                                                                                                                              |
+| labelZoomFrom | number  | The minimum zoom level the label will be visible on the map.                                                                                                                                       |
+| labelZoomTo   | number  | The maximum zoom level the label will be visible on the map.                                                                                                                                       |
+| visible       | boolean | Controls the overall visibility of the POI on the map. If false both the label and icon will not be displayed.                                                                                     |
+| zoomFrom      | number  | The minimum zoom level the image/icon will be visible on the map.                                                                                                                                  |
+| zoomTo        | number  | The maximum zoom level the image/icon will be visible on the map.                                                                                                                                  |
 
 This enables you to do things like changing an icon at a specific zoom level.
 It is also possible to highlight POIs when a user clicks on it.
