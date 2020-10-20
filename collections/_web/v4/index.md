@@ -70,7 +70,7 @@ If you need to work with MapsIndoors SDK behind a firewall, you might need to [w
 ## Guides
 
 * [Create a simple map with MapsIndoors](guides/simple_map/)
-* [Update display rules dynamically](guides/dynamic-updates/)
+* [Introduction to DispayRules](guides/display_rules_intro/)
 * [Event handling](guides/using_events/)
 * [Search and filtering](guides/search_and_filtering/)
 * [Show user location on the map (Blue dot)](guides/show_users_position/)
