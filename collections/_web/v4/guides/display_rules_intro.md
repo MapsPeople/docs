@@ -8,7 +8,7 @@ date: 2019-11-04
 
 ## Overview
 
-In this, you will be introduced to the concept of Display Rules and learn how you can use Display Rules to change how POIs look on the map.
+In this, you will be introduced to the concept of Display Rules and learn how you can use Display Rules to change how POIs are displayed on the map.
 It's possible to apply Display Rules to all POIs of a specific type like `Meeting Rooms` or a single POI using its id.
 
 You control the default appearance of types and POIs through the MapsIndoors CMS. The Display Rules enable you to change the default appearance dynamically at runtime.
