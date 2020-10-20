@@ -21,7 +21,7 @@ The MapsIndoors SDK is loaded by using a script tag like so:
 ```
 The `apikey` parameter contains your application's MapsIndoors API key.
 
-For IE11 it's critical to load the MapsIndoors SDK before the Google Maps API due to some conflicting polyfills.
+For IE11 it's critical to load the MapsIndoors SDK before the Google Maps API due to conflicting polyfills.
 
 ### Loading the Google Maps JavaScript API
 
