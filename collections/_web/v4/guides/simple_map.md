@@ -31,7 +31,7 @@ The Google Maps API is loaded by using a script tag like the one below:
 <script src="https://maps.googleapis.com/maps/api/js?libraries=geometry&key=YOUR_GOOGLE_API_KEY"></script>
 ```
 
-The `libraries` parameter is for loading additional libraries for Google Maps. The MapsIndoors SDK has a dependency on the geometry library.
+The `libraries` parameter is for loading additional libraries for the Google Maps API. The MapsIndoors SDK is dependent on the geometry library from Google.
 The `key` parameter contains your Google Maps API key. Look [here](https://developers-dot-devsite-v2-prod.appspot.com/maps/documentation/javascript/get-api-key) For more information about how to obtain a key.
 
 ### Setting up the MapView
