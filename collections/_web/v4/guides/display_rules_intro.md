@@ -38,7 +38,7 @@ A Display Rule could looks like this:
 -   `iconVisible` - Controls the visibility of the icon.
 -   `imageScale` - ????
 -   `imageSize` - Specifies the size that the image will appear on the map.
--   `label` - Descriptive text for the POI. This can either be a static text or a dynamic text, retrieved from a property on the POI. E.g. `"{{ "{{ name " }}}}"`.
+-   `label` - Descriptive text for the POI. This can either be a static text or a dynamic text, retrieved from a property on the POI. E.g. `"{{ "{{ name " }}}}"` or a combination `"Room: {{ "{{ name " }}}}"`.
 -   `labelVisible` - Controls the visibility of the label.
 -   `labelZoomFrom` - The minimum zoom level the label will be visible on the map.
 -   `labelZoomTo` - The maximum zoom level the label will be visible on the map.
@@ -47,7 +47,7 @@ A Display Rule could looks like this:
 -   `zoomTo` - The maximum zoom level the image/icon will be visible on the map.
 
 This enables you to do things like change an icon at a specific zoom level.
-Its also possible to highlight POIs when a user clicks on it.
+It's also possible to highlight POIs when a user clicks on it.
 
 <script async src="//jsfiddle.net/mapspeople/m62t9zyc/embed/html,result/"></script>
 
