@@ -46,7 +46,7 @@ A Display Rule could looks like this:
 -   `zoomFrom` - The minimum zoom level the image/icon will be visible on the map.
 -   `zoomTo` - The maximum zoom level the image/icon will be visible on the map.
 
-This enables you to do things like change an icon at a specific zoom level.
+This enables you to do things like changing an icon at a specific zoom level.
 It is also possible to highlight POIs when a user clicks on it.
 
 <script async src="//jsfiddle.net/mapspeople/m62t9zyc/embed/html,result/"></script>
