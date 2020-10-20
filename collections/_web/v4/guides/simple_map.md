@@ -60,7 +60,7 @@ const mapsIndoors = new mapsindoors.MapsIndoors({
 });
 ```
 
-Now we create a new instance of the MapsIndoors class and assign the GoogleMapsView to the `mapView` parameter.
+A new instance of the MapsIndoors class is created and assigns the GoogleMapsView to the `mapView` parameter.
 
 ### Adding a Floor Selector
 
