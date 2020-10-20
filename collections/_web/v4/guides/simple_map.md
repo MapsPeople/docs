@@ -25,7 +25,7 @@ For IE11 it's critical to load the MapsIndoors SDK before the Google Maps API du
 
 ### Loading the Google Maps JavaScript API
 
-The Google Maps API is loaded by using a script tag like so:
+The Google Maps API is loaded by using a script tag like the one below:
 
 ```html
 <script src="https://maps.googleapis.com/maps/api/js?libraries=geometry&key=YOUR_GOOGLE_API_KEY"></script>
