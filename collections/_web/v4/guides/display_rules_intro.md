@@ -13,7 +13,7 @@ It is possible to apply Display Rules to a single POI using its ID, or to all PO
 
 You control the default appearance of types and POIs through the MapsIndoors CMS. The Display Rules enable you to change the default appearance dynamically at runtime.
 
-It's possible to control different aspects of the appearances like at what zoom levels labels and icons should be visible.
+It's possible to control different aspects of the appearance. For example at what zoom levels labels and icons should be visible.
 
 A Display Rule could looks like this:
 
