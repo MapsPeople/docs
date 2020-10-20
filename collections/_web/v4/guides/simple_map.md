@@ -14,7 +14,7 @@ In this guide you will learn to load a Google map with a MapsIndoors map on top.
 
 ### Loading the MapsIndoors SDK
 
-The MapsIndoors SDK is loaded by using a script tag like so:
+The MapsIndoors SDK is loaded by using a script tag like the one below:
 
 ```html
 <script src="https://app.mapsindoors.com/mapsindoors/js/sdk/DevelopmentReleases/4.0.0-rc.1/mapsindoors-4.0.0-rc.1.js?apikey=YOUR_MAPSINDOORS_API_KEY"></script>
