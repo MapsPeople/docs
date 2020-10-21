@@ -21,7 +21,7 @@ A code example is shown in the JSFiddle below, but will be run through bit by bi
 
 ### Ready event
 
-The ready event will be fired when MapsIndoors is done initializing and is ready to interact.
+The `ready` event will be fired when MapsIndoors is done initializing and is ready to interact.
 
 ```javascript
 mapsIndoors.addListener('ready', (e) => {
