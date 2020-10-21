@@ -48,9 +48,10 @@ const mapView = new mapsindoors.mapView.GoogleMapsView({
     maxZoom: 21,
 });
 ```
-- Element is the DOM element on the page that will contain the map. `document.getElementById('map')`
-- Center is the geographical point on which the map is centered.
-- Zoom is the initial zoom level the map will be displayed at.
+
+- `element` is the DOM element on the page that will contain the map. `document.getElementById('map')`
+- `center` is the geographical point on which the map is centered.
+- `zoom` is the initial zoom level the map will be displayed at.
 - The `maxZoom` parameter is set to disable the map from zooming further in that level 21, which is the current maximum.
 
 ### Initializing MapsIndoors
