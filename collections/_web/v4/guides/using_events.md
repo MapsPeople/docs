@@ -46,7 +46,7 @@ mapsIndoors.addListener('building_changed', (e) => {
 
 The floor changed event will be fired when the floor is changed; either by clicking the floor selector or by calling `setFloor()` on the MapsIndoors instance.
 
-The event handler is called with the floor index of the current floor.
+The event handler is called with the Floor Index of the current Floor.
 
 ```javascript
 mapsIndoors.addListener('floor_changed', (e) => {
