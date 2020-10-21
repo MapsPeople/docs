@@ -9,8 +9,7 @@ date: 2019-11-20
 
 In this, we will take a look at the events that MapsIndoors offers and how to utilize them.
 
->Events are actions or occurrences that happen in the system you are programming,
->which the system tells you about so you can respond to them in some way if desired.
+> Events are actions or occurrences that happen in the system you are programming, which the system tells you about so you can respond to them in some way if desired.
 >-- <cite>[MDN web docs](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events)</cite>
 
 For example, if the user clicks on a POI on the map, then you can react to that action by presenting the user with additional info about the POI.
