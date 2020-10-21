@@ -75,3 +75,10 @@ The FloorSelector is created by calling the `new mapsindoors.FloorSelector(floor
 `googleMap.controls[google.maps.ControlPosition.RIGHT_TOP].push(floorSelector);` adds the floor selector to upper right corner of the map as a map control.
 
 ---
+
+## Guides
+
+* [Create a simple map with MapsIndoors](/guides/simple_map/)
+* [Introduction to DispayRules](guides/display_rules_intro/)
+* [Search and filtering](/guides/search_and_filtering/)
+* [Show user location on the map (Blue dot)](/guides/show_users_position/)
