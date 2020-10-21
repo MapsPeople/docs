@@ -61,6 +61,7 @@ All properties are optional and will only be applied if a value.
 | zoomTo        | number  | The maximum zoom level the image/icon will be visible on the map.                                                                                                                                  |
 
 This enables you to do things like changing an icon at a specific zoom level.
+
 It is also possible to highlight POIs when a user clicks on it.
 
 ```javascript
