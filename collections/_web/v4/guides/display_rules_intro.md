@@ -8,8 +8,9 @@ date: 2019-11-04
 
 ## Overview
 
-In this, you will be introduced to the concept of Display Rules and learn how you can use Display Rules to change how POIs are displayed on the map.
-It is possible to apply Display Rules to a single POI using its ID, or to all POIs of a specific type such as 'Meeting Rooms'.
+In this guide you will be introduced to the concept of Display Rules and learn how you can use Display Rules to change how POIs are displayed on the map.
+
+It is possible to apply Display Rules to a single POI using its ID, or to all POIs of a specific Location Type such as 'Meeting Rooms'.
 
 The MapsIndoors CMS is used to control the default appearance of types and POIs. To change the default appearance at runtime you can use Display Rules.
 
@@ -24,7 +25,7 @@ A DisplayRule defined for a **POI** at runtime.
 It is only properties with a value that will override the prevoius value. If the value is undefined the prevoius value will be used.  
 To remove a value from the DisplayRule set the proptery to `null`.
 
-A Display Rule could looks like this:
+A Display Rule could look like this:
 
 ```javascript
 {
@@ -60,6 +61,7 @@ All properties are optional and will only be applied if a value.
 | zoomTo        | number  | The maximum zoom level the image/icon will be visible on the map.                                                                                                                                  |
 
 This enables you to do things like changing an icon at a specific zoom level.
+
 It is also possible to highlight POIs when a user clicks on it.
 
 ```javascript

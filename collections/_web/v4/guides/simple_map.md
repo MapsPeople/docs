@@ -31,7 +31,8 @@ The Google Maps API is loaded by using a script tag like the one below:
 <script src="https://maps.googleapis.com/maps/api/js?libraries=geometry&key=YOUR_GOOGLE_API_KEY"></script>
 ```
 
-The `libraries` parameter is for loading additional libraries for the Google Maps API. The MapsIndoors SDK is dependent on the geometry library from Google.
+The `libraries` parameter is for loading additional libraries for the Google Maps API. The MapsIndoors SDK is dependent on the Geometry Library from Google.
+
 The `key` parameter contains your Google Maps API key. Look [here](https://developers-dot-devsite-v2-prod.appspot.com/maps/documentation/javascript/get-api-key) For more information about how to obtain a key.
 
 ### Setting up the MapView
@@ -70,9 +71,12 @@ const floorSelector = document.createElement("div");
 new mapsindoors.FloorSelector(floorSelector, mapsIndoors);
 googleMap.controls[google.maps.ControlPosition.RIGHT_TOP].push(floorSelector);
 ```
-A reference to the Google Map is obtained by calling getMap on the MapView.
-The FloorSelector is created by calling the `new mapsindoors.FloorSelector(floor selector, mapsIndoors);` passing in a DOM element and an instance of MapsIndoors.
-`googleMap.controls[google.maps.ControlPosition.RIGHT_TOP].push(floorSelector);` adds the floor selector to upper right corner of the map as a map control.
+
+A reference to the Google Map is obtained by calling `getMap` on the `mapView`.
+
+The `floorSelector` is created by calling the `new mapsindoors.FloorSelector(floor selector, mapsIndoors);` passing in a DOM element and an instance of MapsIndoors.
+
+`googleMap.controls[google.maps.ControlPosition.RIGHT_TOP].push(floorSelector);` adds the Floor Selector to upper right corner of the map as a map control.
 
 ---
 

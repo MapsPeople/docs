@@ -1,5 +1,5 @@
 ---
-title: MapsIndoors Web SDK v3
+title: MapsIndoors Web SDK v4
 permalink: /web/v4/
 published: true
 date: 2019-09-30
