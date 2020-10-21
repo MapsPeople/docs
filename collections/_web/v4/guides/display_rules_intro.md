@@ -25,7 +25,7 @@ A DisplayRule defined for a **POI** at runtime.
 It is only properties with a value that will override the prevoius value. If the value is undefined the prevoius value will be used.  
 To remove a value from the DisplayRule set the proptery to `null`.
 
-A Display Rule could looks like this:
+A Display Rule could look like this:
 
 ```javascript
 {
