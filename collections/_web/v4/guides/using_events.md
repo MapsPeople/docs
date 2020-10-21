@@ -30,7 +30,8 @@ mapsIndoors.addListener('ready', (e) => {
 
 ### Building changed event
 
-The building changed event will be fired when the map is moved around and a new building comes in focus.
+The `building_changed` event will be fired when the map is moved around and a new Building comes in focus.
+
 This is also related to the Floor Selector, which will update its view to show the Floors of the current Building.
 
 The event handler is called with a [building](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/global.html#Building) object representing the building in focus.
