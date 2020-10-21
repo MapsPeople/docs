@@ -8,7 +8,7 @@ date: 2019-11-04
 
 ## Overview
 
-In this, you will be introduced to the concept of Display Rules and learn how you can use Display Rules to change how POIs are displayed on the map.
+In this guide you will be introduced to the concept of Display Rules and learn how you can use Display Rules to change how POIs are displayed on the map.
 
 It is possible to apply Display Rules to a single POI using its ID, or to all POIs of a specific Location Type such as 'Meeting Rooms'.
 
