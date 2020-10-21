@@ -56,7 +56,7 @@ mapsIndoors.addListener('floor_changed', (e) => {
 
 ### Click event
 
-The click event will fire when the user clicks on a POI or an area on the map.
+The `click` event will fire when the user clicks on a POI or an Area on the map.
 
 The event handler is called with a [location](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/global.html#Location) object representing the POI or area clicked.
 
