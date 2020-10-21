@@ -76,6 +76,4 @@ A reference to the Google Map is obtained by calling `getMap` on the `mapView`.
 
 The `floorSelector` is created by calling the `new mapsindoors.FloorSelector(floor selector, mapsIndoors);` passing in a DOM element and an instance of MapsIndoors.
 
-`googleMap.controls[google.maps.ControlPosition.RIGHT_TOP].push(floorSelector);` adds the floor selector to upper right corner of the map as a map control.
-
----
+`googleMap.controls[google.maps.ControlPosition.RIGHT_TOP].push(floorSelector);` adds the Floor Selector to upper right corner of the map as a map control.
