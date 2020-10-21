@@ -10,7 +10,7 @@ date: 2019-11-04
 
 In this guide you will be introduced to the concept of Display Rules and learn how you can use Display Rules to change how POIs are displayed on the map.
 
-It is possible to apply Display Rules to a single POI using its ID, or to all POIs of a specific Location Type such as 'Meeting Rooms'.
+It is possible to apply Display Rules to a single POI using its ID, or to all POIs of a specific Location Type such as `MEETING_ROOMS`.
 
 The MapsIndoors CMS is used to control the default appearance of types and POIs. To change the default appearance at runtime you can use Display Rules.
 
@@ -25,7 +25,7 @@ A DisplayRule defined for a **POI** in the CMS is overridden by:
 A DisplayRule defined for a **POI** at runtime.
 
 It is only properties with a value that will override the previous value. If the value is undefined the previous value will be used.  
-To remove a value from the DisplayRule set the proptery to `null`.
+To remove a value from the DisplayRule set the proptery to `null`. 
 
 ## Display Rule properties
 
@@ -83,19 +83,41 @@ mapsIndoors.addListener("click", function (poi) {
 });
 ```
 
+### Changing change the label for all POIs for the type `PRINTER`
+
 ```javascript
-mi.setDisplayRule('PRINTER',  {
+mapsIndoors.setDisplayRule('PRINTER',  {
     label: "{{ "Printer: {{ name " }}}}"
 });
 ```
 
+### Changing change the label for a single POI
+
 ```javascript
-mi.setDisplayRule('c66dccd480624c428ea5b78d',  {
+mapsIndoors.setDisplayRule('c66dccd480624c428ea5b78d',  {
     label: "{{ "Printer: {{ name " }}}}"
 });
 ```
 
-<script async src="//jsfiddle.net/mapspeople/m62t9zyc/embed/html,result/"></script>
+### Apply the same Display Rule to multiple POIs
+
+```javascript
+mapsIndoors.setDisplayRule(['c66dccd480624c428ea5b780', 'c66dccd480624c428ea5b79c','c66dccd480624c428ea5b76a', ...], {
+    icon: "https://app.mapsindoors.com/mapsindoors/cms/assets/icons/building-icons/printer.png"
+});
+```
+
+### Reset the Display Rule back to default.
+
+```javascript
+mapsIndoors.setDisplayRule('PRINTER', null);
+```
+```javascript
+mapsIndoors.setDisplayRule('c66dccd480624c428ea5b78d', null);
+```
+```javascript
+mapsIndoors.setDisplayRule(['c66dccd480624c428ea5b780', 'c66dccd480624c428ea5b79c','c66dccd480624c428ea5b76a', ...], null);
+```
 
 ---
 
