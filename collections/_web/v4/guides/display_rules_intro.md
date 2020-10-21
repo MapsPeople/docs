@@ -44,7 +44,7 @@ A Display Rule could look like this:
 }
 ```
 
-All properties are optional and will only be applied if a value.
+All properties are optional.
 
 | Properties    | Type    | Description                                                                                                                                                                                        |
 | ------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
