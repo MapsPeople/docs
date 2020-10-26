@@ -20,6 +20,7 @@ Key Benefits:
 ### Using The Dashboard
 
 You must be logged into the CMS as an Administrator to use the Dashboard.
+
 Go to the Administration section and click on the Dashboard tab.
 
 ![Using The Dashboard]({{ site.url }}/assets/various/Dashboard/UsingTheDashboard.png)
