@@ -16,6 +16,12 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 ### Removed
 -->
 
+## [3.14.0] 2020-10-26
+
+### Added
+
+- Support for global App User Roles setting, `MapsIndoors.userRoles`, see [introduction to App User Roles here](https://mapsindoors.github.io/ios/v3/app-user-roles/).
+
 ## [3.13.0] 2020-10-14
 
 ### Added
