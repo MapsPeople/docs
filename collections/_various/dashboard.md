@@ -65,7 +65,7 @@ Filters are available on each tab. You can select all, none, or a subset of Buil
 
 ![Dashboard Filters]({{ site.url }}/assets/various/Dashboard/DashboardUsingFilters.gif)
 
-The Building Address field is used to populate the Building filter. The Building Address can be set or updated in Map -> Buildings.
+The Building Address field is used to populate the Building filter. The Building Address can be set or updated in the Buildings page in the CMS.
 
 ![EditAddress]({{ site.url }}/assets/various/Dashboard/EditAddress.png)
 
