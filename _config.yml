@@ -41,6 +41,9 @@ collections:
   web:
     output: true
     permalink: :collection/:path/
+  product:
+    output: true
+    permalink: :collection/:path/
   xamarin:
     output: true
     permalink: :collection/:path/
