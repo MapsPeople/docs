@@ -29,7 +29,7 @@ MPSolutionProvider.init().getUserRoles { (userRoles, error) in
 
 App User Roles can be applied any time on a global level by setting `MapsIndoors.userRoles`.
 
-```
+```swift
 
 MapsIndoors.userRoles = [janitorRole]
 
@@ -48,7 +48,7 @@ let directionsQuery = MPDirectionsQuery.init(originPoint: MPPoint.init(lat: 57.0
 directionsQuery.userRoles = [janitorRole]
 
 directionsService.routing(with: directionsQuery) { (route, error) in
-    
+
 }
 
 ```
