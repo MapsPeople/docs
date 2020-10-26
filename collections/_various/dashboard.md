@@ -47,7 +47,7 @@ Visit the [MapsIndoors Glossary](https://mapsindoors.github.io/glossary/) for mo
 
 There are three tabs available in the Dashboard table.
 
-* **Buildings** - This table shows the number of Locations (POIs and Rooms) with Categories and Aliases for each floor of each Building within each Solution. In the example below, we can see that the Copenhagen Office has 169 Points of Interest associated with a category on the ground floor.
+* **Buildings** - This table shows the number of Locations (POIs and Rooms) with Categories and Aliases for each floor of each Building within each Solution. In the example below, we can see that the Copenhagen Office has 169 Points of Interest associated with a Category on the ground floor.
 
 ![Buildings]({{ site.url }}/assets/various/Dashboard/BuildingsTable.png)
 
