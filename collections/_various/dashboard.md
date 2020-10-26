@@ -8,7 +8,7 @@ permalink: /cms-dashboard/
 
 ## Overview
 
-The CMS Dashboard is an add-on feature that provides cross-Solution statistics and data. The Dashboard provides global visibility for MapsIndoors clients with many Solutions.
+The CMS Dashboard is an add-on feature that provides cross-Solution statistics and data. The Dashboard is a way for MapsIndoors clients with multiple Solutions to gain further insight into their location data.
 
 Key Benefits:
 
