@@ -19,6 +19,7 @@ The MapsIndoors SDK is loaded by using a script tag like the one below:
 ```html
 <script src="https://app.mapsindoors.com/mapsindoors/js/sdk/DevelopmentReleases/4.0.0-rc.1/mapsindoors-4.0.0-rc.1.js?apikey=YOUR_MAPSINDOORS_API_KEY"></script>
 ```
+
 The `apikey` parameter contains your application's MapsIndoors API key.
 
 For IE11 it's critical to load the MapsIndoors SDK before the Google Maps API due to conflicting polyfills.
@@ -83,7 +84,7 @@ The `floorSelector` is created by calling the `new mapsindoors.FloorSelector(flo
 
 ## Guides
 
-* [Create a simple map with MapsIndoors](/guides/simple_map/)
-* [Introduction to DispayRules](guides/display_rules_intro/)
-* [Search and filtering](/guides/search_and_filtering/)
-* [Show user location on the map (Blue dot)](/guides/show_users_position/)
+- [Create a simple map with MapsIndoors](/guides/simple_map/)
+- [Introduction to DispayRules](guides/display_rules_intro/)
+- [Search and filtering](/guides/search_and_filtering/)
+- [Show user location on the map (Blue dot)](/guides/show_users_position/)
