@@ -64,7 +64,7 @@ function displayResults(locations) {
 }
 ```
 
-If there are no locations returned, we show a message to the user stating "No results matched the query.". Otherwise, we pass the locations on to the next handler called `filterMap`
+If there are no Locations returned, we show a message to the user stating "No results matched the query.". Otherwise, we pass the Locations on to the next handler called `filterMap`
 
 ```javascript
 function filterMap(locations) {
@@ -73,7 +73,7 @@ function filterMap(locations) {
 }
 ```
 
-In the `filterMap` helper function, we create a list of `location id`s we can use to filter the POIs on the map by.
+In the `filterMap` helper function, we create a list of `location id`s we can use to filter the Locations on the map by.
 
 The second parameter tells MapsIndoors not to change the viewport of the map.
 
