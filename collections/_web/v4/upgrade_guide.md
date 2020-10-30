@@ -166,9 +166,9 @@ mapsindoors.DirectionsService.getRoute({
 #### Google Maps
 
 ```javascript
-const externalDirections = new mapsindoors.directions.GoogleMapsProvider();
+const externalProvider = new mapsindoors.directions.GoogleMapsProvider();
 const directionsService = new mapsindoors.services.DirectionsService(
-    externalDirections
+    externalProvider
 );
 const directionsRenderer = new mapsindoors.directions.DirectionsRenderer({
     mapsIndoors: mapsIndoors,
@@ -188,9 +188,9 @@ directionsService
 #### Mapbox
 
 ```javascript
-const externalDirections = new mapsindoors.directions.MapboxProvider();
+const externalProvider = new mapsindoors.directions.MapboxProvider();
 const directionsService = new mapsindoors.services.DirectionsService(
-    externalDirections
+    externalProvider
 );
 const directionsRenderer = new mapsindoors.directions.DirectionsRenderer({
     mapsIndoors: mapsIndoors,
