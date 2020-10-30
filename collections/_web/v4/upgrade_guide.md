@@ -11,7 +11,6 @@ The Directions service now takes a reference to an external Directions provider 
 
 All services have been moved to the `mapsindoors.services` namespace, for example, mapsindoors.service.LocationsService. See [mapsindoors.services](https://app.mapsindoors.com/mapsindoors/js/sdk/4.0.0/docs/mapsindoors.services.html).
 
-
 ## Initialization
 
 ### V3
@@ -142,4 +141,68 @@ map.addControl({
     },
     onRemove: function () {},
 });
+```
+
+## Directions
+
+### V3
+
+```javascript
+const directionsRenderer = new mapsindoors.DirectionsRenderer({
+    mapsindoors: mapsIndoors,
+});
+
+mapsindoors.DirectionsService.getRoute({
+    origin: origin,
+    destination: destination,
+    travelMode: "DRIVING",
+}).then(function (response) {
+    directionsRenderer.setRoute(response.routes[0]);
+});
+```
+
+### V4
+
+#### Google Maps
+
+```javascript
+const externalDirections = new mapsindoors.directions.GoogleMapsProvider();
+const directionsService = new mapsindoors.services.DirectionsService(
+    externalDirections
+);
+const directionsRenderer = new mapsindoors.directions.DirectionsRenderer({
+    mapsIndoors: mapsIndoors,
+});
+
+directionsService
+    .getRoute({
+        origin: origin,
+        destination: destination,
+        travelMode: "DRIVING",
+    })
+    .then(function (route) {
+        directionsRenderer.setRoute(route);
+    });
+```
+
+#### Mapbox
+
+```javascript
+const externalDirections = new mapsindoors.directions.MapboxProvider();
+const directionsService = new mapsindoors.services.DirectionsService(
+    externalDirections
+);
+const directionsRenderer = new mapsindoors.directions.DirectionsRenderer({
+    mapsIndoors: mapsIndoors,
+});
+
+directionsService
+    .getRoute({
+        origin: origin,
+        destination: destination,
+        travelMode: "DRIVING",
+    })
+    .then(function (route) {
+        directionsRenderer.setRoute(route);
+    });
 ```
