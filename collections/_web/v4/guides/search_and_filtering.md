@@ -15,6 +15,7 @@ In this guide you will see an example of how to search for Locations. The full c
 ### Search
 
 The `mapsindoors.LocationsService` offers the `getLocations` function. This function can be used for searching for POIs.
+
 It will return a Promise that gets resolved when the query has executed.
 
 See [LocationsService.getLocations](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/LocationsService.html#getLocations) for more information.
@@ -36,8 +37,6 @@ searchElement.addEventListener('input', debounce((e) => {
 The `debounce` method is there to ensure that the service is not being called too rapidly. This method delays the execution of the function by 500ms, unless `debounce` is called again within 500ms, in which case the timer is reset.
 
 See this article ["What is debouncing" by Jamis Charles](https://medium.com/@jamischarles/what-is-debouncing-2505c0648ff1) for a more detailed description of the `debounce` concept.
-
-When the function executes, we check to see if the input is empty or not. If the input is not empty, we proceed to construct the request object.
 
 When the function executes, we check to see if the input is empty or not. If the input is not empty, we proceed to construct the request object.
 
@@ -65,7 +64,7 @@ function displayResults(locations) {
 }
 ```
 
-If there are no locations returned, we show a message to the user stating "No results matched the query.". Otherwise, we pass the locations on to the next handler called `filterMap`
+If there are no Locations returned, we show a message to the user stating "No results matched the query.". Otherwise, we pass the Locations on to the next handler called `filterMap`
 
 ```javascript
 function filterMap(locations) {
@@ -74,7 +73,7 @@ function filterMap(locations) {
 }
 ```
 
-In the `filterMap` helper function, we create a list of `location id`s we can use to filter the POIs on the map by.
+In the `filterMap` helper function, we create a list of `location id`s we can use to filter the Locations on the map by.
 
 The second parameter tells MapsIndoors not to change the viewport of the map.
 

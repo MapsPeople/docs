@@ -25,7 +25,8 @@ A DisplayRule defined for a **POI** in the CMS is overridden by:
 A DisplayRule defined for a **POI** at runtime.
 
 It is only properties with a value that will override the previous value. If the value is undefined the previous value will be used.  
-To remove a value from the DisplayRule set the proptery to `null`. 
+
+To remove a value from the DisplayRule set the proptery to `null`.
 
 ## Display Rule properties
 
@@ -107,14 +108,16 @@ mapsIndoors.setDisplayRule(['c66dccd480624c428ea5b780', 'c66dccd480624c428ea5b79
 });
 ```
 
-### Reset the Display Rule back to default.
+### Reset the Display Rule back to default
 
 ```javascript
 mapsIndoors.setDisplayRule('PRINTER', null);
 ```
+
 ```javascript
 mapsIndoors.setDisplayRule('c66dccd480624c428ea5b78d', null);
 ```
+
 ```javascript
 mapsIndoors.setDisplayRule(['c66dccd480624c428ea5b780', 'c66dccd480624c428ea5b79c','c66dccd480624c428ea5b76a', ...], null);
 ```
@@ -123,7 +126,7 @@ mapsIndoors.setDisplayRule(['c66dccd480624c428ea5b780', 'c66dccd480624c428ea5b79
 
 ## Guides
 
--   [Create a simple map with MapsIndoors](/guides/simple_map/)
--   [Introduction to DispayRules](guides/display_rules_intro/)
--   [Search and filtering](/guides/search_and_filtering/)
--   [Show user location on the map (Blue dot)](/guides/show_users_position/)
+- [Create a simple map with MapsIndoors](/guides/simple_map/)
+- [Introduction to DispayRules](guides/display_rules_intro/)
+- [Search and filtering](/guides/search_and_filtering/)
+- [Show user location on the map (Blue dot)](/guides/show_users_position/)
