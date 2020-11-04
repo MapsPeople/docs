@@ -13,7 +13,7 @@ All services have been moved to the `mapsindoors.services` namespace, for exampl
 
 ## Initialization
 
-Initializing the SDK has change a bit. In version 3 MapsIndoors could be initialized directly with the google map object. In version 4 the map object is created for you by the mapView. You must create a MapView either as GoogleMap or MapBox and hand this MapView to MapsIndoors. You can retrieve the created instance of the map using mapsIndoors.getMap(); 
+Initializing the SDK has change a bit. In version 3 of the SDK, MapsIndoors could be initialized directly with the google map object. In version 4 the map object is created for you by the mapView. You must create a MapView either as GoogleMap or MapBox and hand this MapView to MapsIndoors. You can retrieve the created instance of the map using mapsIndoors.getMap(); 
 
 ### V3
 
@@ -71,8 +71,7 @@ See [mapsindoors.mapView.MapboxView](https://app.mapsindoors.com/mapsindoors/js/
 
 SDK Version 4 supports multiple map providers and provides a generic interface for registering events. In version 3 the event listners was set up directly on the map provider. The SDK will take care of setting the correct listners in the map for which the SDK has been initialized. This makes sure that the App will have the same interface no matter what map provider is used. It will also make it easier to swich map provider at a later date.
 
-The following events can be set up for subscription:
-TBD: (Esben to provide list)
+
 
 ### V3
 
@@ -86,6 +85,7 @@ google.maps.event.addListener(mapsIndoors, 'event_name', function() {...});
 mapsIndoors.addListener('event_name', function() {...});
 ```
 
+The following events can be set up for subscription:
 See [MapsIndoors#events](https://app.mapsindoors.com/mapsindoors/js/sdk/4.0.0/docs/mapsindoors.MapsIndoors.html#event:building_changed)
 
 ## Zoom levels
@@ -115,9 +115,9 @@ mapsIndoors.getZoom();
 
 ## Adding Floor Selector to the Map
 
-Both SDK version 3 and 4 supports addding a floor selector to the map. When using GoogleMap as map provider the method of working with the floor selector is unchanged except that the GoogleMap object is now created by the SDK an will have to retrieved using the getMap() method (See initialization for more information). 
+Both SDK version 3 and 4 supports addding a floor selector to the map. When using GoogleMap as map provider the method of working with the floor selector is unchanged except that the GoogleMap object is now created by the SDK and will have to retrieved using the getMap() method (See initialization for more information). 
 
-For MapBox the specification of controllers is a bit different than for Google. For Google the controller setup takes a <div> where MapBox takes an object containing functions returning the <Div>.  
+For MapBox the specification of controllers is a bit different than for Google. For Google the controller setup takes a DIV where MapBox takes an object containing functions returning the DIV.  
 
 ### V3
 
