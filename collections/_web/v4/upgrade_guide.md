@@ -4,7 +4,7 @@ permalink: /web/v4/upgrade
 published: true
 date: 2019-09-30
 ---
-
+This guide will help you upgrade the MapsIndoors JavaScript SDK from v3.x to v4.
 With the introduction of MapsIndoors JavaScript SDK v4, there are some changes to the structure of the APIs. With the added support for Mapbox, we have introduced a new concept called a Map View. A Map View is an adapter layer between the SDK and the Map itself. When initializing the SDK, a reference to a map view is passed instead of a reference to a map.
 
 The Directions service now takes a reference to an external Directions provider when initialized. The external provider can either be a Google Maps or a Mapbox provider.
