@@ -13,6 +13,8 @@ All services have been moved to the `mapsindoors.services` namespace, for exampl
 
 ## Initialization
 
+Initializing the SDK has change a bit. In version 3 MapsIndoors could be initialized directly with the google map object. In version 4 the map object is created for you by the mapView. You must create a MapView either as GoogleMap or MapBox and hand this MapView to MapsIndoors. You can retrieve the created instance of the map using mapsIndoors.getMap(); 
+
 ### V3
 
 ```javascript
@@ -67,6 +69,11 @@ See [mapsindoors.mapView.MapboxView](https://app.mapsindoors.com/mapsindoors/js/
 
 ## Events
 
+SDK Version 4 supports multiple map providers and provides a generic interface for registering events. In version 3 the event listners was set up directly on the map provider. The SDK will take care of setting the correct listners in the map for which the SDK has been initialized. This makes sure that the App will have the same interface no matter what map provider is used. It will also make it easier to swich map provider at a later date.
+
+The following events can be set up for subscription:
+TBD: (Esben to provide list)
+
 ### V3
 
 ```javascript
@@ -108,6 +115,10 @@ mapsIndoors.getZoom();
 
 ## Adding Floor Selector to the Map
 
+Both SDK version 3 and 4 supports addding a floor selector to the map. When using GoogleMap as map provider the method of working with the floor selector is unchanged except that the GoogleMap object is now created by the SDK an will have to retrieved using the getMap() method (See initialization for more information). 
+
+For MapBox the specification of controllers is a bit different than for Google. For Google the controller setup takes a <div> where MapBox takes an object containing functions returning the <Div>.  
+
 ### V3
 
 ```javascript
@@ -121,7 +132,7 @@ googleMap.controls[google.maps.ControlPosition.RIGHT_TOP].push(floorSelector);
 #### Google Maps
 
 ```javascript
-const map = mapsIndoors.getMap();
+const googleMap = mapsIndoors.getMap();
 const floorSelectorDiv = document.createElement("div");
 new mapsindoors.FloorSelector(floorSelectorDiv, mapsIndoors);
 googleMap.controls[google.maps.ControlPosition.RIGHT_TOP].push(
@@ -144,6 +155,14 @@ map.addControl({
 ```
 
 ## Directions
+
+When working with directions two different elements are needed. A "Provider" to calculate routes and a "Renderer" to display a given route on the map and generate the textual dicription for directions. In SDK version 3 the "Provider" was automatically given by GoogleMap which has a directions service built in. In version 4 the mapping and the directions service has been separated as it cannot be assumed that all mapping providers will have a built-in direction service. 
+
+This means that for version 4 a "DirectionsProvider" must be registered. Currently it is possible to create a directionsService either from GoogleMap or MapBox, but in the future other Direction services could be supported.
+
+The directionsRenderer is created in the same way in version 4 as it was done in version 3.
+
+Calculating and displaying a route is still done using the getRoute() call, however, the response of this call has been changed for convience. In version 4 the actual route is returned. In version 3 an array of route (which always only contained 1 element) was returned, Hense the "response.routes[0]" can be omitted and the returned route can be send directly to the rendere for displaying.
 
 ### V3
 
@@ -206,3 +225,8 @@ directionsService
         directionsRenderer.setRoute(route);
     });
 ```
+
+We hope you will enjoy the verion 4 of the MapsPeople Javascript SDK and appriciate the enhancements we have made.
+
+Best regards
+MapsPeople
