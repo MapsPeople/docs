@@ -118,7 +118,7 @@ mapsIndoors.getZoom();
 
 Both SDK version 3 and 4 supports addding a Floor Selector to the map. When using Google Maps as map provider, the method of working with the Floor Selector is unchanged, except that the `GoogleMap` object is now created by the SDK, and is retrieved using the `getMap()` method. See initialization for more information.
 
-For MapBox the specification of controllers is a bit different than for Google. For Google, the controller setup takes a `div` where MapBox takes an object containing functions returning the `div`.
+For MapBox the specification of controls is a bit different than for Google. For Google, the control setup takes a `div` where MapBox takes an object containing functions returning the `div`.
 
 ### V3
 
