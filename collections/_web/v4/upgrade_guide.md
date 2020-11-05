@@ -15,7 +15,7 @@ With the introduction of MapsIndoors JavaScript SDK v4, there are some changes t
 
 ## Initialization
 
-How to initiale the SDK has changed. In version 3 of the SDK, MapsIndoors could be initialized directly with the Google Maps map object. In version 4 the map object is created for you by the `mapView`. You must create a `mapView` either as `GoogleMap` or `MapBox` and hand this `mapView` to MapsIndoors. You can retrieve the created instance of the map using `mapsIndoors.getMap();`.
+How to initialize the SDK has changed. In version 3 of the SDK, MapsIndoors could be initialized directly with the Google Maps map object. In version 4 the map object is created for you by the `mapView`. You must create a `mapView` either as `GoogleMap` or `MapBox` and hand this `mapView` to MapsIndoors. You can retrieve the created instance of the map using `mapsIndoors.getMap();`.
 
 ### V3
 
