@@ -14,7 +14,7 @@ In this guide you will see an example of how to search for Locations. The full c
 
 ### Search
 
-The `mapsindoors.LocationsService` offers the `getLocations` function. This function can be used for searching for POIs.
+The `mapsindoors.LocationsService` offers the `getLocations` function. This function can be used for searching for Locations.
 
 It will return a Promise that gets resolved when the query has executed.
 
@@ -40,7 +40,7 @@ See this article ["What is debouncing" by Jamis Charles](https://medium.com/@jam
 
 When the function executes, we check to see if the input is empty or not. If the input is not empty, we proceed to construct the request object.
 
-We pass the value as the `q` property and set the `includeOutsidePOI` property to `true`. When the Promise resolves the response is passed to the displayResults helper function.
+We pass the value as the `q` property and set the `includeOutsidePOI` property to `true`. When the Promise resolves the response is passed to the `displayResults` helper function.
 
 If the input is empty, we clear both the result list and reset the map filter by calling the helper functions `clearResults` and `clearFilter`.
 
