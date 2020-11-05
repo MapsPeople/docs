@@ -160,7 +160,7 @@ map.addControl({
 When working with Directions, two different elements are needed:
 
 - A "Provider" to calculate routes
-- A "Renderer" to display a given Route on the map and generate the textual description for Directions
+- A "Renderer" to display a given route on the map
 
 In SDK version 3, the "Provider" was automatically given by Google Maps which has a Directions service built-in. In version 4 the mapping and the directions service has been separated, as it cannot be assumed that all mapping providers will have a built-in direction service.
 
