@@ -15,7 +15,7 @@ With the introduction of MapsIndoors JavaScript SDK v4, there are some changes t
 
 ## Initialization
 
-How to initiale the SDK has changed. In version 3 of the SDK, MapsIndoors could be initialized directly with the Google Maps map object. In version 4 the map object is created for you by the `mapView`. You must create a `mapView` either as `GoogleMap` or `MapBox` and hand this `mapView` to MapsIndoors. You can retrieve the created instance of the map using `mapsIndoors.getMap();`. 
+How to initiale the SDK has changed. In version 3 of the SDK, MapsIndoors could be initialized directly with the Google Maps map object. In version 4 the map object is created for you by the `mapView`. You must create a `mapView` either as `GoogleMap` or `MapBox` and hand this `mapView` to MapsIndoors. You can retrieve the created instance of the map using `mapsIndoors.getMap();`.
 
 ### V3
 
@@ -159,8 +159,8 @@ map.addControl({
 
 When working with Directions, two different elements are needed:
 
-- A "Provider" to calculate routes 
-- A "Renderer" to display a given Route on the map and generate the textual description for Directions. 
+- A "Provider" to calculate routes
+- A "Renderer" to display a given Route on the map and generate the textual description for Directions
 
 In SDK version 3, the "Provider" was automatically given by Google Maps which has a Directions service built-in. In version 4 the mapping and the directions service has been separated, as it cannot be assumed that all mapping providers will have a built-in direction service.
 
