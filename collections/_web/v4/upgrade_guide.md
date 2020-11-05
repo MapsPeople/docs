@@ -168,7 +168,7 @@ This means that for version 4 a "`DirectionsProvider`" must be registered. Curre
 
 The `directionsRenderer` is created in the same way in version 4 as it was done in version 3.
 
-Calculating and displaying a route is still done using the `getRoute()` call, however, the response of this call has been changed for convenience. In version 4 the actual route is returned. In version 3 an array of the route (which always only contained 1 element) was returned, Hense the "`response.routes[0]`" can be omitted and the returned route can be sent directly to the renderer for displaying.
+Calculating and displaying a route is still done using the `getRoute()` call, however, the response of this call has been changed for convenience. In version 4 the actual route is returned. In version 3 an array of the route (which always only contained 1 element) was returned, hence the "`response.routes[0]`" can be omitted and the returned route can be sent directly to the renderer for displaying.
 
 ### V3
 
