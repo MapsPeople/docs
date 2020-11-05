@@ -2,7 +2,7 @@
 title: MapsIndoors Web SDK v4
 permalink: /web/v4/
 published: true
-date: 2019-09-30
+date: 2020-11-05
 ---
 
 Welcome to the documentation site for the MapsIndoors JavaScript SDK. On this page you will get an overview of the MapsIndoors web application and which prerequisites you need in order to start playing around with the SDK yourself. In the bottom of this page you will find an overview of our guides to get you started.
