@@ -5,6 +5,7 @@ nav_weight: 400
 published: true
 date: 2019-11-20
 ---
+
 ## Overview
 
 In this, we will take a look at the events that MapsIndoors offers and how to utilize them.
@@ -12,11 +13,11 @@ In this, we will take a look at the events that MapsIndoors offers and how to ut
 > Events are actions or occurrences that happen in the system you are programming, which the system tells you about so you can respond to them in some way if desired.
 >-- <cite>[MDN web docs](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events)</cite>
 
-For example, if the user clicks on a POI on the map, then you can react to that action by presenting the user with additional info about the POI.
+For example, if the user clicks on a Location on the map, then you can react to that action by presenting the user with additional info about the Location.
 
 A code example is shown in the JSFiddle below, but will be run through bit by bit in this guide.
 
- <script async src="//jsfiddle.net/mapspeople/gex62wzn/embed/html,result/"></script>
+<script async src="//jsfiddle.net/mapspeople/gex62wzn/embed/html,result/"></script>
 
 ### Ready event
 
@@ -56,7 +57,7 @@ mapsIndoors.addListener('floor_changed', (e) => {
 
 ### Click event
 
-The `click` event will fire when the user clicks on a POI or an Area on the map.
+The `click` event will fire when the user clicks on a Location on the map.
 
 The event handler is called with a [location](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/global.html#Location) object representing the Location clicked.
 
