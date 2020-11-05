@@ -3,7 +3,7 @@ title: Create a simple map with MapsIndoors
 guide_title: guides
 nav_weight: 200
 published: true
-date: 2019-09-30
+date: 2020-11-05
 ---
 
 ## Overview
