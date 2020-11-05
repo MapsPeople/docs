@@ -3,7 +3,7 @@ title: Search and filtering
 parent: guides
 nav_weight: 500
 published: true
-date: 2019-11-25
+date: 2020-11-05
 ---
 
 ## Overview
