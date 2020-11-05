@@ -21,7 +21,7 @@ To get an overview of the MapsIndoors web app capabilities check out a [running 
 
 ## Prerequisits before getting your hands dirty
 
-The MapsIndoors web application is build on top of Google Maps. You therefore need to get a Google Maps API key.
+The MapsIndoors web application is built on top of Google Maps. You therefore need to get a Google Maps API key.
 
 You also need a MapsIndoors API key in order to see indoor floor plans.
 
