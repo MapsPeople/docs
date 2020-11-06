@@ -1,6 +1,7 @@
 ---
 title: MapsIndoors Web SDK v4
 permalink: /web/v4/
+nav_weight: 1
 published: true
 date: 2020-11-05
 ---
@@ -69,8 +70,8 @@ If you need to work with MapsIndoors SDK behind a firewall, you might need to [w
 
 ## Guides
 
-* [Create a simple map with MapsIndoors](guides/simple_map/)
-* [Introduction to DispayRules](guides/display_rules_intro/)
-* [Event handling](guides/using_events/)
-* [Search and filtering](guides/search_and_filtering/)
-* [Show user location on the map (Blue dot)](guides/show_users_position/)
+* [Upgrade Guide]({{ site.url }}/web/v4/upgrade-guide/)
+* [Create a simple map with MapsIndoors]({{ site.url }}/web/v4/guides/simple-map/)
+* [Introduction to DispayRules]({{ site.url }}/web/v4/guides/display-rules-intro/)
+* [Event handling]({{ site.url }}/web/v4/guides/using-events/)
+* [Search and filtering]({{ site.url }}/web/v4/guides/search-and-filtering/)
