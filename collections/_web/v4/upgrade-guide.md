@@ -1,6 +1,7 @@
 ---
-title: MapsIndoors Web SDK v4
-permalink: /web/v4/upgrade
+title: Web SDK v4 Upgrade Guide
+permalink: /web/v4/upgrade-guide
+nav_weight: 20
 published: true
 date: 2019-09-30
 ---
@@ -233,3 +234,13 @@ directionsService
 ```
 
 We hope you will enjoy the verion 4 of the MapsPeople Javascript SDK and appriciate the enhancements.
+
+---
+
+## Guides
+
+- [Upgrade Guide]({{ site.url }}/web/v4/upgrade-guide/)
+- [Create a simple map with MapsIndoors]({{ site.url }}/web/v4/guides/simple-map/)
+- [Introduction to DispayRules]({{ site.url }}/web/v4/guides/display-rules-intro/)
+- [Event handling]({{ site.url }}/web/v4/guides/using-events/)
+- [Search and filtering]({{ site.url }}/web/v4/guides/search-and-filtering/)

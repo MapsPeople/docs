@@ -83,7 +83,8 @@ For more information, see `MapsIndoors.filter` in the [reference documentation](
 
 ## Guides
 
-* [Create a simple map with MapsIndoors](/guides/simple_map/)
-* [Introduction to DispayRules](guides/display_rules_intro/)
-* [Event handling](/guides/using_events/)
-* [Show user location on the map (Blue dot)](/guides/show_users_position/)
+* [Upgrade Guide]({{ site.url }}/web/v4/upgrade-guide/)
+* [Create a simple map with MapsIndoors]({{ site.url }}/web/v4/guides/simple-map/)
+* [Introduction to DispayRules]({{ site.url }}/web/v4/guides/display-rules-intro/)
+* [Event handling]({{ site.url }}/web/v4/guides/using-events/)
+* [Search and filtering]({{ site.url }}/web/v4/guides/search-and-filtering/)
