@@ -1,6 +1,6 @@
 ---
 title: Web SDK v4 Upgrade Guide
-permalink: /web/v4/upgrade-guide
+permalink: /web/v4/upgrade-guide/
 nav_weight: 20
 published: true
 date: 2019-09-30
