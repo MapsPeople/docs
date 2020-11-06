@@ -61,20 +61,20 @@
             </div>
             <div class="w-third mr4 mt4">
                 <h2>
-                    <a href="/web/v3" class="link dim near-white">Web v3</a>
+                    <a href="/web/v4" class="link dim near-white">Web v4</a>
                 </h2>
                     <ul class="list pl0">
-                {% for item in web_items %}
+                {% for item in web_v4_items %}
                         <li class="mb2 {% if item.layout == 'guide' %}b mt4{% elsif item.title contains 'Changelog' %}b mt4{% endif %}">
                             <a class="link dim near-white" href="{{ item.url }}">{{ item.title }}</a>
                         </li>
                 {% endfor %}
                     </ul>
-                    <h2>
-                    <a href="/web/v4" class="link dim near-white">Web v4</a>
+                <h2>
+                    <a href="/web/v3" class="link dim near-white">Web v3</a>
                 </h2>
                     <ul class="list pl0">
-                {% for item in web_v4_items %}
+                {% for item in web_items %}
                         <li class="mb2 {% if item.layout == 'guide' %}b mt4{% elsif item.title contains 'Changelog' %}b mt4{% endif %}">
                             <a class="link dim near-white" href="{{ item.url }}">{{ item.title }}</a>
                         </li>
