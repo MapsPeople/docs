@@ -139,6 +139,12 @@ defaults:
       layout: tutorial
   -
     scope:
+      path: "_web/v4"
+    values:
+      version: v4
+      layout: tutorial
+  -
+    scope:
       path: "_xamarin/v3"
     values:
       version: v3
