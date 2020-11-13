@@ -84,16 +84,18 @@ a {
     @include font.leading(xx-large);
     @include font.weight(small);
     @include margin.vertical(xxx-large);
+    @include margin.bottom(xx-large);
     font-style: italic;
   }
   ul {
     list-style: none;
     padding: 0;
-    @include margin.top(xx-large);
+    @include margin.bottom(medium);
     li {
       display: inline;
       @include margin.right(medium);
     }
+    text-align: center;
   }
   a.front-button {
     @include font.size(x-large);
