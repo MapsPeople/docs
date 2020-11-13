@@ -20,7 +20,7 @@ Data is structured in a hierarchy where the top level is your Solution which can
 
 View the tutorial video below for more information about terminology and hierarchy.
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/1k_wAv8kEXg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/GwyO-Vav8Rs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Although a point of interest can be placed within a room, it is not required. Points of interest can also be placed "outside” on the ground level which is also the layer where the Google map exists. In this case the POI belongs to the Venue directly.
 
@@ -35,51 +35,43 @@ There are 2 different roles in the system:
 
 View the tutorial video below for more information about the menu structure and user roles.
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/sQHOb0llDk0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/HpghIH5IKgk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## The Map
 
 After logging in, the map will appear.
 
-![MapsIndoors CMS](https://app.mapsindoors.com/mapsindoors/cms/assets/images/guide1.png)
+![MapsIndoors CMS]({{ site.url }}/assets/cms/map-overview.png)
 
 There are a number of key elements:
 
-1. **Solution Name:** This is the name of your Solution
-1. **Venue:** This is the name of your Venue. It’s possible to have several Venues. Also, the arrow above the Venue can be clicked to hide the side panel
-1. **CMS Guide:** High level guide on various areas to make changes
-1. **Venue and Buildings & Routes:**
-
-   * Change Building names, enter aliases
-   * Routes will display on the map, along with the entry point to indoor navigation. There is also the ability to close part of the route network
-
-1. **General Settings:**
-
-   * **Location Types:** List of Locations with their icon - ability to edit. Add Location Types here
-   * **Categories:** List of categories - ability to edit. Add new categories here. These will populate in an iOS or Android app
-   * **Location Type templates:** Ability to add information to a specific Location Type, for example, business hours, email, phone number
-
-1. **App settings:**
-
-   * **App configuration:** App title, MapsIndoors API key, list of categories - editing of the order can be done here
-   * **Type visibility:** Set the zoom level of when Location icon will appear. Can also "hide” icon via the eye icon
-
-1. **Administration:**
-
-   * **Users:** Add, edit users for the CMS
-
+1. **Solution Name:** This is the name of your Solution. It's possible to have access to several Solutions.
+1. **Venue:** This is the name of your Venue. It’s possible to have several Venues.
+1. **Map**
+   * **Locations:** Manage rooms and POIs
+   * **Categories:** Create, edit, and delete Categories
+   * **Location Types:** Create, edit, and delete Location Types
+   * **Type Visibility:** Manage icon and label visibility
+   * **Buildings:** Manage Building name, address, and floor names
+   * **Venue:** Manage Venue name and default floor
+   * **Route Access:** Manage route access and parking lots
+1. **App Settings**
+   * **App Configuration:** Manage App Title and Alias, App User Roles, and Category visibility
+   * **API Keys:** Create, edit, or delete API Keys
+1. **Administration**
+   * **Users:** Create, edit, or delete CMS Users
+   * **Logs:** Filter and download CMS logs
 1. **Current User**
-1. **List:** A list of Locations in the currently selected Venue, can edit from this list
-1. **Zoom In/Zoom Out**
+1. **List View:** A list of Locations in the currently selected Venue
+1. **Filter**
+   * **Type:** Dropdown to select Locations of a specific Location Type to show on the map or in the List View
+   * **Category:** Dropdown to select Locations of a specific Category to show on the map or in the List View
+   * **Search:** Search for Locations
+1. **Selected Building**
 1. **Zoom Level:** Indicates which zoom level you are viewing
-1. **Filter:**
-
-   * **Type:** dropdown to select a specific Location Type to only see on the map
-   * **Category:** dropdown to select a specific Category to only see on the map
-   * **Search:** search for Locations
-
-1. **Floor selector:** The floor selector shows the floors available, click on the desired floor to switch floor
-1. **POI:** click on this icon to add a POI anywhere on the map
+1. **Floor selector**
+1. **Zoom In/Zoom Out**
+1. **POI:** Click on this icon to add a POI anywhere on the map
 
 ## Locations
 
@@ -87,7 +79,7 @@ When Locations is selected, you see the map with all the icons that determine th
 
 To create a new POI, first make it clear if this is an outdoor POI or placed inside a Building. If inside a Building, select the desired Building from the drop down menu. Click on the POI icon in the bottom right corner, then click on the map where it should be added. The placement doesn’t have to be 100% precise, it can be moved afterwards.
 
-![New Location](https://app.mapsindoors.com/mapsindoors/cms/assets/images/guide2.png)
+![New Location]({{ site.url }}/assets/cms/locations/locations-newpoi.png)
 
 After clicking on the box, you will be asked to select a Location Type and Name. The other choices; Description, Categories, Icon are optional.
 
@@ -95,7 +87,7 @@ Select the icon on the map for the Location that you wish to edit, or click on L
 
 View the tutorial video below for more information about managing POIs.
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/FejUy9-dhps" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/YjvmpkZ4Rdg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 In the Edit Location Form you can do the following:
 
@@ -213,11 +205,7 @@ Please see the official [Google Street View Service documentation](https://devel
 
 Remember to save before clicking on another Location or changing the page, otherwise your changes will be lost. To save the changes, press "Save”-button in the top of the Location edit form.
 
-![Locations](https://app.mapsindoors.com/mapsindoors/cms/assets/images/guide3.png)
-
-View the tutorial video below for more information about advanced settings for POIs.
-
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/YkvGQE3Fbtg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+![Locations]({{ site.url }}/assets/cms/locations/locations-listview.png)
 
 To view a list of all Locations in a certain Venue, select ‘List View”.
 
@@ -265,6 +253,8 @@ Preview is especially helpful when using rotation or larger-than-monitor exports
 * Edit the Venue name in the available languages
 * Choose a default floor
 
+_A note about Venue images:_ You can request MapsPeople to add an image of the Venue. It should be in a 600w x 300h size to make it look its best in our Standard Apps.
+
 ## Buildings
 
 ### Adding a building
@@ -280,9 +270,9 @@ Preview is especially helpful when using rotation or larger-than-monitor exports
 * Click on the pencil icon to the left of the Building name. A new menu will appear
 * Edit Building name in the available languages
 * Edit floor names
-* Select a default floor under "Show advanced".
+* Select a default floor under "Show advanced"
 
-   The Building's default Floor is used to manage panning across Buildings in the apps. In order to improve the user experience in the apps, the default Floor is used when the Building panned to doesn't have the floor index of the floor selector.
+The Building's default Floor is used to manage panning across Buildings in the apps. In order to improve the user experience in the apps, the default Floor is used when the Building panned to doesn't have the floor index of the floor selector.
 
 ### Uploading CAD files for a floor
 
@@ -298,9 +288,9 @@ Preview is especially helpful when using rotation or larger-than-monitor exports
 
 ## Routes Access
 
-![Routes](https://app.mapsindoors.com/mapsindoors/cms/assets/images/guide5.png)
+![Routes]({{ site.url }}/assets/cms/route-access/route-access.png)
 
-The routes tab allows you to manipulate the network that powers the indoor navigation. It is useful for redirecting traffic by locking paths or isolating entire areas where navigation should be turned off entirely.
+The Route Access tab allows you to manipulate the network that powers the indoor navigation. It is useful for redirecting traffic by locking paths or isolating entire areas where navigation should be turned off entirely.
 
 To create a parking lot:
 
@@ -318,7 +308,7 @@ To restrict access to a path:
 
 ## Location Types
 
-![Location Types](https://app.mapsindoors.com/mapsindoors/cms/assets/images/guide6.png)
+![Location Types]({{ site.url }}/assets/cms/location-types/location-types.png)
 
 This is a list of all the Location Types in the Solution. From this list you can edit each Location by clicking on the pencil.
 
@@ -344,17 +334,17 @@ To display or otherwise use the custom data, your app needs to be customized. Th
 
 View the tutorial video below for more information about Location Types.
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/PyQOMnJP0Z8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/WJIZUBsObU4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Categories
 
-![Categories](https://app.mapsindoors.com/mapsindoors/cms/assets/images/guide7.png)
+![Categories]({{ site.url }}/assets/cms/categories/categories.png)
 
-Ability to add new categories to the list. Click on New Category, add name, click save. Once created, this Category can be added to a specific Location. The categories can be chosen to be displayed in the app, as well as put in a specific order (this can be done under App Configuration).
+Ability to add new categories to the list. Click on New Category, add name, click save. Once created, this Category can be added to a specific Location. The categories can be chosen to be displayed in the app, as well as put in a specific order (this can be done under App Configuration in App Settings).
 
 View the tutorial video below for more information about Categories.
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/FMIEJmJwogU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/DskwwAE4lLE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Syncing Categories to other Solutions
 
@@ -412,9 +402,9 @@ The Audit Log functionality is a configurable feature in MapsIndoors and if not 
 
 The Audit Log feature can be used to access the Audit log on MapsIndoor data objects, i.e. you can find or inspect the change history.
 
-The Log functionality is found in the Log menu point in the left menu of the MapsIndoors CMS.
+The Log functionality is found in the Logs tab under Administration in the CMS.
 
-![Audit log](https://app.mapsindoors.com/mapsindoors/cms/assets/images/guide9.png)
+![Audit log]({{ site.url }}/assets/cms/administration/logs.png)
 
 The Log can be filtered on date, ID, User and Data object types. When pressing download a comma separated file (csv) will be stored on your computer's hard drive.
 
@@ -453,17 +443,17 @@ If you use Excel you can find a video on how to open a CSV file here: [https://w
 
 Anywhere in the CMS you can change icons for one or more markers on the map, you use the Icon Manager to do so. Click the "Change"-button to invoke it.
 
-In the Icon Manager, you can choose between a predefined set of MapsIndoors icons, and a list of your uploaded icons. We support uploads of image files in the PNG and SVG formats. Click on an icon in either place, and set it to close the icon manager and preview the icon on the map. Don't worry, it won't be saved until you click "Save" in the details editor.
+In the Icon Manager, you can choose between a predefined set of MapsIndoors icons, and a list of your uploaded icons. We support uploads of files in the PNG and SVG formats. Click on an icon in either place, and set it to close the icon manager and preview the icon on the map. Don't worry, it won't be saved until you click "Save" in the details editor.
 
-Remember to keep your icons at a reasonable size. We'll let you know if it's larger than 128x64px, as that would take up a large amount of space on the map. There is a hard limit on the image size of 900x600px or 150kb. The images should also be optimized and compressed to be as small as possible.
+Remember to keep your icons at a reasonable size. The Icon Manager will prompt you if an icon is larger than 128x64px, as that would take up a large amount of space on the map. There is a hard limit on the size of 900x600px or 150kb. The icon files should also be optimized and compressed to be as small as possible.
 
 You can bulk upload SVGs and PNGs at the same time.
 
-To delete an icon, click the "trash bin" on the image files you want to delete. It is strongly advised to change icons on the Locations, Location Types or Categories before deleting their associated icon file. However, if you delete an icon that is already used by a Location, the Location will revert back to using the icon for its Location Type. If you delete an icon that is used by a Category or Location Type, it will revert to using a generic marker on the map.
+To delete an icon, click the "trash bin" on the icons you want to delete. It is strongly advised to change icons on the Locations, Location Types or Categories before deleting their associated icon file. However, if you delete an icon that is already used by a Location, the Location will revert back to using the icon for its Location Type. If you delete an icon that is used by a Category or Location Type, it will revert to using a generic marker on the map.
 
 ### Uploading PNGs
 
-When uploading a PNG image file, make sure you upload it in a 3x size to accommodate for it being scaled down on the map. For example, to display a 20x20px icon on the map, upload it in 60x60px.
+When uploading an icon in the PNG format, make sure you upload it in a 3x size to accommodate for it being scaled down on the map. For example, to display a 20x20px icon on the map, upload it in 60x60px.
 
 ### Uploading SVGs
 
@@ -473,7 +463,7 @@ SVGs should be uploaded with a `width` and `height` that you want the SVG to be 
 
 ### Supported SVG elements
 
-We only accept SVGs that conform to a very strict ruleset. If an uploaded SVG contains anything other than the elements and attributes listed below, it's rejected. All child elements can be nested as supported by the SVG format.
+We only accept SVGs that conform to a very strict ruleset. If an uploaded SVG contains anything other than the elements and attributes listed below, it will be rejected. All child elements can be nested as supported by the SVG format.
 
 * `<svg>` element
 * `viewbox` attribute
