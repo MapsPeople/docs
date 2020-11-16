@@ -140,6 +140,11 @@ nav.sidebar {
     @include margin.vertical(medium);
     border-top: 1px solid $color-gray-50;
   }
+
+  .nav__header {
+    @include font.weight(large);
+    @include font.size(x-large);
+  }
 }
 
 nav {
@@ -150,7 +155,7 @@ nav {
     margin: 0;
   }
   ul {
-    @include font.weight(x-large);
+    @include font.weight(large);
     @include font.size(medium);
     @include font.leading(x-large);
     li {
