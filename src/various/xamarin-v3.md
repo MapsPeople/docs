@@ -2,14 +2,14 @@
 title: MapsIndoors Xamarin SDK v3
 eleventyNavigation:
   key: Xamarin v3
-  parent: Various
+  parent: xamarin
 ---
 
 ## Introduction
 
 This will explain how to get started with getting MapsIndoors inside of your Xamarin application.
 
-### Please note: Xamarin support for MapsIndoors is currently in beta.
+### Please note: Xamarin support for MapsIndoors is currently in beta
 
 ## Getting started
 

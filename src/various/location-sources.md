@@ -2,7 +2,7 @@
 title: Location Sources in MapsIndoors
 eleventyNavigation:
   key: Location Sources in MapsIndoors
-  parent: Various
+  parent: various
 ---
 
 Location Sources is a new feature introduced in version 3 of MapsIndoors SDK for Android and iOS. Basically we are making it possible to register your own custom location data source, adhering to a very simple interface.

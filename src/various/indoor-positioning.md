@@ -2,7 +2,7 @@
 title: Indoor Positioning with MapsIndoors
 eleventyNavigation:
   key: Indoor Positioning with MapsIndoors
-  parent: Various
+  parent: various
 ---
 
 To get an introduction to the field of indoor positioning, we recommend [this blog post](https://www.mapspeople.com/blog/mapsindoors/indoor-positioning-101/) for a start.

@@ -2,7 +2,7 @@
 title: Glossary
 eleventyNavigation:
   key: Glossary
-  parent: Various
+  parent: various
 ---
 
 In order to get an understanding of the concepts used when working with MapsIndoors this space provides a glossary list ordered hierarchically, so that it starts with broad concepts and from there goes into details.

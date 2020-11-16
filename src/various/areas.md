@@ -1,8 +1,9 @@
 ---
 title: Areas
 eleventyNavigation:
-  key: Areas
-  parent: Various
+  title: Areas
+  key: various-areas
+  parent: various
 ---
 
 Areas are a type of Location, the same way a POI and a Room is. A POI is a *single-point Location*, while a Room is a *multi-point Location* (i.e. a "polygon"). Think of an Area as a *multi-point POI*, as it does not affect the routing (same as POIs), but there is a polygon (like Rooms).

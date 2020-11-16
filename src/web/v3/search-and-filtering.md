@@ -2,7 +2,8 @@
 title: Search and filtering
 eleventyNavigation:
   parent: web-v3
-  key: Search and filtering
+  title: Search and filtering
+  key: web-v3-search-filtering
 ---
 
 ## Overview

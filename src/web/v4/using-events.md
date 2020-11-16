@@ -2,7 +2,8 @@
 title: Event handling
 eleventyNavigation:
   parent: web-v4
-  key: Event handling
+  key: web-v4-event-handling
+  title: Event handling
   order: 400
 ---
 

@@ -1,8 +1,9 @@
 ---
 title: CMS Dashboard
 eleventyNavigation:
-  key: CMS Dashboard
-  parent: Various
+  key: cms-dashboard
+  title: CMS Dashboard
+  parent: various
 ---
 
 ## Overview

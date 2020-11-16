@@ -2,7 +2,7 @@
 title: Kiosk
 eleventyNavigation:
   key: Kiosk
-  parent: Various
+  parent: various
 ---
 
 Please do the following before getting started:

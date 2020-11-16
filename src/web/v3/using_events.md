@@ -2,7 +2,8 @@
 title: Event handling
 eleventyNavigation:
   parent: web-v3
-  key: Event handling
+  title: Event handling
+  key: web-v3-event-handling
 ---
 
 ## Overview

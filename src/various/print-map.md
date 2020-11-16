@@ -2,7 +2,7 @@
 title: Print Map
 eleventyNavigation:
   key: Print Map
-  parent: Various
+  parent: various
 ---
 
 The print map tool is found in the Standard Web App and can be used for different purposes, e.g. to print evacuation routes for each Floor at your Venue.
