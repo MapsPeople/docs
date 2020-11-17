@@ -2,63 +2,64 @@
 
 <body>
   {% include "header.njk" %}
-  <div class="wrap">
-    <section class="container">
-      <nav class="sidebar">
-        {% if '/web/v3/' in page.url %}
-        <p class="nav__header"><a href="/web/v3/">Web v3</a></p>
-        {% set navPages = collections.published | eleventyNavigation("web-v3") %}
-        {% elif '/web/v4' in page.url %}
-        <p class="nav__header"><a href="/web/v4/">Web v4</p>
-        {% set navPages = collections.published | eleventyNavigation("web-v4") %}
-        {% elif '/android/v2' in page.url %}
-        <p class="nav__header"><a href="/android/v2/">Android v2</p>
-        {% set navPages = collections.published | eleventyNavigation("android-v2") %}
-        {% elif '/android/v3' in page.url %}
-        <p class="nav__header"><a href="/android/v3/">Android v3</p>
-        {% set navPages = collections.published | eleventyNavigation("android-v3") %}
-        {% elif '/ios/v2' in page.url %}
-        <p class="nav__header"><a href="/ios/v2/">iOS v2</p>
-        {% set navPages = collections.published | eleventyNavigation("ios-v2") %}
-        {% elif '/ios/v3' in page.url %}
-        <p class="nav__header"><a href="/ios/v3/">iOS v3</p>
-        {% set navPages = collections.published | eleventyNavigation("ios-v3") %}
-        {% elif '/api' in page.url %}
-        <p class="nav__header"><a href="/api/">Integration API</p>
-        {% set navPages = collections.published | eleventyNavigation("api") %}
-        {% elif '/cms' in page.url %}
-        <p class="nav__header"><a href="/cms/">MapsIndoors CMS</p>
-        {% set navPages = collections.published | eleventyNavigation("cms") %}
-        {% elif '/product' in page.url %}
-        <p class="nav__header"><a href="/product/">Product Overview</p>
-        {% set navPages = collections.published | eleventyNavigation("product") %}
-        {% elif '/xamarin' in page.url %}
-        <p class="nav__header"><a href="/xamarin/">Xamarin</p>
-        {% set navPages = collections.published | eleventyNavigation("xamarin") %}
-        {% elif '/various' in page.url %}
-        <p class="nav__header"><a href="/various/">Various</p>
-        {% set navPages = collections.published | eleventyNavigation("various") %}
-        {% else %}
-        {% set navPages = collections.published | eleventyNavigation("index") %}
-        {% endif %}
-        {{ navPages | eleventyNavigationToHtml({listClass: "sidebar-nav", activeListItemClass: "active", activeKey: eleventyNavigation.key}) | safe }}
-      </nav>
-      <main>
-        <nav aria-label="Breadcrumb">
-          {{ collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key) | eleventyNavigationToHtml({listElement: "ol", listItemElement: "span", listItemClass: "item", listClass: "breadcrumb", activeListItemClass: "active", activeKey: eleventyNavigation.key}) | safe }}
+  <div class="content">
+
+
+    <div class="wrap">
+      <section class="container">
+        <nav class="sidebar">
+          {% if '/web/v3/' in page.url %}
+          <p class="nav__header"><a href="/web/v3/">Web v3</a></p>
+          {% set navPages = collections.published | eleventyNavigation("web-v3") %}
+          {% elif '/web/v4' in page.url %}
+          <p class="nav__header"><a href="/web/v4/">Web v4</p>
+          {% set navPages = collections.published | eleventyNavigation("web-v4") %}
+          {% elif '/android/v2' in page.url %}
+          <p class="nav__header"><a href="/android/v2/">Android v2</p>
+          {% set navPages = collections.published | eleventyNavigation("android-v2") %}
+          {% elif '/android/v3' in page.url %}
+          <p class="nav__header"><a href="/android/v3/">Android v3</p>
+          {% set navPages = collections.published | eleventyNavigation("android-v3") %}
+          {% elif '/ios/v2' in page.url %}
+          <p class="nav__header"><a href="/ios/v2/">iOS v2</p>
+          {% set navPages = collections.published | eleventyNavigation("ios-v2") %}
+          {% elif '/ios/v3' in page.url %}
+          <p class="nav__header"><a href="/ios/v3/">iOS v3</p>
+          {% set navPages = collections.published | eleventyNavigation("ios-v3") %}
+          {% elif '/api' in page.url %}
+
+          {% set navPages = collections.published | eleventyNavigation("api") %}
+          {% elif '/cms' in page.url %}
+          {% set navPages = collections.published | eleventyNavigation("cms") %}
+          {% elif '/product' in page.url %}
+          {% set navPages = collections.published | eleventyNavigation("product") %}
+          {% elif '/xamarin' in page.url %}
+          {% set navPages = collections.published | eleventyNavigation("xamarin") %}
+          {% elif '/various' in page.url %}
+          <p class="nav__header"><a href="/various/">Various</p>
+          {% set navPages = collections.published | eleventyNavigation("various") %}
+          {% else %}
+          {% set navPages = collections.published | eleventyNavigation("index") %}
+          {% endif %}
+          {{ navPages | eleventyNavigationToHtml({listClass: "sidebar-nav", activeListItemClass: "active", activeKey: eleventyNavigation.key}) | safe }}
         </nav>
-        <h1>
-          <a href="{{ page.url }}">{{ title }}</a>
-        </h1>
-        {% if '/404.html' not in page.url %}
-        <p class="time">Last updated: <time>{{ page.date.toLocaleDateString() }}</time>
-        </p>
-        {% endif %}
-        {{ content | safe }}
-      </main>
-    </section>
-    {% include "footer.njk" %}
+        <main>
+          <nav aria-label="Breadcrumb">
+            {{ collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key) | eleventyNavigationToHtml({listElement: "ol", listItemElement: "span", listItemClass: "item", listClass: "breadcrumb", activeListItemClass: "active", activeKey: eleventyNavigation.key}) | safe }}
+          </nav>
+          <h1>
+            <a href="{{ page.url }}">{{ title }}</a>
+          </h1>
+          {% if '/404.html' not in page.url %}
+          <p class="time">Last updated: <time>{{ page.date.toLocaleDateString() }}</time>
+          </p>
+          {% endif %}
+          {{ content | safe }}
+        </main>
+      </section>
+    </div>
   </div>
+  {% include "footer.njk" %}
 </body>
 
 </html>

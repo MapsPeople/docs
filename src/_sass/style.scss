@@ -15,6 +15,10 @@
 
 @use '../../node_modules/@mapsindoors/midt/build/scss/variables' as *;
 
+:root {
+  background: $color-green-90;
+}
+
 html,
 body {
   margin: 0;
@@ -27,22 +31,26 @@ body {
   @include font.leading(x-large);
   @include font.tracking(medium);
   @include font.color(base);
-  @include background-color.white(base);
+  // @include background-color.white(base);
   // @include margin.bottom(x-large);
 }
 
 .wrap {
-  max-width: 1248px;
+  width: 1140px;
   margin-left: auto;
   margin-right: auto;
-  .container {
-    display: flex;
-    flex: 1 0;
-  }
 }
 
+.container {
+  display: flex;
+  flex: 1 0;
+}
+.content {
+  @include background-color.white(base);
+}
 main {
   @include margin.top(medium);
+  @include margin.bottom(x-large);
   p,
   ul,
   ol,
@@ -132,9 +140,9 @@ nav.sidebar {
   max-width: 280px;
   display: block;
   @include margin.right(xx-large);
-  @include margin.top(medium);
+  // @include margin.top(medium);
   @include border.radius(medium);
-  @include padding.horizontal(medium);
+  @include padding.right(medium);
 
   hr {
     @include margin.vertical(medium);
@@ -155,7 +163,6 @@ nav {
     margin: 0;
   }
   ul {
-    @include font.weight(large);
     @include font.size(medium);
     @include font.leading(x-large);
     li {
@@ -174,15 +181,20 @@ nav {
   }
 
   .active > a {
-    @include background-color.blue(10);
-    @include padding.horizontal(small);
-    @include padding.vertical(x-small);
-    @include border.radius(medium);
+    // @include background-color.blue(10);
+    // @include padding.horizontal(small);
+    // @include padding.vertical(x-small);
+    // @include border.radius(medium);
     @include font.weight(large);
-    margin-left: -12px;
+    // margin-left: -12px;
 
-    ul {
-      font-style: normal;
+    // ul {
+    //   font-style: normal;
+    // }
+
+    &::before {
+      content: '• ';
+      margin-left: -12px;
     }
   }
 }
@@ -328,7 +340,11 @@ header {
 // footer.njk
 
 footer {
-  background-image: linear-gradient(to bottom, #006440, #1e3c32);
+  background-image: linear-gradient(
+    to bottom,
+    $color-green-60,
+    $color-green-90
+  );
   @include color.white(base);
   @include margin.all(none);
   @include padding.all(medium);
