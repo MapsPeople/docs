@@ -94,15 +94,15 @@ extension MyClass : MPMapControlDelegate {
     func willUpdateLocationsOnMap(locations: [MPLocation]) {
         for location in locations {
             let occupied = location.getLiveValue(forKey: "occupied", domainType: "occupancy")
-            
+
             let image:UIImage
-            
+
             if (occupied == "True") {
                 image = UIImage.init("occupied")
             } else {
                 image = UIImage.init("free")
             }
-            
+
             let displayRule = MPLocationDisplayRule.init(name: nil, andIcon: image, andZoomLevelOn: 15)
 
             self.mapControl.setDisplayRule(myDisplayRule, for: location)
@@ -133,7 +133,7 @@ As you can see, both `MPMapControlDelegate` and `MPMappedLocationUpdateHandler` 
 
 ## Handling Live Data Events
 
-While only a few lines of code can get things moving around on a map, there are of course more handles that are relevant to create a robust and user-friendly real-time map experience. 
+While only a few lines of code can get things moving around on a map, there are of course more handles that are relevant to create a robust and user-friendly real-time map experience.
 
 ### Listening for Live Updates
 
