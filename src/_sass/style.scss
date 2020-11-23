@@ -31,31 +31,50 @@ body {
   @include font.leading(x-large);
   @include font.tracking(medium);
   @include font.color(base);
-  // @include background-color.white(base);
-  // @include margin.bottom(x-large);
 }
 
 .wrap {
-  width: 1140px;
+  max-width: 1140px;
   margin-left: auto;
   margin-right: auto;
+  @include padding.horizontal(medium);
 }
 
 .container {
   display: flex;
   flex: 1 0;
+  @include padding.bottom(x-large);
 }
+
 .content {
   @include background-color.white(base);
 }
+
 main {
   @include margin.top(medium);
-  @include margin.bottom(x-large);
   p,
   ul,
   ol,
   blockquote {
     @include font.measure(large);
+  }
+}
+
+blockquote {
+  font-style: italic;
+  @include border.width;
+  @include border.style;
+  @include border.left;
+  @include border.top(none);
+  @include border.right(none);
+  @include border.bottom(none);
+  @include border.bronze(30);
+  @include background-color.bronze(10);
+  @include margin.left(none);
+  @include padding.left(small);
+  border-radius: 0 $rounding-large $rounding-large 0;
+  p {
+    display: inline-block;
   }
 }
 
@@ -427,6 +446,40 @@ p.time {
 
 main img {
   max-width: 100%;
+}
+
+// Table styles
+
+table {
+  @include margin.top(small);
+  @include margin.bottom(medium);
+  display: inline-block;
+  text-align: left;
+  border: 1px solid $color-gray-40;
+  border-top: none;
+  border-collapse: collapse;
+  thead {
+    @include font.size(large);
+    @include background-color.gray(80);
+    th {
+      @include padding.all(small);
+      @include color.white(base);
+    }
+  }
+  tbody tr:nth-child(odd) {
+    @include background-color.gray(10);
+  }
+  td {
+    @include padding.horizontal(small);
+    @include padding.vertical(small);
+    min-width: 72px;
+    border-left: 1px solid $color-gray-30;
+    vertical-align: baseline;
+    word-break: break-word;
+    &:first-child {
+      border-left: none;
+    }
+  }
 }
 
 // // Dark theme overrides. Should always be at the bottom. Not possible until mi-tabs has dark mode too...
