@@ -13,7 +13,6 @@ From the MapsIndoors Integration API you can get, add, change and delete data re
 Send your requests to this endpoint: [https://integration.mapsindoors.com](https://integration.mapsindoors.com)
 
 > Note: Only https is supported.
-{: .mi-careful}
 
 You can access data through the Integration API using a range of endpoints. The endpoints are described in the Swagger interface definition: [https://integration.mapsindoors.com/doc](https://integration.mapsindoors.com/doc)
 
@@ -71,7 +70,6 @@ authorization: Bearer eyJhbGciOiJ...vmERrovsg
 ```
 
 > Note: The access token is valid for 24 hours. After that you will need to reauthenticate, following the same steps as explained above.
-{: .mi-careful}
 
 ## Data description
 
@@ -215,7 +213,6 @@ Venue, Building, Floor, Room and Area have a polygon that describes where its po
 To read, change or delete Geodata use the Geodata endpoints described here: [https://integration.mapsindoors.com/doc/index.html#/Geodata](https://integration.mapsindoors.com/doc/index.html#/Geodata)
 
 > Note: When you get data, you only specify the `apiKey` hence you get the entire tree! The other Geodata endpoints works on individual Geodata objects.
-{: .mi-careful}
 
 ## Detailed data description
 
@@ -324,7 +321,6 @@ Each Geodata element has a number of properties. Let's look at an example - a co
     As this is a dictionary setup, the keyname needs to be unique and only contain the ascii chars [a-z] and [0-9]. Use of spaces and unicode chars here is discouraged as it makes it harder to use from the application code side. The char @ is not supported in the keyname as it’s used as a seperator. As an example, if you want to store opening hours here you could use the key openinghours@en as a keyname.
 
 > Note: BaseType ‘Floor’ doesn’t support properties.
-{: .mi-careful}
 
 #### Example: Area
 
@@ -486,7 +482,6 @@ Common setup for Geodata of different kinds (meeting room, hallway, ...)
     The name property must be specified for every language defined in the dataset.
 
 > Note: The display type data is split in the CMS; currently it can be found in the fans "Location Types" and "Type Visibility".
-{: .mi-careful}
 
 ### Categories
 

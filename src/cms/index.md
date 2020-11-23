@@ -120,7 +120,6 @@ Take a photo of your Location and upload it here. Photos on Locations makes it e
 ### Image with IndoorView
 
 > IndoorView is only supported for web
-{: .mi-careful}
 
 To get started using the IndoorView feature for your Locations, please make sure that the _Google Street View panorama images_ are publicly available for your building by looking at [Google Maps](https://www.google.com/maps). If no imagery is available, please [contact a certified Street View Photographer](https://www.google.com/streetview/contacts-tools/).
 
