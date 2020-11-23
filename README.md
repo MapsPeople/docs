@@ -1,12 +1,3 @@
-# Creating a redirecting page
-
-Set the front matter to the following:
-
-```markdown
-layout: redirect
-destination: /path/to/page/
-```
-
 # Docs for MapsIndoors iOS, Android, Web SDKs, and Integration API
 
 This is the repository holding all documentation related to developing apps on the [MapsIndoors](https://www.mapspeople.com/mapsindoors/) platform.
@@ -48,7 +39,7 @@ Eleventy automatically builds and deploys from the `main` branch in this reposit
 
 1. Open <http://0.0.0.0:8080>
 
-### Create a new guide
+### Create a new page
 
 1. Create a feature branch:
 
@@ -89,6 +80,14 @@ Eleventy automatically builds and deploys from the `main` branch in this reposit
 2. The folder structure determines the url structure of the page.
 3. The `*.json`-files named for their parent folders are used to inject data into the Markdown-files in that folder. That way you can set the template for all files without repeating yourself in each file's Front Matter, or set a tag on all pages to add it to a collection to set up navigation.
 4. If a page has the same `key` in `eleventyNavigation` as another page, we have a problem. You can override what is displayed in the sidebar by setting a `title` under `eleventyNavigation` and making the `key` something distinct.
+5. Creating a redirecting page
+
+    Set the front matter to the following:
+
+    ```markdown
+    layout: redirect
+    destination: /path/to/page/
+    ```
 
 ### Markdown
 
