@@ -2,7 +2,8 @@
 title: Google Analytics
 eleventyNavigation:
   key: Google Analytics
-  parent: Various
+  parent: various
+  order: 7
 ---
 
 ## Overview
@@ -36,7 +37,6 @@ After doing this, within 24 hours you will start receiving stats and events in y
 When a `Property ID` is added to your MapsIndoors Solution you will see the following events in Google Analytics.
 
 > Events seen below are only tracked in the Standard Web App.
-{: .mi-careful}
 
 | Category   | Action                                   | Label                                                                | Description                                                |
 | ---------- | ---------------------------------------- | -------------------------------------------------------------------- | ---------------------------------------------------------- |

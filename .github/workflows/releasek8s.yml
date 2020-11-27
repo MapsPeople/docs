@@ -1,25 +1,25 @@
 name: K8S Release
 
 on:
-    push:
-        branches:
-            - main
-        paths-ignore:
-            - "package.json"
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - 'package.json'
 
 jobs:
-    build-image:
-        runs-on: ubuntu-latest
+  build-image:
+    runs-on: ubuntu-latest
 
-        steps:
-            - name: Checkout
-              uses: actions/checkout@v2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
 
-            - name: Build and push Docker images
-              uses: docker/build-push-action@v1.1.0
-              with:
-                  username: _json_key
-                  password: ${{ secrets.DOCKER_PASSWORD }}
-                  registry: eu.gcr.io
-                  repository: mapsindoors-services/docs
-                  tag_with_sha: true
+      - name: Build and push Docker images
+        uses: docker/build-push-action@v1.1.0
+        with:
+          username: _json_key
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          registry: eu.gcr.io
+          repository: mapsindoors-services/docs
+          tag_with_sha: true

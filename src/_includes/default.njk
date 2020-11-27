@@ -1,31 +1,30 @@
 {% include "head.njk" %}
+
 <body>
   {% include "header.njk" %}
-  <div class="wrap">
-    <section class="container">
-      <nav class="sidebar">
-        <ul>
-          <li>
-            <a href="{{ '/' | url }}">Home</a>
-          </li>
-        </ul>
-        {% set navPages = collections.published | eleventyNavigation("index") %}
-        {{ navPages | eleventyNavigationToHtml({listClass: "sidebar-nav", activeListItemClass: "active", activeKey: eleventyNavigation.key}) | safe }}
-      </nav>
-      <main>
-        <nav aria-label="Breadcrumb">
-          {{ collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key) | eleventyNavigationToHtml({listElement: "ol", listItemElement: "span", listItemClass: "item", listClass: "breadcrumb", activeListItemClass: "active", activeKey: eleventyNavigation.key}) | safe }}
-        </nav>
-        <h1>
-          <a href="{{ page.url }}">{{ title }}</a>
-        </h1>
-        {% if '/404.html' not in page.url %}
-          <p class="time">Last updated: <time>{{ page.date.toLocaleDateString() }}</time>
-          </p>
+  <div class="content">
+    <div class="wrap">
+      <section class="container">
+        {% if ('/web/' in page.url) or ('/ios/' in page.url) or ('/android/' in page.url) or ('/various/' in page.url) %}
+         {% include "sidebar.njk" %}
         {% endif %}
-        {{ content | safe }}
-      </main>
-    </section>
+        <main>
+          <nav aria-label="Breadcrumb">
+            {{ collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key) | eleventyNavigationToHtml({listElement: "ol", listItemElement: "span", listItemClass: "item", listClass: "breadcrumb", activeListItemClass: "active", activeKey: eleventyNavigation.key}) | safe }}
+          </nav>
+          <h1>
+            <a href="{{ page.url }}">{{ title }}</a>
+          </h1>
+          {% if '/404.html' not in page.url %}
+            <p class="time">Last updated: <time>{{ page.date.toLocaleDateString() }}</time>
+            </p>
+          {% endif %}
+          {{ content | safe }}
+        </main>
+      </section>
+    </div>
   </div>
+  {% include "footer.njk" %}
 </body>
+
 </html>

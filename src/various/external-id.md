@@ -2,7 +2,8 @@
 title: External ID
 eleventyNavigation:
   key: External ID
-  parent: Various
+  parent: various
+  order: 5
 ---
 
 The ExternalID is a reference from your real-life data to a piece of MapsIndoors geodata.

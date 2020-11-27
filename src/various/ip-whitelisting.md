@@ -2,7 +2,8 @@
 title: Work with MapsIndoors SDK behind a firewall
 eleventyNavigation:
   key: Work with MapsIndoors SDK behind a firewall
-  parent: Various
+  parent: various
+  order: 8
 ---
 
 If you need to work with MapsIndoors SDK from behind a firewall, you might need to whitelist these IP-addresses:

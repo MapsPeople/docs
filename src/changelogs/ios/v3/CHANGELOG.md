@@ -1,8 +1,5 @@
 ---
 title: Changelog
-layout: default
-published: true
-nav_weight: 1000
 ---
 
 Changelog for MapsIndoors for iOS. This document structure is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and the project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
@@ -16,12 +13,45 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 ### Removed
 -->
 
-## [3.10.0-beta1] 2020-09-04
+## [3.13.0] 2020-10-14
 
 ### Added
 
-- Support for Live Data added. For more information, read more about this feature in the [Live Data Guide](https://mapsindoors.github.io/ios/v3/live-data/). Please note that the Live Data feature is currently in beta.
+- Support for Rendering of Polygons through Display Rules, see [updated guide about map styling](https://mapsindoors.github.io/ios/v3/map-styling/).
+
+### Fixed
+
+- Fixed an issue causing our route to go through walls in some cases. Sure hope we didn't cause any accidents:)
+- Fixed a logging issue causing obsolete logs to spam the console.
+- Fixed a rare issue causing a Live Data session to freeze in the UI thread.
+- Fixed an issue causing some Live Updates to be discarded unintentionally.
+- Fixed an issue causing some Live Updates to be emitted unintentionally while they should have been discarded.
+- Fixed offline data script so that it handles external ressources better.
+- Fixed some general stability issues
+
+## [3.12.0] 2020-09-30
+
+### Added
+
+- Support for Live Data added. For more information, read about this feature in the [Live Data Guide](https://mapsindoors.github.io/ios/v3/live-data/).
+
+## [3.11.1] 2020-09-28
+
+### Added
+
 - In `MPDatasetCacheManager` we have optimized support for changing caching scope from a larger scope to a smaller scope, by deleting obsolete caches.
+
+### Fixed
+
+- Fixed that route end marker on `MPDirectionsRenderer` was obscuring the destination location marker.
+- Fixed an issue causing `MPDirectionsRenderer` not to use the `MPDirectionsRenderer.actionPointImages` in some cases.
+- Fixed a data synchronisation issue that caused the newly synchronised data to not being used before a new session was initiated.
+- Fixed a route path optimization issue that caused the optimization to be applied unintentionally in some cases.
+- Fixed a search issue that caused the search engine to ignore `MPLocation.externalId`.
+- Fixed a routing issue that caused the `MPDirectionsRenderer` to show a wrong the next leg marker.
+- Fixed an issue causing the Info Window of `MPMapControl.selectedLocation` to not show up in some cases.
+- Fixed an internal issue with the map marker collision handling.
+- Some internal refactorings and optimizations.
 
 ## [3.9.9] 2020-08-31
 
@@ -146,16 +176,6 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 ### Changed
 
 - Multiple improvements to the search engine has been implemented.
-
-## [3.6.2] 2019-11-18
-
-### Fixed
-
-- Fixed a memory leak happening when switching Solution or API key.
-- Fixed `MPMapControl` is now more resilient against `GMSMapView.delegate` being changed.
-- [This issue](https://forums.developer.apple.com/thread/123003) made our SDK crash if built with XCode 10 and below. We have implemented a workaround in this version.
-- Fixed Restored previous behaviour where the map settles on a building and showing the floor selector initially.
-- Fixed Improved switching between different Solutions / API keys.
 
 ## [3.6.2] 2019-11-18
 

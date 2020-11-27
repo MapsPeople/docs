@@ -15,6 +15,15 @@
 
 @use '../../node_modules/@mapsindoors/midt/build/scss/variables' as *;
 
+:root {
+  background: $color-green-90;
+}
+
+html,
+body {
+  margin: 0;
+}
+
 body {
   @include font.family(sans-serif);
   @include font.size(medium);
@@ -22,18 +31,23 @@ body {
   @include font.leading(x-large);
   @include font.tracking(medium);
   @include font.color(base);
-  @include background-color.white(base);
-  @include margin.bottom(x-large);
 }
 
 .wrap {
   max-width: 1140px;
   margin-left: auto;
   margin-right: auto;
-  .container {
-    display: flex;
-    flex: 1 0;
-  }
+  @include padding.horizontal(medium);
+}
+
+.container {
+  display: flex;
+  flex: 1 0;
+  @include padding.bottom(x-large);
+}
+
+.content {
+  @include background-color.white(base);
 }
 
 main {
@@ -43,6 +57,24 @@ main {
   ol,
   blockquote {
     @include font.measure(large);
+  }
+}
+
+blockquote {
+  font-style: italic;
+  @include border.width;
+  @include border.style;
+  @include border.left;
+  @include border.top(none);
+  @include border.right(none);
+  @include border.bottom(none);
+  @include border.bronze(30);
+  @include background-color.bronze(10);
+  @include margin.left(none);
+  @include padding.left(small);
+  border-radius: 0 $rounding-large $rounding-large 0;
+  p {
+    display: inline-block;
   }
 }
 
@@ -84,16 +116,18 @@ a {
     @include font.leading(xx-large);
     @include font.weight(small);
     @include margin.vertical(xxx-large);
+    @include margin.bottom(xx-large);
     font-style: italic;
   }
   ul {
     list-style: none;
     padding: 0;
-    @include margin.top(xx-large);
+    @include margin.bottom(medium);
     li {
       display: inline;
       @include margin.right(medium);
     }
+    text-align: center;
   }
   a.front-button {
     @include font.size(x-large);
@@ -125,13 +159,18 @@ nav.sidebar {
   max-width: 280px;
   display: block;
   @include margin.right(xx-large);
-  @include margin.top(medium);
+  // @include margin.top(medium);
   @include border.radius(medium);
-  @include padding.horizontal(medium);
+  @include padding.right(medium);
 
   hr {
     @include margin.vertical(medium);
     border-top: 1px solid $color-gray-50;
+  }
+
+  .nav__header {
+    @include font.weight(large);
+    @include font.size(x-large);
   }
 }
 
@@ -143,7 +182,6 @@ nav {
     margin: 0;
   }
   ul {
-    @include font.weight(x-large);
     @include font.size(medium);
     @include font.leading(x-large);
     li {
@@ -162,15 +200,20 @@ nav {
   }
 
   .active > a {
-    @include background-color.blue(10);
-    @include padding.horizontal(small);
-    @include padding.vertical(x-small);
-    @include border.radius(medium);
+    // @include background-color.blue(10);
+    // @include padding.horizontal(small);
+    // @include padding.vertical(x-small);
+    // @include border.radius(medium);
     @include font.weight(large);
-    margin-left: -12px;
+    // margin-left: -12px;
 
-    ul {
-      font-style: normal;
+    // ul {
+    //   font-style: normal;
+    // }
+
+    &::before {
+      content: '• ';
+      margin-left: -12px;
     }
   }
 }
@@ -313,6 +356,64 @@ header {
   }
 }
 
+// footer.njk
+
+footer {
+  background-image: linear-gradient(
+    to bottom,
+    $color-green-60,
+    $color-green-90
+  );
+  @include color.white(base);
+  @include margin.all(none);
+  @include padding.all(medium);
+
+  a {
+    @include color.white(base);
+
+    &:hover {
+      @include color.white(base);
+    }
+  }
+
+  ul {
+    @include padding.left(none);
+    li {
+      list-style-type: none;
+      line-height: $font-size-x-large;
+    }
+    li ul {
+      @include padding.left(medium);
+    }
+  }
+
+  .flex {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-align-content: stretch;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+  }
+
+  .third {
+    width: calc(100% / 3);
+    @include margin.right(medium);
+  }
+}
+
 // Breadcrumb
 
 ol.breadcrumb {
@@ -345,6 +446,40 @@ p.time {
 
 main img {
   max-width: 100%;
+}
+
+// Table styles
+
+table {
+  @include margin.top(small);
+  @include margin.bottom(medium);
+  display: inline-block;
+  text-align: left;
+  border: 1px solid $color-gray-40;
+  border-top: none;
+  border-collapse: collapse;
+  thead {
+    @include font.size(large);
+    @include background-color.gray(80);
+    th {
+      @include padding.all(small);
+      @include color.white(base);
+    }
+  }
+  tbody tr:nth-child(odd) {
+    @include background-color.gray(10);
+  }
+  td {
+    @include padding.horizontal(small);
+    @include padding.vertical(small);
+    min-width: 72px;
+    border-left: 1px solid $color-gray-30;
+    vertical-align: baseline;
+    word-break: break-word;
+    &:first-child {
+      border-left: none;
+    }
+  }
 }
 
 // // Dark theme overrides. Should always be at the bottom. Not possible until mi-tabs has dark mode too...

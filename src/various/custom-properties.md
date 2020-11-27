@@ -1,8 +1,10 @@
 ---
 title: Custom Properties
 eleventyNavigation:
-  key: Custom Properties
-  parent: Various
+  key: Custom-Properties
+  title: Custom Properties
+  parent: various
+  order: 3
 ---
 
 You have the option of adding Custom Properties to any piece of geodata within MapsIndoors. They can be anything that makes sense for you in building your app.
