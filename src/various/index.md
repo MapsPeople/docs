@@ -1,7 +1,7 @@
 ---
 title: Various
 layout: redirect
-destination: /various/indoor-positioning/
+destination: /various/glossary/
 eleventyNavigation:
   key: various
   title: Various

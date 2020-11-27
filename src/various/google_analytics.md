@@ -3,6 +3,7 @@ title: Google Analytics
 eleventyNavigation:
   key: Google Analytics
   parent: various
+  order: 7
 ---
 
 ## Overview

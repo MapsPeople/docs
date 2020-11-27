@@ -3,6 +3,7 @@ title: Kiosk
 eleventyNavigation:
   key: Kiosk
   parent: various
+  order: 9
 ---
 
 Please do the following before getting started:
