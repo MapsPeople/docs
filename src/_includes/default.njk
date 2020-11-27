@@ -16,8 +16,8 @@
             <a href="{{ page.url }}">{{ title }}</a>
           </h1>
           {% if '/404.html' not in page.url %}
-          <p class="time">Last updated: <time>{{ page.date.toLocaleDateString() }}</time>
-          </p>
+            <p class="time">Last updated: <time>{{ page.date.toLocaleDateString() }}</time>
+            </p>
           {% endif %}
           {{ content | safe }}
         </main>
