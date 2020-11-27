@@ -1,0 +1,541 @@
+@use '../../node_modules/normalize.css/normalize.css';
+
+@use '../../node_modules/@mapsindoors/midt/background-color';
+@use '../../node_modules/@mapsindoors/midt/border';
+@use '../../node_modules/@mapsindoors/midt/color';
+@use '../../node_modules/@mapsindoors/midt/elevation';
+@use '../../node_modules/@mapsindoors/midt/font';
+@use '../../node_modules/@mapsindoors/midt/icons';
+@use '../../node_modules/@mapsindoors/midt/margin';
+@use '../../node_modules/@mapsindoors/midt/opacity';
+@use '../../node_modules/@mapsindoors/midt/padding';
+@use '../../node_modules/@mapsindoors/midt/sizing';
+@use '../../node_modules/@mapsindoors/midt/transitions';
+@use '../../node_modules/@mapsindoors/midt/z-index';
+
+@use '../../node_modules/@mapsindoors/midt/build/scss/variables' as *;
+
+:root {
+  background: $color-green-90;
+}
+
+html,
+body {
+  margin: 0;
+}
+
+body {
+  @include font.family(sans-serif);
+  @include font.size(medium);
+  @include font.weight(medium);
+  @include font.leading(x-large);
+  @include font.tracking(medium);
+  @include font.color(base);
+}
+
+.wrap {
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+  @include padding.horizontal(medium);
+}
+
+.container {
+  display: flex;
+  flex: 1 0;
+  @include padding.bottom(x-large);
+}
+
+.content {
+  @include background-color.white(base);
+}
+
+main {
+  @include margin.top(medium);
+  p,
+  ul,
+  ol,
+  blockquote {
+    @include font.measure(large);
+  }
+}
+
+blockquote {
+  font-style: italic;
+  @include border.width;
+  @include border.style;
+  @include border.left;
+  @include border.top(none);
+  @include border.right(none);
+  @include border.bottom(none);
+  @include border.bronze(30);
+  @include background-color.bronze(10);
+  @include margin.left(none);
+  @include padding.left(small);
+  border-radius: 0 $rounding-large $rounding-large 0;
+  p {
+    display: inline-block;
+  }
+}
+
+a {
+  text-decoration: none;
+  @include color.blue(60);
+
+  &:hover {
+    text-decoration: underline;
+    @include color.blue(70);
+  }
+
+  &:active {
+    @include color.magenta(60);
+  }
+}
+
+// Front page
+
+.front {
+  background-image: linear-gradient(to bottom right, #f4f0e8, #d8e8e0);
+  color: #006440;
+  min-height: 100vh;
+
+  .front-content {
+    display: grid;
+    place-items: center;
+    height: 90vh;
+  }
+  .headline {
+    @include font.family(raleway);
+    @include font.size(xxxx-large);
+    @include font.leading(xxxx-large);
+    @include font.weight(small);
+    max-width: 38ch;
+  }
+  .subheadline {
+    @include font.size(xx-large);
+    @include font.leading(xx-large);
+    @include font.weight(small);
+    @include margin.vertical(xxx-large);
+    @include margin.bottom(xx-large);
+    font-style: italic;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    @include margin.bottom(medium);
+    li {
+      display: inline;
+      @include margin.right(medium);
+    }
+    text-align: center;
+  }
+  a.front-button {
+    @include font.size(x-large);
+    @include padding.vertical(medium);
+    @include padding.horizontal(large);
+    @include color.gray(100);
+    @include border.radius(large);
+    @include border.width(large);
+    @include border.style(solid);
+    @include border.green(60);
+    @include background-color.white(base);
+    @include font.weight(large);
+    @include margin.vertical(medium);
+    box-shadow: 0px 16px 32px rgba(0, 120, 72, 0.16);
+    min-width: 180px;
+    display: inline-block;
+    text-align: center;
+    &:hover {
+      @include background-color.gray(10);
+      text-decoration: none;
+    }
+  }
+}
+
+// Sidebar navigation
+
+nav.sidebar {
+  min-width: 280px;
+  max-width: 280px;
+  display: block;
+  @include margin.right(xx-large);
+  // @include margin.top(medium);
+  @include border.radius(medium);
+  @include padding.right(medium);
+
+  hr {
+    @include margin.vertical(medium);
+    border-top: 1px solid $color-gray-50;
+  }
+
+  .nav__header {
+    @include font.weight(large);
+    @include font.size(x-large);
+  }
+}
+
+nav {
+  ul,
+  li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  ul {
+    @include font.size(medium);
+    @include font.leading(x-large);
+    li {
+      @include margin.top(x-small);
+      ul {
+        @include font.weight(medium);
+        @include font.size(medium);
+        @include margin.vertical(small);
+        @include margin.left(medium);
+        li {
+          @include margin.top(x-small);
+          @include font.size(medium);
+        }
+      }
+    }
+  }
+
+  .active > a {
+    // @include background-color.blue(10);
+    // @include padding.horizontal(small);
+    // @include padding.vertical(x-small);
+    // @include border.radius(medium);
+    @include font.weight(large);
+    // margin-left: -12px;
+
+    // ul {
+    //   font-style: normal;
+    // }
+
+    &::before {
+      content: '• ';
+      margin-left: -12px;
+    }
+  }
+}
+
+// Headlines
+
+h1 {
+  @include font.size(xx-large);
+  @include font.leading(xx-large);
+  @include font.weight(large);
+  @include margin.top(medium);
+  @include margin.bottom(large);
+
+  a {
+    @include font.color(base);
+
+    &:visited {
+      @include font.color(base);
+    }
+
+    &:hover {
+      @include color.blue(60);
+    }
+  }
+}
+
+h2 {
+  @include font.size(x-large);
+  @include font.leading(x-large);
+  @include font.weight(x-large);
+  @include margin.top(x-large);
+  @include margin.bottom(large);
+}
+
+h3 {
+  @include font.size(large);
+  @include font.leading(large);
+  @include font.weight(x-large);
+  @include margin.top(x-large);
+  @include margin.bottom(large);
+}
+
+h4 {
+  @include font.size(medium);
+  @include font.leading(medium);
+  @include font.weight(xx-large);
+  @include margin.top(large);
+  @include margin.bottom(medium);
+}
+
+h5 {
+  @include font.size(small);
+  @include font.weight(xx-large);
+  @include margin.top(medium);
+  @include margin.bottom(small);
+}
+
+h6 {
+  @include font.size(x-small);
+  @include font.weight(xx-large);
+  @include font.tracking(x-large);
+  @include margin.top(medium);
+  @include margin.bottom(small);
+  text-transform: uppercase;
+}
+
+// Code highlight styling. .hljs is a highlight.js-specific class.
+
+code {
+  font-size: 0.95rem;
+}
+
+p code {
+  @include padding.vertical(xxx-small);
+  @include padding.horizontal(x-small);
+  @include border.radius(medium);
+  @include background-color.gray(10);
+  @include color.gray(90);
+}
+
+pre code {
+  @include font.family(monospace);
+  @include border.radius(medium);
+  width: $font-measure-large;
+  &.hljs {
+    @include padding.all(medium);
+    @include border.gray(40);
+    @include border.style(solid);
+    @include border.width(medium);
+  }
+}
+
+// header.njk
+
+header {
+  svg.mapspeople-logo path {
+    fill: white;
+  }
+  background-image: linear-gradient(
+    to bottom,
+    $color-green-90,
+    $color-green-100
+  );
+  .flex {
+    display: flex;
+  }
+  .left {
+    @include margin.vertical(medium);
+    flex: 1 1 auto;
+    min-width: 0;
+    min-height: 0;
+  }
+  .right {
+    @include margin.vertical(medium);
+    align-items: center;
+    display: inline-flex;
+    text-align: right;
+
+    a {
+      vertical-align: middle;
+      @include padding.left(medium);
+      display: inline-block;
+    }
+  }
+  a {
+    @include color.white(base);
+
+    &:hover {
+      text-decoration: underline;
+      @include color.gray(20);
+    }
+
+    &:active {
+      @include color.gray(30);
+    }
+
+    &:visited {
+      @include color.white(base);
+    }
+  }
+}
+
+// footer.njk
+
+footer {
+  background-image: linear-gradient(
+    to bottom,
+    $color-green-60,
+    $color-green-90
+  );
+  @include color.white(base);
+  @include margin.all(none);
+  @include padding.all(medium);
+
+  a {
+    @include color.white(base);
+
+    &:hover {
+      @include color.white(base);
+    }
+  }
+
+  ul {
+    @include padding.left(none);
+    li {
+      list-style-type: none;
+      line-height: $font-size-x-large;
+    }
+    li ul {
+      @include padding.left(medium);
+    }
+  }
+
+  .flex {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-align-content: stretch;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+  }
+
+  .third {
+    width: calc(100% / 3);
+    @include margin.right(medium);
+  }
+}
+
+// Breadcrumb
+
+ol.breadcrumb {
+  @include padding.left(none);
+  @include margin.top(none);
+  .item {
+    a {
+      @include margin.right(small);
+      @include font.weight(large);
+      @include font.size(medium);
+    }
+  }
+  .item:not(:first-of-type) {
+    @include margin.left(xx-small);
+  }
+  .item:not(:last-of-type)::after {
+    content: '›';
+  }
+}
+
+p.time {
+  @include color.gray(60);
+  @include font.size(x-small);
+  @include font.weight(xx-large);
+  @include font.tracking(x-large);
+  @include margin.bottom(large);
+  margin-top: -12px;
+  text-transform: uppercase;
+}
+
+main img {
+  max-width: 100%;
+}
+
+// Table styles
+
+table {
+  @include margin.top(small);
+  @include margin.bottom(medium);
+  display: inline-block;
+  text-align: left;
+  border: 1px solid $color-gray-40;
+  border-top: none;
+  border-collapse: collapse;
+  thead {
+    @include font.size(large);
+    @include background-color.gray(80);
+    th {
+      @include padding.all(small);
+      @include color.white(base);
+    }
+  }
+  tbody tr:nth-child(odd) {
+    @include background-color.gray(10);
+  }
+  td {
+    @include padding.horizontal(small);
+    @include padding.vertical(small);
+    min-width: 72px;
+    border-left: 1px solid $color-gray-30;
+    vertical-align: baseline;
+    word-break: break-word;
+    &:first-child {
+      border-left: none;
+    }
+  }
+}
+
+// // Dark theme overrides. Should always be at the bottom. Not possible until mi-tabs has dark mode too...
+
+// @media (prefers-color-scheme: dark) {
+//   body {
+//     @include font.color(inverse);
+//     @include background-color.gray(100);
+//   }
+
+//   a {
+//     @include color.bronze(30);
+
+//     &:hover {
+//       text-decoration: underline;
+//       @include color.bronze(30);
+//     }
+
+//     &:active {
+//       @include color.bronze(40);
+//     }
+
+//     // &:visited {
+//     //   @include color.bronze(20);
+//     // }
+//   }
+//   pre code.hljs {
+//     @include border.style(none);
+//   }
+//   nav {
+//     .active > a {
+//       @include background-color.gray(90);
+//     }
+//   }
+//   nav.sidebar {
+//     li.active {
+//       @include border.bronze(20);
+//     }
+//   }
+//   header,
+//   p code {
+//     @include background-color.gray(90);
+//     background-image: none;
+//     @include font.color(inverse);
+//   }
+//   h1 {
+//     a {
+//       @include font.color(inverse);
+
+//       &:visited {
+//         @include font.color(inverse);
+//       }
+
+//       &:hover {
+//         @include color.bronze(30);
+//       }
+//     }
+//   }
+// }

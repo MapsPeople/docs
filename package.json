@@ -1,0 +1,26 @@
+{
+  "name": "eleventy-test",
+  "version": "0.0.1",
+  "description": "",
+  "main": "_site/index.html",
+  "dependencies": {},
+  "devDependencies": {
+    "@11ty/eleventy": "^0.10.0",
+    "@11ty/eleventy-navigation": "^0.1.5",
+    "@11ty/eleventy-plugin-inclusive-language": "^1.0.0",
+    "@mapsindoors/components": "^3.0.1",
+    "@mapsindoors/midt": "^10.2.3",
+    "del": "^5.1.0",
+    "eleventy-plugin-youtube-embed": "^1.2.0",
+    "normalize.css": "^8.0.1",
+    "sass": "^1.26.10"
+  },
+  "scripts": {
+    "build": "npm run sass & eleventy",
+    "sass-watch": "sass --watch src/_sass:src/assets --no-source-map",
+    "sass": "sass src/_sass:src/assets --no-source-map",
+    "start": "npm run sass-watch & eleventy --serve"
+  },
+  "author": "MapsPeople A/S",
+  "license": "MIT"
+}
