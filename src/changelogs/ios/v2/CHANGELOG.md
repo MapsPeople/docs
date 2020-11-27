@@ -1,5 +1,10 @@
 ---
-title: Changelog for MapsIndoors iOS SDK v2
+title: iOS SDK v2 Changelog
+permalink: /changelogs/ios/v2/
+eleventyNavigation:
+  key: iOS SDK v2 Changlog
+  parent: changelogs
+  order: 4
 ---
 
 Changelog for MapsIndoors for iOS. This document structure is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and the project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).

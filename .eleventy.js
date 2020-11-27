@@ -45,9 +45,9 @@ module.exports = function (eleventyConfig) {
     return collectionApi.getFilteredByTags('ios', 'v3');
   });
 
-  eleventyConfig.addCollection('webv3', function (collectionApi) {
-    return collectionApi.getFilteredByTags('web', 'v3');
-  });
+    eleventyConfig.addCollection("changelogs", function (collectionApi) {
+        return collectionApi.getFilteredByTags("changelogs");
+    });
 
   eleventyConfig.addCollection('published', function (collectionApi) {
     return [...collectionApi.getFilteredByGlob('./src/**/*.md')].filter(
