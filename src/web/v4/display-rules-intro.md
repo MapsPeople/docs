@@ -85,7 +85,7 @@ mapsIndoors.addListener("click", function (poi) {
 });
 ```
 
-### Changing change the label for all Locations for the type `PRINTER`
+### Change the label for all Locations for the type `PRINTER`
 
 ```javascript
 mapsIndoors.setDisplayRule('PRINTER',  {
@@ -93,7 +93,7 @@ mapsIndoors.setDisplayRule('PRINTER',  {
 });
 ```
 
-### Changing change the label for a single Location
+### Change the label for a single Location
 
 ```javascript
 mapsIndoors.setDisplayRule('c66dccd480624c428ea5b78d',  {
