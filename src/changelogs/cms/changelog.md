@@ -1,5 +1,10 @@
 ---
 title: MapsIndoors CMS Changelog
+permalink: /changelogs/cms/
+eleventyNavigation:
+  key: MapsIndoors CMS Changlog
+  parent: changelogs
+  order: 6
 ---
 
 ## October 8th 2020 - v3.35.0
@@ -16,7 +21,7 @@ title: MapsIndoors CMS Changelog
 
 ### What's new
 
-- Added ´title´ to Solution and Venue switcher list items for increased usability
+- Added `title` to Solution and Venue switcher list items for increased usability
 
 ## August 11th 2020 - v3.32.0
 
