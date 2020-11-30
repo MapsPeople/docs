@@ -3,7 +3,7 @@ name: K8S Release
 on:
     push:
         branches:
-            - feature/mhj/eleventy
+            - main
         paths-ignore:
             - "package.json"
 
