@@ -90,10 +90,10 @@ bookingService.perform(myBooking) { (booking, error) in
 
 In the above example a Booking object is created and several properties are assigned:
 
-* The related Location object
-* A Title for the Booking
-* Participants for the Event being created through the Booking
-* Start and end time
+- The related Location object
+- A Title for the Booking
+- Participants for the Event being created through the Booking
+- Start and end time
 
 Depending on the Booking provider, the participants will receive invites for an event created by this Booking request.
 
