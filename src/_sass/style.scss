@@ -99,9 +99,39 @@ a {
 .front {
     background-image: linear-gradient(to bottom right, #f4f0e8, #d8e8e0);
     color: #006440;
-    min-height: 100vh;
 
     .front-content {
+        ul {
+            list-style: none;
+            padding: 0;
+            @include margin.bottom(medium);
+            li {
+                display: inline;
+                @include margin.right(medium);
+            }
+            text-align: center;
+        }
+        a.front-button {
+            @include font.size(x-large);
+            @include padding.vertical(medium);
+            @include padding.horizontal(large);
+            @include color.gray(100);
+            @include border.radius(large);
+            @include border.width(large);
+            @include border.style(solid);
+            @include border.green(60);
+            @include background-color.white(base);
+            @include font.weight(large);
+            @include margin.vertical(medium);
+            box-shadow: 0px 16px 32px rgba(0, 120, 72, 0.16);
+            min-width: 180px;
+            display: inline-block;
+            text-align: center;
+            &:hover {
+                @include background-color.gray(10);
+                text-decoration: none;
+            }
+        }
         display: grid;
         place-items: center;
         height: 90vh;
@@ -115,42 +145,11 @@ a {
     }
     .subheadline {
         @include font.size(xx-large);
-        @include font.leading(xx-large);
+        @include font.leading(xxx-large);
         @include font.weight(small);
         @include margin.vertical(xxx-large);
         @include margin.bottom(xx-large);
         font-style: italic;
-    }
-    ul {
-        list-style: none;
-        padding: 0;
-        @include margin.bottom(medium);
-        li {
-            display: inline;
-            @include margin.right(medium);
-        }
-        text-align: center;
-    }
-    a.front-button {
-        @include font.size(x-large);
-        @include padding.vertical(medium);
-        @include padding.horizontal(large);
-        @include color.gray(100);
-        @include border.radius(large);
-        @include border.width(large);
-        @include border.style(solid);
-        @include border.green(60);
-        @include background-color.white(base);
-        @include font.weight(large);
-        @include margin.vertical(medium);
-        box-shadow: 0px 16px 32px rgba(0, 120, 72, 0.16);
-        min-width: 180px;
-        display: inline-block;
-        text-align: center;
-        &:hover {
-            @include background-color.gray(10);
-            text-decoration: none;
-        }
     }
 }
 
@@ -382,7 +381,7 @@ footer {
         @include padding.left(none);
         li {
             list-style-type: none;
-            line-height: $font-size-x-large;
+            line-height: $font-size-xx-large;
         }
         li ul {
             @include padding.left(medium);

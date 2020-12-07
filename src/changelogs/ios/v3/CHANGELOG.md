@@ -24,6 +24,30 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 
 - Added convenience methods for enabling Live Data for a `MPMapControl` instance. Methods are `MPMapControl.enableLiveData()` (two variants) and `MPMapControl.disableLiveData()`. For more information, read about this feature in the [Live Data Guide](https://mapsindoors.github.io/ios/v3/live-data/).
 
+## [3.15.0] 2020-11-12
+
+### Added
+
+- Support for Booking of Locations through a MapsIndoors Google Calendar Booking Provider, see [guide about booking](https://mapsindoors.github.io/ios/v3/booking/).
+
+## [3.14.0] 2020-11-11
+
+### Added
+
+- Support for global App User Roles setting, `MapsIndoors.userRoles`, see [introduction to App User Roles here](https://mapsindoors.github.io/ios/v3/app-user-roles/).
+
+### Fixed
+
+- Fixed an issue causing `MapsIndoors.synchronizeContent` to call its completion handler too early.
+- Fixed an issue causing outdoor locations to only show on floor index 0.
+- Fixed an issue where map imagery was disappearing in some cases and datasets.
+- Boosted the pathfinding performance of `MPDirectionsService`.
+- Fixed an issue with network issues causing occational UI freeze in Live Data sessions.
+
+### Changed
+
+- `MPLocation.imageUrl` deprecation has been revoked.
+
 ## [3.13.0] 2020-10-14
 
 ### Added
