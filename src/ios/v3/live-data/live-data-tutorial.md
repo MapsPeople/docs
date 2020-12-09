@@ -38,7 +38,7 @@ fileprivate func setupLiveDataButtons() {
     positionButton.setTitle("Tracking Live Positions", for: .selected)
     positionButton.addTarget(self, action: #selector(togglePosition), for: .touchUpInside)
     positionButton.backgroundColor = UIColor.blue
-    
+
     occupancyButton.setTitle("See Live Occupancy", for: .normal)
     occupancyButton.setTitle("Showing Live Occupancy", for: .selected)
     occupancyButton.addTarget(self, action: #selector(toggleOccupancy), for: .touchUpInside)

@@ -60,7 +60,7 @@ Enabling of Live Data through `MPMapControl` can be done as simple as calling `M
 
 ```swift
   self.mapControl = MPMapControl.init(map: self.map!)
-  
+
   self.mapControl.enableLiveData(MPLiveDomainType.position)
 ```
 
@@ -79,11 +79,11 @@ Live Data updates with the "Position" Domain Type directly affects the behavior 
 
 ```swift
   self.mapControl = MPMapControl.init(map: self.map!)
-  
+
   let liveManager = MapsIndoors.liveDataManager()
-  
+
   let topic = MPLiveTopicCriteria.domainType(MPLiveDomainType.position)
-  
+
   liveManager.subscribe(topic)
 ```
 
@@ -98,16 +98,16 @@ extension MyClass : MPMapControlDelegate {
     func willUpdateLocationsOnMap(locations: [MPLocation]) {
         for location in locations {
             let liveUpdate = location.getLiveUpdate(forDomainType: MPLiveDomainType.occupancy)
-            
+
             if let occupancy = liveUpdate as? MPOccupancyLiveUpdate {
                 var img:UIImage
-                
+
                 if occupancy.numberOfPeople > 0 {
                     img = UIImage.init(named: "closed.png")
                 } else {
                     img = UIImage.init(named: "open.png")
                 }
-                
+
                 let dr = MPLocationDisplayRule.init(name: domainType, andIcon: icon, andZoomLevelOn: 15)!
                 self.mapControl?.setDisplayRule(dr, for: location)
             }
