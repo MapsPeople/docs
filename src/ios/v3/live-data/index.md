@@ -66,6 +66,11 @@ Enabling of Live Data through `MPMapControl` can be done as simple as calling `M
 
 In the example we are enabling Live Data for the Domain Type "Occupancy". Internal processes will determine which topics are relevant for subscription based on where the map is situated. A default rendering mechanism will also alter the appearance of the relevant locations on the map. As a consequence, the SDK will set [custom display rules](https://mapsindoors.github.io/ios/v3/map-styling/#setting-display-rule-for-a-single-and-multiple-locations) for this rendering. Adding your own or resetting display rules while Live Data is enabled with default rendering may break the rendering for the current `MPMapControl` instance. Hence, you should not use custom display rules unless you are [handling the rendering of Live Data](#rendering-live-data-locations) by your own.
 
+Note that using the `enableLiveData()` methods on `MPMapControl` has some limitations and is thereby not suitable for all use cases.
+
+* Since `MPMapControl` will try to determine relevant Live Data subscriptions based on where the map is currently situated, it might not detect Live Data updates of the Position domain representing moving objects entering the visible region of the map.
+* Since `MPMapControl` does not know which Live Updates that are relevant to show it will need to subscribe to all Live Data in the visible region, which, depending on your amount of Live Data, may or may not lead to app performance implications.
+
 ### Enable Live Data through MPLiveDataManager
 
 Enabling of Live Data through `MPLiveDataManager` is done by creating one or more Topic Criterias and calling `MPLiveDataManager.subscribe()` with the topic.
@@ -92,19 +97,20 @@ As mentioned, `MPMapControl` has a default way of rendering Live Data Locations 
 extension MyClass : MPMapControlDelegate {
     func willUpdateLocationsOnMap(locations: [MPLocation]) {
         for location in locations {
-            let occupied = location.getLiveValue(forKey: "occupied", domainType: MPLiveDomainType.occupancy)
-
-            let image:UIImage
-
-            if (occupied == "True") {
-                image = UIImage.init("occupied")
-            } else {
-                image = UIImage.init("free")
+            let liveUpdate = location.getLiveUpdate(forDomainType: MPLiveDomainType.occupancy)
+            
+            if let occupancy = liveUpdate as? MPOccupancyLiveUpdate {
+                var img:UIImage
+                
+                if occupancy.numberOfPeople > 0 {
+                    img = UIImage.init(named: "closed.png")
+                } else {
+                    img = UIImage.init(named: "open.png")
+                }
+                
+                let dr = MPLocationDisplayRule.init(name: domainType, andIcon: icon, andZoomLevelOn: 15)!
+                self.mapControl?.setDisplayRule(dr, for: location)
             }
-
-            let displayRule = MPLocationDisplayRule.init(name: nil, andIcon: image, andZoomLevelOn: 15)
-
-            self.mapControl.setDisplayRule(myDisplayRule, for: location)
         }
     }
 }
@@ -146,7 +152,7 @@ To get Live Updates on a general level the `MPLiveDataManagerDelegate` protocol 
 ```swift
 extension MyClass : MPLiveDataManagerDelegate {
     func didReceive(_ liveUpdate: MPLiveUpdate) {
-        let numberOfPeople = liveUpdate.getLiveValue(forKey: "nrOfPeople")
+        let liveUpdate = location.getLiveUpdate(forDomainType: MPLiveDomainType.occupancy)
         ...
     }
 }
@@ -158,7 +164,7 @@ To get Live Updates on a map-specific level the `MPMapControlDelegate` protocol 
 extension MyClass : MPMapControlDelegate {
     func willUpdateLocationsOnMap(locations: [MPLocation]) {
         for location in locations {
-            let numberOfPeople = location.getLiveValue(forKey: "nrOfPeople", domainType: MPLiveDomainType.occupancy)
+            let liveUpdate = location.getLiveUpdate(forDomainType: MPLiveDomainType.occupancy)
             ...
         }
     }
