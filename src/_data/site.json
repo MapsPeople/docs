@@ -1,0 +1,11 @@
+{
+    "title": "MapsIndoors SDK Documentation",
+    "url": "https://docs.mapsindoors.com",
+    "baseurl": "",
+    "repo": "http://github.com/mapsindoors/docs",
+    "comments": false,
+    "author": {
+        "name": "MapsPeople A/S"
+    },
+    "og_locale": "en_US"
+}
