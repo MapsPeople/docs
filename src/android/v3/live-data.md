@@ -49,6 +49,26 @@ A live update is the model for a message carrying one piece of Live Data, for ex
 
 ## Enable Live Data in Your App
 
+### Enable Live Data through MapControl
+
+Enabling Live Data through the MapControl is an easy way to get live data running in your app.
+
+```java
+mMapControl.init(error -> {
+   mMapControl.enableLiveData(LiveDataDomainTypes.OCCUPANCY_DOMAIN);
+   mMapControl.enableLiveData(LiveDataDomainTypes.AVAILABILITY_DOMAIN);
+});
+```
+
+In the example we enable Live Data for the availability and occupancy domain type. Internal processes will determine which topics are relevant for subscription based on where the map is situated. A default rendering mechanism will also alter the appearance of the relevant locations on the map. As a consequence, the SDK will set custom display rules for this rendering. Adding your own or resetting display rules while Live Data is enabled with default rendering may break the rendering for the current MapControl instance. Hence, you should not use custom display rules unless you are handling the rendering of live data by your own.
+
+Note that using the enableLiveData methods on MapControl has some limitations and is thereby not suitable for all use cases.
+
+- Since `MapControl` will try to determine the Live Data subscriptions based on where the map is currently situated, it might not detect Live Data updates of the position Domain representing moving objects entering the visible region of the map.
+- Since `MapControl` does not know which Live Updates that are relevant to show it will need to subscribe to all live data in the visible region, which, depending on your amount of Live Data, may or may not lead to app performance implications.
+
+### Enable Live Data through LiveDataManager
+
 To enable Live Data in an application, a subscription to one or more Topics is needed. Once subscribed, the application can be notified about changes and decide what to do. The application is in control of what should happen upon receiving live data updates, and the MapsIndoors SDKs provide mechanisms to efficiently make updates to the map representation of Locations. The central class to carry out these tasks is the `LiveDataManager`.
 
 The only Live Data updates that are also directly notified to the SDK internally are Live Data updates of the "Position" Domain Type. By consequence, if you have already set up your map with MapsIndoors, an additional few lines of code can enable moving locations on the map. Here is an example in Java:
@@ -65,6 +85,53 @@ liveDataManager.subscribeTopic(liveTopicCriteria);
 ```
 
 In the example, the Topic is created using the `datasetId` and a multilevel wildcard, which will return all Live Data in the Solution.
+
+## Rendering Live Data Locations
+
+As mentioned `MapControl` has a default way of rendering Live Data Locations if you call `mapControl.enableLiveData(String domainType)`. If you need to show live data in another way, you can add handlers for this either through `mapControl.setOnWillUpdateLocationsOnMap(OnWillUpdateLocationsOnMap listener)` or calling `enableLiveData(String domainType, OnLiveLocationUpdateListener OnLiveLocationUpdateListener)`.
+Here are examples of using the different methods to render live data on your map.
+
+```java
+mMapControl.setOnWillUpdateLocationsOnMap(locations -> {
+   for (MPLocation location : locations) {
+       LiveUpdate occupancy = location.getLiveUpdate("occupancy");
+
+       LocationDisplayRule currentDisplayRule = mMapControl.getDisplayRule(location);
+       String displayRuleName = location.getId() + "_live";
+       if (occupancy != null) {
+           OccupancyProperty occupancyProperty = occupancy.getOccupancyProperties();
+
+           LocationDisplayRule occupancyDisplayRule = new LocationDisplayRule
+                   .Builder(displayRuleName, currentDisplayRule)
+                   .setLabel("people = " + occupancyProperty.getNrOfPeople())
+                   .build();
+
+           mMapControl.setDisplayRule(occupancyDisplayRule, location);
+       }
+   }
+});
+```
+
+```java
+mMapControl.enableLiveData(LiveDataDomainTypes.OCCUPANCY_DOMAIN, location -> {
+   LiveUpdate occupancy = location.getLiveUpdate("occupancy");
+
+   LocationDisplayRule currentDisplayRule = mMapControl.getDisplayRule(location);
+   String displayRuleName = location.getId() + "_live";
+   if (occupancy != null) {
+       OccupancyProperty occupancyProperty = occupancy.getOccupancyProperties();
+
+       LocationDisplayRule occupancyDisplayRule = new LocationDisplayRule
+               .Builder(displayRuleName, currentDisplayRule)
+               .setLabel("people = " + occupancyProperty.getNrOfPeople())
+               .build();
+
+       mMapControl.setDisplayRule(occupancyDisplayRule, location);
+   }
+});
+```
+
+Note that since there is no guarantee of what Live Data you receive first and Locations can have multiple Live Data updates on different domains. It can be advised to check the lastModifiedTimeStamp of each live data update to choose what you want to render.
 
 ## Handling Live Data Events
 
