@@ -18,6 +18,15 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 ### Security     in case of vulnerabilities.
 -->
 
+## [3.7.0] 2020-10-22
+
+### Added
+
+- Support for offline datasets via the DataSetManager
+- Rewrite of the internal networking layer, resulting in faster and more reliable networking
+- Rewrite of the internal file handling, improving file system usage and speed
+- Minor improvements
+
 ## [3.6.1] 2020-10-15
 
 ### Added
