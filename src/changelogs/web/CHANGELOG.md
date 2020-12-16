@@ -9,13 +9,54 @@ eleventyNavigation:
 
 Changelog for MapsIndoors SDK for JavaScript. This document structure is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and the project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## [4.1.1]
+## [4.2.0] - 2020-12-16
+
+### Added
+
+- Support for Live Data via a new `mapsindoors.LiveDataManager` class. For more information about Live Data and how to get started, please contact our sales team.
+- `mapsindoors.BadgeRenderer` helper class to apply a badge onto an image.
+- Support for overriding a display rule and removing the override again (`overrideDisplayRule()`, `revertDisplayRule()`).
+- Optional `ignoreOverrides` parameter on `getDisplayRule` (defaults to `false`).
+
+## [4.1.4] - 2020-12-16
+
+### Fixed
+
+- Google Maps will enable zoom level 22 by default if the `maxZoom` is not specified. The SDK will now set  `maxZoom`  to 21 if  `maxZoom` hasn't been specified when creating the MapView.
+
+## [4.1.3] - 2020-12-15
+
+### Fixed
+
+- An issue where the default styling of labels would render almost unreadable labels.
+- An issue where the My Position icon didn't follow the users' movement.
+- Improved internal caching of the services to reduce network traffic.
+- Improved performance of the ViewState.
+
+### Changed
+
+- The SDK will now check if the 'z22' module is enabled and set the max zoom on the MapView to 22 unless the MapView is initialized with max zoom specified. (Contact our sales team to hear more about this feature).
+- The default color of the building outlines to `#EF6CCE`.
+- The default color for the Directions Renderer to `#3071D9`.
+- MICommon has been updated to the latest version.
+
+## [4.1.2] - 2020-12-03
+
+### Fixed
+
+- An issue where directions between two venues would cause an error.
+
+### Changed
+
+- Minor updates of the documentation.
+
+## [4.1.1] - 2020-11-20
 
 ### Fixed
 
 - An issue where the Directions polyline would visible on all floors.
 
-## [4.1.0]
+## [4.1.0] - 2020-11-12
 
 ### Added
 
@@ -33,7 +74,7 @@ Changelog for MapsIndoors SDK for JavaScript. This document structure is based o
 - An issue when the user clicked a room on a Google Map the click event would return `null` as the location property.
 - An issue where settting floor early would cause wrong map tiles to be shown.
 
-## [4.0.0]
+## [4.0.0] - 2020-10-29
 
 The MapsIndoors JavaScript SDK V4 can now be used with [Google Maps](https://developers.google.com/maps/documentation/javascript/overview) and [Mapbox GL JS](https://docs.mapbox.com/mapbox-gl-js/). It introduces several **breaking changes**, so read this carefully.
 
