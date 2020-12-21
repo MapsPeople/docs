@@ -29,8 +29,10 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 - When developing with Live Data, you can now use/cast to subclasses of `MPLiveUpdate`: `MPPositionLiveUpdate`, `MPOccupancyLiveUpdate`, `MPAvailabilityLiveUpdate`.
 - Added `types` and `locations` filter to `MPLocationService`.
 - Now returning an error from `MPLocationService` if a Location Source status changes to `unavailable`.
-- Added `positionProviderConfigs` on `MPSolution` model.
-- Added `dataSetId` on `MPSolution` model.
+- Added property `positionProviderConfigs` on `MPSolution` model.
+- Added property `dataSetId` on `MPSolution` model.
+- Added property `isIndoors` on `MPLocation` model, returning true if location is indoors and belongs to a building.
+
 
 ### Changed
 
