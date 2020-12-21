@@ -33,7 +33,6 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 - Added property `dataSetId` on `MPSolution` model.
 - Added property `isIndoors` on `MPLocation` model, returning true if location is indoors and belongs to a building.
 
-
 ### Changed
 
 - Made `didReceiveLiveUpdate` on `MPLiveDataManagerDelegate` optional.
