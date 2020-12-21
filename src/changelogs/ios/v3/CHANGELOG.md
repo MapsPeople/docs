@@ -43,7 +43,7 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 ### Fixed
 
 - Fix `bbox` getter returning `nil` on MPMultiPolygonGeometry and MPPolygonGeometry
-- Fixed occational crash in `MPBooking` deserialization.
+- Fixed occasional crash in `MPBooking` deserialization.
 - Improved search and filtering quality of the search engine in `MPLocationService`.
 
 ## [3.15.0] 2020-11-12
