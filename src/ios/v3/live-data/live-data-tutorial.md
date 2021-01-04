@@ -6,9 +6,9 @@ eleventyNavigation:
   order: 340
 ---
 
-In this tutorial you will learn to work with Live Updates / real-time data in MapsIndoors. It is recommended that you read the [Live Data Introduction](/ios/v3/live-data) before continuing.
+In this tutorial you will learn to work with Live Data / Real Time Data in MapsIndoors. It is recommended that you read the [Live Data Introduction](../../introductions/live-data) before continueing.
 
-We will create a view controller displaying a map that shows some dynamic changes that are initiated from Live Data sources known by MapsIndoors. If you do not have a Live Data integration in place for your MapsIndoors project, you can use API key `2ae7d137162642618b5ce555` for demo and test purposes. The test data are of the Occupancy Domain Type and the Position Domain Type.
+We will create a view controller displaying a map that shows the some dynamic changes that are initiated from Live Data sources known by MapsIndoors. The test data coming as Live Updates contains data for the Occupancy Domain Type and the Position Domain Type.
 
 Create a class `LiveDataController` that inherits from `UIViewController`.
 
@@ -23,23 +23,17 @@ let positionButton = UIButton.init()
 let occupancyButton = UIButton.init()
 ```
 
-Add a `GMSMapView` and a `MPMapControl` to the class.
+Add a `GMSMapView` and a `MPMapControl` to the class
 
 ```swift
 var map: GMSMapView? = nil
 var mapControl: MPMapControl? = nil
 ```
 
-Add a `MPLiveDataManager` to the class, being the shared instance. The property is declared `lazy` in order to only instantiate the shared instance once it is needed.
+Add a method `setupLiveDataButtons()` setting up buttons that enables/disables the subscriptions.
 
 ```swift
-lazy var liveManager = MPLiveDataManager.sharedInstance()
-```
-
-Add a method `setupSubscriptionButtons()` setting up buttons that enables/disables the subscriptions.
-
-```swift
-fileprivate func setupSubscriptionButtons() {
+fileprivate func setupLiveDataButtons() {
     positionButton.setTitle("See Live Positions", for: .normal)
     positionButton.setTitle("Tracking Live Positions", for: .selected)
     positionButton.addTarget(self, action: #selector(togglePosition), for: .touchUpInside)
@@ -52,16 +46,16 @@ fileprivate func setupSubscriptionButtons() {
 }
 ```
 
-Add a method `toggleSubscription()` that does the actual toggling of a subscription for a button based on the buttons `isSelected` flag. Swap current selected state for button. If the flag is true and the button is selected, call the Live Data Manager's `subscribe()` method with the given Topic Criteria. We will also call a `startFlash()`method that should make the button flash. More on this later. If the flag is false and the button is not selected, call the Live Data Manager's `unsubscribe()` method with the given Topic Criteria. Similarly we will call a `stopFlash()`method that should stop the button flash.
+Add a method `toggleLiveData()` that does the actual toggling of Live Data for a button based on the buttons `isSelected` flag. Swap current selected state for button. If the flag is true and the button is selected, call the `MPMapControl.enableLiveData()` method with the given Domain Type. We will also call a `startFlash()`method that should make the button flash. More on this later. If the flag is false and the button is not selected, call the `MPMapControl.disableLiveData()` method with the given Domain Type. Similarly we will call a `stopFlash()`method that should stop the button flash. In this example, we choose to have a customized rendering of Live Data, so we provide a Handler instance that gets the updated Locations. We will get to that later.
 
 ```swift
-fileprivate func toggleSubscription(_ button: UIButton, _ topic: MPLiveTopicCriteria) {
+fileprivate func toggleLiveData(_ button: UIButton, _ domainType: String) {
     button.isSelected = !button.isSelected
     if button.isSelected {
-        liveManager.subscribe(topic)
+        mapControl?.enableLiveData(domainType, handler: self)
         button.startFlash()
     } else {
-        liveManager.unsubscribe(topic)
+        mapControl?.disableLiveData(domainType)
         button.stopFlash()
     }
 }
@@ -71,8 +65,7 @@ Define an objective-c method `togglePosition()` that will receive events from yo
 
 ```swift
 @objc func togglePosition(button:UIButton) {
-    let topic = MPLiveTopicCriteria.domainType(MPLiveDomainType.position)
-    toggleSubscription(button, topic)
+    toggleLiveData(button, MPLiveDomainType.position)
 }
 ```
 
@@ -80,8 +73,7 @@ Define an objective-c method `toggleOccupancy()` that will receive events from y
 
 ```swift
 @objc func toggleOccupancy(button:UIButton) {
-    let topic = MPLiveTopicCriteria.domainType(MPLiveDomainType.occupancy)
-    toggleSubscription(button, topic)
+    toggleLiveData(button, MPLiveDomainType.occupancy)
 }
 ```
 
@@ -89,11 +81,11 @@ Inside `viewDidLoad()`, initialise your instance of `GMSMapView` and `MPMapContr
 
 ```swift
 self.map = GMSMapView.init(frame: CGRect.zero)
+self.map?.accessibilityElementsHidden = false
 self.mapControl = MPMapControl.init(map: self.map!)
-self.mapControl?.delegate = self as MPMapControlDelegate
 ```
 
-Inside `viewDidLoad()`, also request a Building and go to this Building on the map.
+Inside `viewDidLoad()`, also request a building and go to this building on the map.
 
 ```swift
 let q = MPQuery.init()
@@ -107,60 +99,71 @@ MPLocationService.sharedInstance().getLocationsUsing(q, filter: f) { (locations,
 }
 ```
 
-Inside `viewDidLoad()` method, call `setupSubscriptionButtons()` arrange the map view and the buttons in stackviews.
+Inside `viewDidLoad()` method, call `setupLiveDataButtons()` arrange the map view and the buttons in stackviews.
 
 ```swift
-setupSubscriptionButtons()
+setupLiveDataButtons()
 let buttonStackView = UIStackView.init(arrangedSubviews: [positionButton, occupancyButton])
 buttonStackView.axis = .horizontal
 buttonStackView.distribution = .fillEqually
 let stackView = UIStackView.init(arrangedSubviews: [map!, buttonStackView])
 stackView.axis = .vertical
 view = stackView
+
 ```
 
 Optionally, when you leave this controller, unsubscribe all Live Update Topics.
 
 ```swift
 override func viewDidDisappear(_ animated: Bool) {
-    liveManager.unsubscribeAll()
+    mapControl?.disableLiveData(MPLiveDomainType.position)
+    mapControl?.disableLiveData(MPLiveDomainType.occupancy)
 }
 ```
 
-Create an extension for `LiveDataController` to make it adopt the `MPMapControlDelegate` protocol.
+Create an extension for `LiveDataController` to make it adopt the `MPMappedLocationUpdateHandler` protocol. Note that if you are happy with the default rendering of Live Data, this part is not needed.
 
 ```swift
-extension LiveDataController : MPMapControlDelegate {
+extension LiveDataController : MPMappedLocationUpdateHandler {
 ```
 
-In the `LiveDataController` extension, add the method `handleLiveUpdate()` that handles a Live Update for a `MPLocation`. This method should only handle the `occupancy` Domain Type, so the first thing is to check for an `occupied` value in the `occupancy` Domain Type. After this verification, do the following:
+In the `LiveDataController` extension, add the method `handleLiveUpdate()` that handles a Live Update for a `MPLocation`. This method should only handle the `occupancy` Domain Type, so the first thing is to check for a `MPLiveUpdate` object for the `occupancy` Domain Type. After this verification, do the following:
 
-1. If `occupied == "True"` create the "closed" image, else create the "open" image.
-2. Setup a Location Display Rule with that image.
-3. Check for a `nrOfPeople`value in the same Domain Type.
-4. If present use the value in the label for the Location.
-5. Assign the new Display Rule to the Location through `MPMapControl`.
+1. If `occupancy.numberOfPeople > 0` create the "closed" image, else create the "open" image.
+1. Preferrably in a separate background thread, setup a Location Display Rule with that image.
+1. If `occupancy.numberOfPeople > 0` create a icon badge showing the number of people as text in the badge. How you do this is up to you. In this example we use [this code](https://github.com/MapsIndoors/MapsIndoorsUtils).
+1. Apply the newly created display rule on the main thread.
 
 ```swift
-private func handleLiveUpdate(_ forLocation: MPLocation) {
+private func handleLiveUpdate(_ location: MPLocation) {
     let domainType = MPLiveDomainType.occupancy
-    if let occupied = loc.getLiveValue(forKey:"occupied", domainType: domainType) {
+    if let occupancy = location.getLiveUpdate(forDomainType: domainType) as? MPOccupancyLiveUpdate {
         var img:UIImage?
-        if occupied == "True" {
+        var label:String
+        if occupancy.numberOfPeople > 0 {
             img = UIImage.init(named: "closed.png")
+            label = "\(location.name ?? "") - Occupied"
         } else {
             img = UIImage.init(named: "open.png")
+            label = "\(location.name ?? "") - Free"
         }
-        let dr = MPLocationDisplayRule.init(name: domainType, andIcon: img, andZoomLevelOn: 15)!
-        dr.iconSize = CGSize.init(width: 10, height: 10)
-
-        if let peopleCount = loc.getLiveValue(forKey:"nrOfPeople", domainType: domainType) {
-            dr.label = peopleCount
+        guard let icon = img else {
+            return
+        }
+        DispatchQueue.global(qos: .background).async {
+            let dr = MPLocationDisplayRule.init(name: domainType, andIcon: icon, andZoomLevelOn: 15)!
+            dr.iconSize = CGSize.init(width: 42, height: 42)
+            dr.label = label
             dr.showLabel = true
-        } else {
-            dr.showLabel = false
+            if occupancy.numberOfPeople > 0 {
+                let badgeConfig = BagdedIconConfiguration(originalIcon:icon, badgeText:"\(occupancy.numberOfPeople)")
+                let badged = BagdedIcon.bagdedIcon(config: badgeConfig)
+                dr.icon = badged
+            }
+            DispatchQueue.main.async {
+                self.mapControl?.setDisplayRule(dr, for: location)
+            }
         }
-        self.mapControl?.setDisplayRule(dr, for: loc)
     }
 }
 ```
@@ -176,6 +179,7 @@ func willUpdateLocationsOnMap(locations: [MPLocation]) {
         }
     }
 }
+
 ```
 
 Earlier we called some non-existing methods, `startFlash()` and `stopFlash()` on a `UIButton`. We will create these methods now. Create an extension for `UIButton`.
@@ -207,4 +211,4 @@ func stopFlash() {
 }
 ```
 
-This completes the tutorial on Live Data. [See the sample in LiveDataController.swift](<https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Live Data/LiveDataController.swift>).
+[See the sample in LiveDataController.swift](https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Live Data/LiveDataController.swift)
