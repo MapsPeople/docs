@@ -9,6 +9,26 @@ eleventyNavigation:
 
 Changelog for MapsIndoors SDK for JavaScript. This document structure is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and the project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [4.3.0] - 2021-01-04
+
+### Added
+
+- LiveDataInfo class for checking if live data domain type is available on the loaded solution.
+
+### Changed
+
+- LiveDataManager `enableLiveData()` and `subscribe()` will no longer attempt to make subscription if the live data domain type is not available on the solution.
+
+### Fixed
+
+- Prevent faulty travel modes when getting directions inside MapsIndoors venues.
+
+## [4.2.1] - 2020-12-17
+
+### Fixed
+
+- The Directions Service would in some cases not return the most optimal route.
+
 ## [4.2.0] - 2020-12-16
 
 ### Added
@@ -17,6 +37,12 @@ Changelog for MapsIndoors SDK for JavaScript. This document structure is based o
 - `mapsindoors.BadgeRenderer` helper class to apply a badge onto an image.
 - Support for overriding a display rule and removing the override again (`overrideDisplayRule()`, `revertDisplayRule()`).
 - Optional `ignoreOverrides` parameter on `getDisplayRule` (defaults to `false`).
+
+## [4.1.5] - 2020-12-17
+
+### Fixed
+
+- The Directions Service would in some cases not return the most optimal route.
 
 ## [4.1.4] - 2020-12-16
 
