@@ -85,7 +85,7 @@ The `floorSelector` is created by calling the `new mapsindoors.FloorSelector(flo
 ## Guides
 
 - [Upgrade Guide]({{ site.url }}/web/v4/upgrade-guide/)
-- [Create a simple map with MapsIndoors]({{ site.url }}/web/v4/guides/simple-map/)
-- [Introduction to DispayRules]({{ site.url }}/web/v4/guides/display-rules-intro/)
-- [Event handling]({{ site.url }}/web/v4/guides/using-events/)
-- [Search and filtering]({{ site.url }}/web/v4/guides/search-and-filtering/)
+- [Create a simple map with MapsIndoors]({{ site.url }}/web/v4/simple-map/)
+- [Introduction to DispayRules]({{ site.url }}/web/v4/display-rules-intro/)
+- [Event handling]({{ site.url }}/web/v4/using-events/)
+- [Search and filtering]({{ site.url }}/web/v4/search-and-filtering/)
