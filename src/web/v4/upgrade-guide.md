@@ -41,7 +41,7 @@ const mapsIndoors = new mapsindoors.MapsIndoors({
 ```javascript
 const element = document.getElementById("map");
 
-const mapView = new mapsindoors.mapView.GoogleMapView({
+const mapView = new mapsindoors.mapView.GoogleMapsView({
     element: element,
     center: { lat: 38.8976067, lng: -77.0365872 },
     zoom: 19,
@@ -51,7 +51,7 @@ const mapView = new mapsindoors.mapView.GoogleMapView({
 const mapsIndoors = new mapsindoors.MapsIndoors({ mapView: mapView });
 ```
 
-See [mapsindoors.mapView.GoogleMapView](https://app.mapsindoors.com/mapsindoors/js/sdk/4.0.0/docs/mapsindoors.mapView.GoogleMapView.html) and [mapsindoors.MapsIndoors](https://app.mapsindoors.com/mapsindoors/js/sdk/4.0.0/docs/mapsindoors.MapsIndoors.html)
+See [mapsindoors.mapView.GoogleMapsView](https://app.mapsindoors.com/mapsindoors/js/sdk/4.0.0/docs/mapsindoors.mapView.GoogleMapsView.html) and [mapsindoors.MapsIndoors](https://app.mapsindoors.com/mapsindoors/js/sdk/4.0.0/docs/mapsindoors.MapsIndoors.html)
 
 #### Mapbox
 
