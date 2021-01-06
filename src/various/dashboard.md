@@ -34,8 +34,8 @@ The top of the Dashboard provides high level information about your Solutions, s
 
 * **Venues** - Total number of Venues across all Solutions. A Venue is a geographical area that contains one or more Buildings, such as a campus.
 * **Buildings** - Total number of Buildings in all Venues across all Solutions. A Building is part of a Venue and contains one or more floors.
-* **Floors** - Total number of Floors in all Buildings in all Venues across all Solutions. A floor is a level in a Building.
-* **Location Types** - Total number of Location Types across all Solutions. Location types are templates for Rooms and POIs. Examples include elevators, offices, and restrooms.
+* **Floors** - Total number of Floors in all Buildings in all Venues across all Solutions. A Floor is a level in a Building.
+* **Location Types** - Total number of Location Types across all Solutions. Location Types are templates for Rooms and POIs. Examples include elevators, offices, and restrooms.
 * **Categories** - Total number of Categories across all Solutions. Categories are used to group similar Rooms and POIs for easier searching in the app, e.g. meeting rooms and cafes.
 * **POIs with Alias** - Total number of Points of Interest with one or more aliases across Solutions. Aliases are additional search terms for a POI. For example, an ATM POI may have a 'cash' and 'machine' alias.
 * **POIs with Category** - Total number of Points of Interest with one or more Categories across all Solutions. Categories are used to group similar Rooms and POIs for easier searching in the app, e.g. meeting rooms and cafes.
