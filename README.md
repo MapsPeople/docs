@@ -21,8 +21,8 @@ Eleventy automatically builds and deploys from the `main` branch in this reposit
 1. Clone this repository to your machine:
 
     ```bash
-    git clone git@github.com:MapsIndoors/mapsindoors.github.io
-    cd mapsindoors.github.io
+    git clone git@github.com:MapsIndoors/docs
+    cd docs
     ```
 
 1. Install dependencies
