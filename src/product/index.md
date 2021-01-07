@@ -6,14 +6,14 @@ eleventyNavigation:
   order: 40
 ---
 
-MapsIndoors is an Indoor Navigation Platform and can be integrated into existing applications for mobile, desktop, and kiosk or as a standalone service. 
+MapsIndoors is an Indoor Navigation Platform and can be integrated into existing applications for mobile, desktop, and kiosk or as a standalone service.
 
 MapsIndoors consists of:
 
 * A Content Management System (CMS)
 * Three Software Development Kits (SDKs):
   * Android
-  * iOS 
+  * iOS
   * Web (JavaScript)
 * Standard Apps built on top of each SDK
 * An Integration API
