@@ -40,7 +40,7 @@ The MapsIndoors SDKs are the engines that ensure your users can view, navigate, 
 
 ## Standard Apps
 
-MapsIndoors Standard Apps are built on top of the SDKs and visualize some of the SDK capabilities. The Standard Apps are plug-and-play and provide a good basic indoor navigation app. Many clients choose to only use the Standard Apps for testing or demo purposes and use the SDKs to create a completely customized experience for their users.
+MapsIndoors Standard Apps are built on top of the SDKs and visualize some of the SDK capabilities. The Standard Apps are plug-and-play and provide a good basic indoor navigation app. Most clients choose to only use the Standard Apps for testing or demo purposes, and use the SDKs to create a completely customized experience for their users.
 
 ![WebApp](/assets/product/webApp.png)
 
