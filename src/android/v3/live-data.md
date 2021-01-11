@@ -285,10 +285,6 @@ mMapControl.setOnWillUpdateLocationsOnMap { locations ->
     </mi-tab-panel>
 </mi-tabs>
 
-```java
-
-```
-
 ### Handling State Changes and Errors
 
 In order to get notified about state changes and errors related to Live Data, a number of listeners can be set on the `LiveDataManager` using the following methods and interfaces:
