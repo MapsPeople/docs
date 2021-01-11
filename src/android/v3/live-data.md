@@ -58,7 +58,7 @@ Enabling Live Data through the MapControl is an easy way to get live data runnin
     <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
     <mi-tab-panel id="java">
         <h3>java</h3>
-        <pre lang="java">
+        <pre lang="Java">
 mMapControl.init(error -> {
     mMapControl.enableLiveData(LiveDataDomainTypes.OCCUPANCY_DOMAIN);
     mMapControl.enableLiveData(LiveDataDomainTypes.AVAILABILITY_DOMAIN);
@@ -67,7 +67,7 @@ mMapControl.init(error -> {
     </mi-tab-panel>
     <mi-tab-panel id="kotlin">
         <h3>kotlin</h3>
-        <pre lang ="kotlin">
+        <pre lang ="Kotlin">
 mMapControl.init {
     mMapControl.enableLiveData(LiveDataDomainTypes.OCCUPANCY_DOMAIN)
     mMapControl.enableLiveData(LiveDataDomainTypes.AVAILABILITY_DOMAIN)
@@ -75,13 +75,6 @@ mMapControl.init {
         </pre>
     </mi-tab-panel>
 </mi-tabs>
-
-```java
-mMapControl.init(error -> {
-    mMapControl.enableLiveData(LiveDataDomainTypes.OCCUPANCY_DOMAIN);
-    mMapControl.enableLiveData(LiveDataDomainTypes.AVAILABILITY_DOMAIN);
-});
-```
 
 In the example we enable Live Data for the availability and occupancy domain type. Internal processes will determine which topics are relevant for subscription based on where the map is situated. A default rendering mechanism will also alter the appearance of the relevant locations on the map. As a consequence, the SDK will set custom display rules for this rendering. Adding your own or resetting display rules while Live Data is enabled with default rendering may break the rendering for the current MapControl instance. Hence, you should not use custom display rules unless you are handling the rendering of live data by your own.
 
