@@ -213,9 +213,6 @@ mMapControl.enableLiveData(LiveDataDomainTypes.OCCUPANCY_DOMAIN) { location: MPL
         </code></pre>
     </mi-tab-panel>
 </mi-tabs>
-```java
-
-```
 
 Note that since there is no guarantee of what Live Data you receive first and Locations can have multiple Live Data updates on different domains. It can be advised to check the lastModifiedTimeStamp of each live data update to choose what you want to render.
 
