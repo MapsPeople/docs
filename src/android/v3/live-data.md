@@ -58,25 +58,21 @@ Enabling Live Data through the MapControl is an easy way to get live data runnin
     <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
     <mi-tab-panel id="java">
         <h3>java</h3>
-        <span>
-
-        ```java
-        mMapControl.init(error -> {
-            mMapControl.enableLiveData(LiveDataDomainTypes.OCCUPANCY_DOMAIN);
-            mMapControl.enableLiveData(LiveDataDomainTypes.AVAILABILITY_DOMAIN);
-        });
-        ```
-
-        </span>
+        <pre lang="Java"><code>
+mMapControl.init(error -> {
+    mMapControl.enableLiveData(LiveDataDomainTypes.OCCUPANCY_DOMAIN);
+    mMapControl.enableLiveData(LiveDataDomainTypes.AVAILABILITY_DOMAIN);
+});
+        </code></pre>
     </mi-tab-panel>
     <mi-tab-panel id="kotlin">
         <h3>kotlin</h3>
-        <pre lang ="Kotlin">
+        <pre lang ="Kotlin"><code>
 mMapControl.init {
     mMapControl.enableLiveData(LiveDataDomainTypes.OCCUPANCY_DOMAIN)
     mMapControl.enableLiveData(LiveDataDomainTypes.AVAILABILITY_DOMAIN)
 }
-        </pre>
+        </code></pre>
     </mi-tab-panel>
 </mi-tabs>
 
@@ -100,7 +96,7 @@ The only Live Data updates that are also directly notified to the SDK internally
     <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
     <mi-tab-panel id="java">
         <h3>java</h3>
-        <pre lang="Java">
+        <pre lang="Java"><code>
 LiveDataManager liveDataManager = LiveDataManager.getInstance();
 liveDataManager.setOnLiveDataManagerStateChangedListener(state -> Log.d(TAG,"Live data manager state changed to: "+state.toString()));
 
@@ -109,11 +105,11 @@ LiveTopicCriteria liveTopicCriteria = LiveTopicCriteria.getBuilder("datasetId")
         .build();
 
 liveDataManager.subscribeTopic(liveTopicCriteria);
-        </pre>
+        </code></pre>
     </mi-tab-panel>
     <mi-tab-panel id="kotlin">
         <h3>kotlin</h3>
-        <pre lang ="Kotlin">
+        <pre lang ="Kotlin"><code>
 var liveDataManager = LiveDataManager.getInstance();
 liveDataManager.setOnLiveDataManagerStateChangedListener {
     Log.d("LiveDataState", "Live data manager state changed to: $it")
@@ -124,7 +120,7 @@ var liveTopicCriteria = LiveTopicCriteria.getBuilder("datasetId")
     .build();
 
 liveDataManager.subscribeTopic(liveTopicCriteria);
-        </pre>
+        </code></pre>
     </mi-tab-panel>
 </mi-tabs>
 
