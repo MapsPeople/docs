@@ -249,6 +249,7 @@ liveDataManager.setOnReceivedLiveUpdateListener((topic, message) -> {
 liveDataManager.setOnReceivedLiveUpdateListener { liveTopic, liveUpdate ->
             if (liveUpdate.domainType == LiveDataDomainTypes.OCCUPANCY_DOMAIN) {
                 var people = liveUpdate.occupancyProperties.nrOfPeople
+                ...
             }
         }
         </code></pre>
@@ -257,13 +258,35 @@ liveDataManager.setOnReceivedLiveUpdateListener { liveTopic, liveUpdate ->
 
 To get Live Updates on a map-specific level, the `OnWillUpdateLocationsOnMap` must be set on `MapControl`:
 
-```java
+<mi-tabs>
+    <mi-tab label="Java" tab-for="java"></mi-tab>
+    <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
+    <mi-tab-panel id="java">
+        <h3>java</h3>
+        <pre lang="Java"><code>
 mapControl.setOnWillUpdateLocationsOnMap(locations -> {
     for(MPLocation location : locations){
         LiveUpdate liveUpdate = location.getLiveUpdate("occupancy");
         ...
     }
 }
+        </code></pre>
+    </mi-tab-panel>
+    <mi-tab-panel id="kotlin">
+        <h3>kotlin</h3>
+        <pre lang ="Kotlin"><code>
+mMapControl.setOnWillUpdateLocationsOnMap { locations ->
+            for (location in locations) {
+                val properties = location.getLiveUpdate("occupancy")?.occupancyProperties
+                ...
+            }
+        }
+        </code></pre>
+    </mi-tab-panel>
+</mi-tabs>
+
+```java
+
 ```
 
 ### Handling State Changes and Errors
