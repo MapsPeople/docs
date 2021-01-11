@@ -305,13 +305,6 @@ pre code {
         @include border.style(solid);
         @include border.width(medium);
     }
-    &.java {
-        white-space: normal;
-        @include padding.all(medium);
-        @include border.gray(40);
-        @include border.style(solid);
-        @include border.width(medium);
-    }
 }
 
 // header.njk
