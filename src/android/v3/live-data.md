@@ -229,12 +229,31 @@ There are two ways to be notified about Live Updates:
 
 To get Live Updates on a general level the `OnReceivedLiveUpdateListener` must be set on the `LiveDataManager`:
 
-```java
+<mi-tabs>
+    <mi-tab label="Java" tab-for="java"></mi-tab>
+    <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
+    <mi-tab-panel id="java">
+        <h3>java</h3>
+        <pre lang="Java"><code>
 liveDataManager.setOnReceivedLiveUpdateListener((topic, message) -> {
-    String people = message.getProperties().get("nrOfPeople");
-    ...
-});
-```
+           if (message.getDomainType().equals(LiveDataDomainTypes.OCCUPANCY_DOMAIN)) {
+               int people = message.getOccupancyProperties().getNrOfPeople();
+               ...
+           }
+        });
+        </code></pre>
+    </mi-tab-panel>
+    <mi-tab-panel id="kotlin">
+        <h3>kotlin</h3>
+        <pre lang ="Kotlin"><code>
+liveDataManager.setOnReceivedLiveUpdateListener { liveTopic, liveUpdate ->
+            if (liveUpdate.domainType == LiveDataDomainTypes.OCCUPANCY_DOMAIN) {
+                var people = liveUpdate.occupancyProperties.nrOfPeople
+            }
+        }
+        </code></pre>
+    </mi-tab-panel>
+</mi-tabs>
 
 To get Live Updates on a map-specific level, the `OnWillUpdateLocationsOnMap` must be set on `MapControl`:
 
