@@ -173,23 +173,48 @@ mMapControl.setOnWillUpdateLocationsOnMap { locations: List&lt;MPLocation&gt; ->
     </mi-tab-panel>
 </mi-tabs>
 
-```java
+<mi-tabs>
+    <mi-tab label="Java" tab-for="java"></mi-tab>
+    <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
+    <mi-tab-panel id="java">
+        <h3>java</h3>
+        <pre lang="Java"><code>
 mMapControl.enableLiveData(LiveDataDomainTypes.OCCUPANCY_DOMAIN, location -> {
    LiveUpdate occupancy = location.getLiveUpdate("occupancy");
-
    LocationDisplayRule currentDisplayRule = mMapControl.getDisplayRule(location);
    String displayRuleName = location.getId() + "_live";
    if (occupancy != null) {
        OccupancyProperty occupancyProperty = occupancy.getOccupancyProperties();
-
        LocationDisplayRule occupancyDisplayRule = new LocationDisplayRule
                .Builder(displayRuleName, currentDisplayRule)
                .setLabel("people = " + occupancyProperty.getNrOfPeople())
                .build();
-
        mMapControl.setDisplayRule(occupancyDisplayRule, location);
    }
 });
+        </code></pre>
+    </mi-tab-panel>
+    <mi-tab-panel id="kotlin">
+        <h3>kotlin</h3>
+        <pre lang ="Kotlin"><code>
+mMapControl.enableLiveData(LiveDataDomainTypes.OCCUPANCY_DOMAIN) { location: MPLocation ->
+    val occupancy = location.getLiveUpdate("occupancy")
+    val currentDisplayRule = mMapControl.getDisplayRule(location)
+    val displayRuleName = location.id + "_live"
+    if (occupancy != null) {
+        val occupancyProperty = occupancy.occupancyProperties
+        val occupancyDisplayRule =
+            LocationDisplayRule.Builder(displayRuleName, currentDisplayRule!!)
+                .setLabel("people = " + occupancyProperty.nrOfPeople)
+                .build()
+        mMapControl.setDisplayRule(occupancyDisplayRule, location)
+    }
+}
+        </code></pre>
+    </mi-tab-panel>
+</mi-tabs>
+```java
+
 ```
 
 Note that since there is no guarantee of what Live Data you receive first and Locations can have multiple Live Data updates on different domains. It can be advised to check the lastModifiedTimeStamp of each live data update to choose what you want to render.
