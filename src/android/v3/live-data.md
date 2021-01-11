@@ -266,7 +266,7 @@ To get Live Updates on a map-specific level, the `OnWillUpdateLocationsOnMap` mu
         <pre lang="Java"><code>
 mapControl.setOnWillUpdateLocationsOnMap(locations -> {
     for(MPLocation location : locations){
-        LiveUpdate liveUpdate = location.getLiveUpdate("occupancy");
+        LiveUpdate liveUpdate = location.getLiveUpdate(LiveDataDomainTypes.OCCUPANCY_DOMAIN);
         ...
     }
 }
@@ -277,7 +277,7 @@ mapControl.setOnWillUpdateLocationsOnMap(locations -> {
         <pre lang ="Kotlin"><code>
 mMapControl.setOnWillUpdateLocationsOnMap { locations ->
             for (location in locations) {
-                val properties = location.getLiveUpdate("occupancy")?.occupancyProperties
+                val properties = location.getLiveUpdate(LiveDataDomainTypes.OCCUPANCY_DOMAIN)?.occupancyProperties
                 ...
             }
         }
