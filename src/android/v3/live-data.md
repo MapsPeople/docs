@@ -137,7 +137,6 @@ Here are examples of using the different methods to render live data on your map
 mMapControl.setOnWillUpdateLocationsOnMap(locations -> {
    for (MPLocation location : locations) {
        LiveUpdate occupancy = location.getLiveUpdate("occupancy");
-
        LocationDisplayRule currentDisplayRule = mMapControl.getDisplayRule(location);
        String displayRuleName = location.getId() + "_live";
        if (occupancy != null) {
@@ -168,7 +167,7 @@ mMapControl.setOnWillUpdateLocationsOnMap { locations: List&lt;MPLocation&gt; ->
                 LocationDisplayRule.Builder(displayRuleName, currentDisplayRule!!)
                     .setLabel("people = " + occupancyProperty.nrOfPeople)
                     .build()
-            mMapControl.setDisplayRule(occupancyDisplayRule, location)
+                mMapControl.setDisplayRule(occupancyDisplayRule, location)
         }
     }
 }
