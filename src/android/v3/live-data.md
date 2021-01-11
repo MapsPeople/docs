@@ -53,12 +53,26 @@ A live update is the model for a message carrying one piece of Live Data, for ex
 
 Enabling Live Data through the MapControl is an easy way to get live data running in your app.
 
-```java
-mMapControl.init(error -> {
-   mMapControl.enableLiveData(LiveDataDomainTypes.OCCUPANCY_DOMAIN);
-   mMapControl.enableLiveData(LiveDataDomainTypes.AVAILABILITY_DOMAIN);
-});
-```
+<mi-tabs>
+    <mi-tab label="Java" tab-for="java"></mi-tab>
+    <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
+    <mi-tab-panel id="java">
+    ```java
+    mMapControl.init(error -> {
+        mMapControl.enableLiveData(LiveDataDomainTypes.OCCUPANCY_DOMAIN);
+        mMapControl.enableLiveData(LiveDataDomainTypes.AVAILABILITY_DOMAIN);
+    });
+    ```
+    </mi-tab-panel>
+    <mi-tab-panel id="kotlin">
+    ```java
+    mMapControl.init(error -> {
+        mMapControl.enableLiveData(LiveDataDomainTypes.OCCUPANCY_DOMAIN);
+        mMapControl.enableLiveData(LiveDataDomainTypes.AVAILABILITY_DOMAIN);
+    });
+    ```
+    </mi-tab-panel>
+</mi-tabs>
 
 In the example we enable Live Data for the availability and occupancy domain type. Internal processes will determine which topics are relevant for subscription based on where the map is situated. A default rendering mechanism will also alter the appearance of the relevant locations on the map. As a consequence, the SDK will set custom display rules for this rendering. Adding your own or resetting display rules while Live Data is enabled with default rendering may break the rendering for the current MapControl instance. Hence, you should not use custom display rules unless you are handling the rendering of live data by your own.
 
