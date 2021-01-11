@@ -58,12 +58,16 @@ Enabling Live Data through the MapControl is an easy way to get live data runnin
     <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
     <mi-tab-panel id="java">
         <h3>java</h3>
-        <pre lang="Java">
-mMapControl.init(error -> {
-    mMapControl.enableLiveData(LiveDataDomainTypes.OCCUPANCY_DOMAIN);
-    mMapControl.enableLiveData(LiveDataDomainTypes.AVAILABILITY_DOMAIN);
-});
-        </pre>
+        <span>
+
+        ```java
+        mMapControl.init(error -> {
+            mMapControl.enableLiveData(LiveDataDomainTypes.OCCUPANCY_DOMAIN);
+            mMapControl.enableLiveData(LiveDataDomainTypes.AVAILABILITY_DOMAIN);
+        });
+        ```
+
+        </span>
     </mi-tab-panel>
     <mi-tab-panel id="kotlin">
         <h3>kotlin</h3>
