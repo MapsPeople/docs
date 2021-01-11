@@ -96,7 +96,7 @@ The only Live Data updates that are also directly notified to the SDK internally
     <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
     <mi-tab-panel id="java">
         <h3>java</h3>
-        <pre lang="Java"><code>
+        <pre><code>
 LiveDataManager liveDataManager = LiveDataManager.getInstance();
 liveDataManager.setOnLiveDataManagerStateChangedListener(state -> Log.d(TAG,"Live data manager state changed to: "+state.toString()));
 
