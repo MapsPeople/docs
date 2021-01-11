@@ -91,16 +91,38 @@ To enable Live Data in an application, a subscription to one or more Topics is n
 
 The only Live Data updates that are also directly notified to the SDK internally are Live Data updates of the "Position" Domain Type. By consequence, if you have already set up your map with MapsIndoors, an additional few lines of code can enable moving locations on the map. Here is an example in Java:
 
-```java
-LiveDataManagerInterface liveDataManager = LiveDataManager.getInstance();
-liveDataManager.setOnLiveDataManagerStateChangedListener(state -> Log.d(TAG,"Live data manager state changed to: “+state.toString()));
+<mi-tabs>
+    <mi-tab label="Java" tab-for="java"></mi-tab>
+    <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
+    <mi-tab-panel id="java">
+        <h3>java</h3>
+        <pre lang="Java">
+LiveDataManager liveDataManager = LiveDataManager.getInstance();
+liveDataManager.setOnLiveDataManagerStateChangedListener(state -> Log.d(TAG,"Live data manager state changed to: "+state.toString()));
 
 LiveTopicCriteria liveTopicCriteria = LiveTopicCriteria.getBuilder("datasetId")
         .setMultiLevelWildcard()
         .build();
 
 liveDataManager.subscribeTopic(liveTopicCriteria);
-```
+        </pre>
+    </mi-tab-panel>
+    <mi-tab-panel id="kotlin">
+        <h3>kotlin</h3>
+        <pre lang ="Kotlin">
+var liveDataManager = LiveDataManager.getInstance();
+liveDataManager.setOnLiveDataManagerStateChangedListener {
+    Log.d("LiveDataState", "Live data manager state changed to: $it")
+}
+
+var liveTopicCriteria = LiveTopicCriteria.getBuilder("datasetId")
+    .setMultiLevelWildcard()
+    .build();
+
+liveDataManager.subscribeTopic(liveTopicCriteria);
+        </pre>
+    </mi-tab-panel>
+</mi-tabs>
 
 In the example, the Topic is created using the `datasetId` and a multilevel wildcard, which will return all Live Data in the Solution.
 
