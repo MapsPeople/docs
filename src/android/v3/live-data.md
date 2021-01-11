@@ -157,21 +157,21 @@ mMapControl.setOnWillUpdateLocationsOnMap(locations -> {
     <mi-tab-panel id="kotlin">
         <h3>kotlin</h3>
         <pre lang ="Kotlin"><code>
-mMapControl.setOnWillUpdateLocationsOnMap { locations: List<MPLocation> ->
-            for (location in locations) {
-                val occupancy = location.getLiveUpdate("occupancy")
-                val currentDisplayRule = mMapControl.getDisplayRule(location)
-                val displayRuleName = location.id + "_live"
-                if (occupancy != null) {
-                    val occupancyProperty = occupancy.occupancyProperties
-                    val occupancyDisplayRule =
-                        LocationDisplayRule.Builder(displayRuleName, currentDisplayRule!!)
-                            .setLabel("people = " + occupancyProperty.nrOfPeople)
-                            .build()
-                    mMapControl.setDisplayRule(occupancyDisplayRule, location)
-                }
-            }
+mMapControl.setOnWillUpdateLocationsOnMap { locations: List&lt;MPLocation&gt; ->
+    for (location in locations) {
+        val occupancy = location.getLiveUpdate("occupancy")
+        val currentDisplayRule = mMapControl.getDisplayRule(location)
+        val displayRuleName = location.id + "_live"
+        if (occupancy != null) {
+            val occupancyProperty = occupancy.occupancyProperties
+            val occupancyDisplayRule =
+                LocationDisplayRule.Builder(displayRuleName, currentDisplayRule!!)
+                    .setLabel("people = " + occupancyProperty.nrOfPeople)
+                    .build()
+            mMapControl.setDisplayRule(occupancyDisplayRule, location)
         }
+    }
+}
         </code></pre>
     </mi-tab-panel>
 </mi-tabs>
