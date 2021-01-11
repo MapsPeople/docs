@@ -128,7 +128,12 @@ As mentioned `MapControl` has a default way of rendering Live Data Locations if 
 
 Here are examples of using the different methods to render live data on your map:
 
-```java
+<mi-tabs>
+    <mi-tab label="Java" tab-for="java"></mi-tab>
+    <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
+    <mi-tab-panel id="java">
+        <h3>java</h3>
+        <pre lang="Java"><code>
 mMapControl.setOnWillUpdateLocationsOnMap(locations -> {
    for (MPLocation location : locations) {
        LiveUpdate occupancy = location.getLiveUpdate("occupancy");
@@ -147,7 +152,29 @@ mMapControl.setOnWillUpdateLocationsOnMap(locations -> {
        }
    }
 });
-```
+        </code></pre>
+    </mi-tab-panel>
+    <mi-tab-panel id="kotlin">
+        <h3>kotlin</h3>
+        <pre lang ="Kotlin"><code>
+mMapControl.setOnWillUpdateLocationsOnMap { locations: List<MPLocation> ->
+    for (location in locations) {
+        val occupancy = location.getLiveUpdate("occupancy")
+        val currentDisplayRule = mMapControl.getDisplayRule(location)
+        val displayRuleName = location.id + "_live"
+        if (occupancy != null) {
+            val occupancyProperty = occupancy.occupancyProperties
+            val occupancyDisplayRule =
+                LocationDisplayRule.Builder(displayRuleName, currentDisplayRule!!)
+                    .setLabel("people = " + occupancyProperty.nrOfPeople)
+                    .build()
+            mMapControl.setDisplayRule(occupancyDisplayRule, location)
+        }
+    }
+}
+        </code></pre>
+    </mi-tab-panel>
+</mi-tabs>
 
 ```java
 mMapControl.enableLiveData(LiveDataDomainTypes.OCCUPANCY_DOMAIN, location -> {
