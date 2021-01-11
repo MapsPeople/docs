@@ -141,12 +141,10 @@ mMapControl.setOnWillUpdateLocationsOnMap(locations -> {
        String displayRuleName = location.getId() + "_live";
        if (occupancy != null) {
            OccupancyProperty occupancyProperty = occupancy.getOccupancyProperties();
-
            LocationDisplayRule occupancyDisplayRule = new LocationDisplayRule
                    .Builder(displayRuleName, currentDisplayRule)
                    .setLabel("people = " + occupancyProperty.getNrOfPeople())
                    .build();
-
            mMapControl.setDisplayRule(occupancyDisplayRule, location);
        }
    }
@@ -167,7 +165,7 @@ mMapControl.setOnWillUpdateLocationsOnMap { locations: List&lt;MPLocation&gt; ->
                 LocationDisplayRule.Builder(displayRuleName, currentDisplayRule!!)
                     .setLabel("people = " + occupancyProperty.nrOfPeople)
                     .build()
-                mMapControl.setDisplayRule(occupancyDisplayRule, location)
+            mMapControl.setDisplayRule(occupancyDisplayRule, location)
         }
     }
 }
