@@ -68,10 +68,10 @@ mMapControl.init(error -> {
     <mi-tab-panel id="kotlin">
         <h3>kotlin</h3>
         <pre lang ="kotlin">
-mMapControl.init(error -> {
-    mMapControl.enableLiveData(LiveDataDomainTypes.OCCUPANCY_DOMAIN);
-    mMapControl.enableLiveData(LiveDataDomainTypes.AVAILABILITY_DOMAIN);
-});
+mMapControl.init {
+    mMapControl.enableLiveData(LiveDataDomainTypes.OCCUPANCY_DOMAIN)
+    mMapControl.enableLiveData(LiveDataDomainTypes.AVAILABILITY_DOMAIN)
+}
         </pre>
     </mi-tab-panel>
 </mi-tabs>
