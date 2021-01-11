@@ -381,7 +381,7 @@ Clicking on the arrows to the left of the Category name allows you to change the
 
 Use these settings to control how Icons are shown on the map.
 
-**Zoom Level:** This can be edited by moving the dot on the line. The icon will appear in the chosen zoom level. The ability to click/select a location on the map is also based on the location's type visibility.
+**Zoom Level:** This can be edited by moving the dot on the line. The icon will appear in the chosen zoom level. The ability to click/select a Location on the map is also based on the Location's Type visibility.
 
 **Visible:** By clicking the eye, this will remove the icon from appearing in the Solution
 
