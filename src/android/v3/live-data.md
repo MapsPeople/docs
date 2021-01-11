@@ -109,15 +109,12 @@ liveDataManager.subscribeTopic(liveTopicCriteria);
         <h3>kotlin</h3>
         <pre lang ="Kotlin"><code>
 var liveDataManager = LiveDataManager.getInstance();
-
 liveDataManager.setOnLiveDataManagerStateChangedListener {
     Log.d("LiveDataState", "Live data manager state changed to: $it")
 }
-
 var liveTopicCriteria = LiveTopicCriteria.getBuilder("datasetId")
     .setMultiLevelWildcard()
     .build();
-
 liveDataManager.subscribeTopic(liveTopicCriteria);
         </code></pre>
     </mi-tab-panel>
