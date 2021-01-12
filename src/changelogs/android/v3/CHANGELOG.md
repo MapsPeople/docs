@@ -18,6 +18,20 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 ### Security     in case of vulnerabilities.
 -->
 
+## [3.7.0] 2021-01-07
+
+### Added
+
+- Support for booking
+
+### Changed
+
+- Made LiveData interfaces more intuitive and simpler.
+
+### Fixed
+
+- Minor bugfixes and improvements
+
 ## [3.7.0] 2020-10-22
 
 ### Added
