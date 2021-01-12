@@ -217,7 +217,7 @@ The second callback would result in no route being produced
 
 ### Changed
 
-- Changed initialisation steps, see [Getting Started](https://docs.mapsindoors.com/ios/v2)
+- Changed initialisation steps, see [Getting Started](https://docs.mapsindoors.com/ios/v2/)
 - Added `MPDirectionsQuery` and new method to query routes on `MPDirectionsService`
 - Deprecations introduced on various methods
 - Deprecations introduced on various UI controls
