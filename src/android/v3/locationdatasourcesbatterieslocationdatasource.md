@@ -6,7 +6,7 @@ eleventyNavigation:
   order: 120
 ---
 
-In this tutorial we will show how you can build a custom Location Source. In [Part 1](../locationdatasourcespeoplelocationdatasource) we created a people location source that mocks locations of people.
+In this tutorial we will show how you can build a custom Location Source. In [Part 1](/android/v3/locationdatasourcespeoplelocationdatasource.md) we created a people location source that mocks locations of people.
 
 Now we will create another location source that represents batteries. The power level of the batteries will be changing over time and it needs to be visible on the map realtime.
 
