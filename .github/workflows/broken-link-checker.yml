@@ -15,6 +15,6 @@ jobs:
             TARGET: https://docs.mapsindoors.com
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             RECURSIVE: true
-            RATE_LIMIT: 10
+            RATE_LIMIT: 0
             TITLE: Broken link found to ${URL}
             ASSIGNEES: marksdk
