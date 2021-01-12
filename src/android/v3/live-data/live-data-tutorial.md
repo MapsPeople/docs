@@ -238,9 +238,7 @@ if (MapsIndoors.getDataSet() != null && MapsIndoors.getDataSet().getId() != null
                 .anyLocation()
                 .setDomainType(LiveDataDomainTypes.OCCUPANCY_DOMAIN)
                 .build();
-            if (mBuildingLiveTopicCritera != null) {
-                liveDataManager.subscribeTopic(mBuildingLiveTopicCritera);
-            }
+            liveDataManager.subscribeTopic(mBuildingLiveTopicCritera);
         }
     });
 }
@@ -263,9 +261,7 @@ MapsIndoors.getDataSet()?.id?.let { datasetId ->
                 .anyLocation()
                 .setDomainType(LiveDataDomainTypes.OCCUPANCY_DOMAIN)
                 .build()
-            if (mBuildingLiveTopicCritera != null) {
-                liveDataManager.subscribeTopic(mBuildingLiveTopicCritera)
-            }
+            liveDataManager.subscribeTopic(mBuildingLiveTopicCritera)
         }
     }
 }
