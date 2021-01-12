@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check
-        uses: ruzickap/action-my-broken-link-checker@v1.0.3
+        uses: ruzickap/action-my-broken-link-checker@v1.0.2
         with:
           url: https://docs.mapsindoors.com
           cmd_params: "--one-page-only --color=always"  # Check just one page
