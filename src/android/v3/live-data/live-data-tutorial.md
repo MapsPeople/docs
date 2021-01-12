@@ -216,7 +216,7 @@ liveDataManager.setOnReceivedLiveUpdateListener { liveTopic, liveUpdate ->
 </mi-tabs>
 
 This is quite a simple implementation to get live data up and running and see it working. Say you want to get the occupancy of your locations and have the label update to reflect how many people are inside a room.
-First we will implement a way to setup `LiveTopics` so we dont get too much data at once. Here we will create a `LiveTopicCriteria` that uses the currently viewed building together with listening on occupancy updates.
+First we will implement a way to setup `LiveTopics` so we dont get too much data at once. Here we will create a `LiveTopicCriteria` that uses the currently viewed building together with listening on occupancy updates. We will assign the `LiveTopicCriteria` to a variable so that we can unsubscribe when changing to another topic.
 
 <mi-tabs>
     <mi-tab label="Java" tab-for="java"></mi-tab>
@@ -224,25 +224,26 @@ First we will implement a way to setup `LiveTopics` so we dont get too much data
     <mi-tab-panel id="java">
         <h3>java</h3>
         <pre lang="Java"><code>
-AtomicReference<LiveTopicCriteria> liveTopicCriteria = new AtomicReference<>();
-mMapControl.setOnCurrentBuildingChangedListener(building -> {
-    if (building != null) {
-        if (liveTopicCriteria.get() != null) {
-            liveDataManager.unsubscribeTopic(liveTopicCriteria.get());
+if (MapsIndoors.getDataSet() != null && MapsIndoors.getDataSet().getId() != null) {
+    mMapControl.setOnCurrentBuildingChangedListener(building -> {
+        if (building != null) {
+            if (mBuildingLiveTopicCritera != null) {
+                liveDataManager.unsubscribeTopic(mBuildingLiveTopicCritera);
+            }
+            mBuildingLiveTopicCritera = LiveTopicCriteria.getBuilder(MapsIndoors.getDataSet().getId())
+                .anyVenue()
+                .setBuildingId(building.getId())
+                .anyFloor()
+                .anyRoom()
+                .anyLocation()
+                .setDomainType(LiveDataDomainTypes.OCCUPANCY_DOMAIN)
+                .build();
+            if (mBuildingLiveTopicCritera != null) {
+                liveDataManager.subscribeTopic(mBuildingLiveTopicCritera);
+            }
         }
-        liveTopicCriteria.set(LiveTopicCriteria.getBuilder(MapsIndoors.getDataSet().getId())
-            .anyVenue()
-            .setBuildingId(building.getId())
-            .anyFloor()
-            .anyRoom()
-            .anyLocation()
-            .setDomainType(LiveDataDomainTypes.OCCUPANCY_DOMAIN)
-            .build());
-        if (liveTopicCriteria.get() != null) {
-            liveDataManager.subscribeTopic(liveTopicCriteria.get());
-        }
-    }
-});
+    });
+}
         </code></pre>
     </mi-tab-panel>
     <mi-tab-panel id="kotlin">
@@ -251,10 +252,10 @@ mMapControl.setOnCurrentBuildingChangedListener(building -> {
 MapsIndoors.getDataSet()?.id?.let { datasetId ->
     mMapControl.setOnCurrentBuildingChangedListener { building: Building? ->
         if (building != null) {
-            if (liveTopicCriteria != null) {
-                liveDataManager.unsubscribeTopic(liveTopicCriteria)
+            if (mBuildingLiveTopicCritera != null) {
+                liveDataManager.unsubscribeTopic(mBuildingLiveTopicCritera)
             }
-            liveTopicCriteria = LiveTopicCriteria.getBuilder(datasetId)
+            mBuildingLiveTopicCritera = LiveTopicCriteria.getBuilder(datasetId)
                 .anyVenue()
                 .setBuildingId(building.id)
                 .anyFloor()
@@ -262,8 +263,8 @@ MapsIndoors.getDataSet()?.id?.let { datasetId ->
                 .anyLocation()
                 .setDomainType(LiveDataDomainTypes.OCCUPANCY_DOMAIN)
                 .build()
-            if (liveTopicCriteria != null) {
-                liveDataManager.subscribeTopic(liveTopicCriteria)
+            if (mBuildingLiveTopicCritera != null) {
+                liveDataManager.subscribeTopic(mBuildingLiveTopicCritera)
             }
         }
     }
