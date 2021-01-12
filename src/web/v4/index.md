@@ -61,7 +61,7 @@ Using a terminal/shell in the project folder, run the following commands:
 
 * Run `npm install` to install all dependencies.
 
-* Run `npm start` for a dev server and then enter an API key or Alias from your Solution in the URL, e.g. [http://localhost:4200/demo](http://localhost:4200/demo). The app will automatically reload if you change any of the source files.
+* Run `npm start` for a dev server and then enter an API key or Alias from your Solution in the URL, e.g. localhost:4200/demo. The app will automatically reload if you change any of the source files.
 
 ## Work with MapsIndoors SDK behind a Firewall
 

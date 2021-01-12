@@ -6,7 +6,7 @@ eleventyNavigation:
   order: 120
 ---
 
-> A [newer version]({{ site.url }}/ios/v3) of the MapsIndoors SDK for iOS is available. The legacy version will not receive new features and will only get critical bugfix and security updates.
+> A [newer version]({{ site.url }}/ios/v3/) of the MapsIndoors SDK for iOS is available. The legacy version will not receive new features and will only get critical bugfix and security updates.
 
 This is an example of creating a simple search experience using MapsIndoors. We will create a map with a search button that leads to another view controller that handles the search and selection. On selection of a location, we go back to the map and shows the selected location on the map.
 
@@ -113,7 +113,8 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
 ```
 
 Implement the `tableView:didSelectRowAt` method. In this example we just call the delegate method and dismiss the view controller.
-Delegate method will be handled by [SearchMapController](../searchmysearchcontroller)
+
+Delegate method will be handled by SearchMapController.
 
 ```swift
 func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -121,7 +122,5 @@ func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     self.dismiss(animated: true, completion: nil)
 }
 ```
-
-In [Part 2](../searchmysearchcontroller) we will create the map view controller that displays the search selection.
 
 [See the sample in MySearchController.swift](https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Search/MySearchController.swift)
