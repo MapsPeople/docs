@@ -16,7 +16,7 @@ This will explain how to get started with getting MapsIndoors inside of your Xam
 
 You should start by creating a new Solution containing an iOS and an Android project.
 
-Find the Nuget Package Manager, and add the [MapsIndoors package from Nuget.org](https://www.nuget.org/packages/MapsIndoors). This will contain the MapsIndoors SDK for both iOS and the Android, and requires some dependencies on each platform (like Google Maps).
+Find the Nuget Package Manager, and add the [MapsIndoors package from Nuget.org](https://www.nuget.org/packages/MapsIndoors/). This will contain the MapsIndoors SDK for both iOS and the Android, and requires some dependencies on each platform (like Google Maps).
 
 This is the only Xamarin specific setup you need to get started with MapsIndoors for Xamarin.
 
@@ -50,4 +50,4 @@ Continue reading the [Getting Started with Android](/android/v3/#setup-google-ma
 
 ## Further reading
 
-Most of what you want to do can be done by looking at examples from [iOS](/ios/v3/) and [Android](/android/v3), and put them into the C# language syntax.
+Most of what you want to do can be done by looking at examples from [iOS](/ios/v3/) and [Android](/android/v3/), and put them into the C# language syntax.

@@ -7,7 +7,7 @@ eleventyNavigation:
   order: 1
 ---
 
-> A [newer version]({{ site.url }}/ios/v3) of the MapsIndoors SDK for iOS is available. The legacy version will not receive new features and will only get critical bugfix and security updates.
+> A [newer version]({{ site.url }}/ios/v3/) of the MapsIndoors SDK for iOS is available. The legacy version will not receive new features and will only get critical bugfix and security updates.
 
 This guide explains how to start using a MapsIndoors map in your iOS application using the MapsIndoors iOS SDK v2.
 
@@ -22,7 +22,7 @@ You can get started in two ways, either by reviewing and modifying the [basic ex
 
 For simple examples of MapsIndoors implementations, run `pod try MapsIndoors` (see below for setting up CocoaPods or just clone [this repository](https://github.com/MapsIndoors/MapsIndoorsIOS/tree/SDK_V2)) and run the XCode Scheme called *Demos*. The code for these samples are to find in the */Example/DemoSamples* folder.
 
-You can also follow the steps below to start your app from scratch or to enhance the basic examples, more features will be explained in the [guides](/ios/v2/guides).
+You can also follow the steps below to start your app from scratch or to enhance the basic examples, more features will be explained in the [guides](/ios/v2/guides/).
 
 ## Setup CocoaPods
 
@@ -83,7 +83,7 @@ view = mapView
 let myMapControl = MPMapControl.init(map: mapView)!
 ```
 
-Head to the [guides](/ios/v2/guides) to learn about searching, getting directions, display settings and more.
+Head to the [guides](/ios/v2/guides/) to learn about searching, getting directions, display settings and more.
 
 ## Download and Bundle Offline Content
 

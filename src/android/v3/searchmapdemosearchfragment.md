@@ -102,6 +102,6 @@ public static SearchFragment newInstance()
 }
 ```
 
-In [Part 2](../searchmapdemosearchmapfragment) we will create the map fragment that displays the search result.
+In [Part 2](/android/v3/searchmapdemosearchmapfragment/) we will create the map fragment that displays the search result.
 
 [See the sample in SearchFragment.java](https://github.com/MapsIndoors/MapsIndoorsAndroid-Demo-Samples/blob/master/app/src/main/java/com/mapsindoors/searchmapdemo/SearchFragment.java)
