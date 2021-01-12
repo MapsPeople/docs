@@ -203,4 +203,4 @@ extension MyClass : MPLiveDataManagerDelegate {
 
 Live Updates are of course dependent on network connectivity, so the Live Data Manager will try to recover from common errors like network dropout. On the contrary, the Live Data Manager will not try to recover from subscription errors alone as this could be caused by a non-existing topic for a given Dataset, thus it does not make sense retrying the failing subscription.
 
-To learn more, visit the [Live Data tutorial for iOS](/ios/v3/live-data/live-data-tutorial) and the [reference guide](https://app.mapsindoors.com/mapsindoors/reference/ios/v3/interface_m_p_live_data_manager.html).
+To learn more, visit the [Live Data tutorial for iOS](/ios/v3/live-data/live-data-tutorial/) and the [reference guide](https://app.mapsindoors.com/mapsindoors/reference/ios/v3/interface_m_p_live_data_manager.html).
