@@ -8,7 +8,7 @@ eleventyNavigation:
 
 In this tutorial you will learn to work with Live Updates / real-time data in MapsIndoors. It is recommended that you read the [Live Data Introduction](/android/v3/live-data) before continuing.
 
-We will create a view controller displaying a map that shows some dynamic changes that are initiated from Live Data sources known by MapsIndoors. If you do not have a Live Data integration in place for your MapsIndoors project, you can use API key `2ae7d137162642618b5ce555` for demo and test purposes. The test data are of the Occupancy Domain Type and the Position Domain Type.
+We will create a simple activity displaying a map that shows some dynamic changes that are initiated from Live Data sources known by MapsIndoors. If you do not have a Live Data integration in place for your MapsIndoors project, you can use API key `2ae7d137162642618b5ce555` for demo and test purposes. The test data are of the Occupancy Domain Type and the Position Domain Type.
 
 Start by creating an activity that has a google map view and a mapcontrol initiated.
 
@@ -139,7 +139,7 @@ Thats it you now have live data running on your app. If you need to show live da
 
 If you need a different way of handling live data subscriptions completely, because of the limitations of the convenience interface. It is also possible to implement your own way of setting up subscriptions and dealing with the responses.
 
-Say you only need it for a few specific locations with positioning updates. You use thoose locations id to create a LiveTopicCriteria with the builder supplied on the class that matches what you want. Once you have created the LiveTopicCriteria you can subscribe to it through the LiveDataManager.
+Say you only need it for a few specific locations with positioning updates. You use thoose locations id to create a `LiveTopicCriteria` with the builder supplied on the class that matches what you want. Once you have created the `LiveTopicCriteria` you can subscribe to it through the `LiveDataManager`.
 
 <mi-tabs>
     <mi-tab label="Java" tab-for="java"></mi-tab>
@@ -179,8 +179,8 @@ MapsIndoors.getDataSet()?.id?.let { datasetId ->
     </mi-tab-panel>
 </mi-tabs>
 
-Once subscribed the location will update its position according to the live data it receives. If you want to disable the subscription later on you can store the LiveTopicCriteria and unsubscribe through LiveDataManager.unsubscribeTopic(LiveTopicCritera liveTopicCriteria). The lifecycle of the subscription is already handled so there is no need to unsubscribe resubscribe on Android lifecycles.
-If you want to see the position update happening you can set up a listener through the LiveDataManager like in this example.
+Once subscribed the location will update its position according to the live data it receives. If you want to disable the subscription later on you can store the `LiveTopicCriteria` and unsubscribe through `LiveDataManager.unsubscribeTopic(LiveTopicCritera liveTopicCriteria)`. The lifecycle of the subscription is already handled so there is no need to unsubscribe and resubscribe on Android lifecycles.
+If you want to see the position update happening you can set up a listener through the `LiveDataManager` like in this example.
 
 <mi-tabs>
     <mi-tab label="Java" tab-for="java"></mi-tab>
@@ -216,7 +216,7 @@ liveDataManager.setOnReceivedLiveUpdateListener { liveTopic, liveUpdate ->
 </mi-tabs>
 
 This is quite a simple implementation to get live data up and running and see it working. Say you want to get the occupancy of your locations and have the label update to reflect how many people are inside a room.
-First we will implement a way to setup liveTopics so we dont get too much data at once. Here we will create a LiveTopicCriteria that uses the currently viewed building together with listening on occupancy updates.
+First we will implement a way to setup `LiveTopics` so we dont get too much data at once. Here we will create a `LiveTopicCriteria` that uses the currently viewed building together with listening on occupancy updates.
 
 <mi-tabs>
     <mi-tab label="Java" tab-for="java"></mi-tab>
@@ -272,7 +272,7 @@ MapsIndoors.getDataSet()?.id?.let { datasetId ->
     </mi-tab-panel>
 </mi-tabs>
 
-Now if you already have the live update listener from the previous position example, you can remove the positioning part on a specific location and instead implement a more generic way of handling the new updates we subscripe to. Here is an example that updates the label with the ammount of people in each room.
+Now if you already have the live update listener from the previous position example, you can remove the positioning part on a specific location and instead implement a more generic way of handling the new updates we subscribe to. Here is an example that updates the label with the ammount of people in each room.
 
 <mi-tabs>
     <mi-tab label="Java" tab-for="java"></mi-tab>
