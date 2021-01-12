@@ -72,7 +72,7 @@ Eleventy automatically builds and deploys from the `main` branch in this reposit
     git push -u origin feature/teleportation-guide
     ```
 
-6. Go to [mapsindoors.github.io](https://mapsindoors.github.io) to see your new page live.
+6. Go to [docs.mapsindoors.com](https://docs.mapsindoors.com) to see your new page live.
 
 #### Tips
 

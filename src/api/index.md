@@ -14,7 +14,7 @@ Send your requests to this endpoint: [https://integration.mapsindoors.com](https
 
 > Note: Only https is supported.
 
-You can access data through the Integration API using a range of endpoints. The endpoints are described in the Swagger interface definition: [https://integration.mapsindoors.com/doc](https://integration.mapsindoors.com/doc)
+You can access data through the Integration API using a range of endpoints. The endpoints are described in the Swagger interface definition: [https://integration.mapsindoors.com/doc](https://integration.mapsindoors.com/doc/index.html)
 
 In Swagger, each `GET` method is pre-loaded with all mandatory fields needed to get a live example of data. Click the  "_Try it out_" button in Swagger to see the example data.
 
@@ -22,7 +22,7 @@ In Swagger, each `GET` method is pre-loaded with all mandatory fields needed to 
 
 First, log in to the service to get an `access token` to access the data.
 
-This requires a POST request to our Auth API at the following endpoint: [https://auth.mapsindoors.com/connect/token](https://auth.mapsindoors.com/connect/token)
+This requires a POST request to our Auth API at the following endpoint: https://auth.mapsindoors.com/connect/token
 
 The Auth API supports multiple ways to log in. The most common way is with your MapsIndoors username and password. If you need to sign in with other providers, please [contact support](https://mapspeople.com/support).
 No matter what login method you use, you will always need to use the following content-type header when talking to the Auth API:

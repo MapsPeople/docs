@@ -41,7 +41,7 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 
 ### Added
 
-- Support for Live Data added. Information and documentation about this new feature is available at [Live Data Guide](https://mapsindoors.github.io/android/v3/live-data/)
+- Support for Live Data added. Information and documentation about this new feature is available at [Live Data Guide](https://docs.mapsindoors.com/android/v3/live-data/)
 
 ### Fixed
 
@@ -132,7 +132,7 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 
 - Custom fields, exposed in the following classes: `Venue`, `Building`, `MPLocation`, `Category`, `POIType`. If available, they can be retrieved by using `getField( fieldName )`.
 
-- Status data. For detailed info, please refer to the [status bitfield description](https://mapsindoors.github.io/api/v1/#detailed-data-description) in our Integration API documentation.
+- Status data. For detailed info, please refer to the [status bitfield description](https://docs.mapsindoors.com/api/v1/#detailed-data-description) in our Integration API documentation.
   - The following methods are available in `MPLocation`:
     - `getStatus()`: Returns a status bitfield. For more info, please check the above link.
     - `isActive()`: If an element **is not** active, it will **not** be given to the apps.

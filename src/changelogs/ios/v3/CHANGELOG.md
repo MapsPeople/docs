@@ -22,7 +22,7 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 
 ### Added
 
-- Added convenience methods for enabling Live Data for a `MPMapControl` instance. Methods are `MPMapControl.enableLiveData()` (two variants) and `MPMapControl.disableLiveData()`. For more information, read about this feature in the [Live Data Guide](https://mapsindoors.github.io/ios/v3/live-data/).
+- Added convenience methods for enabling Live Data for a `MPMapControl` instance. Methods are `MPMapControl.enableLiveData()` (two variants) and `MPMapControl.disableLiveData()`. For more information, read about this feature in the [Live Data Guide](https://docs.mapsindoors.com/ios/v3/live-data/).
 - Added default rendering of Live Data when using the above interface.
 - Added optional method `updateLiveDataInfo` to `MPLiveDataManager`. This makes it possible to fetch updated information about active Live Data Domain Types in the current dataset.
 - Added optional method `didUpdateLiveDataInfo` to `MPLiveDataManagerDelegate`. This makes it possible to receive updated information about active Live Data Domain Types in the current dataset.
@@ -49,13 +49,13 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 
 ### Added
 
-- Support for Booking of Locations through a MapsIndoors Google Calendar Booking Provider, see [guide about booking](https://mapsindoors.github.io/ios/v3/booking/).
+- Support for Booking of Locations through a MapsIndoors Google Calendar Booking Provider, see [guide about booking](https://docs.mapsindoors.com/ios/v3/booking/).
 
 ## [3.14.0] 2020-11-11
 
 ### Added
 
-- Support for global App User Roles setting, `MapsIndoors.userRoles`, see [introduction to App User Roles here](https://mapsindoors.github.io/ios/v3/app-user-roles/).
+- Support for global App User Roles setting, `MapsIndoors.userRoles`, see [introduction to App User Roles here](https://docs.mapsindoors.com/ios/v3/app-user-roles/).
 
 ### Fixed
 
@@ -73,7 +73,7 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 
 ### Added
 
-- Support for Rendering of Polygons through Display Rules, see [updated guide about map styling](https://mapsindoors.github.io/ios/v3/map-styling/).
+- Support for Rendering of Polygons through Display Rules, see [updated guide about map styling](https://docs.mapsindoors.com/ios/v3/map-styling/).
 
 ### Fixed
 
@@ -89,7 +89,7 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 
 ### Added
 
-- Support for Live Data added. For more information, read about this feature in the [Live Data Guide](https://mapsindoors.github.io/ios/v3/live-data/).
+- Support for Live Data added. For more information, read about this feature in the [Live Data Guide](https://docs.mapsindoors.com/ios/v3/live-data/).
 
 ## [3.11.1] 2020-09-28
 
@@ -174,7 +174,7 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 
 ### Added
 
-- Support for caching offline data for multiple datasets. See `MapsIndoors.dataSetCacheManager` and [https://mapsindoors.github.io/ios/v3/offline/](https://mapsindoors.github.io/ios/v3/offline/) for more details.
+- Support for caching offline data for multiple datasets. See `MapsIndoors.dataSetCacheManager` and [https://docs.mapsindoors.com/ios/v3/offline/](https://docs.mapsindoors.com/ios/v3/offline/) for more details.
 
 ### Changed
 
