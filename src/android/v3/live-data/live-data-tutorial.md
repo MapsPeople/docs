@@ -39,175 +39,274 @@ Add buttons to the view for toggling subscriptions, one button for Live Position
 </RelativeLayout>
 ```
 
-Add a method `setupSubscriptionButtons()` setting up buttons that enables/disables the subscriptions.
+Add a method `setupSubscriptionButtons()` setting up buttons that enables/disables the subscriptions. This example uses the convenience interface to setup live data for the app.
 
-```swift
-fileprivate func setupSubscriptionButtons() {
-    positionButton.setTitle("See Live Positions", for: .normal)
-    positionButton.setTitle("Tracking Live Positions", for: .selected)
-    positionButton.addTarget(self, action: #selector(togglePosition), for: .touchUpInside)
-    positionButton.backgroundColor = UIColor.blue
-
-    occupancyButton.setTitle("See Live Occupancy", for: .normal)
-    occupancyButton.setTitle("Showing Live Occupancy", for: .selected)
-    occupancyButton.addTarget(self, action: #selector(toggleOccupancy), for: .touchUpInside)
-    occupancyButton.backgroundColor = UIColor.red
-}
-```
-
-Add a method `toggleSubscription()` that does the actual toggling of a subscription for a button based on the buttons `isSelected` flag. Swap current selected state for button. If the flag is true and the button is selected, call the Live Data Manager's `subscribe()` method with the given Topic Criteria. We will also call a `startFlash()`method that should make the button flash. More on this later. If the flag is false and the button is not selected, call the Live Data Manager's `unsubscribe()` method with the given Topic Criteria. Similarly we will call a `stopFlash()`method that should stop the button flash.
-
-```swift
-fileprivate func toggleSubscription(_ button: UIButton, _ topic: MPLiveTopicCriteria) {
-    button.isSelected = !button.isSelected
-    if button.isSelected {
-        liveManager.subscribe(topic)
-        button.startFlash()
-    } else {
-        liveManager.unsubscribe(topic)
-        button.stopFlash()
-    }
-}
-```
-
-Define an objective-c method `togglePosition()` that will receive events from your `positionButton`. In this method create a `position` Topic Criteria and call `togglePosition` with the button and the Topic Criteria.
-
-```swift
-@objc func togglePosition(button:UIButton) {
-    let topic = MPLiveTopicCriteria.domainType(MPLiveDomainType.position)
-    toggleSubscription(button, topic)
-}
-```
-
-Define an objective-c method `toggleOccupancy()` that will receive events from your `occupancyButton`. In this method create a `occupancy` Topic Criteria and call `togglePosition` with the button and the Topic Criteria.
-
-```swift
-@objc func toggleOccupancy(button:UIButton) {
-    let topic = MPLiveTopicCriteria.domainType(MPLiveDomainType.occupancy)
-    toggleSubscription(button, topic)
-}
-```
-
-Inside `viewDidLoad()`, initialise your instance of `GMSMapView` and `MPMapControl`. Set the delegate to be able to get notified about Live Updates for the map.
-
-```swift
-self.map = GMSMapView.init(frame: CGRect.zero)
-self.mapControl = MPMapControl.init(map: self.map!)
-self.mapControl?.delegate = self as MPMapControlDelegate
-```
-
-Inside `viewDidLoad()`, also request a Building and go to this Building on the map.
-
-```swift
-let q = MPQuery.init()
-let f = MPFilter.init()
-q.query = "Building"
-
-MPLocationService.sharedInstance().getLocationsUsing(q, filter: f) { (locations, error) in
-    if let loc = locations?.first {
-        self.mapControl?.go(to: loc)
-    }
-}
-```
-
-Inside `viewDidLoad()` method, call `setupSubscriptionButtons()` arrange the map view and the buttons in stackviews.
-
-```swift
-setupSubscriptionButtons()
-let buttonStackView = UIStackView.init(arrangedSubviews: [positionButton, occupancyButton])
-buttonStackView.axis = .horizontal
-buttonStackView.distribution = .fillEqually
-let stackView = UIStackView.init(arrangedSubviews: [map!, buttonStackView])
-stackView.axis = .vertical
-view = stackView
-```
-
-Optionally, when you leave this controller, unsubscribe all Live Update Topics.
-
-```swift
-override func viewDidDisappear(_ animated: Bool) {
-    liveManager.unsubscribeAll()
-}
-```
-
-Create an extension for `LiveDataController` to make it adopt the `MPMapControlDelegate` protocol.
-
-```swift
-extension LiveDataController : MPMapControlDelegate {
-```
-
-In the `LiveDataController` extension, add the method `handleLiveUpdate()` that handles a Live Update for a `MPLocation`. This method should only handle the `occupancy` Domain Type, so the first thing is to check for an `occupied` value in the `occupancy` Domain Type. After this verification, do the following:
-
-1. If `occupied == "True"` create the "closed" image, else create the "open" image.
-2. Setup a Location Display Rule with that image.
-3. Check for a `nrOfPeople`value in the same Domain Type.
-4. If present use the value in the label for the Location.
-5. Assign the new Display Rule to the Location through `MPMapControl`.
-
-```swift
-private func handleLiveUpdate(_ forLocation: MPLocation) {
-    let domainType = MPLiveDomainType.occupancy
-    if let occupied = loc.getLiveValue(forKey:"occupied", domainType: domainType) {
-        var img:UIImage?
-        if occupied == "True" {
-            img = UIImage.init(named: "closed.png")
-        } else {
-            img = UIImage.init(named: "open.png")
+<mi-tabs>
+    <mi-tab label="Java" tab-for="java"></mi-tab>
+    <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
+    <mi-tab-panel id="java">
+        <h3>java</h3>
+        <pre lang="Java"><code>
+private void setupSubscriptionButtons() {
+    enablePositionBtn.setOnClickListener(btnView -> {
+        if (!enablePositionBtn.isSelected()) {
+            enablePositionBtn.setSelected(true);
+            mMapControl.enableLiveData(LiveDataDomainTypes.POSITION_DOMAIN);
+        }else {
+            enablePositionBtn.setSelected(false);
+            mMapControl.disableLiveData(LiveDataDomainTypes.POSITION_DOMAIN);
         }
-        let dr = MPLocationDisplayRule.init(name: domainType, andIcon: img, andZoomLevelOn: 15)!
-        dr.iconSize = CGSize.init(width: 10, height: 10)
-
-        if let peopleCount = loc.getLiveValue(forKey:"nrOfPeople", domainType: domainType) {
-            dr.label = peopleCount
-            dr.showLabel = true
-        } else {
-            dr.showLabel = false
+    });
+    enableOccupancyBtn.setOnClickListener(btnView -> {
+        if (!enableOccupancyBtn.isSelected()) {
+            enableOccupancyBtn.setSelected(true);
+            mMapControl.enableLiveData(LiveDataDomainTypes.OCCUPANCY_DOMAIN);
+        }else {
+            enableOccupancyBtn.setSelected(false);
+            mMapControl.disableLiveData(LiveDataDomainTypes.OCCUPANCY_DOMAIN);
         }
-        self.mapControl?.setDisplayRule(dr, for: loc)
-    }
+    });
 }
-```
-
-In the `LiveDataController` extension, add the method `willUpdateLocations()`. This is the actual delegate method that recieves all `MPLocation` objects that was updated on the map. Iterate through these locations and skip the ones that have the `position` Domain Type. Call the `handleLiveUpdate()` method for all others.
-
-```swift
-func willUpdateLocationsOnMap(locations: [MPLocation]) {
-    for loc in locations {
-        let positionUpdate = loc.getLiveUpdate(forDomainType: MPLiveDomainType.position)
-        if positionUpdate == nil {
-            handleLiveUpdate(loc)
+        </code></pre>
+    </mi-tab-panel>
+    <mi-tab-panel id="kotlin">
+        <h3>kotlin</h3>
+        <pre lang ="Kotlin"><code>
+private fun setupSubscriptionButtons() {
+    enablePositionBtn.setOnClickListener {
+        if (!enablePositionBtn.isSelected) {
+            enablePositionBtn.isSelected = true
+            mMapControl.enableLiveData(LiveDataDomainTypes.POSITION_DOMAIN)
+        }else {
+            enablePositionBtn.isSelected = false
+            mMapControl.disableLiveData(LiveDataDomainTypes.POSITION_DOMAIN)
+        }
+    }
+    enableOccupancyBtn.setOnClickListener {
+        if (!enableOccupancyBtn.isSelected) {
+            enableOccupancyBtn.isSelected = true
+            mMapControl.enableLiveData(LiveDataDomainTypes.OCCUPANCY_DOMAIN)
+        }else {
+            enableOccupancyBtn.isSelected = false
+            mMapControl.disableLiveData(LiveDataDomainTypes.OCCUPANCY_DOMAIN)
         }
     }
 }
-```
+        </code></pre>
+    </mi-tab-panel>
+</mi-tabs>
 
-Earlier we called some non-existing methods, `startFlash()` and `stopFlash()` on a `UIButton`. We will create these methods now. Create an extension for `UIButton`.
+If you are using the demo solution. You will need to allign the camera with one of the solutions venues. You can use this example to find a venue and position the camera on it.
 
-```swift
-extension UIButton {
-```
-
-In the `UIButton` extension, add the method `startFlash()` that creates and adds an animation layer that manipulates with the opacity of the button over time.
-
-```swift
-func startFlash() {
-    let flash = CABasicAnimation(keyPath: "opacity")
-    flash.duration = 0.5
-    flash.fromValue = 1
-    flash.toValue = 0.5
-    flash.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-    flash.autoreverses = true
-    flash.repeatCount = .greatestFiniteMagnitude
-    layer.add(flash, forKey: "flash")
+<mi-tabs>
+    <mi-tab label="Java" tab-for="java"></mi-tab>
+    <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
+    <mi-tab-panel id="java">
+        <h3>java</h3>
+        <pre lang="Java"><code>
+mMapControl.init(error -> {
+    if (error == null) {
+        if (MapsIndoors.getVenues() != null) {
+            Venue venue = MapsIndoors.getVenues().getVenueById("130036b0b6954e479e8a9116");
+            runOnUiThread(()-> {
+                mGoogleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(venue.getAnchor().getLatLng(), 16f));
+            });
+        }
+    }
+});
+        </code></pre>
+    </mi-tab-panel>
+    <mi-tab-panel id="kotlin">
+        <h3>kotlin</h3>
+        <pre lang ="Kotlin"><code>
+mMapControl.init { error ->
+    if (error == null) {
+        val venue = MapsIndoors.getVenues()?.getVenueById("130036b0b6954e479e8a9116")
+        if (venue != null) {
+            runOnUiThread {
+                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(venue.anchor.latLng, 16f))
+            }
+        }
+    }
 }
-```
+        </code></pre>
+    </mi-tab-panel>
+</mi-tabs>
 
-In the `UIButton` extension, add the method `stopFlash()` that removes the above layer again.
+Thats it you now have live data running on your app. If you need to show live data in another way, you can add handlers for this. Read more about this here [Rendering Live Data Locations](/android/v3/live-data).
 
-```swift
-func stopFlash() {
-    layer.removeAnimation(forKey: "flash")
+## Using livedata without the convenience interface
+
+If you need a different way of handling live data subscriptions completely, because of the limitations of the convenience interface. It is also possible to implement your own way of setting up subscriptions and dealing with the responses.
+
+Say you only need it for a few specific locations with positioning updates. You use thoose locations id to create a LiveTopicCriteria with the builder supplied on the class that matches what you want. Once you have created the LiveTopicCriteria you can subscribe to it through the LiveDataManager.
+
+<mi-tabs>
+    <mi-tab label="Java" tab-for="java"></mi-tab>
+    <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
+    <mi-tab-panel id="java">
+        <h3>java</h3>
+        <pre lang="Java"><code>
+LiveDataManager liveDataManager = LiveDataManager.getInstance();
+if (MapsIndoors.getDataSet() != null && MapsIndoors.getDataSet().getId() != null) {
+    LiveTopicCriteria liveTopicCriteria = LiveTopicCriteria.getBuilder(MapsIndoors.getDataSet().getId())
+            .anyVenue()
+            .anyBuilding()
+            .anyFloor()
+            .anyRoom()
+            .setLocationId("5bbab6734efd40598e11cbcf")
+            .setDomainType(LiveDataDomainTypes.POSITION_DOMAIN)
+            .build();
+    liveDataManager.subscribeTopic(liveTopicCriteria);
 }
-```
+        </code></pre>
+    </mi-tab-panel>
+    <mi-tab-panel id="kotlin">
+        <h3>kotlin</h3>
+        <pre lang ="Kotlin"><code>
+MapsIndoors.getDataSet()?.id?.let { datasetId ->
+    val liveTopic = LiveTopicCriteria.getBuilder(datasetId)
+        .anyVenue()
+        .anyBuilding()
+        .anyFloor()
+        .anyRoom()
+        .setLocationId("5bbab6734efd40598e11cbcf")
+        .setDomainType(LiveDataDomainTypes.POSITION_DOMAIN)
+        .build()
+    LiveDataManager.getInstance().subscribeTopic(liveTopic)
+}
+        </code></pre>
+    </mi-tab-panel>
+</mi-tabs>
 
-This completes the tutorial on Live Data. [See the sample in LiveDataController.swift](<https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Live Data/LiveDataController.swift>).
+Once subscribed the location will update its position according to the live data it receives. If you want to disable the subscription later on you can store the LiveTopicCriteria and unsubscribe through LiveDataManager.unsubscribeTopic(LiveTopicCritera liveTopicCriteria). The lifecycle of the subscription is already handled so there is no need to unsubscribe resubscribe on Android lifecycles.
+If you want to see the position update happening you can set up a listener through the LiveDataManager like in this example.
+
+<mi-tabs>
+    <mi-tab label="Java" tab-for="java"></mi-tab>
+    <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
+    <mi-tab-panel id="java">
+        <h3>java</h3>
+        <pre lang="Java"><code>
+liveDataManager.setOnReceivedLiveUpdateListener((topic, message) -> {
+    if (topic.getLocation().equals("5bbab6734efd40598e11cbcf")) {
+        Point point = MapsIndoors.getLocationById("5bbab6734efd40598e11cbcf").getPoint();
+        runOnUiThread(()-> {
+            mGoogleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(point.getLatLng(), 19f));
+        });
+    }
+});
+        </code></pre>
+    </mi-tab-panel>
+    <mi-tab-panel id="kotlin">
+        <h3>kotlin</h3>
+        <pre lang ="Kotlin"><code>
+liveDataManager.setOnReceivedLiveUpdateListener { liveTopic, liveUpdate ->
+    if (liveTopic.location == "5bbab6734efd40598e11cbcf") {
+        val point = MapsIndoors.getLocationById("5bbab6734efd40598e11cbcf")?.point;
+        point?.let {
+            runOnUiThread {
+                mGoogleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(it.latLng, 19f))
+            }
+        }
+    }
+}
+        </code></pre>
+    </mi-tab-panel>
+</mi-tabs>
+
+This is quite a simple implementation to get live data up and running and see it working. Say you want to get the occupancy of your locations and have the label update to reflect how many people are inside a room.
+First we will implement a way to setup liveTopics so we dont get too much data at once. Here we will create a LiveTopicCriteria that uses the currently viewed building together with listening on occupancy updates.
+
+<mi-tabs>
+    <mi-tab label="Java" tab-for="java"></mi-tab>
+    <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
+    <mi-tab-panel id="java">
+        <h3>java</h3>
+        <pre lang="Java"><code>
+AtomicReference<LiveTopicCriteria> liveTopicCriteria = new AtomicReference<>();
+mMapControl.setOnCurrentBuildingChangedListener(building -> {
+    if (building != null) {
+        if (liveTopicCriteria.get() != null) {
+            liveDataManager.unsubscribeTopic(liveTopicCriteria.get());
+        }
+        liveTopicCriteria.set(LiveTopicCriteria.getBuilder(MapsIndoors.getDataSet().getId())
+            .anyVenue()
+            .setBuildingId(building.getId())
+            .anyFloor()
+            .anyRoom()
+            .anyLocation()
+            .setDomainType(LiveDataDomainTypes.OCCUPANCY_DOMAIN)
+            .build());
+        if (liveTopicCriteria.get() != null) {
+            liveDataManager.subscribeTopic(liveTopicCriteria.get());
+        }
+    }
+});
+        </code></pre>
+    </mi-tab-panel>
+    <mi-tab-panel id="kotlin">
+        <h3>kotlin</h3>
+        <pre lang ="Kotlin"><code>
+MapsIndoors.getDataSet()?.id?.let { datasetId ->
+    mMapControl.setOnCurrentBuildingChangedListener { building: Building? ->
+        if (building != null) {
+            if (liveTopicCriteria != null) {
+                liveDataManager.unsubscribeTopic(liveTopicCriteria)
+            }
+            liveTopicCriteria = LiveTopicCriteria.getBuilder(datasetId)
+                .anyVenue()
+                .setBuildingId(building.id)
+                .anyFloor()
+                .anyRoom()
+                .anyLocation()
+                .setDomainType(LiveDataDomainTypes.OCCUPANCY_DOMAIN)
+                .build()
+            if (liveTopicCriteria != null) {
+                liveDataManager.subscribeTopic(liveTopicCriteria)
+            }
+        }
+    }
+}
+        </code></pre>
+    </mi-tab-panel>
+</mi-tabs>
+
+Now if you already have the live update listener from the previous position example, you can remove the positioning part on a specific location and instead implement a more generic way of handling the new updates we subscripe to. Here is an example that updates the label with the ammount of people in each room.
+
+<mi-tabs>
+    <mi-tab label="Java" tab-for="java"></mi-tab>
+    <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
+    <mi-tab-panel id="java">
+        <h3>java</h3>
+        <pre lang="Java"><code>
+liveDataManager.setOnReceivedLiveUpdateListener((topic, message) -> {
+    if (message.getDomainType().equals(LiveDataDomainTypes.OCCUPANCY_DOMAIN)) {
+        MPLocation location = MapsIndoors.getLocationById(message.getId());
+        if (location != null) {
+            String nrOfPeople = "people = " + message.getOccupancyProperties().getNrOfPeople();
+            LocationDisplayRule locationDisplayRule = new LocationDisplayRule.Builder(location.getId() + "_occupancy", mMapControl.getDisplayRule(location)).setLabel(nrOfPeople).build();
+            mMapControl.setDisplayRule(locationDisplayRule, location);
+        }
+    }
+});
+        </code></pre>
+    </mi-tab-panel>
+    <mi-tab-panel id="kotlin">
+        <h3>kotlin</h3>
+        <pre lang ="Kotlin"><code>
+liveDataManager.setOnReceivedLiveUpdateListener { topic: LiveTopic?, message: LiveUpdate ->
+    if (message.domainType == LiveDataDomainTypes.OCCUPANCY_DOMAIN) {
+        val location = MapsIndoors.getLocationById(message.id)
+        if (location != null) {
+            val nrOfPeople = "people = " + message.getOccupancyProperties().getNrOfPeople()
+            val locationDisplayRule = LocationDisplayRule.Builder(location.id + "_occupancy", mMapControl.getDisplayRule(location)!!).setLabel(nrOfPeople).build()
+            mMapControl.setDisplayRule(locationDisplayRule, location)
+        }
+    }
+}
+        </code></pre>
+    </mi-tab-panel>
+</mi-tabs>
+
+You should now be able to hover between buildings and see labels being updated with the live data you have requested.
