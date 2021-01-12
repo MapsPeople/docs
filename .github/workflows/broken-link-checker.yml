@@ -13,3 +13,6 @@ jobs:
         uses: technote-space/broken-link-checker-action@v2
         with:
             TARGET: https://docs.mapsindoors.com
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            RECURSIVE: true
+            TITLE: Broken link found at ${URL}
