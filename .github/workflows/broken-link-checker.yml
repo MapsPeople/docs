@@ -1,16 +1,13 @@
-name: Broken link check
 on:
     push:
         branches:
             - feature/mhj/broken-link-checker
 
+name: Broken Link Check
 jobs:
-  my-broken-link-checker:
-    name: Check broken links
+  check:
+    name: Broken Link Check
     runs-on: ubuntu-latest
     steps:
-      - name: Check
-        uses: ruzickap/action-my-broken-link-checker@v1.0.2
-        with:
-          url: https://docs.mapsindoors.com
-          cmd_params: "--one-page-only --color=always"  # Check just one page
+      - name: Broken Link Check
+        uses: technote-space/broken-link-checker-action@v2
