@@ -16,4 +16,4 @@ jobs:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             RECURSIVE: true
             RATE_LIMIT: 10
-            TITLE: Broken link found at ${URL}
+            TITLE: Broken link found to ${URL}
