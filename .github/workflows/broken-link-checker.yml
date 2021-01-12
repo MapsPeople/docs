@@ -5,19 +5,12 @@ on:
             - feature/mhj/broken-link-checker
 
 jobs:
-  broken_link_checker_job:
+  my-broken-link-checker:
+    name: Check broken links
     runs-on: ubuntu-latest
-    name: Check for broken links
     steps:
-    - name: Check for broken links
-      id: link-report
-      uses: celinekurpershoek/link-checker@v1.0.1
-      with:
-        # Required:
-        url: 'https://docs.mapsindoors.com'
-        # optional:
-        honorRobotExclusions: false
-        ignorePatterns: 'github,google'
-        recursiveLinks: true # Check all URLs on all reachable pages (could take a while)
-    - name: Get the result
-      run: echo "${{steps.link-report.outputs.result}}"
+      - name: Check
+        uses: ruzickap/action-my-broken-link-checker@v1
+        with:
+          url: https://docs.mapsindoors.com
+          cmd_params: "--one-page-only --color=always"  # Check just one page
