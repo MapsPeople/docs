@@ -17,4 +17,4 @@ jobs:
             RECURSIVE: true
             RATE_LIMIT: 10
             TITLE: Broken link found to ${URL}
-            ASSIGNEE: marksdk
+            ASSIGNEES: marksdk
