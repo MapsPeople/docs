@@ -6,7 +6,7 @@ eleventyNavigation:
   order: 110
 ---
 
-> A [newer version]({{ site.url }}/ios/v3) of the MapsIndoors SDK for iOS is available. The legacy version will not receive new features and will only get critical bugfix and security updates.
+> A [newer version]({{ site.url }}/ios/v3/) of the MapsIndoors SDK for iOS is available. The legacy version will not receive new features and will only get critical bugfix and security updates.
 
 This is an example of displaying some details of a MapsIndoors location
 

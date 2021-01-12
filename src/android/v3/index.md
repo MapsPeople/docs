@@ -17,9 +17,9 @@ You can get started in two ways, either by reviewing and modifying the [basic ex
 
 ## Basic Example
 
-You will find in the [link](https://github.com/MapsIndoors/MapsIndoorsAndroid-Demo-Samples) a repo that contains the minimum code to start a MapsIndoors project.
+You will find in the [link](https://github.com/MapsIndoors/MapsIndoorsAndroid-Demo-Samples/) a repo that contains the minimum code to start a MapsIndoors project.
 
-You can also follow the steps below to start your app from scratch or to enhance the Basic Examples, more features will be explained in the [guides](/android/v3/guides).
+You can also follow the steps below to start your app from scratch or to enhance the Basic Examples, more features will be explained in the [guides](/android/v3/guides/).
 
 ## Setup MapsIndoors
 
@@ -127,7 +127,7 @@ myMapControl.init( errorCode -> {
 });
 ```
 
-Head to the [guides](/android/v3/guides) to learn about event handling, searching, getting directions, display settings and more.
+Head to the [guides](/android/v3/guides/) to learn about event handling, searching, getting directions, display settings and more.
 
 ## Download and Bundle Offline Content
 
