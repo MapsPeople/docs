@@ -127,7 +127,7 @@ In the example, the Topic is created using the `datasetId` and a multilevel wild
 
 As mentioned `MapControl` has a default way of rendering Live Data Locations if you call `enableLiveData(String domainType)`. If you need to show Live Data in another way, you can add handlers for this, either through `setOnWillUpdateLocationsOnMap(OnWillUpdateLocationsOnMap listener)` or by calling `enableLiveData(String domainType, OnLiveLocationUpdateListener OnLiveLocationUpdateListener)`.
 
-Here are examples of using the different methods to render live data on your map:
+Here are examples of using the different methods to render Live Data on your map:
 
 <mi-tabs>
     <mi-tab label="Java" tab-for="java"></mi-tab>
