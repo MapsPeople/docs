@@ -133,7 +133,7 @@ Here are examples of using the different methods to render Live Data on your map
     <mi-tab label="Java" tab-for="java"></mi-tab>
     <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
     <mi-tab-panel id="java">
-        <h3>java</h3>
+        <h3>Java</h3>
         <pre lang="Java"><code>
 mMapControl.setOnWillUpdateLocationsOnMap(locations -> {
    for (MPLocation location : locations) {
