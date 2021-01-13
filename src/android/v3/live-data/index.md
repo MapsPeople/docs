@@ -81,7 +81,7 @@ In the example we enable Live Data for the "Availability" and "Occupancy" Domain
 
  You can disable the Live Data again by calling `disableLiveData(String domainType)`.
 
-Note that using the enableLiveData methods on MapControl has some limitations and is thereby not suitable for all use cases.
+Note that using the `enableLiveData` methods on `MapControl` has some limitations, and is thereby not suitable for all use cases.
 
 - Since `MapControl` will try to determine the Live Data subscriptions based on where the map is currently situated, it might not detect Live Data updates of the position Domain representing moving objects entering the visible region of the map.
 - Since `MapControl` does not know which Live Updates that are relevant to show it will need to subscribe to all live data in the visible region, which, depending on your amount of Live Data, may or may not lead to app performance implications.
