@@ -99,7 +99,7 @@ The only Live Data updates that are also directly notified to the SDK internally
         <h3>java</h3>
         <pre lang="Java"><code>
 LiveDataManager liveDataManager = LiveDataManager.getInstance();
-liveDataManager.setOnLiveDataManagerStateChangedListener(state -> Log.d(TAG,"Live data manager state changed to: "+state.toString()));
+liveDataManager.setOnLiveDataManagerStateChangedListener(state -> Log.d(TAG,"Live Data manager state changed to: "+state.toString()));
 LiveTopicCriteria liveTopicCriteria = LiveTopicCriteria.getBuilder("datasetId")
         .setMultiLevelWildcard()
         .build();
