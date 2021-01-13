@@ -245,7 +245,7 @@ if (MapsIndoors.getDataSet() != null && MapsIndoors.getDataSet().getId() != null
         </code></pre>
     </mi-tab-panel>
     <mi-tab-panel id="kotlin">
-        <h3>kotlin</h3>
+        <h3>Kotlin</h3>
         <pre lang ="Kotlin"><code>
 MapsIndoors.getDataSet()?.id?.let { datasetId ->
     mMapControl.setOnCurrentBuildingChangedListener { building: Building? ->
