@@ -77,7 +77,7 @@ mMapControl.init {
     </mi-tab-panel>
 </mi-tabs>
 
-In the example we enable Live Data for the availability and occupancy domain type. Internal processes will determine which topics are relevant for subscription based on where the map is situated. A default rendering mechanism will also alter the appearance of the relevant locations on the map. As a consequence, the SDK will set custom display rules for this rendering. Adding your own or resetting display rules while Live Data is enabled with default rendering may break the rendering for the current MapControl instance. Hence, you should not use custom display rules unless you are handling the rendering of live data by your own.
+In the example we enable Live Data for the "Availability" and "Occupancy" Domain types. Internal processes will determine which Topics are relevant for subscription based on where the map is situated. A default rendering mechanism will also alter the appearance of the relevant Locations on the map. As a consequence, the SDK will set custom Display Rules for this rendering. Adding your own, or resetting Display Rules, while Live Data is enabled with default rendering, may break the rendering for the current MapControl instance. Hence, you should not use custom Display Rules unless you are handling the rendering of Live Data on your own.
 
  You can disable the Live Data again by calling `disableLiveData(String domainType)`.
 
