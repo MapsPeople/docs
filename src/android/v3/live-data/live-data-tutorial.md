@@ -6,13 +6,13 @@ eleventyNavigation:
   order: 340
 ---
 
-In this tutorial you will learn to work with Live Updates / real-time data in MapsIndoors. It is recommended that you read the [Live Data Introduction](/android/v3/live-data) before continuing.
+In this tutorial you will learn to work with Live Updates / real-time data in MapsIndoors. It is recommended that you read the [Live Data Introduction](/android/v3/live-data/) before continuing.
 
-We will create a simple activity displaying a map that shows some dynamic changes that are initiated from Live Data sources known by MapsIndoors. If you do not have a Live Data integration in place for your MapsIndoors project, you can use API key `2ae7d137162642618b5ce555` for demo and test purposes. The test data are of the Occupancy Domain Type and the Position Domain Type.
+We will create a simple activity displaying a map showing dynamic changes initiated from Live Data sources known by MapsIndoors. If you do not have a Live Data integration in place for your MapsIndoors project, you can use API key `2ae7d137162642618b5ce555` for demo and test purposes. The test data are of the Occupancy Domain Type and the Position Domain Type.
 
-Start by creating an activity that has a google map view and a mapcontrol initiated.
+Start by creating an activity that has a Google Maps map view and a `MapControl` initiated.
 
-Add buttons to the view for toggling subscriptions, one button for Live Position Updates and one for Live Occupancy Updates.
+Add buttons to the view for toggling subscriptions, one button for Live Position Updates, and one for Live Occupancy Updates.
 
 ```xml
 <RelativeLayout
@@ -39,13 +39,13 @@ Add buttons to the view for toggling subscriptions, one button for Live Position
 </RelativeLayout>
 ```
 
-Add a method `setupSubscriptionButtons()` setting up buttons that enables/disables the subscriptions. This example uses the convenience interface to setup live data for the app.
+Add a method `setupSubscriptionButtons()` setting up buttons that enable/disable the subscriptions. This example uses the convenience interface to setup Live Data for the app.
 
 <mi-tabs>
     <mi-tab label="Java" tab-for="java"></mi-tab>
     <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
     <mi-tab-panel id="java">
-        <h3>java</h3>
+        <h3>Java</h3>
         <pre lang="Java"><code>
 private void setupSubscriptionButtons() {
     enablePositionBtn.setOnClickListener(btnView -> {
@@ -70,7 +70,7 @@ private void setupSubscriptionButtons() {
         </code></pre>
     </mi-tab-panel>
     <mi-tab-panel id="kotlin">
-        <h3>kotlin</h3>
+        <h3>Kotlin</h3>
         <pre lang ="Kotlin"><code>
 private fun setupSubscriptionButtons() {
     enablePositionBtn.setOnClickListener {
@@ -96,13 +96,13 @@ private fun setupSubscriptionButtons() {
     </mi-tab-panel>
 </mi-tabs>
 
-If you are using the demo solution. You will need to allign the camera with one of the solutions venues. You can use this example to find a venue and position the camera on it.
+If you are using the Demo Solution, you will need to align the camera with one of the Solution's Venues. You can use this example to find a Venue and position the camera on it.
 
 <mi-tabs>
     <mi-tab label="Java" tab-for="java"></mi-tab>
     <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
     <mi-tab-panel id="java">
-        <h3>java</h3>
+        <h3>Java</h3>
         <pre lang="Java"><code>
 mMapControl.init(error -> {
     if (error == null) {
@@ -117,7 +117,7 @@ mMapControl.init(error -> {
         </code></pre>
     </mi-tab-panel>
     <mi-tab-panel id="kotlin">
-        <h3>kotlin</h3>
+        <h3>Kotlin</h3>
         <pre lang ="Kotlin"><code>
 mMapControl.init { error ->
     if (error == null) {
@@ -133,19 +133,19 @@ mMapControl.init { error ->
     </mi-tab-panel>
 </mi-tabs>
 
-Thats it you now have live data running on your app. If you need to show live data in another way, you can add handlers for this. Read more about this here [Rendering Live Data Locations](/android/v3/live-data).
+And that's it! You now have Live Data running on your app. If you need to show Live Data in another way, you can add handlers for it. Read more about this in [Rendering Live Data Locations](/android/v3/live-data/).
 
-## Using livedata without the convenience interface
+## Using Live Data without the "convenience interface"
 
-If you need a different way of handling live data subscriptions completely, because of the limitations of the convenience interface. It is also possible to implement your own way of setting up subscriptions and dealing with the responses.
+If you need a different way of handling Live Data subscriptions completely, because of the limitations of the "convenience interface", it is also possible to implement your own way of setting up subscriptions and dealing with the responses.
 
-Say you only need it for a few specific locations with positioning updates. You use thoose locations id to create a `LiveTopicCriteria` with the builder supplied on the class that matches what you want. Once you have created the `LiveTopicCriteria` you can subscribe to it through the `LiveDataManager`.
+Say you only need it for a few specific Locations with positioning updates. You use those Location's IDs to create a `LiveTopicCriteria` with the builder supplied on the class that matches what you want. Once you have created the `LiveTopicCriteria`, you can subscribe to it through the `LiveDataManager`.
 
 <mi-tabs>
     <mi-tab label="Java" tab-for="java"></mi-tab>
     <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
     <mi-tab-panel id="java">
-        <h3>java</h3>
+        <h3>Java</h3>
         <pre lang="Java"><code>
 LiveDataManager liveDataManager = LiveDataManager.getInstance();
 if (MapsIndoors.getDataSet() != null && MapsIndoors.getDataSet().getId() != null) {
@@ -162,7 +162,7 @@ if (MapsIndoors.getDataSet() != null && MapsIndoors.getDataSet().getId() != null
         </code></pre>
     </mi-tab-panel>
     <mi-tab-panel id="kotlin">
-        <h3>kotlin</h3>
+        <h3>Kotlin</h3>
         <pre lang ="Kotlin"><code>
 MapsIndoors.getDataSet()?.id?.let { datasetId ->
     val liveTopic = LiveTopicCriteria.getBuilder(datasetId)
@@ -179,14 +179,14 @@ MapsIndoors.getDataSet()?.id?.let { datasetId ->
     </mi-tab-panel>
 </mi-tabs>
 
-Once subscribed the location will update its position according to the live data it receives. If you want to disable the subscription later on you can store the `LiveTopicCriteria` and unsubscribe through `LiveDataManager.unsubscribeTopic(LiveTopicCritera liveTopicCriteria)`. The lifecycle of the subscription is already handled so there is no need to unsubscribe and resubscribe on Android lifecycles.
-If you want to see the position update happening you can set up a listener through the `LiveDataManager` like in this example.
+Once subscribed, the Location will update its position according to the Live Data it receives. If you want to disable the subscription later on, you can store the `LiveTopicCriteria`, and unsubscribe through `LiveDataManager.unsubscribeTopic(LiveTopicCritera liveTopicCriteria)`. The lifecycle of the subscription is already handled so there is no need to unsubscribe and resubscribe on Android lifecycles.
+If you want to see the position update happening, you can set up a listener through the `LiveDataManager` like in this example.
 
 <mi-tabs>
     <mi-tab label="Java" tab-for="java"></mi-tab>
     <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
     <mi-tab-panel id="java">
-        <h3>java</h3>
+        <h3>Java</h3>
         <pre lang="Java"><code>
 liveDataManager.setOnReceivedLiveUpdateListener((topic, message) -> {
     if (topic.getLocation().equals("5bbab6734efd40598e11cbcf")) {
@@ -199,7 +199,7 @@ liveDataManager.setOnReceivedLiveUpdateListener((topic, message) -> {
         </code></pre>
     </mi-tab-panel>
     <mi-tab-panel id="kotlin">
-        <h3>kotlin</h3>
+        <h3>Kotlin</h3>
         <pre lang ="Kotlin"><code>
 liveDataManager.setOnReceivedLiveUpdateListener { liveTopic, liveUpdate ->
     if (liveTopic.location == "5bbab6734efd40598e11cbcf") {
@@ -215,14 +215,16 @@ liveDataManager.setOnReceivedLiveUpdateListener { liveTopic, liveUpdate ->
     </mi-tab-panel>
 </mi-tabs>
 
-This is quite a simple implementation to get live data up and running and see it working. Say you want to get the occupancy of your locations and have the label update to reflect how many people are inside a room.
-First we will implement a way to setup `LiveTopics` so we dont get too much data at once. Here we will create a `LiveTopicCriteria` that uses the currently viewed building together with listening on occupancy updates. We will assign the `LiveTopicCriteria` to a variable so that we can unsubscribe when changing to another topic.
+This is a really simple implementation to get Live Data up and running. 
+
+Now let's say you want to get the Occupancy of your Locations and make the label update to reflect how many people are inside a room.
+First we will implement a way to setup `LiveTopics` so we don't get too much data at once. Here we will create a `LiveTopicCriteria` that uses the currently viewed Building together with listening on Occupancy updates. We will assign the `LiveTopicCriteria` to a variable so that we can unsubscribe when changing to another topic.
 
 <mi-tabs>
     <mi-tab label="Java" tab-for="java"></mi-tab>
     <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
     <mi-tab-panel id="java">
-        <h3>java</h3>
+        <h3>Java</h3>
         <pre lang="Java"><code>
 if (MapsIndoors.getDataSet() != null && MapsIndoors.getDataSet().getId() != null) {
     mMapControl.setOnCurrentBuildingChangedListener(building -> {
@@ -275,7 +277,7 @@ Now if you already have the live update listener from the previous Position exam
     <mi-tab label="Java" tab-for="java"></mi-tab>
     <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
     <mi-tab-panel id="java">
-        <h3>java</h3>
+        <h3>Java</h3>
         <pre lang="Java"><code>
 liveDataManager.setOnReceivedLiveUpdateListener((topic, message) -> {
     if (message.getDomainType().equals(LiveDataDomainTypes.OCCUPANCY_DOMAIN)) {
@@ -290,7 +292,7 @@ liveDataManager.setOnReceivedLiveUpdateListener((topic, message) -> {
         </code></pre>
     </mi-tab-panel>
     <mi-tab-panel id="kotlin">
-        <h3>kotlin</h3>
+        <h3>Kotlin</h3>
         <pre lang ="Kotlin"><code>
 liveDataManager.setOnReceivedLiveUpdateListener { topic: LiveTopic?, message: LiveUpdate ->
     if (message.domainType == LiveDataDomainTypes.OCCUPANCY_DOMAIN) {
@@ -306,4 +308,4 @@ liveDataManager.setOnReceivedLiveUpdateListener { topic: LiveTopic?, message: Li
     </mi-tab-panel>
 </mi-tabs>
 
-You should now be able to hover between buildings and see labels being updated with the live data you have requested.
+You should now be able to move between Buildings and see labels being updated with the Live Data you have requested.

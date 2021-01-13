@@ -178,7 +178,7 @@ mMapControl.setOnWillUpdateLocationsOnMap { locations: List&lt;MPLocation&gt; ->
     <mi-tab label="Java" tab-for="java"></mi-tab>
     <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
     <mi-tab-panel id="java">
-        <h3>java</h3>
+        <h3>Java</h3>
         <pre lang="Java"><code>
 mMapControl.enableLiveData(LiveDataDomainTypes.OCCUPANCY_DOMAIN, location -> {
    LiveUpdate occupancy = location.getLiveUpdate("occupancy");
@@ -196,7 +196,7 @@ mMapControl.enableLiveData(LiveDataDomainTypes.OCCUPANCY_DOMAIN, location -> {
         </code></pre>
     </mi-tab-panel>
     <mi-tab-panel id="kotlin">
-        <h3>kotlin</h3>
+        <h3>Kotlin</h3>
         <pre lang ="Kotlin"><code>
 mMapControl.enableLiveData(LiveDataDomainTypes.OCCUPANCY_DOMAIN) { location: MPLocation ->
     val occupancy = location.getLiveUpdate("occupancy")
@@ -215,7 +215,7 @@ mMapControl.enableLiveData(LiveDataDomainTypes.OCCUPANCY_DOMAIN) { location: MPL
     </mi-tab-panel>
 </mi-tabs>
 
-Note that since there is no guarantee of what Live Data you receive first and Locations can have multiple Live Data updates on different domains. It can be advised to check the lastModifiedTimeStamp of each live data update to choose what you want to render.
+Note that since there is no guarantee of which Live Data you receive first, and Locations can have multiple Live Data updates on different domains, we recommend checking the `lastModifiedTimeStamp` of each Live Data update to select which one to render.
 
 ## Handling Live Data Events
 
@@ -234,7 +234,7 @@ To get Live Updates on a general level the `OnReceivedLiveUpdateListener` must b
     <mi-tab label="Java" tab-for="java"></mi-tab>
     <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
     <mi-tab-panel id="java">
-        <h3>java</h3>
+        <h3>Java</h3>
         <pre lang="Java"><code>
 liveDataManager.setOnReceivedLiveUpdateListener((topic, message) -> {
            if (message.getDomainType().equals(LiveDataDomainTypes.OCCUPANCY_DOMAIN)) {
@@ -245,7 +245,7 @@ liveDataManager.setOnReceivedLiveUpdateListener((topic, message) -> {
         </code></pre>
     </mi-tab-panel>
     <mi-tab-panel id="kotlin">
-        <h3>kotlin</h3>
+        <h3>Kotlin</h3>
         <pre lang ="Kotlin"><code>
 liveDataManager.setOnReceivedLiveUpdateListener { liveTopic, liveUpdate ->
             if (liveUpdate.domainType == LiveDataDomainTypes.OCCUPANCY_DOMAIN) {
@@ -263,7 +263,7 @@ To get Live Updates on a map-specific level, the `OnWillUpdateLocationsOnMap` mu
     <mi-tab label="Java" tab-for="java"></mi-tab>
     <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
     <mi-tab-panel id="java">
-        <h3>java</h3>
+        <h3>Java</h3>
         <pre lang="Java"><code>
 mapControl.setOnWillUpdateLocationsOnMap(locations -> {
     for(MPLocation location : locations){
@@ -274,7 +274,7 @@ mapControl.setOnWillUpdateLocationsOnMap(locations -> {
         </code></pre>
     </mi-tab-panel>
     <mi-tab-panel id="kotlin">
-        <h3>kotlin</h3>
+        <h3>Kotlin</h3>
         <pre lang ="Kotlin"><code>
 mMapControl.setOnWillUpdateLocationsOnMap { locations ->
             for (location in locations) {
