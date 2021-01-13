@@ -111,7 +111,7 @@ liveDataManager.subscribeTopic(liveTopicCriteria);
         <pre lang ="Kotlin"><code>
 var liveDataManager = LiveDataManager.getInstance();
 liveDataManager.setOnLiveDataManagerStateChangedListener {
-    Log.d("LiveDataState", "Live data manager state changed to: $it")
+    Log.d("LiveDataState", "Live Data manager state changed to: $it")
 }
 var liveTopicCriteria = LiveTopicCriteria.getBuilder("datasetId")
     .setMultiLevelWildcard()
