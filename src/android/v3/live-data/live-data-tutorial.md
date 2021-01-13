@@ -269,7 +269,7 @@ MapsIndoors.getDataSet()?.id?.let { datasetId ->
     </mi-tab-panel>
 </mi-tabs>
 
-Now if you already have the live update listener from the previous position example, you can remove the positioning part on a specific location and instead implement a more generic way of handling the new updates we subscribe to. Here is an example that updates the label with the ammount of people in each room.
+Now if you already have the live update listener from the previous Position example, you can remove the Positioning part on a specific Location, and instead implement a more generic way of handling the new updates we subscribe to. Here is an example that updates the label with the amount of people in each room.
 
 <mi-tabs>
     <mi-tab label="Java" tab-for="java"></mi-tab>
