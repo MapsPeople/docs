@@ -52,7 +52,7 @@ A live update is the model for a message carrying one piece of Live Data, for ex
 
 ### Enable Live Data through MapControl
 
-Enabling Live Data through the MapControl is an easy way to get live data running in your app.
+Enabling Live Data through the `MapControl` is an easy way to get Live Data running in your app.
 
 <mi-tabs>
     <mi-tab label="Java" tab-for="java"></mi-tab>
