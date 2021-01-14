@@ -215,7 +215,7 @@ liveDataManager.setOnReceivedLiveUpdateListener { liveTopic, liveUpdate ->
     </mi-tab-panel>
 </mi-tabs>
 
-This is a really simple implementation to get Live Data up and running. 
+This is a really simple implementation to get Live Data up and running.
 
 Now let's say you want to get the Occupancy of your Locations and make the label update to reflect how many people are inside a room.
 First we will implement a way to setup `LiveTopics` so we don't get too much data at once. Here we will create a `LiveTopicCriteria` that uses the currently viewed Building together with listening on Occupancy updates. We will assign the `LiveTopicCriteria` to a variable so that we can unsubscribe when changing to another topic.
