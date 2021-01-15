@@ -1,7 +1,9 @@
 on:
-    push:
-        branches:
-            - feature/mhj/broken-link-checker
+    repository_dispatch: # run manually
+        types: [check-link]
+    # push:
+        # branches:
+            # - feature/mhj/broken-link-checker
 
 name: Broken Link Check
 jobs:
