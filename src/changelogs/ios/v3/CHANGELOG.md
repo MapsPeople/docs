@@ -26,8 +26,8 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 
 ### Fixed
 
-- Fixed a date bug in the `MPBookingService` causing the service to query for available locations with a wrong date, offset by one hour from the intended date.
-- Fixed a bug preventing display of info windows for locations that should not have an icon nor a label.
+- Fixed a date bug in the `MPBookingService` causing the service to query for available Locations with a wrong date, offset by one hour from the intended date.
+- Fixed a bug preventing display of info windows for Locations that should not have an icon nor a label.
 - Improved various elements of our search engine.
 
 ### Changed
