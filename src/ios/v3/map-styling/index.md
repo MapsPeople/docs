@@ -37,7 +37,7 @@ You can set display settings programatically in multiple ways depending on your 
 
 ### Modify the Display Rule for the Selected Location
 
-When a location is selected through assignment of the `selectedLocation` property of `MPMapControl`, this location is highlighted using the settings specified in the `locationHighlightDisplayRule` property. This property has some defaults which can be overridden. Here is an example of overriding the fill and outline color:  
+When a Location is selected through assignment of the `selectedLocation` property of `MPMapControl`, this Location is highlighted using the settings specified in the `locationHighlightDisplayRule` property. This property has some defaults which can be overridden. Here is an example of overriding the fill and outline color:  
 
 ```swift
 myMapControl.locationHighlightDisplayRule?.highlightFillColor = UIColor.blue
