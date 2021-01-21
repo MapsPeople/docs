@@ -18,6 +18,22 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 ### Removed
 -->
 
+## [3.17.0] 2021-01-21
+
+### Added
+
+- Added an `address` property on `MPBuilding` which can be set in MapsIndoors CMS.
+
+### Fixed
+
+- Fixed a date bug in the `MPBookingService` causing the service to query for available locations with a wrong date, offset by one hour from the intended date.
+- Fixed a bug preventing display of info windows for locations that should not have an icon nor a label.
+- Improved various elements of our search engine.
+
+### Changed
+
+- Changed the default selection highlight color for locations with a polygon shape. See [more about the UX behind it here](https://blog.mapspeople.com/new-selection-highlight-color). To customize the highlight color see this [guide about map styling](https://docs.mapsindoors.com/ios/v3/map-styling/#modify-the-display-rule-for-the-selected-location).
+
 ## [3.16.1] 2021-01-04
 
 ### Added
@@ -41,7 +57,7 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 
 ### Fixed
 
-- Fix `bbox` getter returning `nil` on MPMultiPolygonGeometry and MPPolygonGeometry
+- Fix `bbox` getter returning `nil` on `MPMultiPolygonGeometry` and `MPPolygonGeometry`
 - Fixed occasional crash in `MPBooking` deserialization.
 - Improved search and filtering quality of the search engine in `MPLocationService`.
 

@@ -28,11 +28,21 @@ In some cases, you may also want to programmatically set display settings that d
 let myDisplayRule = MPLocationDisplayRule(name: "info", andIcon: UIImage(named : "info"), andZoomLevelOn: 17)
 ```
 
-You can set display settings programatically in three ways:
+You can set display settings programatically in multiple ways depending on your use case:
 
+* Modify the Display Rule for the Selected Location
 * Set a Display Rule for a type of Location
 * Set a Display Rule for a single specific Location
 * Set a Display Rule for multiple Locations
+
+### Modify the Display Rule for the Selected Location
+
+When a location is selected through assignment of the `selectedLocation` property of `MPMapControl`, this location is highlighted using the settings specified in the `locationHighlightDisplayRule` property. This property has some defaults which can be overridden. Here is an example of overriding the fill and outline color:  
+
+```swift
+myMapControl.locationHighlightDisplayRule?.highlightFillColor = UIColor.blue
+myMapControl.locationHighlightDisplayRule?.highlightOutlineColor = UIColor.red
+```
 
 ### Setting Display Rule for a Type
 
