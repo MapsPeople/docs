@@ -1,13 +1,82 @@
 ---
 permalink: /search.json
 ---
+
 [
-  {% for post in collections.published  %}
+    {% for post in collections.published %}
     {% set data = post.data %}
-    {
-      "title": "{{ data.title }}",
-      "description": "{{ data.description }}",
-      "url": "{{ post.url }}"
-    }{{ '' if loop.last else ',' }}
-  {% endfor  %}
+        {
+            "title": "{{ data.title }}",
+            "description": "{{ data.description }}",
+            "url": "{{ post.url }}",
+            "content": "{{ post.templateContent
+                | striptags
+                | lower
+                | forceescape
+                | replace ('\\', ' ')
+                | replace ('\)', ' ')
+                | replace ("'", ' ')
+                | replace ('\(', ' ')
+                | replace ('\{', ' ')
+                | replace ('\}', ' ')
+                | replace ('\[', ' ')
+                | replace ('\]', ' ')
+                | replace ('\;', ' ')
+                | replace ('\:', ' ')
+                | replace ('\.', ' ')
+                | replace ('\,', ' ')
+                | replace ('\/', ' ')
+                | replace ('\&', ' ')
+                | replace ('\"', ' ')
+                | replace ('\@', ' ')
+                | replace ('\‘', ' ')
+                | replace ('\=', ' ')
+                | replace ('\_', ' ')
+                | replace ('\*', ' ')
+                | replace ('\-', ' ')
+                | replace('%', ' ')
+                | replace('?', ' ')
+                | replace(' the ', ' ')
+                | replace(' a ', ' ')
+                | replace(' an ', ' ')
+                | replace(' and ', ' ')
+                | replace(' am ', ' ')
+                | replace(' you ', ' ')
+                | replace(' I ', ' ')
+                | replace(' to ', ' ')
+                | replace(' if ', ' ')
+                | replace(' of ', ' ')
+                | replace(' off ', ' ')
+                | replace(' me ', ' ')
+                | replace(' my ', ' ')
+                | replace(' on ', ' ')
+                | replace(' in ', ' ')
+                | replace(' it ', ' ')
+                | replace(' is ', ' ')
+                | replace(' at ', ' ')
+                | replace(' as ', ' ')
+                | replace(' we ', ' ')
+                | replace(' do ', ' ')
+                | replace(' be ', ' ')
+                | replace(' has ', ' ')
+                | replace(' but ', ' ')
+                | replace(' was ', ' ')
+                | replace(' so ', ' ')
+                | replace(' no ', ' ')
+                | replace(' not ', ' ')
+                | replace(' or ', ' ')
+                | replace(' up ', ' ')
+                | replace(' for ', ' ')
+                | replace(' about ', ' ')
+                | replace(' this ', ' ')
+                | replace(' an ', ' ')
+                | replace(' s ', ' ')
+                | replace(' t ', ' ')
+                | replace('  ', ' ')
+                | replace('   ', ' ')
+                | replace('|', ' ')
+            }}"
+        }
+        {{ '' if loop.last else ',' }}
+    {% endfor %}
 ]

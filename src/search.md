@@ -88,6 +88,7 @@ fetch('/search.json')
         window.searchIdx = lunr(function () {
             this.ref('url');
             this.field('title');
+            this.field('content');
 
             posts.forEach(function (doc) {
                 this.add(doc)
