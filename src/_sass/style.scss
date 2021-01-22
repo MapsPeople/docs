@@ -488,17 +488,37 @@ table {
 
     // Block element interaction while search index is loading
     &--blocked {
-        opacity: .5;
+        opacity: 0.5;
         pointer-events: none;
+    }
+
+    input {
+        @include margin.right();
+        @include border.radius(medium);
+        @include border.style(solid);
+        @include border.black(base);
+        @include padding.left(x-small);
+        width: 320px;
+        height: 32px;
+
+        &:focus {
+            @include border.blue(60);
+        }
     }
 }
 
 .search-result {
-    @include margin.bottom(medium);
+    @include margin.bottom(large);
+
+    a#sr-link {
+        @include font.size(x-large);
+        @include font.weight(large);
+    }
 
     p {
         @include color.green(50);
-        @include margin.all(none);
+        @include margin.top(xxx-small);
+        @include font.size(small);
     }
 }
 
