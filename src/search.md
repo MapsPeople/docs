@@ -6,7 +6,7 @@ layout: default
 
 <form id="search-form" class="search-form search-form--blocked">
     <input autofocus id="search-field" type="search" placeholder="Search..." />
-    <button type="submit">Search</button>
+    <button type="submit" class="mi-button mi-button--primary mi-button--small">Search</button>
 </form>
 
 <div id="search-results"></div>
@@ -20,7 +20,7 @@ layout: default
 
 <template id="no-search-results-template">
     <p class="search-results-no-match">
-        Your search - <span id="nsr-term"></span> - did not match any documents.
+        Your search "<span id="nsr-term"></span>" did not match any documents.
     </p>
 </template>
 
