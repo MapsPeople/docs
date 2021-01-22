@@ -483,6 +483,25 @@ table {
     }
 }
 
+.search-form {
+    @include margin.bottom(large);
+
+    // Block element interaction while search index is loading
+    &--blocked {
+        opacity: .5;
+        pointer-events: none;
+    }
+}
+
+.search-result {
+    @include margin.bottom(medium);
+
+    p {
+        @include color.green(50);
+        @include margin.all(none);
+    }
+}
+
 // // Dark theme overrides. Should always be at the bottom. Not possible until mi-tabs has dark mode too...
 
 // @media (prefers-color-scheme: dark) {
