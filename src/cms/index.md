@@ -46,7 +46,7 @@ After logging in, the map will appear.
 There are a number of key elements:
 
 1. **Solution Name:** This is the name of your Solution. It's possible to have access to several Solutions.
-1. **Venue:** This is the name of your Venue. It’s possible to have several Venues.
+1. **Venue:** This is the name of your Venue. It's possible to have several Venues.
 1. **Map**
    * **Locations:** Manage rooms and POIs
    * **Categories:** Create, edit, and delete Categories
@@ -77,7 +77,7 @@ There are a number of key elements:
 
 When Locations is selected, you see the map with all the icons that determine the Location Type.
 
-To create a new POI, first make it clear if this is an outdoor POI or placed inside a Building. If inside a Building, select the desired Building from the drop down menu. Click on the POI icon in the bottom right corner, then click on the map where it should be added. The placement doesn’t have to be 100% precise, it can be moved afterwards.
+To create a new POI, first make it clear if this is an outdoor POI or placed inside a Building. If inside a Building, select the desired Building from the drop down menu. Click on the POI icon in the bottom right corner, then click on the map where it should be added. The placement doesn't have to be 100% precise, it can be moved afterwards.
 
 ![New Location]({{ site.url }}/assets/cms/locations/locations-newpoi.png)
 
@@ -417,23 +417,23 @@ Time, User, Action, ObjectType, ObjectId and ObjectData
   * If data was added, the 'Action' will be set to 'Created'
   * If data was changed, the 'Action' will be set to 'Changed'
   * If data was deleted, the 'Action' will be set to 'Deleted'
-* **ObjectType:** Tells what type of data was modified (eg. ‘building’, ‘location’, ‘user’, ‘graphdata’ ... )
+* **ObjectType:** Tells what type of data was modified (eg. ‘building', ‘location', ‘user', ‘graphdata' ... )
 * **ObjectId:** Is a unique ID that represents the given data - Building, Location or whatever it is.
 If you want to see a history of that specific Location this ID can be used to filter by
 * **ObjectData:** Is a JSON formatted representation of the actual data stored in the MapsIndoors system. To see what changed you can compare this data to the previous change.
 
 Examples of use cases could be:
 
-* **How to do I get Network history?** Filter the ObjectType to ‘graphdata’ to see these entries. To find a particular user history, filter ‘User’ to their email as well.
-* **How to do I get Categories history?** Filter the ObjectType to ‘category’ to see these entries. To find a particular data history, filter ‘User’ to their email as well.
-* **How to do I get Location Type/type template/visibility history?** Filter the ObjectType to ‘locationtype’ to see these entries. To find a particular data history, filter ‘User’ to their email as well. The type template is covered in the "LocationTypeField” section of the data. The visibility is covered in the "displayrule” section of the data
-* **How to find user login activity?** When a user logs in, the corresponding user object will be changed too (the ‘last login field will be updated’). Filter the ObjectType to ‘user’ to see login entries. To find a particular user login history, filter ‘User’ to their email as well.
+* **How to do I get Network history?** Filter the ObjectType to ‘graphdata' to see these entries. To find a particular user history, filter ‘User' to their email as well.
+* **How to do I get Categories history?** Filter the ObjectType to ‘category' to see these entries. To find a particular data history, filter ‘User' to their email as well.
+* **How to do I get Location Type/type template/visibility history?** Filter the ObjectType to ‘locationtype' to see these entries. To find a particular data history, filter ‘User' to their email as well. The type template is covered in the "LocationTypeField” section of the data. The visibility is covered in the "displayrule” section of the data
+* **How to find user login activity?** When a user logs in, the corresponding user object will be changed too (the ‘last login field will be updated'). Filter the ObjectType to ‘user' to see login entries. To find a particular user login history, filter ‘User' to their email as well.
 
 If you use Excel you can find a video on how to open a CSV file here: [https://www.youtube.com/watch?v=z5Pxil4jVO4](https://www.youtube.com/watch?v=z5Pxil4jVO4)
 
 * **Icons:** Icons are used for various Locations on the map, e.g. POIs, Rooms. Having a unified representation for specific types of Locations makes the system easier for users to engage with.
 * **Location**: A term used for all Rooms and points of interest (POI).
-* **POI**: "Point of interest” - is usually an object that isn’t tied to a room. E.g. Vending Machine, Locker, A Statue, ATM etc.
+* **POI**: "Point of interest” - is usually an object that isn't tied to a room. E.g. Vending Machine, Locker, A Statue, ATM etc.
 * **Type**: All Locations are of a type. Types serve as templates for Locations to provide a basic setup. Many of the properties can later be overridden for specific Locations.
 * **Venue**: Typically a collection of Buildings that are close geographically.
 * **Search alias**: An alternative name for a Location allowing users to search for the Location by that name.

@@ -41,7 +41,7 @@ Remember to enable relevant Maps products (i.e. Maps JavaScript API) in your Goo
 
 ### Setup Your HTML
 
-Include the following scripts in your HTML document. MapsIndoors depends on Google Maps API v3, so if it’s not present on script load, MapsIndoors will not be able to initialize.
+Include the following scripts in your HTML document. MapsIndoors depends on Google Maps API v3, so if it's not present on script load, MapsIndoors will not be able to initialize.
 
 If you need to use a floor selector (most projects do), just add a css reference as in the sample. This will provide a basic CSS-layout for the floor selector.
 

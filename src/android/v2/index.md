@@ -23,7 +23,7 @@ You can also follow the steps below to start your app from scratch or to enhance
 
 ## Setup MapsIndoors
 
-Add the MapsIndoors SDK as a dependency to your project. The AAR for the MapsIndoors SDK contains both Java classes, SDK resources and AndroidManifest.xml template which gets merged into your application’s AndroidManifest.xml during build process. Add or merge in the following to your app’s build gradle file (usually called build.gradle).
+Add the MapsIndoors SDK as a dependency to your project. The AAR for the MapsIndoors SDK contains both Java classes, SDK resources and AndroidManifest.xml template which gets merged into your application's AndroidManifest.xml during build process. Add or merge in the following to your app's build gradle file (usually called build.gradle).
 
 Make sure that the minimum Android SDK version is 21 or above:
 

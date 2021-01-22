@@ -70,6 +70,6 @@ The Building Address field is used to populate the Building filter. The Building
 
 ![EditAddress]({{ site.url }}/assets/various/Dashboard/EditAddress.png)
 
-Each table’s data can be exported to a CSV file. The CSV export adheres to the selected filters.
+Each table's data can be exported to a CSV file. The CSV export adheres to the selected filters.
 
 ![ExportCSV]({{ site.url }}/assets/various/Dashboard/ExportCSV.png)
