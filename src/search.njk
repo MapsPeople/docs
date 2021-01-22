@@ -1,4 +1,13 @@
 ---
 permalink: /search.json
 ---
-[{% for post in collections.published  %}{% set data = post.data %}{"title": "{{ data.title }}","description": "{{ data.description }}","url": "{{ post.url }}"}{{ '' if loop.last else ',' }}{% endfor  %}]
+[
+  {% for post in collections.published  %}
+    {% set data = post.data %}
+    {
+      "title": "{{ data.title }}",
+      "description": "{{ data.description }}",
+      "url": "{{ post.url }}"
+    }{{ '' if loop.last else ',' }}
+  {% endfor  %}
+]
