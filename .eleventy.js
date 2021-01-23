@@ -1,14 +1,11 @@
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
-const fs = require("fs");
 const embedYouTube = require("eleventy-plugin-youtube-embed");
+const fs = require("fs");
 
 module.exports = function (eleventyConfig) {
+    eleventyConfig.addPassthroughCopy("src/assets");
     eleventyConfig.addPlugin(eleventyNavigationPlugin);
     eleventyConfig.addPlugin(embedYouTube);
-    eleventyConfig.addPassthroughCopy("src/assets");
-    eleventyConfig.addPassthroughCopy({
-        "./node_modules/@mapsindoors/components/": "assets/components",
-    });
     eleventyConfig.addWatchTarget("./src/assets/");
     eleventyConfig.setBrowserSyncConfig({
         ui: false,
@@ -26,7 +23,6 @@ module.exports = function (eleventyConfig) {
             },
         },
     });
-
     eleventyConfig.setUseGitIgnore(false);
 
     eleventyConfig.addCollection("androidv2", function (collectionApi) {
