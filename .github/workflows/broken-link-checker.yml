@@ -14,6 +14,8 @@ jobs:
         with:
             TARGET: https://docs.mapsindoors.com
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            EXCLUDED_KEYWORDS:
+                - nuget
             RECURSIVE: true
             RATE_LIMIT: 0
             TITLE: Broken link found to ${URL}
