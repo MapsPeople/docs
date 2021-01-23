@@ -1,7 +1,7 @@
 on:
     push:
         branches:
-            - feature/mhj/broken-link-checker
+            - main
 
 name: Broken Link Check
 jobs:
