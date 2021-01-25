@@ -483,8 +483,11 @@ table {
     }
 }
 
+
+// Seach
 .search-form {
-    @include margin.bottom(large);
+    @include margin.bottom(x-large);
+    display: flex;
 
     // Block element interaction while search index is loading
     &--blocked {
@@ -496,10 +499,12 @@ table {
         @include margin.right();
         @include border.radius(medium);
         @include border.style(solid);
-        @include border.black(base);
+        @include border.gray(60);
+        @include border.width();
         @include padding.left(x-small);
+        @include font.size(large);
         width: 320px;
-        height: 32px;
+        height: 44px;
 
         &:focus {
             @include border.blue(60);

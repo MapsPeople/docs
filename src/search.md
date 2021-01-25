@@ -6,7 +6,7 @@ layout: default
 
 <form id="search-form" class="search-form search-form--blocked">
     <input autofocus id="search-field" type="search" placeholder="Search..." />
-    <button type="submit" class="mi-button mi-button--primary mi-button--small">Search</button>
+    <button type="submit" class="mi-button mi-button--primary">Search</button>
 </form>
 
 <div id="search-results"></div>
