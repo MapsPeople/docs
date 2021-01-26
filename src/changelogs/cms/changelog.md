@@ -25,33 +25,33 @@ eleventyNavigation:
 
 ## August 11th 2020 - v3.32.0
 
-### What’s new
+### What's new
 
 - The sidebar is replaced by a top bar.
 - A "What's new" section with the latest updates.
 
 ## July 30th 2020 - v3.31.0
 
-### What’s new
+### What's new
 
 - **Location Types:** Types can be deleted in bulk.
 - **Locations:** Search for a Location by ID or ExternalID.
 
 ## July 27th 2020 - v3.30.0
 
-### What’s new
+### What's new
 
 - **Booking Provider Feature:** This feature is about setting up credentials to a booking service provider, which will allow app users to book meeting rooms. The Customer should already have a booking service provider in place.
 
 ### Bugfix
 
 - **App Config:** Fixes duplicated Categories under App Configuration page when switching Solutions.
-- **Locations:** Fixes case sensitivity issue when comparing Locations and the Building’s administrative ID.
-- **Locations:** Updates a Location’s path  when moving it in or out of a Building.
+- **Locations:** Fixes case sensitivity issue when comparing Locations and the Building's administrative ID.
+- **Locations:** Updates a Location's path  when moving it in or out of a Building.
 
 ## July 16th 2020 - v3.29.0
 
-### What’s new
+### What's new
 
 - **Sync Feature:** Categories, Location Types and Icons can now be synchronised from one solution to another, given that a customer has multiple solutions.
 - Icon-images hosted in the CMS have finally been moved to Amazon S3 and all the links have been updated in the backend.
@@ -62,7 +62,7 @@ eleventyNavigation:
 
 ## July 1st 2020 - v3.28.7
 
-### What’s new
+### What's new
 
 - **Location Type Template:** Adds a check that prevents calling a property-key "name" because one already exists.
 - **Custom Properties:** Custom properties are not case-sensitive.
@@ -73,7 +73,7 @@ eleventyNavigation:
 
 ## June 18th 2020 - v3.28.0
 
-### What’s new
+### What's new
 
 - Improvements to the authentication module.
 
@@ -81,11 +81,11 @@ eleventyNavigation:
 
 - **Locations:** Fixes a styling issue on the bulk editing view.
 - **Route Access:** Removes Route segment highlight when a Route Layer Item is selected.
-- **Login:** Unauthenticated users are now redirected to the login page when attempting to access the Locations’ URL directly
+- **Login:** Unauthenticated users are now redirected to the login page when attempting to access the Locations' URL directly
 
 ## June 16th 2020 - v3.27.16
 
-### What’s new
+### What's new
 
 - **Locations:** It is required to select a Location Type in order to create a new Location. The Location Type selection field has been moved so that it comes right under the Name field, which is also required.
 - **Venue:** The Venue ID can be found under the Venue menu.
@@ -98,7 +98,7 @@ eleventyNavigation:
 
 ## June 10th 2020 - v3.27.11
 
-### What’s new
+### What's new
 
 - **Location Types:** Adds a column showing how many Locations are linked to a Location Type.
 
@@ -108,13 +108,13 @@ eleventyNavigation:
 
 ## May 26th 2020 - v3.26.0
 
-### What’s new
+### What's new
 
 - **API Keys:** Adds the option to disable an API key.
 
 ## May 19th 2020 - v3.25.0
 
-### What’s new
+### What's new
 
 - **API Keys:** Previously, API keys were only available as part of the "Security module". All customers now have access to this. All Solutions get an API key (if they did not have one before), that is the same as the Solution ID (also called Dataset ID). This ensures backward compatibility.
 - **Single Sign-On:** This was also part of the "Security module" and is now its own module. It needs to be activated on a per-Solution basis.
@@ -134,7 +134,7 @@ eleventyNavigation:
 
 ## May 6th 2020 - v3.24.0
 
-### What’s new
+### What's new
 
 - New Google Cloud client ID and API Keys
 
@@ -148,20 +148,20 @@ eleventyNavigation:
 
 ## Apr 29th 2020 - v3.23.0
 
-### What’s new
+### What's new
 
 - **Areas:** Areas can be managed under the new Areas menu.
 - **Locations' Table:** Multiple Locations can be set as "Searchable" with bulk editing.
 
 ## Apr 23rd 2020 - v3.21.0
 
-### What’s new
+### What's new
 
 - On start up, the CMS determines the fastest Manager API to call for all subsequent requests.
 
 ## Apr 21st 2020 - v3.20.0
 
-### What’s new
+### What's new
 
 - Added Deployment CMS features.
 
@@ -185,7 +185,7 @@ eleventyNavigation:
 ### Bugfix
 
 - **Locations Table:** Locations were not deselected after saving bulk changes.
-- **Locations Table:** Last character on buttons wasn’t aligned correctly.
+- **Locations Table:** Last character on buttons wasn't aligned correctly.
 
 ## Mar 26th 2020 - v3.19.0
 
@@ -237,7 +237,7 @@ eleventyNavigation:
 
 ## Mar 4th 2020 - v3.16.0
 
-### What’s new
+### What's new
 
 - **Analytics Dashboard:** Added "Export to CSV" functionality. Added "metric cards" tooltips.  Rooms and POIs cards have been split up.
 
@@ -281,7 +281,7 @@ eleventyNavigation:
 
 ### New
 
-- Display the Solution’s default language first, and then all non-default languages alphabetically.
+- Display the Solution's default language first, and then all non-default languages alphabetically.
 
 ### Bug Fixes
 
@@ -291,7 +291,7 @@ eleventyNavigation:
 
 ## January 2020 - v3.8.0
 
-### What’s New
+### What's New
 
 - **CAD file upload:** Ability to create new buildings and floors and upload CAD files (.dwg, .dxf) for the floors in the CMS. You can find [a guide in the documentation](https://docs.mapsindoors.com/cms/#buildings).
 - **Icon Manager:** Added the option to "skip" uploading icons larger than 128x64px.
@@ -375,7 +375,7 @@ eleventyNavigation:
 ### New
 
 - **Venue and buildings:** A building can have a default floor.
-- **App configuration:** Manages app user roles, which ensure that specific user groups are not routed where they are not allowed or don’t have access to.
+- **App configuration:** Manages app user roles, which ensure that specific user groups are not routed where they are not allowed or don't have access to.
 - **Route access:** Parking lots can be created as entrypoint for cars and bikes, which means that a car or bike will be directed to the parking lot. When locking a path, an app user role can be selected to give some users access.
 
 ## July 2019 - v.3.6.7

@@ -1,0 +1,19 @@
+---
+permalink: /search.json
+---
+
+[ {% for post in collections.published %} {% set data = post.data %} { "title":
+"{{ data.title }}", "description": "{{ data.description }}", "url": "{{
+    post.url
+}}", "content": "{{ post.templateContent
+                | striptags
+                | lower
+                | forceescape
+                | replace ( r/0|1|2|3|4|5|6|7|8|9/g, ' ')
+                | replace ( r/\\|\)|\'|\(|\{|\}|\[|\]|\;|\:|\.|\,|\/|\%|\?|\&|\!|\+|\"|\@|\‘|\`|\=|\_|\*|\-|\#|(\20f)|\|/g, ' ')
+                | replace ( r/ a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | x | y | z /g, ' ')
+                | replace ( r/ on | are | to | the | only | of | no | if | is | not | or | its | in | our | the | has | been | it | by | might | be | an | shown | up | show /g, ' ')
+                | replace ( r/      |     |    |   |  /g, '')
+}}" }
+{{ '' if loop.last else ',' }}
+{% endfor %} ]

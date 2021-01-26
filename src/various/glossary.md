@@ -126,7 +126,7 @@ Edges are always straight lines, but Nodes can be used in quick succession to cr
 
 Bounds are used to indicate the geographical area a Venue or Building occupies.
 
-The Venue Bounds can be altered to fit points where it can conveniently connect to the Google Maps network. This is to ensure a smooth transition between the Directions given by Google Maps and MapsIndoors’.
+The Venue Bounds can be altered to fit points where it can conveniently connect to the Google Maps network. This is to ensure a smooth transition between the Directions given by Google Maps and MapsIndoors'.
 
 The Building Bounds are used to accurately display the area a Building occupies in the world.
 

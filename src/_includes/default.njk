@@ -15,7 +15,7 @@
                     <h1>
                         <a href="{{ page.url }}">{{ title }}</a>
                     </h1>
-                    {% if '/404.html' not in page.url %}
+                    {% if '/404.html' not in page.url and '/search' not in page.url %}
                     <p class="time">Last updated: <time>{{ page.date.toLocaleDateString() }}</time>
                     </p>
                     {% endif %}

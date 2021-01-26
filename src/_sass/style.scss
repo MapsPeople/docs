@@ -483,6 +483,50 @@ table {
     }
 }
 
+
+// Seach
+.search-form {
+    @include margin.bottom(x-large);
+    display: flex;
+
+    // Block element interaction while search index is loading
+    &--blocked {
+        opacity: 0.5;
+        pointer-events: none;
+    }
+
+    input {
+        @include margin.right();
+        @include border.radius(medium);
+        @include border.style(solid);
+        @include border.gray(60);
+        @include border.width();
+        @include padding.left(x-small);
+        @include font.size(large);
+        width: 320px;
+        height: 44px;
+
+        &:focus {
+            @include border.blue(60);
+        }
+    }
+}
+
+.search-result {
+    @include margin.bottom(large);
+
+    a#sr-link {
+        @include font.size(x-large);
+        @include font.weight(large);
+    }
+
+    p {
+        @include color.green(50);
+        @include margin.top(xxx-small);
+        @include font.size(small);
+    }
+}
+
 // // Dark theme overrides. Should always be at the bottom. Not possible until mi-tabs has dark mode too...
 
 // @media (prefers-color-scheme: dark) {

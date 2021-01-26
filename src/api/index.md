@@ -188,7 +188,7 @@ All Geodata BaseTypes have some common keys that is available for all, and then 
 #### BaseTypeProperties for Floor
 
 * `Name [string]` - <span class="red">* required</span>
-  * Floor identifier that will be used in the floor selector e.g. ‘0’, ‘42’, ‘B1’, etc.
+  * Floor identifier that will be used in the floor selector e.g. ‘0', ‘42', ‘B1', etc.
 
     Keep it as short as possible. Recommendation is 1-3 characters.
 
@@ -264,7 +264,7 @@ Each Geodata element has a number of properties. Let's look at an example - a co
 
 * **ParentId**
 
-    For elements (other than the root) there is a parentId which links to the element it’s connected to.
+    For elements (other than the root) there is a parentId which links to the element it's connected to.
 
     This will be a 24 character string, just as _Id_ is.
 
@@ -284,7 +284,7 @@ Each Geodata element has a number of properties. Let's look at an example - a co
 
 * **Geometry**
 
-    Contains the actual geodata - where it is on the map. It’s based on [GeoJSON](http://geojson.org) - in the example above the geometry is a point defining the POIs position on the map.
+    Contains the actual geodata - where it is on the map. It's based on [GeoJSON](http://geojson.org) - in the example above the geometry is a point defining the POIs position on the map.
 
 * **Aliases**
 
@@ -316,19 +316,19 @@ Each Geodata element has a number of properties. Let's look at an example - a co
 
     The key format is: <keyname>@<language>
 
-    E.g. name in english will be ‘name@en’ - in the example with a value of "Coat stand (RT)"
+    E.g. name in english will be ‘name@en' - in the example with a value of "Coat stand (RT)"
 
-    As this is a dictionary setup, the keyname needs to be unique and only contain the ascii chars [a-z] and [0-9]. Use of spaces and unicode chars here is discouraged as it makes it harder to use from the application code side. The char @ is not supported in the keyname as it’s used as a seperator. As an example, if you want to store opening hours here you could use the key openinghours@en as a keyname.
+    As this is a dictionary setup, the keyname needs to be unique and only contain the ascii chars [a-z] and [0-9]. Use of spaces and unicode chars here is discouraged as it makes it harder to use from the application code side. The char @ is not supported in the keyname as it's used as a seperator. As an example, if you want to store opening hours here you could use the key openinghours@en as a keyname.
 
-> Note: BaseType ‘Floor’ doesn’t support properties.
+> Note: BaseType ‘Floor' doesn't support properties.
 
 #### Example: Area
 
-Now let’s have a look at another Geodata with the BaseType _Area_.
+Now let's have a look at another Geodata with the BaseType _Area_.
 
 An Area is a BaseType that is a little different compared to e.g. POI and Room:
 
-It can be a part of a Room, Floor or Venue, but it can’t be a parent to any other Geodata objects. An Area can (unlike a Room) expand across multiple Rooms, or even Buildings.
+It can be a part of a Room, Floor or Venue, but it can't be a parent to any other Geodata objects. An Area can (unlike a Room) expand across multiple Rooms, or even Buildings.
 
 It will look a lot like the POI example, with a few differences:
 
@@ -401,7 +401,7 @@ It will look a lot like the POI example, with a few differences:
 
 * **ParentId**
 
-    The area’s ParentId could be either a Venue, a Floor, or a Room. In this case, it is in the same parent as the Coat Hanger POI.
+    The area's ParentId could be either a Venue, a Floor, or a Room. In this case, it is in the same parent as the Coat Hanger POI.
 
 * **Geometry**
 
@@ -467,7 +467,7 @@ Common setup for Geodata of different kinds (meeting room, hallway, ...)
 
     Zoom from and to is inclusive. In this example an icon will be shown from zoom level 19 to 21. A quick word on zoom levels: these are described in [web mercator](https://en.wikipedia.org/wiki/Web_Mercator_projection) which is the system we use to show maps. In short zoom level 1 shows a map of the earth in its entirety and a higher zoom level lets you get closer. The highest supported zoom level is generally 21, but some Solutions support up to zoom level 22.
 
-    You will notice that there are 3 ‘visibility’ keys (visible, iconVisible, labelVisible). The first one, ‘visible’, is the main switch that will show and hide the whole element. The two others, ‘iconVisible’ and ‘labelVisible’, is changing the individual elements it is attached to. This way, you can toggle the ‘visible’ without having to remember the visible state for both the icon and label.
+    You will notice that there are 3 ‘visibility' keys (visible, iconVisible, labelVisible). The first one, ‘visible', is the main switch that will show and hide the whole element. The two others, ‘iconVisible' and ‘labelVisible', is changing the individual elements it is attached to. This way, you can toggle the ‘visible' without having to remember the visible state for both the icon and label.
 
 * **PropertyTemplates**
 

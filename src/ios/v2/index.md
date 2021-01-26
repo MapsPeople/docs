@@ -26,7 +26,7 @@ You can also follow the steps below to start your app from scratch or to enhance
 
 ## Setup CocoaPods
 
-If you haven’t already, install CocoaPods:
+If you haven't already, install CocoaPods:
 [Getting Started with CocoaPods](https://guides.cocoapods.org/using/getting-started.html)
 
 ## Setup MapsIndoors
