@@ -13,15 +13,15 @@ Changelog for MapsIndoors SDK for JavaScript. This document structure is based o
 
 ### Added
 
-- `fitBoundsPadding` has been added as an optional parameter to the DirectionsRenderer constructor. It can be used to add a padding around the route when the map is fitted to a route leg or route step.
-- Step switching has been added to the DirectionsRenderer. It is now possible to call `nextStep()` or `previousStep()` to navigate between each step of the route. `setStepIndex(stepIndex, legIndex)` can be used to set the renderer to a specific step on a specific leg. If the legIndex is not specified then the current legIndex is used.
+- `fitBoundsPadding` has been added as an optional parameter to the `DirectionsRenderer` constructor. It can be used to add a padding around the route when the map is fitted to a route leg or route step.
+- Step switching has been added to the `DirectionsRenderer`. It is now possible to call `nextStep()` or `previousStep()` to navigate between each step of the route. `setStepIndex(stepIndex, legIndex)` can be used to set the renderer to a specific step on a specific leg. If the `legIndex` is not specified then the current `legIndex` is used.
 
 ### Fixed
 
 - External IDs are now searchable.
-- Updated the documentation for the BuildingOutlineOptions.
+- Updated the documentation for the `BuildingOutlineOptions`.
 - `getBuildingOutlineOptions()` no longer returns undefined.
-- The optional parameters for DirectionsRenderer will now have an effect when set in the constructor.
+- The optional parameters for `DirectionsRenderer` will now have an effect when set in the constructor.
 - Updated the documentation for LabelOptions. Added missing fontWeight property. *fontWeight is not supported by MapBox.
 
 ## [4.3.1] - 2021-01-06
