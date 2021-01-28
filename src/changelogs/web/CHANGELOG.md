@@ -22,7 +22,7 @@ Changelog for MapsIndoors SDK for JavaScript. This document structure is based o
 - Updated the documentation for the `BuildingOutlineOptions`.
 - `getBuildingOutlineOptions()` no longer returns undefined.
 - The optional parameters for `DirectionsRenderer` will now have an effect when set in the constructor.
-- Updated the documentation for LabelOptions. Added missing fontWeight property. *fontWeight is not supported by MapBox.
+- Updated the documentation for `LabelOptions`. Added missing `fontWeight` property. Do note that `fontWeight` is not supported by MapBox.
 
 ## [4.3.1] - 2021-01-06
 
