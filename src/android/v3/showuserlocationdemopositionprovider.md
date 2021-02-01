@@ -36,7 +36,7 @@ MPPositionResult fixedPosition =  new MPPositionResult(
 Timer mPositionUpdateTimer = new Timer();
 ```
 
-Implement the `addOnPositionUpdateListener`. Assign the `mPositionUpdateListener` inside the method with the `PositionUpdateListener` from the method
+Implement the `addOnPositionUpdateListener`. Assign the `mPositionUpdateListener` inside the method with the `PositionUpdateListener` from the method:
 
 ```java
 @Override
