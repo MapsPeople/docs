@@ -9,6 +9,19 @@ eleventyNavigation:
 
 Changelog for MapsIndoors SDK for JavaScript. This document structure is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and the project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [4.5.0] - 2021-02-01
+
+### Added
+
+- Booking service - Adds support for booking of Locations. It requires integration to a calendar provider e.g. Google Calendar for this to work. For more information about our Booking service and how to get started, please contact our sales team.
+
+### Fixed
+
+- Prevent crash in case of nonexisting venue on location
+- Prevent crash in case of rendering badge on nonexisting icon
+- Improved distance/text ranking correlation (micommon)
+- In some cases the route step would have a wrong travel mode when routing from one venue to another.
+
 ## [4.4.0] - 2021-01-11
 
 ### Added
