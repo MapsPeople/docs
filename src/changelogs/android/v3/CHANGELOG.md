@@ -18,7 +18,18 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 ### Security     in case of vulnerabilities.
 -->
 
-## [3.7.0] 2021-01-07
+## [3.8.1] 2021-01-29
+
+### Added
+
+- Address fields to Building
+- Added hot-pink as the new standard highlighting color (To help visually impaired users)
+
+### Fixed
+
+- Various bugfixes
+
+## [3.8.0] 2021-01-07
 
 ### Added
 
