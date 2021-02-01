@@ -23,7 +23,7 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 ### Added
 
 - Address fields to Building
-- Added hot-pink as the new standard highlighting color (To help visually impaired users)
+- Added pink as the new standard selection highlighting color (to help visually impaired users)
 
 ### Fixed
 
