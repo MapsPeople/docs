@@ -36,6 +36,15 @@ MPPositionResult fixedPosition =  new MPPositionResult(
 Timer mPositionUpdateTimer = new Timer();
 ```
 
+Implement the `addOnPositionUpdateListener`. Assign the `mPositionUpdateListener` inside the method with the `PositionUpdateListener` from the method:
+
+```java
+@Override
+public void addOnPositionUpdateListener( @Nullable OnPositionUpdateListener listener ) {
+    mPositionUpdateListener = listener;
+}
+```
+
 Create a method called `updatePosition`. This will be our "loop" constantly posting a new position to the delegate:
 
 * Check if the provider has a running state
