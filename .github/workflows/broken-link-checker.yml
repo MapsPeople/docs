@@ -4,8 +4,8 @@ on:
       - main
 
 name: Broken Link Check
+needs: [Markdown Lint, K8S Release]
 jobs:
-  needs: [Markdown Lint, K8S Release]
   check:
     name: Broken Link Check
     runs-on: ubuntu-latest
