@@ -1,10 +1,13 @@
 on:
-    push:
-        branches:
-            - main
+  push:
+    branches:
+      - main
 
 name: Broken Link Check
 jobs:
+  needs:
+    - "Markdown Lint"
+    - "K8S Release"
   check:
     name: Broken Link Check
     runs-on: ubuntu-latest
@@ -12,10 +15,10 @@ jobs:
       - name: Broken Link Check
         uses: technote-space/broken-link-checker-action@v2
         with:
-            TARGET: https://docs.mapsindoors.com
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-            EXCLUDED_KEYWORDS: nuget, openid
-            RECURSIVE: true
-            RATE_LIMIT: 0
-            TITLE: Broken link found to ${URL}
-            ASSIGNEES: marksdk
+          TARGET: https://docs.mapsindoors.com
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          EXCLUDED_KEYWORDS: nuget, openid
+          RECURSIVE: true
+          RATE_LIMIT: 0
+          TITLE: Broken link found to ${URL}
+          ASSIGNEES: marksdk
