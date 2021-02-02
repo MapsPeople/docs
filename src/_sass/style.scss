@@ -31,6 +31,10 @@ body {
     @include font.leading(x-large);
     @include font.tracking(medium);
     @include font.color(base);
+    /* Controlling overflow of long urls in particular */
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
 }
 
 .wrap {
@@ -482,7 +486,6 @@ table {
         }
     }
 }
-
 
 // Seach
 .search-form {
