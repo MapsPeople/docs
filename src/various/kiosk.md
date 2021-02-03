@@ -64,7 +64,7 @@ Google Analytics is used for general analytics, page view and event tracking in 
 
 To collect statistics in Google Analytics, provide your MapsIndoors representative with a Google Analytics Property ID (tracking id). This can be set in the app config on a per-Solution basis.
 
-You will receive stats and events in the Google Analytics Dashboard approximately 24 hours the key has been set.
+You will receive stats and events in the Google Analytics Dashboard approximately 24 hours after the key has been set.
 
 ### Page View Tracking
 
