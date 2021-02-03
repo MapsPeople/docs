@@ -139,10 +139,6 @@ The `originLocation` URL parameter is saved in the browser's local storage as  `
 http://kiosk.mapsindoors.com/demo?originLocation=f952e8bcf8f0423b96f23611
 ```
 
-### `timeout` aka. "Reset kiosk"
-
-To make the Kiosk reset after a fixed time of inactivity, use the `timeout` URL parameter. The `timeout` value is in seconds.
-
 ### `liveData`
 
 The `liveData` URL parameter is used for enabling Live Data. The URL parameter accepts a comma-separated list of Live Data Domain types.
