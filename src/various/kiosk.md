@@ -30,7 +30,7 @@ Splitting the URL, this is what it contains:
 * **`demo`** is the `Alias` for your Solution (you can use an API key in the same way if an Alias is not set)
 * **`originLocation=652cf26a26784b4e9a390d8b`** is the Location selected as "origin Location", i.e. where your Kiosk is located in the real world
 * **`zoom=22`** is the zoom level to start at
-* **`&timeout=20`** is the timeout period before resetting
+* **`&timeout=20`** is the timeout period (in seconds) before resetting
 * **`&legend=true`** is whether the Legend should be displayed
 * **`&bearing=180`** is how much the map should be rotated from North (in this case 180 degrees, so due South)
 * **`&pitch=60`** is how much the map should tilt towards the horizon
