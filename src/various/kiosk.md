@@ -151,6 +151,8 @@ Available Domain types can be found here: <https://app.mapsindoors.com/mapsindoo
 
 The `liveData` URL parameter is saved in the browser's local storage as  `MIKIOSK:{miApiKey}-paramLiveData`.
 
+[Get in touch](https://resources.mapspeople.com/contact-us) to hear more about how to set up Live Data integrations for your Solution.
+
 #### Example
 
 ```bash
