@@ -22,7 +22,7 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 
 ### Fixed
 
-- Fixed a crash happening when targeting api 30 and running on an Android 11 device.
+- Fixed a crash happening when targeting API level 30 and running on an Android 11 device.
 
 ## [3.8.1] 2021-01-29
 
