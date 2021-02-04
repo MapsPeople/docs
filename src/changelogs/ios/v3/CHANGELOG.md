@@ -18,6 +18,12 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 ### Removed
 -->
 
+## [3.18.0] 2021-02-04
+
+### Added
+
+- Added a `floorName` property on `MPLocation`.
+
 ## [3.17.0] 2021-01-21
 
 ### Added
