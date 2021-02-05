@@ -79,13 +79,3 @@ In the `filterMap` helper function, we create a list of `location id`s we can us
 The second parameter tells MapsIndoors not to change the viewport of the map.
 
 For more information, see `MapsIndoors.filter` in the [reference documentation](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/MapsIndoors.html#filter)
-
----
-
-## Guides
-
-* [Upgrade Guide]({{ site.url }}/web/v4/upgrade-guide/)
-* [Create a simple map with MapsIndoors]({{ site.url }}/web/v4/simple-map/)
-* [Introduction to DispayRules]({{ site.url }}/web/v4/display-rules-intro/)
-* [Event handling]({{ site.url }}/web/v4/using-events/)
-* [Search and filtering]({{ site.url }}/web/v4/search-and-filtering/)
