@@ -55,8 +55,8 @@ dependencies {
     ...
     implementation 'com.android.support:support-v4:27.1.0'
     implementation 'com.google.android.gms:play-services-maps:11.8.0'
-    implementation 'com.google.code.gson:gson:2.8.2'
-    implementation 'com.mapspeople.mapsindoors:mapsindoorssdk:3.5.+@aar'
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation 'com.mapspeople.mapsindoors:mapsindoorssdk:3.8.1'
 }
 repositories{
     maven {
@@ -102,58 +102,88 @@ You will receive a unique API key to use when access has been granted. If you ar
 
 Place the following initialization code in the `onCreate` method in the activity that should display the Google map:
 
-```java
-MapsIndoors.initialize(
-  getApplicationContext(),
-  "YOUR_MAPSINDOORS_API_KEY",
-  "YOUR_GOOGLE_MAPS_API_KEY"
-);
-```
+<mi-tabs>
+    <mi-tab label="Java" tab-for="java"></mi-tab>
+    <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
+    <mi-tab-panel id="java">
+        <h3>Java</h3>
+        <pre lang="Java"><code>
+MapsIndoors.initialize(getApplicationContext(), "YOUR_MAPSINDOORS_API_KEY");
+MapsIndoors.setGoogleAPIKey(“YOUR_GOOGLE_API_KEY”);
+        </code></pre>
+    </mi-tab-panel>
+    <mi-tab-panel id="kotlin">
+        <h3>Kotlin</h3>
+        <pre lang ="Kotlin"><code>
+MapsIndoors.initialize(applicationContext, "YOUR_MAPSINDOORS_API_KEY")
+MapsIndoors.setGoogleAPIKey(“YOUR_GOOGLE_API_KEY”)
+        </code></pre>
+    </mi-tab-panel>
+</mi-tabs>
 
 In your `onMapReady` callback function, use the `MapControl` class to set up a Google map with MapsIndoors venues, buildings & locations:
 
-```java
-// Create a new MapControl instance
-myMapControl = new MapControl( getApplicationContext(), mapFragment, mGoogleMap );
 
-// Initialize MapControl to get the locations on the map, etc.
-myMapControl.init( errorCode -> {
-  if( errorCode == null ) {
-    runOnUiThread( () -> {
-      // Animate the camera to show the venue
-      mGoogleMap.animateCamera( CameraUpdateFactory.newLatLngZoom( new LatLng( 57.05813067, 9.95058065 ), 19f ) );
-    });
-  }
-});
-```
+<mi-tabs>
+    <mi-tab label="Java" tab-for="java"></mi-tab>
+    <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
+    <mi-tab-panel id="java">
+        <h3>Java</h3>
+        <pre lang="Java"><code>
+@Override
+public void onMapReady(GoogleMap googleMap) {
+   mMap = googleMap;
+
+   if (view != null) {
+       initMapControl(view);
+   }
+}
+
+void initMapControl(View view) {
+   mMapControl = new MapControl(getApplicationContext());
+
+   mMapControl.setGoogleMap(mMap, view);
+
+   mMapControl.init(miError -> {
+       if (miError == null) {
+           runOnUiThread( ()-> {
+               mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new   LatLng(38.8975552046, -77.036568326), 19f));
+           });
+       }
+   });
+}
+        </code></pre>
+    </mi-tab-panel>
+    <mi-tab-panel id="kotlin">
+        <h3>Kotlin</h3>
+        <pre lang ="Kotlin"><code>
+override fun onMapReady(googleMap: GoogleMap) {
+   mMap = googleMap
+
+   map.view?.let {
+       initMapControl(it)
+   }
+}
+
+fun initMapControl(view: View) {
+   mMapControl = MapControl(applicationContext)
+
+   mMapControl.setGoogleMap(mMap, view)
+
+   mMapControl.init { error ->
+       if (error == null) {
+           runOnUiThread {
+               mMap.animateCamera(
+                       CameraUpdateFactory.newLatLngZoom(LatLng(38.8975552046, -77.036568326), 19f))
+           }
+       }
+   }
+}
+        </code></pre>
+    </mi-tab-panel>
+</mi-tabs>
 
 Head to the [guides](/android/v3/guides/) to learn about event handling, searching, getting directions, display settings and more.
-
-## Download and Bundle Offline Content
-
-If needed, it is possible to bundle MapsIndoors content to make your app work better in offline or poor network conditions. (Please note that while MapsIndoors content can be used offline, Google Maps does not provide offline features. Outdoor wayfinding, Google Places searches will be unavailable and the surrounding map may be unavailable unless it has been cached.)
-
-In your */res/values* folder, create a file named `mapsindoors_api.xml` with the following content:
-
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
- <string name="mapsindoors_api_key" translatable="false">YOUR_MAPSINDOORS_API_KEY</string>
-</resources>
-```
-
-Replace:
-
-* `YOUR_MAPSINDOORS_API_KEY` with your MapsIndoors API key.
-
-In your apps build gradle file, add these two lines:
-
-```java
-apply from: 'https://raw.githubusercontent.com/MapsIndoors/MapsIndoorsAndroid/SDK_V2/scripts/gradle/MapsIndoorsOfflineDataSync.gradle'
-preBuild.dependsOn fetchData
-```
-
-Depending on the overall size of your MapsIndoors deployment, this may take some time, so during development you might want to comment out the script dependency.
 
 ## Work with MapsIndoors SDK behind a Firewall
 
