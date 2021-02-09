@@ -75,6 +75,7 @@ if (destination != null) {
 
 When the route is generated the `onResultListener`in the first example will be called and if the Route could be generated it will call the `renderRoute` method that we will implement the rendering logic inside now.
 First we'll create a method to create and setup a `MPDirectionsRenderer` and keep a global reference to the created object. When that is created inside the `renderRoute` method, we will set the route on the `MPDirectionsRenderer`object with the method `setRoute(route)`. After that we will set the Route leg index to 0. Which will start animating the route.
+We will also create an action on the onLegSelectedListener for `MPDirectionsRenderer`. This listener is called when a user clicks on the marker at the end of a rendered leg.
 
 <mi-tabs>
     <mi-tab label="Java" tab-for="java"></mi-tab>
@@ -85,7 +86,11 @@ First we'll create a method to create and setup a `MPDirectionsRenderer` and kee
 MPDirectionsRenderer mDirectionsRenderer = null;
 
 MPDirectionsRenderer createDirectionsRenderer(Context context) {
-        mRoutingRenderer = new MPDirectionsRenderer(context, mGoogleMap, mMapControl, null);
+        mRoutingRenderer = new MPDirectionsRenderer(context, mGoogleMap, mMapControl, i -> {
+            //Marker is clicked on lets go to the next step.
+            mRoutingRenderer.nextLeg();
+            mMapControl.selectFloor(mRoutingRenderer.getLegFloor());
+        });
 
         //Color of the route drawn onto the map
         mRoutingRenderer.setPrimaryColor( ContextCompat.getColor( context, R.color.blue ) );
@@ -123,8 +128,11 @@ void renderRoute(Route route) {
 var mDirectionsRenderer: MPDirectionsRenderer? = null
 
 fun createDirectionsRenderer(context: Context?): MPDirectionsRenderer? {
-    mRoutingRenderer = MPDirectionsRenderer(context, mGoogleMap, mMapControl, null)
-
+    mRoutingRenderer = MPDirectionsRenderer(context, mGoogleMap, mMapControl) {
+            //Marker is clicked on lets go to the next step.
+            mRoutingRenderer.nextLeg()
+            mMapControl.selectFloor(mRoutingRenderer.legFloor)
+    }
     //Color of the route drawn onto the map
     mRoutingRenderer.setPrimaryColor(ContextCompat.getColor(context, R.color.blue))
 
