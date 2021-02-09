@@ -123,7 +123,6 @@ MapsIndoors.setGoogleAPIKey(“YOUR_GOOGLE_API_KEY”)
 
 In your `onMapReady` callback function, use the `MapControl` class to set up a Google map with MapsIndoors venues, buildings & locations:
 
-
 <mi-tabs>
     <mi-tab label="Java" tab-for="java"></mi-tab>
     <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
