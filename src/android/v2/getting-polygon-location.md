@@ -2,7 +2,8 @@
 title: Getting a Polygon from a Location
 eleventyNavigation:
   parent: android-v2
-  key: Getting a Polygon from a Location
+  key: android v2 Getting a Polygon from a Location
+  title: Getting a Polygon from a Location
 ---
 
 Some locations in MapsIndoors can have additional polygon information. These polygons can be used to render a room or area in a special way or make geofences, calculating whether another point or location is contained within the polygon. If a `MPLocation` has polygons, these can be retrieved using:

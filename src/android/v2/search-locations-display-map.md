@@ -2,7 +2,8 @@
 title: Searching for Locations and Displaying the Results on a Map
 eleventyNavigation:
   parent: android-v2
-  key: Searching for Locations and Displaying the Results on a Map
+  title: Searching for Locations and Displaying the Results on a Map
+  key: android v2 Searching for Locations and Displaying the Results on a Map
 ---
 
 Use the `MPLocationsProvider` class to search for content in your MapsIndoors Solution.
