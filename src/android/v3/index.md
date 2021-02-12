@@ -182,7 +182,7 @@ fun initMapControl(view: View) {
     </mi-tab-panel>
 </mi-tabs>
 
-Head to the [guides](/android/v3/guides/) to learn about event handling, searching, getting directions, display settings and more.
+Head to the [guides]({{ site.url }}/android/v3/guides/) to learn about event handling, searching, getting directions, display settings and more.
 
 ## Work with MapsIndoors SDK behind a Firewall
 
