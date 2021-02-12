@@ -6,14 +6,14 @@ eleventyNavigation:
   order: 150
 ---
 
-In this tutorial we will create a route from a users location to a location on the map. We will also create a route between two locations.
+In this tutorial we will create a Route from a users location to a Location on the map.
 
-Mapsindoors supports both indoor and outdoors navigation.
+Mapsindoors supports both indoor and outdoors Navigation.
 
 Start by creating an activity that has a Google Maps map view and a `MapControl` initiated. You can read how to do this on [Setup a Google Map with MapsIndoors]({{ site.url }}/android/v3/#setup-a-google-map-with-mapsindoors)
 
-Once that is created we can start making routes between coordinates and locations on the map.
-To create the routes you start by querying `MPRoutingProvider` with two locations/coordinates. Here we will start with a user location and a `MPLocation`object. In this example we are using the MapsIndoors office Solution. The API key for it is `57e4e4992e74800ef8b69718`.
+Once that is created we can start making Routes between coordinates and Locations on the map.
+To create the Routes you start by querying `MPRoutingProvider` with two Locations/coordinates. Here we will start with a user location and a `MPLocation`object. In this example we are using the MapsIndoors office Solution. The API key for it is `57e4e4992e74800ef8b69718`.
 
 First create an instance of `MPRoutingProvider`. After that, assign a listener to the routing provider with `setOnRouteResultListener`. Right now, we will just send the route on to a rendering method. This will be covered later.
 
@@ -44,7 +44,7 @@ routeProvider.setOnRouteResultListener { route, miError ->
     </mi-tab-panel>
 </mi-tabs>
 
-To get a route result we must query the `MPRoutingProvider` with two `Point` objects. First, let's assume we have the latitude and longitude of a user. We create a `Point`object from the lattitude and longitude and set the `zIndex` to `0` as the user is outside. We also need to find a location the user should navigate to. This can be done by using the marker the user has selected and creating a UI function to generate a route for the selected location. In this example, we will just query for a Location through an ID. We will also set the `TravelMode` to "Walking".
+To get a Route result we must query the `MPRoutingProvider` with two `Point` objects. First, let's assume we have the latitude and longitude of a user. We create a `Point`object from the lattitude and longitude and set the `zIndex` to `0` as the user is outside. We also need to find a Location the user should navigate to. This can be done by using the Marker the user has selected and creating a UI function to generate a Route for the selected Location. In this example, we will just query for a Location through an ID. We will also set the `TravelMode` to "Walking".
 
 <mi-tabs>
     <mi-tab label="Java" tab-for="java"></mi-tab>
@@ -73,11 +73,11 @@ if (destination != null) {
     </mi-tab-panel>
 </mi-tabs>
 
-When the route is generated, the `onResultListener` in the first example will be called, and if the route could be generated, it will call the `renderRoute` method for which we'll now implement the rendering logic inside.
+When the Route is generated, the `onResultListener` in the first example will be called, and if the route could be generated, it will call the `renderRoute` method for which we'll now implement the rendering logic inside.
 
-First, we'll create a method to create and setup a `MPDirectionsRenderer` and keep a global reference to the created object. When that is created inside the `renderRoute` method, we will set the route on the `MPDirectionsRenderer`object with the method `setRoute(route)`. After that, we will set the Route leg index to `0` which will start animating the route.
+First, we'll create a method to create and setup a `MPDirectionsRenderer` and keep a global reference to the created object. When that is created inside the `renderRoute` method, we will set the Route on the `MPDirectionsRenderer`object with the method `setRoute(route)`. After that, we will set the Route leg index to `0` which will start animating the Route.
 
-We will also create an action on the onLegSelectedListener for `MPDirectionsRenderer`. This listener is called when a user clicks on the marker at the end of a rendered leg.
+We will also create an action on the onLegSelectedListener for `MPDirectionsRenderer`. This listener is called when a user clicks on the marker at the end of a rendered Leg.
 
 <mi-tabs>
     <mi-tab label="Java" tab-for="java"></mi-tab>
@@ -163,7 +163,7 @@ fun renderRoute(route: Route?) {
     </mi-tab-panel>
 </mi-tabs>
 
-When the first leg has been set, all there is left is to create a previous and next functionality to go through the whole route. Here we will just create 4 simple buttons; one for going to the next leg of the route, one for going back to the previous leg of the route, one to clear the generated route, and one to reload the generated route.
+When the first Leg has been set, all there is left is to create a previous and next functionality to go through the whole Route. Here we will just create 4 simple buttons; one for going to the next Leg of the Route, one for going back to the previous Leg of the Route, one to clear the generated Route, and one to reload the generated Route.
 
 <mi-tabs>
     <mi-tab label="Java" tab-for="java"></mi-tab>
