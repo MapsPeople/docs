@@ -83,14 +83,3 @@ bookings.onUpdate = (rooms) => {
 The callback is provided with a list of rooms and their statuses. The rooms are then divided into two arrays based on their status (`booked` or `notBooked`).
 
 Then the `DisplayRule`s are updated for each location in the two arrays. Doing this, we can color the room either green (for `notBooked`) or red (indicating the `booked` status).
-
----
-
-## Guides
-
-- [Create a simple map with MapsIndoors](/../web/v3/guides/simple_map/)
-- [Event handling](/../web/v3/guides/using_events/)
-- [Search and filtering](/../web/v3/guides/search_and_filtering/)
-- [Show user location on the map (Blue dot)](/../web/v3/guides/show_users_position/)
-
-[Show user location on the map (Blue dot)](/../web/v3/guides/show_users_position/)
