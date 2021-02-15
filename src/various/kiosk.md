@@ -214,3 +214,12 @@ The `pitch` URL parameter is saved in the browser's local storage as  `MIKIOSK:{
 ```bash
 http://kiosk.mapsindoors.com/demo?pitch=60
 ```
+
+## Live Data badges
+
+When subscribing to live data (see URL parameters), badges will be applied to location icons for locations that have live data.
+
+* **Availability:** Will add a green badge with checkmark or a red badge with a cross, depending on the availability of the location.
+
+* **Occupancy**: Will add a black badge with a number depicting the occupancy of the location (nrOfPeople).
+It is also possible to show a utilization percentage badge instead of occupancy number. To do that, a custom property must be set on the location: key “livedataRenderOccupancyAs” and value “% utilization”
