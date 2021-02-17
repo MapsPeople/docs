@@ -26,3 +26,60 @@ Now we have a Google Maps API key with the necessary APIs and SDK enabled.
 ## Get your MapsIndoors API key
 
 If you are not a customer you can use this demo MapsIndoors API key `79f8e7daff76489dace4f9f9` to follow this guide or you can [contact MapsPeople](https://resources.mapspeople.com/contact-us) to get your building drawings processed and hosted by us to receive a unique API key.
+
+## Set up your environment
+
+To set up your environment each platform has some specific tools which is needed. Please select an appropriate tab and continue.
+
+<mi-tabs>
+<mi-tab label="Android - Java" tab-for="a-java"></mi-tab>
+<mi-tab label="Android - Kotlin" tab-for="a-kotlin"></mi-tab>
+<mi-tab label="iOS" tab-for="ios"></mi-tab>
+<mi-tab label="Web" tab-for="web"></mi-tab>
+<mi-tab label="Web Components" tab-for="web-components"></mi-tab>
+<mi-tab-panel id="a-java">
+
+{% include "./environment/java.md" %}
+
+</mi-tab-panel>
+<mi-tab-panel id="a-kotlin">
+
+{% include "./environment/kotlin.md" %}
+
+</mi-tab-panel>
+<mi-tab-panel id="ios">
+
+{% include "./environment/ios.md" %}
+
+</mi-tab-panel>
+<mi-tab-panel id="web">
+
+{% include "./environment/web.md" %}
+
+</mi-tab-panel>
+<mi-tab-panel id="web-components">
+
+{% include "./environment/web-components.md" %}
+
+</mi-tab-panel>
+</mi-tabs>
+
+## Setup a Google Map with MapsIndoors
+
+<mi-tabs>
+<mi-tab label="Android - Java" tab-for="a-java"></mi-tab>
+<mi-tab label="Android - Kotlin" tab-for="a-kotlin"></mi-tab>
+<mi-tab label="iOS" tab-for="ios"></mi-tab>
+<mi-tab label="Web" tab-for="web"></mi-tab>
+<mi-tab label="Web Components" tab-for="web-components"></mi-tab>
+<mi-tab-panel id="a-java">
+</mi-tab-panel>
+<mi-tab-panel id="a-kotlin">
+</mi-tab-panel>
+<mi-tab-panel id="ios">
+</mi-tab-panel>
+<mi-tab-panel id="web">
+</mi-tab-panel>
+<mi-tab-panel id="web-components">
+</mi-tab-panel>
+</mi-tabs>
