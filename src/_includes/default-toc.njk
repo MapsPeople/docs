@@ -5,9 +5,6 @@
     <div class="content">
         <div class="wrap">
             <section class="container">
-                <aside>
-                    {{ content | toc | safe }}
-                </aside>
                 <main>
                     <nav aria-label="Breadcrumb">
                         {{ collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key) | eleventyNavigationToHtml({listElement: "ol", listItemElement: "span", listItemClass: "item", listClass: "breadcrumb", activeListItemClass: "active", activeKey: eleventyNavigation.key}) | safe }}
@@ -21,6 +18,13 @@
                     {% endif %}
                     {{ content | safe }}
                 </main>
+
+                <aside>
+                    <div class="toc">
+                        <h4>In this article</h4>
+                        {{ content | toc  | safe }}
+                    </div>
+                <aside>
             </section>
         </div>
     </div>

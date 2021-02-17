@@ -163,8 +163,10 @@ a {
 
 // Sidebar navigation
 
-nav.sidebar, nav.toc {
-    width: 280px;
+$sidebar-width: 280px;
+
+nav.sidebar {
+    width: $sidebar-width;
     display: block;
     @include margin.right(xx-large);
     @include padding.right(medium);
@@ -180,8 +182,37 @@ nav.sidebar, nav.toc {
     }
 }
 
-nav.toc {
-    margin-top: 56px;
+aside {
+    width: $sidebar-width;
+    @include margin.left(xx-large);
+    @include padding.left(medium);
+
+    div.toc {
+        padding-top: 56px;
+        position: sticky;
+        top: 0;
+
+        h4 {
+            margin-top: 0;
+            padding-bottom: .3em;
+            border-bottom: 1px solid #eaecef;
+            @include font.size(medium);
+            @include font.weight(x-large);
+        }
+
+        nav ol {
+            @include font.size(small);
+            line-height: 1.25;
+
+        }
+    }
+}
+
+@media (min-height: 300px) {
+    nav ol {
+        position: sticky;
+        top: 0;
+    }
 }
 
 nav {
