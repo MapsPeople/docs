@@ -19,6 +19,10 @@
     background: $color-green-90;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 html,
 body {
     margin: 0;
