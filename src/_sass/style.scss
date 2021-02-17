@@ -160,12 +160,9 @@ a {
 // Sidebar navigation
 
 nav.sidebar, nav.toc {
-    min-width: 280px;
-    max-width: 280px;
+    width: 280px;
     display: block;
     @include margin.right(xx-large);
-    // @include margin.top(medium);
-    @include border.radius(medium);
     @include padding.right(medium);
 
     hr {
