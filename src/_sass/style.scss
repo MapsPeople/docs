@@ -176,14 +176,20 @@ nav.sidebar, nav.toc {
     }
 }
 
+nav.toc {
+    margin-top: 56px;
+}
+
 nav {
-    ul,
+    ul, 
+    ol,
     li {
         list-style: none;
         padding: 0;
         margin: 0;
     }
-    ul {
+    ul,
+    ol {
         @include font.size(medium);
         @include font.leading(x-large);
         li {
