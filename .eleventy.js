@@ -8,7 +8,9 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPlugin(eleventyNavigationPlugin);
     eleventyConfig.addPlugin(embedYouTube);
     // Generates a Table of Content using an Eleventy filter
-    eleventyConfig.addPlugin(pluginTOC)
+    eleventyConfig.addPlugin(pluginTOC, {
+        tags: ['h2'],
+    });
     eleventyConfig.addWatchTarget("./src/assets/");
     eleventyConfig.setBrowserSyncConfig({
         ui: false,
