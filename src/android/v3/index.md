@@ -132,17 +132,13 @@ In your `onMapReady` callback function, use the `MapControl` class to set up a G
 @Override
 public void onMapReady(GoogleMap googleMap) {
    mMap = googleMap;
-
    if (view != null) {
        initMapControl(view);
    }
 }
-
 void initMapControl(View view) {
    mMapControl = new MapControl(getApplicationContext());
-
    mMapControl.setGoogleMap(mMap, view);
-
    mMapControl.init(miError -> {
        if (miError == null) {
            runOnUiThread( ()-> {
@@ -158,17 +154,13 @@ void initMapControl(View view) {
         <pre lang ="Kotlin"><code>
 override fun onMapReady(googleMap: GoogleMap) {
    mMap = googleMap
-
    map.view?.let {
        initMapControl(it)
    }
 }
-
 fun initMapControl(view: View) {
    mMapControl = MapControl(applicationContext)
-
    mMapControl.setGoogleMap(mMap, view)
-
    mMapControl.init { error ->
        if (error == null) {
            runOnUiThread {
