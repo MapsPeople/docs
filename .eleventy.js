@@ -49,6 +49,10 @@ module.exports = function (eleventyConfig) {
         return collectionApi.getFilteredByTags("changelogs");
     });
 
+    eleventyConfig.addCollection("wip", function (collectionApi) {
+        return collectionApi.getFilteredByTags("wip");
+    });
+
     eleventyConfig.addCollection("published", function (collectionApi) {
         return [...collectionApi.getFilteredByGlob("./src/**/*.md")].filter(
             (post) => !post.data.draft

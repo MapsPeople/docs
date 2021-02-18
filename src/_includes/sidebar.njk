@@ -43,5 +43,9 @@
     <p class="nav__header"><a href="/changelogs/">Changelogs</p>
     {% set navPages = collections.published | eleventyNavigation("changelogs") %}
   {% endif %}
+  {% if '/wip' in page.url %}
+    <p class="nav__header"><a href="/wip/">Wip</p>
+    {% set navPages = collections.published | eleventyNavigation("wip") %}
+  {% endif %}
   {{ navPages | eleventyNavigationToHtml({listClass: "sidebar-nav", activeListItemClass: "active", activeKey: eleventyNavigation.key}) | safe }}
 </nav>
