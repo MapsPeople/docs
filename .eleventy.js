@@ -56,6 +56,10 @@ module.exports = function (eleventyConfig) {
         return collectionApi.getFilteredByTags("web", "v3");
     });
 
+    eleventyConfig.addCollection("web-2", function (collectionApi) {
+        return collectionApi.getFilteredByTags("wip");
+    });
+
     eleventyConfig.addCollection("changelogs", function (collectionApi) {
         return collectionApi.getFilteredByTags("changelogs");
     });

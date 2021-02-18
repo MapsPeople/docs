@@ -5,6 +5,10 @@
     <div class="content">
         <div class="wrap">
             <section class="container">
+                {% if '/web-2/' in page.url %}
+                {% include "sidebar.njk" %}
+                {% endif %}
+                
                 <main>
                     <nav aria-label="Breadcrumb">
                         {{ collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key) | eleventyNavigationToHtml({listElement: "ol", listItemElement: "span", listItemClass: "item", listClass: "breadcrumb", activeListItemClass: "active", activeKey: eleventyNavigation.key}) | safe }}
