@@ -18,6 +18,17 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 ### Removed
 -->
 
+## [3.18.0] 2021-02-05
+
+### Added
+
+- Added a `floorName` property on `MPLocation`.
+
+### Changed
+
+- Changed the default icon for a Location where it is not possible to determine a specific icon.
+- Changed `iconUrl` on `MPLocation` so that it will conveniently return either specific icon url or the icon url for the corresponding Location Type.
+
 ## [3.17.0] 2021-01-21
 
 ### Added
