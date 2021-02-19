@@ -59,6 +59,7 @@ body {
 }
 
 main {
+    width: 500px;
     @include margin.top(medium);
     p,
     ul,
@@ -166,7 +167,8 @@ a {
 $sidebar-width: 280px;
 
 nav.sidebar {
-    width: $sidebar-width;
+    min-width: $sidebar-width;
+    max-width: $sidebar-width;
     display: block;
     @include margin.right(xx-large);
     @include padding.right(medium);
@@ -186,6 +188,7 @@ aside {
     width: $sidebar-width;
     @include margin.left(xx-large);
     @include padding.left(medium);
+    box-sizing: border-box;
 
     div.toc {
         padding-top: 56px;
@@ -203,19 +206,13 @@ aside {
         nav ol {
             @include font.size(small);
             line-height: 1.25;
-
         }
     }
 }
 
-@media (min-height: 300px) {
-    nav ol {
-        position: sticky;
-        top: 0;
-    }
-}
-
 nav {
+    box-sizing: border-box;
+
     ul, 
     ol,
     li {
@@ -340,7 +337,6 @@ p code {
 pre code {
     @include font.family(monospace);
     @include border.radius(medium);
-    width: $font-measure-large;
     &.hljs {
         @include padding.all(medium);
         @include border.gray(40);
