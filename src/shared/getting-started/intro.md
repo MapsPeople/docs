@@ -1,1 +1,0 @@
-Welcome to the Getting Started Tutorial. This tutorial takes you from scratch to and simple application with MapsIndoors data shown.

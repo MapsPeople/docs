@@ -1,1 +1,0 @@
-Now we have a MapsIndoors and Google Maps API key with the necessary APIs and SDK enabled.

@@ -1,0 +1,1 @@
+Now you have simple app with a showing map. In this page, you'll create a simple search which you will display in a list. You'll also learn how to filter the data displayed on the map based on the search query.
