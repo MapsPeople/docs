@@ -1,7 +1,8 @@
 ---
 title: Create a simple map with MapsIndoors
 eleventyNavigation:
-  parent: web-v4
+  title: Simple map
+  parent: web-v4-guides
   key: Create a simple map with MapsIndoors
   order: 200
 ---

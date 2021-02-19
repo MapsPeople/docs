@@ -1,10 +1,10 @@
 ---
 title: Event handling
 eleventyNavigation:
-  parent: web-v4
-  key: web-v4-event-handling
   title: Event handling
-  order: 400
+  parent: web-v4-guides
+  key: web-v4-guides-event-handling
+  order: 230
 ---
 
 ## Overview

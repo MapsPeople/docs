@@ -1,10 +1,10 @@
 ---
 title: Search and filtering
 eleventyNavigation:
-  parent: web-v4
   title: Search and filtering
-  key: web-v4-search-filtering
-  order: 500
+  parent: web-v4-guides
+  key: web-v4-guides-search-filtering
+  order: 220
 ---
 
 ## Overview
