@@ -17,13 +17,13 @@ See the full list of parameters:
     <mi-tab label="iOS" tab-for="ios"></mi-tab>
     <mi-tab label="Web" tab-for="web"></mi-tab>
     <mi-tab-panel id="android">
-    {% include "../details_content/android-filter-content.md" %}
+    {% include "../guides/table_content/android-filter-content.md" %}
     </mi-tab-panel>
     <mi-tab-panel id="ios">
-    {% include "../details_content/ios-filter-content.md" %}
+    {% include "../guides/table_content/ios-filter-content.md" %}
     </mi-tab-panel>
     <mi-tab-panel id="web">
-    {% include "../details_content/web-filter-content.md" %}
+    {% include "../guides/table_content/web-filter-content.md" %}
     </mi-tab-panel>
 </mi-tabs>
 
@@ -35,10 +35,10 @@ See the full list of parameters:
     <mi-tab label="iOS" tab-for="ios"></mi-tab>
     <mi-tab label="Web" tab-for="web"></mi-tab>
     <mi-tab-panel id="androidKotlin">
-    {% include "../code_example_content/kotlin-query-filter-example.md" %}
+    {% include "../guides/code_example_content/kotlin-query-filter-example.md" %}
     </mi-tab-panel>
     <mi-tab-panel id="androidJava">
-    {% include "../details_content/java-query-filter-example.md" %}
+    {% include "../guides/code_example_content/java-query-filter-example.md" %}
     </mi-tab-panel>
     <mi-tab-panel id="ios">
     </mi-tab-panel>
@@ -66,10 +66,10 @@ When displaying the search results it is helpful to filter the map to only show 
     <mi-tab label="iOS" tab-for="ios"></mi-tab>
     <mi-tab label="Web" tab-for="web"></mi-tab>
     <mi-tab-panel id="androidKotlin">
-    {% include "../code_example_content/kotlin-display-search.md" %}
+    {% include "../guides/code_example_content/kotlin-display-search.md" %}
     </mi-tab-panel>
     <mi-tab-panel id="androidJava">
-    {% include "../details_content/java-display-search.md" %}
+    {% include "../guides/code_example_content/java-display-search.md" %}
     </mi-tab-panel>
     <mi-tab-panel id="ios">
     </mi-tab-panel>
