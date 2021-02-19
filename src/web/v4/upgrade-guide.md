@@ -3,7 +3,7 @@ title: Web SDK v4 Upgrade Guide
 eleventyNavigation:
   parent: web-v4
   key: v4 Upgrade Guide
-  order: 10
+  order: 400
 ---
 
 This guide will help you upgrade the MapsIndoors JavaScript SDK from v3.x to v4.
