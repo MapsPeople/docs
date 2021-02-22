@@ -1,6 +1,7 @@
 ---
 title: Create a new project
 toc: true
+tags: ["environment, dependencies"]
 eleventyNavigation:
   title: Create a project
   key: web-v4-getting-started-project

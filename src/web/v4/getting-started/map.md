@@ -1,6 +1,7 @@
 ---
 title: Show a map
 toc: true
+tags: ["map, Google Maps, tiles"]
 eleventyNavigation:
   title: Show a map
   key: web-v4-getting-started-map

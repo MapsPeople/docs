@@ -1,6 +1,7 @@
 ---
 title: Prerequisites
 toc: true
+tags: ["api, key, libraries, Google Distance Matrix, Google Places"]
 eleventyNavigation:
   title: Prerequisites
   key: web-v4-getting-started-prerequisites

@@ -1,5 +1,6 @@
 ---
 title: Getting Started
+tags: ["basic concepts"]
 eleventyNavigation:
   title: Getting Started
   key: web-v4-getting-started
