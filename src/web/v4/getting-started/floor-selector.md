@@ -1,5 +1,5 @@
 ---
-title: Create a floor selector
+title: Setting up a Floor Selector
 toc: true
 eleventyNavigation:
   title: Floor selector
