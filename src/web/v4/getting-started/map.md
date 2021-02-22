@@ -14,6 +14,8 @@ eleventyNavigation:
 <!-- Set up MapsIndoors -->
 {% include "../../../shared/getting-started/map/show-map.md" %}
 
+* **TODO: Initialize MapsIndoors and show a map with MapsIndoors tiles (MapControl, mi-map-googlemaps component)**
+
 <mi-tabs>
 <mi-tab label="Manually" tab-for="manually"></mi-tab>
 <mi-tab label="MapsIndoors Web Components" tab-for="components"></mi-tab>
