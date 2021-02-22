@@ -1,5 +1,5 @@
 ---
-title: Show a map with MapsIndoors
+title: Show a map
 eleventyNavigation:
   title: Show a map
   key: web-v4-getting-started-map
