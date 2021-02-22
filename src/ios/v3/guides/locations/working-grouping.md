@@ -2,7 +2,7 @@
 title: Working with Location Grouping (Clustering)
 eleventyNavigation:
   key: Working with Location Grouping (Clustering)
-  parent: ios-v3-locations
+  parent: ios-v3-guides-locations
   order: 320
 ---
 

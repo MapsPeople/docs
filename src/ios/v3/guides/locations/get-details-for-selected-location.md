@@ -2,7 +2,7 @@
 title: Show details for selected Location
 eleventyNavigation:
   key: Show details for selected Location
-  parent: ios-v3-locations
+  parent: ios-v3-guides-locations
   order: 330
 ---
 

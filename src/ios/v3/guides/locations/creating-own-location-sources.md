@@ -2,7 +2,7 @@
 title: Creating your own Location Sources
 eleventyNavigation:
   key: Creating your own Location Sources
-  parent: ios-v3-locations
+  parent: ios-v3-guides-locations
   order: 330
 ---
 
