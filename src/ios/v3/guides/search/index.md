@@ -1,8 +1,8 @@
 ---
 title: Create a search experience with MapsIndoors
 eleventyNavigation:
-  key: ios-v3-search
-  parent: ios-v3
+  key: ios-v3-guides-search
+  parent: ios-v3-guides
   title: Create a search experience with MapsIndoors
   order: 510
 ---
