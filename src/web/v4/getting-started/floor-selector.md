@@ -4,7 +4,7 @@ eleventyNavigation:
   title: Floor selector
   key: web-v4-getting-started-floor-selector
   parent: web-v4-getting-started
-  order: 140
+  order: 150
 ---
 
 <!-- Overview -->

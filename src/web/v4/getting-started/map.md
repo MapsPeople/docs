@@ -4,7 +4,7 @@ eleventyNavigation:
   title: Show a map
   key: web-v4-getting-started-map
   parent: web-v4-getting-started
-  order: 120
+  order: 130
 ---
 
 <!-- Overview -->

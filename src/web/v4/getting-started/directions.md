@@ -4,7 +4,7 @@ eleventyNavigation:
   title: Directions
   key: web-v4-getting-started-directions
   parent: web-v4-getting-started
-  order: 150
+  order: 160
 ---
 
 <!-- Overview -->
