@@ -1,7 +1,7 @@
 ---
 title: Working with Live Updates / Real Time Data in MapsIndoors for android
 eleventyNavigation:
-  parent: android-v3-live-data
+  parent: android-v3-guides-live-data
   key: Working with Live Updates / Real Time Data in MapsIndoors for android
   order: 340
 ---

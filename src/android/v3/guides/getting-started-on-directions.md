@@ -1,7 +1,7 @@
 ---
 title: Getting started on directions
 eleventyNavigation:
-  parent: android-v3
+  parent: android-v3-guides
   key: Getting started on directions
   order: 150
 ---

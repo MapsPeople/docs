@@ -1,7 +1,7 @@
 ---
 title: Getting a Polygon from a Location
 eleventyNavigation:
-  parent: android-v3
+  parent: android-v3-guides
   key: Getting a Polygon from a Location
   order: 10
 ---

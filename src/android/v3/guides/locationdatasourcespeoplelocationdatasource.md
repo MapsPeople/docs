@@ -1,7 +1,7 @@
 ---
 title: Creating your own Location Data Source - Part 1
 eleventyNavigation:
-  parent: android-v3
+  parent: android-v3-guides
   key: Creating your own Location Data Source - Part 1
   order: 110
 ---

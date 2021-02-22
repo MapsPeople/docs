@@ -1,7 +1,7 @@
 ---
 title: Work with location grouping / clustering
 eleventyNavigation:
-  parent: android-v3
+  parent: android-v3-guides
   key: Work with location grouping / clustering
   order: 140
 ---

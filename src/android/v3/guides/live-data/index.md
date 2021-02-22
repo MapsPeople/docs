@@ -1,8 +1,8 @@
 ---
 title: Live Data
 eleventyNavigation:
-  key: android-v3-live-data
-  parent: android-v3
+  key: android-v3-guides-live-data
+  parent: android-v3-guides
   title: Live Data
   order: 330
 ---
