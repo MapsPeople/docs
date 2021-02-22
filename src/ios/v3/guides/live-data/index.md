@@ -1,8 +1,8 @@
 ---
 title: Live Data
 eleventyNavigation:
-  key: ios-v3-live-data
-  parent: ios-v3
+  key: ios-v3-guides-live-data
+  parent: ios-v3-guides
   title: Live Data
   order: 330
 ---

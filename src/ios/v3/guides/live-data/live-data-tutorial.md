@@ -1,7 +1,7 @@
 ---
 title: Working with Live Updates / Real Time Data in MapsIndoors for iOS
 eleventyNavigation:
-  parent: ios-v3-live-data
+  parent: ios-v3-guides-live-data
   key: Working with Live Updates / Real Time Data in MapsIndoors for iOS
   order: 340
 ---
