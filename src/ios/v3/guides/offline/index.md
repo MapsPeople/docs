@@ -2,7 +2,7 @@
 title: Caching and offline content
 eleventyNavigation:
   key: ios-v3-offline
-  parent: ios-v3
+  parent: ios-v3-guides
   title: Caching and offline content
   order: 600
 ---
