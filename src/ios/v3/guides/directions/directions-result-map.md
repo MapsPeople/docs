@@ -1,7 +1,7 @@
 ---
 title: Get Directions and Show the Result on a Map
 eleventyNavigation:
-  parent: ios-v3-directions
+  parent: ios-v3-guides-directions
   key: Get Directions and Show the Result on a Map
   order: 430
 ---

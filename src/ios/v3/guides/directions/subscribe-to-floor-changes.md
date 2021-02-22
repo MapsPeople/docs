@@ -1,7 +1,7 @@
 ---
 title: Subscribe to floor changes in the rendering
 eleventyNavigation:
-  parent: ios-v3-directions
+  parent: ios-v3-guides-directions
   key: Subscribe to floor changes in the rendering
   order: 460
 ---

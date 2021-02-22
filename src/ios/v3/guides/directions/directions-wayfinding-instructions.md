@@ -1,7 +1,7 @@
 ---
 title: Get Directions and Show Wayfinding Instructions
 eleventyNavigation:
-  parent: ios-v3-directions
+  parent: ios-v3-guides-directions
   key: Get Directions and Show Wayfinding Instructions
   order: 410
 ---

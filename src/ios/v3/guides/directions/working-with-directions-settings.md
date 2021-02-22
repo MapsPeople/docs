@@ -1,7 +1,7 @@
 ---
 title: Working with Directions Settings
 eleventyNavigation:
-  parent: ios-v3-directions
+  parent: ios-v3-guides-directions
   key: Working with Directions Settings
   order: 440
 ---

@@ -1,7 +1,7 @@
 ---
 title: Display Route on map
 eleventyNavigation:
-  parent: ios-v3-directions
+  parent: ios-v3-guides-directions
   key: Display Route on map
   order: 420
 ---
