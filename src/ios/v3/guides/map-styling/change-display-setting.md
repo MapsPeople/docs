@@ -2,7 +2,7 @@
 title: Working with Display Settings
 eleventyNavigation:
   key: Working with Display Settings
-  parent: ios-v3-map-styling
+  parent: ios-v3-guides-map-styling
   order: 340
 ---
 

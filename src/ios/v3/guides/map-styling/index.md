@@ -1,8 +1,8 @@
 ---
 title: Map Styling
 eleventyNavigation:
-  key: ios-v3-map-styling
-  parent: ios-v3
+  key: ios-v3-guides-map-styling
+  parent: ios-v3-guides
   title: Map Styling
   order: 330
 ---
