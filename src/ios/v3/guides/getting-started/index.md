@@ -2,7 +2,7 @@
 title: Getting Started
 eleventyNavigation:
   key: ios-v3-getting-started
-  parent: ios-v3
+  parent: ios-v3-guides
   title: Getting Started
   order: 1
 ---
