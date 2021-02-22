@@ -1,9 +1,9 @@
 ---
 title: Booking
 eleventyNavigation:
-    key: ios-booking
+    key: ios-v3-guides-booking
     title: Booking
-    parent: ios-v3
+    parent: ios-v3-guides
     order: 400
 ---
 

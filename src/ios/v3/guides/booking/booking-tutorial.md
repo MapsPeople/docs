@@ -1,8 +1,8 @@
 ---
 title: Booking Tutorial
 eleventyNavigation:
-    parent: ios-booking
-    key: ios-booking-tutorial
+    parent: ios-v3-guides-booking
+    key: ios-v3-guides-booking-tutorial
     title: Booking Tutorial
 ---
 
