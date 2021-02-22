@@ -1,5 +1,7 @@
 ---
 title: Guides
+layout: redirect
+destination: /web/v4/guides/simple-map/
 eleventyNavigation:
   title: Guides
   parent: web-v4
