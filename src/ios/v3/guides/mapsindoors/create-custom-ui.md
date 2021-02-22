@@ -2,7 +2,7 @@
 title: Create custom UI
 eleventyNavigation:
   key: Create custom UI
-  parent: ios-v3-mapsindoors
+  parent: ios-v3-guides-mapsindoors
   order: 250
 ---
 

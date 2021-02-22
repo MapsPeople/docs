@@ -2,7 +2,7 @@
 title: Show the user's location aka. Blue Dot
 eleventyNavigation:
   key: Show the user's location aka. Blue Dot
-  parent: ios-v3-mapsindoors
+  parent: ios-v3-guides-mapsindoors
   order: 240
 ---
 

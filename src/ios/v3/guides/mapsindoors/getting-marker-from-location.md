@@ -2,7 +2,7 @@
 title: Getting a marker from a location and vice versa
 eleventyNavigation:
   key: Getting a marker from a location and vice versa
-  parent: ios-v3-mapsindoors
+  parent: ios-v3-guides-mapsindoors
   order: 220
 ---
 

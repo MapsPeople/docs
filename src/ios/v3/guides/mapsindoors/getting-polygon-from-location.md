@@ -2,7 +2,7 @@
 title: Getting a polygon from a location
 eleventyNavigation:
   key: Getting a polygon from a location
-  parent: ios-v3-mapsindoors
+  parent: ios-v3-guides-mapsindoors
   order: 230
 ---
 
