@@ -1,7 +1,7 @@
 ---
 title: Show Location Details
 eleventyNavigation:
-  parent: android-v3
+  parent: android-v3-guides
   key: Show Location Details
   order: 150
 ---

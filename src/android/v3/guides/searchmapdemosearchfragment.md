@@ -1,7 +1,7 @@
 ---
 title: Create a Search Experience with MapsIndoors - Part 1
 eleventyNavigation:
-  parent: android-v3
+  parent: android-v3-guides
   key: Create a Search Experience with MapsIndoors - Part 1
   order: 160
 ---
