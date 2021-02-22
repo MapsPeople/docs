@@ -1,5 +1,6 @@
 ---
 title: Getting directions
+toc: true
 eleventyNavigation:
   title: Directions
   key: web-v4-getting-started-directions

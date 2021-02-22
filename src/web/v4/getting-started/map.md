@@ -1,5 +1,6 @@
 ---
 title: Show a map
+toc: true
 eleventyNavigation:
   title: Show a map
   key: web-v4-getting-started-map
