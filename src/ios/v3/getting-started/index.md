@@ -8,4 +8,7 @@ eleventyNavigation:
 ---
 
 <!-- Overview -->
-{% include "../../../shared/getting-started/overview.md" %}
+{% include "src/shared/getting-started/overview.md" %}
+
+<!-- Skills -->
+{% include "src/shared/getting-started/skills.md" %}
