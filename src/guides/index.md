@@ -1,7 +1,7 @@
 ---
 title: Search in MapsIndoors
 eleventyNavigation:
-  parent: guides
+  parent: index
   key: Search in MapsIndoors
   order: 10
 ---
