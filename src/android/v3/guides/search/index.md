@@ -4,7 +4,7 @@ eleventyNavigation:
   key: android-v3-guides-search
   parent: android-v3-guides
   title: Search in MapsIndoors
-  order: 430
+  order: 0
 ---
 
 Searching through your MapsIndoors data is an integral part of a great user experience with your maps. Users can look for places to go, or filter what is shown on the map.
@@ -47,10 +47,8 @@ When displaying the search results it is helpful to filter the map to only show 
 ## Examples of filtering the map to display searched locations on the map
 
 <mi-tabs>
-<mi-tab label="Android - Kotlin" tab-for="androidKotlin"></mi-tab>
-<mi-tab label="Android - Java" tab-for="androidJava"></mi-tab>
-<mi-tab label="iOS" tab-for="ios"></mi-tab>
-<mi-tab label="Web" tab-for="web"></mi-tab>
+<mi-tab label="Kotlin" tab-for="androidKotlin"></mi-tab>
+<mi-tab label="Java" tab-for="androidJava"></mi-tab>
 <mi-tab-panel id="androidKotlin">
 
 {% include "src/android/v3/guides/search/extras/kotlin-display-search.md" %}
@@ -60,9 +58,5 @@ When displaying the search results it is helpful to filter the map to only show 
 
 {% include "src/android/v3/guides/search/extras/java-display-search.md" %}
 
-</mi-tab-panel>
-<mi-tab-panel id="ios">
-</mi-tab-panel>
-<mi-tab-panel id="web">
 </mi-tab-panel>
 </mi-tabs>

@@ -1,149 +1,36 @@
 ---
-title: Create a search experience with MapsIndoors
+title: Search in MapsIndoors
 eleventyNavigation:
   key: ios-v3-guides-search
   parent: ios-v3-guides
-  title: Create a search experience with MapsIndoors
-  order: 510
+  title: Search in MapsIndoors
+  order: 0
 ---
 
-This is an example of creating a simple search experience using MapsIndoors. We will create a map with a search button that leads to another view controller that handles the search and selection. On selection of a location, we go back to the map and shows the selected location on the map.
+Searching through your MapsIndoors data is an integral part of a great user experience with your maps. Users can look for places to go, or filter what is shown on the map.
 
-We will start by creating a simple search controller that handles search and selection of MapsIndoors locations
+Searches work on all MapsIndoors geodata. It is up to you to create a search experience that fits your use case. To aid you in this, there are a range of filters you can apply to the search queries to get the best results. E.g. you can filter by Categories, search only a specific part of the map or search near a Location.
 
-Declare a protocol for our location selection with a `didSelectLocation` method
+See the full list of parameters:
 
-```swift
-protocol MySearchControllerDelegate {
-    func didSelectLocation(location:MPLocation)
-}
-```
+{% include "src/ios/v3/guides/search/extras/ios-filter-content.md" %}
 
-Define `MySearchController`. In this tutorial our search controller is a `UIViewController` that implements the protocols `UISearchBarDelegate`, `UITableViewDelegate` and `UITableViewDataSource`
+## Examples of creating a search query for each platform
 
-```swift
-class MySearchController: UIViewController, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource {
-```
+**EXAMPLE HERE
 
-Setup member variables for `MySearchController`:
+All three return a list of Locations from your Solution matching the parameters they are given. The results are ranked upon the 3 following factors:
 
-* An instance of type `MPLocationService`
-* An instance of type `MPQuery`
-* An array of `MPLocation` to hold your list of results
-* Your delegate object
-* A search bar view
-* A table view
+* If a "near" parameter is set, how close is the origin point to the result?
+* How well does the search input text match the text of the result (using the "Levenshtein distance" algorithm)?
+* Which kind of geodata is the result (e.g. Buildings are ranked over POIs)?
 
-```swift
-let locationService = MPLocationService.sharedInstance()
-let query = MPQuery.init()
-var locations:[MPLocation] = []
-var delegate:MySearchControllerDelegate? = nil
-let tableView = UITableView.init()
-let searchBar = UISearchBar.init()
-```
+This means that the first item in the search result list will be the one matching the 3 factors best and so forth.
 
-In `viewDidLoad`, wire up your view controller to the tableview and search bar.
+## Displaying your search results on the map
 
-```swift
-searchBar.delegate = self
-tableView.delegate = self
-tableView.dataSource = self
-```
+When displaying the search results it is helpful to filter the map to only show matching Locations. Matching Buildings and Venues will still be shown on the map, as they give context to the user, even if they aren't selectable on the map.
 
-Register a class for the reusable table view cell.
+## Examples of filtering the map to display searched locations on the map
 
-```swift
-tableView.register(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
-```
-
-Arrange the search bar and the table view in a stack view.
-
-```swift
-let topFiller = UIView.init()
-let stackView = UIStackView.init(arrangedSubviews: [topFiller, searchBar, tableView])
-stackView.axis = .vertical
-view = stackView
-let kw = UIApplication.shared.keyWindow
-topFiller.heightAnchor.constraint(equalToConstant:kw?.safeAreaInsets.top ?? 0).isActive = true
-topFiller.backgroundColor = .blue
-searchBar.barTintColor = .blue
-searchBar.tintColor = .white
-searchBar.showsCancelButton = true
-searchBar.becomeFirstResponder()
-```
-
-In `MySearchController`, implement the `numberOfSections` method, return 1.
-
-```swift
-func numberOfSections(in tableView: UITableView) -> Int {
-    return 1
-}
-```
-
-Implement the `numberOfRowsInSection` method, return the length of your locations array.
-
-```swift
-func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return locations.count
-}
-```
-
-Implement the `textDidChange` method:
-
-* Change the query objects query property to reflect the current search text
-* Call `getLocationsUsing` with the modified query
-* In the callback block, reset the locations array with new results
-* Reload table view
-
-```swift
-func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-    if searchText.count > 0 {
-        query.query = searchText
-        let filter = MPFilter()
-        filter.take = 10
-        locationService.getLocationsUsing(query, filter: filter) { (locations, error) in
-            if error == nil {
-                self.locations = locations!
-                self.tableView.reloadData()
-            }
-        }
-    } else {
-        self.locations = []
-        self.tableView.reloadData()
-    }
-}
-```
-
-Implement the `searchBarCancelButtonClicked` method, with dismissal of the view controller.
-
-```swift
-func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-    self.dismiss(animated: true, completion: nil)
-}
-```
-
-Implement the `tableView:cellForRowAt` method. Set the `cell.textLabel.text` to reflect the *name* of the location of same index.
-
-```swift
-func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-    cell.textLabel?.text = locations[indexPath.row].name
-    let defaultValue = ""
-    cell.textLabel?.text?.append(", \(locations[indexPath.row].roomId ?? defaultValue), \(locations[indexPath.row].building ?? defaultValue), \(locations[indexPath.row].venue ?? defaultValue)")
-    return cell
-}
-```
-
-Implement the `tableView:didSelectRowAt` method. In this example we just call the delegate method and dismiss the view controller.
-
-Delegate method will be handled by SearchMapController.
-
-```swift
-func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    delegate?.didSelectLocation(location: locations[indexPath.row])
-    self.dismiss(animated: true, completion: nil)
-}
-```
-
-[See the sample in MySearchController.swift](https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Search/MySearchController.swift)
+**EXAMPLE HERE
