@@ -3,8 +3,8 @@ title: Prerequisites
 toc: true
 eleventyNavigation:
   title: Prerequisites
-  key: web-v4-getting-started-prerequisites
-  parent: web-v4-getting-started
+  key: ios-v3-getting-started-prerequisites
+  parent: ios-v3-getting-started
   order: 110
 ---
 

@@ -3,8 +3,8 @@ title: Setting up a Floor Selector
 toc: true
 eleventyNavigation:
   title: Floor selector
-  key: web-v4-getting-started-floor-selector
-  parent: web-v4-getting-started
+  key: android-v3-getting-started-floor-selector
+  parent: android-v3-getting-started
   order: 150
 ---
 
