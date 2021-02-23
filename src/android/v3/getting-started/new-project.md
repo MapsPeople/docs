@@ -1,7 +1,6 @@
 ---
 title: Create a new project
 toc: true
-tags: ["environment, dependencies"]
 eleventyNavigation:
   title: Create a project
   key: android-v3-getting-started-project

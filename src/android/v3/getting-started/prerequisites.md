@@ -1,7 +1,6 @@
 ---
 title: Prerequisites
 toc: true
-tags: ["api, key, libraries, Google Distance Matrix, Google Places"]
 eleventyNavigation:
   title: Prerequisites
   key: android-v3-getting-started-prerequisites

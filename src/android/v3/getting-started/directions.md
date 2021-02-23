@@ -1,7 +1,6 @@
 ---
 title: Getting directions
 toc: true
-tags: ["directions, travel mode, navigation"]
 eleventyNavigation:
   title: Directions
   key: android-v3-getting-started-directions

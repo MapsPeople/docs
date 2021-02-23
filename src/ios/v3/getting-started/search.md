@@ -1,7 +1,6 @@
 ---
 title: Create a search experience
 toc: true
-tags: ["search, locations, filter, categories"]
 eleventyNavigation:
   title: Search
   key: ios-v3-getting-started-search

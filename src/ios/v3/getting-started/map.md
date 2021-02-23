@@ -1,7 +1,6 @@
 ---
 title: Show a map
 toc: true
-tags: ["map, Google Maps, tiles"]
 eleventyNavigation:
   title: Show a map
   key: ios-v3-getting-started-map

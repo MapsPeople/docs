@@ -1,7 +1,6 @@
 ---
 title: Setting up a Floor Selector
 toc: true
-tags: ["floor selector"]
 eleventyNavigation:
   title: Floor selector
   key: web-v4-getting-started-floor-selector

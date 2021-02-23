@@ -1,7 +1,6 @@
 ---
 title: Create a search experience
 toc: true
-tags: ["search, locations, filter, categories"]
 eleventyNavigation:
   title: Search
   key: web-v4-getting-started-search

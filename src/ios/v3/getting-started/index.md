@@ -1,6 +1,5 @@
 ---
 title: Getting Started
-tags: ["basic concepts"]
 eleventyNavigation:
   title: Getting Started
   key: ios-v3-getting-started
