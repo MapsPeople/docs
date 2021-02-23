@@ -1,7 +1,6 @@
 ---
 title: Create a new project
 toc: true
-tags: ["environment, dependencies"]
 eleventyNavigation:
   title: Create a project
   key: web-v4-getting-started-project
@@ -10,10 +9,10 @@ eleventyNavigation:
 ---
 
 <!-- Overview -->
-{% include "../../../shared/getting-started/project/overview.md" %}
+{% include "src/shared/getting-started/project/overview.md" %}
 
 <!-- Environment -->
-{% include "../../../shared/getting-started/project/environment.md" %}
+{% include "src/shared/getting-started/project/environment.md" %}
 
 * **TODO: Install and setup dependencies (Eg. CocoaPods, build.gradle file, node.js, NPM, and MI Components)**
 * **TODO: Create an empty project (Xcode, Android application)**

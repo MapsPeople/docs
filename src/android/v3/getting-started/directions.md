@@ -3,8 +3,8 @@ title: Getting directions
 toc: true
 eleventyNavigation:
   title: Directions
-  key: web-v4-getting-started-directions
-  parent: web-v4-getting-started
+  key: android-v3-getting-started-directions
+  parent: android-v3-getting-started
   order: 160
 ---
 

@@ -3,8 +3,8 @@ title: Create a search experience
 toc: true
 eleventyNavigation:
   title: Search
-  key: web-v4-getting-started-search
-  parent: web-v4-getting-started
+  key: ios-v3-getting-started-search
+  parent: ios-v3-getting-started
   order: 140
 ---
 
