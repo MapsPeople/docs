@@ -13,7 +13,7 @@ fun findRestroom() {
         .setCategories(categories)
         .setTake(50)
         .build()
-    
+
     MapsIndoors.getLocationsAsync(mpQuery, mpFilter) { locations: List<MPLocation?>?, error: MIError? ->
         //Check if there is an error and iterate through the list to do what you need with the search
     }
