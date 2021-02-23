@@ -9,10 +9,10 @@ eleventyNavigation:
 ---
 
 <!-- Overview -->
-{% include "../../../shared/getting-started/prerequisites/overview.md" %}
+{% include "src/shared/getting-started/prerequisites/overview.md" %}
 
 <!-- Google Maps API key -->
-{% include "../../../shared/getting-started/prerequisites/api-key-google-maps.md" %}
+{% include "src/shared/getting-started/prerequisites/api-key-google-maps.md" %}
 
 <!-- MapsIndoors API key -->
-{% include "../../../shared/getting-started/prerequisites/api-key-mapsindoors.md" %}
+{% include "src/shared/getting-started/prerequisites/api-key-mapsindoors.md" %}

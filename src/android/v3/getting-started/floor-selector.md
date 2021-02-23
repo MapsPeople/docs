@@ -9,6 +9,6 @@ eleventyNavigation:
 ---
 
 <!-- Overview -->
-{% include "../../../shared/getting-started/floor-selector/overview.md" %}
+{% include "src/shared/getting-started/floor-selector/overview.md" %}
 
 * **TODO: How to display a MapsIndoors floor selector**
