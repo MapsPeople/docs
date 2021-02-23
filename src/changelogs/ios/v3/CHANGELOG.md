@@ -18,6 +18,16 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 ### Removed
 -->
 
+## [3.18.0] 2021-02-30
+
+### Changed
+
+- `MPLocationService` now accounts for vertical proximity when `near` (z value) parameter is provided with `MPQuery`.
+
+### Fixed
+
+- Fixed a map rendering issue where icons would appear/disappear in a flaky and not intuitive manner.
+
 ## [3.18.0] 2021-02-05
 
 ### Added
