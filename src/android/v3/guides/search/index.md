@@ -18,18 +18,18 @@ See the full list of parameters:
 ## Examples of creating a search query for each platform
 
 <mi-tabs>
-    <mi-tab label="Java" tab-for="java"></mi-tab>
-    <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
-    <mi-tab-panel id="java">
+<mi-tab label="Java" tab-for="java"></mi-tab>
+<mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
+<mi-tab-panel id="java">
 
-    {% include "src/android/v3/guides/search/extras/java-query-filter-example.md" %}
+{% include "src/android/v3/guides/search/extras/java-query-filter-example.md" %}
 
-    </mi-tab-panel>
-    <mi-tab-panel id="kotlin">
+</mi-tab-panel>
+<mi-tab-panel id="kotlin">
 
-    {% include "src/android/v3/guides/search/extras/kotlin-query-filter-example.md" %}
+{% include "src/android/v3/guides/search/extras/kotlin-query-filter-example.md" %}
 
-    </mi-tab-panel>
+</mi-tab-panel>
 </mi-tabs>
 
 All three return a list of Locations from your Solution matching the parameters they are given. The results are ranked upon the 3 following factors:
@@ -47,18 +47,22 @@ When displaying the search results it is helpful to filter the map to only show 
 ## Examples of filtering the map to display searched locations on the map
 
 <mi-tabs>
-    <mi-tab label="Android - Kotlin" tab-for="androidKotlin"></mi-tab>
-    <mi-tab label="Android - Java" tab-for="androidJava"></mi-tab>
-    <mi-tab label="iOS" tab-for="ios"></mi-tab>
-    <mi-tab label="Web" tab-for="web"></mi-tab>
-    <mi-tab-panel id="androidKotlin">
-        {% include "../search/extras/kotlin-display-search.md" %}
-    </mi-tab-panel>
-    <mi-tab-panel id="androidJava">
-        {% include "../search/extras/java-display-search.md" %}
-    </mi-tab-panel>
-    <mi-tab-panel id="ios">
-    </mi-tab-panel>
-    <mi-tab-panel id="web">
-    </mi-tab-panel>
+<mi-tab label="Android - Kotlin" tab-for="androidKotlin"></mi-tab>
+<mi-tab label="Android - Java" tab-for="androidJava"></mi-tab>
+<mi-tab label="iOS" tab-for="ios"></mi-tab>
+<mi-tab label="Web" tab-for="web"></mi-tab>
+<mi-tab-panel id="androidKotlin">
+
+{% include "src/android/v3/guides/search/extras/kotlin-display-search.md" %}
+
+</mi-tab-panel>
+<mi-tab-panel id="androidJava">
+
+{% include "src/android/v3/guides/search/extras/java-display-search.md" %}
+
+</mi-tab-panel>
+<mi-tab-panel id="ios">
+</mi-tab-panel>
+<mi-tab-panel id="web">
+</mi-tab-panel>
 </mi-tabs>
