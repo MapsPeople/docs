@@ -9,6 +9,8 @@ eleventyNavigation:
 
 {% include "src/shared/guides/search/overview.md" %}
 
+See the full list of parameters:
+
 {% include "src/android/v3/guides/search/extras/android-filter-content.md" %}
 
 ## Examples of creating a search query for each platform

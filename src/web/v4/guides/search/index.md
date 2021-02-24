@@ -9,7 +9,7 @@ eleventyNavigation:
 
 {% include "src/shared/guides/search/overview.md" %}
 
-{% include "src/web/v4/guides/search/extras/web-filter-content.md" %}
+See the full list of parameters in the [reference guide](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/mapsindoors.services.LocationsService.html#.getLocations).
 
 ## Examples of creating a search query for each platform
 
