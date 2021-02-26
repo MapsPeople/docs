@@ -27,6 +27,7 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 ### Added
 
 - Added method to acquire LiveData-style badged icons on MapsIndoors
+- Added option to set a list of types or locations to search for, when using MPFilter
 
 ## [3.8.2] 2021-02-4
 
