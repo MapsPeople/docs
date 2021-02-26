@@ -18,6 +18,16 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 ### Security     in case of vulnerabilities.
 -->
 
+## [3.8.3] 2021-02-26
+
+### Fixed
+
+- Fixed time zone related issue causing crashes on Android <7
+
+### Added
+
+- Added method to acquire LiveData-style badged icons on MapsIndoors
+
 ## [3.8.2] 2021-02-4
 
 ### Fixed
