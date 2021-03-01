@@ -26,7 +26,7 @@ query.take = 1
 
 MPLocationService.sharedInstance().getLocationsUsing(query, filter: filter) { (locations, error) in
     if let location = locations?.first {
-        
+
     }
 }
 ```
