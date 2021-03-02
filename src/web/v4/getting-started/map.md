@@ -118,7 +118,6 @@ const miMapElement = document.querySelector('mi-map-googlemaps');
 
 miMapElement.addEventListener('mapsIndoorsReady', () => {
   miMapElement.getMapInstance().then((mapInstance) => {
-    
     mapInstance.setCenter({ lat: 38.8974905, lng: -77.0362723 }); // The White House
   });
 })
