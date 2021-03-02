@@ -128,3 +128,46 @@ miMapElement.addEventListener('mapsIndoorsReady', () => {
 
 </mi-tab-panel>
 </mi-tabs>
+
+## Interactive Floor Selector
+
+Next you'll display a floor selector to navigate between floors. The floor selector element will be positioned as an map control.
+
+<mi-tabs>
+<mi-tab label="Manually" tab-for="manually"></mi-tab>
+<mi-tab label="MI Components" tab-for="components"></mi-tab>
+<mi-tab-panel id="manually">
+
+* Add an empty `<div>` element programmatically.
+* Create a new floor selector instance.
+* Push the `floorSelectorElement` to the `googleMapsInstance` as an control element.
+
+```js
+// main.js
+
+const googleMapsInstance = mapViewInstance.getMap();
+
+const floorSelectorElement = document.createElement('div');
+new mapsindoors.FloorSelector(floorSelectorElement, mapsIndoorsInstance);
+googleMapsInstance.controls[google.maps.ControlPosition.RIGHT_TOP].push(floorSelectorElement);
+```
+
+</mi-tab-panel>
+<mi-tab-panel id="components">
+
+Using the `<mi-map-googlemaps>` element you can add the  [floorSelectorControlPosition attribute](https://components.mapsindoors.com/map-googlemaps/) to your existing element.
+
+* Add the `floor-selector-control-position` attribute with the value "TOP_RIGHT".
+
+```html
+<!-- index.html -->
+
+<mi-map-googlemaps
+  ...
+  floor-selector-control-position="TOP_RIGHT">
+</mi-map-googlemaps>
+```
+
+> See all available control positions in the [Google Maps Documentation](https://developers.google.com/maps/documentation/javascript/controls#ControlPositioning).
+
+</mi-tab-panel>
