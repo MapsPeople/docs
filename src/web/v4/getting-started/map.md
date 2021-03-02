@@ -129,7 +129,7 @@ miMapElement.addEventListener('mapsIndoorsReady', () => {
 </mi-tab-panel>
 </mi-tabs>
 
-## Interactive Floor Selector
+## Show a floor selector
 
 Next you'll display a floor selector to navigate between floors. The floor selector element will be positioned as an map control.
 
@@ -164,7 +164,7 @@ Using the `<mi-map-googlemaps>` element you can add the  [floorSelectorControlPo
 
 <mi-map-googlemaps
   ...
-  floor-selector-control-position="TOP_RIGHT">
+  floor-selector-control-position="RIGHT_TOP">
 </mi-map-googlemaps>
 ```
 
