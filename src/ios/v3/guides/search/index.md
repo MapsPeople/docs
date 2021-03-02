@@ -15,7 +15,19 @@ See the full list of parameters:
 
 ## Examples of creating a search query for each platform
 
-**EXAMPLE HERE
+```swift
+let filter = MPFilter.init()
+let query = MPQuery.init()
+query.query = "Office"
+query.near = MPPoint.init(lat: 57.057964, lon: 9.9504112)
+query.take = 1
+
+MPLocationService.sharedInstance().getLocationsUsing(query, filter: filter) { (locations, error) in
+    if let location = locations?.first {
+
+    }
+}
+```
 
 All three return a list of Locations from your Solution matching the parameters they are given. The results are ranked upon the 3 following factors:
 
@@ -31,4 +43,14 @@ When displaying the search results it is helpful to filter the map to only show 
 
 ## Examples of filtering the map to display searched locations on the map
 
-**EXAMPLE HERE
+```swift
+let filter = MPFilter.init()
+let query = MPQuery.init()
+query.query = "Office"
+query.near = MPPoint.init(lat: 57.057964, lon: 9.9504112)
+query.take = 1
+
+MPLocationService.sharedInstance().getLocationsUsing(query, filter: filter) { (locations, error) in
+    myMapControl.searchResult = locations
+}
+```
