@@ -41,7 +41,6 @@ The MapsIndoors SDK is hosted on a CDN and should be loaded using a script tag.
 ```html
 <!-- index.html -->
 
-...
 <body>
   <div id="map" style="width: 600px; height: 600px;"></div>
   ...
@@ -94,7 +93,6 @@ The MI Components library can be loaded using [unpkg](https://unpkg.com/), a wid
 ```html
 <!-- index.html -->
 
-...
 <body>
   <mi-map-googlemaps
     style="width: 600px; height: 600px;"
@@ -130,7 +128,7 @@ miMapElement.addEventListener('mapsIndoorsReady', () => {
 
 ## Show a floor selector
 
-Next you'll display a floor selector to navigate between floors. The floor selector element will be positioned as an map control.
+Next you'll add a floor selector for changing between floors.
 
 <mi-tabs>
 <mi-tab label="Manually" tab-for="manually"></mi-tab>
@@ -139,7 +137,7 @@ Next you'll display a floor selector to navigate between floors. The floor selec
 
 * Add an empty `<div>` element programmatically.
 * Create a new floor selector instance.
-* Push the `floorSelectorElement` to the `googleMapsInstance` as an control element.
+* Push the `floorSelectorElement` to the `googleMapsInstance` to position it as a map control.
 
 ```js
 // main.js
