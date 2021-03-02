@@ -52,5 +52,3 @@ Set **travel mode** on your request using the `travelMode` property on `MPDirect
 let directionsQuery = MPDirectionsQuery.init(originPoint: origin!, destination: destination!)
 directionsQuery.travelMode = .driving
 ```
-
-The travel modes generally applies for outdoor navigation. Indoor navigation calculations are based on **walking** travel mode.
