@@ -30,16 +30,14 @@ class MapViewController: UIViewController {
 Place the following code in the `viewDidLoad` method in your view controller displaying the Google map.
 
 ```swift
-//Setup map
 let mapView = GMSMapView.map(withFrame: CGRect.zero)
 self.view = mapView
 self.mapControl = MPMapControl.init(map: mapView)
 ```
 
-This will show a Google Map with a default map region displayed. Append the following search code:
+This will show a Google Map with a default map region displayed. Append the following search code to the already added code in `viewDidLoad`:
 
 ```swift
-//Setup initial view
 let query = MPQuery.init()
 let filter = MPFilter.init()
 query.query = "White House"
