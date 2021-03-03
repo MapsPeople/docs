@@ -143,6 +143,25 @@ function onSearch() {
 </mi-tab-panel>
 <mi-tab-panel id="components">
 
+```js
+// main.js
+
+const miSearchElement = document.querySelector('mi-search');
+const searchResultsElement = document.getElementById('search-results');
+
+miSearchElement.addEventListener('results', (event) => {
+  // Reset search results list
+  searchResultsElement.innerHTML = null;
+
+  // Append new search results
+  event.detail.forEach(location => {
+    const listElement = document.createElement('li');
+    listElement.innerHTML = location.properties.name;
+    searchResultsElement.appendChild(listElement);
+  });
+});
+```
+
 </mi-tab-panel>
 </mi-tabs>
 
