@@ -168,12 +168,12 @@ miSearchElement.addEventListener('results', (event) => {
 <!-- Filter map -->
 {% include "src/shared/getting-started/search/filter-map.md" %}
 
+To filter the map to only display the search results you can use the `filter` method.
+
 <mi-tabs>
 <mi-tab label="Manually" tab-for="manually"></mi-tab>
 <mi-tab label="MI Components" tab-for="components"></mi-tab>
 <mi-tab-panel id="manually">
-
-To filter the map to only display the search results you can use the `filter` method.
 
 * Call `mapsIndoorsInstance.filter` with an array of location IDs.
 
@@ -190,10 +190,10 @@ function onSearch() {
 }
 ```
 
-> To remove the location filter again, call `mapsIndoorsInstance.filter(null)`.
-
 </mi-tab-panel>
 <mi-tab-panel id="components">
 
 </mi-tab-panel>
 </mi-tabs>
+
+> To remove the location filter again, call `mapsIndoorsInstance.filter(null)`.
