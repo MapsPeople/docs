@@ -57,6 +57,39 @@ function onSearch() {
 </mi-tab-panel>
 <mi-tab-panel id="components">
 
+Using the `<mi-search>` component you get a `<input>`element tied tightly together with the [Location Service](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/LocationsService.html).
+
+* Insert the `<mi-search>` custom element into `<body>`.
+* Add the `mapsindoors` and `placeholder` attributes.
+
+```html
+<!-- index.html -->
+
+<body>
+  ...
+  <mi-search
+    style="width: 600px;"
+    mapsindoors="true"
+    placeholder="Search">
+  </mi-search>
+</body>
+```
+
+* Get a reference to the `<mi-search>` element.
+* Attach an `results` event listener and log out the results to the console.
+
+```js
+// main.js
+
+const miSearchElement = document.querySelector('mi-search');
+
+miSearchElement.addEventListener('results', (event) => {
+    console.log(event.detail);
+});
+```
+
+> For more information on available events and how to configure the `<mi-search>` component, see [components.mapsindoors.com/search](https://components.mapsindoors.com/search/).
+
 </mi-tab-panel>
 </mi-tabs>
 
