@@ -105,20 +105,18 @@ To display a list of search results you can append each search result as a `<li>
 
 <body>
   ...
-  <input type="text" placeholder="Search">
-  <button onclick="onSearch()">Search</button>
   <ul id="search-results"></ul>
 </body>
 ```
+
+* Get a reference to the `<ul>` element.
+* Reset the search results list on every complete search.
+* Add an for loop and append every result to the search results list.
 
 <mi-tabs>
 <mi-tab label="Manually" tab-for="manually"></mi-tab>
 <mi-tab label="MI Components" tab-for="components"></mi-tab>
 <mi-tab-panel id="manually">
-
-* Get a reference to the `<ul>` element.
-* Reset the search results list every time the `getLocations` promise resolves.
-* Add an for loop and append every result to the search results list.
 
 ```js
 // main.js
