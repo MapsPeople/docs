@@ -193,6 +193,19 @@ function onSearch() {
 </mi-tab-panel>
 <mi-tab-panel id="components">
 
+```js
+// main.js
+
+miSearchElement.addEventListener('results', (event) => {
+  ...
+  // Get the MapsIndoors instance
+  miMapElement.getMapsIndoorsInstance().then((mapsIndoorsInstance) => {
+    // Filter map to only display search results
+    mapsIndoorsInstance.filter(event.detail.map(location => location.id), false);
+  });
+});
+```
+
 </mi-tab-panel>
 </mi-tabs>
 
