@@ -87,7 +87,7 @@ The MI Components library can be loaded using [unpkg](https://unpkg.com/), a wid
 </head>
 ```
 
-* Insert the `<mi-map-googlemaps>` custom element tag into `<body>`.
+* Insert the `<mi-map-googlemaps>` custom element into `<body>`.
 * Add and populate the `gm-api-key` and `mi-api-key` attributes with your API keys.
 
 ```html

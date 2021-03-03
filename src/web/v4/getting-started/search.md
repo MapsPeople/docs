@@ -98,7 +98,7 @@ miSearchElement.addEventListener('results', (event) => {
 
 To display a list of search results you can append each search result as a `<li>` element to a `<ul>` element.
 
-* Add the `<ul>` element below the search field in `<body>` and give it the `id` attribute with the value "search-results".
+* Add the `<ul>` element below the search field in `<body>` with the `id` attribute set to "search-results".
 
 ```html
 <!-- index.html -->
