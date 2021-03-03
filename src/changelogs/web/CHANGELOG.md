@@ -13,7 +13,7 @@ Changelog for MapsIndoors SDK for JavaScript. This document structure is based o
 
 ### Added
 
-- Areas - It's now possible to rendere areas on the map using display rules.
+- Areas - It's now possible to render Areas on the map using Display Rules.
 
 ## [4.5.2] - 2021-02-23
 
