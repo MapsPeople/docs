@@ -118,4 +118,32 @@ function onSearch() {
 <!-- Filter map -->
 {% include "src/shared/getting-started/search/filter-map.md" %}
 
-* **TODO: How to filter map based on search results/query**
+<mi-tabs>
+<mi-tab label="Manually" tab-for="manually"></mi-tab>
+<mi-tab label="MI Components" tab-for="components"></mi-tab>
+<mi-tab-panel id="manually">
+
+To filter the map to only display the search results you can use the `filter` method.
+
+* Call `mapsIndoorsInstance.filter` with an array of location IDs.
+
+```js
+// main.js
+
+function onSearch() {
+  ...
+  mapsindoors.services.LocationsService.getLocations(searchParameters).then(locations => {
+    ...
+    // Filter map to only display search results
+    mapsIndoorsInstance.filter(locations.map(location => location.id), false);
+  });
+}
+```
+
+> To remove the location filter again, call `mapsIndoorsInstance.filter(null)`.
+
+</mi-tab-panel>
+<mi-tab-panel id="components">
+
+</mi-tab-panel>
+</mi-tabs>
