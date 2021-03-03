@@ -63,7 +63,57 @@ function onSearch() {
 <!-- Results list -->
 {% include "src/shared/getting-started/search/results-list.md" %}
 
-* **TODO: How to display search results in a list**
+To display a list of search results you can append each search result as a `<li>` element to a `<ul>` element.
+
+* Add the `<ul>` element below the search field in `<body>` and give it the `id` attribute with the value "search-results".
+
+```html
+<!-- index.html -->
+
+<body>
+  ...
+  <input type="text" placeholder="Search">
+  <button onclick="onSearch()">Search</button>
+  <ul id="search-results"></ul>
+</body>
+```
+
+<mi-tabs>
+<mi-tab label="Manually" tab-for="manually"></mi-tab>
+<mi-tab label="MI Components" tab-for="components"></mi-tab>
+<mi-tab-panel id="manually">
+
+* Get a reference to the `<ul>` element.
+* Reset the search results list every time the `getLocations` promise resolves.
+* Add an for loop and append every result to the search results list.
+
+```js
+// main.js
+
+function onSearch() {
+  const searchInputElement = document.querySelector('input');
+  const searchResultsElement = document.getElementById('search-results');
+
+  const searchParameters = { q: searchInputElement.value };
+  mapsindoors.services.LocationsService.getLocations(searchParameters).then(locations => {
+    // Reset search results list
+    searchResultsElement.innerHTML = null;
+
+    // Append new search results
+    locations.forEach(location => {
+      const listElement = document.createElement('li');
+      listElement.innerHTML = location.properties.name;
+      searchResultsElement.appendChild(listElement);
+    });
+  });
+}
+```
+
+</mi-tab-panel>
+<mi-tab-panel id="components">
+
+</mi-tab-panel>
+</mi-tabs>
 
 <!-- Filter map -->
 {% include "src/shared/getting-started/search/filter-map.md" %}
