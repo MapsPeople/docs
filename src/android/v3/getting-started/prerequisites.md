@@ -16,3 +16,7 @@ eleventyNavigation:
 
 <!-- MapsIndoors API key -->
 {% include "src/shared/getting-started/prerequisites/api-key-mapsindoors.md" %}
+
+## Work with MapsIndoors SDK behind a Firewall
+
+If you need to work with MapsIndoors SDK behind a firewall, you might need to [white-list some IP-adresses](../../ip-whitelisting).
