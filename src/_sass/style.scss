@@ -19,6 +19,10 @@
     background: $color-green-90;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 html,
 body {
     margin: 0;
@@ -55,6 +59,7 @@ body {
 }
 
 main {
+    width: 500px;
     @include margin.top(medium);
     p,
     ul,
@@ -138,7 +143,7 @@ a {
         }
         display: grid;
         place-items: center;
-        height: 90vh;
+        min-height: 90vh;
     }
     .headline {
         @include font.family(raleway);
@@ -159,13 +164,13 @@ a {
 
 // Sidebar navigation
 
+$sidebar-width: 280px;
+
 nav.sidebar {
-    min-width: 280px;
-    max-width: 280px;
+    min-width: $sidebar-width;
+    max-width: $sidebar-width;
     display: block;
     @include margin.right(xx-large);
-    // @include margin.top(medium);
-    @include border.radius(medium);
     @include padding.right(medium);
 
     hr {
@@ -179,14 +184,44 @@ nav.sidebar {
     }
 }
 
+aside {
+    width: $sidebar-width;
+    @include margin.left(xx-large);
+    @include padding.left(medium);
+    box-sizing: border-box;
+
+    div.toc {
+        padding-top: 56px;
+        position: sticky;
+        top: 0;
+
+        h4 {
+            margin-top: 0;
+            padding-bottom: .3em;
+            border-bottom: 1px solid #eaecef;
+            @include font.size(medium);
+            @include font.weight(x-large);
+        }
+
+        nav ol {
+            @include font.size(small);
+            line-height: 1.25;
+        }
+    }
+}
+
 nav {
-    ul,
+    box-sizing: border-box;
+
+    ul, 
+    ol,
     li {
         list-style: none;
         padding: 0;
         margin: 0;
     }
-    ul {
+    ul,
+    ol {
         @include font.size(medium);
         @include font.leading(x-large);
         li {
@@ -302,7 +337,6 @@ p code {
 pre code {
     @include font.family(monospace);
     @include border.radius(medium);
-    width: $font-measure-large;
     &.hljs {
         @include padding.all(medium);
         @include border.gray(40);

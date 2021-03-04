@@ -13,6 +13,14 @@
     <hr />
     {% set navPages = collections.published | eleventyNavigation("web-v4") %}
   {% endif %}
+
+  {% if ('web-2/' in page.url) and ('changelogs' not in page.url) %}
+    <p class="nav__header"><a href="/web/v4/">Web v4</p>
+    <a href="https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/index.html">Reference Docs &UpperRightArrow;</a>
+    <hr />
+    {% set navPages = collections.published | eleventyNavigation("web-2") %}
+  {% endif %}
+
   {% if ('android/v3/' in page.url) and ('changelogs' not in page.url) %}
     <p class="nav__header"><a href="/android/v3/">Android v3</p>
     <a href="https://app.mapsindoors.com/mapsindoors/reference/android/v3/index.html">Reference Docs
