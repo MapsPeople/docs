@@ -96,9 +96,14 @@ miSearchElement.addEventListener('results', (event) => {
 <!-- Results list -->
 {% include "src/shared/getting-started/search/results-list.md" %}
 
-To display a list of search results you can append each search result as a `<li>` element to a `<ul>` element.
+To display a list of search results you can append each search result to a list element.
 
-* Add the `<ul>` element below the search field in `<body>` with the `id` attribute set to "search-results".
+<mi-tabs>
+<mi-tab label="Manually" tab-for="manually"></mi-tab>
+<mi-tab label="MI Components" tab-for="components"></mi-tab>
+<mi-tab-panel id="manually">
+
+* Add the `<ul>` list element below the search field in `<body>` with the `id` attribute set to "search-results".
 
 ```html
 <!-- index.html -->
@@ -109,9 +114,32 @@ To display a list of search results you can append each search result as a `<li>
 </body>
 ```
 
-* Get a reference to the `<ul>` element.
-* Reset the search results list on every complete search.
-* Add an for loop and append every result to the search results list.
+</mi-tab-panel>
+<mi-tab-panel id="components">
+
+* Insert the `<mi-list>` custom element below the search field in `<body>`.
+* Add the `scroll-buttons-enabled` and `scroll-length` attributes.
+
+```html
+<!-- index.html -->
+
+<body>
+  ...
+  <mi-list
+    style="width: 600px; height: 400px;"
+    scroll-buttons-enabled="true"
+    scroll-length="200">
+  </mi-list>
+</body>
+```
+
+> For more information on how to configure the `<mi-list>` component, see [components.mapsindoors.com/list](https://components.mapsindoors.com/list/).
+
+</mi-tab-panel>
+</mi-tabs>
+
+* Get a reference to the list element.
+* Reset the list on every complete search.
 
 <mi-tabs>
 <mi-tab label="Manually" tab-for="manually"></mi-tab>
@@ -122,14 +150,51 @@ To display a list of search results you can append each search result as a `<li>
 // main.js
 
 function onSearch() {
-  const searchInputElement = document.querySelector('input');
+  ...
+  // Get list element reference
   const searchResultsElement = document.getElementById('search-results');
-
-  const searchParameters = { q: searchInputElement.value };
+  ...
   mapsindoors.services.LocationsService.getLocations(searchParameters).then(locations => {
     // Reset search results list
     searchResultsElement.innerHTML = null;
+    ...
+  });
+}
+```
 
+</mi-tab-panel>
+<mi-tab-panel id="components">
+
+```js
+// main.js
+
+// Get list element reference
+const miListElement = document.querySelector('mi-list');
+
+miSearchElement.addEventListener('results', (event) => {
+  // Reset search results list
+  miListElement.innerHTML = null;
+  ...
+});
+```
+
+</mi-tab-panel>
+</mi-tabs>
+
+* Add an for loop and append every result to the search results list element.
+
+<mi-tabs>
+<mi-tab label="Manually" tab-for="manually"></mi-tab>
+<mi-tab label="MI Components" tab-for="components"></mi-tab>
+<mi-tab-panel id="manually">
+
+```js
+// main.js
+
+function onSearch() {
+  ...
+  mapsindoors.services.LocationsService.getLocations(searchParameters).then(locations => {
+    ...
     // Append new search results
     locations.forEach(location => {
       const listElement = document.createElement('li');
@@ -146,18 +211,13 @@ function onSearch() {
 ```js
 // main.js
 
-const miSearchElement = document.querySelector('mi-search');
-const searchResultsElement = document.getElementById('search-results');
-
 miSearchElement.addEventListener('results', (event) => {
-  // Reset search results list
-  searchResultsElement.innerHTML = null;
-
+  ...
   // Append new search results
   event.detail.forEach(location => {
-    const listElement = document.createElement('li');
-    listElement.innerHTML = location.properties.name;
-    searchResultsElement.appendChild(listElement);
+    const miListItemElement = document.createElement('mi-list-item-location');
+    miListItemElement.location = location;
+    miListElement.appendChild(miListItemElement);
   });
 });
 ```
