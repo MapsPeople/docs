@@ -69,7 +69,7 @@ function getRoute(location) {
 
   // Get route from directions service
   directionsServiceInstance.getRoute(routeParameters).then((directionsResult) => {
-    // Use directions render to display route 
+    // Use directions render to display route
     directionsRendererInstance.setRoute(directionsResult);
   });
 }
