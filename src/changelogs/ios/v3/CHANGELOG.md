@@ -30,7 +30,7 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 
 - Fixed some map label rendering artifacts when rendering the system font with a stroke as the map label font.
 - Fixed some Live Data related stability issues.
-- Fixed a caching issue causing some locations to get the same icon.
+- Fixed a caching issue causing some Locations to get the same icon.
 
 ## [3.19.0] 2021-02-24
 
