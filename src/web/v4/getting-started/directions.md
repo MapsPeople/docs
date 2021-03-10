@@ -19,9 +19,16 @@ eleventyNavigation:
 <mi-tab label="MI Components" tab-for="components"></mi-tab>
 <mi-tab-panel id="manually">
 
+To get _Directions_ between two MapsIndoors Locations, or Places outside of your MapsIndoors Solution, we need two things:
+
+1. Initialize the _Directions Service_ (including an _external directions provider_)
+2. Initialize the _Directions Render_
+
+We need the _Directions Service_ to calculate the fastest route between two points, and use the _Directions Render_ to actually draw the route on the map.
+
 ### Set up Directions Service and Render
 
-* Initialize the [MapsIndoors Directions Service](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/mapsindoors.services.DirectionsService.html) with a external directions provider.
+First, initialize the [MapsIndoors Directions _Service_](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/mapsindoors.services.DirectionsService.html), and add an _external directions provider_ (in this case Google Maps):
 
 ```js
 // main.js
@@ -30,7 +37,7 @@ const externalDirectionsProvider = new mapsindoors.directions.GoogleMapsProvider
 const directionsServiceInstance = new mapsindoors.services.DirectionsService(externalDirectionsProvider);
 ```
 
-* Initialize the [MapsIndoors Directions Render](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/mapsindoors.directions.DirectionsRenderer.html).
+Then, we need to initialize the [MapsIndoors Directions Render](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/mapsindoors.directions.DirectionsRenderer.html) with the MapsIndoors _instance_:
 
 ```js
 // main.js
@@ -41,18 +48,24 @@ const directionsRendererInstance = new mapsindoors.directions.DirectionsRenderer
 
 > See all available directions render options in the [reference documentation](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/mapsindoors.directions.DirectionsRenderer.html).
 
+Now our example app is ready to provide Directions. Next up is how to give it an _Origin_ and _Destination_ and draw the route between.
+
 ### Draw a route on the map
 
-To display a route between two coordinates the MapsIndoors `directionsRender` need an origin coordinate and destination coordinate. The destination coordinate will be retrieved dynamically using the coordinate of the clicked location in the search results list.
+To display a route on the map, we use the _coordinates_ of an _Origin_ and _Destination_ and draw a line between them. For this, we use MapsIndoors' `directionsRender`.
 
-* Create a new `getRoute` method in main.js which accepts a "location".
-* Create two new constants, one for origin coordinate and another for destination coordinate. For the sake of simplicity of this tutorial the origin will be a hardcoded coordinate.
-* Add another constant defining the route parameters.
-* Using the [MapsIndoors Directions Service](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/mapsindoors.services.DirectionsService.html#getRoute) call the `getRoute` method to get the fastest route between the two coordinates.
+The _Destination_ coordinate is retrieved dynamically, using the coordinate of the selected Location in the search results list. In this tutorial, the _Origin_ is a hardcoded coordinate.
 
-> See all available route parameters in the [reference documentation](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/mapsindoors.services.DirectionsService.html#getRoute).
+In the following example, this is what happens:
 
-* Using the [MapsIndoors Directions Renderer](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/mapsindoors.directions.DirectionsRenderer.html#setRoute) call the `setRoute` method to display the route on the map.
+1. Create a new `getRoute` method in `main.js` which accepts a `location`
+1. Create two new constants, one for the _Origin_'s coordinate, and another for the _Destination_'s coordinate
+1. Add another constant defining the `routeParameters`
+1. Using the [MapsIndoors Directions Service](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/mapsindoors.services.DirectionsService.html#getRoute) call the `getRoute` method to get the fastest route between the two coordinates
+
+    > See all available route parameters in the [reference documentation](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/mapsindoors.services.DirectionsService.html#getRoute).
+
+1. Using the [MapsIndoors Directions Renderer](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/mapsindoors.directions.DirectionsRenderer.html#setRoute) call the `setRoute` method to display the route on the map
 
 ```js
 // main.js
@@ -75,7 +88,7 @@ function getRoute(location) {
 }
 ```
 
-* In the `onSearch` method, attach a `click` event listener for each location appended to the search results list element and add the `getRoute` method as the callback function.
+Now, to make it more dynamic, we attach a `click` event listener in the `onSearch` method for each location appended to the search results list element. Then we add the `getRoute` method as the callback function.
 
 ```js
 // main.js
@@ -89,6 +102,10 @@ locations.forEach(location => {
 });
 
 ```
+
+Now you can click on each item in the search results list to get directions from The Oval Office to any Location in The White House.
+
+<!-- Add screenshot -->
 
 </mi-tab-panel>
 <mi-tab-panel id="components">

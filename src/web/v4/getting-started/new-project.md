@@ -14,14 +14,14 @@ eleventyNavigation:
 <!-- Environment -->
 {% include "src/shared/getting-started/project/environment.md" %}
 
-The project setup is really simple. Because we only want to use pure JavaScript we do not need to install any frameworks.
+The project setup is simple. We use pure JavaScript so we do not need to install any frameworks.
 
-* Start by creating a new project folder
-* Inside that, create two empty files: index.html and main.js.
+1. Start by creating a new project folder
+1. Inside that, create two empty files: `index.html` and `main.js`.
 
-> The file index.html is the entry point for our application and contains the HTML code. The file main.js will be included in index.html and going to consist of the corresponding JavaScript code needed for the sample application.
+    > The file `index.html` is the entry point for our application and contains the HTML code. The file `main.js` will be included in `index.html` and consists of the JavaScript code for the sample application.
 
-* Open index.html and create a basic HTML structure and include the main.js file.
+1. Open `index.html`. Create a basic HTML structure and include the `main.js` file:
 
 ```html
 <!-- index.html -->
