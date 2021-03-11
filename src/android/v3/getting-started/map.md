@@ -42,6 +42,7 @@ You will receive a unique API key to use when access has been granted. If you ar
 
 Place the following initialization code in the `onCreate` method in the activity that should display the Google map also assign the mapFragment view to a variable as we will use this later to initialize `MapControl`:
 
+**Refresh kotlin example to allign on a venue**
 <mi-tabs>
     <mi-tab label="Java" tab-for="java"></mi-tab>
     <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
@@ -78,15 +79,23 @@ public void onMapReady(GoogleMap googleMap) {
    }
 }
 void initMapControl(View view) {
-   mMapControl = new MapControl(getApplicationContext());
-   mMapControl.setGoogleMap(mMap, view);
-   mMapControl.init(miError -> {
-       if (miError == null) {
-           runOnUiThread( ()-> {
-               mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new   LatLng(38.8975552046, -77.036568326), 19f));
-           });
-       }
-   });
+    //Creates a new instance of MapControl
+    mMapControl = new MapControl(this);
+    //Sets the Google map object and the map view to the MapControl
+    mMapControl.setGoogleMap(mMap, view);
+    //Initiates the MapControl
+    mMapControl.init(miError -> {
+        if (miError == null) {
+            //No errors so getting the first venue (in the white house solution the only one)
+            Venue venue = MapsIndoors.getVenues().getCurrentVenue();
+            runOnUiThread( ()-> {
+                if (venue != null) {
+                    //Animates the camera to fit the new venue
+                    mMap.animateCamera(CameraUpdateFactory.newLatLngBounds(venue.getLatLngBoundingBox(), 19));
+                }
+            });
+        }
+    });
 }
         </code></pre>
     </mi-tab-panel>
@@ -100,8 +109,11 @@ override fun onMapReady(googleMap: GoogleMap) {
    }
 }
 fun initMapControl(view: View) {
+   //Creates a new instance of MapControl
    mMapControl = MapControl(applicationContext)
+   //Sets the Google map object and the map view to the MapControl
    mMapControl.setGoogleMap(mMap, view)
+   //Initiates the MapControl
    mMapControl.init { error ->
        if (error == null) {
            runOnUiThread {

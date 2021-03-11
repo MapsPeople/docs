@@ -30,6 +30,8 @@ You can also follow the steps below to start your app from scratch or to enhance
 
 ## Setup MapsIndoors
 
+If you dont already have a project. We recommend using the Google Maps Activity preset from android studio to getting started on developing your MapsIndoors solution.
+
 Add the MapsIndoors SDK as a dependency to your project. The AAR for the MapsIndoors SDK contains both Java classes, SDK resources and AndroidManifest.xml template which gets merged into your application's AndroidManifest.xml during build process. Add or merge in the following to your app's build gradle file (usually called build.gradle).
 
 Make sure that the minimum Android SDK version is 21 (aka. "Android Lollipop", version 5.0) or above:
@@ -63,6 +65,7 @@ dependencies {
     implementation 'com.google.android.gms:play-services-maps:17.0.0'
     implementation 'com.google.code.gson:gson:2.8.6'
     implementation 'com.mapspeople.mapsindoors:mapsindoorssdk:3.8.2'
+    implementation 'com.squareup.okhttp3:okhttp:4.9.0'
 }
 repositories{
     maven {
