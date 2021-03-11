@@ -275,9 +275,6 @@ class SearchItemAdapter extends RecyclerView.Adapter<ViewHolder> {
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         holder.text.setText(mLocations.get(position).getName());
-        holder.itemView.setOnClickListener(view -> {
-            mMapActivity.createRoute(mLocations.get(position));
-        });
         if (mMapActivity != null) {
             LocationDisplayRule locationDisplayRule = mMapActivity.getMapControl().getDisplayRule(mLocations.get(position));
             if (locationDisplayRule != null && locationDisplayRule.getIcon() != null) {

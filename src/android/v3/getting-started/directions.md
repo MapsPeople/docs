@@ -58,6 +58,29 @@ class MapsActivity : FragmentActivity(), OnMapReadyCallback, OnRouteResultListen
 
 implement the `onRouteResult` method and make the method to generate a route. To generate a route you use `MPRoutingProvider` to query a route with 2 points. We already have a hardcoded starting location so all we need is a point from the location we picked from the search list.
 
+So we start by creating an onClickListener on our search `ViewHolder` inside the `SearchItemAdapter` on `onBindViewHolder` that calls a `createRoute` on our activity, to generate a route with the `MPLocation`.
+
+<mi-tabs>
+    <mi-tab label="Java" tab-for="java"></mi-tab>
+    <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
+    <mi-tab-panel id="java">
+        <h3>Java</h3>
+        <pre lang="Java"><code>
+holder.itemView.setOnClickListener(view -> {
+          mMapActivity.createRoute(mLocations.get(position));
+        });
+        </code></pre>
+    </mi-tab-panel>
+    <mi-tab-panel id="kotlin">
+        <h3>Kotlin</h3>
+        <pre lang ="Kotlin"><code>
+holder.itemView.setOnClickListener {
+  mMapActivity.createRoute(mLocations.get(position))
+}
+        </code></pre>
+    </mi-tab-panel>
+</mi-tabs>
+
 When we receive a result on our listener, we render the route through the `MPDirectionsRenderer`.
 We create global variables of the `MPdirectionsRenderer` and `MPRoutingProvider` and create getter to the `MPDirectionsRenderer`to access it from fragments later on.
 
