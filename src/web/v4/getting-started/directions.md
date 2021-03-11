@@ -64,7 +64,8 @@ function getRoute(location) {
   // Route parameters
   const routeParameters = {
     origin: originLocationCoordinate,
-    destination: destinationCoordinate
+    destination: destinationCoordinate,
+    travelMode: 'WALKING'
   };
 
   // Get route from directions service
@@ -99,4 +100,49 @@ locations.forEach(location => {
 <!-- Travel-mode -->
 {% include "src/shared/getting-started/directions/travel-mode.md" %}
 
-* **TODO: How to swap between travel modes**
+To change between travel modes we first need to add a `<select>` element above the search field:
+
+```HTML
+<!-- index.html -->
+
+<body>
+  ...
+  <!-- Travel mode selector -->
+  <label for="travel-modes">Choose a travel mode:</label>
+  <select name="travelModeSelector" id="travel-modes">
+    <option value="walking" selected>Walking</option>
+    <option value="bicycling">Bicycling</option>
+    <option value="driving">Driving</option>
+    <option value="transit">Transit</option>
+  </select>
+  ...
+</body>
+```
+
+<mi-tabs>
+<mi-tab label="Manually" tab-for="manually"></mi-tab>
+<mi-tab label="MI Components" tab-for="components"></mi-tab>
+<mi-tab-panel id="manually">
+
+Then inside the `getRoute` method, replace the hardcoded value for `travelMode` parameter with the value of the select element:
+
+```js
+// main.js
+
+function getRoute(location) {
+  ...
+  // Route parameters
+  const routeParameters = {
+    origin: originLocationCoordinate,
+    destination: destinationCoordinate,
+    travelMode: document.getElementById('travel-mode').value.toUpperCase()
+  };
+  ...
+}
+```
+
+</mi-tab-panel>
+<mi-tab-panel id="components">
+
+</mi-tab-panel>
+</mi-tabs>
