@@ -94,6 +94,40 @@ locations.forEach(location => {
 </mi-tab-panel>
 <mi-tab-panel id="components">
 
+### Get reference to directions instances
+
+First, we need to add two new `let` statements all the way at the top right after the `miMapElement` constant:
+
+```js
+// main.js
+
+let miDirectionsServiceInstance;
+let miDirectionsRendererInstance;
+```
+
+Then inside the `mapsIndoorsReady` event get the _Directions Service_ and _Directions Render_ instances:
+
+```js
+miMapElement.addEventListener('mapsIndoorsReady', () => {
+  ...
+  miMapElement.getDirectionsServiceInstance()
+    .then((directionsServiceInstance) => miDirectionsServiceInstance = directionsServiceInstance);
+
+  miMapElement.getDirectionsRendererInstance()
+    .then((directionsRendererInstance) => miDirectionsRendererInstance = directionsRendererInstance);
+})
+```
+
+Now our example app is ready to provide Directions. Next up is how to give it an _Origin_ and _Destination_ and draw the route between.
+
+### Draw a route on the map
+
+To display a route on the map, we use the _coordinates_ of an _Origin_ and _Destination_ and draw a line between them. For this, we use MapsIndoors' `directionsRender`.
+
+The _Destination_ coordinate is retrieved dynamically, using the coordinate of the selected Location in the search results list. In this tutorial, the _Origin_ is a hardcoded coordinate.
+
+In the following example, this is what happens:
+
 </mi-tab-panel>
 </mi-tabs>
 
@@ -124,7 +158,7 @@ To change between travel modes we first need to add a `<select>` element above t
 <mi-tab label="MI Components" tab-for="components"></mi-tab>
 <mi-tab-panel id="manually">
 
-Then inside the `getRoute` method, replace the hardcoded value for `travelMode` parameter with the value of the select element:
+Then, we need to replace the hardcoded value for `travelMode` parameter inside the `getRoute` method with the value of the select element:
 
 ```js
 // main.js
