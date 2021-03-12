@@ -1,7 +1,7 @@
 ---
 title: Working with Events
 eleventyNavigation:
-  parent: ios-v3-guides-directions
+  parent: ios-v3-guides-mapsindoors
   key: Working with Events
   order: 450
 ---

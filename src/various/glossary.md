@@ -150,11 +150,11 @@ The main difference between Directions and Routes are the scope of what is inclu
 
 ### Route Leg
 
-A Route may consist of multiple Route Legs, each of which are Routes themselves. All Routes give instructions for travelling from an Origin to a Destination, so putting multiple Route Legs together, you get a Route that has Via Points.
+{% include "src/shared/directions/route-leg.md" %}
 
-### Direction Step
+### Direction Step / Route Step
 
-A Direction Step is an instruction for a required action or context change when travelling a Route. Examples include “Make a right turn”, “Continue straight ahead”, “Take the elevator to Floor 4” and the like.
+{% include "src/shared/directions/route-step.md" %}
 
 ### Turn-by-turn
 
@@ -162,7 +162,7 @@ A Direction Step is an instruction for a required action or context change when 
 
 ### Entry point / Entryway
 
-An Entry Point is the point where MapsIndoors takes over Directions from Google Maps. MapsIndoors Directions are always Walking instructions.
+{% include "src/shared/directions/entry-points.md" %}
 
 ### Bus/tram/train stop
 
