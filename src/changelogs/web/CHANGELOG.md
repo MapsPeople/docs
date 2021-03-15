@@ -13,8 +13,8 @@ Changelog for MapsIndoors SDK for JavaScript. This document structure is based o
 
 ### Fixed
 
-- MICommon updated to 3.0.3 - Fixing an issue where the location service in some circumstances wouldn't return locations.
-- Fixed bug where live data was not shown
+- Fixing an issue where the Location Service in some circumstances wouldn't return Locations
+- Fixed bug where Live Data was not shown
 
 ## [4.6.0] - 2021-03-01
 
