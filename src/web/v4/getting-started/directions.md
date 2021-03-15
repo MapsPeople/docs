@@ -185,7 +185,7 @@ To change between travel modes we first need to add a `<select>` element with al
 
 To use the chosen transportation when getting a route, we need to replace the hardcoded value for `travelMode` parameter inside the `getRoute` method with the `<select>` elements value:
 
-```js
+```js/8
 // main.js
 
 function getRoute(location) {
