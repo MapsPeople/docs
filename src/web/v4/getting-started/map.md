@@ -66,8 +66,6 @@ const mapsIndoorsInstance = new mapsindoors.MapsIndoors({
 
 What happens in this snippet is we create a `mapViewInstance` that pulls up a `GoogleMapsView` with some `mapViewOptions`. The options define which element in the html-file to display the map in (in this case `<div id="map">`), where the map should center, what zoom level to display, and what the max zoom level is.
 
-You should now see a Google Maps map with MapsIndoors data loaded on top.
-
 <!-- Add screenshot -->
 
 </mi-tab-panel>
@@ -121,12 +119,12 @@ miMapElement.addEventListener('mapsIndoorsReady', () => {
 })
 ```
 
-You should now see a Google Maps map with MapsIndoors data loaded on top.
-
 > For more information on how to configure the `<mi-map-googlemaps>` component, see [components.mapsindoors.com/map-googlemaps](https://components.mapsindoors.com/map-googlemaps/).
 
 </mi-tab-panel>
 </mi-tabs>
+
+You should now see a Google Maps map with MapsIndoors data loaded on top.
 
 ## Show a Floor Selector
 
@@ -149,10 +147,6 @@ new mapsindoors.FloorSelector(floorSelectorElement, mapsIndoorsInstance);
 googleMapsInstance.controls[google.maps.ControlPosition.RIGHT_TOP].push(floorSelectorElement);
 ```
 
-You should now be able to switch between the first and second Floors of The White House.
-
-<!-- Add screenshot -->
-
 </mi-tab-panel>
 <mi-tab-panel id="components">
 
@@ -167,10 +161,10 @@ Using the `<mi-map-googlemaps>` element, you can add the [floorSelectorControlPo
 </mi-map-googlemaps>
 ```
 
-You should now be able to switch between the first and second Floors of The White House.
-
-<!-- Add screenshot -->
-
 > See all available control positions in the [Google Maps Documentation](https://developers.google.com/maps/documentation/javascript/controls#ControlPositioning).
 
 </mi-tab-panel>
+
+You should now be able to switch between the first and second Floors of The White House.
+
+<!-- Add screenshot -->
