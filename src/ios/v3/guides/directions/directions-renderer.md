@@ -39,7 +39,6 @@ renderer.routeStepIndex = 1
 
 The length of the `legs` and `steps` arrays determines the possible values of `routeLegIndex` and `routeStepIndex` (`0 ..< length`).
 
-
 Assigning a `MPDirectionsRenderer` delegate will make it possible to know which floor the currently rendered part of the route belongs to:
 
 ```swift
