@@ -11,9 +11,9 @@ As a key element in the MapsIndoors platform, we offer API's for effeciently cal
 
 ![Venue to Venue Directions through Entry Points](/assets/directions/directions-with-entry-points.svg)
 
-In order to provide a route between Venues, MapsIndoors integrate with external and global map providers. Our default routing provider is Google Maps.
+In order to provide a route between Venues, MapsIndoors integrate with external and global map providers. Our preferred provider is Google Maps.
 
-The central components that utilize a Directions experience is the [Directions Service](#directions-service) and the [Directions Renderer](#directions-renderer). But before we get to the fun part, let's examine some key concepts first.
+The central components that utilize a Directions experience is the [Directions Service](directions-service) and the [Directions Renderer](directions-renderer). But before we get to the fun part, let's examine some key concepts first.
 
 ## Entry Points
 
