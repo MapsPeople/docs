@@ -14,7 +14,8 @@ eleventyNavigation:
 <!-- Search -->
 {% include "src/shared/getting-started/search/search.md" %}
 
-Start by creating a new activity or fragment to facilitate searches on your application. Here we will be using a fragment to search and show search results on and using a bottom sheet to show the results. We also create a search input field on our main map activity for the user to put in search text.
+Start by creating a new activity or fragment to facilitate searches on your application. Here we will be using a fragment to search and show search results on, and using a bottom sheet to display the results. We also create a search input field on our main map activity for the user to input the text they want to search for.
+
 Both UI component implementations can be found in the getting started app sample.
 
 To perform a search you will need to have initiated `MapsIndoors`. This was shown in the previous section of the getting started tutorial how you do this.
@@ -58,7 +59,8 @@ fun search(searchQuery: String) {
     </mi-tab-panel>
 </mi-tabs>
 
-To start by being able to search. We need a text input field where a user can write what he wants to search for.
+To be able to search we need a text input field where a user can write what they want to search for.
+
 We'll start by adding a search bar on the top of our MapsActivity. So we add it to the root layout.
 
 ```xml
@@ -151,8 +153,9 @@ class SearchFragment : Fragment() {
     </mi-tab-panel>
 </mi-tabs>
 
-To Accompany this we'll create a fragment and a BottomSheet to handle the searchFragment.
-Start by creating a Fragment with a view only consisting of a Recycler View.
+To accompany this we'll create a fragment and a `BottomSheet` to handle the `searchFragment`.
+
+Start by creating a fragment with a view-only consisting of a `RecyclerView`.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -229,7 +232,7 @@ class SearchFragment : Fragment() {
     </mi-tab-panel>
 </mi-tabs>
 
-Create an RecyclerView adapter and the accompanying Viewholder
+Create a `RecyclerView` adapter and the accompanying `Viewholder`:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -353,7 +356,7 @@ internal class ViewHolder(inflater: LayoutInflater, parent: ViewGroup?) :
     </mi-tab-panel>
 </mi-tabs>
 
-Implement a BottomSheet to the bottom of your MapsActivity Layout. The root of the view should be a CoordinatorLayout. You can find the full xml layout on **Link to the github sample with the full view**
+Implement a `BottomSheet` to the bottom of your `MapsActivity` layout. The root of the view should be a `CoordinatorLayout`. You can find the full xml layout on **Link to the github sample with the full view**
 
 ```xml
     <FrameLayout
@@ -450,4 +453,4 @@ mMapControl.displaySearchResults(locationList)
     </mi-tab-panel>
 </mi-tabs>
 
-The accompanying ui and implementation of this search experience can be found in the getting started app sample. Found on github: TODO, CREATE GITHUB SAMPLE PAGE.
+The accompanying UI and implementation of this search experience can be found in the getting started app sample. Found on github: TODO, CREATE GITHUB SAMPLE PAGE.

@@ -40,7 +40,7 @@ You will receive a unique API key to use when access has been granted. If you ar
 
 ### Initialize MapsIndoors
 
-Place the following initialization code in the `onCreate` method in the activity that should display the Google map also assign the mapFragment view to a variable as we will use this later to initialize `MapControl`:
+Place the following initialization code in the `onCreate` method in the activity that should display the Google map. You should also assign the `mapFragment` view to a variable as we will use this later to initialize `MapControl`:
 
 **Refresh kotlin example to allign on a venue**
 <mi-tabs>
@@ -63,7 +63,7 @@ MapsIndoors.setGoogleAPIKey(“YOUR_GOOGLE_API_KEY”)
     </mi-tab-panel>
 </mi-tabs>
 
-In your `onMapReady` callback function, use the `MapControl` class to set up a Google map with MapsIndoors venues, buildings & locations:
+In your `onMapReady` callback function, use the `MapControl` class to set up a Google map with MapsIndoors Venues, Buildings and Locations:
 
 <mi-tabs>
     <mi-tab label="Java" tab-for="java"></mi-tab>

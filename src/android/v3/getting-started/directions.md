@@ -14,10 +14,10 @@ eleventyNavigation:
 <!-- Directions -->
 {% include "src/shared/getting-started/directions/directions.md" %}
 
-After having created our list of search results we have a good starting point to creating directions between two locations.
-Since our search only supports a single search we will hardcode a location coordinate into our app and use that as the basis for our origin, we'll then create a route and navigate to a view of the the navigation details and show the route on the map from our origin point to the destination.
+After having created our list of search results, we have a good starting point for creating directions between two Locations.
+Since our search only supports a single search, we will hardcode a Location's coordinate into our app, and use that as the basis for our Origin. Then we'll create a route, navigate to a view of the navigation details, and show a route on the map from the Origin to the Destination.
 
-Create a `Point` with the coordinates from the oval office on your MapsActivity.
+Create a `Point` with the coordinates from the Oval Office Location on your MapsActivity.
 
 <mi-tabs>
     <mi-tab label="Java" tab-for="java"></mi-tab>
@@ -36,7 +36,7 @@ private val mUserLocation: Point = Point(38.897389429704695, -77.03740973527613,
     </mi-tab-panel>
 </mi-tabs>
 
-Now we will make a method that can generate a route for us with just a location (picked through the search list).
+Now we will make a method that can generate a route for us with just a Location (picked from the search list).
 Start by implementing `OnRouteResultListener` to your MapsActivity.
 
 <mi-tabs>
@@ -58,7 +58,7 @@ class MapsActivity : FragmentActivity(), OnMapReadyCallback, OnRouteResultListen
 
 implement the `onRouteResult` method and make the method to generate a route. To generate a route you use `MPRoutingProvider` to query a route with 2 points. We already have a hardcoded starting location so all we need is a point from the location we picked from the search list.
 
-So we start by creating an onClickListener on our search `ViewHolder` inside the `SearchItemAdapter` on `onBindViewHolder` that calls a `createRoute` on our activity, to generate a route with the `MPLocation`.
+To generate a route with the `MPLocation`, we start by creating an `onClickListener` on our search `ViewHolder` inside the `SearchItemAdapter` on `onBindViewHolder`. This calls a `createRoute` on our activity and the route is generated.
 
 <mi-tabs>
     <mi-tab label="Java" tab-for="java"></mi-tab>
@@ -82,7 +82,8 @@ holder.itemView.setOnClickListener {
 </mi-tabs>
 
 When we receive a result on our listener, we render the route through the `MPDirectionsRenderer`.
-We create global variables of the `MPdirectionsRenderer` and `MPRoutingProvider` and create getter to the `MPDirectionsRenderer`to access it from fragments later on.
+
+We create global variables of the `MPdirectionsRenderer` and `MPRoutingProvider` and create a getter to the `MPDirectionsRenderer` to access it from _fragments_ later on.
 
 <mi-tabs>
     <mi-tab label="Java" tab-for="java"></mi-tab>
@@ -145,8 +146,9 @@ class MapsActivity : FragmentActivity(), OnMapReadyCallback, OnRouteResultListen
     </mi-tab-panel>
 </mi-tabs>
 
-Now we will create a fragment we can put into our BottomSheet to show the steps for each route and the time and distance it takes to travel the route.
-Here we will use a viewpager to allow the user to switch between each step and a close button. To be able to remove the route and the bottomsheet from the activity.
+Now we will create a fragment we can put into our BottomSheet and show the steps for each route, as well as the time and distance it takes to travel the route.
+
+Here we'll use a `viewpager` to allow the user to switch between each step, as well as display a "close" button so we are able to remove the route and the bottom sheet from the activity.
 
 Route fragment view:
 
@@ -223,7 +225,7 @@ RouteLeg fragment for the viewpager view:
 </RelativeLayout>
 ```
 
-Create the Navigation `Fragment` with a `FragmentStateAdapter` for the `ViewPager`
+Create the Navigation `Fragment` with a `FragmentStateAdapter` for the `ViewPager`:
 
 <mi-tabs>
     <mi-tab label="Java" tab-for="java"></mi-tab>
@@ -315,7 +317,7 @@ private val mUserLocation: Point = Point(38.897389429704695, -77.03740973527613,
     </mi-tab-panel>
 </mi-tabs>
 
-Create the `RouteLegFragment` for the `ViewPager`
+Create the `RouteLegFragment` for the `ViewPager`:
 
 <mi-tabs>
     <mi-tab label="Java" tab-for="java"></mi-tab>
@@ -367,7 +369,7 @@ private val mUserLocation: Point = Point(38.897389429704695, -77.03740973527613,
 <!-- Travel-mode -->
 {% include "src/shared/getting-started/directions/travel-mode.md" %}
 
-To swap travel modes you just set the travel mode before making a query for the route.
+To swap Travel Modes you set the Travel Mode before making a query for the route:
 
 <mi-tabs>
     <mi-tab label="Java" tab-for="java"></mi-tab>
