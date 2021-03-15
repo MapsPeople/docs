@@ -51,7 +51,7 @@ const miDirectionsRendererInstance = new mapsindoors.directions.DirectionsRender
 
 ### Get Directions Service and Render instances
 
-First, add two new `let` statements all the way at the top right after the `miMapElement` constant for storing our _Directions Service_ and _Directions Render_ instances:
+First, add two new `let` statements all the way at the top, after the `miMapElement` constant, for storing our _Directions Service_ and _Directions Renderer_ instances:
 
 ```js
 // main.js
