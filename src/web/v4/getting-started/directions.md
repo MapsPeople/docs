@@ -166,7 +166,7 @@ Now you can click on each item in the search results list to get directions from
 
 To change between travel modes we first need to add a `<select>` element with all four transportation options above the search field:
 
-```HTML
+```html
 <!-- index.html -->
 
 <body>
