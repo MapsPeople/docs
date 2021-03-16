@@ -320,31 +320,6 @@ h6 {
     text-transform: uppercase;
 }
 
-// Code highlight styling. .hljs is a highlight.js-specific class.
-
-code {
-    font-size: 0.95rem;
-}
-
-p code {
-    @include padding.vertical(xxx-small);
-    @include padding.horizontal(x-small);
-    @include border.radius(medium);
-    @include background-color.gray(10);
-    @include color.gray(90);
-}
-
-pre code {
-    @include font.family(monospace);
-    @include border.radius(medium);
-    &.hljs {
-        @include padding.all(medium);
-        @include border.gray(40);
-        @include border.style(solid);
-        @include border.width(medium);
-    }
-}
-
 // header.njk
 
 header {
