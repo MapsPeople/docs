@@ -434,7 +434,7 @@ fun search(searchQuery: String) {
 <!-- Filter map -->
 {% include "src/shared/getting-started/search/filter-map.md" %}
 
-When getting a search result, you might want to only show those search results on the map. You can do this through calling `displaySearchResults(List<MPLocation> locations)` on `MapControl`. This method has different parameters to make it easier for you as a developer to fit your exact need in terms of animation and more. This can be read in the [JavaDoc of `MapControl`](https://instert-link-here.tim). 
+When getting a search result, you might want to only show those search results on the map. You can do this through calling `displaySearchResults(List<MPLocation> locations)` on `MapControl`. This method has different parameters to make it easier for you as a developer to fit your exact need in terms of animation and more. This can be read in the [JavaDoc of `MapControl`](https://app.mapsindoors.com/mapsindoors/reference/android/v3/com/mapsindoors/mapssdk/MapControl.html).
 
 The standard implementation animates the camera to fit all Locations on the map and show the info window of a Location, if it's a list of only one Location. 
 
