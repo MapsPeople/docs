@@ -372,7 +372,7 @@ Implement a `BottomSheet` to the bottom of your `MapsActivity` Layout. The root 
     </FrameLayout>
 ```
 
-Now add the search fragment to the bottomSheet in the search query method on your MapsActivity.
+Now add the search fragment to the `BottomSheet` in the search query method on your `MapsActivity`.
 
 <mi-tabs>
     <mi-tab label="Java" tab-for="java"></mi-tab>
