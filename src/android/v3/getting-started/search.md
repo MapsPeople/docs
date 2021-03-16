@@ -434,7 +434,11 @@ fun search(searchQuery: String) {
 <!-- Filter map -->
 {% include "src/shared/getting-started/search/filter-map.md" %}
 
-When getting a search result you might want to only show thoose search results on the map. You can do this through calling `displaySearchResults(List<MPLocation> locations)` on `MapControl`. This method has different parameters to make it easier for you as a developer to fit your exact need in terms of animation and more. This can be read in the JavaDoc of `MapControl`. The standard implementation animates the camera to fit all locations on the map and shows the info window of a location if its a list of only 1 Location. When you are done showing the different search results you can call `clearMap()` on `MapControl`.
+When getting a search result, you might want to only show those search results on the map. You can do this through calling `displaySearchResults(List<MPLocation> locations)` on `MapControl`. This method has different parameters to make it easier for you as a developer to fit your exact need in terms of animation and more. This can be read in the [JavaDoc of `MapControl`](https://instert-link-here.tim). 
+
+The standard implementation animates the camera to fit all Locations on the map and show the info window of a Location, if it's a list of only one Location. 
+
+When you are done showing the search results you can call `clearMap()` on `MapControl`.
 
 <mi-tabs>
     <mi-tab label="Java" tab-for="java"></mi-tab>
