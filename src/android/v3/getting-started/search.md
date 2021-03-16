@@ -16,11 +16,11 @@ eleventyNavigation:
 
 Start by creating a new activity or fragment to facilitate searches on your application. Here we will be using a fragment to search and show search results on, and using a bottom sheet to display the results. We also create a search input field on our main map activity for the user to input the text they want to search for.
 
-Both UI component implementations can be found in the getting started app sample.
+Both UI component implementations can be found in the getting started app sample.[Getting Started App sample](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/tree/master/app/src/main/java/com/example/mapsindoorsgettingstarted)
 
-To perform a search you will need to have initiated `MapsIndoors`. This was shown in the previous section of the getting started tutorial how you do this.
+To perform a search you will need to have initiated `MapsIndoors`. This was shown in the previous section of the getting started tutorial how you do this. [guides]({{ site.url }}/android/v3/getting-started/map)
 
-For advanced usage of the search functionality read the Search guide and tutorials connected to it.
+For advanced usage of the search functionality read the Search guide and tutorials connected to it. [guides]({{ site.url }}/android/v3/guides/search)
 
 <!-- Results list -->
 {% include "src/shared/getting-started/search/results-list.md" %}
@@ -356,7 +356,7 @@ internal class ViewHolder(inflater: LayoutInflater, parent: ViewGroup?) :
     </mi-tab-panel>
 </mi-tabs>
 
-Implement a `BottomSheet` to the bottom of your `MapsActivity` layout. The root of the view should be a `CoordinatorLayout`. You can find the full xml layout on **Link to the github sample with the full view**
+Implement a `BottomSheet` to the bottom of your `MapsActivity` Layout. The root of the view should be a `CoordinatorLayout`. You can find the full xml layout on [MapsActivity Layout](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/res/layout/activity_maps.xml)
 
 ```xml
     <FrameLayout
@@ -453,4 +453,4 @@ mMapControl.displaySearchResults(locationList)
     </mi-tab-panel>
 </mi-tabs>
 
-The accompanying UI and implementation of this search experience can be found in the getting started app sample. Found on github: TODO, CREATE GITHUB SAMPLE PAGE.
+The accompanying UI and implementation of this search experience can be found in the getting started app sample. [Getting Started App sample](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/tree/master/app/src/main/java/com/example/mapsindoorsgettingstarted).

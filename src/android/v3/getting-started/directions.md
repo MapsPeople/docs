@@ -56,7 +56,7 @@ class MapsActivity : FragmentActivity(), OnMapReadyCallback, OnRouteResultListen
     </mi-tab-panel>
 </mi-tabs>
 
-implement the `onRouteResult` method and make the method to generate a route. To generate a route you use `MPRoutingProvider` to query a route with 2 points. We already have a hardcoded starting location so all we need is a point from the location we picked from the search list.
+implement the `onRouteResult` method and create a method called `createRoute(MPLocation mpLocation)` To generate a route you can use with `MPRoutingProvider` to query a route with our hardcoded `mUserLocation` and a point from the MPLocation we call the method with later on.
 
 To generate a route with the `MPLocation`, we start by creating an `onClickListener` on our search `ViewHolder` inside the `SearchItemAdapter` on `onBindViewHolder`. This calls a `createRoute` on our activity and the route is generated.
 

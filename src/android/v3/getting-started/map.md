@@ -18,25 +18,20 @@ eleventyNavigation:
 
 Learn how to setup Google Maps on Android in this [Getting Started Guide](https://developers.google.com/maps/documentation/android-api/start).
 
-Some Web Service APIs are needed also for the MapsIndoors SDK, so make sure to enable them when getting your key:
+Firstly you need to [setup at a new project in the Google Cloud Console](https://developers.google.com/maps/gmp-get-started). When the project is created the following following APIs and the specific SDK you plan to use must be enabled from the [Maps API Library Page](https://console.cloud.google.com/apis/library?filter=category:maps).
 
-* [Google Maps Distance Matrix API](https://developers.google.com/maps/documentation/distance-matrix/start)
-* [Google Maps Directions API](https://developers.google.com/maps/documentation/directions/start)
-* [Google Places API Web Service](https://developers.google.com/places/web-service/intro)
+* Google Maps Distance Matrix API
+* Google Maps Directions API
+* Google Places API Web Service
+* Maps SDK for Android/iOS or Maps JavaScript API
 
-When getting your Google Maps API keys, remember to enable relevant Maps products (i.e. SDK for Android) in your Google project and include these on your API key if you apply restrictions.
-
-If you are using a newer version of android studio, it is possible to create a new project with the google maps infrastructure already setup for you. This is an easy way to get started.
+When the 3 APIs and SDK is enabled you can retrieve the API key from the [Credentials page](https://console.cloud.google.com/project/_/apiui/credential). On the Credentials page, click Create credentials > API key.
 
 ## Setup a Google Map with MapsIndoors
 
 ### Set the MapsIndoors API Key
 
-In order to include MapsIndoors in your app, you need an API key. If you are not a customer you can use this API key `79f8e7daff76489dace4f9f9` to follow the guide.
-
-In order to include MapsIndoors in your own app with your own content, you need to [contact MapsPeople](https://resources.mapspeople.com/contact-us) to get your building drawings processed and hosted by us.
-
-You will receive a unique API key to use when access has been granted. If you are exploring how this service can become part of your own product, you can read about [partnering with MapsPeople here](https://www.mapspeople.com/become-a-partner).
+If you are not a customer you can use this demo MapsIndoors API key `79f8e7daff76489dace4f9f9` to follow this guide or you can [contact MapsPeople](https://resources.mapspeople.com/contact-us) to get your building drawings processed and hosted by us to receive a unique API key.
 
 ### Initialize MapsIndoors
 
