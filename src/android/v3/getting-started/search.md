@@ -91,7 +91,7 @@ We'll start by adding a search bar on the top of our MapsActivity. So we add it 
 </RelativeLayout>
 ```
 
-We then add an `EditorActionListener` and a `OnClickListener` to our text input field and our search button in our `onCreate`. That calls our search method with the text in the search input field.
+We then add an `EditorActionListener` and a `OnClickListener` to our text input field and our search button in our `onCreate`. That calls our search method with the text in the search input field. Find the full `onCreate` example here: [MapsActivity.java](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L55-L121)
 
 <mi-tabs>
     <mi-tab label="Java" tab-for="java"></mi-tab>
@@ -99,16 +99,12 @@ We then add an `EditorActionListener` and a `OnClickListener` to our text input 
     <mi-tab-panel id="java">
         <h3>Java</h3>
         <pre lang="Java"><code>
-mSearchBtn = findViewById(R.id.search_btn);
-mSearchTxtField = findViewById(R.id.search_edit_txt);
-InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+...
 //ClickListener to start a search, when the user clicks the search button
 mSearchBtn.setOnClickListener(view -> {
     if (mSearchTxtField.getText().length() != 0) {
         //There is text inside the search field. So lets do the search.
         search(mSearchTxtField.getText().toString());
-        //Making sure keyboard is closed.
-        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
 });
 //Listener for when the user searches through the keyboard
@@ -118,37 +114,17 @@ mSearchTxtField.setOnEditorActionListener((textView, i, keyEvent) -> {
             //There is text inside the search field. So lets do the search.
             search(textView.getText().toString());
         }
-        //Making sure keyboard is closed.
-        imm.hideSoftInputFromWindow(textView.getWindowToken(), 0);
         return true;
     }
     return false;
 });
+...
         </code></pre>
     </mi-tab-panel>
     <mi-tab-panel id="kotlin">
         <h3>Kotlin</h3>
         <pre lang ="Kotlin"><code>
-class SearchFragment : Fragment() {
-    private lateinit var mLocations: List<MPLocation>
-    private lateinit var mMapActivity: MapsActivity
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_search_dialog_list_dialog, container, false)
-    }
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val recyclerView = view as RecyclerView
-        recyclerView.layoutManager = LinearLayoutManager(context)
-        recyclerView.adapter = SearchItemAdapter(mLocations, mMapActivity)
-    }
-    companion object {
-        fun newInstance(locations: List<MPLocation>, mapsActivity: MapsActivity): SearchFragment {
-            val fragment = SearchFragment()
-            fragment.mLocations = locations
-            fragment.mMapActivity = mapsActivity
-            return fragment
-        }
-    }
-}
+//TODO
         </code></pre>
     </mi-tab-panel>
 </mi-tabs>
@@ -186,22 +162,14 @@ public class SearchFragment extends Fragment {
         fragment.mMapActivity = mapsActivity;
         return fragment;
     }
-    @Nullable
-    @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
-                             @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_search_dialog_list_dialog, container, false);
-    }
+    ...
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         final RecyclerView recyclerView = (RecyclerView) view;
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(new SearchItemAdapter(mLocations, mMapActivity));
     }
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
+    ...
 }
         </code></pre>
     </mi-tab-panel>
@@ -231,6 +199,8 @@ class SearchFragment : Fragment() {
         </code></pre>
     </mi-tab-panel>
 </mi-tabs>
+
+See the full example of SearchFragment here: [SearchFragment.java](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/SearchFragment.java)
 
 Create a `RecyclerView` adapter and the accompanying `Viewholder`:
 
@@ -266,15 +236,7 @@ Create a `RecyclerView` adapter and the accompanying `Viewholder`:
 class SearchItemAdapter extends RecyclerView.Adapter<ViewHolder> {
     private final List<MPLocation> mLocations;
     private final MapsActivity mMapActivity;
-    SearchItemAdapter(List<MPLocation> locationList, MapsActivity activity) {
-        mLocations = locationList;
-        mMapActivity = activity;
-    }
-    @NonNull
-    @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new ViewHolder(LayoutInflater.from(parent.getContext()), parent);
-    }
+    ...
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         holder.text.setText(mLocations.get(position).getName());
@@ -295,19 +257,10 @@ class SearchItemAdapter extends RecyclerView.Adapter<ViewHolder> {
             }
         }
     }
-    @Override
-    public int getItemCount() {
-        return mLocations.size();
-    }
+    ...
 }
 class ViewHolder extends RecyclerView.ViewHolder {
-    final TextView text;
-    final ImageView imageView;
-    ViewHolder(LayoutInflater inflater, ViewGroup parent) {
-        super(inflater.inflate(R.layout.fragment_search__list_item, parent, false));
-        text = itemView.findViewById(R.id.text);
-        imageView = itemView.findViewById(R.id.location_image);
-    }
+    ...
 }
         </code></pre>
     </mi-tab-panel>
@@ -356,6 +309,8 @@ internal class ViewHolder(inflater: LayoutInflater, parent: ViewGroup?) :
     </mi-tab-panel>
 </mi-tabs>
 
+See the full example of `SearchItemAdapter` and accompanying `ViewHolder` here: [SearchItemAdapter.java](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/SearchItemAdapter.java#L16-L75)
+
 Implement a `BottomSheet` to the bottom of your `MapsActivity` Layout. The root of the view should be a `CoordinatorLayout`. You can find the full xml layout on [MapsActivity Layout](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/res/layout/activity_maps.xml)
 
 ```xml
@@ -393,19 +348,7 @@ void search(String searchQuery) {
             mSearchFragment = SearchFragment.newInstance(list, this);
             //Make a transaction to the bottomsheet
             getSupportFragmentManager().beginTransaction().replace(R.id.standardBottomSheet, mSearchFragment).commit();
-            //Set the map padding to the height of the bottom sheets peek height. To not obfuscate the google logo.
-            mMapControl.setMapPadding(0, 0,0,btmnSheetBehavior.getPeekHeight());
-            if (btmnSheetBehavior.getState() == BottomSheetBehavior.STATE_HIDDEN) {
-                btmnSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
-            }
-            //Assign search fragment to current fragment for ui logic
-            currentFragment = mSearchFragment;
-            //Clear the search text, since we got a result
-            mSearchTxtField.getText().clear();
-            //Calling displaySearch results on the ui thread as camera movement is involved
-            runOnUiThread(()-> {
-                mMapControl.displaySearchResults(list, true);
-            });
+            ...
         }
     }
 }
@@ -430,6 +373,8 @@ fun search(searchQuery: String) {
         </code></pre>
     </mi-tab-panel>
 </mi-tabs>
+
+See the full example of the search method here: [MapsActivity.java](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L185-L234)
 
 <!-- Filter map -->
 {% include "src/shared/getting-started/search/filter-map.md" %}

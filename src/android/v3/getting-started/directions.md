@@ -98,18 +98,9 @@ void createRoute(MPLocation mpLocation) {
     }
     mpRoutingProvider.query(mUserLocation, mpLocation.getPoint());
 }
-/**
-  * The result callback from the route query. Starts the rendering of the route and opens up a new instance of the navigation fragment on the bottom sheet.
-  * @param route the route model used to render a navigation view.
-  * @param miError an MIError if anything goes wrong when generating a route
-  */
 @Override
 public void onRouteResult(@Nullable Route route, @Nullable MIError miError) {
-    //Return if either error is not null or the route is null
-    if (miError != null || route == null) {
-        //TODO: Tell the user about the route not being able to be created etc.
-        return;
-    }
+    ...
     //Create the MPDirectionsRenderer if it has not been instantiated.
     if (mpDirectionsRenderer == null) {
         mpDirectionsRenderer = new MPDirectionsRenderer(this, mMap, mMapControl, i -> {
@@ -123,17 +114,12 @@ public void onRouteResult(@Nullable Route route, @Nullable MIError miError) {
     //Create a new instance of the navigation fragment
     mNavigationFragment = NavigationFragment.newInstance(route, this);
     //Start a transaction and assign it to the BottomSheet
-    getSupportFragmentManager().beginTransaction().replace(R.id.standardBottomSheet, mNavigationFragment).commit();
-    if (btmnSheetBehavior.getState() == BottomSheetBehavior.STATE_HIDDEN) {
-        btmnSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
-    }
-    //Assign the navigation fragment to current fragment. To handle ui logic
-    currentFragment = mNavigationFragment;
+    ...
     //As camera movement is involved run this on the UIThread
     runOnUiThread(()-> {
         //Starts drawing and adjusting the map according to the route
         mpDirectionsRenderer.initMap(true);
-        mMapControl.setMapPadding(0, 0,0,btmnSheetBehavior.getPeekHeight());
+        ...
     });
 }
         </code></pre>
@@ -145,6 +131,8 @@ class MapsActivity : FragmentActivity(), OnMapReadyCallback, OnRouteResultListen
         </code></pre>
     </mi-tab-panel>
 </mi-tabs>
+
+See the full implementation of theese methods here: [MapsActivity.java](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L240-L288)
 
 Now we will create a fragment we can put into our BottomSheet and show the steps for each route, as well as the time and distance it takes to travel the route.
 
@@ -236,22 +224,7 @@ Create the Navigation `Fragment` with a `FragmentStateAdapter` for the `ViewPage
 public class NavigationFragment extends Fragment {
     private Route mRoute;
     private MapsActivity mMapsActivity;
-    public static NavigationFragment newInstance(Route route, MapsActivity mapsActivity) {
-        final NavigationFragment fragment = new NavigationFragment();
-        fragment.mRoute = route;
-        fragment.mMapsActivity = mapsActivity;
-        return fragment;
-    }
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
-    @Nullable
-    @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
-                             @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_navigation_list_dialog, container, false);
-    }
+    ...
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         RouteCollectionAdapter routeCollectionAdapter = new RouteCollectionAdapter(this);
@@ -267,12 +240,7 @@ public class NavigationFragment extends Fragment {
                 mMapsActivity.getMapControl().selectFloor(mMapsActivity.getMpDirectionsRenderer().getCurrentFloor());
             }
         });
-        //Assigning views
-        TextView distanceTxtView = view.findViewById(R.id.distanceTxt);
-        TextView infoTxtView = view.findViewById(R.id.infoTxt);
-        ImageButton closeBtn = view.findViewById(R.id.closeBtn);
-        ImageButton nextBtn = view.findViewById(R.id.arrow_next);
-        ImageButton backBtn = view.findViewById(R.id.arrow_back);
+        ...
         //Button for closing the bottom sheet. Clears the route through directionsRenderer as well, and changes map padding.
         closeBtn.setOnClickListener(v -> {
             mMapsActivity.getSupportFragmentManager().beginTransaction().remove(this).commit();
@@ -293,18 +261,7 @@ public class NavigationFragment extends Fragment {
         infoTxtView.setText("Time for route: " + TimeUnit.MINUTES.convert(mRoute.getDuration(), TimeUnit.SECONDS) + " minutes");
     }
     public class RouteCollectionAdapter extends FragmentStateAdapter {
-        public RouteCollectionAdapter(Fragment fragment) {
-            super(fragment);
-        }
-        @NonNull
-        @Override
-        public Fragment createFragment(int position) {
-            return RouteLegFragment.newInstance(mRoute.getLegs().get(position));
-        }
-        @Override
-        public int getItemCount() {
-            return mRoute.getLegs().size();
-        }
+        ...
     }
 }
         </code></pre>
@@ -317,6 +274,8 @@ private val mUserLocation: Point = Point(38.897389429704695, -77.03740973527613,
     </mi-tab-panel>
 </mi-tabs>
 
+See the full implementation of `NavigationFragment` and the accompanying adapter here: [NavigationFragment.java](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/NavigationFragment.java#L31-L117)
+
 Create the `RouteLegFragment` for the `ViewPager`:
 
 <mi-tabs>
@@ -327,21 +286,7 @@ Create the `RouteLegFragment` for the `ViewPager`:
         <pre lang="Java"><code>
 public class RouteLegFragment extends Fragment {
     private RouteLeg mRouteLeg;
-    public static RouteLegFragment newInstance(RouteLeg routeLeg) {
-        RouteLegFragment fragment = new RouteLegFragment();
-        fragment.mRouteLeg = routeLeg;
-        return fragment;
-    }
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_route_leg, container, false);
-    }
+    ...
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -365,6 +310,8 @@ private val mUserLocation: Point = Point(38.897389429704695, -77.03740973527613,
         </code></pre>
     </mi-tab-panel>
 </mi-tabs>
+
+See the full implementation of the fragment here: [RouteLegFragment.java](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/RouteLegFragment.java#L23-L57)
 
 <!-- Travel-mode -->
 {% include "src/shared/getting-started/directions/travel-mode.md" %}
