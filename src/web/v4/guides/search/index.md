@@ -13,7 +13,17 @@ See the full list of parameters in the [reference guide](https://app.mapsindoors
 
 ## Example of creating a search query
 
-**EXAMPLE HERE
+```js
+const searchParameters = {
+  q: 'Office',
+  near: { lat: 38.897579747054046, lng: -77.03658652944773 }, // // Blue Room, The White House
+  take: 1
+}
+
+mapsindoors.services.LocationsService.getLocations(searchParameters).then(locations => {
+  console.log(locations);
+});
+```
 
 {% include "src/shared/guides/search/search-ranking.md" %}
 
@@ -23,4 +33,14 @@ See the full list of parameters in the [reference guide](https://app.mapsindoors
 
 ## Example of filtering the map to display searched locations on the map
 
-**EXAMPLE HERE
+```js/7
+const searchParameters = {
+  q: 'Office',
+  near: { lat: 38.897579747054046, lng: -77.03658652944773 }, // // Blue Room, The White House
+  take: 1
+}
+
+mapsindoors.services.LocationsService.getLocations(searchParameters).then(locations => {
+  mapsIndoorsInstance.filter(locations.map(location => location.id), false);
+});
+```
