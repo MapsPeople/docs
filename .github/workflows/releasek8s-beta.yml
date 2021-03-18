@@ -1,0 +1,25 @@
+name: K8S Release beta
+
+on:
+    push:
+        branches:
+            - beta
+        paths-ignore:
+            - "package.json"
+
+jobs:
+    build-image:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v2
+
+            - name: Build and push Docker images
+              uses: docker/build-push-action@v1.1.0
+              with:
+                  username: _json_key
+                  password: ${{ secrets.DOCKER_PASSWORD }}
+                  registry: eu.gcr.io
+                  repository: mapsindoors-services/docs-beta
+                  tag_with_sha: true

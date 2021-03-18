@@ -9,6 +9,24 @@ eleventyNavigation:
 
 Changelog for MapsIndoors SDK for JavaScript. This document structure is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and the project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [4.6.0] - 2021-03-01
+
+### Added
+
+- Areas - It's now possible to render Areas on the map using Display Rules.
+
+## [4.5.2] - 2021-02-23
+
+### Fixed
+
+- MICommon updated to 2.1.0 with improved distance/text ranking correlation.
+
+## [4.5.1] - 2021-02-16
+
+### Fixed
+
+- A bug in the directions renderer where directions going from a POI not on the ground floor to an external address would not render correctly on the map.
+
 ## [4.5.0] - 2021-02-01
 
 ### Added

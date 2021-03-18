@@ -103,46 +103,47 @@ You will receive a unique API key to use when access has been granted. If you ar
 Place the following initialization code in the `onCreate` method in the activity that should display the Google map:
 
 <mi-tabs>
-    <mi-tab label="Java" tab-for="java"></mi-tab>
-    <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
-    <mi-tab-panel id="java">
-        <h3>Java</h3>
-        <pre lang="Java"><code>
+<mi-tab label="Java" tab-for="java"></mi-tab>
+<mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
+<mi-tab-panel id="java">
+<h3>Java</h3>
+
+```java
 MapsIndoors.initialize(getApplicationContext(), "YOUR_MAPSINDOORS_API_KEY");
 MapsIndoors.setGoogleAPIKey(“YOUR_GOOGLE_API_KEY”);
-        </code></pre>
-    </mi-tab-panel>
-    <mi-tab-panel id="kotlin">
-        <h3>Kotlin</h3>
-        <pre lang ="Kotlin"><code>
+```
+
+</mi-tab-panel>
+<mi-tab-panel id="kotlin">
+<h3>Kotlin</h3>
+
+```kotlin
 MapsIndoors.initialize(applicationContext, "YOUR_MAPSINDOORS_API_KEY")
 MapsIndoors.setGoogleAPIKey(“YOUR_GOOGLE_API_KEY”)
-        </code></pre>
-    </mi-tab-panel>
+```
+
+</mi-tab-panel>
 </mi-tabs>
 
 In your `onMapReady` callback function, use the `MapControl` class to set up a Google map with MapsIndoors venues, buildings & locations:
 
 <mi-tabs>
-    <mi-tab label="Java" tab-for="java"></mi-tab>
-    <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
-    <mi-tab-panel id="java">
-        <h3>Java</h3>
-        <pre lang="Java"><code>
+<mi-tab label="Java" tab-for="java"></mi-tab>
+<mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
+<mi-tab-panel id="java">
+<h3>Java</h3>
+
+```java
 @Override
 public void onMapReady(GoogleMap googleMap) {
    mMap = googleMap;
-
    if (view != null) {
        initMapControl(view);
    }
 }
-
 void initMapControl(View view) {
    mMapControl = new MapControl(getApplicationContext());
-
    mMapControl.setGoogleMap(mMap, view);
-
    mMapControl.init(miError -> {
        if (miError == null) {
            runOnUiThread( ()-> {
@@ -151,24 +152,22 @@ void initMapControl(View view) {
        }
    });
 }
-        </code></pre>
-    </mi-tab-panel>
-    <mi-tab-panel id="kotlin">
-        <h3>Kotlin</h3>
-        <pre lang ="Kotlin"><code>
+```
+
+</mi-tab-panel>
+<mi-tab-panel id="kotlin">
+<h3>Kotlin</h3>
+
+```kotlin
 override fun onMapReady(googleMap: GoogleMap) {
    mMap = googleMap
-
    map.view?.let {
        initMapControl(it)
    }
 }
-
 fun initMapControl(view: View) {
    mMapControl = MapControl(applicationContext)
-
    mMapControl.setGoogleMap(mMap, view)
-
    mMapControl.init { error ->
        if (error == null) {
            runOnUiThread {
@@ -178,12 +177,13 @@ fun initMapControl(view: View) {
        }
    }
 }
-        </code></pre>
-    </mi-tab-panel>
+```
+
+</mi-tab-panel>
 </mi-tabs>
 
 Head to the [guides]({{ site.url }}/android/v3/guides/) to learn about event handling, searching, getting directions, display settings and more.
 
 ## Work with MapsIndoors SDK behind a Firewall
 
-If you need to work with MapsIndoors SDK behind a firewall, you might need to [white-list some IP-adresses](../../ip-whitelisting).
+If you need to work with MapsIndoors SDK behind a firewall, you might need to [allowlist some IP-addresses]({{ site.url }}/various/mapsindoors-sdk-firewall/).
