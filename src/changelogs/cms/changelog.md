@@ -7,6 +7,13 @@ eleventyNavigation:
   order: 6
 ---
 
+## March 11th 2021
+
+### Bugfix
+
+- Fixes zoom level change when switching from Locations' table-view to map-view
+- Fixes an issue where Areas were not appearing on the initial Floor.
+
 ## October 8th 2020 - v3.35.0
 
 ### What's new
