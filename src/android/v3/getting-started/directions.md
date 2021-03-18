@@ -20,40 +20,48 @@ Since our search only supports a single search, we will hardcode a Location's co
 Create a `Point` with the coordinates from the Oval Office Location on your MapsActivity.
 
 <mi-tabs>
-    <mi-tab label="Java" tab-for="java"></mi-tab>
-    <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
-    <mi-tab-panel id="java">
-        <h3>Java</h3>
-        <pre lang="Java"><code>
+<mi-tab label="Java" tab-for="java"></mi-tab>
+<mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
+<mi-tab-panel id="java">
+<h3>Java</h3>
+
+```java
 private Point mUserLocation = new Point(38.897389429704695, -77.03740973527613,0);
-        </code></pre>
-    </mi-tab-panel>
-    <mi-tab-panel id="kotlin">
-        <h3>Kotlin</h3>
-        <pre lang ="Kotlin"><code>
+```
+
+</mi-tab-panel>
+<mi-tab-panel id="kotlin">
+<h3>Kotlin</h3>
+
+```kotlin
 private val mUserLocation: Point = Point(38.897389429704695, -77.03740973527613, 0.0)
-        </code></pre>
-    </mi-tab-panel>
+```
+
+</mi-tab-panel>
 </mi-tabs>
 
 Now we will make a method that can generate a route for us with just a Location (picked from the search list).
 Start by implementing `OnRouteResultListener` to your MapsActivity.
 
 <mi-tabs>
-    <mi-tab label="Java" tab-for="java"></mi-tab>
-    <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
-    <mi-tab-panel id="java">
-        <h3>Java</h3>
-        <pre lang="Java"><code>
+<mi-tab label="Java" tab-for="java"></mi-tab>
+<mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
+<mi-tab-panel id="java">
+<h3>Java</h3>
+
+```java
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, OnRouteResultListener
-        </code></pre>
-    </mi-tab-panel>
-    <mi-tab-panel id="kotlin">
-        <h3>Kotlin</h3>
-        <pre lang ="Kotlin"><code>
+```
+
+</mi-tab-panel>
+<mi-tab-panel id="kotlin">
+<h3>Kotlin</h3>
+
+```kotlin
 class MapsActivity : FragmentActivity(), OnMapReadyCallback, OnRouteResultListener
-        </code></pre>
-    </mi-tab-panel>
+```
+
+</mi-tab-panel>
 </mi-tabs>
 
 implement the `onRouteResult` method and create a method called `createRoute(MPLocation mpLocation)` To generate a route you can use with `MPRoutingProvider` to query a route with our hardcoded `mUserLocation` and a point from the MPLocation we call the method with later on.
@@ -61,24 +69,28 @@ implement the `onRouteResult` method and create a method called `createRoute(MPL
 To generate a route with the `MPLocation`, we start by creating an `onClickListener` on our search `ViewHolder` inside the `SearchItemAdapter` on `onBindViewHolder`. This calls a `createRoute` on our activity and the route is generated.
 
 <mi-tabs>
-    <mi-tab label="Java" tab-for="java"></mi-tab>
-    <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
-    <mi-tab-panel id="java">
-        <h3>Java</h3>
-        <pre lang="Java"><code>
+<mi-tab label="Java" tab-for="java"></mi-tab>
+<mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
+<mi-tab-panel id="java">
+<h3>Java</h3>
+
+```java
 holder.itemView.setOnClickListener(view -> {
           mMapActivity.createRoute(mLocations.get(position));
         });
-        </code></pre>
-    </mi-tab-panel>
-    <mi-tab-panel id="kotlin">
-        <h3>Kotlin</h3>
-        <pre lang ="Kotlin"><code>
+```
+
+</mi-tab-panel>
+<mi-tab-panel id="kotlin">
+<h3>Kotlin</h3>
+
+```kotlin
 holder.itemView.setOnClickListener {
   mMapActivity.createRoute(mLocations.get(position))
 }
-        </code></pre>
-    </mi-tab-panel>
+```
+
+</mi-tab-panel>
 </mi-tabs>
 
 When we receive a result on our listener, we render the route through the `MPDirectionsRenderer`.
@@ -86,11 +98,12 @@ When we receive a result on our listener, we render the route through the `MPDir
 We create global variables of the `MPdirectionsRenderer` and `MPRoutingProvider` and create a getter to the `MPDirectionsRenderer` to access it from _fragments_ later on.
 
 <mi-tabs>
-    <mi-tab label="Java" tab-for="java"></mi-tab>
-    <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
-    <mi-tab-panel id="java">
-        <h3>Java</h3>
-        <pre lang="Java"><code>
+<mi-tab label="Java" tab-for="java"></mi-tab>
+<mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
+<mi-tab-panel id="java">
+<h3>Java</h3>
+
+```java
 void createRoute(MPLocation mpLocation) {
     if (mpRoutingProvider == null) {
         mpRoutingProvider = new MPRoutingProvider();
@@ -122,14 +135,17 @@ public void onRouteResult(@Nullable Route route, @Nullable MIError miError) {
         ...
     });
 }
-        </code></pre>
-    </mi-tab-panel>
-    <mi-tab-panel id="kotlin">
-        <h3>Kotlin</h3>
-        <pre lang ="Kotlin"><code>
+```
+
+</mi-tab-panel>
+<mi-tab-panel id="kotlin">
+<h3>Kotlin</h3>
+
+```kotlin
 class MapsActivity : FragmentActivity(), OnMapReadyCallback, OnRouteResultListener
-        </code></pre>
-    </mi-tab-panel>
+```
+
+</mi-tab-panel>
 </mi-tabs>
 
 See the full implementation of theese methods here: [MapsActivity.java](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L240-L288)
@@ -216,11 +232,12 @@ RouteLeg fragment for the viewpager view:
 Create the Navigation `Fragment` with a `FragmentStateAdapter` for the `ViewPager`:
 
 <mi-tabs>
-    <mi-tab label="Java" tab-for="java"></mi-tab>
-    <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
-    <mi-tab-panel id="java">
-        <h3>Java</h3>
-        <pre lang="Java"><code>
+<mi-tab label="Java" tab-for="java"></mi-tab>
+<mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
+<mi-tab-panel id="java">
+<h3>Java</h3>
+
+```java
 public class NavigationFragment extends Fragment {
     private Route mRoute;
     private MapsActivity mMapsActivity;
@@ -264,14 +281,17 @@ public class NavigationFragment extends Fragment {
         ...
     }
 }
-        </code></pre>
-    </mi-tab-panel>
-    <mi-tab-panel id="kotlin">
-        <h3>Kotlin</h3>
-        <pre lang ="Kotlin"><code>
+```
+
+</mi-tab-panel>
+<mi-tab-panel id="kotlin">
+<h3>Kotlin</h3>
+
+```kotlin
 private val mUserLocation: Point = Point(38.897389429704695, -77.03740973527613, 0.0)
-        </code></pre>
-    </mi-tab-panel>
+```
+
+</mi-tab-panel>
 </mi-tabs>
 
 See the full implementation of `NavigationFragment` and the accompanying adapter here: [NavigationFragment.java](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/NavigationFragment.java#L31-L117)
@@ -279,11 +299,12 @@ See the full implementation of `NavigationFragment` and the accompanying adapter
 Create the `RouteLegFragment` for the `ViewPager`:
 
 <mi-tabs>
-    <mi-tab label="Java" tab-for="java"></mi-tab>
-    <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
-    <mi-tab-panel id="java">
-        <h3>Java</h3>
-        <pre lang="Java"><code>
+<mi-tab label="Java" tab-for="java"></mi-tab>
+<mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
+<mi-tab-panel id="java">
+<h3>Java</h3>
+
+```java
 public class RouteLegFragment extends Fragment {
     private RouteLeg mRouteLeg;
     ...
@@ -301,14 +322,17 @@ public class RouteLegFragment extends Fragment {
         fromTxtView.setText(stepsString);
     }
 }
-        </code></pre>
-    </mi-tab-panel>
-    <mi-tab-panel id="kotlin">
-        <h3>Kotlin</h3>
-        <pre lang ="Kotlin"><code>
+```
+
+</mi-tab-panel>
+<mi-tab-panel id="kotlin">
+<h3>Kotlin</h3>
+
+```kotlin
 private val mUserLocation: Point = Point(38.897389429704695, -77.03740973527613, 0.0)
-        </code></pre>
-    </mi-tab-panel>
+```
+
+</mi-tab-panel>
 </mi-tabs>
 
 See the full implementation of the fragment here: [RouteLegFragment.java](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/RouteLegFragment.java#L23-L57)
@@ -319,18 +343,22 @@ See the full implementation of the fragment here: [RouteLegFragment.java](https:
 To swap Travel Modes you set the Travel Mode before making a query for the route:
 
 <mi-tabs>
-    <mi-tab label="Java" tab-for="java"></mi-tab>
-    <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
-    <mi-tab-panel id="java">
-        <h3>Java</h3>
-        <pre lang="Java"><code>
+<mi-tab label="Java" tab-for="java"></mi-tab>
+<mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
+<mi-tab-panel id="java">
+<h3>Java</h3>
+
+```java
 mpRoutingProvider.setTravelMode(TravelMode.WALKING);
-        </code></pre>
-    </mi-tab-panel>
-    <mi-tab-panel id="kotlin">
-        <h3>Kotlin</h3>
-        <pre lang ="Kotlin"><code>
+```
+
+</mi-tab-panel>
+<mi-tab-panel id="kotlin">
+<h3>Kotlin</h3>
+
+```kotlin
 private val mUserLocation: Point = Point(38.897389429704695, -77.03740973527613, 0.0)
-        </code></pre>
-    </mi-tab-panel>
+```
+
+</mi-tab-panel>
 </mi-tabs>
