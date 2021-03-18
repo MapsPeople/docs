@@ -103,7 +103,7 @@ MPDirectionsRenderer createDirectionsRenderer(Context context) {
 
         //Color of the Directions Marker at the end of each Route Leg
         mRoutingRenderer.setAccentColor( ContextCompat.getColor( context, R.color.pink ) );
-        
+
         //Text color
         mRoutingRenderer.setTextColor( ContextCompat.getColor( context, R.color.white ) );
 
