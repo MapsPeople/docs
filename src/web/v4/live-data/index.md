@@ -46,7 +46,7 @@ Knowing that updates are ordered in Topics, it is possible to subscribe to updat
 
 ## Live Updates
 
-A live update is the model for a message carrying one piece of Live Data, for example that a particular room is now occupied. It contains the Topic for the live update and the actual live properties as a _dictionary_ of _strings_.
+A live update is the model for a message carrying one piece of Live Data, for example that a particular Room is now occupied. It contains the Topic for the live update and the actual live properties as a _dictionary_ of _strings_.
 
 ## Enable Live Data in Your App with the LiveDataManager
 
@@ -116,7 +116,7 @@ liveDataManagerInstance.enableLiveData(mapsindoors.LiveDataManager.LiveDataDomai
 
 To avoid performance implications, the display rule updates may benefit from being throttled.
 
-Note that since there is no guarantee of which Live Data you receive first, and Locations can have multiple Live Data updates on different domains, we recommend checking the lastModifiedTimeStamp of each Live Data update to select which one to render.
+Note that since there is no guarantee of which Live Data you receive first, and Locations can have multiple Live Data updates on different Domains, we recommend checking the `lastModifiedTimeStamp` of each Live Data update to select which one to render.
 
 ## Handling Live Data Events
 
