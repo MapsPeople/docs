@@ -40,7 +40,7 @@ const routeParameters = {
 };
 ```
 
-> See all available route parameters in the [reference documentation](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/mapsindoors.services.DirectionsService.html#getRoute).
+> Please note that not all map providers support pubic transportation as travel mode.
 
 ## Route Restrictions
 
