@@ -84,7 +84,7 @@ This will affect all following Directions requests as well as search queries wit
 
 ## Transit Departure and Arrival Time
 
-Set a **departure date** or an **arrival date** on the route using the `departure` or `arrival` property. It will only make sense to set one of these properties at a time.
+Set a **departure date** or an **arrival date** on the route using the `transitOptions` property. It will only make sense to set one of these properties at a time.
 
 ```js
 const departureDate = new Date(new Date().getTime() + 30*60000); // 30 minutes from now
@@ -93,7 +93,7 @@ const routeParameters = {
   origin: { lat: 38.897389429704695, lng: -77.03740973527613, floor: 0 }, // Oval Office, The White House
   destination: { lat: 38.897579747054046, lng: -77.03658652944773, floor: 1 }, // Blue Room, The White House
   travelMode: 'TRANSIT',
-  TransitOptions: {
+  transitOptions: {
     departureTime: departureDate
   }
 };
