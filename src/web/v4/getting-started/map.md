@@ -22,7 +22,7 @@ eleventyNavigation:
 
 The MapsIndoors SDK is hosted on a CDN and should be loaded using a script tag.
 
-* Insert the MapsIndoors SDK script tag into `<head>` followed by the Google Maps script tag:
+Insert the MapsIndoors SDK script tag into `<head>`, followed by the Google Maps script tag:
 
 ```html
 <!-- index.html -->
@@ -36,8 +36,8 @@ The MapsIndoors SDK is hosted on a CDN and should be loaded using a script tag.
 
 > Remember to add your API keys.
 
-* Add a empty `<div>` element to `<body>` with the `id` attribute set to "map".
-  
+Add an empty `<div>` element to `<body>` with the `id` attribute set to "map":
+
 ```html
 <!-- index.html -->
 
@@ -47,10 +47,7 @@ The MapsIndoors SDK is hosted on a CDN and should be loaded using a script tag.
 </body>
 ```
 
-To create a new instance of the [MapsIndoors class](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/mapsindoors.MapsIndoors.html#MapsIndoors) you need a [MapView instance](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/mapsindoors.mapView.GoogleMapsView.html#GoogleMapsView) with a few properties set.
-
-* Create a MapView instance.
-* Create a MapsIndoors instance and populate it with the mapView property.
+To load data and display it on the map, we need to create a new _instance_ of the [`MapsIndoors` class](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/mapsindoors.MapsIndoors.html#MapsIndoors) with a [`mapView` instance](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/mapsindoors.mapView.GoogleMapsView.html#GoogleMapsView) with a few _properties_ set:
 
 ```js
 // main.js
@@ -67,14 +64,18 @@ const mapsIndoorsInstance = new mapsindoors.MapsIndoors({
 });
 ```
 
+What happens in this snippet is we create a `mapViewInstance` that pulls up a `GoogleMapsView` with some `mapViewOptions`. The options define which element in the html-file to display the map in (in this case `<div id="map">`), where the map should center, what zoom level to display, and what the max zoom level is.
+
+<!-- Add screenshot -->
+
 </mi-tab-panel>
 <mi-tab-panel id="components">
 
-Using the `<mi-map-googlemaps>` component the MapsIndoors JS SDK is automatically inserted into the DOM when initialized.
+Using the `<mi-map-googlemaps>` component, the MapsIndoors JS SDK is automatically inserted into the DOM when initialized.
 
-The MI Components library can be loaded using [unpkg](https://unpkg.com/), a widely used CDN for everything on npm.
+The MapsIndoors Web Components library can be loaded using [unpkg](https://unpkg.com/), a widely used CDN for everything on [npm](https://npmjs.com).
 
-* Insert script tag into `<head>`.
+Insert script tag into `<head>`:
 
 > Check [@mapsindoors/components](https://www.npmjs.com/package/@mapsindoors/components) for latest version.
 
@@ -87,8 +88,7 @@ The MI Components library can be loaded using [unpkg](https://unpkg.com/), a wid
 </head>
 ```
 
-* Insert the `<mi-map-googlemaps>` custom element into `<body>`.
-* Add and populate the `gm-api-key` and `mi-api-key` attributes with your API keys.
+After you added the script tag into `<head>`, add the `<mi-map-googlemaps>` custom element into `<body>`. We need to add and populate the `gm-api-key` and `mi-api-key` attributes with your API keys as well:
 
 ```html
 <!-- index.html -->
@@ -103,11 +103,9 @@ The MI Components library can be loaded using [unpkg](https://unpkg.com/), a wid
 </body>
 ```
 
-To center the map correctly you need need the Google Maps instance.
+To center the map correctly, you need need the Google Maps _instance_ in your JavaScript-file.
 
-* Get a reference to the `<mi-map-googlemaps>` element.
-* Attach an ["mapsIndoorsReady"](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/mapsindoors.MapsIndoors.html#event:ready) event listener.
-* On "mapsIndoorsReady" event, get the Google Map instance and call its [`setCenter` method](https://developers.google.com/maps/documentation/javascript/reference/map#Map.setCenter).
+First we get a reference to the `<mi-map-googlemaps>` element. Then we attach the [`mapsIndoorsReady`](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/mapsindoors.MapsIndoors.html#event:ready) event listener so we'll know when MapsIndoors is ready after loading. Lastly, on the `mapsIndoorsReady` event, get the Google Map _instance_ and call its [`setCenter` method](https://developers.google.com/maps/documentation/javascript/reference/map#Map.setCenter) to center the map on the loaded data:
 
 ```js
 // main.js
@@ -121,23 +119,23 @@ miMapElement.addEventListener('mapsIndoorsReady', () => {
 })
 ```
 
->For more information on how to configure the `<mi-map-googlemaps>` component, see [components.mapsindoors.com/map-googlemaps](https://components.mapsindoors.com/map-googlemaps/).
+> For more information on how to configure the `<mi-map-googlemaps>` component, see [components.mapsindoors.com/map-googlemaps](https://components.mapsindoors.com/map-googlemaps/).
 
 </mi-tab-panel>
 </mi-tabs>
 
-## Show a floor selector
+You should now see a Google Maps map with MapsIndoors data loaded on top.
 
-Next you'll add a floor selector for changing between floors.
+## Show a Floor Selector
+
+Next, we'll add a Floor Selector for changing between Floors.
 
 <mi-tabs>
 <mi-tab label="Manually" tab-for="manually"></mi-tab>
 <mi-tab label="MI Components" tab-for="components"></mi-tab>
 <mi-tab-panel id="manually">
 
-* Add an empty `<div>` element programmatically.
-* Create a new floor selector instance.
-* Push the `floorSelectorElement` to the `googleMapsInstance` to position it as a map control.
+First, we add an empty `<div>` element programmatically. Then we create a new `FloorSelector` _instance_ and push the `floorSelectorElement` to the `googleMapsInstance` to position it as a map controller:
 
 ```js
 // main.js
@@ -152,19 +150,21 @@ googleMapsInstance.controls[google.maps.ControlPosition.RIGHT_TOP].push(floorSel
 </mi-tab-panel>
 <mi-tab-panel id="components">
 
-Using the `<mi-map-googlemaps>` element you can add the  [floorSelectorControlPosition attribute](https://components.mapsindoors.com/map-googlemaps/) to your existing element.
-
-* Add the `floor-selector-control-position` attribute with the value "TOP_RIGHT".
+Using the `<mi-map-googlemaps>` element, you can add the [floorSelectorControlPosition attribute](https://components.mapsindoors.com/map-googlemaps/) to your existing element. In this case with the value `"TOP_RIGHT"`:
 
 ```html
 <!-- index.html -->
 
 <mi-map-googlemaps
   ...
-  floor-selector-control-position="RIGHT_TOP">
+  floor-selector-control-position="TOP_RIGHT">
 </mi-map-googlemaps>
 ```
 
 > See all available control positions in the [Google Maps Documentation](https://developers.google.com/maps/documentation/javascript/controls#ControlPositioning).
 
 </mi-tab-panel>
+
+You should now be able to switch between the first and second Floors of The White House.
+
+<!-- Add screenshot -->
