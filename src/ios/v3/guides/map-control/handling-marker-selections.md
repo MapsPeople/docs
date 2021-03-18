@@ -2,7 +2,7 @@
 title: Handling marker selections and other user events
 eleventyNavigation:
   key: Handling marker selections and other user events
-  parent: ios-v3-guides-mapsindoors
+  parent: ios-v3-guides-map-control
   order: 210
 ---
 
