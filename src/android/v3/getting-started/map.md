@@ -39,33 +39,35 @@ Place the following initialization code in the `onCreate` method in the activity
 
 **Refresh kotlin example to allign on a venue**
 <mi-tabs>
-    <mi-tab label="Java" tab-for="java"></mi-tab>
-    <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
-    <mi-tab-panel id="java">
-        <h3>Java</h3>
-        <pre lang="Java"><code>
+<mi-tab label="Java" tab-for="java"></mi-tab>
+<mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
+<mi-tab-panel id="java">
+
+```java
 MapView = mapFragment.getView();
 MapsIndoors.initialize(getApplicationContext(), "YOUR_MAPSINDOORS_API_KEY");
 MapsIndoors.setGoogleAPIKey(“YOUR_GOOGLE_API_KEY”);
-        </code></pre>
-    </mi-tab-panel>
-    <mi-tab-panel id="kotlin">
-        <h3>Kotlin</h3>
-        <pre lang ="Kotlin"><code>
+```
+
+</mi-tab-panel>
+<mi-tab-panel id="kotlin">
+
+```kotlin
 MapsIndoors.initialize(applicationContext, "YOUR_MAPSINDOORS_API_KEY")
 MapsIndoors.setGoogleAPIKey(“YOUR_GOOGLE_API_KEY”)
-        </code></pre>
-    </mi-tab-panel>
+```
+
+</mi-tab-panel>
 </mi-tabs>
 
 In your `onMapReady` callback function, use the `MapControl` class to set up a Google map with MapsIndoors Venues, Buildings and Locations:
 
 <mi-tabs>
-    <mi-tab label="Java" tab-for="java"></mi-tab>
-    <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
-    <mi-tab-panel id="java">
-        <h3>Java</h3>
-        <pre lang="Java"><code>
+<mi-tab label="Java" tab-for="java"></mi-tab>
+<mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
+<mi-tab-panel id="java">
+
+```java
 @Override
 public void onMapReady(GoogleMap googleMap) {
    mMap = googleMap;
@@ -92,11 +94,12 @@ void initMapControl(View view) {
         }
     });
 }
-        </code></pre>
-    </mi-tab-panel>
-    <mi-tab-panel id="kotlin">
-        <h3>Kotlin</h3>
-        <pre lang ="Kotlin"><code>
+```
+
+</mi-tab-panel>
+<mi-tab-panel id="kotlin">
+
+```kotlin
 override fun onMapReady(googleMap: GoogleMap) {
    mMap = googleMap
    map.view?.let {
@@ -118,8 +121,9 @@ fun initMapControl(view: View) {
        }
    }
 }
-        </code></pre>
-    </mi-tab-panel>
+```
+
+</mi-tab-panel>
 </mi-tabs>
 
 See the full example of MapsActivity here [MapsActivity.java](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java)

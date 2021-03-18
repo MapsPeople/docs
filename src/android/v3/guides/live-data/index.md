@@ -55,26 +55,28 @@ A live update is the model for a message carrying one piece of Live Data, for ex
 Enabling Live Data through the `MapControl` is an easy way to get Live Data running in your app.
 
 <mi-tabs>
-    <mi-tab label="Java" tab-for="java"></mi-tab>
-    <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
-    <mi-tab-panel id="java">
-        <h3>java</h3>
-        <pre lang="Java"><code>
+<mi-tab label="Java" tab-for="java"></mi-tab>
+<mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
+<mi-tab-panel id="java">
+
+```java
 mMapControl.init(error -> {
     mMapControl.enableLiveData(LiveDataDomainTypes.OCCUPANCY_DOMAIN);
     mMapControl.enableLiveData(LiveDataDomainTypes.AVAILABILITY_DOMAIN);
 });
-        </code></pre>
-    </mi-tab-panel>
-    <mi-tab-panel id="kotlin">
-        <h3>kotlin</h3>
-        <pre lang ="Kotlin"><code>
+```
+
+</mi-tab-panel>
+<mi-tab-panel id="kotlin">
+
+```kotlin
 mMapControl.init {
     mMapControl.enableLiveData(LiveDataDomainTypes.OCCUPANCY_DOMAIN)
     mMapControl.enableLiveData(LiveDataDomainTypes.AVAILABILITY_DOMAIN)
 }
-        </code></pre>
-    </mi-tab-panel>
+```
+
+</mi-tab-panel>
 </mi-tabs>
 
 In the example we enable Live Data for the "Availability" and "Occupancy" Domain types. Internal processes will determine which Topics are relevant for subscription based on where the map is situated. A default rendering mechanism will also alter the appearance of the relevant Locations on the map. As a consequence, the SDK will set custom Display Rules for this rendering. Adding your own, or resetting Display Rules, while Live Data is enabled with default rendering, may break the rendering for the current MapControl instance. Hence, you should not use custom Display Rules unless you are handling the rendering of Live Data on your own.
@@ -93,22 +95,23 @@ To enable Live Data in an application, a subscription to one or more Topics is n
 The only Live Data updates that are also directly notified to the SDK internally are Live Data updates of the "Position" Domain Type. By consequence, if you have already set up your map with MapsIndoors, an additional few lines of code can enable moving locations on the map. Here is an example in Java:
 
 <mi-tabs>
-    <mi-tab label="Java" tab-for="java"></mi-tab>
-    <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
-    <mi-tab-panel id="java">
-        <h3>java</h3>
-        <pre lang="Java"><code>
+<mi-tab label="Java" tab-for="java"></mi-tab>
+<mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
+<mi-tab-panel id="java">
+
+```java
 LiveDataManager liveDataManager = LiveDataManager.getInstance();
 liveDataManager.setOnLiveDataManagerStateChangedListener(state -> Log.d(TAG,"Live Data manager state changed to: "+state.toString()));
 LiveTopicCriteria liveTopicCriteria = LiveTopicCriteria.getBuilder("datasetId")
         .setMultiLevelWildcard()
         .build();
 liveDataManager.subscribeTopic(liveTopicCriteria);
-        </code></pre>
-    </mi-tab-panel>
-    <mi-tab-panel id="kotlin">
-        <h3>kotlin</h3>
-        <pre lang ="Kotlin"><code>
+```
+
+</mi-tab-panel>
+<mi-tab-panel id="kotlin">
+
+```kotlin
 var liveDataManager = LiveDataManager.getInstance();
 liveDataManager.setOnLiveDataManagerStateChangedListener {
     Log.d("LiveDataState", "Live Data manager state changed to: $it")
@@ -117,8 +120,9 @@ var liveTopicCriteria = LiveTopicCriteria.getBuilder("datasetId")
     .setMultiLevelWildcard()
     .build();
 liveDataManager.subscribeTopic(liveTopicCriteria);
-        </code></pre>
-    </mi-tab-panel>
+```
+
+</mi-tab-panel>
 </mi-tabs>
 
 In the example, the Topic is created using the `datasetId` and a multilevel wildcard, which will return all Live Data in the Solution.
@@ -130,11 +134,11 @@ As mentioned `MapControl` has a default way of rendering Live Data Locations if 
 Here are examples of using the different methods to render Live Data on your map:
 
 <mi-tabs>
-    <mi-tab label="Java" tab-for="java"></mi-tab>
-    <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
-    <mi-tab-panel id="java">
-        <h3>Java</h3>
-        <pre lang="Java"><code>
+<mi-tab label="Java" tab-for="java"></mi-tab>
+<mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
+<mi-tab-panel id="java">
+
+```java
 mMapControl.setOnWillUpdateLocationsOnMap(locations -> {
    for (MPLocation location : locations) {
        LiveUpdate occupancy = location.getLiveUpdate("occupancy");
@@ -150,11 +154,12 @@ mMapControl.setOnWillUpdateLocationsOnMap(locations -> {
        }
    }
 });
-        </code></pre>
-    </mi-tab-panel>
-    <mi-tab-panel id="kotlin">
-        <h3>Kotlin</h3>
-        <pre lang ="Kotlin"><code>
+```
+
+</mi-tab-panel>
+<mi-tab-panel id="kotlin">
+
+```kotlin
 mMapControl.setOnWillUpdateLocationsOnMap { locations: List&lt;MPLocation&gt; ->
     for (location in locations) {
         val occupancy = location.getLiveUpdate("occupancy")
@@ -170,16 +175,17 @@ mMapControl.setOnWillUpdateLocationsOnMap { locations: List&lt;MPLocation&gt; ->
         }
     }
 }
-        </code></pre>
-    </mi-tab-panel>
+```
+
+</mi-tab-panel>
 </mi-tabs>
 
 <mi-tabs>
-    <mi-tab label="Java" tab-for="java"></mi-tab>
-    <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
-    <mi-tab-panel id="java">
-        <h3>Java</h3>
-        <pre lang="Java"><code>
+<mi-tab label="Java" tab-for="java"></mi-tab>
+<mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
+<mi-tab-panel id="java">
+
+```java
 mMapControl.enableLiveData(LiveDataDomainTypes.OCCUPANCY_DOMAIN, location -> {
    LiveUpdate occupancy = location.getLiveUpdate("occupancy");
    LocationDisplayRule currentDisplayRule = mMapControl.getDisplayRule(location);
@@ -193,11 +199,12 @@ mMapControl.enableLiveData(LiveDataDomainTypes.OCCUPANCY_DOMAIN, location -> {
        mMapControl.setDisplayRule(occupancyDisplayRule, location);
    }
 });
-        </code></pre>
-    </mi-tab-panel>
-    <mi-tab-panel id="kotlin">
-        <h3>Kotlin</h3>
-        <pre lang ="Kotlin"><code>
+```
+
+</mi-tab-panel>
+<mi-tab-panel id="kotlin">
+
+```kotlin
 mMapControl.enableLiveData(LiveDataDomainTypes.OCCUPANCY_DOMAIN) { location: MPLocation ->
     val occupancy = location.getLiveUpdate("occupancy")
     val currentDisplayRule = mMapControl.getDisplayRule(location)
@@ -211,8 +218,9 @@ mMapControl.enableLiveData(LiveDataDomainTypes.OCCUPANCY_DOMAIN) { location: MPL
         mMapControl.setDisplayRule(occupancyDisplayRule, location)
     }
 }
-        </code></pre>
-    </mi-tab-panel>
+```
+
+</mi-tab-panel>
 </mi-tabs>
 
 Note that since there is no guarantee of which Live Data you receive first, and Locations can have multiple Live Data updates on different domains, we recommend checking the `lastModifiedTimeStamp` of each Live Data update to select which one to render.
@@ -231,59 +239,63 @@ There are two ways to be notified about Live Updates:
 To get Live Updates on a general level the `OnReceivedLiveUpdateListener` must be set on the `LiveDataManager`:
 
 <mi-tabs>
-    <mi-tab label="Java" tab-for="java"></mi-tab>
-    <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
-    <mi-tab-panel id="java">
-        <h3>Java</h3>
-        <pre lang="Java"><code>
+<mi-tab label="Java" tab-for="java"></mi-tab>
+<mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
+<mi-tab-panel id="java">
+
+```java
 liveDataManager.setOnReceivedLiveUpdateListener((topic, message) -> {
            if (message.getDomainType().equals(LiveDataDomainTypes.OCCUPANCY_DOMAIN)) {
                int people = message.getOccupancyProperties().getNrOfPeople();
                ...
            }
         });
-        </code></pre>
-    </mi-tab-panel>
-    <mi-tab-panel id="kotlin">
-        <h3>Kotlin</h3>
-        <pre lang ="Kotlin"><code>
+```
+
+</mi-tab-panel>
+<mi-tab-panel id="kotlin">
+
+```kotlin
 liveDataManager.setOnReceivedLiveUpdateListener { liveTopic, liveUpdate ->
             if (liveUpdate.domainType == LiveDataDomainTypes.OCCUPANCY_DOMAIN) {
                 var people = liveUpdate.occupancyProperties.nrOfPeople
                 ...
             }
         }
-        </code></pre>
-    </mi-tab-panel>
+```
+
+</mi-tab-panel>
 </mi-tabs>
 
 To get Live Updates on a map-specific level, the `OnWillUpdateLocationsOnMap` must be set on `MapControl`:
 
 <mi-tabs>
-    <mi-tab label="Java" tab-for="java"></mi-tab>
-    <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
-    <mi-tab-panel id="java">
-        <h3>Java</h3>
-        <pre lang="Java"><code>
+<mi-tab label="Java" tab-for="java"></mi-tab>
+<mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
+<mi-tab-panel id="java">
+
+```java
 mapControl.setOnWillUpdateLocationsOnMap(locations -> {
     for(MPLocation location : locations){
         LiveUpdate liveUpdate = location.getLiveUpdate(LiveDataDomainTypes.OCCUPANCY_DOMAIN);
         ...
     }
 }
-        </code></pre>
-    </mi-tab-panel>
-    <mi-tab-panel id="kotlin">
-        <h3>Kotlin</h3>
-        <pre lang ="Kotlin"><code>
+```
+
+</mi-tab-panel>
+<mi-tab-panel id="kotlin">
+
+```kotlin
 mMapControl.setOnWillUpdateLocationsOnMap { locations ->
             for (location in locations) {
                 val properties = location.getLiveUpdate(LiveDataDomainTypes.OCCUPANCY_DOMAIN)?.occupancyProperties
                 ...
             }
         }
-        </code></pre>
-    </mi-tab-panel>
+```
+
+</mi-tab-panel>
 </mi-tabs>
 
 ### Handling State Changes and Errors

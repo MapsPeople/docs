@@ -28,11 +28,12 @@ For advanced usage of the search functionality read the Search guide and tutoria
 Create a search method that takes a search string as a parameter. In this example we only use the `setTake` on the `MPFilter` to limit our result to 30 locations.
 
 <mi-tabs>
-    <mi-tab label="Java" tab-for="java"></mi-tab>
-    <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
-    <mi-tab-panel id="java">
-        <h3>Java</h3>
-        <pre lang="Java"><code>
+<mi-tab label="Java" tab-for="java"></mi-tab>
+<mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
+<mi-tab-panel id="java">
+<pre lang="Java"><code>
+
+```java
 void search(String searchQuery) {
     //Query with a string to search on
     MPQuery mpQuery = new MPQuery.Builder().setQuery(searchQuery).build();
@@ -43,11 +44,13 @@ void search(String searchQuery) {
       //Implement UI handling of the search result here
     }
 }
-        </code></pre>
-    </mi-tab-panel>
-    <mi-tab-panel id="kotlin">
-        <h3>Kotlin</h3>
-        <pre lang ="Kotlin"><code>
+```
+
+</code></pre>
+</mi-tab-panel>
+<mi-tab-panel id="kotlin">
+
+```kotlin
 fun search(searchQuery: String) {
     val mpQuery = MPQuery.Builder().setQuery(searchQuery).build()
     val mpFilter = MPFilter.Builder().setTake(30).build()
@@ -55,8 +58,9 @@ fun search(searchQuery: String) {
         //Implement UI handling of the search result here
     }
 }
-        </code></pre>
-    </mi-tab-panel>
+```
+
+</mi-tab-panel>
 </mi-tabs>
 
 To be able to search we need a text input field where a user can write what they want to search for.
@@ -94,11 +98,11 @@ We'll start by adding a search bar on the top of our MapsActivity. So we add it 
 We then add an `EditorActionListener` and a `OnClickListener` to our text input field and our search button in our `onCreate`. That calls our search method with the text in the search input field. Find the full `onCreate` example here: [MapsActivity.java](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L55-L121)
 
 <mi-tabs>
-    <mi-tab label="Java" tab-for="java"></mi-tab>
-    <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
-    <mi-tab-panel id="java">
-        <h3>Java</h3>
-        <pre lang="Java"><code>
+<mi-tab label="Java" tab-for="java"></mi-tab>
+<mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
+<mi-tab-panel id="java">
+
+```java
 ...
 //ClickListener to start a search, when the user clicks the search button
 mSearchBtn.setOnClickListener(view -> {
@@ -119,14 +123,16 @@ mSearchTxtField.setOnEditorActionListener((textView, i, keyEvent) -> {
     return false;
 });
 ...
-        </code></pre>
-    </mi-tab-panel>
-    <mi-tab-panel id="kotlin">
-        <h3>Kotlin</h3>
-        <pre lang ="Kotlin"><code>
+```
+
+</mi-tab-panel>
+<mi-tab-panel id="kotlin">
+
+```kotlin
 //TODO
-        </code></pre>
-    </mi-tab-panel>
+```
+
+</mi-tab-panel>
 </mi-tabs>
 
 To accompany this we'll create a fragment and a `BottomSheet` to handle the `searchFragment`.
@@ -148,11 +154,11 @@ Start by creating a fragment with a view-only consisting of a `RecyclerView`.
 ```
 
 <mi-tabs>
-    <mi-tab label="Java" tab-for="java"></mi-tab>
-    <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
-    <mi-tab-panel id="java">
-        <h3>Java</h3>
-        <pre lang="Java"><code>
+<mi-tab label="Java" tab-for="java"></mi-tab>
+<mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
+<mi-tab-panel id="java">
+
+```java
 public class SearchFragment extends Fragment {
     private List<MPLocation> mLocations = null;
     private MapsActivity mMapActivity = null;
@@ -171,11 +177,12 @@ public class SearchFragment extends Fragment {
     }
     ...
 }
-        </code></pre>
-    </mi-tab-panel>
-    <mi-tab-panel id="kotlin">
-        <h3>Kotlin</h3>
-        <pre lang ="Kotlin"><code>
+```
+
+</mi-tab-panel>
+<mi-tab-panel id="kotlin">
+
+```kotlin
 class SearchFragment : Fragment() {
     private lateinit var mLocations: List<MPLocation>
     private lateinit var mMapActivity: MapsActivity
@@ -196,8 +203,9 @@ class SearchFragment : Fragment() {
         }
     }
 }
-        </code></pre>
-    </mi-tab-panel>
+```
+
+</mi-tab-panel>
 </mi-tabs>
 
 See the full example of SearchFragment here: [SearchFragment.java](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/SearchFragment.java)
@@ -228,11 +236,11 @@ Create a `RecyclerView` adapter and the accompanying `Viewholder`:
 ```
 
 <mi-tabs>
-    <mi-tab label="Java" tab-for="java"></mi-tab>
-    <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
-    <mi-tab-panel id="java">
-        <h3>Java</h3>
-        <pre lang="Java"><code>
+<mi-tab label="Java" tab-for="java"></mi-tab>
+<mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
+<mi-tab-panel id="java">
+
+```java
 class SearchItemAdapter extends RecyclerView.Adapter<ViewHolder> {
     private final List<MPLocation> mLocations;
     private final MapsActivity mMapActivity;
@@ -262,11 +270,12 @@ class SearchItemAdapter extends RecyclerView.Adapter<ViewHolder> {
 class ViewHolder extends RecyclerView.ViewHolder {
     ...
 }
-        </code></pre>
-    </mi-tab-panel>
-    <mi-tab-panel id="kotlin">
-        <h3>Kotlin</h3>
-        <pre lang ="Kotlin"><code>
+```
+
+</mi-tab-panel>
+<mi-tab-panel id="kotlin">
+
+```kotlin
 internal class SearchItemAdapter(private val mLocations: List<MPLocation>, activity: MapsActivity?) : RecyclerView.Adapter<ViewHolder>() {
     private val mMapActivity: MapsActivity? = activity
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -305,8 +314,9 @@ internal class ViewHolder(inflater: LayoutInflater, parent: ViewGroup?) :
         imageView = itemView.findViewById(R.id.location_image)
     }
 }
-        </code></pre>
-    </mi-tab-panel>
+```
+
+</mi-tab-panel>
 </mi-tabs>
 
 See the full example of `SearchItemAdapter` and accompanying `ViewHolder` here: [SearchItemAdapter.java](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/SearchItemAdapter.java#L16-L75)
@@ -330,11 +340,11 @@ Implement a `BottomSheet` to the bottom of your `MapsActivity` Layout. The root 
 Now add the search fragment to the `BottomSheet` in the search query method on your `MapsActivity`.
 
 <mi-tabs>
-    <mi-tab label="Java" tab-for="java"></mi-tab>
-    <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
-    <mi-tab-panel id="java">
-        <h3>Java</h3>
-        <pre lang="Java"><code>
+<mi-tab label="Java" tab-for="java"></mi-tab>
+<mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
+<mi-tab-panel id="java">
+
+```java
 void search(String searchQuery) {
     //Query with a string to search on
     MPQuery mpQuery = new MPQuery.Builder().setQuery(searchQuery).build();
@@ -352,11 +362,12 @@ void search(String searchQuery) {
         }
     }
 }
-        </code></pre>
-    </mi-tab-panel>
-    <mi-tab-panel id="kotlin">
-        <h3>Kotlin</h3>
-        <pre lang ="Kotlin"><code>
+```
+
+</mi-tab-panel>
+<mi-tab-panel id="kotlin">
+
+```kotlin
 fun search(searchQuery: String) {
     val mpQuery = MPQuery.Builder().setQuery(searchQuery).build()
     val mpFilter = MPFilter.Builder().setTake(30).build()
@@ -370,8 +381,9 @@ fun search(searchQuery: String) {
             }
     }
 }
-        </code></pre>
-    </mi-tab-panel>
+```
+
+</mi-tab-panel>
 </mi-tabs>
 
 See the full example of the search method here: [MapsActivity.java](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L185-L234)
@@ -386,20 +398,22 @@ The standard implementation animates the camera to fit all Locations on the map 
 When you are done showing the search results you can call `clearMap()` on `MapControl`.
 
 <mi-tabs>
-    <mi-tab label="Java" tab-for="java"></mi-tab>
-    <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
-    <mi-tab-panel id="java">
-        <h3>Java</h3>
-        <pre lang="Java"><code>
+<mi-tab label="Java" tab-for="java"></mi-tab>
+<mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
+<mi-tab-panel id="java">
+
+```java
 mMapControl.displaySearchResults(locationList);
-        </code></pre>
-    </mi-tab-panel>
-    <mi-tab-panel id="kotlin">
-        <h3>Kotlin</h3>
-        <pre lang ="Kotlin"><code>
+```
+
+</mi-tab-panel>
+<mi-tab-panel id="kotlin">
+
+```kotlin
 mMapControl.displaySearchResults(locationList)
-        </code></pre>
-    </mi-tab-panel>
+```
+
+</mi-tab-panel>
 </mi-tabs>
 
 The accompanying UI and implementation of this search experience can be found in the getting started app sample. [Getting Started App sample](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/tree/master/app/src/main/java/com/example/mapsindoorsgettingstarted).

@@ -23,7 +23,6 @@ Create a `Point` with the coordinates from the Oval Office Location on your Maps
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
-<h3>Java</h3>
 
 ```java
 private Point mUserLocation = new Point(38.897389429704695, -77.03740973527613,0);
@@ -31,7 +30,6 @@ private Point mUserLocation = new Point(38.897389429704695, -77.03740973527613,0
 
 </mi-tab-panel>
 <mi-tab-panel id="kotlin">
-<h3>Kotlin</h3>
 
 ```kotlin
 private val mUserLocation: Point = Point(38.897389429704695, -77.03740973527613, 0.0)
@@ -47,7 +45,6 @@ Start by implementing `OnRouteResultListener` to your MapsActivity.
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
-<h3>Java</h3>
 
 ```java
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, OnRouteResultListener
@@ -55,7 +52,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 </mi-tab-panel>
 <mi-tab-panel id="kotlin">
-<h3>Kotlin</h3>
 
 ```kotlin
 class MapsActivity : FragmentActivity(), OnMapReadyCallback, OnRouteResultListener
@@ -72,7 +68,6 @@ To generate a route with the `MPLocation`, we start by creating an `onClickListe
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
-<h3>Java</h3>
 
 ```java
 holder.itemView.setOnClickListener(view -> {
@@ -82,7 +77,6 @@ holder.itemView.setOnClickListener(view -> {
 
 </mi-tab-panel>
 <mi-tab-panel id="kotlin">
-<h3>Kotlin</h3>
 
 ```kotlin
 holder.itemView.setOnClickListener {
@@ -101,7 +95,6 @@ We create global variables of the `MPdirectionsRenderer` and `MPRoutingProvider`
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
-<h3>Java</h3>
 
 ```java
 void createRoute(MPLocation mpLocation) {
@@ -139,7 +132,6 @@ public void onRouteResult(@Nullable Route route, @Nullable MIError miError) {
 
 </mi-tab-panel>
 <mi-tab-panel id="kotlin">
-<h3>Kotlin</h3>
 
 ```kotlin
 class MapsActivity : FragmentActivity(), OnMapReadyCallback, OnRouteResultListener
@@ -235,7 +227,6 @@ Create the Navigation `Fragment` with a `FragmentStateAdapter` for the `ViewPage
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
-<h3>Java</h3>
 
 ```java
 public class NavigationFragment extends Fragment {
@@ -285,7 +276,6 @@ public class NavigationFragment extends Fragment {
 
 </mi-tab-panel>
 <mi-tab-panel id="kotlin">
-<h3>Kotlin</h3>
 
 ```kotlin
 private val mUserLocation: Point = Point(38.897389429704695, -77.03740973527613, 0.0)
@@ -302,7 +292,6 @@ Create the `RouteLegFragment` for the `ViewPager`:
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
-<h3>Java</h3>
 
 ```java
 public class RouteLegFragment extends Fragment {
@@ -326,7 +315,6 @@ public class RouteLegFragment extends Fragment {
 
 </mi-tab-panel>
 <mi-tab-panel id="kotlin">
-<h3>Kotlin</h3>
 
 ```kotlin
 private val mUserLocation: Point = Point(38.897389429704695, -77.03740973527613, 0.0)
@@ -346,7 +334,6 @@ To swap Travel Modes you set the Travel Mode before making a query for the route
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
-<h3>Java</h3>
 
 ```java
 mpRoutingProvider.setTravelMode(TravelMode.WALKING);
@@ -354,7 +341,6 @@ mpRoutingProvider.setTravelMode(TravelMode.WALKING);
 
 </mi-tab-panel>
 <mi-tab-panel id="kotlin">
-<h3>Kotlin</h3>
 
 ```kotlin
 private val mUserLocation: Point = Point(38.897389429704695, -77.03740973527613, 0.0)
