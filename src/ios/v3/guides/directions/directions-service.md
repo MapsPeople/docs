@@ -76,9 +76,9 @@ directionsService.routing(with: directionsQuery) { (route, error) in
 
 User Role restrictions set for a specific Directions Query will take precedence over User Roles set on a global level.
 
-## Departure and Arrival Time
+## Transit Departure and Arrival Time
 
-Set a **departure date** or an **arrival date** on the route using the `departure` or `arrival` property. It will only make sense to set one of these properties at a time.
+Set a **departure date** or an **arrival date** on the route using the `departure` or `arrival` property. This is relevant when using the Transit travel mode. It will only make sense to set one of these properties at a time.
 
 ```swift
 let directionsQuery = MPDirectionsQuery.init(originPoint: origin, destination: destination)
