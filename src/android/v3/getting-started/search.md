@@ -320,9 +320,9 @@ internal class SearchItemAdapter(private val mLocations: List<MPLocation?>, priv
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.text.text = mLocations[position]?.name
-        
+
         ...
-        
+
         if (mMapActivity != null) {
             val locationDisplayRule: LocationDisplayRule? = mMapActivity.getMapControl().getDisplayRule(mLocations[position])
 
@@ -399,7 +399,7 @@ void search(String searchQuery) {
             mSearchFragment = SearchFragment.newInstance(list, this);
             //Make a transaction to the bottomsheet
             getSupportFragmentManager().beginTransaction().replace(R.id.standardBottomSheet, mSearchFragment).commit();
-            
+
             ...
         }
     }
@@ -424,7 +424,7 @@ private fun search(searchQuery: String) {
             mSearchFragment = SearchFragment.newInstance(list, this)
             //Make a transaction to the bottom sheet
             supportFragmentManager.beginTransaction().replace(R.id.standardBottomSheet, mSearchFragment).commit()
-            
+
             ...
         }
     }

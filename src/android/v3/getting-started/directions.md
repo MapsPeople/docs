@@ -168,7 +168,7 @@ override fun onRouteResult(@Nullable route: Route?, @Nullable miError: MIError?)
     runOnUiThread {
         //Starts drawing and adjusting the map according to the route
         mpDirectionsRenderer?.initMap(true)
-        ...    
+        ...
     }
 }
 ```
@@ -321,7 +321,7 @@ public class NavigationFragment extends Fragment {
 class NavigationFragment : Fragment() {
     private var mRoute: Route? = null
     private var mMapsActivity: MapsActivity? = null
-    
+
     ...
     override fun onViewCreated(view: View, @Nullable savedInstanceState: Bundle?) {
         val routeCollectionAdapter = RouteCollectionAdapter(this)
