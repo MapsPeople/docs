@@ -176,7 +176,7 @@ override fun onRouteResult(@Nullable route: Route?, @Nullable miError: MIError?)
 </mi-tab-panel>
 </mi-tabs>
 
-See the full implementation of theese methods here: [MapsActivity.java](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L240-L288)
+See the full implementation of theese methods here: [MapsActivity.java](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L240-L288) or [MapsActivity.kt](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L240-L288)
 
 Now we will create a fragment we can put into our BottomSheet and show the steps for each route, as well as the time and distance it takes to travel the route.
 
@@ -390,7 +390,7 @@ class NavigationFragment : Fragment() {
 </mi-tab-panel>
 </mi-tabs>
 
-See the full implementation of `NavigationFragment` and the accompanying adapter here: [NavigationFragment.java](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/NavigationFragment.java#L31-L117)
+See the full implementation of `NavigationFragment` and the accompanying adapter here: [NavigationFragment.java](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/NavigationFragment.java#L31-L117) or [NavigationFragment.kt](https://github.com/MapsIndoors/MapsIndoors-Getting-started-android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/NavigationFragment.kt#L18-L105)
 
 Create the `RouteLegFragment` for the `ViewPager`:
 
@@ -457,7 +457,7 @@ class RouteLegFragment : Fragment() {
 </mi-tab-panel>
 </mi-tabs>
 
-See the full implementation of the fragment here: [RouteLegFragment.java](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/RouteLegFragment.java#L23-L57)
+See the full implementation of the fragment here: [RouteLegFragment.java](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/RouteLegFragment.java#L23-L57) or [RouteLegFragment.kt](https://github.com/MapsIndoors/MapsIndoors-Getting-started-android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/RouteLegFragment.kt#L12-L44)
 
 <!-- Travel-mode -->
 {% include "src/shared/getting-started/directions/travel-mode.md" %}

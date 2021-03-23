@@ -33,11 +33,11 @@ MapsIndoors.setGoogleAPIKey(“YOUR_GOOGLE_API_KEY”);
 <mi-tab-panel id="kotlin">
 
 ```kotlin
-MapsIndoors.initialize(applicationContext, "YOUR_MAPSINDOORS_API_KEY")
-MapsIndoors.setGoogleAPIKey("YOUR_GOOGLE_API_KEY")
+MapsIndoors.initialize(applicationContext, "79f8e7daff76489dace4f9f9")
+MapsIndoors.setGoogleAPIKey(getString(R.string.google_maps_key))
 
-mapView?.let { view ->
-  initMapControl(view)
+mapFragment.view?.let {
+    mapView = it
 }
 ```
 
@@ -120,6 +120,6 @@ private fun initMapControl(view: View) {
 </mi-tab-panel>
 </mi-tabs>
 
-See the full example of MapsActivity here [MapsActivity.java](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java)
+See the full example of MapsActivity here [MapsActivity.java](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java) or [MapsActivity.kt](https://github.com/MapsIndoors/MapsIndoors-Getting-started-android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/MapsActivity.kt)
 
 Head to the [guides]({{ site.url }}/android/v3/guides/) to learn about event handling, searching, getting directions, display settings and more.

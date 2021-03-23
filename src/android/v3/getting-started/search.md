@@ -16,7 +16,7 @@ eleventyNavigation:
 
 Start by creating a new activity or fragment to facilitate searches on your application. Here we will be using a fragment to search and show search results on, and using a bottom sheet to display the results. We also create a search input field on our main map activity for the user to input the text they want to search for.
 
-Both UI component implementations can be found in the getting started app sample.[Getting Started App sample](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/tree/master/app/src/main/java/com/example/mapsindoorsgettingstarted)
+Both UI component implementations can be found in the getting started app sample.[Getting Started App sample for java](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/tree/master/app/src/main/java/com/example/mapsindoorsgettingstarted) or [Getting started App sample for kotlin](https://github.com/MapsIndoors/MapsIndoors-Getting-started-android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/)
 
 To perform a search you will need to have initiated `MapsIndoors`. This was shown in the previous section of the getting started tutorial how you do this. [guides]({{ site.url }}/android/v3/getting-started/map)
 
@@ -99,7 +99,7 @@ We'll start by adding a search bar on the top of our MapsActivity. So we add it 
 </RelativeLayout>
 ```
 
-We then add an `EditorActionListener` and a `OnClickListener` to our text input field and our search button in our `onCreate`. That calls our search method with the text in the search input field. Find the full `onCreate` example here: [MapsActivity.java](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L55-L121)
+We then add an `EditorActionListener` and a `OnClickListener` to our text input field and our search button in our `onCreate`. That calls our search method with the text in the search input field. Find the full `onCreate` example here: [MapsActivity.java](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L55-L121) or [MapsActivity.kt](https://github.com/MapsIndoors/MapsIndoors-Getting-started-android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/MapsActivity.kt#L39-L100)
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
@@ -238,7 +238,7 @@ class SearchFragment : Fragment() {
 </mi-tab-panel>
 </mi-tabs>
 
-See the full example of SearchFragment here: [SearchFragment.java](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/SearchFragment.java)
+See the full example of SearchFragment here: [SearchFragment.java](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/SearchFragment.java) or [SearchFragment.kt](https://github.com/MapsIndoors/MapsIndoors-Getting-started-android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/SearchFragment.kt)
 
 Create a `RecyclerView` adapter and the accompanying `Viewholder`:
 
@@ -359,7 +359,7 @@ internal class ViewHolder(inflater: LayoutInflater, parent: ViewGroup?) :
 </mi-tab-panel>
 </mi-tabs>
 
-See the full example of `SearchItemAdapter` and accompanying `ViewHolder` here: [SearchItemAdapter.java](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/SearchItemAdapter.java#L16-L75)
+See the full example of `SearchItemAdapter` and accompanying `ViewHolder` here: [SearchItemAdapter.java](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/SearchItemAdapter.java#L16-L75) or [SearchItemAdapter.kt](https://github.com/MapsIndoors/MapsIndoors-Getting-started-android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/SearchItemAdapter.kt#L12-L60)
 
 Implement a `BottomSheet` to the bottom of your `MapsActivity` Layout. The root of the view should be a `CoordinatorLayout`. You can find the full xml layout on [MapsActivity Layout](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/res/layout/activity_maps.xml)
 
@@ -434,7 +434,7 @@ private fun search(searchQuery: String) {
 </mi-tab-panel>
 </mi-tabs>
 
-See the full example of the search method here: [MapsActivity.java](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L185-L234)
+See the full example of the search method here: [MapsActivity.java](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L185-L234) or [MapsActivity.kt](https://github.com/MapsIndoors/MapsIndoors-Getting-started-android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/MapsActivity.kt#L137-L183)
 
 <!-- Filter map -->
 {% include "src/shared/getting-started/search/filter-map.md" %}
@@ -464,4 +464,4 @@ mMapControl.displaySearchResults(locationList)
 </mi-tab-panel>
 </mi-tabs>
 
-The accompanying UI and implementation of this search experience can be found in the getting started app sample. [Getting Started App sample](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/tree/master/app/src/main/java/com/example/mapsindoorsgettingstarted).
+The accompanying UI and implementation of this search experience can be found in the getting started app sample. [Getting Started App sample](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/tree/master/app/src/main/java/com/example/mapsindoorsgettingstarted) or [Getting Started App sample kotlin](https://github.com/MapsIndoors/MapsIndoors-Getting-started-android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin).
