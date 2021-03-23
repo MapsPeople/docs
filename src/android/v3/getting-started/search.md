@@ -51,11 +51,15 @@ void search(String searchQuery) {
 <mi-tab-panel id="kotlin">
 
 ```kotlin
-fun search(searchQuery: String) {
+private fun search(searchQuery: String) {
+    //Query with a string to search on
     val mpQuery = MPQuery.Builder().setQuery(searchQuery).build()
+    //Filter for the search query, only taking 30 locations
     val mpFilter = MPFilter.Builder().setTake(30).build()
-    MapsIndoors.getLocationsAsync(mpQuery, mpFilter) { locations, miError ->
-        //Implement UI handling of the search result here
+
+    //Gets locations
+    MapsIndoors.getLocationsAsync(mpQuery, mpFilter) { list: List<MPLocation?>?, miError: MIError? ->
+      //Implement UI handling of the search result here
     }
 }
 ```
@@ -111,6 +115,7 @@ mSearchBtn.setOnClickListener(view -> {
         search(mSearchTxtField.getText().toString());
     }
 });
+
 //Listener for when the user searches through the keyboard
 mSearchTxtField.setOnEditorActionListener((textView, i, keyEvent) -> {
     if (i == EditorInfo.IME_ACTION_DONE || i == EditorInfo.IME_ACTION_SEARCH) {
@@ -129,7 +134,26 @@ mSearchTxtField.setOnEditorActionListener((textView, i, keyEvent) -> {
 <mi-tab-panel id="kotlin">
 
 ```kotlin
-//TODO
+...
+//Listener for when the user searches through the keyboard
+mSearchTxtField.setOnEditorActionListener { textView, i, _ ->
+    if (i == EditorInfo.IME_ACTION_DONE || i == EditorInfo.IME_ACTION_SEARCH) {
+        if (textView.text.isNotEmpty()) {
+            search(textView.text.toString())
+        }
+        return@setOnEditorActionListener true
+    }
+    return@setOnEditorActionListener false
+}
+
+//ClickListener to start a search, when the user clicks the search button
+searchBtn.setOnClickListener {
+    if (mSearchTxtField.text?.length != 0) {
+        //There is text inside the search field. So lets do the search.
+        search(mSearchTxtField.text.toString())
+    }
+}
+...
 ```
 
 </mi-tab-panel>
@@ -160,21 +184,26 @@ Start by creating a fragment with a view-only consisting of a `RecyclerView`.
 
 ```java
 public class SearchFragment extends Fragment {
+
     private List<MPLocation> mLocations = null;
     private MapsActivity mMapActivity = null;
+
     public static SearchFragment newInstance(List<MPLocation> locations, MapsActivity mapsActivity) {
         final SearchFragment fragment = new SearchFragment();
         fragment.mLocations = locations;
         fragment.mMapActivity = mapsActivity;
         return fragment;
     }
+
     ...
+
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         final RecyclerView recyclerView = (RecyclerView) view;
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(new SearchItemAdapter(mLocations, mMapActivity));
     }
+
     ...
 }
 ```
@@ -184,18 +213,19 @@ public class SearchFragment extends Fragment {
 
 ```kotlin
 class SearchFragment : Fragment() {
-    private lateinit var mLocations: List<MPLocation>
-    private lateinit var mMapActivity: MapsActivity
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_search_dialog_list_dialog, container, false)
-    }
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    private var mLocations: List<MPLocation?>? = null
+    private var mMapActivity: MapsActivity? = null
+
+    override fun onViewCreated(view: View, @Nullable savedInstanceState: Bundle?) {
         val recyclerView = view as RecyclerView
         recyclerView.layoutManager = LinearLayoutManager(context)
-        recyclerView.adapter = SearchItemAdapter(mLocations, mMapActivity)
+        recyclerView.adapter = mLocations?.let { locations -> SearchItemAdapter(locations, mMapActivity) }
     }
+
+    ...
+
     companion object {
-        fun newInstance(locations: List<MPLocation>, mapsActivity: MapsActivity): SearchFragment {
+        fun newInstance(locations: List<MPLocation?>?, mapsActivity: MapsActivity?): SearchFragment {
             val fragment = SearchFragment()
             fragment.mLocations = locations
             fragment.mMapActivity = mapsActivity
@@ -235,6 +265,8 @@ Create a `RecyclerView` adapter and the accompanying `Viewholder`:
 </RelativeLayout>
 ```
 
+Create a getter for your `MapControl` object on the `MapsActivity` so that it can be used in the adapter.
+
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
@@ -244,12 +276,16 @@ Create a `RecyclerView` adapter and the accompanying `Viewholder`:
 class SearchItemAdapter extends RecyclerView.Adapter<ViewHolder> {
     private final List<MPLocation> mLocations;
     private final MapsActivity mMapActivity;
+
     ...
+
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         holder.text.setText(mLocations.get(position).getName());
+
         if (mMapActivity != null) {
             LocationDisplayRule locationDisplayRule = mMapActivity.getMapControl().getDisplayRule(mLocations.get(position));
+
             if (locationDisplayRule != null && locationDisplayRule.getIcon() != null) {
                 mMapActivity.runOnUiThread(()-> {
                     holder.imageView.setImageBitmap(locationDisplayRule.getIcon());
@@ -257,6 +293,7 @@ class SearchItemAdapter extends RecyclerView.Adapter<ViewHolder> {
             }else {
                 //Location does not have a special displayRule using type Display rule
                 LocationDisplayRule typeDisplayRule = mMapActivity.getMapControl().getDisplayRule(mLocations.get(position).getType());
+
                 if (typeDisplayRule != null) {
                     mMapActivity.runOnUiThread(()-> {
                         holder.imageView.setImageBitmap(typeDisplayRule.getIcon());
@@ -265,6 +302,7 @@ class SearchItemAdapter extends RecyclerView.Adapter<ViewHolder> {
             }
         }
     }
+
     ...
 }
 class ViewHolder extends RecyclerView.ViewHolder {
@@ -276,43 +314,45 @@ class ViewHolder extends RecyclerView.ViewHolder {
 <mi-tab-panel id="kotlin">
 
 ```kotlin
-internal class SearchItemAdapter(private val mLocations: List<MPLocation>, activity: MapsActivity?) : RecyclerView.Adapter<ViewHolder>() {
-    private val mMapActivity: MapsActivity? = activity
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(LayoutInflater.from(parent.context), parent)
-    }
+internal class SearchItemAdapter(private val mLocations: List<MPLocation?>, private val mMapActivity: MapsActivity?) : RecyclerView.Adapter<ViewHolder>() {
+
+    ...
+
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.text.text = mLocations[position].name
-        holder.itemView.setOnClickListener { view: View? ->
-            mMapActivity.createRoute(
-                mLocations[position]
-            )
-        }
+        holder.text.text = mLocations[position]?.name
+        
+        ...
+        
         if (mMapActivity != null) {
-            val locationDisplayRule: LocationDisplayRule = mMapActivity.getMapControl().getDisplayRule(mLocations[position])
+            val locationDisplayRule: LocationDisplayRule? = mMapActivity.getMapControl().getDisplayRule(mLocations[position])
+
             if (locationDisplayRule != null && locationDisplayRule.icon != null) {
-                mMapActivity.runOnUiThread({ holder.imageView.setImageBitmap(locationDisplayRule.icon) })
-            }else {
+                mMapActivity.runOnUiThread(Runnable {
+                    holder.imageView.setImageBitmap(
+                        locationDisplayRule.icon
+                    )
+                })
+            } else {
                 //Location does not have a special displayRule using type Display rule
-                val typeDisplayRule: LocationDisplayRule = mMapActivity.getMapControl().getDisplayRule(mLocations[position].type)
+                val typeDisplayRule: LocationDisplayRule? = mMapActivity.getMapControl().getDisplayRule(mLocations[position]?.type)
+
                 if (typeDisplayRule != null) {
-                    mMapActivity.runOnUiThread({ holder.imageView.setImageBitmap(typeDisplayRule.icon) })
+                    mMapActivity.runOnUiThread(Runnable {
+                        holder.imageView.setImageBitmap(
+                            typeDisplayRule.icon
+                        )
+                    })
                 }
             }
         }
     }
-    override fun getItemCount(): Int {
-        return mLocations.size
-    }
+
+    ...
+
 }
+
 internal class ViewHolder(inflater: LayoutInflater, parent: ViewGroup?) :
-    RecyclerView.ViewHolder(inflater.inflate(R.layout.fragment_search__list_item, parent, false)) {
-    val text: TextView
-    val imageView: ImageView
-    init {
-        text = itemView.findViewById(R.id.text)
-        imageView = itemView.findViewById(R.id.location_image)
-    }
+    ...
 }
 ```
 
@@ -350,6 +390,7 @@ void search(String searchQuery) {
     MPQuery mpQuery = new MPQuery.Builder().setQuery(searchQuery).build();
     //Filter for the search query, only taking 30 locations
     MPFilter mpFilter = new MPFilter.Builder().setTake(30).build();
+
     //Query for the locations
     MapsIndoors.getLocationsAsync(mpQuery, mpFilter, (list, miError) -> {
         //Check if there is no error and the list is not empty
@@ -358,6 +399,7 @@ void search(String searchQuery) {
             mSearchFragment = SearchFragment.newInstance(list, this);
             //Make a transaction to the bottomsheet
             getSupportFragmentManager().beginTransaction().replace(R.id.standardBottomSheet, mSearchFragment).commit();
+            
             ...
         }
     }
@@ -368,17 +410,23 @@ void search(String searchQuery) {
 <mi-tab-panel id="kotlin">
 
 ```kotlin
-fun search(searchQuery: String) {
+private fun search(searchQuery: String) {
+    //Query with a string to search on
     val mpQuery = MPQuery.Builder().setQuery(searchQuery).build()
+    //Filter for the search query, only taking 30 locations
     val mpFilter = MPFilter.Builder().setTake(30).build()
-    MapsIndoors.getLocationsAsync(mpQuery, mpFilter) { locations, miError ->
-        locations?.let { locationList ->
-                supportFragmentManager.beginTransaction().replace(R.id.standardBottomSheet, SearchFragment.newInstance(locationList, this)).commit()
-                //Check if the bottom sheet is hidden.
-                if (btmnSheetBehavior.getState() == BottomSheetBehavior.STATE_HIDDEN) {
-                    btmnSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
-                }
-            }
+
+    //Query for the locations
+    MapsIndoors.getLocationsAsync(mpQuery, mpFilter) { list: List<MPLocation?>?, miError: MIError? ->
+        //Check if there is no error and the list is not empty
+        if (miError == null && !list.isNullOrEmpty()) {
+            //Create a new instance of the search fragment
+            mSearchFragment = SearchFragment.newInstance(list, this)
+            //Make a transaction to the bottom sheet
+            supportFragmentManager.beginTransaction().replace(R.id.standardBottomSheet, mSearchFragment).commit()
+            
+            ...
+        }
     }
 }
 ```

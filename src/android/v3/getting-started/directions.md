@@ -80,7 +80,7 @@ holder.itemView.setOnClickListener(view -> {
 
 ```kotlin
 holder.itemView.setOnClickListener {
-  mMapActivity.createRoute(mLocations.get(position))
+    mLocations[position]?.let { locations -> mMapActivity?.createRoute(locations) }
 }
 ```
 
@@ -104,6 +104,7 @@ void createRoute(MPLocation mpLocation) {
     }
     mpRoutingProvider.query(mUserLocation, mpLocation.getPoint());
 }
+
 @Override
 public void onRouteResult(@Nullable Route route, @Nullable MIError miError) {
     ...
@@ -115,6 +116,7 @@ public void onRouteResult(@Nullable Route route, @Nullable MIError miError) {
             mMapControl.selectFloor(mpDirectionsRenderer.getCurrentFloor());
         });
     }
+
     //Set the route on the Directions renderer
     mpDirectionsRenderer.setRoute(route);
     //Create a new instance of the navigation fragment
@@ -134,7 +136,41 @@ public void onRouteResult(@Nullable Route route, @Nullable MIError miError) {
 <mi-tab-panel id="kotlin">
 
 ```kotlin
-class MapsActivity : FragmentActivity(), OnMapReadyCallback, OnRouteResultListener
+fun createRoute(mpLocation: MPLocation) {
+    //If MPRoutingProvider has not been instantiated create it here and assign the results call back to the activity.
+    if (mpRoutingProvider == null) {
+        mpRoutingProvider = MPRoutingProvider()
+        mpRoutingProvider?.setOnRouteResultListener(this)
+    }
+    mpRoutingProvider?.setTravelMode(TravelMode.WALKING)
+    //Queries the MPRouting provider for a route with the hardcoded user location and the point from a location.
+    mpRoutingProvider?.query(mUserLocation, mpLocation.point)
+}
+
+override fun onRouteResult(@Nullable route: Route?, @Nullable miError: MIError?) {
+    ...
+    //Create the MPDirectionsRenderer if it has not been instantiated.
+    if (mpDirectionsRenderer == null) {
+        mpDirectionsRenderer = MPDirectionsRenderer(this, mMap, mMapControl, OnLegSelectedListener { i: Int ->
+            //Listener call back for when the user changes route leg. (By default is only called when a user presses the RouteLegs end marker)
+            mpDirectionsRenderer?.setRouteLegIndex(i)
+            mMapControl.selectFloor(mpDirectionsRenderer!!.currentFloor)
+        })
+    }
+
+    //Set the route on the Directions renderer
+    mpDirectionsRenderer?.setRoute(route)
+    //Create a new instance of the navigation fragment
+    mNavigationFragment = NavigationFragment.newInstance(route, this)
+    //Start a transaction and assign it to the BottomSheet
+    ...
+    //As camera movement is involved run this on the UIThread
+    runOnUiThread {
+        //Starts drawing and adjusting the map according to the route
+        mpDirectionsRenderer?.initMap(true)
+        ...    
+    }
+}
 ```
 
 </mi-tab-panel>
@@ -248,6 +284,7 @@ public class NavigationFragment extends Fragment {
                 mMapsActivity.getMapControl().selectFloor(mMapsActivity.getMpDirectionsRenderer().getCurrentFloor());
             }
         });
+
         ...
         //Button for closing the bottom sheet. Clears the route through directionsRenderer as well, and changes map padding.
         closeBtn.setOnClickListener(v -> {
@@ -255,14 +292,17 @@ public class NavigationFragment extends Fragment {
             mMapsActivity.getMpDirectionsRenderer().clear();
             mMapsActivity.getMapControl().setMapPadding(0,0,0,0);
         });
+
         //Next button for going through the legs of the route.
         nextBtn.setOnClickListener(v -> {
             mViewPager.setCurrentItem(mViewPager.getCurrentItem() + 1, true);
         });
+
         //Back button for going through the legs of the route.
         backBtn.setOnClickListener(v -> {
             mViewPager.setCurrentItem(mViewPager.getCurrentItem() - 1, true);
         });
+
         //Describing the distance in meters
         distanceTxtView.setText("Distance: " + mRoute.getDistance() + " m");
         //Describing the time it takes for the route in minutes
@@ -278,7 +318,73 @@ public class NavigationFragment extends Fragment {
 <mi-tab-panel id="kotlin">
 
 ```kotlin
-private val mUserLocation: Point = Point(38.897389429704695, -77.03740973527613, 0.0)
+class NavigationFragment : Fragment() {
+    private var mRoute: Route? = null
+    private var mMapsActivity: MapsActivity? = null
+    
+    ...
+    override fun onViewCreated(view: View, @Nullable savedInstanceState: Bundle?) {
+        val routeCollectionAdapter = RouteCollectionAdapter(this)
+        val mViewPager: ViewPager2 = view.findViewById(R.id.view_pager)
+        mViewPager.adapter = routeCollectionAdapter
+        mViewPager.registerOnPageChangeCallback(object : OnPageChangeCallback() {
+            override fun onPageSelected(position: Int) {
+                super.onPageSelected(position)
+                //When a page is selected call the renderer with the index
+                mMapsActivity?.getMpDirectionsRenderer()?.setRouteLegIndex(position)
+                //Update the floor on mapcontrol if the floor might have changed for the routing
+                mMapsActivity?.getMpDirectionsRenderer()?.currentFloor?.let {floorIndex ->
+                    mMapsActivity?.getMapControl()?.selectFloor(floorIndex)
+                }
+            }
+        })
+
+        ...
+
+        //Button for closing the bottom sheet. Clears the route through directionsRenderer as well, and changes map padding.
+        closeBtn.setOnClickListener {
+            mMapsActivity!!.supportFragmentManager.beginTransaction().remove(this).commit()
+            mMapsActivity!!.getMpDirectionsRenderer()?.clear()
+            mMapsActivity!!.getMapControl().setMapPadding(0, 0, 0, 0)
+        }
+
+        //Next button for going through the legs of the route.
+        nextBtn.setOnClickListener {
+            mViewPager.setCurrentItem(
+                mViewPager.currentItem + 1,
+                true
+            )
+        }
+
+        //Back button for going through the legs of the route.
+        backBtn.setOnClickListener {
+            mViewPager.setCurrentItem(
+                mViewPager.currentItem - 1,
+                true
+            )
+        }
+
+        //Describing the distance in meters
+        distanceTxtView.text = "Distance: " + mRoute?.getDistance().toString() + " m"
+        //Describing the time it takes for the route in minutes
+        infoTxtView.text = "Time for route: " + mRoute?.duration?.toLong()?.let {duration ->
+            TimeUnit.MINUTES.convert(duration, TimeUnit.SECONDS).toString()
+        } + " minutes"
+    }
+
+    inner class RouteCollectionAdapter(fragment: Fragment?) :
+        ...
+    }
+
+    companion object {
+        fun newInstance(route: Route?, mapsActivity: MapsActivity?): NavigationFragment {
+            val fragment = NavigationFragment()
+            fragment.mRoute = route
+            fragment.mMapsActivity = mapsActivity
+            return fragment
+        }
+    }
+}
 ```
 
 </mi-tab-panel>
@@ -317,7 +423,35 @@ public class RouteLegFragment extends Fragment {
 <mi-tab-panel id="kotlin">
 
 ```kotlin
-private val mUserLocation: Point = Point(38.897389429704695, -77.03740973527613, 0.0)
+class RouteLegFragment : Fragment() {
+    private var mRouteLeg: RouteLeg? = null
+
+    ...
+
+    override fun onViewCreated(view: View, @Nullable savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        //Assigning views
+        val fromTxtView = view.findViewById<TextView>(R.id.from_text_view)
+        var stepsString = ""
+        //A loop to write what to do for each step of the leg.
+        for (i in mRouteLeg!!.steps.indices) {
+            val routeStep = mRouteLeg!!.steps[i]
+            stepsString += """
+                Step ${i + 1}${routeStep.maneuver}
+                """.trimIndent()
+        }
+
+        fromTxtView.text = stepsString
+    }
+
+    companion object {
+        fun newInstance(routeLeg: RouteLeg?): RouteLegFragment {
+            val fragment = RouteLegFragment()
+            fragment.mRouteLeg = routeLeg
+            return fragment
+        }
+    }
+}
 ```
 
 </mi-tab-panel>
@@ -343,7 +477,7 @@ mpRoutingProvider.setTravelMode(TravelMode.WALKING);
 <mi-tab-panel id="kotlin">
 
 ```kotlin
-private val mUserLocation: Point = Point(38.897389429704695, -77.03740973527613, 0.0)
+mpRoutingProvider?.setTravelMode(TravelMode.WALKING)
 ```
 
 </mi-tab-panel>
