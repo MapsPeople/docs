@@ -46,7 +46,7 @@ routeProvider.setOnRouteResultListener { route, miError ->
 </mi-tab-panel>
 </mi-tabs>
 
-To get a Route result we must query the `MPRoutingProvider` with two `Point` objects. First, let's assume we have the latitude and longitude of a user. We create a `Point` object from the latitude and longitude, and set the `zIndex` to `0` as the user is outside. We also need to find a Location the user should navigate to. This can be done by using the Marker the user has selected and creating a UI function to generate a Route for the selected Location. In this example, we will just query for a Location through an ID. We will also set the `TravelMode` to "Walking".
+To get a Route result we must query the `MPRoutingProvider` with two `Point` objects. First, let's assume we have the latitude and longitude of a user. We create a `Point` object from the latitude and longitude, and set the `zIndex` to `0` as the user is outside. We also need to find a Location the user should navigate to. This can be done by using the Marker the user has selected, and creating a UI function to generate a Route for the selected Location. In this example, we will query for a Location through an ID. We will also set the `TravelMode` to "Walking".
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>

@@ -27,7 +27,7 @@ You can get started in two ways, either by reviewing and modifying the [basic ex
 
 You will find in the **Create a link to a very basic implementation of a single activity mapsindoors implementation** a repo that contains the minimum code to start a MapsIndoors project.
 
-You can also follow the steps below to start your app from scratch or to enhance the Basic Examples, more features will be explained in the [guides](/android/v3/guides/).
+You can also follow the steps below to start your app from scratch or to enhance the Basic Examples, more features will be explained in the [guides]({{ site.url }}/android/v3/guides/).
 
 ## Setup MapsIndoors
 
