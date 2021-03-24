@@ -44,3 +44,9 @@ mapsindoors.services.LocationsService.getLocations(searchParameters).then(locati
   mapsIndoorsInstance.filter(locations.map(location => location.id), false);
 });
 ```
+
+## Clearing the map of your filter
+
+{% include "src/shared/guides/search/clear-search-filter-on-map.md" %}
+
+## Example of clearing you map filter to show all Locations again

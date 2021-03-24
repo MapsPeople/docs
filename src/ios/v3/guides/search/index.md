@@ -48,3 +48,9 @@ MPLocationService.sharedInstance().getLocationsUsing(query, filter: filter) { (l
     myMapControl.searchResult = locations
 }
 ```
+
+## Clearing the map of your filter
+
+{% include "src/shared/guides/search/clear-search-filter-on-map.md" %}
+
+## Example of clearing you map filter to show all Locations again

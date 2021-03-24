@@ -36,7 +36,7 @@ See the full list of parameters:
 
 {% include "src/shared/guides/search/displaying-search-results.md" %}
 
-## Examples of filtering the map to display searched locations on the map
+## Example of filtering the map to display searched locations on the map
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="androidJava"></mi-tab>
@@ -49,6 +49,27 @@ See the full list of parameters:
 <mi-tab-panel id="androidKotlin">
 
 {% include "src/android/v3/guides/search/extras/kotlin-display-search.md" %}
+
+</mi-tab-panel>
+</mi-tabs>
+
+## Clearing the map of your filter
+
+{% include "src/shared/guides/search/clear-search-filter-on-map.md" %}
+
+## Example of clearing you map filter to show all Locations again
+
+<mi-tabs>
+<mi-tab label="Java" tab-for="androidJava"></mi-tab>
+<mi-tab label="Kotlin" tab-for="androidKotlin"></mi-tab>
+<mi-tab-panel id="androidJava">
+
+{% include "src/android/v3/guides/search/extras/java-clear-search.md" %}
+
+</mi-tab-panel>
+<mi-tab-panel id="androidKotlin">
+
+{% include "src/android/v3/guides/search/extras/kotlin-clear-search.md" %}
 
 </mi-tab-panel>
 </mi-tabs>
