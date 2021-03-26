@@ -54,3 +54,7 @@ MPLocationService.sharedInstance().getLocationsUsing(query, filter: filter) { (l
 {% include "src/shared/guides/search/clear-search-filter-on-map.md" %}
 
 ## Example of clearing you map filter to show all Locations again
+
+```swift
+myMapControl.clearMap()
+```
