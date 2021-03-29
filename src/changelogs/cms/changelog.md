@@ -11,8 +11,7 @@ eleventyNavigation:
 
 ### What's new
 
-- New look to the CSV upload/download page.
-- CSV upload/download of Live-data mappings has been added.
+- Improvements to internal tools
 
 ## March 24th 2021
 
