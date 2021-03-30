@@ -6,9 +6,9 @@ eleventyNavigation:
   order: 520
 ---
 
-Use the `MPLocationService` class to search for content in your MapsIndoors solution.
+Use the `MPLocationService` class to search for content in your MapsIndoors Solution.
 
-This example shows how to setup a query for the nearest single best matching location and display the result on the map:
+This example shows how to setup a query for the nearest single best matching Location and display the result on the map:
 
 ```swift
 let filter = MPFilter.init()
@@ -25,7 +25,7 @@ MPLocationService.sharedInstance().getLocationsUsing(query, filter: filter) { (l
 }
 ```
 
-This example shows how to setup a query for a group of locations and display the result on the map:
+This example shows how to setup a query for a group of Locations and display the result on the map:
 
 ```swift
 let filter = MPFilter.init()

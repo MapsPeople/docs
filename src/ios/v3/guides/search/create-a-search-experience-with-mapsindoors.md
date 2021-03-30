@@ -7,11 +7,11 @@ eleventyNavigation:
   order: 510
 ---
 
-This is an example of creating a simple search experience using MapsIndoors. We will create a map with a search button that leads to another view controller that handles the search and selection. On selection of a location, we go back to the map and shows the selected location on the map.
+This is an example of creating a simple search experience using MapsIndoors. We will create a map with a search button which leads to another view controller that handles the search and selection. Select a Location to go back to the map and show the selected Location on the map.
 
-We will start by creating a simple search controller that handles search and selection of MapsIndoors locations
+We will start by creating a simple search controller that handles search and selection of MapsIndoors Locations.
 
-Declare a protocol for our location selection with a `didSelectLocation` method
+Declare a protocol for our Location selection with a `didSelectLocation` method
 
 ```swift
 protocol MySearchControllerDelegate {
@@ -19,7 +19,7 @@ protocol MySearchControllerDelegate {
 }
 ```
 
-Define `MySearchController`. In this tutorial our search controller is a `UIViewController` that implements the protocols `UISearchBarDelegate`, `UITableViewDelegate` and `UITableViewDataSource`
+Define `MySearchController`. In this tutorial our search controller is a `UIViewController` that implements the protocols `UISearchBarDelegate`, `UITableViewDelegate` and `UITableViewDataSource`.
 
 ```swift
 class MySearchController: UIViewController, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource {
@@ -43,7 +43,7 @@ let tableView = UITableView.init()
 let searchBar = UISearchBar.init()
 ```
 
-In `viewDidLoad`, wire up your view controller to the tableview and search bar.
+In `viewDidLoad`, wire up your view controller to the table view and search bar.
 
 ```swift
 searchBar.delegate = self
@@ -135,7 +135,7 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
 }
 ```
 
-Implement the `tableView:didSelectRowAt` method. In this example we just call the delegate method and dismiss the view controller.
+Implement the `tableView:didSelectRowAt` method. In this example we call the delegate method and dismiss the view controller.
 
 Delegate method will be handled by SearchMapController.
 

@@ -1,6 +1,6 @@
 ```java
 fun findRestroom() {
-    //Here we will create an empty query because we are only interrested in getting locations that match a category. If you want to be more specific here where you can add a query text like "Handicap Toilet"
+    //Here we will create an empty query because we are only interrested in getting locations that match a category. If you want to be more specific here where you can add a query text like "Unisex Restroom"
     val mpQuery = MPQuery.Builder()
         .build()
     val categories: MutableList<String> = ArrayList()

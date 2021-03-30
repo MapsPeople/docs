@@ -31,11 +31,11 @@ MPLocationService.sharedInstance().getLocationsUsing(query, filter: filter) { (l
 
 {% include "src/shared/guides/search/search-ranking.md" %}
 
-## Displaying your search results on the map
+## Display search results on the map
 
 {% include "src/shared/guides/search/displaying-search-results.md" %}
 
-## Examples of filtering the map to display searched locations on the map
+## Filter the map to display searched Locations on the map
 
 ```swift
 let filter = MPFilter.init()
@@ -49,11 +49,11 @@ MPLocationService.sharedInstance().getLocationsUsing(query, filter: filter) { (l
 }
 ```
 
-## Clearing the map of your filter
+## Clear the map of your filter
 
 {% include "src/shared/guides/search/clear-search-filter-on-map.md" %}
 
-## Example of clearing you map filter to show all Locations again
+## Example of clearing your map filter to show all Locations again
 
 ```swift
 myMapControl.clearMap()

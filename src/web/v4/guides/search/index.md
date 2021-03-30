@@ -27,11 +27,11 @@ mapsindoors.services.LocationsService.getLocations(searchParameters).then(locati
 
 {% include "src/shared/guides/search/search-ranking.md" %}
 
-## Displaying your search results on the map
+## Display search results on the map
 
 {% include "src/shared/guides/search/displaying-search-results.md" %}
 
-## Example of filtering the map to display searched locations on the map
+## Filter the map to display searched locations on the map
 
 ```js/7
 const searchParameters = {
@@ -49,7 +49,7 @@ mapsindoors.services.LocationsService.getLocations(searchParameters).then(locati
 
 {% include "src/shared/guides/search/clear-search-filter-on-map.md" %}
 
-## Example of clearing you map filter to show all Locations again
+## Example of clearing your map filter to show all Locations again
 
 ```js
 mapsIndoorsInstance.filter(null);

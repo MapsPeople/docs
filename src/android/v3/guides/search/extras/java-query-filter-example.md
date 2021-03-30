@@ -1,6 +1,6 @@
 ```java
 void findRestroom() {
-    //Here we will create an empty query because we are only interrested in getting locations that match a category. If you want to be more specific here where you can add a query text like "Handicap Toilet"
+    //Here we will create an empty query because we are only interrested in getting locations that match a category. If you want to be more specific here where you can add a query text like "Unisex Restroom"
     MPQuery mpQuery = new MPQuery
             .Builder()
             .build();
@@ -16,7 +16,7 @@ void findRestroom() {
             .build();
 
     MapsIndoors.getLocationsAsync(mpQuery, mpFilter, (locations, error) -> {
-        //Check if there is an error and itterate through the list to do what you need with the search
+        //Check if there is an error and iterate through the list to do what you need with the search
     });
 }
 ```
