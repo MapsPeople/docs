@@ -7,6 +7,23 @@ eleventyNavigation:
   order: 6
 ---
 
+## March 29th 2021
+
+### What's new
+
+- Improvements to internal tools
+
+## March 24th 2021
+
+### What's new
+
+- **Locations:** The App User Roles’ filter reflects the Location Type’s restrictions if the individual Location is set to “Visible for all”.
+
+### Bugfix
+
+- **Route Access:** Zoom level 22 is now disabled when z22 module is not set for the Solution.
+- **Locations:** Fixes an issue where the inherited icon from the Location Type was displayed in a different size on the map.
+
 ## March 11th 2021
 
 ### Bugfix
