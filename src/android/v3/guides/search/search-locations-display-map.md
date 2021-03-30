@@ -1,7 +1,7 @@
 ---
 title: Searching for Locations and Displaying the Results on a Map
 eleventyNavigation:
-  parent: android-v3-guides
+  parent: android-v3-guides-search
   key: Searching for Locations and Displaying the Results on a Map
   order: 20
 ---
