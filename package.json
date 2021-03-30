@@ -3,9 +3,8 @@
   "version": "0.0.1",
   "description": "",
   "main": "_site/index.html",
-  "dependencies": {},
   "devDependencies": {
-    "@11ty/eleventy": "^0.11.1",
+    "@11ty/eleventy": "^0.12.1",
     "@11ty/eleventy-navigation": "^0.1.6",
     "@mapsindoors/midt": "^13.0.0",
     "del": "^6.0.0",
