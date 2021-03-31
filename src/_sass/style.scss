@@ -213,7 +213,7 @@ aside {
 nav {
     box-sizing: border-box;
 
-    ul, 
+    ul,
     ol,
     li {
         list-style: none;
@@ -318,31 +318,6 @@ h6 {
     @include margin.top(medium);
     @include margin.bottom(small);
     text-transform: uppercase;
-}
-
-// Code highlight styling. .hljs is a highlight.js-specific class.
-
-code {
-    font-size: 0.95rem;
-}
-
-p code {
-    @include padding.vertical(xxx-small);
-    @include padding.horizontal(x-small);
-    @include border.radius(medium);
-    @include background-color.gray(10);
-    @include color.gray(90);
-}
-
-pre code {
-    @include font.family(monospace);
-    @include border.radius(medium);
-    &.hljs {
-        @include padding.all(medium);
-        @include border.gray(40);
-        @include border.style(solid);
-        @include border.width(medium);
-    }
 }
 
 // header.njk
@@ -563,61 +538,3 @@ table {
         @include font.size(small);
     }
 }
-
-// // Dark theme overrides. Should always be at the bottom. Not possible until mi-tabs has dark mode too...
-
-// @media (prefers-color-scheme: dark) {
-//   body {
-//     @include font.color(inverse);
-//     @include background-color.gray(100);
-//   }
-
-//   a {
-//     @include color.bronze(30);
-
-//     &:hover {
-//       text-decoration: underline;
-//       @include color.bronze(30);
-//     }
-
-//     &:active {
-//       @include color.bronze(40);
-//     }
-
-//     // &:visited {
-//     //   @include color.bronze(20);
-//     // }
-//   }
-//   pre code.hljs {
-//     @include border.style(none);
-//   }
-//   nav {
-//     .active > a {
-//       @include background-color.gray(90);
-//     }
-//   }
-//   nav.sidebar {
-//     li.active {
-//       @include border.bronze(20);
-//     }
-//   }
-//   header,
-//   p code {
-//     @include background-color.gray(90);
-//     background-image: none;
-//     @include font.color(inverse);
-//   }
-//   h1 {
-//     a {
-//       @include font.color(inverse);
-
-//       &:visited {
-//         @include font.color(inverse);
-//       }
-
-//       &:hover {
-//         @include color.bronze(30);
-//       }
-//     }
-//   }
-// }

@@ -6,39 +6,38 @@ eleventyNavigation:
   order: 520
 ---
 
-Use the `MPLocationsProvider` class to search for content in your MapsIndoors solution.
+Use the `MPLocationService` class to search for content in your MapsIndoors Solution.
 
-This example shows how to setup a query for the nearest single best matching location and display the result on the map:
+This example shows how to setup a query for the nearest single best matching Location and display the result on the map:
 
 ```swift
-let locations = MPLocationsProvider.init()
-let queryObj = MPLocationQuery.init()
+let filter = MPFilter.init()
+let query = MPQuery.init()
+query.query = "Office"
+query.near = MPPoint.init(lat: 57.057964, lon: 9.9504112)
+query.take = 1
 
-queryObj.query = "Toilet"
-queryObj.near = MPPoint.init(lat: 57.057964, lon: 9.9504112)
-queryObj.max = 1
-
-locations.getLocationsUsing(queryObj) { (locationData, error) in
+MPLocationService.sharedInstance().getLocationsUsing(query, filter: filter) { (locations, error) in
     if error == nil {
-        let location = locationData?.list.first
+        let location = locations?.first
         self.mapControl?.go(to: location)
     }
 }
 ```
 
-This example shows how to setup a query for a group of locations and display the result on the map:
+This example shows how to setup a query for a group of Locations and display the result on the map:
 
 ```swift
-let locations = MPLocationsProvider.init()
-let queryObj = MPLocationQuery.init()
+let filter = MPFilter.init()
+let query = MPQuery.init()
 
-queryObj.categories = ["Toilet"]
-queryObj.max = 50
+query.categories = ["Office"]
+query.max = 50
 
-locations.getLocationsUsing(queryObj) { (locationData, error) in
+MPLocationService.sharedInstance().getLocationsUsing(query, filter: filter) { (locations, error) in
     if error == nil {
-        self.mapControl?.searchResult = locationData!.list
-        let firstLocation = locationData?.list.first
+        self.mapControl?.searchResult = locations
+        let firstLocation = locations?.first
         self.mapControl?.currentFloor = firstLocation.floor
     }
 }
