@@ -6,5 +6,5 @@ eleventyNavigation:
   key: ios-v3-guides-locations
   parent: ios-v3-guides
   title: Locations
-  order: 30
+  order: 40
 ---

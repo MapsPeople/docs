@@ -3,8 +3,8 @@ title: Search in MapsIndoors
 eleventyNavigation:
   key: ios-v3-guides-search
   parent: ios-v3-guides
-  title: Search in MapsIndoors
-  order: 0
+  title: Create a search experience with MapsIndoors
+  order: 20
 ---
 
 {% include "src/shared/guides/search/overview.md" %}

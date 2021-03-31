@@ -13,7 +13,7 @@ We will start by making the controller that renders the route from the input of 
 class ShowRouteOnMapController: UIViewController, MPDirectionsRendererDelegate {
 ```
 
-Setup member variables for `MySearchController`:
+Setup member variables for `ShowRouteOnMapController`:
 
 * An instance of type `GMSMapView`
 * An instance of type `MPMapControl`

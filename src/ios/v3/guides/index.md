@@ -1,7 +1,7 @@
 ---
 title: Guides
 layout: redirect
-destination: /ios/v3/guides/getting-started/
+destination: /ios/v3/guides/map-control/
 eleventyNavigation:
   title: Guides
   parent: ios-v3
