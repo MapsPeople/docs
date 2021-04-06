@@ -34,7 +34,7 @@ Insert the MapsIndoors SDK script tag into `<head>`, followed by the Google Maps
 </head>
 ```
 
-> Remember to add your API keys.
+> Remember to add your API keys. You can use the demo MapsIndoors API key showing "The White House": 79f8e7daff76489dace4f9f9
 
 Add an empty `<div>` element to `<body>` with the `id` attribute set to "map":
 
@@ -56,7 +56,7 @@ const mapViewOptions = {
   element: document.getElementById('map'),
   center: { lat: 38.8974905, lng: -77.0362723 }, // The White House
   zoom: 17,
-  maxZoom: 21,
+  maxZoom: 22,
 };
 const mapViewInstance = new mapsindoors.mapView.GoogleMapsView(mapViewOptions);
 const mapsIndoorsInstance = new mapsindoors.MapsIndoors({
