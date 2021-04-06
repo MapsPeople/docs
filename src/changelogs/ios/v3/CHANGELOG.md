@@ -18,6 +18,17 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 ### Removed
 -->
 
+## [3.22.0] 2021-03-18
+
+### Fixed
+
+- Fixed an issue with our offline bundling feature causing languages to be mixed on first install and start of the application using the SDK with offline bundling.
+
+### Changed
+
+- A map label will now be centered when the icon is hidden for a given Location.
+- When Live Data is enabled for both `occupancy` and `availability`, the default rendering will now combine these two into a visualisation where it is possible to see if a room is booked and how many people are in the room.
+
 ## [3.20.0] 2021-03-05
 
 ### Changed
