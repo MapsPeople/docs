@@ -181,7 +181,7 @@ miSearchElement.addEventListener('results', (event) => {
 </mi-tab-panel>
 </mi-tabs>
 
-* Add an for loop and append every result to the search results list element.
+* Add a _for_ loop and append every result to the search results list element.
 
 <mi-tabs>
 <mi-tab label="Manually" tab-for="manually"></mi-tab>
