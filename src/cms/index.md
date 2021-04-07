@@ -1,5 +1,6 @@
 ---
 title: MapsIndoors CMS
+toc: true
 eleventyNavigation:
   key: MapsIndoors CMS
   parent: index
