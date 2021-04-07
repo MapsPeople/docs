@@ -20,7 +20,7 @@ Data is structured in a hierarchy where the top level is your Solution which can
 
 View the tutorial video below for more information about terminology and hierarchy.
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/GwyO-Vav8Rs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="480" height="300" src="https://www.youtube-nocookie.com/embed/GwyO-Vav8Rs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Although a point of interest can be placed within a room, it is not required. Points of interest can also be placed "outside” on the ground level which is also the layer where the Google map exists. In this case the POI belongs to the Venue directly.
 
@@ -35,7 +35,7 @@ There are 2 different roles in the system:
 
 View the tutorial video below for more information about the menu structure and user roles.
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/HpghIH5IKgk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="480" height="300" src="https://www.youtube-nocookie.com/embed/HpghIH5IKgk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## The Map
 
@@ -87,7 +87,7 @@ Select the icon on the map for the Location that you wish to edit, or click on L
 
 View the tutorial video below for more information about managing POIs.
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/YjvmpkZ4Rdg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="480" height="300" src="https://www.youtube-nocookie.com/embed/YjvmpkZ4Rdg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 In the Edit Location Form you can do the following:
 
@@ -333,7 +333,7 @@ To display or otherwise use the custom data, your app needs to be customized. Th
 
 View the tutorial video below for more information about Location Types.
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/WJIZUBsObU4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="480" height="300" src="https://www.youtube-nocookie.com/embed/WJIZUBsObU4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Categories
 
@@ -343,7 +343,7 @@ Ability to add new categories to the list. Click on New Category, add name, clic
 
 View the tutorial video below for more information about Categories.
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/DskwwAE4lLE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="480" height="300" src="https://www.youtube-nocookie.com/embed/DskwwAE4lLE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Syncing Categories to other Solutions
 
