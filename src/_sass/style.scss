@@ -19,6 +19,10 @@
     background: $color-green-90;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 html,
 body {
     margin: 0;
@@ -55,6 +59,7 @@ body {
 }
 
 main {
+    width: 500px;
     @include margin.top(medium);
     p,
     ul,
@@ -138,7 +143,7 @@ a {
         }
         display: grid;
         place-items: center;
-        height: 90vh;
+        min-height: 90vh;
     }
     .headline {
         @include font.family(raleway);
@@ -159,13 +164,13 @@ a {
 
 // Sidebar navigation
 
+$sidebar-width: 280px;
+
 nav.sidebar {
-    min-width: 280px;
-    max-width: 280px;
+    min-width: $sidebar-width;
+    max-width: $sidebar-width;
     display: block;
     @include margin.right(xx-large);
-    // @include margin.top(medium);
-    @include border.radius(medium);
     @include padding.right(medium);
 
     hr {
@@ -179,14 +184,44 @@ nav.sidebar {
     }
 }
 
+aside {
+    width: $sidebar-width;
+    @include margin.left(xx-large);
+    @include padding.left(medium);
+    box-sizing: border-box;
+
+    div.toc {
+        padding-top: 56px;
+        position: sticky;
+        top: 0;
+
+        h4 {
+            margin-top: 0;
+            padding-bottom: .3em;
+            border-bottom: 1px solid #eaecef;
+            @include font.size(medium);
+            @include font.weight(x-large);
+        }
+
+        nav ol {
+            @include font.size(small);
+            line-height: 1.25;
+        }
+    }
+}
+
 nav {
+    box-sizing: border-box;
+
     ul,
+    ol,
     li {
         list-style: none;
         padding: 0;
         margin: 0;
     }
-    ul {
+    ul,
+    ol {
         @include font.size(medium);
         @include font.leading(x-large);
         li {
@@ -283,32 +318,6 @@ h6 {
     @include margin.top(medium);
     @include margin.bottom(small);
     text-transform: uppercase;
-}
-
-// Code highlight styling. .hljs is a highlight.js-specific class.
-
-code {
-    font-size: 0.95rem;
-}
-
-p code {
-    @include padding.vertical(xxx-small);
-    @include padding.horizontal(x-small);
-    @include border.radius(medium);
-    @include background-color.gray(10);
-    @include color.gray(90);
-}
-
-pre code {
-    @include font.family(monospace);
-    @include border.radius(medium);
-    width: $font-measure-large;
-    &.hljs {
-        @include padding.all(medium);
-        @include border.gray(40);
-        @include border.style(solid);
-        @include border.width(medium);
-    }
 }
 
 // header.njk
@@ -529,61 +538,3 @@ table {
         @include font.size(small);
     }
 }
-
-// // Dark theme overrides. Should always be at the bottom. Not possible until mi-tabs has dark mode too...
-
-// @media (prefers-color-scheme: dark) {
-//   body {
-//     @include font.color(inverse);
-//     @include background-color.gray(100);
-//   }
-
-//   a {
-//     @include color.bronze(30);
-
-//     &:hover {
-//       text-decoration: underline;
-//       @include color.bronze(30);
-//     }
-
-//     &:active {
-//       @include color.bronze(40);
-//     }
-
-//     // &:visited {
-//     //   @include color.bronze(20);
-//     // }
-//   }
-//   pre code.hljs {
-//     @include border.style(none);
-//   }
-//   nav {
-//     .active > a {
-//       @include background-color.gray(90);
-//     }
-//   }
-//   nav.sidebar {
-//     li.active {
-//       @include border.bronze(20);
-//     }
-//   }
-//   header,
-//   p code {
-//     @include background-color.gray(90);
-//     background-image: none;
-//     @include font.color(inverse);
-//   }
-//   h1 {
-//     a {
-//       @include font.color(inverse);
-
-//       &:visited {
-//         @include font.color(inverse);
-//       }
-
-//       &:hover {
-//         @include color.bronze(30);
-//       }
-//     }
-//   }
-// }

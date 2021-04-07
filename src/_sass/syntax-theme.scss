@@ -1,0 +1,190 @@
+@use '../../node_modules/@mapsindoors/midt/build/scss/variables' as *;
+
+// Override default highlight color
+mark {
+    background-color: rgba($color-bronze-20, 0.48);
+    color: inherit;
+    padding-top: $spacing-xxx-small;
+    padding-bottom: $spacing-xxx-small;
+}
+
+code {
+    color: $color-black-black;
+    font-family: "ui-monospace", $font-family-monospace;
+}
+
+// Inline code
+code:not([class*="language-"]) {
+    font-size: 0.95rem;
+    background: $color-gray-10;
+    padding: $spacing-xx-small;
+    border-radius: $rounding-small;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+    padding: $spacing-x-small;
+    overflow: auto;
+    border: 1px solid $color-gray-60;
+    border-radius: $rounding-medium;
+    background: $color-white-base;
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.4;
+
+    -moz-tab-size: 8;
+    -o-tab-size: 8;
+    tab-size: 8;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+}
+
+.token.comment,
+.token.blockquote {
+    color: $color-gray-60;
+}
+
+.token.cdata {
+    color: $color-indigo-base;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+    color: $color-gray-80;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+    color: $color-magenta-base;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+    color: $color-indigo-base;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+    color: $color-blue-50;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+    color: $color-green-60;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+    color: $color-purple-base;
+}
+
+.token.entity {
+    cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+    font-weight: bold;
+    color: $color-indigo-base;
+}
+
+.token.list {
+    color: $color-bronze-base;
+}
+
+.token.inserted {
+    background-color: $color-green-20;
+    color: $color-green-70;
+}
+
+.token.deleted {
+    background-color: $color-white-base;
+    color: $color-red-base;
+}
+
+.token.bold {
+    font-weight: bold;
+}
+
+.token.italic {
+    font-style: italic;
+}
+
+/* JSON */
+.language-json .token.property {
+    color: $color-indigo-base;
+}
+
+.language-markup .token.tag .token.punctuation {
+    color: $color-gray-80;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+    color: $color-blue-60;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+    color: $color-green-base;
+}
+
+code.language-yaml {
+    color: $color-indigo-base;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+    color: $color-gray-80;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+    color: $color-purple-base;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+    color: $color-indigo-base;
+}
+
+/* xml */
+/* java */
+/* kotlin */
+/* swift */
+/* javascript */
+/* js */
+/* csharp */

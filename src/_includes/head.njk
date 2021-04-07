@@ -17,27 +17,8 @@
             rel="stylesheet"
             href="https://www.unpkg.com/@mapsindoors/css@0.0.7/helpers.css"
         />
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
-        <script>
-            hljs.initHighlightingOnLoad();
-        </script>
-        <script>
-            if (
-                window.matchMedia &&
-                window.matchMedia("(prefers-color-scheme: dark)").matches
-            ) {
-                document.write(
-                    '<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css">'
-                );
-            } else if (
-                window.matchMedia &&
-                window.matchMedia("(prefers-color-scheme: light)").matches
-            ) {
-                document.write(
-                    '<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github-gist.min.css">'
-                );
-            }
-        </script>
+        <link rel="stylesheet" href="{{ '/assets/syntax-theme.css' | url }}" />
+
         <script
             type="module"
             src="https://unpkg.com/@mapsindoors/components@7.2.1/dist/mi-components/mi-components.esm.js"

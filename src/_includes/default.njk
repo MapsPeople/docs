@@ -21,6 +21,16 @@
                     {% endif %}
                     {{ content | safe }}
                 </main>
+
+                {% if toc %}
+                <aside>
+                    <div class="toc">
+                        <h4>In this article</h4>
+                        {{ content | toc  | safe }}
+                    </div>
+                <aside>
+                {% endif %}
+
             </section>
         </div>
     </div>

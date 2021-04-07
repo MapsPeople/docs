@@ -1,11 +1,22 @@
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const embedYouTube = require("eleventy-plugin-youtube-embed");
 const fs = require("fs");
+const pluginTOC = require('eleventy-plugin-toc')
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("src/assets");
     eleventyConfig.addPlugin(eleventyNavigationPlugin);
     eleventyConfig.addPlugin(embedYouTube);
+    // Generates a Table of Content using an Eleventy filter
+    eleventyConfig.addPlugin(pluginTOC, {
+        tags: ['h2'],
+    });
+    // Provides syntax highlighting
+    eleventyConfig.addPlugin(syntaxHighlight, {
+        templateFormats: ["md"],
+        alwaysWrapLineHighlights: false,
+    });
     eleventyConfig.addWatchTarget("./src/assets/");
     eleventyConfig.setBrowserSyncConfig({
         ui: false,
@@ -24,6 +35,12 @@ module.exports = function (eleventyConfig) {
         },
     });
     eleventyConfig.setUseGitIgnore(false);
+
+    // Populates all headings with an id attribute
+    const markdownIt = require("markdown-it");
+    const markdownItAnchor = require("markdown-it-anchor");
+    const markdownLib = markdownIt({ html: true }).use(markdownItAnchor);
+    eleventyConfig.setLibrary("md", markdownLib);
 
     eleventyConfig.addCollection("androidv2", function (collectionApi) {
         return collectionApi.getFilteredByTags("android", "v2");
