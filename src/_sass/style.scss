@@ -106,14 +106,15 @@ a {
 // Front page
 
 .front {
-    background-image: linear-gradient(to bottom right, #f4f0e8, #d8e8e0);
-    color: #006440;
+    @include color.green(70);
 
     .front-content {
+        background-color: $color-white-base;
+
         ul {
             list-style: none;
             padding: 0;
-            @include margin.bottom(medium);
+            @include margin.bottom(large);
             li {
                 display: inline;
                 @include margin.right(medium);
@@ -139,6 +140,21 @@ a {
             &:hover {
                 @include background-color.gray(10);
                 text-decoration: none;
+            }
+        }
+        p {
+            text-align: center;
+            @include font.size(x-large);
+            @include font.weight(large);
+            &.links {
+                @include font.weight(medium);
+                @include padding.vertical(medium);
+            }
+            a.front-link {
+                @include font.size(large);
+                @include color.blue(70);
+                @include margin.right(medium);
+                @include margin.left(medium);
             }
         }
         display: grid;
