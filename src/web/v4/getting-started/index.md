@@ -14,3 +14,5 @@ eleventyNavigation:
 
 <!-- Skills -->
 {% include "src/shared/getting-started/skills.md" %}
+
+<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/web/v4/getting-started/prerequisites/">Next up: Prerequisites</a></p>

@@ -39,3 +39,5 @@ The project setup is simple. We use pure JavaScript so we do not need to install
 </body>
 </html>
 ```
+
+<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/web/v4/getting-started/map/">Next up: Show a map</a></p>

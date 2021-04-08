@@ -53,3 +53,5 @@ end{% endraw %}
 
   * `YOUR_GOOGLE_API_KEY` with your Google API key.
   * `YOUR_MAPSINDOORS_API_KEY` with your MapsIndoors API key.
+
+<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/ios/v3/getting-started/map/">Next up: Show a map</a></p>
