@@ -50,3 +50,5 @@ MPLocationService.sharedInstance().getLocationsUsing(query, filter: filter) { (l
 ```
 
 Replace "White House" with the name of a known building in your MapsIndoors dataset. Run your iOS project. You should now see a map of a building.
+
+<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/ios/v3/getting-started/search/">Next up: Search</a></p>

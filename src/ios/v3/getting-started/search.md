@@ -110,3 +110,5 @@ func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
 ```
 
 You should now be able to type text in your search bar and see the map showing the results of your searches.
+
+<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/ios/v3/getting-started/directions/">Next up: Directions</a></p>

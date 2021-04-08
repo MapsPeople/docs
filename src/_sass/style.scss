@@ -67,6 +67,19 @@ main {
     blockquote {
         @include font.measure(large);
     }
+    p.next-article {
+        text-align: center;
+        a.mi-button {
+            @include margin.top(large);
+            @include background-color.blue(60);
+            @include color.white(base);
+            @include border.width(large);
+            &:hover {
+                @include background-color.blue(70);
+                @include color.white(base);
+            }
+        }
+    }
 }
 
 blockquote {
@@ -213,7 +226,7 @@ aside {
 
         h4 {
             margin-top: 0;
-            padding-bottom: .3em;
+            padding-bottom: 0.3em;
             border-bottom: 1px solid #eaecef;
             @include font.size(medium);
             @include font.weight(x-large);
@@ -342,11 +355,7 @@ header {
     svg.mapspeople-logo path {
         fill: white;
     }
-    background-image: linear-gradient(
-        to bottom,
-        $color-green-90,
-        $color-green-100
-    );
+    background-image: linear-gradient(to bottom, $color-green-90, $color-green-100);
     .flex {
         display: flex;
     }
@@ -389,11 +398,7 @@ header {
 // footer.njk
 
 footer {
-    background-image: linear-gradient(
-        to bottom,
-        $color-green-60,
-        $color-green-90
-    );
+    background-image: linear-gradient(to bottom, $color-green-60, $color-green-90);
     @include color.white(base);
     @include margin.all(none);
     @include padding.all(medium);

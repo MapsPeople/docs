@@ -270,3 +270,5 @@ miSearchElement.addEventListener('results', (event) => {
 </mi-tabs>
 
 > To remove the location filter again, call `mapsIndoorsInstance.filter(null)`.
+
+<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/web/v4/getting-started/directions/">Next up: Directions</a></p>

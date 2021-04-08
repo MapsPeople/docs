@@ -168,3 +168,5 @@ Using the `<mi-map-googlemaps>` element, you can add the [floorSelectorControlPo
 You should now be able to switch between the first and second Floors of The White House.
 
 <!-- Add screenshot -->
+
+<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/web/v4/getting-started/search/">Next up: Search</a></p>
