@@ -18,6 +18,13 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 ### Security     in case of vulnerabilities.
 -->
 
+## [3.8.4] 2021-04-12
+
+### Fixed
+
+- Fixed issue with location source being stuck
+- Fixed HTML routing instructions to align with iOS
+
 ## [3.8.3] 2021-02-26
 
 ### Fixed
