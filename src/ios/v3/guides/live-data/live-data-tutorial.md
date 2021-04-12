@@ -6,7 +6,7 @@ eleventyNavigation:
   order: 340
 ---
 
-In this tutorial you will learn to work with Live Data / Real Time Data in MapsIndoors. It is recommended that you read the [Live Data Introduction](../../introductions/live-data) before continueing.
+In this tutorial you will learn to work with Live Data / Real Time Data in MapsIndoors. It is recommended that you read the [Live Data Introduction]({{ site.url }}/ios/v3/guides/live-data/) before continueing.
 
 We will create a view controller displaying a map that shows the some dynamic changes that are initiated from Live Data sources known by MapsIndoors. The test data coming as Live Updates contains data for the Occupancy Domain Type and the Position Domain Type.
 
