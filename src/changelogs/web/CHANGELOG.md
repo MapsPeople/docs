@@ -9,6 +9,20 @@ eleventyNavigation:
 
 Changelog for MapsIndoors SDK for JavaScript. This document structure is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and the project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [4.7.0] - 2021-04-12
+
+### Added
+
+ - Live Data icon badges can now show badges that combine info from both the occupancy and availability domains.
+ - The LocationsService will now emit a `update_completed` event when data has been synchronized with the backend.
+
+### Fixed
+
+ - Fixed a bug in DirectionsRenderer, that could cause a route polyline not to be shown on the map.
+ - Fixed label placement for Mapbox, so they are placed in the same location as labels on Google Maps.
+ - Fixed a bug in the processing of display rules, that caused room polygons not to be clickable.
+ - Fixed maxZoom offset for MapBoxView.
+
 ## [4.6.1] - 2021-03-11
 
 ### Fixed
