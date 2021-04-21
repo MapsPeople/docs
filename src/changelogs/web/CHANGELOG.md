@@ -13,7 +13,7 @@ Changelog for MapsIndoors SDK for JavaScript. This document structure is based o
 
 ### Added
 
-- Live Data icon badges can now show badges that combine info from both the occupancy and availability domains.
+- Live Data icon badges can now show badges that combine info from both the Occupancy and Availability domains.
 - The LocationsService will now emit a `update_completed` event when data has been synchronized with the backend.
 
 ### Fixed
