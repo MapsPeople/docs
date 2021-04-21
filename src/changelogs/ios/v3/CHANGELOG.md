@@ -18,6 +18,24 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 ### Removed
 -->
 
+## [3.24.0] 2021-04-15
+
+### Added
+
+- Added new default renderings of Temperature and Count Domains. For more information about Live Data, read about the feature in the [Live Data Guide](https://docs.mapsindoors.com/ios/v3/live-data/).
+
+## [3.23.0] 2021-04-06
+
+### Fixed
+
+- Fixed an occasional crash issue caused by changing the text size through the accessibility settings while showing a map.
+- Fixed an issue causing Live Data to not appear when enabled under offline conditions and getting connectivity at a later stage.
+- Fixed a parameter assertion causing a crash in `MPLocationsProvider`.
+
+### Changed
+
+- Changed some Location polygon styling defaults. To customize the styling of polygons, see this [guide about map styling](https://docs.mapsindoors.com/ios/v3/map-styling/).
+
 ## [3.22.0] 2021-03-18
 
 ### Fixed
