@@ -9,6 +9,31 @@ eleventyNavigation:
 
 Changelog for MapsIndoors SDK for JavaScript. This document structure is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and the project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [4.9.0] - 2021-04-28
+
+### Added
+
+- `deallocate` method on MapsIndoors class that will clean up and release resources associated with the MapsIndoors instance.
+
+## [4.8.1] - 2021-04-28
+
+### Fixed
+
+- A bug in the DirectionsService that would cause routes between Venues to fail.
+- A bug in the styling of labels that prevented the ShadowBlur from being changed.
+- A bug in the styling of labels where strokeStyle would not be applied for labels on Google Maps.
+
+## [4.8.0] - 2021-04-19
+
+### Added
+
+- SDK Event logging.
+
+### Fixed
+
+- Labels are now clickable on Google Maps.
+- The directions steps are now aligned across the different directions providers.
+
 ## [4.7.0] - 2021-04-12
 
 ### Added
