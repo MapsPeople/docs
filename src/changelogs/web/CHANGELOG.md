@@ -19,7 +19,7 @@ Changelog for MapsIndoors SDK for JavaScript. This document structure is based o
 
 ### Fixed
 
-- A bug in the DirectionsService that would cause routes between venues to fail.
+- A bug in the DirectionsService that would cause routes between Venues to fail.
 - A bug in the styling of labels that prevented the ShadowBlur from being changed.
 - A bug in the styling of labels where strokeStyle would not be applied for labels on Google Maps.
 
