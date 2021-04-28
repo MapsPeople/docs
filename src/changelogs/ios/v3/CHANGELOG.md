@@ -18,6 +18,16 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 ### Removed
 -->
 
+## [3.25.0] 2021-04-28
+
+### Fixed
+
+- Fixed an issue causing Live Data badges from the default rendering to get different sizes depending on the original image 
+- Fixed mis-alignment of text instructions for offline and online directions
+- Fixed an issue causing `MPMapControl` to lock the maps view port to a search result of a single Location
+- Improved the ranking of search results
+- Small performance improvements
+
 ## [3.24.0] 2021-04-15
 
 ### Added
