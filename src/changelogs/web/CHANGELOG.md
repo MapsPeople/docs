@@ -13,7 +13,7 @@ Changelog for MapsIndoors SDK for JavaScript. This document structure is based o
 
 ### Fixed
 
-- A bug that caused icons with live data badges to look unsharp/fuzzy.
+- A bug that caused icons with Live Data badges to look unsharp/fuzzy.
 - A timing issue that could cause a `TypeError: Cannot read property 'toString' of undefined` error in the console.
 
 ## [4.9.0] - 2021-04-28
