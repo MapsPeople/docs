@@ -9,6 +9,13 @@ eleventyNavigation:
 
 Changelog for MapsIndoors SDK for JavaScript. This document structure is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and the project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [4.9.1] - 2021-05-05
+
+### Fixed
+
+ - A bug that caused icons with live data badges to look unsharp/fuzzy.
+ - A timing issue that could cause a `TypeError: Cannot read property 'toString' of undefined` error in the console.
+ 
 ## [4.9.0] - 2021-04-28
 
 ### Added
