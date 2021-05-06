@@ -7,6 +7,13 @@ eleventyNavigation:
   order: 6
 ---
 
+## May 5th 2021
+
+### What's new
+
+- **Areas:** Areas can be created outside any floor polygon.
+- **Areas:** An Area's visibility can be switched on/off.
+
 ## March 29th 2021
 
 ### What's new
