@@ -18,6 +18,21 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 ### Security     in case of vulnerabilities.
 -->
 
+## [3.9.0] 2021-05-17
+
+### Fixed
+
+- The POI's label text is now centered on the locaiton, when no icon is shown
+- Search has been improved & the "near" parameter works as intended
+- Various bugfixes & stability issues
+
+### Added
+
+- LiveData domains for temerapture & count added
+- LiveData topic for CiscoDNA positioning integration added
+- Fade-in effect on MapsIndoors tiles (enabled by default)
+- Set font styling of labels using setMapLabelFont() and setMapLabelTextSize() on the MapControl instance
+
 ## [3.8.4] 2021-04-12
 
 ### Fixed
