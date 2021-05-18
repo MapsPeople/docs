@@ -25,7 +25,7 @@ You can get started in two ways, either by reviewing and modifying the [basic ex
 
 ## Basic Example
 
-You will find in the **Create a link to a very basic implementation of a single activity mapsindoors implementation** a repo that contains the minimum code to start a MapsIndoors project.
+You will find in the **Create a link to a very basic implementation of a single activity mapsindoors implementation** a repo that contains the minimum code to start a MapsIndoors project. This project is written in java and is created from the Google Maps Activity preset from Android Studio.
 
 You can also follow the steps below to start your app from scratch or to enhance the Basic Examples, more features will be explained in the [guides]({{ site.url }}/android/v3/guides/).
 
@@ -33,7 +33,9 @@ You can also follow the steps below to start your app from scratch or to enhance
 
 If you don't already have a project, we recommend using the Google Maps Activity preset from Android Studio to getting started on developing your MapsIndoors project.
 
-Add the MapsIndoors SDK as a dependency to your project. The _AAR_ for the MapsIndoors SDK contains both Java classes, SDK resources and an `AndroidManifest.xml` template which gets merged into your application's `AndroidManifest.xml` during build process. Add or merge in the following to your app's build gradle file (usually called `build.gradle`).
+Add the MapsIndoors SDK as a dependency to your project. The _AAR_ for the MapsIndoors SDK contains both Java classes, SDK resources and an `AndroidManifest.xml` template which gets merged into your application's `AndroidManifest.xml` during build process.
+
+Add or merge in the following to your app's build gradle file (usually called `build.gradle`).
 
 Make sure that the minimum Android SDK version is 21 (aka. "Android Lollipop", version 5.0) or above:
 

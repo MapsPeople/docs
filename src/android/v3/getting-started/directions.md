@@ -60,7 +60,7 @@ class MapsActivity : FragmentActivity(), OnMapReadyCallback, OnRouteResultListen
 </mi-tab-panel>
 </mi-tabs>
 
-implement the `onRouteResult` method and create a method called `createRoute(MPLocation mpLocation)` To generate a route you can use with `MPRoutingProvider` to query a route with our hardcoded `mUserLocation` and a point from the MPLocation we call the method with later on.
+implement the `onRouteResult` method and create a method called `createRoute(MPLocation mpLocation)`. Use this method to query the `MPRoutingProvider`, which generates a route between two coordinates. We will use this to query a route with our hardcoded `mUserLocation` and a point from a MPLocation.
 
 To generate a route with the `MPLocation`, we start by creating an `onClickListener` on our search `ViewHolder` inside the `SearchItemAdapter` on `onBindViewHolder`. This calls a `createRoute` on our activity and the route is generated.
 
@@ -182,7 +182,7 @@ Now we will create a fragment we can put into our BottomSheet and show the steps
 
 Here we'll use a `viewpager` to allow the user to switch between each step, as well as display a "close" button so we are able to remove the route and the bottom sheet from the activity.
 
-Route fragment view:
+Route fragment view (Drawables can be found in the getting started repository):
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>

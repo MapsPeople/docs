@@ -16,7 +16,7 @@ eleventyNavigation:
 
 ### Initialize MapsIndoors
 
-Place the following initialization code in the `onCreate` method in the activity that should display the Google map. You should also assign the `mapFragment` view to a variable as we will use this later to initialize `MapControl`:
+Place the following initialization code in the `onCreate` method in the activity that should display the Google map. You should also assign the `mapFragment` view to a local variable as we will use this later to initialize `MapControl` (Here we use View mMapView):
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
@@ -24,7 +24,7 @@ Place the following initialization code in the `onCreate` method in the activity
 <mi-tab-panel id="java">
 
 ```java
-MapView = mapFragment.getView();
+mMapView = mapFragment.getView();
 MapsIndoors.initialize(getApplicationContext(), "YOUR_MAPSINDOORS_API_KEY");
 MapsIndoors.setGoogleAPIKey(“YOUR_GOOGLE_API_KEY”);
 ```
