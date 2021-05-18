@@ -16,12 +16,13 @@ eleventyNavigation:
 
 ### Initialize MapsIndoors
 
-Place the following initialization code in the `onCreate` method in the activity that should display the Google map. You should also assign the `mapFragment` view to a local variable as we will use this later to initialize `MapControl` (Here we use View mMapView):
+Place the following initialization code in the `onCreate` method in the `MapsActivity` that displays the Google map. You should also assign the `mapFragment` view to a local variable as we will use this later to initialize `MapControl`:
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
+<a href="https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L60-L64">MapsActivity.java</a>
 
 ```java
 mMapView = mapFragment.getView();
@@ -52,6 +53,7 @@ In your `onMapReady` callback function, use the `MapControl` class to set up a G
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
+<a href="https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L135-L165">MapsActivity.java</a>
 
 ```java
 @Override

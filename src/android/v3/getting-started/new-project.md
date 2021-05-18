@@ -25,7 +25,8 @@ You can get started in two ways, either by reviewing and modifying the [basic ex
 
 ## Basic Example
 
-You will find in the **Create a link to a very basic implementation of a single activity mapsindoors implementation** a repo that contains the minimum code to start a MapsIndoors project. This project is written in java and is created from the Google Maps Activity preset from Android Studio.
+The getting started tutorial will be based on you starting from our basic map implementation. This contains basic UI implementations together with layout files and drawables used to create the UI. You will then be guided through how to implement the MapsIndoors sdk into this app. To showcase usage of the SDK.
+You can find this basic example here: **Create a link to a very basic implementation of a single activity mapsindoors implementation**
 
 You can also follow the steps below to start your app from scratch or to enhance the Basic Examples, more features will be explained in the [guides]({{ site.url }}/android/v3/guides/).
 
