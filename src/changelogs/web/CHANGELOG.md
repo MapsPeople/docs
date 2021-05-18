@@ -17,7 +17,7 @@ Changelog for MapsIndoors SDK for JavaScript. This document structure is based o
 
 ### Fixed
 
-- A bug that caused the outdoor parts of the directions polyline to not be shown if the current floor index wasn't 0.
+- A bug that caused the outdoor parts of the directions polyline to not be shown if the current Floor Index wasn't 0.
 
 ## [4.9.1] - 2021-05-05
 
