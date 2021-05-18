@@ -1,8 +1,5 @@
 name: Markdown Lint
-on:
-  push:
-    paths-ignore:
-      - "src/changelogs/**"
+on: [push]
 
 jobs:
   build:
