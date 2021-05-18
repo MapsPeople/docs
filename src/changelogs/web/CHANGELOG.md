@@ -12,9 +12,11 @@ Changelog for MapsIndoors SDK for JavaScript. This document structure is based o
 ## [4.10.0] - 2021-05-18
 
 ### Added
+
 - Animated directions for Google Maps.
 
 ### Fixed
+
 - A bug that caused the outdoor parts of the directions polyline to not be shown if the current floor index wasn't 0.
 
 ## [4.9.1] - 2021-05-05
