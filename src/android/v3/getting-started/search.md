@@ -250,7 +250,7 @@ class SearchItemAdapter extends RecyclerView.Adapter<ViewHolder> {
         if (mMapActivity != null) {
             //We start by checking if there is a specific Location icon assigned to the location
             LocationDisplayRule locationDisplayRule = mMapActivity.getMapControl().getDisplayRule(mLocations.get(position));
-            
+
             if (locationDisplayRule != null && locationDisplayRule.getIcon() != null) {
                 //There is a specific icon on this location so we use that
                 mMapActivity.runOnUiThread(()-> {
@@ -259,7 +259,7 @@ class SearchItemAdapter extends RecyclerView.Adapter<ViewHolder> {
             }else {
                 //Location does not have a specific displayRule, we instead use type Display rule
                 LocationDisplayRule typeDisplayRule = mMapActivity.getMapControl().getDisplayRule(mLocations.get(position).getType());
-                
+
                 if (typeDisplayRule != null) {
                     mMapActivity.runOnUiThread(()-> {
                         holder.imageView.setImageBitmap(typeDisplayRule.getIcon());
