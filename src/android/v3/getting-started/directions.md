@@ -419,3 +419,7 @@ mpRoutingProvider?.setTravelMode(TravelMode.WALKING)
 
 </mi-tab-panel>
 </mi-tabs>
+
+Expected result:
+
+![Directions result](/assets/android/getting-started/directions_gif.gif)

@@ -439,6 +439,10 @@ mMapControl.displaySearchResults(locationList)
 </mi-tab-panel>
 </mi-tabs>
 
+Expected result:
+
+![Search result](/assets/android/getting-started/search_gif.gif)
+
 The accompanying UI and implementation of this search experience can be found in the getting started app sample. [Getting Started App sample](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/tree/master/app/src/main/java/com/example/mapsindoorsgettingstarted) or [Getting Started App sample kotlin](https://github.com/MapsIndoors/MapsIndoors-Getting-started-android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin).
 
 <p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/android/v3/getting-started/directions/">Next up: Directions</a></p>
