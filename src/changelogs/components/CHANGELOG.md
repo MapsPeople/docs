@@ -142,7 +142,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **mi-map-mapbox**: Documentation updated.
 - **mi-route-instructions-step**: Documentation updated.
 - **mi-distance**:  Documentation updated.
-- **mi-icon**:  Documentation updated. Note added regards component not being compatible with IE11 (MIAJS-1327 & MIAJS-1142).
+- **mi-icon**:  Documentation updated. Note added regards component not being compatible with IE11.
 
 ### Fixed
 
