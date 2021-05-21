@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- Fixed a bug where moving across buildings would show incorrect step heading. 
+- Fixed a bug where moving across buildings would show incorrect step heading.
 
 ## [9.0.1] - 2021-04-29
 
