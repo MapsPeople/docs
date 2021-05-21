@@ -34,7 +34,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- **mi-scroll-buttons**: Documentation added (MIAJS-1142).
+- **mi-scroll-buttons**: Documentation added.
 
 ## [8.2.1] - 2021-04-20
 
@@ -43,7 +43,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **mi-route-instructions-step** Replaced the empty circle with the steps action icon. Now showing the steps instruction when available (defaults to action for travel mode).
 - **mi-map-mapbox** Removed default maxZoom value of 21. This is handled in the SDK.
 - Upgrade to use the latest MapsIndoors JavaScript SDK (v4.7.0) with various bugfixes.
-- **mi-share-sms**: Property name changed from `inputPlaceholder` to `input-placeholder` (MIAJS-1211).
+- **mi-share-sms**: Property name changed from `inputPlaceholder` to `input-placeholder`.
 
 ## [8.2.0] - 2021-02-23
 
@@ -53,9 +53,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- **mi-share-sms**: Documentation updated (MIAJS-1142).
-- **mi-location-info**: Documentation updated (MIAJS-1142).
-- **mi-step-switcher**: Documentation updated (MIAJS-1142).
+- **mi-share-sms**: Documentation updated.
+- **mi-location-info**: Documentation updated.
+- **mi-step-switcher**: Documentation updated.
 
 ## [8.1.0] - 2021-02-15
 
@@ -73,26 +73,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- **mi-search**: New custom `shortInput` event (MIAJS-1189).
-- **mi-map-googlemaps**: `getDirectionsServiceInstance` method added to expose `DirectionsService` instance (MIAJS-1449).
-- **mi-map-googlemaps**: `getDirectionsRendererInstance` method added to expose `DirectionsRenderer` instance (MIAJS-1449).
-- **mi-map-mapbox**: `getDirectionsServiceInstance` method added to expose `DirectionsService` instance (MIAJS-1449).
-- **mi-map-mapbox**: `getDirectionsRendererInstance` method added to expose `DirectionsRenderer` instance (MIAJS-1449).
+- **mi-search**: New custom `shortInput` event.
+- **mi-map-googlemaps**: `getDirectionsServiceInstance` method added to expose `DirectionsService` instance.
+- **mi-map-googlemaps**: `getDirectionsRendererInstance` method added to expose `DirectionsRenderer` instance.
+- **mi-map-mapbox**: `getDirectionsServiceInstance` method added to expose `DirectionsService` instance.
+- **mi-map-mapbox**: `getDirectionsRendererInstance` method added to expose `DirectionsRenderer` instance.
 
 ### Changed
 
-- **mi-map-googlemaps**: `showRoute`, `setRoute`, `clearRoute`, `nextRouteLeg`, `previousRouteLeg`, `setRouteLegIndex`, and `getRoute` methods is deprecated in favor for new `getDirectionsRendererInstance` and `getDirectionsRendererInstance` methods (MIAJS-1449).
+- **mi-map-googlemaps**: `showRoute`, `setRoute`, `clearRoute`, `nextRouteLeg`, `previousRouteLeg`, `setRouteLegIndex`, and `getRoute` methods is deprecated in favor for new `getDirectionsRendererInstance` and `getDirectionsRendererInstance` methods.
 - **mi-map-googlemaps**: Component updated to latests SDK release (V. 4.5.0).
-- **mi-map-mapbox**: `showRoute`, `setRoute`, `clearRoute`, `nextRouteLeg`, `previousRouteLeg`, `setRouteLegIndex`, and `getRoute` methods is deprecated  in favor for new `getDirectionsRendererInstance` and `getDirectionsRendererInstance` methods (MIAJS-1449).
+- **mi-map-mapbox**: `showRoute`, `setRoute`, `clearRoute`, `nextRouteLeg`, `previousRouteLeg`, `setRouteLegIndex`, and `getRoute` methods is deprecated  in favor for new `getDirectionsRendererInstance` and `getDirectionsRendererInstance` methods.
 - **mi-map-mapbox**: Component updated to latests SDK release (V. 4.5.0).
-- **RouteParams interface**: Deprecation of `RouteParams` interface (MIAJS-1449).
+- **RouteParams interface**: Deprecation of `RouteParams` interface.
 
 ## [7.3.2] - 2021-02-03
 
 ### Changed
 
-- **mi-map-googlemaps**: Default value for `strokeWeight` at the `polygonHighlightOptions` property is changed from 1 to 2 (MIAJS-1353).
-- **mi-map-mapbox**: Default value for `strokeWeight` at the `polygonHighlightOptions` property is changed from 1 to 2 (MIAJS-1353).
+- **mi-map-googlemaps**: Default value for `strokeWeight` at the `polygonHighlightOptions` property is changed from 1 to 2.
+- **mi-map-mapbox**: Default value for `strokeWeight` at the `polygonHighlightOptions` property is changed from 1 to 2.
 
 ## [7.3.1] - 2021-02-02
 
@@ -110,8 +110,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- **mi-route-instructions**: Documentation updated (MIAJS-1142).
-- **mi-route-instructions-maneuver**: Documentation updated (MIAJS-1142).
+- **mi-route-instructions**: Documentation updated.
+- **mi-route-instructions-maneuver**: Documentation updated.
 - **mi-map-googlemaps**: Component updated to latests SDK release (V. 4.4.0).
 - **mi-map-mapbox**: Component updated to latests SDK release (V. 4.4.0).
 
@@ -119,29 +119,29 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- **Field Interface**: Export `Field` interface used for `fields` property at `Location` objects (MIAJS-1262).
+- **Field Interface**: Export `Field` interface used for `fields` property at `Location` objects.
 
 ## [7.2.1] - 2021-01-14
 
 ### Fixed
 
-- **mi-route-instructions**: The step toggle didn't show the pointer cursor on hover if the step was active (MIAJS-1329).
+- **mi-route-instructions**: The step toggle didn't show the pointer cursor on hover if the step was active.
 
 ## [7.2.0] - 2021-01-14
 
 ### Added
 
-- **mi-route-instructions**: Add `activeStep` attribute for visually highlighting of current step (MIAJS-1329).
-- **mi-route-instructions**: Add `step` and `active` part attributes for external styling of step element (MIAJS-1329).
+- **mi-route-instructions**: Add `activeStep` attribute for visually highlighting of current step.
+- **mi-route-instructions**: Add `step` and `active` part attributes for external styling of step element.
 
 ## [7.1.3] - 2021-01-13
 
 ### Changed
 
-- **mi-map-googlemaps**: Documentation updated (MIAJS-1142).
-- **mi-map-mapbox**: Documentation updated (MIAJS-1142).
-- **mi-route-instructions-step**: Documentation updated (MIAJS-1142).
-- **mi-distance**:  Documentation updated (MIAJS-1142).
+- **mi-map-googlemaps**: Documentation updated.
+- **mi-map-mapbox**: Documentation updated.
+- **mi-route-instructions-step**: Documentation updated.
+- **mi-distance**:  Documentation updated.
 - **mi-icon**:  Documentation updated. Note added regards component not being compatible with IE11 (MIAJS-1327 & MIAJS-1142).
 
 ### Fixed
@@ -159,83 +159,83 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- **mi-route-instructions-maneuver**: Set `instructions` property as default maneuver and fallback to the `maneuver` property (MIAJS-1384).
+- **mi-route-instructions-maneuver**: Set `instructions` property as default maneuver and fallback to the `maneuver` property.
 
 ## [7.1.0] - 2020-12-14
 
 ### Added
 
-- **mi-route-instructions**: `originLocation` and `originName` attributes added (MIAJS-1374).
+- **mi-route-instructions**: `originLocation` and `originName` attributes added.
 
 ### Fixed
 
-- **mi-route-instructions-step**: Header saying "Leave" was presented for outdoor to outdoor steps (MIAJS-1372).
+- **mi-route-instructions-step**: Header saying "Leave" was presented for outdoor to outdoor steps.
 
 ## [7.0.0] - 2020-12-11
 
 ### Changed
 
-- **mi-route-instructions**: Add a `hideIndoorSubsteps` attribute which can be used to control the visibility of the indoor substeps at the `<mi-route-instructions-step>` element (MIAJS-1363).
-- **mi-route-instructions-step**: Add a `hideIndoorSubsteps` attribute which can be used to control the visibility of the indoor substeps (MIAJS-1363).
-- **mi-route-instructions-maneuver**: Fallback to `instructions` property value if the `maneuver` property is empty (MIAJS-1363).
+- **mi-route-instructions**: Add a `hideIndoorSubsteps` attribute which can be used to control the visibility of the indoor substeps at the `<mi-route-instructions-step>` element.
+- **mi-route-instructions-step**: Add a `hideIndoorSubsteps` attribute which can be used to control the visibility of the indoor substeps.
+- **mi-route-instructions-maneuver**: Fallback to `instructions` property value if the `maneuver` property is empty.
 
 ### Fixed
 
-- **mi-route-instructions-step**: A solid box was rendered instead of a maneuver icon when the `maneuver` property was empty (MIAJS-1363).
+- **mi-route-instructions-step**: A solid box was rendered instead of a maneuver icon when the `maneuver` property was empty.
 
 ## [6.0.4] - 2020-12-07
 
 ### Added
 
-- **mi-route-instructions**: Handles for styleable elements in shadow tree (MIAJS-1341).
-- **mi-route-instructions-step**: Handles for styleable elements in shadow tree (MIAJS-1341).
-- **mi-route-instructions-maneuver**: Handles for styleable elements in shadow tree (MIAJS-1341).
+- **mi-route-instructions**: Handles for styleable elements in shadow tree.
+- **mi-route-instructions-step**: Handles for styleable elements in shadow tree.
+- **mi-route-instructions-maneuver**: Handles for styleable elements in shadow tree.
 
 ### Changed
 
-- **mi-step-switcher**: Documentation simplified for styling handles (MIAJS-1341).
+- **mi-step-switcher**: Documentation simplified for styling handles.
 
 ## [6.0.3] - 2020-12-03
 
 ### Fixed
 
-- **mi-route-instructions-step**: Transit destination wasn't presented (MIAJS-1320).
+- **mi-route-instructions-step**: Transit destination wasn't presented.
 
 ## [6.0.2] - 2020-12-03
 
 ### Changed
 
-- **mi-route-instructions-heading**: Documentation updated (MIAJS-1142).
-- **mi-route-instructions**: 'arrive' and 'take' translation strings is deprecated and not longer needed (MIAJS-1142).
+- **mi-route-instructions-heading**: Documentation updated.
+- **mi-route-instructions**: 'arrive' and 'take' translation strings is deprecated and not longer needed.
 
 ### Fixed
 
-- **mi-route-instructions-step**: Transit destination wasn't presented (MIAJS-1320).
+- **mi-route-instructions-step**: Transit destination wasn't presented.
 
 ## [6.0.1] - 2020-12-02
 
 ### Added
 
-- **mi-step-switcher**: Handles for styleable elements in shadow tree (MIAJS-1341).
-- **mi-route-instructions**: IE11 support (MIAJS-1303).
-- **mi-route-instructions-step**: IE11 support (MIAJS-1303).
+- **mi-step-switcher**: Handles for styleable elements in shadow tree.
+- **mi-route-instructions**: IE11 support.
+- **mi-route-instructions-step**: IE11 support.
 
 ## [6.0.0] - 2020-11-30
 
 ### Added
 
-- **mi-map-googlemaps**: New map component using Google Maps as map provider and SDK V. 4.1.1 (MIAJS-1252).
+- **mi-map-googlemaps**: New map component using Google Maps as map provider and SDK V. 4.1.1.
 - **mi-map-mapbox**: Position Control support added.
-- **mi-route-instructions-step**: Added missing rendering of transit step (MIAJS-1320).
-- **mi-spinner**: Documentation updated (MIAJS-1142).
-- **mi-notification**: Documentation updated (MIAJS-1142).
-- **mi-map-mapbox**: Documentation added (MIAJS-1253).
+- **mi-route-instructions-step**: Added missing rendering of transit step.
+- **mi-spinner**: Documentation updated.
+- **mi-notification**: Documentation updated.
+- **mi-map-mapbox**: Documentation added.
 
 ### Changed
 
-- **mi-map**: Component deprecated in favor for new `<mi-map-googlemaps>` component (MIAJS-1252).
-- **mi-map-mapbox**: The `mapsIndoors` instance is removed from the payload of the `mapsIndoorsReady` event in favor for new `getMapsIndoorsInstance` method (MIAJS-1183).
-- **mi-map-mapbox**: Deprecated the following methods: `panTo`, `getBounds`, `fitBounds`, `setDisplayRule`, `setVenue`, `fitVenue`, `filterLocations`, and `clearLocationFilter` in favor for the `getMapInstance` and `getMapsIndoorsInstance` methods (MIAJS-1183).
+- **mi-map**: Component deprecated in favor for new `<mi-map-googlemaps>` component.
+- **mi-map-mapbox**: The `mapsIndoors` instance is removed from the payload of the `mapsIndoorsReady` event in favor for new `getMapsIndoorsInstance` method.
+- **mi-map-mapbox**: Deprecated the following methods: `panTo`, `getBounds`, `fitBounds`, `setDisplayRule`, `setVenue`, `fitVenue`, `filterLocations`, and `clearLocationFilter` in favor for the `getMapInstance` and `getMapsIndoorsInstance` methods.
 
 ## [5.0.8] - 2020-11-24
 
@@ -258,64 +258,64 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- **mi-route-instructions**: Add default translations for `mi-time` component (MIAJS-1332).
-- **mi-time**: Clean up handling of `translations` attribute (MIAJS-1332).
+- **mi-route-instructions**: Add default translations for `mi-time` component.
+- **mi-time**: Clean up handling of `translations` attribute.
 
 ## [5.0.5] - 2020-11-20
 
 ### Changed
 
-- **mi-map-mapbox**: Component updated to latests SDK release (V. 4.1.1) (MIAJS-1317).
+- **mi-map-mapbox**: Component updated to latests SDK release (V. 4.1.1).
 
 ## [5.0.4] - 2020-11-19
 
 ### Added
 
-- **mi-time**: `translations` attributes is added (MIAJS-1332).
-- **mi-keyboard**: Support added for `da-DK` browser language (MIAJS-1343).
+- **mi-time**: `translations` attributes is added.
+- **mi-keyboard**: Support added for `da-DK` browser language.
 
 ### Changed
 
-- **mi-keyboard**: Documentation update (MIAJS-1142).
-- **mi-search**: The fixed height of the component is removed (MIAJS-1342).
-- **mi-search**: Documentation update (MIAJS-1142).
+- **mi-keyboard**: Documentation update.
+- **mi-search**: The fixed height of the component is removed.
+- **mi-search**: Documentation update.
 
 ## [5.0.3] - 2020-11-18
 
 ### Added
 
-- **mi-keyboard**: Documentation update with sample usage and working example (MIAJS-1142).
+- **mi-keyboard**: Documentation update with sample usage and working example.
 - **mi-route-instructions**: Documentation update to describe the clicked event.
 
 ### Fixed
 
-- **mi-map-mapbox**: Component updated to latests SDK release (V. 4.1.0) (MIAJS-1317).
-- **mi-route-instructions**: Unit property wasn't reflected in child components (MIAJS-1319).
+- **mi-map-mapbox**: Component updated to latests SDK release (V. 4.1.0).
+- **mi-route-instructions**: Unit property wasn't reflected in child components.
 
 ## [5.0.2] - 2020-11-03
 
 ### Added
 
-- **mi-icon**: Printer icon added (MIAJS-1306).
+- **mi-icon**: Printer icon added.
 
 ## [5.0.1] - 2020-10-30
 
 ### Added
 
-- **mi-route-instructions**: New component displaying MapsIndoors route instructions (MIAJS-1284).
+- **mi-route-instructions**: New component displaying MapsIndoors route instructions.
 
 ## [5.0.0] - 2020-10-28
 
 ### Changed
 
-- **mi-map-mapbox**: `highlightLocation` method is made public (MIAJS-1237).
-- **mi-map-mapbox**: `clearPolygonHighlight` method is renamed to `clearHighlightLocation` (MIAJS-1237).
+- **mi-map-mapbox**: `highlightLocation` method is made public.
+- **mi-map-mapbox**: `clearPolygonHighlight` method is renamed to `clearHighlightLocation`.
 
 ## [3.2.2] - 2020-09-30
 
 ### Added
 
-- **mi-map-mapbox**: New map component using Mapbox as map provider and the SDK v.4 alpha 7 (MIAJS-1122).
+- **mi-map-mapbox**: New map component using Mapbox as map provider and the SDK v.4 alpha 7.
 
 ### Changed
 
@@ -351,34 +351,34 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- **mi-location-info**: details string wasn't returned when the venue and building was named the same (MIAJS-1180)
-- **mi-keyboard**: eventListener was attached multiple times (MIAJS-1195)
+- **mi-location-info**: details string wasn't returned when the venue and building was named the same.
+- **mi-keyboard**: eventListener was attached multiple times.
 
 ### Added
 
-- **mi-keyboard**: custom `inputCleared` event listener (MIAJS-1195)
+- **mi-keyboard**: custom `inputCleared` event listener.
 
 ## [3.0.0] - 2020-08-13
 
 ### Fixed
 
-- **mi-location-info**: details for outdoor locations wasn't shown (MIAJS-1180)
+- **mi-location-info**: details for outdoor locations wasn't shown.
 
 ### Changed
 
-- **mi-keyboard**: some breaking changes was introduced for better control of when the keyboard should be visible. A layout and inputElement property is added (MIAJS-1195)
-- **mi-share-sms**: necessary changes to reflect changes made in mi-keyboard component (MIAJS-1195)
+- **mi-keyboard**: some breaking changes was introduced for better control of when the keyboard should be visible. A layout and inputElement property is added.
+- **mi-share-sms**: necessary changes to reflect changes made in mi-keyboard component.
 
 ## [2.4.0] - 2020-08-07
 
 ### Added
 
-- **New**: mi-share-sms component (MIAJS-1204)
+- **New**: mi-share-sms component.
 
 ### Fixed
 
-- **mi-map**: didn't show any locations until the map had been idle (MIAJS-1126)
-- **mi-card**: had a unnecessary div tag which in some cases did cause trouble (MIAJS-1203)
+- **mi-map**: didn't show any locations until the map had been idle.
+- **mi-card**: had a unnecessary div tag which in some cases did cause trouble.
 
 ### Changed
 
@@ -388,37 +388,37 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- **mi-search**: fixed `mi-near` to provide correctly formatted data to the SDK
+- **mi-search**: fixed `mi-near` to provide correctly formatted data to the SDK.
 
 ## [2.3.0]
 
 ### Added
 
-- **mi-search**: added a componentRendered event (MIAJS-1163)
+- **mi-search**: added a componentRendered event.
 
 ## [2.2.0]
 
 ### Added
 
-- **mi-search**: added a idAttribute and dataAttributes attribute (MIAJS-1184)
+- **mi-search**: added a idAttribute and dataAttributes attribute.
 
 ## [2.1.2]
 
 ### Fixed
 
-- **mi-keyboard**: added a "same element" check to handleFocusin method (MIAJS-1163)
+- **mi-keyboard**: added a "same element" check to handleFocusin method.
 
 ## [2.1.1]
 
 ### Fixed
 
-- **mi-step-switcher**: adjusted the vertical padding (MIAJS-1028)
+- **mi-step-switcher**: adjusted the vertical padding.
 
 ## [2.1.0]
 
 ### Added
 
-- **New**: mi-step-switcher component (MIAJS-1028)
+- **New**: mi-step-switcher component.
 
 ## [2.0.0]
 
@@ -429,13 +429,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Switched to semantic versioning.
-- **mi-search**: disabled browser autocomplete (MIAJS-1161)
-- **mi-search**: style changes for a larger appearance (MIAJS-1164)
-- **mi-keyboard**: removed the enter key from the keyboard layouts (MIAJS-1154)
-- **mi-list-item-location**: vertically centering (MIAJS-1162)
+- **mi-search**: disabled browser autocomplete.
+- **mi-search**: style changes for a larger appearance.
+- **mi-keyboard**: removed the enter key from the keyboard layouts.
+- **mi-list-item-location**: vertically centering.
 
 ### Fixed
 
-- **mi-location-info**: removed alike building names (MIAJS-1129)
-- **mi-keyboard**: when clicking outside the keyboard to dismiss it now exposes the correct click target (MIAJS-1164)
-- **mi-list**: fixed reference bug (MIAJS-1120)
+- **mi-location-info**: removed alike building names.
+- **mi-keyboard**: when clicking outside the keyboard to dismiss it now exposes the correct click target.
+- **mi-list**: fixed reference bug.
