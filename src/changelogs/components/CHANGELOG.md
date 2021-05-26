@@ -3,8 +3,8 @@ title: MI Components Changelog
 permalink: /changelogs/mi-components/
 eleventyNavigation:
     parent: changelogs
-    key: Components Changelog
-    order: 6
+    key: MI Components Changelog
+    order: 7
 ---
 
 All notable changes to this project will be documented in this file.
