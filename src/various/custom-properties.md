@@ -19,4 +19,4 @@ You can also add Custom Properties through the Integration API with the exact sa
 
 ## Known limitations
 
-Your Custom Properties can not contain underscores for technical reasons.
+Your Custom Properties can not contain special characters (underscores, hyphens, dots etc.) for technical reasons.
