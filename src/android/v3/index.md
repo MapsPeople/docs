@@ -17,7 +17,7 @@ You can get started in two ways, either by reviewing and modifying the [basic ex
 
 ## Basic Example
 
-You will find in the [link](https://github.com/MapsIndoors/MapsIndoorsAndroid-Demo-Samples/) a repo that contains the minimum code to start a MapsIndoors project.
+You will find in the [link](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android) a repo that contains the minimum code to start a MapsIndoors project.
 
 You can also follow the steps below to start your app from scratch or to enhance the Basic Examples, more features will be explained in the [guides](/android/v3/guides/).
 
