@@ -34,8 +34,8 @@ MapsIndoors.setGoogleAPIKey(“YOUR_GOOGLE_API_KEY”);
 <mi-tab-panel id="kotlin">
 
 ```kotlin
-MapsIndoors.initialize(applicationContext, "79f8e7daff76489dace4f9f9")
-MapsIndoors.setGoogleAPIKey(getString(R.string.google_maps_key))
+MapsIndoors.initialize(applicationContext, "YOUR_MAPSINDOORS_API_KEY")
+MapsIndoors.setGoogleAPIKey(“YOUR_GOOGLE_API_KEY”)
 
 mapFragment.view?.let {
     mapView = it
@@ -92,8 +92,6 @@ void initMapControl(View view) {
 ```kotlin
 override fun onMapReady(googleMap: GoogleMap) {
     mMap = googleMap
-    MapsIndoors.initialize(applicationContext, "79f8e7daff76489dace4f9f9")
-    MapsIndoors.setGoogleAPIKey(getString(R.string.google_maps_key))
 
     mapView?.let { view ->
         initMapControl(view)

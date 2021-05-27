@@ -14,7 +14,7 @@ eleventyNavigation:
 <!-- Search -->
 {% include "src/shared/getting-started/search/search.md" %}
 
-Start by creating a new activity or fragment to facilitate searches on your application. Here we will be using a fragment for search and show to search results on, while using a bottom sheet to display the results. We also create a search input field on our main map activity for the user to input the text they want to search for.
+Start by creating a new activity or _fragment_ to facilitate searches on your application. Here we will be using a _fragment_ for search and show to search results on, while using a bottom sheet to display the results. We also create a search input field on our main map _activity_ for the user to input the text they want to search for.
 This is already setup in the basic example app.
 
 To perform a search you will need to have initiated `MapsIndoors`. This was shown in the previous section of the getting started tutorial how you do this. [Show a map]({{ site.url }}/android/v3/getting-started/map)
@@ -55,7 +55,7 @@ private fun search(searchQuery: String) {
     //Filter for the search query, only taking 30 locations
     val mpFilter = MPFilter.Builder().setTake(30).build()
 
-    //Gets locations
+    //Query for the locations
     MapsIndoors.getLocationsAsync(mpQuery, mpFilter) { list: List<MPLocation?>?, miError: MIError? ->
       //Implement UI handling of the search result here
     }
@@ -128,9 +128,9 @@ searchBtn.setOnClickListener {
 </mi-tab-panel>
 </mi-tabs>
 
-To accompany this we use a fragment and a `BottomSheet` to handle the `SearchFragment`.
+To accompany this we use a _fragment_ and a `BottomSheet` to handle the `SearchFragment`.
 
-Observe that the `SearchFragment`is just a simple fragment with a `RecyclerView` and a `SearchItemAdapter` added to it
+Observe that the `SearchFragment`is just a simple _fragment_ with a `RecyclerView` and a `SearchItemAdapter` added to it
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
@@ -194,7 +194,7 @@ class SearchFragment : Fragment() {
 </mi-tab-panel>
 </mi-tabs>
 
-See the full example of SearchFragment here: [SearchFragment.java](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/SearchFragment.java) or [SearchFragment.kt](https://github.com/MapsIndoors/MapsIndoors-Getting-started-android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/SearchFragment.kt)
+See the full example of `SearchFragment` here: [SearchFragment.java](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/SearchFragment.java) or [SearchFragment.kt](https://github.com/MapsIndoors/MapsIndoors-Getting-started-android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/SearchFragment.kt)
 
 Create a getter for your `MapControl` object on the `MapsActivity` so that it can be used in the `SearchAdapter`.
 
@@ -241,11 +241,6 @@ class SearchItemAdapter extends RecyclerView.Adapter<ViewHolder> {
     public void onBindViewHolder(ViewHolder holder, int position) {
         //Setting the the text on the text view to the name of the location
         holder.text.setText(mLocations.get(position).getName());
-
-        holder.itemView.setOnClickListener(view -> {
-            mMapActivity.createRoute(mLocations.get(position));
-            mMapActivity.getMapControl().clearMap();
-        });
 
         if (mMapActivity != null) {
             //We start by checking if there is a specific Location icon assigned to the location
@@ -294,8 +289,6 @@ internal class SearchItemAdapter(private val mLocations: List<MPLocation?>, priv
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.text.text = mLocations[position]?.name
 
-        ...
-
         if (mMapActivity != null) {
             val locationDisplayRule: LocationDisplayRule? = mMapActivity.getMapControl().getDisplayRule(mLocations[position])
 
@@ -340,8 +333,8 @@ internal class ViewHolder(inflater: LayoutInflater, parent: ViewGroup?) : Recycl
 
 See the full example of `SearchItemAdapter` and accompanying `ViewHolder` here: [SearchItemAdapter.java](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/SearchItemAdapter.java#L16-L75) or [SearchItemAdapter.kt](https://github.com/MapsIndoors/MapsIndoors-Getting-started-android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/SearchItemAdapter.kt#L12-L60)
 
-We have already implemented the BottomSheet in the UI. Now we add the search fragment to the `BottomSheet` in our search query method on our `MapsActivity`.
-You can use the `addFragmentToBottomSheet` too add the created fragment to the `BottomSheet`. When we have received the search results
+We have already implemented the BottomSheet in the UI. Now we add the search _fragment_ to the `BottomSheet` in our search query method on our `MapsActivity`.
+You can use the `addFragmentToBottomSheet` too add the created _fragment_ to the `BottomSheet`. When we have received the search results
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
@@ -389,8 +382,9 @@ private fun search(searchQuery: String) {
             //Create a new instance of the search fragment
             mSearchFragment = SearchFragment.newInstance(list, this)
             //Make a transaction to the bottom sheet
-            supportFragmentManager.beginTransaction().replace(R.id.standardBottomSheet, mSearchFragment).commit()
-
+            addFragmentToBottomSheet(mSearchFragment)
+            //Clear the search text, since we got a result
+            mSearchTxtField.text?.clear()
             ...
         }
     }
@@ -433,7 +427,10 @@ MapsIndoors.getLocationsAsync(mpQuery, mpFilter, (list, miError) -> {
 <mi-tab-panel id="kotlin">
 
 ```kotlin
-mMapControl.displaySearchResults(locationList)
+MapsIndoors.getLocationsAsync(mpQuery, mpFilter) { list: List<MPLocation?>?, miError: MIError? ->
+    //Calling displaySearchResults on the ui thread as camera movement is involved
+    runOnUiThread { mMapControl.displaySearchResults(list, true) }
+}
 ```
 
 </mi-tab-panel>

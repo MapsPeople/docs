@@ -88,6 +88,8 @@ holder.itemView.setOnClickListener(view -> {
 ```kotlin
 holder.itemView.setOnClickListener {
     mLocations[position]?.let { locations -> mMapActivity?.createRoute(locations) }
+    //Clearing map to remove the location filter from our search result
+    mMapActivity?.getMapControl()?.clearMap()
 }
 ```
 
@@ -110,7 +112,7 @@ We create global variables of the `MPdirectionsRenderer` and `MPRoutingProvider`
 void createRoute(MPLocation mpLocation) {
     if (mpRoutingProvider == null) {
         mpRoutingProvider = new MPRoutingProvider();
-      mpRoutingProvider.setOnRouteResultListener(this);
+        mpRoutingProvider.setOnRouteResultListener(this);
     }
     mpRoutingProvider.query(mUserLocation, mpLocation.getPoint());
 }
@@ -152,14 +154,12 @@ fun createRoute(mpLocation: MPLocation) {
         mpRoutingProvider = MPRoutingProvider()
         mpRoutingProvider?.setOnRouteResultListener(this)
     }
-    mpRoutingProvider?.setTravelMode(TravelMode.WALKING)
     //Queries the MPRouting provider for a route with the hardcoded user location and the point from a location.
     mpRoutingProvider?.query(mUserLocation, mpLocation.point)
 }
 
 override fun onRouteResult(@Nullable route: Route?, @Nullable miError: MIError?) {
     ...
-    //Create the MPDirectionsRenderer if it has not been instantiated.
     if (mpDirectionsRenderer == null) {
         mpDirectionsRenderer = MPDirectionsRenderer(this, mMap, mMapControl, OnLegSelectedListener { i: Int ->
             //Listener call back for when the user changes route leg. (By default is only called when a user presses the RouteLegs end marker)
@@ -167,18 +167,16 @@ override fun onRouteResult(@Nullable route: Route?, @Nullable miError: MIError?)
             mMapControl.selectFloor(mpDirectionsRenderer!!.currentFloor)
         })
     }
-
     //Set the route on the Directions renderer
     mpDirectionsRenderer?.setRoute(route)
     //Create a new instance of the navigation fragment
     mNavigationFragment = NavigationFragment.newInstance(route, this)
     //Start a transaction and assign it to the BottomSheet
-    ...
+    addFragmentToBottomSheet(mNavigationFragment)
     //As camera movement is involved run this on the UIThread
     runOnUiThread {
         //Starts drawing and adjusting the map according to the route
         mpDirectionsRenderer?.initMap(true)
-        ...
     }
 }
 ```
@@ -226,7 +224,6 @@ public class NavigationFragment extends Fragment {
         closeBtn.setOnClickListener(v -> {
             mMapsActivity.removeFragmentFromBottomSheet(this);
             mMapsActivity.getMpDirectionsRenderer().clear();
-            mMapsActivity.getMapControl().setMapPadding(0,0,0,0);
         });
 
         //Next button for going through the legs of the route.
@@ -279,9 +276,8 @@ class NavigationFragment : Fragment() {
 
         //Button for closing the bottom sheet. Clears the route through directionsRenderer as well, and changes map padding.
         closeBtn.setOnClickListener {
-            mMapsActivity!!.supportFragmentManager.beginTransaction().remove(this).commit()
+            mMapsActivity!!.removeFragmentFromBottomSheet(this)
             mMapsActivity!!.getMpDirectionsRenderer()?.clear()
-            mMapsActivity!!.getMapControl().setMapPadding(0, 0, 0, 0)
         }
 
         //Next button for going through the legs of the route.
