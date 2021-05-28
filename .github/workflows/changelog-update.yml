@@ -2,9 +2,9 @@ name: CHANGELOG
 
 on:
   push:
-    branches:
-      - '**changelog**'
-
+    paths:
+      - 'src/changelogs/web/CHANGELOG.md'
+      - 'src/changelogs/components/CHANGELOG.md'
 jobs:
   build:
     runs-on: ubuntu-latest
