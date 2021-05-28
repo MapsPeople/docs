@@ -16,15 +16,16 @@ eleventyNavigation:
 
 ### Initialize MapsIndoors
 
-Place the following initialization code in the `onCreate` method in the activity that should display the Google map. You should also assign the `mapFragment` view to a variable as we will use this later to initialize `MapControl`:
+Place the following initialization code in the `onCreate` method in the `MapsActivity` that displays the Google map. You should also assign the `mapFragment` view to a local variable as we will use this later to initialize `MapControl`:
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
+<a href="https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L60-L64">MapsActivity.java</a>
 
 ```java
-MapView = mapFragment.getView();
+mMapView = mapFragment.getView();
 MapsIndoors.initialize(getApplicationContext(), "YOUR_MAPSINDOORS_API_KEY");
 MapsIndoors.setGoogleAPIKey(“YOUR_GOOGLE_API_KEY”);
 ```
@@ -33,8 +34,8 @@ MapsIndoors.setGoogleAPIKey(“YOUR_GOOGLE_API_KEY”);
 <mi-tab-panel id="kotlin">
 
 ```kotlin
-MapsIndoors.initialize(applicationContext, "79f8e7daff76489dace4f9f9")
-MapsIndoors.setGoogleAPIKey(getString(R.string.google_maps_key))
+MapsIndoors.initialize(applicationContext, "YOUR_MAPSINDOORS_API_KEY")
+MapsIndoors.setGoogleAPIKey(“YOUR_GOOGLE_API_KEY”)
 
 mapFragment.view?.let {
     mapView = it
@@ -52,6 +53,7 @@ In your `onMapReady` callback function, use the `MapControl` class to set up a G
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
+<a href="https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L135-L165">MapsActivity.java</a>
 
 ```java
 @Override
@@ -90,8 +92,6 @@ void initMapControl(View view) {
 ```kotlin
 override fun onMapReady(googleMap: GoogleMap) {
     mMap = googleMap
-    MapsIndoors.initialize(applicationContext, "79f8e7daff76489dace4f9f9")
-    MapsIndoors.setGoogleAPIKey(getString(R.string.google_maps_key))
 
     mapView?.let { view ->
         initMapControl(view)
@@ -119,6 +119,10 @@ private fun initMapControl(view: View) {
 
 </mi-tab-panel>
 </mi-tabs>
+
+Expected result:
+
+![Map result](/assets/android/getting-started/map_gif.gif)
 
 See the full example of MapsActivity here [MapsActivity.java](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java) or [MapsActivity.kt](https://github.com/MapsIndoors/MapsIndoors-Getting-started-android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/MapsActivity.kt)
 

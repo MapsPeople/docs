@@ -14,24 +14,23 @@ eleventyNavigation:
 <!-- Search -->
 {% include "src/shared/getting-started/search/search.md" %}
 
-Start by creating a new activity or fragment to facilitate searches on your application. Here we will be using a fragment to search and show search results on, and using a bottom sheet to display the results. We also create a search input field on our main map activity for the user to input the text they want to search for.
+Start by creating a new activity or _fragment_ to facilitate searches on your application. Here we will be using a _fragment_ for search and show to search results on, while using a bottom sheet to display the results. We also create a search input field on our main map _activity_ for the user to input the text they want to search for.
+This is already setup in the basic example app.
 
-Both UI component implementations can be found in the getting started app sample.[Getting Started App sample for java](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/tree/master/app/src/main/java/com/example/mapsindoorsgettingstarted) or [Getting started App sample for kotlin](https://github.com/MapsIndoors/MapsIndoors-Getting-started-android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/)
+To perform a search you will need to have initiated `MapsIndoors`. This was shown in the previous section of the getting started tutorial how you do this. [Show a map]({{ site.url }}/android/v3/getting-started/map)
 
-To perform a search you will need to have initiated `MapsIndoors`. This was shown in the previous section of the getting started tutorial how you do this. [guides]({{ site.url }}/android/v3/getting-started/map)
-
-For advanced usage of the search functionality read the Search guide and tutorials connected to it. [guides]({{ site.url }}/android/v3/guides/search)
+For advanced usage of the search functionality read the Search guide and tutorials connected to it: [Search Guide]({{ site.url }}/android/v3/guides/search)
 
 <!-- Results list -->
 {% include "src/shared/getting-started/search/results-list.md" %}
 
-Create a search method that takes a search string as a parameter. In this example we only use the `setTake` on the `MPFilter` to limit our result to 30 locations.
+Create a search method that takes a search string as a parameter on your `MapsActivity` class. In this example we only use the `setTake` on the `MPFilter` to limit our result to 30 locations. We will expand on this method later.
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
-<pre lang="Java"><code>
+<a href="https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L168-L213">MapsActivity.java</a>
 
 ```java
 void search(String searchQuery) {
@@ -46,7 +45,6 @@ void search(String searchQuery) {
 }
 ```
 
-</code></pre>
 </mi-tab-panel>
 <mi-tab-panel id="kotlin">
 
@@ -57,7 +55,7 @@ private fun search(searchQuery: String) {
     //Filter for the search query, only taking 30 locations
     val mpFilter = MPFilter.Builder().setTake(30).build()
 
-    //Gets locations
+    //Query for the locations
     MapsIndoors.getLocationsAsync(mpQuery, mpFilter) { list: List<MPLocation?>?, miError: MIError? ->
       //Implement UI handling of the search result here
     }
@@ -67,44 +65,15 @@ private fun search(searchQuery: String) {
 </mi-tab-panel>
 </mi-tabs>
 
-To be able to search we need a text input field where a user can write what they want to search for.
+To be able to search we will use a text input field where a user can write what they want to search for. This is placed at the top of the MapsActivity
 
-We'll start by adding a search bar on the top of our MapsActivity. So we add it to the root layout.
-
-```xml
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:elevation="1dp"
-    android:background="@drawable/card_shape_top">
-    <ImageButton
-        android:id="@+id/search_btn"
-        android:layout_margin="10dp"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:background="@drawable/ic_baseline_search_24"/>
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_margin="5dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_toEndOf="@+id/search_btn">
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/search_edit_txt"
-            android:hint="search"
-            android:imeOptions="actionSearch"
-            android:inputType="text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </com.google.android.material.textfield.TextInputLayout>
-</RelativeLayout>
-```
-
-We then add an `EditorActionListener` and a `OnClickListener` to our text input field and our search button in our `onCreate`. That calls our search method with the text in the search input field. Find the full `onCreate` example here: [MapsActivity.java](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L55-L121) or [MapsActivity.kt](https://github.com/MapsIndoors/MapsIndoors-Getting-started-android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/MapsActivity.kt#L39-L100)
+We then add an `EditorActionListener` and a `OnClickListener` to our text input field and our search button in the `onCreate` of `MapsActivity`. To call our search method with the text in the search input field. Find the full `onCreate` example here: [MapsActivity.java](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L55-L121) or [MapsActivity.kt](https://github.com/MapsIndoors/MapsIndoors-Getting-started-android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/MapsActivity.kt#L39-L100)
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
+<a href="https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L70-L90">MapsActivity.java</a>
 
 ```java
 ...
@@ -159,28 +128,15 @@ searchBtn.setOnClickListener {
 </mi-tab-panel>
 </mi-tabs>
 
-To accompany this we'll create a fragment and a `BottomSheet` to handle the `searchFragment`.
+To accompany this we use a _fragment_ and a `BottomSheet` to handle the `SearchFragment`.
 
-Start by creating a fragment with a view-only consisting of a `RecyclerView`.
-
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.recyclerview.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/list"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:clipToPadding="false"
-    android:paddingTop="@dimen/list_item_spacing_half"
-    android:paddingBottom="@dimen/list_item_spacing_half"
-    tools:context=".SearchFragment"
-    tools:listitem="@layout/fragment_search__list_item" />
-```
+Observe that the `SearchFragment`is just a simple _fragment_ with a `RecyclerView` and a `SearchItemAdapter` added to it
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
+<a href="https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/SearchFragment.java">SearchFragment.java</a>
 
 ```java
 public class SearchFragment extends Fragment {
@@ -238,39 +194,41 @@ class SearchFragment : Fragment() {
 </mi-tab-panel>
 </mi-tabs>
 
-See the full example of SearchFragment here: [SearchFragment.java](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/SearchFragment.java) or [SearchFragment.kt](https://github.com/MapsIndoors/MapsIndoors-Getting-started-android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/SearchFragment.kt)
+See the full example of `SearchFragment` here: [SearchFragment.java](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/SearchFragment.java) or [SearchFragment.kt](https://github.com/MapsIndoors/MapsIndoors-Getting-started-android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/SearchFragment.kt)
 
-Create a `RecyclerView` adapter and the accompanying `Viewholder`:
-
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_height="wrap_content"
-    android:layout_width="match_parent">
-    <ImageView
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:id="@+id/location_image"/>
-    <TextView
-        android:id="@+id/text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_toEndOf="@id/location_image"
-        android:background="?attr/selectableItemBackground"
-        android:paddingLeft="@dimen/list_item_spacing"
-        android:paddingTop="@dimen/list_item_spacing_half"
-        android:paddingRight="@dimen/list_item_spacing"
-        android:paddingBottom="@dimen/list_item_spacing_half"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
-</RelativeLayout>
-```
-
-Create a getter for your `MapControl` object on the `MapsActivity` so that it can be used in the adapter.
+Create a getter for your `MapControl` object on the `MapsActivity` so that it can be used in the `SearchAdapter`.
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
+<a href="https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L118-L124">MapsActivity.java</a>
+
+```java
+public MapControl getMapControl() {
+    return mMapControl;
+}
+```
+
+</mi-tab-panel>
+<mi-tab-panel id="kotlin">
+
+```kotlin
+fun getMapControl(): MapControl {
+    return mMapControl
+}
+```
+
+</mi-tab-panel>
+</mi-tabs>
+
+Inside the `SearchItemAdapter` implement logic to display the locations you get from a search result. Here we show an image of the location marker and show the name of the locations.
+
+<mi-tabs>
+<mi-tab label="Java" tab-for="java"></mi-tab>
+<mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
+<mi-tab-panel id="java">
+<a href="https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/SearchItemAdapter.java">SearchItemAdapter.java</a>
 
 ```java
 class SearchItemAdapter extends RecyclerView.Adapter<ViewHolder> {
@@ -281,17 +239,20 @@ class SearchItemAdapter extends RecyclerView.Adapter<ViewHolder> {
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
+        //Setting the the text on the text view to the name of the location
         holder.text.setText(mLocations.get(position).getName());
 
         if (mMapActivity != null) {
+            //We start by checking if there is a specific Location icon assigned to the location
             LocationDisplayRule locationDisplayRule = mMapActivity.getMapControl().getDisplayRule(mLocations.get(position));
 
             if (locationDisplayRule != null && locationDisplayRule.getIcon() != null) {
+                //There is a specific icon on this location so we use that
                 mMapActivity.runOnUiThread(()-> {
                     holder.imageView.setImageBitmap(locationDisplayRule.getIcon());
                 });
             }else {
-                //Location does not have a special displayRule using type Display rule
+                //Location does not have a specific displayRule, we instead use type Display rule
                 LocationDisplayRule typeDisplayRule = mMapActivity.getMapControl().getDisplayRule(mLocations.get(position).getType());
 
                 if (typeDisplayRule != null) {
@@ -306,7 +267,14 @@ class SearchItemAdapter extends RecyclerView.Adapter<ViewHolder> {
     ...
 }
 class ViewHolder extends RecyclerView.ViewHolder {
-    ...
+    final TextView text;
+    final ImageView imageView;
+
+    ViewHolder(LayoutInflater inflater, ViewGroup parent) {
+        super(inflater.inflate(R.layout.fragment_search_list_item, parent, false));
+        text = itemView.findViewById(R.id.text);
+        imageView = itemView.findViewById(R.id.location_image);
+    }
 }
 ```
 
@@ -320,8 +288,6 @@ internal class SearchItemAdapter(private val mLocations: List<MPLocation?>, priv
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.text.text = mLocations[position]?.name
-
-        ...
 
         if (mMapActivity != null) {
             val locationDisplayRule: LocationDisplayRule? = mMapActivity.getMapControl().getDisplayRule(mLocations[position])
@@ -351,8 +317,14 @@ internal class SearchItemAdapter(private val mLocations: List<MPLocation?>, priv
 
 }
 
-internal class ViewHolder(inflater: LayoutInflater, parent: ViewGroup?) :
-    ...
+internal class ViewHolder(inflater: LayoutInflater, parent: ViewGroup?) : RecyclerView.ViewHolder(inflater.inflate(R.layout.fragment_search_list_item, parent, false)) {
+    val text: TextView
+    val imageView: ImageView
+
+    init {
+        text = itemView.findViewById(R.id.text)
+        imageView = itemView.findViewById(R.id.location_image)
+    }
 }
 ```
 
@@ -361,28 +333,14 @@ internal class ViewHolder(inflater: LayoutInflater, parent: ViewGroup?) :
 
 See the full example of `SearchItemAdapter` and accompanying `ViewHolder` here: [SearchItemAdapter.java](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/SearchItemAdapter.java#L16-L75) or [SearchItemAdapter.kt](https://github.com/MapsIndoors/MapsIndoors-Getting-started-android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/SearchItemAdapter.kt#L12-L60)
 
-Implement a `BottomSheet` to the bottom of your `MapsActivity` Layout. The root of the view should be a `CoordinatorLayout`. You can find the full xml layout on [MapsActivity Layout](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/res/layout/activity_maps.xml)
-
-```xml
-    <FrameLayout
-        android:id="@+id/standardBottomSheet"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        style="?attr/bottomSheetStyle"
-        android:background="@drawable/card_shape_bottom"
-        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
-        app:behavior_hideable="true"
-        android:focusable="true">
-    </FrameLayout>
-```
-
-Now add the search fragment to the `BottomSheet` in the search query method on your `MapsActivity`.
+We have already implemented the BottomSheet in the UI. Now we add the search _fragment_ to the `BottomSheet` in our search query method on our `MapsActivity`.
+You can use the `addFragmentToBottomSheet` too add the created _fragment_ to the `BottomSheet`. When we have received the search results
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
+<a href="https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L168-L213">MapsActivity.java</a>
 
 ```java
 void search(String searchQuery) {
@@ -398,8 +356,9 @@ void search(String searchQuery) {
             //Create a new instance of the search fragment
             mSearchFragment = SearchFragment.newInstance(list, this);
             //Make a transaction to the bottomsheet
-            getSupportFragmentManager().beginTransaction().replace(R.id.standardBottomSheet, mSearchFragment).commit();
-
+            addFragmentToBottomSheet(mSearchFragment);
+            //Clear the search text, since we got a result
+            mSearchTxtField.getText().clear();
             ...
         }
     }
@@ -423,8 +382,9 @@ private fun search(searchQuery: String) {
             //Create a new instance of the search fragment
             mSearchFragment = SearchFragment.newInstance(list, this)
             //Make a transaction to the bottom sheet
-            supportFragmentManager.beginTransaction().replace(R.id.standardBottomSheet, mSearchFragment).commit()
-
+            addFragmentToBottomSheet(mSearchFragment)
+            //Clear the search text, since we got a result
+            mSearchTxtField.text?.clear()
             ...
         }
     }
@@ -445,24 +405,40 @@ The standard implementation animates the camera to fit all Locations on the map 
 
 When you are done showing the search results you can call `clearMap()` on `MapControl`.
 
+Since the default `displaySearchResults(List<MPLocation> locations)` uses camera animation we will call it from the UI Thread and implement it in our search method inside the getLocationsAsync result with the list from the method.
+
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
+<a href="https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L188-L190">MapsActivity.java</a>
 
 ```java
-mMapControl.displaySearchResults(locationList);
+MapsIndoors.getLocationsAsync(mpQuery, mpFilter, (list, miError) -> {
+    ...
+    //Calling displaySearch results on the ui thread as camera movement is involved
+    runOnUiThread(()-> {
+        mMapControl.displaySearchResults(list, true);
+    });
+}
 ```
 
 </mi-tab-panel>
 <mi-tab-panel id="kotlin">
 
 ```kotlin
-mMapControl.displaySearchResults(locationList)
+MapsIndoors.getLocationsAsync(mpQuery, mpFilter) { list: List<MPLocation?>?, miError: MIError? ->
+    //Calling displaySearchResults on the ui thread as camera movement is involved
+    runOnUiThread { mMapControl.displaySearchResults(list, true) }
+}
 ```
 
 </mi-tab-panel>
 </mi-tabs>
+
+Expected result:
+
+![Search result](/assets/android/getting-started/search_gif.gif)
 
 The accompanying UI and implementation of this search experience can be found in the getting started app sample. [Getting Started App sample](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/tree/master/app/src/main/java/com/example/mapsindoorsgettingstarted) or [Getting Started App sample kotlin](https://github.com/MapsIndoors/MapsIndoors-Getting-started-android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin).
 

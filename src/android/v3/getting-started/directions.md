@@ -17,12 +17,13 @@ eleventyNavigation:
 After having created our list of search results, we have a good starting point for creating directions between two Locations.
 Since our search only supports a single search, we will hardcode a Location's coordinate into our app, and use that as the basis for our Origin. Then we'll create a route, navigate to a view of the navigation details, and show a route on the map from the Origin to the Destination.
 
-Create a `Point` with the coordinates from the Oval Office Location on your MapsActivity.
+We have created a point called mUserLocation to use as a starting point for directions on `MapsActivity`
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
+<a href="https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L46">MapsActivity.java</a>
 
 ```java
 private Point mUserLocation = new Point(38.897389429704695, -77.03740973527613,0);
@@ -38,13 +39,14 @@ private val mUserLocation: Point = Point(38.897389429704695, -77.03740973527613,
 </mi-tab-panel>
 </mi-tabs>
 
-Now we will make a method that can generate a route for us with just a Location (picked from the search list).
+Now we will create a method that can generate a route for us with a Location (picked from the search list).
 Start by implementing `OnRouteResultListener` to your MapsActivity.
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
+<a href="https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L38">MapsActivity.java</a>
 
 ```java
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, OnRouteResultListener
@@ -60,19 +62,24 @@ class MapsActivity : FragmentActivity(), OnMapReadyCallback, OnRouteResultListen
 </mi-tab-panel>
 </mi-tabs>
 
-implement the `onRouteResult` method and create a method called `createRoute(MPLocation mpLocation)` To generate a route you can use with `MPRoutingProvider` to query a route with our hardcoded `mUserLocation` and a point from the MPLocation we call the method with later on.
+implement the `onRouteResult` method and create a method called `createRoute(MPLocation mpLocation)` on your `MapsActivity`.
 
-To generate a route with the `MPLocation`, we start by creating an `onClickListener` on our search `ViewHolder` inside the `SearchItemAdapter` on `onBindViewHolder`. This calls a `createRoute` on our activity and the route is generated.
+Use this method to query the `MPRoutingProvider`, which generates a route between two coordinates. We will use this to query a route with our hardcoded `mUserLocation` and a point from a MPLocation.
+
+To generate a route with the `MPLocation`, we start by creating an `onClickListener` on our search `ViewHolder` inside the `SearchItemAdapter`. In the method `onBindViewHolder` we will call our `createRoute` on the `MapsActivity` for our route to be generated.
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
+<a href="https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/SearchItemAdapter.java#L37-L40">SearchItemAdapter.java</a>
 
 ```java
 holder.itemView.setOnClickListener(view -> {
-          mMapActivity.createRoute(mLocations.get(position));
-        });
+        mMapActivity.createRoute(mLocations.get(position));
+        //Clearing map to remove the location filter from our search result
+        mMapActivity.getMapControl().clearMap();
+    });
 ```
 
 </mi-tab-panel>
@@ -81,11 +88,15 @@ holder.itemView.setOnClickListener(view -> {
 ```kotlin
 holder.itemView.setOnClickListener {
     mLocations[position]?.let { locations -> mMapActivity?.createRoute(locations) }
+    //Clearing map to remove the location filter from our search result
+    mMapActivity?.getMapControl()?.clearMap()
 }
 ```
 
 </mi-tab-panel>
 </mi-tabs>
+
+We start by implementing logic to our createRoute method to query a route through `MPRoutingProvider` and assign the onRouteResultListener to the activity. When we call the `createRoute` through our `onClickListener` we will receive a result through our `onRouteResult` implementation.
 
 When we receive a result on our listener, we render the route through the `MPDirectionsRenderer`.
 
@@ -95,12 +106,13 @@ We create global variables of the `MPdirectionsRenderer` and `MPRoutingProvider`
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
+<a href="https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L215-264">MapsActivity.java</a>
 
 ```java
 void createRoute(MPLocation mpLocation) {
     if (mpRoutingProvider == null) {
         mpRoutingProvider = new MPRoutingProvider();
-      mpRoutingProvider.setOnRouteResultListener(this);
+        mpRoutingProvider.setOnRouteResultListener(this);
     }
     mpRoutingProvider.query(mUserLocation, mpLocation.getPoint());
 }
@@ -121,8 +133,8 @@ public void onRouteResult(@Nullable Route route, @Nullable MIError miError) {
     mpDirectionsRenderer.setRoute(route);
     //Create a new instance of the navigation fragment
     mNavigationFragment = NavigationFragment.newInstance(route, this);
-    //Start a transaction and assign it to the BottomSheet
-    ...
+    //Add the fragment to the BottomSheet
+    addFragmentToBottomSheet(mNavigationFragment);
     //As camera movement is involved run this on the UIThread
     runOnUiThread(()-> {
         //Starts drawing and adjusting the map according to the route
@@ -142,14 +154,12 @@ fun createRoute(mpLocation: MPLocation) {
         mpRoutingProvider = MPRoutingProvider()
         mpRoutingProvider?.setOnRouteResultListener(this)
     }
-    mpRoutingProvider?.setTravelMode(TravelMode.WALKING)
     //Queries the MPRouting provider for a route with the hardcoded user location and the point from a location.
     mpRoutingProvider?.query(mUserLocation, mpLocation.point)
 }
 
 override fun onRouteResult(@Nullable route: Route?, @Nullable miError: MIError?) {
     ...
-    //Create the MPDirectionsRenderer if it has not been instantiated.
     if (mpDirectionsRenderer == null) {
         mpDirectionsRenderer = MPDirectionsRenderer(this, mMap, mMapControl, OnLegSelectedListener { i: Int ->
             //Listener call back for when the user changes route leg. (By default is only called when a user presses the RouteLegs end marker)
@@ -157,18 +167,16 @@ override fun onRouteResult(@Nullable route: Route?, @Nullable miError: MIError?)
             mMapControl.selectFloor(mpDirectionsRenderer!!.currentFloor)
         })
     }
-
     //Set the route on the Directions renderer
     mpDirectionsRenderer?.setRoute(route)
     //Create a new instance of the navigation fragment
     mNavigationFragment = NavigationFragment.newInstance(route, this)
     //Start a transaction and assign it to the BottomSheet
-    ...
+    addFragmentToBottomSheet(mNavigationFragment)
     //As camera movement is involved run this on the UIThread
     runOnUiThread {
         //Starts drawing and adjusting the map according to the route
         mpDirectionsRenderer?.initMap(true)
-        ...
     }
 }
 ```
@@ -178,91 +186,17 @@ override fun onRouteResult(@Nullable route: Route?, @Nullable miError: MIError?)
 
 See the full implementation of theese methods here: [MapsActivity.java](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L240-L288) or [MapsActivity.kt](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L240-L288)
 
-Now we will create a fragment we can put into our BottomSheet and show the steps for each route, as well as the time and distance it takes to travel the route.
+Now we will implement logic to our `NavigationFragment` that we can put into our BottomSheet and show the steps for each route, as well as the time and distance it takes to travel the route.
 
 Here we'll use a `viewpager` to allow the user to switch between each step, as well as display a "close" button so we are able to remove the route and the bottom sheet from the activity.
 
-Route fragment view:
-
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/distanceTxt"
-        android:layout_margin="5dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:textColor="@color/black"/>
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/infoTxt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:textColor="@color/black"
-        android:layout_below="@+id/distanceTxt"/>
-    <ImageButton
-        android:id="@+id/closeBtn"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_alignParentEnd="true"
-        android:background="@drawable/ic_baseline_close_24"/>
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/infoTxt">
-        <ImageButton
-            android:id="@+id/arrow_back"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:background="@drawable/ic_baseline_keyboard_arrow_left_24"
-            android:layout_centerVertical="true"
-            android:layout_margin="5dp"/>
-        <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/view_pager"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_toEndOf="@id/arrow_back"
-            android:layout_toStartOf="@+id/arrow_next"/>
-        <ImageButton
-            android:id="@+id/arrow_next"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:background="@drawable/ic_baseline_keyboard_arrow_right_24"
-            android:layout_margin="5dp"
-            android:layout_centerVertical="true"
-            android:layout_alignParentEnd="true"/>
-    </RelativeLayout>
-</RelativeLayout>
-```
-
-RouteLeg fragment for the viewpager view:
-
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    tools:context=".RouteLegFragment">
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/from_text_view"
-        android:layout_margin="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:textStyle="bold"/>
-</RelativeLayout>
-```
-
-Create the Navigation `Fragment` with a `FragmentStateAdapter` for the `ViewPager`:
+Inside the `NavigationFragment` we will implement logic to navigate through Legs of our Route.
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
+<a href="https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/NavigationFragment.java">NavigationFragment.java</a>
 
 ```java
 public class NavigationFragment extends Fragment {
@@ -288,9 +222,8 @@ public class NavigationFragment extends Fragment {
         ...
         //Button for closing the bottom sheet. Clears the route through directionsRenderer as well, and changes map padding.
         closeBtn.setOnClickListener(v -> {
-            mMapsActivity.getSupportFragmentManager().beginTransaction().remove(this).commit();
+            mMapsActivity.removeFragmentFromBottomSheet(this);
             mMapsActivity.getMpDirectionsRenderer().clear();
-            mMapsActivity.getMapControl().setMapPadding(0,0,0,0);
         });
 
         //Next button for going through the legs of the route.
@@ -343,9 +276,8 @@ class NavigationFragment : Fragment() {
 
         //Button for closing the bottom sheet. Clears the route through directionsRenderer as well, and changes map padding.
         closeBtn.setOnClickListener {
-            mMapsActivity!!.supportFragmentManager.beginTransaction().remove(this).commit()
+            mMapsActivity!!.removeFragmentFromBottomSheet(this)
             mMapsActivity!!.getMpDirectionsRenderer()?.clear()
-            mMapsActivity!!.getMapControl().setMapPadding(0, 0, 0, 0)
         }
 
         //Next button for going through the legs of the route.
@@ -392,12 +324,13 @@ class NavigationFragment : Fragment() {
 
 See the full implementation of `NavigationFragment` and the accompanying adapter here: [NavigationFragment.java](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/NavigationFragment.java#L31-L117) or [NavigationFragment.kt](https://github.com/MapsIndoors/MapsIndoors-Getting-started-android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/NavigationFragment.kt#L18-L105)
 
-Create the `RouteLegFragment` for the `ViewPager`:
+We will then create a simple textview to describe each step of the Route Leg in the `RouteLegFragment` for the `ViewPager`:
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
+<a href="https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/RouteLegFragment.java">RouteLegFragment.java</a>
 
 ```java
 public class RouteLegFragment extends Fragment {
@@ -482,3 +415,7 @@ mpRoutingProvider?.setTravelMode(TravelMode.WALKING)
 
 </mi-tab-panel>
 </mi-tabs>
+
+Expected result:
+
+![Directions result](/assets/android/getting-started/directions_gif.gif)
