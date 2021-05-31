@@ -9,6 +9,17 @@ eleventyNavigation:
 
 Changelog for MapsIndoors SDK for JavaScript. This document structure is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and the project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [4.11.0] - 2021-05-20
+
+### Added
+
+- Support for (and default rendering of) Live Data Domain Types `temperature` and `count`.
+
+### Fixed
+
+- The default Live Data badge rendering is now based on Domain Type hierarchy: `availability+occupancy` > `availability` > `occupancy` > `temperature` > `count`.
+- The default label styling has been refreshed and is now aligned with out showcase web app.
+
 ## [4.10.0] - 2021-05-18
 
 ### Added
