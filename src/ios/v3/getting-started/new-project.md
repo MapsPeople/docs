@@ -14,6 +14,10 @@ eleventyNavigation:
 <!-- Environment -->
 {% include "src/shared/getting-started/project/environment.md" %}
 
+MapsIndoors can either be installed using CocoaPods or manually.
+
+### Install MapsIndoors using CocoaPods
+
 If you haven't already, install CocoaPods:
 [Getting Started with CocoaPods](https://guides.cocoapods.org/using/getting-started.html)
 
@@ -24,7 +28,7 @@ If you haven't already, install CocoaPods:
 ```swift
 {% raw %}source 'https://github.com/CocoaPods/Specs.git'
 target 'YOUR_APPLICATION_TARGET_NAME_HERE' do
-pod 'MapsIndoors', '~>3.19'      # Check CocoaPods for latest version
+pod 'MapsIndoors', '~>3.28'      # Check CocoaPods for latest version
 end{% endraw %}
 ```
 
@@ -33,6 +37,21 @@ end{% endraw %}
 * `cd <path-to-project>`
 * Run the `pod install` command. This will install the APIs specified in the `Podfile`, along with any dependencies they may have.
 * Close Xcode, and then open (double-click) your project's *.xcworkspace* file to launch Xcode. From this time onwards, you must use the *.xcworkspace* file to open the project.
+
+### Install MapsIndoors Manually
+
+Since MapsIndoors is dependent on [Google Maps iOS SDK](https://developers.google.com/maps/documentation/ios-sdk/overview), you must also install this SDK, either [manually](https://developers.google.com/maps/documentation/ios-sdk/start#install-manually), [using Carthage](https://developers.google.com/maps/documentation/ios-sdk/start#use-carthage) or [using CocoaPods](https://developers.google.com/maps/documentation/ios-sdk/start#use-cocoapods). You should use [Google Maps iOS version 4.2.0](https://dl.google.com/dl/cpdc/870a9df85dbcbadc/GoogleMaps-4.2.0.tar.gz) since MapsIndoors >=3.30.0 is linked against this version.
+
+When the Google Maps installation is completed, go through these steps to install MapsIndoors:
+
+* Download and unzip the latest MapsIndoors.xcframework.
+* Drag and drop the framework into your XCode project. In the dialog that pops up, choose “Copy items if needed” and make sure the framework is added to the correct target.
+* Right click the imported framework and click "Show in Finder".
+* Locate ios-arm64 > MapsIndoors.framework > Resources > MapsIndoors.bundle, and drag this into your project as well. This time, make sure to uncheck “Copy items if needed”.
+* 
+
+## Add your API Credentials
+
 * Add your credentials to your `AppDelegate.swift`
   1. Add the following import statements:
 
