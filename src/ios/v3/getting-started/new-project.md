@@ -44,10 +44,10 @@ Since MapsIndoors is dependent on [Google Maps iOS SDK](https://developers.googl
 
 When the Google Maps installation is completed, go through these steps to install MapsIndoors:
 
-* Download and unzip the latest MapsIndoors.xcframework.
+* Download and unzip the latest [MapsIndoors.xcframework](https://github.com/MapsIndoors/MapsIndoorsIOS/releases/download/3.30.0-beta4/MapsIndoors.xcframework.zip).
 * Drag and drop the framework into your XCode project. In the dialog that pops up, choose “Copy items if needed” and make sure the framework is added to the correct target.
-* Right click the imported framework and click "Show in Finder".
-* Locate ios-arm64 > MapsIndoors.framework > Resources > MapsIndoors.bundle, and drag the bundle into your project as well. This time, make sure to uncheck “Copy items if needed”.
+* From XCode, right click the imported framework and click "Show in Finder".
+* In Finder, Locate ios-arm64 > MapsIndoors.framework > Resources > MapsIndoors.bundle, and drag the bundle into your XCode project as well. This time, make sure to uncheck “Copy items if needed”.
 
 ## Add your API Credentials
 
