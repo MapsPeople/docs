@@ -25,11 +25,14 @@ If you haven't already, install CocoaPods:
 * Create a file named `Podfile` in your project directory. This file defines your project's dependencies.
 * Edit the `Podfile` and add your dependencies. Here is an example:
 
-```swift
-{% raw %}source 'https://github.com/CocoaPods/Specs.git'
+```ruby
+source 'https://github.com/CocoaPods/Specs.git'
+
 target 'YOUR_APPLICATION_TARGET_NAME_HERE' do
-pod 'MapsIndoors', '~>3.28'      # Check CocoaPods for latest version
-end{% endraw %}
+
+  pod 'MapsIndoors', '~>{{ios.sdkVersion}}'
+
+end
 ```
 
 * Save the `Podfile`.
@@ -44,7 +47,7 @@ Since MapsIndoors is dependent on [Google Maps iOS SDK](https://developers.googl
 
 When the Google Maps installation is completed, go through these steps to install MapsIndoors:
 
-* Download and unzip the latest [MapsIndoors.xcframework](https://github.com/MapsIndoors/MapsIndoorsIOS/releases/download/3.30.0-beta4/MapsIndoors.xcframework.zip).
+* Download and unzip the latest [MapsIndoors.xcframework](https://github.com/MapsIndoors/MapsIndoorsIOS/releases/download/{{ ios.sdkVersion }}/MapsIndoors.xcframework.zip).
 * Drag and drop the framework into your XCode project. In the dialog that pops up, choose “Copy items if needed” and make sure the framework is added to the correct target.
 * From XCode, right click the imported framework and click "Show in Finder".
 * In Finder, Locate ios-arm64 > MapsIndoors.framework > Resources > MapsIndoors.bundle, and drag the bundle into your XCode project as well. This time, make sure to uncheck “Copy items if needed”.
