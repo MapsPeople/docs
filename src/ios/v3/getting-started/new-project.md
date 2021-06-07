@@ -15,6 +15,7 @@ eleventyNavigation:
 {% include "src/shared/getting-started/project/environment.md" %}
 
 ### Create Xcode project
+
 If you don't have an Xcode project yet, create one now and save it to your local machine.
 
 If you're new to iOS development, create a "Single View Application" or "App" (depending on your version of Xcode) for iOS. Name it how you like, e.g. "MIstarter".
@@ -22,6 +23,7 @@ If you're new to iOS development, create a "Single View Application" or "App" (d
 This guide uses Swift as the programming language and Storyboards for creating user interfaces, so choose that for your project if you want to follow along easier.
 
 ### Install CocoaPods
+
 If you haven't already, install CocoaPods:
 [Getting Started with CocoaPods](https://guides.cocoapods.org/using/getting-started.html)
 
