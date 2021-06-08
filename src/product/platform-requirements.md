@@ -35,7 +35,6 @@ The MapsIndoors SDK is a collection of software libraries, guides and documentat
 - Depends on Google Maps API for JavaScript v3
 - Supports the following desktop browsers:
   - Current version of Microsoft Edge (Windows)
-  - Internet Explorer 11 (Windows)
   - Current and previous version of Firefox (Windows, macOS, Linux)
   - Current and previous version of Chrome (Windows, macOS, Linux)
   - Current and previous version of Safari (macOS)
