@@ -1,1 +1,1 @@
-Now you have simple app with a showing map. In this page, you'll create a simple search and display the search results in a list. You'll also learn how to filter the data displayed on the map based on the search results.
+Now you have simple app showing a map. In this step, you'll create a simple search and display the search results in a list. You'll also learn how to filter the data displayed on the map based on the search results.
