@@ -48,7 +48,7 @@ The Connectors can be an Elevator, Stairs or Escalator.
 
 A Location is an item with data about what is located at that geographical point. A Location can be anything; an office desk, a conference exhibitor, or a room feature (firehose, coffee machine, TV etc.).
 
-Location, Place and POI (“Point of Interest”) are used interchangeably in everyday speech. MapsIndoors relies on Locations as the word to describe a geographical point.
+Location, Place and POI ("Point of Interest") are used interchangeably in everyday speech. MapsIndoors relies on Locations as the word to describe a geographical point.
 
 See also Rooms.
 
@@ -60,7 +60,7 @@ A Room might have one or more Doors connecting it with another or multiple other
 
 ### Area
 
-An Area is a polygon like a Room, but it doesn't have Doors. It is the third kind of Location next to Room and POI. An Area can cover as little or as much of a Room, Floor or Building as makes sense.
+An Area is a polygon like a Room, but it doesn't have Doors. It is the third kind of Location besides Room and POI. An Area can cover as little or as much of a Room, Floor or Building as makes sense.
 
 ### Door
 
@@ -78,7 +78,7 @@ A Building Entrance is a Door at the outer edge of a Building.
 
 ### Category
 
-Categories can be used to group Locations in bundles regardless of their type. E.g. a Location of the type Vegetarian Restaurant can be grouped with a Location of the type Barbeque Restaurant in the Category “Restaurants”.
+Categories can be used to group Locations in bundles regardless of their type. E.g. a Location of the type Vegetarian Restaurant can be grouped with a Location of the type Barbeque Restaurant in the Category "Restaurants".
 
 ### Type
 
@@ -140,7 +140,7 @@ This can be helpful on large Venues where certain hallways are preferred for a s
 
 Directions is the set of instructions for travelling from an Origin to a Destination.
 
-You can get Directions for a Route using the four Travel Modes: “Walking”, “Driving”, “Biking” and “Public Transportation”.
+You can get Directions for a Route using the four Travel Modes: "Walking", "Driving", "Biking" and "Public Transportation".
 
 For Directions where the Origin and Destination are both inside a Venue (as defined by the Venue Bounds), Walking is the only Travel Mode available.
 
@@ -158,7 +158,7 @@ The main difference between Directions and Routes are the scope of what is inclu
 
 ### Turn-by-turn
 
-“Turn-by-turn navigation” means the current Direction Step change when the physical location of the person navigating changes. The current Direction Step might instruct the person to “Make a right turn” and based on their location after they have completed that step, the current Direction Step changes automatically to “Take the elevator to Floor 4”.
+"Turn-by-turn navigation" means the current Direction Step change when the physical location of the person navigating changes. The current Direction Step might instruct the person to "Make a right turn" and based on their location after they have completed that step, the current Direction Step changes automatically to "Take the elevator to Floor 4".
 
 ### Entry point / Entryway
 
@@ -166,12 +166,16 @@ The main difference between Directions and Routes are the scope of what is inclu
 
 ### Bus/tram/train stop
 
-A “Public Transportation”-only Entry Point inside the Venue is understood to be the point from which MapsIndoors starts the walking directions.
+A "Public Transportation"-only Entry Point inside the Venue is understood to be the point from which MapsIndoors starts the walking directions.
 
 ### Parking Lot
 
-A Parking Lot is a “Driving”-specific Entry Point. It will provide a suggestion to park the car at the Parking Lot closest to the Destination. It only displays a Parking Lot when requesting “Driving” directions from outside a Venue to a Location inside a Venue.
+A Parking Lot is a "Driving"-specific Entry Point. It will provide a suggestion to park the car at the Parking Lot closest to the Destination. It only displays a Parking Lot when requesting "Driving" directions from outside a Venue to a Location inside a Venue.
 
 ### Landmark
 
-Landmarks can be used as navigational identifiers when people describe a route to one another. MapsIndoors does not support Landmarks as special Locations, but they can be constructed using Types and Advanced Icons.
+Landmarks can be used as navigational identifiers when people describe a route to one another. MapsIndoors does not support Landmarks as special Locations, but they can be constructed using Location Types and Icons.
+
+### Selection Highlight Color
+
+To illustrate which piece of geodata is selected, we use a highlight color that is the highest possible contrast to the surroundings: Pink. You can read more about the [background for our choice on our MapsIndoors product blog](https://blog.mapspeople.com/new-selection-highlight-color).
