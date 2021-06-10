@@ -7,7 +7,7 @@ eleventyNavigation:
   order: 330
 ---
 
-This guide gives an overview of how to work with _Live Data_ in the MapsIndoors iOS SDK. 
+This guide gives an overview of how to work with _Live Data_ in the MapsIndoors iOS SDK.
 
 {% include "src/shared/live-data/live-data-intro.md" %}
 
