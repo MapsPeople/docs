@@ -12,6 +12,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [9.1.0] - 2021-06-10
+
+### Changed
+
+- From previously inserting a script tag manually to now using the [Google Maps JS API Loader](https://www.npmjs.com/package/@googlemaps/js-api-loader) npm package.
+
 ## [9.0.2] - 2021-05-06
 
 ### Fixed
@@ -358,34 +364,34 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- **mi-location-info**: details string wasn't returned when the venue and building was named the same.
-- **mi-keyboard**: eventListener was attached multiple times.
+- **mi-location-info**: details string wasn't returned when the venue and building was named the same
+- **mi-keyboard**: eventListener was attached multiple times
 
 ### Added
 
-- **mi-keyboard**: custom `inputCleared` event listener.
+- **mi-keyboard**: custom `inputCleared` event listener
 
 ## [3.0.0] - 2020-08-13
 
 ### Fixed
 
-- **mi-location-info**: details for outdoor locations wasn't shown.
+- **mi-location-info**: details for outdoor locations wasn't shown
 
 ### Changed
 
-- **mi-keyboard**: some breaking changes was introduced for better control of when the keyboard should be visible. A layout and inputElement property is added.
-- **mi-share-sms**: necessary changes to reflect changes made in mi-keyboard component.
+- **mi-keyboard**: some breaking changes was introduced for better control of when the keyboard should be visible. A layout and inputElement property is added
+- **mi-share-sms**: necessary changes to reflect changes made in mi-keyboard component
 
 ## [2.4.0] - 2020-08-07
 
 ### Added
 
-- **New**: mi-share-sms component.
+- **New**: mi-share-sms component
 
 ### Fixed
 
-- **mi-map**: didn't show any locations until the map had been idle.
-- **mi-card**: had a unnecessary div tag which in some cases did cause trouble.
+- **mi-map**: didn't show any locations until the map had been idle
+- **mi-card**: had a unnecessary div tag which in some cases did cause trouble
 
 ### Changed
 
@@ -395,37 +401,37 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- **mi-search**: fixed `mi-near` to provide correctly formatted data to the SDK.
+- **mi-search**: fixed `mi-near` to provide correctly formatted data to the SDK
 
 ## [2.3.0]
 
 ### Added
 
-- **mi-search**: added a componentRendered event.
+- **mi-search**: added a componentRendered event
 
 ## [2.2.0]
 
 ### Added
 
-- **mi-search**: added a idAttribute and dataAttributes attribute.
+- **mi-search**: added a idAttribute and dataAttributes attribute
 
 ## [2.1.2]
 
 ### Fixed
 
-- **mi-keyboard**: added a "same element" check to handleFocusin method.
+- **mi-keyboard**: added a "same element" check to handleFocusin method
 
 ## [2.1.1]
 
 ### Fixed
 
-- **mi-step-switcher**: adjusted the vertical padding.
+- **mi-step-switcher**: adjusted the vertical padding
 
 ## [2.1.0]
 
 ### Added
 
-- **New**: mi-step-switcher component.
+- **New**: mi-step-switcher component
 
 ## [2.0.0]
 
@@ -436,13 +442,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Switched to semantic versioning.
-- **mi-search**: disabled browser autocomplete.
-- **mi-search**: style changes for a larger appearance.
-- **mi-keyboard**: removed the enter key from the keyboard layouts.
-- **mi-list-item-location**: vertically centering.
+- **mi-search**: disabled browser autocomplete
+- **mi-search**: style changes for a larger appearance
+- **mi-keyboard**: removed the enter key from the keyboard layouts
+- **mi-list-item-location**: vertically centering
 
 ### Fixed
 
-- **mi-location-info**: removed alike building names.
-- **mi-keyboard**: when clicking outside the keyboard to dismiss it now exposes the correct click target.
-- **mi-list**: fixed reference bug.
+- **mi-location-info**: removed alike building names
+- **mi-keyboard**: when clicking outside the keyboard to dismiss it now exposes the correct click target
+- **mi-list**: fixed reference bug
