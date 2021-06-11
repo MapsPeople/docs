@@ -1,7 +1,7 @@
 ---
 title: SDK Platform Support and Requirements
 eleventyNavigation:
-  parent: product
+  parent: Product Overview
   order: 12
 ---
 
