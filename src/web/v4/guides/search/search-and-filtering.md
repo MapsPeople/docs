@@ -9,7 +9,8 @@ eleventyNavigation:
 
 ## Overview
 
-In this guide you will see an example of how to search for Locations. The full code example is shown in the JSFiddle below, which will be examined below.
+In this guide you will see an example of how to search for Locations.
+The full code example is shown in the JSFiddle below, which will be examined below.
 
 <script async src="https://jsfiddle.net/mapspeople/91xhwd65/embed/html,result/"></script>
 
@@ -35,14 +36,14 @@ searchElement.addEventListener('input', debounce((e) => {
 }, 500));
 ```
 
-The `debounce` method is there to ensure that the service is not being called in rapid succession. 
+The `debounce` method is there to ensure that the service is not being called in rapid succession.
 This method delays the execution of the function by 500ms, unless `debounce` is called again within 500ms, in which case the timer is reset.
 
 See this article ["What is debouncing" by Jamis Charles](https://medium.com/@jamischarles/what-is-debouncing-2505c0648ff1) for a more detailed description of the `debounce` concept.
 
 When the function executes, we check whether the input is empty or not. A request object is created if the input is not empty.
 
-The `getLocations` function expects either no input, in which case it returns all Locations, or an Object (please refer to the official documentation for an exhaustive list of properties). 
+The `getLocations` function expects either no input, in which case it returns all Locations, or an Object (please refer to the official documentation for an exhaustive list of properties).
 In this case, the constant `value` is passed to the `q` property and the `includeOutsidePOI` property is set to `true`. When the Promise resolves, the response is passed to the `displayResults` helper function.
 
 If the input is empty, we clear the result list and reset the map filter by calling the helper functions `clearResults` and `clearFilter`.
@@ -80,4 +81,4 @@ The purpose of the `filterMap` function is to create a list of `location id`s us
 
 The second parameter tells MapsIndoors not to change the viewport of the map.
 
-For more information, see `MapsIndoors.filter` in the [reference documentation](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/MapsIndoors.html#filter)
+For more information, see `MapsIndoors.filter` in the [reference documentation](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/MapsIndoors.html#filter).
