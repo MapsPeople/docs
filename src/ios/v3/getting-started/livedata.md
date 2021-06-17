@@ -10,6 +10,8 @@ eleventyNavigation:
 
 {% include "src/shared/live-data/live-data-intro.md" %}
 
+{% include "src/shared/getting-started/live-data/live-position-demo-preconditions.md" %}
+
 Enabling of Live Data through `MPMapControl` can be done as simple as calling `MPMapControl.enableLiveData()` with a [Domain Type]({{ site.url }}/ios/v3/guides/live-data/#domain-type).
 
 ```swift
@@ -31,5 +33,7 @@ class MapViewController: UIViewController {
   }
 }
 ```
+
+{% include "src/shared/getting-started/live-data/live-position-demo-result.md" %}
 
 Learn more about controlling and rendering Live Data in MapsIndoors in the [introduction to Live Data]({{ site.url }}/ios/v3/guides/live-data/).
