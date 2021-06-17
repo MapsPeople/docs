@@ -9,6 +9,19 @@ eleventyNavigation:
 
 Changelog for MapsIndoors SDK for JavaScript. This document structure is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and the project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [4.12.0] - 2021-06-17
+
+### Added
+
+- Support for (and default rendering of) Live Data Domain Types `co2` and `humidity`.
+- The Location id is now added to the request when deleting a booking.
+
+### Fixed
+
+- Reduce icon flicker when applying Live Data badges.
+- Default badge rendering of unknown Live Data Occupancy can now handle unknown number of people.
+- In some cases setting the stroke- and fill-opacity for a Location Type would fail.
+
 ## [4.11.2] - 2021-06-03
 
 ### Fixed
