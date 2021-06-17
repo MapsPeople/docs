@@ -12,6 +12,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [9.2.0] - 2021-06-17
+
+### Added
+
+- **mi-data-table**: Emit `clicked` event when clickin on elements within table cells.
+- **mi-column**: Make it possible to use bindings for boolean HTML attributes within table cells.
+- **mi-column**: Make it possible to style elements within table cells with MIDT helper classes and MapsIndoors CSS classes.
+- **mi-map-mapbox**: New attribute for setting max pitch (defaults to 60)
+
+### Changed
+
+- **mi-map-mapbox**: Upgrade to use Mapbox GL JS v2.3.0.
+
 ## [9.1.0] - 2021-06-10
 
 ### Changed
