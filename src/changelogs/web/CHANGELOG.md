@@ -9,6 +9,20 @@ eleventyNavigation:
 
 Changelog for MapsIndoors SDK for JavaScript. This document structure is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and the project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [4.11.2] - 2021-06-03
+
+### Fixed
+
+- Calling `mapsindoors.MapsIndoors.setLanguage()` will now trigger a refresh of the cached Locations.
+- Reduces the amount of HTTP requests when using Live Data.
+
+## [4.11.1] - 2021-05-27
+
+### Fixed
+
+- The `radius` combined with the `near` parameter will now reduce the number of Locations returned by `LocationsService.getLocations()` to those within that radius from the location (MapsIndoors Location or latitude/longitude) specified by `near`.
+- The `LocationsService` will now log usage statistics.
+
 ## [4.11.0] - 2021-05-20
 
 ### Added
