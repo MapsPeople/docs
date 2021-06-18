@@ -18,6 +18,22 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 ### Security     in case of vulnerabilities.
 -->
 
+## [3.9.1] 2021-06-10
+
+### Fixed
+
+- Routing animation no longer flashes when being animated
+- The MapsPeople logo now shows when using a FragmentActivity
+- Fixed a certificate issue with lower Android APIs making Live Data and Tiles unavailable
+- Selected Locations are now shown, even if another Location was overlapping it with `setLocationHideOnIconOverlapEnabled`
+- Various bug fixes and stability issues
+
+### Added
+
+- Added two new Domain Types with default renderings (CO2 and Humidity)
+- Made default rendered Live Data badge text more readable
+- Added a method to change the text size of marker labels with `setMapLabelTextSize(int textSize)`
+
 ## [3.9.0] 2021-05-17
 
 ### Fixed

@@ -14,28 +14,33 @@ eleventyNavigation:
 <!-- Set up MapsIndoors -->
 {% include "src/shared/getting-started/map/show-map.md" %}
 
-Use the `MPMapControl` class to set up a Google map with MapsPeople venues, buildings & locations.
+The `MPMapControl` class is used to set up a Google map with MapsPeople venues, buildings & locations.
 
-Create a view controller for your map and add a stored property of type `MPMapControl`:
+Create a view controller (or reuse the `ViewController` in a new project) for your map, include the libraries necessary for MapsIndors and add a stored property of type `MPMapControl`:
 
 ```swift
+import GoogleMaps
+import MapsIndoors
+
 class MapViewController: UIViewController {
     private var mapControl:MPMapControl?
-    override func viewDidLoad() {
 
+    override func viewDidLoad() {
     }
 }
 ```
 
-Place the following code in the `viewDidLoad` method in your view controller displaying the Google map.
+`MPMapControl` is an addition to the Google map to show MapsIndoors content.
+
+Place the following code in the `viewDidLoad` method in your view controller for displaying the Google map and initialize the MapsIndoors controller with the Google map.
 
 ```swift
-let mapView = GMSMapView.map(withFrame: CGRect.zero)
+let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: GMSCameraPosition())
 self.view = mapView
 self.mapControl = MPMapControl.init(map: mapView)
 ```
 
-This will show a Google Map with a default map region displayed. Append the following search code to the already added code in `viewDidLoad`:
+This will show a Google Map with a default map region displayed. Append the following search code below the already added code in `viewDidLoad`:
 
 ```swift
 let query = MPQuery.init()
@@ -44,11 +49,11 @@ query.query = "White House"
 filter.take = 1
 MPLocationService.sharedInstance().getLocationsUsing(query, filter: filter) { (locations, error) in
     if let location = locations?.first {
-        self.mapControl.go(to:location)
+        self.mapControl?.go(to:location)
     }
 }
 ```
 
-Replace "White House" with the name of a known building in your MapsIndoors dataset. Run your iOS project. You should now see a map of a building.
+You can replace "White House" with the name of a known building in your MapsIndoors dataset. Run your iOS project. You should now see a map of a building.
 
 <p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/ios/v3/getting-started/search/">Next up: Search</a></p>

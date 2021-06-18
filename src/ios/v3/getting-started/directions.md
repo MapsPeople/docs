@@ -16,22 +16,34 @@ eleventyNavigation:
 
 Use the `MPDirectionsService` class to search for directions. You need to build a query using the `MPDirectionsQuery` class.
 
-This example shows how to setup a query for a route and display the result on the map:
+This example shows how to modify the view controller with a query for a route and display the result on the map:
 
 ```swift
-let directions = MPDirectionsService.init()
-let renderer = MPDirectionsRenderer.init()
+class MapViewController: UIViewController {
+  private var mapControl: MPMapControl?
+  private let renderer = MPDirectionsRenderer()
 
-let origin = MPPoint.init(lat: 57.057917, lon: 9.950361, zValue:0)
-let destination = MPPoint.init(lat: 57.058038, lon: 9.950509, zValue:0)
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    mapControl = MPMapControl(map: mapView)
+    directions()
+  }
 
-let directionsQuery = MPDirectionsQuery.init(originPoint: origin!, destination: destination!)
+  func directions() {
+    let directions = MPDirectionsService()
 
-directions.routing(with: directionsQuery) { (route, error) in
-    renderer.map = self.googleMap
-    renderer.route = route
-    renderer.routeLegIndex = 0
-    renderer.animate(5)
+    let origin = MPPoint(lat: 38.897382, lon: -77.037447, zValue:0)
+    let destination = MPPoint(lat: 38.897583, lon: -77.037821, zValue:0)
+
+    let directionsQuery = MPDirectionsQuery(originPoint: origin!, destination: destination!)
+
+    directions.routing(with: directionsQuery) { (route, error) in
+      self.renderer.map = self.mapView
+      self.renderer.route = route
+      self.renderer.routeLegIndex = 0
+      self.renderer.animate(5)
+    }
+  }
 }
 ```
 

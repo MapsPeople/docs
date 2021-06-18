@@ -1,0 +1,18 @@
+name: CHANGELOG
+
+on:
+  push:
+    paths:
+      - 'src/changelogs/web/CHANGELOG.md'
+      - 'src/changelogs/components/CHANGELOG.md'
+jobs:
+  create-pull-request:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Create Pull Request
+        uses: repo-sync/pull-request@v2
+        with:
+          destination_branch: "main"
+          github_token: ${{ secrets.GITHUB_TOKEN }}
