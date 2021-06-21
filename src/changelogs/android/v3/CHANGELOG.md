@@ -18,6 +18,13 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 ### Security     in case of vulnerabilities.
 -->
 
+## [3.9.2] 2021-06-21
+
+### Fixed
+
+- Fixed rare null pointer crash on MPImageProvider
+- Fixed issue with down-scoping datasets to basic scope, upon synchronizing
+
 ## [3.9.1] 2021-06-10
 
 ### Fixed
