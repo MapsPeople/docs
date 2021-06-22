@@ -74,50 +74,36 @@ body {
 
 .content {
     grid-area: content;
-    max-width: 900px;
-    // width: 100%;
     margin: 0 auto;
     @include padding.horizontal(xxx-large);
 
-    display: flex;
-    flex-direction: column;
-    // display: grid;
-    // gap: 16px 0;
-    // // grid-template-columns: minmax(400px, auto) 250px;
-    // // grid-template-columns: calc(100% - 250px) 250px;
-    // grid-template-columns: 1fr 250px;
-    // grid-template-rows: 48px auto;
-    // grid-template-areas:
-    //     "breadcrumb breadcrumb"
-    //     "article toc";
+    display: grid;
+    grid-template-columns: 1fr 250px;
+    grid-template-rows: 48px auto;
+    grid-template-areas:
+        "breadcrumb breadcrumb"
+        "article toc";
 
-
-
-
-    // .wrap {
-    //     @include padding.horizontal(xxx-large);
-    // }
     @include padding.vertical(large);
 
     .breadcrumb {
-        // grid-area: breadcrumb;
-        border-bottom: 1px solid #eaecef;
+        grid-area: breadcrumb;
+        max-width: 900px;
         padding-bottom: 16px;
+        border-bottom: 1px solid #eaecef;
     }
 
     .article {
-        // grid-area: article;
-        float: left;
-        width: calc(100% - 250px);
-        padding: 32px 0;
+        grid-area: article;
+        max-width: 650px;
+        @include padding.vertical(x-large);
     }
 
     .sidebar-toc {
         width: 250px;
-        float: left;
-        // grid-area: toc;
+        grid-area: toc;
         @include padding.left(xxx-large);
-        @include padding.bottom(medium);
+        @include padding.vertical(x-large);
     }
 }
 
@@ -127,8 +113,9 @@ body {
 
 @media only screen and (max-width: 1200px) {
     .content {
-        // TODO: FIX THIS
-        // grid-template-columns: 100% 0;
+        grid-template-areas:
+        "breadcrumb breadcrumb"
+        "article article";
 
         .sidebar-toc {
             display: none;
