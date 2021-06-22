@@ -27,7 +27,7 @@ const liveDataManagerInstance = new mapsindoors.LiveDataManager(mapsIndoorsInsta
 liveDataManagerInstance.enableLiveData(mapsindoors.LiveDataManager.LiveDataDomainTypes.POSITION);
 ```
 
-In the example above we create an instance of LiveDataManager and enable Live Data for the "Position" Domain type.
+In the example above we create an instance of `LiveDataManager` and enable Live Data for the "Position" Domain type.
 
 {% include "src/shared/getting-started/live-data/live-position-demo-result.md" %}
 
