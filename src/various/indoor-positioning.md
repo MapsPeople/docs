@@ -14,8 +14,8 @@ With this in mind you need to find an IPS and then use the location from that IP
 
 We have made implementations for the platform LocationManagers in demo apps shipped with the MapsIndoors SDK:
 
-[GPSPositionProvider for Android](https://github.com/MapsIndoors/MapsIndoorsAndroid/blob/master/app/src/main/java/com/mapsindoors/stdapp/positionprovider/gpsPositionProvider/GPSPositionProvider.java)
+[GPSPositionProvider for Android](https://github.com/MapsIndoors/MapsIndoorsAndroid/blob/master/app/src/main/java/com/mapsindoors/stdapp/positionprovider/gps/GoogleAPIPositionProvider.java)
 
-[GPSPositionProvider for iOS](https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/MIAIOS-SRC/GenericBase/Services/GPSPositionProvider.m)
+[GPSPositionProvider for iOS](https://github.com/MapsIndoors/MapsIndoorsIOS/tree/master/Example/MIAIOS-SRC/GenericBase/Services/PositionProvider/CoreLocationAkaGPS)
 
 This provider is then passed to the MapsIndoors' MapControl instance using a method set/addPositionProvider on a MapControl instance.
