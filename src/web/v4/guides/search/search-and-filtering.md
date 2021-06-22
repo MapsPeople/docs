@@ -16,7 +16,7 @@ The full code example is shown in the JSFiddle below, which will be examined bel
 
 ### Search
 
-The `mapsindoors.services.LocationService` namespace exposes the `getLocations` function that enable you to search for Locations on the map.
+The `mapsindoors.services.LocationsService` class exposes the `getLocations` function that enables you to search for Locations.
 
 It will return a Promise that gets resolved when the query has executed.
 
