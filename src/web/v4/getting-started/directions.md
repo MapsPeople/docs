@@ -199,3 +199,5 @@ function getRoute(location) {
   ...
 }
 ```
+
+<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/web/v4/getting-started/livedata/">Next up: Live Data</a></p>
