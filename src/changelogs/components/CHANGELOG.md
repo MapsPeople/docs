@@ -18,8 +18,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - **mi-data-table**: Emit `clicked` event when clickin on elements within table cells.
 - **mi-column**: Make it possible to use bindings for boolean HTML attributes within table cells.
-- **mi-column**: Make it possible to style elements within table cells with MIDT helper classes and MapsIndoors CSS classes.
-- **mi-map-mapbox**: New attribute for setting max pitch (defaults to 60)
+- **mi-column**: Make it possible to style elements within table cells with [MIDT helper classes](https://github.com/MapsIndoors/midt) and [MapsIndoors CSS classes](https://github.com/MapsIndoors/css).
+- **mi-map-mapbox**: New attribute for setting max pitch (defaults to 60).
 
 ### Changed
 
