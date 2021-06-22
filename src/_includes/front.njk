@@ -1,35 +1,36 @@
 {% include "head.njk" %}
-
-<body class="front">
-    {% include "header.njk" %}
-    <div class="front-content">
-        <div class="wrap">
-
+<body>
+    <div class="grid-wrapper grid-wrapper__home">
+        <header class="header">
+            {% include "header.njk" %}
+        </header>
+        <main class="main">
             <h1 class="headline">MapsIndoors is a dynamic mapping platform with endless use cases.</h1>
-            <h2 class="subheadline">Use our SDKs to integrate MapsIndoors into your existing apps,<br>or build a custom app suited to your needs.</h2>
-            <div>
-                <p>Get started now with:</p>
-                <ul>
-                    <li>
-                        <a href="/ios/v3/getting-started/" class="front-button">iOS</a>
-                    </li>
-                    <li>
-                        <a href="/android/v3/getting-started/" class="front-button">Android</a>
-                    </li>
-                    <li>
-                        <a href="/web/v4/getting-started/" class="front-button">Web</a>
-                    </li>
-                </ul>
-                <p class="links">
-                    <a href="/product/" class="front-link">Product Overview</a>
-                    <a href="/cms/" class="front-link">MapsIndoors CMS</a>
-                    <a href="/api/" class="front-link">Integration API v1</a>
-                    <a href="/various/" class="front-link">Various</a>
-                </p>
-            </div>
-        </div>
-    </div>
-    {% include "footer.njk" %}
-</body>
+            <h2 class="subheadline">Use our SDKs to integrate MapsIndoors into your existing apps, or build a custom app suited to
+                your needs.
+            </h2>
+            <p>Get started now with:</p>
+            <ul>
+                <li>
+                    <a href="/ios/v3/getting-started/" class="front-button">iOS</a>
+                </li>
+                <li>
+                    <a href="/android/v3/getting-started/" class="front-button">Android</a>
+                </li>
+                <li>
+                    <a href="/web/v4/getting-started/" class="front-button">Web</a>
+                </li>
+            </ul>
 
-</html>
+            <p class="links">
+                <a href="/product/" class="front-link">Product Overview</a>
+                <a href="/cms/" class="front-link">MapsIndoors CMS</a>
+                <a href="/api/" class="front-link">Integration API v1</a>
+                <a href="/various/" class="front-link">Various</a>
+            </p>
+        </main>
+        <footer class="footer">
+            {% include "footer.njk" %}
+        </footer>
+    </div>
+</body></html>
