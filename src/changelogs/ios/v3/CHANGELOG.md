@@ -18,7 +18,6 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 ### Removed
 -->
 
-
 ## [3.31.0] 2021-06-22
 
 ### Fixed
@@ -34,8 +33,6 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 - Changed default Occupancy Live Data rendering for unknown number of people.
 - Improved raster image quality.
 - Now defaulting to `MPMapControl.mapIconSize` in an `MPLocationDisplayRule`.
-
-Always parse iso8601 dates with milliseconds
 
 ## [3.30.0] 2021-06-07
 
