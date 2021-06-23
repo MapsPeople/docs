@@ -85,4 +85,8 @@ private fun initMapControl(view: View) {
 
 {% include "src/shared/getting-started/live-data/live-position-demo-result.md" %}
 
+Expected result:
+
+![LiveData result](/assets/android/getting-started/live_data.gif)
+
 Learn more about controlling and rendering Live Data in MapsIndoors in the [introduction to Live Data]({{ site.url }}/android/v3/guides/live-data/).
