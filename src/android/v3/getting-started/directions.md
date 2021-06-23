@@ -425,3 +425,5 @@ mpRoutingProvider?.setTravelMode(TravelMode.WALKING)
 Expected result:
 
 ![Directions result](/assets/android/getting-started/directions_gif.gif)
+
+<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/android/v3/getting-started/livedata/">Next up: Enable Live Data</a></p>
