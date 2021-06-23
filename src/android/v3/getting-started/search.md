@@ -30,7 +30,7 @@ Create a search method that takes a search string as a parameter on your `MapsAc
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
-<a href="https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L168-L213">MapsActivity.java</a>
+<a href="https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L170-L216">MapsActivity.java</a>
 
 ```java
 void search(String searchQuery) {
@@ -47,6 +47,7 @@ void search(String searchQuery) {
 
 </mi-tab-panel>
 <mi-tab-panel id="kotlin">
+<a href="https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/MapsActivity.kt#L136-L175">MapsActivity.kt</a>
 
 ```kotlin
 private fun search(searchQuery: String) {
@@ -67,13 +68,13 @@ private fun search(searchQuery: String) {
 
 To be able to search we will use a text input field where a user can write what they want to search for. This is placed at the top of the MapsActivity
 
-We then add an `EditorActionListener` and a `OnClickListener` to our text input field and our search button in the `onCreate` of `MapsActivity`. To call our search method with the text in the search input field. Find the full `onCreate` example here: [MapsActivity.java](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L55-L121) or [MapsActivity.kt](https://github.com/MapsIndoors/MapsIndoors-Getting-started-android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/MapsActivity.kt#L39-L100)
+We then add an `EditorActionListener` and a `OnClickListener` to our text input field and our search button in the `onCreate` of `MapsActivity`. To call our search method with the text in the search input field. Find the full `onCreate` example here: [MapsActivity.java](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L53-L117) or [MapsActivity.kt](https://github.com/MapsIndoors/MapsIndoors-Getting-started-android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/MapsActivity.kt#L42-L106)
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
-<a href="https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L70-L90">MapsActivity.java</a>
+<a href="https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L70-L91">MapsActivity.java</a>
 
 ```java
 ...
@@ -101,6 +102,7 @@ mSearchTxtField.setOnEditorActionListener((textView, i, keyEvent) -> {
 
 </mi-tab-panel>
 <mi-tab-panel id="kotlin">
+<a href="https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/MapsActivity.kt#L61-L83">MapsActivity.kt</a>
 
 ```kotlin
 ...
@@ -166,6 +168,7 @@ public class SearchFragment extends Fragment {
 
 </mi-tab-panel>
 <mi-tab-panel id="kotlin">
+<a href="https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/SearchFragment.kt">SearchFragment.kt</a>
 
 ```kotlin
 class SearchFragment : Fragment() {
@@ -202,7 +205,7 @@ Create a getter for your `MapControl` object on the `MapsActivity` so that it ca
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
-<a href="https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L118-L124">MapsActivity.java</a>
+<a href="https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L119-L125">MapsActivity.java</a>
 
 ```java
 public MapControl getMapControl() {
@@ -212,6 +215,7 @@ public MapControl getMapControl() {
 
 </mi-tab-panel>
 <mi-tab-panel id="kotlin">
+<a href="https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/MapsActivity.kt#L177-L179">MapsActivity.kt</a>
 
 ```kotlin
 fun getMapControl(): MapControl {
@@ -280,6 +284,7 @@ class ViewHolder extends RecyclerView.ViewHolder {
 
 </mi-tab-panel>
 <mi-tab-panel id="kotlin">
+<a href="https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/SearchItemAdapter.kt">SearchItemAdapter.kt</a>
 
 ```kotlin
 internal class SearchItemAdapter(private val mLocations: List<MPLocation?>, private val mMapActivity: MapsActivity?) : RecyclerView.Adapter<ViewHolder>() {
@@ -340,7 +345,7 @@ You can use the `addFragmentToBottomSheet` too add the created _fragment_ to the
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
-<a href="https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L168-L213">MapsActivity.java</a>
+<a href="https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L170-L216">MapsActivity.java</a>
 
 ```java
 void search(String searchQuery) {
@@ -367,6 +372,7 @@ void search(String searchQuery) {
 
 </mi-tab-panel>
 <mi-tab-panel id="kotlin">
+<a href="https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/MapsActivity.kt#L136-L175">MapsActivity.kt</a>
 
 ```kotlin
 private fun search(searchQuery: String) {
@@ -411,7 +417,7 @@ Since the default `displaySearchResults(List<MPLocation> locations)` uses camera
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
-<a href="https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L188-L190">MapsActivity.java</a>
+<a href="https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L191-L193">MapsActivity.java</a>
 
 ```java
 MapsIndoors.getLocationsAsync(mpQuery, mpFilter, (list, miError) -> {
@@ -425,6 +431,7 @@ MapsIndoors.getLocationsAsync(mpQuery, mpFilter, (list, miError) -> {
 
 </mi-tab-panel>
 <mi-tab-panel id="kotlin">
+<a href="https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/MapsActivity.kt#L153">MapsActivity.kt</a>
 
 ```kotlin
 MapsIndoors.getLocationsAsync(mpQuery, mpFilter) { list: List<MPLocation?>?, miError: MIError? ->

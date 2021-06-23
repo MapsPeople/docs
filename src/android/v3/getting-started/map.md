@@ -22,7 +22,7 @@ Place the following initialization code in the `onCreate` method in the `MapsAct
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
-<a href="https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L60-L64">MapsActivity.java</a>
+<a href="https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L60-L65">MapsActivity.java</a>
 
 ```java
 mMapView = mapFragment.getView();
@@ -32,6 +32,7 @@ MapsIndoors.setGoogleAPIKey(“YOUR_GOOGLE_API_KEY”);
 
 </mi-tab-panel>
 <mi-tab-panel id="kotlin">
+<a href="https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/MapsActivity.kt#L50-L55">MapsActivity.kt</a>
 
 ```kotlin
 MapsIndoors.initialize(applicationContext, "YOUR_MAPSINDOORS_API_KEY")
@@ -45,7 +46,7 @@ mapFragment.view?.let {
 </mi-tab-panel>
 </mi-tabs>
 
-If you are not a customer you can use this demo MapsIndoors API key `79f8e7daff76489dace4f9f9`.
+If you are not a customer you can use this demo MapsIndoors API key `d876ff0e60bb430b8fabb145`.
 
 In your `onMapReady` callback function, use the `MapControl` class to set up a Google map with MapsIndoors Venues, Buildings and Locations:
 
@@ -53,7 +54,7 @@ In your `onMapReady` callback function, use the `MapControl` class to set up a G
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
-<a href="https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L135-L165">MapsActivity.java</a>
+<a href="https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L135-L168">MapsActivity.java</a>
 
 ```java
 @Override
@@ -88,6 +89,7 @@ void initMapControl(View view) {
 
 </mi-tab-panel>
 <mi-tab-panel id="kotlin">
+<a href="https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/MapsActivity.kt#L108-L134">MapsActivity.kt</a>
 
 ```kotlin
 override fun onMapReady(googleMap: GoogleMap) {
