@@ -60,7 +60,7 @@ In the context of your view controller showing a map, add the call after creatin
 void initMapControl(View view) {
         //Creates a new instance of MapControl
         mMapControl = new MapControl(this);
-        //Enable live data on the map
+        //Enable Live Data on the map
         enableLiveData();
         ...
 }
