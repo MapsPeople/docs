@@ -1,8 +1,3 @@
-// Front page
-
-// display: grid;
-// place-items: center;
-// min-height: 90vh;
 .grid-wrapper.grid-wrapper__home {
     grid-template-areas:
         "header header"
@@ -16,9 +11,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-
-
-        color: #20693e;
+        align-items: center;
         @include color.green(70);
     }
 
@@ -26,6 +19,7 @@
         a:not(:last-child) {
             @include margin.right(large);
         }
+
         a.front-button {
             @include font.size(x-large);
             @include padding.vertical(medium);
@@ -64,6 +58,7 @@
             @include color.blue(70);
             @include margin.right(medium);
             @include margin.left(medium);
+            line-height: 2em;
         }
     }
 
