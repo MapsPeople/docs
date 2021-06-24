@@ -26,6 +26,15 @@ footer {
 
         .column {
             flex: 1;
+            @include padding.horizontal(x-large);
+
+            &:first-child {
+                padding-left: 0;
+            }
+
+            &:last-child {
+                padding-right: 0;
+            }
 
             h2:not(:first-child) {
                 @include padding.top(large);
@@ -38,7 +47,6 @@ footer {
         padding: 0 0 0 20px;
 
         >li {
-            // list-style-type: none;
             line-height: 2em;
 
             ul {
@@ -56,8 +64,12 @@ footer {
         .row {
             flex-direction: column;
 
-            .column:not(:first-child) h2 {
-                @include padding.top(x-large);
+            .column {
+                padding: 0;
+
+                &:not(:first-child) h2 {
+                    @include padding.top(x-large);
+                }
             }
         }
 
