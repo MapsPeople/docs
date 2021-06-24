@@ -78,22 +78,21 @@ A page view event is sent for the following views:
 
 The following events is sent from the kiosk when triggered:
 
-| Category                     | Action                   | Label                                                                 | Internal | Description                                                       |
-| ---------------------------- | ------------------------ | --------------------------------------------------------------------- | -------- | ----------------------------------------------------------------- |
-| Initialization               | URL parameter configured | Origin Location was set                                               | True     | When the origin location parameter is set                         |
-| Initialization               | URL parameter configured | Timeout was set                                                       | True     | When the timeout parameter is set                                 |
-| Initialization               | URL parameter configured | Zoom parameter was set                                                | True     | When the zoom level parameter is set                              |
-| Initialization               | URL parameter configured | Bearing parameter was set                                             | True     | When the bearing parameter is set                                 |
-| Initialization               | URL parameter configured | Pitch parameter was set                                               | True     | When the pitch parameter is set                                   |
-| Initialization               | URL parameter configured | Legend was set                                                        | True     | When the legend params is set to true                             |
-| Initialization               | URL parameter configured | LiveData parameter was set ([DOMAIN TYPES])                           | True     | When live data parameter is set                                   |
-| Home                         | Reset                    | Kiosk was reset                                                       | True     | When the kiosk is dirty and has been idle for X amount of seconds |
-| Search                       | Location selected        | Location id: [LOCATION ID],                                           |
-| Search query: [SEARCH QUERY] | False                    | When a location is selected in the list and a search query is entered |
-| Search                       | Location selected        | Location id: [LOCATION ID]                                            | false    | When a location is selected in the list                           |
-| Search                       | Category filter applied  | Selected "[CATEGORY NAME]" Category                                   | False    | When a category is selected                                       |
-| Details                      | Send SMS                 | SMS successfully sent                                                 | False    | When a SMS is successfully sent                                   |
-| Details                      | Send SMS                 | SMS failed to send                                                    | False    | When a SMS is unsuccessfully sent                                 |
+| Category       | Action                   | Label                                                    | Internal | Description                                                           |
+| -------------- | ------------------------ | -------------------------------------------------------- | -------- | --------------------------------------------------------------------- |
+| Initialization | URL parameter configured | Origin Location was set                                  | True     | When the origin location parameter is set                             |
+| Initialization | URL parameter configured | Timeout was set                                          | True     | When the timeout parameter is set                                     |
+| Initialization | URL parameter configured | Zoom parameter was set                                   | True     | When the zoom level parameter is set                                  |
+| Initialization | URL parameter configured | Bearing parameter was set                                | True     | When the bearing parameter is set                                     |
+| Initialization | URL parameter configured | Pitch parameter was set                                  | True     | When the pitch parameter is set                                       |
+| Initialization | URL parameter configured | Legend was set                                           | True     | When the legend params is set to true                                 |
+| Initialization | URL parameter configured | LiveData parameter was set ([DOMAIN TYPES])              | True     | When live data parameter is set                                       |
+| Home           | Reset                    | Kiosk was reset                                          | True     | When the kiosk is dirty and has been idle for X amount of seconds     |
+| Search         | Location selected        | Location id: [LOCATION ID], Search query: [SEARCH QUERY] | False    | When a location is selected in the list and a search query is entered |
+| Search         | Location selected        | Location id: [LOCATION ID]                               | False    | When a location is selected in the list                               |
+| Search         | Category filter applied  | Selected "[CATEGORY NAME]" Category                      | False    | When a category is selected                                           |
+| Details        | Send SMS                 | SMS successfully sent                                    | False    | When a SMS is successfully sent                                       |
+| Details        | Send SMS                 | SMS failed to send                                       | False    | When a SMS is unsuccessfully sent                                     |
 
 ## Configuring Chrome to run in Kiosk Mode
 
