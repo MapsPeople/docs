@@ -48,7 +48,7 @@ private fun enableLiveData() {
 
 By consequence, `MapControl` will manage the Live Data subscriptions needed for the currently visible map and provide a default rendering of the Live Data updates depending on the Domain Type.
 
-In the context of your view controller showing a map, just add the call after creating your `MapControl` object used in the `Activity` in the `initMapControl()` method created earlier.
+In the context of your view controller showing a map, add the call after creating your `MapControl` object used in the `Activity` in the `initMapControl()` method created earlier.
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
