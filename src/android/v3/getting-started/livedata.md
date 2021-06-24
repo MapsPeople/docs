@@ -74,7 +74,7 @@ void initMapControl(View view) {
 private fun initMapControl(view: View) {
     //Creates a new instance of MapControl
     mMapControl = MapControl(this)
-    //Enable live data on the map
+    //Enable Live Data on the map
     enableLiveData()
     ...
 }
