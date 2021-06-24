@@ -91,6 +91,7 @@ The following events is sent from the kiosk when triggered:
 | Search         | Location selected        | Location id: [LOCATION ID], Search query: [SEARCH QUERY] | False    | When a location is selected in the list and a search query is entered |
 | Search         | Location selected        | Location id: [LOCATION ID]                               | False    | When a location is selected in the list                               |
 | Search         | Category filter applied  | Selected "[CATEGORY NAME]" Category                      | False    | When a category is selected                                           |
+| Details        | QR Code                  | QR code generated                                        | False    | When a QR code is successfully generated                              |
 | Details        | Send SMS                 | SMS successfully sent                                    | False    | When a SMS is successfully sent                                       |
 | Details        | Send SMS                 | SMS failed to send                                       | False    | When a SMS is unsuccessfully sent                                     |
 
