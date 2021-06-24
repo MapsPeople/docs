@@ -4,59 +4,49 @@
 // place-items: center;
 // min-height: 90vh;
 .grid-wrapper.grid-wrapper__home {
-    grid-template-columns: 100vw;
     grid-template-areas:
-        "header"
-        "content"
-        "footer";
+        "header header"
+        "content content"
+        "footer footer";
 
-    .header {
-        grid-area: header;
-    }
-
-    .main {
-        grid-area: content;
+    .content {
         text-align: center;
+        min-height: 90vh;
+        max-width: 1200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+
+        color: #20693e;
+        @include color.green(70);
     }
 
-    .footer {
-        grid-area: footer;
-    }
-
-
-    ul {
-        list-style: none;
-        padding: 0;
-        @include margin.bottom(large);
-
-        li {
-            display: inline;
-            @include margin.right(medium);
+    .links-primary {
+        a:not(:last-child) {
+            @include margin.right(large);
         }
+        a.front-button {
+            @include font.size(x-large);
+            @include padding.vertical(medium);
+            @include padding.horizontal(large);
+            @include color.gray(100);
+            @include border.radius(large);
+            @include border.width(large);
+            @include border.style(solid);
+            @include border.green(60);
+            @include background-color.white(base);
+            @include font.weight(large);
+            @include margin.vertical(medium);
+            box-shadow: 0px 16px 32px rgba(0, 120, 72, 0.16);
+            min-width: 180px;
+            display: inline-block;
+            text-align: center;
 
-        text-align: center;
-    }
-
-    a.front-button {
-        @include font.size(x-large);
-        @include padding.vertical(medium);
-        @include padding.horizontal(large);
-        @include color.gray(100);
-        @include border.radius(large);
-        @include border.width(large);
-        @include border.style(solid);
-        @include border.green(60);
-        @include background-color.white(base);
-        @include font.weight(large);
-        @include margin.vertical(medium);
-        box-shadow: 0px 16px 32px rgba(0, 120, 72, 0.16);
-        min-width: 180px;
-        display: inline-block;
-        text-align: center;
-
-        &:hover {
-            @include background-color.gray(10);
-            text-decoration: none;
+            &:hover {
+                @include background-color.gray(10);
+                text-decoration: none;
+            }
         }
     }
 
@@ -77,7 +67,6 @@
         }
     }
 
-
     .headline {
         @include font.family(raleway);
         @include font.size(xxxx-large);
@@ -90,8 +79,6 @@
         @include font.size(xx-large);
         @include font.leading(xxx-large);
         @include font.weight(small);
-        @include margin.vertical(xxx-large);
-        @include margin.bottom(xx-large);
         font-style: italic;
     }
 }
