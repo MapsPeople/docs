@@ -4,11 +4,11 @@
         <header class="header">
             {% include "header.njk" %}
         </header>
-        <aside class="sidebar">
-            {% if ('/web/' in page.url) or ('/ios/' in page.url) or ('/android/' in page.url) or ('/various/' in page.url) or ('/changelogs/' in page.url) %}
+        {% if ('/web/' in page.url) or ('/ios/' in page.url) or ('/android/' in page.url) or ('/various/' in page.url) or ('/changelogs/' in page.url) %}
+            <aside class="sidebar">
                 {% include "sidebar.njk" %}
-            {% endif %}
-        </aside>
+            </aside>
+        {% endif %}
         <main class="content">
             <nav class="breadcrumb" aria-label="Breadcrumb">
                 {{ collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key) | eleventyNavigationToHtml({listElement: "ol", listItemElement: "span", listItemClass: "item", activeListItemClass: "active", activeKey: eleventyNavigation.key}) | safe }}
