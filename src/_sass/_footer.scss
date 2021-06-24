@@ -1,0 +1,72 @@
+footer {
+    background-image: linear-gradient(to bottom, $color-green-60, $color-green-90);
+    @include padding.horizontal(x-large);
+    @include padding.vertical(xxx-large);
+    @include color.white(base);
+
+    hr {
+        @include margin.vertical(xxx-large);
+    }
+
+    a,
+    a:hover {
+        @include color.white(base);
+    }
+
+    h2 {
+        margin: 0;
+        padding: 0;
+        line-height: 2em;
+    }
+
+
+    .row {
+        display: flex;
+        justify-content: space-between;
+
+        .column {
+            flex: 1;
+
+            h2:not(:first-child) {
+                @include padding.top(large);
+            }
+        }
+    }
+
+    ul.list {
+        margin: 0;
+        padding: 0 0 0 20px;
+
+        >li {
+            // list-style-type: none;
+            line-height: 2em;
+
+            ul {
+                margin: 0;
+                padding: 0 0 0 24px;
+
+                li {
+                    line-height: 1.6em;
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width: 1200px) {
+        .row {
+            flex-direction: column;
+
+            .column:not(:first-child) h2 {
+                @include padding.top(x-large);
+            }
+        }
+
+        hr {
+            visibility: hidden;
+        }
+
+        hr {
+            @include margin.vertical(medium);
+        }
+    }
+}

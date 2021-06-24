@@ -16,6 +16,7 @@
 @use '../../node_modules/@mapsindoors/midt/build/scss/variables'as *;
 
 @import './home';
+@import './footer';
 
 * {
     box-sizing: border-box;
@@ -363,62 +364,6 @@ header {
         &:not(:last-child) {
             @include margin.right(medium);
         }
-    }
-}
-
-// footer.njk
-
-footer {
-    background-image: linear-gradient(to bottom, $color-green-60, $color-green-90);
-    @include color.white(base);
-    @include margin.all(none);
-    @include padding.all(medium);
-
-    a {
-        @include color.white(base);
-
-        &:hover {
-            @include color.white(base);
-        }
-    }
-
-    ul {
-        @include padding.left(none);
-
-        li {
-            list-style-type: none;
-            line-height: $font-size-xx-large;
-        }
-
-        li ul {
-            @include padding.left(medium);
-        }
-    }
-
-    .flex {
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-flex-direction: row;
-        -ms-flex-direction: row;
-        flex-direction: row;
-        -webkit-flex-wrap: nowrap;
-        -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
-        -webkit-justify-content: flex-start;
-        -ms-flex-pack: start;
-        justify-content: flex-start;
-        -webkit-align-content: stretch;
-        -ms-flex-line-pack: stretch;
-        align-content: stretch;
-        -webkit-align-items: flex-start;
-        -ms-flex-align: start;
-        align-items: flex-start;
-    }
-
-    .third {
-        width: calc(100% / 3);
-        @include margin.right(medium);
     }
 }
 
