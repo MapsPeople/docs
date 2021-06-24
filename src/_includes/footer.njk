@@ -1,71 +1,106 @@
-<div class="wrap">
-  <div class="flex">
-    <div class="third">
-      <h2>
-        <a href="/ios/v3/">iOS v3</a>
-      </h2>
+{# -- Navigation macro -- #}
+{% macro renderNavListItem(entry) -%}
+  <li {% if entry.url == page.url %} class="my-active-class" {% endif %}>
+    <a href="{{ entry.url | url }}">{{ entry.title }}</a>
+    {%- if entry.children.length -%}
+      <ul>
+        {%- for child in entry.children %}
+          <li>
+            <a href="{{ child.url | url }}">{{ child.title }}</a>
+          </li>
+        {% endfor -%}
+      </ul>
+    {%- endif -%}
+  </li>
+{%- endmacro %}
+<div class="row">
+  <div class="column">
+    <h2>
+      <a href="/ios/v3/">iOS v3</a>
+    </h2>
+    <ul class="list">
       {% set iosv3 = collections.published | eleventyNavigation("ios-v3") %}
-      {{ iosv3 | eleventyNavigationToHtml | safe }}
-    </div>
-    <div class="third">
-      <h2>
-        <a href="/android/v3/">Android v3</a>
-      </h2>
-      {% set androidv3 = collections.published | eleventyNavigation("android-v3") %}
-      {{ androidv3 | eleventyNavigationToHtml | safe }}
-    </div>
-    <div class="third">
-      <h2>
-        <a href="/web/v4/">Web v4</a>
-      </h2>
-      {% set webv4 = collections.published | eleventyNavigation("web-v4") %}
-      {{ webv4 | eleventyNavigationToHtml | safe }}
-      <h2>
-        <a href="/web/v3/">Web v3</a>
-      </h2>
-      {% set webv3 = collections.published | eleventyNavigation("web-v3") %}
-      {{ webv3 | eleventyNavigationToHtml | safe }}
-    </div>
+      {%- for entry in iosv3 %}
+        {{ renderNavListItem(entry) }}
+      {%- endfor -%}
+    </ul>
   </div>
-  <hr/>
-  <div class="flex">
-    <div class="third">
-      <h2>Legacy versions</h2>
-      <h4>
+  <div class="column">
+    <h2>
+      <a href="/android/v3/">Android v3</a>
+    </h2>
+    <ul class="list">
+      {% set androidv3 = collections.published | eleventyNavigation("android-v3") %}
+      {%- for entry in androidv3 %}
+        {{ renderNavListItem(entry) }}
+      {%- endfor -%}
+    </ul>
+  </div>
+  <div class="column">
+    <h2>
+      <a href="/web/v4/">Web v4</a>
+    </h2>
+    <ul class="list">
+      {% set webv4 = collections.published | eleventyNavigation("web-v4") %}
+      {%- for entry in webv4 %}
+        {{ renderNavListItem(entry) }}
+      {%- endfor -%}
+    </ul>
+    <h2>
+      <a href="/web/v3/">Web v3</a>
+    </h2>
+    <ul class="list">
+      {% set webv3 = collections.published | eleventyNavigation("web-v3") %}
+      {%- for entry in webv3 %}
+        {{ renderNavListItem(entry) }}
+      {%- endfor -%}
+    </ul>
+  </div>
+</div>
+<hr/>
+<div class="row">
+  <div class="column">
+    <h2>Legacy versions</h2>
+    <ul class="list">
+      <li>
         <a href="/android/v2/">Android v2</a>
-      </h4>
-      <h4>
+      </li>
+      <li>
         <a href="/ios/v2/">iOS v2</a>
-      </h4>
-      <h4>
+      </li>
+      <li>
         <a href="/xamarin/">Xamarin v3</a>
-      </h4>
-    </div>
-    <div class="third">
-      <h2>
-        <a href="/api/">Integration API</a>
-      </h2>
-      <h2>
-        <a href="/cms/">MapsIndoors CMS</a>
-      </h2>
-    </div>
-    <div class="third">
-      <h2>
-        <a href="/changelogs/">Changelogs</a>
-      </h2>
-      <h2>
-        <a href="/product/">Product Overview</a>
-      </h2>
-      <h2>
-        <a href="/product/platform-requirements/">Requirements</a>
-      </h2>
-    </div>
-    <div class="third">
-      <h2>
-        <a href="/various/">Various</a>
-      </h2>
+      </li>
+    </ul>
+  </div>
+  <div class="column">
+    <h2>
+      <a href="/api/">Integration API</a>
+    </h2>
+    <h2>
+      <a href="/cms/">MapsIndoors CMS</a>
+    </h2>
+  </div>
+  <div class="column">
+    <h2>
+      <a href="/changelogs/">Changelogs</a>
+    </h2>
+    <h2>
+      <a href="/product/">Product Overview</a>
+    </h2>
+    <h2>
+      <a href="/product/platform-requirements/">Requirements</a>
+    </h2>
+  </div>
+  <div class="column">
+    <h2>
+      <a href="/various/">Various</a>
+    </h2>
+    <ul class="list">
       {% set various = collections.published | eleventyNavigation("various") %}
-      {{ various | eleventyNavigationToHtml | safe }}
-    </div>
+      {%- for entry in various %}
+        {{ renderNavListItem(entry) }}
+      {%- endfor -%}
+    </ul>
   </div>
 </div>
