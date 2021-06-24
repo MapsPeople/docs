@@ -65,4 +65,4 @@ let directionsQuery = MPDirectionsQuery.init(originPoint: origin!, destination: 
 directionsQuery.travelMode = .driving
 ```
 
-<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/ios/v3/getting-started/live-data/">Next up: Live Data</a></p>
+<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/ios/v3/getting-started/livedata/">Next up: Live Data</a></p>
