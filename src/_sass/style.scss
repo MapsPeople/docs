@@ -122,8 +122,8 @@ blockquote {
 @media only screen and (max-width: 1200px) {
     .content {
         grid-template-areas:
-        "breadcrumb breadcrumb"
-        "article article";
+            "breadcrumb breadcrumb"
+            "article article";
 
         .sidebar-toc {
             display: none;
@@ -131,35 +131,24 @@ blockquote {
     }
 }
 
+// Button
+.next-article {
+    max-width: 100%;
+    text-align: center;
 
+    a.mi-button {
+        @include margin.top(large);
+        @include background-color.blue(60);
+        @include color.white(base);
+        @include border.width(large);
 
-main {
-
-    // width: 500px;
-    // @include margin.top(medium);
-    // p,
-    // ul,
-    // ol,
-    // blockquote {
-    //     @include font.measure(large);
-    // }
-
-    p.next-article {
-        text-align: center;
-
-        a.mi-button {
-            @include margin.top(large);
-            @include background-color.blue(60);
+        &:hover {
+            @include background-color.blue(70);
             @include color.white(base);
-            @include border.width(large);
-
-            &:hover {
-                @include background-color.blue(70);
-                @include color.white(base);
-            }
         }
     }
 }
+
 
 blockquote {
     font-style: italic;
@@ -273,7 +262,6 @@ a {
             @include color.blue(60);
         }
     }
-
 }
 
 
