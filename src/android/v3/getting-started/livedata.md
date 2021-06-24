@@ -11,7 +11,7 @@ eleventyNavigation:
 
 {% include "src/shared/getting-started/live-data/live-position-demo-preconditions.md" %}
 
-Enabling of Live Data through `MapControl` can be done as simple as calling `mapControl.enableLiveData()` with a [Domain Type](https://app.mapsindoors.com/mapsindoors/reference/android/v3/index.html).
+Enabling Live Data through `MapControl` is as simple as calling `mapControl.enableLiveData()` with a [Domain Type](https://app.mapsindoors.com/mapsindoors/reference/android/v3/index.html).
 
 We will create a new method on our `MapsActivity` called `enableLiveData()` to enable live data for the solution.
 
