@@ -51,6 +51,13 @@ body {
     word-break: break-word;
 }
 
+p,
+ul,
+ol,
+blockquote {
+    @include font.measure(large);
+}
+
 .grid-wrapper {
     display: grid;
     grid-template-columns: 300px 1fr;
