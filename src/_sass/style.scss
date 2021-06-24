@@ -96,14 +96,14 @@ blockquote {
 
     .breadcrumb {
         grid-area: breadcrumb;
-        max-width: 900px;
+        max-width: 1000px;
         padding-bottom: 16px;
         border-bottom: 1px solid #eaecef;
     }
 
     .article {
         grid-area: article;
-        max-width: 650px;
+        max-width: 750px;
         @include padding.vertical(x-large);
     }
 
