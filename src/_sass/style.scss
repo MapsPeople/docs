@@ -196,7 +196,7 @@ a {
     h4 {
         margin: 0;
         text-transform: uppercase;
-        @include color.gray(80);
+        @include color.gray(90);
         @include font.size(medium);
         @include font.weight(x-large);
     }
@@ -206,13 +206,14 @@ a {
         padding: 0;
 
         @include font.size(small);
-        line-height: 1.50;
+        @include font.leading(large);
 
         li {
             list-style: none;
+            @include margin.bottom(x-small);
 
             a {
-                @include color.gray(60);
+                @include color.gray(80);
             }
         }
     }
@@ -272,8 +273,8 @@ h1 {
     @include font.size(xx-large);
     @include font.leading(xx-large);
     @include font.weight(large);
-    @include margin.top(medium);
-    @include margin.bottom(large);
+    // @include margin.top(medium);
+    // @include margin.bottom(large);
 
     a {
         @include font.color(base);
