@@ -11,6 +11,20 @@ eleventyNavigation:
 <!-- Overview -->
 {% include "src/shared/getting-started/map/overview.md" %}
 
+After going through this guide this is what you end up with:
+
+<mi-tabs>
+<mi-tab label="Manually" tab-for="manually"></mi-tab>
+<mi-tab label="MI Components" tab-for="components"></mi-tab>
+  <mi-tab-panel id="manually">
+    <iframe width="100%" src="//jsfiddle.net/simonlaustsen/3z9tby8q/16/embedded/" frameborder="0"></iframe>
+  </mi-tab-panel>
+
+  <mi-tab-panel id="components">
+    <iframe width="100%" src="//jsfiddle.net/simonlaustsen/fb5rauto/8/embedded/" frameborder="0"></iframe>
+  </mi-tab-panel>
+</mi-tabs>
+
 <!-- Set up MapsIndoors -->
 {% include "src/shared/getting-started/map/show-map.md" %}
 
@@ -19,7 +33,6 @@ eleventyNavigation:
 <mi-tab label="MI Components" tab-for="components"></mi-tab>
 
 <mi-tab-panel id="manually">
-
 The MapsIndoors SDK is hosted on a CDN and should be loaded using a script tag.
 
 Insert the MapsIndoors SDK script tag into `<head>`, followed by the Google Maps script tag:
