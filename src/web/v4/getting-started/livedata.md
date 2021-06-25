@@ -10,6 +10,21 @@ eleventyNavigation:
 
 {% include "src/shared/live-data/live-data-intro.md" %}
 
+<!-- JS Fiddle intro -->
+{% include "src/web/v4/getting-started/js-fiddle-intro.md" %}
+
+<mi-tabs>
+<mi-tab label="Manually" tab-for="manually"></mi-tab>
+<mi-tab label="MI Components" tab-for="components"></mi-tab>
+  <mi-tab-panel id="manually">
+  <iframe width="100%" src="//jsfiddle.net/simonlaustsen/3z9tby8q/37/embedded/js,html,result/" frameborder="0"></iframe>
+  </mi-tab-panel>
+
+  <mi-tab-panel id="components">
+    <iframe width="100%" src="//jsfiddle.net/simonlaustsen/fb5rauto/19/embedded/js,html,result/" frameborder="0"></iframe>
+  </mi-tab-panel>
+</mi-tabs>
+
 {% include "src/shared/getting-started/live-data/live-position-demo-preconditions.md" %}
 
 To enable Live Data in your web app, create an instance of `LiveDataManager`. Call the method `enableLiveData()` on it with a [Domain Type]({{ site.url }}/web/v4/live-data/#domain-type).
