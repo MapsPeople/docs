@@ -119,38 +119,43 @@ function getRoute(location) {
 }
 ```
 
-Now, to make it more dynamic, we attach a `click` event listener with the `getRoute` method as callback function, in the `onSearch` method for each location appended to the search results list element.
+Now, to make it more dynamic, we attach a `click` event listener for each location appended to the search results list element with the `getRoute` method as callback function.
 
 <mi-tabs>
 <mi-tab label="Manually" tab-for="manually"></mi-tab>
 <mi-tab label="MI Components" tab-for="components"></mi-tab>
 <mi-tab-panel id="manually">
 
-```js
+```js/7
 // main.js
 
-locations.forEach(location => {
+function onSearch() {
   ...
-  // Add click event listener
-  listElement.addEventListener("click", () => getRoute(location), false);
+  locations.forEach(location => {
+    ...
+    // Add click event listener
+    listElement.addEventListener("click", () => getRoute(location), false);
 
-  searchResultsElement.appendChild(listElement);
-});
-
+    searchResultsElement.appendChild(listElement);
+  });
+}
 ```
 
 </mi-tab-panel>
 <mi-tab-panel id="components">
 
-```js
+```js/7
 // main.js
 
-event.detail.forEach(location => {
+miSearchElement.addEventListener('results', (event) => {
   ...
-  // Add click event listener
-  miListItemElement.addEventListener("click", () => getRoute(location), false);
+  event.detail.forEach(location => {
+    ...
+    // Add click event listener
+    miListItemElement.addEventListener("click", () => getRoute(location), false);
 
-  miListElement.appendChild(miListItemElement);
+    miListElement.appendChild(miListItemElement);
+  });
 });
 ```
 
