@@ -103,6 +103,8 @@ After you added the script tag into `<head>`, add the `<mi-map-googlemaps>` cust
 </body>
 ```
 
+> Remember to add your API keys. You can use the demo MapsIndoors API key showing "The White House": 79f8e7daff76489dace4f9f9
+
 To center the map correctly, you need need the Google Maps _instance_ in your JavaScript-file.
 
 First we get a reference to the `<mi-map-googlemaps>` element. Then we attach the [`mapsIndoorsReady`](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/mapsindoors.MapsIndoors.html#event:ready) event listener so we'll know when MapsIndoors is ready after loading. Lastly, on the `mapsIndoorsReady` event, get the Google Map _instance_ and call its [`setCenter` method](https://developers.google.com/maps/documentation/javascript/reference/map#Map.setCenter) to center the map on the loaded data:
