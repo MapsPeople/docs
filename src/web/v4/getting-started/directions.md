@@ -204,3 +204,6 @@ function getRoute(location) {
   ...
 }
 ```
+
+<!-- Congrats -->
+{% include "src/shared/getting-started/congrats.md" %}
