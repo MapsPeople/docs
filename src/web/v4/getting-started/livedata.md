@@ -32,3 +32,6 @@ In the example above we create an instance of `LiveDataManager` and enable Live 
 {% include "src/shared/getting-started/live-data/live-position-demo-result.md" %}
 
 Learn more about controlling and rendering Live Data in MapsIndoors in the [introduction to Live Data]({{ site.url }}/web/v4/live-data/).
+
+<!-- Congrats -->
+{% include "src/shared/getting-started/congrats.md" %}
