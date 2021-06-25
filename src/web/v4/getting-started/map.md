@@ -47,7 +47,7 @@ Insert the MapsIndoors SDK script tag into `<head>`, followed by the Google Maps
 </head>
 ```
 
-> Remember to add your API keys. You can use the demo MapsIndoors API key showing "The White House": 79f8e7daff76489dace4f9f9
+> Remember to add your API keys. You can use the demo MapsIndoors API key showing "The White House": {{sdk.tutorialAPIKey}}
 
 Add an empty `<div>` element to `<body>` with the `id` attribute set to "map":
 
@@ -116,7 +116,7 @@ After you added the script tag into `<head>`, add the `<mi-map-googlemaps>` cust
 </body>
 ```
 
-> Remember to add your API keys. You can use the demo MapsIndoors API key showing "The White House": `79f8e7daff76489dace4f9f9`
+> Remember to add your API keys. You can use the demo MapsIndoors API key showing "The White House": {{sdk.tutorialAPIKey}}
 
 To center the map correctly, you need need the Google Maps _instance_ in your JavaScript-file.
 
