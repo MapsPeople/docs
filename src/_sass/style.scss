@@ -15,6 +15,10 @@
 
 @use '../../node_modules/@mapsindoors/midt/build/scss/variables' as *;
 
+iframe {
+    height: 400px;
+}
+
 :root {
     background: $color-green-90;
 }

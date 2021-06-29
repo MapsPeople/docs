@@ -43,7 +43,7 @@ Remember to enable relevant Maps products (i.e. Maps JavaScript API) in your Goo
 
 ### Get a MapsIndoors API Key
 
-In order to include MapsIndoors in your app, you need an API key. If you are not a customer you can use this API key `79f8e7daff76489dace4f9f9` to follow the guide.
+In order to include MapsIndoors in your app, you need an API key. If you are not a customer you can use this API key `{{sdk.tutorialAPIKey}}` to follow the guide.
 
 In order to include MapsIndoors in your own app with your own content, you need to [contact MapsPeople](https://resources.mapspeople.com/contact-us) to get your building drawings processed and hosted by us.
 

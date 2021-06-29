@@ -37,3 +37,6 @@ class MapViewController: UIViewController {
 {% include "src/shared/getting-started/live-data/live-position-demo-result.md" %}
 
 Learn more about controlling and rendering Live Data in MapsIndoors in the [introduction to Live Data]({{ site.url }}/ios/v3/guides/live-data/).
+
+<!-- Congrats -->
+{% include "src/shared/getting-started/congrats.md" %}
