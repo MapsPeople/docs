@@ -20,7 +20,7 @@
         "build": "npm run sass & eleventy",
         "sass-watch": "sass --watch src/_sass:src/assets --no-source-map",
         "sass": "sass src/_sass:src/assets --no-source-map",
-        "start": "npm run sass-watch & eleventy --serve"
+        "start": "npm run sass-watch & ELEVENTY_ENV=dev eleventy --serve"
     },
     "author": "MapsPeople A/S",
     "license": "MIT"
