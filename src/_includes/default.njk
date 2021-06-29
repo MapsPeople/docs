@@ -1,40 +1,40 @@
 {% include "head.njk" %}
-
 <body>
-    {% include "header.njk" %}
-    <div class="content">
-        <div class="wrap">
-            <section class="container">
-                {% if ('/web/' in page.url) or ('/ios/' in page.url) or ('/android/' in page.url) or ('/various/' in page.url) or ('/changelogs/' in page.url) %}
+    <div class="grid-wrapper">
+        <header class="header">
+            {% include "header.njk" %}
+        </header>
+        {% if ('/web/' in page.url) or ('/ios/' in page.url) or ('/android/' in page.url) or ('/various/' in page.url) or ('/changelogs/' in page.url) %}
+            <aside class="sidebar">
                 {% include "sidebar.njk" %}
-                {% endif %}
-                <main>
-                    <nav aria-label="Breadcrumb">
-                        {{ collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key) | eleventyNavigationToHtml({listElement: "ol", listItemElement: "span", listItemClass: "item", listClass: "breadcrumb", activeListItemClass: "active", activeKey: eleventyNavigation.key}) | safe }}
-                    </nav>
-                    <h1>
-                        <a href="{{ page.url }}">{{ title }}</a>
-                    </h1>
-                    {% if '/404.html' not in page.url and '/search' not in page.url %}
-                    <p class="time">Last updated: <time>{{ page.date.toLocaleDateString() }}</time>
+            </aside>
+        {% endif %}
+        <main class="content">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                {{ collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key) | eleventyNavigationToHtml({listElement: "ol", listItemElement: "span", listItemClass: "item", activeListItemClass: "active", activeKey: eleventyNavigation.key}) | safe }}
+            </nav>
+            <article class="article">
+                <h1>
+                    <a href="{{ page.url }}">{{ title }}</a>
+                </h1>
+                {% if '/404.html' not in page.url and '/search' not in page.url %}
+                    <p class="time">Last updated:
+                        <time>{{ page.date.toLocaleDateString() }}</time>
                     </p>
-                    {% endif %}
-                    {{ content | safe }}
-                </main>
-
-                {% if toc %}
-                <aside>
-                    <div class="toc">
+                {% endif %}
+                {{ content | safe }}
+            </article>
+            <aside class="sidebar-toc">
+                <div class="toc__content">
+                    {% if toc %}
                         <h4>In this article</h4>
                         {{ content | toc  | safe }}
-                    </div>
-                <aside>
-                {% endif %}
-
-            </section>
-        </div>
+                    {% endif %}
+                </div>
+            </aside>
+        </main>
+        <footer class="footer">
+            {% include "footer.njk" %}
+        </footer>
     </div>
-    {% include "footer.njk" %}
-</body>
-
-</html>
+</body></html>

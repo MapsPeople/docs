@@ -1,0 +1,79 @@
+.grid-wrapper.grid-wrapper__home {
+    grid-template-areas:
+        "header header"
+        "content content"
+        "footer footer";
+
+    .content {
+        text-align: center;
+        min-height: 90vh;
+        max-width: 1200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        @include color.green(70);
+    }
+
+    .links-primary {
+        a:not(:last-child) {
+            @include margin.right(large);
+        }
+
+        a.front-button {
+            @include font.size(x-large);
+            @include padding.vertical(medium);
+            @include padding.horizontal(large);
+            @include color.gray(100);
+            @include border.radius(large);
+            @include border.width(large);
+            @include border.style(solid);
+            @include border.green(60);
+            @include background-color.white(base);
+            @include font.weight(large);
+            @include margin.vertical(medium);
+            box-shadow: 0px 16px 32px rgba(0, 120, 72, 0.16);
+            min-width: 180px;
+            display: inline-block;
+            text-align: center;
+
+            &:hover {
+                @include background-color.gray(10);
+                text-decoration: none;
+            }
+        }
+    }
+
+    p {
+        @include font.size(x-large);
+        @include font.weight(large);
+
+        &.links {
+            @include font.weight(medium);
+            @include padding.vertical(medium);
+        }
+
+        a.front-link {
+            @include font.size(large);
+            @include color.blue(70);
+            @include margin.right(medium);
+            @include margin.left(medium);
+            line-height: 2em;
+        }
+    }
+
+    .headline {
+        @include font.family(raleway);
+        @include font.size(xxxx-large);
+        @include font.leading(xxxx-large);
+        @include font.weight(small);
+        max-width: 38ch;
+    }
+
+    .subheadline {
+        @include font.size(xx-large);
+        @include font.leading(xxx-large);
+        @include font.weight(small);
+        font-style: italic;
+    }
+}
