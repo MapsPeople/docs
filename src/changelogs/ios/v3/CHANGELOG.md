@@ -16,6 +16,18 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 ### Fixed
 ### Changed
 ### Removed
+
+### Deprecated
+
+- Deprecated `MPBuilding.delegate`.
+- Deprecated `MPBuilding.map`.
+- Deprecated `MPBuilding.floorsReady`.
+- Deprecated `MPBuilding.getFloor`. Use `MPMapControl.currentFloor` instead.
+- Deprecated `MPBuilding.getInitFloor`
+- Deprecated `MPBuilding.getFloors`. Use `MPBuilding.floors.count` instead.
+- Deprecated `MPBuilding.getFloorArray`. Use `MPBuilding.floors.allValues` instead.
+- Deprecated `MPBuilding.setFloor`. Use `MPMapControl.currentFloor` instead.
+
 -->
 
 ## [3.30.0] 2021-06-07
