@@ -230,6 +230,10 @@ a {
 
             a {
                 @include color.gray(80);
+
+                &:hover {
+                    @include color.blue(base);
+                }
             }
         }
     }
@@ -237,7 +241,7 @@ a {
 
 .sidebar {
     nav>a {
-        @include color.gray(70);
+        @include color.gray(80);
     }
 
     &__header a {
@@ -258,6 +262,10 @@ a {
             a {
                 @include font.weight(large);
                 @include color.gray(80);
+
+                &:hover {
+                    @include color.blue(base);
+                }
             }
 
             ul {
@@ -269,7 +277,6 @@ a {
 
                     a {
                         @include font.weight(medium);
-                        @include color.gray(70);
                     }
                 }
             }
@@ -397,8 +404,11 @@ header {
             @include margin.right(small);
             @include font.weight(medium);
             @include font.size(medium);
-            // font-style: italic;
             color: inherit;
+
+            &:hover {
+                @include color.blue(base);
+            }
         }
 
         &:not(:first-of-type) {
