@@ -103,7 +103,7 @@ blockquote {
 
     .article {
         grid-area: article;
-        max-width: 750px;
+        width: 750px;
         @include padding.vertical(x-large);
     }
 
@@ -119,15 +119,31 @@ blockquote {
     grid-area: footer;
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1420px) {
+    .content .article {
+        width: 560px;
+    }
+}
+
+@media only screen and (max-width: 1220px) {
     .content {
         grid-template-areas:
             "breadcrumb breadcrumb"
             "article article";
 
+        .article {
+            width: 550px;
+        }
+
         .sidebar-toc {
             display: none;
         }
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .content .article {
+        width: 450px;
     }
 }
 
