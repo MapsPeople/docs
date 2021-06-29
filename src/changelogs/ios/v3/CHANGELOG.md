@@ -19,6 +19,7 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 
 ### Deprecated
 
+- Deprecated `MPBuildingDelegate`.
 - Deprecated `MPBuilding.delegate`.
 - Deprecated `MPBuilding.map`.
 - Deprecated `MPBuilding.floorsReady`.
