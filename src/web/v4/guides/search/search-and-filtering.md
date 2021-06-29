@@ -9,17 +9,18 @@ eleventyNavigation:
 
 ## Overview
 
-In this guide you will see an example of how to search for Locations. The full code example is shown in the JSFiddle below, but will be run through bit by bit in this guide.
+In this guide you will see an example of how to search for Locations.
+The full code example is shown in the JSFiddle below, which will be examined below.
 
 <script async src="https://jsfiddle.net/mapspeople/91xhwd65/embed/html,result/"></script>
 
 ### Search
 
-The `mapsindoors.LocationsService` offers the `getLocations` function. This function can be used for searching for Locations.
+The `mapsindoors.services.LocationsService` class exposes the `getLocations` function that enables you to search for Locations.
 
 It will return a Promise that gets resolved when the query has executed.
 
-See [LocationsService.getLocations](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/LocationsService.html#getLocations) for more information.
+See [mapsindoors.services.LocationsService](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/mapsindoors.services.LocationsService.html) for more information.
 
 ```javascript
 searchElement.addEventListener('input', debounce((e) => {
@@ -35,19 +36,21 @@ searchElement.addEventListener('input', debounce((e) => {
 }, 500));
 ```
 
-The `debounce` method is there to ensure that the service is not being called too rapidly. This method delays the execution of the function by 500ms, unless `debounce` is called again within 500ms, in which case the timer is reset.
+The `debounce` method is there to ensure that the service is not being called in rapid succession.
+This method delays the execution of the function by 500ms, unless `debounce` is called again within 500ms, in which case the timer is reset.
 
 See this article ["What is debouncing" by Jamis Charles](https://medium.com/@jamischarles/what-is-debouncing-2505c0648ff1) for a more detailed description of the `debounce` concept.
 
-When the function executes, we check to see if the input is empty or not. If the input is not empty, we proceed to construct the request object.
+When the function executes, we check whether the input is empty or not. A request object is created if the input is not empty.
 
-We pass the value as the `q` property and set the `includeOutsidePOI` property to `true`. When the Promise resolves the response is passed to the `displayResults` helper function.
+The `getLocations` function expects either no input, in which case it returns all Locations, or an Object (please refer to the official documentation for an exhaustive list of properties).
+In this case, the constant `value` is passed to the `q` property and the `includeOutsidePOI` property is set to `true`. When the Promise resolves, the response is passed to the `displayResults` helper function.
 
-If the input is empty, we clear both the result list and reset the map filter by calling the helper functions `clearResults` and `clearFilter`.
+If the input is empty, we clear the result list and reset the map filter by calling the helper functions `clearResults` and `clearFilter`.
 
 ### Checking for results
 
-First, we need to clear the previous results. Next, we check if any Locations were returned. If so, we loop through them and add them to the result list.
+We need to clear the previous results, and check if any Locations were returned. If so, we loop through them and add them to the result list.
 
 ```javascript
 function displayResults(locations) {
@@ -65,7 +68,7 @@ function displayResults(locations) {
 }
 ```
 
-If there are no Locations returned, we show a message to the user stating "No results matched the query.". Otherwise, we pass the Locations on to the next handler called `filterMap`
+If no Locations are returned, a message is shown to the user stating "No results matched the query.". Otherwise, we pass the Locations on to the next helper function called `filterMap`.
 
 ```javascript
 function filterMap(locations) {
@@ -74,8 +77,8 @@ function filterMap(locations) {
 }
 ```
 
-In the `filterMap` helper function, we create a list of `location id`s we can use to filter the Locations on the map by.
+The purpose of the `filterMap` function is to create a list of `location id`s used to filter the Locations on the map.
 
 The second parameter tells MapsIndoors not to change the viewport of the map.
 
-For more information, see `MapsIndoors.filter` in the [reference documentation](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/MapsIndoors.html#filter)
+For more information, see `MapsIndoors.filter` in the [reference documentation](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/MapsIndoors.html#filter).

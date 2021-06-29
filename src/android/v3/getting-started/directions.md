@@ -23,7 +23,7 @@ We have created a point called mUserLocation to use as a starting point for dire
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
-<a href="https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L46">MapsActivity.java</a>
+<a href="https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L47">MapsActivity.java</a>
 
 ```java
 private Point mUserLocation = new Point(38.897389429704695, -77.03740973527613,0);
@@ -31,6 +31,7 @@ private Point mUserLocation = new Point(38.897389429704695, -77.03740973527613,0
 
 </mi-tab-panel>
 <mi-tab-panel id="kotlin">
+<a href="https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/MapsActivity.kt#L36">MapsActivity.kt</a>
 
 ```kotlin
 private val mUserLocation: Point = Point(38.897389429704695, -77.03740973527613, 0.0)
@@ -46,7 +47,7 @@ Start by implementing `OnRouteResultListener` to your MapsActivity.
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
-<a href="https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L38">MapsActivity.java</a>
+<a href="https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L39">MapsActivity.java</a>
 
 ```java
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, OnRouteResultListener
@@ -54,6 +55,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 </mi-tab-panel>
 <mi-tab-panel id="kotlin">
+<a href="https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/MapsActivity.kt#L26">MapsActivity.kt</a>
 
 ```kotlin
 class MapsActivity : FragmentActivity(), OnMapReadyCallback, OnRouteResultListener
@@ -84,6 +86,7 @@ holder.itemView.setOnClickListener(view -> {
 
 </mi-tab-panel>
 <mi-tab-panel id="kotlin">
+<a href="https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/SearchItemAdapter.kt#L20-L24">MapsActivity.kt</a>
 
 ```kotlin
 holder.itemView.setOnClickListener {
@@ -106,7 +109,7 @@ We create global variables of the `MPdirectionsRenderer` and `MPRoutingProvider`
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
-<a href="https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L215-264">MapsActivity.java</a>
+<a href="https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L218-L267">MapsActivity.java</a>
 
 ```java
 void createRoute(MPLocation mpLocation) {
@@ -146,6 +149,7 @@ public void onRouteResult(@Nullable Route route, @Nullable MIError miError) {
 
 </mi-tab-panel>
 <mi-tab-panel id="kotlin">
+<a href="https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/MapsActivity.kt#L185-L225">MapsActivity.kt</a>
 
 ```kotlin
 fun createRoute(mpLocation: MPLocation) {
@@ -184,7 +188,7 @@ override fun onRouteResult(@Nullable route: Route?, @Nullable miError: MIError?)
 </mi-tab-panel>
 </mi-tabs>
 
-See the full implementation of theese methods here: [MapsActivity.java](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L240-L288) or [MapsActivity.kt](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L240-L288)
+See the full implementation of these methods here: [MapsActivity.java](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L218-L267) or [MapsActivity.kt](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/MapsActivity.kt#L185-L225)
 
 Now we will implement logic to our `NavigationFragment` that we can put into our BottomSheet and show the steps for each route, as well as the time and distance it takes to travel the route.
 
@@ -249,6 +253,7 @@ public class NavigationFragment extends Fragment {
 
 </mi-tab-panel>
 <mi-tab-panel id="kotlin">
+<a href="https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/NavigationFragment.kt">NavigationFragment.kt</a>
 
 ```kotlin
 class NavigationFragment : Fragment() {
@@ -354,6 +359,7 @@ public class RouteLegFragment extends Fragment {
 
 </mi-tab-panel>
 <mi-tab-panel id="kotlin">
+<a href="https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/RouteLegFragment.kt">RouteLegFragment.kt</a>
 
 ```kotlin
 class RouteLegFragment : Fragment() {
@@ -419,3 +425,5 @@ mpRoutingProvider?.setTravelMode(TravelMode.WALKING)
 Expected result:
 
 ![Directions result](/assets/android/getting-started/directions_gif.gif)
+
+<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/android/v3/getting-started/livedata/">Next up: Enable Live Data</a></p>

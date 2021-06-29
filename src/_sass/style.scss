@@ -58,6 +58,10 @@ blockquote {
     @include font.measure(large);
 }
 
+iframe {
+    height: 400px;
+}
+
 .grid-wrapper {
     display: grid;
     grid-template-columns: 300px 1fr;
