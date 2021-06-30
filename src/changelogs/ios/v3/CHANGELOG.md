@@ -19,6 +19,7 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 
 ### Deprecated
 
+- Deprecating iOS 10. Support for iOS 10 will end by version 4.
 - Deprecated `MPBuildingDelegate`.
 - Deprecated `MPBuilding.delegate`.
 - Deprecated `MPBuilding.map`.
