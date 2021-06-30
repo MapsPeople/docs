@@ -274,18 +274,6 @@ _A note about Venue images:_ You can request MapsPeople to add an image of the V
 
 The Building's default Floor is used to manage panning across Buildings in the apps. In order to improve the user experience in the apps, the default Floor is used when the Building panned to doesn't have the floor index of the floor selector.
 
-### Uploading CAD files for a floor
-
-* Click on the pencil icon to the left of the Building name and a sidebar should appear.
-* Click on "Add floor" (to add a new Floor to the Building) or "Update floor" (to update an existing Floor in the Building) and a popup window appears.
-* Type the floor name.
-* Select a CAD file.
-* Select any extra files. (optional)
-* Add any extra information in the text field.
-* Click on "Upload" and a spinner should appear with the upload progress.
-* When it is done uploading you should see an added/updated floor name in the list.
-* The CAD file, and any extra files, will be automatically sent to a MapsPeople project manager, and a representative will contact you shortly to plan the digitization of the new or updated Floor.
-
 ## Routes Access
 
 ![Routes]({{ site.url }}/assets/cms/route-access/route-access.png)
