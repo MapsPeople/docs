@@ -19,7 +19,7 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 
 ### Deprecated
 
-- Bundling of offline data has been deprecated and will be removed in version 4 of the iOS SDK. 
+- Bundling of offline data has been deprecated and will be removed in version 4 of the iOS SDK. The mobile SDKs will still support offline conditions, and we recommend that you use the Dataset Manager `MapsIndoors.dataSetCacheManager` to download, persist and synchronize datasets.
 - iOS 10 support has been deprecated. Support for iOS 10 will end by version 4 of the iOS SDK.
 - Deprecated `MPBuildingDelegate`.
 - Deprecated `MPBuilding.delegate`.
