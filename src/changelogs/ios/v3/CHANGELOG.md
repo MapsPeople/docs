@@ -15,20 +15,19 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 ### Added
 ### Fixed
 ### Changed
+
 ### Removed
 
-### Deprecated
-
-- Bundling of offline data has been deprecated and will be removed in version 4 of the iOS SDK. The mobile SDKs will still support offline conditions, and we recommend that you use the Dataset Manager `MapsIndoors.dataSetCacheManager` to download, persist and synchronize datasets.
-- iOS 10 support has been deprecated. Support for iOS 10 will end by version 4 of the iOS SDK.
-- Deprecated `MPBuildingDelegate`.
-- Deprecated `MPBuilding.delegate`.
-- Deprecated `MPBuilding.map`.
-- Deprecated `MPBuilding.floorsReady`.
-- Deprecated `MPBuilding.getFloor`. Use `MPMapControl.currentFloor` instead.
-- Deprecated `MPBuilding.getInitFloor`
-- Deprecated `MPBuilding.getFloors`. Use `MPBuilding.floors.count` instead.
-- Deprecated `MPBuilding.setFloor`. Use `MPMapControl.currentFloor` or `MPBuilding.defaultFloor` instead.
+- Bundling of offline data has been removed in version 4 of the iOS SDK. The mobile SDKs will still support offline conditions, and we recommend that you use the Dataset Manager `MapsIndoors.dataSetCacheManager` to download, persist and synchronize datasets.
+- iOS 10 support has ended.
+- Removed `MPBuildingDelegate`.
+- Removed `MPBuilding.delegate`.
+- Removed `MPBuilding.map`.
+- Removed `MPBuilding.floorsReady`.
+- Removed `MPBuilding.getFloor`. Use `MPMapControl.currentFloor` instead.
+- Removed `MPBuilding.getInitFloor`
+- Removed `MPBuilding.getFloors`. Use `MPBuilding.floors.count` instead.
+- Removed `MPBuilding.setFloor`. Use `MPMapControl.currentFloor` or `MPBuilding.defaultFloor` instead.
 
 -->
 

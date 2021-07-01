@@ -43,26 +43,6 @@ let dataSet = dataSetManager.dataSetForCurrentMapsIndoorsAPIKey()
 dataSetManager.setCachingScope(.cachingScope_Full, cacheItem: dataSet!.cacheItem)
 ```
 
-## Bundling of data in the application (Deprecated)
-
-> Bundling of offline data has been deprecated and will be removed in version 4 of the iOS SDK. The mobile SDKs will still support offline conditions, and we recommend that you use the Dataset Manager `MapsIndoors.dataSetCacheManager` to download, persist and synchronize datasets.
-
-If needed, it is possible to bundle one MapsIndoors dataset to make your app work better in offline or poor network conditions.
-Please note that while MapsIndoors content can be used offline, Google Maps does not provide offline features. Outdoor wayfinding and Google Places searches will be unavailable and the surrounding map may be unavailable unless it has been cached.
-
-In your app targets build phases, add a "Run Script" build phase containing the following command:
-
-```bash
-${SRCROOT}/Pods/MapsIndoors/Scripts/derive_ressources.sh --api-key=YOUR_MAPSINDOORS_API_KEY --language=en
-```
-
-Replace:
-
-* `YOUR_MAPSINDOORS_API_KEY` with your MapsIndoors API key.
-* `en` with any one of the languages that your MapsIndoors Solution supports (Two letter ISO-639-1 language code). If you only have one language deployed you may remove this input parameter entirely
-
-Depending on the overall size of your MapsIndoors deployment, this may take some time, so during development you might want to check the "Run script only when installing" option. This means that content will only be bundled when archiving for e.g. a release.
-
 ## Caching of multiple datasets
 
 `Available in SDK version 3.9 and later`
