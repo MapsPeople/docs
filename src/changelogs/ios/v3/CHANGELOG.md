@@ -18,6 +18,10 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 
 ### Removed
 
+- Removed `MPMapControl.mapLocationsHidden`.
+- Removed `MapsIndoors.locationsProvider`.
+- Removed `MPLocationsProvider` class. Use MPLocationService instead.
+- Removed `MPMapControl.currentPosition`.
 - Bundling of offline data has been removed in version 4 of the iOS SDK. The mobile SDKs will still support offline conditions, and we recommend that you use the Dataset Manager `MapsIndoors.dataSetCacheManager` to download, persist and synchronize datasets.
 - iOS 10 support has ended.
 - Removed `MPBuildingDelegate`.
@@ -28,6 +32,8 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 - Removed `MPBuilding.getInitFloor`
 - Removed `MPBuilding.getFloors`. Use `MPBuilding.floors.count` instead.
 - Removed `MPBuilding.setFloor`. Use `MPMapControl.currentFloor` or `MPBuilding.defaultFloor` instead.
+- Removed `MPRouteInstructions` class.
+- Removed `MPRouteInfo` class.
 
 -->
 
