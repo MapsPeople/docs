@@ -18,6 +18,8 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 
 ### Removed
 
+- Removed `MPMapControl.addDisplayRule()`.
+- Removed `MPMapControl.addDisplayRules()`.
 - Removed `MPMapControl.mapLocationsHidden`.
 - Removed `MapsIndoors.locationsProvider`.
 - Removed `MPLocationsProvider` class. Use MPLocationService instead.
