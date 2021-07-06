@@ -18,6 +18,24 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 
 ### Removed
 
+- Removed `MPVenue.getVenueBounds`.
+- Removed `MPBuildingReference`.
+- Removed `MPMapControl.currentPosition`.
+- Removed `MPVenue.entryPoints`.
+- Removed `MPVenue.buildings`.
+- Removed `MPFloorSelectorControl.addToMap`.
+- Removed `MPFloorSelectorControl.addToView`.
+- Removed `MPPositionResult.getAge`.
+- Removed `MPPositionResult.getRoundtrip`.
+- Removed `MPPositionResult.type`.
+- Removed `MPPositionIndicator`.
+- Removed `MPLocation.activeFrom`.
+- Removed `MPLocation.activeTo`.
+- Removed `MPLocation.roomId`.
+- Removed `MPLocation.properties`.
+- Removed `MPLocation.marker`.
+- Removed `MPLocation.image`.
+- Removed `MPLocation.getPoint`.
 - Removed `MPMapControl.addDisplayRule()`.
 - Removed `MPMapControl.addDisplayRules()`.
 - Removed `MPMapControl.mapLocationsHidden`.
