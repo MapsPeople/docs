@@ -43,7 +43,9 @@ let dataSet = dataSetManager.dataSetForCurrentMapsIndoorsAPIKey()
 dataSetManager.setCachingScope(.cachingScope_Full, cacheItem: dataSet!.cacheItem)
 ```
 
-## Bundling of data in the application
+## Bundling of data in the application (Deprecated)
+
+> Bundling of offline data has been deprecated and will be removed in version 4 of the iOS SDK. The mobile SDKs will still support offline conditions, and we recommend that you use the Dataset Manager `MapsIndoors.dataSetCacheManager` to download, persist and synchronize datasets.
 
 If needed, it is possible to bundle one MapsIndoors dataset to make your app work better in offline or poor network conditions.
 Please note that while MapsIndoors content can be used offline, Google Maps does not provide offline features. Outdoor wayfinding and Google Places searches will be unavailable and the surrounding map may be unavailable unless it has been cached.
