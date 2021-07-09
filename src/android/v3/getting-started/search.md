@@ -41,7 +41,7 @@ void search(String searchQuery) {
     //Query for the locations
     MapsIndoors.getLocationsAsync(mpQuery, mpFilter, (list, miError) -> {
       //Implement UI handling of the search result here
-    }
+    });
 }
 ```
 
@@ -68,7 +68,7 @@ private fun search(searchQuery: String) {
 
 To be able to search we will use a text input field where a user can write what they want to search for. This is placed at the top of the MapsActivity
 
-To call our search method with the text in the search input field, we then add an `EditorActionListener` and a `OnClickListener` to the text input field and the search button in the `onCreate` of `MapsActivity`. Find the full `onCreate` example here: [MapsActivity.java](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L53-L117) or [MapsActivity.kt](https://github.com/MapsIndoors/MapsIndoors-Getting-started-android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/MapsActivity.kt#L42-L106)
+To call our search method with the text in the search input field, we then add an `EditorActionListener` and a `OnClickListener` to the text input field and the search button in the `onCreate` of `MapsActivity`.
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
@@ -77,27 +77,32 @@ To call our search method with the text in the search input field, we then add a
 <a href="https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L70-L91">MapsActivity.java</a>
 
 ```java
-...
-//ClickListener to start a search, when the user clicks the search button
-mSearchBtn.setOnClickListener(view -> {
-    if (mSearchTxtField.getText().length() != 0) {
-        //There is text inside the search field. So lets do the search.
-        search(mSearchTxtField.getText().toString());
-    }
-});
-
-//Listener for when the user searches through the keyboard
-mSearchTxtField.setOnEditorActionListener((textView, i, keyEvent) -> {
-    if (i == EditorInfo.IME_ACTION_DONE || i == EditorInfo.IME_ACTION_SEARCH) {
-        if (textView.getText().length() != 0) {
+protected void onCreate(Bundle savedInstanceState) {
+    ...
+    mSearchBtn = findViewById(R.id.search_btn);
+    mSearchTxtField = findViewById(R.id.search_edit_txt);
+    ...
+    //ClickListener to start a search, when the user clicks the search button
+    mSearchBtn.setOnClickListener(view -> {
+        if (mSearchTxtField.getText().length() != 0) {
             //There is text inside the search field. So lets do the search.
-            search(textView.getText().toString());
+            search(mSearchTxtField.getText().toString());
         }
-        return true;
-    }
-    return false;
-});
-...
+    });
+
+    //Listener for when the user searches through the keyboard
+    mSearchTxtField.setOnEditorActionListener((textView, i, keyEvent) -> {
+        if (i == EditorInfo.IME_ACTION_DONE || i == EditorInfo.IME_ACTION_SEARCH) {
+            if (textView.getText().length() != 0) {
+                //There is text inside the search field. So lets do the search.
+                search(textView.getText().toString());
+            }
+            return true;
+        }
+        return false;
+    });
+    ...
+}
 ```
 
 </mi-tab-panel>
@@ -105,32 +110,38 @@ mSearchTxtField.setOnEditorActionListener((textView, i, keyEvent) -> {
 <a href="https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/MapsActivity.kt#L61-L83">MapsActivity.kt</a>
 
 ```kotlin
-...
-//Listener for when the user searches through the keyboard
-mSearchTxtField.setOnEditorActionListener { textView, i, _ ->
-    if (i == EditorInfo.IME_ACTION_DONE || i == EditorInfo.IME_ACTION_SEARCH) {
-        if (textView.text.isNotEmpty()) {
-            search(textView.text.toString())
+override fun onCreate(savedInstanceState: Bundle?) {
+    ...
+    mSearchTxtField = findViewById(R.id.search_edit_txt)
+    //Listener for when the user searches through the keyboard
+    mSearchTxtField.setOnEditorActionListener { textView, i, _ ->
+        if (i == EditorInfo.IME_ACTION_DONE || i == EditorInfo.IME_ACTION_SEARCH) {
+            if (textView.text.isNotEmpty()) {
+                search(textView.text.toString())
+            }
+            return@setOnEditorActionListener true
         }
-        return@setOnEditorActionListener true
+        return@setOnEditorActionListener false
     }
-    return@setOnEditorActionListener false
-}
 
-//ClickListener to start a search, when the user clicks the search button
-searchBtn.setOnClickListener {
-    if (mSearchTxtField.text?.length != 0) {
-        //There is text inside the search field. So lets do the search.
-        search(mSearchTxtField.text.toString())
+    //ClickListener to start a search, when the user clicks the search button
+    var searchBtn = findViewById<ImageButton>(R.id.search_btn)
+    searchBtn.setOnClickListener {
+        if (mSearchTxtField.text?.length != 0) {
+            //There is text inside the search field. So lets do the search.
+            search(mSearchTxtField.text.toString())
+        }
     }
+    ...
 }
-...
 ```
 
 </mi-tab-panel>
 </mi-tabs>
 
-To accompany this we use a _fragment_ and a `BottomSheet` to handle the `SearchFragment`.
+Find the full `onCreate` example here: [MapsActivity.java](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L53-L117) or [MapsActivity.kt](https://github.com/MapsIndoors/MapsIndoors-Getting-started-android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/MapsActivity.kt#L42-L106)
+
+To accompany this we use the `SearchFragment` that is already created for you and a `BottomSheet` to handle the `SearchFragment`.
 
 Observe that the `SearchFragment`is just a simple _fragment_ with a `RecyclerView` and a `SearchItemAdapter` added to it
 
@@ -366,7 +377,7 @@ void search(String searchQuery) {
             mSearchTxtField.getText().clear();
             ...
         }
-    }
+    });
 }
 ```
 
@@ -420,11 +431,14 @@ Since the default `displaySearchResults(List<MPLocation> locations)` uses camera
 <a href="https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L191-L193">MapsActivity.java</a>
 
 ```java
-MapsIndoors.getLocationsAsync(mpQuery, mpFilter, (list, miError) -> {
+void search(String searchQuery) {
     ...
-    //Calling displaySearch results on the ui thread as camera movement is involved
-    runOnUiThread(()-> {
-        mMapControl.displaySearchResults(list, true);
+    MapsIndoors.getLocationsAsync(mpQuery, mpFilter, (list, miError) -> {
+        ...
+        //Calling displaySearch results on the ui thread as camera movement is involved
+        runOnUiThread(()-> {
+            mMapControl.displaySearchResults(list, true);
+        });
     });
 }
 ```
@@ -434,9 +448,11 @@ MapsIndoors.getLocationsAsync(mpQuery, mpFilter, (list, miError) -> {
 <a href="https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/MapsActivity.kt#L153">MapsActivity.kt</a>
 
 ```kotlin
-MapsIndoors.getLocationsAsync(mpQuery, mpFilter) { list: List<MPLocation?>?, miError: MIError? ->
-    //Calling displaySearchResults on the ui thread as camera movement is involved
-    runOnUiThread { mMapControl.displaySearchResults(list, true) }
+private fun search(searchQuery: String) {
+    MapsIndoors.getLocationsAsync(mpQuery, mpFilter) { list: List<MPLocation?>?, miError: MIError? ->
+        //Calling displaySearchResults on the ui thread as camera movement is involved
+        runOnUiThread { mMapControl.displaySearchResults(list, true) }
+    }
 }
 ```
 

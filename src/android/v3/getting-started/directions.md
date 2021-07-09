@@ -17,7 +17,7 @@ eleventyNavigation:
 After having created our list of search results, we have a good starting point for creating directions between two Locations.
 Since our search only supports a single search, we will hardcode a Location's coordinate into our app, and use that as the basis for our Origin. Then we'll create a route, navigate to a view of the navigation details, and show a route on the map from the Origin to the Destination.
 
-We have created a point called mUserLocation to use as a starting point for directions on `MapsActivity`
+We have already created a point in the basic example, called `mUserLocation` to use as a starting point for directions on `MapsActivity`
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
@@ -77,11 +77,15 @@ To generate a route with the `MPLocation`, we start by creating an `onClickListe
 <a href="https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/SearchItemAdapter.java#L37-L40">SearchItemAdapter.java</a>
 
 ```java
-holder.itemView.setOnClickListener(view -> {
-        mMapActivity.createRoute(mLocations.get(position));
-        //Clearing map to remove the location filter from our search result
-        mMapActivity.getMapControl().clearMap();
-    });
+public void onBindViewHolder(ViewHolder holder, int position) {
+    ...
+    holder.itemView.setOnClickListener(view -> {
+            mMapActivity.createRoute(mLocations.get(position));
+            //Clearing map to remove the location filter from our search result
+            mMapActivity.getMapControl().clearMap();
+        });
+    ...
+}
 ```
 
 </mi-tab-panel>
@@ -89,10 +93,14 @@ holder.itemView.setOnClickListener(view -> {
 <a href="https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/SearchItemAdapter.kt#L20-L24">MapsActivity.kt</a>
 
 ```kotlin
-holder.itemView.setOnClickListener {
-    mLocations[position]?.let { locations -> mMapActivity?.createRoute(locations) }
-    //Clearing map to remove the location filter from our search result
-    mMapActivity?.getMapControl()?.clearMap()
+override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+    ...
+    holder.itemView.setOnClickListener {
+        mLocations[position]?.let { locations -> mMapActivity?.createRoute(locations) }
+        //Clearing map to remove the location filter from our search result
+        mMapActivity?.getMapControl()?.clearMap()
+    }
+    ...
 }
 ```
 
@@ -193,6 +201,33 @@ See the full implementation of these methods here: [MapsActivity.java](https://g
 Now we will implement logic to our `NavigationFragment` that we can put into our BottomSheet and show the steps for each route, as well as the time and distance it takes to travel the route.
 
 Here we'll use a `viewpager` to allow the user to switch between each step, as well as display a "close" button so we are able to remove the route and the bottom sheet from the activity.
+
+We will start by making a getter for our `MPDirectionsRenderer` the we store on `MapsActivity`
+
+<mi-tabs>
+<mi-tab label="Java" tab-for="java"></mi-tab>
+<mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
+<mi-tab-panel id="java">
+<a href="https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L127-133">MapsActivity.java</a>
+
+```java
+public MPDirectionsRenderer getMpDirectionsRenderer() {
+    return mpDirectionsRenderer;
+}
+```
+
+</mi-tab-panel>
+<mi-tab-panel id="kotlin">
+<a href="https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/MapsActivity.kt#L181-183">MapsActivity.kt</a>
+
+```kotlin
+fun getMpDirectionsRenderer(): MPDirectionsRenderer? {
+    return mpDirectionsRenderer
+}
+```
+
+</mi-tab-panel>
+</mi-tabs>
 
 Inside the `NavigationFragment` we will implement logic to navigate through Legs of our Route.
 
@@ -408,15 +443,33 @@ To swap Travel Modes you set the Travel Mode before making a query for the route
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
 
-```java
-mpRoutingProvider.setTravelMode(TravelMode.WALKING);
+```java/6
+void createRoute(MPLocation mpLocation) {
+    //If MPRoutingProvider has not been instantiated create it here and assign the results call back to the activity.
+    if (mpRoutingProvider == null) {
+        mpRoutingProvider = new MPRoutingProvider();
+        mpRoutingProvider.setOnRouteResultListener(this);
+    }
+    mpRoutingProvider.setTravelMode(TravelMode.WALKING);
+    //Queries the MPRouting provider for a route with the hardcoded user location and the point from a location.
+    mpRoutingProvider.query(mUserLocation, mpLocation.getPoint());
+}
 ```
 
 </mi-tab-panel>
 <mi-tab-panel id="kotlin">
 
-```kotlin
-mpRoutingProvider?.setTravelMode(TravelMode.WALKING)
+```kotlin/6
+fun createRoute(mpLocation: MPLocation) {
+    //If MPRoutingProvider has not been instantiated create it here and assign the results call back to the activity.
+    if (mpRoutingProvider == null) {
+        mpRoutingProvider = MPRoutingProvider()
+        mpRoutingProvider?.setOnRouteResultListener(this)
+    }
+    mpRoutingProvider?.setTravelMode(TravelMode.WALKING)
+    //Queries the MPRouting provider for a route with the hardcoded user location and the point from a location.
+    mpRoutingProvider?.query(mUserLocation, mpLocation.point)
+}
 ```
 
 </mi-tab-panel>

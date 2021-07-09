@@ -3,7 +3,7 @@ title: Create a Search Experience with MapsIndoors - Part 2
 eleventyNavigation:
   parent: android-v3-guides-search
   key: Create a Search Experience with MapsIndoors - Part 2
-  order: 170
+  order: 40
 ---
 
 This is part 2 of the tutorial of creating a simple search experience using MapsIndoors. [In Part 1 we created the search Fragment](/android/v3/searchmapdemosearchfragment/). Now we will create the "main" controller displaying the map and eventually the selected location.

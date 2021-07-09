@@ -1,7 +1,7 @@
 ---
 title: Guides
 layout: redirect
-destination: /android/v3/guides/getting-polygon-from-location/
+destination: /android/v3/guides/search/
 eleventyNavigation:
   title: Guides
   parent: android-v3
