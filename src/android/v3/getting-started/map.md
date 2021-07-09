@@ -18,7 +18,7 @@ eleventyNavigation:
 
 We start by initializing `MapsIndoors`. `MapsIndoors` is used to get all and store all references to MapsIndoors-specific data. This includes access to all MapsIndoors-specific geodata.
 
-Place the following initialization code in the `onCreate` method in the `MapsActivity` that displays the Google map. You should also assign the `mapFragment` view to a local variable as we will use this later to initialize `MapControl` inside the onCreate after it has been created:
+Place the following initialization code in the `onCreate` method in the `MapsActivity` that displays the Google map. You should also assign the `mapFragment` view to a local variable, as we will use this later to initialize `MapControl` inside the onCreate, after it has been created:
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
