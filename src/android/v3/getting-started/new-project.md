@@ -33,7 +33,7 @@ You can get started in two ways, either by reviewing and modifying the [basic ex
 
 The tutorial will be based on you starting from our basic map implementation. This contains basic UI implementations together with layout files and drawables used to create the UI. You will then be guided through how to implement the MapsIndoors SDK into this app.
 
-The basic example contains a single `activity` app with already made `fragments` to host the different logic to get a complete app interracting with a map and `MapsIndoors` data.
+The basic example contains a single `activity` app with already made `fragments` to host the different logic to get a complete app interacting with a map and `MapsIndoors` data.
 
 You can find this basic example here: [Java](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android-Basic) or [Kotlin](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android-Kotlin-Basic)
 
