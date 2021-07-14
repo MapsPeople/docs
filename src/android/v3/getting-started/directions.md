@@ -202,7 +202,7 @@ Now we will implement logic to our `NavigationFragment` that we can put into our
 
 Here we'll use a `viewpager` to allow the user to switch between each step, as well as display a "close" button so we are able to remove the route and the bottom sheet from the activity.
 
-We will start by making a getter for our `MPDirectionsRenderer` the we store on `MapsActivity`
+We will start by making a getter for our `MPDirectionsRenderer` that we store on `MapsActivity`:
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
