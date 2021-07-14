@@ -64,7 +64,7 @@ We now want to add all the data we get by initializing `MapsIndoors` to our Goog
 
 Here we use Google Maps logic to apply geodata onto the map. This also means we append logic onto many Google Maps listeners, which means that using Google Maps listeners directly might break intended behavior of the MapsIndoors experience. We recommend to check our reference docs, and see if you can add a specific `Listener` through the `MapControl` and always use those when possible.
 
-Start by creating a `initMapControl` method we will use to initiate the MapControl and assign it to our Google Map:
+Start by creating an `initMapControl` method which is used to initiate the `MapControl` and assign it to our Google map:
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
