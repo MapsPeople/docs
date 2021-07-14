@@ -76,7 +76,7 @@ Add the following dependencies and the MapsIndoors maven repository:
 
 `Gson` and `okhttp` is used by MapsIndoors to function properly with network calls and deserializing.
 
-`play-services-maps` is used for the Google maps which MapsIndoors is build ontop of on Android.
+`play-services-maps` is used for Google Maps which MapsIndoors is build on top of on Android.
 
 ```java
 dependencies {
