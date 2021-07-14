@@ -121,7 +121,7 @@ private fun initMapControl(view: View) {
 </mi-tab-panel>
 </mi-tabs>
 
-In your `onMapReady` callback function, assign the `mMap` variable with the GoogleMap you get from the callback and call the initMapControl method with the `mMapView` you assigned in the `onCreate` to set up a Google map with MapsIndoors Venues, Buildings and Locations:
+In your `onMapReady` callback function, assign the `mMap` variable with the `GoogleMap` you get from the callback and call the `initMapControl` method with the `mMapView` you assigned in the `onCreate` to set up a Google map with MapsIndoors Venues, Buildings and Locations:
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
