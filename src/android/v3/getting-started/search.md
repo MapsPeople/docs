@@ -68,7 +68,7 @@ private fun search(searchQuery: String) {
 
 To be able to search we will use a text input field where a user can write what they want to search for. This is placed at the top of the MapsActivity
 
-To call our search method with the text in the search input field, we then add an `EditorActionListener` and a `OnClickListener` to the text input field and the search button in the `onCreate` of `MapsActivity`.
+To call our search method with the text in the search input field, we add an `EditorActionListener` and a `OnClickListener` to the text input field, as well as the search button in the `onCreate` of `MapsActivity`.
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
