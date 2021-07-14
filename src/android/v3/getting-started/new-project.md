@@ -20,7 +20,7 @@ We recommend using Android Studio for using this tutorial. Read how to set it up
 
 If you do not have a Android device, you can setup an emulator through Android studio. You can see how to do that here: [Setting up Android emulator](https://developer.android.com/studio/run/emulator).
 
-If you already have a Android device make sure to enable developer mode and USB debugging. Read about this here [Enable USB debugging](https://developer.android.com/studio/debug/dev-options#enable)
+If you already have an Android device, make sure to enable developer mode and USB debugging. Read about this here: [Enable USB debugging](https://developer.android.com/studio/debug/dev-options#enable)
 
 To benefit from the guides, you will need basic knowledge about:
 
