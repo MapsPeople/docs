@@ -62,7 +62,7 @@ If you are not a customer you can use this demo MapsIndoors API key `d876ff0e60b
 
 We now want to add all the data we get by initializing `MapsIndoors` to our Google map. This is done by initializing `MapControl` onto the Google map. `MapControl` is used as a layer between Google Maps and MapsIndoors.
 
-Here we use Google Map logic to apply Geodata onto the map. This also means we append logic onto a lot of the Google Maps listeners, which means that using google maps listeners directly might break intended behaviour of the MapsIndoors experience. We recommend to check our reference docs, and see if you can add a specific Listener through the MapControl and always use thoose when possible.
+Here we use Google Maps logic to apply geodata onto the map. This also means we append logic onto many Google Maps listeners, which means that using Google Maps listeners directly might break intended behavior of the MapsIndoors experience. We recommend to check our reference docs, and see if you can add a specific `Listener` through the `MapControl` and always use those when possible.
 
 Start by creating a `initMapControl` method we will use to initiate the MapControl and assign it to our Google Map:
 
