@@ -12,6 +12,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [10.3.0] - 2021-07-15
+
+### Added
+
+- **mi-data-table**: The `selectionChanged` event has been added. If the table is selectable this event will fire when the selection changes.
+
 ## [10.2.0] - 2021-07-15
 
 ### Added
@@ -41,8 +47,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - **mi-data-table**: Emit `clicked` event when clickin on elements within table cells.
 - **mi-column**: Make it possible to use bindings for boolean HTML attributes within table cells.
-- **mi-column**: Make it possible to style elements within table cells with MIDT helper classes and MapsIndoors CSS classes.
-- **mi-map-mapbox**: New attribute for setting max pitch (defaults to 60)
+- **mi-column**: Make it possible to style elements within table cells with [MIDT helper classes](https://github.com/MapsIndoors/midt) and [MapsIndoors CSS classes](https://github.com/MapsIndoors/css).
+- **mi-map-mapbox**: New attribute for setting max pitch (defaults to 60).
 
 ### Changed
 
