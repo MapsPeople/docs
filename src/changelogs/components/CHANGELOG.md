@@ -12,6 +12,24 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [10.4.0] - 2021-07-21
+
+### Added
+
+- **mi-dropdown**: The button can now be styled using document-level CSS.
+
+## [10.3.2] - 2021-07-16
+
+### Fixed
+
+- **mi-dropdown**: The `mi-dropdown-item`'s wasn't rendered when the `items` attribute was an empty array.
+
+## [10.3.1] - 2021-07-15
+
+### Fixed
+
+- **mi-dropdown**: The `mi-dropdown` component didn't render the `mi-dropdown-item` elements when set before the first render.
+
 ## [10.3.0] - 2021-07-15
 
 ### Added
