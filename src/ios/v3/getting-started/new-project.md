@@ -26,7 +26,7 @@ MapsIndoors can either be installed using CocoaPods or manually.
 
 ### Install MapsIndoors using CocoaPods
 
-From MapsIndors SDK version 3.32.0 it is necessary to install `git-lfs` as [described here](https://git-lfs.github.com/) so Cocoapods can fetch the SDK properly.
+From MapsIndors SDK version 3.32.0 it is necessary to install `git-lfs` as [described here](https://git-lfs.github.com/) so CocoaPods can fetch the SDK properly.
 
 If you haven't already, install CocoaPods:
 [Getting Started with CocoaPods](https://guides.cocoapods.org/using/getting-started.html)
