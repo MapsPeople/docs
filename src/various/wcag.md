@@ -6,7 +6,7 @@ eleventyNavigation:
   order: 12
 ---
 
-Accessiblity is important to us at MapsIndoors, and we go to great lengths to make sure you can build accessible apps using our SDKs.
+Making MapsIndoors accessible to all is important to us at MapsPeople, and we go to great lengths to make sure you can build accessible apps using our SDKs.
 
 We support building apps that are at least compliant with WCAG 2.0 AA using any of the MapsIndoors SDKs (JavaScript, iOS, and Android). Our SDKs also support screen readers such as Voiceover on iOS and TalkBack on Android.
 
