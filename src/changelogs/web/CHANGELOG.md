@@ -9,6 +9,22 @@ eleventyNavigation:
 
 Changelog for MapsIndoors SDK for JavaScript. This document structure is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and the project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [4.13.0] - 2021-08-17
+
+### Added
+
+- Animated directions for MapBox
+
+### Fixed
+
+- The "Uncaught (in promise) TypeError: Cannot read property 'flush' of undefined" error.
+
+## [4.12.1] - 2021-06-24
+
+### Fixed
+
+- Location icons are now internally requested with size parameters instead of scale.
+
 ## [4.12.0] - 2021-06-17
 
 ### Added
