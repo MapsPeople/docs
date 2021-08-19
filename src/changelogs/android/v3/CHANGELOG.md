@@ -18,6 +18,22 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 ### Security     in case of vulnerabilities.
 -->
 
+## [3.10.0] 2021-08-19
+
+### Added
+
+- The MapsIndoors SDK records anonymous usage statistics and diagnostic events per default (if enabled in the CMS) and sends the logged data to a server at MapsPeople. Logging may be disabled entirely by calling `MapsIndoors.disableEventLogging(true)` on the SDK.
+
+### Deprecated
+
+- Deprecated `MapsIndoors.setOnMapsIndoorsReadyListener(onReadyListener)`. Use `MapsIndoors.addOnMapsIndoorsReadyListener(onReadyListener)` instead.
+
+### Fixed
+
+- Polygon DisplayRules can now be applied to all Locations with a polygon, not just Areas
+- Live Data badges now correctly scale according to the device's pixel density
+- Various bug fixes and stability issues
+
 ## [3.9.2] 2021-06-21
 
 ### Fixed
