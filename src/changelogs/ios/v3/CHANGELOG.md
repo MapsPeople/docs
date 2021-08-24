@@ -28,7 +28,7 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 ### Fixed
 
 - Single character query works again.
-- Posistion is now validated before drawing proximity circle, preventing app crashes in certain circumstances.
+- Position is now validated before drawing proximity circle, preventing app crashes in certain circumstances.
 - Location images are now always presented in best quality available.
 - Route descriptions are now consistent for floor changes.
 
