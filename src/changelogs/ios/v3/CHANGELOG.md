@@ -22,7 +22,7 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 
 ### Added
 
-- Added internal logging functionality in the SDK. Logging of anonymous statistic and diagnostic events will occur if enabled for the current API key. Logging may be disabled entirely by calling `MapsIndoors.eventLoggingDisabled = true`. [Read more](https://docs.mapsindoors.com/ios/v3/guides/event-logging/).
+- Added internal logging functionality in the SDK. Logging of anonymous statistics and diagnostic events will occur if enabled for the current API key. Logging may be disabled entirely by calling `MapsIndoors.eventLoggingDisabled = true`. [Read more](https://docs.mapsindoors.com/ios/v3/guides/event-logging/).
 - Search for floor aliases is now possible.
 
 ### Fixed
