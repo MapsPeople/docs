@@ -15,7 +15,88 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 ### Added
 ### Fixed
 ### Changed
+
 ### Removed
+
+- Removed `MPVenue.getVenueBounds`.
+- Removed `MPBuildingReference`.
+- Removed `MPMapControl.currentPosition`.
+- Removed `MPVenue.entryPoints`.
+- Removed `MPVenue.buildings`.
+- Removed `MPFloorSelectorControl.addToMap`.
+- Removed `MPFloorSelectorControl.addToView`.
+- Removed `MPPositionResult.getAge`.
+- Removed `MPPositionResult.getRoundtrip`.
+- Removed `MPPositionResult.type`.
+- Removed `MPPositionIndicator`.
+- Removed `MPLocation.activeFrom`.
+- Removed `MPLocation.activeTo`.
+- Removed `MPLocation.roomId`.
+- Removed `MPLocation.properties`.
+- Removed `MPLocation.marker`.
+- Removed `MPLocation.image`.
+- Removed `MPLocation.getPoint`.
+- Removed `MPMapControl.addDisplayRule()`.
+- Removed `MPMapControl.addDisplayRules()`.
+- Removed `MPMapControl.mapLocationsHidden`.
+- Removed `MapsIndoors.locationsProvider`.
+- Removed `MPLocationsProvider` class. Use MPLocationService instead.
+- Removed `MPMapControl.currentPosition`.
+- Bundling of offline data has been removed in version 4 of the iOS SDK. The mobile SDKs will still support offline conditions, and we recommend that you use the Dataset Manager `MapsIndoors.dataSetCacheManager` to download, persist and synchronize datasets.
+- iOS 10 support has ended.
+- Removed `MPBuildingDelegate`.
+- Removed `MPBuilding.delegate`.
+- Removed `MPBuilding.map`.
+- Removed `MPBuilding.floorsReady`.
+- Removed `MPBuilding.getFloor`. Use `MPMapControl.currentFloor` instead.
+- Removed `MPBuilding.getInitFloor`
+- Removed `MPBuilding.getFloors`. Use `MPBuilding.floors.count` instead.
+- Removed `MPBuilding.setFloor`. Use `MPMapControl.currentFloor` or `MPBuilding.defaultFloor` instead.
+- Removed `MPRouteInstructions` class.
+- Removed `MPRouteInfo` class.
+- Added convenience method MPMapControl.gotoLocation() and MPMapControl.selectLocation() that takes string id..
+- Added new selection interface and behavior.
+- Made MPLatLng and LatLngBounds models readonly.
+- Made MPLocationField readonly.
+- Made MPVenue readonly.
+- Made MPSolution readonly.
+- Made MPType readonly.
+- Made MPGeometry readonly.
+- Made MPMenuItem readonly.
+- Made Route Transit Detail models readonly.
+- Made MPRouteProperty readonly.
+- Made MPFloor readonly.
+- Made MPRouteBounds readonly.
+- Made MPRouteLeg readonly.
+- Made MPRoute readonly.
+- Made categories MPDataDield readonly.
+- Made MPBuilding readonly.
+- Made MPAppData readonly.
+- Rename many instances of floor to floorIndex for easier understandability.
+- Rename MPFloor.zIndex to .floorIndex.
+- Use property floorIndex instead of floor for MPFilter, MPLocationQuery, MPLocationUpdate.
+- Introduce filter methods on MPMapControl and remove MPMapControl.searchResult and MPMapControl.showSearchResult().
+- Added clear() method on MPDirectionsRenderer.
+- Added nextStep(), previousStep(), nextLeg() and previousLeg() methods on MPDirectionsRenderer.
+- Renamed MPDirectionsRenderer edgeInsets to padding, solidColor to pathColor, backgroundColor to pathBackgroundColor.
+- Removed userRoles property from MPDirectionsQuery.
+- Removed delegate property from MPDirectionsService.
+- Removed MPRoutingProvider class.
+- Removed sources property and registerLocationSources method from MapsIndoors class. 
+- Added sources property and registerLocationSources method to MPLocationService.
+- Remove MapsIndoors.getMapsIndoorsAPIKey and MapsIndoors.getGoogleAPIKey.
+- Rename MPLocation.geometry to position.
+- Deprecated customFloorSelector.
+- Made floorSelector writable / customizable.
+- Removed MPLocation.sourceId.
+- Renamed fields property on Venue, Building and Location to properties.
+- Renamed -[MPLocation getFieldForKey:] to -[MPLocation getPropertyForKey:].
+- Removed MPLocation.isIndoors.
+- Changed completion block of MPVenueProvider to use array of MPVenues instead of MPVenueCollection.
+- Removed MPVenueCollection, MPBuildingDataset and MPLocationDataset.
+- Removed MPLocation.descr.
+- Removed MPLocation.roomId.
+
 -->
 
 ## [3.30.0] 2021-06-07
