@@ -18,6 +18,12 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 ### Removed
 -->
 
+## [3.33.1] 2021-08-30
+
+### Fixed
+
+- We fixed an issue causing route instructions to reflect the wrong floor when routing across several floors.
+
 ## [3.33.0] 2021-08-24
 
 ### Added
