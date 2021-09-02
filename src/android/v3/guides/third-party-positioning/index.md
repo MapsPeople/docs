@@ -1,0 +1,18 @@
+---
+title: Use third party positioning with MapsIndoors
+eleventyNavigation:
+  parent: android-v3-guides
+  title: Use third party positioning with MapsIndoors
+  key: android-v3-guides-use-third-party-positioning-with-MapsIndoors
+  order: 210
+---
+
+### How User Positioning Works in MapsIndoors
+
+In order to show a user's position in an indoor map with MapsIndoors, a Position Provider must be implemented. MapsIndoors does not implement a Position Provider itself, but rely on 3rd party positioning software to create this experience. For you the developer, this means that the MapsIndoors SDK offers an interface for such a Position Provider, but no building blocks for acquiring positioning.
+
+This guide will show you how to use a third party positioning provider and implement it into your MapsIndoors application. Here we will start from the finished Getting started app. This code can be found at [Java](https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android).
+
+A full implementation of three different third party positioning providers can be found here **Insert link here for 3 different positioning providers**
+
+We recommend reading **Insert link to the two show blue dot guides on the documentation site** guides to get a basic understanding of the MapsIndoors positioning provider interface.
