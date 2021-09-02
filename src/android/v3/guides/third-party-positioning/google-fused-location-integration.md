@@ -82,10 +82,10 @@ public class GPSPositionProvider implements PositionProvider {
     private boolean mIsEnabled;
 
     private String mProviderId;
-    
+
     private final List<OnStateChangedListener> mOnStateChangedListenersList = new ArrayList<>();
     private final List<OnPositionUpdateListener> mOnPositionUpdateListeners = new ArrayList<>();
-    
+
     private PositionResult mLatestPosition;
 
     private FusedLocationProviderClient fusedLocationClient;

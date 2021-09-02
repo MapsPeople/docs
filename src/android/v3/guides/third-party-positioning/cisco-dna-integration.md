@@ -418,7 +418,7 @@ public class CiscoDNAPositionProvider implements PositionProvider {
     private void unsubscribe(){
         LiveDataManager.getInstance().unsubscribeTopic(mTopic);
         mIsSubscribed = false;
-    }    
+    }
 }
 ```
 
