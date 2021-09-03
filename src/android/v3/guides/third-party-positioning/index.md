@@ -9,7 +9,7 @@ eleventyNavigation:
 
 ### How User Positioning Works in MapsIndoors
 
-In order to show a user's position in an indoor map with MapsIndoors, a Position Provider must be implemented. MapsIndoors does not implement a Position Provider itself, but rely on 3rd party positioning software to create this experience. For you the developer, this means that the MapsIndoors SDK offers an interface for such a Position Provider, but no building blocks for acquiring positioning.
+In order to show a user's position (Blue dot) on an indoor map with MapsIndoors, a Position Provider must be implemented. You can integrate a 3rd party positioning provider (IPS) to create this experience. For you the developer, this means that the MapsIndoors SDK offers an interface for such a Position Provider, but no building blocks for acquiring positioning.
 
 This guide will show you how to use a third party positioning provider and implement it into your MapsIndoors application. Here we will start from the finished Getting started app. This code can be found at [Java](https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android).
 
