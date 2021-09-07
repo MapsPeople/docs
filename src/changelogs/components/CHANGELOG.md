@@ -12,6 +12,24 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [10.11.0] - 2021-09-01
+
+## Added
+
+- mi-dropdown: Now displays a message when no results can be found based on the search query.
+- mi-dropdown: Now disables the filter select buttons when there's nothing to select.
+- mi-dropdown: Now performs filtering based on a fuzzy search algorithm.
+
+### Fixed
+
+- mi-dropdown: Filtering within the component now works as expected.
+
+## [10.10.0] - 2021-08-26
+
+### Added
+
+- **mi-data-table**: `emptyPageHeader` and `emptyPageSubheader` properties added which can be used to set the header and subheader that is being presented when the table is empty.
+
 ## [10.9.0] - 2021-08-25
 
 ### Added
