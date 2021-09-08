@@ -90,7 +90,7 @@ public class IndoorAtlasPositionProvider implements PositionProvider {
     private PositionResult mLatestPosition;
 
     private IALocationManager mIndoorAtlasClient;
-    
+
     ...
     @NonNull
     @Override
