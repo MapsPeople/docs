@@ -26,7 +26,7 @@ We start by implementing a Positioning Provider service. This service is so that
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab-panel id="java">
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L270-L278">MapsActivity.java</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/feature/third_pary_position_providers/app/src/main/java/com/example/mapsindoorsgettingstarted/PositionProviders/PositionProviderService.java#L29-L32">PositionProviderService.java</a>
 
 ```java
 public class PositionProviderService {
@@ -48,7 +48,7 @@ Now we will start implementing the Fused Location position provider. Create a cl
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab-panel id="java">
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L270-L278">MapsActivity.java</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/feature/third_pary_position_providers/app/src/main/java/com/example/mapsindoorsgettingstarted/PositionProviders/GPSPositionProvider.java#L50-L52">GPSPositionProvider.java</a>
 
 ```java
 public class GPSPositionProvider implements PositionProvider {
@@ -68,7 +68,7 @@ We will start by implementing logic to each of the implemented methods from the 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab-panel id="java">
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L270-L278">MapsActivity.java</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/feature/third_pary_position_providers/app/src/main/java/com/example/mapsindoorsgettingstarted/PositionProviders/GPSPositionProvider.java#L54-L151">GPSPositionProvider.java</a>
 
 ```java
 public class GPSPositionProvider implements PositionProvider {
@@ -82,10 +82,10 @@ public class GPSPositionProvider implements PositionProvider {
     private boolean mIsEnabled;
 
     private String mProviderId;
-
+    
     private final List<OnStateChangedListener> mOnStateChangedListenersList = new ArrayList<>();
     private final List<OnPositionUpdateListener> mOnPositionUpdateListeners = new ArrayList<>();
-
+    
     private PositionResult mLatestPosition;
 
     private FusedLocationProviderClient fusedLocationClient;
@@ -192,7 +192,7 @@ We start by implementing the startPositioning and stopPositioning methods:
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab-panel id="java">
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L270-L278">MapsActivity.java</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/feature/third_pary_position_providers/app/src/main/java/com/example/mapsindoorsgettingstarted/PositionProviders/GPSPositionProvider.java#L65-L84">GPSPositionProvider.java</a>
 
 ```java
 public class GPSPositionProvider implements PositionProvider {
@@ -228,7 +228,7 @@ Implement the locationCallBack to the provider to receive and handle the locatio
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab-panel id="java">
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L270-L278">MapsActivity.java</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/feature/third_pary_position_providers/app/src/main/java/com/example/mapsindoorsgettingstarted/PositionProviders/GPSPositionProvider.java#L153-L164">GPSPositionProvider.java</a>
 
 ```java
 public class GPSPositionProvider implements PositionProvider {
@@ -256,7 +256,7 @@ Create the onLocationChanged method to handle the google location and make it in
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab-panel id="java">
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L270-L278">MapsActivity.java</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/feature/third_pary_position_providers/app/src/main/java/com/example/mapsindoorsgettingstarted/PositionProviders/GPSPositionProvider.java#L166-L233">GPSPositionProvider.java</a>
 
 ```java
 public class GPSPositionProvider implements PositionProvider {
@@ -336,7 +336,7 @@ Now we need to start up our PositionProvider to get positioning onto our map. Th
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab-panel id="java">
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L270-L278">MapsActivity.java</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/feature/third_pary_position_providers/app/src/main/java/com/example/mapsindoorsgettingstarted/PositionProviders/PositionProviderService.java#L119-L167">PositionProviderService.java</a>
 
 ```java
 public class PositionProviderService {
@@ -400,7 +400,7 @@ All that is left to do now is to start this up after initialising our mapControl
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab-panel id="java">
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L270-L278">MapsActivity.java</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/feature/third_pary_position_providers/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L186-L190">MapsActivity.java</a>
 
 ```java
 mMapControl.init(miError -> {
@@ -412,4 +412,4 @@ mMapControl.init(miError -> {
 </mi-tab-panel>
 </mi-tabs>
 
-***TODO: Create link for the full sample of the working implementation of IndoorAtlas and update code sample links to show it in that sample***
+A full example of the CiscoDNA position provider together with PositionProviderService can be found here: [PositionProviders](https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/tree/feature/third_pary_position_providers/app/src/main/java/com/example/mapsindoorsgettingstarted/PositionProviders)

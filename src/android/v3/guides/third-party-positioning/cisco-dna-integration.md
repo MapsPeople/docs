@@ -25,7 +25,7 @@ We start by implementing a Positioning Provider service. This service is so that
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab-panel id="java">
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L270-L278">MapsActivity.java</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/feature/third_pary_position_providers/app/src/main/java/com/example/mapsindoorsgettingstarted/PositionProviders/PositionProviderService.java#L22-L32">PositionProviderService.java</a>
 
 ```java
 public class PositionProviderService {
@@ -47,7 +47,7 @@ Now we will start implementing the CiscoDNA position provider. Create a class ca
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab-panel id="java">
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L270-L278">MapsActivity.java</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/feature/third_pary_position_providers/app/src/main/java/com/example/mapsindoorsgettingstarted/PositionProviders/CiscoDNAPositionProvider.java#L37-L84">CiscoDNAPositionProvider.java</a>
 
 ```java
 public class CiscoDNAPositionProvider implements PositionProvider {
@@ -74,7 +74,7 @@ We will start by implementing logic to each of the implemented methods from the 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab-panel id="java">
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L270-L278">MapsActivity.java</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/feature/third_pary_position_providers/app/src/main/java/com/example/mapsindoorsgettingstarted/PositionProviders/CiscoDNAPositionProvider.java#L177-L271">CiscoDNAPositionProvider.java</a>
 
 ```java
 public class CiscoDNAPositionProvider implements PositionProvider {
@@ -183,7 +183,7 @@ Start by creating a method to retrieve the LAN adress:
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab-panel id="java">
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L270-L278">MapsActivity.java</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/feature/third_pary_position_providers/app/src/main/java/com/example/mapsindoorsgettingstarted/PositionProviders/CiscoDNAPositionProvider.java#L134-L153">CiscoDNAPositionProvider.java</a>
 
 ```java
 public class CiscoDNAPositionProvider implements PositionProvider {
@@ -220,7 +220,7 @@ Then the WAN adress, as of now we suggest using a 3rd party service to acquire t
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab-panel id="java">
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L270-L278">MapsActivity.java</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/feature/third_pary_position_providers/app/src/main/java/com/example/mapsindoorsgettingstarted/PositionProviders/CiscoDNAPositionProvider.java#L155-L175">CiscoDNAPositionProvider.java</a>
 
 ```java
 public class CiscoDNAPositionProvider implements PositionProvider {
@@ -258,7 +258,7 @@ Lastly we need the Tenant Id. This is an id you can have hardcoded inside your a
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab-panel id="java">
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L270-L278">MapsActivity.java</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/feature/third_pary_position_providers/app/src/main/java/com/example/mapsindoorsgettingstarted/PositionProviders/PositionProviderService.java#L35-L36">PositionProviderService.java</a>
 
 ```java
 Map<String, Object> ciscoDnaConfig = MapsIndoors.getSolution().getPositionProviderConfig().get("ciscodna");
@@ -273,7 +273,7 @@ If all of the three above mentioned strings can be acquired, you can ask our end
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab-panel id="java">
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L270-L278">MapsActivity.java</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/feature/third_pary_position_providers/app/src/main/java/com/example/mapsindoorsgettingstarted/PositionProviders/CiscoDNAPositionProvider.java#L105-L132">CiscoDNAPositionProvider.java</a>
 
 ```java
 public class CiscoDNAPositionProvider implements PositionProvider {
@@ -317,7 +317,7 @@ Now you can make a method to start a subscription that we will use when starting
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab-panel id="java">
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L270-L278">MapsActivity.java</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/feature/third_pary_position_providers/app/src/main/java/com/example/mapsindoorsgettingstarted/PositionProviders/CiscoDNAPositionProvider.java#L86-L103">CiscoDNAPositionProvider.java</a>
 
 ```java
 public class CiscoDNAPositionProvider implements PositionProvider {
@@ -337,6 +337,11 @@ public class CiscoDNAPositionProvider implements PositionProvider {
             LiveDataManager.getInstance().subscribeTopic(mTopic);
         }
     }
+
+    private void unsubscribe(){
+        LiveDataManager.getInstance().unsubscribeTopic(mTopic);
+        mIsSubscribed = false;
+    }
     ...
 }
 ```
@@ -349,7 +354,7 @@ To handle the subscription we have just created we need to create some callbacks
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab-panel id="java">
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L270-L278">MapsActivity.java</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/feature/third_pary_position_providers/app/src/main/java/com/example/mapsindoorsgettingstarted/PositionProviders/CiscoDNAPositionProvider.java#L59-L84">CiscoDNAPositionProvider.java</a>
 
 ```java
 public class CiscoDNAPositionProvider implements PositionProvider {
@@ -389,7 +394,7 @@ Implement the startPositoning and stopPositioning method:
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab-panel id="java">
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L270-L278">MapsActivity.java</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/feature/third_pary_position_providers/app/src/main/java/com/example/mapsindoorsgettingstarted/PositionProviders/CiscoDNAPositionProvider.java#L188-L208">CiscoDNAPositionProvider.java</a>
 
 ```java
 public class CiscoDNAPositionProvider implements PositionProvider {
@@ -413,12 +418,7 @@ public class CiscoDNAPositionProvider implements PositionProvider {
                 unsubscribe();
             }
         }
-    }
-
-    private void unsubscribe(){
-        LiveDataManager.getInstance().unsubscribeTopic(mTopic);
-        mIsSubscribed = false;
-    }
+    }  
 }
 ```
 
@@ -430,7 +430,7 @@ Now we need to start up our PositionProvider to get positioning onto our map. Th
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab-panel id="java">
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L270-L278">MapsActivity.java</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/feature/third_pary_position_providers/app/src/main/java/com/example/mapsindoorsgettingstarted/PositionProviders/PositionProviderService.java#L34-L68">PositionProviderService.java</a>
 
 ```java
 public class PositionProviderService {
@@ -483,7 +483,7 @@ All that is left to do now is to start this up after initialising our mapControl
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab-panel id="java">
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L270-L278">MapsActivity.java</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/feature/third_pary_position_providers/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L186-L188">MapsActivity.java</a>
 
 ```java
 mMapControl.init(miError -> {
@@ -495,4 +495,4 @@ mMapControl.init(miError -> {
 </mi-tab-panel>
 </mi-tabs>
 
-***TODO: Create link for the full sample of the working implementation of IndoorAtlas and update code sample links to show it in that sample***
+A full example of the CiscoDNA position provider together with PositionProviderService can be found here: [PositionProviders](https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/tree/feature/third_pary_position_providers/app/src/main/java/com/example/mapsindoorsgettingstarted/PositionProviders)
