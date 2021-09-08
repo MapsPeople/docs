@@ -497,6 +497,8 @@ We highly recommend using SVGs for icons across MapsIndoors, but support PNG fil
 
 When uploading an icon in the PNG format, make sure you upload it in a 3x size to accommodate for it being scaled down on the map. For example, to display a 20x20px icon on the map, upload it in 60x60px.
 
+## Split and Combine
+
 ## Support
 
 **Something not working?**
