@@ -22,7 +22,7 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 
 ### Fixed
 
-- Fixed a rare crash related to area polygon display rules rendering
+- Fixed a rare null pointer exception crash related to area polygon display rules rendering
 
 ## [3.10.0] 2021-08-19
 
