@@ -7,7 +7,7 @@ eleventyNavigation:
   order: 190
 ---
 
-This is part 2 of the tutorial of managing a blue dot on the map. [In Part 1 we created the position provider](/android/v3/showuserlocationdemopositionprovider/). Now we will create a Fragment displaying a map that shows the users (mock) location.
+This is part 2 of the tutorial of managing a blue dot on the map. [In Part 1 we created the position provider](/android/v3/guides/showuserlocationdemopositionprovider/). Now we will create a Fragment displaying a map that shows the users (mock) location.
 
 Create the class `ShowUserLocationFragment` that inherits from `Fragment`:
 
