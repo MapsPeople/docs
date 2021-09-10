@@ -9,16 +9,16 @@ eleventyNavigation:
 
 For Cisco DNA positoning the MapsIndoors SDK offers all the required building blocks to get it up and running - so no external dependencies are needed.
 
-The Position Provider implementation exists at the customer application level, and needs to implement the PositionProvider interface from the MapsIndoors SDK. The MapsIndoors SDK can then utilize the positioning results yielded from the given Position Provider, by setting the Position Provider with MapControl.setPositionProvider(PositionProvider).
+The Position Provider implementation exists at the customer application level, and needs to implement the PositionProvider interface from the MapsIndoors SDK. The MapsIndoors SDK can then utilize the positioning results yielded from the given Position Provider, by setting the Position Provider with `MapControl.setPositionProvider(PositionProvider)`.
 
 ### Floor Mapping
 
-The Position Provider should align with the MapsIndoors floor index convention (floors are indexed as 0, 10, 20, 30, etc. corresponding to ground floor, 1st floor, 2nd floor, 3rd floor, etc., where negative floors indices are allowed, as e.g. -10). It is therefore up to the position provider class to convert any given floor indexing from the positioning source to that of MapsIndoors.
-For a typical Position Provider this mapping from whatever indexing is derived from the positioning, needs to be mapped to the Mapsindoors floor format. However, as the MapsIndoors backend is closely integrated with the CiscoDNA platform, the MapsIndoors backend handles this floor mapping conversion. From an application perspective no floor mapping implementation is required when integrating CiscoDNA positioning through the MapsIndoors platform.
+The Position Provider should align with the MapsIndoors Floor index convention (floors are indexed as 0, 10, 20, 30, etc. corresponding to ground floor, 1st floor, 2nd floor, 3rd floor, etc., where negative floors indices are allowed, as e.g. -10). It is therefore up to the Position Provider class to convert any given Floor indexing from the positioning source to that of MapsIndoors.
+For a typical Position Provider this mapping from whatever indexing is derived from the positioning, needs to be mapped to the MapsIndoors Floor format. However, as the MapsIndoors backend is closely integrated with the CiscoDNA platform, the MapsIndoors backend handles this floor mapping conversion. From an application perspective no Floor mapping implementation is required when integrating CiscoDNA positioning through the MapsIndoors platform.
 
 ### Implementing Cisco DNA
 
-This Guide requires you to already have an activity that shows a MapsIndoors map and a Cisco DNA network with positioning active.
+This Guide requires you to already have an activity that shows a MapsIndoors Map and a Cisco DNA network with positioning active.
 
 We start by implementing a Positioning Provider service. This service is so that in the future you can have mulitple positioning solutions running in the same application and have the code stored in one location. For now just create a simple class with a constructor that receives an activity and a MapControl object.
 
@@ -42,7 +42,7 @@ public class PositionProviderService {
 </mi-tab-panel>
 </mi-tabs>
 
-Now we will start implementing the CiscoDNA position provider. Create a class called CiscoDNAPositionProvider that implements the PositionProvider interface from the MapsIndoorsSDK, also create a constructor that takes a context as well as a String as a tenantId.
+Now we will start implementing the CiscoDNA position provider. Create a class called `CiscoDNAPositionProvider` that implements the PositionProvider interface from the MapsIndoorsSDK, also create a constructor that takes a context as well as a String as a `tenantId`.
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
@@ -69,7 +69,7 @@ public class CiscoDNAPositionProvider implements PositionProvider {
 </mi-tab-panel>
 </mi-tabs>
 
-We will start by implementing logic to each of the implemented methods from the PositionProvider interface. Some of theese will be generic others will be specific to CiscoDNA.
+We will start by implementing logic to each of the implemented methods from the PositionProvider interface. Some of these will be generic others will be specific to CiscoDNA.
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
@@ -178,7 +178,7 @@ public class CiscoDNAPositionProvider implements PositionProvider {
 
 The CiscoDNA positioning requires three parameters, the device’s IPv4 address (LAN) and the external IP address of the network in question (WAN), as well as the Tenant ID.
 
-Start by creating a method to retrieve the LAN adress:
+Start by creating a method to retrieve the LAN address:
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
@@ -215,7 +215,7 @@ public class CiscoDNAPositionProvider implements PositionProvider {
 </mi-tab-panel>
 </mi-tabs>
 
-Then the WAN adress, as of now we suggest using a 3rd party service to acquire the WAN adress:
+Then the WAN address, as of now we suggest using a 3rd party service to acquire the WAN address:
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
@@ -253,7 +253,7 @@ public class CiscoDNAPositionProvider implements PositionProvider {
 </mi-tab-panel>
 </mi-tabs>
 
-Lastly we need the Tenant Id. This is an id you can have hardcoded inside your app or saved as a string resource otherwise you can use the PositionProviderConfig fields from MapsIndoors to get this id like this:
+Lastly we need the Tenant ID. This is an ID you can have hardcoded inside your app or saved as a string resource otherwise you can use the PositionProviderConfig fields from MapsIndoors to get this ID like this:
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
@@ -268,7 +268,7 @@ String tenantId = (String) ciscoDnaConfig.get("ciscoDnaSpaceTenantId");
 </mi-tab-panel>
 </mi-tabs>
 
-If all of the three above mentioned strings can be acquired, you can ask our endpoint for a CiscoDNA Device ID string. A device id is only available if there has been a recorded positioning for the device, in the past 24 hours. We will implement this as a new method into our CiscoDNAPositionProvider.
+If all of the three above mentioned strings can be acquired, you can ask our endpoint for a CiscoDNA Device ID string. A device ID is only available if there has been a recorded positioning for the device, in the past 24 hours. We will implement this as a new method into our CiscoDNAPositionProvider.
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
@@ -389,7 +389,7 @@ public class CiscoDNAPositionProvider implements PositionProvider {
 </mi-tab-panel>
 </mi-tabs>
 
-Implement the startPositoning and stopPositioning method:
+Implement the `startPositoning` and `stopPositioning` method:
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
@@ -478,7 +478,7 @@ public class PositionProviderService {
 </mi-tab-panel>
 </mi-tabs>
 
-All that is left to do now is to start this up after initialising our mapControl.
+All that is left to do now is to start this up after initializing our MapControl.
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>

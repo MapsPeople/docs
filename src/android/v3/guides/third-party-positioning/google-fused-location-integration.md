@@ -7,13 +7,13 @@ eleventyNavigation:
   order: 230
 ---
 
-For Google Fused Location Provider you will need to create a positioning implementation to have the positions received from the api communicate with the MapsIndoors SDK.
+For Google Fused Location Provider you will need to create a positioning implementation to have the positions received from the API communicate with the MapsIndoors SDK.
 
 The Position Provider implementation exists at the customer application level, and needs to implement the PositionProvider interface from the MapsIndoors SDK. The MapsIndoors SDK can then utilize the positioning results yielded from the given Position Provider, by setting the Position Provider with MapControl.setPositionProvider(PositionProvider).
 
 ### Implementing Google Fused Location Provider API
 
-This Guide requires you to already have an activity that shows a MapsIndoors map and to have the google play services location library dependency added to your project.
+This Guide requires you to already have an activity that shows a MapsIndoors Map and to have the google play services location library dependency added to your project.
 
 ```java
 dependencies {
@@ -185,9 +185,9 @@ public class GPSPositionProvider implements PositionProvider {
 </mi-tab-panel>
 </mi-tabs>
 
-We'll then start implementing the code to get Google Fused Location positioning up and running.
+We will then start implementing the code to get Google Fused Location positioning up and running.
 
-We start by implementing the startPositioning and stopPositioning methods:
+We start by implementing the `startPositioning` and `stopPositioning` methods:
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
@@ -331,7 +331,7 @@ public class GPSPositionProvider implements PositionProvider {
 </mi-tab-panel>
 </mi-tabs>
 
-Now we need to start up our PositionProvider to get positioning onto our map. This we will do through our PositionProviderService. We start with creating a method to setup the IndoorAtlas positionProvider from the PositionProviderService.
+Now we need to start up our PositionProvider to get positioning onto our Map. This we will do through our PositionProviderService. We start with creating a method to setup the Google positionProvider from the PositionProviderService.
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
@@ -395,7 +395,7 @@ void onGooglePositioningPermissionsGiven() {
 </mi-tab-panel>
 </mi-tabs>
 
-All that is left to do now is to start this up after initialising our mapControl.
+All that is left to do now is to start this up after initializing our mapControl.
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>

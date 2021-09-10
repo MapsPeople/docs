@@ -9,15 +9,15 @@ eleventyNavigation:
 
 For Indoor Atlas positioning you will need to create a positioning implementation to have the positions received from Indoor Atlas communicate with the MapsIndoors SDK.
 
-The Position Provider implementation exists at the customer application level, and needs to implement the PositionProvider interface from the MapsIndoors SDK. The MapsIndoors SDK can then utilize the positioning results yielded from the given Position Provider, by setting the Position Provider with MapControl.setPositionProvider(PositionProvider).
+The Position Provider implementation exists at the customer application level, and needs to implement the PositionProvider interface from the MapsIndoors SDK. The MapsIndoors SDK can then utilize the positioning results yielded from the given Position Provider, by setting the Position Provider with `MapControl.setPositionProvider(PositionProvider)`.
 
 ### Floor Mapping
 
-The Position Provider should align with the MapsIndoors floor index convention (floors are indexed as 0, 10, 20, 30, etc. corresponding to ground floor, 1st floor, 2nd floor, 3rd floor, etc., where negative floors indices are allowed, as e.g. -10). It is therefore up to the position provider class to convert any given floor indexing from the positioning source to that of MapsIndoors.
+The Position Provider should align with the MapsIndoors Floor index convention (floors are indexed as 0, 10, 20, 30, etc. corresponding to ground floor, 1st floor, 2nd floor, 3rd floor, etc., where negative floors indices are allowed, as e.g. -10). It is therefore up to the position provider class to convert any given Floor indexing from the positioning source to that of MapsIndoors.
 
 ### Implementing Indoor Atlas
 
-This Guide requires you to already have an activity that shows a MapsIndoors map and a Indoor Atlas beacon network for positioning. We use Indoor Atlas v3 for this guide. Here is how to set it up in your project: [Indoor Atlas setup](https://indooratlas.freshdesk.com/support/solutions/articles/36000050564-setup-positioning-sdk-with-android)
+This Guide requires you to already have an activity that shows a MapsIndoors Map and a Indoor Atlas beacon network for positioning. We use Indoor Atlas v3 for this guide. Here is how to set it up in your project: [Indoor Atlas setup](https://indooratlas.freshdesk.com/support/solutions/articles/36000050564-setup-positioning-sdk-with-android)
 
 We start by implementing a Positioning Provider service. This service is so that in the future you can have mulitple positioning solutions running in the same application and have the code stored in one location. For now just create a simple class with a constructor that receives an activity and a MapControl object.
 
@@ -185,9 +185,9 @@ public class IndoorAtlasPositionProvider implements PositionProvider {
 </mi-tab-panel>
 </mi-tabs>
 
-We'll then start implementing the code to get Indoor Atlas positioning up and running.
+We will then start implementing the code to get Indoor Atlas positioning up and running.
 
-For Indoor Atlas to work you will need to supply Indoor Atlas with a api key and a secret key. This can be handled in two ways, if the Indoor Atlas account is setup through MapsPeople we will have the data for this stored on the MapsIndoors SDK. If not you will have to handle the two keys yourself, this can be done through String resources as an example.
+For Indoor Atlas to work you will need to supply Indoor Atlas with a API key and a secret key. This can be handled in two ways, if the Indoor Atlas account is setup through MapsPeople CMS on the Position Provider tab, we will have the data for this stored on the MapsIndoors SDK. If not you will have to handle the two keys yourself, this can be done through String resources as an example.
 
 We start by creating a method to initiate the Indoor Atlas client. Here the method is called initClient.
 
@@ -315,7 +315,7 @@ public class IndoorAtlasPositionProvider implements PositionProvider {
 </mi-tab-panel>
 </mi-tabs>
 
-Implement the startPositoning and stopPositioning method:
+Implement the `startPositoning` and `stopPositioning` method:
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
@@ -348,7 +348,7 @@ public class IndoorAtlasPositionProvider implements PositionProvider {
 </mi-tab-panel>
 </mi-tabs>
 
-Create the locationListener referenced in the startPositioning and stopPositioning:
+Create the locationListener referenced in the `startPositioning` and `stopPositioning`:
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
@@ -405,7 +405,7 @@ public class IndoorAtlasPositionProvider implements PositionProvider {
 </mi-tab-panel>
 </mi-tabs>
 
-Now we need to start up our PositionProvider to get positioning onto our map. This we will do through our PositionProviderService. We start with creating a method to setup the IndoorAtlas positionProvider from the PositionProviderService.
+Now we need to start up our PositionProvider to get positioning onto our Map. This we will do through our PositionProviderService. We start with creating a method to setup the IndoorAtlas positionProvider from the PositionProviderService.
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
@@ -471,7 +471,7 @@ public class PositionProviderService implements PositionProvider {
 </mi-tab-panel>
 </mi-tabs>
 
-All that is left to do now is to start this up after initialising our mapControl.
+All that is left to do now is to start this up after initializing our mapControl.
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
