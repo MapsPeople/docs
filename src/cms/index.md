@@ -515,12 +515,12 @@ You can get a helping hand after placing the first splitting point by holding do
 
 If you exit the Split mode before completing the split, your changes will be discarded.
 
-**Detailed constraints for Split**
+#### Detailed constraints for Split
 
 1. The split must contain two points touching the edge/Walls of the Room.
 1. The split can not extend outside of the Room.
 1. The split must not intersect with any holes in the Room.
-1. The split must be at least 1 meter from any Walls or holes. 
+1. The split must be at least 1 meter from any Walls or holes.
 1. The outcome of the split must be at least 1 square meters in size.
 1. A split must not overlap itself.
 
@@ -534,7 +534,7 @@ The combined Room’s Location Details are based on the first selected Room’s 
 
 If you exit the Combine mode before completing the combination, your changes will be discarded.
 
-**Detailed constraints for Combine**
+#### Detailed constraints for Combine
 
 1. All Locations must be of the same Type.
 1. The Rooms must share at least 1 meter of unbroken Wall.
