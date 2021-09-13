@@ -22,7 +22,7 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 
 ## Added
 
-- MapsIndoors now triggers as ready when locations are loaded.
+- MapsIndoors now triggers as ready when Locations are loaded.
 
 ### Fixed
 
