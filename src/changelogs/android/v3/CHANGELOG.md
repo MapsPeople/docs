@@ -29,7 +29,7 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 - Issue with `setApiKey` loading new Solutions. You can now switch between Solutions again by calling `setAPIKey`, and initializing a new `MapControl` object.
 - Applying `PolygonDisplayRules` on Locations that does not have Polygon geometry no longer causes a crash
 - Issue with Tiles not loading, if a custom Floor Selector is implemented
-- Using near on MPQuery should now give a better ordering in the list in terms of what is near the set location.
+- Using `near` on `MPQuery` now gives a better ordering in the list in terms of what is near the set location
 - Various bug fixes and stability issues
 
 ## [3.10.1] 2021-09-08
