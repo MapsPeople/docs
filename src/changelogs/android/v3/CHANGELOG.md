@@ -18,6 +18,20 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 ### Security     in case of vulnerabilities.
 -->
 
+## [3.10.2] 2021-09-13
+
+## Added
+
+- MapsIndoors now triggers as ready when locations are loaded.
+
+### Fixed
+
+- Issue with setApiKey loading new solutions fixed. You can now switch between solutions again by calling setAPIKey, and initialising a new MapControl object.
+- Applying PolygonDisplayRules on locations that does not have Polygon geometry no longer causes a crash
+- Fixed issue with tiles not loading, if a custom floor selector is implemented.
+- Using near on MPQuery should now give a better ordering in the list in terms of what is near the set location.
+- Various bug fixes and stability issues
+
 ## [3.10.1] 2021-09-08
 
 ### Fixed
