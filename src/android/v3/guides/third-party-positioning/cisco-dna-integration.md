@@ -47,7 +47,7 @@ public class PositionProviderService {
 </mi-tab-panel>
 </mi-tabs>
 
-Now we will start implementing the CiscoDNA position provider. Create a class called `CiscoDNAPositionProvider` that implements the PositionProvider interface from the MapsIndoorsSDK, also create a constructor that takes a context as well as a String as a `tenantId`.
+Now we will start implementing the CiscoDNA position provider. Create a class called `CiscoDNAPositionProvider` that implements the `PositionProvider` interface from the MapsIndoors SDK. Then create a constructor that takes a context, as well as a String named `tenantId`.
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
