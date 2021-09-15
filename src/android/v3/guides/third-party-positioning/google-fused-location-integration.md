@@ -251,7 +251,7 @@ public class GPSPositionProvider implements PositionProvider {
 </mi-tab-panel>
 </mi-tabs>
 
-Create the onLocationChanged method to handle the google location and make it into a PositionResult:
+Create the `onLocationChanged` method to handle the Google location and make it into a `PositionResult`:
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
