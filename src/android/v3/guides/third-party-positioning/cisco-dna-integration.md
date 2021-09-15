@@ -321,7 +321,7 @@ public class CiscoDNAPositionProvider implements PositionProvider {
 </mi-tab-panel>
 </mi-tabs>
 
-Now you can make a method to start a subscription that we will use when starting positioning to receive position updates. You use the SDKs `LiveDataManager` to create a subscription.
+Now you can make a method to start a subscription that we use when starting positioning to receive position updates. You use the SDKs `LiveDataManager` to create a subscription.
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
