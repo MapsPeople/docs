@@ -405,7 +405,7 @@ public class IndoorAtlasPositionProvider implements PositionProvider {
 </mi-tab-panel>
 </mi-tabs>
 
-Now we need to start up our PositionProvider to get positioning onto our Map. This we will do through our PositionProviderService. We start with creating a method to setup the IndoorAtlas positionProvider from the PositionProviderService.
+Now we need to start up our `PositionProvider` to get positioning onto our Map. This we will do through our `PositionProviderService`. We start with creating a method to setup the IndoorAtlas `positionProvider` from the `PositionProviderService`.
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
