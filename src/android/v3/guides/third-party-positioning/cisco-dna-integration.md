@@ -74,7 +74,7 @@ public class CiscoDNAPositionProvider implements PositionProvider {
 </mi-tab-panel>
 </mi-tabs>
 
-We will start by implementing logic to each of the implemented methods from the PositionProvider interface. Some of these will be generic others will be specific to CiscoDNA.
+We will start by implementing logic to each of the implemented methods from the `PositionProvider` interface. Some of these will be generic, while others will be specific to CiscoDNA.
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
