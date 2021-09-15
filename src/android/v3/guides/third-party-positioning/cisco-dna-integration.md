@@ -9,7 +9,7 @@ eleventyNavigation:
 
 To get started with Cisco DNA positioning, the MapsIndoors SDK offers all the required building blocks without any external dependencies.
 
-The Position Provider implementation exists at the customer application level, and needs to implement the PositionProvider interface from the MapsIndoors SDK. The MapsIndoors SDK can then utilize the positioning results yielded from the given Position Provider, by setting the Position Provider with `MapControl.setPositionProvider(PositionProvider)`.
+The Position Provider implementation exists at the customer application level, and needs to use the `PositionProvider` interface from the MapsIndoors SDK. The MapsIndoors SDK can then use the positioning results given by the Position Provider when setting the Position Provider with `MapControl.setPositionProvider(PositionProvider)`.
 
 ### Floor Mapping
 
