@@ -434,7 +434,7 @@ public class CiscoDNAPositionProvider implements PositionProvider {
 </mi-tab-panel>
 </mi-tabs>
 
-Now we need to start up our PositionProvider to get positioning onto our map. This we will do through our PositionProviderService. We start with creating a method to setup the CiscoDNA positionProvider from the PositionProviderService.
+Now we need to start up our `PositionProvider` to get positioning onto our map. This we will do through our `PositionProviderService`. We start by creating a method to setup the Cisco DNA `positionProvider` from the `PositionProviderService`.
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
