@@ -13,7 +13,7 @@ The Position Provider implementation exists at the customer application level, a
 
 ### Implementing Google Fused Location Provider API
 
-This Guide requires you to already have an activity that shows a MapsIndoors Map and to have the google play services location library dependency added to your project.
+This Guide requires you to already have an activity that shows a MapsIndoors Map and to have the Google Play Services Location library dependency added to your project.
 
 ```java
 dependencies {
