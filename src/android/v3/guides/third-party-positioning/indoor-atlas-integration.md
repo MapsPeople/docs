@@ -348,7 +348,7 @@ public class IndoorAtlasPositionProvider implements PositionProvider {
 </mi-tab-panel>
 </mi-tabs>
 
-Create the locationListener referenced in the `startPositioning` and `stopPositioning`:
+Create the `locationListener` referenced in the `startPositioning` and `stopPositioning`:
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
