@@ -251,7 +251,7 @@ public class IndoorAtlasPositionProvider implements PositionProvider {
 </mi-tab-panel>
 </mi-tabs>
 
-Create the IAOrientationListener we register in the init method and a positionUpdate method.
+Create the `IAOrientationListener` we register in the `init` method and a `positionUpdate` method.
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
