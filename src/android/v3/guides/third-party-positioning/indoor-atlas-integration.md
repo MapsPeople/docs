@@ -7,19 +7,23 @@ eleventyNavigation:
   order: 220
 ---
 
-For Indoor Atlas positioning you will need to create a positioning implementation to have the positions received from Indoor Atlas communicate with the MapsIndoors SDK.
+To get started with Indoor Atlas positioning, you need to create a positioning implementation which enables communicating the positions received from Indoor Atlas with the MapsIndoors SDK.
 
-The Position Provider implementation exists at the customer application level, and needs to implement the PositionProvider interface from the MapsIndoors SDK. The MapsIndoors SDK can then utilize the positioning results yielded from the given Position Provider, by setting the Position Provider with `MapControl.setPositionProvider(PositionProvider)`.
+The Position Provider implementation exists at the customer application level, and needs to use the `PositionProvider` interface from the MapsIndoors SDK. The MapsIndoors SDK can then use the positioning results given by the given Position Provider, by setting the Position Provider with `MapControl.setPositionProvider(PositionProvider)`.
 
 ### Floor Mapping
 
-The Position Provider should align with the MapsIndoors Floor index convention (floors are indexed as 0, 10, 20, 30, etc. corresponding to ground floor, 1st floor, 2nd floor, 3rd floor, etc., where negative floors indices are allowed, as e.g. -10). It is therefore up to the position provider class to convert any given Floor indexing from the positioning source to that of MapsIndoors.
+The Position Provider should align with the MapsIndoors Floor index convention (floors are indexed as e.g 0, 10, 20, 30 corresponding to ground floor, 1st floor, 2nd floor, 3rd floor, with negative floors indices allowed as well to indicate Floors below ground, e.g. -10). It is therefore up to the Position Provider class to convert any given Floor indexing from the positioning source to that of MapsIndoors.
+
+For a typical Position Provider, the mapping from the positioning's index needs to be mapped to the MapsIndoors Floor format. This is possible through the CMS or creating your own int:int mapping.
 
 ### Implementing Indoor Atlas
 
-This Guide requires you to already have an activity that shows a MapsIndoors Map and a Indoor Atlas beacon network for positioning. We use Indoor Atlas v3 for this guide. Here is how to set it up in your project: [Indoor Atlas setup](https://indooratlas.freshdesk.com/support/solutions/articles/36000050564-setup-positioning-sdk-with-android)
+This Guide requires you to already have an activity that shows a MapsIndoors Map as well as a Indoor Atlas beacon network for positioning. We use Indoor Atlas v3 for this guide. Here is how to set it up in your project: [Indoor Atlas setup](https://indooratlas.freshdesk.com/support/solutions/articles/36000050564-setup-positioning-sdk-with-android)
 
-We start by implementing a Positioning Provider service. This service is so that in the future you can have mulitple positioning solutions running in the same application and have the code stored in one location. For now just create a simple class with a constructor that receives an activity and a MapControl object.
+We start by implementing a Positioning Provider service. This service is needed so you can have multiple positioning providers running in the same application, and have the code stored in one location.
+
+To begin, create a simple class with a constructor that receives an `Activity` and a `MapControl` object.
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
@@ -41,7 +45,7 @@ public class PositionProviderService {
 </mi-tab-panel>
 </mi-tabs>
 
-Now we will start implementing the Indoor Atlas position provider. Create a class called IndoorAtlasPositionProvider that implements the PositionProvider interface from the MapsIndoorsSDK, also create a constructor that takes a context as parameter.
+Now we will start implementing the Indoor Atlas position provider. Create a class called `IndoorAtlasPositionProvider` that implements the `PositionProvider` interface from the MapsIndoors SDK, also create a constructor that takes a `Context` as parameter.
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
@@ -471,7 +475,7 @@ public class PositionProviderService implements PositionProvider {
 </mi-tab-panel>
 </mi-tabs>
 
-All that is left to do now is to start this up after initializing our mapControl.
+Lastly, we need to start this up after initializing our `MapControl`.
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>

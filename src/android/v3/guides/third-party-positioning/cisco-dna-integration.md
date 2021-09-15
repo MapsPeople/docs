@@ -15,7 +15,7 @@ The Position Provider implementation exists at the customer application level, a
 
 The Position Provider should align with the MapsIndoors Floor index convention (floors are indexed as e.g 0, 10, 20, 30 corresponding to ground floor, 1st floor, 2nd floor, 3rd floor, with negative floors indices allowed as well to indicate Floors below ground, e.g. -10). It is therefore up to the Position Provider class to convert any given Floor indexing from the positioning source to that of MapsIndoors.
 
-For a typical Position Provider, the mapping from the positioning's index needs to be mapped to the MapsIndoors Floor format. 
+For a typical Position Provider, the mapping from the positioning's index needs to be mapped to the MapsIndoors Floor format.
 
 The MapsIndoors backend is closely integrated with the CiscoDNA platform, so the MapsIndoors backend handles the floor mapping conversion for that integration. From an application perspective no Floor mapping implementation is required when integrating CiscoDNA positioning through the MapsIndoors platform.
 
@@ -23,9 +23,9 @@ The MapsIndoors backend is closely integrated with the CiscoDNA platform, so the
 
 This Guide requires you to already have an activity that shows a MapsIndoors Map as well as a Cisco DNA network with positioning active.
 
-We start by implementing a Positioning Provider service. This service is needed so you can have multiple positioning providers running in the same application, and have the code stored in one location. 
+We start by implementing a Positioning Provider service. This service is needed so you can have multiple positioning providers running in the same application, and have the code stored in one location.
 
-To begin, create a class with a constructor that receives an activity and a `MapControl` object.
+To begin, create a class with a constructor that receives an `Activity` and a `MapControl` object.
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
@@ -47,7 +47,7 @@ public class PositionProviderService {
 </mi-tab-panel>
 </mi-tabs>
 
-Now we will start implementing the CiscoDNA position provider. Create a class called `CiscoDNAPositionProvider` that implements the `PositionProvider` interface from the MapsIndoors SDK. Then create a constructor that takes a context, as well as a String named `tenantId`.
+Now we will start implementing the CiscoDNA position provider. Create a class called `CiscoDNAPositionProvider` that implements the `PositionProvider` interface from the MapsIndoors SDK. Then create a constructor that takes a `Context`, as well as a String named `tenantId`.
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>

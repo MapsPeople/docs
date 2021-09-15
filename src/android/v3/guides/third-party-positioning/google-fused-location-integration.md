@@ -7,9 +7,9 @@ eleventyNavigation:
   order: 230
 ---
 
-For Google Fused Location Provider, you need to create a positioning implementation which enables communicating the positions received from the API with the MapsIndoors SDK.
+To get started with Google Fused Location Provider, you need to create a positioning implementation which enables communicating the positions received from the API with the MapsIndoors SDK.
 
-The Position Provider implementation exists at the customer application level, and needs to implement the PositionProvider interface from the MapsIndoors SDK. The MapsIndoors SDK can then utilize the positioning results yielded from the given Position Provider, by setting the Position Provider with MapControl.setPositionProvider(PositionProvider).
+The Position Provider implementation exists at the customer application level, and needs to use the `PositionProvider` interface from the MapsIndoors SDK. The MapsIndoors SDK can then use the positioning results given by the given Position Provider, by setting the Position Provider with `MapControl.setPositionProvider(PositionProvider)`.
 
 ### Implementing Google Fused Location Provider API
 
@@ -21,7 +21,9 @@ dependencies {
 }
 ```
 
-We start by implementing a Positioning Provider service. This service is so that in the future you can have mulitple positioning solutions running in the same application and have the code stored in one location. For now just create a simple class with a constructor that receives an activity and a MapControl object.
+We start by implementing a Positioning Provider service. This service is needed so you can have mulitple positioning providers running in the same application, and have the code stored in one location.
+
+To begin, create a class with a constructor that receives an `Activity` and a `MapControl` object.
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
@@ -43,7 +45,7 @@ public class PositionProviderService {
 </mi-tab-panel>
 </mi-tabs>
 
-Now we will start implementing the Fused Location position provider. Create a class called GPSPositionProvider that implements the PositionProvider interface from the MapsIndoorsSDK, also create a constructor that takes a context as parameter.
+Now we will start implementing the Fused Location position provider. Create a class called `GPSPositionProvider` that implements the `PositionProvider` interface from the MapsIndoors SDK, and create a constructor that takes a `Context` as parameter.
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
@@ -395,7 +397,7 @@ void onGooglePositioningPermissionsGiven() {
 </mi-tab-panel>
 </mi-tabs>
 
-All that is left to do now is to start this up after initializing our mapControl.
+Lastly, we need to start this up after initializing our `MapControl`.
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
