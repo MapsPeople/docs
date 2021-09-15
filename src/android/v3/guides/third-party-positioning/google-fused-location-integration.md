@@ -223,7 +223,7 @@ public class GPSPositionProvider implements PositionProvider {
 </mi-tab-panel>
 </mi-tabs>
 
-Implement the locationCallBack to the provider to receive and handle the location updates.
+Implement the `locationCallBack` to the provider to receive and handle the location updates.
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
