@@ -7,7 +7,7 @@ eleventyNavigation:
   order: 230
 ---
 
-For Google Fused Location Provider you will need to create a positioning implementation to have the positions received from the API communicate with the MapsIndoors SDK.
+For Google Fused Location Provider, you need to create a positioning implementation which enables communicating the positions received from the API with the MapsIndoors SDK.
 
 The Position Provider implementation exists at the customer application level, and needs to implement the PositionProvider interface from the MapsIndoors SDK. The MapsIndoors SDK can then utilize the positioning results yielded from the given Position Provider, by setting the Position Provider with MapControl.setPositionProvider(PositionProvider).
 
