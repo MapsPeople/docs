@@ -277,7 +277,7 @@ String tenantId = (String) ciscoDnaConfig.get("ciscoDnaSpaceTenantId");
 </mi-tab-panel>
 </mi-tabs>
 
-If all of the three above mentioned strings can be acquired, you can ask our endpoint for a CiscoDNA Device ID string. A device ID is only available if there has been a recorded positioning for the device, in the past 24 hours. We will implement this as a new method into our CiscoDNAPositionProvider.
+If all of the three above mentioned strings can be acquired, you can ask our endpoint for a CiscoDNA Device ID string. A device ID is only available if there has been a recorded positioning for the device, in the past 24 hours. We will implement this as a new method into our `CiscoDNAPositionProvider`.
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
