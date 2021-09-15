@@ -181,7 +181,11 @@ public class CiscoDNAPositionProvider implements PositionProvider {
 </mi-tab-panel>
 </mi-tabs>
 
-The CiscoDNA positioning requires three parameters, the device’s IPv4 address (LAN) and the external IP address of the network in question (WAN), as well as the Tenant ID.
+The CiscoDNA positioning requires three parameters:
+
+1. The device’s IPv4 address (LAN)
+2. The external IP address of the network in question (WAN)
+3. The Tenant ID
 
 Start by creating a method to retrieve the LAN address:
 
