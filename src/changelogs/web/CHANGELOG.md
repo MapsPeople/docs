@@ -9,6 +9,17 @@ eleventyNavigation:
 
 Changelog for MapsIndoors SDK for JavaScript. This document structure is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and the project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [4.14.0] - 2021-09-13
+
+### Changed
+
+- Updated the JSDOC template used for the reference guide.
+
+### Added
+
+- The `LocationsService` now supports filtering by `Location` type. (`mapsindoors.services.LocationsService.getLocations({types: ['Staris']})`).
+- `synchronizeContent()` has been added to MapsIndoors as a static member. It will synchronize the MapsIndoors data from the backend to the client when called.
+
 ## [4.13.0] - 2021-08-17
 
 ### Added
