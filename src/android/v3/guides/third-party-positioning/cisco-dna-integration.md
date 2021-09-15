@@ -15,7 +15,9 @@ The Position Provider implementation exists at the customer application level, a
 
 The Position Provider should align with the MapsIndoors Floor index convention (floors are indexed as e.g 0, 10, 20, 30 corresponding to ground floor, 1st floor, 2nd floor, 3rd floor, with negative floors indices allowed as well to indicate Floors below ground, e.g. -10). It is therefore up to the Position Provider class to convert any given Floor indexing from the positioning source to that of MapsIndoors.
 
-For a typical Position Provider this mapping from whatever indexing is derived from the positioning, needs to be mapped to the MapsIndoors Floor format. However, as the MapsIndoors backend is closely integrated with the CiscoDNA platform, the MapsIndoors backend handles this floor mapping conversion. From an application perspective no Floor mapping implementation is required when integrating CiscoDNA positioning through the MapsIndoors platform.
+For a typical Position Provider, the mapping from the positioning's index needs to be mapped to the MapsIndoors Floor format. 
+
+The MapsIndoors backend is closely integrated with the CiscoDNA platform, so the MapsIndoors backend handles the floor mapping conversion for that integration. From an application perspective no Floor mapping implementation is required when integrating CiscoDNA positioning through the MapsIndoors platform.
 
 ### Implementing Cisco DNA
 
