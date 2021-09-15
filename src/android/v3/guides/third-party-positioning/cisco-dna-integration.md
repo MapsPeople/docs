@@ -358,7 +358,7 @@ public class CiscoDNAPositionProvider implements PositionProvider {
 </mi-tab-panel>
 </mi-tabs>
 
-To handle the subscription we have just created we need to create some callbacks in the constructor of the PositionProvider to handle the position results and lifecycle of the subscription:
+To handle the subscription we just created, we need to create some callbacks in the constructor of the `PositionProvider` to handle the position results and lifecycle of the subscription:
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
