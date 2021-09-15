@@ -63,7 +63,7 @@ public class GPSPositionProvider implements PositionProvider {
 </mi-tab-panel>
 </mi-tabs>
 
-We will start by implementing logic to each of the implemented methods from the PositionProvider interface.
+We will start by implementing logic to each of the implemented methods from the `PositionProvider` interface.
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
