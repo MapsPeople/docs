@@ -189,7 +189,7 @@ We will then start implementing the code to get Indoor Atlas positioning up and 
 
 For Indoor Atlas to work you will need to supply Indoor Atlas with a API key and a secret key. This can be handled in two ways, if the Indoor Atlas account is setup through MapsPeople CMS on the Position Provider tab, we will have the data for this stored on the MapsIndoors SDK. If not you will have to handle the two keys yourself, this can be done through String resources as an example.
 
-We start by creating a method to initiate the Indoor Atlas client. Here the method is called initClient.
+We start by creating a method to initiate the Indoor Atlas client. Here the method is called `initClient`.
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
