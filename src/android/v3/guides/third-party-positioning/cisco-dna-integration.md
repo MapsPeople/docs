@@ -21,7 +21,7 @@ The MapsIndoors backend is closely integrated with the CiscoDNA platform, so the
 
 ### Implementing Cisco DNA
 
-This Guide requires you to already have an activity that shows a MapsIndoors Map and a Cisco DNA network with positioning active.
+This Guide requires you to already have an activity that shows a MapsIndoors Map as well as a Cisco DNA network with positioning active.
 
 We start by implementing a Positioning Provider service. This service is so that in the future you can have mulitple positioning solutions running in the same application and have the code stored in one location. For now just create a simple class with a constructor that receives an activity and a MapControl object.
 
