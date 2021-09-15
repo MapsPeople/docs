@@ -224,7 +224,7 @@ public class CiscoDNAPositionProvider implements PositionProvider {
 </mi-tab-panel>
 </mi-tabs>
 
-Then the WAN address, as of now we suggest using a 3rd party service to acquire the WAN address:
+Then create a method to retrieve the WAN address (we recommend using a 3rd party service for this):
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
