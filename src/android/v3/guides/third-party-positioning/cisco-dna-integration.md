@@ -262,7 +262,7 @@ public class CiscoDNAPositionProvider implements PositionProvider {
 </mi-tab-panel>
 </mi-tabs>
 
-Lastly we need the Tenant ID. This is an ID you can have hardcoded inside your app or saved as a string resource otherwise you can use the PositionProviderConfig fields from MapsIndoors to get this ID like this:
+Lastly, we need the Tenant ID. This is an ID you might have hardcoded inside your app, or saved as a string resource. Otherwise you can use the `PositionProviderConfig` fields from MapsIndoors to get this ID like this:
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
