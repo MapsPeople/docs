@@ -487,7 +487,7 @@ public class PositionProviderService {
 </mi-tab-panel>
 </mi-tabs>
 
-All that is left to do now is to start this up after initializing our MapControl.
+Lastly, we need to start this up after initializing our `MapControl`.
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
