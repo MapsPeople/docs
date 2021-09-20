@@ -14,7 +14,7 @@ In MapsIndoors, we create all Rooms, Buildings, and Venues with an internal id t
 
 Previously, regardless of the type of geodata, we called it `RoomID`. This is less than optimal when a `RoomID` refers to a Building, or even a whole Venue, hence the change.
 
-## Advanced uses of ExternalID
+## Advanced Uses of ExternalID
 
 You can also use the ExternalID as an identifier for an external system of your choosing. If you have a queue monitoring system and want to display some regularly updated statuses on a piece of geodata in MapsIndoors, you can use the ExternalID as the common denominator between the systems.
 

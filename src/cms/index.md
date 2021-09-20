@@ -131,7 +131,7 @@ To get started using the IndoorView feature for your Locations, please make sure
 1. Navigate Street View and find an image and viewing angle that is suitable
 1. Click "Set image”
 
-#### MapsIndoors support matrix
+#### Mapsindoors Support Matrix
 
 | MapsIndoors | Support for IndoorView                                             | Private hosted panorama images |
 | ----------- | ------------------------------------------------------------------ | ------------------------------ |
@@ -145,7 +145,7 @@ To get started using the IndoorView feature for your Locations, please make sure
 
 IndoorView only supports **publicly** available Google Street View imagery. If you would like to know more about **privately** hosted panorama images, please see [Googles Custom Street View documentation](https://developers.google.com/maps/documentation/javascript/streetview#CustomStreetView).
 
-##### Developing your own app
+##### Developing Your Own App
 
 When developing your own app, you can still use the MapsIndoors CMS to save the Google Street View image information to a Location. When the Panorama image is set, the Location gets populated with a `streetViewConfig` property. Please see below for an example.
 
@@ -230,7 +230,7 @@ Export Map is an add-on feature that can be enabled for a Solution. Once enabled
 
 The Export Map service has a limit of 8000 x 8000 pixels. Clicking the Download icon button on the bottom right opens a new tab with the PNG.
 
-### Usage (scale)
+### Usage (Scale)
 
 Sets the scale of the export imagery.
 
@@ -257,7 +257,7 @@ _A note about Venue images:_ You can request MapsPeople to add an image of the V
 
 ## Buildings
 
-### Adding a building
+### Adding a Building
 
 * Click on the "Add building" button at the top-right of the page and a popup window should appear.
 * Type a building name, search for the building address by typing in the search field or panning the map.
@@ -265,7 +265,7 @@ _A note about Venue images:_ You can request MapsPeople to add an image of the V
 * Click "Add" and the popup window should close.
 * The building should now appear in the list.
 
-### Editing a building
+### Editing a Building
 
 * Click on the pencil icon to the left of the Building name. A new menu will appear
 * Edit Building name in the available languages
@@ -300,7 +300,7 @@ To restrict access to a path:
 
 This is a list of all the Location Types in the Solution. From this list you can edit each Location by clicking on the pencil.
 
-### Syncing Types to other Solutions
+### Syncing Types to Other Solutions
 
 If you have multiple Solutions, you can update Location Types across multiple Solutions to keep them up to date with the latest changes.
 
@@ -314,7 +314,7 @@ The *View settings* can be set for each Location Type. Use the settings to defin
 
 ![View Settings]({{ site.url }}/assets/cms/location-types/view-settings.png)
 
-#### Location Type templates
+#### Location Type Templates
 
 You can add custom data fields to Locations by adding templates to a Location Type defining the data fields. All Locations of a Type will inherit the templates defined for the Type. Add a template to a Location Type by clicking the template button to the right in the table.
 
@@ -334,7 +334,7 @@ View the tutorial video below for more information about Categories.
 
 <iframe width="480" height="300" src="https://www.youtube-nocookie.com/embed/DskwwAE4lLE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-### Syncing Categories to other Solutions
+### Syncing Categories to Other Solutions
 
 If you have multiple Solutions, you can update Categories across multiple Solutions to keep them up to date with the latest changes.
 
@@ -366,7 +366,7 @@ Previously, you could use a `SolutionID` to load your data, but this is no longe
 
 Clicking on the arrows to the left of the Category name allows you to change the order. This Category order will be reflected in the apps. You can also choose an icon to be displayed next to the category name.
 
-## Type visibility
+## Type Visibility
 
 Use these settings to control how Icons are shown on the map.
 
@@ -427,7 +427,7 @@ If you use Excel you can find a video on how to open a CSV file here: [https://w
 * **Venue**: Typically a collection of Buildings that are close geographically.
 * **Search alias**: An alternative name for a Location allowing users to search for the Location by that name.
 
-## Managing icons
+## Managing Icons
 
 Anywhere in the CMS you can change icons for one or more markers on the map, you use the Icon Manager to do so. Click the "Change"-button to invoke it.
 
@@ -447,7 +447,7 @@ SVG is a vector file format, which lets MapsIndoors convert your icon in a range
 
 SVGs should be uploaded with a `width` and `height` that you want the SVG to be displayed on the map in. Make sure you define it in `px`, not `cm` or `%`. E.g., if you want to display a 32x24px icon on the map, upload an SVG with the attributes `width='32px'` and `height='24px'`. For consistency, it's good form to make the `viewport` the same size as the `width` and `height`.
 
-### Supported SVG elements
+### Supported SVG Elements
 
 We only accept SVGs that conform to a very strict ruleset. If an uploaded SVG contains anything other than the elements and attributes listed below, it will be rejected. All child elements can be nested as supported by the SVG format.
 
@@ -477,13 +477,13 @@ When you try to upload an SVG containing one or more of these elements and/or at
 
 If your SVGs contain unsupported elements, you must remove them before they can be uploaded. One typical issue is embedded `base64` data in the SVG, which usually indicates the SVG will display raster image data (PNGs and the like) somewhere in it. That can lead to unintended consequences on the map.
 
-### SVG help
+### SVG Help
 
 Michelle Barker has written [a terrific guide to optimizing SVGs for the web](https://css-irl.info/optimising-svgs-for-the-web/) on her site.
 
 A great tool to strip unnecesary elements from your SVG-file is [SVGOMG by Jake Archibald](https://jakearchibald.github.io/svgomg/).
 
-### Syncing Icons to other Solutions
+### Syncing Icons to Other Solutions
 
 If you have multiple Solutions, you can sync Icons across multiple Solutions to make sure you can use the same Icons in all of your Solutions.
 
@@ -491,7 +491,7 @@ Open the Icon Manager (you can find it on a Location Detail screen when you set 
 
 When you sync an Icon, if the Icon exists in the target Solution (i.e. an Icon with the exact same filename), you override the Icon in the target Solution. If the Icon does not exist in the target Solution, it is added.
 
-### PNG image file support
+### PNG Image File Support
 
 We highly recommend using SVGs for icons across MapsIndoors, but support PNG files as well.
 

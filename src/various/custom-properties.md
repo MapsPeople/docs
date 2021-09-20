@@ -17,6 +17,6 @@ In general, your Custom Properties can contain any combination of letters, numbe
 
 You can also add Custom Properties through the Integration API with the exact same requirements and options as when adding them via the MapsIndoors CMS.
 
-## Known limitations
+## Known Limitations
 
 Your Custom Properties can not contain special characters (underscores, hyphens, dots etc.) for technical reasons.

@@ -1,5 +1,5 @@
 ---
-title: Getting directions
+title: Getting Directions
 toc: true
 eleventyNavigation:
   title: Directions

@@ -50,7 +50,7 @@ A live update is the model for a message carrying one piece of Live Data, for ex
 
 ## Enable Live Data in Your App with the LiveDataManager
 
-### With the `enableLiveData()` and `disableLiveData()` methods
+### With the `enableLiveData()` and `disableLiveData()` Methods
 
 Enabling Live Data through the `LiveDataManager` is an easy way to get Live Data running in your web app.
 
@@ -73,7 +73,7 @@ Note that using the `enableLiveData` method has some limitations, and is thereby
 - Since the LiveDataManager will try to determine the Live Data subscriptions based on where the map is currently situated, it might not detect Live Data updates of the "Position" Domain representing moving objects entering the visible region of the map.
 - Since the LiveDataManager does not know which Live Updates are relevant to show, it will need to subscribe to all Live Data in the visible region, which, depending on your amount of Live Data, may or may not lead to performance implications.
 
-### With the `subscribe()` and `unsubscribe()` methods
+### With the `subscribe()` and `unsubscribe()` Methods
 
 To enable Live Data in an web application, a subscription to one or more Topics is needed. Once subscribed, the web application can be notified about changes and decide what to do. The web application is in control of what should happen upon receiving live data updates, and the MapsIndoors SDKs provide mechanisms to efficiently make updates to the map representation of Locations. The central class to carry out these tasks is the `LiveDataManager`.
 

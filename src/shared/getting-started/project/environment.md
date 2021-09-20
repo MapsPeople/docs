@@ -1,1 +1,1 @@
-## Set up your environment
+## Set Up Your Environment

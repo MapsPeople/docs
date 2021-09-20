@@ -1,5 +1,5 @@
 ---
-title: WCAG compliance
+title: WCAG Compliance
 eleventyNavigation:
   key: WCAG Compliance
   parent: various

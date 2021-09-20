@@ -1,7 +1,7 @@
 ---
-title: Creating your own Location Sources
+title: Creating Your own Location Sources
 eleventyNavigation:
-  key: Creating your own Location Sources
+  key: Creating Your own Location Sources
   parent: ios-v3-guides-locations
   order: 330
 ---
@@ -165,7 +165,7 @@ func sourceId() -> Int32 {
 
 [See the sample in PeopleLocationSource.swift](https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Location%20Sources/PeopleLocationSource.swift)
 
-## Create another location source that mocks the availability of meeting rooms or work desks
+## Create Another Location Source That Mocks the Availability of Meeting Rooms or Work Desks
 
 This location source rely on MapsIndoors data, so we will consume the locations of `MPMapsIndoorsLocationSource` and relay them as this source's own locations. Thus we need to observe the `MPMapsIndoorsLocationSource` and act as a LocationSource at the same time.
 
@@ -304,7 +304,7 @@ func onStatusChange(_ status: MPLocationSourceStatus, source: MPLocationSource) 
 
 [See the sample in RoomAvailabilitySource.swift](https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Location%20Sources/RoomAvailabilitySource.swift)
 
-## Create a view controller displaying a map that shows the mocked people locations and the mocked room availability on top of a MapsIndoors map
+## Create a View Controller Displaying a Map That Shows the Mocked People Locations and the Mocked Room Availability on top of a MapsIndoors Map
 
 Create a class `LocationSourcesController` that inherits from `UIViewController`.
 

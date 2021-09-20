@@ -1,8 +1,8 @@
 ---
-title: Working with Live Updates / Real Time Data in MapsIndoors for android
+title: Working with Live Updates / Real Time Data in MapsIndoors for Android
 eleventyNavigation:
   parent: android-v3-guides-live-data
-  key: Working with Live Updates / Real Time Data in MapsIndoors for android
+  key: Working with Live Updates / Real Time Data in MapsIndoors for Android
   order: 340
 ---
 
@@ -139,7 +139,7 @@ mMapControl.init { error ->
 
 And that's it! You now have Live Data running on your app. If you need to show Live Data in another way, you can add handlers for it. Read more about this in [Rendering Live Data Locations](/android/v3/live-data/).
 
-## Using Live Data without the "convenience interface"
+## Using Live Data Without the "Convenience Interface"
 
 If you need a different way of handling Live Data subscriptions completely, because of the limitations of the "convenience interface", it is also possible to implement your own way of setting up subscriptions and dealing with the responses.
 

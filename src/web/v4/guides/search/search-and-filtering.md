@@ -1,7 +1,7 @@
 ---
-title: Search and filtering
+title: Search and Filtering
 eleventyNavigation:
-  title: Search and filtering
+  title: Search and Filtering
   parent: web-v4-guides-search
   key: web-v4-guides-filtering
   order: 10
@@ -48,7 +48,7 @@ In this case, the constant `value` is passed to the `q` property and the `includ
 
 If the input is empty, we clear the result list and reset the map filter by calling the helper functions `clearResults` and `clearFilter`.
 
-### Checking for results
+### Checking for Results
 
 We need to clear the previous results, and check if any Locations were returned. If so, we loop through them and add them to the result list.
 

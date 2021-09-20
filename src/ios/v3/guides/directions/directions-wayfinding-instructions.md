@@ -59,7 +59,7 @@ func renderRouteInstructions(_ route:MPRoute, for segment:MPRouteSegmentPath) {
 }
 ```
 
-## Helper methods
+## Helper Methods
 
 We will need some helper methods. First create a method that can get us the previous step for later comparison.
 
@@ -142,7 +142,7 @@ fileprivate func getDistanceInstructions(_ distance:NSNumber?) -> String {
 }
 ```
 
-## Suggested logic for generating meaningful instructions
+## Suggested Logic for Generating Meaningful Instructions
 
 Obviously it is up to your application to present some instructions to the end user, but here a suggestion. Add a method called `updateViews` that will fire whenever our models change.
 
@@ -205,7 +205,7 @@ extension String {
 
 [See the sample in RouteSegmentView.swift](https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Advanced%20Directions/RouteSegmentView.swift)
 
-## Create the controller that displays generated textual instructions segment by segment
+## Create the Controller That Displays Generated Textual Instructions Segment by Segment
 
 We use a collection view to do this but you can of course use whatever view that fits your use case best.
 
@@ -344,7 +344,7 @@ extension RouteSegmentsController : UITableViewDelegate {
 
 [See the sample in RouteSegmentsController.swift](https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Advanced%20Directions/RouteSegmentsController.swift)
 
-## Create a controller that renders a map and utilizes interaction between a route rendered on the map and the selected instructions
+## Create a Controller That Renders a Map and Utilizes Interaction Between a Route Rendered on the Map and the Selected Instructions
 
 Start by creating a controller class `AdvancedDirectionsController` that inherits from `UIViewController`
 
@@ -530,7 +530,7 @@ fileprivate func updateDirections() {
 }
 ```
 
-## Map interactions
+## Map Interactions
 
 Let's do a couple of extensions for the map interactions. First implement the `RouteSegmentsControllerDelegate` through an extension. In `didSelectRouteSegment` update the leg index for the directions renderer.
 

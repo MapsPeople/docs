@@ -1,7 +1,7 @@
 ---
-title: Getting a polygon from a location
+title: Getting a Polygon from a Location
 eleventyNavigation:
-  key: Getting a polygon from a location
+  key: Getting a Polygon from a Location
   parent: ios-v3-guides-map-control
   order: 230
 ---

@@ -1,5 +1,5 @@
 ---
-title: Create a search experience
+title: Create a Search Experience
 toc: true
 eleventyNavigation:
   title: Search
