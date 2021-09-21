@@ -22,8 +22,8 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 
 ## Fixed
 
-- Crash on file reads with external Library.
-- Fixed bug with areas sometimes not being rendered correctly.
+- Crash on file reads with external library.
+- Fixed bug with Areas sometimes not being rendered correctly.
 
 ## [3.10.2] 2021-09-13
 
