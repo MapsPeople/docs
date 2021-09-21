@@ -14,6 +14,9 @@ eleventyNavigation:
 <!-- Environment -->
 {% include "src/shared/getting-started/project/environment.md" %}
 
+<!-- Known Issues -->
+{% include "src/ios/v3/known_issues.md" %}
+
 ### Create Xcode project
 
 If you don't have an Xcode project yet, create one now and save it to your local machine.
