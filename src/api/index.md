@@ -666,7 +666,7 @@ A list of 4 geodata objects: a Venue, a Building, a Floor and a Room:
 
 ## Route Access
 
-### Route elements
+### Route Elements
 
 A number of things can affect which routes the end users are given. Doors can be locked or there can we wait times along the way. This meta-data is contained in "route elements". A route element often represents a physical element in the real world that affects the routes such as doors and stairs.
 

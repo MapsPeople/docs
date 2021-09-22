@@ -2,7 +2,7 @@
 title: Android SDK v3 Changelog
 permalink: /changelogs/android/v3/
 eleventyNavigation:
-  key: Android SDK v3 Changlog
+  key: Android SDK v3 Changelog
   parent: changelogs
   order: 1
 ---

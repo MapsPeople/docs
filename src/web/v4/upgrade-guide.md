@@ -89,7 +89,7 @@ mapsIndoors.addListener('event_name', function() {...});
 The following events can be set up for subscription:
 See [MapsIndoors#events](https://app.mapsindoors.com/mapsindoors/js/sdk/4.0.0/docs/mapsindoors.MapsIndoors.html#event:building_changed)
 
-## Zoom levels
+## Zoom Levels
 
 In v4 of the SDK, we have introduced a MapsIndoors zoom level. The reason for this is Mapbox uses 512x512 as the base tile size, where Google Maps uses 256x256. Because of this difference, a Mapbox at zoom level 1 displays the same geographical areas as a Google Map at zoom level 2.
 

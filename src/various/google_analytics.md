@@ -16,7 +16,7 @@ The following diagram represents the flow of information from MapsIndoors to Goo
 
 ![Google Analytics Flow]({{ site.url }}/assets/various/Google_Analytics_Flow.png)
 
-### Get started
+### Get Started
 
 To start seeing stats for your [standard web app](https://clients.mapsindoors.com/):
 
@@ -32,7 +32,7 @@ To start seeing stats for your [standard web app](https://clients.mapsindoors.co
 
 After doing this, within 24 hours you will start receiving stats and events in your Google Analytics Dashboard.
 
-### Events overview
+### Events Overview
 
 When a `Property ID` is added to your MapsIndoors Solution you will see the following events in Google Analytics.
 

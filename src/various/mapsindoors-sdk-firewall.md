@@ -1,7 +1,7 @@
 ---
-title: Work with MapsIndoors SDK behind a firewall
+title: Work with MapsIndoors SDK Behind a Firewall
 eleventyNavigation:
-  key: Work with MapsIndoors SDK behind a firewall
+  key: Work with MapsIndoors SDK Behind a Firewall
   parent: various
   order: 8
 ---

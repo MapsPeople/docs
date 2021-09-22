@@ -1,8 +1,8 @@
 ---
-title: Show a map
+title: Show a Map
 toc: true
 eleventyNavigation:
-  title: Show a map
+  title: Show a Map
   key: web-v4-getting-started-map
   parent: web-v4-getting-started
   order: 130

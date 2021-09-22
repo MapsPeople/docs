@@ -1,5 +1,5 @@
 ---
-title: Create a new project
+title: Create a New Project
 toc: true
 eleventyNavigation:
   title: Create a project
@@ -17,7 +17,7 @@ eleventyNavigation:
 <!-- Known Issues -->
 {% include "src/ios/v3/known_issues.md" %}
 
-### Create Xcode project
+### Create Xcode Project
 
 If you don't have an Xcode project yet, create one now and save it to your local machine.
 
@@ -27,7 +27,7 @@ This guide uses Swift as the programming language and Storyboards for creating u
 
 MapsIndoors can either be installed using CocoaPods or manually.
 
-### Install MapsIndoors using CocoaPods
+### Install MapsIndoors Using CocoaPods
 
 From MapsIndors SDK version 3.32.0 it is necessary to install `git-lfs` as [described here](https://git-lfs.github.com/) so CocoaPods can fetch the SDK properly.
 
@@ -70,7 +70,7 @@ When the Google Maps installation is completed, go through these steps to instal
 * From XCode, right click the imported framework and click "Show in Finder".
 * In Finder, Locate ios-arm64 > MapsIndoors.framework > Resources > MapsIndoors.bundle, and drag the bundle into your XCode project as well. This time, make sure to uncheck “Copy items if needed”.
 
-## Add your API Credentials
+## Add Your API Credentials
 
 Add your credentials to your `AppDelegate.swift`
 

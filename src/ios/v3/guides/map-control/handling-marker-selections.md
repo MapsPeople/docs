@@ -1,7 +1,7 @@
 ---
-title: Handling marker selections and other user events
+title: Handling Marker Selections and Other User Events
 eleventyNavigation:
-  key: Handling marker selections and other user events
+  key: Handling Marker Selections and Other User Events
   parent: ios-v3-guides-map-control
   order: 210
 ---

@@ -1,9 +1,9 @@
 ---
-title: Create a simple map with MapsIndoors
+title: Create a Simple Map with MapsIndoors
 eleventyNavigation:
-  title: Simple map
+  title: Simple Map
   parent: web-v4-guides
-  key: Create a simple map with MapsIndoors
+  key: Create a Simple Map with MapsIndoors
   order: 200
 ---
 
@@ -37,7 +37,7 @@ The `libraries` parameter is for loading additional libraries for the Google Map
 
 The `key` parameter contains your Google Maps API key. Look [here](https://developers-dot-devsite-v2-prod.appspot.com/maps/documentation/javascript/get-api-key) For more information about how to obtain a key.
 
-### Setting up the MapView
+### Setting Up the MapView
 
 ```javascript
 const mapView = new mapsindoors.mapView.GoogleMapsView({

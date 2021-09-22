@@ -1,5 +1,5 @@
 ---
-title: Show a map
+title: Show a Map
 toc: true
 eleventyNavigation:
   title: Show a map

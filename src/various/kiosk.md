@@ -42,7 +42,7 @@ The URL parameters are saved in the browser's *local storage* to persist across 
 
 When testing the Kiosk, it is highly recommended to use Chrome's "Incognito" or Safari's "Private Browsing" feature to ensure the local storage is empty.
 
-## Legend fields
+## Legend Fields
 
 To update and present custom fields in the Legend, add *Custom Properties* to the Location set as `originLocation`.
 
@@ -95,7 +95,7 @@ The following events is sent from the kiosk when triggered:
 | Details        | Send SMS                 | SMS successfully sent                                    | False    | When a SMS is successfully sent                                       |
 | Details        | Send SMS                 | SMS failed to send                                       | False    | When a SMS is unsuccessfully sent                                     |
 
-## Configuring Chrome to run in Kiosk Mode
+## Configuring Chrome to Run in Kiosk Mode
 
 Starting Chrome in "kiosk mode" enforces fullscreen mode, removes the address bar, the close and minimise buttons as well as bookmarks. Starting the browser in "kiosk mode" requires the `--kiosk` parameter along with a target URL.
 
@@ -117,7 +117,7 @@ Here's how you would do it on a computer running Windows:
 
 Now close all instances of Chrome, and start Chrome in kiosk mode using the shortcut.
 
-## Send SMS with link to route
+## Send SMS with Link to Route
 
 For the SMS feature to work, MapsPeople needs to activate it.
 
@@ -215,7 +215,7 @@ The `pitch` URL parameter is saved in the browser's local storage as  `MIKIOSK:{
 http://kiosk.mapsindoors.com/demo?pitch=60
 ```
 
-## Live Data badges
+## Live Data Badges
 
 When subscribing to Live Data (see *URL parameters*), badges will be applied to the icons for Locations that have Live Data.
 

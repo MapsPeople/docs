@@ -13,7 +13,7 @@ See the full list of parameters:
 
 {% include "src/android/v3/guides/search/extras/android-filter-content.md" %}
 
-## Example of creating a Search Query
+## Example of Creating a Search Query
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
@@ -36,7 +36,7 @@ See the full list of parameters:
 
 {% include "src/shared/guides/search/displaying-search-results.md" %}
 
-## Example of filtering the map to display searched Locations on the map
+## Example of Filtering the Map to Display Searched Locations on the Map
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="androidJava"></mi-tab>
@@ -53,11 +53,11 @@ See the full list of parameters:
 </mi-tab-panel>
 </mi-tabs>
 
-## Clearing the map of your filter
+## Clearing the Map of Your Filter
 
 {% include "src/shared/guides/search/clear-search-filter-on-map.md" %}
 
-## Example of clearing your map filter to show all Locations again
+## Example of Clearing Your Map Filter to Show All Locations Again
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="androidJava"></mi-tab>
