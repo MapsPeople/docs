@@ -62,7 +62,7 @@ override func viewDidAppear(_ animated: Bool) {
     let renderer = MPDirectionsRenderer.init()
     renderer.delegate = self
     renderer.map = self.map
-    
+
     renderer.nextRouteLegButton?.addTarget(self, action: #selector(nextLeg), for: .touchUpInside)
     renderer.previousRouteLegButton?.addTarget(self, action: #selector(previousLeg), for: .touchUpInside)
 }
