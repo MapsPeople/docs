@@ -14,6 +14,7 @@ This example shows how to setup a query for a route and display the result on a 
 ```swift
 let directions = MPDirectionsService.init()
 let renderer = MPDirectionsRenderer.init()
+renderer.fitBounds = true
 renderer.delegate = self
 
 let origin = MPPoint.init(lat: 57.057917, lon: 9.950361, zValue:0)
@@ -29,7 +30,9 @@ directions.routing(with: directionsQuery) { (route, error) in
 }
 ```
 
-As previously mentioned, the route object is seperated into objects of `MPRouteLeg` and these legs are again seperated indo objects of `MPRouteStep`. Unless the Route only contains one Leg, the Directions Renderer does not allow the full Route to be rendered all at once. A specific part of the route can be rendered by setting the `routeLegIndex` and/or `routeStepIndex` properties on the `MPDirectionsRenderer`.
+## Controlling the Visible Segments on the Directions Renderer
+
+As previously mentioned, the route object is seperated into objects of `MPRouteLeg` and these legs are again seperated indo objects of `MPRouteStep`. Unless the Route only contains one Leg, the Directions Renderer does not allow the full Route to be rendered all at once. A specific segment of the route can be rendered by setting the `routeLegIndex` and/or `routeStepIndex` properties on the `MPDirectionsRenderer`.
 
 ```swift
 let renderer = MPDirectionsRenderer.init()
@@ -39,10 +42,39 @@ renderer.routeStepIndex = 1
 
 The length of the `legs` and `steps` arrays determines the possible values of `routeLegIndex` and `routeStepIndex` (`0 ..< length`).
 
-Assigning a `MPDirectionsRenderer` delegate will make it possible to know which floor the currently rendered part of the route belongs to:
+## Reacting to Directions Renderer Events
+
+Assigning a `MPDirectionsRenderer` delegate will make it possible to know which floor the currently rendered part of the route belongs to. As such, you may want to change the currently visible floor on `MPMapControl` like shown in the example below.
 
 ```swift
 func floorDidChange(_ floor: NSNumber!) {
     mapControl?.currentFloor = floor
 }
 ```
+
+### Reacting to Label Tapping
+
+The Directions Labels refer to labels shown at the start and/or end of the rendered route segment (leg or step) path, that may provide contextual information or show instructions for the needed user action at that point. E.g. the end label can be retrieved with `.nextRouteLegButton`. The labels are created as simple `UIButton` instances that are rendered as markers on the map. As with most buttons, it is possible to add targets to these labels, so you can react to touch events.
+
+```swift
+
+override func viewDidAppear(_ animated: Bool) {
+    let renderer = MPDirectionsRenderer.init()
+    renderer.delegate = self
+    renderer.map = self.map
+    
+    renderer.nextRouteLegButton?.addTarget(self, action: #selector(nextLeg), for: .touchUpInside)
+    renderer.previousRouteLegButton?.addTarget(self, action: #selector(previousLeg), for: .touchUpInside)
+}
+
+@objc func nextLeg() {
+    renderer.routeLegIndex += 1
+}
+
+@objc func previousLeg() {
+    renderer.routeLegIndex -= 1
+}
+
+```
+
+In the above example, a target is added to `nextRouteLegButton` and  `nextRouteLegButton` calling the method `nextLeg` and `previousLeg` respectively. These methods then changes the visible Route Leg.
