@@ -38,7 +38,7 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 ### Changed
 
 - We are now sorting search results using a more natural sorting algorithm when applicable.
-- We have changed the our internal image service so that it now primarily serves higher quality remote images and resorting to potentially lower quality cached images when offline. 
+- We have changed the our internal image service so that it now primarily serves higher quality remote images and resorting to potentially lower quality cached images when offline.
 
 ## [3.33.1] 2021-08-30
 
