@@ -95,4 +95,4 @@ In the 'onDestroyView' method, we need to free the MapsIndoors PositionProvider
 MapsIndoors.setPositionProvider(null);
 ```
 
-[See the sample in ShowUserLocationFragment.java](https://github.com/MapsIndoors/MapsIndoorsAndroid-Demo-Samples/blob/master/app/src/main/java/com/mapsindoors/showuserLocation/ShowUserLocationFragment.java)
+[See the sample in ShowUserLocationFragment.java](https://github.com/mapspeople/MapsIndoorsAndroid-Demo-Samples/blob/master/app/src/main/java/com/mapsindoors/showuserLocation/ShowUserLocationFragment.java)

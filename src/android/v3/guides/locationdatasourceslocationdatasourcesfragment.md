@@ -166,4 +166,4 @@ public void onDestroyView() {
 }
 ```
 
-[See the sample in LocationDataSourcesFragment.java](https://github.com/MapsIndoors/MapsIndoorsAndroid-Demo-Samples/blob/master/app/src/main/java/com/mapsindoors/locationdatasources/LocationDataSourcesFragment.java)
+[See the sample in LocationDataSourcesFragment.java](https://github.com/mapspeople/MapsIndoorsAndroid-Demo-Samples/blob/master/app/src/main/java/com/mapsindoors/locationdatasources/LocationDataSourcesFragment.java)
