@@ -51,7 +51,7 @@ You will receive a unique API key to use when access has been granted. If you ar
 
 ## Showcase Web App
 
-A [showcase app is available on GitHub](https://github.com/MapsIndoors/MapsIndoorsWeb), free to use and adapt to your needs.
+A [showcase app is available on GitHub](https://github.com/mapspeople/MapsIndoorsWeb), free to use and adapt to your needs.
 
 ### Try the Showcase Web App Right Away
 
