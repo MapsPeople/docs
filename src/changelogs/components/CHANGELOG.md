@@ -12,25 +12,45 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [11.3.0] - 2021-10-05
+
+### Added
+
+- **mi-dropdown**: Now has an `icon` property, which accepts an image source.
+- **mi-dropdown**: Now has an `icon-alt` property, which sets the alternative text for an image.
+
+## [11.2.0] - 2021-09-16
+
+### Added
+
+- **mi-route-instructions**: Support for three new highways that can occur in a route: `ladder`, `wheelchairramp` and `wheelcharlift`.
+- **mi-icon**: Icons for `ladder`, `wheelchair-ramp` and `wheelchair-lift`.
+
+## [11.1.0] - 2021-09-15
+
+### Changed
+
+- **mi-list-item-location** and **mi-list-item-category**: Images hosted on `image.mapsindoors.com` are now requested with query parameters for getting the image in the displayed size.
+
 ## [11.0.0] - 2021-09-08
 
 ### Added
 
-- mi-data-table: Now has a `sticky-header` property, which can be used to make the table header non-sticky.
+- **mi-data-table**: Now has a `sticky-header` property, which can be used to make the table header non-sticky.
 
 ## [10.12.0] - 2021-09-06
 
 ### Added
 
-- mi-tabs: Now has a `bordered` property, which can be set to add a border surrounding the content view.
+- **mi-tabs**: Now has a `bordered` property, which can be set to add a border surrounding the content view.
 
 ## [10.11.0] - 2021-09-01
 
 ### Added
 
-- mi-dropdown: Now displays a message when no results can be found based on the search query.
-- mi-dropdown: Now disables the filter select buttons when there's nothing to select.
-- mi-dropdown: Now performs filtering based on a fuzzy search algorithm.
+- **mi-dropdown**: Now displays a message when no results can be found based on the search query.
+- **mi-dropdown**: Now disables the filter select buttons when there's nothing to select.
+- **mi-dropdown**: Now performs filtering based on a fuzzy search algorithm.
 
 ### Fixed
 
