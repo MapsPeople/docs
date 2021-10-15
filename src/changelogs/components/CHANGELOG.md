@@ -12,6 +12,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [11.4.1] - 2021-10-14
+
+### Fixed
+
+- **mi-dropdown**: The spacing between checkbox and icon is now `12px`.
+- **mi-dropdown**: The spacing between the icon and the label is now `8px`.
+
+## [11.4.0] - 2021-10-14
+
+### Added
+
+- **mi-dropdown**: Now has support for adding icons to items. `<mi-dropdown-item value="foo"><img src="example.com/image.png />bar</mi-dropdown-item>`.
+- **mi-column**: Now has an `sort` attribute for pre-sorting the table by that column. `sort="asc|desc"`
+- **mi-column**: The `sortable` attribute can now take an optional value `"date"` to sort the specific column as dates. `sortable="date"`.
+
 ## [11.3.0] - 2021-10-05
 
 ### Added
@@ -159,7 +174,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - **mi-data-table**: Emit `clicked` event when clickin on elements within table cells.
 - **mi-column**: Make it possible to use bindings for boolean HTML attributes within table cells.
-- **mi-column**: Make it possible to style elements within table cells with [MIDT helper classes](https://github.com/mapspeople/midt) and [MapsIndoors CSS classes](https://github.com/mapspeople/css).
+- **mi-column**: Make it possible to style elements within table cells with [MIDT helper classes](https://github.com/MapsIndoors/midt) and [MapsIndoors CSS classes](https://github.com/MapsIndoors/css).
 - **mi-map-mapbox**: New attribute for setting max pitch (defaults to 60).
 
 ### Changed
@@ -250,7 +265,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - **mi-map-googlemaps**: `showRoute`, `setRoute`, `clearRoute`, `nextRouteLeg`, `previousRouteLeg`, `setRouteLegIndex`, and `getRoute` methods is deprecated in favor for new `getDirectionsRendererInstance` and `getDirectionsRendererInstance` methods.
 - **mi-map-googlemaps**: Component updated to latests SDK release (V. 4.5.0).
-- **mi-map-mapbox**: `showRoute`, `setRoute`, `clearRoute`, `nextRouteLeg`, `previousRouteLeg`, `setRouteLegIndex`, and `getRoute` methods is deprecated  in favor for new `getDirectionsRendererInstance` and `getDirectionsRendererInstance` methods.
+- **mi-map-mapbox**: `showRoute`, `setRoute`, `clearRoute`, `nextRouteLeg`, `previousRouteLeg`, `setRouteLegIndex`, and `getRoute` methods is deprecated in favor for new `getDirectionsRendererInstance` and `getDirectionsRendererInstance` methods.
 - **mi-map-mapbox**: Component updated to latests SDK release (V. 4.5.0).
 - **RouteParams interface**: Deprecation of `RouteParams` interface.
 
@@ -308,8 +323,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **mi-map-googlemaps**: Documentation updated.
 - **mi-map-mapbox**: Documentation updated.
 - **mi-route-instructions-step**: Documentation updated.
-- **mi-distance**:  Documentation updated.
-- **mi-icon**:  Documentation updated. Note added regards component not being compatible with IE11.
+- **mi-distance**: Documentation updated.
+- **mi-icon**: Documentation updated. Note added regards component not being compatible with IE11.
 
 ### Fixed
 
