@@ -46,18 +46,18 @@ From MapsIndoors SDK version 3.32.0 and upwards, in order for CocoaPods to fetch
 1. Create an empty text file named `Podfile` in your project directory (same folder as your *.xcodeproj*).
 2. Add your dependecies to the Podfile as followed (replace `YOUR_APPLICATION_TARGET_NAME_HERE` with your project name),
 
-```text
-source 'https://github.com/CocoaPods/Specs.git'
+    ```text
+    source 'https://github.com/CocoaPods/Specs.git'
 
-platform :ios, '15.0'
+    platform :ios, '15.0'
 
-target 'YOUR_APPLICATION_TARGET_NAME_HERE' do
-  use_frameworks!
+    target 'YOUR_APPLICATION_TARGET_NAME_HERE' do
+      use_frameworks!
 
-  pod 'MapsIndoors', '~>3.34.0'
+      pod 'MapsIndoors', '~>3.34.0'
 
-end
-```
+    end
+    ```
 
 3. Save the Podfile and open a terminal in the directory of the project.
 `cd \<path-to-project>`
@@ -78,10 +78,10 @@ Open back up the project and navigate to the file `AppDelegate.swift`.
 
 1. Add the following import statements to the top of the file,  
 
-```swift
-import GoogleMaps  
-import MapsIndoors
-````
+    ```swift
+    import GoogleMaps  
+    import MapsIndoors
+    ````
 
 2. Insert the following into the `application(_:didFinishLaunchingWithOptions:)` method,
 
