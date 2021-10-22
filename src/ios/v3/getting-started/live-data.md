@@ -9,6 +9,7 @@ eleventyNavigation:
 ---
 
 ## Enable Live Data
+
 As opposed to *static data*, which does not change unless data is synchronized, Live Data can change in real time, and these changes can be instantly reflected on the map and in searches.
 
 Common use-cases are:
@@ -20,9 +21,9 @@ Support for Live Data will require specific server-side integrations. For instan
 
 The following section rely on the existence of Live Position Data. If you do not have access to a MapsIndoors Dataset that have a Live Data integration, we remind you that you can our demo API key: `d876ff0e60bb430b8fabb145`.
 
-For this demonstration we wish to show an employee moving across The White House. 
+For this demonstration we wish to show an employee moving across The White House.
 
-Enabling Live Data through `MapControl` is achieved by simply calling `mapControl.enableLiveData()` with a [Domain Type](http://0.0.0.0:8080/ios/v3/guides/live-data/#domain-type), somewhere after the initialization of `MapControl`. In this case, since we wish to show the positional changes to an employee live, we will use the domain type, position. 
+Enabling Live Data through `MapControl` is achieved by simply calling `mapControl.enableLiveData()` with a [Domain Type](http://0.0.0.0:8080/ios/v3/guides/live-data/#domain-type), somewhere after the initialization of `MapControl`. In this case, since we wish to show the positional changes to an employee live, we will use the domain type, position.
 
 ```swift
 mapControl?.enableLiveData(MPLiveDomainType.position)

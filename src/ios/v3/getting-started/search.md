@@ -9,6 +9,7 @@ eleventyNavigation:
 ---
 
 ## Search for a Location
+
 Our goal now is to enable the user to interact with a search bar and move the map with respect to their search. Therefore, we need to implement a bit more functionality into our ViewController class, so feel free to update it as followed.
 
 ```swift
@@ -76,11 +77,11 @@ func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
 }
 ```
 
-Here, the first 3 functions simply outline the appearence of the table. Namely, how many rows to show and which text to represent each entry. 
+Here, the first 3 functions simply outline the appearence of the table. Namely, how many rows to show and which text to represent each entry.
 
-The main functions of note in this case are, `func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)` and `func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String)`. 
+The main functions of note in this case are, `func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)` and `func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String)`.
 
-The former denotes what to do once an item is selected, in this case we simply go to the specified location and hide the table view again, while the latter functions almost exactly the same as the initial simple search we included in [Display a Map](https://docs.mapsindoors.com/ios/v3/getting-started/display-a-map/) with MapsIndoors. 
+The former denotes what to do once an item is selected, in this case we simply go to the specified location and hide the table view again, while the latter functions almost exactly the same as the initial simple search we included in [Display a Map](https://docs.mapsindoors.com/ios/v3/getting-started/display-a-map/) with MapsIndoors.
 
 At this point we should have a functional map with a search feature.
 
