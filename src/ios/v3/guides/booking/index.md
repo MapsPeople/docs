@@ -19,11 +19,13 @@ let bookingService = MPBookingService.sharedInstance()
 
 The Booking Service can help with the following tasks:
 
-- [Bookable Locations](#bookable-locations)
-- [Bookings](#bookings)
+- [List Bookable Locations](#bookable-locations)
+- [Work with Bookings](#bookings)
   - [Listing Bookings for a Location](#listing-bookings-for-a-location)
   - [Performing a Booking of a Location](#performing-a-booking-of-a-location)
   - [Cancelling a Booking of a Location](#cancelling-a-booking-of-a-location)
+  
+> By default, the `MPBookingService` performs anonymous bookings using a service account known to MapsIndoors. However, it is also possible to list, perform and cancel Bookings [on behalf of a user](#user-authenticated-bookings).
 
 ## Bookable Locations
 
@@ -107,3 +109,25 @@ let bookingService = MPBookingService.sharedInstance()
 bookingService.cancel(myBooking) { (booking, error) in
 }
 ```
+
+## User Authenticated Bookings
+
+By default, the `MPBookingService` performs anonymous bookings using a service account known to MapsIndoors. However, it is also possible to list, perform and cancel Bookings on behalf of a user. For the `MPBookingService` to work on behalf of a user, it must identify the tenant with a given tenant id (optional for single tenant setups) and prove user access with an access token. See the following example.
+
+```swift
+let bookingService = MPBookingService.sharedInstance()
+
+bookingService.authenticationConfig = MPBookingAuthConfig.init(accessToken: "some-user-access-token")
+bookingService.authenticationConfig?.tenantId = "some-tenant-id"
+}
+```
+
+When the above configuration is in place, all following operations through the `MPBookingService` will be performed on behalf of a user. If the access token expires, the different Booking methods will result in errors and a new token must be obtained.
+
+### Obtaining a Tenant ID for User Bookings
+
+The tenant id is specific for each tenant / booking provider. If you don't know your tenant id, your IT administrator should be able to provide the information needed. Note that this is optional for single tenant setups and single tenant setups are the most common.
+
+### Obtaining an Access Token for User Bookings
+
+Obtaining an access token for working with Bookings on behalf of a user is outside of the scope of this guide. Usually an access token is obtained in a login flow in your own application. Often, the access token may also grant you access to other resources than the Booking Service. We cover Single Sign-on and user authentication in our [guide about Single Sign-on]().
