@@ -20,7 +20,7 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 
 ## [3.11.0] 2021-10-27
 
-## Added
+### Added
 
 - Support for obstacle avoidance zones in routing
 - Static method on MapsIndoors to disable internal SDK event logging
@@ -29,7 +29,7 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 - 'Go to previous leg' behavior added on start marker of a routing line
 - Line breaking ability for marker labels. Line breaks can now be enforced manually with '\n' in location names or automated to wrap based on a set labelWidth. (Currently only accessible though overriding LocationDisplayRules)
 
-## Fixed
+### Fixed
 
 - Wait times reflected correctly when using offline routing
 - Search results are now naturally ordered
@@ -39,14 +39,14 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 
 ## [3.10.3] 2021-09-21
 
-## Fixed
+### Fixed
 
 - Crash on file reads with external library.
 - Fixed bug with Areas sometimes not being rendered correctly.
 
 ## [3.10.2] 2021-09-13
 
-## Added
+### Added
 
 - MapsIndoors now triggers as ready when Locations are loaded.
 
