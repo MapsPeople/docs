@@ -10,7 +10,7 @@ eleventyNavigation:
 
 ## Getting Directions to a Location
 
-In a lot of cases, the user might not want to display a specifc region, but rather get a route proposed that will lead them to where they need to go. In order to accomplish this, we utilize the [MPDirectionsService](https://app.mapsindoors.com/mapsindoors/reference/ios/v3/interface_m_p_directions_service.html) class, which we will be able to query through the [MPDirectionsQuery](https://app.mapsindoors.com/mapsindoors/reference/ios/v3/interface_m_p_directions_query.html) class, while to actually display the result we use the [MPDirectionsRenderer](https://app.mapsindoors.com/mapsindoors/reference/ios/v3/interface_m_p_directions_renderer.html).
+In a lot of cases, the user might not want to display a specific region, but rather get a route proposed that will lead them to where they need to go. In order to accomplish this, we utilize the [MPDirectionsService](https://app.mapsindoors.com/mapsindoors/reference/ios/v3/interface_m_p_directions_service.html) class, which we will be able to query through the [MPDirectionsQuery](https://app.mapsindoors.com/mapsindoors/reference/ios/v3/interface_m_p_directions_query.html) class, while to actually display the result we use the [MPDirectionsRenderer](https://app.mapsindoors.com/mapsindoors/reference/ios/v3/interface_m_p_directions_renderer.html).
 
 First things first, let us add in some new variables, namely the renderer and two points we wish to acquire directional data between (the origin and destination). Usually, the origin point would refer to the location of the user, however for the purposes of demonstration we will use a static origin point.
 

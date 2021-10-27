@@ -19,7 +19,7 @@ Common use-cases are:
 
 Support for Live Data will require specific server-side integrations. For instance, visualizing live occupancy data requires a calendar or booking system integration is in place. An integration like that is set up in [collaboration with MapsPeople](https://www.mapspeople.com/mapsindoors-integrations/).
 
-The following section rely on the existence of Live Position Data. If you do not have access to a MapsIndoors Dataset that have a Live Data integration, we remind you that you can our demo API key: `d876ff0e60bb430b8fabb145`.
+The following section rely on the existence of Live Position Data. If you do not have access to a MapsIndoors Dataset that have a Live Data integration, we suggest that you use can our demo API key: `{{sdk.tutorialAPIKey}}`.
 
 For this demonstration we wish to show an employee moving across The White House.
 
