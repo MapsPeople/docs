@@ -1,5 +1,3 @@
-In this tutorial, you build your own app from the ground up, providing experience with the typical development process, as well as an introduction to basic concepts, tools, and terminology.
+In this tutorial, you will build your own app from the ground up, gaining experience with the typical development process when working with the MapsIndoors SDK. Furthermore, you should be able to gain a basic understanding of the basic concepts, tools and terminology, commonly used when interacting with the SDK. The goal of this guide will be to leave you with an app, that is able to display a map and incorporate a few basic features such as searching, directions and Live Data integration.
 
-This Getting Started tutorial shows you how to set up your local development environment and develop an app using the MapsIndoors SDK, and provides an introduction to the fundamentals of MapsIndoors.
-
-The Getting Started tutorial rely on Live Data. If you do not have access to a MapsIndoors Dataset that have a Live Data integration, you should use our demo API key: `{{sdk.tutorialAPIKey}}`.
+The Live Data relies on a MapsIndoors Dataset which supports Live Data integration, if you do not have access to this we recommend using our demo API key: `{{sdk.tutorialAPIKey}}`.
