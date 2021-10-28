@@ -7,11 +7,11 @@ eleventyNavigation:
     order: 400
 ---
 
-This guide covers the different aspects of _Booking_ in the MapsIndoors iOS SDK. The concept of booking in MapsIndoors implies that specific Locations in your MapsIndoors dataset is treated as Bookable resources. Typical bookable resources could be meeting rooms and workspaces.
+This guide covers the different aspects of _Booking_ in the MapsIndoors iOS SDK. The concept of Booking in MapsIndoors implies that specific Locations in your MapsIndoors dataset is treated as Bookable resources. Typical bookable resources could be meeting rooms and workspaces.
 
-A MapsIndoors dataset can only have bookable resources if an integration with a booking provider exists. Current examples of booking providers are _Google Calendar_ and _Microsoft Office 365_. These providers and more can be added and integrated to your MapsIndoors project by request.
+A MapsIndoors dataset can only have bookable resources if an integration with a Booking provider exists. Current examples of Booking providers are _Google Calendar_ and _Microsoft Office 365_. These providers and more can be added and integrated to your MapsIndoors project by request.
 
-The central service in the SDK managing bookings is the Booking Service, `MPBookingService`.
+The central service in the SDK managing Bookings is the Booking Service, `MPBookingService`.
 
 ```swift
 let bookingService = MPBookingService.sharedInstance()
@@ -25,11 +25,11 @@ The Booking Service can help with the following tasks:
   - [Performing a Booking of a Location](#performing-a-booking-of-a-location)
   - [Cancelling a Booking of a Location](#cancelling-a-booking-of-a-location)
   
-> By default, the `MPBookingService` performs anonymous bookings using a service account known to MapsIndoors. However, it is also possible to list, perform and cancel Bookings [on behalf of a user](#user-authenticated-bookings).
+> By default, the `MPBookingService` performs anonymous Bookings using a service account known to MapsIndoors. However, it is also possible to list, perform and cancel Bookings [on behalf of a user](#user-authenticated-bookings).
 
 ## Bookable Locations
 
-To determine whether or not a Location is bookable can be looked up using the `MPBookingService.getBookableLocationsUsingQuery()` method. Below is an example of querying for bookable locations:
+To determine whether or not a Location is bookable can be looked up using the `MPBookingService.getBookableLocationsUsingQuery()` method. Below is an example of querying for bookable Locations:
 
 ```swift
 let bookingService = MPBookingService.sharedInstance()
@@ -43,9 +43,9 @@ bookingService.getBookableLocations(using: bookableQuery, completion: { (locatio
 })
 ```
 
-The above example creates a query for locations that are bookable for a timespan between now and 1 hour ahead.
+The above example creates a query for Locations that are bookable for a timespan between now and 1 hour ahead.
 
-It is also possible to check a location statically using `MPLocation.isBookable`, but please note that this information is not a dynamic property reflecting the current bookable state from the Booking Service. If `MPLocation.isBookable` is true it means that the Location has a potentially bookable resource known by the integrated booking provider, but still it might be booked for a specific time.
+It is also possible to check a location statically using `MPLocation.isBookable`, but please note that this information is not a dynamic property reflecting the current bookable state from the Booking Service. If `MPLocation.isBookable` is true it means that the Location has a potentially bookable resource known by the integrated Booking provider, but still it might be booked for a specific time.
 
 ## Bookings
 
@@ -101,7 +101,7 @@ Depending on the Booking provider, the participants will receive invites for an 
 
 ### Cancelling a Booking of a Location
 
-It is possible to cancel a created Booking using the `MPBookingService.cancel()` method which takes an existing booking object as input.
+It is possible to cancel a created Booking using the `MPBookingService.cancel()` method which takes an existing Booking object as input.
 
 ```swift
 let bookingService = MPBookingService.sharedInstance()
@@ -126,10 +126,21 @@ When the above configuration is in place, all following operations through the `
 
 ### Obtaining a Tenant ID for User Bookings
 
-The tenant id is specific for each tenant / booking provider. If you don't know your tenant id, your IT administrator should be able to provide the information needed. Note that this is optional for single tenant setups and single tenant setups are the most common.
+The tenant id is specific for each tenant / Booking provider. If you don't know your tenant id, your IT administrator should be able to provide the information needed. Note that this is optional for single tenant setups and single tenant setups are the most common.
 
 ### Obtaining an Access Token for User Bookings
 
 Obtaining an access token for working with Bookings on behalf of a user is outside of the scope of this guide. Usually an access token is obtained in a login flow in your own application.
 
 > Note that the access token obtained from a [MapsIndoors Single Sign-on flow](../sso) cannot be used as access token for the `MPBookingService`. Single Sign-on access tokens are issued by MapsIndoors and not the underlying tenant. You need to login directly on your Booking tenant to get an access token that can be used for working with the Booking Service as an authenticated user.
+
+### Disabling User Authenticated Bookings
+
+Disabling User Authenticated Bookings is as simple as setting the `authenticationConfig` to `nil`:
+
+```swift
+let bookingService = MPBookingService.sharedInstance().authenticationConfig = nil
+}
+```
+
+After disabling user authenticated Bookings, all following operations will be treated as anonymous Booking operations.
