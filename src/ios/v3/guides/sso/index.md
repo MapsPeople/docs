@@ -13,7 +13,7 @@ Usually, access to the services behind the MapsIndoors SDK is restricted with AP
 
 MapsIndoors follows a common OAuth2-based Single Sign-on flow that allows for multiple login services. As such, we recommend that you use a commonly used and well trusted SSO client library for your application. We created [this Single Sign-on sample](https://github.com/mapsindoors/mapsindoorsios/Single Sign-On) with the [OAuth2 client library from Open Id](https://github.com/openid/AppAuth-iOS).
 
-In order to utilize an OAuth2 login flow for your MapsIndoors project, you will need to provide some details to the OAuth2 client, like the _issuer url_, _client id_, _scopes_ and possibly a _preferred identity provider_ if there are more than one option. These details can be fetched using `MapsIndoors.fetchAuthenticationDetails()`
+In order to utilize an OAuth2 login flow for your MapsIndoors project, you will need to provide some details to the OAuth2 client, like the _issuer url_, _client id_, _scopes_ and possibly a _preferred identity provider_ if there are more than one option. These details can be fetched using `MapsIndoors.fetchAuthenticationDetails()`.
 
 ```swift
 MapsIndoors.fetchAuthenticationDetails { details, error in
@@ -30,7 +30,7 @@ MapsIndoors.fetchAuthenticationDetails { details, error in
 }
 ```
 
-You will also need to provide a _redirect url_, but this is not provided by MapsIndoors. The callback url may be a [app url scheme](https://developer.apple.com/documentation/xcode/defining-a-custom-url-scheme-for-your-app) or a [universal link](https://developer.apple.com/ios/universal-links/). 
+You will also need to provide a _redirect url_, but this is not provided by MapsIndoors. The callback url may be a [app url scheme](https://developer.apple.com/documentation/xcode/defining-a-custom-url-scheme-for-your-app) or a [universal link](https://developer.apple.com/ios/universal-links/).
 
 > Note that the redirect link must be known to MapsIndoors and white-listed for your identity provider integration. You must inform us about all the links that you need for your application, both for development and production use so they can be white-listed.
 
@@ -100,7 +100,5 @@ authHelper.openLoginFlow(for: self) {
 ```
 
 The SDK will then make sure that all requests for data is performed using this access token.
-
-
 
 > Note that the access token obtained from a MapsIndoors Single Sign-on flow cannot be used as access token for the [Booking Service](../booking). Single Sign-on access tokens are issued by MapsIndoors and not the underlying tenant. You need to login directly on your Booking tenant to get an access token that can be used for working with the Booking Service as an authenticated user.

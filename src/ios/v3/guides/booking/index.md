@@ -130,6 +130,6 @@ The tenant id is specific for each tenant / booking provider. If you don't know 
 
 ### Obtaining an Access Token for User Bookings
 
-Obtaining an access token for working with Bookings on behalf of a user is outside of the scope of this guide. Usually an access token is obtained in a login flow in your own application. 
+Obtaining an access token for working with Bookings on behalf of a user is outside of the scope of this guide. Usually an access token is obtained in a login flow in your own application.
 
 > Note that the access token obtained from a [MapsIndoors Single Sign-on flow](../sso) cannot be used as access token for the `MPBookingService`. Single Sign-on access tokens are issued by MapsIndoors and not the underlying tenant. You need to login directly on your Booking tenant to get an access token that can be used for working with the Booking Service as an authenticated user.
