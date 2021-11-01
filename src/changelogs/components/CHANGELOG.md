@@ -12,6 +12,24 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [11.5.2] - 2021-10-28
+
+### Fixed
+
+- **mi-dropdown**: Using the cursor to select an item was not possible.
+
+## [11.5.1] - 2021-10-28
+
+### Fixed
+
+- **mi-dropdown**: Now shows the selected item again.
+
+## [11.5.0] - 2021-10-28
+
+### Added
+
+- **mi-dropdown**: Now supports navigating and selecting items using the keyboard.
+
 ## [11.4.2] - 2021-10-18
 
 ### Fixed
