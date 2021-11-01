@@ -4,7 +4,7 @@ toc: true
 eleventyNavigation:
   title: Set Up Your Environment
   key: ios-v3-getting-start-setupyourenvironment
-  parent: ios-v3-getting-start
+  parent: ios-v3-getting-started
   order: 91
 ---
 
