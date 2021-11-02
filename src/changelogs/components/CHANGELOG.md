@@ -12,6 +12,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [11.6.0] - 2021-10-29
+
+### Added
+
+- **mi-column**: `alignContent` attribute for setting the alignment of the column's content.
+- **mi-column**: `width` attribute for setting a fixed width of the column.
+
+### Fixed
+
+- **mi-data-table**: Styling issue for none-sortable columns that caused extra padding to be applied.
+
 ## [11.5.2] - 2021-10-28
 
 ### Fixed
