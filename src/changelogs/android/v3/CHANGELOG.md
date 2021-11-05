@@ -22,7 +22,7 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 
 ### Added
 
-- setLocationHideOnIconOverlapEnabled can now be toggled dynamically
+- `setLocationHideOnIconOverlapEnabled` can now be toggled dynamically
 
 ### Changed
 
