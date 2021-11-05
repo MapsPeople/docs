@@ -18,6 +18,20 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 ### Security     in case of vulnerabilities.
 -->
 
+## [3.11.2] 2021-11-5
+
+### Added
+
+- setLocationHideOnIconOverlapEnabled can now be toggled dynamically
+
+### Changed
+
+- setLabelMaxWidth now takes DP (Device independent pixels) instead of actual pixels in it's parameter
+
+### Fixed
+
+- Files being deleted outside of scope
+
 ## [3.11.1] 2021-10-29
 
 ### Fixed
