@@ -26,7 +26,7 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 
 ### Changed
 
-- setLabelMaxWidth now takes DP (Device independent pixels) instead of actual pixels in it's parameter
+- `setLabelMaxWidth` now takes DP (Device-independent Pixels) instead of actual pixels in its parameter
 
 ### Fixed
 
