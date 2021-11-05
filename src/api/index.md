@@ -432,7 +432,7 @@ Common setup for Geodata of different kinds (meeting room, hallway, ...)
       "visible": true,
       "iconVisible": true,
       "labelVisible": true,
-      "labelWidth": 200
+      "labelMaxWidth": 200
     }
   ],
   "propertyTemplates": [
@@ -470,7 +470,7 @@ Common setup for Geodata of different kinds (meeting room, hallway, ...)
 
     You will notice that there are 3 ‘visibility' keys (visible, iconVisible, labelVisible). The first one, ‘visible', is the main switch that will show and hide the whole element. The two others, ‘iconVisible' and ‘labelVisible', is changing the individual elements it is attached to. This way, you can toggle the ‘visible' without having to remember the visible state for both the icon and label.
 
-    In addition to having a label visible or not, a `labelWidth` can be set in order to enforce a maximum width in pixels.
+    In addition to having a label visible or not, a `labelMaxWidth` can be set in order to enforce a maximum width in pixels.
 If the actual label width would exceed this, the label text is automatically broken into multiple lines.
 
 * **PropertyTemplates**
