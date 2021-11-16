@@ -431,7 +431,8 @@ Common setup for Geodata of different kinds (meeting room, hallway, ...)
       "labelZoomTo": 20,
       "visible": true,
       "iconVisible": true,
-      "labelVisible": true
+      "labelVisible": true,
+      "labelMaxWidth": 200
     }
   ],
   "propertyTemplates": [
@@ -468,6 +469,9 @@ Common setup for Geodata of different kinds (meeting room, hallway, ...)
     Zoom from and to is inclusive. In this example an icon will be shown from zoom level 19 to 21. A quick word on zoom levels: these are described in [web mercator](https://en.wikipedia.org/wiki/Web_Mercator_projection) which is the system we use to show maps. In short zoom level 1 shows a map of the earth in its entirety and a higher zoom level lets you get closer. The highest supported zoom level is generally 21, but some Solutions support up to zoom level 22.
 
     You will notice that there are 3 ‘visibility' keys (visible, iconVisible, labelVisible). The first one, ‘visible', is the main switch that will show and hide the whole element. The two others, ‘iconVisible' and ‘labelVisible', is changing the individual elements it is attached to. This way, you can toggle the ‘visible' without having to remember the visible state for both the icon and label.
+
+    In addition to having a label visible or not, a `labelMaxWidth` can be set in order to enforce a maximum width in pixels.
+If the actual label width would exceed this, the label text is automatically broken into multiple lines.
 
 * **PropertyTemplates**
 

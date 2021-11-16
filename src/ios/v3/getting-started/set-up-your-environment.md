@@ -4,7 +4,7 @@ toc: true
 eleventyNavigation:
   title: Set Up Your Environment
   key: ios-v3-getting-start-setupyourenvironment
-  parent: ios-v3-getting-start
+  parent: ios-v3-getting-started
   order: 91
 ---
 
@@ -68,9 +68,16 @@ From MapsIndoors SDK version 3.32.0 and upwards, in order for CocoaPods to fetch
 
 6. From this time onwards, use the *.xcworkspace* file to open the project from now on.
 
-## Install MapsIndoors Manually
+### Install MapsIndoors Manually
 
-(I didn't interact with this section so for now it is left as is.)
+Since MapsIndoors is dependent on [Google Maps iOS SDK](https://developers.google.com/maps/documentation/ios-sdk/overview), you must also install this SDK, either [manually](https://developers.google.com/maps/documentation/ios-sdk/start#install-manually), [using Carthage](https://developers.google.com/maps/documentation/ios-sdk/start#use-carthage) or [using CocoaPods](https://developers.google.com/maps/documentation/ios-sdk/start#use-cocoapods). You should use [Google Maps iOS version 4.2.0](https://dl.google.com/dl/cpdc/870a9df85dbcbadc/GoogleMaps-4.2.0.tar.gz) since MapsIndoors >=3.30.0 is linked against this version.
+
+When the Google Maps installation is completed, go through these steps to install MapsIndoors:
+
+* Download and unzip the latest [MapsIndoors.xcframework](https://github.com/MapsIndoors/MapsIndoorsIOS/releases/download/{{ ios.sdkVersion }}/MapsIndoors.xcframework.zip).
+* Drag and drop the framework into your XCode project. In the dialog that pops up, choose “Copy items if needed” and make sure the framework is added to the correct target.
+* From XCode, right click the imported framework and click "Show in Finder".
+* In Finder, Locate ios-arm64 > MapsIndoors.framework > Resources > MapsIndoors.bundle, and drag the bundle into your XCode project as well. This time, make sure to uncheck “Copy items if needed”.
 
 ## Adding API Credentials
 

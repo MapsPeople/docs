@@ -18,16 +18,57 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 ### Security     in case of vulnerabilities.
 -->
 
+## [3.11.2] 2021-11-5
+
+### Added
+
+- `setLocationHideOnIconOverlapEnabled` can now be toggled dynamically
+
+### Changed
+
+- `setLabelMaxWidth` now takes DP (Device-independent Pixels) instead of actual pixels in its parameter
+
+### Fixed
+
+- Files being deleted outside of scope
+
+## [3.11.1] 2021-10-29
+
+### Fixed
+
+- Potential crash when initializing large solutions
+- Tiles are now rendering with improved resolution
+- Memory leaks
+
+## [3.11.0] 2021-10-27
+
+### Added
+
+- Support for obstacle avoidance zones in routing
+- Static method on MapsIndoors to disable internal SDK event logging
+- Support for 'ladder' highways
+- Icons for ramps, wheelchair ramps and wheelchair lifts
+- 'Go to previous leg' behavior added on start marker of a routing line
+- Line breaking ability for marker labels. Line breaks can now be enforced manually with '\n' in location names or automated to wrap based on a set labelWidth. (Currently only accessible though overriding LocationDisplayRules)
+
+### Fixed
+
+- Wait times reflected correctly when using offline routing
+- Search results are now naturally ordered
+- Various loading & SDK initialization issues
+- Various route directions rendering glitches
+- Various crashes and issues
+
 ## [3.10.3] 2021-09-21
 
-## Fixed
+### Fixed
 
 - Crash on file reads with external library.
 - Fixed bug with Areas sometimes not being rendered correctly.
 
 ## [3.10.2] 2021-09-13
 
-## Added
+### Added
 
 - MapsIndoors now triggers as ready when Locations are loaded.
 
