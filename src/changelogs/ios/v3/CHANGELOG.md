@@ -30,7 +30,7 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 
 - We added support for requiring authentication for accessing MapsIndoors solution data.
 - We added the ability to create room bookings associated with a specific user account rather than only anonymous bookings. This also enables the possibility to delete bookings.
-- We added a possibility to show specific contextual information on the map along a route. You can choose to show icon, label or both. 
+- We added a possibility to show specific contextual information on the map along a route. You can choose to show icon, label or both.
 
 ### Changed
 
