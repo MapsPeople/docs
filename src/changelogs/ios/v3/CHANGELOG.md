@@ -36,7 +36,7 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 
 - The `MPLocationDisplayRule.labelWidth` attribute added in 3.35.0 has been renamed to `MPLocationDisplayRule.labelMaxWidth`.
 - It is now not possible to change user roles while worknig in offline mode.
- 
+
 ## [3.35.0] 2021-10-29
 
 ### Fixed
