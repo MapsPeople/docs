@@ -27,8 +27,8 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
   - Icons and labels can now be shown/hidden at different zoom levels, according to the display rule
 - Contextual routing information
   - Now able to allow for context taken from nearby POI's of a given type, using the MPDirectionsRenderer
-- Single sign-on
-  - Added interface for setting a token on the MapsIndoors SDK, which will allow access to restricted MapsIndoors API keys
+- Support for authentication
+  - Added interface to support single side sign-on from OpenIDConnect providers by setting tokens, which will allow access to otherwise restricted MapsIndoors API keys
 - User authenticated booking
   - Revised booking interface to set a token, in order to allow for booking on user calenders
 
