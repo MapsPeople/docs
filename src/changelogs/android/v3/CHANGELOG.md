@@ -18,6 +18,29 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 ### Security     in case of vulnerabilities.
 -->
 
+## [3.12.0] 2021-11-23
+
+### Added
+
+- Icon and labels are now handled independently
+  - Icons and labels are now separate entities when computing overlaps/collisions
+  - Icons and labels can now be shown/hidden at different zoom levels, according to the display rule
+- Contextual routing information
+  - Now able to allow for context taken from nearby POI's of a given type, using the MPDirectionsRenderer
+- Single sign-on
+  - Added interface for setting a token on the MapsIndoors SDK, which will allow access to restricted MapsIndoors API keys
+- User authenticated booking
+  - Revised booking interface to set a token, in order to allow for booking on user calenders
+
+
+### Fixed
+
+- Significant improvements to loading performance
+- Fixed issue where on marker click event was not forwarded properly to Google Maps
+- Fixed rare issue where MapControl may never invoke the set listener, upon initialization (OnLoadingDataReadyListener)
+- Fixed issue where markers may be retained on the map, when changing floors
+- Various minor fixes
+
 ## [3.11.2] 2021-11-5
 
 ### Added
