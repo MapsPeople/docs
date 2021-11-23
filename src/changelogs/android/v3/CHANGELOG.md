@@ -32,7 +32,6 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 - User authenticated booking
   - Revised booking interface to set a token, in order to allow for booking on user calenders
 
-
 ### Fixed
 
 - Significant improvements to loading performance
