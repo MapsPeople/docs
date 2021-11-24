@@ -18,6 +18,13 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 ### Security     in case of vulnerabilities.
 -->
 
+## [3.12.1] 2021-11-24
+
+### Fixed
+
+- Fixed issue where LocationSource was Available before it was completely updated
+- Various minor fixes
+
 ## [3.12.0] 2021-11-23
 
 ### Added
