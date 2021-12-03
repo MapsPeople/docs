@@ -3,7 +3,7 @@ title: Using authentication in MapsIndoors
 eleventyNavigation:
   parent: android-v3-guides
   key: Using authentication in MapsIndoors
-  order: 210
+  order: 410
 ---
 
 This guide covers the different aspects of user authentication and authorization in the MapsIndoors Android SDK.
@@ -163,4 +163,4 @@ fun checkApiKeyValidityAndInitializeSDK() {
 
 The SDK will then make sure that all requests for data is performed using this access token.
 
-> Note that the access token obtained from a MapsIndoors Single Sign-on flow cannot be used as access token for the [insert booking link here](insert-link-for-booking-here). Single Sign-on access tokens are issued by MapsIndoors and not the underlying tenant. You need to login directly on your Booking tenant to get an access token that can be used for working with the Booking Service as an authenticated user.
+> Note that the access token obtained from a MapsIndoors Single Sign-on flow cannot be used as access token for the [Booking service](../booking-UAB). Single Sign-on access tokens are issued by MapsIndoors and not the underlying tenant. You need to login directly on your Booking tenant to get an access token that can be used for working with the Booking Service as an authenticated user.
