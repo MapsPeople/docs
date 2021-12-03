@@ -72,7 +72,7 @@ You will also need to provide a _redirect url_, but this is not provided by Maps
 
 > Note that the redirect link must be known to MapsIndoors and white-listed for your identity provider integration. You must inform us about all the links that you need for your application, both for development and production use so they can be white-listed.
 
-After you have made the request if using the library you will have to react on the recieved intent from the user loggin in.
+After you have made the request if using the library you will have to react on the recieved intent from the user logging in.
 
 With that you response you will create the token exchange request. The token exchange request will respond with a token if succesful that can be set through the `MapsIndoors` class by calling `setAuthToken`. The set access token is used by the MapsIndoors SDK, for remaining lifespan of the SDK. If the SDK is initialized again, a token will need to be set again.
 
@@ -161,6 +161,6 @@ fun checkApiKeyValidityAndInitializeSDK() {
 </mi-tab-panel>
 </mi-tabs>
 
-The SDK will then make sure that all requests for data is performed using this access token.
+The SDK will ensure all subsequent performed data requests will include the set access token.
 
 > Note that the access token obtained from a MapsIndoors Single Sign-on flow cannot be used as access token for the [Booking service](../booking-UAB). Single Sign-on access tokens are issued by MapsIndoors and not the underlying tenant. You need to login directly on your Booking tenant to get an access token that can be used for working with the Booking Service as an authenticated user.
