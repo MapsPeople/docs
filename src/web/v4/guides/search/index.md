@@ -11,7 +11,7 @@ eleventyNavigation:
 
 See the full list of parameters in the [reference guide](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/mapsindoors.services.LocationsService.html#.getLocations).
 
-## Example of creating a search query
+## Example of Creating a Search Query
 
 ```js
 const searchParameters = {
@@ -27,11 +27,11 @@ mapsindoors.services.LocationsService.getLocations(searchParameters).then(locati
 
 {% include "src/shared/guides/search/search-ranking.md" %}
 
-## Display search results on the map
+## Display Search Results on the Map
 
 {% include "src/shared/guides/search/displaying-search-results.md" %}
 
-## Filter the map to display searched locations on the map
+## Filter the Map to Display Searched Locations on the Map
 
 ```js/7
 const searchParameters = {
@@ -45,11 +45,11 @@ mapsindoors.services.LocationsService.getLocations(searchParameters).then(locati
 });
 ```
 
-## Clearing the map of your filter
+## Clearing the Map of your filter
 
 {% include "src/shared/guides/search/clear-search-filter-on-map.md" %}
 
-## Example of clearing your map filter to show all Locations again
+## Example of Clearing Your Map Filter to Show All Locations Again
 
 ```js
 mapsIndoorsInstance.filter(null);

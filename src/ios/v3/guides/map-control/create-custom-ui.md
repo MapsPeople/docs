@@ -1,7 +1,7 @@
 ---
-title: Create custom UI
+title: Create Custom UI
 eleventyNavigation:
-  key: Create custom UI
+  key: Create Custom UI
   parent: ios-v3-guides-map-control
   order: 250
 ---

@@ -17,7 +17,7 @@ The MapsIndoors CMS is used to control the default appearance of Types and Locat
 
 It is possible to control different aspects of the appearance. For example at what zoom levels Labels and Icons should be visible.
 
-## Display Rule hierarchy
+## Display Rule Hierarchy
 
 Display Rules are applied to a POI in a hierarchy:
 
@@ -30,7 +30,7 @@ It is only properties with a value that will override the previous value. If the
 
 To remove a value from the Display Rule set the proptery to `null`.
 
-## Display Rule properties
+## Display Rule Properties
 
 A Display Rule could look like this:
 
@@ -67,9 +67,9 @@ All properties are optional.
 
 This enables you to do things like changing an icon at a specific zoom level.
 
-## How to use Display Rules in practice
+## How to Use Display Rules in Practice
 
-### Changing the appearance when the user clicks a Location
+### Changing the Appearance When the User Clicks a Location
 
 ```javascript
 let selectedPOI;
@@ -86,7 +86,7 @@ mapsIndoors.addListener("click", function (poi) {
 });
 ```
 
-### Change the label for all Locations for the type `PRINTER`
+### Change the Label for All Locations for the Type `PRINTER`
 
 ```javascript
 mapsIndoors.setDisplayRule('PRINTER',  {
@@ -94,7 +94,7 @@ mapsIndoors.setDisplayRule('PRINTER',  {
 });
 ```
 
-### Change the label for a single Location
+### Change the Label for a Single Location
 
 ```javascript
 mapsIndoors.setDisplayRule('c66dccd480624c428ea5b78d',  {
@@ -102,7 +102,7 @@ mapsIndoors.setDisplayRule('c66dccd480624c428ea5b78d',  {
 });
 ```
 
-### Apply the same Display Rule to multiple Locations
+### Apply the Same Display Rule to Multiple Locations
 
 ```javascript
 mapsIndoors.setDisplayRule(['c66dccd480624c428ea5b780', 'c66dccd480624c428ea5b79c','c66dccd480624c428ea5b76a', ...], {
@@ -110,7 +110,7 @@ mapsIndoors.setDisplayRule(['c66dccd480624c428ea5b780', 'c66dccd480624c428ea5b79
 });
 ```
 
-### Reset the Display Rule back to default
+### Reset the Display Rule Back to Default
 
 ```javascript
 mapsIndoors.setDisplayRule('PRINTER', null);

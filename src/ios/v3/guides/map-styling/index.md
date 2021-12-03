@@ -82,7 +82,7 @@ myMapControl.setDisplayRule(myDisplayRule, for: myLocations)
 
 Setting a display rule for specific locations will *not* persist the new display rule for that type throughout the whole app session and across instances of `MPMapControl`. In other words, as soon as your instance of `MPMapControl` is deallocated, the overridden display rules for specific locations will reset to their original display rule.
 
-### Presenting Locations using polygons
+### Presenting Locations Using Polygons
 
 To present a polygon, either configure the Display Rule using the CMS, or configure a Display Rule programatically:
 

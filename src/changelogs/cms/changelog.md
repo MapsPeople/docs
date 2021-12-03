@@ -9,13 +9,13 @@ eleventyNavigation:
 
 ## March 29th 2021
 
-### What's new
+### What's New
 
 - Improvements to internal tools
 
 ## March 24th 2021
 
-### What's new
+### What's New
 
 - **Locations:** The App User Roles’ filter reflects the Location Type’s restrictions if the individual Location is set to “Visible for all”.
 
@@ -33,7 +33,7 @@ eleventyNavigation:
 
 ## October 8th 2020 - v3.35.0
 
-### What's new
+### What's New
 
 - Display all Solutions for a User on /users page
 
@@ -43,27 +43,27 @@ eleventyNavigation:
 
 ## August 14th 2020 - v3.34.0
 
-### What's new
+### What's New
 
 - Added `title` to Solution and Venue switcher list items for increased usability
 
 ## August 11th 2020 - v3.32.0
 
-### What's new
+### What's New
 
 - The sidebar is replaced by a top bar.
-- A "What's new" section with the latest updates.
+- A "What's New" section with the latest updates.
 
 ## July 30th 2020 - v3.31.0
 
-### What's new
+### What's New
 
 - **Location Types:** Types can be deleted in bulk.
 - **Locations:** Search for a Location by ID or ExternalID.
 
 ## July 27th 2020 - v3.30.0
 
-### What's new
+### What's New
 
 - **Booking Provider Feature:** This feature is about setting up credentials to a booking service provider, which will allow app users to book meeting rooms. The Customer should already have a booking service provider in place.
 
@@ -75,7 +75,7 @@ eleventyNavigation:
 
 ## July 16th 2020 - v3.29.0
 
-### What's new
+### What's New
 
 - **Sync Feature:** Categories, Location Types and Icons can now be synchronised from one solution to another, given that a customer has multiple solutions.
 - Icon-images hosted in the CMS have finally been moved to Amazon S3 and all the links have been updated in the backend.
@@ -86,7 +86,7 @@ eleventyNavigation:
 
 ## July 1st 2020 - v3.28.7
 
-### What's new
+### What's New
 
 - **Location Type Template:** Adds a check that prevents calling a property-key "name" because one already exists.
 - **Custom Properties:** Custom properties are not case-sensitive.
@@ -97,7 +97,7 @@ eleventyNavigation:
 
 ## June 18th 2020 - v3.28.0
 
-### What's new
+### What's New
 
 - Improvements to the authentication module.
 
@@ -109,7 +109,7 @@ eleventyNavigation:
 
 ## June 16th 2020 - v3.27.16
 
-### What's new
+### What's New
 
 - **Locations:** It is required to select a Location Type in order to create a new Location. The Location Type selection field has been moved so that it comes right under the Name field, which is also required.
 - **Venue:** The Venue ID can be found under the Venue menu.
@@ -122,7 +122,7 @@ eleventyNavigation:
 
 ## June 10th 2020 - v3.27.11
 
-### What's new
+### What's New
 
 - **Location Types:** Adds a column showing how many Locations are linked to a Location Type.
 
@@ -132,13 +132,13 @@ eleventyNavigation:
 
 ## May 26th 2020 - v3.26.0
 
-### What's new
+### What's New
 
 - **API Keys:** Adds the option to disable an API key.
 
 ## May 19th 2020 - v3.25.0
 
-### What's new
+### What's New
 
 - **API Keys:** Previously, API keys were only available as part of the "Security module". All customers now have access to this. All Solutions get an API key (if they did not have one before), that is the same as the Solution ID (also called Dataset ID). This ensures backward compatibility.
 - **Single Sign-On:** This was also part of the "Security module" and is now its own module. It needs to be activated on a per-Solution basis.
@@ -158,7 +158,7 @@ eleventyNavigation:
 
 ## May 6th 2020 - v3.24.0
 
-### What's new
+### What's New
 
 - New Google Cloud client ID and API Keys
 
@@ -172,20 +172,20 @@ eleventyNavigation:
 
 ## Apr 29th 2020 - v3.23.0
 
-### What's new
+### What's New
 
 - **Areas:** Areas can be managed under the new Areas menu.
 - **Locations' Table:** Multiple Locations can be set as "Searchable" with bulk editing.
 
 ## Apr 23rd 2020 - v3.21.0
 
-### What's new
+### What's New
 
 - On start up, the CMS determines the fastest Manager API to call for all subsequent requests.
 
 ## Apr 21st 2020 - v3.20.0
 
-### What's new
+### What's New
 
 - Added Deployment CMS features.
 
@@ -213,7 +213,7 @@ eleventyNavigation:
 
 ## Mar 26th 2020 - v3.19.0
 
-### What's new
+### What's New
 
 - **Locations Table:** Bulk editing and removal of Categories and Aliases.
 - **Locations Table:** Validation of Alias input to ensure that no duplicate Aliases are added
@@ -236,7 +236,7 @@ eleventyNavigation:
 
 ## Mar 17th 2020 - v3.18.0
 
-### What's new
+### What's New
 
 - **Users:** Implement user roles guards, and improve user roles in general.
 
@@ -255,13 +255,13 @@ eleventyNavigation:
 
 ## Mar 10th 2020 - v3.17.0
 
-### What's new
+### What's New
 
 - Remote error logging
 
 ## Mar 4th 2020 - v3.16.0
 
-### What's new
+### What's New
 
 - **Analytics Dashboard:** Added "Export to CSV" functionality. Added "metric cards" tooltips.  Rooms and POIs cards have been split up.
 

@@ -22,7 +22,7 @@ Maintains an array of locations and notifies its Location Observers about locati
 
 Can observe a Location Source for status changes and location updates.
 
-## Creating your own Location Source
+## Creating Your own Location Source
 
 See a [demo and tutorial of this feature for iOS](/ios/v3/locations/creating-own-location-sources/). Of course there is more to it than just these interfaces, but assuming that working with the actual 3rd party data is an isolated problem, the setup steps is as follows:
 

@@ -324,4 +324,4 @@ public int getSourceId() {
 }
 ```
 
-[See the sample in BatteriesLocationDataSource.java](https://github.com/MapsIndoors/MapsIndoorsAndroid-Demo-Samples/blob/master/app/src/main/java/com/mapsindoors/locationdatasources/BatteriesLocationDataSource.java)
+[See the sample in BatteriesLocationDataSource.java](https://github.com/mapspeople/MapsIndoorsAndroid-Demo-Samples/blob/master/app/src/main/java/com/mapsindoors/locationdatasources/BatteriesLocationDataSource.java)

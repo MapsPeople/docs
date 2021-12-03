@@ -3,7 +3,7 @@ title: Search in MapsIndoors
 eleventyNavigation:
   key: ios-v3-guides-search
   parent: ios-v3-guides
-  title: Create a search experience with MapsIndoors
+  title: Create a Search Experience with MapsIndoors
   order: 20
 ---
 
@@ -13,7 +13,7 @@ See the full list of parameters:
 
 {% include "src/ios/v3/guides/search/extras/ios-filter-content.md" %}
 
-## Example of creating a search query
+## Example of Creating a Search Query
 
 ```swift
 let filter = MPFilter.init()
@@ -31,11 +31,11 @@ MPLocationService.sharedInstance().getLocationsUsing(query, filter: filter) { (l
 
 {% include "src/shared/guides/search/search-ranking.md" %}
 
-## Display search results on the map
+## Display Search Results on the Map
 
 {% include "src/shared/guides/search/displaying-search-results.md" %}
 
-## Filter the map to display searched Locations on the map
+## Filter the Map to Display Searched Locations on the Map
 
 ```swift
 let filter = MPFilter.init()
@@ -49,11 +49,11 @@ MPLocationService.sharedInstance().getLocationsUsing(query, filter: filter) { (l
 }
 ```
 
-## Clear the map of your filter
+## Clear the Map of Your Filter
 
 {% include "src/shared/guides/search/clear-search-filter-on-map.md" %}
 
-## Example of clearing your map filter to show all Locations again
+## Example of Clearing Your Map Filter to Show All Locations Again
 
 ```swift
 myMapControl.clearMap()

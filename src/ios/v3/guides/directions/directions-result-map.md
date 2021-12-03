@@ -75,7 +75,7 @@ func floorDidChange(_ floor: NSNumber) {
 
 [See the sample in ShowRouteOnMapController.swift](https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Show%20Route/ShowRouteOnMapController.swift)
 
-## Create the controller that requests the route, and list the route in a table
+## Create the Controller That Requests the Route, and List the Route in a Table
 
 A MapsIndoors route is made of one or more legs, each containing one or more steps.
 

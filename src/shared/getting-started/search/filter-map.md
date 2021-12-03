@@ -1,1 +1,1 @@
-## Filter Locations on map based on search results
+## Filter Locations on Map Based on Search Results

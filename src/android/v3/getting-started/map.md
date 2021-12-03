@@ -1,8 +1,8 @@
 ---
-title: Show a map
+title: Show a Map
 toc: true
 eleventyNavigation:
-  title: Show a map
+  title: Show a Map
   key: android-v3-getting-started-map
   parent: android-v3-getting-started
   order: 130

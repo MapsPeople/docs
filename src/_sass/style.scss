@@ -449,6 +449,7 @@ table {
     border: 1px solid $color-gray-40;
     border-top: none;
     border-collapse: collapse;
+    word-break: normal;
 
     thead {
         @include font.size(large);
@@ -470,7 +471,6 @@ table {
         min-width: 72px;
         border-left: 1px solid $color-gray-30;
         vertical-align: baseline;
-        word-break: break-word;
 
         &:first-child {
             border-left: none;

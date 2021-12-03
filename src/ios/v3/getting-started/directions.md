@@ -1,68 +1,55 @@
 ---
-title: Getting directions
+title: Directions
 toc: true
 eleventyNavigation:
   title: Directions
   key: ios-v3-getting-started-directions
   parent: ios-v3-getting-started
-  order: 160
+  order: 94
 ---
 
-<!-- Overview -->
-{% include "src/shared/getting-started/directions/overview.md" %}
+## Getting Directions to a Location
 
-<!-- Directions -->
-{% include "src/shared/getting-started/directions/directions.md" %}
+In a lot of cases, the user might not want to display a specific region, but rather get a route proposed that will lead them to where they need to go. In order to accomplish this, we utilize the [MPDirectionsService](https://app.mapsindoors.com/mapsindoors/reference/ios/v3/interface_m_p_directions_service.html) class, which we will be able to query through the [MPDirectionsQuery](https://app.mapsindoors.com/mapsindoors/reference/ios/v3/interface_m_p_directions_query.html) class, while to actually display the result we use the [MPDirectionsRenderer](https://app.mapsindoors.com/mapsindoors/reference/ios/v3/interface_m_p_directions_renderer.html).
 
-Use the `MPDirectionsService` class to search for directions. You need to build a query using the `MPDirectionsQuery` class.
-
-This example shows how to modify the view controller with a query for a route and display the result on the map:
+First things first, let us add in some new variables, namely the renderer and two points we wish to acquire directional data between (the origin and destination). Usually, the origin point would refer to the location of the user, however for the purposes of demonstration we will use a static origin point.
 
 ```swift
-class MapViewController: UIViewController {
-  private var mapControl: MPMapControl?
-  private let renderer = MPDirectionsRenderer()
+var origin:MPPoint = MPPoint(lat: 38.897382, lon: -77.037447, zValue:0)
+var destination:MPPoint = MPPoint.init()
+private let renderer = MPDirectionsRenderer()
+```
 
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    mapControl = MPMapControl(map: mapView)
-    directions()
-  }
+In order to update the destination variable we simply employ the same concept as we did when adding the search bar, namely we utilise the `func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)` function. In this case, we simply need to update our function to store the point of the selected location and call `directions()`, which is a function we will add in a bit that will handle the construction of the directions query and rendering.
 
-  func directions() {
-    let directions = MPDirectionsService()
-
-    let origin = MPPoint(lat: 38.897382, lon: -77.037447, zValue:0)
-    let destination = MPPoint(lat: 38.897583, lon: -77.037821, zValue:0)
-
-    let directionsQuery = MPDirectionsQuery(originPoint: origin!, destination: destination!)
-
-    directions.routing(with: directionsQuery) { (route, error) in
-      self.renderer.map = self.mapView
-      self.renderer.route = route
-      self.renderer.routeLegIndex = 0
-      self.renderer.animate(5)
+```swift
+func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let location:MPLocation = searchResult![indexPath.row]
+        self.destination = location.getPoint()!
+        self.mapControl?.go(to: location)
+        tableView.removeFromSuperview()
+        directions()
     }
-  }
-}
 ```
 
-The route object is seperated into objects of `MPRouteLeg` and these legs are again seperated indo objects of `MPRouteStep`. A specific part of the route can be rendered by setting the `routeLegIndex` and/or `routeStepIndex` properties.
+We can now add in the `directions()` function,
 
 ```swift
-renderer.routeLegIndex = 1
+func directions() {
+        let directions = MPDirectionsService()
+        let directionsQuery = MPDirectionsQuery(originPoint: origin, destination: destination)
+
+        directions.routing(with: directionsQuery) { (route, error) in
+          self.renderer.map = self.mapView
+          self.renderer.route = route
+          self.renderer.routeLegIndex = 0
+          self.renderer.animate(5)
+        }
+      }
 ```
 
-The length of the `legs` and `steps` arrays determines the possible values of `routeLegIndex` and `routeStepIndex` (`0 ..< length`).
+## Expected Result
 
-<!-- Travel-mode -->
-{% include "src/shared/getting-started/directions/travel-mode.md" %}
+![Expected Result](/assets/ios/getting-started/er_directions.gif)
 
-Set **travel mode** on your request using the `travelMode` property on `MPDirectionsQuery`:
-
-```swift
-let directionsQuery = MPDirectionsQuery.init(originPoint: origin!, destination: destination!)
-directionsQuery.travelMode = .driving
-```
-
-<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/ios/v3/getting-started/livedata/">Next up: Live Data</a></p>
+<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/ios/v3/getting-started/live-data/">Next up: Live Data</a></p>

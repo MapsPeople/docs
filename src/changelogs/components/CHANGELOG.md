@@ -12,13 +12,125 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [11.8.0] - 2021-11-17
+
+### Added
+
+- **mi-dropdown**: The items within the content window now truncate long strings, and hovering over items will now show the full text.
+
+## [11.7.1] - 2021-11-10
+
+### Fixed
+
+- **mi-dropdown**: Fuzzy search now correctly shows the items that match the input query the most.
+
+## [11.7.0] - 2021-11-05
+
+### Fixed
+
+- **mi-dropdown**: The clear button in the input field is now hidden and untabable when there's no input string.
+
+## [11.6.2] - 2021-11-02
+
+### Fixed
+
+- **mi-dropdown**: Searching for items now uses a score to show the items that match the search query.
+
+## [11.6.1] - 2021-11-02
+
+### Fixed
+
+- **mi-column**: Styling issue that would cause columns with a fixed width to resize when changing the table width.
+
+## [11.6.0] - 2021-10-29
+
+### Added
+
+- **mi-column**: `alignContent` attribute for setting the alignment of the column's content.
+- **mi-column**: `width` attribute for setting a fixed width of the column.
+
+### Fixed
+
+- **mi-data-table**: Styling issue for none-sortable columns that caused extra padding to be applied.
+
+## [11.5.2] - 2021-10-28
+
+### Fixed
+
+- **mi-dropdown**: Using the cursor to select an item was not possible.
+
+## [11.5.1] - 2021-10-28
+
+### Fixed
+
+- **mi-dropdown**: Now shows the selected item again.
+
+## [11.5.0] - 2021-10-28
+
+### Added
+
+- **mi-dropdown**: Now supports navigating and selecting items using the keyboard.
+
+## [11.4.2] - 2021-10-18
+
+### Fixed
+
+- **mi-dropdown**: The dropdown filtering options now got a fixed position.
+
+## [11.4.1] - 2021-10-14
+
+### Fixed
+
+- **mi-dropdown**: The spacing between checkbox and icon is now `12px`.
+- **mi-dropdown**: The spacing between the icon and the label is now `8px`.
+
+## [11.4.0] - 2021-10-14
+
+### Added
+
+- **mi-dropdown**: Now has support for adding icons to items. `<mi-dropdown-item value="foo"><img src="example.com/image.png />bar</mi-dropdown-item>`.
+- **mi-column**: Now has an `sort` attribute for pre-sorting the table by that column. `sort="asc|desc"`
+- **mi-column**: The `sortable` attribute can now take an optional value `"date"` to sort the specific column as dates. `sortable="date"`.
+
+## [11.3.0] - 2021-10-05
+
+### Added
+
+- **mi-dropdown**: Now has an `icon` property, which accepts an image source.
+- **mi-dropdown**: Now has an `icon-alt` property, which sets the alternative text for an image.
+
+## [11.2.0] - 2021-09-16
+
+### Added
+
+- **mi-route-instructions**: Support for three new highways that can occur in a route: `ladder`, `wheelchairramp` and `wheelcharlift`.
+- **mi-icon**: Icons for `ladder`, `wheelchair-ramp` and `wheelchair-lift`.
+
+## [11.1.0] - 2021-09-15
+
+### Changed
+
+- **mi-list-item-location** and **mi-list-item-category**: Images hosted on `image.mapsindoors.com` are now requested with query parameters for getting the image in the displayed size.
+
+## [11.0.0] - 2021-09-08
+
+### Added
+
+- **mi-data-table**: Now has a `sticky-header` property, which can be used to make the table header non-sticky.
+
+## [10.12.0] - 2021-09-06
+
+### Added
+
+- **mi-tabs**: Now has a `bordered` property, which can be set to add a border surrounding the content view.
+
 ## [10.11.0] - 2021-09-01
 
-## Added
+### Added
 
-- mi-dropdown: Now displays a message when no results can be found based on the search query.
-- mi-dropdown: Now disables the filter select buttons when there's nothing to select.
-- mi-dropdown: Now performs filtering based on a fuzzy search algorithm.
+- **mi-dropdown**: Now displays a message when no results can be found based on the search query.
+- **mi-dropdown**: Now disables the filter select buttons when there's nothing to select.
+- **mi-dropdown**: Now performs filtering based on a fuzzy search algorithm.
 
 ### Fixed
 
@@ -218,7 +330,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - **mi-map-googlemaps**: `showRoute`, `setRoute`, `clearRoute`, `nextRouteLeg`, `previousRouteLeg`, `setRouteLegIndex`, and `getRoute` methods is deprecated in favor for new `getDirectionsRendererInstance` and `getDirectionsRendererInstance` methods.
 - **mi-map-googlemaps**: Component updated to latests SDK release (V. 4.5.0).
-- **mi-map-mapbox**: `showRoute`, `setRoute`, `clearRoute`, `nextRouteLeg`, `previousRouteLeg`, `setRouteLegIndex`, and `getRoute` methods is deprecated  in favor for new `getDirectionsRendererInstance` and `getDirectionsRendererInstance` methods.
+- **mi-map-mapbox**: `showRoute`, `setRoute`, `clearRoute`, `nextRouteLeg`, `previousRouteLeg`, `setRouteLegIndex`, and `getRoute` methods is deprecated in favor for new `getDirectionsRendererInstance` and `getDirectionsRendererInstance` methods.
 - **mi-map-mapbox**: Component updated to latests SDK release (V. 4.5.0).
 - **RouteParams interface**: Deprecation of `RouteParams` interface.
 
@@ -276,8 +388,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **mi-map-googlemaps**: Documentation updated.
 - **mi-map-mapbox**: Documentation updated.
 - **mi-route-instructions-step**: Documentation updated.
-- **mi-distance**:  Documentation updated.
-- **mi-icon**:  Documentation updated. Note added regards component not being compatible with IE11.
+- **mi-distance**: Documentation updated.
+- **mi-icon**: Documentation updated. Note added regards component not being compatible with IE11.
 
 ### Fixed
 

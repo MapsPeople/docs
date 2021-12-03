@@ -1,7 +1,7 @@
 ---
-title: Getting a marker from a location and vice versa
+title: Getting a Marker from a Location and Vice Versa
 eleventyNavigation:
-  key: Getting a marker from a location and vice versa
+  key: Getting a Marker from a Location and Vice Versa
   parent: ios-v3-guides-map-control
   order: 220
 ---
