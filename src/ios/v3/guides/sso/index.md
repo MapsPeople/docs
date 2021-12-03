@@ -11,7 +11,7 @@ This guide covers the different aspects of user authentication and authorization
 
 Usually, access to the services behind the MapsIndoors SDK is restricted with API keys. However, as an additional layer of security and control, access can be restricted to users of a specific tenant. A MapsIndoors dataset can only be subject to user authentication and authorization if an integration with an identity provider exists. Current examples of such identity providers are _Google_ and _Microsoft_. These providers and more can be added and integrated to your MapsIndoors project by request.
 
-MapsIndoors follows a common OAuth2-based Single Sign-on flow that allows for multiple login services. As such, we recommend that you use a commonly used and well trusted SSO client library for your application. We created [this Single Sign-on sample](https://github.com/mapsindoors/mapsindoorsios/Single Sign-On) with the [OAuth2 client library from Open Id](https://github.com/openid/AppAuth-iOS).
+MapsIndoors follows a common OAuth2-based Single Sign-on flow that allows for multiple login services. As such, we recommend that you use a commonly used and well trusted SSO client library for your application. We created [this Single Sign-on sample](https://github.com/MapsIndoors/MapsIndoorsIOS/tree/master/Example/DemoSamples/Single Sign-On) with the [OAuth2 client library from Open Id](https://github.com/openid/AppAuth-iOS).
 
 In order to utilize an OAuth2 login flow for your MapsIndoors project, you will need to provide some details to the OAuth2 client, like the _issuer url_, _client id_, _scopes_ and possibly a _preferred identity provider_ if there are more than one option. These details can be fetched using `MapsIndoors.fetchAuthenticationDetails()`.
 
