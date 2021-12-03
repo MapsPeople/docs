@@ -149,7 +149,7 @@ private void checkApiKeyValidityAndInitializeSDK() {
 fun checkApiKeyValidityAndInitializeSDK() {
     MPApiKeyValidatorService.checkAuthToken("apikey") {
         if (it != null) {
-            //An error happened authentication was not succesful.
+            //An error happened, authentication was not succesful.
         }else {
             //You have now succesfully gotten access to a solution that requires authentication
             MapsIndoors.initialize(applicationContext, "apikey");
