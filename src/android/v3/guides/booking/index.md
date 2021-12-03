@@ -123,7 +123,7 @@ val bookingsQuery = MPBookingsQuery.Builder()
     .setEndTime(Date(System.currentTimeMillis() + 24*60*60*1000))
     .build()
 
-bookingService.getBookingsUsingQuery(bookingsQuery) {bookings, error -> 
+bookingService.getBookingsUsingQuery(bookingsQuery) {bookings, error ->
     ...
 }
 ```
@@ -150,7 +150,7 @@ MPBooking myBooking = new MPBooking.Builder()
         .setParticipants(new String[] {"myemail@email.com"})
         .setStartTime(new Date())
         .setEndTime(new Date(System.currentTimeMillis() + 60*60*1000))
-        .build();   
+        .build();
 
 bookingService.performBooking(myBooking, (booking, error) -> {
     if (error == null) {
@@ -172,7 +172,7 @@ var myBooking = MPBooking.Builder()
     .setStartTime(Date())
     .setEndTime(Date(System.currentTimeMillis() + 60*60*1000))
     .build()
-        
+
 bookingService.performBooking(myBooking!!) {booking, error ->
     if (error == null) {
         myBooking = booking
@@ -217,7 +217,7 @@ bookingService.cancelBooking(myBooking, (booking, error) -> {
 
 ```kotlin
 val bookingService = MPBookingService.getInstance()
-bookingService.cancelBooking(myBooking) { booking, error -> 
+bookingService.cancelBooking(myBooking) { booking, error ->
     ...
 }
 ```
