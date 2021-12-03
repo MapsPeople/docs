@@ -158,8 +158,6 @@ bookingService.performBooking(myBooking, (booking, error) -> {
     }
     ...
 });
-
-
 ```
 
 </mi-tab-panel>
@@ -194,6 +192,8 @@ In the above example a Booking object is created and several properties are assi
 - Start and end time
 
 Depending on the Booking provider, the participants will receive invites for an event created by this Booking request.
+
+> By default, the `MPBookingService` performs anonymous bookings using a service account known to MapsIndoors. However, it is also possible to list, perform and cancel Bookings [on behalf of a user](../booking/user-authenticated-booking).
 
 ### Cancelling a Booking of a Location
 
