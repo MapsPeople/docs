@@ -74,7 +74,7 @@ You will also need to provide a _redirect url_, but this is not provided by Maps
 
 After you have made the request if using the library you will have to react on the recieved intent from the user loggin in.
 
-With that you response you will create the token exchange request. The token exchange request will respond with a token if succesful that can be set through the `MapsIndoors` class by calling `setAuthToken`.
+With that you response you will create the token exchange request. The token exchange request will respond with a token if succesful that can be set through the `MapsIndoors` class by calling `setAuthToken`. The set access token is used by the MapsIndoors SDK, for remaining lifespan of the SDK. If the SDK is initialized again, a token will need to be set again.
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
