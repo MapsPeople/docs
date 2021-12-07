@@ -22,12 +22,12 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 
 ### Added
 
-- Added getTranslatedName() to POIType, which can get the name of a type in plaintext in the correct language
-- Added getLatLngBounds() to Route
+- Added `getTranslatedName()` to POIType, which can get the name of a type in plaintext in the correct language
+- Added `getLatLngBounds()` to Route
 
 ### Deprecated
 
-- Route.getWaypoint_order()
+- `Route.getWaypoint_order()`
 
 ### Fixed
 
