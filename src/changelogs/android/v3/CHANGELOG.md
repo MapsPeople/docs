@@ -18,6 +18,28 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 ### Security     in case of vulnerabilities.
 -->
 
+## [3.12.2] 2021-12-07
+
+### Added
+
+- Added `getTranslatedName()` to POIType, which can get the name of a type in plaintext in the correct language
+- Added `getLatLngBounds()` to Route
+
+### Deprecated
+
+- `Route.getWaypoint_order()`
+
+### Fixed
+
+- Fixed crash from adding a listener to the LiveDataManager
+- Fixed crash where icons did not have a valid resource
+- Fixed FloorSelector sometimes not being visible
+- Fixed bug that showed wrong directions when changing floors
+- Fixed bug where searching for a specific location could include all available locations
+- Fixed issue where cache was deleted from SDK before sync was initiated
+- Fixed rare NPE that could occur when switching solutions
+- Fixed Various other bugs and crashes
+
 ## [3.12.1] 2021-11-24
 
 ### Fixed
