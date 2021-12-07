@@ -9,6 +9,31 @@ eleventyNavigation:
 
 Changelog for MapsIndoors SDK for JavaScript. This document structure is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and the project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [4.16.0] - 2021-12-07
+
+### Added
+
+- Disabling Live Data will now remove badges from icons when using the default callback.
+
+### Fixed
+
+- In some cases, when adding the MapsPeople logo to the map, the SDK would throw an error.
+- Live Data now sends correct Http headers.
+- `LiveDataInfo.activeDomainTypes()` now always returns a promise.
+
+## [4.15.0] - 2021-11-18
+
+### Added
+
+- Labels in MapIndoors now support linebreaks. A `Label` containing `\n` now renders as multiple lines.
+- `labelMaxWidth` on `DisplayRule` sets the max-width in px for a `Label`. Long labels now wrap over multiple lines.
+
+## [4.14.1] - 2021-11-03
+
+### Fixed
+
+- `AppUserRoles` set via `MapsIndoors.setUserRoles` is now applied when calling `DirectionsService.getRoute`
+
 ## [4.14.0] - 2021-09-13
 
 ### Changed
