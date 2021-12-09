@@ -43,5 +43,9 @@
     <p class="sidebar__header"><a href="/changelogs/">Changelogs</p>
     {% set navPages = collections.published | eleventyNavigation("changelogs") %}
   {% endif %}
+  {% if '/auth' in page.url %}
+    <p class="sidebar__header"><a href="/auth/">Auth</p>
+    {% set navPages = collections.published | eleventyNavigation("auth") %}
+  {% endif %}
   {{ navPages | eleventyNavigationToHtml({listClass: "sidebar-nav", activeListItemClass: "active", activeKey: eleventyNavigation.key}) | safe }}
 </nav>
