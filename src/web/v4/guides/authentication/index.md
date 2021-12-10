@@ -88,4 +88,4 @@ The SDK will then make sure that all requests for data is performed using this a
 
 For a full example please [see here](https://github.com/MapsPeople/JS-SDK-Examples/tree/main/single-sign-on)
 
-> Note that the access token obtained from a MapsIndoors Single Sign-on flow cannot be used as access token for the [Booking Service](../booking). Single Sign-on access tokens are issued by MapsIndoors and not the underlying tenant. You need to login directly on your Booking tenant to get an access token that can be used for working with the Booking Service as an authenticated user.
+> Note that the access token obtained from a MapsIndoors Single Sign-on flow cannot be used as access token for the Booking Service. Single Sign-on access tokens are issued by MapsIndoors and not the underlying tenant. You need to login directly on your Booking tenant to get an access token that can be used for working with the Booking Service as an authenticated user.
