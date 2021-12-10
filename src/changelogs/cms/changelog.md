@@ -12,7 +12,7 @@ eleventyNavigation:
 ### What's new
 
 - **Areas:** Areas can be created outside any Floor polygon.
-- **Areas:** An Area's visibility can be switched on/off.
+- **Areas:** An Areas visibility can be switched on or off.
 
 ## March 29th 2021
 
