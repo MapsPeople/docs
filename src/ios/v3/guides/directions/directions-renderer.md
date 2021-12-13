@@ -97,7 +97,7 @@ class MPDirectionsRendererContextualInfoSettings {
     // If no Categories are supplied, all Categories of Locations will be considered.
     var categories: [String]?
 
-    // The maximum distance in meters allowed for using text and icon from a Location. Leave blank for a sensible default.
+    // The maximum distance in meters allowed for using text and icon from a Location. Leave blank for a default of 5 meters.
     var maxDistance: Double
 
     // Which content should be used. Default is IconAndName.
