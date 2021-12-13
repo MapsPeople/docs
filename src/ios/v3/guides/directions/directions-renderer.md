@@ -92,14 +92,14 @@ class MPDirectionsRendererContextualInfoSettings {
     // The Types of Location that should be used when showing text and icon for a start or end marker.
     // If no Types are supplied, all Types of Locations will be considered.
     var types: [String]?
-    
+
     // The Categories of Location that should be used when showing text and icon for a start or end marker.
     // If no Categories are supplied, all Categories of Locations will be considered.
     var categories: [String]?
 
     // The maximum distance in meters allowed for using text and icon from a Location. Leave blank for a sensible default.
     var maxDistance: Double
-        
+
     // Which content should be used. Default is IconAndName.
     var contentScope: MPDirectionsRendererContextualInfoScope
 }
