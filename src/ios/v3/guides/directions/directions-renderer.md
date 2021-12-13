@@ -78,3 +78,40 @@ override func viewDidAppear(_ animated: Bool) {
 ```
 
 In the above example, a target is added to `nextRouteLegButton` and  `nextRouteLegButton` calling the method `nextLeg` and `previousLeg` respectively. These methods then changes the visible Route Leg.
+
+## Show Content of Nearby Locations
+
+It is possible to show contextual information on the start or end points of the rendered path of a route segment by configuring the directions renderer to look for nearby locations or POIs.
+
+![Show content of nearby locations](/assets/ios/directions-renderer/directions_renderer_contextual_info.png)
+
+This is done by creating an appropriate `MPDirectionsRendererContextualInfoSettings` object and passing it to the directions renderer. If the `contextualInfoSettings` property is not set, no contextual information will be searched for and shown.
+
+```swift
+class MPDirectionsRendererContextualInfoSettings {
+    // The Types of Location that should be used when showing text and icon for a start or end marker.
+    // If no Types are supplied, all Types of Locations will be considered.
+    var types: [String]?
+    
+    // The Categories of Location that should be used when showing text and icon for a start or end marker.
+    // If no Categories are supplied, all Categories of Locations will be considered.
+    var categories: [String]?
+
+    // The maximum distance in meters allowed for using text and icon from a Location. Leave blank for a sensible default.
+    var maxDistance: Double
+        
+    // Which content should be used. Default is IconAndName.
+    var contentScope: MPDirectionsRendererContextualInfoScope
+}
+```
+
+Possible values for `contentScope` are `IconAndName` (default), `IconOnly`, or `NameOnly` as defined in `MPDirectionsRendererContextualInfoScope`.
+
+This is an example of how to show information about locations of type "Entry" within 20 meters from the route with both an icon and the name:
+
+```swift
+let contextualSettings = DirectionsRendererContextualInfoSettings()
+contextualSettings.types = ["Entry"]
+contextualSettings.maxDistance = 20
+myDirectionsRenderer.contextualInfoSettings = contextualSettings
+```
