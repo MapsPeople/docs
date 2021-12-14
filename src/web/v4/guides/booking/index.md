@@ -76,7 +76,7 @@ It is possible to get a list of bookings using the `bookingService.getBookableLo
   const start = new Date().setHours(new Date().getHours() -1);
   const end = new Date(start).setHours(start.getHours() + 24);
 
-  const bookings = await bookingService.getBookingsUsingQuery({ 
+  const bookings = await bookingService.getBookingsUsingQuery({
     location: myMeetingRoom,
     startTime: start,
     endTime: end
