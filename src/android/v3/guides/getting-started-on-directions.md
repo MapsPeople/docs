@@ -231,3 +231,40 @@ reloadBtn.setOnClickListener {
 
 </mi-tab-panel>
 </mi-tabs>
+
+## Show Content of Nearby Locations
+
+It is possible to show contextual information on the end points of the rendered path of a route segment by configuring the directions renderer to look for nearby Locations or POIs.
+
+This is done by creating an appropriate `MPContextualInfoSettings` object and passing that to the Directions Renderer. If it is not set or is null, no contextual information will be shown.
+
+The MPContextualInfoSetting can be applied on `MPDirectionsRenderer` by calling `useContentOfNearbyLocations(MPContextualInfoSettings)`. Like this:
+
+<mi-tabs>
+<mi-tab label="Java" tab-for="java"></mi-tab>
+<mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
+<mi-tab-panel id="java">
+
+```java
+//Sets the contextual info to be of locations that has the type "entries" and searches within a max distance of 30 meters from the end point of the current route segment
+mDirectionsRenderer.useContentOfNearbyLocations(new MPContextualInfoSettings.Builder()
+            .setMaxDistance(30.0)
+            .setTypes(Collections.singletonList("entries"))
+            .build());
+```
+
+</mi-tab-panel>
+<mi-tab-panel id="kotlin">
+
+```kotlin
+//Sets the contextual info to be of locations that has the type "entries" and searches within a max distance of 30 meters from the end point of the current route segment
+mDirectionsRenderer?.useContentOfNearbyLocations(MPContextualInfoSettings.Builder()
+            .setMaxDistance(30.0)
+            .setTypes(Collections.singletonList("entries"))
+            .build())
+```
+
+</mi-tab-panel>
+</mi-tabs>
+
+The defaults of the `ContextualInfoSettings` builder is `maxDistance` at 5 meters and the `ContextualInfoScope` as icon and name. No types or categories is set as default. Not applying any will make it search through all locations to use as contextual information.
