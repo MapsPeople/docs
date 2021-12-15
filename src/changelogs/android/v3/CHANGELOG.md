@@ -27,8 +27,7 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 ### Changed
 
 - Upped target SDK version to 31 (Android 12)
-- Made changes to rendering such that the contents of the map are updated more often, and without user input
-  - The renderer is now stopped/restarted along with MapControl, by calling `MapControl.onStop()` and `MapControl.onStart()`, to ensure that the GC does not kill the app when it is in the background
+- Made changes to rendering such that the contents of the map are updated more often
 
 ### Deprecated
 
@@ -37,14 +36,13 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 
 ### Fixed
 
-- Fixed issue with multiple whitespaces in labels not being trimmed correctly
-- Fixed an issue where labels were being displayed off centre when maxLabelWidth has been set in the CMS
+- Fixed issues with linebreaks
 - Fixed issue where the floor selector was unremoveable
 - Fixed manifest issue that was blocking use of the SDK in Android 12 apps
-- Fixed issue where the SDK continued to be 'ready' for a short period after setting user roles,causing unexpected behavior
+- Fixed issue where the SDK continued to be 'ready' for a short period after setting user roles
 - Fixed an issue where `MPQuery.setNear()` ignored the Z-index of the parameter
-- Fixed an issue where initializing the SDK with an invalid API key would lock it. Now if an invalid API key has been set, the SDK will halt correctly, and can be restarted either by re-initializing it or calling `setAPIKey()`
-- Fixed issue where all HTTP error codes were converted to 206 (Partial Content)
+- Fixed an issue where initializing the SDK with an invalid API key would lock it
+- Various minor fixes
 
 ## [3.12.2] 2021-12-07
 
