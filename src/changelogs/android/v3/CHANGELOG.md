@@ -18,6 +18,34 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 ### Security     in case of vulnerabilities.
 -->
 
+## [3.12.3] 2021-12-15
+
+### Added
+
+- Added `MPConstants`, which in this first iteration exposes a number of constants related to Z-index levels on the google map
+
+### Changed
+
+- Upped target SDK version to 31 (Android 12)
+- Made changes to rendering such that the contents of the map are updated more often, and without user input
+  - The renderer is now stopped/restarted along with MapControl, by calling `MapControl.onStop()` and `MapControl.onStart()`, to ensure that the GC does not kill the app when it is in the background
+
+### Deprecated
+
+- Deprecated `MPDatasetCacheManager.getConcurrentTaskLimit()`
+- Deprecated `MPDatasetCacheManager.setConcurrentTaskLimits()`
+
+### Fixed
+
+- Fixed issue with multiple whitespaces in labels not being trimmed correctly
+- Fixed an issue where labels were being displayed off centre when maxLabelWidth has been set in the CMS
+- Fixed issue where the floor selector was unremoveable
+- Fixed manifest issue that was blocking use of the SDK in Android 12 apps
+- Fixed issue where the SDK continued to be 'ready' for a short period after setting user roles,causing unexpected behavior
+- Fixed an issue where `MPQuery.setNear()` ignored the Z-index of the parameter
+- Fixed an issue where initializing the SDK with an invalid API key would lock it. Now if an invalid API key has been set, the SDK will halt correctly, and can be restarted either by re-initializing it or calling `setAPIKey()`
+- Fixed issue where all HTTP error codes were converted to 206 (Partial Content)
+
 ## [3.12.2] 2021-12-07
 
 ### Added
