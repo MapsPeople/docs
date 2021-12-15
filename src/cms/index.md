@@ -497,6 +497,48 @@ We highly recommend using SVGs for icons across MapsIndoors, but support PNG fil
 
 When uploading an icon in the PNG format, make sure you upload it in a 3x size to accommodate for it being scaled down on the map. For example, to display a 20x20px icon on the map, upload it in 60x60px.
 
+## Split and Combine
+
+Split and Combine are features that enable you to edit a Room's geometry. A Room can either be split in two, or combined with another Room.
+
+The Split and Combine features are useful if you want to make quick changes to your Rooms. If you want to make groundbreaking changes to a Floor or Building layout, reach out to your contact at MapsPeople with your updated CAD drawings.
+
+One use case for Split and Combine is to manage the layout of an exhibition for a temporary event in a convention center. Combine booths or split them into smaller ones based on the event demands.
+
+Another use case is if you make changes to your office layout without making any structural changes to the building. E.g. you might knock down a plaster wall to combine two meeting rooms or the like, which doesn’t necessarily require a full redrawing of your floor layout by our team of specialists.
+
+### How to split
+
+Select a Room on the map. In the Location Details editor, click on the “Split”-button. Place two points on the borders of the Rooms where you'd like to split it. Then choose which Room is the new Room on the map. The new Room will get a new ID, but otherwise copy all other data from the original Room. The old Room will retain all of the original data.
+
+You can get a helping hand after placing the first splitting point by holding down the "Shift" key on your keyboard. The line will be drawn perpendicular (at a 90° angle) to the Room's wall.
+
+If you exit the Split mode before completing the split, your changes will be discarded.
+
+#### Detailed constraints for Split
+
+1. The split must contain two points touching the edge/Walls of the Room.
+1. The split can not extend outside of the Room.
+1. The split must not intersect with any holes in the Room.
+1. The split must be at least 1 meter from any Walls or holes.
+1. The outcome of the split must be at least 1 square meters in size.
+1. A split must not overlap itself.
+
+### How to combine
+
+Select a Room on the map. In the Location Details editor, click on the “Combine”-button.
+
+The selected Room is now highlighted on the map, with the compatible Rooms highlighted in a different color. Click on the other Room you'd like to combine with your selected Room.
+
+The combined Room’s Location Details are based on the first selected Room’s Location Details. If you have any external integrations that rely on a Room's ID, make sure the Rooms are selected in the right order.
+
+If you exit the Combine mode before completing the combination, your changes will be discarded.
+
+#### Detailed constraints for Combine
+
+1. All Locations must be of the same Type.
+1. The Rooms must share at least 1 meter of unbroken Wall.
+
 ## Support
 
 **Something not working?**
