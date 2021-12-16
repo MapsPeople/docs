@@ -267,4 +267,4 @@ mDirectionsRenderer?.useContentOfNearbyLocations(MPContextualInfoSettings.Builde
 </mi-tab-panel>
 </mi-tabs>
 
-The defaults of the `ContextualInfoSettings` builder is `maxDistance` at 5 meters and the `ContextualInfoScope` as icon and name. No types or categories is set as default. Not applying any will make it search through all locations to use as contextual information.
+The defaults of the `ContextualInfoSettings` builder is `maxDistance` at 5 meters and the `ContextualInfoScope` as icon and name. No Types or Categories is set as default. Not applying any will make it search through all Locations to use as contextual information.
