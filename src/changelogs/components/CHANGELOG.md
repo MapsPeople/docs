@@ -12,6 +12,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [11.9.0] - 2021-12-16
+
+### Added
+
+- **mi-dropdown**: Now has the option to display user-specified text when hovering an `mi-dropdown-item` by setting the `title` attribute.
+
+### Fixed
+
+- **mi-dropdown**: Tabbing to the clear button and pressing Enter would clear the input field and select the highlighted item instead of just clearing the input field.
+- **mi-dropdown**: `mi-dropdown-item`s with icons were not filterable.
+
 ## [11.8.1] - 2021-12-01
 
 ### Changed
