@@ -1,7 +1,7 @@
 ---
-title: Event handling
+title: Event Handling
 eleventyNavigation:
-  title: Event handling
+  title: Event Handling
   parent: web-v4-guides
   key: web-v4-guides-event-handling
   order: 230
@@ -20,7 +20,7 @@ A code example is shown in the JSFiddle below, but will be run through bit by bi
 
 <script async src="//jsfiddle.net/mapspeople/gex62wzn/embed/html,result/"></script>
 
-### Ready event
+### Ready Event
 
 The `ready` event will be fired when MapsIndoors is done initializing and is ready to interact.
 
@@ -30,7 +30,7 @@ mapsIndoors.addListener('ready', (e) => {
 });
 ```
 
-### Building changed event
+### Building Changed Event
 
 The `building_changed` event will be fired when the map is moved around and a new Building comes in focus.
 
@@ -44,7 +44,7 @@ mapsIndoors.addListener('building_changed', (e) => {
 });
 ```
 
-### Floor changed event
+### Floor Changed Event
 
 The `floor_changed` event will be fired when the Floor is changed; either by clicking the Floor Selector or by calling `setFloor()` on the MapsIndoors instance.
 
@@ -56,7 +56,7 @@ mapsIndoors.addListener('floor_changed', (e) => {
 });
 ```
 
-### Click event
+### Click Event
 
 The `click` event will fire when the user clicks on a Location on the map.
 

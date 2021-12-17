@@ -19,7 +19,7 @@ We will create a new method on our `MapsActivity` called `enableLiveData()` to e
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
-<a href="https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L270-L278">MapsActivity.java</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L270-L278">MapsActivity.java</a>
 
 ```java
 void enableLiveData() {
@@ -32,7 +32,7 @@ void enableLiveData() {
 
 </mi-tab-panel>
 <mi-tab-panel id="kotlin">
-<a href="https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/MapsActivity.kt#L227-L235">MapsActivity.kt</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/MapsActivity.kt#L227-L235">MapsActivity.kt</a>
 
 ```kotlin
 private fun enableLiveData() {
@@ -54,7 +54,7 @@ In the context of your view controller showing a map, add the call after creatin
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
-<a href="https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L148-L168">MapsActivity.java</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L148-L168">MapsActivity.java</a>
 
 ```java
 void initMapControl(View view) {
@@ -68,7 +68,7 @@ void initMapControl(View view) {
 
 </mi-tab-panel>
 <mi-tab-panel id="kotlin">
-<a href="https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/MapsActivity.kt#L116-L134">MapsActivity.kt</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/MapsActivity.kt#L116-L134">MapsActivity.kt</a>
 
 ```kotlin
 private fun initMapControl(view: View) {

@@ -95,7 +95,7 @@ miMapElement.addEventListener('mapsIndoorsReady', () => {
 
 Now our example app is ready to provide Directions. Next up is how to give it an _Origin_ and _Destination_ and draw the route between.
 
-### Draw a route on the map
+### Draw a Route on the Map
 
 To display a route on the map, we use the _coordinates_ of an _Origin_ and _Destination_ and draw a line between them. For this, we use MapsIndoors' `directionsRender`.
 

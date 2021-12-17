@@ -1,1 +1,1 @@
-## Show a list of search results
+## Show a List of Search Results

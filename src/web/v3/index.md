@@ -91,7 +91,7 @@ google.maps.event.addDomListener(window, 'load', init);
 
 ## Trying the Showcase Web App
 
-A [showcase app is available on GitHub](https://github.com/MapsIndoors/MapsIndoorsWeb), free to use and adapt to your needs.
+A [showcase app is available on GitHub](https://github.com/mapspeople/MapsIndoorsWeb), free to use and adapt to your needs.
 
 ### Try the Showcase Web App right away
 

@@ -12,6 +12,233 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [11.8.1] - 2021-12-01
+
+### Changed
+
+- **mi-notification**: Enums and interfaces is now exposed.
+
+## [11.8.0] - 2021-11-17
+
+### Added
+
+- **mi-dropdown**: The items within the content window now truncate long strings, and hovering over items will now show the full text.
+
+## [11.7.1] - 2021-11-10
+
+### Fixed
+
+- **mi-dropdown**: Fuzzy search now correctly shows the items that match the input query the most.
+
+## [11.7.0] - 2021-11-05
+
+### Fixed
+
+- **mi-dropdown**: The clear button in the input field is now hidden and untabable when there's no input string.
+
+## [11.6.2] - 2021-11-02
+
+### Fixed
+
+- **mi-dropdown**: Searching for items now uses a score to show the items that match the search query.
+
+## [11.6.1] - 2021-11-02
+
+### Fixed
+
+- **mi-column**: Styling issue that would cause columns with a fixed width to resize when changing the table width.
+
+## [11.6.0] - 2021-10-29
+
+### Added
+
+- **mi-column**: `alignContent` attribute for setting the alignment of the column's content.
+- **mi-column**: `width` attribute for setting a fixed width of the column.
+
+### Fixed
+
+- **mi-data-table**: Styling issue for none-sortable columns that caused extra padding to be applied.
+
+## [11.5.2] - 2021-10-28
+
+### Fixed
+
+- **mi-dropdown**: Using the cursor to select an item was not possible.
+
+## [11.5.1] - 2021-10-28
+
+### Fixed
+
+- **mi-dropdown**: Now shows the selected item again.
+
+## [11.5.0] - 2021-10-28
+
+### Added
+
+- **mi-dropdown**: Now supports navigating and selecting items using the keyboard.
+
+## [11.4.2] - 2021-10-18
+
+### Fixed
+
+- **mi-dropdown**: The dropdown filtering options now got a fixed position.
+
+## [11.4.1] - 2021-10-14
+
+### Fixed
+
+- **mi-dropdown**: The spacing between checkbox and icon is now `12px`.
+- **mi-dropdown**: The spacing between the icon and the label is now `8px`.
+
+## [11.4.0] - 2021-10-14
+
+### Added
+
+- **mi-dropdown**: Now has support for adding icons to items. `<mi-dropdown-item value="foo"><img src="example.com/image.png />bar</mi-dropdown-item>`.
+- **mi-column**: Now has an `sort` attribute for pre-sorting the table by that column. `sort="asc|desc"`
+- **mi-column**: The `sortable` attribute can now take an optional value `"date"` to sort the specific column as dates. `sortable="date"`.
+
+## [11.3.0] - 2021-10-05
+
+### Added
+
+- **mi-dropdown**: Now has an `icon` property, which accepts an image source.
+- **mi-dropdown**: Now has an `icon-alt` property, which sets the alternative text for an image.
+
+## [11.2.0] - 2021-09-16
+
+### Added
+
+- **mi-route-instructions**: Support for three new highways that can occur in a route: `ladder`, `wheelchairramp` and `wheelcharlift`.
+- **mi-icon**: Icons for `ladder`, `wheelchair-ramp` and `wheelchair-lift`.
+
+## [11.1.0] - 2021-09-15
+
+### Changed
+
+- **mi-list-item-location** and **mi-list-item-category**: Images hosted on `image.mapsindoors.com` are now requested with query parameters for getting the image in the displayed size.
+
+## [11.0.0] - 2021-09-08
+
+### Added
+
+- **mi-data-table**: Now has a `sticky-header` property, which can be used to make the table header non-sticky.
+
+## [10.12.0] - 2021-09-06
+
+### Added
+
+- **mi-tabs**: Now has a `bordered` property, which can be set to add a border surrounding the content view.
+
+## [10.11.0] - 2021-09-01
+
+### Added
+
+- **mi-dropdown**: Now displays a message when no results can be found based on the search query.
+- **mi-dropdown**: Now disables the filter select buttons when there's nothing to select.
+- **mi-dropdown**: Now performs filtering based on a fuzzy search algorithm.
+
+### Fixed
+
+- mi-dropdown: Filtering within the component now works as expected.
+
+## [10.10.0] - 2021-08-26
+
+### Added
+
+- **mi-data-table**: `emptyPageHeader` and `emptyPageSubheader` properties added which can be used to set the header and subheader that is being presented when the table is empty.
+
+## [10.9.0] - 2021-08-25
+
+### Added
+
+- **mi-dropdown**: `itemsOrder` property added to control the sorting of the dropdown options.
+
+## [10.8.0] - 2021-08-20
+
+### Fixed
+
+- **mi-scroll-buttons**: The state of the up and down buttons now disable or enable correctly when the scrollbar reaches the top or bottom.
+
+## [10.7.0] - 2021-08-16
+
+### Added
+
+- **mi-dropdown**: Option to style icon on the right-hand side of the dropdown component.
+
+### Fixed
+
+- **mi-dropdown**: Dropdown content previously had no max height to prevent it from taking more space than available.
+
+## [10.6.0] - 2021-08-11
+
+### Fixed
+
+- **mi-dropdown**: Collapsing button now has a pre-defined height.
+
+### Added
+
+- **mi-dropdown**: Disabled state for the button when no textual content is available.
+
+## [10.5.1] - 2021-08-03
+
+### Fixed
+
+- **mi-dropdown**: The button will now display the name of the first `mi-dropdown-item` as its content instead of being empty.
+
+## [10.5.0] - 2021-08-03
+
+### Added
+
+- **mi-dropdown**: Option to style the textual content inside the button using document-level CSS.
+
+## [10.4.0] - 2021-07-21
+
+### Added
+
+- **mi-dropdown**: The button can now be styled using document-level CSS.
+
+## [10.3.2] - 2021-07-16
+
+### Fixed
+
+- **mi-dropdown**: The `mi-dropdown-item`'s wasn't rendered when the `items` attribute was an empty array.
+
+## [10.3.1] - 2021-07-15
+
+### Fixed
+
+- **mi-dropdown**: The `mi-dropdown` component didn't render the `mi-dropdown-item` elements when set before the first render.
+
+## [10.3.0] - 2021-07-15
+
+### Added
+
+- **mi-data-table**: The `selectionChanged` event has been added. If the table is selectable this event will fire when the selection changes.
+
+## [10.2.0] - 2021-07-15
+
+### Added
+
+- **mi-column**: The `fit-content` attribute has been added. When present the column width will be fitted to the content.
+
+## [10.1.0] - 2021-07-14
+
+### Added
+
+- **mi-data-table**: The `selectable` attribute has been added. When present on the data-table the first column will be rendered as checkboxes.
+
+## [10.0.0] - 2021-07-07
+
+### Added
+
+- **mi-dropdown**: Documentation added.
+
+### Changed
+
+- **mi-dropdown**: Cleanup of component including look and feel.
+- **mi-dropdown**: `change` event now emits selected items instead of the component itself.
+
 ## [9.2.0] - 2021-06-17
 
 ### Added
@@ -109,7 +336,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - **mi-map-googlemaps**: `showRoute`, `setRoute`, `clearRoute`, `nextRouteLeg`, `previousRouteLeg`, `setRouteLegIndex`, and `getRoute` methods is deprecated in favor for new `getDirectionsRendererInstance` and `getDirectionsRendererInstance` methods.
 - **mi-map-googlemaps**: Component updated to latests SDK release (V. 4.5.0).
-- **mi-map-mapbox**: `showRoute`, `setRoute`, `clearRoute`, `nextRouteLeg`, `previousRouteLeg`, `setRouteLegIndex`, and `getRoute` methods is deprecated  in favor for new `getDirectionsRendererInstance` and `getDirectionsRendererInstance` methods.
+- **mi-map-mapbox**: `showRoute`, `setRoute`, `clearRoute`, `nextRouteLeg`, `previousRouteLeg`, `setRouteLegIndex`, and `getRoute` methods is deprecated in favor for new `getDirectionsRendererInstance` and `getDirectionsRendererInstance` methods.
 - **mi-map-mapbox**: Component updated to latests SDK release (V. 4.5.0).
 - **RouteParams interface**: Deprecation of `RouteParams` interface.
 
@@ -167,8 +394,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **mi-map-googlemaps**: Documentation updated.
 - **mi-map-mapbox**: Documentation updated.
 - **mi-route-instructions-step**: Documentation updated.
-- **mi-distance**:  Documentation updated.
-- **mi-icon**:  Documentation updated. Note added regards component not being compatible with IE11.
+- **mi-distance**: Documentation updated.
+- **mi-icon**: Documentation updated. Note added regards component not being compatible with IE11.
 
 ### Fixed
 

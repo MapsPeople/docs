@@ -2,7 +2,7 @@
 title: Android SDK v3 Changelog
 permalink: /changelogs/android/v3/
 eleventyNavigation:
-  key: Android SDK v3 Changlog
+  key: Android SDK v3 Changelog
   parent: changelogs
   order: 1
 ---
@@ -17,6 +17,167 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 ### Fixed        for any bug fixes.
 ### Security     in case of vulnerabilities.
 -->
+
+## [3.12.3] 2021-12-15
+
+### Added
+
+- Added `MPConstants`, which in this first iteration exposes a number of constants related to Z-index levels on the google map
+
+### Changed
+
+- Upped target SDK version to 31 (Android 12)
+- Made changes to rendering such that the contents of the map are updated more often
+
+### Deprecated
+
+- Deprecated `MPDatasetCacheManager.getConcurrentTaskLimit()`
+- Deprecated `MPDatasetCacheManager.setConcurrentTaskLimits()`
+
+### Fixed
+
+- Fixed issues with linebreaks
+- Fixed issue where the floor selector was unremoveable
+- Fixed manifest issue that was blocking use of the SDK in Android 12 apps
+- Fixed issue where the SDK continued to be 'ready' for a short period after setting user roles
+- Fixed an issue where `MPQuery.setNear()` ignored the Z-index of the parameter
+- Fixed an issue where initializing the SDK with an invalid API key would lock it
+- Various minor fixes
+
+## [3.12.2] 2021-12-07
+
+### Added
+
+- Added `getTranslatedName()` to POIType, which can get the name of a type in plaintext in the correct language
+- Added `getLatLngBounds()` to Route
+
+### Deprecated
+
+- `Route.getWaypoint_order()`
+
+### Fixed
+
+- Fixed crash from adding a listener to the LiveDataManager
+- Fixed crash where icons did not have a valid resource
+- Fixed FloorSelector sometimes not being visible
+- Fixed bug that showed wrong directions when changing floors
+- Fixed bug where searching for a specific location could include all available locations
+- Fixed issue where cache was deleted from SDK before sync was initiated
+- Fixed rare NPE that could occur when switching solutions
+- Fixed Various other bugs and crashes
+
+## [3.12.1] 2021-11-24
+
+### Fixed
+
+- Fixed issue where LocationSource was Available before it was completely updated
+- Various minor fixes
+
+## [3.12.0] 2021-11-23
+
+### Added
+
+- Icon and labels are now handled independently
+  - Icons and labels are now separate entities when computing overlaps/collisions
+  - Icons and labels can now be shown/hidden at different zoom levels, according to the display rule
+- Contextual routing information
+  - Now able to allow for context taken from nearby POI's of a given type, using the MPDirectionsRenderer
+- Support for authentication
+  - Added interface to support single side sign-on from OpenIDConnect providers by setting tokens, which will allow access to otherwise restricted MapsIndoors API keys
+- User authenticated booking
+  - Revised booking interface to set a token, in order to allow for booking on user calenders
+
+### Fixed
+
+- Significant improvements to loading performance
+- Fixed issue where on marker click event was not forwarded properly to Google Maps
+- Fixed rare issue where MapControl may never invoke the set listener, upon initialization (OnLoadingDataReadyListener)
+- Fixed issue where markers may be retained on the map, when changing floors
+- Various minor fixes
+
+## [3.11.2] 2021-11-5
+
+### Added
+
+- `setLocationHideOnIconOverlapEnabled` can now be toggled dynamically
+
+### Changed
+
+- `setLabelMaxWidth` now takes DP (Device-independent Pixels) instead of actual pixels in its parameter
+
+### Fixed
+
+- Files being deleted outside of scope
+
+## [3.11.1] 2021-10-29
+
+### Fixed
+
+- Potential crash when initializing large solutions
+- Tiles are now rendering with improved resolution
+- Memory leaks
+
+## [3.11.0] 2021-10-27
+
+### Added
+
+- Support for obstacle avoidance zones in routing
+- Static method on MapsIndoors to disable internal SDK event logging
+- Support for 'ladder' highways
+- Icons for ramps, wheelchair ramps and wheelchair lifts
+- 'Go to previous leg' behavior added on start marker of a routing line
+- Line breaking ability for marker labels. Line breaks can now be enforced manually with '\n' in location names or automated to wrap based on a set labelWidth. (Currently only accessible though overriding LocationDisplayRules)
+
+### Fixed
+
+- Wait times reflected correctly when using offline routing
+- Search results are now naturally ordered
+- Various loading & SDK initialization issues
+- Various route directions rendering glitches
+- Various crashes and issues
+
+## [3.10.3] 2021-09-21
+
+### Fixed
+
+- Crash on file reads with external library.
+- Fixed bug with Areas sometimes not being rendered correctly.
+
+## [3.10.2] 2021-09-13
+
+### Added
+
+- MapsIndoors now triggers as ready when Locations are loaded.
+
+### Fixed
+
+- Issue with `setApiKey` loading new Solutions. You can now switch between Solutions again by calling `setAPIKey`, and initializing a new `MapControl` object.
+- Applying `PolygonDisplayRules` on Locations that does not have Polygon geometry no longer causes a crash
+- Issue with Tiles not loading, if a custom Floor Selector is implemented
+- Using `near` on `MPQuery` now gives a better ordering in the list in terms of what is near the set location
+- Various bug fixes and stability issues
+
+## [3.10.1] 2021-09-08
+
+### Fixed
+
+- Fixed a rare null pointer exception crash related to area polygon display rules rendering
+
+## [3.10.0] 2021-08-19
+
+### Added
+
+- The MapsIndoors SDK records anonymous usage statistics and diagnostic events per default (if enabled in the CMS) and sends the logged data to a server at MapsPeople. Logging may be disabled entirely by calling `MapsIndoors.disableEventLogging(true)` on the SDK.
+
+### Deprecated
+
+- Deprecated `MapsIndoors.setOnMapsIndoorsReadyListener(onReadyListener)`. Use `MapsIndoors.addOnMapsIndoorsReadyListener(onReadyListener)` instead.
+
+### Fixed
+
+- Polygon DisplayRules can now be applied to all Locations with a polygon, not just Areas
+- Live Data badges now correctly scale according to the device's pixel density
+- Various bug fixes and stability issues
 
 ## [3.9.2] 2021-06-21
 

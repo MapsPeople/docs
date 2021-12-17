@@ -1,1 +1,1 @@
-## Create a simple query search
+## Create a Simple Query Search

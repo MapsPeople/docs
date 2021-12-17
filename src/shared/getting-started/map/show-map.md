@@ -1,1 +1,1 @@
-## Show a map with MapsIndoors
+## Show a Map with MapsIndoors

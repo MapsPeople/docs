@@ -22,7 +22,7 @@
   {% endif %}
   {% if ('ios/v3/' in page.url) and ('changelogs' not in page.url) %}
    <p class="sidebar__header"><a href="/ios/v3/">iOS v3</p>
-    <a href="https://app.mapsindoors.com/mapsindoors/reference/ios/v3/index.html">Reference Docs
+    <a href="https://app.mapsindoors.com/mapsindoors/reference/ios/v3/classes.html">Reference Docs
       &UpperRightArrow;</a>
     <hr />
     {% set navPages = collections.published | eleventyNavigation("ios-v3") %}
@@ -42,6 +42,10 @@
   {% if '/changelogs' in page.url %}
     <p class="sidebar__header"><a href="/changelogs/">Changelogs</p>
     {% set navPages = collections.published | eleventyNavigation("changelogs") %}
+  {% endif %}
+  {% if '/auth' in page.url %}
+    <p class="sidebar__header"><a href="/auth/">Auth</p>
+    {% set navPages = collections.published | eleventyNavigation("auth") %}
   {% endif %}
   {{ navPages | eleventyNavigationToHtml({listClass: "sidebar-nav", activeListItemClass: "active", activeKey: eleventyNavigation.key}) | safe }}
 </nav>

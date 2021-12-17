@@ -1,13 +1,13 @@
 ---
-title: Caching and offline content
+title: Caching and Offline Content
 eleventyNavigation:
   key: ios-v3-offline
   parent: ios-v3-guides
-  title: Caching and offline content
+  title: Caching and Offline Content
   order: 600
 ---
 
-## Cacheable data
+## Cacheable Data
 
 MapsIndoors has three levels of caching:
 
@@ -17,13 +17,13 @@ MapsIndoors has three levels of caching:
 
 Full dataset caching requires that maptiles are prepared specifically for this purpose.  Contact MapsPeople for arranging this.
 
-## Automatic caching
+## Automatic Caching
 
 Out of the box, MapsIndoors automatically cache all basic data for the **active** dataset on device, whereas images and maptiles are cached as they are used.
 
 This means all MapsIndoors specific data is cached automatically, but images are only cached after they have been needed for map display.  Likewise maptiles (the base map) are only cached when needed for map display, so all parts of the map that has been shown is cached.  Areas and zoomlevels that has not been shown as part of user interaction is not cached.
 
-## Tweaking caching behaviour
+## Tweaking Caching Behaviour
 
 Applications have a few ways to change the default caching behaviour:
 
@@ -43,7 +43,7 @@ let dataSet = dataSetManager.dataSetForCurrentMapsIndoorsAPIKey()
 dataSetManager.setCachingScope(.cachingScope_Full, cacheItem: dataSet!.cacheItem)
 ```
 
-## Bundling of data in the application
+## Bundling of Data in the Application
 
 If needed, it is possible to bundle one MapsIndoors dataset to make your app work better in offline or poor network conditions.
 Please note that while MapsIndoors content can be used offline, Google Maps does not provide offline features. Outdoor wayfinding and Google Places searches will be unavailable and the surrounding map may be unavailable unless it has been cached.
@@ -61,7 +61,7 @@ Replace:
 
 Depending on the overall size of your MapsIndoors deployment, this may take some time, so during development you might want to check the "Run script only when installing" option. This means that content will only be bundled when archiving for e.g. a release.
 
-## Caching of multiple datasets
+## Caching of Multiple Datasets
 
 `Available in SDK version 3.9 and later`
 
@@ -71,7 +71,7 @@ Offline caching of multiple simultaneous datasets is fully supported, and is mos
 
 Management of multiple dataset is done via  `MapsIndoors.dataSetCacheManager`, which allows querying, adding, modifying and removing datasets.
 
-### Listing managed datasets
+### Listing Managed Datasets
 
 All datasets currently manager is accessible via the `MapsIndoors.dataSetCacheManager.managedDataSets` collection:
 
@@ -83,7 +83,7 @@ for ds in MapsIndoors.dataSetCacheManager.managedDataSets {
 
 This can be used to build a management user interface, and information about individual datasets can be access from the `MPDataSetCache` and `MPDataSetCacheItem` classes.
 
-### Adding datasets for offline caching
+### Adding Datasets for Offline Caching
 
 Datasets are scheduled for caching using one of the  `MapsIndoors.dataSetCacheManager.addDataSet()` variants:
 
@@ -94,7 +94,7 @@ MapsIndoors.dataSetCacheManager.addDataSet("API Key", cachingScope: .cachingScop
 
 The current MapsIndoors API key is automatically added as a managed dataset with `cachingScope_Basic`.
 
-### Removing datasets
+### Removing Datasets
 
 Datasets are removed from caching using `MapsIndoors.dataSetCacheManager.removeDataSet()`:
 
@@ -104,7 +104,7 @@ MapsIndoors.dataSetCacheManager.removeDataSet(MPDataSetCache)
 
 Note: the currently active dataset is not removed.
 
-### Changing caching parameters
+### Changing Caching Parameters
 
 To change the extent of caching, for example in a management menu:
 
@@ -114,7 +114,7 @@ let dataSet = dataSetManager.dataSetForCurrentMapsIndoorsAPIKey()
 dataSetManager.setCachingScope( .cachingScope_Detailed, cacheItem: dataSet?.cacheItem )
 ```
 
-### Determining the caching size of a dataset
+### Determining the Caching Size of a Dataset
 
 The estimated and cached size of a dataset is available via the datasets cacheitem:
 
@@ -131,7 +131,7 @@ dataSetManager.fetchSyncSizes(for: [dataSet], delegate: self)
 
 This is an asynchronous process, and a `MPDataSetCacheManagerSizeDelegate` is needed for getting information about progress and results.
 
-### Synchronizing data with MPDataSetCacheManager
+### Synchronizing Data with MPDataSetCacheManager
 
 The `MPDataSetCacheManager`allows for finegrained control which datasets are synchronized, and allows for cancellation:
 

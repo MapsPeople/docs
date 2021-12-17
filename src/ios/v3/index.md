@@ -14,6 +14,5 @@ To benefit from the guides, you will need basic knowledge about:
 * iOS Development
 * Google Maps iOS SDK
 
-> Known Issues:
->
-> 1. Developing on the new Arm-based (M1) Macs requires building and running on a physical iOS device. This is a temporary limitation in Google Maps SDK for iOS, and as such also a limitation in MapsIndoors, due to the dependency to Google Maps.
+<!-- Known Issues -->
+{% include "src/ios/v3/known_issues.md" %}

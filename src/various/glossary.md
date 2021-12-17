@@ -160,11 +160,11 @@ The main difference between Directions and Routes are the scope of what is inclu
 
 "Turn-by-turn navigation" means the current Direction Step change when the physical location of the person navigating changes. The current Direction Step might instruct the person to "Make a right turn" and based on their location after they have completed that step, the current Direction Step changes automatically to "Take the elevator to Floor 4".
 
-### Entry point / Entryway
+### Entry Point / Entryway
 
 {% include "src/shared/directions/entry-points.md" %}
 
-### Bus/tram/train stop
+### Bus/Tram/Train Stop
 
 A "Public Transportation"-only Entry Point inside the Venue is understood to be the point from which MapsIndoors starts the walking directions.
 

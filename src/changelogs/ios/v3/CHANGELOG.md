@@ -18,6 +18,105 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 ### Removed
 -->
 
+## [3.36.0] 2021-11-15
+
+### Fixed
+
+- We fixed an issue where MapsIndoors would crash while calculating a route.
+- We fixed an issue where location specific icons could disappear.
+- We fixed an issue where the correct floor (and tiles for it) would not be shown when advancing on a route.
+
+### Added
+
+- We added support for requiring authentication for accessing MapsIndoors solution data.
+- We added the ability to create room bookings associated with a specific user account rather than only anonymous bookings. This also enables the possibility to delete bookings.
+- We added a possibility to show specific contextual information on the map along a route. You can choose to show icon, label or both.
+
+### Changed
+
+- The `MPLocationDisplayRule.labelWidth` attribute added in 3.35.0 has been renamed to `MPLocationDisplayRule.labelMaxWidth`.
+- It is now not possible to change user roles while worknig in offline mode.
+
+## [3.35.0] 2021-10-29
+
+### Fixed
+
+- We fixed an issue in the floor selector causing the scroll indicator to be shown when only few levels.
+- We fixed a rendering issue with live data badges when location is unoccupied.
+
+### Added
+
+- We added support for multiple lines in labels on the map by including a "\n" as part of the Location name or by setting `MPLocationDisplayRule.labelWidth`.
+
+## [3.34.0] 2021-09-28
+
+### Fixed
+
+- We fixed a layout issue in the floor selector causing large (>4 characters) floor names to be truncated.
+- We fixed a Location selection issue causing the Info Window to sometimes not show on selection.
+- We fixed a rendering issue causing some Live Data badges to show as unintentionally large icons.
+- We fixed an issue causing some icon images to not load and display on the map.
+- We fixed a packaging issue causing some CocoaPods project integrations to not being able to build when using static libraries instead of frameworks in CocoaPods.
+- We fixed an issue in our [Dataset Cache Manager](https://docs.mapsindoors.com/ios/v3/guides/offline/) causing some images to not being properly fetched from cache.
+- We fixed a warning about some public header files not being included by the framework umbrella header.
+- We fixed some issues with the `MPRouteStep` [instructions property](https://app.mapsindoors.com/mapsindoors/reference/ios/v3/interface_m_p_route_step.html#aff76e19b8eb2de29490cf4f4ac7e4d15) not properly reflecting the recommended end-user actions.
+
+### Added
+
+- We added support for Obstacles to our [Directions Service](https://docs.mapsindoors.com/ios/v3/guides/directions/directions-service/). No interface changes are made, but the routing engine will fetch and respect Obstacles created in the MapsIndoors backbone when creating routes.  
+
+### Changed
+
+- We are now sorting search results using a more natural sorting algorithm when applicable.
+- We have changed the our internal image service so that it now primarily serves higher quality remote images and resorting to potentially lower quality cached images when offline.
+
+## [3.33.1] 2021-08-30
+
+### Fixed
+
+- We fixed an issue causing route instructions to reflect the wrong floor when routing across several floors.
+
+## [3.33.0] 2021-08-24
+
+### Added
+
+- Added internal logging functionality in the SDK. Logging of anonymous statistics and diagnostic events will occur if enabled for the current API key. Logging may be disabled entirely by calling `MapsIndoors.eventLoggingDisabled = true`. [Read more](https://docs.mapsindoors.com/ios/v3/guides/event-logging/).
+- Search for Floor aliases is now possible.
+
+### Fixed
+
+- Single character query works again.
+- Position is now validated before drawing proximity circle, preventing app crashes in certain circumstances.
+- Location images are now always presented in best quality available.
+- Route descriptions are now consistent for floor changes.
+
+### Changed
+
+- `administrativeId` is now provided as supplied from the CMS instead of always being lower case.
+
+## [3.32.0] 2021-07-05
+
+### Fixed
+
+- Fixed missing call of the `GMSMapViewDelegate` method `markerInfoContents()`.
+- Fixed an issue causing Location Updates involving floor changes to not being updated on the map.
+
+## [3.31.0] 2021-06-22
+
+### Fixed
+
+- Fixed an archive issue caused by missing architectures in the XCFramework.
+- Fixed a rendering issue in `MPDirectionsRenderer` causing a route to be rendered at the wrong floor.
+- Fixed an issue in the `MPFloorSelectorControl` causing it to not reflecting the correct floor in some cases.
+- Fixed an issue causing inactive Locations to briefly appear when Live Data was imposed to them.
+- Fixed an issue in `MPBookingService` causing some booked slots to appear as not booked.
+
+### Changed
+
+- Changed default Occupancy Live Data rendering for unknown number of people.
+- Improved raster image quality.
+- Now defaulting to `MPMapControl.mapIconSize` in an `MPLocationDisplayRule`.
+
 ## [3.30.0] 2021-06-07
 
 ### Changed

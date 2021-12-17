@@ -1,7 +1,7 @@
 ---
-title: Filter Locations on map by search query
+title: Filter Locations on Map by Search Query
 eleventyNavigation:
-  key: Filter Locations on map by search query
+  key: Filter Locations on Map by Search Query
   parent: ios-v3-guides-search
   order: 520
 ---

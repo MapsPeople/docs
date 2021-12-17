@@ -21,7 +21,7 @@ To benefit from the guides, you will need basic knowledge about:
 
 To get an overview of the MapsIndoors web app capabilities check out a [running version of MapsIndoors here](https://clients.mapsindoors.com/demo).
 
-## Prerequisits before getting your hands dirty
+## Prerequisits Before Getting Your Hands Dirty
 
 The MapsIndoors web application is built on top of Google Maps. You therefore need to get a Google Maps API key.
 
@@ -51,9 +51,9 @@ You will receive a unique API key to use when access has been granted. If you ar
 
 ## Showcase Web App
 
-A [showcase app is available on GitHub](https://github.com/MapsIndoors/MapsIndoorsWeb), free to use and adapt to your needs.
+A [showcase app is available on GitHub](https://github.com/mapspeople/MapsIndoorsWeb), free to use and adapt to your needs.
 
-### Try the Showcase Web App right away
+### Try the Showcase Web App Right Away
 
 Before you begin, make sure your development environment includes Node.js, npm package manager and [Angular CLI globally](https://angular.io/cli#installing-angular-cli).
 

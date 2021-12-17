@@ -18,7 +18,7 @@ Key Benefits:
 * Provides more powerful analytics across the organization when combining the exported data with other systems
 * Assists with finding discrepancies in the data across multiple Buildings, Venues and Solutions (typos, semantics etc.)
 
-### Using The Dashboard
+### Using the Dashboard
 
 You must be logged into the CMS as an Administrator to use the Dashboard.
 

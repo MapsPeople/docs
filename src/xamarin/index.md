@@ -12,7 +12,7 @@ This will explain how to get started with getting MapsIndoors inside of your Xam
 
 > Please note: Xamarin support for MapsIndoors is currently in beta.
 
-## Getting started
+## Getting Started
 
 You should start by creating a new Solution containing an iOS and an Android project.
 
@@ -48,6 +48,6 @@ _You will also need to setup your `AndroidManifest.xml` file in Xamarin, like yo
 
 Continue reading the [Getting Started with Android](/android/v3/#setup-google-maps).
 
-## Further reading
+## Further Reading
 
 Most of what you want to do can be done by looking at examples from [iOS](/ios/v3/) and [Android](/android/v3/), and put them into the C# language syntax.
