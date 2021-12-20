@@ -22,8 +22,8 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 
 ### Fixed
 
-- We fixed an issue where the shown route could have a strange starting point.
-- We fixed an issue where the selected location would not be properly selected if it had been set to nil shortly before.
+- We fixed an issue where the shown route could have an unintended starting point.
+- We fixed an issue where the selected Location would not be properly selected if it had been set to `nil` shortly before.
 - We fixed an issue where the html instructions for a route was not identical to the route leg description.
 
 ### Changed
