@@ -22,9 +22,9 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 
 ### Fixed
 
-- Potential crash when changing API keys rapidly
-- Tiles not being rendered
-- Caching issue with images
+- Fixed a potential crash when changing API keys rapidly
+- Fixed tiles not being rendered
+- Fixed caching issue with images
 
 ## [3.12.3] 2021-12-15
 
