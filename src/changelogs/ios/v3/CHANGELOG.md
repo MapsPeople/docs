@@ -18,6 +18,12 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 ### Removed
 -->
 
+## [3.37.1] 2021-12-21
+
+### Fixed
+
+- We fixed an issue where selecting a Location with `MPMapcontrol.selectedLocation` would not obey the current zoom level.
+
 ## [3.37.0] 2021-12-20
 
 ### Fixed
