@@ -18,6 +18,14 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 ### Security     in case of vulnerabilities.
 -->
 
+## [3.12.4] 2021-12-21
+
+### Fixed
+
+- Fixed a potential crash when changing API keys rapidly
+- Fixed tiles not being rendered
+- Fixed caching issue with images
+
 ## [3.12.3] 2021-12-15
 
 ### Added
