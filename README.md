@@ -21,7 +21,7 @@ Eleventy automatically builds and deploys from the `main` branch in this reposit
 1. Clone this repository to your machine:
 
     ```bash
-    git clone git@github.com:MapsIndoors/docs
+    git clone git@github.com:MapsPeople/docs
     cd docs
     ```
 
@@ -37,7 +37,7 @@ Eleventy automatically builds and deploys from the `main` branch in this reposit
     npm run start
     ```
 
-1. Open <http://0.0.0.0:8080>
+1. Open <http://localhost:8080>
 
 ### Create a new page
 
