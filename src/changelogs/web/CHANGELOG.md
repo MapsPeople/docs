@@ -35,7 +35,7 @@ Changelog for MapsIndoors SDK for JavaScript. This document structure is based o
 
 ### Added
 
-- Labels on Google Maps now support linebreaks. A label containing `\n` will now be broken into two lines.
+- Labels on Google Maps now support line breaks. A label containing `\n` will now be broken into two lines.
 - `labelMaxWidth` on `DisplayRule` sets the max-width in px for a label. Longer labels will be wrapped over multiple lines.
 
 ## [4.14.1] - 2021-11-03
