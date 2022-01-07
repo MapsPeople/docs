@@ -1,1 +1,1 @@
-MapsIndoors is built on top of Google Maps and in this page, you'll create a Google Maps API key with the correct API enabled, retrieve a MapsIndoors API key and install the necessary dependencies to get started building.
+MapsIndoors is built on top of Google Maps and on this page, you'll create a Google Maps API key with the relevant API's enabled, retrieve a MapsIndoors API key and install the necessary dependencies to get started building your own app.
