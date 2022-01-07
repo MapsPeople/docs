@@ -1,1 +1,1 @@
-After going through this tutorial this is what you end up with:
+If you have followed to tutorial exactly so far, you will now have something like this:
