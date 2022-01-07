@@ -21,6 +21,7 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 ## [3.12.5] 2022-01-07
 
 ### Fixed
+
 - Fixed behavior where no tiles are shown
 - Fixed issue with external routes choosing the wrong entry point
 - Various crashes
