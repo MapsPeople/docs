@@ -23,30 +23,50 @@ The MapsIndoors SDK is hosted on a content delivery network (CDN) and should be 
 
 Insert the MapsIndoors SDK script tag into `<head>`, followed by the Google Maps script tag:
 
-```html
+```html/9-10
 <!-- index.html -->
 
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  ...
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MapsIndoors</title>
   <script src="https://app.mapsindoors.com/mapsindoors/js/sdk/4.5.1/mapsindoors-4.5.1.js.gz?apikey=YOUR_MAPSINDOORS_API_KEY"></script>
   <script src="https://maps.googleapis.com/maps/api/js?libraries=geometry&key=YOUR_GOOGLE_MAPS_API_KEY"></script>
 </head>
+<body>
+  <script src="main.js"></script>
+</body>
+</html>
 ```
 
-> Remember to add your API keys. You can use the demo MapsIndoors API key showing "The White House": {{sdk.tutorialAPIKey}}
+> Remember to add your API keys to the links in your code. You can use the demo MapsIndoors API key showing "The White House": {{sdk.tutorialAPIKey}}
 
 Add an empty `<div>` element to `<body>` with the `id` attribute set to "map":
 
-```html
+```html/13
 <!-- index.html -->
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MapsIndoors</title>
+  <script src="https://app.mapsindoors.com/mapsindoors/js/sdk/4.5.1/mapsindoors-4.5.1.js.gz?apikey=YOUR_MAPSINDOORS_API_KEY"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?libraries=geometry&key=YOUR_GOOGLE_MAPS_API_KEY"></script>
+</head>
 <body>
   <div id="map" style="width: 600px; height: 600px;"></div>
-  ...
+  <script src="main.js"></script>
 </body>
+</html>
 ```
 
-To load data and display it on the map, we need to create a new _instance_ of the [`MapsIndoors` class](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/mapsindoors.MapsIndoors.html#MapsIndoors) with a [`mapView` instance](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/mapsindoors.mapView.GoogleMapsView.html#GoogleMapsView) with a few _properties_ set:
+To load data and display it on the map, we need to create a new _instance_ of the [`MapsIndoors` class](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/mapsindoors.MapsIndoors.html#MapsIndoors) with a [`mapView` instance](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/mapsindoors.mapView.GoogleMapsView.html#GoogleMapsView) with a few _properties_ set - This is all done by placing the following code in the `main.js` file you created earlier:
 
 ```js
 // main.js
@@ -76,33 +96,51 @@ The MapsIndoors Web Components library can be loaded using [unpkg](https://unpkg
 
 Insert script tag into `<head>`:
 
-> Check [@mapsindoors/components](https://www.npmjs.com/package/@mapsindoors/components) for latest version.
-
-```html
+```html/9
 <!-- index.html -->
 
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  ...
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MapsIndoors</title>
   <script src="https://unpkg.com/@mapsindoors/components@8.2.0/dist/mi-components/mi-components.js"></script>
 </head>
+<body>
+  <script src="main.js"></script>
+</body>
+</html>
 ```
+
+> Check [@mapsindoors/components](https://www.npmjs.com/package/@mapsindoors/components) for latest version.
 
 After you added the script tag into `<head>`, add the `<mi-map-googlemaps>` custom element into `<body>`. We need to add and populate the `gm-api-key` and `mi-api-key` attributes with your API keys as well:
 
-```html
+<!-- FIGURE OUT HOW TO FIX THE HIGHLIGHTING - IT'S THE <> THAT ARE DOING IT - POTENTIAL FIX MY MAKING IT ONE LINE, IT DOESNT LIKE SPLIT <> -->
+
+```html/12
 <!-- index.html -->
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MapsIndoors</title>
+  <script src="https://unpkg.com/@mapsindoors/components@8.2.0/dist/mi-components/mi-components.js"></script>
+</head>
 <body>
-  <mi-map-googlemaps
-    style="width: 600px; height: 600px;"
-    gm-api-key="YOUR_GOOGLE_MAPS_API_KEY"
-    mi-api-key="YOUR_MAPSINDOORS_API_KEY">
+  <mi-map-googlemaps style="width: 600px; height: 600px;" gm-api-key="YOUR_GOOGLE_MAPS_API_KEY" mi-api-key="YOUR_MAPSINDOORS_API_KEY">
   </mi-map-googlemaps>
-  ...
+  <script src="main.js"></script>
 </body>
+</html>
 ```
 
-> Remember to add your API keys. You can use the demo MapsIndoors API key showing "The White House": {{sdk.tutorialAPIKey}}
+> Remember to add your API keys where indicated. You can use the demo MapsIndoors API key showing "The White House": {{sdk.tutorialAPIKey}}
 
 To center the map correctly, you need need the Google Maps _instance_ in your JavaScript-file.
 
@@ -138,11 +176,20 @@ Next, we'll add a Floor Selector for changing between Floors.
 
 First, we add an empty `<div>` element programmatically. Then we create a new `FloorSelector` _instance_ and push the `floorSelectorElement` to the `googleMapsInstance` to position it as a map controller:
 
-```js
+```js/10,13,14,15
 // main.js
 
+const mapViewOptions = {
+  element: document.getElementById('map'),
+  center: { lat: 38.8974905, lng: -77.0362723 }, // The White House
+  zoom: 17,
+  maxZoom: 22,
+};
+const mapViewInstance = new mapsindoors.mapView.GoogleMapsView(mapViewOptions);
+const mapsIndoorsInstance = new mapsindoors.MapsIndoors({ mapView: mapViewInstance });
 const googleMapsInstance = mapViewInstance.getMap();
 
+// Floor Selector
 const floorSelectorElement = document.createElement('div');
 new mapsindoors.FloorSelector(floorSelectorElement, mapsIndoorsInstance);
 googleMapsInstance.controls[google.maps.ControlPosition.RIGHT_TOP].push(floorSelectorElement);
@@ -153,13 +200,26 @@ googleMapsInstance.controls[google.maps.ControlPosition.RIGHT_TOP].push(floorSel
 
 Using the `<mi-map-googlemaps>` element, you can add the [floorSelectorControlPosition attribute](https://components.mapsindoors.com/map-googlemaps/) to your existing element. In this case with the value `"TOP_RIGHT"`:
 
-```html
+<!-- FIGURE OUT HOW TO FIX THE HIGHLIGHTING - IT'S THE <> THAT ARE DOING IT - POTENTIAL FIX MY MAKING IT ONE LINE, IT DOESNT LIKE SPLIT <> -->
+
+```html/12
 <!-- index.html -->
 
-<mi-map-googlemaps
-  ...
-  floor-selector-control-position="TOP_RIGHT">
-</mi-map-googlemaps>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MapsIndoors</title>
+  <script src="https://unpkg.com/@mapsindoors/components@8.2.0/dist/mi-components/mi-components.js"></script>
+</head>
+<body>
+  <mi-map-googlemaps style="width: 600px; height: 600px;" gm-api-key="YOUR_GOOGLE_MAPS_API_KEY" mi-api-key="YOUR_MAPSINDOORS_API_KEY" floor-selector-control-position="TOP_RIGHT">
+  </mi-map-googlemaps>
+  <script src="main.js"></script>
+</body>
+</html>
 ```
 
 > See all available control positions in the [Google Maps Documentation](https://developers.google.com/maps/documentation/javascript/controls#ControlPositioning).
