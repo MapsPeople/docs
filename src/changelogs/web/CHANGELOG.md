@@ -9,6 +9,16 @@ eleventyNavigation:
 
 Changelog for MapsIndoors SDK for JavaScript. This document structure is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and the project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [4.17.0] 2021-12-21
+
+### Added
+
+- User authenticated booking.
+
+### Fixed
+
+- Label and icon can now be visible at different zoom level ranges.
+
 ## [4.16.0] - 2021-12-07
 
 ### Added
@@ -25,8 +35,8 @@ Changelog for MapsIndoors SDK for JavaScript. This document structure is based o
 
 ### Added
 
-- Labels in MapIndoors now support linebreaks. A `Label` containing `\n` now renders as multiple lines.
-- `labelMaxWidth` on `DisplayRule` sets the max-width in px for a `Label`. Long labels now wrap over multiple lines.
+- Labels on Google Maps now support line breaks. A label containing `\n` will now be broken into two lines.
+- `labelMaxWidth` on `DisplayRule` sets the max-width in px for a label. Longer labels will be wrapped over multiple lines.
 
 ## [4.14.1] - 2021-11-03
 
