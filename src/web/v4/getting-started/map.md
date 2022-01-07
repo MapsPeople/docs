@@ -11,21 +11,6 @@ eleventyNavigation:
 <!-- Overview -->
 {% include "src/shared/getting-started/map/overview.md" %}
 
-<!-- JS Fiddle intro -->
-{% include "src/web/v4/getting-started/js-fiddle-intro.md" %}
-
-<mi-tabs>
-<mi-tab label="Manually" tab-for="manually"></mi-tab>
-<mi-tab label="MI Components" tab-for="components"></mi-tab>
-  <mi-tab-panel id="manually">
-    <iframe width="100%" src="//jsfiddle.net/simonlaustsen/3z9tby8q/42/embedded/js,html,result/" frameborder="0"></iframe>
-  </mi-tab-panel>
-
-  <mi-tab-panel id="components">
-    <iframe width="100%" src="//jsfiddle.net/simonlaustsen/fb5rauto/24/embedded/js,html,result/" frameborder="0"></iframe>
-  </mi-tab-panel>
-</mi-tabs>
-
 <!-- Set up MapsIndoors -->
 {% include "src/shared/getting-started/map/show-map.md" %}
 
@@ -34,7 +19,7 @@ eleventyNavigation:
 <mi-tab label="MI Components" tab-for="components"></mi-tab>
 
 <mi-tab-panel id="manually">
-The MapsIndoors SDK is hosted on a CDN and should be loaded using a script tag.
+The MapsIndoors SDK is hosted on a content delivery network (CDN) and should be loaded using a script tag.
 
 Insert the MapsIndoors SDK script tag into `<head>`, followed by the Google Maps script tag:
 
@@ -182,6 +167,23 @@ Using the `<mi-map-googlemaps>` element, you can add the [floorSelectorControlPo
 </mi-tab-panel>
 
 You should now be able to switch between the first and second Floors of The White House.
+
+</mi-tabs>
+
+<!-- JS Fiddle intro -->
+{% include "src/web/v4/getting-started/js-fiddle-intro.md" %}
+
+<mi-tabs>
+<mi-tab label="Manually" tab-for="manually"></mi-tab>
+<mi-tab label="MI Components" tab-for="components"></mi-tab>
+  <mi-tab-panel id="manually">
+    <iframe width="100%" src="//jsfiddle.net/simonlaustsen/3z9tby8q/42/embedded/js,html,result/" frameborder="0"></iframe>
+  </mi-tab-panel>
+
+  <mi-tab-panel id="components">
+    <iframe width="100%" src="//jsfiddle.net/simonlaustsen/fb5rauto/24/embedded/js,html,result/" frameborder="0"></iframe>
+  </mi-tab-panel>
+</mi-tabs>
 
 <!-- Add screenshot -->
 
