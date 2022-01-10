@@ -4,7 +4,7 @@ eleventyNavigation:
   key: android-v3-guides-search
   parent: android-v3-guides
   title: Search in MapsIndoors
-  order: 0
+  order: 10
 ---
 
 {% include "src/shared/guides/search/overview.md" %}

@@ -18,6 +18,70 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 ### Security     in case of vulnerabilities.
 -->
 
+## [3.12.5] 2022-01-07
+
+### Fixed
+
+- Fixed behavior where no tiles are shown
+- Fixed issue with external routes choosing the wrong entry point
+- Various crashes
+
+## [3.12.4] 2021-12-21
+
+### Fixed
+
+- Fixed a potential crash when changing API keys rapidly
+- Fixed tiles not being rendered
+- Fixed caching issue with images
+
+## [3.12.3] 2021-12-15
+
+### Added
+
+- Added `MPConstants`, which in this first iteration exposes a number of constants related to Z-index levels on the google map
+
+### Changed
+
+- Upped target SDK version to 31 (Android 12)
+- Made changes to rendering such that the contents of the map are updated more often
+
+### Deprecated
+
+- Deprecated `MPDatasetCacheManager.getConcurrentTaskLimit()`
+- Deprecated `MPDatasetCacheManager.setConcurrentTaskLimits()`
+
+### Fixed
+
+- Fixed issues with linebreaks
+- Fixed issue where the floor selector was unremoveable
+- Fixed manifest issue that was blocking use of the SDK in Android 12 apps
+- Fixed issue where the SDK continued to be 'ready' for a short period after setting user roles
+- Fixed an issue where `MPQuery.setNear()` ignored the Z-index of the parameter
+- Fixed an issue where initializing the SDK with an invalid API key would lock it
+- Various minor fixes
+
+## [3.12.2] 2021-12-07
+
+### Added
+
+- Added `getTranslatedName()` to POIType, which can get the name of a type in plaintext in the correct language
+- Added `getLatLngBounds()` to Route
+
+### Deprecated
+
+- `Route.getWaypoint_order()`
+
+### Fixed
+
+- Fixed crash from adding a listener to the LiveDataManager
+- Fixed crash where icons did not have a valid resource
+- Fixed FloorSelector sometimes not being visible
+- Fixed bug that showed wrong directions when changing floors
+- Fixed bug where searching for a specific location could include all available locations
+- Fixed issue where cache was deleted from SDK before sync was initiated
+- Fixed rare NPE that could occur when switching solutions
+- Fixed Various other bugs and crashes
+
 ## [3.12.1] 2021-11-24
 
 ### Fixed
