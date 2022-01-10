@@ -25,8 +25,15 @@ The bare minimum needed by MapsIndoors Auth - given that the authentication serv
 * **Client ID** - The ID of the MapsIndoors-specific client configured at the authentication server.
 * **Client secret**, unless [**client assertion**](https://datatracker.ietf.org/doc/html/rfc7523) is applicable - The secret that was generated for the client, unless client assertion is to be used.
 
-Given just the three bits of information above, MapsIndoors Auth will have all that it needs.
-For the authentication server it will also need **whitelisting of the signin URL** for the configured client:
+A valid **e-mail** must provided through the id_token, or userinfo endpoint, as one of the following claim types:
+
+* `email`
+* `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`
+* `preferred_username`
+* `name`
+
+Given just the bits of information above, MapsIndoors Auth will have all that it needs.
+For the authentication server, it will also need **whitelisting of the signin URL** for the configured client:
 
 `https://auth.mapsindoors.com/signin-NAME`
 
