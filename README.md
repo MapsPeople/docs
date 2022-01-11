@@ -37,6 +37,12 @@ Eleventy automatically builds and deploys from the `main` branch in this reposit
     npm run start
     ```
 
+    OR IF THAT DOESN'T WORK
+
+    ```bash
+    eleventy --serve
+    ```
+
 1. Open <http://localhost:8080>
 
 ### Create a new page
