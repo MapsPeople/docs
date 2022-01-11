@@ -124,13 +124,6 @@ miSearchElement.addEventListener('results', (event) => {
 });
 ```
 
-```js
-// main.js
-
-let miDirectionsServiceInstance;
-let miDirectionsRendererInstance;
-```
-
 </mi-tab-panel>
 </mi-tabs>
 
