@@ -14,7 +14,7 @@ eleventyNavigation:
 <!-- Directions -->
 {% include "src/shared/getting-started/directions/directions.md" %}
 
-To get _Directions_ between two MapsIndoors Locations, or places outside of your MapsIndoors Solution, we need two things:
+To get _Directions_ between two MapsIndoors Locations, or Places outside of your MapsIndoors Solution, we need two things:
 
 1. The _Directions Service_ instance
 2. The _Directions Render_ instance
