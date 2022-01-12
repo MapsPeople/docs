@@ -61,13 +61,10 @@ function onSearch() {
     locations.forEach(location => {
       const listElement = document.createElement('li');
       listElement.innerHTML = location.properties.name;
-      
       // Add click event listener
       listElement.addEventListener("click", () => getRoute(location), false);
-    
       searchResultsElement.appendChild(listElement);
     });
-    
     // Filter map to only display search results
     mapsIndoorsInstance.filter(locations.map(location => location.id), false);
   });
@@ -129,10 +126,8 @@ miSearchElement.addEventListener('results', (event) => {
   event.detail.forEach(location => {
     const miListItemElement = document.createElement('mi-list-item-location');
     miListItemElement.location = location;
-    
     // Add click event listener
     miListItemElement.addEventListener("click", () => getRoute(location), false);
-    
     miListElement.appendChild(miListItemElement);
   });
   
