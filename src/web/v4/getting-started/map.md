@@ -19,7 +19,7 @@ eleventyNavigation:
 <mi-tab label="MI Components" tab-for="components"></mi-tab>
 
 <mi-tab-panel id="manually">
-The MapsIndoors SDK is hosted on a content delivery network (CDN) and should be loaded using a script tag.
+The MapsIndoors SDK is hosted on a Content Delivery Network (CDN) and should be loaded using a script tag.
 
 Insert the MapsIndoors SDK script tag into `<head>`, followed by the Google Maps script tag:
 
