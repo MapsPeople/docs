@@ -39,7 +39,7 @@ const miDirectionsServiceInstance = new mapsindoors.services.DirectionsService(e
 const directionsRendererOptions = { mapsIndoors: mapsIndoorsInstance }
 const miDirectionsRendererInstance = new mapsindoors.directions.DirectionsRenderer(directionsRendererOptions);
 
-// Enable Live Data 
+// Enable Live Data
 const liveDataManagerInstance = new mapsindoors.LiveDataManager(mapsIndoorsInstance);
 liveDataManagerInstance.enableLiveData(mapsindoors.LiveDataManager.LiveDataDomainTypes.POSITION);
 
@@ -112,7 +112,7 @@ miMapElement.addEventListener('mapsIndoorsReady', () => {
   miMapElement.getDirectionsRendererInstance().then((directionsRendererInstance) => miDirectionsRendererInstance = directionsRendererInstance);
   
   miMapElement.getMapsIndoorsInstance().then((mapsIndoorsInstance) => {
-    // Enable Live Data     
+    // Enable Live Data
     const liveDataManagerInstance = new mapsindoors.LiveDataManager(mapsIndoorsInstance);
     liveDataManagerInstance.enableLiveData(mapsindoors.LiveDataManager.LiveDataDomainTypes.POSITION);
   });
