@@ -31,7 +31,7 @@ If 2FA is **not** activated for the requesting user, the response will look like
 
 Even though a key has been generated and returned, and persisted for the user as well, 2FA is still not enabled. This can only be done by actually entering the secret into an activator - i.e. an app that can generate the 6-digit codes by utilizing the secret and system clock, e.g. Google Authenticator. Once this is done and a code is available, this code can be submitted for the user with the call: `PUT /api/account/twofactor/verification?code=CODE`
 
-The code will then be verified using the last generated key. If verification is possible it will return true, otherwise false.
+The code will then be verified using the last generated key. If verification is possible it will return `true`, otherwise `false`.
 
 > This is a PUT request with an empty request body. It might seem strange, but it is due to the nature of REST APIs and their inability to represent actions that are not directly manipulating resources. PUT is used instead of GET as this does indeed altering something, just on something that cannot be altered directly.
 
