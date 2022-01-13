@@ -51,7 +51,7 @@ The details are no longer needed as the key is persisted in the database, and it
 
 This can be done by the user themselves by requesting: `DELETE /api/account/twofactor?code=CODE`
 
-Once the code is verified, `twoFactorEnabled` will once again be set to false. The key will be kept, since a new key will be generated on the next request of the details route.
+Once the code is verified, `twoFactorEnabled` will once again be set to `false`. The key will be kept, since a new key will be generated on the next request of the details route.
 
 ### Disabling 2FA on behalf of a user
 
