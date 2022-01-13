@@ -424,8 +424,6 @@ function getRoute(location) {
 
 Now you can click on each item in the search results list to get directions from The Oval Office to any Location in The White House.
 
-<!-- Add screenshot -->
-
 <!-- Travel-mode -->
 {% include "src/shared/getting-started/directions/travel-mode.md" %}
 

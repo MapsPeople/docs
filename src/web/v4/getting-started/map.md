@@ -118,8 +118,6 @@ Insert script tag into `<head>`:
 
 After you added the script tag into `<head>`, add the `<mi-map-googlemaps>` custom element into `<body>`. We need to add and populate the `gm-api-key` and `mi-api-key` attributes with your API keys as well:
 
-<!-- FIGURE OUT HOW TO FIX THE HIGHLIGHTING - IT'S THE <> THAT ARE DOING IT - POTENTIAL FIX MY MAKING IT ONE LINE, IT DOESNT LIKE SPLIT <> -->
-
 ```html/12
 <!-- index.html -->
 
@@ -199,8 +197,6 @@ googleMapsInstance.controls[google.maps.ControlPosition.RIGHT_TOP].push(floorSel
 <mi-tab-panel id="components">
 
 Using the `<mi-map-googlemaps>` element, you can add the [floorSelectorControlPosition attribute](https://components.mapsindoors.com/map-googlemaps/) to your existing element. In this case with the value `"TOP_RIGHT"`:
-
-<!-- FIGURE OUT HOW TO FIX THE HIGHLIGHTING - IT'S THE <> THAT ARE DOING IT - POTENTIAL FIX MY MAKING IT ONE LINE, IT DOESNT LIKE SPLIT <> -->
 
 ```html/12
 <!-- index.html -->
