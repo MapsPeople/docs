@@ -14,7 +14,7 @@ eleventyNavigation:
 <!-- Directions -->
 {% include "src/shared/getting-started/directions/directions.md" %}
 
-To get _Directions_ between two MapsIndoors Locations, or places outside of your MapsIndoors Solution, we need two things:
+To get _Directions_ between two MapsIndoors Locations, or Places outside of your MapsIndoors Solution, we need two things:
 
 1. The _Directions Service_ instance
 2. The _Directions Render_ instance
@@ -28,7 +28,7 @@ We need the _Directions Service_ to calculate the fastest route between two poin
 
 ### Set up Directions Service and Render
 
-First, initialize the [MapsIndoors Directions _Service_](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/mapsindoors.services.DirectionsService.html), and add an _external directions provider_ (in this case Google Maps).
+First, initialize the [MapsIndoors Directions _Service_](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/mapsindoors.services.DirectionsService.html), and add an _external Directions Provider_ (in this case Google Maps).
 
 Then, we need to initialize the [MapsIndoors Directions Render](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/mapsindoors.directions.DirectionsRenderer.html) with the MapsIndoors _instance_:
 
@@ -135,7 +135,7 @@ Now our example app is ready to provide Directions. Next up is how to give it an
 
 To display a route on the map, we use the _coordinates_ of an _Origin_ and _Destination_ and draw a line between them. For this, we use MapsIndoors' `directionsRender`.
 
-The _Destination_ coordinate is retrieved dynamically, using the coordinate of the selected Location in the search results list - Therefore, you must search for the destination to get directions, and then click the result, in the text-list. Different solutions can of course be implemented into your own solution later. In this tutorial, the _Origin_ is a hardcoded coordinate.
+The _Destination_ coordinate is retrieved dynamically, using the coordinate of the selected Location in the search results list. Therefore, you must search for the destination to get directions, and then click the result, in the text list. Different solutions can of course be implemented into your own solution later. In this tutorial, the _Origin_ is a hardcoded coordinate.
 
 In the following example, this is what happens:
 

@@ -19,7 +19,7 @@ eleventyNavigation:
 <mi-tab label="MI Components" tab-for="components"></mi-tab>
 
 <mi-tab-panel id="manually">
-The MapsIndoors SDK is hosted on a content delivery network (CDN) and should be loaded using a script tag.
+The MapsIndoors SDK is hosted on a Content Delivery Network (CDN) and should be loaded using a script tag.
 
 Insert the MapsIndoors SDK script tag into `<head>`, followed by the Google Maps script tag:
 
@@ -66,7 +66,7 @@ Add an empty `<div>` element to `<body>` with the `id` attribute set to "map":
 </html>
 ```
 
-To load data and display it on the map, we need to create a new _instance_ of the [`MapsIndoors` class](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/mapsindoors.MapsIndoors.html#MapsIndoors) with a [`mapView` instance](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/mapsindoors.mapView.GoogleMapsView.html#GoogleMapsView) with a few _properties_ set - This is all done by placing the following code in the `main.js` file you created earlier:
+To load data and display it on the map, we need to create a new _instance_ of the [`MapsIndoors` class](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/mapsindoors.MapsIndoors.html#MapsIndoors) with a [`mapView` instance](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/mapsindoors.mapView.GoogleMapsView.html#GoogleMapsView) with a few _properties_ set. This is all done by placing the following code in the `main.js` file you created earlier:
 
 ```js
 // main.js

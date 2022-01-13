@@ -14,9 +14,7 @@ eleventyNavigation:
 <!-- Environment -->
 ## Set Up Your Environment
 
-[]: # (The project setup is simple. We use pure JavaScript, so we do not need to install any frameworks. (I don't think we need to mention frameworks, no need to confuse more than neccesary))
-
-1. While not strictly neccesary, if you do not have prior development experience, it is advised to install an integrated development environment (IDE). A common one to use is [Visual Studio Code](https://code.visualstudio.com/), which is free.
+1. While not strictly neccesary, if you do not have prior development experience, it is advised to install an Integrated Development Environment (IDE). A common one to use is [Visual Studio Code](https://code.visualstudio.com/), which is free.
 1. Start by creating a new project folder. The location is not important, just remember the location, and ensure your newly created project folder is empty.
 1. Inside that, create two empty files: `index.html` and `main.js`.
 

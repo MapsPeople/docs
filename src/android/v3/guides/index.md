@@ -11,7 +11,7 @@ You might have come here directly after the "Getting Started" guide, or you migh
 
 **NOTE: These guides are for the Android version of the SDK, but we also have extensive documentation for the SDK for iOS and web.**
 
-* [Search in MapsIndoors](../guides/search)
+* [Search in MapsIndoors](https://docs.mapsindoors.com/android/v3/guides/search/)
   * [Searching for Locations and Displaying the Results on a Map](../guides/search/search-locations-display-map/)
   * [Create a Search Experience with MapsIndoors - Part 1](../guides/search/searchmapdemosearchfragment/)
   * [Create a Search Experience with MapsIndoors - Part 2](../guides/search/searchmapdemosearchmapfragment/)
