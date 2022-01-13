@@ -1,8 +1,8 @@
 ---
 title: Password Reset
 eleventyNavigation:
-    key: web-v4-guides-authentication-passwordreset
-    parent: web-v4-guides-authentication
+    key: passwordreset
+    parent: various
     title: Password Reset
     order: 440
 ---
