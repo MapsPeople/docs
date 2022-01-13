@@ -39,7 +39,7 @@ Splitting the URL, this is what it contains:
 
 *Only relevant if the customer has SSO is enabled.
 
-All the parameters can be combined individually and differently for each Kiosk you set up. 
+All the parameters can be combined individually and differently for each Kiosk you set up.
 
 The URL parameters are saved in the browser's *local storage* to persist across an app refresh, without the need for manually entering them again. They are all prefixed with `MIKIOSK:param`. The saved parameters are overwritten when new URL parameters are set, and can only be deleted by clearing the browser's local storage.
 
