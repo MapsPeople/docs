@@ -29,7 +29,7 @@ If 2FA is **not** activated for the requesting user, the response will look like
 
 > As long as 2FA is not enabled, a new key will be generated and persist on each request. Be careful not to insert the key into an authenticator app, and then request a new key before validating the existing key, as this will create a mismatch between key and generated code.
 
-Even though a key has been generated and returned, and persisted for the user as well, 2FA is still not enabled. This can only be done by actually entering the secret into an activator - i. e. an app that can generate the 6-digit codes by utilizing the secret and system clock, for example Google Authenticator. Once this is done and a code is available, this code can be submitted for the user by the call: `PUT /api/account/twofactor/verification?code=CODE`
+Even though a key has been generated and returned, and persisted for the user as well, 2FA is still not enabled. This can only be done by actually entering the secret into an activator - i.e. an app that can generate the 6-digit codes by utilizing the secret and system clock, e.g. Google Authenticator. Once this is done and a code is available, this code can be submitted for the user with the call: `PUT /api/account/twofactor/verification?code=CODE`
 
 The code will then be verified using the last generated key. If verification is possible it will return true, otherwise false.
 
