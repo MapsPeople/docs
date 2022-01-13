@@ -45,7 +45,7 @@ If 2FA is already enabled for the requesting user, the response will instead loo
 }
 ```
 
-The details are no longer needed as the key is persisted in the database and it is presumed that the secret is in an authenticator app kept by the user.
+The details are no longer needed as the key is persisted in the database, and it is presumed that the secret is in an authenticator app kept by the user.
 
 ## Disabling 2FA
 
