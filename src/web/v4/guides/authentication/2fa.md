@@ -33,7 +33,7 @@ Even though a key has been generated and returned, and persisted for the user as
 
 The code will then be verified using the last generated key. If verification is possible it will return `true`, otherwise `false`.
 
-> This is a PUT request with an empty request body. It might seem strange, but it is due to the nature of REST APIs and their inability to represent actions that are not directly manipulating resources. PUT is used instead of GET as this does indeed altering something, just on something that cannot be altered directly.
+> This is a PUT request with an empty request body. It might seem strange, but it is due to the nature of REST APIs and their inability to represent actions that are not directly manipulating resources. PUT is used instead of GET as this does indeed alter something, just something that cannot be altered directly.
 
 If 2FA is already enabled for the requesting user, the response will instead look like this:
 
