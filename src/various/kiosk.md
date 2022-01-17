@@ -222,7 +222,7 @@ http://kiosk.mapsindoors.com/demo?pitch=60
 
 By adding the `logOut` URL parameter, a log-out button will be visible in the upper right corner of the viewport. The button is only visible when a user is logged in, and the URL parameter is present. This parameter is only relevant for customers with SSO enabled for their Solution.
 
-The `logOut` URL parameter is saved in the browser's local storage as  `MIKIOSK:{miApiKey}-paramLogOut`.
+The `logOut` URL parameter is saved in the browser's local storage as `MIKIOSK:{miApiKey}-paramLogOut`.
 
 #### Example
 
