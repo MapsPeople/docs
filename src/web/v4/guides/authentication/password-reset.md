@@ -9,7 +9,7 @@ eleventyNavigation:
 
 ## Password Validation
 
-A password must be longer than 16 characters in order to be valid.
+A password must be 16 characters or longer in order to be valid.
 
 ## Password Reset
 
