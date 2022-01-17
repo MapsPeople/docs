@@ -37,7 +37,7 @@ Splitting the URL, this is what it contains:
 * **`&liveData=occupancy,availability,position`** is which Live Data Domains should be enabled on the Kiosk
 * **`&logOut=true`** is to control the visibility of the log-out button.*
 
-*Only relevant if the customer has SSO is enabled.
+*Only relevant if SSO is enabled for the customer.
 
 All the parameters can be combined individually and differently for each Kiosk you set up.
 
