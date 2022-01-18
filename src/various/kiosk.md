@@ -96,6 +96,7 @@ The following events is sent from the kiosk when triggered:
 | Initialization | URL parameter configured | Pitch parameter was set                                  | True     | When the pitch parameter is set                                       |
 | Initialization | URL parameter configured | Legend was set                                           | True     | When the legend params is set to true                                 |
 | Initialization | URL parameter configured | LiveData parameter was set ([DOMAIN TYPES])              | True     | When live data parameter is set                                       |
+| Initialization | URL parameter configured | LogOut parameter was set                                 | True     | When logOut parameter is set                                          |
 | Home           | Reset                    | Kiosk was reset                                          | True     | When the kiosk is dirty and has been idle for X amount of seconds     |
 | Search         | Location selected        | Location id: [LOCATION ID], Search query: [SEARCH QUERY] | False    | When a location is selected in the list and a search query is entered |
 | Search         | Location selected        | Location id: [LOCATION ID]                               | False    | When a location is selected in the list                               |
