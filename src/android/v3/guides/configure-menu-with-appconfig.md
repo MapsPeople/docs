@@ -156,7 +156,7 @@ internal class MenuItemAdapter(
 </mi-tabs>
 
 <!-- lets download an image -->
-The image for the `MenuInfo` is saved as an URL, as such it has to be downloaded to be displayed. Open a network connection in a background thread and download the image as a stream and save it in a `Bitmap`, then update the item's view back on the Main thread.
+The icon for the `MenuInfo` is saved as an URL, as such it has to be downloaded to be displayed. Open a network connection in a background thread and download the image as a stream and save it in a `Bitmap`, then update the item's view back on the Main thread.
 > This is a very rudimentary example, and should not be replicated in production code, see it as an exercise to implement a better way to download and display the icons.
 
 <mi-tabs>
@@ -354,3 +354,5 @@ override fun onDestroyView() {
 
 </mi-tab-panel>
 </mi-tabs>
+
+The code shown in this guide can be found here for [java](https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/tree/feature/appconfig)/[kotlin](https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android-Kotlin/tree/feature/appconfig).
