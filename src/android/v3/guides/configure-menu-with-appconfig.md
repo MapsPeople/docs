@@ -10,7 +10,7 @@ eleventyNavigation:
 `AppConfig` primarily contains elements that are used by the standard apps, but it also contains some elements that are useful for any app developer using the SDK. This guide will showcase how to use `AppConfig` to create a menu of location categories.
 
 <!-- The code can be found here -->
-> This guide is using code based on the getting started guide. If you have not completed it yet, it is <b>highly recommended</b> to complete it in order to achieve a better understanding of the MapsIndoors SDK. The guide can be found [here](../getting-started/index). If you just want to follow this guide, the getting started code can be found here for [java](https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android)/[kotlin](https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android-Kotlin).
+> This guide uses code from the "Getting Started" guide. If you have not completed it yet, it is <b>highly recommended</b> to complete it in order to achieve a better understanding of the MapsIndoors SDK. The guide can be found [here](../getting-started/index). If you just want to follow this guide, the getting started code can be found here for [java](https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android)/[kotlin](https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android-Kotlin).
 
 <!-- lets make a "new" fragment -->
 First, make a new fragment for the menu, and call it `MenuFragment`, this fragment will take a list of `MenuInfo` which will become the elements of the menu.
