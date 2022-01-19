@@ -19,6 +19,4 @@ Once 2FA is enabled, this page will change to allow disabling of 2FA, should the
 
 ![2fa-disable instructions](/assets/various/Dashboard/2fa-disable.png)
 
-### Disabling 2FA on behalf of a user
-
-In case a user loses their ability to generate a code, a Solution owner can help them out via a request to: `DELETE /api/account/{userId}/twofactor`
+If you, or a user, loses access to your account and are unable to use 2FA for any reason, please contact your representative at MapsPeople, and we will work with you to find a solution.
