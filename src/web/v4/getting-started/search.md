@@ -24,7 +24,7 @@ MapsIndoors Locations can be retrieved in the mapsindoors namespace using the `L
 * Create an `<input>` and `<button>` element in `<body>`.
 * Attach an `onclick` event to the `<button>` element and call a `onSearch` method, which you will create next.
 
-```html/15,16
+```html/16,17
 <!-- index.html -->
 
 <!DOCTYPE html>
@@ -34,8 +34,9 @@ MapsIndoors Locations can be retrieved in the mapsindoors namespace using the `L
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MapsIndoors</title>
-  <script src="https://app.mapsindoors.com/mapsindoors/js/sdk/4.5.1/mapsindoors-4.5.1.js.gz?apikey=YOUR_MAPSINDOORS_API_KEY"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?libraries=geometry&key=YOUR_GOOGLE_MAPS_API_KEY"></script>
+  <script src="https://app.mapsindoors.com/mapsindoors/js/sdk/4.17.0/mapsindoors-4.17.0.js.gz?apikey=YOUR_MAPSINDOORS_API_KEY"></script>
+  <script src='https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.css' rel='stylesheet' />
 </head>
 <body>
   <div id="map" style="width: 600px; height: 600px;"></div>
@@ -63,21 +64,23 @@ MapsIndoors Locations can be retrieved in the mapsindoors namespace using the `L
 
 ```js/16-24
 // main.js
-
 const mapViewOptions = {
-  element: document.getElementById('map'),
-  center: { lat: 38.8974905, lng: -77.0362723 }, // The White House
-  zoom: 17,
-  maxZoom: 22,
+    accessToken: "YOUR_MAPBOX_ACCESS_TOKEN",
+    element: document.getElementById("map"),
+    center: { lat: 38.8974905, lng: -77.0362723 }, // The White House
+    zoom: 17,
+    maxZoom: 22,
 };
-const mapViewInstance = new mapsindoors.mapView.GoogleMapsView(mapViewOptions);
-const mapsIndoorsInstance = new mapsindoors.MapsIndoors({ mapView: mapViewInstance });
-const googleMapsInstance = mapViewInstance.getMap();
+const mapViewInstance = new mapsindoors.mapView.MapboxView(mapViewOptions);
+const mapsIndoorsInstance = new mapsindoors.MapsIndoors({
+    mapView: mapViewInstance,
+});
 
 // Floor Selector
 const floorSelectorElement = document.createElement('div');
 new mapsindoors.FloorSelector(floorSelectorElement, mapsIndoorsInstance);
-googleMapsInstance.controls[google.maps.ControlPosition.RIGHT_TOP].push(floorSelectorElement);
+mapboxInstance.addControl({ onAdd: function () { return floorSelectorElement }, onRemove: function () { } });
+
 
 function onSearch() {
   const searchInputElement = document.querySelector('input');
@@ -125,8 +128,8 @@ Using the `<mi-search>` component you get a `<input>`element tied tightly togeth
   <script src="https://unpkg.com/@mapsindoors/components@8.2.0/dist/mi-components/mi-components.js"></script>
 </head>
 <body>
-  <mi-map-googlemaps style="width: 600px; height: 600px;" gm-api-key="YOUR_GOOGLE_MAPS_API_KEY" mi-api-key="YOUR_MAPSINDOORS_API_KEY" floor-selector-control-position="TOP_RIGHT">
-  </mi-map-googlemaps>
+  <mi-map-mapbox style="width: 600px; height: 600px;" accessToken="YOUR_MAPBOX_ACCESS_TOKEN" mi-api-key="YOUR_MAPSINDOORS_API_KEY">
+  </mi-map-mapbox>
   <script src="main.js"></script>
   <mi-search style="width: 600px;" mapsindoors="true" placeholder="Search">
   </mi-search>
@@ -153,14 +156,14 @@ Using the `<mi-search>` component you get a `<input>`element tied tightly togeth
 ```js/4,11-13
 // main.js
 
-const miMapElement = document.querySelector('mi-map-googlemaps');
+const miMapElement = document.querySelector("mi-map-mapbox");
 const miSearchElement = document.querySelector('mi-search');
 
-miMapElement.addEventListener('mapsIndoorsReady', () => {
-  miMapElement.getMapInstance().then((mapInstance) => {
-    mapInstance.setCenter({ lat: 38.8974905, lng: -77.0362723 }); // The White House
-  });
-})
+miMapElement.addEventListener("mapsIndoorsReady", () => {
+    miMapElement.getMapInstance().then((mapInstance) => {
+        mapInstance.setCenter([-77.0362723, 38.8974905]); // The White House
+    });
+});
 
 miSearchElement.addEventListener('results', (event) => {
     console.log(event.detail);
@@ -204,8 +207,9 @@ To display a list of search results you can append each search result to a list 
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MapsIndoors</title>
-  <script src="https://app.mapsindoors.com/mapsindoors/js/sdk/4.5.1/mapsindoors-4.5.1.js.gz?apikey=YOUR_MAPSINDOORS_API_KEY"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?libraries=geometry&key=YOUR_GOOGLE_MAPS_API_KEY"></script>
+  <script src="https://app.mapsindoors.com/mapsindoors/js/sdk/4.17.0/mapsindoors-4.17.0.js.gz?apikey=YOUR_MAPSINDOORS_API_KEY"></script>
+  <script src='https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.css' rel='stylesheet
 </head>
 <body>
   <div id="map" style="width: 600px; height: 600px;"></div>
@@ -245,8 +249,8 @@ To display a list of search results you can append each search result to a list 
   <script src="https://unpkg.com/@mapsindoors/components@8.2.0/dist/mi-components/mi-components.js"></script>
 </head>
 <body>
-  <mi-map-googlemaps style="width: 600px; height: 600px;" gm-api-key="YOUR_GOOGLE_MAPS_API_KEY" mi-api-key="YOUR_MAPSINDOORS_API_KEY" floor-selector-control-position="TOP_RIGHT">
-  </mi-map-googlemaps>
+  <mi-map-mapbox style="width: 600px; height: 600px;" accessToken="YOUR_MAPBOX_ACCESS_TOKEN" mi-api-key="YOUR_MAPSINDOORS_API_KEY">
+  </mi-map-mapbox>
   <script src="main.js"></script>
   <mi-search style="width: 600px;" mapsindoors="true" placeholder="Search">
   </mi-search>
@@ -291,14 +295,14 @@ const mapViewOptions = {
   zoom: 17,
   maxZoom: 22,
 };
-const mapViewInstance = new mapsindoors.mapView.GoogleMapsView(mapViewOptions);
+const mapViewInstance = new mapsindoors.mapView.MapboxView(mapViewOptions);
 const mapsIndoorsInstance = new mapsindoors.MapsIndoors({ mapView: mapViewInstance });
-const googleMapsInstance = mapViewInstance.getMap();
+const mapboxInstance = mapViewInstance.getMap();
 
 // Floor Selector
 const floorSelectorElement = document.createElement('div');
 new mapsindoors.FloorSelector(floorSelectorElement, mapsIndoorsInstance);
-googleMapsInstance.controls[google.maps.ControlPosition.RIGHT_TOP].push(floorSelectorElement);
+mapboxInstance.addControl({ onAdd: function () { return floorSelectorElement }, onRemove: function () { } });
 
 function onSearch() {
   const searchInputElement = document.querySelector('input');
@@ -335,7 +339,7 @@ function onSearch() {
 ```js/4,12,13,14,15,16
 // main.js
 
-const miMapElement = document.querySelector('mi-map-googlemaps');
+const miMapElement = document.querySelector("mi-map-mapbox");
 const miSearchElement = document.querySelector('mi-search');
 const miListElement = document.querySelector('mi-list');
 
@@ -383,14 +387,14 @@ const mapViewOptions = {
   zoom: 17,
   maxZoom: 22,
 };
-const mapViewInstance = new mapsindoors.mapView.GoogleMapsView(mapViewOptions);
+const mapViewInstance = new mapsindoors.mapView.MapboxView(mapViewOptions);
 const mapsIndoorsInstance = new mapsindoors.MapsIndoors({ mapView: mapViewInstance });
-const googleMapsInstance = mapViewInstance.getMap();
+const mapboxInstance = mapViewInstance.getMap();
 
 // Floor Selector
 const floorSelectorElement = document.createElement('div');
 new mapsindoors.FloorSelector(floorSelectorElement, mapsIndoorsInstance);
-googleMapsInstance.controls[google.maps.ControlPosition.RIGHT_TOP].push(floorSelectorElement);
+mapboxInstance.addControl({ onAdd: function () { return floorSelectorElement }, onRemove: function () { } });
 
 function onSearch() {
   const searchInputElement = document.querySelector('input');
@@ -435,7 +439,7 @@ function onSearch() {
 ```js/16-21
 // main.js
 
-const miMapElement = document.querySelector('mi-map-googlemaps');
+const miMapElement = document.querySelector("mi-map-mapbox");
 const miSearchElement = document.querySelector('mi-search');
 const miListElement = document.querySelector('mi-list');
 
@@ -496,14 +500,14 @@ const mapViewOptions = {
   zoom: 17,
   maxZoom: 22,
 };
-const mapViewInstance = new mapsindoors.mapView.GoogleMapsView(mapViewOptions);
+const mapViewInstance = new mapsindoors.mapView.MapboxView(mapViewOptions);
 const mapsIndoorsInstance = new mapsindoors.MapsIndoors({ mapView: mapViewInstance });
-const googleMapsInstance = mapViewInstance.getMap();
+const mapboxInstance = mapViewInstance.getMap();
 
 // Floor Selector
 const floorSelectorElement = document.createElement('div');
 new mapsindoors.FloorSelector(floorSelectorElement, mapsIndoorsInstance);
-googleMapsInstance.controls[google.maps.ControlPosition.RIGHT_TOP].push(floorSelectorElement);
+mapboxInstance.addControl({ onAdd: function () { return floorSelectorElement }, onRemove: function () { } });
 
 function onSearch() {
   const searchInputElement = document.querySelector('input');
@@ -544,10 +548,10 @@ function onSearch() {
 </mi-tab-panel>
 <mi-tab-panel id="components">
 
-```js/23-27
+```js /23-27
 // main.js
 
-const miMapElement = document.querySelector('mi-map-googlemaps');
+const miMapElement = document.querySelector("mi-map-mapbox");
 const miSearchElement = document.querySelector('mi-search');
 const miListElement = document.querySelector('mi-list');
 
@@ -572,6 +576,7 @@ miSearchElement.addEventListener('results', (event) => {
   miMapElement.getMapsIndoorsInstance().then((mapsIndoorsInstance) => {
     // Filter map to only display search results
     mapsIndoorsInstance.filter(event.detail.map(location => location.id), false);
+  });
 });
 ```
 
