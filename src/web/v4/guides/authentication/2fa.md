@@ -19,4 +19,4 @@ After you've enabled 2FA, the page will show instructions on how to disable 2FA 
 
 ![2fa-disable instructions](/assets/various/Dashboard/2fa-disable.png)
 
-If you, or a user, loses access to your account and are unable to use 2FA for any reason, please contact your representative at MapsPeople, and we will work with you to find a solution.
+If you lose access to your account and are unable to use 2FA for any reason, please [get in touch](https://resources.mapspeople.com/contact-us), and we'll do our best to find a solution.
