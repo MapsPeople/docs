@@ -21,20 +21,21 @@ This should be done after you have initialized your MapsIndoors instance, since 
 <mi-tab label="MI Components" tab-for="components"></mi-tab>
 <mi-tab-panel id="manually">
 
-```js/9,17-19
+```js/10,18-20
 // main.js
 
 const mapViewOptions = {
+  accessToken: 'YOUR_MAPBOX_ACCESS_TOKEN',
   element: document.getElementById('map'),
   center: { lat: 38.8974905, lng: -77.0362723 }, // The White House
   zoom: 17,
   maxZoom: 22,
 };
-const mapViewInstance = new mapsindoors.mapView.GoogleMapsView(mapViewOptions);
+const mapViewInstance = new mapsindoors.mapView.MapboxView(mapViewOptions);
 const mapsIndoorsInstance = new mapsindoors.MapsIndoors({ mapView: mapViewInstance });
-const googleMapsInstance = mapViewInstance.getMap();
+const mapboxInstance = mapViewInstance.getMap();
 
-const externalDirectionsProvider = new mapsindoors.directions.GoogleMapsProvider();
+const externalDirectionsProvider = new mapsindoors.directions.MapboxProvider();
 const miDirectionsServiceInstance = new mapsindoors.services.DirectionsService(externalDirectionsProvider);
 const directionsRendererOptions = { mapsIndoors: mapsIndoorsInstance }
 const miDirectionsRendererInstance = new mapsindoors.directions.DirectionsRenderer(directionsRendererOptions);
@@ -46,7 +47,7 @@ liveDataManagerInstance.enableLiveData(mapsindoors.LiveDataManager.LiveDataDomai
 // Floor Selector
 const floorSelectorElement = document.createElement('div');
 new mapsindoors.FloorSelector(floorSelectorElement, mapsIndoorsInstance);
-googleMapsInstance.controls[google.maps.ControlPosition.RIGHT_TOP].push(floorSelectorElement);
+mapboxInstance.controls[google.maps.ControlPosition.RIGHT_TOP].push(floorSelectorElement);
 
 function onSearch() {
   const searchInputElement = document.querySelector('input');
@@ -95,7 +96,7 @@ function getRoute(location) {
 ```js/19-21
 // main.js
 
-const miMapElement = document.querySelector('mi-map-googlemaps');
+const miMapElement = document.querySelector('mi-map-mapbox');
 const miSearchElement = document.querySelector('mi-search');
 const miListElement = document.querySelector('mi-list');
 
