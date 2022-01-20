@@ -28,24 +28,27 @@ We need the _Directions Service_ to calculate the fastest route between two poin
 
 ### Set up Directions Service and Render
 
-First, initialize the [MapsIndoors Directions _Service_](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/mapsindoors.services.DirectionsService.html), and add an _external Directions Provider_ (in this case Google Maps).
+First, initialize the [MapsIndoors Directions _Service_](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/mapsindoors.services.DirectionsService.html), and add an _external Directions Provider_ (in this case Mapbox).
 
 Then, we need to initialize the [MapsIndoors Directions Render](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/mapsindoors.directions.DirectionsRenderer.html) with the MapsIndoors _instance_:
 
-```js/12-15
+```js/13-16
 // main.js
 
 const mapViewOptions = {
-  element: document.getElementById('map'),
+  accessToken: "YOUR_MAPBOX_ACCESS_TOKEN",
+  element: document.getElementById("map"),
   center: { lat: 38.8974905, lng: -77.0362723 }, // The White House
   zoom: 17,
   maxZoom: 22,
 };
-const mapViewInstance = new mapsindoors.mapView.GoogleMapsView(mapViewOptions);
-const mapsIndoorsInstance = new mapsindoors.MapsIndoors({ mapView: mapViewInstance });
-const googleMapsInstance = mapViewInstance.getMap();
+const mapViewInstance = new mapsindoors.mapView.MapboxView(mapViewOptions);
+const mapsIndoorsInstance = new mapsindoors.MapsIndoors({
+    mapView: mapViewInstance,
+});
+const mapboxInstance = mapViewInstance.getMap();
 
-const externalDirectionsProvider = new mapsindoors.directions.GoogleMapsProvider();
+const externalDirectionsProvider = new mapsindoors.directions.MapboxProvider();
 const miDirectionsServiceInstance = new mapsindoors.services.DirectionsService(externalDirectionsProvider);
 const directionsRendererOptions = { mapsIndoors: mapsIndoorsInstance }
 const miDirectionsRendererInstance = new mapsindoors.directions.DirectionsRenderer(directionsRendererOptions);
@@ -53,7 +56,7 @@ const miDirectionsRendererInstance = new mapsindoors.directions.DirectionsRender
 // Floor Selector
 const floorSelectorElement = document.createElement('div');
 new mapsindoors.FloorSelector(floorSelectorElement, mapsIndoorsInstance);
-googleMapsInstance.controls[google.maps.ControlPosition.RIGHT_TOP].push(floorSelectorElement);
+mapboxInstance.addControl({ onAdd: function () { return floorSelectorElement }, onRemove: function () { } });
 
 function onSearch() {
   const searchInputElement = document.querySelector('input');
@@ -88,7 +91,7 @@ First, add two new `let` statements all the way at the top, after the `miMapElem
 ```js/6-7,13-17
 // main.js
 
-const miMapElement = document.querySelector('mi-map-googlemaps');
+const miMapElement = document.querySelector('mi-map-mapbox');
 const miSearchElement = document.querySelector('mi-search');
 const miListElement = document.querySelector('mi-list');
 
@@ -157,16 +160,17 @@ In the following example, this is what happens:
 // main.js
 
 const mapViewOptions = {
+  accessToken: "YOUR_MAPBOX_ACCESS_TOKEN",
   element: document.getElementById('map'),
   center: { lat: 38.8974905, lng: -77.0362723 }, // The White House
   zoom: 17,
   maxZoom: 22,
 };
-const mapViewInstance = new mapsindoors.mapView.GoogleMapsView(mapViewOptions);
+const mapViewInstance = new mapsindoors.mapView.MapboxView(mapViewOptions);
 const mapsIndoorsInstance = new mapsindoors.MapsIndoors({ mapView: mapViewInstance });
-const googleMapsInstance = mapViewInstance.getMap();
+const mapboxInstance = mapViewInstance.getMap();
 
-const externalDirectionsProvider = new mapsindoors.directions.GoogleMapsProvider();
+const externalDirectionsProvider = new mapsindoors.directions.MapboxProvider();
 const miDirectionsServiceInstance = new mapsindoors.services.DirectionsService(externalDirectionsProvider);
 const directionsRendererOptions = { mapsIndoors: mapsIndoorsInstance }
 const miDirectionsRendererInstance = new mapsindoors.directions.DirectionsRenderer(directionsRendererOptions);
@@ -174,7 +178,7 @@ const miDirectionsRendererInstance = new mapsindoors.directions.DirectionsRender
 // Floor Selector
 const floorSelectorElement = document.createElement('div');
 new mapsindoors.FloorSelector(floorSelectorElement, mapsIndoorsInstance);
-googleMapsInstance.controls[google.maps.ControlPosition.RIGHT_TOP].push(floorSelectorElement);
+mapboxInstance.addControl({ onAdd: function () { return floorSelectorElement }, onRemove: function () { } });
 
 function onSearch() {
   const searchInputElement = document.querySelector('input');
@@ -223,7 +227,7 @@ function getRoute(location) {
 ```js/37-53
 // main.js
 
-const miMapElement = document.querySelector('mi-map-googlemaps');
+const miMapElement = document.querySelector("mi-map-mapbox");
 const miSearchElement = document.querySelector('mi-search');
 const miListElement = document.querySelector('mi-list');
 
@@ -291,16 +295,17 @@ Now, to make it more dynamic, we attach a `click` event listener for each locati
 // main.js
 
 const mapViewOptions = {
+  accessToken: "YOUR_MAPBOX_ACCESS_TOKEN",
   element: document.getElementById('map'),
   center: { lat: 38.8974905, lng: -77.0362723 }, // The White House
   zoom: 17,
   maxZoom: 22,
 };
-const mapViewInstance = new mapsindoors.mapView.GoogleMapsView(mapViewOptions);
+const mapViewInstance = new mapsindoors.mapView.MapboxView(mapViewOptions);
 const mapsIndoorsInstance = new mapsindoors.MapsIndoors({ mapView: mapViewInstance });
-const googleMapsInstance = mapViewInstance.getMap();
+const mapboxInstance = mapViewInstance.getMap();
 
-const externalDirectionsProvider = new mapsindoors.directions.GoogleMapsProvider();
+const externalDirectionsProvider = new mapsindoors.directions.MapboxProvider();
 const miDirectionsServiceInstance = new mapsindoors.services.DirectionsService(externalDirectionsProvider);
 const directionsRendererOptions = { mapsIndoors: mapsIndoorsInstance }
 const miDirectionsRendererInstance = new mapsindoors.directions.DirectionsRenderer(directionsRendererOptions);
@@ -308,7 +313,7 @@ const miDirectionsRendererInstance = new mapsindoors.directions.DirectionsRender
 // Floor Selector
 const floorSelectorElement = document.createElement('div');
 new mapsindoors.FloorSelector(floorSelectorElement, mapsIndoorsInstance);
-googleMapsInstance.controls[google.maps.ControlPosition.RIGHT_TOP].push(floorSelectorElement);
+mapboxInstance.addControl({ onAdd: function () { return floorSelectorElement }, onRemove: function () { } });
 
 function onSearch() {
   const searchInputElement = document.querySelector('input');
@@ -361,7 +366,7 @@ function getRoute(location) {
 ```js/29,30
 // main.js
 
-const miMapElement = document.querySelector('mi-map-googlemaps');
+const miMapElement = document.querySelector("mi-map-mapbox");
 const miSearchElement = document.querySelector('mi-search');
 const miListElement = document.querySelector('mi-list');
 
@@ -370,7 +375,7 @@ let miDirectionsRendererInstance;
 
 miMapElement.addEventListener('mapsIndoorsReady', () => {
   miMapElement.getMapInstance().then((mapInstance) => {
-    mapInstance.setCenter({ lat: 38.8974905, lng: -77.0362723 }); // The White House
+      mapInstance.setCenter([-77.0362723, 38.8974905]); // The White House
   });
   miMapElement.getDirectionsServiceInstance()
     .then((directionsServiceInstance) => miDirectionsServiceInstance = directionsServiceInstance);
@@ -444,8 +449,9 @@ To change between travel modes we first need to add a `<select>` element with al
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MapsIndoors</title>
-  <script src="https://app.mapsindoors.com/mapsindoors/js/sdk/4.5.1/mapsindoors-4.5.1.js.gz?apikey=d876ff0e60bb430b8fabb145"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?libraries=geometry"></script>
+  <script src="https://app.mapsindoors.com/mapsindoors/js/sdk/4.17.0/mapsindoors-4.17.0.js.gz?apikey=YOUR_MAPSINDOORS_API_KEY"></script>
+  <script src='https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.css' rel='stylesheet' />
 </head>
 <body>
   <div id="map" style="width: 600px; height: 600px;"></div>
@@ -483,11 +489,12 @@ To change between travel modes we first need to add a `<select>` element with al
     <script src="https://unpkg.com/@mapsindoors/components@8.2.0/dist/mi-components/mi-components.js"></script>
 </head>
 <body>
-  <mi-map-googlemaps
+  <mi-map-mapbox
+    accessToken="YOUR_MAPBOX_ACCESS_TOKEN"
     style="width: 600px; height: 600px;"
     mi-api-key="d876ff0e60bb430b8fabb145"
     floor-selector-control-position="TOP_RIGHT">
-  </mi-map-googlemaps>
+  </mi-map-mapbox>
   
   <!-- Travel mode selector -->
   <label for="travel-modes">Choose a travel mode:</label>
@@ -542,16 +549,17 @@ To use the chosen transportation when getting a route, we need to replace the ha
 // main.js
 
 const mapViewOptions = {
+  accessToken: "YOUR_MAPBOX_ACCESS_TOKEN",
   element: document.getElementById('map'),
   center: { lat: 38.8974905, lng: -77.0362723 }, // The White House
   zoom: 17,
   maxZoom: 22,
 };
-const mapViewInstance = new mapsindoors.mapView.GoogleMapsView(mapViewOptions);
+const mapViewInstance = new mapsindoors.mapView.MapboxView(mapViewOptions);
 const mapsIndoorsInstance = new mapsindoors.MapsIndoors({ mapView: mapViewInstance });
-const googleMapsInstance = mapViewInstance.getMap();
+const mapboxInstance = mapViewInstance.getMap();
 
-const externalDirectionsProvider = new mapsindoors.directions.GoogleMapsProvider();
+const externalDirectionsProvider = new mapsindoors.directions.MapboxProvider();
 const miDirectionsServiceInstance = new mapsindoors.services.DirectionsService(externalDirectionsProvider);
 const directionsRendererOptions = { mapsIndoors: mapsIndoorsInstance }
 const miDirectionsRendererInstance = new mapsindoors.directions.DirectionsRenderer(directionsRendererOptions);
@@ -559,7 +567,7 @@ const miDirectionsRendererInstance = new mapsindoors.directions.DirectionsRender
 // Floor Selector
 const floorSelectorElement = document.createElement('div');
 new mapsindoors.FloorSelector(floorSelectorElement, mapsIndoorsInstance);
-googleMapsInstance.controls[google.maps.ControlPosition.RIGHT_TOP].push(floorSelectorElement);
+mapboxInstance.addControl({ onAdd: function () { return floorSelectorElement }, onRemove: function () { } });
 
 function onSearch() {
   const searchInputElement = document.querySelector('input');
@@ -608,7 +616,7 @@ function getRoute(location) {
 ```js/49
 // main.js
 
-const miMapElement = document.querySelector('mi-map-googlemaps');
+const miMapElement = document.querySelector('mi-map-mapbox');
 const miSearchElement = document.querySelector('mi-search');
 const miListElement = document.querySelector('mi-list');
 
