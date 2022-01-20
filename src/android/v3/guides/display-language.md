@@ -10,7 +10,7 @@ eleventyNavigation:
 <!-- Introduction -->
 {% include "src/shared/display-language/intro.md" %}
 
-Addionally, aside from methods mentioned here, you can provide translations via the standard method for your device, such as using individual localised strings.
+Additionally, aside from methods mentioned here, you can provide translations via the standard method for your device, such as using individual localized strings.
 
 <!-- CMS Language-->
 {% include "src/shared/display-language/cms-language.md" %}
