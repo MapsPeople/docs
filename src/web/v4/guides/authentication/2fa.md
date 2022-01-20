@@ -9,7 +9,7 @@ eleventyNavigation:
 
 ## Enabling 2-Factor Authentication
 
-Enabling 2-Factor Authentication (2FA) is done by the user themselves via the CMS. If a user clicks their avatar in the top-right corner, a drop-down menu will appear, where "Settings" should be clicked. The user should now follow the instructions to enable 2FA.
+You can enable 2-Factor Authentication (2FA) in the MapsIndoors CMS. Click the avatar in the top-right corner, and click on "Settings". Follow the instructions to enable 2FA.
 
 ![2fa instructions](/assets/various/Dashboard/2fa.png)
 
