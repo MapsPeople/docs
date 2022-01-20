@@ -15,7 +15,7 @@ You can enable 2-Factor Authentication (2FA) in the MapsIndoors CMS. Click the a
 
 ## Disabling 2FA
 
-Once 2FA is enabled, this page will change to allow disabling of 2FA, should the user want to do this at a later point. Simply follow the instructions on the page.
+After you've enabled 2FA, the page will show instructions on how to disable 2FA again.
 
 ![2fa-disable instructions](/assets/various/Dashboard/2fa-disable.png)
 
