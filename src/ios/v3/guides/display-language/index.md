@@ -10,6 +10,11 @@ eleventyNavigation:
 <!-- Introduction -->
 {% include "src/shared/display-language/intro.md" %}
 
+Additionally, aside from methods mentioned here, you can provide translations via the standard method for iOS, `LocalizedString`.
+
+<!-- CMS Language-->
+{% include "src/shared/display-language/cms-language.md" %}
+
 <!-- Fixed Language -->
 {% include "src/shared/display-language/fixed-language.md" %}
 
