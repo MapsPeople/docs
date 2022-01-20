@@ -9,11 +9,9 @@ eleventyNavigation:
 ---
 
 <!-- Overview -->
-
 {% include "src/shared/getting-started/map/overview.md" %}
 
 <!-- Set up MapsIndoors -->
-
 {% include "src/shared/getting-started/map/show-map.md" %}
 
 <mi-tabs>
@@ -76,8 +74,8 @@ To load data and display it on the map, we need to create a new _instance_ of th
 // main.js
 
 const mapViewOptions = {
-    accessToken: "YOUR_MAPBOX_ACCESS_TOKEN",
-    element: document.getElementById("map"),
+    accessToken: 'YOUR_MAPBOX_ACCESS_TOKEN',
+    element: document.getElementById('map'),
     center: { lat: 38.8974905, lng: -77.0362723 }, // The White House
     zoom: 17,
     maxZoom: 22,
@@ -154,9 +152,9 @@ First we get a reference to the `<mi-map-mapbox>` element. Then we attach the [`
 ```js
 // main.js
 
-const miMapElement = document.querySelector("mi-map-mapbox");
+const miMapElement = document.querySelector('mi-map-mapbox');
 
-miMapElement.addEventListener("mapsIndoorsReady", () => {
+miMapElement.addEventListener('mapsIndoorsReady', () => {
     miMapElement.getMapInstance().then((mapInstance) => {
         mapInstance.setCenter([-77.0362723, 38.8974905]); // The White House
     });
@@ -185,7 +183,7 @@ First, we add an empty `<div>` element programmatically. Then we create a new `F
 // main.js
 
 const mapViewOptions = {
-  accessToken: "YOUR_MAPBOX_ACCESS_TOKEN",
+  accessToken: 'YOUR_MAPBOX_ACCESS_TOKEN',
   element: document.getElementById('map'),
   center: { lat: 38.8974905, lng: -77.0362723 }, // The White House
   zoom: 17,
