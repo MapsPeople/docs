@@ -64,23 +64,21 @@ MapsIndoors Locations can be retrieved in the mapsindoors namespace using the `L
 
 ```js/16-24
 // main.js
+
 const mapViewOptions = {
-    accessToken: "YOUR_MAPBOX_ACCESS_TOKEN",
-    element: document.getElementById("map"),
+    accessToken: 'YOUR_MAPBOX_ACCESS_TOKEN',
+    element: document.getElementById('map'),
     center: { lat: 38.8974905, lng: -77.0362723 }, // The White House
     zoom: 17,
     maxZoom: 22,
 };
 const mapViewInstance = new mapsindoors.mapView.MapboxView(mapViewOptions);
-const mapsIndoorsInstance = new mapsindoors.MapsIndoors({
-    mapView: mapViewInstance,
-});
+const mapsIndoorsInstance = new mapsindoors.MapsIndoors({ mapView: mapViewInstance });
 
 // Floor Selector
 const floorSelectorElement = document.createElement('div');
 new mapsindoors.FloorSelector(floorSelectorElement, mapsIndoorsInstance);
 mapboxInstance.addControl({ onAdd: function () { return floorSelectorElement }, onRemove: function () { } });
-
 
 function onSearch() {
   const searchInputElement = document.querySelector('input');
@@ -115,7 +113,7 @@ Using the `<mi-search>` component you get a `<input>`element tied tightly togeth
 * Insert the `<mi-search>` custom element into `<body>`.
 * Add the `mapsindoors` and `placeholder` attributes.
 
-```html/15,16
+```html/18-19
 <!-- index.html -->
 
 <!DOCTYPE html>
@@ -128,7 +126,10 @@ Using the `<mi-search>` component you get a `<input>`element tied tightly togeth
   <script src="https://unpkg.com/@mapsindoors/components@8.2.0/dist/mi-components/mi-components.js"></script>
 </head>
 <body>
-  <mi-map-mapbox style="width: 600px; height: 600px;" accessToken="YOUR_MAPBOX_ACCESS_TOKEN" mi-api-key="YOUR_MAPSINDOORS_API_KEY">
+  <mi-map-mapbox style="width: 600px; height: 600px;" 
+    accessToken="YOUR_MAPBOX_ACCESS_TOKEN" 
+    mi-api-key="YOUR_MAPSINDOORS_API_KEY"
+    floor-selector-control-position="TOP_RIGHT">
   </mi-map-mapbox>
   <script src="main.js"></script>
   <mi-search style="width: 600px;" mapsindoors="true" placeholder="Search">
@@ -156,10 +157,10 @@ Using the `<mi-search>` component you get a `<input>`element tied tightly togeth
 ```js/4,11-13
 // main.js
 
-const miMapElement = document.querySelector("mi-map-mapbox");
+const miMapElement = document.querySelector('mi-map-mapbox');
 const miSearchElement = document.querySelector('mi-search');
 
-miMapElement.addEventListener("mapsIndoorsReady", () => {
+miMapElement.addEventListener('mapsIndoorsReady', () => {
     miMapElement.getMapInstance().then((mapInstance) => {
         mapInstance.setCenter([-77.0362723, 38.8974905]); // The White House
     });
@@ -197,7 +198,7 @@ To display a list of search results you can append each search result to a list 
 
 * Add the `<ul>` list element below the search field in `<body>` with the `id` attribute set to "search-results".
 
-```html/17
+```html/18
 <!-- index.html -->
 
 <!DOCTYPE html>
@@ -209,7 +210,7 @@ To display a list of search results you can append each search result to a list 
   <title>MapsIndoors</title>
   <script src="https://app.mapsindoors.com/mapsindoors/js/sdk/4.17.0/mapsindoors-4.17.0.js.gz?apikey=YOUR_MAPSINDOORS_API_KEY"></script>
   <script src='https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.js'></script>
-  <link href='https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.css' rel='stylesheet
+  <link href='https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.css' rel='stylesheet' />
 </head>
 <body>
   <div id="map" style="width: 600px; height: 600px;"></div>
@@ -286,10 +287,11 @@ To display a list of search results you can append each search result to a list 
 <mi-tab label="MI Components" tab-for="components"></mi-tab>
 <mi-tab-panel id="manually">
 
-```js/19,20,23,24,25,26
+```js/20-21,24-27
 // main.js
 
 const mapViewOptions = {
+  accessToken: "YOUR_MAPBOX_ACCESS_TOKEN",
   element: document.getElementById('map'),
   center: { lat: 38.8974905, lng: -77.0362723 }, // The White House
   zoom: 17,
@@ -382,6 +384,7 @@ miSearchElement.addEventListener('results', (event) => {
 // main.js
 
 const mapViewOptions = {
+  accessToken: "YOUR_MAPBOX_ACCESS_TOKEN",
   element: document.getElementById('map'),
   center: { lat: 38.8974905, lng: -77.0362723 }, // The White House
   zoom: 17,
@@ -439,7 +442,7 @@ function onSearch() {
 ```js/16-21
 // main.js
 
-const miMapElement = document.querySelector("mi-map-mapbox");
+const miMapElement = document.querySelector('mi-map-mapbox');
 const miSearchElement = document.querySelector('mi-search');
 const miListElement = document.querySelector('mi-list');
 
@@ -495,6 +498,7 @@ To filter the map to only display the search results you can use the `filter` me
 // main.js
 
 const mapViewOptions = {
+  accessToken: "YOUR_MAPBOX_ACCESS_TOKEN",
   element: document.getElementById('map'),
   center: { lat: 38.8974905, lng: -77.0362723 }, // The White House
   zoom: 17,
@@ -548,7 +552,7 @@ function onSearch() {
 </mi-tab-panel>
 <mi-tab-panel id="components">
 
-```js /23-27
+```js/23-27
 // main.js
 
 const miMapElement = document.querySelector("mi-map-mapbox");
