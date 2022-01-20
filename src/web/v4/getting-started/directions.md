@@ -43,9 +43,7 @@ const mapViewOptions = {
   maxZoom: 22,
 };
 const mapViewInstance = new mapsindoors.mapView.MapboxView(mapViewOptions);
-const mapsIndoorsInstance = new mapsindoors.MapsIndoors({
-    mapView: mapViewInstance,
-});
+const mapsIndoorsInstance = new mapsindoors.MapsIndoors({ mapView: mapViewInstance });
 const mapboxInstance = mapViewInstance.getMap();
 
 const externalDirectionsProvider = new mapsindoors.directions.MapboxProvider();
@@ -291,7 +289,7 @@ Now, to make it more dynamic, we attach a `click` event listener for each locati
 <mi-tab label="MI Components" tab-for="components"></mi-tab>
 <mi-tab-panel id="manually">
 
-```js/37,38
+```js/38-39
 // main.js
 
 const mapViewOptions = {
@@ -439,7 +437,7 @@ To change between travel modes we first need to add a `<select>` element with al
 <mi-tab label="MI Components" tab-for="components"></mi-tab>
 <mi-tab-panel id="manually">
 
-```html/15-22
+```html/16-23
 <!-- index.html -->
 
 <!DOCTYPE html>
@@ -476,7 +474,7 @@ To change between travel modes we first need to add a `<select>` element with al
 </mi-tab-panel>
 <mi-tab-panel id="components">
 
-```html/18-25
+```html/19-26
 <!-- index.html -->
 
 <!DOCTYPE html>
@@ -545,7 +543,7 @@ To use the chosen transportation when getting a route, we need to replace the ha
 <mi-tab label="MI Components" tab-for="components"></mi-tab>
 <mi-tab-panel id="manually">
 
-```js/55
+```js/56
 // main.js
 
 const mapViewOptions = {
