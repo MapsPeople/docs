@@ -74,6 +74,7 @@ To load data and display it on the map, we need to create a new _instance_ of th
 
 ```js
 // main.js
+
 const mapViewOptions = {
     accessToken: "YOUR_MAPBOX_ACCESS_TOKEN",
     element: document.getElementById("map"),
@@ -180,10 +181,11 @@ Next, we'll add a Floor Selector for changing between Floors.
 
 First, we add an empty `<div>` element programmatically. Then we create a new `FloorSelector` _instance_ and push the `floorSelectorElement` to the `mapboxInstance` to position it as a map controller:
 
-```js/10,13,14,15
+```js/11,14-16
 // main.js
 
 const mapViewOptions = {
+  accessToken: "YOUR_MAPBOX_ACCESS_TOKEN",
   element: document.getElementById('map'),
   center: { lat: 38.8974905, lng: -77.0362723 }, // The White House
   zoom: 17,
