@@ -24,7 +24,7 @@ MapsIndoors Locations can be retrieved in the mapsindoors namespace using the `L
 * Create an `<input>` and `<button>` element in `<body>`.
 * Attach an `onclick` event to the `<button>` element and call a `onSearch` method, which you will create next.
 
-```html/15,16
+```diff-html
 <!-- index.html -->
 
 <!DOCTYPE html>
@@ -40,20 +40,10 @@ MapsIndoors Locations can be retrieved in the mapsindoors namespace using the `L
 <body>
   <div id="map" style="width: 600px; height: 600px;"></div>
   <script src="main.js"></script>
-  <input type="text" placeholder="Search">
-  <button onclick="onSearch()">Search</button>
++ <input type="text" placeholder="Search">
++ <button onclick="onSearch()">Search</button>
 </body>
 </html>
-```
-
-```html
-<!-- index.html -->
-
-<body>
-  ...
-  <input type="text" placeholder="Search">
-  <button onclick="onSearch()">Search</button>
-</body>
 ```
 
 * Create the `onSearch` method.
@@ -61,7 +51,7 @@ MapsIndoors Locations can be retrieved in the mapsindoors namespace using the `L
 * Define a new object with the search parameter `q` and the value of `searchInputElement`.
 * Call the `getLocations` method and log out the results to the console.
 
-```js/16-24
+```diff-js
 // main.js
 
 const mapViewOptions = {
@@ -79,27 +69,14 @@ const floorSelectorElement = document.createElement('div');
 new mapsindoors.FloorSelector(floorSelectorElement, mapsIndoorsInstance);
 googleMapsInstance.controls[google.maps.ControlPosition.RIGHT_TOP].push(floorSelectorElement);
 
-function onSearch() {
-  const searchInputElement = document.querySelector('input');
++ function onSearch() {
++   const searchInputElement = document.querySelector('input');
 
-  const searchParameters = { q: searchInputElement.value };
-  mapsindoors.services.LocationsService.getLocations(searchParameters).then(locations => {
-    console.log(locations);
-  });
-}
-```
-
-```js
-// main.js
-
-function onSearch() {
-  const searchInputElement = document.querySelector('input');
-
-  const searchParameters = { q: searchInputElement.value };
-  mapsindoors.services.LocationsService.getLocations(searchParameters).then(locations => {
-    console.log(locations);
-  });
-}
++   const searchParameters = { q: searchInputElement.value };
++   mapsindoors.services.LocationsService.getLocations(searchParameters).then(locations => {
++     console.log(locations);
++   });
++ }
 ```
 
 > See all available search parameters in the [reference documentation](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/mapsindoors.services.LocationsService.html#.getLocations).
@@ -112,7 +89,7 @@ Using the `<mi-search>` component you get a `<input>`element tied tightly togeth
 * Insert the `<mi-search>` custom element into `<body>`.
 * Add the `mapsindoors` and `placeholder` attributes.
 
-```html/15,16
+```diff-html
 <!-- index.html -->
 
 <!DOCTYPE html>
@@ -128,33 +105,23 @@ Using the `<mi-search>` component you get a `<input>`element tied tightly togeth
   <mi-map-googlemaps style="width: 600px; height: 600px;" gm-api-key="YOUR_GOOGLE_MAPS_API_KEY" mi-api-key="YOUR_MAPSINDOORS_API_KEY" floor-selector-control-position="TOP_RIGHT">
   </mi-map-googlemaps>
   <script src="main.js"></script>
-  <mi-search style="width: 600px;" mapsindoors="true" placeholder="Search">
-  </mi-search>
++ <mi-search 
++  style="width: 600px;"
++  mapsindoors="true"
++  placeholder="Search">
++ </mi-search>
 </body>
 </html>
-```
-
-```html
-<!-- index.html -->
-
-<body>
-  ...
-  <mi-search
-    style="width: 600px;"
-    mapsindoors="true"
-    placeholder="Search">
-  </mi-search>
-</body>
 ```
 
 * Get a reference to the `<mi-search>` element.
 * Attach an `results` event listener and log out the results to the console.
 
-```js/4,11-13
+```diff-js
 // main.js
 
 const miMapElement = document.querySelector('mi-map-googlemaps');
-const miSearchElement = document.querySelector('mi-search');
++ const miSearchElement = document.querySelector('mi-search');
 
 miMapElement.addEventListener('mapsIndoorsReady', () => {
   miMapElement.getMapInstance().then((mapInstance) => {
@@ -162,19 +129,9 @@ miMapElement.addEventListener('mapsIndoorsReady', () => {
   });
 })
 
-miSearchElement.addEventListener('results', (event) => {
-    console.log(event.detail);
-});
-```
-
-```js
-// main.js
-
-const miSearchElement = document.querySelector('mi-search');
-
-miSearchElement.addEventListener('results', (event) => {
-    console.log(event.detail);
-});
++ miSearchElement.addEventListener('results', (event) => {
++     console.log(event.detail);
++ });
 ```
 
 > For more information on available events and how to configure the `<mi-search>` component, see [components.mapsindoors.com/search](https://components.mapsindoors.com/search/).
@@ -194,7 +151,7 @@ To display a list of search results you can append each search result to a list 
 
 * Add the `<ul>` list element below the search field in `<body>` with the `id` attribute set to "search-results".
 
-```html/17
+```diff-html
 <!-- index.html -->
 
 <!DOCTYPE html>
@@ -212,18 +169,9 @@ To display a list of search results you can append each search result to a list 
   <script src="main.js"></script>
   <input type="text" placeholder="Search">
   <button onclick="onSearch()">Search</button>
-  <ul id="search-results"></ul>
++ <ul id="search-results"></ul>
 </body>
 </html>
-```
-
-```html
-<!-- index.html -->
-
-<body>
-  ...
-  <ul id="search-results"></ul>
-</body>
 ```
 
 </mi-tab-panel>
@@ -232,7 +180,7 @@ To display a list of search results you can append each search result to a list 
 * Insert the `<mi-list>` custom element below the search field in `<body>`.
 * Add the `scroll-buttons-enabled` and `scroll-length` attributes.
 
-```html/17,18
+```diff-html
 <!-- index.html -->
 
 <!DOCTYPE html>
@@ -250,23 +198,13 @@ To display a list of search results you can append each search result to a list 
   <script src="main.js"></script>
   <mi-search style="width: 600px;" mapsindoors="true" placeholder="Search">
   </mi-search>
-  <mi-list style="width: 600px; height: 400px;" scroll-buttons-enabled="true" scroll-length="200">
-  </mi-list>
++ <mi-list 
++  style="width: 600px; height: 400px;" 
++  scroll-buttons-enabled="true" 
++  scroll-length="200">
++ </mi-list>
 </body>
 </html>
-```
-
-```html
-<!-- index.html -->
-
-<body>
-  ...
-  <mi-list
-    style="width: 600px; height: 400px;"
-    scroll-buttons-enabled="true"
-    scroll-length="200">
-  </mi-list>
-</body>
 ```
 
 > For more information on how to configure the `<mi-list>` component, see [components.mapsindoors.com/list](https://components.mapsindoors.com/list/).
@@ -282,7 +220,7 @@ To display a list of search results you can append each search result to a list 
 <mi-tab label="MI Components" tab-for="components"></mi-tab>
 <mi-tab-panel id="manually">
 
-```js/19,20,23,24,25,26
+```diff-js
 // main.js
 
 const mapViewOptions = {
@@ -302,42 +240,26 @@ googleMapsInstance.controls[google.maps.ControlPosition.RIGHT_TOP].push(floorSel
 
 function onSearch() {
   const searchInputElement = document.querySelector('input');
-  // Get list element reference
-  const searchResultsElement = document.getElementById('search-results');
++ // Get list element reference
++ const searchResultsElement = document.getElementById('search-results');
 
   const searchParameters = { q: searchInputElement.value };
-  mapsindoors.services.LocationsService.getLocations(searchParameters).then(locations => {
-    // Reset search results list
-    searchResultsElement.innerHTML = null;
-  });
-}
-```
-
-```js
-// main.js
-
-function onSearch() {
-  ...
-  // Get list element reference
-  const searchResultsElement = document.getElementById('search-results');
-  ...
-  mapsindoors.services.LocationsService.getLocations(searchParameters).then(locations => {
-    // Reset search results list
-    searchResultsElement.innerHTML = null;
-    ...
-  });
++ mapsindoors.services.LocationsService.getLocations(searchParameters).then(locations => {
++   // Reset search results list
++   searchResultsElement.innerHTML = null;
++ });
 }
 ```
 
 </mi-tab-panel>
 <mi-tab-panel id="components">
 
-```js/4,12,13,14,15,16
+```diff-js
 // main.js
 
 const miMapElement = document.querySelector('mi-map-googlemaps');
 const miSearchElement = document.querySelector('mi-search');
-const miListElement = document.querySelector('mi-list');
++ const miListElement = document.querySelector('mi-list');
 
 miMapElement.addEventListener('mapsIndoorsReady', () => {
   miMapElement.getMapInstance().then((mapInstance) => {
@@ -345,23 +267,10 @@ miMapElement.addEventListener('mapsIndoorsReady', () => {
   });
 })
 
-miSearchElement.addEventListener('results', (event) => {
-  // Reset search results list
-  miListElement.innerHTML = null;
-});
-```
-
-```js
-// main.js
-
-// Get list element reference
-const miListElement = document.querySelector('mi-list');
-
-miSearchElement.addEventListener('results', (event) => {
-  // Reset search results list
-  miListElement.innerHTML = null;
-  ...
-});
++ miSearchElement.addEventListener('results', (event) => {
++   // Reset search results list
++   miListElement.innerHTML = null;
++ });
 ```
 
 </mi-tab-panel>
@@ -374,7 +283,7 @@ miSearchElement.addEventListener('results', (event) => {
 <mi-tab label="MI Components" tab-for="components"></mi-tab>
 <mi-tab-panel id="manually">
 
-```js/27-32
+```diff-js
 // main.js
 
 const mapViewOptions = {
@@ -402,29 +311,12 @@ function onSearch() {
     // Reset search results list
     searchResultsElement.innerHTML = null;
 
-    // Append new search results
-    locations.forEach(location => {
-      const listElement = document.createElement('li');
-      listElement.innerHTML = location.properties.name;
-      searchResultsElement.appendChild(listElement);
-    });
-  });
-}
-```
-
-```js
-// main.js
-
-function onSearch() {
-  ...
-  mapsindoors.services.LocationsService.getLocations(searchParameters).then(locations => {
-    ...
-    // Append new search results
-    locations.forEach(location => {
-      const listElement = document.createElement('li');
-      listElement.innerHTML = location.properties.name;
-      searchResultsElement.appendChild(listElement);
-    });
++   // Append new search results
++   locations.forEach(location => {
++     const listElement = document.createElement('li');
++     listElement.innerHTML = location.properties.name;
++     searchResultsElement.appendChild(listElement);
++   });
   });
 }
 ```
@@ -432,7 +324,7 @@ function onSearch() {
 </mi-tab-panel>
 <mi-tab-panel id="components">
 
-```js/16-21
+```diff-js
 // main.js
 
 const miMapElement = document.querySelector('mi-map-googlemaps');
@@ -449,26 +341,12 @@ miSearchElement.addEventListener('results', (event) => {
   // Reset search results list
   miListElement.innerHTML = null;
 
-  // Append new search results
-  event.detail.forEach(location => {
-    const miListItemElement = document.createElement('mi-list-item-location');
-    miListItemElement.location = location;
-    miListElement.appendChild(miListItemElement);
-  });
-});
-```
-
-```js
-// main.js
-
-miSearchElement.addEventListener('results', (event) => {
-  ...
-  // Append new search results
-  event.detail.forEach(location => {
-    const miListItemElement = document.createElement('mi-list-item-location');
-    miListItemElement.location = location;
-    miListElement.appendChild(miListItemElement);
-  });
++ // Append new search results
++ event.detail.forEach(location => {
++   const miListItemElement = document.createElement('mi-list-item-location');
++   miListItemElement.location = location;
++   miListElement.appendChild(miListItemElement);
++ });
 });
 ```
 
@@ -487,7 +365,7 @@ To filter the map to only display the search results you can use the `filter` me
 
 * Call `mapsIndoorsInstance.filter` with an array of location IDs.
 
-```js/34-36
+```diff-js
 // main.js
 
 const mapViewOptions = {
@@ -522,29 +400,16 @@ function onSearch() {
       searchResultsElement.appendChild(listElement);
     });
 
-    // Filter map to only display search results
-    mapsIndoorsInstance.filter(locations.map(location => location.id), false);
-  });
-}
-```
-
-```js
-// main.js
-
-function onSearch() {
-  ...
-  mapsindoors.services.LocationsService.getLocations(searchParameters).then(locations => {
-    ...
-    // Filter map to only display search results
-    mapsIndoorsInstance.filter(locations.map(location => location.id), false);
-  });
++   // Filter map to only display search results
++   mapsIndoorsInstance.filter(locations.map(location => location.id), false);
++ });
 }
 ```
 
 </mi-tab-panel>
 <mi-tab-panel id="components">
 
-```js/23-27
+```diff-js
 // main.js
 
 const miMapElement = document.querySelector('mi-map-googlemaps');
@@ -568,24 +433,11 @@ miSearchElement.addEventListener('results', (event) => {
     miListElement.appendChild(miListItemElement);
   });
 
-  // Get the MapsIndoors instance
-  miMapElement.getMapsIndoorsInstance().then((mapsIndoorsInstance) => {
-    // Filter map to only display search results
-    mapsIndoorsInstance.filter(event.detail.map(location => location.id), false);
-});
-```
-
-```js
-// main.js
-
-miSearchElement.addEventListener('results', (event) => {
-  ...
-  // Get the MapsIndoors instance
-  miMapElement.getMapsIndoorsInstance().then((mapsIndoorsInstance) => {
-    // Filter map to only display search results
-    mapsIndoorsInstance.filter(event.detail.map(location => location.id), false);
-  });
-});
++ // Get the MapsIndoors instance
++ miMapElement.getMapsIndoorsInstance().then((mapsIndoorsInstance) => {
++   // Filter map to only display search results
++   mapsIndoorsInstance.filter(event.detail.map(location => location.id), false);
++ });
 ```
 
 </mi-tab-panel>
