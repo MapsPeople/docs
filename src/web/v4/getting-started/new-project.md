@@ -22,25 +22,6 @@ eleventyNavigation:
 
 1. Open `index.html`. Create a basic HTML structure and include the `main.js` file, as follows:
 
-```html
-<!-- index.html -->
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MapsIndoors</title>
-</head>
-<body>
-  <script src="main.js"></script>
-</body>
-</html>
-```
-
-Both here, and in future code examples, you will always be able to see which of two files the code should go in, by looking at the first line, where the name of the file is written:
-
 ```html/0
 <!-- index.html -->
 
@@ -57,5 +38,7 @@ Both here, and in future code examples, you will always be able to see which of 
 </body>
 </html>
 ```
+
+Both here, and in future code examples, you will always be able to see which of two files the code should go in, by looking at the first line, where the name of the file is written.
 
 <p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/web/v4/getting-started/map/">Next up: Show a map</a></p>

@@ -126,7 +126,11 @@ pre[class*="language-"] {
 
 .token.inserted {
     background-color: $color-green-20;
-    color: $color-green-70;
+    color: inherit;
+}
+
+.token.prefix.inserted {
+    color: $color-green-80;
 }
 
 .token.deleted {
