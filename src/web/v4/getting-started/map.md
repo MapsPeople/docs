@@ -132,9 +132,9 @@ After you added the script tag into `<head>`, add the `<mi-map-googlemaps>` cust
 </head>
 <body>
 + <mi-map-googlemaps
-+  style="width: 600px; 
-+  height: 600px;" 
-+  gm-api-key="YOUR_GOOGLE_MAPS_API_KEY" 
++  style="width: 600px;
++  height: 600px;"
++  gm-api-key="YOUR_GOOGLE_MAPS_API_KEY"
 +  mi-api-key="YOUR_MAPSINDOORS_API_KEY">
 + </mi-map-googlemaps>
   <script src="main.js"></script>
@@ -216,9 +216,9 @@ Using the `<mi-map-googlemaps>` element, you can add the [floorSelectorControlPo
 </head>
 <body>
   <mi-map-googlemaps
-  style="width: 600px; 
-  height: 600px;" 
-  gm-api-key="YOUR_GOOGLE_MAPS_API_KEY" 
+  style="width: 600px;
+  height: 600px;"
+  gm-api-key="YOUR_GOOGLE_MAPS_API_KEY"
   mi-api-key="YOUR_MAPSINDOORS_API_KEY"
 + floor-selector-control-position="TOP_RIGHT">
   </mi-map-googlemaps>

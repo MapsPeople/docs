@@ -105,7 +105,7 @@ Using the `<mi-search>` component you get a `<input>`element tied tightly togeth
   <mi-map-googlemaps style="width: 600px; height: 600px;" gm-api-key="YOUR_GOOGLE_MAPS_API_KEY" mi-api-key="YOUR_MAPSINDOORS_API_KEY" floor-selector-control-position="TOP_RIGHT">
   </mi-map-googlemaps>
   <script src="main.js"></script>
-+ <mi-search 
++ <mi-search
 +  style="width: 600px;"
 +  mapsindoors="true"
 +  placeholder="Search">
@@ -198,9 +198,9 @@ To display a list of search results you can append each search result to a list 
   <script src="main.js"></script>
   <mi-search style="width: 600px;" mapsindoors="true" placeholder="Search">
   </mi-search>
-+ <mi-list 
-+  style="width: 600px; height: 400px;" 
-+  scroll-buttons-enabled="true" 
++ <mi-list
++  style="width: 600px; height: 400px;"
++  scroll-buttons-enabled="true"
 +  scroll-length="200">
 + </mi-list>
 </body>
