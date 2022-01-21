@@ -18,6 +18,15 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 ### Security     in case of vulnerabilities.
 -->
 
+## [3.12.6] 2022-01-19
+
+### Fixed
+
+- Fixed issue where map padding was not always applied when changed on runtime
+- Fixed issue with a internal library conflicting with newer versions of firebase libraries
+- Fixed issue with custom images on locations not being applied on load
+- Fixed crash appearing when frequently reloading solutions
+
 ## [3.12.5] 2022-01-07
 
 ### Fixed
