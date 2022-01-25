@@ -21,7 +21,7 @@ This should be done after you have initialized your MapsIndoors instance, since 
 <mi-tab label="MI Components" tab-for="components"></mi-tab>
 <mi-tab-panel id="manually">
 
-```js/9,17-19
+```diff-js
 // main.js
 
 const mapViewOptions = {
@@ -31,7 +31,7 @@ const mapViewOptions = {
   maxZoom: 22,
 };
 const mapViewInstance = new mapsindoors.mapView.GoogleMapsView(mapViewOptions);
-const mapsIndoorsInstance = new mapsindoors.MapsIndoors({ mapView: mapViewInstance });
++ const mapsIndoorsInstance = new mapsindoors.MapsIndoors({ mapView: mapViewInstance });
 const googleMapsInstance = mapViewInstance.getMap();
 
 const externalDirectionsProvider = new mapsindoors.directions.GoogleMapsProvider();
@@ -39,9 +39,9 @@ const miDirectionsServiceInstance = new mapsindoors.services.DirectionsService(e
 const directionsRendererOptions = { mapsIndoors: mapsIndoorsInstance }
 const miDirectionsRendererInstance = new mapsindoors.directions.DirectionsRenderer(directionsRendererOptions);
 
-// Enable Live Data
-const liveDataManagerInstance = new mapsindoors.LiveDataManager(mapsIndoorsInstance);
-liveDataManagerInstance.enableLiveData(mapsindoors.LiveDataManager.LiveDataDomainTypes.POSITION);
++ // Enable Live Data
++ const liveDataManagerInstance = new mapsindoors.LiveDataManager(mapsIndoorsInstance);
++ liveDataManagerInstance.enableLiveData(mapsindoors.LiveDataManager.LiveDataDomainTypes.POSITION);
 
 // Floor Selector
 const floorSelectorElement = document.createElement('div');
@@ -92,7 +92,7 @@ function getRoute(location) {
 </mi-tab-panel>
 <mi-tab-panel id="components">
 
-```js/19-21
+```diff-js
 // main.js
 
 const miMapElement = document.querySelector('mi-map-googlemaps');
@@ -112,9 +112,9 @@ miMapElement.addEventListener('mapsIndoorsReady', () => {
   miMapElement.getDirectionsRendererInstance().then((directionsRendererInstance) => miDirectionsRendererInstance = directionsRendererInstance);
   
   miMapElement.getMapsIndoorsInstance().then((mapsIndoorsInstance) => {
-    // Enable Live Data
-    const liveDataManagerInstance = new mapsindoors.LiveDataManager(mapsIndoorsInstance);
-    liveDataManagerInstance.enableLiveData(mapsindoors.LiveDataManager.LiveDataDomainTypes.POSITION);
++   // Enable Live Data
++   const liveDataManagerInstance = new mapsindoors.LiveDataManager(mapsIndoorsInstance);
++   liveDataManagerInstance.enableLiveData(mapsindoors.LiveDataManager.LiveDataDomainTypes.POSITION);
   });
 })
 

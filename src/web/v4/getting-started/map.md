@@ -23,7 +23,7 @@ The MapsIndoors SDK is hosted on a Content Delivery Network (CDN) and should be 
 
 Insert the MapsIndoors SDK script tag into `<head>`, followed by the Google Maps script tag:
 
-```html/9-10
+```diff-html
 <!-- index.html -->
 
 <!DOCTYPE html>
@@ -33,8 +33,8 @@ Insert the MapsIndoors SDK script tag into `<head>`, followed by the Google Maps
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MapsIndoors</title>
-  <script src="https://app.mapsindoors.com/mapsindoors/js/sdk/4.5.1/mapsindoors-4.5.1.js.gz?apikey=YOUR_MAPSINDOORS_API_KEY"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?libraries=geometry&key=YOUR_GOOGLE_MAPS_API_KEY"></script>
++ <script src="https://app.mapsindoors.com/mapsindoors/js/sdk/4.5.1/mapsindoors-4.5.1.js.gz?apikey=YOUR_MAPSINDOORS_API_KEY"></script>
++ <script src="https://maps.googleapis.com/maps/api/js?libraries=geometry&key=YOUR_GOOGLE_MAPS_API_KEY"></script>
 </head>
 <body>
   <script src="main.js"></script>
@@ -46,7 +46,7 @@ Insert the MapsIndoors SDK script tag into `<head>`, followed by the Google Maps
 
 Add an empty `<div>` element to `<body>` with the `id` attribute set to "map":
 
-```html/13
+```diff-html
 <!-- index.html -->
 
 <!DOCTYPE html>
@@ -60,7 +60,7 @@ Add an empty `<div>` element to `<body>` with the `id` attribute set to "map":
   <script src="https://maps.googleapis.com/maps/api/js?libraries=geometry&key=YOUR_GOOGLE_MAPS_API_KEY"></script>
 </head>
 <body>
-  <div id="map" style="width: 600px; height: 600px;"></div>
++ <div id="map" style="width: 600px; height: 600px;"></div>
   <script src="main.js"></script>
 </body>
 </html>
@@ -96,7 +96,7 @@ The MapsIndoors Web Components library can be loaded using [unpkg](https://unpkg
 
 Insert script tag into `<head>`:
 
-```html/9
+```diff-html
 <!-- index.html -->
 
 <!DOCTYPE html>
@@ -106,7 +106,7 @@ Insert script tag into `<head>`:
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MapsIndoors</title>
-  <script src="https://unpkg.com/@mapsindoors/components@8.2.0/dist/mi-components/mi-components.js"></script>
++ <script src="https://unpkg.com/@mapsindoors/components@8.2.0/dist/mi-components/mi-components.js"></script>
 </head>
 <body>
   <script src="main.js"></script>
@@ -118,7 +118,7 @@ Insert script tag into `<head>`:
 
 After you added the script tag into `<head>`, add the `<mi-map-googlemaps>` custom element into `<body>`. We need to add and populate the `gm-api-key` and `mi-api-key` attributes with your API keys as well:
 
-```html/12
+```diff-html
 <!-- index.html -->
 
 <!DOCTYPE html>
@@ -131,8 +131,12 @@ After you added the script tag into `<head>`, add the `<mi-map-googlemaps>` cust
   <script src="https://unpkg.com/@mapsindoors/components@8.2.0/dist/mi-components/mi-components.js"></script>
 </head>
 <body>
-  <mi-map-googlemaps style="width: 600px; height: 600px;" gm-api-key="YOUR_GOOGLE_MAPS_API_KEY" mi-api-key="YOUR_MAPSINDOORS_API_KEY">
-  </mi-map-googlemaps>
++ <mi-map-googlemaps
++  style="width: 600px;
++  height: 600px;"
++  gm-api-key="YOUR_GOOGLE_MAPS_API_KEY"
++  mi-api-key="YOUR_MAPSINDOORS_API_KEY">
++ </mi-map-googlemaps>
   <script src="main.js"></script>
 </body>
 </html>
@@ -174,7 +178,7 @@ Next, we'll add a Floor Selector for changing between Floors.
 
 First, we add an empty `<div>` element programmatically. Then we create a new `FloorSelector` _instance_ and push the `floorSelectorElement` to the `googleMapsInstance` to position it as a map controller:
 
-```js/10,13,14,15
+```diff-js
 // main.js
 
 const mapViewOptions = {
@@ -185,12 +189,12 @@ const mapViewOptions = {
 };
 const mapViewInstance = new mapsindoors.mapView.GoogleMapsView(mapViewOptions);
 const mapsIndoorsInstance = new mapsindoors.MapsIndoors({ mapView: mapViewInstance });
-const googleMapsInstance = mapViewInstance.getMap();
++ const googleMapsInstance = mapViewInstance.getMap();
 
 // Floor Selector
-const floorSelectorElement = document.createElement('div');
-new mapsindoors.FloorSelector(floorSelectorElement, mapsIndoorsInstance);
-googleMapsInstance.controls[google.maps.ControlPosition.RIGHT_TOP].push(floorSelectorElement);
++ const floorSelectorElement = document.createElement('div');
++ new mapsindoors.FloorSelector(floorSelectorElement, mapsIndoorsInstance);
++ googleMapsInstance.controls[google.maps.ControlPosition.RIGHT_TOP].push(floorSelectorElement);
 ```
 
 </mi-tab-panel>
@@ -198,7 +202,7 @@ googleMapsInstance.controls[google.maps.ControlPosition.RIGHT_TOP].push(floorSel
 
 Using the `<mi-map-googlemaps>` element, you can add the [floorSelectorControlPosition attribute](https://components.mapsindoors.com/map-googlemaps/) to your existing element. In this case with the value `"TOP_RIGHT"`:
 
-```html/12
+```diff-html
 <!-- index.html -->
 
 <!DOCTYPE html>
@@ -211,7 +215,12 @@ Using the `<mi-map-googlemaps>` element, you can add the [floorSelectorControlPo
   <script src="https://unpkg.com/@mapsindoors/components@8.2.0/dist/mi-components/mi-components.js"></script>
 </head>
 <body>
-  <mi-map-googlemaps style="width: 600px; height: 600px;" gm-api-key="YOUR_GOOGLE_MAPS_API_KEY" mi-api-key="YOUR_MAPSINDOORS_API_KEY" floor-selector-control-position="TOP_RIGHT">
+  <mi-map-googlemaps
+  style="width: 600px;
+  height: 600px;"
+  gm-api-key="YOUR_GOOGLE_MAPS_API_KEY"
+  mi-api-key="YOUR_MAPSINDOORS_API_KEY"
++ floor-selector-control-position="TOP_RIGHT">
   </mi-map-googlemaps>
   <script src="main.js"></script>
 </body>

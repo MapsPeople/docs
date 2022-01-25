@@ -9,6 +9,14 @@ eleventyNavigation:
 
 Changelog for MapsIndoors SDK for JavaScript. This document structure is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and the project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [4.17.1] 2021-01-13
+
+### Fixed
+
+- In some cases, the MapsPeople logo would not be visible.
+- All icons are now added to MapBox, to prevent the "Image ... could not be loaded." warning in the console.
+- `strokeFill`, `strokeColor`, and `strokeWeight` is now correctly applied when using `setBuildingOutlineOptions()`.
+
 ## [4.17.0] 2021-12-21
 
 ### Added

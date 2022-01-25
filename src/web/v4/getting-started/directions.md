@@ -32,7 +32,7 @@ First, initialize the [MapsIndoors Directions _Service_](https://app.mapsindoors
 
 Then, we need to initialize the [MapsIndoors Directions Render](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/mapsindoors.directions.DirectionsRenderer.html) with the MapsIndoors _instance_:
 
-```js/12-15
+```diff-js
 // main.js
 
 const mapViewOptions = {
@@ -45,10 +45,10 @@ const mapViewInstance = new mapsindoors.mapView.GoogleMapsView(mapViewOptions);
 const mapsIndoorsInstance = new mapsindoors.MapsIndoors({ mapView: mapViewInstance });
 const googleMapsInstance = mapViewInstance.getMap();
 
-const externalDirectionsProvider = new mapsindoors.directions.GoogleMapsProvider();
-const miDirectionsServiceInstance = new mapsindoors.services.DirectionsService(externalDirectionsProvider);
-const directionsRendererOptions = { mapsIndoors: mapsIndoorsInstance }
-const miDirectionsRendererInstance = new mapsindoors.directions.DirectionsRenderer(directionsRendererOptions);
++ const externalDirectionsProvider = new mapsindoors.directions.GoogleMapsProvider();
++ const miDirectionsServiceInstance = new mapsindoors.services.DirectionsService(externalDirectionsProvider);
++ const directionsRendererOptions = { mapsIndoors: mapsIndoorsInstance }
++ const miDirectionsRendererInstance = new mapsindoors.directions.DirectionsRenderer(directionsRendererOptions);
 
 // Floor Selector
 const floorSelectorElement = document.createElement('div');
@@ -85,25 +85,25 @@ function onSearch() {
 
 First, add two new `let` statements all the way at the top, after the `miMapElement` constant, for storing our _Directions Service_ and _Directions Renderer_ instances. Then, we populate them with the instances within the `mapsIndoorsReady` event:
 
-```js/6-7,13-17
+```diff-js
 // main.js
 
 const miMapElement = document.querySelector('mi-map-googlemaps');
 const miSearchElement = document.querySelector('mi-search');
 const miListElement = document.querySelector('mi-list');
 
-let miDirectionsServiceInstance;
-let miDirectionsRendererInstance;
++ let miDirectionsServiceInstance;
++ let miDirectionsRendererInstance;
 
 miMapElement.addEventListener('mapsIndoorsReady', () => {
   miMapElement.getMapInstance().then((mapInstance) => {
     mapInstance.setCenter({ lat: 38.8974905, lng: -77.0362723 }); // The White House
   });
-  miMapElement.getDirectionsServiceInstance()
-    .then((directionsServiceInstance) => miDirectionsServiceInstance = directionsServiceInstance);
++ miMapElement.getDirectionsServiceInstance()
++   .then((directionsServiceInstance) => miDirectionsServiceInstance = directionsServiceInstance);
 
-  miMapElement.getDirectionsRendererInstance()
-    .then((directionsRendererInstance) => miDirectionsRendererInstance = directionsRendererInstance);
++ miMapElement.getDirectionsRendererInstance()
++   .then((directionsRendererInstance) => miDirectionsRendererInstance = directionsRendererInstance);
 })
 
 miSearchElement.addEventListener('results', (event) => {
@@ -153,7 +153,7 @@ In the following example, this is what happens:
 <mi-tab label="MI Components" tab-for="components"></mi-tab>
 <mi-tab-panel id="manually">
 
-```js/44-60
+```diff-js
 // main.js
 
 const mapViewOptions = {
@@ -198,29 +198,29 @@ function onSearch() {
   });
 }
 
-function getRoute(location) {
-  const originLocationCoordinate = { lat: 38.897389429704695, lng: -77.03740973527613, floor: 0 }; // Oval Office, The White House (Hardcoded coordinate and floor index)
-  const destinationCoordinate = { lat: location.properties.anchor.coordinates[1], lng: location.properties.anchor.coordinates[0], floor: location.properties.floor };
++ function getRoute(location) {
++   const originLocationCoordinate = { lat: 38.897389429704695, lng: -77.03740973527613, floor: 0 }; // Oval Office, The White House (Hardcoded coordinate and floor index)
++   const destinationCoordinate = { lat: location.properties.anchor.coordinates[1], lng: location.properties.anchor.coordinates[0], floor: location.properties.floor };
 
-  // Route parameters
-  const routeParameters = {
-    origin: originLocationCoordinate,
-    destination: destinationCoordinate,
-    travelMode: 'WALKING'
-  };
++   // Route parameters
++   const routeParameters = {
++     origin: originLocationCoordinate,
++     destination: destinationCoordinate,
++     travelMode: 'WALKING'
++   };
 
-  // Get route from directions service
-  miDirectionsServiceInstance.getRoute(routeParameters).then((directionsResult) => {
-    // Use directions render to display route
-    miDirectionsRendererInstance.setRoute(directionsResult);
-  });
-}
++   // Get route from directions service
++   miDirectionsServiceInstance.getRoute(routeParameters).then((directionsResult) => {
++     // Use directions render to display route
++     miDirectionsRendererInstance.setRoute(directionsResult);
++   });
++ }
 ```
 
 </mi-tab-panel>
 <mi-tab-panel id="components">
 
-```js/37-53
+```diff-js
 // main.js
 
 const miMapElement = document.querySelector('mi-map-googlemaps');
@@ -258,23 +258,23 @@ miSearchElement.addEventListener('results', (event) => {
     mapsIndoorsInstance.filter(event.detail.map(location => location.id), false);
 });
 
-function getRoute(location) {
-  const originLocationCoordinate = { lat: 38.897389429704695, lng: -77.03740973527613, floor: 0 }; // Oval Office, The White House (Hardcoded coordinate and floor index)
-  const destinationCoordinate = { lat: location.properties.anchor.coordinates[1], lng: location.properties.anchor.coordinates[0], floor: location.properties.floor };
++ function getRoute(location) {
++   const originLocationCoordinate = { lat: 38.897389429704695, lng: -77.03740973527613, floor: 0 }; // Oval Office, The White House (Hardcoded coordinate and floor index)
++   const destinationCoordinate = { lat: location.properties.anchor.coordinates[1], lng: location.properties.anchor.coordinates[0], floor: location.properties.floor };
 
-  // Route parameters
-  const routeParameters = {
-    origin: originLocationCoordinate,
-    destination: destinationCoordinate,
-    travelMode: 'WALKING'
-  };
++   // Route parameters
++   const routeParameters = {
++     origin: originLocationCoordinate,
++     destination: destinationCoordinate,
++     travelMode: 'WALKING'
++   };
 
-  // Get route from directions service
-  miDirectionsServiceInstance.getRoute(routeParameters).then((directionsResult) => {
-    // Use directions render to display route
-    miDirectionsRendererInstance.setRoute(directionsResult);
-  });
-}
++   // Get route from directions service
++   miDirectionsServiceInstance.getRoute(routeParameters).then((directionsResult) => {
++     // Use directions render to display route
++     miDirectionsRendererInstance.setRoute(directionsResult);
++   });
++ }
 ```
 
 </mi-tab-panel>
@@ -287,7 +287,7 @@ Now, to make it more dynamic, we attach a `click` event listener for each locati
 <mi-tab label="MI Components" tab-for="components"></mi-tab>
 <mi-tab-panel id="manually">
 
-```js/37,38
+```diff-js
 // main.js
 
 const mapViewOptions = {
@@ -325,8 +325,8 @@ function onSearch() {
       const listElement = document.createElement('li');
       listElement.innerHTML = location.properties.name;
 
-      // Add click event listener
-      listElement.addEventListener("click", () => getRoute(location), false);
++     // Add click event listener
++     listElement.addEventListener("click", () => getRoute(location), false);
 
       searchResultsElement.appendChild(listElement);
     });
@@ -358,7 +358,7 @@ function getRoute(location) {
 </mi-tab-panel>
 <mi-tab-panel id="components">
 
-```js/29,30
+```diff-js
 // main.js
 
 const miMapElement = document.querySelector('mi-map-googlemaps');
@@ -388,8 +388,8 @@ miSearchElement.addEventListener('results', (event) => {
     const miListItemElement = document.createElement('mi-list-item-location');
     miListItemElement.location = location;
 
-    // Add click event listener
-    miListItemElement.addEventListener("click", () => getRoute(location), false);
++   // Add click event listener
++   miListItemElement.addEventListener("click", () => getRoute(location), false);
 
     miListElement.appendChild(miListItemElement);
   });
@@ -434,7 +434,7 @@ To change between travel modes we first need to add a `<select>` element with al
 <mi-tab label="MI Components" tab-for="components"></mi-tab>
 <mi-tab-panel id="manually">
 
-```html/15-22
+```diff-html
 <!-- index.html -->
 
 <!DOCTYPE html>
@@ -450,14 +450,14 @@ To change between travel modes we first need to add a `<select>` element with al
 <body>
   <div id="map" style="width: 600px; height: 600px;"></div>
   
-  <!-- Travel mode selector -->
-  <label for="travel-modes">Choose a travel mode:</label>
-  <select name="travelModeSelector" id="travel-modes">
-    <option value="walking" selected>Walking</option>
-    <option value="bicycling">Bicycling</option>
-    <option value="driving">Driving</option>
-    <option value="transit">Transit</option>
-  </select>
++ <!-- Travel mode selector -->
++ <label for="travel-modes">Choose a travel mode:</label>
++ <select name="travelModeSelector" id="travel-modes">
++   <option value="walking" selected>Walking</option>
++   <option value="bicycling">Bicycling</option>
++   <option value="driving">Driving</option>
++   <option value="transit">Transit</option>
++ </select>
   
   <input type="text" placeholder="Search">
   <button onclick="onSearch()">Search</button>
@@ -470,7 +470,7 @@ To change between travel modes we first need to add a `<select>` element with al
 </mi-tab-panel>
 <mi-tab-panel id="components">
 
-```html/18-25
+```diff-html
 <!-- index.html -->
 
 <!DOCTYPE html>
@@ -489,14 +489,14 @@ To change between travel modes we first need to add a `<select>` element with al
     floor-selector-control-position="TOP_RIGHT">
   </mi-map-googlemaps>
   
-  <!-- Travel mode selector -->
-  <label for="travel-modes">Choose a travel mode:</label>
-  <select name="travelModeSelector" id="travel-modes">
-    <option value="walking" selected>Walking</option>
-    <option value="bicycling">Bicycling</option>
-    <option value="driving">Driving</option>
-    <option value="transit">Transit</option>
-  </select>
++ <!-- Travel mode selector -->
++ <label for="travel-modes">Choose a travel mode:</label>
++ <select name="travelModeSelector" id="travel-modes">
++   <option value="walking" selected>Walking</option>
++   <option value="bicycling">Bicycling</option>
++   <option value="driving">Driving</option>
++   <option value="transit">Transit</option>
++ </select>
   
   <mi-search
     style="width: 600px;"
@@ -513,21 +513,6 @@ To change between travel modes we first need to add a `<select>` element with al
 </html>
 ```
 
-```js/7
-// main.js
-
-miSearchElement.addEventListener('results', (event) => {
-  ...
-  event.detail.forEach(location => {
-    ...
-    // Add click event listener
-    miListItemElement.addEventListener("click", () => getRoute(location), false);
-
-    miListElement.appendChild(miListItemElement);
-  });
-});
-```
-
 </mi-tab-panel>
 </mi-tabs>
 
@@ -538,7 +523,7 @@ To use the chosen transportation when getting a route, we need to replace the ha
 <mi-tab label="MI Components" tab-for="components"></mi-tab>
 <mi-tab-panel id="manually">
 
-```js/55
+```diff-js
 // main.js
 
 const mapViewOptions = {
@@ -591,7 +576,7 @@ function getRoute(location) {
   const routeParameters = {
     origin: originLocationCoordinate,
     destination: destinationCoordinate,
-    travelMode: document.getElementById('travel-modes').value.toUpperCase()
++   travelMode: document.getElementById('travel-modes').value.toUpperCase()
   };
 
   // Get route from directions service
@@ -605,7 +590,7 @@ function getRoute(location) {
 </mi-tab-panel>
 <mi-tab-panel id="components">
 
-```js/49
+```diff-js
 // main.js
 
 const miMapElement = document.querySelector('mi-map-googlemaps');
@@ -652,7 +637,7 @@ function getRoute(location) {
   const routeParameters = {
     origin: originLocationCoordinate,
     destination: destinationCoordinate,
-    travelMode: document.getElementById('travel-modes').value.toUpperCase()
++   travelMode: document.getElementById('travel-modes').value.toUpperCase()
   };
 
   // Get route from directions service
