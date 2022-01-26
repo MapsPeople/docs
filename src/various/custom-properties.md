@@ -27,7 +27,7 @@ dncjdncjdnc
 
 cmndcndjcndc
 
-### iOS SD¨K
+### iOS SDK
 
 dcndjcnjdcndjc
 
