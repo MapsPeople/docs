@@ -15,9 +15,49 @@ App User Roles are confuigured via the CMS web application. In the menus, go to 
 
 Upon clicking `Add App User Role`, you will be asked to enter the name of the newly created Role, in all defined languages for your solution.
 
-## How to Assign a Role to a User
+## How to Assign/Change a Role to a User
 
-knfncfc
+Assigning or changing App User Roles to users is done in the app itself, and the exact method depends on which platform you're developing for.
+
+### iOS
+
+You get the available Roles with help of the `MPSolutionProvider`:
+
+```swift
+MPSolutionProvider.init().getUserRoles { (userRoles, error) in
+    let myUserRole = myUserRole.first
+}
+```
+
+User Roles can be set on a global level using `MapsIndoors.userRoles`.
+
+```swift
+MapsIndoors.userRoles = [myUserRole]
+```
+
+### Android
+
+cdnjdcjdnc
+
+### Web
+
+To get the available Roles in the Web SDK, you use `SolutionsService`:
+
+```js
+mapsindoors.services.SolutionsService.getUserRoles().then(userRoles => {
+  console.log(userRoles);
+});
+```
+
+> For more information, see the [reference documentation](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/mapsindoors.services.SolutionsService.html#getUserRoles).
+
+User Roles can be set on a global level using `mapsindoors.MapsIndoors.setUserRoles()`.
+
+```js
+mapsindoors.MapsIndoors.setUserRoles(['myUserRoleId']);
+```
+
+> For more information, see the [reference documentation](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/mapsindoors.MapsIndoors.html#.setUserRoles).
 
 ## How to Change the Assigned Role
 
