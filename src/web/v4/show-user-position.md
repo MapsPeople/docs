@@ -33,6 +33,6 @@ const positionControl = new mapsindoors.PositionControl(positionControlElement, 
     mapsIndoors: mapsIndoorsInstance,
 });
 // Add the element now holding position control to your map
-mapboxInstance.addControl({ onAdd: function () { return myPositionControlElm }, onRemove: function () { } });
+mapboxInstance.addControl({ onAdd: function () { return positionControlElement }, onRemove: function () { } });
 
 ```
