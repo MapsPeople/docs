@@ -9,7 +9,7 @@ const googleMapsInstance = mapViewInstance.getMap();
 // Create element to hold the position control
 const positionControlElement = document.createElement("div");
 // Create position control and attach it to element
-const positionControl ew mapsindoors.PositionControl(myPositionControlElement, {
+const positionControl new mapsindoors.PositionControl(positionControlElement, {
     mapsIndoors: mapsIndoorsInstance,
 });
 // Add the element now holding position control to your map
@@ -29,7 +29,7 @@ const mapboxInstance = mapViewInstance.getMap();
 // Create element to hold the position control
 const positionControlElement = document.createElement("div");
 // Create position control and attach it to element
-const positionControl = new mapsindoors.PositionControl(myPositionControlElement, {
+const positionControl = new mapsindoors.PositionControl(positionControlElement, {
     mapsIndoors: mapsIndoorsInstance,
 });
 // Add the element now holding position control to your map
