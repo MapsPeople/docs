@@ -19,13 +19,18 @@ Upon clicking `Add App User Role`, you will be asked to enter the name of the ne
 
 Assigning or changing App User Roles to users is done in the app itself, and the exact method depends on which platform you're developing for.
 
-### iOS
+<mi-tabs>
+<mi-tab label="iOS" tab-for="iOS"></mi-tab>
+<mi-tab label="Android" tab-for="Android"></mi-tab>
+<mi-tab label="Web" tab-for="Web"></mi-tab>
+<mi-tab-panel id="iOS">
 
 You get the available Roles with help of the `MPSolutionProvider`:
 
 ```swift
-MPSolutionProvider.init().getUserRoles { (userRoles, error) in
-    let myUserRole = myUserRole.first
+let myUserRole: MPUserRole
+MPSolutionProvider().getUserRoles { (userRoles, error) in
+    myUserRole = userRoles.first
 }
 ```
 
@@ -35,11 +40,29 @@ User Roles can be set on a global level using `MapsIndoors.userRoles`.
 MapsIndoors.userRoles = [myUserRole]
 ```
 
-### Android
+User roles can also be set for a specific direction query using `DirectionsQuery.userRoles` instead of `MapsIndoors.userRoles`, for example if you want to find directions that are more accesible to individuals with disabilities.
 
-cdnjdcjdnc
+> For more information, see the [reference documentation](https://app.mapsindoors.com/mapsindoors/reference/ios/v3/interface_m_p_solution_provider.html).
 
-### Web
+</mi-tab-panel>
+<mi-tab-panel id="Android">
+
+To fetch User Roles from the SDK, you call `getUserRoles`:
+
+```java
+final List<UserRole> cmsUserRoles = MapsIndoors.getUserRoles();
+```
+
+To set User Roles, `applyUserRoles` is used:
+
+```java
+MapsIndoors.applyUserRoles(savedUserRoles);
+```
+
+> For more information, see the [reference documentation](https://app.mapsindoors.com/mapsindoors/reference/android/v3/index.html).
+
+</mi-tab-panel>
+<mi-tab-panel id="Web">
 
 To get the available Roles in the Web SDK, you use `SolutionsService`:
 
@@ -49,8 +72,6 @@ mapsindoors.services.SolutionsService.getUserRoles().then(userRoles => {
 });
 ```
 
-> For more information, see the [reference documentation](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/mapsindoors.services.SolutionsService.html#getUserRoles).
-
 User Roles can be set on a global level using `mapsindoors.MapsIndoors.setUserRoles()`.
 
 ```js
@@ -59,9 +80,8 @@ mapsindoors.MapsIndoors.setUserRoles(['myUserRoleId']);
 
 > For more information, see the [reference documentation](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/mapsindoors.MapsIndoors.html#.setUserRoles).
 
-## How to Change the Assigned Role
-
-mcdmkdmkd
+</mi-tab-panel>
+</mi-tabs>
 
 ## What Features do App User Roles Affect?
 
