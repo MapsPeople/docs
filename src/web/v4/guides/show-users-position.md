@@ -9,9 +9,9 @@ eleventyNavigation:
 
 In this guide, you will learn how to show a dot on the map, representing the user's current location.
 
-The JSFiddle example below draws a MapsIndoors map, and adds a position control. Whenever position is received or updated, the map is always panned to that position. The code will be run through bit by bit in this guide.
+The JSFiddle example below draws a MapsIndoors map, and adds a position control. Whenever position is received or updated, the map is always panned to that position.
 
-<script async src="//jsfiddle.net/ammapspeople/4qxL90ta/embed/html,result/"></script>
+<script async src="//jsfiddle.net/ammapspeople/wtan25gv/embed/html,result/"></script>
 
 ### How the position is determined
 
@@ -37,23 +37,61 @@ Clicking on the button will pan the map, so the current position is in the cente
 
 The button will be blue whenever the position is in center of the map.
 
-If the user has granted permission indefinitely, the map will pan to the current position when reloading the app *(this does not work in Internet Explorer 11 due to missing support of the [Permissions API](https://developer.mozilla.org/en-US/docs/Web/API/Permissions_API))*.
+If the user has granted permission indefinitely, the map will pan to the current position when reloading the app *(this may not work in certain browsers, such as Internet Explorer 11, due to missing support of the [Permissions API](https://developer.mozilla.org/en-US/docs/Web/API/Permissions_API))*.
 
 You will have to add the generated button to the map yourself.
 
-### Minimal example
+### Basic Example
+
+MapsIndoors supports both Google Maps and MapBox, and the methods for each vary slightly. Both still revolve around `PositionControl`.
+
+<mi-tabs>
+<mi-tab label="Google Maps" tab-for="google-maps"></mi-tab>
+<mi-tab label="Mapbox" tab-for="mapbox"></mi-tab>
+<mi-tab-panel id="google-maps">
 
 ```js
+//GOOGLE MAP
+// MapsIndoors MapView instantiation, which you should already have
+const mapViewInstance = new mapsindoors.mapView.GoogleMapsView(/*...*/);
 // MapsIndoors instantiation, which you should already have
-const myMapsIndoors = new mapsindoors.MapsIndoors( /* ... */ );
+const mapsIndoorsInstance = new mapsindoors.MapsIndoors(/*...*/);
+// Obtain a reference to the Google map.
+const googleMapsInstance = mapViewInstance.getMap();
+// Create element to hold the position control
+const positionControlElement = document.createElement("div");
+// Create position control and attach it to element
+const positionControl = new mapsindoors.PositionControl(positionControlElement, {
+    mapsIndoors: mapsIndoorsInstance,
+});
+// Add the element now holding position control to your map
+googleMapsInstance.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(positionControlElement);
+```
+
+</mi-tab-panel>
+<mi-tab-panel id="mapbox">
+
+```js
+//MAPBOX
+// MapsIndoors MapView instantiation, which you should already have
+const mapViewInstance = new mapsindoors.mapView.GoogleMapsView(/*...*/);
+// MapsIndoors instantiation, which you should already have
+const mapsIndoorsInstance = new mapsindoors.MapsIndoors(/*...*/);
+// Obtain a reference to the Mapbox map.
+const mapboxInstance = mapViewInstance.getMap();
 
 // Create element to hold the position control
-const myPositionControlElement = document.createElement('div');
+const positionControlElement = document.createElement("div");
 // Create position control and attach it to element
-new mapsindoors.PositionControl(myPositionControlElement, { mapsIndoors: myMapsIndoors });
+const positionControl = new mapsindoors.PositionControl(positionControlElement, {
+    mapsIndoors: mapsIndoorsInstance,
+});
 // Add the element now holding position control to your map
-myGoogleMap.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(myPositionControlElement);
+mapboxInstance.addControl({ onAdd: function () { return positionControlElement }, onRemove: function () { } });
 ```
+
+</mi-tab-panel>
+</mi-tabs>
 
 ### maxAccuracy
 
@@ -63,7 +101,3 @@ Since browsers sometimes give inaccurate positions, you can use the `maxAccuracy
 // Generate PositionControl and only show the dot on the map if accuracy is better than 80 meters
 new mapsindoors.PositionControl(myPositionControlElm, { mapsIndoors: myMapsIndoors, maxAccuracy: 80 });
 ```
-
-### Other options
-
-See the [options description](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/global.html#PositionControlOptions) to see how you can configure [Geolocation PositionOptions](https://developer.mozilla.org/en-US/docs/Web/API/PositionOptions), dot and circle marker styles.
