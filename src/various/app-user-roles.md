@@ -103,7 +103,7 @@ If a Location has been restricted to certain App User Roles, it will not be disp
 
 ### Search
 
-Similarly to the effect on the Map, if a Location has restrictions, it will not show up in a Search for users without sufficient permissions.
+Similarly to the effect on the map, if a Location has restrictions, it will not show up in the search results for users without sufficient permissions.
 
 ### Directions
 
