@@ -93,7 +93,7 @@ Any Location defined on the map, in the menu, there is a section named `Restrict
 
 ![app-user-role-restrictions](/assets/various/app-user-role-restrictions.png)
 
-* **Open for all** - All App User Roles can view and search for this Location.
+* **Open for all** - All users can view, search for, and get directions to this Location.
 * **Open for specific App User Roles** - Select which App User Roles have access to viewing, searching and getting directions to this specific Location.
 * **Closed for All** - No users will see this Location on the map.
 
