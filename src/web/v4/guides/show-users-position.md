@@ -71,7 +71,6 @@ googleMapsInstance.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(posit
 <mi-tab-panel id="mapbox">
 
 ```js
-//MAPBOX
 // MapsIndoors MapView instantiation, which you should already have
 const mapViewInstance = new mapsindoors.mapView.GoogleMapsView(/*...*/);
 // MapsIndoors instantiation, which you should already have
