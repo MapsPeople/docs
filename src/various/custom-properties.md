@@ -19,17 +19,26 @@ Custom Properties are created for each Location, defined using a `key` and a `va
 
 The method for reading and using these custom properties depends on which platform you're developing for. Here are some examples:
 
-### Web SDK
+<mi-tabs>
+<mi-tab label="iOS" tab-for="iOS"></mi-tab>
+<mi-tab label="Android" tab-for="Android"></mi-tab>
+<mi-tab label="Web" tab-for="Web"></mi-tab>
+<mi-tab-panel id="iOS">
 
-dncjdncjdnc
+bchbdhdhcbdc
 
-### Android SDK
+</mi-tab-panel>
+<mi-tab-panel id="Android">
 
-cmndcndjcndc
+mcjcmdjkdmfcc
 
-### iOS SDK
+</mi-tab-panel>
+<mi-tab-panel id="Web">
 
-dcndjcnjdcndjc
+hcndchnbcjndcjn
+
+</mi-tab-panel>
+</mi-tabs>
 
 ### An Example
 
