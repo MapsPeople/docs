@@ -99,7 +99,7 @@ Any Location defined on the map, in the menu, there is a section named `Restrict
 
 ### The Map
 
-If a Location has been restricted to certain App User Roles, it will not be displayed on the Map for those who do not have permission.
+If a Location has been restricted to certain App User Roles, it will not be displayed on the map for those who do not have permission.
 
 ### Search
 
