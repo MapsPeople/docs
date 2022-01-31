@@ -17,7 +17,7 @@ Custom Properties are created for each Location, defined using a `key` and a `va
 
 ## Reading Custom Properties
 
-ndcndjcdc
+The method for reading and using these custom properties depends on which platform you're developing for. Here are some examples:
 
 ### Web SDK
 
