@@ -9,7 +9,7 @@ eleventyNavigation:
 
 In this guide, you will learn how to show a dot on the map, representing the user's current location.
 
-The JSFiddle example below draws a MapsIndoors map, and adds a position control. Whenever a position is received or updated, the map is always panned to that position.
+The JSFiddle example below draws a MapsIndoors map, and adds a position control. Whenever a position is received or updated, if the user has not moved the map themselves, the map will pan to the new location. If the user has moved the map, it will not center on the new location until position control is clicked.
 
 <script async src="//jsfiddle.net/ammapspeople/wtan25gv/embed/html,result/"></script>
 
