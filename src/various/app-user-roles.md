@@ -13,7 +13,7 @@ You might have parts of your map that can only be accessed by employees, so you 
 
 ## How to Configure App User Roles
 
-App User Roles are configured via the CMS web application. In the menus, go to `Solution Details > App Settings > App Configuration`, and then find the menu point named `App User Roles`. Here, you can configure existing roles, and add new ones.
+App User Roles are configured via the MapsIndoors CMS. Go to `Solution Details > App Settings > App Configuration`, and find `App User Roles` on the page. Here, you can configure existing roles, and add new ones.
 
 Upon clicking `Add App User Role`, you will be asked to enter the name of the newly created Role, in all defined languages for your solution.
 
