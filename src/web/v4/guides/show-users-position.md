@@ -51,7 +51,6 @@ MapsIndoors supports both Google Maps and MapBox, and the methods for each vary 
 <mi-tab-panel id="google-maps">
 
 ```js
-//GOOGLE MAP
 // MapsIndoors MapView instantiation, which you should already have
 const mapViewInstance = new mapsindoors.mapView.GoogleMapsView(/*...*/);
 // MapsIndoors instantiation, which you should already have
