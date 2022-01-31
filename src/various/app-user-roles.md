@@ -7,7 +7,9 @@ eleventyNavigation:
     order: 2
 ---
 
-Application User Roles are a feature of the MapsIndoors platform where you can define roles that you can assign to your users. This will impact various features of the app, for example, if certain doors can only be accessed by employees, you could define an "Employee" and "Visitor" role, and when using the application to search for directions, users assigned to the "Visitor" role will be shown a different route that does not go through such doors, whereas "Employee" users will be shown directions that also include these doors.
+_Application User Roles_ is a feature that lets you define various roles you can assign to your users, or they can choose between themselves.
+
+You might have parts of your map that can only be accessed by employees, so you define "Employee" and "Visitor" roles. When using the application to search for directions, users assigned to the "Visitor" role may be shown a different route from "Employee" users based on what they have access to.
 
 ## How to Configure App User Roles
 
