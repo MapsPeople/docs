@@ -95,7 +95,7 @@ Any Location defined on the map, in the menu, there is a section named `Restrict
 
 * **Open for all** - All App User Roles can view and search for this Location.
 * **Open for specific App User Roles** - Select which App User Roles have access to viewing, searching and getting directions to this specific Location.
-* **Closed for All** - No users will see this Location on the Map.
+* **Closed for All** - No users will see this Location on the map.
 
 ### The Map
 
