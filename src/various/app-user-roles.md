@@ -87,7 +87,7 @@ mapsindoors.MapsIndoors.setUserRoles(['myUserRoleId']);
 
 ## Features Affected by App User Roles
 
-The App User Roles are a useful tool to limit which types of users can see certain Locations. The main fields that can be influenced through the App User Rules are the Locations on the Map itself, whether they show up in the Search, and how they influence the Directions.
+The App User Roles are useful for setting limits on who can find certain Locations. App User Rules influence the map in three ways; which Locations are displayed on the map, whether they show up in search results, and the directions you can get.
 
 Any Location defined on the map, in the menu, there is a section named `Restrictions`, where you are presented with options for limiting certain App User Roles.
 
