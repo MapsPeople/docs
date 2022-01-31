@@ -118,6 +118,10 @@ To avoid performance implications, the display rule updates may benefit from bei
 
 Note that since there is no guarantee of which Live Data you receive first, and Locations can have multiple Live Data updates on different Domains, we recommend checking the `lastModifiedTimeStamp` of each Live Data update to select which one to render.
 
+#### Displaying Occupancy as Numbers or Percentages
+
+In the web-app and kiosk, the default functionality is to display occupancy as an absolute number. However, there is a built-in function to determine whether to display occupancy as a number, or as a percentage of the maximum capacity. To utilise this, a custom property must be set for the Location, with the key `livedataRenderOccupancyAs` and the value `% utilization`.
+
 ## Handling Live Data Events
 
 While only a few lines of code can get things moving around on a map, there are of course more handles that are relevant to create a robust and user-friendly real-time map experience.
