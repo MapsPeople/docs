@@ -19,7 +19,7 @@ Click `Add App User Role` and enter the name of the newly created Role in all de
 
 ## How to Assign/Change a Role to a User
 
-Assigning or changing App User Roles to users is done in the app itself, and the exact method depends on which platform you're developing for.
+Assigning or changing App User Roles to users is done in the app itself. The method depends on which platform you're developing for. Here are some examples:
 
 <mi-tabs>
 <mi-tab label="iOS" tab-for="iOS"></mi-tab>
