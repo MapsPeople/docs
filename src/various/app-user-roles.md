@@ -107,4 +107,6 @@ Similarly to the effect on the map, if a Location has restrictions, it will not 
 
 ### Directions
 
-As mentioned previously, App User Roles can be used to determine which passages can be taken by a given role. Specifically for "Entrance" Location types, the Restrictions will define whether or not a search for Directions will take the route through a given Entrance. For example, if a door needs an access card, a Route for a visitor to the premises might need to bypass this door, and find an alternate route.
+App User Roles can be used to determine the directions users get. For instance, you can restrict Doors between two Locations to only be passable by a certain App User Role.
+
+Note: If you restrict a Room to only be accessible to certain App User Roles, you restrict both directions _to_ and _through_ that Room. It effectively sets restrictions on all Doors leading to that Room as well.
