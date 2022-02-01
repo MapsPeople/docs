@@ -7,10 +7,10 @@ eleventyNavigation:
   title: Authorization
 ---
 
-What a user can see and do is by default controlled in MapsIndoors - which is configurable in the MapsIndoors CMS.
-When signing in with username/password, or via one of the public authentication providers, authorization will be determined by the user configuration.
+What a user can see and do is by default controlled in the MapsIndoors CMS.
+When signing in with a username and password, or via one of the public authentication providers, authorization will be determined by the user configuration.
 
-If a organization-specific authentication server is configured and used for signing in, there are more possibilities.
+If an organization-specific authentication server is configured and used for signing in, there are more possibilities.
 Similar to the login methods mentioned above, authorization will by default be determined based on the MapsIndoors user configuration.
 However, if a user that can sign in via the authentication server, but does not exist in MapsIndoors, it will have its authorization determined via the authentication server.
 This will be done via OAuth claims that can be found on the id_token (or via the userinfo endpoint upon authentication).
