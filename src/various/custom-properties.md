@@ -30,7 +30,25 @@ bchbdhdhcbdc
 </mi-tab-panel>
 <mi-tab-panel id="Android">
 
-mcjcmdjkdmfcc
+![custom-properties-android](/assets/various/custom-properties-android.png)
+
+Using the above screenshot as an example basis - To fetch the entire custom property, you use the following:
+
+```java
+DataField data = location.getField("field name");
+```
+
+To retrieve individual segments of the property, you can use:
+
+```java
+String text = data.getText();
+String value = data.getValue();
+String type = data.getType();
+```
+
+* `data.getText();` retrieves the content of the `key` field, and in the given example, would return `email`.
+* `data.getValue();` retrieves the content of the `value` field, and in the given example, would return `123@email.com`.
+* `data.getType();` retrieves the type of the Custom Property, and will in most known cases return `text`.
 
 </mi-tab-panel>
 <mi-tab-panel id="Web">
