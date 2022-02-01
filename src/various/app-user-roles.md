@@ -7,7 +7,7 @@ eleventyNavigation:
     order: 2
 ---
 
-_Application User Roles_ is a feature that lets you define various roles you can assign to your users, or they can choose between themselves.
+_Application User Roles_ are a feature that lets you define various roles you can assign to your users, or they can choose between themselves.
 
 You might have parts of your map that can only be accessed by employees, so you define "Employee" and "Visitor" roles. When using the application to search for directions, users assigned to the "Visitor" role may be shown a different route from "Employee" users based on what they have access to.
 
