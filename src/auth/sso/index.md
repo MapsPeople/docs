@@ -7,11 +7,10 @@ eleventyNavigation:
   title: Single Sign-On
 ---
 
-In order to access secured MapsIndoors apps, and secured custom apps, SSO (Single Sign-On) login can be used.
+In order to access certain MapsIndoors apps, and certain custom apps, SSO (Single Sign-On) login can be used.
 This includes the MapsIndoors Auth SSO, as well as organization-specific authentication providers - see [Configuration](configuration).
 
 The MapsIndoors Auth SSO page is located at [https://auth.mapsindoors.com/login](https://auth.mapsindoors.com/login).
-It in itself does not do much, but is used for login flows from apps.
 
 MapsIndoors has the following apps where it is possible to sign into:
 
