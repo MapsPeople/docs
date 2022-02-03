@@ -9,7 +9,15 @@ eleventyNavigation:
 
 Changelog for MapsIndoors SDK for JavaScript. This document structure is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and the project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## [4.17.1] 2021-01-13
+## [4.17.2] 2022-02-03
+
+### Fixed
+
+- Locations receiving Live Data `position` updates will no longer disappear when panning the map.
+- Live Data is now correctly resumed with the most recent updates when changing user role.
+- Floor Selector styles are no longer missing.
+
+## [4.17.1] 2022-01-13
 
 ### Fixed
 
