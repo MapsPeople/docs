@@ -13,7 +13,7 @@ Application User Roles are a feature of the MapsIndoors where you can define rol
 
 App User Roles are confuigured via the CMS web application. In the menus, go to `Solution Details > App Settings > App Configuration`, and then find the menu point named `App User Roles`. Here, you can configure existing roles, and add new ones.
 
-Upon clicking `Add App User Role`, you will be asked to enter the name of the newly created Role, in all defined languages for your solution.
+Upon clicking `Add App User Role`, you will be asked to enter the name of the newly created Role, in the defined languages you wish to use for your solution.
 
 ## How to Assign/Change a Role to a User
 
@@ -67,7 +67,7 @@ mcdmkdmkd
 
 The App User Roles are a useful tool to limit which types of users can see certain Locations. The main fields that can be influenced through the App User Rules are the Locations on the Map itself, whether they show up in the Search, and how they influence the Directions.
 
-Any Location defined on the map, in the menu, there is a section named `Restrictions`, where you are presented with options for limiting certain App User Roles.
+For any Location defined on the map, there is a menu named `Restrictions`, where you are presented with options for limiting functionality certain App User Roles.
 
 ![app-user-role-restrictions](/assets/various/app-user-role-restrictions.png)
 
