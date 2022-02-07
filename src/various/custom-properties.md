@@ -61,7 +61,7 @@ String type = data.getType();
 
 ![custom-properties-android](/assets/various/custom-properties-android.png)
 
-Using the above screenshot as an example basis - To fetch the `value` value of a custom property (also known as the `field`), you use `location.properties.fields[key].value`. In an example, that would look like this:
+Using the above screenshot as an example, you fetch the `value` value of a custom property (also known as the `field`) with `location.properties.fields[key].value`. In code, it could look like this:
 
 ```js
 function getLocationFieldValue(location, key) {
