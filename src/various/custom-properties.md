@@ -25,7 +25,13 @@ The method for reading and using these custom properties depends on which platfo
 <mi-tab label="Web" tab-for="Web"></mi-tab>
 <mi-tab-panel id="iOS">
 
-bchbdhdhcbdc
+To get the content of a custom property, the method `getFieldForKey:` can be used.
+
+For example, if the custom property had the name `Area Name`, you would do as follows:
+
+```swift
+let area: String = location?.getField(forKey: "area name")?.value ?? ""
+```
 
 </mi-tab-panel>
 <mi-tab-panel id="Android">
@@ -53,7 +59,20 @@ String type = data.getType();
 </mi-tab-panel>
 <mi-tab-panel id="Web">
 
-hcndchnbcjndcjn
+![custom-properties-android](/assets/various/custom-properties-android.png)
+
+Using the above screenshot as an example basis - To fetch the `value` value of a custom property (also known as the `field`), you use `location.properties.fields[key].value`. In an example, that would look like this:
+
+```js
+function getLocationFieldValue(location, key) {
+    return location.properties.fields[key].value;
+}
+
+console.log(getLocationFieldValue(this.currentLocation, 'email'));
+// Prints out: "123@gmail.com";
+```
+
+Another option that is not case-sensitive is `getFieldForKey(key)`.
 
 </mi-tab-panel>
 </mi-tabs>
