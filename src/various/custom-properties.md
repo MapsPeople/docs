@@ -30,7 +30,7 @@ The method for reading and using these custom properties depends on which platfo
 Using the above screenshot as an example basis you fetch the entire custom property using the following code:
 
 ```swift
-let data = location.getField(forKey: "field name")
+let data = location.getField(forKey: "email")
 ```
 
 To retrieve individual segments of the property, you can use:
