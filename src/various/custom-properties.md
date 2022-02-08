@@ -73,28 +73,23 @@ String type = data.getType();
 
 ![custom-properties-cms-example](/assets/various/custom-properties-cms-example.png)
 
-Using the above screenshot as an example, you fetch the `value` value of a custom property (also known as the `field`) with `location.properties.fields[key].value`. In code, defining it as a function, it could look like this:
+Using the above screenshot as an example basis you fetch the entire custom property using the following code:
 
 ```js
-function getLocationFieldValue(location, key) {
-    return location.properties.fields[key].value;
-}
+let data = location.getFieldForKey('email')
 ```
 
-Using the example above, taking `email` as the input for `key`, the output would be `123@email.com`
+To retrieve individual segments of the property, you can use:
 
 ```js
-console.log(getLocationFieldValue(this.currentLocation, 'email'));
-// Prints out: "123@email.com";
+let text = data.text
+let value = data.value
+let type = data.type
 ```
 
-Another option that is not case-sensitive is `getFieldForKey(key)`, that you could use in the following way:
-
-```js
-let fieldExample = getFieldForKey('email')
-```
-
-The variable `fieldExample` would then be `123@email.com`.
+* `data.text` retrieves the content of the `key` field, and in the given example, would return `email`.
+* `data.value` retrieves the content of the `value` field, and in the given example, would return `123@email.com`.
+* `data.type` retrieves the type of the Custom Property, and will in most known cases return `text`.
 
 </mi-tab-panel>
 </mi-tabs>
