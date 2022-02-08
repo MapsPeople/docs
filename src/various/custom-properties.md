@@ -53,7 +53,7 @@ let type = data.type
 Using the above screenshot as an example basis you fetch the entire custom property using the following code:
 
 ```java
-DataField data = location.getField("field name");
+DataField data = location.getField("email");
 ```
 
 To retrieve individual segments of the property, you can use:
