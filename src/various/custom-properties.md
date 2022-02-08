@@ -25,20 +25,32 @@ The method for reading and using these custom properties depends on which platfo
 <mi-tab label="Web" tab-for="Web"></mi-tab>
 <mi-tab-panel id="iOS">
 
-To get the content of a custom property, the method `getFieldForKey:` can be used.
+![custom-properties-android](/assets/various/custom-properties-android.png)
 
-For example, if the custom property had the name `Area Name`, you would do as follows:
+Using the above screenshot as an example basis you fetch the entire custom property using the following code:
 
 ```swift
-let area: String = location?.getField(forKey: "area name")?.value ?? ""
+let data = location.getField(forKey: "field name")
 ```
+
+To retrieve individual segments of the property, you can use:
+
+```swift
+let text = data.text
+let value = data.value
+let type = data.type
+```
+
+* `let text = data.text` retrieves the content of the `key` field, and in the given example, would return `email`.
+* `let value = data.value` retrieves the content of the `value` field, and in the given example, would return `123@email.com`.
+* `let type = data.type` retrieves the type of the Custom Property, and will in most known cases return `text`.
 
 </mi-tab-panel>
 <mi-tab-panel id="Android">
 
 ![custom-properties-android](/assets/various/custom-properties-android.png)
 
-Using the above screenshot as an example basis - To fetch the entire custom property, you use the following:
+Using the above screenshot as an example basis you fetch the entire custom property using the following code:
 
 ```java
 DataField data = location.getField("field name");
@@ -61,18 +73,28 @@ String type = data.getType();
 
 ![custom-properties-android](/assets/various/custom-properties-android.png)
 
-Using the above screenshot as an example, you fetch the `value` value of a custom property (also known as the `field`) with `location.properties.fields[key].value`. In code, it could look like this:
+Using the above screenshot as an example, you fetch the `value` value of a custom property (also known as the `field`) with `location.properties.fields[key].value`. In code, defining it as a function, it could look like this:
 
 ```js
 function getLocationFieldValue(location, key) {
     return location.properties.fields[key].value;
 }
-
-console.log(getLocationFieldValue(this.currentLocation, 'email'));
-// Prints out: "123@gmail.com";
 ```
 
-Another option that is not case-sensitive is `getFieldForKey(key)`.
+Using the example above, taking `email` as the input for `key`, the output would be `123@email.com`
+
+```js
+console.log(getLocationFieldValue(this.currentLocation, 'email'));
+// Prints out: "123@email.com";
+```
+
+Another option that is not case-sensitive is `getFieldForKey(key)`, that you could use in the following way:
+
+```js
+let fieldExample = getFieldForKey('email')
+```
+
+The variable `fieldExample` would then be `123@email.com`.
 
 </mi-tab-panel>
 </mi-tabs>
