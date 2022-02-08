@@ -173,7 +173,7 @@ Learn more about controlling and rendering Live Data in MapsIndoors in the [intr
 <mi-tab label="Manually" tab-for="manually"></mi-tab>
 <mi-tab label="MI Components" tab-for="components"></mi-tab>
   <mi-tab-panel id="manually">
-  <iframe width="100%" src="//jsfiddle.net/simonlaustsen/3z9tby8q/37/embedded/js,html,result/" frameborder="0"></iframe>
+  <iframe width="100%" src="//jsfiddle.net/simonlaustsen/3z9tby8q/48/embedded/js,html,result/" frameborder="0"></iframe>
   </mi-tab-panel>
 
   <mi-tab-panel id="components">
