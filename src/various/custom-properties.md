@@ -25,7 +25,7 @@ The method for reading and using these custom properties depends on which platfo
 <mi-tab label="Web" tab-for="Web"></mi-tab>
 <mi-tab-panel id="iOS">
 
-![custom-properties-android](/assets/various/custom-properties-android.png)
+![custom-properties-cms-example](/assets/various/custom-properties-cms-example.png)
 
 Using the above screenshot as an example basis you fetch the entire custom property using the following code:
 
@@ -48,7 +48,7 @@ let type = data.type
 </mi-tab-panel>
 <mi-tab-panel id="Android">
 
-![custom-properties-android](/assets/various/custom-properties-android.png)
+![custom-properties-cms-example](/assets/various/custom-properties-cms-example.png)
 
 Using the above screenshot as an example basis you fetch the entire custom property using the following code:
 
@@ -71,7 +71,7 @@ String type = data.getType();
 </mi-tab-panel>
 <mi-tab-panel id="Web">
 
-![custom-properties-android](/assets/various/custom-properties-android.png)
+![custom-properties-cms-example](/assets/various/custom-properties-cms-example.png)
 
 Using the above screenshot as an example, you fetch the `value` value of a custom property (also known as the `field`) with `location.properties.fields[key].value`. In code, defining it as a function, it could look like this:
 
