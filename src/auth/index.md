@@ -1,8 +1,9 @@
 ---
-title: Auth
+title: Authentication
 eleventyNavigation:
-  parent: index 
+  parent: various 
   key: auth
+  title: Authentication
   order: 10
 ---
 
