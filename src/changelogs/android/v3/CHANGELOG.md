@@ -18,6 +18,31 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 ### Security     in case of vulnerabilities.
 -->
 
+## [3.13.0] 2022-02-09
+
+### Changed
+
+- Tweaked how bitmaps are stored in the SDK to lower retained memory size
+  - Reduced heap size by up to 90% depending on solution configuration
+- Tweaked area rendering to improve rendering performance
+- MapsIndoors.setGoogleAPIKey() can now be called before MapsIndoors.Initialize()
+- Improved SDK stability when receiving unknown HTTP responses
+
+### Deprecated
+
+- Deprecated MPRoutingProvider.queryMultipleDestinations()
+- Deprecated RouteStep.addSteps()
+  - Use RouteStep.setSteps() instead
+
+### Fixed
+
+- Fixed memory leak
+- Fixed issue that caused SDK to crash when launched in offline mode
+- Fixed issue where receiving a HTTP 500 response crashed the SDK
+- Fixed crash that could occur when selecting specific locations
+- Fixed issue that caused the SDK to not show proper tiles in some cases
+- Various fixes and improvements
+
 ## [3.12.6] 2022-01-19
 
 ### Fixed
