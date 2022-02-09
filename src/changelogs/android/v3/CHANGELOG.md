@@ -18,6 +18,13 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 ### Security     in case of vulnerabilities.
 -->
 
+## [3.13.1] 2022-02-09
+
+### Fixed
+
+- Fixed crash that occurs when calling `MapControl.onDestroy()` multiple times
+- Fixed crash due to markers being removed before changes could be applied to them
+
 ## [3.13.0] 2022-02-09
 
 ### Changed
@@ -25,14 +32,14 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 - Tweaked how bitmaps are stored in the SDK to lower retained memory size
   - Reduced heap size by up to 90% depending on solution configuration
 - Tweaked area rendering to improve rendering performance
-- MapsIndoors.setGoogleAPIKey() can now be called before MapsIndoors.Initialize()
+- `MapsIndoors.setGoogleAPIKey()` can now be called before `MapsIndoors.Initialize()`
 - Improved SDK stability when receiving unknown HTTP responses
 
 ### Deprecated
 
-- Deprecated MPRoutingProvider.queryMultipleDestinations()
-- Deprecated RouteStep.addSteps()
-  - Use RouteStep.setSteps() instead
+- Deprecated `MPRoutingProvider.queryMultipleDestinations()`
+- Deprecated `RouteStep.addSteps()`
+  - Use `RouteStep.setSteps()` instead
 
 ### Fixed
 
