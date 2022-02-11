@@ -18,6 +18,13 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 ### Security     in case of vulnerabilities.
 -->
 
+## [3.13.2] 2022-02-10
+
+### Fixed
+
+- Fixed an issue where markers may not show on the map on subsequent loading of the same API key
+- Fixed an issue with `MapControl.setApiKey()` where the onLoadingReadyListener would never be invoked
+
 ## [3.13.1] 2022-02-09
 
 ### Fixed
