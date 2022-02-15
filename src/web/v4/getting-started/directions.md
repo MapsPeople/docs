@@ -414,14 +414,14 @@ function onSearch() {
   mapsindoors.services.LocationsService.getLocations(searchParameters).then(locations => {
     // Reset search results list
     searchResultsElement.innerHTML = null;
-    
+
     // Append new search results
     locations.forEach(location => {
       const listElement = document.createElement('li');
       listElement.innerHTML = location.properties.name;
       searchResultsElement.appendChild(listElement);
     });
-    
+
     // Filter map to only display search results
     mapsIndoorsInstance.filter(locations.map(location => location.id), false);
   });
@@ -1139,7 +1139,7 @@ function onSearch() {
   mapsindoors.services.LocationsService.getLocations(searchParameters).then(locations => {
     // Reset search results list
     searchResultsElement.innerHTML = null;
-    
+
     // Append new search results
     locations.forEach(location => {
       const listElement = document.createElement('li');

@@ -226,8 +226,8 @@ Using the `<mi-search>` component you get a `<input>`element tied tightly togeth
   <script src="https://unpkg.com/@mapsindoors/components@8.2.0/dist/mi-components/mi-components.js"></script>
 </head>
 <body>
-  <mi-map-mapbox style="width: 600px; height: 600px;" 
-    accessToken="YOUR_MAPBOX_ACCESS_TOKEN" 
+  <mi-map-mapbox style="width: 600px; height: 600px;"
+    accessToken="YOUR_MAPBOX_ACCESS_TOKEN"
     mi-api-key="YOUR_MAPSINDOORS_API_KEY"
     floor-selector-control-position="TOP_RIGHT">
   </mi-map-mapbox>
@@ -630,7 +630,7 @@ function onSearch() {
   mapsindoors.services.LocationsService.getLocations(searchParameters).then(locations => {
     // Reset search results list
     searchResultsElement.innerHTML = null;
-    
+
 +   // Append new search results
 +   locations.forEach(location => {
 +     const listElement = document.createElement('li');
@@ -796,14 +796,14 @@ function onSearch() {
   mapsindoors.services.LocationsService.getLocations(searchParameters).then(locations => {
     // Reset search results list
     searchResultsElement.innerHTML = null;
-    
+
     // Append new search results
     locations.forEach(location => {
       const listElement = document.createElement('li');
       listElement.innerHTML = location.properties.name;
       searchResultsElement.appendChild(listElement);
     });
-    
+
 +   // Filter map to only display search results
 +   mapsIndoorsInstance.filter(locations.map(location => location.id), false);
  });

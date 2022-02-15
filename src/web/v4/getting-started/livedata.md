@@ -199,7 +199,7 @@ function onSearch() {
   mapsindoors.services.LocationsService.getLocations(searchParameters).then(locations => {
     // Reset search results list
     searchResultsElement.innerHTML = null;
-    
+
     // Append new search results
     locations.forEach(location => {
       const listElement = document.createElement('li');
@@ -223,7 +223,7 @@ function getRoute(location) {
     destination: destinationCoordinate,
     travelMode: document.getElementById('travel-modes').value.toUpperCase()
   };
- 
+
   // Get route from directions service
   miDirectionsServiceInstance.getRoute(routeParameters).then((directionsResult) => {
     // Use directions render to display route
