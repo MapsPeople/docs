@@ -440,14 +440,24 @@ You should now be able to switch between the first and second Floors of The Whit
 {% include "src/web/v4/getting-started/js-fiddle-intro.md" %}
 
 <mi-tabs>
-<mi-tab label="Manually" tab-for="manually"></mi-tab>
-<mi-tab label="MI Components" tab-for="components"></mi-tab>
-  <mi-tab-panel id="manually">
-    <iframe width="100%" src="//jsfiddle.net/simonlaustsen/3z9tby8q/42/embedded/js,html,result/" frameborder="0"></iframe>
+<mi-tab label="Google Maps - Manually" tab-for="gm-manually"></mi-tab>
+<mi-tab label="Google Maps - MI Components" tab-for="gm-components"></mi-tab>
+<mi-tab label="Mapbox - Manually" tab-for="mb-manually"></mi-tab>
+<mi-tab label="Mapbox - MI Components" tab-for="mb-components"></mi-tab>
+  <mi-tab-panel id="gm-manually">
+    <iframe width="100%" src="//jsfiddle.net/mapspeople/wgvdjpsu/2/embedded/js,html,result/" frameborder="0"></iframe>
   </mi-tab-panel>
 
-  <mi-tab-panel id="components">
-    <iframe width="100%" src="//jsfiddle.net/simonlaustsen/fb5rauto/24/embedded/js,html,result/" frameborder="0"></iframe>
+  <mi-tab-panel id="gm-components">
+    <iframe width="100%" src="//jsfiddle.net/mapspeople/h0gdbmo4/1/embedded/js,html,result/" frameborder="0"></iframe>
+  </mi-tab-panel>
+
+  <mi-tab-panel id="mb-manually">
+    <iframe width="100%" src="//jsfiddle.net/mapspeople/o12hrcL8/2/embedded/js,html/" frameborder="0"></iframe>
+  </mi-tab-panel>
+
+  <mi-tab-panel id="mb-components">
+    <iframe width="100%" src="//jsfiddle.net/mapspeople/vr1wkmho/1/embedded/js,html/" frameborder="0"></iframe>
   </mi-tab-panel>
 </mi-tabs>
 

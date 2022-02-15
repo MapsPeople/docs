@@ -1240,14 +1240,24 @@ function getRoute(location) {
 {% include "src/web/v4/getting-started/js-fiddle-intro.md" %}
 
 <mi-tabs>
-<mi-tab label="Manually" tab-for="manually"></mi-tab>
-<mi-tab label="MI Components" tab-for="components"></mi-tab>
-  <mi-tab-panel id="manually">
-    <iframe width="100%" src="//jsfiddle.net/simonlaustsen/3z9tby8q/38/embedded/js,html,result/" frameborder="0"></iframe>
+<mi-tab label="Google Maps - Manually" tab-for="gm-manually"></mi-tab>
+<mi-tab label="Google Maps - MI Components" tab-for="gm-components"></mi-tab>
+<mi-tab label="Mapbox - Manually" tab-for="mb-manually"></mi-tab>
+<mi-tab label="Mapbox - MI Components" tab-for="mb-components"></mi-tab>
+  <mi-tab-panel id="gm-manually">
+    <iframe width="100%" src="//jsfiddle.net/mapspeople/ek48xcLg/1/embedded/js,html,result/" frameborder="0"></iframe>
   </mi-tab-panel>
 
-  <mi-tab-panel id="components">
-    <iframe width="100%" src="//jsfiddle.net/simonlaustsen/fb5rauto/21/embedded/js,html,result/" frameborder="0"></iframe>
+  <mi-tab-panel id="gm-components">
+    <iframe width="100%" src="//jsfiddle.net/mapspeople/jzqx7kmy/1/embedded/js,html,result/" frameborder="0"></iframe>
+  </mi-tab-panel>
+
+  <mi-tab-panel id="mb-manually">
+    <iframe width="100%" src="//jsfiddle.net/mapspeople/z23vjhf4/1/embedded/js,html/" frameborder="0"></iframe>
+  </mi-tab-panel>
+
+  <mi-tab-panel id="mb-components">
+    <iframe width="100%" src="//jsfiddle.net/mapspeople/g4epm0zj/1/embedded/js,html/" frameborder="0"></iframe>
   </mi-tab-panel>
 </mi-tabs>
 

@@ -856,12 +856,22 @@ miSearchElement.addEventListener('results', (event) => {
 <mi-tabs>
 <mi-tab label="Google Maps - Manually" tab-for="gm-manually"></mi-tab>
 <mi-tab label="Google Maps - MI Components" tab-for="gm-components"></mi-tab>
+<mi-tab label="Mapbox - Manually" tab-for="mb-manually"></mi-tab>
+<mi-tab label="Mapbox - MI Components" tab-for="mb-components"></mi-tab>
   <mi-tab-panel id="gm-manually">
-    <iframe width="100%" src="//jsfiddle.net/simonlaustsen/3z9tby8q/41/embedded/js,html,result/" frameborder="0"></iframe>
+    <iframe width="100%" src="//jsfiddle.net/mapspeople/cwg9eumd/2/embedded/js,html,result/" frameborder="0"></iframe>
   </mi-tab-panel>
 
   <mi-tab-panel id="gm-components">
-    <iframe width="100%" src="//jsfiddle.net/simonlaustsen/fb5rauto/23/embedded/js,html,result/" frameborder="0"></iframe>
+    <iframe width="100%" src="//jsfiddle.net/mapspeople/jtnw0u1y/1/embedded/js,html,result/" frameborder="0"></iframe>
+  </mi-tab-panel>
+
+  <mi-tab-panel id="mb-manually">
+    <iframe width="100%" src="//jsfiddle.net/mapspeople/r86903om/embedded/js,html/" frameborder="0"></iframe>
+  </mi-tab-panel>
+
+  <mi-tab-panel id="mb-components">
+    <iframe width="100%" src="//jsfiddle.net/mapspeople/bd4n1qtr/embedded/js,html/" frameborder="0"></iframe>
   </mi-tab-panel>
 </mi-tabs>
 
