@@ -172,8 +172,9 @@ The MapsIndoors SDK is hosted on a Content Delivery Network (CDN) and should be 
 
 Insert the MapsIndoors SDK script tag into `<head>`, followed by the Mapbox script and style tag:
 
-```html/9-11
+```diff-html
 <!-- index.html -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -181,9 +182,9 @@ Insert the MapsIndoors SDK script tag into `<head>`, followed by the Mapbox scri
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MapsIndoors</title>
-  <script src="https://app.mapsindoors.com/mapsindoors/js/sdk/4.17.0/mapsindoors-4.17.0.js.gz?apikey=YOUR_MAPSINDOORS_API_KEY"></script>
-  <script src='https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.js'></script>
-  <link href='https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.css' rel='stylesheet' />
++ <script src="https://app.mapsindoors.com/mapsindoors/js/sdk/4.17.0/mapsindoors-4.17.0.js.gz?apikey=YOUR_MAPSINDOORS_API_KEY"></script>
++ <script src='https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.js'></script>
++ <link href='https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.css' rel='stylesheet' />
 </head>
 <body>
   <script src="main.js"></script>
@@ -194,8 +195,9 @@ Insert the MapsIndoors SDK script tag into `<head>`, followed by the Mapbox scri
 > Remember to add your API keys to the links in your code. You can use the demo MapsIndoors API key showing "The White House": {{sdk.tutorialAPIKey}}
 Add an empty `<div>` element to `<body>` with the `id` attribute set to "map":
 
-```html/14
+```diff-html
 <!-- index.html -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -208,7 +210,7 @@ Add an empty `<div>` element to `<body>` with the `id` attribute set to "map":
   <link href='https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.css' rel='stylesheet' />
 </head>
 <body>
-  <div id="map" style="width: 600px; height: 600px;"></div>
++ <div id="map" style="width: 600px; height: 600px;"></div>
   <script src="main.js"></script>
 </body>
 </html>
@@ -218,6 +220,7 @@ To load data and display it on the map, we need to create a new _instance_ of th
 
 ```js
 // main.js
+
 const mapViewOptions = {
     accessToken: 'YOUR_MAPBOX_ACCESS_TOKEN',
     element: document.getElementById('map'),
@@ -244,8 +247,9 @@ The MapsIndoors Web Components library can be loaded using [unpkg](https://unpkg
 
 Insert script tag into `<head>`:
 
-```html/9
+```diff-html
 <!-- index.html -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -253,7 +257,7 @@ Insert script tag into `<head>`:
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MapsIndoors</title>
-  <script src="https://unpkg.com/@mapsindoors/components@8.2.0/dist/mi-components/mi-components.js"></script>
++ <script src="https://unpkg.com/@mapsindoors/components@8.2.0/dist/mi-components/mi-components.js"></script>
 </head>
 <body>
   <script src="main.js"></script>
@@ -264,7 +268,7 @@ Insert script tag into `<head>`:
 > Check [@mapsindoors/components](https://www.npmjs.com/package/@mapsindoors/components) for latest version.
 After you added the script tag into `<head>`, add the `<mi-map-mapbox>` custom element into `<body>`. We need to add and populate the `accessToken` and `mi-api-key` attributes with your access token and API key as well:
 
-```html/12
+```diff-html
 <!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
@@ -276,8 +280,8 @@ After you added the script tag into `<head>`, add the `<mi-map-mapbox>` custom e
   <script src="https://unpkg.com/@mapsindoors/components@8.2.0/dist/mi-components/mi-components.js"></script>
 </head>
 <body>
-  <mi-map-mapbox style="width: 600px; height: 600px;" accessToken="YOUR_MAPBOX_ACCESS_TOKEN" mi-api-key="YOUR_MAPSINDOORS_API_KEY">
-  </mi-map-mapbox>
++ <mi-map-mapbox style="width: 600px; height: 600px;" accessToken="YOUR_MAPBOX_ACCESS_TOKEN" mi-api-key="YOUR_MAPSINDOORS_API_KEY">
++ </mi-map-mapbox>
   <script src="main.js"></script>
 </body>
 </html>
@@ -375,8 +379,9 @@ Using the `<mi-map-googlemaps>` element, you can add the [floorSelectorControlPo
 
 First, we add an empty `<div>` element programmatically. Then we create a new `FloorSelector` _instance_ and push the `floorSelectorElement` to the `mapboxInstance` to position it as a map controller:
 
-```js/11,14-16
+```diff-js
 // main.js
+
 const mapViewOptions = {
   accessToken: 'YOUR_MAPBOX_ACCESS_TOKEN',
   element: document.getElementById('map'),
@@ -384,13 +389,15 @@ const mapViewOptions = {
   zoom: 17,
   maxZoom: 22,
 };
+
 const mapViewInstance = new mapsindoors.mapView.MapboxView(mapViewOptions);
 const mapsIndoorsInstance = new mapsindoors.MapsIndoors({ mapView: mapViewInstance });
-const mapboxInstance = mapViewInstance.getMap();
-// Floor Selector
-const floorSelectorElement = document.createElement('div');
-new mapsindoors.FloorSelector(floorSelectorElement, mapsIndoorsInstance);
-mapboxInstance.addControl({ onAdd: function () { return floorSelectorElement }, onRemove: function () { } });
++ const mapboxInstance = mapViewInstance.getMap();
+
++ // Floor Selector
++ const floorSelectorElement = document.createElement('div');
++ new mapsindoors.FloorSelector(floorSelectorElement, mapsIndoorsInstance);
++ mapboxInstance.addControl({ onAdd: function () { return floorSelectorElement }, onRemove: function () { } });
 ```
 
 https://docs.mapbox.com/mapbox-gl-js/api/map/#map#addcontrol
@@ -400,8 +407,9 @@ https://docs.mapbox.com/mapbox-gl-js/api/map/#map#addcontrol
 
 Using the `<mi-map-mapbox>` element, you can add the [floorSelectorControlPosition attribute](https://components.mapsindoors.com/map-mapbox/) to your existing element. In this case with the value `"TOP_RIGHT"`:
 
-```html/12
+```diff-html
 <!-- index.html -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -411,8 +419,9 @@ Using the `<mi-map-mapbox>` element, you can add the [floorSelectorControlPositi
   <title>MapsIndoors</title>
   <script src="https://unpkg.com/@mapsindoors/components@8.2.0/dist/mi-components/mi-components.js"></script>
 </head>
+
 <body>
-  <mi-map-mapbox style="width: 600px; height: 600px;" accessToken="YOUR_MAPBOX_ACCESS_TOKEN" mi-api-key="YOUR_MAPSINDOORS_API_KEY" floor-selector-control-position="TOP_RIGHT">
++ <mi-map-mapbox style="width: 600px; height: 600px;" accessToken="YOUR_MAPBOX_ACCESS_TOKEN" mi-api-key="YOUR_MAPSINDOORS_API_KEY" floor-selector-control-position="TOP_RIGHT">
   </mi-map-mapbox>
   <script src="main.js"></script>
 </body>
