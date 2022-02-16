@@ -23,7 +23,7 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 ### Changed
 
 - Optimized inital rendering of new Markers
-- User roles set on MapsIndoors are now implicitly applied to direcitons, unless explicitly set on MPDirectionsRenderer
+- User roles set on MapsIndoors are now implicitly applied to direcitons, unless explicitly set on MPRoutingProvider
 
 ### Deprecated
 
