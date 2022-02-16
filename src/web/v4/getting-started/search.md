@@ -208,7 +208,7 @@ mapboxInstance.addControl({ onAdd: function () { return floorSelectorElement }, 
 </mi-tab-panel>
 <mi-tab-panel id="mb-components">
 
-Using the `<mi-search>` component you get a `<input>`element tied tightly together with the [Location Service](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/LocationsService.html).
+Using the `<mi-search>` component you get an `<input>`element tied tightly together with the [Location Service](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/LocationsService.html).
 
 * Insert the `<mi-search>` custom element into `<body>`.
 * Add the `mapsindoors` and `placeholder` attributes.
