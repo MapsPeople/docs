@@ -142,7 +142,7 @@ miMapElement.addEventListener('mapsIndoorsReady', () => {
 </mi-tab-panel>
 <mi-tab-panel id="mb-manually">
 
-MapsIndoors Locations can be retrieved in the mapsindoors namespace using the `LocationsService.getLocations()` method but first you need to add a `<input>` and `<button>` element to the DOM.
+MapsIndoors Locations can be retrieved in the mapsindoors namespace using the `LocationsService.getLocations()` method but first you need to add an `<input>` and `<button>` element to the DOM.
 
 * Create an `<input>` and `<button>` element in `<body>`.
 * Attach an `onclick` event to the `<button>` element and call a `onSearch` method, which you will create next.
