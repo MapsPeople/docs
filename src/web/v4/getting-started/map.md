@@ -168,7 +168,7 @@ miMapElement.addEventListener('mapsIndoorsReady', () => {
 </mi-tab-panel>
 <mi-tab-panel id="mb-manually">
 
-The MapsIndoors SDK is hosted on a Content Delivery Network (CDN) and should be loaded using a script tag.
+The MapsIndoors SDK is hosted on a Content Delivery Network (CDN) and should be loaded using a `script` tag.
 
 Insert the MapsIndoors SDK script tag into `<head>`, followed by the Mapbox `script` and `style` tag:
 
