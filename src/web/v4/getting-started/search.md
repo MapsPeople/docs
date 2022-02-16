@@ -239,7 +239,7 @@ Using the `<mi-search>` component you get an `<input>`element tied tightly toget
 ```
 
 * Get a reference to the `<mi-search>` element.
-* Attach an `results` event listener and log out the results to the console.
+* Attach a `results` event listener and log the results in the console.
 
 ```diff-js
 // main.js
