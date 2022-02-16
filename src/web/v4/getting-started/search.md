@@ -766,7 +766,7 @@ miSearchElement.addEventListener('results', (event) => {
 </mi-tab-panel>
 <mi-tab-panel id="mb-manually">
 
-* Call `mapsIndoorsInstance.filter` with an array of location IDs.
+* Call `mapsIndoorsInstance.filter` with an array of Location IDs.
 
 ```diff-js
 // main.js
