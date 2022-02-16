@@ -170,7 +170,7 @@ miMapElement.addEventListener('mapsIndoorsReady', () => {
 
 The MapsIndoors SDK is hosted on a Content Delivery Network (CDN) and should be loaded using a script tag.
 
-Insert the MapsIndoors SDK script tag into `<head>`, followed by the Mapbox script and style tag:
+Insert the MapsIndoors SDK script tag into `<head>`, followed by the Mapbox `script` and `style` tag:
 
 ```diff-html
 <!-- index.html -->
