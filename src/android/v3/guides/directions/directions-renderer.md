@@ -47,7 +47,7 @@ fun getRoute() {
 
     val origin = Point(57.057917, 9.950361, 0.0)
     val destination = Point(57.058038, 9.950509, 0.0)
-    
+
     directionsService.setOnRouteResultListener { route, miError ->
         route?.let { mpRoute ->
             renderer.setRoute(mpRoute)
@@ -130,7 +130,7 @@ void getRoute() {
 ```kotlin/3
 fun getRoute() {
     val directionsService = MPRoutingProvider()
-    mpDirectionsRenderer = MPDirectionsRenderer(this, mMap, mMapControl, OnLegSelectedListener { 
+    mpDirectionsRenderer = MPDirectionsRenderer(this, mMap, mMapControl, OnLegSelectedListener {
         mpDirectionsRenderer?.nextLeg()
     })
 
