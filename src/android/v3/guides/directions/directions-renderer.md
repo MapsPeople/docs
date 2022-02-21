@@ -90,7 +90,7 @@ fun setRouteLegIndex(position: Int) {
 </mi-tab-panel>
 </mi-tabs>
 
-The length of the `legs` arrays from `getLegs` on the `Route` object determines the possible values of `routeLegIndex` (`0 ..< length`).
+The length of the `legs` array from `getLegs` on the `Route` object determines the possible values of `routeLegIndex` (`0 ..< length`).
 
 ### Reacting to Label Tapping
 
