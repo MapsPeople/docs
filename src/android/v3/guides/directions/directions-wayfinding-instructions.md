@@ -7,15 +7,15 @@ eleventyNavigation:
   order: 410
 ---
 
-In this tutorial we will show how to work with the route model returned from a directions service call. We will also show how you can utilize interaction between the route rendering on the map and textual instructions showed in another view.
+This tutorial will show how to work with the route model returned from a directions service call. It will also show how you can utilize interactions between the route rendering on the map, and text-based instructions showed in another view.
 
-To start we will use the complete Getting started example found here: [Java](https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android) or [Kotlin](https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android-Kotlin)
+This tutorial will be based off the **Getting Started** example found here: [Java](https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android) or [Kotlin](https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android-Kotlin).
 
 You will work with changing the implementation of the `NavigationFragment` and the `RouteLegFragment`.
 
-An example of the view XML file for the `NavigationFragment` this guide will use can be found here: [Navigation view](https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/advanced_directions/app/src/main/res/layout/fragment_navigation_list_dialog.xml)
+An example of the view XML file for the `NavigationFragment` this guide will use can be found here: [Navigation view](https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/advanced_directions/app/src/main/res/layout/fragment_navigation_list_dialog.xml).
 
-Add the variable `mLocation` that keeps a reference to the MPLocation that was used as the destination for the route. Assign this variable when creating an instance of the `NavigationFragment`. There should already be a reference to the `Route` that should also be assigned
+First, add the variable `mLocation` that keeps a reference to the `MPLocation` that was used as the destination for the route. Assign this variable when creating an instance of the `NavigationFragment`. There should already be a reference to the `Route` that should also be assigned.
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
@@ -60,11 +60,11 @@ companion object {
 
 Next step is replacing the old view in the `RouteLegFragment`.
 
-An example of the view XML file for the `RouteLegFragment` this guide will use, can be found here: [RouteLeg view](https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/advanced_directions/app/src/main/res/layout/fragment_route_leg.xml)
+An example of the view XML file for the `RouteLegFragment`, that this guide will use, can be found here: [RouteLeg view](https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/advanced_directions/app/src/main/res/layout/fragment_route_leg.xml).
 
-We will now start tieing in the logic to create theese views and show the route on the map together with the necessary UI for the user to navigate.
+You must start tying in the logic to create these views and show the route on the map together with the necessary UI for the user to navigate.
 
-We will start by changing the code inside `NavigationFragment` since we changed the ui some of the old code needs to be changed. We will start by changing the code inside `onViewCreated`
+Start by changing the code inside `NavigationFragment`. Since the UI was changed, some of the old code needs to be changed. First, start by changing the code inside `onViewCreated`.
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
@@ -227,7 +227,7 @@ inner class RouteCollectionAdapter(fragment: Fragment?) :
 </mi-tab-panel>
 </mi-tabs>
 
-We are missing the method `getStepName` so we will implement this now. This method creates a string that takes the first and last step of the next leg to create a description for the user on what to do at the end of the currently shown leg. We will also create a method to get a list of the different highways types the route can give the user. Theese are found as enums through the `Highway` class in the MapsIndoors SDK.
+The method `getStepName` is however missing, so you must create this. This method creates a string that takes the first and last step of the next leg to create a description for the user on what to do at the end of the currently shown leg. You will also create a method to get a list of the different highway types the route can give the user. These are found as enums through the `Highway` class in the MapsIndoors SDK.
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
@@ -341,7 +341,7 @@ fun getActionNames(): Array<String?> {
 </mi-tab-panel>
 </mi-tabs>
 
-We will expand the `RouteLegFragment` with some string variables to create the UI to explain the user what to do on the respective Legs. Start by creating 3 new variables and update the `newInstance` method to assign theese variables received from the `createFragment` method inside `RouteCollectionAdapter` from the `NavigationFragment`.
+Now, expand the `RouteLegFragment` with some string variables to create the UI to explain to the user what to do on the respective Legs. Start by creating 3 new variables and update the `newInstance` method to assign these variables received from the `createFragment` method inside `RouteCollectionAdapter` from the `NavigationFragment`.
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
@@ -447,9 +447,9 @@ override fun onViewCreated(
 </mi-tab-panel>
 </mi-tabs>
 
-Now we have the revised UI for giving the user a more explanatory route description when navigating. But we have not gone through the rendering onto the map. Due to the example this guide started from this is already implemented. But lets run through what is actually done to achieve this behaviour and it some final touches to get the project to build and run.
+Now you have the revised UI for providing the user with a more explanatory route description when navigating. Now it needs to be rendered onto the map. Since you started from an existing example, this is already implemented. But run through what is done to achieve this behaviour and add some final touches to get the project to build and run.
 
-The `MapsActivity` class is the class that handles all route rendering and route generation. This is done with the two classes `MPRoutingProvider` and `MPDirectionsRenderer`. The Activity also implements the OnRouteResultListener. We need to create some code to have a reference to our selected location when we get the result from the route query.
+The `MapsActivity` class handles all route rendering and route generation. This is done with `MPRoutingProvider` and `MPDirectionsRenderer`. The Activity also implements the `OnRouteResultListener`. You need to have a reference to your selected location when you get the result from the route query.
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
@@ -500,7 +500,7 @@ fun createRoute(mpLocation: MPLocation) {
 </mi-tab-panel>
 </mi-tabs>
 
-Lets look at what is done inside the activity to facilitate the rendering of routes. First we have the overwritten `onRouteResult` method that recieves the route when you query the `MPRoutingProvider`. The actions and logic in the method is explained inside the code example. This is where we will add the mSelectedLocation to the `NavigationFragment.newInstance` method like in the example below.
+First, you have the overwritten `onRouteResult` method that recieves the route when you query the `MPRoutingProvider`. The actions and logic in the method are explained inside the code example. This is where the `mSelectedLocation` is added to the `NavigationFragment.newInstance` method like in the example below.
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
@@ -587,7 +587,7 @@ override fun onRouteResult(@Nullable route: Route?, @Nullable miError: MIError?)
 </mi-tab-panel>
 </mi-tabs>
 
-Getting a route is done when a user clicks on a location they have searched for. We then call the `createRoute` method which is what will be used to create the Fragments mentioned above. When the route is ready it will be received by the listener. And the user is now able to navigate the route. Changing legs on when a user swipes between the steps is done by having a reference to the `MapsActivity` and a getter for the `MPDirectionRenderer` created inside the `onRouteResult` method.
+A route is fetched when a user clicks on a location they have searched for. Then `createRoute` is called which will be used to create the Fragments mentioned above. When the route is ready, it is received by the listener. The user is now able to navigate the route. Changing legs when a user swipes between the steps is done by having a reference to the `MapsActivity` and a getter for the `MPDirectionRenderer` created inside the `onRouteResult` method.
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
@@ -614,7 +614,7 @@ fun getMpDirectionsRenderer(): MPDirectionsRenderer? {
 </mi-tab-panel>
 </mi-tabs>
 
-To change the routing when swapping between tabs on the viewpager we use the call back that we added further up inside the `onViewCreated` of `NavigationFragment`.
+To change the routing when swapping between tabs on the viewpager, use the call back that we added further up inside the `onViewCreated` of `NavigationFragment`.
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
