@@ -94,7 +94,7 @@ The length of the `legs` array from `getLegs` on the `Route` object determines t
 
 ### Reacting to Label Tapping
 
-The Directions Labels refer to labels shown at the end of the rendered route segment path, that may provide contextual information or show instructions for the needed user action at that point. The labels are created as simple `Marker` instances that are rendered as markers on the map. A user is able to do a long press on theese and an event will be forwarded to the listener you can supply when creating the `MPDirectionsRenderer`. This can be used to change the Leg to the next Leg in line on the Route.
+**Directions Labels** refer to the labels shown at the end of the rendered route segment path, that may provide contextual information, or show instructions for a required user action at that point. The labels are created as simple `Marker` instances that are rendered as markers on the map. A user is able to long press these, and an event will be forwarded to the listener you can supply when creating `MPDirectionsRenderer`. This can be used to change the Leg to the next Leg in line on the Route.
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
