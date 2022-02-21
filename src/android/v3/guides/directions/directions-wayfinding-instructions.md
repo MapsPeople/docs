@@ -384,7 +384,7 @@ public static RouteLegFragment newInstance(String step, int distance, int durati
 </mi-tab-panel>
 </mi-tabs>
 
-We will now update the `onViewCreated` method to use the new views added earlier in the tutorial.
+You must also update the `onViewCreated` method to use the new views added earlier in the tutorial.
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
