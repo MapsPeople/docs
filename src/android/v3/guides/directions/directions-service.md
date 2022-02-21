@@ -7,7 +7,7 @@ eleventyNavigation:
   order: 10
 ---
 
-The class `MPRoutingProvider` is used to request routes from one point to another. The minimal required input to receive a route is an `origin` and a `destination`.
+The class `MPRoutingProvider` is used to request routes from one point to another. The minimum required input to receive a route is an `origin` and a `destination`.
 This example shows how to setup and execute a query for a Route:
 
 <mi-tabs>
