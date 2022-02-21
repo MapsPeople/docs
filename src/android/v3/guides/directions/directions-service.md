@@ -96,7 +96,7 @@ The travel modes generally only apply for outdoor navigation. Indoor navigation 
 
 ### Avoiding Stairs and Steps
 
-For a wheelchair user or a user with physical disabilities it may be relevant to request a Route that avoids stairs and steps. Avoid certain **way types** on the route using the `addRouteRestriction` method on `MPRoutingProvider`.
+For wheelchair users or other users with limited mobility, it may be relevant to request a Route that avoids stairs and steps. Avoid certain **way types** on the route using the `addRouteRestriction` method on `MPRoutingProvider`.
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
