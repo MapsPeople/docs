@@ -146,7 +146,7 @@ fun getRoute() {
 </mi-tab-panel>
 </mi-tabs>
 
-When Route restrictions are set on the `MPRoutingProvider` they will be applied to any subsequent queries as well. So it can be a good idea to remove them again. This is done by calling `clearRouteRestrictions`.
+When Route restrictions are set on the `MPRoutingProvider` they will be applied to any subsequent queries as well. You can remove them again by calling `clearRouteRestrictions`.
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
