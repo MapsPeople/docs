@@ -191,7 +191,7 @@ It is possible to show contextual information on the end points of the rendered 
 
 This is done by creating an appropriate `MPContextualInfoSettings` object and passing that to the Directions Renderer. If it is not set or is null, no contextual information will be shown.
 
-The MPContextualInfoSetting can be applied on `MPDirectionsRenderer` by calling `useContentOfNearbyLocations(MPContextualInfoSettings)`. Like this:
+The `MPContextualInfoSetting` can be applied on `MPDirectionsRenderer` by calling `useContentOfNearbyLocations(MPContextualInfoSettings)`. Like this:
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
