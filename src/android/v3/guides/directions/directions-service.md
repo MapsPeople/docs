@@ -278,7 +278,7 @@ For more information about App User Roles, see [this documentation](https://docs
 
 ## Transit Departure and Arrival Time
 
-Set a **departure date** or an **arrival date** on the route using the `setDateTime` method on `MPRoutingProvider`. This is relevant when using the Transit travel mode. It is only posible to use one of these properties at a time. the `date` parameter is the epoch time, in seconds, as an integer.
+When using the Transit travel mode, you must set a **departure date** or an **arrival date** on the route using the `setDateTime` method on `MPRoutingProvider`. The `date` parameter is the epoch time, in seconds, as an integer, and it is only possible to use one of these properties at a time.
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
