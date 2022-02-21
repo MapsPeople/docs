@@ -140,7 +140,7 @@ override fun onViewCreated(view: View, @Nullable savedInstanceState: Bundle?) {
 </mi-tab-panel>
 </mi-tabs>
 
-We will now change the `ViewPager` implementation to contain the revised `RouteLegFragment` for each leg of the route.
+Next step is to change the `ViewPager` implementation to contain the revised `RouteLegFragment` for each leg of the route.
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
