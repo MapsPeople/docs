@@ -152,7 +152,7 @@ fun getRoute() {
 </mi-tab-panel>
 </mi-tabs>
 
-On the `MPDirectionsRenderer` there is convenience methods to change the legs to previous and next Leg. This means you do not have to take care of the size of legs.
+`MPDirectionsRenderer` also has convenience methods to change the active leg to previous and next Leg.
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
