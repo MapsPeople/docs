@@ -11,7 +11,7 @@ In this tutorial we will show how to work with the route model returned from a d
 
 To start we will use the complete Getting started example found here: [Java](https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android) or [Kotlin](https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android-Kotlin)
 
-We will work with changing the implementation of the `NavigationFragment` and the `RouteLegFragment`.
+You will work with changing the implementation of the `NavigationFragment` and the `RouteLegFragment`.
 
 An example of the view XML file for the `NavigationFragment` this guide will use can be found here: [Navigation view](https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/advanced_directions/app/src/main/res/layout/fragment_navigation_list_dialog.xml)
 
