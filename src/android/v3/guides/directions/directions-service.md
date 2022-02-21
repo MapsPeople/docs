@@ -173,7 +173,7 @@ fun clearRouteRestrictions() {
 
 ### App User Role Restrictions
 
-In the MapsIndoors CMS it is possible to restrict certain ways in the Route Network to be used by users of certain Roles.
+In the MapsIndoors CMS it is possible to restrict certain **ways** in the Route Network to only be accessible by users belonging to certain Roles.
 
 It is possible to get the available Roles with help of the `MapsIndoors.getAppliedUserRoles`:
 
