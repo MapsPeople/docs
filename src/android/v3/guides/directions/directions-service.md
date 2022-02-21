@@ -90,7 +90,7 @@ fun createRoute(mpLocation: MPLocation) {
 </mi-tab-panel>
 </mi-tabs>
 
-The travel modes generally applies for outdoor navigation. Indoor navigation calculations are based on **walking** travel mode.
+The travel modes generally only apply for outdoor navigation. Indoor navigation calculations are based on the **walking** travel mode.
 
 ## Route Restrictions
 
