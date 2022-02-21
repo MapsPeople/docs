@@ -26,7 +26,7 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 
 ### Fixed
 
-- Fixed App User Roles not syncing corretly, leading to unexpected behavior
+- Fixed App User Roles not syncing correctly, leading to unexpected behavior
 
 ## [3.13.3] 2022-02-16
 
