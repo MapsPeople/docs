@@ -65,7 +65,7 @@ fun getRoute() {
 
 ## Controlling the Visible Segments on the Directions Renderer
 
-As previously mentioned, the route object is seperated into objects of `RouteLeg` and these legs are again seperated indo objects of `RouteStep`. Unless the Route only contains one Leg, the Directions Renderer does not allow the full Route to be rendered all at once. A specific segment of the route can be rendered by setting the `routeLegIndex` on the `MPDirectionsRenderer`
+As previously mentioned, the route object is seperated into objects of `RouteLeg`. Each leg is again separated into objects of `RouteStep`. Unless the Route only contains one Leg, the Directions Renderer does not allow the full Route to be rendered all at once. A specific segment of the route can be rendered by setting the `routeLegIndex` on the `MPDirectionsRenderer`
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
