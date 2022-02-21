@@ -175,7 +175,7 @@ fun clearRouteRestrictions() {
 
 In the MapsIndoors CMS it is possible to restrict certain **ways** in the Route Network to only be accessible by users belonging to certain Roles.
 
-It is possible to get the available Roles with help of the `MapsIndoors.getAppliedUserRoles`:
+You can get the available Roles with help of the `MapsIndoors.getAppliedUserRoles`:
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
