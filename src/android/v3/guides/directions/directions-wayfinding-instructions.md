@@ -58,7 +58,7 @@ companion object {
 </mi-tab-panel>
 </mi-tabs>
 
-Now we will replace the old view in the `RouteLegFragment`.
+Next step is replacing the old view in the `RouteLegFragment`.
 
 An example of the view XML file for the `RouteLegFragment` this guide will use, can be found here: [RouteLeg view](https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/advanced_directions/app/src/main/res/layout/fragment_route_leg.xml)
 
