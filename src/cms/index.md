@@ -310,7 +310,7 @@ When you sync a Location Type, if the Location Type exists in the target Solutio
 
 ### View Settings
 
-The *View settings* can be set for each Location Type. Use the settings to define how and when the icon and/or label is displayed on the map, and what is shown in the label.
+The _View settings_ can be set for each Location Type. Use the settings to define how and when the icon and/or label is displayed on the map, and what is shown in the label.
 
 ![View Settings]({{ site.url }}/assets/cms/location-types/view-settings.png)
 
