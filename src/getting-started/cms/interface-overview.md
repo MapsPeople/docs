@@ -46,7 +46,7 @@ Working left to right, the functionality in this main toolbar is as follows - Yo
 * Add Normal Route Element - Creates a Route Element on your map - These would usually be used to create "invisible" barriers, by customising the Restrictions for the Route Element, for example, if you do not want your Directions to guide your visitors down a specific hallway, but there isn't a physical door present.
 * Add Entry Point - Adds an Entry Point to your map, such as a door.
 * Add Floor Connector - Adds a Floor Connector to your map, such as a staircase.
-* Edit Graph Outline - Shows the Graph Outline, allowing you manipulate it.
+* Edit Graph Outline - Shows the Graph Outline, allowing you manipulate it. Will also automatically show the Route Network.
 * Show List of Graphs - Displays a List of Graphs on your Map. Graphs define the different Route Networks at your venue.
 * Regenerate Route Network - Click to regenerate your route network, for example if you've added new Entry Points or Floor Connectors.
 * Reload Route Network - Reload the Route Network.
