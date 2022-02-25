@@ -1,7 +1,7 @@
 ---
 title: Getting Started
 eleventyNavigation:
-  title: Getting Started
+  title: Getting Started with iOS
   key: getting-started-ios
   parent: getting-started-ios
   order: 100
