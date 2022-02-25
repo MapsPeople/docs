@@ -2,8 +2,8 @@
 title: Advanced Settings
 eleventyNavigation:
   title: Advanced Settings
-  key: getting-started-cms-settings
-  parent: getting-started-cms
+  key: map-cms-settings
+  parent: map-cms
   order: 120
 ---
 

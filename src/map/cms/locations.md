@@ -2,8 +2,8 @@
 title: Venues, Buildings, Locations and POI's
 eleventyNavigation:
   title: Venues, Buildings, Locations and POI's
-  key: getting-started-cms-locations
-  parent: getting-started-cms
+  key: map-cms-locations
+  parent: map-cms
   order: 120
 ---
 

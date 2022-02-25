@@ -1,9 +1,9 @@
 ---
-title: Getting Started with the CMS
+title: Introduction to the CMS
 eleventyNavigation:
-  title: Getting Started with the CMS
-  key: getting-started-cms
-  parent: getting-started-cms
+  title: Introduction to the CMS
+  key: map-cms
+  parent: map
   order: 100
 ---
 

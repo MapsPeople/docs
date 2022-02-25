@@ -2,8 +2,8 @@
 title: Interface Overview
 eleventyNavigation:
   title: Interface Overview
-  key: getting-started-cms-interface
-  parent: getting-started-cms
+  key: map-cms-interface
+  parent: map-cms
   order: 110
 ---
 
