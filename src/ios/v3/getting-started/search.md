@@ -58,7 +58,6 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
 }
 
 func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    indexPath: IndexPath) {
     let location:MPLocation = searchResult![indexPath.row]
     self.mapControl?.go(to: location)
     tableView.removeFromSuperview()
