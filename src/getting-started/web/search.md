@@ -195,7 +195,7 @@ mapboxInstance.addControl({ onAdd: function () { return floorSelectorElement }, 
 
 + function onSearch() {
 +   const searchInputElement = document.querySelector('input');
-  
+
 +   const searchParameters = { q: searchInputElement.value };
 +   mapsindoors.services.LocationsService.getLocations(searchParameters).then(locations => {
 +     console.log(locations);
@@ -625,7 +625,7 @@ function onSearch() {
   const searchInputElement = document.querySelector('input');
   // Get list element reference
   const searchResultsElement = document.getElementById('search-results');
-  
+
   const searchParameters = { q: searchInputElement.value };
   mapsindoors.services.LocationsService.getLocations(searchParameters).then(locations => {
     // Reset search results list
@@ -660,7 +660,7 @@ miMapElement.addEventListener('mapsIndoorsReady', () => {
 miSearchElement.addEventListener('results', (event) => {
   // Reset search results list
   miListElement.innerHTML = null;
-  
+
 + // Append new search results
 + event.detail.forEach(location => {
 +   const miListItemElement = document.createElement('mi-list-item-location');
@@ -791,7 +791,7 @@ function onSearch() {
   const searchInputElement = document.querySelector('input');
   // Get list element reference
   const searchResultsElement = document.getElementById('search-results');
-  
+
   const searchParameters = { q: searchInputElement.value };
   mapsindoors.services.LocationsService.getLocations(searchParameters).then(locations => {
     // Reset search results list
@@ -829,14 +829,14 @@ miMapElement.addEventListener('mapsIndoorsReady', () => {
 miSearchElement.addEventListener('results', (event) => {
   // Reset search results list
   miListElement.innerHTML = null;
-  
+
   // Append new search results
   event.detail.forEach(location => {
     const miListItemElement = document.createElement('mi-list-item-location');
     miListItemElement.location = location;
     miListElement.appendChild(miListItemElement);
   });
-  
+
 + // Get the MapsIndoors instance
 + miMapElement.getMapsIndoorsInstance().then((mapsIndoorsInstance) => {
 +   // Filter map to only display search results
@@ -851,7 +851,7 @@ miSearchElement.addEventListener('results', (event) => {
 > To remove the location filter again, call `mapsIndoorsInstance.filter(null)`.
 
 <!-- JS Fiddle intro -->
-{% include "src/web/v4/getting-started/js-fiddle-intro.md" %}
+{% include "src/getting-started/web/js-fiddle-intro.md" %}
 
 <mi-tabs>
 <mi-tab label="Google Maps - Manually" tab-for="gm-manually"></mi-tab>
