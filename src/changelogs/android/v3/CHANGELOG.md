@@ -18,6 +18,24 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 ### Security     in case of vulnerabilities.
 -->
 
+## [3.13.5] 2022-03-02
+
+### Fixed
+
+- Fixed SDK not syncing correctly after calling `MapsIndoors.synchronizeContent()` if App User Roles have been applied
+- Fixed SDK routing not working with restricted Google API keys
+- Fixed clusters sometimes showing incorrect number of clustered locations
+
+## [3.13.4] 2022-02-21
+
+### Added
+
+- Added `Venue.hasGraph()` which checks whether the venue has a valid routing graph configured
+
+### Fixed
+
+- Fixed App User Roles not syncing correctly, leading to unexpected behavior
+
 ## [3.13.3] 2022-02-16
 
 ### Changed
