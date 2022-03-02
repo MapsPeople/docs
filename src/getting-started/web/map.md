@@ -437,7 +437,7 @@ You should now be able to switch between the first and second Floors of The Whit
 </mi-tabs>
 
 <!-- JS Fiddle intro -->
-{% include "src/web/v4/getting-started/js-fiddle-intro.md" %}
+{% include "src/getting-started/web/js-fiddle-intro.md" %}
 
 <mi-tabs>
 <mi-tab label="Google Maps - Manually" tab-for="gm-manually"></mi-tab>

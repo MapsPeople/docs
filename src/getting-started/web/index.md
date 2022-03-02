@@ -1,9 +1,9 @@
 ---
 title: Getting Started
 eleventyNavigation:
-  title: Getting Started
+  title: Getting Started with JS
   key: getting-started-web
-  parent: getting-started-web
+  parent: getting-started
   order: 100
 ---
 
