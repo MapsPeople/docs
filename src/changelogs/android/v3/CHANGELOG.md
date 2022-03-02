@@ -18,6 +18,16 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 ### Security     in case of vulnerabilities.
 -->
 
+## [3.13.4] 2022-02-21
+
+### Added
+
+- Added `Venue.hasGraph()` which checks whether the venue has a valid routing graph configured
+
+### Fixed
+
+- Fixed App User Roles not syncing correctly, leading to unexpected behavior
+
 ## [3.13.3] 2022-02-16
 
 ### Changed
