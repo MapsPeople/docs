@@ -18,7 +18,7 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 ### Security     in case of vulnerabilities.
 -->
 
-## [3.13.5] 2022-02-28
+## [3.13.5] 2022-03-02
 
 ### Fixed
 
