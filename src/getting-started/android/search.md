@@ -3,8 +3,8 @@ title: Create a Search Experience
 toc: true
 eleventyNavigation:
   title: Search
-  key: android-v3-getting-started-search
-  parent: android-v3-getting-started
+  key: getting-started-android-search
+  parent: getting-started-android
   order: 140
 ---
 
@@ -465,4 +465,4 @@ Expected result:
 
 The accompanying UI and implementation of this search experience can be found in the getting started app sample. [Getting Started App sample](https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/tree/master/app/src/main/java/com/example/mapsindoorsgettingstarted) or [Getting Started App sample kotlin](https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin).
 
-<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/android/v3/getting-started/directions/">Next up: Directions</a></p>
+<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/getting-started/android/directions/">Next up: Directions</a></p>

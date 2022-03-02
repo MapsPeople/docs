@@ -3,8 +3,8 @@ title: Search
 toc: true
 eleventyNavigation:
   title: Search
-  key: ios-v3-getting-started-search
-  parent: ios-v3-getting-started
+  key: getting-started-ios-search
+  parent: getting-started-ios
   order: 93
 ---
 
@@ -88,4 +88,4 @@ At this point we should have a functional map with a search feature.
 
 ![Expected Result](/assets/ios/getting-started/er_search.gif)
 
-<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/ios/v3/getting-started/directions/">Next up: Directions</a></p>
+<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/getting-started/ios/directions/">Next up: Directions</a></p>

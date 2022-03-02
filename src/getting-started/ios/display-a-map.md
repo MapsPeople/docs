@@ -3,8 +3,8 @@ title: Display a Map
 toc: true
 eleventyNavigation:
   title: Display a Map
-  key: ios-v3-getting-started-displayamap
-  parent: ios-v3-getting-started
+  key: getting-started-ios-displayamap
+  parent: getting-started-ios
   order: 92
 ---
 Now that we have the prerequisite API keys, and the project set up, we can start adding basic functionality to the app. We will start by having the app display a map.
@@ -69,4 +69,4 @@ Feel free to change the query from "White House" to a known building in *your* M
 
 We have now added a search feature to the app, albeit a search feature which the user cannot interact with. Next, let us look into how we can let the user interact with the map through a search bar.
 
-<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/ios/v3/getting-started/search/">Next up: Search</a></p>
+<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/getting-started/ios/search/">Next up: Search</a></p>

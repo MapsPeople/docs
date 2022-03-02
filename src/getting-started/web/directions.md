@@ -3,8 +3,8 @@ title: Getting directions
 toc: true
 eleventyNavigation:
   title: Directions
-  key: web-v4-getting-started-directions
-  parent: web-v4-getting-started
+  key: getting-started-web-directions
+  parent: getting-started-web
   order: 160
 ---
 
@@ -409,7 +409,7 @@ function onSearch() {
   const searchInputElement = document.querySelector('input');
   // Get list element reference
   const searchResultsElement = document.getElementById('search-results');
-  
+
   const searchParameters = { q: searchInputElement.value };
   mapsindoors.services.LocationsService.getLocations(searchParameters).then(locations => {
     // Reset search results list
@@ -430,14 +430,14 @@ function onSearch() {
 + function getRoute(location) {
 +   const originLocationCoordinate = { lat: 38.897389429704695, lng: -77.03740973527613, floor: 0 }; // Oval Office, The White House (Hardcoded coordinate and floor index)
 +   const destinationCoordinate = { lat: location.properties.anchor.coordinates[1], lng: location.properties.anchor.coordinates[0], floor: location.properties.floor };
-  
+
 +   // Route parameters
 +   const routeParameters = {
 +     origin: originLocationCoordinate,
 +     destination: destinationCoordinate,
 +     travelMode: 'WALKING'
 +   };
-  
+
 +   // Get route from directions service
 +   miDirectionsServiceInstance.getRoute(routeParameters).then((directionsResult) => {
 +     // Use directions render to display route
@@ -490,14 +490,14 @@ miSearchElement.addEventListener('results', (event) => {
 + function getRoute(location) {
 +   const originLocationCoordinate = { lat: 38.897389429704695, lng: -77.03740973527613, floor: 0 }; // Oval Office, The White House (Hardcoded coordinate and floor index)
 +   const destinationCoordinate = { lat: location.properties.anchor.coordinates[1], lng: location.properties.anchor.coordinates[0], floor: location.properties.floor };
-  
+
 +   // Route parameters
 +   const routeParameters = {
 +     origin: originLocationCoordinate,
 +     destination: destinationCoordinate,
 +     travelMode: 'WALKING'
 +   };
-  
+
 +   // Get route from directions service
 +   miDirectionsServiceInstance.getRoute(routeParameters).then((directionsResult) => {
 +     // Use directions render to display route
@@ -771,14 +771,14 @@ miSearchElement.addEventListener('results', (event) => {
 function getRoute(location) {
   const originLocationCoordinate = { lat: 38.897389429704695, lng: -77.03740973527613, floor: 0 }; // Oval Office, The White House (Hardcoded coordinate and floor index)
   const destinationCoordinate = { lat: location.properties.anchor.coordinates[1], lng: location.properties.anchor.coordinates[0], floor: location.properties.floor };
-  
+
   // Route parameters
   const routeParameters = {
     origin: originLocationCoordinate,
     destination: destinationCoordinate,
     travelMode: 'WALKING'
   };
-  
+
   // Get route from directions service
   miDirectionsServiceInstance.getRoute(routeParameters).then((directionsResult) => {
     // Use directions render to display route
@@ -820,7 +820,7 @@ To change between travel modes we first need to add a `<select>` element with al
 </head>
 <body>
   <div id="map" style="width: 600px; height: 600px;"></div>
-  
+
 + <!-- Travel mode selector -->
 + <label for="travel-modes">Choose a travel mode:</label>
 + <select name="travelModeSelector" id="travel-modes">
@@ -829,10 +829,10 @@ To change between travel modes we first need to add a `<select>` element with al
 +   <option value="driving">Driving</option>
 +   <option value="transit">Transit</option>
 + </select>
-  
+
   <input type="text" placeholder="Search">
   <button onclick="onSearch()">Search</button>
-  
+
   <ul id="search-results"></ul>
 </body>
 </html>
@@ -859,7 +859,7 @@ To change between travel modes we first need to add a `<select>` element with al
     mi-api-key="d876ff0e60bb430b8fabb145"
     floor-selector-control-position="TOP_RIGHT">
   </mi-map-googlemaps>
-  
+
 + <!-- Travel mode selector -->
 + <label for="travel-modes">Choose a travel mode:</label>
 + <select name="travelModeSelector" id="travel-modes">
@@ -868,13 +868,13 @@ To change between travel modes we first need to add a `<select>` element with al
 +   <option value="driving">Driving</option>
 +   <option value="transit">Transit</option>
 + </select>
-  
+
   <mi-search
     style="width: 600px;"
     mapsindoors="true"
     placeholder="Search">
   </mi-search>
-  
+
   <mi-list
     style="width: 600px; height: 400px;"
     scroll-buttons-enabled="true"
@@ -903,7 +903,7 @@ To change between travel modes we first need to add a `<select>` element with al
 </head>
 <body>
   <div id="map" style="width: 600px; height: 600px;"></div>
-  
+
 + <!-- Travel mode selector -->
 + <label for="travel-modes">Choose a travel mode:</label>
 + <select name="travelModeSelector" id="travel-modes">
@@ -912,10 +912,10 @@ To change between travel modes we first need to add a `<select>` element with al
 +   <option value="driving">Driving</option>
 +   <option value="transit">Transit</option>
 + </select>
-  
+
   <input type="text" placeholder="Search">
   <button onclick="onSearch()">Search</button>
-  
+
   <ul id="search-results"></ul>
 </body>
 </html>
@@ -942,7 +942,7 @@ To change between travel modes we first need to add a `<select>` element with al
     mi-api-key="d876ff0e60bb430b8fabb145"
     floor-selector-control-position="TOP_RIGHT">
   </mi-map-mapbox>
-  
+
 + <!-- Travel mode selector -->
 + <label for="travel-modes">Choose a travel mode:</label>
 + <select name="travelModeSelector" id="travel-modes">
@@ -951,13 +951,13 @@ To change between travel modes we first need to add a `<select>` element with al
 +   <option value="driving">Driving</option>
 +   <option value="transit">Transit</option>
 + </select>
-  
+
   <mi-search
     style="width: 600px;"
     mapsindoors="true"
     placeholder="Search">
   </mi-search>
-  
+
   <mi-list
     style="width: 600px; height: 400px;"
     scroll-buttons-enabled="true"
@@ -1060,7 +1060,7 @@ miMapElement.addEventListener('mapsIndoorsReady', () => {
   miMapElement.getMapInstance().then((mapInstance) => {
     mapInstance.setCenter({ lat: 38.8974905, lng: -77.0362723 }); // The White House
   });
-  
+
   miMapElement.getDirectionsServiceInstance().then((directionsServiceInstance) => miDirectionsServiceInstance = directionsServiceInstance);
 
   miMapElement.getDirectionsRendererInstance().then((directionsRendererInstance) => miDirectionsRendererInstance = directionsRendererInstance);
@@ -1069,7 +1069,7 @@ miMapElement.addEventListener('mapsIndoorsReady', () => {
 miSearchElement.addEventListener('results', (event) => {
   // Reset search results list
   miListElement.innerHTML = null;
-  
+
   // Append new search results
   event.detail.forEach(location => {
     const miListItemElement = document.createElement('mi-list-item-location');
@@ -1134,7 +1134,7 @@ mapboxInstance.addControl({ onAdd: function () { return floorSelectorElement }, 
 function onSearch() {
   const searchInputElement = document.querySelector('input');
   const searchResultsElement = document.getElementById('search-results');
-  
+
   const searchParameters = { q: searchInputElement.value };
   mapsindoors.services.LocationsService.getLocations(searchParameters).then(locations => {
     // Reset search results list
@@ -1156,14 +1156,14 @@ function onSearch() {
 function getRoute(location) {
   const originLocationCoordinate = { lat: 38.897389429704695, lng: -77.03740973527613, floor: 0 }; // Oval Office, The White House (Hardcoded coordinate and floor index)
   const destinationCoordinate = { lat: location.properties.anchor.coordinates[1], lng: location.properties.anchor.coordinates[0], floor: location.properties.floor };
-  
+
   // Route parameters
   const routeParameters = {
     origin: originLocationCoordinate,
     destination: destinationCoordinate,
 +   travelMode: document.getElementById('travel-modes').value.toUpperCase()
   };
-  
+
   // Get route from directions service
   miDirectionsServiceInstance.getRoute(routeParameters).then((directionsResult) => {
     // Use directions render to display route
@@ -1189,16 +1189,16 @@ miMapElement.addEventListener('mapsIndoorsReady', () => {
   miMapElement.getMapInstance().then((mapInstance) => {
     mapInstance.setCenter({ lat: 38.8974905, lng: -77.0362723 }); // The White House
   });
-  
+
   miMapElement.getDirectionsServiceInstance().then((directionsServiceInstance) => miDirectionsServiceInstance = directionsServiceInstance);
-  
+
   miMapElement.getDirectionsRendererInstance().then((directionsRendererInstance) => miDirectionsRendererInstance = directionsRendererInstance);
 })
 
 miSearchElement.addEventListener('results', (event) => {
   // Reset search results list
   miListElement.innerHTML = null;
-  
+
   // Append new search results
   event.detail.forEach(location => {
     const miListItemElement = document.createElement('mi-list-item-location');
@@ -1217,14 +1217,14 @@ miSearchElement.addEventListener('results', (event) => {
 function getRoute(location) {
   const originLocationCoordinate = { lat: 38.897389429704695, lng: -77.03740973527613, floor: 0 }; // Oval Office, The White House (Hardcoded coordinate and floor index)
   const destinationCoordinate = { lat: location.properties.anchor.coordinates[1], lng: location.properties.anchor.coordinates[0], floor: location.properties.floor };
-  
+
   // Route parameters
   const routeParameters = {
     origin: originLocationCoordinate,
     destination: destinationCoordinate,
 +   travelMode: document.getElementById('travel-modes').value.toUpperCase()
   };
-  
+
   // Get route from directions service
   miDirectionsServiceInstance.getRoute(routeParameters).then((directionsResult) => {
     // Use directions render to display route
@@ -1237,7 +1237,7 @@ function getRoute(location) {
 </mi-tabs>
 
 <!-- JS Fiddle intro -->
-{% include "src/web/v4/getting-started/js-fiddle-intro.md" %}
+{% include "src/getting-started/web/js-fiddle-intro.md" %}
 
 <mi-tabs>
 <mi-tab label="Google Maps - Manually" tab-for="gm-manually"></mi-tab>
@@ -1261,4 +1261,4 @@ function getRoute(location) {
   </mi-tab-panel>
 </mi-tabs>
 
-<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/web/v4/getting-started/livedata/">Next up: Live Data</a></p>
+<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/getting-started/web/livedata/">Next up: Live Data</a></p>

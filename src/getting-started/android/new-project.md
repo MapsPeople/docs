@@ -3,8 +3,8 @@ title: Create a New Project
 toc: true
 eleventyNavigation:
   title: Create a New Project
-  key: android-v3-getting-started-project
-  parent: android-v3-getting-started
+  key: getting-started-android-project
+  parent: getting-started-android
   order: 120
 ---
 
@@ -60,7 +60,7 @@ android {
 }
 ```
 
-MapsIndoors relies on Java 8 features, so you must add the following compile options, also in *android* section of your *build.gradle* file:
+MapsIndoors relies on Java 8 features, so you must add the following compile options, also in _android_ section of your _build.gradle_ file:
 
 ```java
 android {
@@ -104,4 +104,4 @@ Put those lines in your proguard-rules files:
 
 Sync your project with gradle.
 
-<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/android/v3/getting-started/map/">Next up: Show a map</a></p>
+<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/getting-started/android/map/">Next up: Show a map</a></p>

@@ -3,8 +3,8 @@ title: Prerequisites
 toc: true
 eleventyNavigation:
   title: Prerequisites
-  key: web-v4-getting-started-prerequisites
-  parent: web-v4-getting-started
+  key: getting-started-web-prerequisites
+  parent: getting-started-web
   order: 110
 ---
 
@@ -17,4 +17,4 @@ eleventyNavigation:
 <!-- MapsIndoors API key -->
 {% include "src/shared/getting-started/prerequisites/api-key-mapsindoors.md" %}
 
-<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/web/v4/getting-started/new-project/">Next up: Create a new project</a>
+<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/getting-started/web/new-project/">Next up: Create a new project</a>

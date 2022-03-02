@@ -3,8 +3,8 @@ title: Show a Map
 toc: true
 eleventyNavigation:
   title: Show a Map
-  key: web-v4-getting-started-map
-  parent: web-v4-getting-started
+  key: getting-started-web-map
+  parent: getting-started-web
   order: 130
 ---
 
@@ -437,7 +437,7 @@ You should now be able to switch between the first and second Floors of The Whit
 </mi-tabs>
 
 <!-- JS Fiddle intro -->
-{% include "src/web/v4/getting-started/js-fiddle-intro.md" %}
+{% include "src/getting-started/web/js-fiddle-intro.md" %}
 
 <mi-tabs>
 <mi-tab label="Google Maps - Manually" tab-for="gm-manually"></mi-tab>
@@ -463,4 +463,4 @@ You should now be able to switch between the first and second Floors of The Whit
 
 <!-- Add screenshot -->
 
-<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/web/v4/getting-started/search/">Next up: Search</a></p>
+<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/getting-started/web/search/">Next up: Search</a></p>

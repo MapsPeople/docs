@@ -3,8 +3,8 @@ title: Show a Map
 toc: true
 eleventyNavigation:
   title: Show a Map
-  key: android-v3-getting-started-map
-  parent: android-v3-getting-started
+  key: getting-started-android-map
+  parent: getting-started-android
   order: 130
 ---
 
@@ -165,4 +165,4 @@ See the full example of MapsActivity here [MapsActivity.java](https://github.com
 
 Head to the [guides]({{ site.url }}/android/v3/guides/) to learn about event handling, searching, getting directions, display settings and more.
 
-<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/android/v3/getting-started/search/">Next up: Search</a></p>
+<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/getting-started/android/search/">Next up: Search</a></p>

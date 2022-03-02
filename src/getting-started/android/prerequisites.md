@@ -3,8 +3,8 @@ title: Prerequisites
 toc: true
 eleventyNavigation:
   title: Prerequisites
-  key: android-v3-getting-started-prerequisites
-  parent: android-v3-getting-started
+  key: getting-started-android-prerequisites
+  parent: getting-started-android
   order: 110
 ---
 
@@ -21,4 +21,4 @@ eleventyNavigation:
 
 If you need to work with MapsIndoors SDK behind a firewall, you might need to [allowlist some IP-addresses]({{ site.url }}/various/mapsindoors-sdk-firewall/).
 
-<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/android/v3/getting-started/new-project/">Next up: Create a new project</a>
+<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/getting-started/android/new-project/">Next up: Create a new project</a>

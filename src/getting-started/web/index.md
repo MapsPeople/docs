@@ -1,9 +1,9 @@
 ---
 title: Getting Started
 eleventyNavigation:
-  title: Getting Started
-  key: web-v4-getting-started
-  parent: web-v4
+  title: Getting Started with Web
+  key: getting-started-web
+  parent: getting-started
   order: 100
 ---
 
@@ -15,4 +15,4 @@ eleventyNavigation:
 <!-- Skills -->
 {% include "src/shared/getting-started/skills.md" %}
 
-<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/web/v4/getting-started/prerequisites/">Next up: Prerequisites</a></p>
+<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/getting-started/web/prerequisites/">Next up: Prerequisites</a></p>

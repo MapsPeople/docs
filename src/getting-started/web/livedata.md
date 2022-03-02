@@ -3,8 +3,8 @@ title: Enable Live Data
 toc: false
 eleventyNavigation:
   title: Enable Live Data
-  key: web-v4-getting-started-enable-live-data
-  parent: web-v4-getting-started
+  key: getting-started-web-livedata
+  parent: getting-started-web
   order: 170
 ---
 
@@ -109,11 +109,11 @@ miMapElement.addEventListener('mapsIndoorsReady', () => {
   miMapElement.getMapInstance().then((mapInstance) => {
     mapInstance.setCenter({ lat: 38.8974905, lng: -77.0362723 }); // The White House
   });
-  
+
   miMapElement.getDirectionsServiceInstance().then((directionsServiceInstance) => miDirectionsServiceInstance = directionsServiceInstance);
 
   miMapElement.getDirectionsRendererInstance().then((directionsRendererInstance) => miDirectionsRendererInstance = directionsRendererInstance);
-  
+
   miMapElement.getMapsIndoorsInstance().then((mapsIndoorsInstance) => {
 +   // Enable Live Data
 +   const liveDataManagerInstance = new mapsindoors.LiveDataManager(mapsIndoorsInstance);
@@ -124,7 +124,7 @@ miMapElement.addEventListener('mapsIndoorsReady', () => {
 miSearchElement.addEventListener('results', (event) => {
   // Reset search results list
   miListElement.innerHTML = null;
-  
+
   // Append new search results
   event.detail.forEach(location => {
     const miListItemElement = document.createElement('mi-list-item-location');
@@ -133,7 +133,7 @@ miSearchElement.addEventListener('results', (event) => {
     miListItemElement.addEventListener("click", () => getRoute(location), false);
     miListElement.appendChild(miListItemElement);
   });
-  
+
   // Get the MapsIndoors instance
   miMapElement.getMapsIndoorsInstance().then((mapsIndoorsInstance) => {
     // Filter map to only display search results
@@ -194,7 +194,7 @@ mapboxInstance.controls[google.maps.ControlPosition.RIGHT_TOP].push(floorSelecto
 function onSearch() {
   const searchInputElement = document.querySelector('input');
   const searchResultsElement = document.getElementById('search-results');
-  
+
   const searchParameters = { q: searchInputElement.value };
   mapsindoors.services.LocationsService.getLocations(searchParameters).then(locations => {
     // Reset search results list
@@ -216,7 +216,7 @@ function onSearch() {
 function getRoute(location) {
   const originLocationCoordinate = { lat: 38.897389429704695, lng: -77.03740973527613, floor: 0 }; // Oval Office, The White House (Hardcoded coordinate and floor index)
   const destinationCoordinate = { lat: location.properties.anchor.coordinates[1], lng: location.properties.anchor.coordinates[0], floor: location.properties.floor };
-  
+
   // Route parameters
   const routeParameters = {
     origin: originLocationCoordinate,
@@ -249,11 +249,11 @@ miMapElement.addEventListener('mapsIndoorsReady', () => {
   miMapElement.getMapInstance().then((mapInstance) => {
     mapInstance.setCenter({ lat: 38.8974905, lng: -77.0362723 }); // The White House
   });
-  
+
   miMapElement.getDirectionsServiceInstance().then((directionsServiceInstance) => miDirectionsServiceInstance = directionsServiceInstance);
-  
+
   miMapElement.getDirectionsRendererInstance().then((directionsRendererInstance) => miDirectionsRendererInstance = directionsRendererInstance);
-  
+
   miMapElement.getMapsIndoorsInstance().then((mapsIndoorsInstance) => {
 +   // Enable Live Data
 +   const liveDataManagerInstance = new mapsindoors.LiveDataManager(mapsIndoorsInstance);
@@ -264,7 +264,7 @@ miMapElement.addEventListener('mapsIndoorsReady', () => {
 miSearchElement.addEventListener('results', (event) => {
   // Reset search results list
   miListElement.innerHTML = null;
-  
+
   // Append new search results
   event.detail.forEach(location => {
     const miListItemElement = document.createElement('mi-list-item-location');
@@ -273,7 +273,7 @@ miSearchElement.addEventListener('results', (event) => {
     miListItemElement.addEventListener("click", () => getRoute(location), false);
     miListElement.appendChild(miListItemElement);
   });
-  
+
   // Get the MapsIndoors instance
   miMapElement.getMapsIndoorsInstance().then((mapsIndoorsInstance) => {
     // Filter map to only display search results
@@ -284,14 +284,14 @@ miSearchElement.addEventListener('results', (event) => {
 function getRoute(location) {
   const originLocationCoordinate = { lat: 38.897389429704695, lng: -77.03740973527613, floor: 0 }; // Oval Office, The White House (Hardcoded coordinate and floor index)
   const destinationCoordinate = { lat: location.properties.anchor.coordinates[1], lng: location.properties.anchor.coordinates[0], floor: location.properties.floor };
-  
+
   // Route parameters
   const routeParameters = {
     origin: originLocationCoordinate,
     destination: destinationCoordinate,
     travelMode: document.getElementById('travel-modes').value.toUpperCase()
   };
-  
+
   // Get route from directions service
   miDirectionsServiceInstance.getRoute(routeParameters).then((directionsResult) => {
     // Use directions render to display route
@@ -310,7 +310,7 @@ In the example above we create an instance of `LiveDataManager` and enable Live 
 Learn more about controlling and rendering Live Data in MapsIndoors in the [introduction to Live Data]({{ site.url }}/web/v4/live-data/).
 
 <!-- JS Fiddle intro -->
-{% include "src/web/v4/getting-started/js-fiddle-intro.md" %}
+{% include "src/getting-started/web/js-fiddle-intro.md" %}
 
 <mi-tabs>
 <mi-tab label="Google Maps - Manually" tab-for="gm-manually"></mi-tab>

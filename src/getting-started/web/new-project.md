@@ -3,8 +3,8 @@ title: Create a New Project
 toc: true
 eleventyNavigation:
   title: Create a New Project
-  key: web-v4-getting-started-project
-  parent: web-v4-getting-started
+  key: getting-started-web-project
+  parent: getting-started-web
   order: 120
 ---
 
@@ -41,4 +41,4 @@ eleventyNavigation:
 
 Both here, and in future code examples, you will always be able to see which of two files the code should go in, by looking at the first line, where the name of the file is written.
 
-<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/web/v4/getting-started/map/">Next up: Show a map</a></p>
+<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/getting-started/web/map/">Next up: Show a map</a></p>
