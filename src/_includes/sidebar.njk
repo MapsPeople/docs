@@ -51,5 +51,22 @@
     <p class="sidebar__header"><a href="/getting-started/">Getting Started</p>
     {% set navPages = collections.published | eleventyNavigation("getting-started") %}
   {% endif %}
+  {% if '/data' in page.url %}
+    <p class="sidebar__header"><a href="/data/">Working with Data</p>
+    {% set navPages = collections.published | eleventyNavigation("data") %}
+  {% endif %}
+  {% if '/directions' in page.url %}
+    <p class="sidebar__header"><a href="/directions/">Directions and Routing</p>
+    {% set navPages = collections.published | eleventyNavigation("directions") %}
+  {% endif %}
+  {% if '/map' in page.url %}
+    <p class="sidebar__header"><a href="/map/">Map</p>
+    {% set navPages = collections.published | eleventyNavigation("map") %}
+  {% endif %}
+  {% if '/search' in page.url %}
+    <p class="sidebar__header"><a href="/search/">Search</p>
+    {% set navPages = collections.published | eleventyNavigation("search") %}
+  {% endif %}
+  
   {{ navPages | eleventyNavigationToHtml({listClass: "sidebar-nav", activeListItemClass: "active", activeKey: eleventyNavigation.key}) | safe }}
 </nav>
