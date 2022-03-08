@@ -1,7 +1,7 @@
 ---
-title: Search
+title: Map
 eleventyNavigation:
   parent: index
-  key: search
-  title: Search
+  key: map
+  title: Map
 ---
