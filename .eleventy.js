@@ -66,6 +66,10 @@ module.exports = function (eleventyConfig) {
         return collectionApi.getFilteredByTags("changelogs");
     });
 
+    eleventyConfig.addCollection("directions", function (collectionApi) {
+        return collectionApi.getFilteredByTags("directions");
+    });
+
     eleventyConfig.addCollection("published", function (collectionApi) {
         return [...collectionApi.getFilteredByGlob("./src/**/*.md")].filter(
             (post) => !post.data.draft
