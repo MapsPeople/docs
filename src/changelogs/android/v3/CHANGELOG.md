@@ -18,6 +18,17 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 ### Security     in case of vulnerabilities.
 -->
 
+## [3.13.6] 2022-03-08
+
+### Added
+
+- Added `isInitialized()` to `MPDataSetCacheManager` to check whether it has been initialized
+
+### Fixed
+
+- Toned down rendering frequency in some cases
+- Introduced a number of stability fixes
+
 ## [3.13.5] 2022-03-02
 
 ### Fixed
