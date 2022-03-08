@@ -1,9 +1,9 @@
 ---
-title: Directions Service
+title: Directions Service for Android
 eleventyNavigation:
-  key: android-v3-guides-directions-service
-  parent: android-v3-guides-directions
-  title: Directions Service
+  key: directions-service-android
+  parent: directions-service
+  title: Directions Service for Android
   order: 10
 ---
 

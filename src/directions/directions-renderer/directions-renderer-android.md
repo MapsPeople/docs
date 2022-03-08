@@ -1,9 +1,9 @@
 ---
-title: Directions Rendering
+title: Directions Rendering for Android
 eleventyNavigation:
-  key: android-v3-guides-directions-renderer
-  parent: android-v3-guides-directions
-  title: Directions Rendering
+  key: android-directions-rendering
+  parent: directions-renderer
+  title: Directions Rendering for Android
   order: 20
 ---
 

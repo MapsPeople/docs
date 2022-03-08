@@ -1,9 +1,9 @@
 ---
-title: Get Directions and Show Wayfinding Instructions
+title: Wayfinding Instructions for Android
 eleventyNavigation:
-  parent: android-v3-guides-directions
-  title: Get Directions and Show Wayfinding Instructions
-  key: android-v3-guides-get-directions-and-show-wayfinding
+  parent: wayfinding-instructions
+  title: Wayfinding Instructions for Android
+  key: wayfinding-instructions-android
   order: 410
 ---
 
