@@ -63,7 +63,7 @@
     <p class="sidebar__header"><a href="/map/">Map</p>
     {% set navPages = collections.published | eleventyNavigation("map") %}
   {% endif %}
-  {% if '/search' in page.url %}
+  {% if '/searching' in page.url %}
     <p class="sidebar__header"><a href="/search/">Search</p>
     {% set navPages = collections.published | eleventyNavigation("search") %}
   {% endif %}
