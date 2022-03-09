@@ -70,6 +70,18 @@ module.exports = function (eleventyConfig) {
         return collectionApi.getFilteredByTags("directions");
     });
 
+    eleventyConfig.addCollection("map", function (collectionApi) {
+        return collectionApi.getFilteredByTags("map");
+    });
+
+    eleventyConfig.addCollection("data", function (collectionApi) {
+        return collectionApi.getFilteredByTags("data");
+    });
+
+    eleventyConfig.addCollection("searching", function (collectionApi) {
+        return collectionApi.getFilteredByTags("searching");
+    });
+
     eleventyConfig.addCollection("published", function (collectionApi) {
         return [...collectionApi.getFilteredByGlob("./src/**/*.md")].filter(
             (post) => !post.data.draft
