@@ -1,9 +1,9 @@
 ---
-title: Searching for Locations and Displaying the Results on a Map for Android
+title: Searching on a Map for Android
 eleventyNavigation:
   parent: searching-search-on-map
   key: searching-search-on-map-android
-  title: Searching for Locations and Displaying the Results on a Map for Android
+  title: Searching on a Map for Android
   order: 10
 ---
 
