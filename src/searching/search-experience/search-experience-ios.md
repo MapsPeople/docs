@@ -1,10 +1,10 @@
 ---
-title: Create a Search Experience with MapsIndoors
+title: Create a Search Experience with iOS
 eleventyNavigation:
-  key: ios-v3-guides-search-experience
-  parent: ios-v3-guides-search
-  title: Create a Search Experience with MapsIndoors
-  order: 510
+  parent: searching-search-experience
+  Title: Create a Search Experience with iOS
+  key: searching-search-experience-ios
+  order: 20
 ---
 
 This is an example of creating a simple search experience using MapsIndoors. We will create a map with a search button which leads to another view controller that handles the search and selection. Select a Location to go back to the map and show the selected Location on the map.

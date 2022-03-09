@@ -1,9 +1,10 @@
 ---
-title: Filter Locations on Map by Search Query
+title: Searching on a Map for iOS
 eleventyNavigation:
-  key: Filter Locations on Map by Search Query
-  parent: ios-v3-guides-search
-  order: 520
+  parent: searching-search-on-map
+  key: searching-search-on-map-ios
+  title: Searching on a Map for iOS
+  order: 20
 ---
 
 Use the `MPLocationService` class to search for content in your MapsIndoors Solution.

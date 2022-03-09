@@ -1,9 +1,9 @@
 ---
-title: Search in MapsIndoors
+title: Basic Searching for iOS
 eleventyNavigation:
-  key: ios-v3-guides-search
-  parent: ios-v3-guides
-  title: Create a Search Experience with MapsIndoors
+  key: searching-basic-search-ios
+  parent: searching-basic-searching
+  title: Basic Searching for iOS
   order: 20
 ---
 
@@ -11,7 +11,7 @@ eleventyNavigation:
 
 See the full list of parameters:
 
-{% include "src/ios/v3/guides/search/extras/ios-filter-content.md" %}
+{% include "src/searching/assets/ios/ios-filter-content.md" %}
 
 ## Example of Creating a Search Query
 
