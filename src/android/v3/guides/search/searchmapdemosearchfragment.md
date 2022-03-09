@@ -32,7 +32,7 @@ IconTextListAdapter mListAdapter;
 ViewFlipper mViewFlipper;
 ImageButton mBackButton;
 
-```java
+```
 
 Init and setup the listView:
 
@@ -87,7 +87,8 @@ AdapterView.OnItemClickListener mAdapterViewOnItemClickListener = new AdapterVie
     }
 };
 
-```java
+```
+
 Declare an interface that will handle the communication between the fragment and the activity:
 
 ```java
