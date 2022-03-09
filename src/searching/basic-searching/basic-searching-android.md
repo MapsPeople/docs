@@ -11,7 +11,7 @@ eleventyNavigation:
 
 See the full list of parameters:
 
-{% include "src/android/v3/guides/search/extras/android-filter-content.md" %}
+{% include "src/searching/assets/android/android-filter-content.md" %}
 
 ## Example of Creating a Search Query
 
@@ -20,12 +20,12 @@ See the full list of parameters:
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
 
-{% include "src/android/v3/guides/search/extras/java-query-filter-example.md" %}
+{% include "src/searching/assets/android/java-query-filter-example.md" %}
 
 </mi-tab-panel>
 <mi-tab-panel id="kotlin">
 
-{% include "src/android/v3/guides/search/extras/kotlin-query-filter-example.md" %}
+{% include "src/searching/assets/android/kotlin-query-filter-example.md" %}
 
 </mi-tab-panel>
 </mi-tabs>
@@ -43,12 +43,12 @@ See the full list of parameters:
 <mi-tab label="Kotlin" tab-for="androidKotlin"></mi-tab>
 <mi-tab-panel id="androidJava">
 
-{% include "src/android/v3/guides/search/extras/java-display-search.md" %}
+{% include "src/searching/assets/android/java-display-search.md" %}
 
 </mi-tab-panel>
 <mi-tab-panel id="androidKotlin">
 
-{% include "src/android/v3/guides/search/extras/kotlin-display-search.md" %}
+{% include "src/searching/assets/android/kotlin-display-search.md" %}
 
 </mi-tab-panel>
 </mi-tabs>
@@ -64,12 +64,12 @@ See the full list of parameters:
 <mi-tab label="Kotlin" tab-for="androidKotlin"></mi-tab>
 <mi-tab-panel id="androidJava">
 
-{% include "src/android/v3/guides/search/extras/java-clear-search.md" %}
+{% include "src/searching/assets/android/java-clear-search.md" %}
 
 </mi-tab-panel>
 <mi-tab-panel id="androidKotlin">
 
-{% include "src/android/v3/guides/search/extras/kotlin-clear-search.md" %}
+{% include "src/searching/assets/android/kotlin-clear-search.md" %}
 
 </mi-tab-panel>
 </mi-tabs>
