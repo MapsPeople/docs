@@ -11,11 +11,17 @@ eleventyNavigation:
 
 In this guide you will be introduced to the concept of Display Rules and how you can use Display Rules to change how Locations (POIs, Rooms and Areas) are displayed on the map.
 
-The MapsIndoors CMS is used to control the default appearance of Types and Locations. To change the default appearance at _runtime_ you can use Display Rules.
+The MapsIndoors CMS is used to control the initial appearance of Locations. However, the Display Rules—and thereby the appearance of Locations—can be changed from the application at _runtime_. This gives the application the power to change Locations based on events in the app.
 
 ## Display Rule Hierarchy
 
-In each MapsIndoors SDK, a "Main Display Rule" outlines a list of sensible defaults for all geodata. Each Location Type inherits its values from this Main Display Rule, unless specifically overriden for that Type. Each Location (Room, Area or POI) in turn inherits the combined values from the Main Display Rule and its Location Type, unless for those properties where it's been specifically overriden on that Location.
+In each MapsIndoors SDK, a "Main Display Rule" outlines a list of sensible defaults for all geodata. Each Location Type inherits its values from this Main Display Rule, unless the value is specifically overriden.
+
+Each Location (Room, Area or POI) uses the Display Rule from the Type, except for values that are specifically set for the individual Location.
+
+Here's a visualization of the inheritance principle (click to view larger version):
+
+[![Display Rules inhertiance principle]({{ "/assets/various/display-rule-inheritance.png" | url }})]({{ "/assets/various/display-rule-inheritance.png" | url }})
 
 As an example, you might want all polygons to be `red`. However, the Location Type for "Meeting Room" specifies that their polygons should be `blue`, while the "Executive Meeting Room" Location specifically has an `orange` polygon.
 
@@ -23,12 +29,7 @@ No matter what is specified in this hierarchy, you can override it _runtime_ in 
 
 To remove a value from the Display Rule (to make it inherit from further up the hierarchy) set the proptery to `null`.
 
-Here's a visualization of the inheritance principle (click to view larger version):
-
-[![Display Rules inhertiance principle]({{ "/assets/various/display-rule-inheritance.png" | url }})]({{ "/assets/various/display-rule-inheritance.png" | url }})
-
-> ⚠️
-> For Android SDK v3, you can not change Display Rules at runtime on the Location Types level to inherit for all Locations of that Type. To apply styling to all Locations of a Type, you need to filter all Locations of that Type, and update their Display Rules individually.
+> ⚠️ For Android SDK v3, you can not change Display Rules at runtime on the Location Types level to inherit for all Locations of that Type. To apply styling to all Locations of a Type, you need to filter all Locations of that Type, and update their Display Rules individually.
 
 ## Display Rule Properties
 
