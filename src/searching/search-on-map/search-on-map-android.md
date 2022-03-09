@@ -1,9 +1,10 @@
 ---
-title: Searching for Locations and Displaying the Results on a Map
+title: Searching for Locations and Displaying the Results on a Map for Android
 eleventyNavigation:
-  parent: android-v3-guides-search
-  key: Searching for Locations and Displaying the Results on a Map
-  order: 20
+  parent: searching-search-on-map
+  key: searching-search-on-map-android
+  title: Searching for Locations and Displaying the Results on a Map for Android
+  order: 10
 ---
 
 Use the `MapsIndoors.getLocationsAsync()` method to search for content in your MapsIndoors Solution.

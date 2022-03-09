@@ -1,9 +1,9 @@
 ---
-title: Search in MapsIndoors
+title: Basic Searching for Android
 eleventyNavigation:
-  key: android-v3-guides-search
-  parent: android-v3-guides
-  title: Search in MapsIndoors
+  key: searching-basic-search-android
+  parent: searching-basic-searching
+  title: Basic Searching for Android
   order: 10
 ---
 
