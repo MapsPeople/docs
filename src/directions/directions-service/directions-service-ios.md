@@ -1,10 +1,10 @@
 ---
-title: Directions Service
+title: Directions Service for iOS
 eleventyNavigation:
-  key: ios-v3-guides-directions-service
-  parent: ios-v3-guides-directions
-  title: Directions Service
-  order: 10
+  key: directions-service-ios
+  parent: directions-service
+  title: Directions Service for iOS
+  order: 20
 ---
 
 The class `MPDirectionsService` is used to request routes from one point to another. The minimal required input is an `origin` and a `destination`. You need to build a query using the `MPDirectionsQuery` class.

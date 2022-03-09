@@ -1,9 +1,9 @@
 ---
-title: Directions Rendering
+title: Directions Rendering for iOS
 eleventyNavigation:
-  key: ios-v3-guides-directions-renderer
-  parent: ios-v3-guides-directions
-  title: Directions Rendering
+  key: ios-directions-rendering
+  parent: directions-renderer
+  title: Directions Rendering for iOS
   order: 20
 ---
 

@@ -1,10 +1,12 @@
 ---
-title: Get Directions and Show the Result on a Map
+title: Inspect Route Element for iOS
 eleventyNavigation:
-  parent: ios-v3-guides-directions
-  key: Get Directions and Show the Result on a Map
-  order: 430
+  key: ios-directions-rendering-inspect-route-element
+  parent: ios-directions-rendering
+  title: Inspect Route Element for iOS
+  order: 10
 ---
+
 In this tutorial we will request a route, list the route parts and render these on a Google Map. A MapsIndoors route is made of one or more legs, each containing one or more steps.
 
 We will start by making the controller that renders the route from the input of a route, a leg index and optionally a step index. Start by creating a `UIViewController` implementation that conforms to `MPDirectionsRendererDelegate`

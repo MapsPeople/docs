@@ -1,9 +1,10 @@
 ---
-title: Get Directions and Show Wayfinding Instructions
+title: Wayfinding Instructions for iOS
 eleventyNavigation:
-  parent: ios-v3-guides-directions
-  key: Get Directions and Show Wayfinding Instructions
-  order: 410
+  parent: wayfinding-instructions
+  title: Wayfinding Instructions for iOS
+  key: wayfinding-instructions-ios
+  order: 20
 ---
 
 In this tutorial we will show how to work with the route model returned from a directions service call. We will also show how you can utilize interaction between the route rendering on the map and textual instructions showed in another view.
