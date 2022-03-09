@@ -1,15 +1,64 @@
 ---
-title: Search and Filtering
+title: Basic Searching for Web
 eleventyNavigation:
-  title: Search and Filtering
-  parent: web-v4-guides-search
-  key: web-v4-guides-filtering
-  order: 10
+  key: searching-basic-search-web
+  parent: searching-basic-searching
+  title: Basic Searching for Web
+  order: 30
 ---
 
-## Overview
+{% include "src/shared/guides/search/overview.md" %}
 
-In this guide you will see an example of how to search for Locations.
+See the full list of parameters in the [reference guide](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/mapsindoors.services.LocationsService.html#.getLocations).
+
+## Example of Creating a Search Query
+
+```js
+const searchParameters = {
+  q: 'Office',
+  near: { lat: 38.897579747054046, lng: -77.03658652944773 }, // // Blue Room, The White House
+  take: 1
+}
+
+mapsindoors.services.LocationsService.getLocations(searchParameters).then(locations => {
+  console.log(locations);
+});
+```
+
+{% include "src/shared/guides/search/search-ranking.md" %}
+
+## Display Search Results on the Map
+
+{% include "src/shared/guides/search/displaying-search-results.md" %}
+
+## Filter the Map to Display Searched Locations on the Map
+
+```js/7
+const searchParameters = {
+  q: 'Office',
+  near: { lat: 38.897579747054046, lng: -77.03658652944773 }, // // Blue Room, The White House
+  take: 1
+}
+
+mapsindoors.services.LocationsService.getLocations(searchParameters).then(locations => {
+  mapsIndoorsInstance.filter(locations.map(location => location.id), false);
+});
+```
+
+## Clearing the Map of your filter
+
+{% include "src/shared/guides/search/clear-search-filter-on-map.md" %}
+
+## Example of Clearing Your Map Filter to Show All Locations Again
+
+```js
+mapsIndoorsInstance.filter(null);
+```
+
+### Display Locations as List
+
+You can also search for Locations, and have them presented to you as a list, instead of just displaying them on the map.
+
 The full code example is shown in the JSFiddle below, which will be examined below.
 
 <script async src="https://jsfiddle.net/mapspeople/91xhwd65/embed/html,result/"></script>
