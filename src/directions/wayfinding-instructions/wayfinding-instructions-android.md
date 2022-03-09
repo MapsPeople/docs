@@ -4,7 +4,7 @@ eleventyNavigation:
   parent: wayfinding-instructions
   title: Wayfinding Instructions for Android
   key: wayfinding-instructions-android
-  order: 410
+  order: 10
 ---
 
 This tutorial will show how to work with the route model returned from a directions service call. It will also show how you can utilize interactions between the route rendering on the map, and text-based instructions showed in another view.

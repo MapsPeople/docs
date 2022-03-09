@@ -4,7 +4,7 @@ eleventyNavigation:
   key: android-directions-rendering
   parent: directions-renderer
   title: Directions Rendering for Android
-  order: 20
+  order: 10
 ---
 
 When getting the resulting Route from a [Directions Service](../directions/directions-service), you may want to display this Route on a map. To perform this task the `MPDirectionsRenderer` can be used.
