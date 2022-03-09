@@ -1,10 +1,10 @@
 ---
-title: Directions Rendering
+title: Directions Rendering for Web
 eleventyNavigation:
-  key: web-v4-guides-directions-renderer
-  parent: web-v4-guides-directions
-  title: Directions Rendering
-  order: 20
+  key: web-directions-rendering
+  parent: directions-renderer
+  title: Directions Rendering for Web
+  order: 30
 ---
 
 When getting the result Route from a [Directions Service](../directions/directions-service), we may want to display this Route on a map. To perform this task the `DirectionsRenderer` can be used.

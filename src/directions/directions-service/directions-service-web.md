@@ -1,10 +1,10 @@
 ---
-title: Directions Service
+title: Directions Service for Web
 eleventyNavigation:
-  key: web-v4-guides-directions-service
-  parent: web-v4-guides-directions
-  title: Directions Service
-  order: 10
+  key: directions-service-web
+  parent: directions-service
+  title: Directions Service for Web
+  order: 30
 ---
 
 The class `DirectionsService` is used to request routes from one point to another. The minimal required input is an `origin` and a `destination`.
