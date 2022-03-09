@@ -4,4 +4,5 @@ eleventyNavigation:
   parent: directions
   key: directions-service
   title: Directions Service
+  order: 10
 ---
