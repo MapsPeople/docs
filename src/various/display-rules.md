@@ -25,7 +25,7 @@ Here's a visualization of the inheritance principle (click to view larger versio
 
 As an example, you might want all polygons to be `red`. However, the Location Type for "Meeting Room" specifies that their polygons should be `blue`, while the "Executive Meeting Room" Location specifically has an `orange` polygon.
 
-No matter what is specified in this hierarchy, you can override it _runtime_ in your app. That means, as an example, that all matches for a specific search query can be specified to have a polygon color that is `pink`, regardless of what exisits in the defaults, on their Types, and for those Locations specifically.
+No matter what is specified in this hierarchy, you can override it at _runtime_ in your app. That means, as an example, that all matches for a specific search query can be specified to have a polygon color that is `pink`, regardless of what exisits in the defaults, on their Types, and for those Locations specifically.
 
 To remove a value from the Display Rule (to make it inherit from further up the hierarchy) set the proptery to `null`.
 
