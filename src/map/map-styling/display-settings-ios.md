@@ -1,9 +1,10 @@
 ---
-title: Working with Display Settings
+title: Display Settings for iOS
 eleventyNavigation:
-  key: Working with Display Settings
-  parent: ios-v3-guides-map-styling
-  order: 340
+  key: map-map-styling-display-settings-ios
+  parent: map-map-styling-ios
+  title: Display Settings for iOS
+  order: 20
 ---
 
 In this tutorial we will create a view controller that can enable and disable different custom location display settings on a MapsIndoors map. At the end you should be able to see a map of a building with some colored buttons below the map enabling custom display settings for specified locations.

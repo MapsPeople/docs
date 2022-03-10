@@ -1,10 +1,10 @@
 ---
-title: Map Styling
+title: Map Styling for iOS
 eleventyNavigation:
-  key: ios-v3-guides-map-styling
-  parent: ios-v3-guides
-  title: Map Styling
-  order: 50
+  key: map-map-styling-ios
+  parent: map-map-styling
+  title: Map Styling for iOS
+  order: 20
 ---
 
 There are two ways to change the appearance of the map content in MapsIndoors and Google Maps.
