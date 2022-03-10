@@ -1,9 +1,10 @@
 ---
-title: Working with Live Updates / Real Time Data in MapsIndoors for Android
+title: Live Data Tutorial for Android
 eleventyNavigation:
-  parent: android-v3-guides-live-data
-  key: Working with Live Updates / Real Time Data in MapsIndoors for Android
-  order: 340
+  key: map-live-data-tutorial-android
+  parent: map-live-data
+  title: Live Data Tutorial for Android
+  order: 20
 ---
 
 In this tutorial you will learn to work with Live Updates / real-time data in MapsIndoors. It is recommended that you read the [Live Data Introduction]({{ site.url }}/android/v3/guides/live-data/) before continuing.

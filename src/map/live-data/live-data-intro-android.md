@@ -1,10 +1,10 @@
 ---
-title: Live Data
+title: Live Data Introduction for Android
 eleventyNavigation:
-  key: android-v3-guides-live-data
-  parent: android-v3-guides
-  title: Live Data
-  order: 330
+  key: map-live-data-intro-android
+  parent: map-live-data
+  title: Live Data Introduction for Android
+  order: 10
 ---
 
 This guide gives an overview of how to work with _Live Data_ in the MapsIndoors Android SDK. As opposed to _static data_, which does not change unless data is synchronized, Live Data can change in real time, and these changes can be instantly reflected on the map and in searches.

@@ -1,9 +1,10 @@
 ---
-title: Working with Live Updates / Real Time Data in MapsIndoors for iOS
+title: Live Data Tutorial for iOS
 eleventyNavigation:
-  parent: ios-v3-guides-live-data
-  key: Working with Live Updates / Real Time Data in MapsIndoors for iOS
-  order: 340
+  key: map-live-data-tutorial-ios
+  parent: map-live-data
+  title: Live Data Tutorial for iOS
+  order: 40
 ---
 
 In this tutorial you will learn to work with Live Data / Real Time Data in MapsIndoors. It is recommended that you read the [Live Data Introduction]({{ site.url }}/ios/v3/guides/live-data/) before continueing.

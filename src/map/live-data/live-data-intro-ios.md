@@ -1,10 +1,10 @@
 ---
-title: Live Data
+title: Live Data Introduction for iOS
 eleventyNavigation:
-  key: ios-v3-guides-live-data
-  parent: ios-v3-guides
-  title: Live Data
-  order: 330
+  key: map-live-data-intro-iOS
+  parent: map-live-data
+  title: Live Data Introduction for iOS
+  order: 30
 ---
 
 This guide gives an overview of how to work with _Live Data_ in the MapsIndoors iOS SDK.

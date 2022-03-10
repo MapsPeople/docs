@@ -1,10 +1,10 @@
 ---
-title: Live Data
+title: Live Data for Web
 eleventyNavigation:
-  parent: web-v4
-  title: Live Data
-  key: web-v4-live-data
-  order: 600
+  key: map-live-data-web
+  parent: map-live-data
+  title: Live Data for Web
+  order: 50
 ---
 
 This guide gives an overview of how to work with _Live Data_ in the MapsIndoors JavaScript SDK. As opposed to _static data_, which does not change unless the page is reloaded, Live Data can change in real time, and these changes can be instantly reflected on the map and in searches.
