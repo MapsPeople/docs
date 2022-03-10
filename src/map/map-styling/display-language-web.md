@@ -1,10 +1,10 @@
 ---
-title: Display Language
+title: Display Language for Web
 eleventyNavigation:
-  key: web-v4-display-language
-  parent: web-v4-guides
-  title: Display Language
-  order: 700
+  key: map-map-styling-display-language-web
+  parent: map-map-styling
+  title: Display Language for Web
+  order: 400
 ---
 
 <!-- Introduction -->
