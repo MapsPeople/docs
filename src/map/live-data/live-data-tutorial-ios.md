@@ -2,7 +2,7 @@
 title: Live Data Tutorial for iOS
 eleventyNavigation:
   key: map-live-data-tutorial-ios
-  parent: map-live-data
+  parent: map-live-data-intro-iOS
   title: Live Data Tutorial for iOS
   order: 40
 ---
