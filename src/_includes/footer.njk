@@ -45,42 +45,44 @@
   </div>
   <div class="column">
     <h2>
-      <a href="/ios/v3/">iOS v3</a>
+      <a href="/map/">Map</a>
     </h2>
     <ul class="list">
-      {% set iosv3 = collections.published | eleventyNavigation("ios-v3") %}
-      {%- for entry in iosv3 %}
+      {% set map = collections.published | eleventyNavigation("map") %}
+      {%- for entry in map %}
         {{ renderNavListItem(entry) }}
       {%- endfor -%}
     </ul>
   </div>
   <div class="column">
     <h2>
-      <a href="/android/v3/">Android v3</a>
+      <a href="/searching/">Searching</a>
     </h2>
     <ul class="list">
-      {% set androidv3 = collections.published | eleventyNavigation("android-v3") %}
-      {%- for entry in androidv3 %}
+      {% set searching = collections.published | eleventyNavigation("searching") %}
+      {%- for entry in searching %}
         {{ renderNavListItem(entry) }}
       {%- endfor -%}
     </ul>
   </div>
   <div class="column">
     <h2>
-      <a href="/web/v4/">Web v4</a>
+      <a href="/directions/">Directions and Routing</a>
     </h2>
     <ul class="list">
-      {% set webv4 = collections.published | eleventyNavigation("web-v4") %}
-      {%- for entry in webv4 %}
+      {% set directions = collections.published | eleventyNavigation("directions") %}
+      {%- for entry in directions %}
         {{ renderNavListItem(entry) }}
       {%- endfor -%}
     </ul>
+  </div>
+  <div class="column">
     <h2>
-      <a href="/web/v3/">Web v3</a>
+      <a href="/data/">Working with Data</a>
     </h2>
     <ul class="list">
-      {% set webv3 = collections.published | eleventyNavigation("web-v3") %}
-      {%- for entry in webv3 %}
+      {% set data = collections.published | eleventyNavigation("data") %}
+      {%- for entry in data %}
         {{ renderNavListItem(entry) }}
       {%- endfor -%}
     </ul>
