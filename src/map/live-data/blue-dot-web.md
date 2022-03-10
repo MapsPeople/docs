@@ -1,9 +1,12 @@
 ---
-title: Showing the user's location aka. Blue Dot
+title: Show User's Location for Web
 eleventyNavigation:
-  parent: web-v4-guides
-  key: Showing the user's location aka. Blue Dot
+  key: map-live-data-blue-dot-web
+  parent: map-live-data
+  title: Show User's Location for Web
+  order: 120
 ---
+
 
 ## Overview
 
