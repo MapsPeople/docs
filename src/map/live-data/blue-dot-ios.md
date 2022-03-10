@@ -1,9 +1,10 @@
 ---
-title: Show the User's Location aka. Blue Dot
+title: Show User's Location for iOS
 eleventyNavigation:
-  key: Show the User's Location aka. Blue Dot
-  parent: ios-v3-guides-map-control
-  order: 240
+  key: map-live-data-blue-dot-ios
+  parent: map-live-data
+  title: Show User's Location for iOS
+  order: 100
 ---
 
 In this tutorial we will show how you can show a blue dot on the map, representing the users location. The position will be served from a mocked positioning provider and displayed on a map in a view controller.
