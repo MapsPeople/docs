@@ -1,10 +1,10 @@
 ---
-title: Display Language
+title: Display Language for Android
 eleventyNavigation:
-  key: android-v3-display-language
-  parent: android-v3-guides
-  title: Display Language
-  order: 400
+  key: map-map-styling-display-language-android
+  parent: map-map-styling
+  title: Display Language for Android
+  order: 390
 ---
 
 <!-- Introduction -->
