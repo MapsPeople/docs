@@ -2,9 +2,9 @@
 title: Areas
 eleventyNavigation:
   title: Areas
-  key: various-areas
-  parent: various
-  order: 2
+  key: map-areas
+  parent: map
+  order: 1000
 ---
 
 Areas are a type of Location, the same way a POI and a Room is. A POI is a *single-point Location*, while a Room is a *multi-point Location* (i.e. a "polygon"). Think of an Area as a *multi-point POI*, as it does not affect the routing (same as POIs), but there is a polygon (like Rooms).
@@ -63,7 +63,7 @@ Requests to the Integration API for creating, updating and retrieving geodata ob
 - `name`: Used for the Label on the map
 - `polygon`: Has the following subfields: `visible`, `strokeWidth`, `strokeColor`, `strokeOpacity`, `fillColor`, `fillOpacity`.
 - `geometry`: [standard GeoJson](https://tools.ietf.org/html/rfc7946#section-3.1)
-- `anchor`: Anchor point with a _subfield type_ as `point`
+- `anchor`: Anchor point with a *subfield type* as `point`
 - `aliases`: Aliases are used to enrich the data when searching
 - `categories`: Will be written as the `internal id` of the Category (as opposed to the Name)
 - `status`: Availability in search results; 1=no, 3=yes

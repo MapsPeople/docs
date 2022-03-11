@@ -1,10 +1,10 @@
 ---
 title: Application User Roles
 eleventyNavigation:
-    key: app-user-roles
-    parent: various
+    key: map-displaying-objects-app-user-roles
+    parent: map-displaying-objects
     title: Application User Roles
-    order: 2
+    order: 1000
 ---
 
 _Application User Roles_ are a feature that lets you define various roles you can assign to your users, or they can choose between themselves.

@@ -1,9 +1,10 @@
 ---
-title: Show Location Details
+title: Location Details for Android
 eleventyNavigation:
-  parent: android-v3-guides
-  key: Show Location Details
-  order: 150
+  parent: map-displaying-objects
+  key: map-displaying-objects-location-details-android
+  title: Location Details for Android
+  order: 100
 ---
 
 This is an example of displaying some details of a MapsIndoors location
