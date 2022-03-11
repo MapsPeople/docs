@@ -83,7 +83,7 @@ All properties are optional.
 | label | string  | | Descriptive text for the Location. This can either be a static text or a dynamic text, retrieved from a property on the Location, using double curly braces as delimiters. E.g. `"{{ "{{ name " }}}}"` or a combination `"Room: {{ "{{ name " }}}}"`. |
 | labelZoomFrom | number  | `1`-`21` (`22` if applicable) | The maximum zoom level the image/icon will be visible on the map. | The minimum zoom level the label will be visible on the map. |
 | labelZoomTo   | number  | `1`-`21` (`22` if applicable) | The maximum zoom level the image/icon will be visible on the map. | The maximum zoom level the label will be visible on the map. |
-| labelMaxWidth | double | `> 0` | `0` means infinite, e.g. lines will not be broken based on `width` |
+| labelMaxWidth | double | `>= 0` | In pixels. `0` represents an unlimited max length. |
 | polygon | object | | Everything under this parameter apply only to locations that have polygon data defined such as Rooms and Areas, but not POIs. |
 | polygon.visible | boolean | | Must be `true` for the polygon to be visible on the map. If this is not `true` all parameters under polygon are ignored. |
 | polygon.zoomFrom | | `1`-`21` (`22` if applicable) | The lowest zoom level where the polygon will be shown. |
