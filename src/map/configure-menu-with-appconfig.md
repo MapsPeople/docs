@@ -1,8 +1,8 @@
 ---
 title: Configuring a menu with AppConfig
 eleventyNavigation:
-  key: android-v3-appconfig
-  parent: android-v3-guides
+  key: map-appconfig
+  parent: map
   title: Configuring a menu with AppConfig
   order: 420
 ---

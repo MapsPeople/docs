@@ -2,8 +2,8 @@
 title: Location Clustering for Android
 eleventyNavigation:
   title: Location Clustering for Android
-  parent: map
-  key: map-location-clustering-android
+  parent: map-displaying-objects
+  key: map-displaying-objects-location-clustering
   order: 140
 ---
 

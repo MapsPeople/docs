@@ -1,9 +1,10 @@
 ---
-title: Creating Your own Location Sources
+title: Location Data Sources for iOS
 eleventyNavigation:
-  key: Creating Your own Location Sources
-  parent: ios-v3-guides-locations
-  order: 330
+  parent: map-displaying-objects
+  key: map-displaying-objects-location-sources-ios
+  title: Location Data Sources for iOS
+  order: 40
 ---
 
 In this tutorial we will show how you can build a custom Location Source, representing locations of people. The people locations will be served from a mocked list in the source and displayed on a map in a view controller.

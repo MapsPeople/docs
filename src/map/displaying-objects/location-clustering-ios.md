@@ -1,9 +1,10 @@
 ---
-title: Working with Location Grouping (Clustering)
+title: Location Clustering for iOS
 eleventyNavigation:
-  key: Working with Location Grouping (Clustering)
-  parent: ios-v3-guides-locations
-  order: 320
+  title: Location Clustering for iOS
+  parent: map-displaying-objects
+  key: map-displaying-objects-location-clustering-ios
+  order: 140
 ---
 
 This is an example of enabling and disabling location grouping on the map as well as providing custom cluster tapping behavior and custom cluster images.

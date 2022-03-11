@@ -1,9 +1,10 @@
 ---
-title: Show Details for Selected Location
+title: Location Details for iOS
 eleventyNavigation:
-  key: Show Details for Selected Location
-  parent: ios-v3-guides-locations
-  order: 330
+  parent: map-displaying-objects
+  key: map-displaying-objects-location-details-ios
+  title: Location Details for iOS
+  order: 100
 ---
 
 This is an example of displaying some details of a MapsIndoors location
@@ -30,7 +31,7 @@ var nameLabel = UILabel.init()
 var descrLabel = UILabel.init()
 ```
 
-Inside `viewDidLoad`, setup the map and the mapControl instance
+Inside `viewDidLoad`, setup the map and the mapControl instance:
 
 ```swift
 self.map = GMSMapView.init(frame: CGRect.zero)
