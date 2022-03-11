@@ -3,8 +3,8 @@ title: Searching
 layout: redirect
 destination: /searching/
 eleventyNavigation:
-  key: directions-searching-redirect
+  key: various-searching-redirect
   title: Searching
-  parent: directions
+  parent: various
   order: 2
 ---

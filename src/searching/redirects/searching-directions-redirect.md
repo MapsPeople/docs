@@ -6,5 +6,5 @@ eleventyNavigation:
   key: searching-directions-redirect
   title: Directions
   parent: searching
-  order: 1
+  order: 9997
 ---

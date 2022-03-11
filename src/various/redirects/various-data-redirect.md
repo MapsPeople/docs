@@ -3,8 +3,8 @@ title: Data
 layout: redirect
 destination: /data/
 eleventyNavigation:
-  key: map-data-redirect
+  key: various-data-redirect
   title: Data
-  parent: map
-  order: 9998
+  parent: various
+  order: 4
 ---

@@ -6,5 +6,5 @@ eleventyNavigation:
   key: data-searching-redirect
   title: Searching
   parent: data
-  order: 1
+  order: 2
 ---

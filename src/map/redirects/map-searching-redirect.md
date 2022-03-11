@@ -6,5 +6,5 @@ eleventyNavigation:
   key: map-searching-redirect
   title: Searching
   parent: map
-  order: 1
+  order: 9996
 ---

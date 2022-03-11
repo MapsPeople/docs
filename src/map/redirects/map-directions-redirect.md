@@ -6,5 +6,5 @@ eleventyNavigation:
   key: map-directions-redirect
   title: Directions
   parent: map
-  order: 1
+  order: 9997
 ---

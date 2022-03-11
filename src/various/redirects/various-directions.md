@@ -3,8 +3,8 @@ title: Directions
 layout: redirect
 destination: /directions/
 eleventyNavigation:
-  key: data-directions-redirect
+  key: various-directions-redirect
   title: Directions
-  parent: data
-  order: 4
+  parent: various
+  order: 3
 ---
