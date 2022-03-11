@@ -1,9 +1,9 @@
 ---
 title: Introduction to Display Rules
 eleventyNavigation:
-  title: Display Rules
-  parent: web-v4-guides
-  key: web-v4-guides-display-rules
+  title: Introduction to Display Rules
+  parent: map-various
+  key: map-various-display-rules
   order: 210
 ---
 

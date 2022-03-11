@@ -1,9 +1,9 @@
 ---
-title: Event Handling
+title: Events for Web
 eleventyNavigation:
-  title: Event Handling
-  parent: web-v4-guides
-  key: web-v4-guides-event-handling
+  title: Events for Web
+  parent: map-various
+  key: map-various-events
   order: 230
 ---
 
