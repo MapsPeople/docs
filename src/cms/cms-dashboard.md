@@ -3,7 +3,7 @@ title: CMS Dashboard
 eleventyNavigation:
   key: cms-dashboard
   title: CMS Dashboard
-  parent: various
+  parent: cms
   order: 4
 ---
 
