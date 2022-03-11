@@ -2,7 +2,7 @@
 title: Create a Search Experience with iOS
 eleventyNavigation:
   parent: searching-search-experience
-  Title: Create a Search Experience with iOS
+  title: Create a Search Experience with iOS
   key: searching-search-experience-ios
   order: 20
 ---
