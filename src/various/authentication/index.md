@@ -1,9 +1,9 @@
 ---
 title: Authentication
 eleventyNavigation:
-  parent: various 
-  key: auth
+  key: various-authentication
   title: Authentication
+  parent: various
   order: 10
 ---
 

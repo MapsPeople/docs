@@ -1,10 +1,10 @@
 ---
 title: Password Reset
 eleventyNavigation:
-    key: passwordreset
-    parent: various
+    key: various-authentication-passwordreset
+    parent: various-authentication
     title: Password Reset
-    order: 440
+    order: 60
 ---
 
 ## Password Validation

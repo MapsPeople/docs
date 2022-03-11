@@ -1,9 +1,10 @@
 ---
-title: Using authentication in MapsIndoors
+title: Authentication for Android
 eleventyNavigation:
-  parent: android-v3-guides
-  key: Using authentication in MapsIndoors
-  order: 410
+    key: various-authentication-android
+    parent: various-authentication
+    title: Authentication for Android
+    order: 20
 ---
 
 This guide covers the different aspects of user authentication and authorization in the MapsIndoors Android SDK.

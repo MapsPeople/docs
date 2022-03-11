@@ -1,10 +1,10 @@
 ---
 title: 2-Factor Authentication
 eleventyNavigation:
-    key: 2fa
-    parent: various
+    key: various-authetication-2fa
+    parent: various-authentication
     title: 2-Factor Authentication
-    order: 440
+    order: 50
 ---
 
 ## Enabling 2-Factor Authentication

@@ -1,10 +1,10 @@
 ---
-title: Single Sign-On 
+title: Single Sign-On
 eleventyNavigation:
-  parent: auth
-  key: auth-sso
-  order: 10
+  key: various-authentication-sso
   title: Single Sign-On
+  parent: various-authentication
+  order: 40
 ---
 
 In order to access certain MapsIndoors apps, and certain custom apps, SSO (Single Sign-On) login can be used. This includes the MapsIndoors Auth SSO, as well as organization-specific authentication providers - see [Configuration](configuration).

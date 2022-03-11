@@ -1,10 +1,10 @@
 ---
-title: Authorization
+title: SSO Authorisation
 eleventyNavigation:
-  parent: auth-sso
-  key: auth-sso-authorization
-  order: 5
-  title: Authorization
+  key: various-authentication-sso-authorisation
+  title: SSO Authorisation
+  parent: various-authentication-sso
+  order: 20
 ---
 
 What a user can see and do is by default controlled in the MapsIndoors CMS.
@@ -16,6 +16,7 @@ However, if a user that can sign in via the authentication server, but does not 
 This will be done via OAuth claims that can be found on the id_token (or via the userinfo endpoint upon authentication).
 If no claims are provided, the user will still get read access to the solutions associated with the authentication provider.
 If claims are provided, they will be mapped to MapsIndoors access definitions, so that authorization can occur based on what claims are associated with the user in the authentication server.
+
 There is a default mapping that will occur if claims are provided in the following format:
 
 ```json

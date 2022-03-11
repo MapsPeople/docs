@@ -1,10 +1,10 @@
 ---
-title: Configuration
+title: SSO Configuration
 eleventyNavigation:
-  parent: auth-sso
-  key: auth-sso-configuration
+  key: various-authentication-sso-configuration
+  title: SSO Configuration
+  parent: various-authentication-sso
   order: 10
-  title: Configuration
 ---
 
 Configuring the SSO is currently handled by MapsPeople. Therefore there needs to be an exchange of information - metadata and credentials related to the authentication server, and a unique redirect URL to MapsIndoors. In case of issues, these details must also be documented.

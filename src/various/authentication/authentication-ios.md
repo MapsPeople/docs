@@ -1,10 +1,10 @@
 ---
-title: User Authentication and Authorization
+title: Authentication for iOS
 eleventyNavigation:
-    key: ios-v3-guides-sso
-    title: User Authentication and Authorization
-    parent: ios-v3-guides
-    order: 440
+    key: various-authentication-ios
+    parent: various-authentication
+    title: Authentication for iOS
+    order: 10
 ---
 
 This guide covers the different aspects of user authentication and authorization in the MapsIndoors iOS SDK.

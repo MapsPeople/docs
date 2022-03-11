@@ -1,10 +1,10 @@
 ---
-title: User Authentication and Authorization
+title: Authentication for Web
 eleventyNavigation:
-    key: web-v4-guides-authentication
-    parent: web-v4-guides
-    title: Authentication
-    order: 440
+    key: various-authentication-web
+    parent: various-authentication
+    title: Authentication for Web
+    order: 30
 ---
 
 This guide covers the different aspects of user authentication and authorization in the MapsIndoors JavaScript SDK.

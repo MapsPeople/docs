@@ -43,10 +43,6 @@
     <p class="sidebar__header"><a href="/changelogs/">Changelogs</p>
     {% set navPages = collections.published | eleventyNavigation("changelogs") %}
   {% endif %}
-  {% if '/auth' in page.url %}
-    <p class="sidebar__header"><a href="/auth/">Auth</p>
-    {% set navPages = collections.published | eleventyNavigation("auth") %}
-  {% endif %}
   {% if '/getting-started' in page.url %}
     <p class="sidebar__header"><a href="/getting-started/">Getting Started</p>
     {% set navPages = collections.published | eleventyNavigation("getting-started") %}
