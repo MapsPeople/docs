@@ -1,10 +1,10 @@
 ---
-title: Caching and Offline Content
+title: Offline Content for iOS
 eleventyNavigation:
-  key: ios-v3-offline
-  parent: ios-v3-guides
-  title: Caching and Offline Content
-  order: 600
+  key: data-offline-data-ios
+  parent: data-offline-data
+  title: Offline Content for iOS
+  order: 10
 ---
 
 ## Cacheable Data
