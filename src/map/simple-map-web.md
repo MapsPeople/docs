@@ -4,7 +4,7 @@ eleventyNavigation:
   parent: map
   key: map-simple-map-web
   title: Create a Map for Web
-  order: 50
+  order: 60
 ---
 
 ## Overview
