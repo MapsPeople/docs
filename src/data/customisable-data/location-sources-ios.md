@@ -1,8 +1,8 @@
 ---
-title: Location Sources in MapsIndoors
+title: Location Sources for iOS
 eleventyNavigation:
-  key: Location Sources in MapsIndoors
-  parent: various
+  key: Location Sources for iOS
+  parent: data-customisable-data
   order: 10
 ---
 
