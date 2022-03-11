@@ -1,14 +1,15 @@
 ---
-title: Event Logging
+title: Event Logging for Android
 eleventyNavigation:
-  key: android-v3-event-logging
-  parent: android-v3-guides
-  title: Event Logging
-  order: 600
+  key: various-event-logging-android
+  parent: various-event-logging
+  title: Event Logging for Android
+  order: 20
 ---
 
-<!-- Introduction -->
-{% include "src/shared/event-logging/intro.md" %}
+The MapsIndoors SDK records anonymous usage statistics and diagnostic events per default and sends the logged data to a server at MapsPeople.
+
+Logging may be disabled entirely by calling:
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
