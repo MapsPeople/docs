@@ -1,10 +1,10 @@
 ---
-title: Booking
+title: Booking for Android
 eleventyNavigation:
-  key: android-v3-guides-booking
-  parent: android-v3-guides
-  title: Booking
-  order: 400
+  parent: data-booking
+  key: data-booking-android
+  title: Booking for Android
+  order: 20
 ---
 
 

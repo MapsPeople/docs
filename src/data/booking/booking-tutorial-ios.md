@@ -1,9 +1,10 @@
 ---
 title: Booking Tutorial
 eleventyNavigation:
-    parent: ios-v3-guides-booking
-    key: ios-v3-guides-booking-tutorial
-    title: Booking Tutorial
+  parent: data-booking-ios
+  key: data-booking-ios-tutorial
+  title: Booking Tutorial for iOS
+  order: 10
 ---
 
 In this tutorial we will create a Booking experience using the Booking Service in MapsIndoors. You will learn how to list bookable Locations, list Bookings for a Location and perform new Bookings using the Booking Service, `MPBookingService`.

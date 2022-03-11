@@ -1,10 +1,10 @@
 ---
-title: Booking
+title: Booking for Web
 eleventyNavigation:
-    key: web-v4-guides-booking
-    parent: web-v4-guides
-    title: Booking
-    order: 450
+  parent: data-booking
+  key: data-booking-web
+  title: Booking for Web
+  order: 30
 ---
 
 This guide covers the different aspects of _Booking_ in the MapsIndoors JavaScript SDK. The concept of Booking in MapsIndoors implies that specific Locations in your MapsIndoors dataset is treated as Bookable resources. Typical bookable resources could be meeting rooms and workspaces.
