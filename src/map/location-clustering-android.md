@@ -1,8 +1,9 @@
 ---
-title: Work with Location Grouping / Clustering
+title: Location Clustering for Android
 eleventyNavigation:
-  parent: android-v3-guides
-  key: Work with Location Grouping / Clustering
+  title: Location Clustering for Android
+  parent: map
+  key: map-location-clustering-android
   order: 140
 ---
 
