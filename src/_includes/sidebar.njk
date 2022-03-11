@@ -63,10 +63,6 @@
     <p class="sidebar__header"><a href="/searching/">Search</p>
     {% set navPages = collections.published | eleventyNavigation("searching") %}
   {% endif %}
-  {% if '/cms' in page.url %}
-    <p class="sidebar__header"><a href="/cms/">CMS</p>
-    {% set navPages = collections.published | eleventyNavigation("cms") %}
-  {% endif %}
   
   {{ navPages | eleventyNavigationToHtml({listClass: "sidebar-nav", activeListItemClass: "active", activeKey: eleventyNavigation.key}) | safe }}
 </nav>

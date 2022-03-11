@@ -1,9 +1,9 @@
 ---
 title: CMS Dashboard
 eleventyNavigation:
-  key: cms-dashboard
+  key: map-cms-dashboard
   title: CMS Dashboard
-  parent: cms
+  parent: map-cms
   order: 4
 ---
 

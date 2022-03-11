@@ -2,8 +2,8 @@
 title: MapsIndoors CMS
 toc: true
 eleventyNavigation:
-  key: cms
-  parent: index
+  key: map-cms
+  parent: map
   title: MapsIndoors CMS
   order: 30
 ---

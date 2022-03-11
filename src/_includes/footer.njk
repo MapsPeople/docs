@@ -45,17 +45,6 @@
   </div>
   <div class="column">
     <h2>
-      <a href="/cms/">CMS</a>
-    </h2>
-    <ul class="list">
-      {% set map = collections.published | eleventyNavigation("cms") %}
-      {%- for entry in cms %}
-        {{ renderNavListItem(entry) }}
-      {%- endfor -%}
-    </ul>
-  </div>
-  <div class="column">
-    <h2>
       <a href="/map/">Map</a>
     </h2>
     <ul class="list">
