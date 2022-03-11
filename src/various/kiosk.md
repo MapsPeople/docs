@@ -225,7 +225,7 @@ http://kiosk.mapsindoors.com/demo?pitch=60
 
 When subscribing to Live Data (see *URL parameters*), badges will be applied to the icons for Locations that have Live Data.
 
-* **Availability:** Will add a green badge with a checkmark, or a red badge with a cross, depending on the _availability_ of the Location.
+* **Availability:** Will add a green badge with a checkmark, or a red badge with a cross, depending on the *availability* of the Location.
 
-* **Occupancy**: Will add a black badge with a number depicting the _occupancy_ of the location (`nrOfPeople`).
-It is also possible to show a _utilization percentage_ badge instead of occupancy number. To do that, a custom property must be set on the Location with the key `livedataRenderOccupancyAs` and value `% utilization`.
+* **Occupancy**: Will add a black badge with a number depicting the *occupancy* of the location (`nrOfPeople`).
+It is also possible to show a *utilization percentage* badge instead of occupancy number. To do that, a custom property must be set on the Location with the key `livedataRenderOccupancyAs` and value `% utilization`.
