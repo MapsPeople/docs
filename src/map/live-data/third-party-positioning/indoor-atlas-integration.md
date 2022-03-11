@@ -1,9 +1,9 @@
 ---
 title: Use Indoor Atlas with MapsIndoors
 eleventyNavigation:
-  parent: android-v3-guides-use-third-party-positioning-with-MapsIndoors
   title: Use Indoor Atlas with MapsIndoors
-  key: android-v3-use-Indoor-Atlas-positioning-with-MapsIndoors
+  parent: map-live-data-third-party-android
+  key: map-live-data-third-party-android-atlas
   order: 220
 ---
 

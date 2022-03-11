@@ -1,9 +1,9 @@
 ---
 title: Use Google Fused Location Provider with MapsIndoors
 eleventyNavigation:
-  parent: android-v3-guides-use-third-party-positioning-with-MapsIndoors
   title: Use Google Fused Location Provider with MapsIndoors
-  key: android-v3-use-Google-Fused-Location-Provider-with-MapsIndoors
+  parent: map-live-data-third-party-android
+  key: map-live-data-third-party-android-google
   order: 230
 ---
 

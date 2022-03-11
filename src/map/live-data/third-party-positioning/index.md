@@ -1,10 +1,10 @@
 ---
-title: Use third party positioning with MapsIndoors
+title: Third Party Positioning for Android
 eleventyNavigation:
-  parent: android-v3-guides
-  title: Use third party positioning with MapsIndoors
-  key: android-v3-guides-use-third-party-positioning-with-MapsIndoors
-  order: 210
+  parent: map-live-data
+  title: Third Party Positioning for Android
+  key: map-live-data-third-party-android
+  order: 500
 ---
 
 ### How User Positioning Works in MapsIndoors

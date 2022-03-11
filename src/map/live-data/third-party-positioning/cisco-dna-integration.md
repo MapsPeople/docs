@@ -1,9 +1,9 @@
 ---
 title: Use Cisco DNA with MapsIndoors
 eleventyNavigation:
-  parent: android-v3-guides-use-third-party-positioning-with-MapsIndoors
+  parent: map-live-data-third-party-android
   title: Use Cisco DNA with MapsIndoors
-  key: android-v3-use-Cisco-DNA-positioning-with-MapsIndoors
+  key: map-live-data-third-party-android-cisco
   order: 240
 ---
 
