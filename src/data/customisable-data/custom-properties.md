@@ -1,9 +1,9 @@
 ---
 title: Custom Properties
 eleventyNavigation:
-  key: Custom-Properties
+  key: data-customisable-data-custom-properties
   title: Custom Properties
-  parent: various
+  parent: data-customisable-data
   order: 3
 ---
 
