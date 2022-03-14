@@ -7,3 +7,4 @@ eleventyNavigation:
   order: 20
 ---
 
+Your app should also maintain some degree of functionality, even if your user has lost their internet connection. These guides discuss how to use offline data.

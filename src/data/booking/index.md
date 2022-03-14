@@ -6,3 +6,5 @@ eleventyNavigation:
   title: Booking
   order: 10
 ---
+
+MapsIndoors supports the ability to book rooms, such as meeting rooms, from the app.
