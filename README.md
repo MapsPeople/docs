@@ -80,6 +80,49 @@ Eleventy automatically builds and deploys from the `main` branch in this reposit
 
 6. Go to [docs.mapsindoors.com](https://docs.mapsindoors.com) to see your new page live.
 
+#### Create a new root folder
+
+You might need to add a new folder alongside the existing "Map", "Searching", "Data" and "Directions" folders. In order to ensure that the exisitng templates are applied correctly, and that these folders can feature in, for example, the sidebar and footer, there are some steps you must take.
+
+If in doubt for any of these steps, take a look at how it's already done in `.eleventy.js`, `sidebar.njk` and `footer.njk`.
+
+1. In `.eleventy.js`, add the following lines of code:
+
+```js
+eleventyConfig.addCollection("REPLACE", function (collectionApi) {
+        return collectionApi.getFilteredByTags("REPLACE");
+    });
+```
+
+This creates a "collection", which gathers all the files under this new root folder to a combined entity. Replace "REPLACE" with whatever you wish to name your collection, often the same as the name of the folder.
+
+1. In `sidebar.njk`, to ensure your new folder displays a sidebar, add the following code:
+
+```html
+{% if '/REPLACE' in page.url %}
+    <p class="sidebar__header"><a href="/replace/">REPLACE</p>
+    {% set navPages = collections.published | eleventyNavigation("REPLACE") %}
+  {% endif %}
+```
+
+Replace "REPLACE" with the name of the collection to created in Step 1.
+
+1. Lastly, you might want to ensure that your new menu features in the footer as well. To do this, insert the following code in `footer.njk`
+
+```html
+    <h2>
+      <a href="/REPLACE/">REPLACE</a>
+    </h2>
+    <ul class="list">
+      {% set REPLACE = collections.published | eleventyNavigation("REPLACE") %}
+      {%- for entry in REPLACE %}
+        {{ renderNavListItem(entry) }}
+      {%- endfor -%}
+    </ul>
+```
+
+Replace "REPLACE" with the name of your collection. Your menu should now appear in the footer as well.
+
 #### Tips
 
 1. Use feature-branches. That makes it much easier to review new tutorials before they're live.
