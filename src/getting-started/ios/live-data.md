@@ -23,7 +23,7 @@ The following section rely on the existence of Live Position Data. If you do not
 
 For this demonstration we wish to show an employee moving across The White House.
 
-Enabling Live Data through `MapControl` is achieved by simply calling `mapControl.enableLiveData()` with a [Domain Type](http://0.0.0.0:8080/ios/v3/guides/live-data/#domain-type), somewhere after the initialization of `MapControl`. In this case, since we wish to show the positional changes to an employee live, we will use the domain type, position.
+Enabling Live Data through `MapControl` is achieved by simply calling `mapControl.enableLiveData()` with a Domain Type, somewhere after the initialization of `MapControl`. In this case, since we wish to show the positional changes to an employee live, we will use the domain type, position.
 
 ```swift
 mapControl?.enableLiveData(MPLiveDomainType.position)
@@ -35,7 +35,7 @@ Assuming the demo key is utilising you should now see a "Staff Person" moving fr
 
 ![Expected Result](/assets/ios/getting-started/er_live-data.gif)
 
-Learn more about about controlling and rendering Live Data in MapsIndoors in the [introducion to Live Data](http://0.0.0.0:8080/ios/v3/guides/live-data/)
+Learn more about about controlling and rendering Live Data in MapsIndoors in the [introducion to Live Data](/map/live-data/)
 
 <!-- Congrats -->
 {% include "src/shared/getting-started/congrats.md" %}

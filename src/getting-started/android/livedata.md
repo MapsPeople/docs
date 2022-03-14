@@ -89,7 +89,7 @@ Expected result:
 
 ![LiveData result](/assets/android/getting-started/live_data.gif)
 
-Learn more about controlling and rendering Live Data in MapsIndoors in the [introduction to Live Data]({{ site.url }}/android/v3/guides/live-data/).
+Learn more about controlling and rendering Live Data in MapsIndoors in the [introduction to Live Data](/map/live-data/live-data-intro-android/).
 
 <!-- Congrats -->
 {% include "src/shared/getting-started/congrats.md" %}

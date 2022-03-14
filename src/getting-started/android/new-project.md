@@ -39,7 +39,7 @@ You can find this basic example here: [Java](https://github.com/MapsIndoors/Maps
 
 You can open the project through Android Studio by navigating through **File -> New -> Project from Version Control -> GitHub**. Log in and clone the project.
 
-You can also follow the steps below to start your app from scratch or to enhance the Basic Examples, more features will be explained in the [guides]({{ site.url }}/android/v3/guides/).
+You can also follow the steps below to start your app from scratch or to enhance the Basic Examples, more features will be explained in later guides.
 
 ## Setup MapsIndoors
 

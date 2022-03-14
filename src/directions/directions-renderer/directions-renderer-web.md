@@ -7,7 +7,7 @@ eleventyNavigation:
   order: 30
 ---
 
-When getting the result Route from a [Directions Service](../directions/directions-service), we may want to display this Route on a map. To perform this task the `DirectionsRenderer` can be used.
+When getting the result Route from a [Directions Service](/directions/directions-service/directions-service-web/), we may want to display this Route on a map. To perform this task the `DirectionsRenderer` can be used.
 
 This example shows how to setup a query for a route and display the result on a Google Map using the DirectionsRenderer`:
 

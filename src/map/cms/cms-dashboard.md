@@ -42,7 +42,7 @@ The top of the Dashboard provides high level information about your Solutions, s
 * **Rooms with Alias** - Total number of Rooms with one or more aliases across all Solutions. Aliases are additional search terms for a Room. For example, a lobby may have a 'reception' and 'entry' alias.
 * **Rooms with Category** - Total number of Rooms with one or more Categories across all Solutions. Categories are used to group similar Rooms and POIs for easier searching in the app, e.g. meeting rooms and cafes.
 
-Visit the [MapsIndoors Glossary](https://docs.mapsindoors.com/glossary/) for more information on CMS-related terms.
+Visit the [MapsIndoors Glossary](https://docs.mapsindoors.com/various/glossary/) for more information on CMS-related terms.
 
 ### Dashboard Table
 

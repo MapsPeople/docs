@@ -17,9 +17,9 @@ eleventyNavigation:
 Start by creating a new activity or _fragment_ to facilitate searches on your application. Here we will be using a _fragment_ for search and show to search results on, while using a bottom sheet to display the results. We also create a search input field on our main map _activity_ for the user to input the text they want to search for.
 This is already setup in the basic example app.
 
-To perform a search you will need to have initiated `MapsIndoors`. This was shown in the previous section of the getting started tutorial how you do this. [Show a map]({{ site.url }}/android/v3/getting-started/map)
+To perform a search you will need to have initiated `MapsIndoors`. This was shown in the previous section of the getting started tutorial how you do this.
 
-For advanced usage of the search functionality read the Search guide and tutorials connected to it: [Search Guide]({{ site.url }}/android/v3/guides/search)
+For advanced usage of the search functionality read the Search guide and tutorials connected to it: [Search Guide](/searching/)
 
 <!-- Results list -->
 {% include "src/shared/getting-started/search/results-list.md" %}

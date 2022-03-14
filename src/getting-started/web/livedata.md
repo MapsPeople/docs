@@ -12,7 +12,7 @@ eleventyNavigation:
 
 {% include "src/shared/getting-started/live-data/live-position-demo-preconditions.md" %}
 
-To enable Live Data in your web app, create an instance of `LiveDataManager`. Call the method `enableLiveData()` on it with a [Domain Type]({{ site.url }}/web/v4/live-data/#domain-type).
+To enable Live Data in your web app, create an instance of `LiveDataManager`. Call the method `enableLiveData()` on it with a Domain Type.
 
 This should be done after you have initialized your MapsIndoors instance, since the instance must be given as argument in the `LiveDataManager` constructor:
 
@@ -307,7 +307,7 @@ In the example above we create an instance of `LiveDataManager` and enable Live 
 
 {% include "src/shared/getting-started/live-data/live-position-demo-result.md" %}
 
-Learn more about controlling and rendering Live Data in MapsIndoors in the [introduction to Live Data]({{ site.url }}/web/v4/live-data/).
+Learn more about controlling and rendering Live Data in MapsIndoors in the [introduction to Live Data](/map/live-data/).
 
 <!-- JS Fiddle intro -->
 {% include "src/getting-started/web/js-fiddle-intro.md" %}

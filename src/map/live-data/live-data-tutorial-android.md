@@ -7,7 +7,7 @@ eleventyNavigation:
   order: 20
 ---
 
-In this tutorial you will learn to work with Live Updates / real-time data in MapsIndoors. It is recommended that you read the [Live Data Introduction]({{ site.url }}/android/v3/guides/live-data/) before continuing.
+In this tutorial you will learn to work with Live Updates / real-time data in MapsIndoors. It is recommended that you read the [Live Data Introduction](/map/live-data/live-data-intro-android/) before continuing.
 
 We will create a simple activity displaying a map showing dynamic changes initiated from Live Data sources known by MapsIndoors. If you do not have a Live Data integration in place for your MapsIndoors project, you can use API key `2ae7d137162642618b5ce555` for demo and test purposes. The test data are of the Occupancy Domain Type and the Position Domain Type.
 
@@ -138,7 +138,7 @@ mMapControl.init { error ->
 </mi-tab-panel>
 </mi-tabs>
 
-And that's it! You now have Live Data running on your app. If you need to show Live Data in another way, you can add handlers for it. Read more about this in [Rendering Live Data Locations](/android/v3/live-data/).
+And that's it! You now have Live Data running on your app. If you need to show Live Data in another way, you can add handlers for it. Read more about this in [Rendering Live Data Locations](/map/live-data/live-data-intro-android/).
 
 ## Using Live Data Without the "Convenience Interface"
 
