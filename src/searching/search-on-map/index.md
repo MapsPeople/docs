@@ -6,3 +6,5 @@ eleventyNavigation:
   title: Searching on a Map
   order: 20
 ---
+
+The guides go into further detail on how to search and find locations specifically on the map.
