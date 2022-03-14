@@ -7,3 +7,4 @@ eleventyNavigation:
   order: 50
 ---
 
+Live Data is a useful tool to integrate real-time information into your solution.

@@ -5,7 +5,7 @@ eleventyNavigation:
   key: map-cms
   parent: map
   title: MapsIndoors CMS
-  order: 30
+  order: 10
 ---
 
 ## Introduction

@@ -4,5 +4,7 @@ eleventyNavigation:
   parent: map
   key: map-map-control
   title: Map Control
-  order: 10
+  order: 20
 ---
+
+This section will cover areas as fetching data from specific items on the map.

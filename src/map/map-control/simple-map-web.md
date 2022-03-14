@@ -1,10 +1,10 @@
 ---
 title: Create a Map for Web
 eleventyNavigation:
-  parent: map
+  parent: map-map-control
   key: map-simple-map-web
   title: Create a Map for Web
-  order: 60
+  order: 10
 ---
 
 ## Overview
