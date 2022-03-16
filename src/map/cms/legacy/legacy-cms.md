@@ -2,10 +2,10 @@
 title: MapsIndoors CMS
 toc: true
 eleventyNavigation:
-  key: map-cms
-  parent: map
+  key: map-cms-legacy
+  parent: none
   title: MapsIndoors CMS
-  order: 10
+  order: 1000
 ---
 
 ## Introduction
