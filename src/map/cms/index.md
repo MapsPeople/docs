@@ -19,4 +19,6 @@ Your data is structured in a hierarchy where the top level is your Solution whic
 * Floors
 * Locations (Rooms and Points of Interest)
 
-Although a point of interest can be placed within a room, it is not required. Points of interest can also be placed "outside” on the ground level which is also the layer where the Google map exists. In this case the POI belongs to the Venue directly.
+View the tutorial video below for more information about terminology and hierarchy.
+
+<iframe width="480" height="300" src="https://www.youtube-nocookie.com/embed/GwyO-Vav8Rs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
