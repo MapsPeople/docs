@@ -73,50 +73,144 @@ Working left to right, the functionality in this main toolbar is as follows - Yo
 
 ## Solution Details
 
-cjdcjdckdjc
+Solution details is the page to handle some of the less-obvious facets of managing your solution, such as organising your locations into "Types" and "Categories", or exporting your map in a resolution suitable for printing.
 
 ### Types
 
-cmkdkdcm
+![solution-details-types](/assets/cms/solution-details/Solution_Details_Types.png)
+
+This page is for organising the "Types" you sort your locations in to.
+
+1. Create a new Type.
+1. Click to select a Type, for easy selection of multiple Types at once.
+1. "Edit Type" - Gives you the option to change the name of the type, or to modify the App User Role restrictions.
+1. "Edit Display Settings" - The ability to modify the Display Settings for a given type - See more detailed information on Display Settings here.
+1. The name of the Type.
+1. The icon assigned to the Type.
+1. Displays how the Label is displayed on your map - Usually either Location name, or not displayed at all.
+1. The number of Locations in the given Type.
+1. "Edit Template" - Edit the template for a given Type.
 
 ### Categories
 
-dcndcjdnc
+![solution-details-categories](/assets/cms/solution-details/Solution_Details_Categories.png)
+
+Categories are similar to Types, but whereas Locations can only be of one Type, they can be of multiple Categories, and would usually be used as a form of "tags" when searching - For example, a canteen might be in a Category of both "Food" and "Leisure", but still only be of the Type "Canteen".
+
+1. Create a new Category.
+1. "Edit Category" - Edit properties of your Category.
+1. The name of the Category.
+1. The Key belonging to the Category.
 
 ### Type Visibility
 
-vkvkvkff
+![solution-details-type-visibility](/assets/cms/solution-details/Solution_Details_Type_Visibility.png)
+
+Type Visibility is the term used to determine at which zoom levels both Names and Labels are visible, determined per Type.
+
+1. A save button, click this to save your changes.
+1. Hide/Unhide - Click or unclick this if you don't want a specific Type to show up on the map at all.
+1. Set the minimum and maximum zoom level at which a given Type should be visible.
 
 ### Buildings
 
-cdkccc
+![solution-details-buildings](/assets/cms/solution-details/Solution_Details_Buildings.png)
+
+This page provides you with a list of Buildings in your Solution.
+
+1. "Edit Building" - Let's you edit the properties of the Building, such as name, ID and Floors.
+1. The Name of the Building.
+1. The Administrative ID of the Building.
+1. The Address of the Building.
+1. Add a new Building.
 
 ### Venues
 
-cjidjicj
+![solution-details-venues](/assets/cms/solution-details/Solution_Details_Venues.png)
+
+A page featuring a list of Venues in your Solution. These are provided by MapsIndoors, too add more, contact your representative.
+
+1. "Edit Venue" - You do still have limited editing options, despite Venues being controlled by MapsIndoors.
+1. The Name of your Venues.
+1. The Venue ID of your Venue.
 
 ### Export Map
 
-cdckdcd
+![solution-details-export-map](/assets/cms/solution-details/Solution_Details_Export_Map.png)
+
+The MapsIndoors CMS also provides the opportunity to export your Map to a higher resolution, for example, if you want to print your map to physically hang at your location.
+
+1. Open the Display Settings for the Map - NOTE: This is not the same as the Display Settings in the other sections.
+1. Set the use-case, this helps determine the resolution the map will be exported in.
+1. The Width of the exported map.
+1. The Height of the exported map.
+1. The Rotation angle of the exported map.
+1. The Building you are exporting a map of.
+1. The currently used Zoom Level.
+1. Zoom in or out.
+1. Floor selector, to select which floor will be exported.
 
 ### App Settings
 
-jcdkjcdkjc
+This page contains various subpages with more advanced settings about your app.
 
 #### App Configuration
 
-cdcjdkcdc
+This page contains various settings, such as more memorable names for your API keys, App User Roles and App Categories.
+
+![solution-details-app-title](/assets/cms/solution-details/Solution_Details_App_Title.png)
+
+Here you can change the title of your app.
+
+1. Save the changes you've made.
+1. Enter the name you wish to use.
+
+![solution-details-alias](/assets/cms/solution-details/Solution_Details_Alias.PNG)
+
+The API Keys used to make your MapsIndoors solution consist of random combinations of letters and numbers. Here, you can assign them an alias to make it easier to remember for a person.
+
+NOTE: Do not set an Alias if you want to make it more difficult to find and load your MapsIndoors data in a standard app. In that case, you can only load the data with an API key.
+
+![solution-details-app-user-roles](/assets/cms/solution-details/Solution_Details_App_User_Roles.PNG)
+
+You can also modify your App User Roles from within these pages.
+
+1. "Edit Role" - Edit settings pertaining to one specific App User Role.
+1. The names of your App User Roles.
+1. "Add App User Role" - Create a new App User Role.
+
+![solution-details-app-categories](/assets/cms/solution-details/Solution_Details_App_Categories.png)
+
+Here you can select which categories can be used for browsing the app.
+
+1. Move your app categories up and down in order.
+1. The name of the Category.
+1. Toggle whether or not the Category in question is visible in the app.
+1. The icon selected for the Category.
+1. Select an icon to be used for the Category.
 
 #### API Keys
 
-jcidjdc
+![solution-details-api-keys](/assets/cms/solution-details/Solution_Details_API_Keys.png)
 
-#### Booking Provider
+Here you manage the active API Keys generated for your Solution.
 
-cjcjdc
+1. The name that you want to use to identify the new API key.
+1. Generate API key.
+1. The name of an active API key.
+1. Save any changes you make.
+1. Toggle between active and inactive API keys.
+1. Your API key is located here in text form.
+1. Delete the API key.
 
 #### Position Provider
 
-cjcijdcdc
+![solution-details-position-provider](/assets/cms/solution-details/Solution_Details_Position_Provider.png)
 
-#### Webex
+MapsIndoors also provides the option for integrating your solution with a positioning provider such as IndoorAtlas.
+
+1. Select your positioning provider from the ones you have set up.
+1. Enter the informations required by your desired provider - In the case of IndoorAtlas, that is Key, Secret and Priority.
+1. Add another floor to your provider.
+1. Save your settings.
+1. Delete your settings.
