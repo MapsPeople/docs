@@ -1,0 +1,1 @@
+> Throughout MapsIndoors SDKs and APIs, the terms "Display Settings" and "Display Rules" are used interchangably. Going forward, we are committed to the term "Display Settings", but until a full transition is complete, you will encounter both terms.
