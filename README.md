@@ -82,7 +82,7 @@ Eleventy automatically builds and deploys from the `main` branch in this reposit
 
 #### Create a new root folder
 
-You might need to add a new folder alongside the existing "Map", "Searching", "Data" and "Directions" folders. In order to ensure that the exisitng templates are applied correctly, and that these folders can feature in, for example, the sidebar and footer, there are some steps you must take.
+You might need to add a new folder alongside the existing "Map", "Searching", "Data" and "Directions" folders. In order to ensure that the exisiting templates are applied correctly, and that these folders can feature in, for example, the sidebar and footer, there are some steps you must take.
 
 If in doubt for any of these steps, take a look at how it's already done in `.eleventy.js`, `sidebar.njk` and `footer.njk`.
 
