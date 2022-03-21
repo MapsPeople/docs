@@ -54,7 +54,7 @@ This is the main navigation of the MapsIndoors CMS. The map present will depend 
 
 ### Toolbar
 
-![map-toolbar](/assets/getting-started/cms/map-toolbar.png)
+![map-toolbar](/assets/cms/solution-details/Toolbar.png)
 
 Working left to right, the functionality in this main toolbar is as follows - You can also hover over the icons in the CMS to see their names.
 
@@ -62,13 +62,7 @@ Working left to right, the functionality in this main toolbar is as follows - Yo
 * **Add Area** - Creates an Area by clicking to create corners of a polygon.
 * **Show Network** - A toggle button to show or hide the route network your Directions feature will use.
 * **Add Normal Route Element** - Creates a Route Element on your map - These would usually be used to create "invisible" barriers, by customising the Restrictions for the Route Element, for example, if you do not want your Directions to guide your visitors down a specific hallway, but there isn't a physical door present.
-* **Add Entry Point** - Adds an Entry Point to your map, such as a door.
-* **Add Floor Connector** - Adds a Floor Connector to your map, such as a staircase.
-* **Edit Graph Outline** - Shows the Graph Outline, allowing you manipulate it. Will also automatically show the Route Network.
-* **Show List of Graphs** - Displays a List of Graphs on your Map. Graphs define the different Route Networks at your venue.
-* **Regenerate Route Network** - Click to regenerate your route network, for example if you've added new Entry Points or Floor Connectors.
 * **Reload Route Network** - Reload the Route Network.
-* **Show Satellite Map** - Switches the stylized map out with a satellite image.
 * **Zoom Level** - Adjust the zoom level. Values range from 15 (zoom out) to 22 (zoom in).
 
 ## Solution Details
