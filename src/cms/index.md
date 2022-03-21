@@ -12,13 +12,21 @@ The MapsIndoors Content Management System (CMS) is the platform through which yo
 
 Using the CMS is much less technical than the process of developing an app for Android, iOS or Web, and should be usable by almost anyone, no matter your background - No skills in programming are needed here.
 
-Your data is structured in a hierarchy where the top level is your Solution which can contain multiple Venues, which in turn can have multiple Buildings and so on. The data-types in hierarchical order:
+Your data is structured in a hierarchy where the top level is your Solution which can contain multiple Venues, which in turn can have multiple Buildings and so on. The data-types in hierarchical order, and a short description:
 
-* Solution
-* Venues
-* Buildings
-* Floors
-* Locations (Rooms and Points of Interest)
+* **Solution**
+  * A Solution is the topmost level of your data structure. It encompasses all of the Venues, Building and Locations that you need for your MapsIndoors implementation. It is possible to have more than one solution, but for the mast vajority of use-cases, you will just have one.
+* **Venues**
+  * A Venue is the second level of data. A Venue might consist of only one Building, but it could also consist of several, for example, a university campus might be many Buildings, but it is all considered the same Venue. You can have multiple Venues in one solution, for example, a university might have multiple campuses spread over the city. Each of these could be a Venue, but under the same solution.
+* **Buildings**
+  * A Building is a data type that is a collection of Floors. Buildings are slightly less abstract than Solutions and Venues, as they are just that - a Building, both in real life and in the MapsIndoors terminology.
+* **Floors**
+  * Floors are the levels that exist within a Building. A Building might only have one Floor, but it could also have 50 or more! That entirely depends on the size of the Building in question.
+* **Locations**
+  * Locations can be split into two seperate types - Rooms and Points of Interest (POI's).
+    * A Room is just that, a data point with a defined boundary, often corresponding to the walls of the physical Room. This could be a meeting room, or a bathroom.
+
+    * A POI is a more non-specifc Location, that doesn't necesarily havce a physcially constraining factor such as walls. An example of this could be a water cooler in an office - It's a physical location, but it's not really a Room either. Therefore, it would be created as a POI. Further examples of POI's could be a food truck visiting once a month, or just to designate a general office area.
 
 View the tutorial video below for more information about terminology and hierarchy.
 
@@ -40,6 +48,11 @@ There are several main pages in the CMS, those being "Map", "Solution Details" a
     * **Booking Provider** - Settings for the booking provider you use (if used) for your solution.
     * **Position Provider** - Settings for the position provider you use (if used) for your solution.
     * **Webex** - Settings for your Cisco Webex Integration (if used).
+
+Keep in mind, that there are 2 different roles in the system, that may impact which options you have access to. This documentation will be written from the perspective of an **Admin** level user.
+
+* **Editor** - Editors can create new Locations, make changes to and remove existing Locations
+* **Admin** - Administrators have editor rights and have access to further settings in the CMS
 
 ## Map
 
