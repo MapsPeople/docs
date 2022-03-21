@@ -1,12 +1,28 @@
 ---
-title: Interface Overview
+title: MapsIndoors CMS
 toc: true
 eleventyNavigation:
-  title: Interface Overview
-  key: map-cms-interface
-  parent: map-cms
-  order: 110
+  title: MapsIndoors CMS
+  key: cms
+  parent: index
+  order: 10
 ---
+
+The MapsIndoors Content Management System (CMS) is the platform through which you edit your Maps, Locations, POI's and more.
+
+Using the CMS is much less technical than the process of developing an app for Android, iOS or Web, and should be usable by almost anyone, no matter your background - No skills in programming are needed here.
+
+Your data is structured in a hierarchy where the top level is your Solution which can contain multiple Venues, which in turn can have multiple Buildings and so on. The data-types in hierarchical order:
+
+* Solution
+* Venues
+* Buildings
+* Floors
+* Locations (Rooms and Points of Interest)
+
+View the tutorial video below for more information about terminology and hierarchy.
+
+<iframe width="480" height="300" src="https://www.youtube-nocookie.com/embed/GwyO-Vav8Rs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 There are several main pages in the CMS, those being "Map", "Solution Details" and "Deployment". "Solution Details" and "Deployment have further subpages. The heirachial structure is like this:
 
@@ -52,7 +68,7 @@ This is the main navigation of the MapsIndoors CMS. The map present will depend 
 1. A floor selecter, to select your active Floor.
 1. The main toolbar to modify your Solution.
 
-### Toolbar
+## Toolbar
 
 ![map-toolbar](/assets/cms/solution-details/Toolbar.png)
 
@@ -69,7 +85,7 @@ Working left to right, the functionality in this main toolbar is as follows - Yo
 
 Solution details is the page to handle some of the less-obvious facets of managing your solution, such as organising your locations into "Types" and "Categories", or exporting your map in a resolution suitable for printing.
 
-### Types
+## Types
 
 ![solution-details-types](/assets/cms/solution-details/Solution_Details_Types.png)
 
@@ -85,7 +101,7 @@ This page is for organising the "Types" you sort your locations in to.
 1. The number of Locations in the given Type.
 1. "Edit Template" - Edit the template for a given Type.
 
-### Categories
+## Categories
 
 ![solution-details-categories](/assets/cms/solution-details/Solution_Details_Categories.png)
 
@@ -96,7 +112,7 @@ Categories are similar to Types, but whereas Locations can only be of one Type, 
 1. The name of the Category.
 1. The Key belonging to the Category.
 
-### Type Visibility
+## Type Visibility
 
 ![solution-details-type-visibility](/assets/cms/solution-details/Solution_Details_Type_Visibility.png)
 
@@ -106,7 +122,7 @@ Type Visibility is the term used to determine at which zoom levels both Names an
 1. Hide/Unhide - Click or unclick this if you don't want a specific Type to show up on the map at all.
 1. Set the minimum and maximum zoom level at which a given Type should be visible.
 
-### Buildings
+## Buildings
 
 ![solution-details-buildings](/assets/cms/solution-details/Solution_Details_Buildings.png)
 
@@ -118,7 +134,7 @@ This page provides you with a list of Buildings in your Solution.
 1. The Address of the Building.
 1. Add a new Building.
 
-### Venues
+## Venues
 
 ![solution-details-venues](/assets/cms/solution-details/Solution_Details_Venues.png)
 
@@ -128,7 +144,7 @@ A page featuring a list of Venues in your Solution. These are provided by MapsIn
 1. The Name of your Venues.
 1. The Venue ID of your Venue.
 
-### Export Map
+## Export Map
 
 ![solution-details-export-map](/assets/cms/solution-details/Solution_Details_Export_Map.png)
 
@@ -144,11 +160,11 @@ The MapsIndoors CMS also provides the opportunity to export your Map to a higher
 1. Zoom in or out.
 1. Floor selector, to select which floor will be exported.
 
-### App Settings
+## App Settings
 
 This page contains various subpages with more advanced settings about your app.
 
-#### App Configuration
+### App Configuration
 
 This page contains various settings, such as more memorable names for your API keys, App User Roles and App Categories.
 
@@ -183,7 +199,7 @@ Here you can select which categories can be used for browsing the app.
 1. The icon selected for the Category.
 1. Select an icon to be used for the Category.
 
-#### API Keys
+### API Keys
 
 ![solution-details-api-keys](/assets/cms/solution-details/Solution_Details_API_Keys.png)
 
@@ -197,7 +213,7 @@ Here you manage the active API Keys generated for your Solution.
 1. Your API key is located here in text form.
 1. Delete the API key.
 
-#### Position Provider
+### Position Provider
 
 ![solution-details-position-provider](/assets/cms/solution-details/Solution_Details_Position_Provider.png)
 

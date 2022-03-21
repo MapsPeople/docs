@@ -3,7 +3,7 @@ title: CMS Dashboard
 eleventyNavigation:
   key: map-cms-dashboard-legacy
   title: CMS Dashboard
-  parent: map-cms-legacy
+  parent: 
   order: 1001
 ---
 
