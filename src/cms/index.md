@@ -58,13 +58,12 @@ Keep in mind, that there are 2 different roles in the system, that may impact wh
 
 This is the main navigation of the MapsIndoors CMS. The map present will depend on the map you have uploaded in your Solution, but the overlay will remain the same.
 
-![navigation-overview](/assets/getting-started/cms/navigation-overview.png)
+![map-main](/assets/cms/map/Map_Main.png)
 
 1. A button to return you to the main menu.
 1. Select the active Solution.
 1. Enter the "Map" view (the currently active one in the screenshot).
 1. Enter the "Solution Details" menu.
-1. Enter the "Deployment" menu.
 1. View a sample Web App using the information entered in the CMS.
 1. Enter the "Settings Menu".
 1. Open a drop-down menu containing options such as "Docs" and "Log Out".
@@ -83,7 +82,7 @@ This is the main navigation of the MapsIndoors CMS. The map present will depend 
 
 ## Toolbar
 
-![map-toolbar](/assets/cms/solution-details/Toolbar.png)
+![map-toolbar](/assets/cms/map/Map_Toolbar.png)
 
 Working left to right, the functionality in this main toolbar is as follows - You can also hover over the icons in the CMS to see their names.
 
@@ -226,14 +225,14 @@ Here you manage the active API Keys generated for your Solution.
 1. Your API key is located here in text form.
 1. Delete the API key.
 
+### Booking Provider
+
+This submenu presents you the option of integrating a Booking system to your solution. The exact menus presented here depend on which provider you opt for.
+
 ### Position Provider
 
-![solution-details-position-provider](/assets/cms/solution-details/Solution_Details_Position_Provider.png)
+MapsIndoors also provides you the option of integrating a Positioning system to your solution. The exact menus presented here, like the Booking system, depend on which provider you opt for.
 
-MapsIndoors also provides the option for integrating your solution with a positioning provider such as IndoorAtlas.
+### Webex
 
-1. Select your positioning provider from the ones you have set up.
-1. Enter the informations required by your desired provider - In the case of IndoorAtlas, that is Key, Secret and Priority.
-1. Add another floor to your provider.
-1. Save your settings.
-1. Delete your settings.
+As the options above, the options presented for WebEx integration depends on the exact manner of integration.
