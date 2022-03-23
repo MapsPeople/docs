@@ -54,7 +54,9 @@ Keep in mind, that there are 2 different roles in the system, that may impact wh
 * **Editor** - Editors can create new Locations, make changes to and remove existing Locations
 * **Admin** - Administrators have editor rights and have access to further settings in the CMS
 
-## Map
+## Interface Overview
+
+### Map
 
 This is the main navigation of the MapsIndoors CMS. The map present will depend on the map you have uploaded in your Solution, but the overlay will remain the same.
 
@@ -80,7 +82,7 @@ This is the main navigation of the MapsIndoors CMS. The map present will depend 
 1. A floor selecter, to select your active Floor.
 1. The main toolbar to modify your Solution.
 
-## Toolbar
+#### Toolbar
 
 ![map-toolbar](/assets/cms/map/Map_Toolbar.png)
 
@@ -93,11 +95,11 @@ Working left to right, the functionality in this main toolbar is as follows - Yo
 * **Reload Route Network** - Reload the Route Network.
 * **Zoom Level** - Adjust the zoom level. Values range from 15 (zoom out) to 22 (zoom in).
 
-## Solution Details
+### Solution Details
 
 Solution details is the page to handle some of the less-obvious facets of managing your solution, such as organising your locations into "Types" and "Categories", or exporting your map in a resolution suitable for printing.
 
-## Types
+#### Types
 
 ![solution-details-types](/assets/cms/solution-details/Solution_Details_Types.png)
 
@@ -113,7 +115,7 @@ This page is for organising the "Types" you sort your locations in to.
 1. The number of Locations in the given Type.
 1. "Edit Template" - Edit the template for a given Type.
 
-## Categories
+#### Categories
 
 ![solution-details-categories](/assets/cms/solution-details/Solution_Details_Categories.png)
 
@@ -124,7 +126,7 @@ Categories are similar to Types, but whereas Locations can only be of one Type, 
 1. The name of the Category.
 1. The Key belonging to the Category.
 
-## Type Visibility
+#### Type Visibility
 
 ![solution-details-type-visibility](/assets/cms/solution-details/Solution_Details_Type_Visibility.png)
 
@@ -134,7 +136,7 @@ Type Visibility is the term used to determine at which zoom levels both Names an
 1. Hide/Unhide - Click or unclick this if you don't want a specific Type to show up on the map at all.
 1. Set the minimum and maximum zoom level at which a given Type should be visible.
 
-## Buildings
+#### Buildings
 
 ![solution-details-buildings](/assets/cms/solution-details/Solution_Details_Buildings.png)
 
@@ -146,7 +148,7 @@ This page provides you with a list of Buildings in your Solution.
 1. The Address of the Building.
 1. Add a new Building.
 
-## Venues
+#### Venues
 
 ![solution-details-venues](/assets/cms/solution-details/Solution_Details_Venues.png)
 
@@ -156,7 +158,7 @@ A page featuring a list of Venues in your Solution. These are provided by MapsIn
 1. The Name of your Venues.
 1. The Venue ID of your Venue.
 
-## Export Map
+#### Export Map
 
 ![solution-details-export-map](/assets/cms/solution-details/Solution_Details_Export_Map.png)
 
@@ -172,11 +174,11 @@ The MapsIndoors CMS also provides the opportunity to export your Map to a higher
 1. Zoom in or out.
 1. Floor selector, to select which floor will be exported.
 
-## App Settings
+#### App Settings
 
 This page contains various subpages with more advanced settings about your app.
 
-### App Configuration
+##### App Configuration
 
 This page contains various settings, such as more memorable names for your API keys, App User Roles and App Categories.
 
@@ -211,7 +213,7 @@ Here you can select which categories can be used for browsing the app.
 1. The icon selected for the Category.
 1. Select an icon to be used for the Category.
 
-### API Keys
+##### API Keys
 
 ![solution-details-api-keys](/assets/cms/solution-details/Solution_Details_API_Keys.png)
 
@@ -225,14 +227,37 @@ Here you manage the active API Keys generated for your Solution.
 1. Your API key is located here in text form.
 1. Delete the API key.
 
-### Booking Provider
+##### Booking Provider
 
 This submenu presents you the option of integrating a Booking system to your solution. The exact menus presented here depend on which provider you opt for.
 
-### Position Provider
+##### Position Provider
 
 MapsIndoors also provides you the option of integrating a Positioning system to your solution. The exact menus presented here, like the Booking system, depend on which provider you opt for.
 
-### Webex
+##### Webex
 
 As the options above, the options presented for WebEx integration depends on the exact manner of integration.
+
+## Editing Data
+
+### Location
+
+Each Location also has a certain number of settings associated with it. If you select a Location on the CMS, you will be presented with a sidebar-menu with the following options:
+
+* **Type** - If your Location belongs to and already defined Type, you can set that here. This ensures that you only have to fill out a minimum of data, as much of the following data will be fillin in automatically based on the Type.
+* **Name & Description** - Type in the name of your Location, and a Description. Entering it in the default language is mandatory, but you also have options to enter it in alternative languages.
+* **Area** - Choose the colour of the Area the Location covers. You can also set whether the Area is visible or not.
+* **Status** - Toggle whether or not this Location appears in searches.
+* **Restrictions** - Determine which, if any, App User Role Restrictions this Location should be subject to.
+* **Categories** - Add which, if any, Categories this Location belongs to.
+* **Location Icon** - If not part of a Type, you can set an Icon to be used on the map for this Location.
+* **Image Options** - Here you have the option to connect an image to a location.
+* **Search Aliases** - Other search terms that can be searched, and still return this location, even if it is not a match to the Name, Type or Category.
+* **Venue Details** - Select which Building and Floor this Location should belong to.
+* **External ID** - You can define an External ID that a Location should use alongside its internal ID.
+* **Coordinates** - The coordinates of your Location.
+* **MapsIndoors Location ID** - The internal ID of your location.
+* **Active** - If your Location is only displayed and searchable for a given time period, you can define that here.
+* **Custom Properties** - MapsIndoors supports Custom Properties, defined by key-value pairs.
+* **Location History** - See the editing history of this Location.
