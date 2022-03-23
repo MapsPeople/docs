@@ -2,123 +2,271 @@
 title: MapsIndoors CMS
 toc: true
 eleventyNavigation:
-  key: MapsIndoors CMS
+  title: MapsIndoors CMS
+  key: cms
   parent: index
-  order: 30
+  order: 10
 ---
 
-## Introduction
+The MapsIndoors Content Management System (CMS) is the platform through which you edit your Maps, Locations, POI's and more.
 
-The MapsIndoors Content Management System (CMS) allows you to maintain your data within the MapsIndoors platform.
+Using the CMS is much less technical than the process of developing an app for Android, iOS or Web, and should be usable by almost anyone, no matter your background - No skills in programming are needed here.
 
-Data is structured in a hierarchy where the top level is your Solution which can contain multiple Venues, which in turn can have multiple Buildings and so on. The data-types in hierarchical order:
+Your data is structured in a hierarchy where the top level is your Solution which can contain multiple Venues, which in turn can have multiple Buildings and so on. The data-types in hierarchical order, and a short description:
 
-* Solution
-* Venues
-* Buildings
-* Floors
-* Locations (rooms and points of interest)
+* **Solution**
+  * A Solution is the topmost level of your data structure. It encompasses all of the Venues, Building and Locations that you need for your MapsIndoors implementation. It is possible to have more than one solution, but for the mast vajority of use-cases, you will just have one.
+* **Venues**
+  * A Venue is the second level of data. A Venue might consist of only one Building, but it could also consist of several, for example, a university campus might be many Buildings, but it is all considered the same Venue. You can have multiple Venues in one solution, for example, a university might have multiple campuses spread over the city. Each of these could be a Venue, but under the same solution.
+* **Buildings**
+  * A Building is a data type that is a collection of Floors. Buildings are slightly less abstract than Solutions and Venues, as they are just that - a Building, both in real life and in the MapsIndoors terminology.
+* **Floors**
+  * Floors are the levels that exist within a Building. A Building might only have one Floor, but it could also have 50 or more! That entirely depends on the size of the Building in question.
+* **Locations**
+  * Locations can be split into two seperate types - Rooms and Points of Interest (POI's).
+    * A Room is just that, a data point with a defined boundary, often corresponding to the walls of the physical Room. This could be a meeting room, or a bathroom.
+
+    * A POI is a more non-specifc Location, that doesn't necesarily havce a physcially constraining factor such as walls. An example of this could be a water cooler in an office - It's a physical location, but it's not really a Room either. Therefore, it would be created as a POI. Further examples of POI's could be a food truck visiting once a month, or just to designate a general office area.
 
 View the tutorial video below for more information about terminology and hierarchy.
 
 <iframe width="480" height="300" src="https://www.youtube-nocookie.com/embed/GwyO-Vav8Rs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-Although a point of interest can be placed within a room, it is not required. Points of interest can also be placed "outside” on the ground level which is also the layer where the Google map exists. In this case the POI belongs to the Venue directly.
+There are several main pages in the CMS, those being "Map", "Solution Details" and "Deployment". "Solution Details" and "Deployment have further subpages. The heirachial structure is like this:
 
-## Navigating the CMS
+* **Map** - The main page, this is where you manage your map.
+* **Solution Details** - A "behind-the-scenes" page, where you administrate things such as categories, types, visibility, etc.
+  * **Types** - Define "types" of location, such as "Canteen", "Bathroom", etc.
+  * **Categories** - Similar to types, but in a broader sense - The types "Male Bathroom" and "Female Bathroom" might both belong to the category "Toilets".
+  * **Type Visibility** - Define the zoom levels for which each type will appear on the map.
+  * **Buildings** - A list of the buildings present in your venue.
+  * **Venues** - A list of venues present in your solution.
+  * **Export Map** - Generates a high-resolution image of your map, suitable for, for example, printing.
+  * **App Settings** - A page of various settings concerning your app.
+    * **App Configuration** - Settings to configure your app.
+    * **API Keys** - API Keys used by your solution.
+    * **Booking Provider** - Settings for the booking provider you use (if used) for your solution.
+    * **Position Provider** - Settings for the position provider you use (if used) for your solution.
+    * **Webex** - Settings for your Cisco Webex Integration (if used).
 
-The panel on the left lets you navigate the CMS.
-
-There are 2 different roles in the system:
+Keep in mind, that there are 2 different roles in the system, that may impact which options you have access to. This documentation will be written from the perspective of an **Admin** level user.
 
 * **Editor** - Editors can create new Locations, make changes to and remove existing Locations
-* **Admin** - Administrators have editor rights and have access to icon settings and users
+* **Admin** - Administrators have editor rights and have access to further settings in the CMS
 
-View the tutorial video below for more information about the menu structure and user roles.
+## Interface Overview
 
-<iframe width="480" height="300" src="https://www.youtube-nocookie.com/embed/HpghIH5IKgk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+### Map
 
-## The Map
+This is the main navigation of the MapsIndoors CMS. The map present will depend on the map you have uploaded in your Solution, but the overlay will remain the same.
 
-After logging in, the map will appear.
+![map-main](/assets/cms/interface-overview/Map_Main.png)
 
-![MapsIndoors CMS]({{ site.url }}/assets/cms/map-overview.png)
+1. A button to return you to the main menu.
+1. Select the active Solution.
+1. Enter the "Map" view (the currently active one in the screenshot).
+1. Enter the "Solution Details" menu.
+1. View a sample Web App using the information entered in the CMS.
+1. Enter the "Settings Menu".
+1. Open a drop-down menu containing options such as "Docs" and "Log Out".
+1. Select the active Venue.
+1. Select the active Building.
+1. Select the active Floor.
+1. A filter to narrow down what to display, such as only displaying POI's, or only displaying Rooms.
+1. A filter to narrow down what to display, based on predefined or custom types.
+1. A filter to narrow down what to display, based on predefined or custom categories.
+1. A filter to narrow down what to display, based on App User Role restrictions.
+1. Click to search based on your defined parameters.
+1. Open the editing menu for the Location you have selected.
+1. Open a list containing all your Locations.
+1. A floor selecter, to select your active Floor.
+1. The main toolbar to modify your Solution.
 
-There are a number of key elements:
+#### Toolbar
 
-1. **Solution Name:** This is the name of your Solution. It's possible to have access to several Solutions.
-1. **Venue:** This is the name of your Venue. It's possible to have several Venues.
-1. **Map**
-   * **Locations:** Manage rooms and POIs
-   * **Categories:** Create, edit, and delete Categories
-   * **Location Types:** Create, edit, and delete Location Types
-   * **Type Visibility:** Manage icon and label visibility
-   * **Buildings:** Manage Building name, address, and floor names
-   * **Venue:** Manage Venue name and default floor
-   * **Route Access:** Manage route access and parking lots
-1. **App Settings**
-   * **App Configuration:** Manage App Title and Alias, App User Roles, and Category visibility
-   * **API Keys:** Create, edit, or delete API Keys
-1. **Administration**
-   * **Users:** Create, edit, or delete CMS Users
-   * **Logs:** Filter and download CMS logs
-1. **Current User**
-1. **List View:** A list of Locations in the currently selected Venue
-1. **Filter**
-   * **Type:** Dropdown to select Locations of a specific Location Type to show on the map or in the List View
-   * **Category:** Dropdown to select Locations of a specific Category to show on the map or in the List View
-   * **Search:** Search for Locations
-1. **Selected Building**
-1. **Zoom Level:** Indicates which zoom level you are viewing
-1. **Floor selector**
-1. **Zoom In/Zoom Out**
-1. **POI:** Click on this icon to add a POI anywhere on the map
+![map-toolbar](/assets/cms/interface-overview/Map_Toolbar.png)
 
-## Locations
+Working left to right, the functionality in this main toolbar is as follows - You can also hover over the icons in the CMS to see their names.
 
-When Locations is selected, you see the map with all the icons that determine the Location Type.
+* **Add POI** - Creates a Point of Interest where you click, and opens the configuration menu to add information to it.
+* **Add Area** - Creates an Area by clicking to create corners of a polygon.
+* **Show Network** - A toggle button to show or hide the route network your Directions feature will use.
+* **Add Normal Route Element** - Creates a Route Element on your map - These would usually be used to create "invisible" barriers, by customising the Restrictions for the Route Element, for example, if you do not want your Directions to guide your visitors down a specific hallway, but there isn't a physical door present.
+* **Reload Route Network** - Reload the Route Network.
+* **Zoom Level** - Adjust the zoom level. Values range from 15 (zoom out) to 22 (zoom in).
 
-To create a new POI, first make it clear if this is an outdoor POI or placed inside a Building. If inside a Building, select the desired Building from the drop down menu. Click on the POI icon in the bottom right corner, then click on the map where it should be added. The placement doesn't have to be 100% precise, it can be moved afterwards.
+### Solution Details
 
-![New Location]({{ site.url }}/assets/cms/locations/locations-newpoi.png)
+Solution details is the page to handle some of the less-obvious facets of managing your solution, such as organising your locations into "Types" and "Categories", or exporting your map in a resolution suitable for printing.
 
-After clicking on the box, you will be asked to select a Location Type and Name. The other choices; Description, Categories, Icon are optional.
+#### Types
 
-Select the icon on the map for the Location that you wish to edit, or click on Locations in the main navigation and then choose "View List”. From there you can choose which Location you would like to edit by clicking on the pencil icon.
+![solution-details-types](/assets/cms/interface-overview/Solution_Details_Types.png)
 
-View the tutorial video below for more information about managing POIs.
+This page is for organising the "Types" you sort your locations in to.
 
-<iframe width="480" height="300" src="https://www.youtube-nocookie.com/embed/YjvmpkZ4Rdg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+1. Create a new Type.
+1. Click to select a Type, for easy selection of multiple Types at once.
+1. "Edit Type" - Gives you the option to change the name of the type, or to modify the App User Role restrictions.
+1. "Edit Display Settings" - The ability to modify the Display Settings for a given type - See more detailed information on Display Settings here.
+1. The name of the Type.
+1. The icon assigned to the Type.
+1. Displays how the Label is displayed on your map - Usually either Location name, or not displayed at all.
+1. The number of Locations in the given Type.
+1. "Edit Template" - Edit the template for a given Type.
 
-In the Edit Location Form you can do the following:
+#### Categories
 
-### Location Type
+![solution-details-categories](/assets/cms/interface-overview/Solution_Details_Categories.png)
 
-This can be changed by clicking the drop down menu with Location Types.
+Categories are similar to Types, but whereas Locations can only be of one Type, they can be of multiple Categories, and would usually be used as a form of "tags" when searching - For example, a canteen might be in a Category of both "Food" and "Leisure", but still only be of the Type "Canteen".
 
-### Name
+1. Create a new Category.
+1. "Edit Category" - Edit properties of your Category.
+1. The name of the Category.
+1. The Key belonging to the Category.
 
-Enter a new name for the Location. You can also add another language.
+#### Type Visibility
 
-### Description
+![solution-details-type-visibility](/assets/cms/interface-overview/Solution_Details_Type_Visibility.png)
 
-Provide a description of the Location.
+Type Visibility is the term used to determine at which zoom levels both Names and Labels are visible, determined per Type.
 
-There is an option to add more information for this Location. This can be done by clicking on Location Type templates in the main navigation. From there you can add specific fields to a Location Type, those fields will then appear in the Location form.
+1. A save button, click this to save your changes.
+1. Hide/Unhide - Click or unclick this if you don't want a specific Type to show up on the map at all.
+1. Set the minimum and maximum zoom level at which a given Type should be visible.
 
-### Categories
+#### Buildings
 
-Add or remove Categories the Location belongs to.
+![solution-details-buildings](/assets/cms/interface-overview/Solution_Details_Buildings.png)
 
-### Icon Settings
+This page provides you with a list of Buildings in your Solution.
 
-Change the Icon associated with the Location. See "[Managing Icons](#managing-icons)" for more information.
+1. "Edit Building" - Let's you edit the properties of the Building, such as name, ID and Floors.
+1. The Name of the Building.
+1. The Administrative ID of the Building.
+1. The Address of the Building.
+1. Add a new Building.
 
-### Image
+#### Venues
 
-Take a photo of your Location and upload it here. Photos on Locations makes it easier for your users to find a location in the real world.
+![solution-details-venues](/assets/cms/interface-overview/Solution_Details_Venues.png)
 
-### Image with IndoorView
+A page featuring a list of Venues in your Solution. These are provided by MapsIndoors, too add more, contact your representative.
+
+1. "Edit Venue" - You do still have limited editing options, despite Venues being controlled by MapsIndoors.
+1. The Name of your Venues.
+1. The Venue ID of your Venue.
+
+#### Export Map
+
+![solution-details-export-map](/assets/cms/interface-overview/Solution_Details_Export_Map.png)
+
+The MapsIndoors CMS also provides the opportunity to export your Map to a higher resolution, for example, if you want to print your map to physically hang at your location.
+
+1. Open the Display Settings for the Map - NOTE: This is not the same as the Display Settings in the other sections.
+1. Set the use-case, this helps determine the resolution the map will be exported in.
+1. The Width of the exported map.
+1. The Height of the exported map.
+1. The Rotation angle of the exported map.
+1. The Building you are exporting a map of.
+1. The currently used Zoom Level.
+1. Zoom in or out.
+1. Floor selector, to select which floor will be exported.
+
+#### App Settings
+
+This page contains various subpages with more advanced settings about your app.
+
+##### App Configuration
+
+This page contains various settings, such as more memorable names for your API keys, App User Roles and App Categories.
+
+![solution-details-app-title](/assets/cms/interface-overview/Solution_Details_App_Title.png)
+
+Here you can change the title of your app.
+
+1. Save the changes you've made.
+1. Enter the name you wish to use.
+
+![solution-details-alias](/assets/cms/interface-overview/Solution_Details_Alias.PNG)
+
+The API Keys used to make your MapsIndoors solution consist of random combinations of letters and numbers. Here, you can assign them an alias to make it easier to remember for a person.
+
+NOTE: Do not set an Alias if you want to make it more difficult to find and load your MapsIndoors data in a standard app. In that case, you can only load the data with an API key.
+
+![solution-details-app-user-roles](/assets/cms/interface-overview/Solution_Details_App_User_Roles.PNG)
+
+You can also modify your App User Roles from within these pages.
+
+1. "Edit Role" - Edit settings pertaining to one specific App User Role.
+1. The names of your App User Roles.
+1. "Add App User Role" - Create a new App User Role.
+
+![solution-details-app-categories](/assets/cms/interface-overview/Solution_Details_App_Categories.png)
+
+Here you can select which categories can be used for browsing the app.
+
+1. Move your app categories up and down in order.
+1. The name of the Category.
+1. Toggle whether or not the Category in question is visible in the app.
+1. The icon selected for the Category.
+1. Select an icon to be used for the Category.
+
+##### API Keys
+
+![solution-details-api-keys](/assets/cms/interface-overview/Solution_Details_API_Keys.png)
+
+Here you manage the active API Keys generated for your Solution. To load your MapsIndoors data in your apps, you need an API key.
+
+You can create as many API keys as you want, and it is good practise to use one for each place you need to load data from MapsIndoors (each mobile platform, web app etc.).
+
+You can easily delete an API key if it is unused, or has been compromised in some way.
+
+1. The name that you want to use to identify the new API key.
+1. Generate API key.
+1. The name of an active API key.
+1. Save any changes you make.
+1. Toggle between active and inactive API keys.
+1. Your API key is located here in text form.
+1. Delete the API key.
+
+##### Booking Provider
+
+This submenu presents you the option of integrating a Booking system to your solution. The exact menus presented here depend on which provider you opt for.
+
+##### Position Provider
+
+MapsIndoors also provides you the option of integrating a Positioning system to your solution. The exact menus presented here, like the Booking system, depend on which provider you opt for.
+
+##### Webex
+
+As the options above, the options presented for WebEx integration depends on the exact manner of integration.
+
+## Editing Data
+
+### Location
+
+Each Location also has a certain number of settings associated with it. If you select a Location on the CMS, you will be presented with a sidebar-menu with the following options:
+
+* **Type** - If your Location belongs to and already defined Type, you can set that here. This ensures that you only have to fill out a minimum of data, as much of the following data will be fillin in automatically based on the Type.
+* **Name & Description** - Type in the name of your Location, and a Description. Entering it in the default language is mandatory, but you also have options to enter it in alternative languages.
+* **Area** - Choose the colour of the Area the Location covers. You can also set whether the Area is visible or not.
+* **Status** - Toggle whether or not this Location appears in searches.
+* **Restrictions** - Determine which, if any, App User Role Restrictions this Location should be subject to.
+* **Categories** - Add which, if any, Categories this Location belongs to.
+* **Location Icon** - If not part of a Type, you can set an Icon to be used on the map for this Location.
+* **Image Options** - Here you have the option to connect an image to a location. See below for further details.
+* **Search Aliases** - Other search terms that can be searched, and still return this location, even if it is not a match to the Name, Type or Category.
+* **Venue Details** - Select which Building and Floor this Location should belong to.
+* **External ID** - You can define an External ID that a Location should use alongside its internal ID.
+* **Coordinates** - The coordinates of your Location.
+* **MapsIndoors Location ID** - The internal ID of your location.
+* **Active** - If your Location is only displayed and searchable for a given time period, you can define that here.
+* **Custom Properties** - MapsIndoors supports Custom Properties, defined by key-value pairs.
+* **Location History** - See the editing history of this Location.
+
+#### Image Options with IndoorView
 
 > IndoorView is only supported for web
 
@@ -131,7 +279,7 @@ To get started using the IndoorView feature for your Locations, please make sure
 1. Navigate Street View and find an image and viewing angle that is suitable
 1. Click "Set image”
 
-#### Mapsindoors Support Matrix
+##### Mapsindoors Support Matrix
 
 | MapsIndoors | Support for IndoorView                                             | Private hosted panorama images |
 | ----------- | ------------------------------------------------------------------ | ------------------------------ |
@@ -189,245 +337,7 @@ function initStreetView(streetViewConfig) {
 
 Please see the official [Google Street View Service documentation](https://developers.google.com/maps/documentation/javascript/streetview) for more information.
 
-### Under "Show advanced"
-
-* **Alias:** Add alternative search phrases, for example a restaurant might have aliases of café, dinner, food, lunch etc. Insert a comma between each phrase.
-
-* **Venue Details:** Change Building and or floor.
-
-* **External ID:** This can be edited. See "[ExternalID](https://docs.mapsindoors.com/external-id/)" for more information.
-
-* **"Active to and from":** If required, select a time period during which the Location will be active. "Active" in this case means it is visible on the map, and shows up in search results. Leave the date fields empty if the Location should always be displayed
-
-* **Location History:** Contains a list of all changes made to a Location. Data comes from the MapsIndoors Audit Log functionality.
-
-* **Save changes**
-
-Remember to save before clicking on another Location or changing the page, otherwise your changes will be lost. To save the changes, press "Save”-button in the top of the Location edit form.
-
-![Locations]({{ site.url }}/assets/cms/locations/locations-listview.png)
-
-To view a list of all Locations in a certain Venue, select ‘List View”.
-
-* To sort the data, click on the column title
-* To edit a Location, click the pencil
-* To edit multiple Locations, tick each one
-* To filter, click on the top right options: Type, Category, or Floor. You can also use the search box for a specific Location
-
-When selecting one a more Locations using the checkboxes, 2 options will appear: Edit Locations or Delete Locations.
-
-* **Change type:** Opens a drop down menu to choose new Location Type
-
-* **Location:** Allows you to change the floor of the Locations
-
-* **"Active to and from":** If required, select a time period during which the Location will be active. "Active" in this case means it is visible on the map, and shows up in search results. Leave the date fields empty if the Location should always be displayed
-
-Remember to save before clicking on another Location or changing the page, otherwise your changes will be lost. To save the changes, click "Save”.
-
-## Export Map
-
-Export Map is an add-on feature that can be enabled for a Solution. Once enabled, it allows for PNG export of the MapsIndoors imagery for printing purposes. The export will not include the underlying Google Maps due to terms of use.
-
-The Export Map service has a limit of 8000 x 8000 pixels. Clicking the Download icon button on the bottom right opens a new tab with the PNG.
-
-### Usage (Scale)
-
-Sets the scale of the export imagery.
-
-* Web (1) will export the same pixel size as selected on-screen.
-* Retina (2) will export two times the pixels.
-* Print (4) will export four times the pixels.
-
-### Display Settings
-
-Allows toggling visible features on the exported map, such as Icons, Location Types, and Labels.
-
-You can also rotate the map and set the size of the screen selection. The max is 2000 x 2000.
-
-### Preview
-
-Preview is especially helpful when using rotation or larger-than-monitor exports.
-
-## Venue
-
-* Edit the Venue name in the available languages
-* Choose a default floor
-
-_A note about Venue images:_ You can request MapsPeople to add an image of the Venue. It should be in a 600w x 300h size to make it look its best in our Standard Apps.
-
-## Buildings
-
-### Adding a Building
-
-* Click on the "Add building" button at the top-right of the page and a popup window should appear.
-* Type a building name, search for the building address by typing in the search field or panning the map.
-* Place the red cross on the map at the center of the building's location.
-* Click "Add" and the popup window should close.
-* The building should now appear in the list.
-
-### Editing a Building
-
-* Click on the pencil icon to the left of the Building name. A new menu will appear
-* Edit Building name in the available languages
-* Edit floor names
-* Select a default floor under "Show advanced"
-
-The Building's default Floor is used to manage panning across Buildings in the apps. In order to improve the user experience in the apps, the default Floor is used when the Building panned to doesn't have the floor index of the floor selector.
-
-## Routes Access
-
-![Routes]({{ site.url }}/assets/cms/route-access/route-access.png)
-
-The Route Access tab allows you to manipulate the network that powers the indoor navigation. It is useful for redirecting traffic by locking paths or isolating entire areas where navigation should be turned off entirely.
-
-To create a parking lot:
-
-* Click on "+ P" in the top right corner. If it is not enabled, zoom in higher than 17.
-* The mouse cursor will change to a "+". Click on the map where you want to add the parking lot and a popup window will appear.
-* Select a type: Car or Bike.
-* Enter a name and click "Save"
-
-To restrict access to a path:
-
-* Click on the path and a popup window will appear.
-* Choose between "Open for all", "Open for specific app user roles", "Closed for all".
-* When Open for specific app user roles is chosen, a list of app user roles will appear and you can select which roles will be given access.
-* Set a delay and click "Save".
-
-## Location Types
-
-![Location Types]({{ site.url }}/assets/cms/location-types/location-types.png)
-
-This is a list of all the Location Types in the Solution. From this list you can edit each Location by clicking on the pencil.
-
-### Syncing Types to Other Solutions
-
-If you have multiple Solutions, you can update Location Types across multiple Solutions to keep them up to date with the latest changes.
-
-Click the "Sync to other Solutions"-button to select which of your other Solutions you want to sync this Location Type to.
-
-When you sync a Location Type, if the Location Type exists in the target Solution, you override the Location Type in the target Solution. If the Location Type does not exist in the target Solution, it is added.
-
-### View Settings
-
-The *View settings* can be set for each Location Type. Use the settings to define how and when the icon and/or label is displayed on the map, and what is shown in the label.
-
-![View Settings]({{ site.url }}/assets/cms/location-types/view-settings.png)
-
-#### Location Type Templates
-
-You can add custom data fields to Locations by adding templates to a Location Type defining the data fields. All Locations of a Type will inherit the templates defined for the Type. Add a template to a Location Type by clicking the template button to the right in the table.
-
-To display or otherwise use the custom data, your app needs to be customized. The properties are not available in the Standard app, only when building one using the SDK.
-
-View the tutorial video below for more information about Location Types.
-
-<iframe width="480" height="300" src="https://www.youtube-nocookie.com/embed/WJIZUBsObU4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-## Categories
-
-![Categories]({{ site.url }}/assets/cms/categories/categories.png)
-
-Ability to add new categories to the list. Click on New Category, add name, click save. Once created, this Category can be added to a specific Location. The categories can be chosen to be displayed in the app, as well as put in a specific order (this can be done under App Configuration in App Settings).
-
-View the tutorial video below for more information about Categories.
-
-<iframe width="480" height="300" src="https://www.youtube-nocookie.com/embed/DskwwAE4lLE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-### Syncing Categories to Other Solutions
-
-If you have multiple Solutions, you can update Categories across multiple Solutions to keep them up to date with the latest changes.
-
-Click the "Sync to other Solutions"-button to select which of your other Solutions you want to sync this Category to.
-
-When you sync a Category, if the Category exists in the target Solution, you override the Category in the target Solution. If the Category does not exist in the target Solution, it is added.
-
-Categories have icons, and the icon for the Category is synced to the target Solution as well, creating it if it does not exist already.
-
-## App Settings
-
-### API Keys
-
-To load your MapsIndoors data in your apps, you need an API key.
-
-You can create as many API keys as you want, and it's good practise to use one for each place you need to load data from MapsIndoors (each mobile platform, web app etc.).
-
-You can easily delete an API key if it is unused, or has been compromised in some way.
-
-Previously, you could use a `SolutionID` to load your data, but this is no longer supported. Only API keys is supported for loading data from your Solution.
-
-### App User Roles
-
-* Click on "+ Add App User Roles" and a popup window will appear.
-* Enter the role name in all the languages. It's mandatory.
-* Click "Save" and the entered name should appear in the table.
-
-### App Categories
-
-Clicking on the arrows to the left of the Category name allows you to change the order. This Category order will be reflected in the apps. You can also choose an icon to be displayed next to the category name.
-
-## Type Visibility
-
-Use these settings to control how Icons are shown on the map.
-
-**Zoom Level:** This can be edited by moving the dot on the line. The icon will appear in the chosen zoom level. The ability to click/select a Location on the map is also based on the Location's Type visibility.
-
-**Visible:** By clicking the eye, this will remove the icon from appearing in the Solution
-
-## Users
-
-Allows Admins, to control who has access and what roles they have, or create new users.
-
-A list appears with all users for the Solution. You can also search for an email via the search box in the upper right.
-
-**Editing a user:** Click on the pencil to the left of the email. The user can be deleted, changed role or added to a Solution. Click Save.
-
-**New user:** Click on new user bottom at top. Enter email, choose Editor or Administrator, and assign the appropriate Solution. Click Create.
-
-## Logs
-
-The Audit Log functionality is a configurable feature in MapsIndoors and if not enabled on your Solution it can be on request.
-
-The Audit Log feature can be used to access the Audit log on MapsIndoor data objects, i.e. you can find or inspect the change history.
-
-The Log functionality is found in the Logs tab under Administration in the CMS.
-
-![Audit log]({{ site.url }}/assets/cms/administration/logs.png)
-
-The Log can be filtered on date, ID, User and Data object types. When pressing download a comma separated file (csv) will be stored on your computer's hard drive.
-
-The log will be in CSV format, which can be opened by a spreadsheet program eg. Excel. Each log entry represents a modification in the data. In short, each entry tells at what time who did what to which object.
-
-The headers represented are:
-Time, User, Action, ObjectType, ObjectId and ObjectData
-
-* **Time:** Tells which user did the change (The email representing the user logged in to the system)
-* **Action:** Tells what happened:
-  * If data was added, the 'Action' will be set to 'Created'
-  * If data was changed, the 'Action' will be set to 'Changed'
-  * If data was deleted, the 'Action' will be set to 'Deleted'
-* **ObjectType:** Tells what type of data was modified (eg. ‘building', ‘location', ‘user', ‘graphdata' ... )
-* **ObjectId:** Is a unique ID that represents the given data - Building, Location or whatever it is.
-If you want to see a history of that specific Location this ID can be used to filter by
-* **ObjectData:** Is a JSON formatted representation of the actual data stored in the MapsIndoors system. To see what changed you can compare this data to the previous change.
-
-Examples of use cases could be:
-
-* **How to do I get Network history?** Filter the ObjectType to ‘graphdata' to see these entries. To find a particular user history, filter ‘User' to their email as well.
-* **How to do I get Categories history?** Filter the ObjectType to ‘category' to see these entries. To find a particular data history, filter ‘User' to their email as well.
-* **How to do I get Location Type/type template/visibility history?** Filter the ObjectType to ‘locationtype' to see these entries. To find a particular data history, filter ‘User' to their email as well. The type template is covered in the "LocationTypeField” section of the data. The visibility is covered in the "displayrule” section of the data
-* **How to find user login activity?** When a user logs in, the corresponding user object will be changed too (the ‘last login field will be updated'). Filter the ObjectType to ‘user' to see login entries. To find a particular user login history, filter ‘User' to their email as well.
-
-If you use Excel you can find a video on how to open a CSV file here: [https://www.youtube.com/watch?v=z5Pxil4jVO4](https://www.youtube.com/watch?v=z5Pxil4jVO4)
-
-* **Icons:** Icons are used for various Locations on the map, e.g. POIs, Rooms. Having a unified representation for specific types of Locations makes the system easier for users to engage with.
-* **Location**: A term used for all Rooms and points of interest (POI).
-* **POI**: "Point of interest” - is usually an object that isn't tied to a room. E.g. Vending Machine, Locker, A Statue, ATM etc.
-* **Type**: All Locations are of a type. Types serve as templates for Locations to provide a basic setup. Many of the properties can later be overridden for specific Locations.
-* **Venue**: Typically a collection of Buildings that are close geographically.
-* **Search alias**: An alternative name for a Location allowing users to search for the Location by that name.
-
-## Managing Icons
+### Icon Manager
 
 Anywhere in the CMS you can change icons for one or more markers on the map, you use the Icon Manager to do so. Click the "Change"-button to invoke it.
 
@@ -441,13 +351,13 @@ We support bulk uploading of image files to the Icon Manager.
 
 To delete an icon, click the "trash bin" on the icons you want to delete. It is strongly advised to change icons on the Locations, Location Types or Categories before deleting their associated icon file. However, if you delete an icon that is already used by a Location, the Location will revert back to using the icon for its Location Type. If you delete an icon that is used by a Category or Location Type, it will revert to using a generic marker on the map.
 
-### Uploading SVGs
+#### Uploading SVGs
 
 SVG is a vector file format, which lets MapsIndoors convert your icon in a range of sizes to get the best looking icon in every situation.
 
 SVGs should be uploaded with a `width` and `height` that you want the SVG to be displayed on the map in. Make sure you define it in `px`, not `cm` or `%`. E.g., if you want to display a 32x24px icon on the map, upload an SVG with the attributes `width='32px'` and `height='24px'`. For consistency, it's good form to make the `viewport` the same size as the `width` and `height`.
 
-### Supported SVG Elements
+#### Supported SVG Elements
 
 We only accept SVGs that conform to a very strict ruleset. If an uploaded SVG contains anything other than the elements and attributes listed below, it will be rejected. All child elements can be nested as supported by the SVG format.
 
@@ -477,13 +387,13 @@ When you try to upload an SVG containing one or more of these elements and/or at
 
 If your SVGs contain unsupported elements, you must remove them before they can be uploaded. One typical issue is embedded `base64` data in the SVG, which usually indicates the SVG will display raster image data (PNGs and the like) somewhere in it. That can lead to unintended consequences on the map.
 
-### SVG Help
+#### SVG Help
 
 Michelle Barker has written [a terrific guide to optimizing SVGs for the web](https://css-irl.info/optimising-svgs-for-the-web/) on her site.
 
 A great tool to strip unnecesary elements from your SVG-file is [SVGOMG by Jake Archibald](https://jakearchibald.github.io/svgomg/).
 
-### Syncing Icons to Other Solutions
+#### Syncing Icons to Other Solutions
 
 If you have multiple Solutions, you can sync Icons across multiple Solutions to make sure you can use the same Icons in all of your Solutions.
 
@@ -491,13 +401,37 @@ Open the Icon Manager (you can find it on a Location Detail screen when you set 
 
 When you sync an Icon, if the Icon exists in the target Solution (i.e. an Icon with the exact same filename), you override the Icon in the target Solution. If the Icon does not exist in the target Solution, it is added.
 
-### PNG Image File Support
+#### PNG Image File Support
 
 We highly recommend using SVGs for icons across MapsIndoors, but support PNG files as well.
 
 When uploading an icon in the PNG format, make sure you upload it in a 3x size to accommodate for it being scaled down on the map. For example, to display a 20x20px icon on the map, upload it in 60x60px.
 
-## Split and Combine
+### Export Map
+
+Export Map is an add-on feature that can be enabled for a Solution. Once enabled, it allows for PNG export of the MapsIndoors imagery for printing purposes. The export will not include the underlying Google Maps due to terms of use.
+
+The Export Map service has a limit of 8000 x 8000 pixels. Clicking the Download icon button on the bottom right opens a new tab with the PNG.
+
+#### Usage (Scale)
+
+Sets the scale of the export imagery.
+
+* Web (1) will export the same pixel size as selected on-screen.
+* Retina (2) will export two times the pixels.
+* Print (4) will export four times the pixels.
+
+#### Display Settings
+
+Allows toggling visible features on the exported map, such as Icons, Location Types, and Labels.
+
+You can also rotate the map and set the size of the screen selection. The max is 2000 x 2000.
+
+#### Preview
+
+Preview is especially helpful when using rotation or larger-than-monitor exports.
+
+### Split and Combine
 
 Split and Combine are features that enable you to edit a Room's geometry. A Room can either be split in two, or combined with another Room.
 
@@ -539,13 +473,66 @@ If you exit the Combine mode before completing the combination, your changes wil
 1. All Locations must be of the same Type.
 1. The Rooms must share at least 1 meter of unbroken Wall.
 
+## Settings
+
+### Logs
+
+The Audit Log functionality is a configurable feature in MapsIndoors and if not enabled on your Solution it can be on request.
+
+The Audit Log feature can be used to access the Audit log on MapsIndoor data objects, i.e. you can find or inspect the change history.
+
+The Log functionality is found in the Logs tab under Settings in the CMS.
+
+The Log can be filtered on date, ID, User and Data object types. When pressing download a comma separated file (csv) will be stored on your computer's hard drive.
+
+The log will be in CSV format, which can be opened by a spreadsheet program eg. Excel. Each log entry represents a modification in the data. In short, each entry tells at what time who did what to which object.
+
+The headers represented are:
+Time, User, Action, ObjectType, ObjectId and ObjectData
+
+* **Time:** Tells which user did the change (The email representing the user logged in to the system)
+* **Action:** Tells what happened:
+  * If data was added, the 'Action' will be set to 'Created'
+  * If data was changed, the 'Action' will be set to 'Changed'
+  * If data was deleted, the 'Action' will be set to 'Deleted'
+* **ObjectType:** Tells what type of data was modified (eg. ‘building', ‘location', ‘user', ‘graphdata' ... )
+* **ObjectId:** Is a unique ID that represents the given data - Building, Location or whatever it is.
+If you want to see a history of that specific Location this ID can be used to filter by
+* **ObjectData:** Is a JSON formatted representation of the actual data stored in the MapsIndoors system. To see what changed you can compare this data to the previous change.
+
+Examples of use cases could be:
+
+* **How to do I get Network history?** Filter the ObjectType to ‘graphdata' to see these entries. To find a particular user history, filter ‘User' to their email as well.
+* **How to do I get Categories history?** Filter the ObjectType to ‘category' to see these entries. To find a particular data history, filter ‘User' to their email as well.
+* **How to do I get Location Type/type template/visibility history?** Filter the ObjectType to ‘locationtype' to see these entries. To find a particular data history, filter ‘User' to their email as well. The type template is covered in the "LocationTypeField” section of the data. The visibility is covered in the "displayrule” section of the data
+* **How to find user login activity?** When a user logs in, the corresponding user object will be changed too (the ‘last login field will be updated'). Filter the ObjectType to ‘user' to see login entries. To find a particular user login history, filter ‘User' to their email as well.
+
+If you use Excel you can find a video on how to open a CSV file here: [https://www.youtube.com/watch?v=z5Pxil4jVO4](https://www.youtube.com/watch?v=z5Pxil4jVO4)
+
+* **Icons:** Icons are used for various Locations on the map, e.g. POIs, Rooms. Having a unified representation for specific types of Locations makes the system easier for users to engage with.
+* **Location**: A term used for all Rooms and points of interest (POI).
+* **POI**: "Point of interest” - is usually an object that isn't tied to a room. E.g. Vending Machine, Locker, A Statue, ATM etc.
+* **Type**: All Locations are of a type. Types serve as templates for Locations to provide a basic setup. Many of the properties can later be overridden for specific Locations.
+* **Venue**: Typically a collection of Buildings that are close geographically.
+* **Search alias**: An alternative name for a Location allowing users to search for the Location by that name.
+
+### Users
+
+Allows Admins, to control who has access and what roles they have, or create new users.
+
+A list appears with all users for the Solution. You can also search for an email via the search box in the upper right.
+
+**Editing a user:** Click on the pencil to the left of the email. The user can be deleted, changed role or added to a Solution. Click Save.
+
+**New user:** Click on new user bottom at top. Enter email, choose Editor or Administrator, and assign the appropriate Solution. Click Create.
+
 ## Support
 
 **Something not working?**
 
 If you have found a bug or encountered an issue you can not resolve, please reach out through our [support portal](https://www.mapspeople.com/support/).
 
-## Feedback
+### Feedback
 
 **Do you have feedback for us?**
 
