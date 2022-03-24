@@ -19,7 +19,7 @@ This is already setup in the basic example app.
 
 To perform a search you will need to have initiated `MapsIndoors`. This was shown in the previous section of the getting started tutorial how you do this.
 
-For advanced usage of the search functionality read the Search guide and tutorials connected to it: [Search Guide](/searching/)
+For advanced usage of the search functionality read the Search guide and tutorials connected to it: [Search Guide]({{ site.url }}/searching/)
 
 <!-- Results list -->
 {% include "src/shared/getting-started/search/results-list.md" %}

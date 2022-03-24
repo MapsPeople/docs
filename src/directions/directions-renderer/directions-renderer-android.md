@@ -7,7 +7,7 @@ eleventyNavigation:
   order: 10
 ---
 
-When getting the resulting Route from a [Directions Service](/directions/directions-service/directions-service-android/), you may want to display this Route on a map. To perform this task the `MPDirectionsRenderer` can be used.
+When getting the resulting Route from a [Directions Service]({{ site.url }}/directions/directions-service/directions-service-android/), you may want to display this Route on a map. To perform this task the `MPDirectionsRenderer` can be used.
 
 This example shows how to setup a query for a route and display the result on a Google Map using the `MPDirectionsRenderer`:
 

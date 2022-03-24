@@ -153,7 +153,7 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 
 ### Added
 
-- Added new default renderings of live CO2 levels and humidity. For more information about Live Data, read about the feature in the [Live Data Guide](https://docs.mapsindoors.com//map/live-data/live-data-intro-ios/).
+- Added new default renderings of live CO2 levels and humidity. For more information about Live Data, read about the feature in the [Live Data Guide](https://docs.mapsindoors.com/map/live-data/live-data-intro-ios/).
 
 ### Fixed
 

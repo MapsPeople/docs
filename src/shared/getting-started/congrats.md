@@ -8,4 +8,4 @@ Congratulations! You're at the end of your journey (for now), and you've accompl
 * You added functionality for getting directions from one Location to another.
 * You learned how to enable different types of Live Data Domains in your app.
 
-This concludes the "Getting Started" tutorial, but there's always more to discover. To get more inspiration on what to build next please visit our [showcase page](https://www.mapspeople.com/showcases) to see how other clients use MapsIndoors! For more documentation, please visit the rest of our Docs site for [Android](/android/v3/), [iOS](/ios/v3/) and [Web](/web/v4/).
+This concludes the "Getting Started" tutorial, but there's always more to discover. To get more inspiration on what to build next please visit our [showcase page](https://www.mapspeople.com/showcases) to see how other clients use MapsIndoors! For more documentation, please visit the rest of our Docs site!.
