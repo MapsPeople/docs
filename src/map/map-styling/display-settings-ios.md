@@ -1,13 +1,13 @@
 ---
-title: Display Settings for iOS
+title: Display Rules for iOS
 eleventyNavigation:
-  key: map-map-styling-display-settings-ios
+  key: map-map-styling-display-rules-ios
   parent: map-map-styling-ios
-  title: Display Settings for iOS
+  title: Display Rules for iOS
   order: 20
 ---
 
-In this tutorial we will create a view controller that can enable and disable different custom location display settings on a MapsIndoors map. At the end you should be able to see a map of a building with some colored buttons below the map enabling custom display settings for specified locations.
+In this tutorial we will create a view controller that can enable and disable different custom location display rules on a MapsIndoors map. At the end you should be able to see a map of a building with some colored buttons below the map enabling custom display rules for specified locations.
 
 Start by creating a `UIImage` extension that can generate a mock icon for a color. Alternatively you can refer to your own images instead.
 
@@ -40,7 +40,7 @@ var map: GMSMapView? = nil
 var mapControl: MPMapControl? = nil
 ```
 
-Add buttons for toggling display settings for a type, a single location and multiple locations.
+Add buttons for toggling display rules for a type, a single location and multiple locations.
 
 ```swift
 let typeDisplayButton = UIButton.init()
@@ -55,7 +55,7 @@ var multipleLocations = [MPLocation]()
 var singleLocation:MPLocation? = nil
 ```
 
-Add display setting properties of type `MPLocationDisplayRule` used for overriding display settings for a type, a single location and multiple locations. Also add a property `originalTypeDisplaySetting` to hold on to the original type display setting.
+Add display setting properties of type `MPLocationDisplayRule` used for overriding display rules for a type, a single location and multiple locations. Also add a property `originalTypeDisplaySetting` to hold on to the original type display setting.
 
 ```swift
 let typeDisplaySetting = MPLocationDisplayRule.init(name: "MeetingRoom", andIcon: UIImage.init(color: UIColor.red), andZoomLevelOn: 15)!
@@ -64,7 +64,7 @@ let multipleLocationDisplaySetting = MPLocationDisplayRule.init(name: nil, andIc
 var originalTypeDisplaySetting:MPLocationDisplayRule?
 ```
 
-Add a method `setupDisplaySettingButtons()` setting up buttons that enables/disables the location display settings.
+Add a method `setupDisplaySettingButtons()` setting up buttons that enables/disables the location display rules.
 
 ```swift
 fileprivate func setupDisplaySettingButtons() {
@@ -101,7 +101,7 @@ func prepareData() {
 }
 ```
 
-Define an objective-c method `toggleDisplaySettingsForMultiple()` that will receive events from your `multipleLocationDisplayButton`, swap current selected state for button and toggle the display settings for `multipleLocations`.
+Define an objective-c method `toggleDisplaySettingsForMultiple()` that will receive events from your `multipleLocationDisplayButton`, swap current selected state for button and toggle the display rules for `multipleLocations`.
 
 ```swift
 @objc func toggleDisplaySettingsForMultiple(sender:UIButton) {
@@ -115,7 +115,7 @@ Define an objective-c method `toggleDisplaySettingsForMultiple()` that will rece
 }
 ```
 
-Define an objective-c method `toggleDisplaySettingsForSingle()` that will receive events from your `singleLocationDisplayButton`, swap current selected state for button and toggle the display settings for the `singleLocation`.
+Define an objective-c method `toggleDisplaySettingsForSingle()` that will receive events from your `singleLocationDisplayButton`, swap current selected state for button and toggle the display rules for the `singleLocation`.
 
 ```swift
 @objc func toggleDisplaySettingsForSingle(sender:UIButton) {
@@ -130,7 +130,7 @@ Define an objective-c method `toggleDisplaySettingsForSingle()` that will receiv
 }
 ```
 
-Define an objective-c method `toggleDisplaySettingsForType()` that will receive events from your `typeDisplayButton`, swap current selected state for button and toggle the display settings for the type.
+Define an objective-c method `toggleDisplaySettingsForType()` that will receive events from your `typeDisplayButton`, swap current selected state for button and toggle the display rules for the type.
 
 ```swift
 @objc func toggleDisplaySettingsForType(sender:UIButton) {
@@ -182,6 +182,6 @@ stackView.axis = .vertical
 view = stackView
 ```
 
-At this point you should be able to run this view controller in your own application. You should see a map with some colored buttons below the map. Tapping each button should enable/disable the custom display settings for either a single locations, multiple locations or all locations belonging to a specific type.
+At this point you should be able to run this view controller in your own application. You should see a map with some colored buttons below the map. Tapping each button should enable/disable the custom display rules for either a single locations, multiple locations or all locations belonging to a specific type.
 
 [See the sample in ChangeDisplaySettingController.swift](https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Change%20Display%20Setting/ChangeDisplaySettingController.swift)

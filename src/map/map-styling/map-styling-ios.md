@@ -16,19 +16,19 @@ Each has its own purpose which will be explained below.
 
 ## Style the Map using Display Rules
 
-In the [MapsIndoors CMS](https://cms.mapsindoors.com/types) you can set display settings for the different types of locations in your MapsIndoors content. The changes you make in the CMS will take effect whenever your app reboots or when you call `MapsIndoors.synchroniseContent()` within the app session.
+In the [MapsIndoors CMS](https://cms.mapsindoors.com/types) you can set display rules for the different types of locations in your MapsIndoors content. The changes you make in the CMS will take effect whenever your app reboots or when you call `MapsIndoors.synchroniseContent()` within the app session.
 
 A Display Rule encapsulates both what, how and when a Location should be displayed on the map.
 A Location is presented on the map using a combination of icon, text and polygon. Each of these can appear at different, independent ranges of zoomlevels.
 For example a venue can appear as a marker-icon on low zoomlevels, when zooming in the venuename can appear, and zooming even more in the venue polygon can appear.
 
-In some cases, you may also want to programmatically set display settings that define when and how to show a location. Display settings are defined in a Display Rule object.
+In some cases, you may also want to programmatically set display rules that define when and how to show a location. Display rules are defined in a Display Rule object.
 
 ```swift
 let myDisplayRule = MPLocationDisplayRule(name: "info", andIcon: UIImage(named : "info"), andZoomLevelOn: 17)
 ```
 
-You can set display settings programatically in multiple ways depending on your use case:
+You can set display rules programatically in multiple ways depending on your use case:
 
 * Modify the Display Rule for the Selected Location
 * Set a Display Rule for a type of Location

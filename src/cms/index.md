@@ -108,7 +108,7 @@ This page is for organising the "Types" you sort your locations in to.
 1. Create a new Type.
 1. Click to select a Type, for easy selection of multiple Types at once.
 1. "Edit Type" - Gives you the option to change the name of the type, or to modify the App User Role restrictions.
-1. "Edit Display Settings" - The ability to modify the Display Settings for a given type - See more detailed information on Display Settings here.
+1. "Edit Display Rules" - The ability to modify the Display Rules for a given type - See more detailed information on Display Rules here.
 1. The name of the Type.
 1. The icon assigned to the Type.
 1. Displays how the Label is displayed on your map - Usually either Location name, or not displayed at all.
@@ -164,7 +164,7 @@ A page featuring a list of Venues in your Solution. These are provided by MapsIn
 
 The MapsIndoors CMS also provides the opportunity to export your Map to a higher resolution, for example, if you want to print your map to physically hang at your location.
 
-1. Open the Display Settings for the Map - NOTE: This is not the same as the Display Settings in the other sections.
+1. Open the Display Settings for the Map.
 1. Set the use-case, this helps determine the resolution the map will be exported in.
 1. The Width of the exported map.
 1. The Height of the exported map.
