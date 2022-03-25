@@ -34,7 +34,6 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 
 - We made the standard floor selector control always update to the correct floor.
 
-
 ## [3.38.0] 2022-01-10
 
 ### Added
