@@ -45,7 +45,7 @@ There are several main pages in the CMS, those being "Map", "Solution Details" a
     * **API Keys** - API Keys used by your Solution.
     * **Booking Provider** - Settings for the booking provider you use for your Solution.
     * **Position Provider** - Settings for the position provider you use for your Solution.
-    * **Webex** - Settings for your Cisco Webex Integration (if used).
+    * **Webex** - Settings for your Cisco Webex Integration.
 
 Keep in mind, that there are 2 different roles in the system, that may impact which options you have access to. This documentation will be written from the perspective of an **Admin** level user.
 
