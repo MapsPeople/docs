@@ -40,7 +40,7 @@ There are several main pages in the CMS, those being "Map", "Solution Details" a
   * **Buildings** - An overview of the Buildings present in your Venue.
   * **Venues** - An overview of the Venues present in your Solution.
   * **Export Map** - Generates a high-resolution image of your Map, suitable for printing or similar.
-  * **App Settings** - A page of various settings concerning your app.
+  * **App Settings** - A page with various settings concerning your app.
     * **App Configuration** - Settings to configure your app.
     * **API Keys** - API Keys used by your solution.
     * **Booking Provider** - Settings for the booking provider you use (if used) for your solution.
