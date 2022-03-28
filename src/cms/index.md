@@ -24,7 +24,7 @@ Your data is structured in a hierarchy where the top level is your Solution whic
   * Locations can be split into two separate types - Rooms and Points of Interest (POIs).
     * A Room is a data point with a defined boundary, often corresponding to the walls of the physical Room. This could e.g. be a meeting room, or a bathroom.
 
-    * A POI is a more non-specifc Location, that doesn't necesarily havce a physcially constraining factor such as walls. An example of this could be a water cooler in an office - It's a physical location, but it's not really a Room either. Therefore, it would be created as a POI. Further examples of POI's could be a food truck visiting once a month, or just to designate a general office area.
+    * A POI is a point on the Map that can be added and moved in the CMS. POIs do not have any polygon data as it consists of only one point. Some examples of POIs are locations that are not available in Floor plan drawings, such as coffee machines, food trucks, or temporary event structures. 
 
 View the tutorial video below for more information about terminology and hierarchy.
 
