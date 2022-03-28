@@ -47,7 +47,7 @@ There are several main pages in the CMS, those being "Map", "Solution Details" a
     * **Position Provider** - Settings for the position provider you use for your Solution.
     * **Webex** - Settings for your Cisco Webex Integration.
 
-Keep in mind, that there are 2 different roles in the system, that may impact which options you have access to. This documentation will be written from the perspective of an **Admin** level user.
+In the CMS there are different levels of users, which has an effect on what you have access to. This documentation is written with an **Admin** user level in mind.
 
 * **Editor** - Editors can create new Locations, make changes to and remove existing Locations
 * **Admin** - Administrators have editor rights and have access to further settings in the CMS
