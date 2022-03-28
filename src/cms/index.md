@@ -66,7 +66,7 @@ The Map section is the main navigation of the MapsIndoors CMS and includes the F
 1. Enters the "Solution Details" menu containing the submenus mentioned earlier.
 1. View a sample Web App using the information entered in the CMS.
 1. Enter the "Settings" menu page containing subpages.
-1. Open a drop-down menu containing options such as "Docs" and "Log Out".
+1. Opens a drop-down menu containing options such as "Docs", "Log Out", and a link to enabling two-factor authentication.
 1. Select the active Venue.
 1. Select the active Building.
 1. Select the active Floor.
