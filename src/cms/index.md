@@ -68,7 +68,7 @@ The Map section is the main navigation of the MapsIndoors CMS and includes the F
 1. Enter the "Settings" menu page containing subpages.
 1. Opens a drop-down menu containing options such as "Docs", "Log Out", and a link to enabling two-factor authentication.
 1. Select the active Venue.
-1. Select the active Building.
+1. Select one or more Buildings.
 1. Select the active Floor.
 1. A filter to narrow down what to display, such as only displaying POI's, or only displaying Rooms.
 1. A filter to narrow down what to display, based on predefined or custom types.
