@@ -63,7 +63,7 @@ The Map section is the main navigation of the MapsIndoors CMS and includes the F
 1. A button to return you to the main menu.
 1. Select the active Solution.
 1. Enters the "Map" view (shown on the image). This is the page you see when logging into the CMS.
-1. Enter the "Solution Details" menu.
+1. Enters the "Solution Details" menu containing the submenus mentioned earlier.
 1. View a sample Web App using the information entered in the CMS.
 1. Enter the "Settings Menu".
 1. Open a drop-down menu containing options such as "Docs" and "Log Out".
