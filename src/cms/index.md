@@ -17,7 +17,7 @@ Your data is structured in a hierarchy where the top level is your Solution whic
 * **Venues**
   * A Venue is the second level of data. A Venue might consist of only one Building, but it could also consist of several, for example, a university campus might be many Buildings, but it is all considered the same Venue. You can have multiple Venues in one solution, for example, a university might have multiple campuses spread over the city. Each of these could be a Venue, but under the same solution.
 * **Buildings**
-  * A Building is a data type that is a collection of Floors. Buildings are slightly less abstract than Solutions and Venues, as they are just that - a Building, both in real life and in the MapsIndoors terminology.
+  * A Building is a collection of Floors. Inside a Venue you can have one or more Buildings and an Outside area. Outside is categorized together with Buildings, because it is a part of what comprises a Venue.
 * **Floors**
   * Floors are the levels that exist within a Building. A Building might only have one Floor, but it could also have 50 or more! That entirely depends on the size of the Building in question.
 * **Locations**
