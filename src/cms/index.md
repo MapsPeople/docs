@@ -43,7 +43,7 @@ There are several main pages in the CMS, those being "Map", "Solution Details" a
   * **App Settings** - A page with various settings concerning your app.
     * **App Configuration** - Settings to configure your app.
     * **API Keys** - API Keys used by your Solution.
-    * **Booking Provider** - Settings for the booking provider you use (if used) for your solution.
+    * **Booking Provider** - Settings for the booking provider you use for your Solution.
     * **Position Provider** - Settings for the position provider you use (if used) for your solution.
     * **Webex** - Settings for your Cisco Webex Integration (if used).
 
