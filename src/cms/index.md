@@ -39,7 +39,7 @@ There are several main pages in the CMS, those being "Map", "Solution Details" a
   * **Type Visibility** - Defines the Zoom Levels for which the Locations of each Type will appear on the Map.
   * **Buildings** - An overview of the Buildings present in your Venue.
   * **Venues** - An overview of the Venues present in your Solution.
-  * **Export Map** - Generates a high-resolution image of your map, suitable for, for example, printing.
+  * **Export Map** - Generates a high-resolution image of your Map, suitable for printing or similar.
   * **App Settings** - A page of various settings concerning your app.
     * **App Configuration** - Settings to configure your app.
     * **API Keys** - API Keys used by your solution.
