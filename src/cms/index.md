@@ -72,7 +72,7 @@ The Map section is the main navigation of the MapsIndoors CMS and includes the F
 1. Select the active Floor.
 1. A filter to narrow down what to display, such as only displaying POI's, or only displaying Rooms.
 1. A filter to narrow down what to display, based on predefined or custom types.
-1. A filter to narrow down what to display, based on predefined or custom categories.
+1. A filter to narrow down Locations to display of specific Categories.
 1. A filter to narrow down what to display, based on App User Role restrictions.
 1. Click to search based on your defined parameters.
 1. Open the editing menu for the Location you have selected.
