@@ -49,7 +49,7 @@ There are several main pages in the CMS, those being "Map", "Solution Details" a
 
 In the CMS there are different levels of users, which has an effect on what you have access to. This documentation is written with an **Admin** user level in mind.
 
-* **Editor** - Editors can create new Locations, make changes to and remove existing Locations
+* **Editor** - Editors can create new Locations, edit and delete existing Locations.
 * **Admin** - Administrators have editor rights and have access to further settings in the CMS
 
 ## Interface Overview
