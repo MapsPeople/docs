@@ -71,31 +71,31 @@ The Map section is the main navigation of the MapsIndoors CMS and includes the F
 1. Select one or more Buildings.
 1. Select one or more Floors.
 1. Filters on whether Rooms, POIs, and Areas should be shown on the Map and in the List.
-1. A filter to narrow down what to display, based on predefined or custom types.
+1. A filter to narrow down Locations to display of specific Location Types.
 1. A filter to narrow down Locations to display of specific Categories.
-1. A filter to narrow down what to display, based on App User Role restrictions.
-1. Click to search based on your defined parameters.
-1. Open the editing menu for the Location you have selected.
-1. Open a list containing all your Locations.
-1. A floor selecter, to select your active Floor.
+1. A filter to narrow down Locations to display with specific App User Roles applied.
+1. Click to search for Locations using a Location’s name, Location ID, Alias, or External ID.
+1. Bulk edit button activated by selecting one or more Locations in the List view. This allows you to bulk update Location Attributes, such as Location Type, Searchability, Categories, Aliases, and more.
+1. Expands a list containing all your Locations. Filters are applied to Location data shown on both the Map and in the List view.
+1. A Floor selector, to select the displayed Floor on the Map.
 1. The main toolbar to modify your Solution.
 
 #### Toolbar
 
 ![map-toolbar](/assets/cms/interface-overview/Map_Toolbar.png)
 
-Working left to right, the functionality in this main toolbar is as follows - You can also hover over the icons in the CMS to see their names.
+Working left to right, the functionality in this main Toolbar is as follows - You can also hover over the icons in the CMS to see their names.
 
-* **Add POI** - Creates a Point of Interest where you click, and opens the configuration menu to add information to it.
-* **Add Area** - Creates an Area by clicking to create corners of a polygon.
-* **Show Network** - A toggle button to show or hide the route network your Directions feature will use.
-* **Add Normal Route Element** - Creates a Route Element on your map - These would usually be used to create "invisible" barriers, by customising the Restrictions for the Route Element, for example, if you do not want your Directions to guide your visitors down a specific hallway, but there isn't a physical door present.
-* **Reload Route Network** - Reload the Route Network.
-* **Zoom Level** - Adjust the zoom level. Values range from 15 (zoom out) to 22 (zoom in).
+* **Add POI** - Creates a Point of Interest where you click on the Map. Afterwards it opens an editor where Location details can be adjusted.
+* **Add Area** - Creates an Area by clicking on the Map to create corners of a polygon. Afterwards it opens an editor where Area details can be adjusted.
+* **Show Network** - A toggle button to show or hide the Route Network your Directions feature will use.
+* **Add Barrier Route Element** - Creates a Route Element on your map - The Barrier Route Element can be used to apply e.g. restrictions, delay, or one way direction to specific parts of the Network. For example, if you do not want your Directions to guide your visitors down a specific hallway, but there isn't a physical Door present, this Route Element can be used.
+* **Reload Route Network** - Reloads the Route Network. Route Element changes' effect on the Network becomes visible after reloading the Network.
+* **Zoom Level** - Adjust the Zoom Level. Values range from 15 (zoom out) to 22 (zoom in).
 
 ### Solution Details
 
-Solution details is the page to handle some of the less-obvious facets of managing your solution, such as organising your locations into "Types" and "Categories", or exporting your map in a resolution suitable for printing.
+Under Solution Details you can find several subpages, which are described below:
 
 #### Types
 
@@ -105,19 +105,19 @@ This page is for organising the "Types" you sort your locations in to.
 
 1. Create a new Type.
 1. Click to select a Type, for easy selection of multiple Types at once.
-1. "Edit Type" - Gives you the option to change the name of the type, or to modify the App User Role restrictions.
-1. "Edit Display Settings" - The ability to modify the Display Settings for a given type - See more detailed information on Display Settings here.
+1. "Edit Type" - Gives you the option to change the name of the Type, or to modify the App User Role restrictions.
+1. "Edit Display Settings" - The ability to modify the Display Settings for a given Type - See more detailed information on Display Settings here.
 1. The name of the Type.
-1. The icon assigned to the Type.
-1. Displays how the Label is displayed on your map - Usually either Location name, or not displayed at all.
-1. The number of Locations in the given Type.
+1. The Icon assigned to the Type.
+1. Displays what information the Type's Label contains when displayed on your Map.
+1. The number of Locations with the given Type applied.
 1. "Edit Template" - Edit the template for a given Type.
 
 #### Categories
 
 ![solution-details-categories](/assets/cms/interface-overview/Solution_Details_Categories.png)
 
-Categories are similar to Types, but whereas Locations can only be of one Type, they can be of multiple Categories, and would usually be used as a form of "tags" when searching - For example, a canteen might be in a Category of both "Food" and "Leisure", but still only be of the Type "Canteen".
+Categories are similar to Types, but whereas Locations can only be of one Type, they can be of multiple Categories. Categories are used for browsing important Locations, or amenities, in your application. - For example, a canteen might be in a Category of both "Food" and "Leisure", but still only be of the Type "Canteen".
 
 1. Create a new Category.
 1. "Edit Category" - Edit properties of your Category.
@@ -128,17 +128,17 @@ Categories are similar to Types, but whereas Locations can only be of one Type, 
 
 ![solution-details-type-visibility](/assets/cms/interface-overview/Solution_Details_Type_Visibility.png)
 
-Type Visibility is the term used to determine at which zoom levels both Names and Labels are visible, determined per Type.
+Type Visibility is the term used to determine at which Zoom Levels both the Types' Icons and Labels are visible.
 
 1. A save button, click this to save your changes.
 1. Hide/Unhide - Click or unclick this if you don't want a specific Type to show up on the map at all.
-1. Set the minimum and maximum zoom level at which a given Type should be visible.
+1. Set the minimum and maximum Zoom Level at which a given Type should be visible.
 
 #### Buildings
 
 ![solution-details-buildings](/assets/cms/interface-overview/Solution_Details_Buildings.png)
 
-This page provides you with a list of Buildings in your Solution.
+This page provides you with a list of the Buildings in the selected Venue in your Solution.
 
 1. "Edit Building" - Let's you edit the properties of the Building, such as name, ID and Floors.
 1. The Name of the Building.
@@ -152,7 +152,7 @@ This page provides you with a list of Buildings in your Solution.
 
 A page featuring a list of Venues in your Solution. These are provided by MapsIndoors, too add more, contact your representative.
 
-1. "Edit Venue" - You do still have limited editing options, despite Venues being controlled by MapsIndoors.
+1. "Edit Venue" - You can e.g. edit Venue Name and Venue External ID in the Venue details editor.
 1. The Name of your Venues.
 1. The Venue ID of your Venue.
 
@@ -160,14 +160,14 @@ A page featuring a list of Venues in your Solution. These are provided by MapsIn
 
 ![solution-details-export-map](/assets/cms/interface-overview/Solution_Details_Export_Map.png)
 
-The MapsIndoors CMS also provides the opportunity to export your Map to a higher resolution, for example, if you want to print your map to physically hang at your location.
+The MapsIndoors CMS also provides the opportunity to export your Map to a higher resolution. For example, if you want to print your Map to physically hang at your location.
 
 1. Open the Display Settings for the Map - NOTE: This is not the same as the Display Settings in the other sections.
 1. Set the use-case, this helps determine the resolution the map will be exported in.
-1. The Width of the exported map.
-1. The Height of the exported map.
-1. The Rotation angle of the exported map.
-1. The Building you are exporting a map of.
+1. The Width of the exported Map.
+1. The Height of the exported Map.
+1. The Rotation angle of the exported Map.
+1. The Building you are exporting a Map of.
 1. The currently used Zoom Level.
 1. Zoom in or out.
 1. Floor selector, to select which floor will be exported.
@@ -178,7 +178,7 @@ This page contains various subpages with more advanced settings about your app.
 
 ##### App Configuration
 
-This page contains various settings, such as more memorable names for your API keys, App User Roles and App Categories.
+This page contains various settings, such as names for your API keys, App User Roles and App Categories.
 
 ![solution-details-app-title](/assets/cms/interface-overview/Solution_Details_App_Title.png)
 
@@ -189,7 +189,7 @@ Here you can change the title of your app.
 
 ![solution-details-alias](/assets/cms/interface-overview/Solution_Details_Alias.PNG)
 
-The API Keys used to make your MapsIndoors solution consist of random combinations of letters and numbers. Here, you can assign them an alias to make it easier to remember for a person.
+The API Keys used to make your MapsIndoors Solution consist of random combinations of letters and numbers. Here, you can assign them an Alias to make it easier to remember.
 
 NOTE: Do not set an Alias if you want to make it more difficult to find and load your MapsIndoors data in a standard app. In that case, you can only load the data with an API key.
 
@@ -203,19 +203,19 @@ You can also modify your App User Roles from within these pages.
 
 ![solution-details-app-categories](/assets/cms/interface-overview/Solution_Details_App_Categories.png)
 
-Here you can select which categories can be used for browsing the app.
+Here you can select which Categories can be used for browsing the app.
 
-1. Move your app categories up and down in order.
+1. Move your app Categories up and down in order.
 1. The name of the Category.
 1. Toggle whether or not the Category in question is visible in the app.
-1. The icon selected for the Category.
-1. Select an icon to be used for the Category.
+1. The Icon selected for the Category.
+1. Select an Icon to be used for the Category.
 
 ##### API Keys
 
 ![solution-details-api-keys](/assets/cms/interface-overview/Solution_Details_API_Keys.png)
 
-Here you manage the active API Keys generated for your Solution. To load your MapsIndoors data in your apps, you need an API key.
+Here you manage the active API keys generated for your Solution. To load your MapsIndoors data in your apps, you need an API key.
 
 You can create as many API keys as you want, and it is good practise to use one for each place you need to load data from MapsIndoors (each mobile platform, web app etc.).
 
@@ -231,11 +231,11 @@ You can easily delete an API key if it is unused, or has been compromised in som
 
 ##### Booking Provider
 
-This submenu presents you the option of integrating a Booking system to your solution. The exact menus presented here depend on which provider you opt for.
+This submenu presents you the option of integrating a Booking system to your Solution. The exact menus presented here depend on which provider you opt for.
 
 ##### Position Provider
 
-MapsIndoors also provides you the option of integrating a Positioning system to your solution. The exact menus presented here, like the Booking system, depend on which provider you opt for.
+MapsIndoors also provides you the option of integrating a Positioning system to your Solution. The exact menus presented here, like the Booking system, depend on which provider you opt for.
 
 ##### Webex
 
@@ -245,21 +245,21 @@ As the options above, the options presented for WebEx integration depends on the
 
 ### Location
 
-Each Location also has a certain number of settings associated with it. If you select a Location on the CMS, you will be presented with a sidebar-menu with the following options:
+Each Location also has a number of settings associated with it. If you select a Location on the Map or in the List view in the CMS, you will be presented with a modal with the following settings:
 
-* **Type** - If your Location belongs to and already defined Type, you can set that here. This ensures that you only have to fill out a minimum of data, as much of the following data will be fillin in automatically based on the Type.
+* **Type** - Locations must have a Type applied, which can be set in the Location details editor. When creating a new Location some settings are inherited from the selected Type e.g. Name and Icon. You can always change the inherited settings to something else if necessary.
 * **Name & Description** - Type in the name of your Location, and a Description. Entering it in the default language is mandatory, but you also have options to enter it in alternative languages.
 * **Area** - Choose the colour of the Area the Location covers. You can also set whether the Area is visible or not.
 * **Status** - Toggle whether or not this Location appears in searches.
 * **Restrictions** - Determine which, if any, App User Role Restrictions this Location should be subject to.
 * **Categories** - Add which, if any, Categories this Location belongs to.
-* **Location Icon** - If not part of a Type, you can set an Icon to be used on the map for this Location.
-* **Image Options** - Here you have the option to connect an image to a location. See below for further details.
-* **Search Aliases** - Other search terms that can be searched, and still return this location, even if it is not a match to the Name, Type or Category.
+* **Location Icon** - You can set an Icon to be used on the Map for this Location.
+* **Image Options** - Here you have the option to connect an image to a Location. See below for further details.
+* **Search Aliases** - Other search terms that can be searched, and still return this Location, even if it is not a match to the Name, Type or Category.
 * **Venue Details** - Select which Building and Floor this Location should belong to.
 * **External ID** - You can define an External ID that a Location should use alongside its internal ID.
 * **Coordinates** - The coordinates of your Location.
-* **MapsIndoors Location ID** - The internal ID of your location.
+* **MapsIndoors Location ID** - The internal ID of your Location.
 * **Active** - If your Location is only displayed and searchable for a given time period, you can define that here.
 * **Custom Properties** - MapsIndoors supports Custom Properties, defined by key-value pairs.
 * **Location History** - See the editing history of this Location.
@@ -337,7 +337,7 @@ Please see the official [Google Street View Service documentation](https://devel
 
 ### Icon Manager
 
-Anywhere in the CMS you can change icons for one or more markers on the map, you use the Icon Manager to do so. Click the "Change"-button to invoke it.
+Anywhere in the CMS you can change Icons for one or more markers on the Map, you use the Icon Manager to do so. Click the "Change"-button to invoke it.
 
 In the Icon Manager, you can choose between a predefined set of MapsIndoors icons, and a list of your uploaded icons. Click on an icon in either place, and set it to close the icon manager and preview the icon on the map. Click "Save" in the details editor to update the Location with your selected icon.
 
@@ -347,13 +347,13 @@ Remember to keep your icons at a reasonable size. The Icon Manager will prompt y
 
 We support bulk uploading of image files to the Icon Manager.
 
-To delete an icon, click the "trash bin" on the icons you want to delete. It is strongly advised to change icons on the Locations, Location Types or Categories before deleting their associated icon file. However, if you delete an icon that is already used by a Location, the Location will revert back to using the icon for its Location Type. If you delete an icon that is used by a Category or Location Type, it will revert to using a generic marker on the map.
+To delete an Icon, click the "trash bin" on the Icons you want to delete. It is strongly advised to change Icons on the Locations, Location Types or Categories before deleting their associated Icon file. However, if you delete an Icon that is already used by a Location, the Location will revert back to using the Icon for its Location Type. If you delete an Icon that is used by a Category or Location Type, it will revert to using a generic marker on the Map.
 
 #### Uploading SVGs
 
-SVG is a vector file format, which lets MapsIndoors convert your icon in a range of sizes to get the best looking icon in every situation.
+SVG is a vector file format, which lets MapsIndoors convert your Icon in a range of sizes to get the best looking Icon in every situation.
 
-SVGs should be uploaded with a `width` and `height` that you want the SVG to be displayed on the map in. Make sure you define it in `px`, not `cm` or `%`. E.g., if you want to display a 32x24px icon on the map, upload an SVG with the attributes `width='32px'` and `height='24px'`. For consistency, it's good form to make the `viewport` the same size as the `width` and `height`.
+SVGs should be uploaded with a `width` and `height` that you want the SVG to be displayed on the Map in. Make sure you define it in `px`, not `cm` or `%`. E.g., if you want to display a 32x24px Icon on the Map, upload an SVG with the attributes `width='32px'` and `height='24px'`. For consistency, it's good form to make the `viewport` the same size as the `width` and `height`.
 
 #### Supported SVG Elements
 
@@ -401,15 +401,15 @@ When you sync an Icon, if the Icon exists in the target Solution (i.e. an Icon w
 
 #### PNG Image File Support
 
-We highly recommend using SVGs for icons across MapsIndoors, but support PNG files as well.
+We highly recommend using SVGs for Icons across MapsIndoors, but support PNG files as well.
 
-When uploading an icon in the PNG format, make sure you upload it in a 3x size to accommodate for it being scaled down on the map. For example, to display a 20x20px icon on the map, upload it in 60x60px.
+When uploading an Icon in the PNG format, make sure you upload it in a 3x size to accommodate for it being scaled down on the map. For example, to display a 20x20px Icon on the Map, upload it in 60x60px.
 
 ### Export Map
 
 Export Map is an add-on feature that can be enabled for a Solution. Once enabled, it allows for PNG export of the MapsIndoors imagery for printing purposes. The export will not include the underlying Google Maps due to terms of use.
 
-The Export Map service has a limit of 8000 x 8000 pixels. Clicking the Download icon button on the bottom right opens a new tab with the PNG.
+The Export Map service has a limit of 8000 x 8000 pixels. Clicking the Download Icon button on the bottom right opens a new tab with the PNG.
 
 #### Usage (Scale)
 
@@ -508,9 +508,9 @@ Examples of use cases could be:
 If you use Excel you can find a video on how to open a CSV file here: [https://www.youtube.com/watch?v=z5Pxil4jVO4](https://www.youtube.com/watch?v=z5Pxil4jVO4)
 
 * **Icons:** Icons are used for various Locations on the map, e.g. POIs, Rooms. Having a unified representation for specific types of Locations makes the system easier for users to engage with.
-* **Location**: A term used for all Rooms and points of interest (POI).
-* **POI**: "Point of interest” - is usually an object that isn't tied to a room. E.g. Vending Machine, Locker, A Statue, ATM etc.
-* **Type**: All Locations are of a type. Types serve as templates for Locations to provide a basic setup. Many of the properties can later be overridden for specific Locations.
+* **Location**: A term used for all Rooms and Points of Interest (POI).
+* **POI**: "Point of interest” - is usually an object that isn't tied to a Room. E.g. Vending Machine, Locker, A Statue, ATM etc.
+* **Type**: All Locations are of a Type. Types serve as templates for Locations to provide a basic setup. Many of the properties can later be overridden for specific Locations.
 * **Venue**: Typically a collection of Buildings that are close geographically.
 * **Search alias**: An alternative name for a Location allowing users to search for the Location by that name.
 
