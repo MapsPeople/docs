@@ -30,7 +30,7 @@ View the tutorial video below for more information about terminology and hierarc
 
 <iframe width="480" height="300" src="https://www.youtube-nocookie.com/embed/GwyO-Vav8Rs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-There are several main pages in the CMS, those being "Map", "Solution Details" and "Deployment". "Solution Details" and "Deployment have further subpages. The heirachial structure is like this:
+There are two main pages in the CMS, "Map" and "Solution Details". The heirachial structure is like this:
 
 * **Map** - The main page, this is where you manage your Map.
 * **Solution Details** - A "behind-the-scenes" page, where you administrate things such as Categories, Types, Visibility, etc.
@@ -47,7 +47,7 @@ There are several main pages in the CMS, those being "Map", "Solution Details" a
     * **Position Provider** - Settings for the position provider you use for your Solution.
     * **Webex** - Settings for your Cisco Webex Integration.
 
-In the CMS there are different levels of users, which has an effect on what you have access to. This documentation is written with an **Admin** user level in mind.
+In the CMS there are different levels of users, which has an effect on what you have access to. For example, an "Admin" level user has access to Solution-level settings, wherean an "Editor" primarily has access to create and edit Locations on the Map. This documentation is written with an **Admin** user level in mind.
 
 * **Editor** - Editors can create new Locations, edit and delete existing Locations.
 * **Admin** - Administrators have editor rights and have access to further settings in the CMS
@@ -213,13 +213,13 @@ Here you can select which Categories can be used for browsing the app.
 
 ##### API Keys
 
-![solution-details-api-keys](/assets/cms/interface-overview/Solution_Details_API_Keys.png)
-
 Here you manage the active API keys generated for your Solution. To load your MapsIndoors data in your apps, you need an API key.
 
 You can create as many API keys as you want, and it is good practise to use one for each place you need to load data from MapsIndoors (each mobile platform, web app etc.).
 
 You can easily delete an API key if it is unused, or has been compromised in some way.
+
+![solution-details-api-keys](/assets/cms/interface-overview/Solution_Details_API_Keys.png)
 
 1. The name that you want to use to identify the new API key.
 1. Generate API key.
