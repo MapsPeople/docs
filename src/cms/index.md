@@ -33,7 +33,7 @@ View the tutorial video below for more information about terminology and hierarc
 There are several main pages in the CMS, those being "Map", "Solution Details" and "Deployment". "Solution Details" and "Deployment have further subpages. The heirachial structure is like this:
 
 * **Map** - The main page, this is where you manage your map.
-* **Solution Details** - A "behind-the-scenes" page, where you administrate things such as categories, types, visibility, etc.
+* **Solution Details** - A "behind-the-scenes" page, where you administrate things such as Categories, Types, Visibility, etc.
   * **Types** - Define "types" of location, such as "Canteen", "Bathroom", etc.
   * **Categories** - Similar to types, but in a broader sense - The types "Male Bathroom" and "Female Bathroom" might both belong to the category "Toilets".
   * **Type Visibility** - Define the zoom levels for which each type will appear on the map.
