@@ -19,7 +19,7 @@ Your data is structured in a hierarchy where the top level is your Solution whic
 * **Buildings**
   * A Building is a collection of Floors. Inside a Venue you can have one or more Buildings and an Outside area. Outside is categorized together with Buildings, because it is a part of what comprises a Venue.
 * **Floors**
-  * Floors are the levels that exist within a Building. A Building might only have one Floor, but it could also have 50 or more! That entirely depends on the size of the Building in question.
+  * Floors are the levels that exist within a Building. A Building has at least one Floor. 
 * **Locations**
   * Locations can be split into two seperate types - Rooms and Points of Interest (POI's).
     * A Room is just that, a data point with a defined boundary, often corresponding to the walls of the physical Room. This could be a meeting room, or a bathroom.
