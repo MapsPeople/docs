@@ -38,7 +38,7 @@ There are several main pages in the CMS, those being "Map", "Solution Details" a
   * **Categories** - Categories are a way to group or organize Locations for easier searching in your application. Categories can be used to group Locations in bundles regardless of their Type. The Types "Male Bathroom" and "Female Bathroom" might both belong to the Category "Toilets".
   * **Type Visibility** - Defines the Zoom Levels for which the Locations of each Type will appear on the Map.
   * **Buildings** - An overview of the Buildings present in your Venue.
-  * **Venues** - A list of venues present in your solution.
+  * **Venues** - An overview of the Venues present in your Solution.
   * **Export Map** - Generates a high-resolution image of your map, suitable for, for example, printing.
   * **App Settings** - A page of various settings concerning your app.
     * **App Configuration** - Settings to configure your app.
