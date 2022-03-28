@@ -13,7 +13,7 @@ The MapsIndoors Content Management System (CMS) enables you to add, edit, and ma
 Your data is structured in a hierarchy where the top level is your Solution which can contain multiple Venues, which in turn can have multiple Buildings and so on. The data-types in hierarchical order:
 
 * **Solution**
-  * A Solution is the topmost level of your data structure. It encompasses all of the Venues, Building and Locations that you need for your MapsIndoors implementation. It is possible to have more than one solution, but for the mast vajority of use-cases, you will just have one.
+  * A Solution is the topmost level of your data structure. It encompasses all of the Venues, Buildings and Locations that you need for your MapsIndoors implementation. It is possible to have more than one solution, but for the mast vajority of use-cases, you will just have one.
 * **Venues**
   * A Venue is the second level of data. A Venue might consist of only one Building, but it could also consist of several, for example, a university campus might be many Buildings, but it is all considered the same Venue. You can have multiple Venues in one solution, for example, a university might have multiple campuses spread over the city. Each of these could be a Venue, but under the same solution.
 * **Buildings**
