@@ -56,7 +56,7 @@ In the CMS there are different levels of users, which has an effect on what you 
 
 ### Map
 
-This is the main navigation of the MapsIndoors CMS. The map present will depend on the map you have uploaded in your Solution, but the overlay will remain the same.
+The Map section is the main navigation of the MapsIndoors CMS and includes the Filter bar at the top, Toolbar at the bottom, a Floor selector on the right, and your Map in the center.
 
 ![map-main](/assets/cms/interface-overview/Map_Main.png)
 
