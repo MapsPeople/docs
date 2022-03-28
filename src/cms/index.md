@@ -70,7 +70,7 @@ The Map section is the main navigation of the MapsIndoors CMS and includes the F
 1. Select the active Venue.
 1. Select one or more Buildings.
 1. Select one or more Floors.
-1. A filter to narrow down what to display, such as only displaying POI's, or only displaying Rooms.
+1. Filters on whether Rooms, POIs, and Areas should be shown on the Map and in the List.
 1. A filter to narrow down what to display, based on predefined or custom types.
 1. A filter to narrow down Locations to display of specific Categories.
 1. A filter to narrow down what to display, based on App User Role restrictions.
