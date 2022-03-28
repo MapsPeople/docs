@@ -19,12 +19,12 @@ Your data is structured in a hierarchy where the top level is your Solution whic
 * **Buildings**
   * A Building is a collection of Floors. Inside a Venue you can have one or more Buildings and an Outside area. Outside is categorized together with Buildings, because it is a part of what comprises a Venue.
 * **Floors**
-  * Floors are the levels that exist within a Building. A Building has at least one Floor. 
+  * Floors are the levels that exist within a Building. A Building has at least one Floor.
 * **Locations**
   * Locations can be split into two separate types - Rooms and Points of Interest (POIs).
     * A Room is a data point with a defined boundary, often corresponding to the walls of the physical Room. This could e.g. be a meeting room, or a bathroom.
 
-    * A POI is a point on the Map that can be added and moved in the CMS. POIs do not have any polygon data as it consists of only one point. Some examples of POIs are locations that are not available in Floor plan drawings, such as coffee machines, food trucks, or temporary event structures. 
+    * A POI is a point on the Map that can be added and moved in the CMS. POIs do not have any polygon data as it consists of only one point. Some examples of POIs are locations that are not available in Floor plan drawings, such as coffee machines, food trucks, or temporary event structures.
 
 View the tutorial video below for more information about terminology and hierarchy.
 
