@@ -34,7 +34,7 @@ There are several main pages in the CMS, those being "Map", "Solution Details" a
 
 * **Map** - The main page, this is where you manage your map.
 * **Solution Details** - A "behind-the-scenes" page, where you administrate things such as Categories, Types, Visibility, etc.
-  * **Types** - Define "types" of location, such as "Canteen", "Bathroom", etc.
+  * **Types** - Defines "types" of Locations. Types work as specific identifiers for a group of Locations such as "Canteen", "Bathroom", etc.
   * **Categories** - Similar to types, but in a broader sense - The types "Male Bathroom" and "Female Bathroom" might both belong to the category "Toilets".
   * **Type Visibility** - Define the zoom levels for which each type will appear on the map.
   * **Buildings** - A list of the buildings present in your venue.
