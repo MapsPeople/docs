@@ -8,11 +8,9 @@ eleventyNavigation:
   order: 10
 ---
 
-The MapsIndoors Content Management System (CMS) is the platform through which you edit your Maps, Locations, POI's and more.
+The MapsIndoors Content Management System (CMS) enables you to add, edit, and maintain your location data within the MapsIndoors platform.
 
-Using the CMS is much less technical than the process of developing an app for Android, iOS or Web, and should be usable by almost anyone, no matter your background - No skills in programming are needed here.
-
-Your data is structured in a hierarchy where the top level is your Solution which can contain multiple Venues, which in turn can have multiple Buildings and so on. The data-types in hierarchical order, and a short description:
+Your data is structured in a hierarchy where the top level is your Solution which can contain multiple Venues, which in turn can have multiple Buildings and so on. The data-types in hierarchical order:
 
 * **Solution**
   * A Solution is the topmost level of your data structure. It encompasses all of the Venues, Building and Locations that you need for your MapsIndoors implementation. It is possible to have more than one solution, but for the mast vajority of use-cases, you will just have one.
