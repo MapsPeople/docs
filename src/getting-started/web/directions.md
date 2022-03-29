@@ -146,7 +146,7 @@ const mapViewInstance = new mapsindoors.mapView.MapboxView(mapViewOptions);
 const mapsIndoorsInstance = new mapsindoors.MapsIndoors({ mapView: mapViewInstance });
 const mapboxInstance = mapViewInstance.getMap();
 
-+ const externalDirectionsProvider = new mapsindoors.directions.MapboxProvider();
++ const externalDirectionsProvider = new mapsindoors.directions.MapboxProvider('YOUR_MAPBOX_ACCESS_TOKEN);
 + const miDirectionsServiceInstance = new mapsindoors.services.DirectionsService(externalDirectionsProvider);
 + const directionsRendererOptions = { mapsIndoors: mapsIndoorsInstance }
 + const miDirectionsRendererInstance = new mapsindoors.directions.DirectionsRenderer(directionsRendererOptions);
