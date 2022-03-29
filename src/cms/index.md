@@ -58,7 +58,7 @@ In the CMS there are different levels of users, which has an effect on what you 
 
 The Map section is the main navigation of the MapsIndoors CMS and includes the Filter bar at the top, Toolbar at the bottom, a Floor selector on the right, and your Map in the center.
 
-![map-main](/assets/cms/interface-overview/Map_Main.png)
+[![map-main](/assets/cms/interface-overview/Map_Main.png)]({{site.url}}/assets/cms/interface-overview/Map_Main.png)
 
 1. Select the active Solution.
 1. Enters the "Map" view (shown on the image). This is the page you see when logging into the CMS.
@@ -156,6 +156,8 @@ A page featuring a list of Venues in your Solution. These are provided by MapsIn
 
 #### Export Map
 
+> PLEASE NOTE: This feature is not available in our standard Solution. Please contact your MapsPeople representative to gain access to this feature.
+
 ![solution-details-export-map](/assets/cms/interface-overview/Solution_Details_Export_Map.png)
 
 The MapsIndoors CMS also provides the opportunity to export your Map to a higher resolution. For example, if you want to print your Map to physically hang at your location.
@@ -169,6 +171,7 @@ The MapsIndoors CMS also provides the opportunity to export your Map to a higher
 1. The currently used Zoom Level.
 1. Zoom in or out.
 1. Floor selector, to select which floor will be exported.
+1. Export your Map!
 
 #### App Settings
 
