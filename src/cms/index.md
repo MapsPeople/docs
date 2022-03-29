@@ -15,7 +15,7 @@ Your data is structured in a hierarchy where the top level is your Solution whic
 * **Solution**
   * A Solution is the topmost level of your data structure. It encompasses all of the Venues, Buildings and Locations that you need for your MapsIndoors implementation. It is possible to have more than one solution, but for the mast vajority of use-cases, you will just have one.
 * **Venues**
-  * A Venue is the second level of data. A Venue might consist of only one Building, but it could also consist of several, for example, a university campus might be many Buildings, but it is all considered the same Venue. You can have multiple Venues in one solution, for example, a university might have multiple campuses spread over the city. Each of these could be a Venue, but under the same solution.
+  * A Venue is the second level of data. You can have multiple Venues in one solution. For example, a large company might have multiple offices spread over the country. Each of these could be a Venue, but under the same solution. A Venue can consist of one or more Buildings. For example, a sports stadium might be many Buildings, but it is all considered the same Venue.
 * **Buildings**
   * A Building is a collection of Floors. Inside a Venue you can have one or more Buildings and an Outside area. Outside is categorized together with Buildings, because it is a part of what comprises a Venue.
 * **Floors**
@@ -60,14 +60,13 @@ The Map section is the main navigation of the MapsIndoors CMS and includes the F
 
 ![map-main](/assets/cms/interface-overview/Map_Main.png)
 
-1. A button to return you to the main menu.
 1. Select the active Solution.
 1. Enters the "Map" view (shown on the image). This is the page you see when logging into the CMS.
 1. Enters the "Solution Details" menu containing the submenus mentioned earlier.
-1. View a sample Web App using the information entered in the CMS.
+1. Open the Standard Web App using the information entered in the CMS. (Only available if you have set an Alias)
 1. Enter the "Settings" menu page containing subpages.
 1. Opens a drop-down menu containing options such as "Docs", "Log Out", and a link to enabling two-factor authentication.
-1. Select the active Venue.
+1. Select the active Venue. The filter bar can then be used to narrow down the data you see on the Map and Lists for this Venue.
 1. Select one or more Buildings.
 1. Select one or more Floors.
 1. Filters on whether Rooms, POIs, and Areas should be shown on the Map and in the List.
@@ -144,7 +143,6 @@ This page provides you with a list of the Buildings in the selected Venue in you
 1. The Name of the Building.
 1. The Administrative ID of the Building.
 1. The Address of the Building.
-1. Add a new Building.
 
 #### Venues
 
@@ -495,7 +493,6 @@ Time, User, Action, ObjectType, ObjectId and ObjectData
   * If data was deleted, the 'Action' will be set to 'Deleted'
 * **ObjectType:** Tells what type of data was modified (eg. ‘building', ‘location', ‘user', ‘graphdata' ... )
 * **ObjectId:** Is a unique ID that represents the given data - Building, Location or whatever it is.
-If you want to see a history of that specific Location this ID can be used to filter by
 * **ObjectData:** Is a JSON formatted representation of the actual data stored in the MapsIndoors system. To see what changed you can compare this data to the previous change.
 
 Examples of use cases could be:
