@@ -26,7 +26,7 @@ Your data is structured in a hierarchy where the top level is your Solution whic
 
     * A POI is a point on the Map that can be added and moved in the CMS. POIs do not have any polygon data as it consists of only one point. Some examples of POIs are locations that are not available in Floor plan drawings, such as coffee machines, food trucks, or temporary event structures.
 
-View the tutorial video below for more information about terminology and hierarchy.
+View the tutorial video below for more information about terminology and hierarchy, or visit the [Glossary]({{site.url}}/various/glossary/).
 
 <iframe width="480" height="300" src="https://www.youtube-nocookie.com/embed/GwyO-Vav8Rs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -105,7 +105,7 @@ This page is for organising the "Types" you sort your locations in to.
 1. Create a new Type.
 1. Click to select a Type, for easy selection of multiple Types at once.
 1. "Edit Type" - Gives you the option to change the name of the Type, or to modify the App User Role restrictions.
-1. "Edit Display Settings" - The ability to modify the Display Settings for a given Type - See more detailed information on Display Settings here.
+1. "Edit Display Rules" - The ability to modify the Display Rules for a given Type - See more detailed information on Display Rules [here]({{site.url}}/various/display-rules/).
 1. The name of the Type.
 1. The Icon assigned to the Type.
 1. Displays what information the Type's Label contains when displayed on your Map.
@@ -162,7 +162,7 @@ A page featuring a list of Venues in your Solution. These are provided by MapsIn
 
 The MapsIndoors CMS also provides the opportunity to export your Map to a higher resolution. For example, if you want to print your Map to physically hang at your location.
 
-1. Open the Display Settings for the Map - NOTE: This is not the same as the Display Settings in the other sections.
+1. Open the Display Settings for the Map - NOTE: This is not the same as the Display Rules in the other sections.
 1. Set the use-case, this helps determine the resolution the map will be exported in.
 1. The Width of the exported Map.
 1. The Height of the exported Map.
@@ -192,7 +192,7 @@ Here you can change the title of your app.
 
 The API Keys used to make your MapsIndoors Solution consist of random combinations of letters and numbers. Here, you can assign them an Alias to make it easier to remember.
 
-NOTE: Do not set an Alias if you want to make it more difficult to find and load your MapsIndoors data in a standard app. In that case, you can only load the data with an API key.
+> NOTE: Do not set an Alias if you want to make it more difficult to find and load your MapsIndoors data in a standard app. In that case, you can only load the data with an API key.
 
 ![solution-details-app-user-roles](/assets/cms/interface-overview/Solution_Details_App_User_Roles.PNG)
 
@@ -420,7 +420,7 @@ Sets the scale of the export imagery.
 * Retina (2) will export two times the pixels.
 * Print (4) will export four times the pixels.
 
-#### Display Settings
+#### Display Rules
 
 Allows toggling visible features on the exported map, such as Icons, Location Types, and Labels.
 
