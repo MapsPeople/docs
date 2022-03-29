@@ -131,7 +131,7 @@ Categories are similar to Types, but whereas Locations can only be of one Type, 
 Type Visibility is the term used to determine at which Zoom Levels both the Types' Icons and Labels are visible.
 
 1. A save button, click this to save your changes.
-1. Hide/Unhide - Click or unclick this if you don't want a specific Type to show up on the map at all.
+1. Visibility toggle - Click to toggle on/off the Type visibility. It controls whether the Type Icons and Labels are shown on the Map
 1. Set the minimum and maximum Zoom Level at which a given Type should be visible.
 
 #### Buildings
