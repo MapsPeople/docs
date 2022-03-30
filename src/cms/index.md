@@ -8,21 +8,21 @@ eleventyNavigation:
   order: 10
 ---
 
-The MapsIndoors Content Management System (CMS) enables you to add, edit, and maintain your location data within the MapsIndoors platform.
+The MapsIndoors Content Management System (CMS) enables you to add, edit, and maintain your data within the MapsIndoors platform.
 
 Your data is structured in a hierarchy where the top level is your Solution which can contain multiple Venues, which in turn can have multiple Buildings and so on. The data-types in hierarchical order:
 
 * **Solution**
-  * A Solution is the topmost level of your data structure. It encompasses all of the Venues, Buildings and Locations that you need for your MapsIndoors implementation. It is possible to have more than one solution, but for the mast vajority of use-cases, you will just have one.
+  * A Solution is the topmost level of your data structure. It encompasses all of the Venues, Buildings and Locations that you need for your MapsIndoors implementation. It is possible to have more than one Solution, but for the vast majority of use-cases, you will just have one.
 * **Venues**
-  * A Venue is the second level of data. You can have multiple Venues in one solution. For example, a large company might have multiple offices spread over the country. Each of these could be a Venue, but under the same solution. A Venue can consist of one or more Buildings. For example, a sports stadium might be many Buildings, but it is all considered the same Venue.
+  * A Venue is the second level of data. You can have multiple Venues in one Solution. For example, a large company might have multiple offices spread over the country. Each of these could be a Venue, but under the same Solution. A Venue can consist of one or more Buildings. For example, a sports stadium might be many Buildings, but it is all considered the same Venue.
 * **Buildings**
   * A Building is a collection of Floors. Inside a Venue you can have one or more Buildings and an Outside area. Outside is categorized together with Buildings, because it is a part of what comprises a Venue.
 * **Floors**
   * Floors are the levels that exist within a Building. A Building has at least one Floor.
 * **Locations**
-  * Locations can be split into two separate types - Rooms and Points of Interest (POIs).
-    * A Room is a data point with a defined boundary, often corresponding to the walls of the physical Room. This could e.g. be a meeting room, or a bathroom.
+  * There are three kinds of Locations: Rooms, Areas, and Points of Interest (POIs).
+    * A Room is a multi-point polygon, representing the walls of the physical Room, like a meeting room, or a restroom.
 
     * A POI is a point on the Map that can be added and moved in the CMS. POIs do not have any polygon data as it consists of only one point. Some examples of POIs are locations that are not available in Floor plan drawings, such as coffee machines, food trucks, or temporary event structures.
 
@@ -30,16 +30,16 @@ View the tutorial video below for more information about terminology and hierarc
 
 <iframe width="480" height="300" src="https://www.youtube-nocookie.com/embed/GwyO-Vav8Rs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-There are two main pages in the CMS, "Map" and "Solution Details". The heirachial structure is like this:
+There are two main pages in the CMS, "Map" and "Solution Details". The hierarchical structure is like this:
 
-* **Map** - The main page, this is where you manage your Map.
+* **Map** - The main page where you manage your data on the map.
 * **Solution Details** - A "behind-the-scenes" page, where you administrate things such as Categories, Types, Visibility, etc.
   * **Types** - Defines "types" of Locations. Types work as specific identifiers for a group of Locations such as "Canteen", "Bathroom", etc.
-  * **Categories** - Categories are a way to group or organize Locations for easier searching in your application. Categories can be used to group Locations in bundles regardless of their Type. The Types "Male Bathroom" and "Female Bathroom" might both belong to the Category "Toilets".
+  * **Categories** - Categories are a way to group or organize Locations for easier browsing in your application. Categories can be used to group Locations in bundles regardless of their Type.
   * **Type Visibility** - Defines the Zoom Levels for which the Locations of each Type will appear on the Map.
   * **Buildings** - An overview of the Buildings present in your Venue.
   * **Venues** - An overview of the Venues present in your Solution.
-  * **Export Map** - Generates a high-resolution image of your Map, suitable for printing or similar.
+  * **Export Map** - Generates a high-resolution image of your Map, suitable for printing or similar. *Note*: Not available for all customers.
   * **App Settings** - A page with various settings concerning your app.
     * **App Configuration** - Settings to configure your app.
     * **API Keys** - API Keys used by your Solution.
@@ -47,7 +47,7 @@ There are two main pages in the CMS, "Map" and "Solution Details". The heirachia
     * **Position Provider** - Settings for the position provider you use for your Solution.
     * **Webex** - Settings for your Cisco Webex Integration.
 
-In the CMS there are different levels of users, which has an effect on what you have access to. For example, an "Admin" level user has access to Solution-level settings, wherean an "Editor" primarily has access to create and edit Locations on the Map. This documentation is written with an **Admin** user level in mind.
+In the CMS there are different levels of users, which has an effect on what you have access to. For example, an "Admin" level user has access to Solution-level settings, whereas an "Editor" primarily has access to create and edit Locations on the Map. This documentation is written with an **Admin** user level in mind.
 
 * **Editor** - Editors can create new Locations, edit and delete existing Locations.
 * **Admin** - Administrators have editor rights and have access to further settings in the CMS
@@ -68,7 +68,7 @@ The Map section is the main navigation of the MapsIndoors CMS and includes the F
 1. Opens a drop-down menu containing options such as "Docs", "Log Out", and a link to enabling two-factor authentication.
 1. Select the active Venue. The filter bar can then be used to narrow down the data you see on the Map and Lists for this Venue.
 1. Select one or more Buildings.
-1. Select one or more Floors.
+1. Select one or more Floors. This is active when a single Building is selected.
 1. Filters on whether Rooms, POIs, and Areas should be shown on the Map and in the List.
 1. A filter to narrow down Locations to display of specific Location Types.
 1. A filter to narrow down Locations to display of specific Categories.
@@ -83,12 +83,12 @@ The Map section is the main navigation of the MapsIndoors CMS and includes the F
 
 ![map-toolbar](/assets/cms/interface-overview/Map_Toolbar.png)
 
-Working left to right, the functionality in this main Toolbar is as follows - You can also hover over the icons in the CMS to see their names.
+From left to right, the functionalities in the Toolbar are as follows (you can also hover over the icons in the CMS to see their names):
 
 * **Add POI** - Creates a Point of Interest where you click on the Map. Afterwards it opens an editor where Location details can be adjusted.
 * **Add Area** - Creates an Area by clicking on the Map to create corners of a polygon. Afterwards it opens an editor where Area details can be adjusted.
 * **Show Network** - A toggle button to show or hide the Route Network your Directions feature will use.
-* **Add Barrier Route Element** - Creates a Route Element on your map - The Barrier Route Element can be used to apply e.g. restrictions, delay, or one way direction to specific parts of the Network. For example, if you do not want your Directions to guide your visitors down a specific hallway, but there isn't a physical Door present, this Route Element can be used.
+* **Add Barrier Route Element** - Creates a Route Element on your map. The Barrier Route Element can be used to apply e.g. restrictions, delay, or define one way direction to specific parts of the Network. For example, if you do not want your directions to guide your visitors down a specific hallway, but there isn't a Door present, this Route Element can be used.
 * **Reload Route Network** - Reloads the Route Network. Route Element changes' effect on the Network becomes visible after reloading the Network.
 * **Zoom Level** - Adjust the Zoom Level. Values range from 15 (zoom out) to 22 (zoom in).
 
@@ -105,7 +105,7 @@ This page is for organising the "Types" you sort your locations in to.
 1. Create a new Type.
 1. Click to select a Type, for easy selection of multiple Types at once.
 1. "Edit Type" - Gives you the option to change the name of the Type, or to modify the App User Role restrictions.
-1. "Edit Display Rules" - The ability to modify the Display Rules for a given Type - See more detailed information on Display Rules [here]({{site.url}}/various/display-rules/).
+1. "Edit Display Rules" - The ability to modify the Display Rules for a given Type. Read more about [Display Rules]({{site.url}}/various/display-rules/).
 1. The name of the Type.
 1. The Icon assigned to the Type.
 1. Displays what information the Type's Label contains when displayed on your Map.
@@ -129,7 +129,7 @@ Categories are similar to Types, but whereas Locations can only be of one Type, 
 
 Type Visibility is the term used to determine at which Zoom Levels both the Types' Icons and Labels are visible.
 
-1. A save button, click this to save your changes.
+1. A save button. Click this to save your changes.
 1. Visibility toggle - Click to toggle on/off the Type visibility. It controls whether the Type Icons and Labels are shown on the Map
 1. Set the minimum and maximum Zoom Level at which a given Type should be visible.
 
@@ -139,7 +139,7 @@ Type Visibility is the term used to determine at which Zoom Levels both the Type
 
 This page provides you with a list of the Buildings in the selected Venue in your Solution.
 
-1. "Edit Building" - Let's you edit the properties of the Building, such as name, ID and Floors.
+1. "Edit Building". Lets you edit the properties of the Building, such as name, ID and Floors.
 1. The Name of the Building.
 1. The Administrative ID of the Building.
 1. The Address of the Building.
@@ -148,7 +148,7 @@ This page provides you with a list of the Buildings in the selected Venue in you
 
 ![solution-details-venues](/assets/cms/interface-overview/Solution_Details_Venues.png)
 
-A page featuring a list of Venues in your Solution. These are provided by MapsIndoors, too add more, contact your representative.
+A page featuring a list of Venues in your Solution. These are provided by MapsIndoors, and to add more, contact your representative.
 
 1. "Edit Venue" - You can e.g. edit Venue Name and Venue External ID in the Venue details editor.
 1. The Name of your Venues.
@@ -516,7 +516,7 @@ If you use Excel you can find a video on how to open a CSV file here: [https://w
 
 ### Users
 
-Allows Admins, to control who has access and what roles they have, or create new users.
+Allows Admins to control who has access, and what roles they have, as well as create new users.
 
 A list appears with all users for the Solution. You can also search for an email via the search box in the upper right.
 
