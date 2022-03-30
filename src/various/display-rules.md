@@ -33,6 +33,14 @@ To remove a value from the Display Rule (to make it inherit from further up the 
 
 ## Display Rule Properties
 
+### In CMS
+
+> You can currently only edit Display Rules per Type - Editing by Location will come in a future version of the CMS.
+
+In the CMS, you can edit your Display Rules in `Solution Details > Types > Edit *location name* Settings`, the icon third from the left. This will open a list of the various Display Rules.
+
+### In Code
+
 A Display Rule could look like this:
 
 ```json
