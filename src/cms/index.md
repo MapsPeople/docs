@@ -198,7 +198,7 @@ The API Keys used to make your MapsIndoors Solution consist of random combinatio
 
 You can also modify your App User Roles from within these pages.
 
-1. "Edit Role" - Edit settings pertaining to one specific App User Role.
+1. "Edit Role". Edit settings pertaining to one specific App User Role.
 1. The names of your App User Roles.
 1. "Add App User Role" - Create a new App User Role.
 
