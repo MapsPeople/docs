@@ -33,7 +33,7 @@ View the tutorial video below for more information about terminology and hierarc
 There are two main pages in the CMS, "Map" and "Solution Details". The hierarchical structure is like this:
 
 * **Map** - The main page where you manage your data on the map.
-* **Solution Details** - A "behind-the-scenes" page, where you administrate things such as Categories, Types, Visibility, etc.
+* **Solution Details** - A "behind-the-scenes" page, where you manage Categories, Types, App Settings, etc.
   * **Types** - Defines "types" of Locations. Types work as specific identifiers for a group of Locations such as "Canteen", "Bathroom", etc.
   * **Categories** - Categories are a way to group or organize Locations for easier browsing in your application. Categories can be used to group Locations in bundles regardless of their Type.
   * **Type Visibility** - Defines the Zoom Levels for which the Locations of each Type will appear on the Map.
