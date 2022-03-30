@@ -116,7 +116,7 @@ This page is for organising the "Types" you sort your locations in to.
 
 ![solution-details-categories](/assets/cms/interface-overview/Solution_Details_Categories.png)
 
-Categories are similar to Types, but whereas Locations can only be of one Type, they can be of multiple Categories. Categories are used for browsing important Locations, or amenities, in your application. - For example, a canteen might be in a Category of both "Food" and "Leisure", but still only be of the Type "Canteen".
+Categories are similar to Types, but whereas Locations can only be of one Type, they can be of multiple Categories. Categories are used for browsing important Locations, or amenities, in your application. For example, a canteen might be in a Category of both "Food" and "Leisure", but still only be of the Type "Canteen".
 
 1. Create a new Category.
 1. "Edit Category" - Edit properties of your Category.
