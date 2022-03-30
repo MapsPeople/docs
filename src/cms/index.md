@@ -188,13 +188,13 @@ Here you can change the title of your app.
 1. Save the changes you've made.
 1. Enter the name you wish to use.
 
-![solution-details-alias](/assets/cms/interface-overview/Solution_Details_Alias.PNG)
+![solution-details-alias](/assets/cms/interface-overview/Solution_Details_Alias.png)
 
 The API Keys used to make your MapsIndoors Solution consist of random combinations of letters and numbers. Here, you can assign them an Alias to make it easier to remember.
 
 > NOTE: Do not set an Alias if you want to make it more difficult to find and load your MapsIndoors data in a standard app. In that case, you can only load the data with an API key.
 
-![solution-details-app-user-roles](/assets/cms/interface-overview/Solution_Details_App_User_Roles.PNG)
+![solution-details-app-user-roles](/assets/cms/interface-overview/Solution_Details_App_User_Roles.png)
 
 You can also modify your App User Roles from within these pages.
 
@@ -269,7 +269,7 @@ Each Location also has a number of settings associated with it. If you select a 
 
 > IndoorView is only supported for web
 
-To get started using the IndoorView feature for your Locations, please make sure that the _Google Street View panorama images_ are publicly available for your building by looking at [Google Maps](https://www.google.com/maps). If no imagery is available, please [contact a certified Street View Photographer](https://www.google.com/streetview/contacts-tools/).
+To get started using the IndoorView feature for your Locations, please make sure that the *Google Street View panorama images* are publicly available for your building by looking at [Google Maps](https://www.google.com/maps). If no imagery is available, please [contact a certified Street View Photographer](https://www.google.com/streetview/contacts-tools/).
 
 1. Click "Set Street View image”
 
