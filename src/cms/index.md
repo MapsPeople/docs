@@ -24,7 +24,7 @@ Your data is structured in a hierarchy where the top level is your Solution whic
   * There are three kinds of Locations: Rooms, Areas, and Points of Interest (POIs).
     * A Room is a multi-point polygon, representing the walls of the physical Room, like a meeting room, or a restroom.
 
-    * A POI is a point on the Map that can be added and moved in the CMS. POIs do not have any polygon data as it consists of only one point. Some examples of POIs are locations that are not available in Floor plan drawings, such as coffee machines, food trucks, or temporary event structures.
+    * A POI is a point on the map that can be added and moved in the CMS. POIs do not have any polygon data as it consists of only one point. Some examples of POIs are locations that are not available in floor plan drawings, such as coffee machines, food trucks, or temporary event structures.
 
 View the tutorial video below for more information about terminology and hierarchy, or visit the [Glossary]({{site.url}}/various/glossary/).
 
@@ -33,7 +33,7 @@ View the tutorial video below for more information about terminology and hierarc
 There are two main pages in the CMS, "Map" and "Solution Details". The hierarchical structure is like this:
 
 * **Map** - The main page where you manage your data on the map.
-* **Solution Details** - A "behind-the-scenes" page, where you administrate things such as Categories, Types, Visibility, etc.
+* **Solution Details** - A "behind-the-scenes" page, where you manage Categories, Types, App Settings, etc.
   * **Types** - Defines "types" of Locations. Types work as specific identifiers for a group of Locations such as "Canteen", "Bathroom", etc.
   * **Categories** - Categories are a way to group or organize Locations for easier browsing in your application. Categories can be used to group Locations in bundles regardless of their Type.
   * **Type Visibility** - Defines the Zoom Levels for which the Locations of each Type will appear on the Map.
@@ -116,7 +116,7 @@ This page is for organising the "Types" you sort your locations in to.
 
 ![solution-details-categories](/assets/cms/interface-overview/Solution_Details_Categories.png)
 
-Categories are similar to Types, but whereas Locations can only be of one Type, they can be of multiple Categories. Categories are used for browsing important Locations, or amenities, in your application. - For example, a canteen might be in a Category of both "Food" and "Leisure", but still only be of the Type "Canteen".
+Categories are similar to Types, but whereas Locations can only be of one Type, they can be of multiple Categories. Categories are used for browsing important Locations, or amenities, in your application. For example, a canteen might be in a Category of both "Food" and "Leisure", but still only be of the Type "Canteen".
 
 1. Create a new Category.
 1. "Edit Category" - Edit properties of your Category.
@@ -130,7 +130,7 @@ Categories are similar to Types, but whereas Locations can only be of one Type, 
 Type Visibility is the term used to determine at which Zoom Levels both the Types' Icons and Labels are visible.
 
 1. A save button. Click this to save your changes.
-1. Visibility toggle - Click to toggle on/off the Type visibility. It controls whether the Type Icons and Labels are shown on the Map
+1. Visibility toggle. Click to toggle on/off the Type visibility. It controls whether the Type Icons and Labels are shown on the Map
 1. Set the minimum and maximum Zoom Level at which a given Type should be visible.
 
 #### Buildings
@@ -150,7 +150,7 @@ This page provides you with a list of the Buildings in the selected Venue in you
 
 A page featuring a list of Venues in your Solution. These are provided by MapsIndoors, and to add more, contact your representative.
 
-1. "Edit Venue" - You can e.g. edit Venue Name and Venue External ID in the Venue details editor.
+1. "Edit Venue". You can e.g. edit Venue Name and Venue External ID in the Venue details editor.
 1. The Name of your Venues.
 1. The Venue ID of your Venue.
 
@@ -198,7 +198,7 @@ The API Keys used to make your MapsIndoors Solution consist of random combinatio
 
 You can also modify your App User Roles from within these pages.
 
-1. "Edit Role" - Edit settings pertaining to one specific App User Role.
+1. "Edit Role". Edit settings pertaining to one specific App User Role.
 1. The names of your App User Roles.
 1. "Add App User Role" - Create a new App User Role.
 
