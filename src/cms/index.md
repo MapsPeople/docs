@@ -194,7 +194,7 @@ The API Keys used to make your MapsIndoors Solution consist of random combinatio
 
 > NOTE: Do not set an Alias if you want to make it more difficult to find and load your MapsIndoors data in a standard app. In that case, you can only load the data with an API key.
 
-![solution-details-app-user-roles](/assets/cms/interface-overview/Solution_Details_App_User_Roles.png)
+![solution-details-app-user-roles](/assets/cms/interface-overview/Solution_Details_App_User_Roles_V2.png)
 
 You can also modify your App User Roles from within these pages.
 
@@ -220,7 +220,7 @@ You can create as many API keys as you want, and it is good practise to use one 
 
 You can easily delete an API key if it is unused, or has been compromised in some way.
 
-![solution-details-api-keys](/assets/cms/interface-overview/Solution_Details_API_Keys.png)
+![solution-details-api-keys](/assets/cms/interface-overview/Solution_Details_API_Keys_V2.png)
 
 1. The name that you want to use to identify the new API key.
 1. Generate API key.
