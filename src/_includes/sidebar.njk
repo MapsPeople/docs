@@ -53,3 +53,31 @@
   {% endif %}
   {{ navPages | eleventyNavigationToHtml({listClass: "sidebar-nav", activeListItemClass: "active", activeKey: eleventyNavigation.key}) | safe }}
 </nav>
+
+<style>
+    .sidebar-nav ul {
+        display: none;
+    }
+
+    .sidebar-nav .visible {
+      display: block;
+    }
+</style>
+
+<script>
+let activeListItem = document.querySelector('.sidebar-nav .active');
+
+if (activeListItem) {
+  activeListItem.querySelector(':scope > ul') ? activeListItem.querySelector(':scope > ul').style.display = 'block' : null;
+
+  // Traverse updwards from the active and show lists
+  while (activeListItem.parentNode && activeListItem.parentNode.classList.contains('sidebar-nav') === false) {
+    activeListItem = activeListItem.parentNode;
+    if (activeListItem.tagName = 'li') {
+      activeListItem.classList.add('visible');
+    }
+  }
+} else {
+  document.querySelector('.sidebar-nav > li > ul').style.display = 'block';
+}
+</script>
