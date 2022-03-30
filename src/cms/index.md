@@ -150,7 +150,7 @@ This page provides you with a list of the Buildings in the selected Venue in you
 
 A page featuring a list of Venues in your Solution. These are provided by MapsIndoors, and to add more, contact your representative.
 
-1. "Edit Venue" - You can e.g. edit Venue Name and Venue External ID in the Venue details editor.
+1. "Edit Venue". You can e.g. edit Venue Name and Venue External ID in the Venue details editor.
 1. The Name of your Venues.
 1. The Venue ID of your Venue.
 
