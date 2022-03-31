@@ -3,21 +3,24 @@
  */
 window.addEventListener('DOMContentLoaded', () => {
     /*
-     * Hide elements in the sidebar that is unrelated to the currently shown page (marked with class name "active").
+     * Hide lists in the sidebar that are unrelated to the currently shown page (marked with class name "active").
      */
-    let activeListItem = document.querySelector('.sidebar-nav .active');
-    if (activeListItem) {
-        activeListItem.querySelector(':scope > ul') ? activeListItem.querySelector(':scope > ul').style.display = 'block' : null;
+    let activeList = document.querySelector('.sidebar-nav .active');
+    if (activeList) {
+        if (activeList.querySelector(':scope > ul')) {
+            activeList.querySelector(':scope > ul').style.display = 'block';
+        }
 
         // Traverse updwards from the active list and reveal the lists
-        while (activeListItem.parentNode && activeListItem.parentNode.classList.contains('sidebar-nav') === false) {
-            activeListItem = activeListItem.parentNode;
-            if (activeListItem.tagName = 'li') {
-                activeListItem.classList.add('visible');
+        while (activeList.parentNode && activeList.parentNode.classList.contains('sidebar-nav') === false) {
+            activeList = activeList.parentNode;
+            if (activeList.tagName = 'li') {
+                activeList.classList.add('visible');
             }
         }
     } else {
-        document.querySelector('.sidebar-nav > li > ul').style.display = 'block';
+        // In case no list is active, set the first one as visible
+        document.querySelector('.sidebar-nav > li:first-child > ul').style.display = 'block';
     }
 
     /*
