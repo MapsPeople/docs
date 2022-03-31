@@ -23,7 +23,7 @@ To set up your Kiosk, you need to set a few parameters in the URL. The `?` symbo
 
 This is what the full URL for an app in Kiosk mode could look like:
 
-<http://kiosk.mapsindoors.com/demo?originLocation=652cf26a26784b4e9a390d8b&zoom=22&timeout=20&legend=true&bearing=180&pitch=60&liveData=occupancy,availability,position>
+<http://kiosk.mapsindoors.com/demo?originLocation=652cf26a26784b4e9a390d8b&zoom=22&timeout=20&legend=true&bearing=180&pitch=60&liveData=occupancy,availability,position&logOut=true>
 
 Splitting the URL, this is what it contains:
 
@@ -35,6 +35,9 @@ Splitting the URL, this is what it contains:
 * **`&bearing=180`** is how much the map should be rotated from North (in this case 180 degrees, so due South)
 * **`&pitch=60`** is how much the map should tilt towards the horizon
 * **`&liveData=occupancy,availability,position`** is which Live Data Domains should be enabled on the Kiosk
+* **`&logOut=true`** is to control the visibility of the log-out button.*
+
+*Only relevant if SSO is enabled for the customer.
 
 All the parameters can be combined individually and differently for each Kiosk you set up.
 
@@ -93,6 +96,7 @@ The following events is sent from the kiosk when triggered:
 | Initialization | URL parameter configured | Pitch parameter was set                                  | True     | When the pitch parameter is set                                       |
 | Initialization | URL parameter configured | Legend was set                                           | True     | When the legend params is set to true                                 |
 | Initialization | URL parameter configured | LiveData parameter was set ([DOMAIN TYPES])              | True     | When live data parameter is set                                       |
+| Initialization | URL parameter configured | LogOut parameter was set                                 | True     | When logOut parameter is set                                          |
 | Home           | Reset                    | Kiosk was reset                                          | True     | When the kiosk is dirty and has been idle for X amount of seconds     |
 | Search         | Location selected        | Location id: [LOCATION ID], Search query: [SEARCH QUERY] | False    | When a location is selected in the list and a search query is entered |
 | Search         | Location selected        | Location id: [LOCATION ID]                               | False    | When a location is selected in the list                               |
@@ -219,6 +223,18 @@ The `pitch` URL parameter is saved in the browser's local storage as  `MIKIOSK:{
 
 ```bash
 http://kiosk.mapsindoors.com/demo?pitch=60
+```
+
+### `logOut`
+
+By adding the `logOut` URL parameter, a log-out button will be visible in the upper right corner of the viewport. The button is only visible when a user is logged in, and the URL parameter is present. This parameter is only relevant for customers with SSO enabled for their Solution.
+
+The `logOut` URL parameter is saved in the browser's local storage as `MIKIOSK:{miApiKey}-paramLogOut`.
+
+#### Example
+
+```bash
+http://kiosk.mapsindoors.com/demo?logOut=true
 ```
 
 ## Live Data Badges
