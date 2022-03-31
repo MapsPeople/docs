@@ -30,7 +30,7 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 
 ### Changed
 
-- A number of headers are no longer public – they were not intended for public consumption anyways…
+- A number of headers have been made private to reduce clutter in the reference documentation.
 
 ### Fixed
 
