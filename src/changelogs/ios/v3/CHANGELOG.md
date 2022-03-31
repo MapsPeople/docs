@@ -18,14 +18,14 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 ### Removed
 -->
 
-## [3.39.0] 2022-03-28
+## [3.39.0] 2022-03-31
 
-### __*Note: Due to a bug in CocoaPods it is necessary to include the post_install hook in your Podfile described in the [PodFile post_install](https://github.com/MapsIndoors/MapsIndoorsIOS/wiki/Podfile-post_install) wiki*__
+### __*Note: Due to [a bug in CocoaPods](https://github.com/CocoaPods/CocoaPods/issues/7155) it is necessary to include the post_install hook in your Podfile described in the [PodFile post_install](https://github.com/MapsIndoors/MapsIndoorsIOS/wiki/Podfile-post_install) wiki*__
 
 ### Added
 
-- We added the possibility to get the `translatedName` property of Location Types.
 - We added an enum for `MPHighwayType`, so it is now easy to know which values are valid to use.
+- We added the possibility to get the `translatedName` property of Location Types.
 - We added the method `MPVenue.hasGraph` so it can be checked if there is a routing network available on a solution to get directions.
 
 ### Changed
