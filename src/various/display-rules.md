@@ -37,7 +37,43 @@ To remove a value from the Display Rule (to make it inherit from further up the 
 
 > You can currently only edit Display Rules per Type - Editing by Location will come in a future version of the CMS.
 
-In the CMS, you can edit your Display Rules in `Solution Details > Types > Edit *location name* Settings`, the icon third from the left. This will open a list of the various Display Rules.
+In the CMS, you can edit your Display Rules in `Solution Details > Types > Edit [location name] Settings`, the icon third from the left. This will open a list of the various Display Rules.
+
+![display-rules-general](/assets/cms/interface-overview/Display_Rules_General.png)
+
+The "General" section only has an option to determine whether or not the Type is visible on the map.
+
+![display-rules-icon](/assets/cms/interface-overview/Display_Rules_Icon.png)
+
+The "Icon" section contains options related to the appearance of the Icon.
+
+1. Visibility - Controls whether the Icon is visible on the map or not.
+1. Zoom from - Sets the minimum Zoom Level at which the Icon is visible.
+1. Zoom to - Sets the maximum Zoom Level at which the Icon is visible.
+1. Icon - Use the Icon Manager to control which Icon is shown on the map.
+
+![display-rules-label](/assets/cms/interface-overview/Display_Rules_Label.png)
+
+The "Label" section contains options related to the appearance of the Label.
+
+1. Visibility - Controls whether the Label is visible on the map or not.
+1. Zoom from - Sets the minimum Zoom Level at which the Label is visible.
+1. Zoom to - Sets the maximum Zoom Level at which the Label is visible.
+1. Template - Controls the information the Label should contain.
+1. Max width - Specify how wide a Label can be befotre forcing a line-break.
+
+![display-rules-polygon](/assets/cms/interface-overview/Display_Rules_Polygon.png)
+
+The "Polygon" section contains options related to the appearance of the Polygon.
+
+1. Visibility - Controls whether the Polygon is visible on the map or not.
+1. Zoom from - Sets the minimum Zoom Level at which the Polygon is visible.
+1. Zoom to - Sets the maximum Zoom Level at which the Polygon is visible.
+1. Stroke color - Controls the stroke color of the Polygon.
+1. Stroke width - Controls the stroke width of the Polygon.
+1. Stroke opacity - Controls the stroke opacity of the Polygon.
+1. Fill color - Controls the fill color of the Polygon.
+1. Fill opacity - Controls the fill opacity of the Polygon.
 
 ### In Code
 
