@@ -11,7 +11,7 @@ window.addEventListener('DOMContentLoaded', () => {
             activeList.querySelector(':scope > ul').style.display = 'block';
         }
 
-        // Traverse updwards from the active list and reveal the lists
+        // Traverse upwards from the active list and reveal the lists
         while (activeList.parentNode && activeList.parentNode.classList.contains('sidebar-nav') === false) {
             activeList = activeList.parentNode;
             if (activeList.tagName = 'li') {
