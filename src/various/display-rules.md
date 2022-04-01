@@ -41,7 +41,7 @@ In the CMS, you can edit your Display Rules in `Solution Details > Types > Edit 
 
 ![display-rules-general](/assets/cms/interface-overview/Display_Rules_General.png)
 
-The "General" section only has an option to determine whether or not the Type is visible on the map.
+The "General" visibility switch determines whether Locations of this Type are visible on the map. Moreover, the Location data is not available to the SDKs when the general visibility is turned off.
 
 ![display-rules-icon](/assets/cms/interface-overview/Display_Rules_Icon.png)
 
