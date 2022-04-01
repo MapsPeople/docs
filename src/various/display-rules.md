@@ -35,7 +35,7 @@ To remove a value from the Display Rule (to make it inherit from further up the 
 
 ### In CMS
 
-> You can currently only edit Display Rules per Type - Editing by Location will come in a future version of the CMS.
+> You can currently only edit Display Rules per Type. Editing Display Rules on single Locations will be added in an upcoming release.
 
 In the CMS, you can edit your Display Rules in `Solution Details > Types > Edit [location name] Settings`, the icon third from the left. This will open a list of the various Display Rules.
 
