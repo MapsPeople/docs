@@ -22,7 +22,7 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 
 ### Fixed
 
-- Crash where the SDK would potentially execute on the wrong thread, when modifying display rules
+- Crash where the SDK would potentially execute on the wrong thread when modifying display rules
 
 ## [3.13.8] 2022-03-31
 
