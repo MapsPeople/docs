@@ -90,6 +90,10 @@ module.exports = function (eleventyConfig) {
         return collectionApi.getFilteredByTags("legacy");
     });
 
+    eleventyConfig.addCollection("docs", function (collectionApi) {
+        return collectionApi.getFilteredByTags("docs");
+    });
+
     eleventyConfig.addCollection("published", function (collectionApi) {
         return [...collectionApi.getFilteredByGlob("./src/**/*.md")].filter(
             (post) => !post.data.draft
