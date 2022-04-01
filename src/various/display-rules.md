@@ -49,8 +49,11 @@ The "Icon" section contains options related to the appearance of the Icon.
 
 1. Visibility - Controls whether the Icon is visible on the map.
 1. Zoom from - Sets the minimum Zoom Level at which the Icon is visible.
+    * The value should be a number between 1 and 22, with 1 being very far away, and 22 being very close. In a general use case, most users will only need values between 15 and 22.
 1. Zoom to - Sets the maximum Zoom Level at which the Icon is visible.
+    * The value should be a number between 1 and 22, with 1 being very far away, and 22 being very close. In a general use case, most users will only need values between 15 and 22.
 1. Icon - Use the Icon Manager to control which Icon is shown on the map.
+    * The Icon Manager is a tool to select the displayed Icon from either a pre-loaded selection of Icons, or for you to upload your own.
 
 ![display-rules-label](/assets/cms/interface-overview/Display_Rules_Label.png)
 
@@ -58,9 +61,15 @@ The "Label" section contains options related to the appearance of the Label.
 
 1. Visibility - Controls whether the Label is visible on the map.
 1. Zoom from - Sets the minimum Zoom Level at which the Label is visible.
+   * The value should be a number between 1 and 22, with 1 being very far away, and 22 being very close. In a general use case, most users will only need values between 15 and 22.
 1. Zoom to - Sets the maximum Zoom Level at which the Label is visible.
+   * The value should be a number between 1 and 22, with 1 being very far away, and 22 being very close. In a general use case, most users will only need values between 15 and 22.
 1. Template - Controls the information the Label should contain.
-1. Max width - Specify how wide a Label can be before forcing a line-break.
+    * Location Name - Only displays the name of the Location.
+    * External ID - Only displays the External ID of the Location.
+    * External ID & Location Name - Displays both the External ID and the Location Name, with the External ID first.
+    * Location Name & External ID - Displays both the Location Name and the External ID, with the Location Name first.
+1. Max width - Specify how wide (in pixels) a Label can be before forcing a line-break.
 
 ![display-rules-polygon](/assets/cms/interface-overview/Display_Rules_Polygon.png)
 
@@ -68,12 +77,18 @@ The "Polygon" section contains options related to the appearance of the Polygon.
 
 1. Visibility - Controls whether the Polygon is visible on the map.
 1. Zoom from - Sets the minimum Zoom Level at which the Polygon is visible.
+   * The value should be a number between 1 and 22, with 1 being very far away, and 22 being very close. In a general use case, most users will only need values between 15 and 22.
 1. Zoom to - Sets the maximum Zoom Level at which the Polygon is visible.
+   * The value should be a number between 1 and 22, with 1 being very far away, and 22 being very close. In a general use case, most users will only need values between 15 and 22.
 1. Stroke color - Controls the stroke color of the Polygon.
-1. Stroke width - Controls the stroke width of the Polygon.
+    * You can select a colour using either a colour picker or entering an RGB (eg. 48, 113, 217) or HSL (eg. 217, 69%, 52%) value, or a HEX code (eg. #3071D9).
+1. Stroke width - Controls the stroke width (in pixels) of the Polygon.
 1. Stroke opacity - Controls the stroke opacity of the Polygon.
+    * The value here should be between 0 and 1, for example a value of 1 gives 100% opacity, 0.2 gives 20% opacity, etc.
 1. Fill color - Controls the fill color of the Polygon.
+    * You can select a colour using either a colour picker or entering an RGB (eg. 48, 113, 217) or HSL (eg. 217, 69%, 52%) value, or a HEX code (eg. #3071D9).
 1. Fill opacity - Controls the fill opacity of the Polygon.
+    * The value here should be between 0 and 1, for example a value of 1 gives 100% opacity, 0.2 gives 20% opacity, etc.
 
 ### In Code
 
