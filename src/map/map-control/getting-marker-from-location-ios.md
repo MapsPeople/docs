@@ -7,6 +7,9 @@ eleventyNavigation:
   order: 220
 ---
 
+<!-- Known Issues -->
+{% include "src/shared/known-issues-ios.md" %}
+
 If a `MPLocation` has been displayed on a map, the marker can be retrieved using `location.marker`. On the opposite, get a `MPLocation` from a `GMSMarker` using `getLocation(marker: GMSMarker)` on `MPMapControl`:
 
 ```swift

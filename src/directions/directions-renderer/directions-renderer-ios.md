@@ -7,6 +7,9 @@ eleventyNavigation:
   order: 20
 ---
 
+<!-- Known Issues -->
+{% include "src/shared/known-issues-ios.md" %}
+
 When getting the result Route from a [Directions Service]({{ site.url }}/directions/directions-service/directions-service-ios/), we may want to display this Route on a map. To perform this task the `MPDirectionsRenderer` can be used.
 
 This example shows how to setup a query for a route and display the result on a Google Map using the `MPDirectionsRenderer`:

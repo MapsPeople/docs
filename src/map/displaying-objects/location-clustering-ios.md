@@ -7,6 +7,9 @@ eleventyNavigation:
   order: 140
 ---
 
+<!-- Known Issues -->
+{% include "src/shared/known-issues-ios.md" %}
+
 This is an example of enabling and disabling location grouping on the map as well as providing custom cluster tapping behavior and custom cluster images.
 
 Start by creating a `UIViewController` class that conforms to the `MPMapControlDelegate` protocol

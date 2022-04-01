@@ -7,6 +7,9 @@ eleventyNavigation:
   order: 20
 ---
 
+<!-- Known Issues -->
+{% include "src/shared/known-issues-ios.md" %}
+
 {% include "src/shared/guides/search/overview.md" %}
 
 See the full list of parameters:

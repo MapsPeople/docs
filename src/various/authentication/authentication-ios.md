@@ -7,6 +7,9 @@ eleventyNavigation:
     order: 10
 ---
 
+<!-- Known Issues -->
+{% include "src/shared/known-issues-ios.md" %}
+
 This guide covers the different aspects of user authentication and authorization in the MapsIndoors iOS SDK.
 
 Usually, access to the services behind the MapsIndoors SDK is restricted with API keys. However, as an additional layer of security and control, access can be restricted to users of a specific tenant. A MapsIndoors dataset can only be subject to user authentication and authorization if an integration with an identity provider exists. Current examples of such identity providers are _Google_ and _Microsoft_. These providers and more can be added and integrated to your MapsIndoors project by request.

@@ -7,6 +7,9 @@ eleventyNavigation:
   order: 20
 ---
 
+<!-- Known Issues -->
+{% include "src/shared/known-issues-ios.md" %}
+
 Use the `MPLocationService` class to search for content in your MapsIndoors Solution.
 
 This example shows how to setup a query for the nearest single best matching Location and display the result on the map:

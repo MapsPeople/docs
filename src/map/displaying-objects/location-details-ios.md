@@ -7,6 +7,9 @@ eleventyNavigation:
   order: 100
 ---
 
+<!-- Known Issues -->
+{% include "src/shared/known-issues-ios.md" %}
+
 This is an example of displaying some details of a MapsIndoors location
 
 Start by creating a `UIViewController` class that conforms to the `GMSMapViewDelegate` protocol

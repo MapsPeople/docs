@@ -7,6 +7,9 @@ eleventyNavigation:
   order: 20
 ---
 
+<!-- Known Issues -->
+{% include "src/shared/known-issues-ios.md" %}
+
 The class `MPDirectionsService` is used to request routes from one point to another. The minimal required input is an `origin` and a `destination`. You need to build a query using the `MPDirectionsQuery` class.
 
 This example shows how to setup and execute a query for a Route:

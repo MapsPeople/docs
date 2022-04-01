@@ -7,6 +7,9 @@ eleventyNavigation:
   order: 10
 ---
 
+<!-- Known Issues -->
+{% include "src/shared/known-issues-ios.md" %}
+
 ## Cacheable Data
 
 MapsIndoors has three levels of caching:

@@ -7,6 +7,9 @@ eleventyNavigation:
   order: 380
 ---
 
+<!-- Known Issues -->
+{% include "src/shared/known-issues-ios.md" %}
+
 <!-- Introduction -->
 {% include "src/shared/display-language/intro.md" %}
 
