@@ -1,7 +1,7 @@
 ---
 title: Search and filtering
 eleventyNavigation:
-  parent: web-v3
+  parent: legacy-webv3
   title: Search and filtering
   key: web-v3-search-filtering
 ---

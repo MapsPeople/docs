@@ -1,7 +1,7 @@
 ---
 title: Guides
 eleventyNavigation:
-  parent: ios-v2
+  parent: legacy-iosv2
   key: Guides
   order: 2
 ---

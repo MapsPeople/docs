@@ -1,7 +1,7 @@
 ---
 title: Show Location Details
 eleventyNavigation:
-  parent: android-v2
+  parent: legacy-androidv2
   key: android v2 Show Location Details
   title: Show Location Details
 ---

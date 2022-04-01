@@ -1,7 +1,7 @@
 ---
 title: Web SDK v4 Upgrade Guide
 eleventyNavigation:
-  parent: web-v4
+  parent: legacy-webv3
   key: v4 Upgrade Guide
   order: 400
 ---

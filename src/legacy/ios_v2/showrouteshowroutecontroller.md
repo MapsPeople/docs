@@ -1,7 +1,7 @@
 ---
 title: Get Directions and Show the Result on a Map - Part 2
 eleventyNavigation:
-  parent: ios-v2
+  parent: legacy-iosv2
   key: Get Directions and Show the Result on a Map - Part 2
   order: 160
 ---

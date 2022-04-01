@@ -1,7 +1,7 @@
 ---
 title: Update DisplayRules dynamically
 eleventyNavigation:
-  parent: web-v3
+  parent: legacy-webv3
   key: Update DisplayRules dynamically
 ---
 

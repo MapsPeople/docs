@@ -1,8 +1,8 @@
 ---
 title: MapsIndoors iOS SDK v2
 eleventyNavigation:
-  parent: index
-  key: ios-v2
+  parent: legacy
+  key: legacy-iosv2
   title: iOS v2
   order: 1
 ---

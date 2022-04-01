@@ -1,7 +1,7 @@
 ---
 title: Create a Search Experience with MapsIndoors - Part 1
 eleventyNavigation:
-  parent: android-v2
+  parent: legacy-androidv2
   title: Create a Search Experience with MapsIndoors - Part 1
   key: android v2 Create a Search Experience with MapsIndoors - Part 1
 ---

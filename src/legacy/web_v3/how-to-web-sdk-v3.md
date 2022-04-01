@@ -1,7 +1,7 @@
 ---
 title: How to use the MapsIndoors Web SDK v3
 eleventyNavigation:
-  parent: web-v3
+  parent: legacy-webv3
   key: How to use the MapsIndoors Web SDK v3
   order: 1
 ---

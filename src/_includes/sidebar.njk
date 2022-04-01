@@ -79,6 +79,10 @@
     <p class="sidebar__header"><a href="/cms/">CMS</p>
     {% set navPages = collections.published | eleventyNavigation("cms") %}
   {% endif %}
+  {% if '/legacy' in page.url %}
+    <p class="sidebar__header"><a href="/legacy/">Legacy SDKs</p>
+    {% set navPages = collections.published | eleventyNavigation("legacy") %}
+  {% endif %}
   
   {{ navPages | eleventyNavigationToHtml({listClass: "sidebar-nav", activeListItemClass: "active", activeKey: eleventyNavigation.key}) | safe }}
 </nav>

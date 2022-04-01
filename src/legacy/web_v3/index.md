@@ -1,8 +1,8 @@
 ---
 title: MapsIndoors Web SDK v3
 eleventyNavigation:
-  parent: index
-  key: web-v3
+  parent: legacy
+  key: legacy-webv3
   title: Web v3
   order: 1
 ---

@@ -1,8 +1,8 @@
 ---
 title: MapsIndoors Android SDK v2
 eleventyNavigation:
-  parent: index
-  key: android-v2
+  parent: legacy
+  key: legacy-androidv2
   title: Android v2
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Searching for Locations and Displaying the Results on a Map
 eleventyNavigation:
-  parent: android-v2
+  parent: legacy-androidv2
   title: Searching for Locations and Displaying the Results on a Map
   key: android v2 Searching for Locations and Displaying the Results on a Map
 ---

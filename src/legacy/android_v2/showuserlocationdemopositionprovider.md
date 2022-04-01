@@ -1,7 +1,7 @@
 ---
 title: Show the Blue Dot with MapsIndoors - Part 1
 eleventyNavigation:
-  parent: android-v2
+  parent: legacy-androidv2
   title: Show the Blue Dot with MapsIndoors - Part 1
   key: android-v2-Show-the-Blue-Dot-with-MapsIndoors---Part-1
 ---

@@ -1,8 +1,8 @@
 ---
 title: Getting a Polygon from a Location
 eleventyNavigation:
-  parent: android-v2
-  key: android v2 Getting a Polygon from a Location
+  parent: legacy-androidv2
+  key: legacy-androidv2-polygonfromlocation
   title: Getting a Polygon from a Location
 ---
 

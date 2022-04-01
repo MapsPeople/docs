@@ -1,7 +1,7 @@
 ---
 title: Show the Blue Dot with MapsIndoors - Part 1
 eleventyNavigation:
-  parent: ios-v2
+  parent: legacy-iosv2
   title: Show the Blue Dot with MapsIndoors - Part 1
   key: ios-v2-Show-the-Blue-Dot-with-MapsIndoors---Part-1
   order: 130

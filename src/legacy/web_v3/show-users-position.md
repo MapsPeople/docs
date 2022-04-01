@@ -1,7 +1,7 @@
 ---
 title: Showing the user's location aka. Blue Dot
 eleventyNavigation:
-  parent: web-v3
+  parent: legacy-webv3
   key: Showing the user's location aka. Blue Dot
 ---
 

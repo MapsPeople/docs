@@ -1,7 +1,7 @@
 ---
 title: Show location details
 eleventyNavigation:
-  parent: ios-v2
+  parent: legacy-iosv2
   key: Show location details
   order: 110
 ---

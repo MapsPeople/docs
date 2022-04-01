@@ -86,6 +86,10 @@ module.exports = function (eleventyConfig) {
         return collectionApi.getFilteredByTags("cms");
     });
 
+    eleventyConfig.addCollection("legacy", function (collectionApi) {
+        return collectionApi.getFilteredByTags("legacy");
+    });
+
     eleventyConfig.addCollection("published", function (collectionApi) {
         return [...collectionApi.getFilteredByGlob("./src/**/*.md")].filter(
             (post) => !post.data.draft
