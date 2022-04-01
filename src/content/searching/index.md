@@ -1,7 +1,7 @@
 ---
 title: Searching
 eleventyNavigation:
-  parent: index
+  parent: docs
   key: searching
   title: Searching
 ---

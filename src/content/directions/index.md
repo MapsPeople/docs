@@ -1,7 +1,7 @@
 ---
 title: Directions & Routing
 eleventyNavigation:
-  parent: index
+  parent: docs
   key: directions
   title: Directions & Routing
 ---

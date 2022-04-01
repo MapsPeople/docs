@@ -5,6 +5,6 @@ destination: /various/glossary/
 eleventyNavigation:
   key: various
   title: Various
-  parent: index
+  parent: docs
   order: 50
 ---

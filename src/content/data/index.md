@@ -1,7 +1,7 @@
 ---
 title: Working with Data
 eleventyNavigation:
-  parent: index
+  parent: docs
   key: data
   title: Working with Data
   order: 9999
