@@ -254,15 +254,21 @@ a {
         @include font.color(base);
     }
 
-    &-nav ul {
-        /*
-         * As a default, make all lists invisible.
-         * JavaScript will then decide which to show by applying the .visible class.
-         */
-        display: none;
+    &-nav {
+        ul {
+            /*
+             * As a default, make all lists invisible.
+             * JavaScript will then decide which to show by applying the .visible class.
+             */
+            display: none;
 
-        &.visible {
-            display: block;
+            &.visible {
+                display: block;
+            }
+        }
+
+        .active > ul {
+            display: block;;
         }
     }
 

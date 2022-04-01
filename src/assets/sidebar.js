@@ -7,10 +7,6 @@ window.addEventListener('DOMContentLoaded', () => {
      */
     let activeList = document.querySelector('.sidebar-nav .active');
     if (activeList) {
-        if (activeList.querySelector(':scope > ul')) {
-            activeList.querySelector(':scope > ul').style.display = 'block';
-        }
-
         // Traverse upwards from the active list and reveal the lists
         while (activeList.parentNode && activeList.parentNode.classList.contains('sidebar-nav') === false) {
             activeList = activeList.parentNode;
