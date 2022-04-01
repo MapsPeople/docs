@@ -56,7 +56,7 @@ The "Icon" section contains options related to the appearance of the Icon.
 
 The "Label" section contains options related to the appearance of the Label.
 
-1. Visibility - Controls whether the Label is visible on the map or not.
+1. Visibility - Controls whether the Label is visible on the map.
 1. Zoom from - Sets the minimum Zoom Level at which the Label is visible.
 1. Zoom to - Sets the maximum Zoom Level at which the Label is visible.
 1. Template - Controls the information the Label should contain.
