@@ -8,7 +8,7 @@ eleventyNavigation:
 ---
 
 <!-- Known Issues -->
-{% include "src/shared/known-issues-ios.md" %}
+{% include "src/content/shared/known-issues-ios.md" %}
 
 Detecting the user tapping a marker or an infowindow is part of the Google Maps SDK for iOS. Assign `myGMSMapView.delegate` and implementing the methods: `mapView.didTapMarker(marker: GMSMarker)` and `mapView.didTapInfoWindowOfMarker(marker: GMSMarker)`
 

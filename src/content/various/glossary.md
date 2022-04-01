@@ -150,11 +150,11 @@ The main difference between Directions and Routes are the scope of what is inclu
 
 ### Route Leg
 
-{% include "src/shared/directions/route-leg.md" %}
+{% include "src/content/shared/directions/route-leg.md" %}
 
 ### Direction Step / Route Step
 
-{% include "src/shared/directions/route-step.md" %}
+{% include "src/content/shared/directions/route-step.md" %}
 
 ### Turn-by-turn
 
@@ -162,7 +162,7 @@ The main difference between Directions and Routes are the scope of what is inclu
 
 ### Entry Point / Entryway
 
-{% include "src/shared/directions/entry-points.md" %}
+{% include "src/content/shared/directions/entry-points.md" %}
 
 ### Bus/Tram/Train Stop
 

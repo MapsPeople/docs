@@ -8,7 +8,7 @@ eleventyNavigation:
 ---
 
 <!-- Known Issues -->
-{% include "src/shared/known-issues-ios.md" %}
+{% include "src/content/shared/known-issues-ios.md" %}
 
 In this tutorial we will create a view controller that can enable and disable different custom location display rules on a MapsIndoors map. At the end you should be able to see a map of a building with some colored buttons below the map enabling custom display rules for specified locations.
 

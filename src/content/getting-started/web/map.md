@@ -9,10 +9,10 @@ eleventyNavigation:
 ---
 
 <!-- Overview -->
-{% include "src/shared/getting-started/map/overview.md" %}
+{% include "src/content/shared/getting-started/map/overview.md" %}
 
 <!-- Set up MapsIndoors -->
-{% include "src/shared/getting-started/map/show-map.md" %}
+{% include "src/content/shared/getting-started/map/show-map.md" %}
 
 <mi-tabs>
 <mi-tab label="Google Maps - Manually" tab-for="gm-manually"></mi-tab>
@@ -437,7 +437,7 @@ You should now be able to switch between the first and second Floors of The Whit
 </mi-tabs>
 
 <!-- JS Fiddle intro -->
-{% include "src/getting-started/web/js-fiddle-intro.md" %}
+{% include "src/content/getting-started/web/js-fiddle-intro.md" %}
 
 <mi-tabs>
 <mi-tab label="Google Maps - Manually" tab-for="gm-manually"></mi-tab>

@@ -8,7 +8,7 @@ eleventyNavigation:
 ---
 
 <!-- Known Issues -->
-{% include "src/shared/known-issues-ios.md" %}
+{% include "src/content/shared/known-issues-ios.md" %}
 
 This guide covers the different aspects of _Booking_ in the MapsIndoors iOS SDK. The concept of Booking in MapsIndoors implies that specific Locations in your MapsIndoors dataset is treated as Bookable resources. Typical bookable resources could be meeting rooms and workspaces.
 

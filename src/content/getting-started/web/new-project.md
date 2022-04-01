@@ -9,7 +9,7 @@ eleventyNavigation:
 ---
 
 <!-- Overview -->
-{% include "src/shared/getting-started/project/overview.md" %}
+{% include "src/content/shared/getting-started/project/overview.md" %}
 
 <!-- Environment -->
 ## Set Up Your Environment

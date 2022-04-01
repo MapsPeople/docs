@@ -9,13 +9,13 @@ eleventyNavigation:
 ---
 
 <!-- Overview -->
-{% include "src/shared/getting-started/prerequisites/overview.md" %}
+{% include "src/content/shared/getting-started/prerequisites/overview.md" %}
 
 <!-- Google Maps API key -->
-{% include "src/shared/getting-started/prerequisites/api-key-google-maps.md" %}
+{% include "src/content/shared/getting-started/prerequisites/api-key-google-maps.md" %}
 
 <!-- MapsIndoors API key -->
-{% include "src/shared/getting-started/prerequisites/api-key-mapsindoors.md" %}
+{% include "src/content/shared/getting-started/prerequisites/api-key-mapsindoors.md" %}
 
 ## Work with MapsIndoors SDK behind a Firewall
 

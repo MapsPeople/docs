@@ -38,4 +38,4 @@ Assuming the demo key is utilising you should now see a "Staff Person" moving fr
 Learn more about about controlling and rendering Live Data in MapsIndoors in the [introducion to Live Data]({{ site.url }}/map/live-data/)
 
 <!-- Congrats -->
-{% include "src/shared/getting-started/congrats.md" %}
+{% include "src/content/shared/getting-started/congrats.md" %}

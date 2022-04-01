@@ -7,7 +7,7 @@ eleventyNavigation:
   order: 30
 ---
 
-{% include "src/shared/guides/search/overview.md" %}
+{% include "src/content/shared/guides/search/overview.md" %}
 
 See the full list of parameters in the [reference guide](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/mapsindoors.services.LocationsService.html#.getLocations).
 
@@ -25,11 +25,11 @@ mapsindoors.services.LocationsService.getLocations(searchParameters).then(locati
 });
 ```
 
-{% include "src/shared/guides/search/search-ranking.md" %}
+{% include "src/content/shared/guides/search/search-ranking.md" %}
 
 ## Display Search Results on the Map
 
-{% include "src/shared/guides/search/displaying-search-results.md" %}
+{% include "src/content/shared/guides/search/displaying-search-results.md" %}
 
 ## Filter the Map to Display Searched Locations on the Map
 
@@ -47,7 +47,7 @@ mapsindoors.services.LocationsService.getLocations(searchParameters).then(locati
 
 ## Clearing the Map of your filter
 
-{% include "src/shared/guides/search/clear-search-filter-on-map.md" %}
+{% include "src/content/shared/guides/search/clear-search-filter-on-map.md" %}
 
 ## Example of Clearing Your Map Filter to Show All Locations Again
 

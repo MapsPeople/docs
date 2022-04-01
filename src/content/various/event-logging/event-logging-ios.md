@@ -8,7 +8,7 @@ eleventyNavigation:
 ---
 
 <!-- Known Issues -->
-{% include "src/shared/known-issues-ios.md" %}
+{% include "src/content/shared/known-issues-ios.md" %}
 
 The MapsIndoors SDK records anonymous usage statistics and diagnostic events per default and sends the logged data to a server at MapsPeople.
 

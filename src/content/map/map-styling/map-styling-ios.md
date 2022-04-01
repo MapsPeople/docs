@@ -8,7 +8,7 @@ eleventyNavigation:
 ---
 
 <!-- Known Issues -->
-{% include "src/shared/known-issues-ios.md" %}
+{% include "src/content/shared/known-issues-ios.md" %}
 
 There are two ways to change the appearance of the map content in MapsIndoors and Google Maps.
 

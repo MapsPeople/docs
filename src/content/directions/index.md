@@ -6,4 +6,4 @@ eleventyNavigation:
   title: Directions & Routing
 ---
 
-{% include "src/shared/directions/directions-intro.md" %}
+{% include "src/content/shared/directions/directions-intro.md" %}

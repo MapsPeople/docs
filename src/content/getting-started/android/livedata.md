@@ -7,9 +7,9 @@ eleventyNavigation:
   order: 170
 ---
 
-{% include "src/shared/live-data/live-data-intro.md" %}
+{% include "src/content/shared/live-data/live-data-intro.md" %}
 
-{% include "src/shared/getting-started/live-data/live-position-demo-preconditions.md" %}
+{% include "src/content/shared/getting-started/live-data/live-position-demo-preconditions.md" %}
 
 Enabling Live Data through `MapControl` is as simple as calling `mapControl.enableLiveData()` with a [Domain Type](https://app.mapsindoors.com/mapsindoors/reference/android/v3/index.html).
 
@@ -83,7 +83,7 @@ private fun initMapControl(view: View) {
 </mi-tab-panel>
 </mi-tabs>
 
-{% include "src/shared/getting-started/live-data/live-position-demo-result.md" %}
+{% include "src/content/shared/getting-started/live-data/live-position-demo-result.md" %}
 
 Expected result:
 
@@ -92,4 +92,4 @@ Expected result:
 Learn more about controlling and rendering Live Data in MapsIndoors in the [introduction to Live Data]({{ site.url }}/map/live-data/live-data-intro-android/).
 
 <!-- Congrats -->
-{% include "src/shared/getting-started/congrats.md" %}
+{% include "src/content/shared/getting-started/congrats.md" %}

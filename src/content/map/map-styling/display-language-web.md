@@ -8,7 +8,7 @@ eleventyNavigation:
 ---
 
 <!-- Introduction -->
-{% include "src/shared/display-language/intro.md" %}
+{% include "src/content/shared/display-language/intro.md" %}
 
 The web-app will automatically adjust the language to the language set in the user's browser settings, otherwise default to English. When using Safari, the device's language setting will be used. This is limited to the following languages, and will default to English if the selected language is not supported:
 
@@ -20,4 +20,4 @@ The web-app will automatically adjust the language to the language set in the us
 * French
 
 <!-- CMS Language-->
-{% include "src/shared/display-language/cms-language.md" %}
+{% include "src/content/shared/display-language/cms-language.md" %}

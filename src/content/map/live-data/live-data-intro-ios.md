@@ -8,11 +8,11 @@ eleventyNavigation:
 ---
 
 <!-- Known Issues -->
-{% include "src/shared/known-issues-ios.md" %}
+{% include "src/content/shared/known-issues-ios.md" %}
 
 This guide gives an overview of how to work with _Live Data_ in the MapsIndoors iOS SDK.
 
-{% include "src/shared/live-data/live-data-intro.md" %}
+{% include "src/content/shared/live-data/live-data-intro.md" %}
 
 ## Live Topics
 

@@ -9,10 +9,10 @@ eleventyNavigation:
 ---
 
 <!-- Overview -->
-{% include "src/shared/getting-started/directions/overview.md" %}
+{% include "src/content/shared/getting-started/directions/overview.md" %}
 
 <!-- Directions -->
-{% include "src/shared/getting-started/directions/directions.md" %}
+{% include "src/content/shared/getting-started/directions/directions.md" %}
 
 After having created our list of search results, we have a good starting point for creating directions between two Locations.
 Since our search only supports a single search, we will hardcode a Location's coordinate into our app, and use that as the basis for our Origin. Then we'll create a route, navigate to a view of the navigation details, and show a route on the map from the Origin to the Destination.
@@ -434,7 +434,7 @@ class RouteLegFragment : Fragment() {
 See the full implementation of the fragment here: [RouteLegFragment.java](https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/RouteLegFragment.java#L23-L57) or [RouteLegFragment.kt](https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/RouteLegFragment.kt#L12-L44)
 
 <!-- Travel-mode -->
-{% include "src/shared/getting-started/directions/travel-mode.md" %}
+{% include "src/content/shared/getting-started/directions/travel-mode.md" %}
 
 To swap Travel Modes you set the Travel Mode before making a query for the route:
 

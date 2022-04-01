@@ -9,9 +9,9 @@ eleventyNavigation:
 ---
 
 <!-- Overview -->
-{% include "src/shared/getting-started/overview.md" %}
+{% include "src/content/shared/getting-started/overview.md" %}
 
 <!-- Skills -->
-{% include "src/shared/getting-started/skills.md" %}
+{% include "src/content/shared/getting-started/skills.md" %}
 
 <p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/getting-started/ios/prerequisites/">Next up: Prerequisites</a></p>

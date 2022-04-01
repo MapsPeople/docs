@@ -9,7 +9,7 @@ eleventyNavigation:
 ---
 
 <!-- Overview -->
-{% include "src/shared/getting-started/prerequisites/overview.md" %}
+{% include "src/content/shared/getting-started/prerequisites/overview.md" %}
 
 ## Get your Google Maps API Keys
 

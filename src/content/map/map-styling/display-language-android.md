@@ -8,15 +8,15 @@ eleventyNavigation:
 ---
 
 <!-- Introduction -->
-{% include "src/shared/display-language/intro.md" %}
+{% include "src/content/shared/display-language/intro.md" %}
 
 Additionally, aside from methods mentioned here, you can provide translations via the standard method for your device, such as using individual localized strings.
 
 <!-- CMS Language-->
-{% include "src/shared/display-language/cms-language.md" %}
+{% include "src/content/shared/display-language/cms-language.md" %}
 
 <!-- Fixed Language -->
-{% include "src/shared/display-language/fixed-language.md" %}
+{% include "src/content/shared/display-language/fixed-language.md" %}
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
@@ -38,7 +38,7 @@ MapsIndoors.setLanguage("fr")
 </mi-tabs>
 
 <!-- Device Language -->
-{% include "src/shared/display-language/device-language.md" %}
+{% include "src/content/shared/display-language/device-language.md" %}
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>

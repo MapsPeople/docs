@@ -8,7 +8,7 @@ The central components that utilize a Directions experience is the [Directions S
 
 ## Entry Points
 
-{% include "src/shared/directions/entry-points.md" %}
+{% include "src/content/shared/directions/entry-points.md" %}
 
 ## The Route Model
 
@@ -16,8 +16,8 @@ When requesting Routes in MapsIndoors Directions Service The Route model in Maps
 
 ### The Route Leg Model
 
-{% include "src/shared/directions/route-leg.md" %}
+{% include "src/content/shared/directions/route-leg.md" %}
 
 ### The Route Step Model
 
-{% include "src/shared/directions/route-step.md" %}
+{% include "src/content/shared/directions/route-step.md" %}

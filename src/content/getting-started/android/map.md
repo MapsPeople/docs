@@ -9,10 +9,10 @@ eleventyNavigation:
 ---
 
 <!-- Overview -->
-{% include "src/shared/getting-started/map/overview.md" %}
+{% include "src/content/shared/getting-started/map/overview.md" %}
 
 <!-- Set up MapsIndoors -->
-{% include "src/shared/getting-started/map/show-map.md" %}
+{% include "src/content/shared/getting-started/map/show-map.md" %}
 
 ### Initialize MapsIndoors
 

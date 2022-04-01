@@ -8,7 +8,7 @@ eleventyNavigation:
 ---
 
 <!-- Known Issues -->
-{% include "src/shared/known-issues-ios.md" %}
+{% include "src/content/shared/known-issues-ios.md" %}
 
 The class `MPDirectionsService` is used to request routes from one point to another. The minimal required input is an `origin` and a `destination`. You need to build a query using the `MPDirectionsQuery` class.
 
@@ -26,7 +26,7 @@ directions.routing(with: directionsQuery) { (route, error) in
 ```
 
 <!-- Travel-mode -->
-{% include "src/shared/getting-started/directions/travel-mode.md" %}
+{% include "src/content/shared/getting-started/directions/travel-mode.md" %}
 
 Set **travel mode** on your request using the `travelMode` property on `MPDirectionsQuery`:
 

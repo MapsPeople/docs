@@ -28,7 +28,7 @@ miDirectionsServiceInstance.getRoute(routeParameters).then(directionsResult => {
 > For more information, see the [reference documentation](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/mapsindoors.services.DirectionsService.html).
 
 <!-- Travel-mode -->
-{% include "src/shared/getting-started/directions/travel-mode.md" %}
+{% include "src/content/shared/getting-started/directions/travel-mode.md" %}
 
 Set **travel mode** on your request using the `travelMode` property on `routeParameters`:
 

@@ -49,7 +49,7 @@ directionsService.query(origin, destination)
 </mi-tabs>
 
 <!-- Travel-mode -->
-{% include "src/shared/getting-started/directions/travel-mode.md" %}
+{% include "src/content/shared/getting-started/directions/travel-mode.md" %}
 
 Set the **travel mode** on your request using the `setTravelMode` method on `MPRoutingProvider`:
 

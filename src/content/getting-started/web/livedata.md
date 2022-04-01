@@ -8,9 +8,9 @@ eleventyNavigation:
   order: 170
 ---
 
-{% include "src/shared/live-data/live-data-intro.md" %}
+{% include "src/content/shared/live-data/live-data-intro.md" %}
 
-{% include "src/shared/getting-started/live-data/live-position-demo-preconditions.md" %}
+{% include "src/content/shared/getting-started/live-data/live-position-demo-preconditions.md" %}
 
 To enable Live Data in your web app, create an instance of `LiveDataManager`. Call the method `enableLiveData()` on it with a Domain Type.
 
@@ -305,12 +305,12 @@ function getRoute(location) {
 
 In the example above we create an instance of `LiveDataManager` and enable Live Data for the "Position" Domain type.
 
-{% include "src/shared/getting-started/live-data/live-position-demo-result.md" %}
+{% include "src/content/shared/getting-started/live-data/live-position-demo-result.md" %}
 
 Learn more about controlling and rendering Live Data in MapsIndoors in the [introduction to Live Data]({{ site.url }}/map/live-data/).
 
 <!-- JS Fiddle intro -->
-{% include "src/getting-started/web/js-fiddle-intro.md" %}
+{% include "src/content/getting-started/web/js-fiddle-intro.md" %}
 
 <mi-tabs>
 <mi-tab label="Google Maps - Manually" tab-for="gm-manually"></mi-tab>
@@ -335,4 +335,4 @@ Learn more about controlling and rendering Live Data in MapsIndoors in the [intr
 </mi-tabs>
 
 <!-- Congrats -->
-{% include "src/shared/getting-started/congrats.md" %}
+{% include "src/content/shared/getting-started/congrats.md" %}

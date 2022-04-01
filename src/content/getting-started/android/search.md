@@ -9,10 +9,10 @@ eleventyNavigation:
 ---
 
 <!-- Overview -->
-{% include "src/shared/getting-started/search/overview.md" %}
+{% include "src/content/shared/getting-started/search/overview.md" %}
 
 <!-- Search -->
-{% include "src/shared/getting-started/search/search.md" %}
+{% include "src/content/shared/getting-started/search/search.md" %}
 
 Start by creating a new activity or _fragment_ to facilitate searches on your application. Here we will be using a _fragment_ for search and show to search results on, while using a bottom sheet to display the results. We also create a search input field on our main map _activity_ for the user to input the text they want to search for.
 This is already setup in the basic example app.
@@ -22,7 +22,7 @@ To perform a search you will need to have initiated `MapsIndoors`. This was show
 For advanced usage of the search functionality read the Search guide and tutorials connected to it: [Search Guide]({{ site.url }}/searching/)
 
 <!-- Results list -->
-{% include "src/shared/getting-started/search/results-list.md" %}
+{% include "src/content/shared/getting-started/search/results-list.md" %}
 
 Create a search method that takes a search string as a parameter on your `MapsActivity` class. In this example we only use the `setTake` on the `MPFilter` to limit our result to 30 locations. We will expand on this method later.
 
@@ -414,7 +414,7 @@ private fun search(searchQuery: String) {
 See the full example of the search method here: [MapsActivity.java](https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L185-L234) or [MapsActivity.kt](https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/MapsActivity.kt#L137-L183)
 
 <!-- Filter map -->
-{% include "src/shared/getting-started/search/filter-map.md" %}
+{% include "src/content/shared/getting-started/search/filter-map.md" %}
 
 When getting a search result, you might want to only show those search results on the map. You can do this through calling `displaySearchResults(List<MPLocation> locations)` on `MapControl`. This method has different parameters to make it easier for you as a developer to fit your exact need in terms of animation and more. This can be read in the [JavaDoc of `MapControl`](https://app.mapsindoors.com/mapsindoors/reference/android/v3/com/mapsindoors/mapssdk/MapControl.html).
 

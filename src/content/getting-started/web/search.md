@@ -9,10 +9,10 @@ eleventyNavigation:
 ---
 
 <!-- Overview -->
-{% include "src/shared/getting-started/search/overview.md" %}
+{% include "src/content/shared/getting-started/search/overview.md" %}
 
 <!-- Search -->
-{% include "src/shared/getting-started/search/search.md" %}
+{% include "src/content/shared/getting-started/search/search.md" %}
 
 <mi-tabs>
 <mi-tab label="Google Maps - Manually" tab-for="gm-manually"></mi-tab>
@@ -263,7 +263,7 @@ miMapElement.addEventListener('mapsIndoorsReady', () => {
 </mi-tabs>
 
 <!-- Results list -->
-{% include "src/shared/getting-started/search/results-list.md" %}
+{% include "src/content/shared/getting-started/search/results-list.md" %}
 
 To display a list of search results you can append each search result to a list element.
 
@@ -674,7 +674,7 @@ miSearchElement.addEventListener('results', (event) => {
 </mi-tabs>
 
 <!-- Filter map -->
-{% include "src/shared/getting-started/search/filter-map.md" %}
+{% include "src/content/shared/getting-started/search/filter-map.md" %}
 
 To filter the map to only display the search results you can use the `filter` method.
 
@@ -851,7 +851,7 @@ miSearchElement.addEventListener('results', (event) => {
 > To remove the location filter again, call `mapsIndoorsInstance.filter(null)`.
 
 <!-- JS Fiddle intro -->
-{% include "src/getting-started/web/js-fiddle-intro.md" %}
+{% include "src/content/getting-started/web/js-fiddle-intro.md" %}
 
 <mi-tabs>
 <mi-tab label="Google Maps - Manually" tab-for="gm-manually"></mi-tab>

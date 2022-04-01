@@ -6,8 +6,8 @@ eleventyNavigation:
   title: Searching
 ---
 
-{% include "src/shared/guides/search/overview.md" %}
+{% include "src/content/shared/guides/search/overview.md" %}
 
 See the full list of parameters:
 
-{% include "src/shared/guides/search/filter-content.md" %}
+{% include "src/content/shared/guides/search/filter-content.md" %}

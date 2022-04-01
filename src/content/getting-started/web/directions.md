@@ -9,10 +9,10 @@ eleventyNavigation:
 ---
 
 <!-- Overview -->
-{% include "src/shared/getting-started/directions/overview.md" %}
+{% include "src/content/shared/getting-started/directions/overview.md" %}
 
 <!-- Directions -->
-{% include "src/shared/getting-started/directions/directions.md" %}
+{% include "src/content/shared/getting-started/directions/directions.md" %}
 
 To get _Directions_ between two MapsIndoors Locations, or Places outside of your MapsIndoors Solution, we need two things:
 
@@ -793,7 +793,7 @@ function getRoute(location) {
 Now you can click on each item in the search results list to get directions from The Oval Office to any Location in The White House.
 
 <!-- Travel-mode -->
-{% include "src/shared/getting-started/directions/travel-mode.md" %}
+{% include "src/content/shared/getting-started/directions/travel-mode.md" %}
 
 To change between travel modes we first need to add a `<select>` element with all four transportation options above the search field:
 
@@ -1237,7 +1237,7 @@ function getRoute(location) {
 </mi-tabs>
 
 <!-- JS Fiddle intro -->
-{% include "src/getting-started/web/js-fiddle-intro.md" %}
+{% include "src/content/getting-started/web/js-fiddle-intro.md" %}
 
 <mi-tabs>
 <mi-tab label="Google Maps - Manually" tab-for="gm-manually"></mi-tab>

@@ -8,7 +8,7 @@ eleventyNavigation:
 ---
 
 <!-- Known Issues -->
-{% include "src/shared/known-issues-ios.md" %}
+{% include "src/content/shared/known-issues-ios.md" %}
 
 When getting the result Route from a [Directions Service]({{ site.url }}/directions/directions-service/directions-service-ios/), we may want to display this Route on a map. To perform this task the `MPDirectionsRenderer` can be used.
 

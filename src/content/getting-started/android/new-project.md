@@ -9,10 +9,10 @@ eleventyNavigation:
 ---
 
 <!-- Overview -->
-{% include "src/shared/getting-started/project/overview.md" %}
+{% include "src/content/shared/getting-started/project/overview.md" %}
 
 <!-- Environment -->
-{% include "src/shared/getting-started/project/environment.md" %}
+{% include "src/content/shared/getting-started/project/environment.md" %}
 
 This guide explains how to start using a MapsIndoors map in your Android application using the MapsIndoors Android SDK v3.
 

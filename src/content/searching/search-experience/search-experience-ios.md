@@ -8,7 +8,7 @@ eleventyNavigation:
 ---
 
 <!-- Known Issues -->
-{% include "src/shared/known-issues-ios.md" %}
+{% include "src/content/shared/known-issues-ios.md" %}
 
 This is an example of creating a simple search experience using MapsIndoors. We will create a map with a search button which leads to another view controller that handles the search and selection. Select a Location to go back to the map and show the selected Location on the map.
 
