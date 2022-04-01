@@ -18,6 +18,20 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 ### Security     in case of vulnerabilities.
 -->
 
+## [3.13.8] 2022-03-31
+
+### Fixed
+
+- Crash where large marker icons would exceed the device's OpenGL max texture size limit
+
+## [3.13.7] 2022-03-17
+
+### Fixed
+
+- Fixed issue with category filter not being respected on `MPFilter`
+- Minor security additions
+- Fixed issue with `setTileSize()` not working
+
 ## [3.13.6] 2022-03-08
 
 ### Added
