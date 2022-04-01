@@ -66,7 +66,7 @@ The "Label" section contains options related to the appearance of the Label.
 
 The "Polygon" section contains options related to the appearance of the Polygon.
 
-1. Visibility - Controls whether the Polygon is visible on the map or not.
+1. Visibility - Controls whether the Polygon is visible on the map.
 1. Zoom from - Sets the minimum Zoom Level at which the Polygon is visible.
 1. Zoom to - Sets the maximum Zoom Level at which the Polygon is visible.
 1. Stroke color - Controls the stroke color of the Polygon.
