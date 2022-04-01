@@ -64,7 +64,7 @@ iframe {
 
 .grid-wrapper {
     display: grid;
-    grid-template-columns: 300px 1fr;
+    grid-template-columns: 308px 1fr;
     grid-template-rows: 80px auto auto;
     grid-template-areas:
         "header header"
@@ -254,6 +254,23 @@ a {
         @include font.color(base);
     }
 
+    &-nav {
+        ul {
+            /*
+             * As a default, make all lists invisible.
+             * JavaScript will then decide which to show by applying the .visible class.
+             */
+            display: none;
+
+            &.visible {
+                display: block;
+            }
+        }
+
+        .active > ul {
+            display: block;;
+        }
+    }
 
     ul {
         margin: 0;
