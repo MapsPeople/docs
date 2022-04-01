@@ -60,7 +60,7 @@ The "Label" section contains options related to the appearance of the Label.
 1. Zoom from - Sets the minimum Zoom Level at which the Label is visible.
 1. Zoom to - Sets the maximum Zoom Level at which the Label is visible.
 1. Template - Controls the information the Label should contain.
-1. Max width - Specify how wide a Label can be befotre forcing a line-break.
+1. Max width - Specify how wide a Label can be before forcing a line-break.
 
 ![display-rules-polygon](/assets/cms/interface-overview/Display_Rules_Polygon.png)
 
