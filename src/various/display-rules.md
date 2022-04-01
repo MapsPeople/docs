@@ -47,7 +47,7 @@ The "General" visibility switch determines whether Locations of this Type are vi
 
 The "Icon" section contains options related to the appearance of the Icon.
 
-1. Visibility - Controls whether the Icon is visible on the map or not.
+1. Visibility - Controls whether the Icon is visible on the map.
 1. Zoom from - Sets the minimum Zoom Level at which the Icon is visible.
 1. Zoom to - Sets the maximum Zoom Level at which the Icon is visible.
 1. Icon - Use the Icon Manager to control which Icon is shown on the map.
