@@ -875,4 +875,4 @@ miSearchElement.addEventListener('results', (event) => {
   </mi-tab-panel>
 </mi-tabs>
 
-<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/getting-started/web/directions/">Next up: Directions</a></p>
+<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/content/getting-started/web/directions/">Next up: Directions</a></p>

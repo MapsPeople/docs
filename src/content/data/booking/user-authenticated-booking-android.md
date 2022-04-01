@@ -9,7 +9,7 @@ eleventyNavigation:
 
 
 <!-- reference to normal booking example -->
-It is highly recommended to first read the [guide on Booking]({{ site.url }}/data/booking/booking-android/) to get an an understanding of how booking functions in the MapsIndoors SDK.
+It is highly recommended to first read the [guide on Booking]({{ site.url }}/content/data/booking/booking-android/) to get an an understanding of how booking functions in the MapsIndoors SDK.
 <!-- example showing how to input token/tenantId -->
 ## User Authenticated Bookings
 

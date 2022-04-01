@@ -33,4 +33,4 @@ In order to include MapsIndoors in your own app with your own content, you need 
 
 You will receive a unique API key to use when access has been granted. If you are exploring how this service can become part of your own product, you can read about [partnering with MapsPeople here](https://www.mapspeople.com/become-a-partner).
 
-<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/getting-started/web/new-project/">Next up: Create a new project</a>
+<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/content/getting-started/web/new-project/">Next up: Create a new project</a>

@@ -69,4 +69,4 @@ Feel free to change the query from "White House" to a known building in *your* M
 
 We have now added a search feature to the app, albeit a search feature which the user cannot interact with. Next, let us look into how we can let the user interact with the map through a search bar.
 
-<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/getting-started/ios/search/">Next up: Search</a></p>
+<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/content/getting-started/ios/search/">Next up: Search</a></p>

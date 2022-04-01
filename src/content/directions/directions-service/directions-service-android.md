@@ -274,7 +274,7 @@ fun getRoute() {
 
 User Role restrictions set for a specific Directions Query will take precedence over User Roles set on a global level.
 
-For more information about App User Roles, see [this documentation]({{ site.url }}/map/displaying-objects/app-user-roles/).
+For more information about App User Roles, see [this documentation]({{ site.url }}/content/map/displaying-objects/app-user-roles/).
 
 ## Transit Departure and Arrival Time
 

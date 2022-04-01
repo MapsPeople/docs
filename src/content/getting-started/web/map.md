@@ -463,4 +463,4 @@ You should now be able to switch between the first and second Floors of The Whit
 
 <!-- Add screenshot -->
 
-<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/getting-started/web/search/">Next up: Search</a></p>
+<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/content/getting-started/web/search/">Next up: Search</a></p>

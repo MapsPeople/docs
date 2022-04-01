@@ -19,7 +19,7 @@ This is already setup in the basic example app.
 
 To perform a search you will need to have initiated `MapsIndoors`. This was shown in the previous section of the getting started tutorial how you do this.
 
-For advanced usage of the search functionality read the Search guide and tutorials connected to it: [Search Guide]({{ site.url }}/searching/)
+For advanced usage of the search functionality read the Search guide and tutorials connected to it: [Search Guide]({{ site.url }}/content/searching/)
 
 <!-- Results list -->
 {% include "src/content/shared/getting-started/search/results-list.md" %}
@@ -465,4 +465,4 @@ Expected result:
 
 The accompanying UI and implementation of this search experience can be found in the getting started app sample. [Getting Started App sample](https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/tree/master/app/src/main/java/com/example/mapsindoorsgettingstarted) or [Getting Started App sample kotlin](https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin).
 
-<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/getting-started/android/directions/">Next up: Directions</a></p>
+<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/content/getting-started/android/directions/">Next up: Directions</a></p>

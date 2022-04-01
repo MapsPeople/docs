@@ -100,4 +100,4 @@ MapsIndoors.provideAPIKey(      "YOUR_MAPSINDOORS_API_KEY",
 
 Finally, remember to replace `YOUR_GOOGLE_API_KEY` with your Google API key and `YOUR_MAPSINDOORS_API_KEY` with your MapsIndoors API demo key (d876ff0e60bb430b8fabb145).
 
-<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/getting-started/ios/display-a-map/">Next up: Display a Map</a></p>
+<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/content/getting-started/ios/display-a-map/">Next up: Display a Map</a></p>

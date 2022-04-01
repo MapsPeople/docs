@@ -25,4 +25,4 @@ Finally, retrieve your API key from the [Credentials Page](https://console.cloud
 
 For the purposes of this guide you can use the MapsIndoors API demo key `d876ff0e60bb430b8fabb145`. Alternatively, feel free to [contact MapsPeople](https://resources.mapspeople.com/contact-us) with your building drawings so you can receive a unique API key.
 
-<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/getting-started/ios/set-up-your-environment/">Next up: Set Up Your Environment</a></p>
+<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/content/getting-started/ios/set-up-your-environment/">Next up: Set Up Your Environment</a></p>

@@ -19,6 +19,6 @@ eleventyNavigation:
 
 ## Work with MapsIndoors SDK behind a Firewall
 
-If you need to work with MapsIndoors SDK behind a firewall, you might need to [allowlist some IP-addresses]({{ site.url }}/various/mapsindoors-sdk-firewall/).
+If you need to work with MapsIndoors SDK behind a firewall, you might need to [allowlist some IP-addresses]({{ site.url }}/content/various/mapsindoors-sdk-firewall/).
 
-<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/getting-started/android/new-project/">Next up: Create a new project</a>
+<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/content/getting-started/android/new-project/">Next up: Create a new project</a>

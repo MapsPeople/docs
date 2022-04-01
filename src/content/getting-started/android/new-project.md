@@ -104,4 +104,4 @@ Put those lines in your proguard-rules files:
 
 Sync your project with gradle.
 
-<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/getting-started/android/map/">Next up: Show a map</a></p>
+<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/content/getting-started/android/map/">Next up: Show a map</a></p>

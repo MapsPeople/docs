@@ -62,7 +62,7 @@ Enabling of Live Data through `MPMapControl` can be done as simple as calling `M
   self.mapControl.enableLiveData(MPLiveDomainType.position)
 ```
 
-In the example we are enabling Live Data for the Domain Type "Occupancy". Internal processes will determine which topics are relevant for subscription based on where the map is situated. A default rendering mechanism will also alter the appearance of the relevant locations on the map. As a consequence, the SDK will set [custom display rules]({{ site.url }}/map/map-styling/map-styling-ios/) for this rendering. Adding your own or resetting display rules while Live Data is enabled with default rendering may break the rendering for the current `MPMapControl` instance. Hence, you should not use custom display rules unless you are [handling the rendering of Live Data](#rendering-live-data-locations) by your own.
+In the example we are enabling Live Data for the Domain Type "Occupancy". Internal processes will determine which topics are relevant for subscription based on where the map is situated. A default rendering mechanism will also alter the appearance of the relevant locations on the map. As a consequence, the SDK will set [custom display rules]({{ site.url }}/content/map/map-styling/map-styling-ios/) for this rendering. Adding your own or resetting display rules while Live Data is enabled with default rendering may break the rendering for the current `MPMapControl` instance. Hence, you should not use custom display rules unless you are [handling the rendering of Live Data](#rendering-live-data-locations) by your own.
 
 Note that using the `enableLiveData()` methods on `MPMapControl` has some limitations and is thereby not suitable for all use cases.
 
@@ -201,4 +201,4 @@ extension MyClass : MPLiveDataManagerDelegate {
 
 Live Updates are of course dependent on network connectivity, so the Live Data Manager will try to recover from common errors like network dropout. On the contrary, the Live Data Manager will not try to recover from subscription errors alone as this could be caused by a non-existing topic for a given Dataset, thus it does not make sense retrying the failing subscription.
 
-To learn more, visit the [Live Data tutorial for iOS]({{ site.url }}/map/live-data/live-data-intro-ios/) and the [reference guide](https://app.mapsindoors.com/mapsindoors/reference/ios/v3/interface_m_p_live_data_manager.html).
+To learn more, visit the [Live Data tutorial for iOS]({{ site.url }}/content/map/live-data/live-data-intro-ios/) and the [reference guide](https://app.mapsindoors.com/mapsindoors/reference/ios/v3/interface_m_p_live_data_manager.html).

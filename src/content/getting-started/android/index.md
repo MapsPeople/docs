@@ -13,4 +13,4 @@ eleventyNavigation:
 <!-- Skills -->
 {% include "src/content/shared/getting-started/skills.md" %}
 
-<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/getting-started/android/prerequisites/">Next up: Prerequisites</a></p>
+<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/content/getting-started/android/prerequisites/">Next up: Prerequisites</a></p>

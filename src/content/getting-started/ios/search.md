@@ -88,4 +88,4 @@ At this point we should have a functional map with a search feature.
 
 ![Expected Result](/assets/ios/getting-started/er_search.gif)
 
-<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/getting-started/ios/directions/">Next up: Directions</a></p>
+<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/content/getting-started/ios/directions/">Next up: Directions</a></p>

@@ -35,7 +35,7 @@ Assuming the demo key is utilising you should now see a "Staff Person" moving fr
 
 ![Expected Result](/assets/ios/getting-started/er_live-data.gif)
 
-Learn more about about controlling and rendering Live Data in MapsIndoors in the [introducion to Live Data]({{ site.url }}/map/live-data/)
+Learn more about about controlling and rendering Live Data in MapsIndoors in the [introducion to Live Data]({{ site.url }}/content/map/live-data/)
 
 <!-- Congrats -->
 {% include "src/content/shared/getting-started/congrats.md" %}

@@ -27,7 +27,7 @@ Can observe a Location Source for status changes and location updates.
 
 ## Creating Your own Location Source
 
-See a [demo and tutorial of this feature for iOS]({{ site.url }}/data/customisable-data/location-sources-ios/). Of course there is more to it than just these interfaces, but assuming that working with the actual 3rd party data is an isolated problem, the setup steps is as follows:
+See a [demo and tutorial of this feature for iOS]({{ site.url }}/content/data/customisable-data/location-sources-ios/). Of course there is more to it than just these interfaces, but assuming that working with the actual 3rd party data is an isolated problem, the setup steps is as follows:
 
 1. Implement a `LocationSource` that pulls data from your own or a 3rd party database, API or backend and convert this data into MapsIndoors `Location`'s
 2. Pass the Locations as updates to MapsIndoors through the interface methods of the subscribing `LocationObserver`'s in your `LocationSource` implementation.
@@ -56,4 +56,4 @@ MapsIndoors.register([
 
 ## IOS Demo and Tutorial for Location Sources
 
-A full demo example and tutorial is available [here]({{ site.url }}/data/customisable-data/location-sources-ios/).
+A full demo example and tutorial is available [here]({{ site.url }}/content/data/customisable-data/location-sources-ios/).

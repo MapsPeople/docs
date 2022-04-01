@@ -52,4 +52,4 @@ func directions() {
 
 ![Expected Result](/assets/ios/getting-started/er_directions.gif)
 
-<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/getting-started/ios/live-data/">Next up: Live Data</a></p>
+<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/content/getting-started/ios/live-data/">Next up: Live Data</a></p>

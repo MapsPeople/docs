@@ -307,7 +307,7 @@ In the example above we create an instance of `LiveDataManager` and enable Live 
 
 {% include "src/content/shared/getting-started/live-data/live-position-demo-result.md" %}
 
-Learn more about controlling and rendering Live Data in MapsIndoors in the [introduction to Live Data]({{ site.url }}/map/live-data/).
+Learn more about controlling and rendering Live Data in MapsIndoors in the [introduction to Live Data]({{ site.url }}/content/map/live-data/).
 
 <!-- JS Fiddle intro -->
 {% include "src/content/getting-started/web/js-fiddle-intro.md" %}

@@ -1261,4 +1261,4 @@ function getRoute(location) {
   </mi-tab-panel>
 </mi-tabs>
 
-<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/getting-started/web/livedata/">Next up: Live Data</a></p>
+<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/content/getting-started/web/livedata/">Next up: Live Data</a></p>
