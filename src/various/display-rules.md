@@ -43,6 +43,8 @@ In the CMS, you can edit your Display Rules in `Solution Details > Types > Edit 
 
 The "General" visibility switch determines whether Locations of this Type are visible on the map. Moreover, the Location data is not available to the SDKs when the general visibility is turned off.
 
+The "Lock" icon present in all sections determines whether or not the Display Rule can be edited. Click the lock to toggle this setting.
+
 ![display-rules-icon](/assets/cms/interface-overview/Display_Rules_Icon.png)
 
 The "Icon" section contains options related to the appearance of the Icon.
