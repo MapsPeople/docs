@@ -1,7 +1,7 @@
 ---
 title: Various
 layout: redirect
-destination: /various/glossary/
+destination: /content/various/glossary/
 eleventyNavigation:
   key: various
   title: Various
