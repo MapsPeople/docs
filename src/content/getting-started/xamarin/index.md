@@ -1,8 +1,8 @@
 ---
-title: Xamarin v3
+title: Getting Started with Xamarin
 eleventyNavigation:
-  parent: index
-  key: Xamarin v3
+  parent: getting-started
+  key: getting-started-xamarin
   order: 40
 ---
 
