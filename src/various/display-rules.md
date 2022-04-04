@@ -59,7 +59,7 @@ The "Icon" section contains options related to the appearance of the Icon.
 
 ![display-rules-label](/assets/cms/interface-overview/Display_Rules_Label.png)
 
-The "Label" section contains options related to the appearance of the Label.
+The "Label" section contains options related to the appearance of the Label. The Label is the text associated with the Location on the map, often positioned next to the Icon.
 
 1. Visibility - Controls whether the Label is visible on the map.
 1. Zoom from - Sets the minimum Zoom Level at which the Label is visible.
