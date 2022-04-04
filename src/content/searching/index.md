@@ -4,6 +4,7 @@ eleventyNavigation:
   parent: docs
   key: searching
   title: Searching
+  order: 40
 ---
 
 {% include "src/content/shared/guides/search/overview.md" %}

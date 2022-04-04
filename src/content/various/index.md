@@ -6,5 +6,5 @@ eleventyNavigation:
   key: various
   title: Various
   parent: docs
-  order: 50
+  order: 60
 ---
