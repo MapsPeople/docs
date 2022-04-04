@@ -75,7 +75,7 @@ The "Label" section contains options related to the appearance of the Label.
 
 ![display-rules-polygon](/assets/cms/interface-overview/Display_Rules_Polygon.png)
 
-> NOTE: Polygon's operate seperately from tiles. Tiles are drawn by MapsPeople and overlaid onto the mapping provider. Polygons are an overlay with customisable attributes that are then overlaid on top of the Tiles. Therefore, while you can edit the "Polygon" attributes of a POI Location connected to a Tile, you need to account for attributes such as the opacity of the Polygon in the resulting appearance.
+Polygon's operate seperately from tiles. Tiles are drawn by MapsPeople and overlaid onto the mapping provider. Polygons are an overlay with customisable attributes that are then overlaid on top of the Tiles. Therefore, while you can edit the "Polygon" attributes of a Location connected to a Tile, be that an Area or a Room, you need to account for attributes such as the opacity of the Polygon in the resulting appearance. It is not currently possible to override the appearance of a Tile.
 
 The "Polygon" section contains options related to the appearance of the Polygon.
 
