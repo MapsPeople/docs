@@ -48,28 +48,28 @@
       &UpperRightArrow;</a>
   <hr />
   {% if '/various' in page.url %}
-    <p class="sidebar__header"><a href="/various/">Various</p>
+    <p class="sidebar__header"><a href="/content/various/">Various</p>
     {% set navPages = collections.published | eleventyNavigation("various") %}
   {% endif %}
   {% if '/changelogs' in page.url %}
     <p class="sidebar__header"><a href="/changelogs/">Changelogs</p>
     {% set navPages = collections.published | eleventyNavigation("changelogs") %}
   {% endif %}
-  {% if '/getting-started' in page.url %}
-    <p class="sidebar__header"><a href="/getting-started/">Getting Started</p>
-    {% set navPages = collections.published | eleventyNavigation("getting-started") %}
-  {% endif %}
-  {% if '/cms' in page.url %}
-    <p class="sidebar__header"><a href="/cms/">CMS</p>
+  {% if '/content/cms' in page.url %}
+    <p class="sidebar__header"><a href="/content/cms/">CMS</p>
     {% set navPages = collections.published | eleventyNavigation("cms") %}
   {% endif %}
-  {% if '/legacy' in page.url %}
-    <p class="sidebar__header"><a href="/legacy/">Legacy SDKs</p>
+  {% if '/content/legacy' in page.url %}
+    <p class="sidebar__header"><a href="/content/legacy/">Legacy SDKs</p>
     {% set navPages = collections.published | eleventyNavigation("legacy") %}
   {% endif %}
-  {% if '/content' in page.url %}
+  {% if '/content/' in page.url %}
     <p class="sidebar__header"><a href="/content/">Docs</p>
     {% set navPages = collections.published | eleventyNavigation("docs") %}
+  {% endif %}
+  {% if '/content/getting-started' in page.url %}
+    <p class="sidebar__header"><a href="/content/getting-started/">Getting Started</p>
+    {% set navPages = collections.published | eleventyNavigation("getting-started") %}
   {% endif %}
   
   {{ navPages | eleventyNavigationToHtml({listClass: "sidebar-nav", activeListItemClass: "active", activeKey: eleventyNavigation.key}) | safe }}

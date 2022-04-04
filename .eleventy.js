@@ -94,6 +94,10 @@ module.exports = function (eleventyConfig) {
         return collectionApi.getFilteredByTags("docs");
     });
 
+    eleventyConfig.addCollection("getting-started", function (collectionApi) {
+        return collectionApi.getFilteredByTags("getting-started");
+    });
+
     eleventyConfig.addCollection("published", function (collectionApi) {
         return [...collectionApi.getFilteredByGlob("./src/**/*.md")].filter(
             (post) => !post.data.draft
