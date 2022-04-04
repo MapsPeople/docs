@@ -4,7 +4,7 @@ eleventyNavigation:
   parent: getting-started
   key: getting-started-xamarin
   title: Getting Started with Xamarin
-  order: 40
+  order: 9999
 ---
 
 ## Introduction
