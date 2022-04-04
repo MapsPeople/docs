@@ -16,20 +16,20 @@
 <div class="row">
 <div class="column">
     <h2>
-      <a href="/content/getting-started/ios/">Getting Started with iOS</a>
-    </h2>
-    <ul class="list">
-      {% set getting_started_ios = collections.published | eleventyNavigation("getting-started-ios") %}
-      {%- for entry in getting_started_ios %}
-        {{ renderNavListItem(entry) }}
-      {%- endfor -%}
-    </ul>
-    <h2>
       <a href="/content/getting-started/android/">Getting Started with Android</a>
     </h2>
     <ul class="list">
       {% set getting_started_android = collections.published | eleventyNavigation("getting-started-android") %}
       {%- for entry in getting_started_android %}
+        {{ renderNavListItem(entry) }}
+      {%- endfor -%}
+    </ul>
+    <h2>
+      <a href="/content/getting-started/ios/">Getting Started with iOS</a>
+    </h2>
+    <ul class="list">
+      {% set getting_started_ios = collections.published | eleventyNavigation("getting-started-ios") %}
+      {%- for entry in getting_started_ios %}
         {{ renderNavListItem(entry) }}
       {%- endfor -%}
     </ul>
