@@ -94,6 +94,8 @@ The "Polygon" section contains options related to the appearance of the Polygon.
 1. Fill opacity - Controls the fill opacity of the Polygon.
     * The value here should be between 0 and 1, for example a value of 1 gives 100% opacity, 0.2 gives 20% opacity, etc.
 
+> NOTE: If you edit Display Rules in the CMS, but no (or only some) changes take place in your app, make sure you don't set any conflicting Display Rules in the actual code! Runtime takes precedent over CMS!
+
 ### In Code
 
 A Display Rule could look like this:
