@@ -1,9 +1,9 @@
 ---
-title: Using Display Rules in Practice
+title: Display Rules in Practice for Web
 eleventyNavigation:
-  title: Using Display Rules in Practice
-  parent: web-v4-guides
-  key: web-v4-guides-display-rules
+  title: Display Rules in Practice for Web
+  parent: map-map-styling
+  key: map-map-styling-display-rules-web
   order: 210
 ---
 
