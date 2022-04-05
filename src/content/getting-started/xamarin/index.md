@@ -11,8 +11,6 @@ eleventyNavigation:
 
 This will explain how to get started with getting MapsIndoors inside of your Xamarin application.
 
-> Please note: Xamarin support for MapsIndoors is currently in beta.
-
 ## Getting Started
 
 You should start by creating a new Solution containing an iOS and an Android project.
