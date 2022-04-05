@@ -1,8 +1,8 @@
 ---
 title: Configuring a menu with AppConfig
 eleventyNavigation:
-  key: map-appconfig
-  parent: map
+  key: map-various-appconfig
+  parent: map-various
   title: Configuring a menu with AppConfig
   order: 420
 ---

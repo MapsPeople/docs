@@ -2,8 +2,8 @@
 title: Areas
 eleventyNavigation:
   title: Areas
-  key: map-areas
-  parent: map
+  key: map-various-areas
+  parent: map-various
   order: 1000
 ---
 
