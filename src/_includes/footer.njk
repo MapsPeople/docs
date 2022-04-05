@@ -113,6 +113,13 @@
     <h2>
       <a href="/changelogs/">Changelogs</a>
     </h2>
+    <ul class="list">
+      {% set changelogs = collections.published | eleventyNavigation("changelogs") %}
+      {%- for entry in changelogs %}
+        {{ renderNavListItem(entry) }}
+      {%- endfor -%}
+    </ul>
+    </h2>
     <h2>
       <a href="/product/">Product Overview</a>
     </h2>
