@@ -35,18 +35,7 @@
     <p class="sidebar__header"><a href="/android/v2/">Android v2</p>
     {% set navPages = collections.published | eleventyNavigation("android-v2") %}
   {% endif %}
-  
-  <a href="https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/index.html">Web SDK - Reference Docs
-      &UpperRightArrow;</a>
-  <hr />
-  
-  <a href="https://app.mapsindoors.com/mapsindoors/reference/android/v3/index.html">Android SDK - Reference Docs
-      &UpperRightArrow;</a>
-  <hr />
-   
-  <a href="https://app.mapsindoors.com/mapsindoors/reference/ios/v3/classes.html">iOS SDK - Reference Docs
-      &UpperRightArrow;</a>
-  <hr />
+
   {% if '/content' in page.url %}
     <p class="sidebar__header"><a href="/content/">Docs</p>
     {% set navPages = collections.published | eleventyNavigation("docs") %}
@@ -66,3 +55,19 @@
   
   {{ navPages | eleventyNavigationToHtml({listClass: "sidebar-nav", activeListItemClass: "active", activeKey: eleventyNavigation.key}) | safe }}
 </nav>
+
+<hr/>
+  
+<ul>
+  <li><strong>Reference Docs</strong></li>
+  <li><a href="https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/index.html">Web SDK
+      &UpperRightArrow;</a></li>
+  
+  <li><a href="https://app.mapsindoors.com/mapsindoors/reference/android/v3/index.html">Android SDK
+      &UpperRightArrow;</a></li>
+   
+  <li><a href="https://app.mapsindoors.com/mapsindoors/reference/ios/v3/classes.html">iOS SDK
+      &UpperRightArrow;</a></li>
+</ul>
+
+<hr/>
