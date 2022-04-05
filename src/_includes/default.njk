@@ -4,10 +4,10 @@
         <header class="header">
             {% include "header.njk" %}
         </header>
-        {% if ('/web/' in page.url) or ('/ios/' in page.url) or ('/android/' in page.url) or ('/various/' in page.url) or ('/changelogs/' in page.url) or ('/auth' in page.url) or ('/directions/' in page.url) or ('/data/' in page.url) or ('/map/' in page.url) or ('/searching/' in page.url) %}
-            <aside class="sidebar">
-                {% include "sidebar.njk" %}
-            </aside>
+        {% if ('/web/' in page.url) or ('/ios/' in page.url) or ('/android/' in page.url) or ('/various/' in page.url) or ('/changelogs/' in page.url) or ('/auth' in page.url) or ('/directions/' in page.url) or ('/data/' in page.url) or ('/map/' in page.url) or ('/searching/' in page.url) or ('/content/' in page.url) %}
+        <aside class="sidebar">
+            {% include "sidebar.njk" %}
+        </aside>
         {% endif %}
         <main class="content">
             <nav class="breadcrumb" aria-label="Breadcrumb">
