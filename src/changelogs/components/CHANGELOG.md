@@ -12,6 +12,63 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [11.12.1] - 2022-03-24
+
+### Fixed
+
+**mi-tabs**: Now re-renders upon receiving new content.
+
+## [11.12.0] - 2022-03-23
+
+### Added
+
+**mi-data-table**: Now supports n-depth object traversal so you can dot into objects when binding in the view.
+
+## [11.11.2] - 2022-03-07
+
+### Fixed
+
+**mi-dropdown**: Prevent the dropdown component to interfere with other scrollable elements.
+
+## [11.11.1] - 2022-02-10
+
+### Added
+
+**mi-dropdown**: A `disabled` attribute was added.
+
+### Fixed
+
+**mi-dropdown**: Would throw an error when the `filterable` property wasn't set.
+
+## [11.10.3] - 2022-01-18
+
+### Added
+
+**mi-dropdown**: Now has support for showing items with icons in the header when single selecting.
+
+## [11.10.1] - 2022-01-18
+
+### Fixed
+
+- **mi-data-table**: It's now possible to select rows when adding data to the table by setting the tables `selected` property.
+
+## [11.10.0] - 2022-01-14
+
+### Added
+
+- **mi-dropdown**: A `button-icon` part attribute to allow external styling of the icon img element.
+
+## [11.9.0] - 2021-12-16
+
+### Added
+
+- **mi-dropdown**: Now has the option to display user-specified text when hovering an `mi-dropdown-item` by setting the `title` attribute.
+
+### Fixed
+
+- **mi-dropdown**: Tabbing to the clear button and pressing Enter would clear the input field and select the highlighted item instead of just clearing the input field.
+- **mi-dropdown**: `mi-dropdown-item`s with icons were not filterable.
+
 ## [11.8.1] - 2021-12-01
 
 ### Changed
