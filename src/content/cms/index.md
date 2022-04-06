@@ -30,6 +30,14 @@ View the tutorial video below for more information about terminology and hierarc
 
 <iframe width="480" height="300" src="https://www.youtube-nocookie.com/embed/GwyO-Vav8Rs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+You can also view the full video tutorial of the CMS:
+
+<iframe width="480" height="300" src="https://www.youtube-nocookie.com/embed/1-uFyfH-5po" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+Or if you're just interested in the general concepts:
+
+<iframe width="480" height="300" src="https://www.youtube-nocookie.com/embed/65AKMqbUfPw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 There are two main pages in the CMS, "Map" and "Solution Details". The hierarchical structure is like this:
 
 * **Map** - The main page where you manage your data on the map.
@@ -53,6 +61,10 @@ In the CMS there are different levels of users, which has an effect on what you 
 * **Admin** - Administrators have editor rights and have access to further settings in the CMS
 
 ## Interface Overview
+
+If you prefer to recieve the following information in video format, watch the video below!
+
+<iframe width="480" height="300" src="https://www.youtube-nocookie.com/embed/0boSj6X8Ces" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Map
 
@@ -92,6 +104,8 @@ From left to right, the functionalities in the Toolbar are as follows (you can a
 * **Reload Route Network** - Reloads the Route Network. Route Element changes' effect on the Network becomes visible after reloading the Network.
 * **Zoom Level** - Adjust the Zoom Level. Values range from 15 (zoom out) to 22 (zoom in).
 
+<iframe width="480" height="300" src="https://www.youtube-nocookie.com/embed/ZymL18piH5Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ### Solution Details
 
 Under Solution Details you can find several subpages, which are described below:
@@ -112,6 +126,8 @@ This page is for organising the "Types" you sort your locations in to.
 1. The number of Locations with the given Type applied.
 1. "Edit Template" - Edit the template for a given Type.
 
+<iframe width="480" height="300" src="https://www.youtube-nocookie.com/embed/A10HP0HVgsQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 #### Categories
 
 ![solution-details-categories](/assets/cms/interface-overview/Solution_Details_Categories.png)
@@ -122,6 +138,8 @@ Categories are similar to Types, but whereas Locations can only be of one Type, 
 1. "Edit Category" - Edit properties of your Category.
 1. The name of the Category.
 1. The Key belonging to the Category.
+
+<iframe width="480" height="300" src="https://www.youtube-nocookie.com/embed/Q6LiqBKNNCY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 #### Type Visibility
 
@@ -243,6 +261,8 @@ MapsIndoors also provides you the option of integrating a Positioning system to 
 As the options above, the options presented for WebEx integration depends on the exact manner of integration.
 
 ## Editing Data
+
+<iframe width="480" height="300" src="https://www.youtube-nocookie.com/embed/GKnbEiINEtU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Location
 
