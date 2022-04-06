@@ -588,13 +588,13 @@ We support bulk uploading of image files to the Icon Manager.
 
 To delete an Icon, click the "trash bin" on the Icons you want to delete. It is strongly advised to change Icons on the Locations, Location Types or Categories before deleting their associated Icon file. However, if you delete an Icon that is already used by a Location, the Location will revert back to using the Icon for its Location Type. If you delete an Icon that is used by a Category or Location Type, it will revert to using a generic marker on the Map.
 
-#### Uploading SVGs
+### Uploading SVGs
 
 SVG is a vector file format, which lets MapsIndoors convert your Icon in a range of sizes to get the best looking Icon in every situation.
 
 SVGs should be uploaded with a `width` and `height` that you want the SVG to be displayed on the Map in. Make sure you define it in `px`, not `cm` or `%`. E.g., if you want to display a 32x24px Icon on the Map, upload an SVG with the attributes `width='32px'` and `height='24px'`. For consistency, it's good form to make the `viewport` the same size as the `width` and `height`.
 
-#### Supported SVG Elements
+### Supported SVG Elements
 
 We only accept SVGs that conform to a very strict ruleset. If an uploaded SVG contains anything other than the elements and attributes listed below, it will be rejected. All child elements can be nested as supported by the SVG format.
 
