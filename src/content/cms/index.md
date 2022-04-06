@@ -4,7 +4,7 @@ toc: true
 eleventyNavigation:
   title: MapsIndoors CMS
   key: cms
-  parent: index
+  parent: docs
   order: 10
 ---
 
