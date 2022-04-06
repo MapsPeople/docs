@@ -66,6 +66,38 @@ module.exports = function (eleventyConfig) {
         return collectionApi.getFilteredByTags("changelogs");
     });
 
+    eleventyConfig.addCollection("directions", function (collectionApi) {
+        return collectionApi.getFilteredByTags("directions");
+    });
+
+    eleventyConfig.addCollection("map", function (collectionApi) {
+        return collectionApi.getFilteredByTags("map");
+    });
+
+    eleventyConfig.addCollection("data", function (collectionApi) {
+        return collectionApi.getFilteredByTags("data");
+    });
+
+    eleventyConfig.addCollection("searching", function (collectionApi) {
+        return collectionApi.getFilteredByTags("searching");
+    });
+
+    eleventyConfig.addCollection("cms", function (collectionApi) {
+        return collectionApi.getFilteredByTags("cms");
+    });
+
+    eleventyConfig.addCollection("legacy", function (collectionApi) {
+        return collectionApi.getFilteredByTags("legacy");
+    });
+
+    eleventyConfig.addCollection("docs", function (collectionApi) {
+        return collectionApi.getFilteredByTags("docs");
+    });
+
+    eleventyConfig.addCollection("getting-started", function (collectionApi) {
+        return collectionApi.getFilteredByTags("getting-started");
+    });
+
     eleventyConfig.addCollection("published", function (collectionApi) {
         return [...collectionApi.getFilteredByGlob("./src/**/*.md")].filter(
             (post) => !post.data.draft

@@ -35,21 +35,39 @@
     <p class="sidebar__header"><a href="/android/v2/">Android v2</p>
     {% set navPages = collections.published | eleventyNavigation("android-v2") %}
   {% endif %}
-  {% if '/various' in page.url %}
-    <p class="sidebar__header"><a href="/various/">Various</p>
-    {% set navPages = collections.published | eleventyNavigation("various") %}
+
+  {% if '/content' in page.url %}
+    <p class="sidebar__header"><a href="/content/">Docs</p>
+    {% set navPages = collections.published | eleventyNavigation("docs") %}
   {% endif %}
   {% if '/changelogs' in page.url %}
     <p class="sidebar__header"><a href="/changelogs/">Changelogs</p>
     {% set navPages = collections.published | eleventyNavigation("changelogs") %}
   {% endif %}
-  {% if '/auth' in page.url %}
-    <p class="sidebar__header"><a href="/auth/">Auth</p>
-    {% set navPages = collections.published | eleventyNavigation("auth") %}
+  {% if '/content/legacy' in page.url %}
+    <p class="sidebar__header"><a href="/content/legacy/">Legacy SDKs</p>
+    {% set navPages = collections.published | eleventyNavigation("legacy") %}
   {% endif %}
-  {% if '/getting-started' in page.url %}
-    <p class="sidebar__header"><a href="/getting-started/">Getting Started</p>
+  {% if '/content/getting-started' in page.url %}
+    <p class="sidebar__header"><a href="/content/getting-started/">Getting Started</p>
     {% set navPages = collections.published | eleventyNavigation("getting-started") %}
   {% endif %}
+  
   {{ navPages | eleventyNavigationToHtml({listClass: "sidebar-nav", activeListItemClass: "active", activeKey: eleventyNavigation.key}) | safe }}
 </nav>
+
+<hr/>
+  
+<ul>
+  <li><strong>Reference Docs</strong></li>
+  <li><a href="https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/index.html">Web SDK
+      &UpperRightArrow;</a></li>
+  
+  <li><a href="https://app.mapsindoors.com/mapsindoors/reference/android/v3/index.html">Android SDK
+      &UpperRightArrow;</a></li>
+   
+  <li><a href="https://app.mapsindoors.com/mapsindoors/reference/ios/v3/classes.html">iOS SDK
+      &UpperRightArrow;</a></li>
+</ul>
+
+<hr/>

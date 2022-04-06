@@ -417,7 +417,7 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 
 ### Added
 
-- Support for Live Data added. Information and documentation about this new feature is available at [Live Data Guide](https://docs.mapsindoors.com/android/v3/live-data/)
+- Support for Live Data added. Information and documentation about this new feature is available at [Live Data Guide](https://docs.mapsindoors.com/map/live-data/)
 
 ### Fixed
 

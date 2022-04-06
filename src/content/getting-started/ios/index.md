@@ -1,0 +1,17 @@
+---
+title: Getting Started
+layout: default
+eleventyNavigation:
+  title: Getting Started with iOS
+  key: getting-started-ios
+  parent: getting-started
+  order: 100
+---
+
+<!-- Overview -->
+{% include "src/content/shared/getting-started/overview.md" %}
+
+<!-- Skills -->
+{% include "src/content/shared/getting-started/skills.md" %}
+
+<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/content/getting-started/ios/prerequisites/">Next up: Prerequisites</a></p>

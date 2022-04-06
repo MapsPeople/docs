@@ -324,7 +324,7 @@ eleventyNavigation:
 
 ### What's New
 
-- **CAD file upload:** Ability to create new buildings and floors and upload CAD files (.dwg, .dxf) for the floors in the CMS. You can find [a guide in the documentation](https://docs.mapsindoors.com/cms/#buildings).
+- **CAD file upload:** Ability to create new buildings and floors and upload CAD files (.dwg, .dxf) for the floors in the CMS. You can find [a guide in the documentation](https://docs.mapsindoors.com/map/cms/#buildings).
 - **Icon Manager:** Added the option to "skip" uploading icons larger than 128x64px.
   - When deleting an icon in the Icon Manager that is in use on the map, it is also removed from the map.
 
