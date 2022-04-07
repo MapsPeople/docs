@@ -16,7 +16,7 @@ Changelog for MapsIndoors SDK for JavaScript. This document structure is based o
 - Renamed the `labelTemplate` property on the `DefaultDisplayRule` to `label` to match with the `DisplayRule` interface.
 - Fix bug where directions line on a Mapbox map in some instances would not be rendered.
 - Add missing documentation of required parameter in the `mapsindoors.directions.MapboxProvider`.
-- Fix bug where the set language was not used then requesting Mapbox directions.
+- Fix bug where the set language was not used when requesting Mapbox directions.
 
 ## [4.17.2] 2022-02-03
 
