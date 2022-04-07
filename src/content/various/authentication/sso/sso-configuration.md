@@ -44,7 +44,7 @@ MapsIndoors Auth will start an OAuth 2 authorization code flow, using the defaul
 
 * The authentication server OIDC metadata is found at `.well-known/openid-configuration`, a relative URL to the Authority URL given earlier. If the metadata is found elsewhere, the absolute URL must be provided.
 * Two scopes are requested: `openid profile`. If other, or no, scopes should be provided, this must be specified.
-* MapsIndoors Auth will use the `id_token` to retrieve additional claims from the `userinfo endpoint`. This can be disabled if needed.
+* MapsIndoors Auth will use the `access_token` to retrieve additional claims from the `userinfo endpoint`. This can be disabled if needed.
 
 For client assertions, these are the defaults:
 
