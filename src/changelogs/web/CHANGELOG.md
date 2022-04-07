@@ -32,7 +32,7 @@ Changelog for MapsIndoors SDK for JavaScript. This document structure is based o
 
 - In some cases, the MapsPeople logo would not be visible.
 - All icons are now added to MapBox, to prevent the "Image ... could not be loaded." warning in the console.
-- strokeFill, -Color, and -Weight is now correctly applied when using `setBuildingOutlineOptions()`.
+- `strokeFill`, `strokeColor`, and `strokeWeight` is now correctly applied when using `setBuildingOutlineOptions()`.
 
 ## [4.17.0] 2021-12-21
 
