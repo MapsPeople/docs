@@ -4,7 +4,7 @@ eleventyNavigation:
   key: data-offline-data-ios
   parent: data-offline-data
   title: Offline Content for iOS
-  order: 10
+  order: 20
 ---
 
 <!-- Known Issues -->
