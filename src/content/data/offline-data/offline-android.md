@@ -221,7 +221,7 @@ To refresh or get the size of a synced dataset:
 MPDataSetCacheManager.getInstance().getSyncSizesForDataSetCaches(Collections.singletonList(dataSet), this);
 ```
 
-This is an asynchronous process, and a `MPDataSetCacheManagerSizeDelegate` is needed for getting information about progress and results.
+This is an asynchronous process, and a `MPDataSetCacheManagerSizeListener` is needed for getting information about progress and results.
 
 </mi-tab-panel>
 <mi-tab-panel id="kotlin">
@@ -239,7 +239,7 @@ To refresh or get the size of a synced dataset:
 MPDataSetCacheManager.getInstance().getSyncSizesForDataSetCaches(listOf(dataSet), this)
 ```
 
-This is an asynchronous process, and a `MPDataSetCacheManagerSizeDelegate` is needed for getting information about progress and results.
+This is an asynchronous process, and a `MPDataSetCacheManagerSizeListener` is needed for getting information about progress and results.
 
 </mi-tab-panel>
 </mi-tabs>
