@@ -34,7 +34,6 @@ To remove a value from the Display Rule (to make it inherit from further up the 
 ## Display Rule Properties
 
 > You can currently only edit Display Rules per Type. Editing Display Rules on single Locations will be added in an upcoming release.
-
 > NOTE: If you edit Display Rules in the CMS, but no (or only some) changes take place in your app, make sure you don't set any conflicting Display Rules in-app! Runtime takes precedent over CMS!
 
 In the CMS, you can edit your Display Rules in `Solution Details > Types > Edit [Location Type name] Display Rules`. This will open an overview of all Display Rules.
@@ -233,8 +232,8 @@ All properties are optional.
 
 ## How to Use Display Rules in Practice in iOS SDK
 
-See the [iOS guide to Map Styling]({{ "/ios/v3/guides/map-styling" | url }}).
+See the [iOS guide to Map Styling]({{ site.url }}/content/map/map-styling/map-styling-ios).
 
 ## How to Use Display Rules in Practice in JS SDK
 
-See the [JS SDK guide to Using Display Rules in Practice]({{ "/web/v4/guides/display-rules-practice" | url }}).
+See the [JS SDK guide to Using Display Rules in Practice]({{ site.url }}/content/map/map-styling/display-rules-practice).
