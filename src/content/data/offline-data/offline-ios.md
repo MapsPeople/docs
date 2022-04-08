@@ -4,7 +4,7 @@ eleventyNavigation:
   key: data-offline-data-ios
   parent: data-offline-data
   title: Offline Content for iOS
-  order: 10
+  order: 20
 ---
 
 <!-- Known Issues -->
@@ -14,17 +14,17 @@ eleventyNavigation:
 
 MapsIndoors has three levels of caching:
 
-1. **Basic data**: all descriptions, geometries and in general all metadata about POIs, rooms, areas, buildings and venues.
-2. **Detailed data**: Images referenced by the data + basic data.
-3. **Full dataset**: Maptiles in addition to images and basic data.
+1. **Basic Data**: All descriptions, geometries and metadata about POIs, rooms, areas, buildings and venues.
+2. **Detailed Data**: The same as **Basic Data**, plus images referenced by the data.
+3. **Full Dataset**: The same as **Detailed Data**, plus Map Tiles.
 
-Full dataset caching requires that maptiles are prepared specifically for this purpose.  Contact MapsPeople for arranging this.
+Full Dataset caching requires that Map Tiles are prepared specifically for this purpose.  Contact MapsPeople in order to arrange this.
 
 ## Automatic Caching
 
-Out of the box, MapsIndoors automatically cache all basic data for the **active** dataset on device, whereas images and maptiles are cached as they are used.
+Out of the box, MapsIndoors automatically caches all basic data for the **active** dataset on the device, whereas images and Map Tiles are cached only as they are used.
 
-This means all MapsIndoors specific data is cached automatically, but images are only cached after they have been needed for map display.  Likewise maptiles (the base map) are only cached when needed for map display, so all parts of the map that has been shown is cached.  Areas and zoomlevels that has not been shown as part of user interaction is not cached.
+This means all MapsIndoors-specific data is cached automatically, but images are only cached after they have been needed for map display. Likewise, Map Tiles are only cached when needed for map display, so all parts of the map that has been shown are cached.  Areas and Zoom Levels that have not been shown as part of user interaction are not cached.
 
 ## Tweaking Caching Behaviour
 
@@ -68,15 +68,17 @@ Depending on the overall size of your MapsIndoors deployment, this may take some
 
 `Available in SDK version 3.9 and later`
 
-The most common use of MapsIndoors involve only one dataset, but for large deployments data may be partitioned into multiple datasets.
+The most common use of MapsIndoors involves only one dataset, but for large deployments, data may be partitioned into multiple datasets.
 
-Offline caching of multiple simultaneous datasets is fully supported, and is mostly limited by the available storage space on device.<br>Note: only one dataset is active at any point in time.
+Offline caching of multiple simultaneous datasets is fully supported, and is mostly limited by the available storage space on device.
 
-Management of multiple dataset is done via  `MapsIndoors.dataSetCacheManager`, which allows querying, adding, modifying and removing datasets.
+**NOTE**: Only one dataset is active at any point in time.
+
+Management of multiple datasets is done via  `MPDataSetCacheManager`, which allows querying, adding, modifying and removing datasets.
 
 ### Listing Managed Datasets
 
-All datasets currently manager is accessible via the `MapsIndoors.dataSetCacheManager.managedDataSets` collection:
+All datasets currently managed are accessible via the `MapsIndoors.dataSetCacheManager.managedDataSets` collection:
 
 ```swift
 for ds in MapsIndoors.dataSetCacheManager.managedDataSets {
@@ -84,7 +86,7 @@ for ds in MapsIndoors.dataSetCacheManager.managedDataSets {
 }
 ```
 
-This can be used to build a management user interface, and information about individual datasets can be access from the `MPDataSetCache` and `MPDataSetCacheItem` classes.
+This can be used to build a management user interface, and information about individual datasets can be accessed from the `MPDataSetCache` and `MPDataSetCacheItem` classes.
 
 ### Adding Datasets for Offline Caching
 
@@ -105,7 +107,7 @@ Datasets are removed from caching using `MapsIndoors.dataSetCacheManager.removeD
 MapsIndoors.dataSetCacheManager.removeDataSet(MPDataSetCache)
 ```
 
-Note: the currently active dataset is not removed.
+**NOTE:** The currently active dataset is not removed.
 
 ### Changing Caching Parameters
 
@@ -119,7 +121,7 @@ dataSetManager.setCachingScope( .cachingScope_Detailed, cacheItem: dataSet?.cach
 
 ### Determining the Caching Size of a Dataset
 
-The estimated and cached size of a dataset is available via the datasets cacheitem:
+The estimated and cached size of a dataset is available via:
 
 ```swift
 dataSet?.cacheItem.cachedSize
