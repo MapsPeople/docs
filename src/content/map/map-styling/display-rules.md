@@ -11,7 +11,7 @@ eleventyNavigation:
 
 In this guide you will be introduced to the concept of Display Rules and how you can use Display Rules to change how Locations (POIs, Rooms and Areas) are displayed on the map.
 
-The MapsIndoors CMS is used to control the initial appearance of Locations. However, the Display Rules—and thereby the appearance of Locations—can be changed from the application at _runtime_. This gives the application the power to change Locations based on events in the app.
+The MapsIndoors CMS is used to control the initial appearance of Locations. However, the Display Rules—and thereby the appearance of Locations—can be changed from the application at _runtime_. This gives the application the power to change Locations based on events in the app. You can also use the Integration API to control Display Rules.
 
 ## How Can I Use Display Rules?
 
@@ -41,8 +41,8 @@ To remove a value from the Display Rule (to make it inherit from further up the 
 
 ## Display Rule Properties
 
-> You can currently only edit Display Rules per Type. Editing Display Rules on single Locations will be added in an upcoming release.
-> 
+You can currently only edit Display Rules per Type. Editing Display Rules on single Locations will be added in an upcoming release.
+
 > NOTE: If you edit Display Rules in the CMS, but none (or only some) changes take place in your app, make sure you don't set any conflicting Display Rules in-app. Display Rules applied at runtime takes precedent over all others.
 
 In the CMS, you can edit your Display Rules in `Solution Details > Types > Edit [Location Type name] Display Rules`. This will open an overview of all Display Rules properties.
@@ -70,10 +70,10 @@ The "Icon" section contains options related to the appearance of the Icon.
 1. **Visibility** - Controls whether the Icon is visible on the map.
     * The system will accept a Boolean here, so either `true` or `false`.
 1. **Zoom from** - Sets the minimum Zoom Level at which the Icon is visible.
-    * The value should be a number between 1 and 22, with 1 being very far away, and 22 being very close. In a general use case, most users will only need values between 15 and 22.
+    * The value should be a number between 1 and 22, with 1 being very far away, and 22 being very close (22 not available for all Solutions). In a general use case, most users will only need values between 15 and 22.
     * If you are developing using the JavaScript SDK for Google Maps, the value must be an integer. If you are developing for Android or iOS, or using a different map provider, the value may be fractional.
 1. **Zoom to** - Sets the maximum Zoom Level at which the Icon is visible.
-    * The value should be a number between 1 and 22, with 1 being very far away, and 22 being very close. In a general use case, most users will only need values between 15 and 22.
+    * The value should be a number between 1 and 22, with 1 being very far away, and 22 being very close (22 not available for all Solutions). In a general use case, most users will only need values between 15 and 22.
     * If you are developing using the JavaScript SDK for Google Maps, the value must be an integer. If you are developing for Android or iOS, or using a different map provider, the value may be fractional.
 1. **Icon** - Use the Icon Manager in the CMS to control which Icon is shown on the map.
     * The Icon Manager is a tool to select the displayed Icon from either a pre-loaded selection of Icons, or for you to upload your own.
@@ -104,10 +104,10 @@ The "Label" section contains options related to the appearance of the Label. The
 1. **Visibility** - Controls whether the Label is visible on the map.
     * The system will accept a Boolean here, so either `true` or `false`.
 1. **Zoom from** - Sets the minimum Zoom Level at which the Label is visible.
-    * The value should be a number between 1 and 22, with 1 being very far away, and 22 being very close. In a general use case, most users will only need values between 15 and 22.
+    * The value should be a number between 1 and 22, with 1 being very far away, and 22 being very close (22 not available for all Solutions). In a general use case, most users will only need values between 15 and 22.
     * If you are developing using the JavaScript SDK for Google Maps, the value must be an integer. If you are developing for Android or iOS, or using a different map provider, the value may be fractional.
 1. **Zoom to** - Sets the maximum Zoom Level at which the Label is visible.
-    * The value should be a number between 1 and 22, with 1 being very far away, and 22 being very close. In a general use case, most users will only need values between 15 and 22.
+    * The value should be a number between 1 and 22, with 1 being very far away, and 22 being very close (22 not available for all Solutions). In a general use case, most users will only need values between 15 and 22.
     * If you are developing using the JavaScript SDK for Google Maps, the value must be an integer. If you are developing for Android or iOS, or using a different map provider, the value may be fractional.
 1. **Template** - Controls the information the Label should contain. Only applies to the CMS, any change at runtime will overwrite the information set up by the Template.
     * Location Name - Only displays the name of the Location.
@@ -140,19 +140,19 @@ The "Polygon" section contains options related to the appearance of the Polygon.
 1. **Visibility** - Controls whether the Polygon is visible on the map.
     * The system will accept a Boolean here, so either `true` or `false`.
 1. **Zoom from** - Sets the minimum Zoom Level at which the Polygon is visible.
-    * The value should be a number between 1 and 22, with 1 being very far away, and 22 being very close. In a general use case, most users will only need values between 15 and 22.
+    * The value should be a number between 1 and 22, with 1 being very far away, and 22 being very close (22 not available for all Solutions). In a general use case, most users will only need values between 15 and 22.
     * If you are developing using the JavaScript SDK for Google Maps, the value must be an integer. If you are developing for Android or iOS, or using a different map provider, the value may be fractional.
 1. **Zoom to** - Sets the maximum Zoom Level at which the Polygon is visible.
-    * The value should be a number between 1 and 22, with 1 being very far away, and 22 being very close. In a general use case, most users will only need values between 15 and 22.
+    * The value should be a number between 1 and 22, with 1 being very far away, and 22 being very close (22 not available for all Solutions). In a general use case, most users will only need values between 15 and 22.
     * If you are developing using the JavaScript SDK for Google Maps, the value must be an integer. If you are developing for Android or iOS, or using a different map provider, the value may be fractional.
 1. **Stroke color** - Controls the stroke color of the Polygon.
-    * You can select a colour using either a colour picker or entering an RGB (eg. 48, 113, 217) or HSL (eg. 217, 69%, 52%) value, or a HEX code (eg. #3071D9).
+    * In the CMS, you can select a color using the color picker displayed when clicking the color input field.
     * If setting the color in-app, the value provided must be in HEX code (eg. #3071D9).
 1. **Stroke width** - Controls the stroke width (in pixels) of the Polygon.
 1. **Stroke opacity** - Controls the stroke opacity of the Polygon.
     * The value here should be between 0 and 1, for example a value of 1 gives 100% opacity, 0.2 gives 20% opacity, etc.
 1. **Fill color** - Controls the fill color of the Polygon.
-    * You can select a colour using either a colour picker or entering an RGB (eg. 48, 113, 217) or HSL (eg. 217, 69%, 52%) value, or a HEX code (eg. #3071D9).
+    * In the CMS, you can select a color using the color picker displayed when clicking the color input field.
     * If setting the color in-app, the value provided must be in HEX code (eg. #3071D9).
 1. **Fill opacity** - Controls the fill opacity of the Polygon.
     * The value here should be between 0 and 1, for example a value of 1 gives 100% opacity, 0.2 gives 20% opacity, etc.
