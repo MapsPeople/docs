@@ -7,11 +7,19 @@ eleventyNavigation:
     order: 10
 ---
 
-## What are Display Rules
+## What Are Display Rules?
 
 In this guide you will be introduced to the concept of Display Rules and how you can use Display Rules to change how Locations (POIs, Rooms and Areas) are displayed on the map.
 
 The MapsIndoors CMS is used to control the initial appearance of Locations. However, the Display Rules—and thereby the appearance of Locations—can be changed from the application at _runtime_. This gives the application the power to change Locations based on events in the app.
+
+## How Can I Use Display Rules?
+
+Display Rules offer many options on how to use them, and for what goal. We will provide you with a few examples, but you can always come up with your own!
+
+1. cjdncjnc
+1. cdnmckdcd
+1. cunjcdcn
 
 ## Display Rule Hierarchy
 
