@@ -59,6 +59,8 @@ MPSearchItemRecyclerViewAdapter.kt: 31
 
 * Change the places where the navigation graph is used, if you are not using navigation. Alternatively, create a navigation action for MapsFragment. If so, change the navigation controller call on `line: 74` inside `MapsFragment.kt` under the TODO.
 
+* Check the `FirstFragment.kt` class on how to apply User Roles to the map fragment.
+
 ### The Final Result
 
 ![android-single-page-app](/assets/single-page-app/Android_Single_Page_App.jpg)
