@@ -66,18 +66,18 @@ An example of in-app Display Rules using only the General Visibility option coul
 
 The "Icon" section contains options related to the appearance of the Icon.
 
-1. Visibility - Controls whether the Icon is visible on the map.
+1. **Visibility** - Controls whether the Icon is visible on the map.
     * The system will accept a Boolean here, so either `true` or `false`.
-1. Zoom from - Sets the minimum Zoom Level at which the Icon is visible.
+1. **Zoom from** - Sets the minimum Zoom Level at which the Icon is visible.
     * The value should be a number between 1 and 22, with 1 being very far away, and 22 being very close. In a general use case, most users will only need values between 15 and 22.
     * If you are developing using the JavaScript SDK for Google Maps, the value must be an integer. If you are developing for Android or iOS, or using a different map provider, the value may be fractional.
-1. Zoom to - Sets the maximum Zoom Level at which the Icon is visible.
+1. **Zoom to** - Sets the maximum Zoom Level at which the Icon is visible.
     * The value should be a number between 1 and 22, with 1 being very far away, and 22 being very close. In a general use case, most users will only need values between 15 and 22.
     * If you are developing using the JavaScript SDK for Google Maps, the value must be an integer. If you are developing for Android or iOS, or using a different map provider, the value may be fractional.
-1. Icon - Use the Icon Manager to control which Icon is shown on the map.
+1. **Icon** - Use the Icon Manager to control which Icon is shown on the map.
     * The Icon Manager is a tool to select the displayed Icon from either a pre-loaded selection of Icons, or for you to upload your own.
     * In-app, you can provide a URL to a desired Icon.
-        * In-app, you can also define `iconSize`, by giving the desired pizel size. However, if using the Integration API, use `imageSize` instead of of `iconSize`.
+        * In-app, you can also define `iconSize`, by giving the desired size in pixels. However, if using the Integration API, use `imageSize` instead of of `iconSize`.
 
 An example of in-app Display Rules using only "Icon" Display Rules could look like this:
 
@@ -100,21 +100,21 @@ An example of in-app Display Rules using only "Icon" Display Rules could look li
 
 The "Label" section contains options related to the appearance of the Label. The Label is the text associated with the Location on the map, often positioned next to the Icon.
 
-1. Visibility - Controls whether the Label is visible on the map.
+1. **Visibility** - Controls whether the Label is visible on the map.
     * The system will accept a Boolean here, so either `true` or `false`.
-1. Zoom from - Sets the minimum Zoom Level at which the Label is visible.
+1. **Zoom from** - Sets the minimum Zoom Level at which the Label is visible.
     * The value should be a number between 1 and 22, with 1 being very far away, and 22 being very close. In a general use case, most users will only need values between 15 and 22.
     * If you are developing using the JavaScript SDK for Google Maps, the value must be an integer. If you are developing for Android or iOS, or using a different map provider, the value may be fractional.
-1. Zoom to - Sets the maximum Zoom Level at which the Label is visible.
+1. **Zoom to** - Sets the maximum Zoom Level at which the Label is visible.
     * The value should be a number between 1 and 22, with 1 being very far away, and 22 being very close. In a general use case, most users will only need values between 15 and 22.
     * If you are developing using the JavaScript SDK for Google Maps, the value must be an integer. If you are developing for Android or iOS, or using a different map provider, the value may be fractional.
-1. Template - Controls the information the Label should contain.
+1. **Template** - Controls the information the Label should contain. Only applies to the CMS, any change at runtime will overwrite the information set up by the Template.
     * Location Name - Only displays the name of the Location.
     * External ID - Only displays the External ID of the Location.
     * External ID & Location Name - Displays both the External ID and the Location Name, with the External ID first.
     * Location Name & External ID - Displays both the Location Name and the External ID, with the Location Name first.
-1. Max width - Specify how wide (in pixels) a Label can be before forcing a line-break.
-    * A value of `0` will ensure a line-break never takes place.
+1. **Max width** - Specify how wide (in pixels) a Label can be before forcing a line-break.
+    * A value of `0` will ensure no line-breaks for this label.
 
 An example of in-app Display Rules using only "Label" Display Rules could look like this:
 
@@ -136,24 +136,24 @@ Polygon's operate separately from tiles. Tiles are drawn by MapsPeople and overl
 
 The "Polygon" section contains options related to the appearance of the Polygon.
 
-1. Visibility - Controls whether the Polygon is visible on the map.
+1. **Visibility** - Controls whether the Polygon is visible on the map.
     * The system will accept a Boolean here, so either `true` or `false`.
-1. Zoom from - Sets the minimum Zoom Level at which the Polygon is visible.
+1. **Zoom from** - Sets the minimum Zoom Level at which the Polygon is visible.
     * The value should be a number between 1 and 22, with 1 being very far away, and 22 being very close. In a general use case, most users will only need values between 15 and 22.
     * If you are developing using the JavaScript SDK for Google Maps, the value must be an integer. If you are developing for Android or iOS, or using a different map provider, the value may be fractional.
-1. Zoom to - Sets the maximum Zoom Level at which the Polygon is visible.
+1. **Zoom to** - Sets the maximum Zoom Level at which the Polygon is visible.
     * The value should be a number between 1 and 22, with 1 being very far away, and 22 being very close. In a general use case, most users will only need values between 15 and 22.
     * If you are developing using the JavaScript SDK for Google Maps, the value must be an integer. If you are developing for Android or iOS, or using a different map provider, the value may be fractional.
-1. Stroke color - Controls the stroke color of the Polygon.
+1. **Stroke color** - Controls the stroke color of the Polygon.
     * You can select a colour using either a colour picker or entering an RGB (eg. 48, 113, 217) or HSL (eg. 217, 69%, 52%) value, or a HEX code (eg. #3071D9).
     * If setting the color in-app, the value provided must be in HEX code (eg. #3071D9).
-1. Stroke width - Controls the stroke width (in pixels) of the Polygon.
-1. Stroke opacity - Controls the stroke opacity of the Polygon.
+1. **Stroke width** - Controls the stroke width (in pixels) of the Polygon.
+1. **Stroke opacity** - Controls the stroke opacity of the Polygon.
     * The value here should be between 0 and 1, for example a value of 1 gives 100% opacity, 0.2 gives 20% opacity, etc.
-1. Fill color - Controls the fill color of the Polygon.
+1. **Fill color** - Controls the fill color of the Polygon.
     * You can select a colour using either a colour picker or entering an RGB (eg. 48, 113, 217) or HSL (eg. 217, 69%, 52%) value, or a HEX code (eg. #3071D9).
     * If setting the color in-app, the value provided must be in HEX code (eg. #3071D9).
-1. Fill opacity - Controls the fill opacity of the Polygon.
+1. **Fill opacity** - Controls the fill opacity of the Polygon.
     * The value here should be between 0 and 1, for example a value of 1 gives 100% opacity, 0.2 gives 20% opacity, etc.
 
 An example of in-app Display Rules using only "Polygon" Display Rules could look like this:
