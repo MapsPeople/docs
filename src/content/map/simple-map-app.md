@@ -13,11 +13,9 @@ The solution is pre-made, and simply needs integration into your existing app.
 
 ## Android
 
-First, you need to download the pre-made feature from GitHub, found [here](*INSERT LINK HERE*).
+First, you need to download or clone the pre-made feature from GitHub, found [here](*INSERT LINK HERE*).
 
-### Setting Up The MapsFragment
-
-> NOTE: This Fragment was designed to be displayed in Portrait Mode. While it will work in Landscape Mode, some UI elements may look distroted or out-of-place.
+> NOTE: This Fragment was designed to be displayed in Portrait Mode. While it will work in Landscape Mode, some UI elements may look distorted or out-of-place.
 
 * Open the project you just downloaded, and copy the classes located in `java/com/mapspeople/sportseventactivity` into your own App.
 
@@ -64,4 +62,37 @@ MPSearchItemRecyclerViewAdapter.kt: 31
 
 ## iOS
 
-vjvhfvhfv
+This app will provide an example of how to use the MapsPeople SDK in SwiftUI.
+
+First, you need to download or clone the pre-made feature from GitHub, found [here](*INSERT LINK HERE*).
+
+> NOTE: This Fragment was designed to be displayed in Portrait Mode. While it will work in Landscape Mode, some UI elements may look distorted or out-of-place.
+
+### Getting Started
+
+* Follow the description in the [MapsIndoors Getting Started guide](https://docs.mapsindoors.com/ios/v3/getting-started/prerequisites/) to get an API key for MapsIndoors and Google.
+
+* From the terminal, in the path you cloned the repository to, run `pod install`.
+
+* Open the file `xxxxx.xcworkspace` in Xcode, or your editor of choice.
+
+* Make a copy of the `MapsIndoors-Info-Sample.plist` file and name it `MapsIndoors-Info.plist`.
+
+* Add your MapsIndoors API key and Google Maps API key to the `MapsIndoors-Info.plist` file. Then run the project.
+
+### Using the Functionality in your Own App
+
+This project is specifically built so you can easily re-use this functionality in your own application, without further issue.
+
+* To reuse the code in your app, drag and drop the `Views` and `Services` folders, and all the `Assets` except for the `AppIcon` into your project.
+
+* Create a copy of the `MapsIndoors-Info-Sample.plist` file and name it `MapsIndoors-Info.plist`.
+
+* Add your MapsIndoors API key and Google Maps API key to the `MapsIndoors-Info.plist` file.
+
+* Look at `ViewController.swift` for an example of how to initialize the MapsIndoors SDK and use the MapsIndoors SwiftUI implementation in an UIKit app. The `ViewController.swift` reads the API keys retrieved as described above from the file `MapsIndoors-Info.plist`.
+
+* Update your podfile so it matches the podfile in the MapsIndoors SwiftUI App Example.
+
+<!-- Known Issues -->
+{% include "src/content/shared/known-issues-ios.md" %}
