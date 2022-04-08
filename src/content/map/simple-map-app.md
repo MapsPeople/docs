@@ -10,7 +10,7 @@ eleventyNavigation:
 
 The **Simple Map App** is a plug-and-play solution for you to have a simple integration of a map, containing a basic search and directions functionality, in your existing app. While you can work on implementing your own solution using the documentation found [here]({{site.url}}/content/map/), if you just need a simple solution with no further customisation required, this should fulfil your needs.
 
-The solution is pre-made, and simply needs integration into your existing app. However, MapsPeople will not support changes to this single-page app. If you wish further features, we suggest creating your own implementation, or modifying this one.
+The solution is pre-made, and simply needs integration into your existing app. If you wish further features, or customise existing ones, we suggest creating your own implementation, or modifying this one.
 
 ## Android
 
@@ -41,7 +41,7 @@ DirectionStepFragment.kt: 61
 MPSearchItemRecyclerViewAdapter.kt: 31
 ```
 
-> NOTE: Other view and image dependancies may be needed, depending on how your current app is implemented.
+> NOTE: Material 1.5 is used for this app. If another version is used some UI elements might differ from the initial application. If you do not want to use the Material library you will need to find alternatives for some view elements inside the fragments.
 
 * Copy the layout and drawables from the `res` folder into your app.
 
