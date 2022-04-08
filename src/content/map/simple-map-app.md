@@ -1,5 +1,6 @@
 ---
 title: Implementing a Simple Map App
+toc: true
 eleventyNavigation:
   parent: map
   key: map-simple-map
