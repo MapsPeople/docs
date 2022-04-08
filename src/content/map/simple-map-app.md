@@ -10,11 +10,11 @@ eleventyNavigation:
 
 The **Simple Map App** is a plug-and-play solution for you to have a simple integration of a map, containing a basic search and directions functionality, in your existing app. While you can work on implementing your own solution using the documentation found [here]({{site.url}}/content/map/), if you just need a simple solution with no further customisation required, this should fulfil your needs.
 
-The solution is pre-made, and simply needs integration into your existing app. Please note, that this solution is not intended to be customised. If you need additional features, or wish to customise the layout, please create your own implementation. MapsPeople will not support changes to this single-page app.
+The solution is pre-made, and simply needs integration into your existing app. However, MapsPeople will not support changes to this single-page app. If you wish further features, we suggest creating your own implementation, or modifying this one.
 
 ## Android
 
-First, you need to download or clone the pre-made feature from GitHub, found [here](*INSERT ANDROID REPO LINK HERE*).
+First, you need to download or clone the pre-made project from GitHub, found [here](*INSERT ANDROID REPO LINK HERE*).
 
 > NOTE: This Fragment was designed to be displayed in Portrait Mode. While it will work in Landscape Mode, some UI elements may look distorted or out-of-place.
 
@@ -31,7 +31,7 @@ implementation 'com.squareup.okhttp3:okhttp:4.9.0'
 implementation "com.google.android.gms:play-services-maps:16.1.0"
 ```
 
-* For the next step, this tutorial assumed that you use [Glide](https://bumptech.github.io/glide/) for image handling in your application. If you are not using Glide, either import it, or if you use a different image library, you need to change some lines of code in the app. What you need to change them to, depends on the library you use. The lines are:
+* For the next step, this project uses [Glide](https://bumptech.github.io/glide/) for image handling in your application. If you are not using Glide, either import it, or if you use a different image library, you need to change some lines of code in the app. What you need to change them to, depends on the library you use. The lines are:
 
 ```json
 DirectionStepFragment.kt: 50
@@ -59,8 +59,6 @@ MPSearchItemRecyclerViewAdapter.kt: 31
 
 * Change the places where the navigation graph is used, if you are not using navigation. Alternatively, create a navigation action for MapsFragment. If so, change the navigation controller call on `line: 74` inside `MapsFragment.kt` under the TODO.
 
-* Check the `FirstFragment.kt` class on how to apply User Roles to the map fragment. The Accessibility User Role, which you can use to designate accesible routes might avoid stairs, for example, is handled through the routing page with the toggle.
-
 ### The Final Result
 
 ![android-single-page-app](/assets/single-page-app/Android_Single_Page_App.jpg)
@@ -69,7 +67,7 @@ MPSearchItemRecyclerViewAdapter.kt: 31
 
 This app will provide an example of how to use the MapsPeople SDK in SwiftUI.
 
-First, you need to download or clone the pre-made feature from GitHub, found [here](*INSERT IOS REPO LINK HERE*).
+First, you need to download or clone the pre-made project from GitHub, found [here](*INSERT IOS REPO LINK HERE*).
 
 > NOTE: This Fragment was designed to be displayed in Portrait Mode. While it will work in Landscape Mode, some UI elements may look distorted or out-of-place.
 
