@@ -25,14 +25,14 @@ This means all MapsIndoors-specific data is cached automatically, but images are
 
 ## Tweaking Caching Behaviour
 
+Applications have a few ways to change the default caching behaviour:
+
+The synchronization process can be started manually:
+
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
-
-Applications have a few ways to change the default caching behaviour:
-
-The synchronization process can be started manually:
 
 ```java
 MapsIndoors.synchronizeContent((e) -> {
@@ -40,7 +40,24 @@ MapsIndoors.synchronizeContent((e) -> {
 });
 ```
 
+</mi-tab-panel>
+<mi-tab-panel id="kotlin">
+
+```kotlin
+MapsIndoors.synchronizeContent { error ->
+    ...
+}
+```
+
+</mi-tab-panel>
+</mi-tabs>
+
 The level of caching can be changed:
+
+<mi-tabs>
+<mi-tab label="Java" tab-for="java"></mi-tab>
+<mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
+<mi-tab-panel id="java">
 
 ```java
 MPDataSetCache dataset = MPDataSetCacheManager.getInstance().getDataSetByID("API KEY");
@@ -49,18 +66,6 @@ MPDataSetCacheManager.getInstance().synchronizeDataSetsWithScope(Collections.sin
 
 </mi-tab-panel>
 <mi-tab-panel id="kotlin">
-
-Applications have a few ways to change the default caching behaviour:
-
-The synchronization process can be started manually:
-
-```kotlin
-MapsIndoors.synchronizeContent { error ->
-    ...
-}
-```
-
-The level of caching can be changed:
 
 ```kotlin
 val dataset = MPDataSetCacheManager.getInstance().getDataSetByID("API KEY")
@@ -83,12 +88,12 @@ Management of multiple datasets is done via  `MPDataSetCacheManager`, which allo
 
 ### Listing Managed Datasets
 
+All datasets currently managed are accessible via the `MPDataSetCacheManager`:
+
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
-
-All datasets currently managed are accessible via `MPDataSetCacheManager.getInstance().getManagedDataSets()`:
 
 ```java
 for (MPDataSetCache dataSet : MPDataSetCacheManager.getInstance().getManagedDataSets()) {
@@ -96,12 +101,8 @@ for (MPDataSetCache dataSet : MPDataSetCacheManager.getInstance().getManagedData
 }
 ```
 
-This can be used to build a management user interface, and information about individual datasets can be accessed from the `MPDataSetCache` and `MPDataSetCacheItem` classes.
-
 </mi-tab-panel>
 <mi-tab-panel id="kotlin">
-
-All datasets currently managed are accessible via `MPDataSetCacheManager.getInstance().managedDataSets`:
 
 ```kotlin
 for (dataSet in MPDataSetCacheManager.getInstance().managedDataSets) {
@@ -109,78 +110,70 @@ for (dataSet in MPDataSetCacheManager.getInstance().managedDataSets) {
 }
 ```
 
-This can be used to build a management user interface, and information about individual datasets can be accessed from the `MPDataSetCache` and `MPDataSetCacheItem` classes.
-
 </mi-tab-panel>
 </mi-tabs>
 
+This can be used to build a management user interface, and information about individual datasets can be accessed from the `MPDataSetCache` and `MPDataSetCacheItem` classes.
+
 ### Adding Datasets for Offline Caching
+
+Datasets are scheduled for caching using  `MPDataSetCacheManager`:
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
 
-Datasets are scheduled for caching using  `MPDataSetCacheManager`:
-
 ```java
 MPDataSetCacheManager.getInstance().addDataSetWithCachingScope("API KEY", MPDataSetCacheScope.BASIC);
 ```
 
-The current MapsIndoors API key is automatically added as a managed dataset with `MPDataSetCacheScope.BASIC`.
-
 </mi-tab-panel>
 <mi-tab-panel id="kotlin">
-
-Datasets are scheduled for caching using  `MPDataSetCacheManager`:
 
 ```kotlin
 MPDataSetCacheManager.getInstance()
         .addDataSetWithCachingScope("API KEY", MPDataSetCacheScope.BASIC)
 ```
 
-The current MapsIndoors API key is automatically added as a managed dataset with `MPDataSetCacheScope.BASIC`.
-
 </mi-tab-panel>
 </mi-tabs>
 
+The current MapsIndoors API key is automatically added as a managed dataset with `MPDataSetCacheScope.BASIC`.
+
 ### Removing Datasets
+
+Datasets are removed from caching using `MPDataSetCacheManager.getInstance().removeDataSetCache(MPDataSetCache);`:
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
-
-Datasets are removed from caching using `MPDataSetCacheManager.getInstance().removeDataSetCache(MPDataSetCache);`:
 
 ```java
 MPDataSetCacheManager.getInstance().removeDataSetCache(MPDataSetCache);
 ```
 
-**NOTE:** The currently active dataset is not removed.
-
 </mi-tab-panel>
 <mi-tab-panel id="kotlin">
-
-Datasets are removed from caching using `MPDataSetCacheManager.getInstance().removeDataSetCache(MPDataSetCache);`:
 
 ```kotlin
 MPDataSetCacheManager.getInstance().removeDataSetCache(MPDataSetCache)
 ```
 
-**NOTE:** The currently active dataset is not removed.
-
 </mi-tab-panel>
 </mi-tabs>
 
+**NOTE:** The currently active dataset is not removed.
+
 ### Changing Caching Parameters
+
+To change the extent of caching, for example in a management menu:
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
-
-To change the extent of caching, for example in a management menu:
 
 ```java
 MPDataSetCache dataset = MPDataSetCacheManager.getInstance().getDataSetByID("API KEY");
@@ -189,8 +182,6 @@ MPDataSetCacheManager.getInstance().synchronizeDataSetsWithScope(Collections.sin
 
 </mi-tab-panel>
 <mi-tab-panel id="kotlin">
-
-To change the extent of caching, for example in a management menu:
 
 ```kotlin
 val dataset = MPDataSetCacheManager.getInstance().getDataSetByID("API KEY")
@@ -203,55 +194,60 @@ MPDataSetCacheManager.getInstance()
 
 ### Determining the Caching Size of a Dataset
 
+The estimated and cached size of a dataset is available via:
+
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
-
-The estimated and cached size of a dataset is available via:
 
 ```java
 dataSet.getCacheItem().getCacheSize();
 dataSet.getCacheItem().getSyncSize();
 ```
 
-To refresh or get the size of a synced dataset:
-
-```java
-MPDataSetCacheManager.getInstance().getSyncSizesForDataSetCaches(Collections.singletonList(dataSet), this);
-```
-
-This is an asynchronous process, and a `MPDataSetCacheManagerSizeListener` is needed for getting information about progress and results.
-
 </mi-tab-panel>
 <mi-tab-panel id="kotlin">
-
-The estimated and cached size of a dataset is available via:
 
 ```kotlin
 dataSet?.cacheItem?.cacheSize
 dataSet?.cacheItem?.syncSize
 ```
 
-To refresh or get the size of a synced dataset:
-
-```kotlin
-MPDataSetCacheManager.getInstance().getSyncSizesForDataSetCaches(listOf(dataSet), this)
-```
-
-This is an asynchronous process, and a `MPDataSetCacheManagerSizeListener` is needed for getting information about progress and results.
-
 </mi-tab-panel>
 </mi-tabs>
 
-### Synchronizing Data with MPDataSetCacheManager
+To refresh or get the size of a synced dataset:
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
 
+```java
+MPDataSetCacheManager.getInstance().getSyncSizesForDataSetCaches(Collections.singletonList(dataSet), this);
+```
+
+</mi-tab-panel>
+<mi-tab-panel id="kotlin">
+
+```kotlin
+MPDataSetCacheManager.getInstance().getSyncSizesForDataSetCaches(listOf(dataSet), this)
+```
+
+</mi-tab-panel>
+</mi-tabs>
+
+This is an asynchronous process, and a `MPDataSetCacheManagerSizeListener` is needed for getting information about progress and results.
+
+### Synchronizing Data with MPDataSetCacheManager
+
 The `MPDataSetCacheManager`allows for detailed control over which datasets are synchronized, and allows for cancellation:
+
+<mi-tabs>
+<mi-tab label="Java" tab-for="java"></mi-tab>
+<mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
+<mi-tab-panel id="java">
 
 ```java
 MPDataSetCacheManager dataSetCacheManager = MPDataSetCacheManager.getInstance();
@@ -268,8 +264,6 @@ dataSetCacheManager.synchronizeDataSetsWithScope(dataSets, MPDataSetCacheScope.F
 
 </mi-tab-panel>
 <mi-tab-panel id="kotlin">
-
-The `MPDataSetCacheManager`allows for detailed control over which datasets are synchronized, and allows for cancellation:
 
 ```kotlin
 MPDataSetCacheManager dataSetCacheManager = MPDataSetCacheManager.getInstance();
