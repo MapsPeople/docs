@@ -17,9 +17,9 @@ The MapsIndoors CMS is used to control the initial appearance of Locations. Howe
 
 Display Rules offer many options on how to use them, and for what goal. We will provide you with a few examples, but you can always come up with your own!
 
-1. cjdncjnc
-1. cdnmckdcd
-1. cunjcdcn
+1. You can use Display Rules to match the colours of, for example, the Polygons in your Solution to your Brand Guidelines, to ensure a coherent visual expression throughout your companies Solutions.
+1. It is possible to connect your MapsIndoors Solution to an occupancy monitoring system, so the information about whether or not a room is occupied, and by how many people, is relayed to the MapsIndoors system. This information could then, for example, be used to colour a Room red when it is occupied, or Green if it is available.
+1. A similar concept could be applied to Icons. Instead of the colour of the Polygon changing depending on occupancy status, the Icon used for the Location could change, based on whether or not the room is available.
 
 ## Display Rule Hierarchy
 
