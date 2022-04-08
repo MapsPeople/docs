@@ -8,9 +8,9 @@ eleventyNavigation:
   order: 70
 ---
 
-The **Simple Map App** is a plug-and-play solution for you to have a simple integration of a map in your existing app. While you can work on implementing your own solution using the documentation found [here]({{site.url}}/content/map/), if you just need a simple solution with no further customisation required, this should fulfil your needs.
+The **Simple Map App** is a plug-and-play solution for you to have a simple integration of a map, containing a basic search and directions functionality, in your existing app. While you can work on implementing your own solution using the documentation found [here]({{site.url}}/content/map/), if you just need a simple solution with no further customisation required, this should fulfil your needs.
 
-The solution is pre-made, and simply needs integration into your existing app.
+The solution is pre-made, and simply needs integration into your existing app. Please note, that this solution is not intended to be customised. If you need additional features, or wish to customise the layout, please create your own implementation. MapsPeople will not support changes to this single-page app.
 
 ## Android
 
@@ -61,6 +61,10 @@ MPSearchItemRecyclerViewAdapter.kt: 31
 
 * Check the `FirstFragment.kt` class on how to apply User Roles to the map fragment. The Accessibility User Role, which you can use to designate accesible routes might avoid stairs, for example, is handled through the routing page with the toggle.
 
+### The Final Result
+
+![android-single-page-app](/assets/single-page-app/Android_Single_Page_App.jpg)
+
 ## iOS
 
 This app will provide an example of how to use the MapsPeople SDK in SwiftUI.
@@ -97,3 +101,7 @@ This project is specifically built so you can easily re-use this functionality i
 
 <!-- Known Issues -->
 {% include "src/content/shared/known-issues-ios.md" %}
+
+### The Final Result
+
+![ios-single-page-app](/assets/single-page-app/iOS_Single_Page_App.png)
