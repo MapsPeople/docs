@@ -10,9 +10,8 @@ eleventyNavigation:
 
 Now that you have taken care of all the preliminary issues, we can start building the app. Throughout this guide, you will continously modify this project to extend its functionality to cover a number of basic features.
 
-## Known Issues
->
-> 1. Developing on the new Arm-based Apple Silicon (M1) Macs requires building and running on a physical iOS device or using an iOS simulator running iOS 13.7, e.g. iPhone 11. This is a temporary limitation in Google Maps SDK for iOS, and as such also a limitation in MapsIndoors, due to the dependency to Google Maps.
+<!-- Known Issues -->
+{% include "src/content/shared/known-issues-ios.md" %}
 
 ## Create an Xcode Project
 
@@ -38,6 +37,11 @@ For the sake of simplicity we will only be operating on these pre-generated file
 ## Installing the MapsIndoors SDK
 
 MapsIndoors can either be installed using CocoaPods ([Getting Started with CocoaPods](https://guides.cocoapods.org/using/getting-started.html)) or through a manual installation.
+
+<mi-tabs>
+<mi-tab label="Using CocoaPods" tab-for="cocoapods"></mi-tab>
+<mi-tab label="Manually" tab-for="manually"></mi-tab>
+<mi-tab-panel id="cocoapods">
 
 ### Installing MapsIndoors Using CocoaPods
 
@@ -68,6 +72,12 @@ From MapsIndoors SDK version 3.32.0 and upwards, in order for CocoaPods to fetch
 
 6. From this time onwards, use the *.xcworkspace* file to open the project from now on.
 
+<!-- Known Issues -->
+{% include "src/content/shared/known-issues-ios.md" %}
+
+</mi-tab-panel>
+<mi-tab-panel id="manually">
+
 ### Install MapsIndoors Manually
 
 Since MapsIndoors is dependent on [Google Maps iOS SDK](https://developers.google.com/maps/documentation/ios-sdk/overview), you must also install this SDK, either [manually](https://developers.google.com/maps/documentation/ios-sdk/start#install-manually), [using Carthage](https://developers.google.com/maps/documentation/ios-sdk/start#use-carthage) or [using CocoaPods](https://developers.google.com/maps/documentation/ios-sdk/start#use-cocoapods). You should use [Google Maps iOS version 4.2.0](https://dl.google.com/dl/cpdc/870a9df85dbcbadc/GoogleMaps-4.2.0.tar.gz) since MapsIndoors >=3.30.0 is linked against this version.
@@ -78,6 +88,9 @@ When the Google Maps installation is completed, go through these steps to instal
 * Drag and drop the framework into your XCode project. In the dialog that pops up, choose “Copy items if needed” and make sure the framework is added to the correct target.
 * From XCode, right click the imported framework and click "Show in Finder".
 * In Finder, Locate ios-arm64 > MapsIndoors.framework > Resources > MapsIndoors.bundle, and drag the bundle into your XCode project as well. This time, make sure to uncheck “Copy items if needed”.
+
+</mi-tab-panel>
+</mi-tabs>
 
 ## Adding API Credentials
 
