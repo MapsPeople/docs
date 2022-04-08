@@ -15,10 +15,10 @@ The MapsIndoors CMS is used to control the initial appearance of Locations. Howe
 
 ## How Can I Use Display Rules?
 
-Display Rules offer many options on how to use them, and for what goal. We will provide you with a few examples, but you can always come up with your own!
+Display Rules offer many options on how to use them. We will provide you with a few examples, but there are a lot of other use cases besides these too.
 
-1. You can use Display Rules to match the colours of, for example, the Polygons in your Solution to your Brand Guidelines, to ensure a coherent visual expression throughout your companies Solutions.
-1. It is possible to connect your MapsIndoors Solution to an occupancy monitoring system, so the information about whether or not a room is occupied, and by how many people, is relayed to the MapsIndoors system. This information could then, for example, be used to colour a Room red when it is occupied, or Green if it is available.
+1. You can use Display Rules to match the colours of, for example, the Polygons in your Solution to your brand guidelines, to ensure a coherent visual expression throughout your company's applications.
+1. It is possible to connect your MapsIndoors Solution to an occupancy monitoring system, so the information about whether or not a room is occupied, and by how many people, is relayed to the MapsIndoors system. This information could then, for example, be used to colour a Room red when it is occupied, or green if it is available.
 1. A similar concept could be applied to Icons. Instead of the colour of the Polygon changing depending on occupancy status, the Icon used for the Location could change, based on whether or not the room is available.
 
 ## Display Rule Hierarchy
@@ -42,15 +42,16 @@ To remove a value from the Display Rule (to make it inherit from further up the 
 ## Display Rule Properties
 
 > You can currently only edit Display Rules per Type. Editing Display Rules on single Locations will be added in an upcoming release.
-> NOTE: If you edit Display Rules in the CMS, but no (or only some) changes take place in your app, make sure you don't set any conflicting Display Rules in-app! Runtime takes precedent over CMS!
+> 
+> NOTE: If you edit Display Rules in the CMS, but none (or only some) changes take place in your app, make sure you don't set any conflicting Display Rules in-app. Display Rules applied at runtime takes precedent over all others.
 
-In the CMS, you can edit your Display Rules in `Solution Details > Types > Edit [Location Type name] Display Rules`. This will open an overview of all Display Rules.
+In the CMS, you can edit your Display Rules in `Solution Details > Types > Edit [Location Type name] Display Rules`. This will open an overview of all Display Rules properties.
 
 ![display-rules-general](/assets/map/display-rules/Display_Rules_General.png)
 
 The "General" visibility switch determines whether Locations of this Type are visible on the map. Moreover, the Location data is not available to the SDKs when the general visibility is turned off. The system will accept a Boolean here, so either `true` or `false`.
 
-The "Lock" icon present in all sections determines whether or not the Display Rule can be edited. Click the lock to toggle this setting. This setting is only relevant in the CMS and therefore does not have an equivalent in-App.
+The "Lock" icon present in all sections determines whether or not the Display Rule is inheriting from the Main Display Rule. Click the lock to enable overriding the value.
 
 An example of in-app Display Rules using only the General Visibility option could look like this:
 
@@ -74,7 +75,7 @@ The "Icon" section contains options related to the appearance of the Icon.
 1. **Zoom to** - Sets the maximum Zoom Level at which the Icon is visible.
     * The value should be a number between 1 and 22, with 1 being very far away, and 22 being very close. In a general use case, most users will only need values between 15 and 22.
     * If you are developing using the JavaScript SDK for Google Maps, the value must be an integer. If you are developing for Android or iOS, or using a different map provider, the value may be fractional.
-1. **Icon** - Use the Icon Manager to control which Icon is shown on the map.
+1. **Icon** - Use the Icon Manager in the CMS to control which Icon is shown on the map.
     * The Icon Manager is a tool to select the displayed Icon from either a pre-loaded selection of Icons, or for you to upload your own.
     * In-app, you can provide a URL to a desired Icon.
         * In-app, you can also define `iconSize`, by giving the desired size in pixels.
@@ -132,7 +133,7 @@ An example of in-app Display Rules using only "Label" Display Rules could look l
 
 ![display-rules-polygon](/assets/map/display-rules/Display_Rules_Polygon.png)
 
-Polygon's operate separately from tiles. Tiles are drawn by MapsPeople and overlaid onto the mapping provider. Polygons are an overlay with customisable attributes that are then overlaid on top of the Tiles. Therefore, while you can edit the "Polygon" attributes of a Location connected to a Tile, be that an Area or a Room, you need to account for attributes such as the opacity of the Polygon in the resulting appearance. It is not currently possible to override the appearance of a Tile.
+Polygons are independent from tiles. Tiles are drawn by MapsPeople and overlaid onto the mapping provider. Polygons are an overlay with customisable attributes that are then overlaid on top of the Tiles. Therefore, while you can edit the "Polygon" attributes of a Location connected to a Tile, be that an Area or a Room, you need to account for attributes such as the opacity of the Polygon in the resulting appearance. It is not currently possible to override the appearance of Tiles.
 
 The "Polygon" section contains options related to the appearance of the Polygon.
 
