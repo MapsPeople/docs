@@ -77,7 +77,7 @@ The "Icon" section contains options related to the appearance of the Icon.
 1. Icon - Use the Icon Manager to control which Icon is shown on the map.
     * The Icon Manager is a tool to select the displayed Icon from either a pre-loaded selection of Icons, or for you to upload your own.
     * In-app, you can provide a URL to a desired Icon.
-        * In-app, you can also define `iconScale`, given in a ratio compared to original size and `iconSize`, defined in pixels.
+        * In-app, you can also define `iconSize`, by giving the desired pizel size. However, if using the Integration API, use `imageSize` instead of of `iconSize`.
 
 An example of in-app Display Rules using only "Icon" Display Rules could look like this:
 
@@ -88,7 +88,6 @@ An example of in-app Display Rules using only "Icon" Display Rules could look li
         "zoomFrom": 16.0,
         "zoomTo": 22.0,
         "icon": "https://app.mapsindoors.com/mapsindoors/cms/assets/icons/misc/default-marker.png?71488",
-        "iconScale": 1.0,
         "iconSize": {
             "width": 20.0,
             "height": 20.0
@@ -186,7 +185,6 @@ Putting all this together, a sample set of Display Rules for a given Type could 
         "zoomFrom": 16.0,
         "zoomTo": 22.0,
         "icon": "https://app.mapsindoors.com/mapsindoors/cms/assets/icons/misc/default-marker.png?71488",
-        "iconScale": 1.0,
         "iconSize": {
             "width": 20.0,
             "height": 20.0
