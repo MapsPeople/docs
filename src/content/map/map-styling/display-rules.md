@@ -77,7 +77,7 @@ The "Icon" section contains options related to the appearance of the Icon.
 1. **Icon** - Use the Icon Manager to control which Icon is shown on the map.
     * The Icon Manager is a tool to select the displayed Icon from either a pre-loaded selection of Icons, or for you to upload your own.
     * In-app, you can provide a URL to a desired Icon.
-        * In-app, you can also define `iconSize`, by giving the desired size in pixels. However, if using the Integration API, use `imageSize` instead of of `iconSize`.
+        * In-app, you can also define `iconSize`, by giving the desired size in pixels.
 
 An example of in-app Display Rules using only "Icon" Display Rules could look like this:
 
