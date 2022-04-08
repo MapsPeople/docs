@@ -14,7 +14,7 @@ The solution is pre-made, and simply needs integration into your existing app.
 
 ## Android
 
-First, you need to download or clone the pre-made feature from GitHub, found [here](*INSERT LINK HERE*).
+First, you need to download or clone the pre-made feature from GitHub, found [here](*INSERT ANDROID REPO LINK HERE*).
 
 > NOTE: This Fragment was designed to be displayed in Portrait Mode. While it will work in Landscape Mode, some UI elements may look distorted or out-of-place.
 
@@ -65,7 +65,7 @@ MPSearchItemRecyclerViewAdapter.kt: 31
 
 This app will provide an example of how to use the MapsPeople SDK in SwiftUI.
 
-First, you need to download or clone the pre-made feature from GitHub, found [here](*INSERT LINK HERE*).
+First, you need to download or clone the pre-made feature from GitHub, found [here](*INSERT IOS REPO LINK HERE*).
 
 > NOTE: This Fragment was designed to be displayed in Portrait Mode. While it will work in Landscape Mode, some UI elements may look distorted or out-of-place.
 
