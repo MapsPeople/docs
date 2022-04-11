@@ -9,16 +9,22 @@ eleventyNavigation:
 
 Changelog for MapsIndoors SDK for JavaScript. This document structure is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and the project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## [4.17.3] 2022-04-05
+## [4.17.4] - 2022-04-11
+
+### Fixed
+
+- Animated directions will now always start when rendering a route, and will also render on a per-leg level.
+
+## [4.17.3] - 2022-04-05
 
 ### Fixed
 
 - Renamed the `labelTemplate` property on the `DefaultDisplayRule` to `label` to match with the `DisplayRule` interface.
 - Fix bug where directions line on a Mapbox map in some instances would not be rendered.
 - Add missing documentation of required parameter in the `mapsindoors.directions.MapboxProvider`.
-- Fix bug where the set language was not used when requesting Mapbox directions.
+- Fix bug where the set language was not used then requesting Mapbox directions.
 
-## [4.17.2] 2022-02-03
+## [4.17.2] - 2022-02-03
 
 ### Fixed
 
@@ -26,7 +32,7 @@ Changelog for MapsIndoors SDK for JavaScript. This document structure is based o
 - Live Data is now correctly resumed with the most recent updates when changing user role.
 - Floor Selector styles are no longer missing.
 
-## [4.17.1] 2022-01-13
+## [4.17.1] - 2022-01-13
 
 ### Fixed
 
@@ -34,7 +40,7 @@ Changelog for MapsIndoors SDK for JavaScript. This document structure is based o
 - All icons are now added to MapBox, to prevent the "Image ... could not be loaded." warning in the console.
 - `strokeFill`, `strokeColor`, and `strokeWeight` is now correctly applied when using `setBuildingOutlineOptions()`.
 
-## [4.17.0] 2021-12-21
+## [4.17.0] - 2021-12-21
 
 ### Added
 
