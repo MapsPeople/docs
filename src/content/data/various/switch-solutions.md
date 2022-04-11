@@ -12,9 +12,19 @@ Some larger organisations may have not just multiple Venues, but also multiple S
 At it's core, this is done simply by switching out the API key and reloading the system. However, there are a few more steps that can be done to ensure smooth transition between Solutions.
 
 <mi-tabs>
-<mi-tab label="Android" tab-for="android"></mi-tab>
+<mi-tab label="Android - Java" tab-for="android-java"></mi-tab>
+<mi-tab label="Android - Kotlin" tab-for="android-kotlin"></mi-tab>
 <mi-tab label="iOS" tab-for="ios"></mi-tab>
-<mi-tab-panel id="android">
+<mi-tab-panel id="android-java">
+
+```java
+MapsIndoors.synchronizeContent((e) -> {
+    ...
+});
+```
+
+</mi-tab-panel>
+<mi-tab-panel id="android-kotlin">
 
 ```java
 MapsIndoors.synchronizeContent((e) -> {
