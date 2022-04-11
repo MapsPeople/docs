@@ -96,6 +96,8 @@ MapsIndoors.synchronizeContent { error ->
 
 Since you took the time to set up your Solution "properly" previously, switching Solutions to a different one is as simple as changing the active API key using `setAPIKey()`, along with ensuring that `mMapControl` doesn't retain any uneccesary information from the previously active Solution, which could cause conflicts.
 
+We recommend initialising your own function to call in the future for this purpose, like the example here with `switchSolution()`:
+
 <mi-tabs>
 <mi-tab label="Android - Java" tab-for="android-java"></mi-tab>
 <mi-tab label="Android - Kotlin" tab-for="android-kotlin"></mi-tab>
