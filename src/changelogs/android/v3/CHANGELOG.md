@@ -18,6 +18,16 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 ### Security     in case of vulnerabilities.
 -->
 
+## [3.13.10] 2022-04-12
+
+### Added
+
+- Interface for querying distance matrix services using `getDistanceMatrix()` on `MPRoutingProvider`
+
+### Fixed
+
+- Various bugs and crashes
+
 ## [3.13.9] 2022-04-01
 
 ### Fixed
