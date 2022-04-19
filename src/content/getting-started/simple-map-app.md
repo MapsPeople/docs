@@ -8,9 +8,9 @@ eleventyNavigation:
   order: 9999
 ---
 
-The **Simple Map App** is a plug-and-play solution for you to have a simple integration of a map, containing basic search and directions functionalities, in your existing app. While you can work on implementing your own solution using the documentation found [here]({{site.url}}/content/map/), if you just need a simple solution with no further customisation required, this should fulfil your needs.
+The **Simple Map App** is a plug-and-play solution for you to have a simple integration of a map, containing basic search and directions functionalities, in your existing app. While you can work on implementing your own solution using the documentation found [here]({{site.url}}/content/map/), if you just need a simple solution with no further customisation required, this should fulfil your needs. Going through this guide will also further teach you some principles on how MapsIndoors interacts with an app, and is a natural next step after the "Getting Started" guides.
 
-The solution is pre-made, and only needs to be integrated into your existing app. If you need further features, or want to customize existing ones, you're free to modify this one to your needs.
+The solution is pre-made, and only needs to be integrated into your existing app. If you need further features, or want to customize existing ones, you're free to modify this one to your needs. However, MapsPeople offers no support or responsibility for changes made.
 
 ## Android
 
