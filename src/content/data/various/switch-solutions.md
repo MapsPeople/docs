@@ -12,14 +12,17 @@ Some larger organisations may have not just multiple Venues, but also multiple S
 
 At it's core, this is done simply by switching out the API key and reloading the system. However, there are a few more steps that can be done to ensure smooth transition between Solutions.
 
-## Starting a Solution
+## Android
+
+The method of handling this in Android and iOS differ somewhat, with Android being slightly more complicated.
+
+### Starting a Solution
 
 When you load your initial Solution, it's important to do it the "correct" way, to ensure it's easy to switch Solution's later if needed.
 
 <mi-tabs>
-<mi-tab label="Android - Java" tab-for="android-java"></mi-tab>
-<mi-tab label="Android - Kotlin" tab-for="android-kotlin"></mi-tab>
-<mi-tab label="iOS" tab-for="ios"></mi-tab>
+<mi-tab label="Java" tab-for="android-java"></mi-tab>
+<mi-tab label="Kotlin" tab-for="android-kotlin"></mi-tab>
 <mi-tab-panel id="android-java">
 
 ```java
@@ -80,28 +83,17 @@ fun initMapControl(view: View) {
 }
 ```
 
-</mi-tab-panel>
-<mi-tab-panel id="ios">
-
-```kotlin
-MapsIndoors.synchronizeContent { error ->
-    ...
-}
-```
-
-</mi-tab-panel>
 </mi-tabs>
 
-## Switching Solutions
+### Switching Solutions
 
 Since you took the time to set up your Solution "properly" previously, switching Solutions to a different one is as simple as changing the active API key using `setAPIKey()`, along with ensuring that `mMapControl` doesn't retain any uneccesary information from the previously active Solution, which could cause conflicts.
 
 We recommend initialising your own function to call in the future for this purpose, like the example here with `switchSolution()`:
 
 <mi-tabs>
-<mi-tab label="Android - Java" tab-for="android-java"></mi-tab>
-<mi-tab label="Android - Kotlin" tab-for="android-kotlin"></mi-tab>
-<mi-tab label="iOS" tab-for="ios"></mi-tab>
+<mi-tab label="Java" tab-for="android-java"></mi-tab>
+<mi-tab label="Kotlin" tab-for="android-kotlin"></mi-tab>
 <mi-tab-panel id="android-java">
 
 ```java
@@ -132,13 +124,8 @@ private fun switchSolution() {
 ```
 
 </mi-tab-panel>
-<mi-tab-panel id="ios">
-
-```kotlin
-MapsIndoors.synchronizeContent { error ->
-    ...
-}
-```
-
-</mi-tab-panel>
 </mi-tabs>
+
+## iOS
+
+jdkcjdcdc
