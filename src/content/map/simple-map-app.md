@@ -69,7 +69,7 @@ First, download or clone the pre-made project from GitHub: [link](*INSERT IOS RE
 
 ### Getting Started
 
-* Follow the description in the [MapsIndoors Getting Started guide](https://docs.mapsindoors.com/ios/v3/getting-started/prerequisites/) to get an API key for MapsIndoors and Google
+* Follow the description in the [MapsIndoors Getting Started guide]({{site.url}}/content/getting-started/ios/prerequisites/) to get an API key for MapsIndoors and Google
 * From the terminal, in the path you cloned the repository to, run `pod install`
 * Open the file `xxxxx.xcworkspace` in Xcode, or your editor of choice
 * Make a copy of the `MapsIndoors-Info-Sample.plist` file and name it `MapsIndoors-Info.plist`
