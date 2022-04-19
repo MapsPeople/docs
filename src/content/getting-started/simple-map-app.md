@@ -12,9 +12,28 @@ The **Simple Map App** is a plug-and-play solution for you to have a simple inte
 
 The solution is pre-made, and only needs to be integrated into your existing app. If you need further features, or want to customize existing ones, you're free to modify this one to your needs. However, MapsPeople offers no support or responsibility for changes made.
 
+## Prerequisites
+
+Before you get started, you need to get the API keys needed. This process is the same for both platforms.
+
+### Get Your Google Maps API key
+
+First, you need to [setup at a new project in the Google Cloud Console](https://developers.google.com/maps/gmp-get-started) (**Please note:** You are going to need a Google Billing Account for this step, so go ahead and [create one](https://cloud.google.com/billing/docs/how-to/manage-billing-account#create_a_new_billing_account) if you haven't already). When the project is created, the following APIs and the specific SDK you plan to use must be enabled from the [Maps API Library Page](https://console.cloud.google.com/apis/library?filter=category:maps).
+
+* Google Maps Distance Matrix API
+* Google Maps Directions API
+* Google Places API Web Service
+* Maps SDK for Android/iOS - if you're developing an app for Android/iOS respectively **_OR_** Maps JavaScript API if you're developing a web application.
+
+When the above 3 APIs and the relevant SDK are enabled, you can retrieve the API key from the [Credentials page](https://console.cloud.google.com/project/_/apiui/credential). On the Credentials page, click _Create credentials_ > _API key_.
+
+### Get Your MapsIndoors API key
+
+If you are not a customer yet, you can use this demo MapsIndoors API key `{{sdk.tutorialAPIKey}}` to follow this guide, or you can [contact MapsPeople](https://resources.mapspeople.com/contact-us) to get your building drawings processed and hosted by us to receive a unique API key. For the purpose of this guide, both methods will work.
+
 ## Android
 
-First, download or clone the pre-made project from GitHub: [link](*INSERT ANDROID REPO LINK HERE*).
+First, download or clone the pre-made project from GitHub: [link](_INSERT ANDROID REPO LINK HERE_).
 
 > NOTE: This Fragment was designed to be displayed in Portrait Mode. While it will work in Landscape Mode, some UI elements may look distorted or out-of-place.
 
@@ -63,13 +82,12 @@ MPSearchItemRecyclerViewAdapter.kt: 31
 
 This app will provide an example of how to use the MapsPeople SDK in SwiftUI.
 
-First, download or clone the pre-made project from GitHub: [link](*INSERT IOS REPO LINK HERE*)
+First, download or clone the pre-made project from GitHub: [link](_INSERT IOS REPO LINK HERE_)
 
 > NOTE: This Fragment was designed to be displayed in Portrait Mode. While it will work in Landscape Mode, some UI elements may look distorted or out-of-place.
 
 ### Getting Started
 
-* Follow the description in the [MapsIndoors Getting Started guide]({{site.url}}/content/getting-started/ios/prerequisites/) to get an API key for MapsIndoors and Google
 * From the terminal, in the path you cloned the repository to, run `pod install`
 * Open the file `xxxxx.xcworkspace` in Xcode, or your editor of choice
 * Make a copy of the `MapsIndoors-Info-Sample.plist` file and name it `MapsIndoors-Info.plist`
