@@ -2,10 +2,10 @@
 title: Implementing a Simple Map App
 toc: true
 eleventyNavigation:
-  parent: map
-  key: map-simple-map
+  parent: getting-started
+  key: getting-started-simple-map
   title: Implementing a Simple Map App
-  order: 70
+  order: 9999
 ---
 
 The **Simple Map App** is a plug-and-play solution for you to have a simple integration of a map, containing basic search and directions functionalities, in your existing app. While you can work on implementing your own solution using the documentation found [here]({{site.url}}/content/map/), if you just need a simple solution with no further customisation required, this should fulfil your needs.
