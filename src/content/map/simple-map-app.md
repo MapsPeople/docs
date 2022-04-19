@@ -57,7 +57,7 @@ MPSearchItemRecyclerViewAdapter.kt: 31
 
 ### The Final Result
 
-![android-single-page-app](/assets/single-page-app/Android_Single_Page_App.jpg)
+![android-single-page-app](/assets/single-page-app/Android_Single_Page_App.png)
 
 ## iOS
 
