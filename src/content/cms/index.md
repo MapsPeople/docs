@@ -91,7 +91,7 @@ The Map section is the main navigation of the MapsIndoors CMS and includes the F
 1. A Floor selector, to select the displayed Floor on the Map.
 1. The main toolbar to modify your Solution.
 
-The below video demonstrates the use of the Filter bar on the Map section.
+The below video demonstrates the use of the Filter bar to narrow down search results on the map and in the List view.
 
 <iframe width="480" height="300" src="https://www.youtube-nocookie.com/embed/E3aXO3mdySg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
