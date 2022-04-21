@@ -8,9 +8,11 @@ eleventyNavigation:
   order: 9999
 ---
 
-The **Simple Map App** is a plug-and-play solution for you to have a simple integration of a map, containing basic search and directions functionalities, in your existing app. While you can work on implementing your own solution using the documentation found [here]({{site.url}}/content/map/), if you just need a simple solution with no further customisation required, this should fulfil your needs. Going through this guide will also further teach you some principles on how MapsIndoors interacts with an app, and is a natural next step after the "Getting Started" guides.
+The **Simple Map App** is both a full app and plug-and-play code for you to integrate basic usage of MapsIndoors, containing search and directions functionalities, in your existing app. If you just want to get started with a simple solution with no customisation, this should fulfil your needs. Going through this guide will also teach you some principles on how MapsIndoors interacts with an app, and is a natural next step after the "Getting Started" guides.
 
-The solution is pre-made, and only needs to be integrated into your existing app. If you need further features, or want to customize existing ones, you're free to modify this one to your needs. However, MapsPeople offers no support or responsibility for changes made.
+If you need more customisation you can implementing your own solution using the documentation found [here]({{site.url}}/content/map/), or modify this code as needed.
+
+**Simple Map App** is provided as is, and can be integrated into your existing app. If you need further features, or want to customize existing ones, you're free to modify this one to your needs. However, MapsPeople offers no support or responsibility for changes made.
 
 ## Prerequisites
 
@@ -80,11 +82,11 @@ MPSearchItemRecyclerViewAdapter.kt: 31
 
 ## iOS
 
-This app will provide an example of how to use the MapsPeople SDK in SwiftUI.
+This app provides an example of how to use the MapsIndoors SDK in SwiftUI.
 
 First, download or clone the pre-made project from GitHub: [link](_INSERT IOS REPO LINK HERE_)
 
-> NOTE: This Fragment was designed to be displayed in Portrait Mode. While it will work in Landscape Mode, some UI elements may look distorted or out-of-place.
+> NOTE: This app is designed to be displayed in Portrait Mode. While it will work in Landscape Mode, some UI elements may look distorted or out-of-place.
 
 ### Getting Started
 
@@ -100,8 +102,8 @@ This project is specifically built so you can easily re-use this functionality i
 * To reuse the code in your app, drag and drop the `Views` and `Services` folders, and all the `Assets` except for the `AppIcon` into your project
 * Create a copy of the `MapsIndoors-Info-Sample.plist` file and name it `MapsIndoors-Info.plist`
 * Add your MapsIndoors API key and Google Maps API key to the `MapsIndoors-Info.plist` file
-* Look at `ViewController.swift` for an example of how to initialize the MapsIndoors SDK and use the MapsIndoors SwiftUI implementation in an UIKit app. The `ViewController.swift` reads the API keys retrieved as described above from the file `MapsIndoors-Info.plist`
-* Update your podfile so it matches the podfile in the MapsIndoors SwiftUI App Example
+* Look at `ViewController.swift` for an example of how to initialize the MapsIndoors SDK and use the **Simple Map App** implementation in an UIKit app. The `ViewController.swift` reads the API keys retrieved as described above from the file `MapsIndoors-Info.plist`
+* Update your podfile so it matches the podfile in the MapsIndoors **Simple Map App**
 
 <!-- Known Issues -->
 {% include "src/content/shared/known-issues-ios.md" %}
