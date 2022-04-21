@@ -1,10 +1,10 @@
 ---
-title: Implementing a Simple Map App
+title: Integrating MapsIndoors into your own App
 toc: true
 eleventyNavigation:
   parent: getting-started
   key: getting-started-simple-map
-  title: Implementing a Simple Map App
+  title: Integrating MapsIndoors into your own App
   order: 9999
 ---
 
