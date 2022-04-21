@@ -18,6 +18,13 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 ### Security     in case of vulnerabilities.
 -->
 
+## [3.13.11] 2022-04-21
+
+### Fixed
+
+- Issue with tint on shared drawables
+- Stability fixes
+
 ## [3.13.10] 2022-04-12
 
 ### Added
