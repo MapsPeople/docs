@@ -111,3 +111,8 @@ This project is specifically built so you can easily re-use this functionality i
 ### The Final Result
 
 ![ios-single-page-app](/assets/single-page-app/iOS_Single_Page_App.png)
+
+
+## Summary
+
+Congratulations! You now have a functioning map in your own app, with the ability to both search for Locations and generate directions! If you want more advanced features, check out [further documentation]({{site.url}}/content/map/), or modify the existing code from this tutorial to suit your needs!
