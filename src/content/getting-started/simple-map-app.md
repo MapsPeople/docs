@@ -25,7 +25,7 @@ First, you need to [setup at a new project in the Google Cloud Console](https://
 * Google Maps Distance Matrix API
 * Google Maps Directions API
 * Google Places API Web Service
-* Maps SDK for Android/iOS - if you're developing an app for Android/iOS respectively **_OR_** Maps JavaScript API if you're developing a web application.
+* Maps SDK for Android/iOS
 
 When the above 3 APIs and the relevant SDK are enabled, you can retrieve the API key from the [Credentials page](https://console.cloud.google.com/project/_/apiui/credential). On the Credentials page, click _Create credentials_ > _API key_.
 
