@@ -18,6 +18,16 @@ You can access data through the Integration API using a range of endpoints. The 
 
 In Swagger, each `GET` method is pre-loaded with all mandatory fields needed to get a live example of data. Click the  "_Try it out_" button in Swagger to see the example data.
 
+## Commonly Used Operations
+
+If the Integration API is already familiar to you, here we present some of the most commonly used API operations, and some example use-cases. All operations listed here can be found at [https://integration.mapsindoors.com/doc/index.html](https://integration.mapsindoors.com/doc/index.html).
+
+* `GET /{apiKey}/api/geodata` - jckjcjdc
+  * example use case
+
+* `PUT /{apiKey}/api/geodata` - cjjndnc
+  * example use case 2
+
 ### Login and credentials
 
 First, log in to the service to get an `access token` to access the data.
