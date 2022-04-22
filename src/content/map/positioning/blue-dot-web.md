@@ -1,8 +1,8 @@
 ---
 title: Show User's Location for Web
 eleventyNavigation:
-  key: map-live-data-blue-dot-web
-  parent: map-live-data
+  key: map-positioning-blue-dot-web
+  parent: map-positioning
   title: Show User's Location for Web
   order: 120
 ---

@@ -1,9 +1,9 @@
 ---
-title: Third Party Positioning for Android
+title: Positioning in MapsIndoors
 eleventyNavigation:
-  parent: map-live-data
-  title: Third Party Positioning for Android
-  key: map-live-data-third-party-android
+  parent: map
+  title: Positioning in MapsIndoors
+  key: map-positioning
   order: 500
 ---
 

@@ -1,8 +1,8 @@
 ---
 title: Show User's Location for Android
 eleventyNavigation:
-  key: map-live-data-blue-dot-android
-  parent: map-live-data
+  key: map-positioning-blue-dot-android
+  parent: map-positioning
   title: Show User's Location for Android
   order: 100
 ---

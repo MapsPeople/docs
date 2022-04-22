@@ -1,8 +1,8 @@
 ---
 title: Show User's Location for iOS
 eleventyNavigation:
-  key: map-live-data-blue-dot-ios
-  parent: map-live-data
+  key: map-positioning-blue-dot-ios
+  parent: map-positioning
   title: Show User's Location for iOS
   order: 100
 ---
