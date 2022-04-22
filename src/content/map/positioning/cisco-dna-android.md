@@ -2,8 +2,8 @@
 title: Cisco DNA Spaces for Android
 eleventyNavigation:
   parent: map-positioning
-  title: Cisco DNA Spaces
-  key: map-positioning-cisco-dna
+  title: Cisco DNA Spaces for Android
+  key: map-positioning-cisco-dna-android
   order: 240
 ---
 
