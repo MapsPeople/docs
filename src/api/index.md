@@ -22,8 +22,8 @@ In Swagger, each `GET` method is pre-loaded with all mandatory fields needed to 
 
 If the Integration API is already familiar to you, here we present some of the most commonly used API operations, and some example use-cases. All operations listed here can be found at [https://integration.mapsindoors.com/doc/index.html](https://integration.mapsindoors.com/doc/index.html).
 
-* `GET /{apiKey}/api/geodata` - jckjcjdc
-  * example use case
+* `GET /{apiKey}/api/geodata` - Fetches geodata objects (Locations) from a given dataset (Solution) as a `.json` file.
+  * This call doesn't have a specific use-case per se, as it's functionality is to fetch the data that you wish to modify with other operations.
 
 * `PUT /{apiKey}/api/geodata` - cjjndnc
   * example use case 2
