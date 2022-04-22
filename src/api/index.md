@@ -25,8 +25,8 @@ If the Integration API is already familiar to you, here we present some of the m
 * `GET /{apiKey}/api/geodata` - Fetches geodata objects (Locations) from a given dataset (Solution) as a `.json` file.
   * This call doesn't have a specific use-case per se, as it's functionality is to fetch the data that you wish to modify with other operations.
 
-* `PUT /{apiKey}/api/geodata` - cjjndnc
-  * example use case 2
+* `PUT /{apiKey}/api/geodata` - Updates/modifies a number of existing geodata.
+  * This would often be used in extension of `GET /{apiKey}/api/geodata`, to modify the fetched data. An example use-case for this could be to modify the visibility of a specific Location Type, or to add a specific Custom Property to a given Type.
 
 ### Login and credentials
 
