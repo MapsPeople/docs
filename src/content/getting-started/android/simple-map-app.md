@@ -2,8 +2,8 @@
 title: Integrating MapsIndoors into your own App
 toc: true
 eleventyNavigation:
-  parent: getting-started
-  key: getting-started-simple-map
+  parent: getting-started-android
+  key: getting-started-android-simple-map
   title: Integrating MapsIndoors into your own App
   order: 9999
 ---
