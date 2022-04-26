@@ -39,7 +39,7 @@ If you are not a customer yet, you can use this demo MapsIndoors API key `{{sdk.
 
 This app provides an example of how to use the MapsIndoors SDK in SwiftUI.
 
-* Download or clone the pre-made project from GitHub: [link](_INSERT IOS REPO LINK HERE_)
+* Download or clone the pre-made project from GitHub: [https://github.com/MapsPeople/MapsIndoorsTemplate-iOS](https://github.com/MapsPeople/MapsIndoorsTemplate-iOS)
 * From the terminal, in the path you cloned the repository to, run `pod install`
 * Open the file `xxxxx.xcworkspace` in Xcode, or your editor of choice
 * Make a copy of the `MapsIndoors-Info-Sample.plist` file and name it `MapsIndoors-Info.plist`
