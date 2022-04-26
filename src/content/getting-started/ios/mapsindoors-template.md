@@ -3,7 +3,7 @@ title: Integrating MapsIndoors into your own App
 toc: true
 eleventyNavigation:
   parent: getting-started-ios
-  key: getting-started-ios-simple-map
+  key: getting-started-ios-mapsindoors-template
   title: Integrating MapsIndoors into your own App
   order: 9999
 ---
