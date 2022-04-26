@@ -470,8 +470,8 @@ The Position Provider that you supply to MapsIndoors must know about the floor i
 
 ```json
 // { IndoorAtlas floor index : MapsIndoors floor index }
-{ 
-  0:0, 
+{
+  0:0,
   1:10,
   2:20,
   3:30,
