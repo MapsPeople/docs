@@ -37,7 +37,7 @@ If you are not a customer yet, you can use this demo MapsIndoors API key `{{sdk.
 
 > NOTE: This app was designed to be displayed in Portrait Mode. While it will work in Landscape Mode, some UI elements may look distorted or out-of-place.
 
-First, download or clone the pre-made project from GitHub: [link](_INSERT ANDROID REPO LINK HERE_).
+First, download or clone the pre-made project from GitHub: [https://github.com/MapsPeople/MapsIndoorsTemplate-Android](https://github.com/MapsPeople/MapsIndoorsTemplate-Android).
 
 * Open the project you just downloaded, and copy the classes located in `java/com/mapspeople/sportseventactivity` into your own App
 * Add the Maven repository ([http://maven.mapsindoors.com/](http://maven.mapsindoors.com/)) to your project's `build.gradle` file
