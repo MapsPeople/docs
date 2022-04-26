@@ -8,11 +8,11 @@ eleventyNavigation:
   order: 9999
 ---
 
-The **Simple Map App** is both a full app and plug-and-play code for you to integrate basic usage of MapsIndoors, containing search and directions functionalities, in your existing app. If you just want to get started with a simple solution with no customisation, this should fulfil your needs. Going through this guide will also teach you some principles on how MapsIndoors interacts with an app, and is a natural next step after the "Getting Started" guides.
+The **MapsIndoors Template** is both a full app and plug-and-play code for you to integrate basic usage of MapsIndoors, containing search and directions functionalities, in your existing app. If you just want to get started with a simple solution with no customisation, this should fulfil your needs. Going through this guide will also teach you some principles on how MapsIndoors interacts with an app, and is a natural next step after the "Getting Started" guides.
 
 If you need more customisation you can implementing your own solution using the documentation found [here]({{site.url}}/content/map/), or modify this code as needed.
 
-**Simple Map App** is provided as is, and can be integrated into your existing app. If you need further features, or want to customize existing ones, you're free to modify this one to your needs. However, MapsPeople offers no support or responsibility for changes made.
+**MapsIndoors Template** is provided as is, and can be integrated into your existing app. If you need further features, or want to customize existing ones, you're free to modify this one to your needs. However, MapsPeople offers no support or responsibility for changes made.
 
 ## Prerequisites
 
