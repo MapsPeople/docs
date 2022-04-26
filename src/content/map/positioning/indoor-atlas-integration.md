@@ -1,9 +1,9 @@
 ---
-title: Indoor Atlas for Android
+title: Using Indoor Atlas
 eleventyNavigation:
-  title: Indoor Atlas for Android
+  title: Using Indoor Atlas
   parent: map-positioning
-  key: map-positioning-indoor-atlas-android
+  key: map-positioning-indoor-atlas
   order: 220
 ---
 
