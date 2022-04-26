@@ -448,9 +448,9 @@ A full example implementation of the Indoor Atlas position provider together wit
 </mi-tab-panel>
 <mi-tab-panel id="ios">
 
-## MapsIndoors and CiscoDNA
+## MapsIndoors and IndoorAtlas
 
-MapsIndoors is a dynamic mapping platform from MapsPeople that can provide maps of your indoor and outdoor localities and helps you create search and navigation experiences for your local users. CiscoDNA is Cisco’s newest digital and cloud-based IT infrastructure management platform. Among many other things, CiscoDNA can pinpoint the physical and geographic position of devices connected wirelessly to the local IT network.
+MapsIndoors is a dynamic mapping platform from MapsPeople that can provide maps of your indoor and outdoor localities and helps you create search and navigation experiences for your local users. IndoorAtlas is a MapsPeople partner that works with indoor location based services. Among other things, IndoorAtlas can precisely provide an indoor position with the help of various technologies utilizing various mobile device sensors.
 
 ## How User Positioning Works in MapsIndoors
 
@@ -460,35 +460,70 @@ A Position Provider in MapsIndoors must adhere to the `MPPositionProvider` proto
 
 ![cisco-dna-ios](/assets/map/positioning/Cisco_DNA_iOS.png)
 
-## Wrapping the CiscoDNA Positioning in a Position Provider
+## Wrapping IndoorAtlas in a Position Provider
 
-Just like in the mock Position Provider example, we need to implement a Position Provider that wraps the MapsIndoors CiscoDNA services to inject the CiscoDNA indoor positioning into MapsIndoors. If you only require this to work for indoor positioning, we would be good with just wrapping the CiscoDNA part. MapsIndoors however has the capability to support wayfinding both outdoors and indoors, so we have come up with a solution that implements two Position Providers, one for CoreLocation (`GPSPositionProvider`) and one for CiscoDNA (`CiscoDNAPositionProvider2`). The `CiscoDNAPositionProvider2` subclasses the `GPSPositionProvider` so it can determine whether the CiscoDNA position or the Core Location position should be used in your application. Both Position Providers are written in Objective C, but can of course be used in Swift as well.
+As previously explained we need to implement a Position Provider that wraps the Indoor Atlas services to inject the indoor positioning into MapsIndoors. We have created an example of such a Position Provider, `IAPositionProvider`, which we will utilize in the following setup instructions. The `IAPositionProvider` is written in Objective C, but can of course be used in Swift as well.
 
-The `CiscoDNAPositionProvider2` communicates with some MapsIndoors services to get the Cisco device id, and uses a message subscription service (MQTT) to subscribe for position updates. Each time a Cisco position is received, its age is determined. If the age of the latest Cisco position is above 120 seconds or the application is not connected to the wifi, the CoreLocation position is used instead.
+### Floor Mapping
 
-## Integration Guide
+The Position Provider that you supply to MapsIndoors must know about the floor indexes that exist in MapsIndoors. These floor indexes may not exist in the 3rd party system that provides the indoor position. In order to account for this, we have created a floor mapping in the provider, which is basically a lookup table that can give you the MapsIndoors floor index based on another index or id. The mapping is illustrated below:
+
+```json
+// { IndoorAtlas floor index : MapsIndoors floor index }
+{ 
+  0:0, 
+  1:10,
+  2:20,
+  3:30,
+  4:40
+}
+```
+
+As illustrated, the floor mapping is a dictionary, where the IndoorAtlas floor index operates as the key and the MapsIndoors floor index is the value.
+
+## Integration Setup Steps
 
 1. Make sure you have [integrated MapsIndoors]({{site.url}}/content/getting-started/ios) succesfully.
-1. Download and unzip [this zip file](https://drive.google.com/file/d/1rbtB872NQ81m93xsxdzxA7gn8MtW1Ksl/view?usp=sharing) containing the CiscoDNA integration source.
-1. Create a group in your Xcode project, e.g. called CiscoDNA.
+1. Download and unzip [this zip file](https://drive.google.com/file/d/1F50FRWBmtHnO9HxASY-T2rkgjRJt7TNm/view?usp=sharing) containing the IndoorAtlas integration source.
+1. Create a group in your Xcode project, e.g. called IndoorAtlas.
 1. Drag and drop the files in the downloaded folder to your new group. Choose "Copy items if needed".
 1. If this is the first Objective C code in your project, Xcode will suggest that you create an Objective C Bridging Header file. Select "Yes" or "Create Bridging Header".
-1. Drag and drop the rest of the files into the CiscoDNA group. Choose "Copy items if needed".
-1. In your Objective C Bridging Header, add `#import "CiscoDNAPositionProvider2.h"`.
-1. In `AppDelegate.swift-didFinishLaunchingWithOptions`, add the following code:
+1. In your Objective C Bridging Header, add `#import "IAPositionProvider.h"`.
+1. At the time of writing this guide, IndoorAtlas does not support BitCode, so this must be disabled. In the settings, under your XCode project > "Targets" > "Your App Target" > "Build Settings" > "Build Options", set "Enable BitCode" to "No".
+1. In your Apps `Info.plist` file add the following descriptions (preferably right click `Info.plist` and choose "Open as" > "Source Code"):
 
-    ```objc
-    let pp = MPCiscoDnaPositionProvider2.init()
-    pp.tenantId = "my-cisco-dna-spaces-tenant-id"
-    MapsIndoors.positionProvider = pp
-    MapsIndoors.positionProvider?.startPositioning(nil)
+    ```json
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>This application uses your location in order to provide wayfinding to indoor facilities.</string>
+    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    <string>This application uses your location in order to provide wayfinding to indoor facilities.</string>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>This application uses your location in order to provide wayfinding to indoor facilities.</string>
+    <key>NSMotionUsageDescription</key>
+    <string>This application uses motion data in order to determine your indoor position.</string>
+    <key>NSBluetoothAlwaysUsageDescription</key>
+    <string>This application uses BlueTooth in order to determine your indoor position.</string>
+    <key>NSBluetoothPeripheralUsageDescription</key>
+    <string>This application uses BlueTooth in order to determine your indoor position.</string>
     ```
 
-1. Replace `my-cisco-dna-spaces-tenant-id` with your own Cisco tenant ID.
+1. In `AppDelegate.swift` - `didFinishLaunchingWithOptions`, add the following code:
+
+    ```swift
+    let pp = IAPositionProvider.init(apiKey: "my-indoor-atlas-key", apiSecret: "my-indoor-atlas-secret", floorMapping: [NSNumber(0):NSNumber(0)])
+        MapsIndoors.positionProvider = pp
+        MapsIndoors.positionProvider?.startPositioning(nil)
+    ```
+
+1. In the added code, replace:
+    * `my-indoor-atlas-key` with your own IndoorAtlas application key.
+    * `my-indoor-atlas-secret` with your own IndoorAtlas application key.
+    * `[NSNumber(0):NSNumber(0)]` with the correct floor mapping.
+
 1. In your view controller displaying the Google Map using `MPMapControl`, call `mapControl.showUserPosition(true)`.
 1. Build and run the application. You should now be able to show a blue dot for the user's position.
 
-If you need a working project example with MapsIndoors and CiscoDNA (excluding API keys), you can [download it here](https://drive.google.com/file/d/1nwsdaX0Hm6yaHm5S8JVgqYYb2S0Q4mnT/view?usp=sharing).
+If you need a working project example with MapsIndoors and IndoorAtlas (excluding API keys), you can [download it here](https://drive.google.com/file/d/1CS13NPYjvLl_Q4zbuinevannsKyuiuBM/view?usp=sharing).
 
 </mi-tab-panel>
 </mi-tabs>
