@@ -7,6 +7,11 @@ eleventyNavigation:
   order: 220
 ---
 
+<mi-tabs>
+<mi-tab label="Android" tab-for="android"></mi-tab>
+<mi-tab label="iOS" tab-for="ios"></mi-tab>
+<mi-tab-panel id="android">
+
 To get started with Indoor Atlas positioning, you need to create a positioning implementation which enables communicating the positions received from Indoor Atlas with the MapsIndoors SDK.
 
 The Position Provider implementation exists at the customer application level, and needs to use the `PositionProvider` interface from the MapsIndoors SDK. The MapsIndoors SDK can then use the positioning results given by the given Position Provider, by setting the Position Provider with `MapControl.setPositionProvider(PositionProvider)`.
@@ -25,9 +30,6 @@ We start by implementing a Positioning Provider service. This service is needed 
 
 To begin, create a simple class with a constructor that receives an `Activity` and a `MapControl` object.
 
-<mi-tabs>
-<mi-tab label="Java" tab-for="java"></mi-tab>
-<mi-tab-panel id="java">
 <a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/feature/third_pary_position_providers/app/src/main/java/com/example/mapsindoorsgettingstarted/PositionProviders/PositionProviderService.java#L21-L32">PositionProviderService.java</a>
 
 ```java
@@ -42,14 +44,8 @@ public class PositionProviderService {
 }
 ```
 
-</mi-tab-panel>
-</mi-tabs>
-
 Now we will start implementing the Indoor Atlas position provider. Create a class called `IndoorAtlasPositionProvider` that implements the `PositionProvider` interface from the MapsIndoors SDK, also create a constructor that takes a `Context` as parameter.
 
-<mi-tabs>
-<mi-tab label="Java" tab-for="java"></mi-tab>
-<mi-tab-panel id="java">
 <a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L270-L278">IndoorAtlasPositionProvider.java</a>
 
 ```java
@@ -66,14 +62,8 @@ public class IndoorAtlasPositionProvider implements PositionProvider {
 }
 ```
 
-</mi-tab-panel>
-</mi-tabs>
-
 We will start by implementing logic to each of the implemented methods from the `PositionProvider` interface.
 
-<mi-tabs>
-<mi-tab label="Java" tab-for="java"></mi-tab>
-<mi-tab-panel id="java">
 <a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/feature/third_pary_position_providers/app/src/main/java/com/example/mapsindoorsgettingstarted/PositionProviders/IndoorAtlasPositionProvider.java#L117-L210">IndoorAtlasPositionProvider.java</a>
 
 ```java
@@ -186,18 +176,12 @@ public class IndoorAtlasPositionProvider implements PositionProvider {
 }
 ```
 
-</mi-tab-panel>
-</mi-tabs>
-
 We will then start implementing the code to get Indoor Atlas positioning up and running.
 
 For Indoor Atlas to work you will need to supply Indoor Atlas with a API key and a secret key. This can be handled in two ways, if the Indoor Atlas account is setup through MapsPeople CMS on the Position Provider tab, we will have the data for this stored on the MapsIndoors SDK. If not you will have to handle the two keys yourself, this can be done through String resources as an example.
 
 We start by creating a method to initiate the Indoor Atlas client. Here the method is called `initClient`.
 
-<mi-tabs>
-<mi-tab label="Java" tab-for="java"></mi-tab>
-<mi-tab-panel id="java">
 <a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/feature/third_pary_position_providers/app/src/main/java/com/example/mapsindoorsgettingstarted/PositionProviders/IndoorAtlasPositionProvider.java#L70-L115">IndoorAtlasPositionProvider.java</a>
 
 ```java
@@ -252,14 +236,8 @@ public class IndoorAtlasPositionProvider implements PositionProvider {
 }
 ```
 
-</mi-tab-panel>
-</mi-tabs>
-
 Create the `IAOrientationListener` we register in the `init` method and a `positionUpdate` method.
 
-<mi-tabs>
-<mi-tab label="Java" tab-for="java"></mi-tab>
-<mi-tab-panel id="java">
 <a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/feature/third_pary_position_providers/app/src/main/java/com/example/mapsindoorsgettingstarted/PositionProviders/IndoorAtlasPositionProvider.java#L212-L258">IndoorAtlasPositionProvider.java</a>
 
 ```java
@@ -316,14 +294,8 @@ public class IndoorAtlasPositionProvider implements PositionProvider {
 }
 ```
 
-</mi-tab-panel>
-</mi-tabs>
-
 Implement the `startPositoning` and `stopPositioning` method:
 
-<mi-tabs>
-<mi-tab label="Java" tab-for="java"></mi-tab>
-<mi-tab-panel id="java">
 <a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/feature/third_pary_position_providers/app/src/main/java/com/example/mapsindoorsgettingstarted/PositionProviders/IndoorAtlasPositionProvider.java#L128-L143">IndoorAtlasPositionProvider.java</a>
 
 ```java
@@ -349,14 +321,8 @@ public class IndoorAtlasPositionProvider implements PositionProvider {
 }
 ```
 
-</mi-tab-panel>
-</mi-tabs>
-
 Create the `locationListener` referenced in the `startPositioning` and `stopPositioning`:
 
-<mi-tabs>
-<mi-tab label="Java" tab-for="java"></mi-tab>
-<mi-tab-panel id="java">
 <a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/feature/third_pary_position_providers/app/src/main/java/com/example/mapsindoorsgettingstarted/PositionProviders/IndoorAtlasPositionProvider.java#L260-L300">IndoorAtlasPositionProvider.java</a>
 
 ```java
@@ -406,14 +372,8 @@ public class IndoorAtlasPositionProvider implements PositionProvider {
 }
 ```
 
-</mi-tab-panel>
-</mi-tabs>
-
 Now we need to start up our `PositionProvider` to get positioning onto our Map. This we will do through our `PositionProviderService`. We start with creating a method to setup the IndoorAtlas `positionProvider` from the `PositionProviderService`.
 
-<mi-tabs>
-<mi-tab label="Java" tab-for="java"></mi-tab>
-<mi-tab-panel id="java">
 <a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/feature/third_pary_position_providers/app/src/main/java/com/example/mapsindoorsgettingstarted/PositionProviders/PositionProviderService.java#L70-L117">PositionProviderService.java</a>
 
 ```java
@@ -472,14 +432,8 @@ public class PositionProviderService implements PositionProvider {
 }
 ```
 
-</mi-tab-panel>
-</mi-tabs>
-
 Lastly, we need to start this up after initializing our `MapControl`.
 
-<mi-tabs>
-<mi-tab label="Java" tab-for="java"></mi-tab>
-<mi-tab-panel id="java">
 <a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/feature/third_pary_position_providers/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L186-L189">MapsActivity.java</a>
 
 ```java
@@ -489,7 +443,52 @@ mMapControl.init(miError -> {
 }
 ```
 
+A full example implementation of the Indoor Atlas position provider together with `PositionProviderService` can be found here: [PositionProviders](https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/tree/feature/third_pary_position_providers/app/src/main/java/com/example/mapsindoorsgettingstarted/PositionProviders)
+
+</mi-tab-panel>
+<mi-tab-panel id="ios">
+
+## MapsIndoors and CiscoDNA
+
+MapsIndoors is a dynamic mapping platform from MapsPeople that can provide maps of your indoor and outdoor localities and helps you create search and navigation experiences for your local users. CiscoDNA is Cisco’s newest digital and cloud-based IT infrastructure management platform. Among many other things, CiscoDNA can pinpoint the physical and geographic position of devices connected wirelessly to the local IT network.
+
+## How User Positioning Works in MapsIndoors
+
+In order to show a user's position in an indoor map with MapsIndoors, a Position Provider must be implemented. MapsIndoors does not implement a Position Provider itself, but rely on 3rd party positioning software to create this experience. In an outdoor environment this Position Provider can be a wrapper of the Core Location Services in iOS.
+
+A Position Provider in MapsIndoors must adhere to the `MPPositionProvider` protocol. Once you have an instance of an `MPPositionProvider` you can register it by assigning it to `MapsIndoors.positionProvider`. See the overview of the interface dependencies below.
+
+![cisco-dna-ios](/assets/map/positioning/Cisco_DNA_iOS.png)
+
+## Wrapping the CiscoDNA Positioning in a Position Provider
+
+Just like in the mock Position Provider example, we need to implement a Position Provider that wraps the MapsIndoors CiscoDNA services to inject the CiscoDNA indoor positioning into MapsIndoors. If you only require this to work for indoor positioning, we would be good with just wrapping the CiscoDNA part. MapsIndoors however has the capability to support wayfinding both outdoors and indoors, so we have come up with a solution that implements two Position Providers, one for CoreLocation (`GPSPositionProvider`) and one for CiscoDNA (`CiscoDNAPositionProvider2`). The `CiscoDNAPositionProvider2` subclasses the `GPSPositionProvider` so it can determine whether the CiscoDNA position or the Core Location position should be used in your application. Both Position Providers are written in Objective C, but can of course be used in Swift as well.
+
+The `CiscoDNAPositionProvider2` communicates with some MapsIndoors services to get the Cisco device id, and uses a message subscription service (MQTT) to subscribe for position updates. Each time a Cisco position is received, its age is determined. If the age of the latest Cisco position is above 120 seconds or the application is not connected to the wifi, the CoreLocation position is used instead.
+
+## Integration Guide
+
+1. Make sure you have [integrated MapsIndoors]({{site.url}}/content/getting-started/ios) succesfully.
+1. Download and unzip [this zip file](https://drive.google.com/file/d/1rbtB872NQ81m93xsxdzxA7gn8MtW1Ksl/view?usp=sharing) containing the CiscoDNA integration source.
+1. Create a group in your Xcode project, e.g. called CiscoDNA.
+1. Drag and drop the files in the downloaded folder to your new group. Choose "Copy items if needed".
+1. If this is the first Objective C code in your project, Xcode will suggest that you create an Objective C Bridging Header file. Select "Yes" or "Create Bridging Header".
+1. Drag and drop the rest of the files into the CiscoDNA group. Choose "Copy items if needed".
+1. In your Objective C Bridging Header, add `#import "CiscoDNAPositionProvider2.h"`.
+1. In `AppDelegate.swift-didFinishLaunchingWithOptions`, add the following code:
+
+    ```objc
+    let pp = MPCiscoDnaPositionProvider2.init()
+    pp.tenantId = "my-cisco-dna-spaces-tenant-id"
+    MapsIndoors.positionProvider = pp
+    MapsIndoors.positionProvider?.startPositioning(nil)
+    ```
+
+1. Replace `my-cisco-dna-spaces-tenant-id` with your own Cisco tenant ID.
+1. In your view controller displaying the Google Map using `MPMapControl`, call `mapControl.showUserPosition(true)`.
+1. Build and run the application. You should now be able to show a blue dot for the user's position.
+
+If you need a working project example with MapsIndoors and CiscoDNA (excluding API keys), you can [download it here](https://drive.google.com/file/d/1nwsdaX0Hm6yaHm5S8JVgqYYb2S0Q4mnT/view?usp=sharing).
+
 </mi-tab-panel>
 </mi-tabs>
-
-A full example implementation of the Indoor Atlas position provider together with `PositionProviderService` can be found here: [PositionProviders](https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/tree/feature/third_pary_position_providers/app/src/main/java/com/example/mapsindoorsgettingstarted/PositionProviders)
