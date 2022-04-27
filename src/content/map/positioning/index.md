@@ -1,10 +1,10 @@
 ---
-title: Positioning in MapsIndoors
+title: User Positioning
 eleventyNavigation:
   parent: map
-  title: Positioning in MapsIndoors
+  title: User Positioning
   key: map-positioning
-  order: 500
+  order: 60
 ---
 
 ### How User Positioning Works in MapsIndoors
