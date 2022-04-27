@@ -1,10 +1,10 @@
 ---
-title: Google Fused Location Provider
+title: Using Google Fused Location Provider
 eleventyNavigation:
-  title: Google Fused Location Provider
-  parent: map-positioning
+  title: Using Google Fused Location Provider
+  parent: map-positioning-blue-dot
   key: map-positioning-google-fused
-  order: 230
+  order: 120
 ---
 
 To get started with Google Fused Location Provider, you need to create a positioning implementation which enables communicating the positions received from the API with the MapsIndoors SDK.

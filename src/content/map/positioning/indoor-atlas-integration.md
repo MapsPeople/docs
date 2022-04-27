@@ -2,9 +2,9 @@
 title: Using Indoor Atlas
 eleventyNavigation:
   title: Using Indoor Atlas
-  parent: map-positioning
+  parent: map-positioning-blue-dot
   key: map-positioning-indoor-atlas
-  order: 220
+  order: 130
 ---
 
 <mi-tabs>

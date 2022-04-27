@@ -1,10 +1,10 @@
 ---
 title: Using Cisco DNA Spaces
 eleventyNavigation:
-  parent: map-positioning
+  parent: map-positioning-blue-dot
   title: Using Cisco DNA Spaces
   key: map-positioning-cisco-dna-android
-  order: 240
+  order: 110
 ---
 
 <mi-tabs>
