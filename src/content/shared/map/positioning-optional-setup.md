@@ -1,6 +1,6 @@
 #### Fetch Attributes from Solution
 
-You can choose to fetch the Position Provider information from the CMS as follows:
+You can choose to fetch the Position Provider information (`CMS` > `Solution Details` > `App Settings` > `Position Provider`) from the CMS as follows:
 
 ```java
 Map<String, Map<String, Object>> providerConfig = MapsIndoors.getSolution().getPositionProviderConfig();
