@@ -12,7 +12,7 @@ From the MapsIndoors Integration API you can get, add, change and delete data re
 
 Send your requests to this endpoint: [https://integration.mapsindoors.com](https://integration.mapsindoors.com)
 
-> Note: Only https is supported.
+> Note: Only HTTPS is supported. Please limit requests to a maximum of 10 per second per Solution.
 
 You can access data through the Integration API using a range of endpoints. The endpoints are described in the Swagger interface definition: [https://integration.mapsindoors.com/doc](https://integration.mapsindoors.com/doc/index.html)
 
@@ -20,7 +20,9 @@ In Swagger, each `GET` method is pre-loaded with all mandatory fields needed to 
 
 ## Example Use Cases
 
-kvkfvfkvjv
+* A conference hall might have a list of vendors that will be presenting on a given date. MapsIndoors has built in functionality to navigate from a point on the map to an information page, but not the other way around, from a navigation page to a specific point on the map. However, by creating a lookup table between the MapsIndoors External ID, and the conference hall's own database, the Integration API would allow this functionality to be done.
+* An airport might want the various routes to change based on estamiated wait times in queues. This can be done by using the Integration API to connect to a live data feed of client's positioning in the airport, and setting a given Route Element to "Blocked" if too many people are there.
+* jcnjdndjnc
 
 <!-- ## Commonly Used Operations
 
