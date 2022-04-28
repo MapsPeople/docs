@@ -464,4 +464,3 @@ new mapsindoors.PositionControl(myPositionControlElm, { mapsIndoors: myMapsIndoo
 
 </mi-tab-panel>
 </mi-tabs>
-
