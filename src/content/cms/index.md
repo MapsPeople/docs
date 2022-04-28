@@ -47,7 +47,6 @@ There are two main pages in the CMS, "Map" and "Solution Details". The hierarchi
   * **Type Visibility** - Defines the Zoom Levels for which the Locations of each Type will appear on the Map.
   * **Buildings** - An overview of the Buildings present in your Venue.
   * **Venues** - An overview of the Venues present in your Solution.
-  * **Export Map** - Generates a high-resolution image of your Map, suitable for printing or similar. *Note*: Not available for all customers.
   * **App Settings** - A page with various settings concerning your app.
     * **App Configuration** - Settings to configure your app.
     * **API Keys** - API Keys used by your Solution.
@@ -175,25 +174,6 @@ A page featuring a list of Venues in your Solution. These are provided by MapsIn
 1. "Edit Venue" - You can e.g. edit Venue Name and Venue External ID in the Venue details editor.
 1. The Name of your Venues.
 1. The Venue ID of your Venue.
-
-#### Export Map
-
-> PLEASE NOTE: This feature is not available in our standard Solution. Please contact your MapsPeople representative to gain access to this feature.
-
-![solution-details-export-map](/assets/cms/interface-overview/Solution_Details_Export_Map.png)
-
-The MapsIndoors CMS also provides the opportunity to export your Map to a higher resolution. For example, if you want to print your Map to physically hang at your location.
-
-1. Open the Display Settings for the Map - NOTE: This is not the same as the Display Rules in the other sections.
-1. Set the use-case, this helps determine the resolution the map will be exported in.
-1. The Width of the exported Map.
-1. The Height of the exported Map.
-1. The Rotation angle of the exported Map.
-1. The Building you are exporting a Map of.
-1. The currently used Zoom Level.
-1. Zoom in or out.
-1. Floor selector, to select which floor will be exported.
-1. Export your Map!
 
 #### App Settings
 
@@ -429,30 +409,6 @@ When you sync an Icon, if the Icon exists in the target Solution (i.e. an Icon w
 We highly recommend using SVGs for Icons across MapsIndoors, but support PNG files as well.
 
 When uploading an Icon in the PNG format, make sure you upload it in a 3x size to accommodate for it being scaled down on the map. For example, to display a 20x20px Icon on the Map, upload it in 60x60px.
-
-### Export Map
-
-Export Map is an add-on feature that can be enabled for a Solution. Once enabled, it allows for PNG export of the MapsIndoors imagery for printing purposes. The export will not include the underlying Google Maps due to terms of use.
-
-The Export Map service has a limit of 8000 x 8000 pixels. Clicking the Download Icon button on the bottom right opens a new tab with the PNG.
-
-#### Usage (Scale)
-
-Sets the scale of the export imagery.
-
-* Web (1) will export the same pixel size as selected on-screen.
-* Retina (2) will export two times the pixels.
-* Print (4) will export four times the pixels.
-
-#### Display Rules
-
-Allows toggling visible features on the exported map, such as Icons, Location Types, and Labels.
-
-You can also rotate the map and set the size of the screen selection. The max is 2000 x 2000.
-
-#### Preview
-
-Preview is especially helpful when using rotation or larger-than-monitor exports.
 
 ### Split and Combine
 
