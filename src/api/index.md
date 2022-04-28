@@ -6,7 +6,7 @@ eleventyNavigation:
   order: 40
 ---
 
-## Introduction and getting started
+## Introduction and Getting Started
 
 From the MapsIndoors Integration API you can get, add, change and delete data related to your MapsIndoors Solution via a REST service.
 
@@ -18,7 +18,11 @@ You can access data through the Integration API using a range of endpoints. The 
 
 In Swagger, each `GET` method is pre-loaded with all mandatory fields needed to get a live example of data. Click the  "_Try it out_" button in Swagger to see the example data.
 
-## Commonly Used Operations
+## Example Use Cases
+
+kvkfvfkvjv
+
+<!-- ## Commonly Used Operations
 
 If the Integration API is already familiar to you, here we present some of the most commonly used API operations, and some example use-cases. All operations listed here can be found at [https://integration.mapsindoors.com/doc/index.html](https://integration.mapsindoors.com/doc/index.html).
 
@@ -26,7 +30,7 @@ If the Integration API is already familiar to you, here we present some of the m
   * This call doesn't have a specific use-case per se, as it's functionality is to fetch the data that you wish to modify with other operations.
 
 * `PUT /{apiKey}/api/geodata` - Updates/modifies a number of existing geodata.
-  * This would often be used in extension of `GET /{apiKey}/api/geodata`, to modify the fetched data. An example use-case for this could be to modify the visibility of a specific Location Type, or to add a specific Custom Property to a given Type.
+  * This would often be used in extension of `GET /{apiKey}/api/geodata`, to modify the fetched data. An example use-case for this could be to modify the visibility of a specific Location Type, or to add a specific Custom Property to a given Type. -->
 
 ### Login and credentials
 
