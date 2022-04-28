@@ -437,9 +437,10 @@ mMapControl.init(miError -> {
 }
 ```
 
-</mi-tab-panel>
-
 A full example of the Cisco DNA position provider together with `PositionProviderService` can be found here: [PositionProviders](https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/tree/feature/third_pary_position_providers/app/src/main/java/com/example/mapsindoorsgettingstarted/PositionProviders)
+
+<!-- Shortcut hack -->
+{% include "src/content/shared/map/positioning-optional-setup.md" %}
 
 </mi-tab-panel>
 <mi-tab-panel id="ios">
