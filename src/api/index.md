@@ -12,7 +12,7 @@ From the MapsIndoors Integration API you can get, add, change and delete data re
 
 Send your requests to this endpoint: [https://integration.mapsindoors.com](https://integration.mapsindoors.com)
 
-> Note: Only HTTPS is supported. Please limit requests to a maximum of 10 per second per Solution.
+> Note: Only HTTPS is supported. There is a rate limit of 10 requests per second per Solution.
 
 You can access data through the Integration API using a range of endpoints. The endpoints are described in the Swagger interface definition: [https://integration.mapsindoors.com/doc](https://integration.mapsindoors.com/doc/index.html)
 
