@@ -23,6 +23,7 @@ In Swagger, each `GET` method is pre-loaded with all mandatory fields needed to 
 * A conference hall might have a list of vendors that will be presenting on a given date. MapsIndoors has built in functionality to navigate from a point on the map to an information page, but not the other way around, from a navigation page to a specific point on the map. However, by creating a lookup table, fetching the MapsIndoors External ID's with `GET /{apiKey}/api/geodata`, and the conference hall's own database, the Integration API would allow this functionality to be done.
 * An airport might want the various routes to change based on estamiated wait times in queues. This can be done by using the Integration API to connect to a live data feed of client's positioning in the airport, and using `GET /{apiKey}/api/routing/routeelements` and `PUT /{apiKey}/api/routing/routeelements`, setting a given Route Element to "Blocked" if too many people are there.
 * Some of our clients have used the Integration API to create their own CMS, for example, using `POST /{apiKey}/api/geodata` to create new desk locations in the Solution for their corporate offices.
+* You can use `PUT /{apiKey}/api/displaytypes` to edit multiple Location Types at once. For example, if you want to have some Location Types only show up at certain times of day, or when other conditions are met.
 
 <!-- ## Commonly Used Operations
 
