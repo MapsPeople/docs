@@ -24,6 +24,9 @@ For a typical Position Provider, the mapping from the positioning's index needs 
 
 The MapsIndoors backend is closely integrated with the CiscoDNA platform, so the MapsIndoors backend handles the floor mapping conversion for that integration. From an application perspective no Floor mapping implementation is required when integrating CiscoDNA positioning through the MapsIndoors platform.
 
+<!-- Fetch data from solution -->
+{% include "src/content/shared/map/positioning-optional-setup.md" %}
+
 ### Implementing Cisco DNA
 
 This Guide requires you to already have an activity that shows a MapsIndoors Map as well as a Cisco DNA network with positioning active.
@@ -438,9 +441,6 @@ mMapControl.init(miError -> {
 ```
 
 A full example of the Cisco DNA position provider together with `PositionProviderService` can be found here: [PositionProviders](https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/tree/feature/third_pary_position_providers/app/src/main/java/com/example/mapsindoorsgettingstarted/PositionProviders)
-
-<!-- Shortcut hack -->
-{% include "src/content/shared/map/positioning-optional-setup.md" %}
 
 </mi-tab-panel>
 <mi-tab-panel id="ios">

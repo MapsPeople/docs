@@ -22,6 +22,9 @@ The Position Provider should align with the MapsIndoors Floor index convention (
 
 For a typical Position Provider, the mapping from the positioning's index needs to be mapped to the MapsIndoors Floor format. This is possible through the CMS or creating your own int:int mapping.
 
+<!-- Fetch data from solution -->
+{% include "src/content/shared/map/positioning-optional-setup.md" %}
+
 ### Implementing Indoor Atlas
 
 This Guide requires you to already have an activity that shows a MapsIndoors Map as well as a Indoor Atlas beacon network for positioning. We use Indoor Atlas v3 for this guide. Here is how to set it up in your project: [Indoor Atlas setup](https://indooratlas.freshdesk.com/support/solutions/articles/36000050564-setup-positioning-sdk-with-android)
