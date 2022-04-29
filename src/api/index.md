@@ -34,7 +34,7 @@ If the Integration API is already familiar to you, here we present some of the m
 * `PUT /{apiKey}/api/geodata` - Updates/modifies a number of existing geodata.
   * This would often be used in extension of `GET /{apiKey}/api/geodata`, to modify the fetched data. An example use-case for this could be to modify the visibility of a specific Location Type, or to add a specific Custom Property to a given Type. -->
 
-### Login and credentials
+### Login and Credentials
 
 First, log in to the service to get an `access token` to access the data.
 
@@ -47,7 +47,7 @@ No matter what login method you use, you will always need to use the following c
 Content-Type: application/x-www-form-urlencoded
 ```
 
-#### Log in with MapsIndoors username/password
+#### Log in with MapsIndoors Username/Password
 
 To log in with your MapsIndoors login, send them with the `grant_type` set to `password`.
 
@@ -66,7 +66,7 @@ The body of the request must end up containing a query string like this:
 
 `grant_type=password&client_id=client&username=<your username>&password=<your password>`
 
-#### When you are authenticated
+#### When You Are Authenticated
 
 If you sent valid credentials to the Auth API, you will receive a response like this:
 
@@ -87,7 +87,7 @@ authorization: Bearer eyJhbGciOiJ...vmERrovsg
 
 > Note: The access token is valid for 24 hours. After that you will need to reauthenticate, following the same steps as explained above.
 
-## Data description
+## Data Description
 
 ### Dataset
 
@@ -122,7 +122,7 @@ You can create, update, delete all Geodata types: Venue, Building, Floor, Room, 
 
 All Geodata BaseTypes have some common keys that is available for all, and then there is some specific ones for each type, listed in BaseTypeProperties.
 
-#### Object definition
+#### Object Definition
 
 **A Geodata object contains the following:**
 
@@ -230,7 +230,7 @@ To read, change or delete Geodata use the Geodata endpoints described here: [htt
 
 > Note: When you get data, you only specify the `apiKey` hence you get the entire tree! The other Geodata endpoints works on individual Geodata objects.
 
-## Detailed data description
+## Detailed Data Description
 
 ### Geodata
 
@@ -272,7 +272,7 @@ Each Geodata element has a number of properties. Let's look at an example - a co
 
 ```
 
-* **Id**
+* **id**
 
     All elements have a unique 24 character string.
 
@@ -546,9 +546,9 @@ As a simple example: All rooms and areas across any building/venue related to en
 
     The name property must be specified for every language defined in the dataset.
 
-## Interface descriptions
+## Interface Descriptions
 
-### Reverse geocoding
+### Reverse Geocoding
 
 ```bash
 HTTP Get
