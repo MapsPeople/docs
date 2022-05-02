@@ -1,5 +1,6 @@
 ---
 title: Display Rules in Practice for Android
+toc: true
 eleventyNavigation:
   key: map-map-styling-display-rules-android
   parent: map-map-styling
@@ -215,9 +216,13 @@ MapsIndoors.getLocationsAsync(null, MPFilter.Builder().setTypes(listOf("Office")
 </mi-tab-panel>
 </mi-tabs>
 
-Style the map using Google Maps Styling:
+## Style the Map using Google Maps Styling
 
 > This needs to be applied after `mMapControl` is initialised. Further documentation on the Google Maps styling can be found here: [https://developers.google.com/maps/documentation/android-sdk/styling](https://developers.google.com/maps/documentation/android-sdk/styling)
+
+MapsIndoors is built on top of Google Maps which has its own way of styling the map. Google Maps styling will only affect the MapsIndoors map if Google Maps has Points of Interest placed inside or near the buildings that you build a MapsIndoors solution for. By default, MapsIndoors applies a Google Maps styling that hides most POI icons that may collide with MapsIndoors content.
+
+You can apply your own styling to Google Maps using `googleMap.setMapStyle` for Java, or `mMap.setMapStyle` for Kotlin.
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
@@ -243,3 +248,5 @@ mMapControl.init { miError ->
 
 </mi-tab-panel>
 </mi-tabs>
+
+The JSON string that you apply in this case can be built using the [Google Maps Styling Wizard](https://mapstyle.withgoogle.com/). Read more about styling the Google Map in the [Google Maps iOS SDK Docs](https://developers.google.com/maps/documentation/ios-sdk/styling).
