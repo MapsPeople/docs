@@ -48,7 +48,9 @@ You can set display rules programatically in multiple ways depending on your use
 * Set a Display Rule for a single specific Location
 * Set a Display Rule for multiple Locations
 
-Modify displayRule for selected location:
+### Modify the Display Rule for the Selected Location
+
+When a Location is selected through assignment of the `selectedLocation` property of `MPMapControl`, this Location is highlighted using the settings specified in the `setClickedPOIHighlight` properties. These properties gace some defaults which can be overridden. Here is an example of overriding the fill and outline color, along with the stroke width and which zoom level is shows in:
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
