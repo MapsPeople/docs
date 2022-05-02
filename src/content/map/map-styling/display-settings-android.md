@@ -11,52 +11,59 @@ eleventyNavigation:
 
 Creating a display rule object:
 
+<mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
-<h3>Java</h3>
+
 ```java
 private LocationDisplayRule airLocationDisplayRule = new LocationDisplayRule.Builder("air rule").setVectorDrawableIcon(R.drawable.ic_baseline_air_24).setLabel("air rule").build();
 ```
+
 </mi-tab-panel>
 <mi-tab-panel id="kotlin">
-<h3>Kotlin</h3>
+
 ```kotlin
 private var airLocationDisplayRule = LocationDisplayRule.Builder("air rule").setVectorDrawableIcon(R.drawable.ic_baseline_air_24).setLabel("air rule").build()
 ```
+
 </mi-tab-panel>
 </mi-tabs>
 
 Modify displayRule for selected location:
 
+<mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
-<h3>Java</h3>
+
 ```java
 mMapControl.setClickedPOIHighlightOutlineStrokeColor(Color.BLUE);
 mMapControl.setClickedPOIHighlightFillColor(Color.GREEN);
 mMapControl.setClickedPOIHighlightOutlineStrokeWidth(3f);
 mMapControl.setClickedPOIHighlightShowingZoomLevel(16);
 ```
+
 </mi-tab-panel>
 <mi-tab-panel id="kotlin">
-<h3>Kotlin</h3>
+
 ```kotlin
 mMapControl.clickedPOIHighlightOutlineStrokeColor = Color.BLUE
 mMapControl.clickedPOIHighlightFillColor = Color.GREEN
 mMapControl.clickedPOIHighlightOutlineStrokeWidth = 3f
 mMapControl.clickedPOIHighlightShowingZoomLevel = 16f
 ```
+
 </mi-tab-panel>
 </mi-tabs>
 
 Setting display rule for type:
 
+<mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
-<h3>Java</h3>
+
 ```java
 typeDisplayRule = new LocationDisplayRule.Builder("Office", mMapControl.getDisplayRule("Office")).setVectorDrawableIcon(R.drawable.ic_baseline_bolt_24).build();
 MapsIndoors.getLocationsAsync(null, new MPFilter.Builder().setTypes(Collections.singletonList("Office")).build(), (locations, miError) -> {
@@ -65,9 +72,10 @@ MapsIndoors.getLocationsAsync(null, new MPFilter.Builder().setTypes(Collections.
     }
 });
 ```
+
 </mi-tab-panel>
 <mi-tab-panel id="kotlin">
-<h3>Kotlin</h3>
+
 ```kotlin
 typeDisplayRule = LocationDisplayRule.Builder("Office", mMapControl.getDisplayRule("Office")!!).setPolygonDisplayRule(polygonDisplayRule).setVectorDrawableIcon(R.drawable.ic_baseline_bolt_24).build()
 MapsIndoors.getLocationsAsync(null, MPFilter.Builder().setTypes(listOf("Office")).build()) { locations, miError ->
@@ -76,6 +84,7 @@ MapsIndoors.getLocationsAsync(null, MPFilter.Builder().setTypes(listOf("Office")
     }
 }
 ```
+
 </mi-tab-panel>
 </mi-tabs>
 
@@ -83,32 +92,36 @@ Setting display rule for a single and multiple locations:
 
 single:
 
+<mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
-<h3>Java</h3>
+
 ```java
 singleLocationDisplayRule = new LocationDisplayRule.Builder("singleRule").setVectorDrawableIcon(R.drawable.ic_baseline_air_24).setLabel("single display rule").build();
 MPLocation mpLocation = MapsIndoors.getLocationById("MyLocationId");
 mMapControl.setDisplayRule(singleLocationDisplayRule, mpLocation);
 ```
+
 </mi-tab-panel>
 <mi-tab-panel id="kotlin">
-<h3>Kotlin</h3>
+
 ```kotlin
 singleLocationDisplayRule = LocationDisplayRule.Builder("singleRule").setVectorDrawableIcon(R.drawable.ic_baseline_air_24).setLabel("single display rule").build()
 val mpLocation = MapsIndoors.getLocationById("MyLocationId")
 mMapControl.setDisplayRule(singleLocationDisplayRule, mpLocation)
 ```
+
 </mi-tab-panel>
 </mi-tabs>
 
 multiple:
 
+<mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
-<h3>Java</h3>
+
 ```java
 multipleLocationDisplayRule = new LocationDisplayRule.Builder("multipleRule").setVectorDrawableIcon(R.drawable.ic_baseline_air_24).setLabel("multiple display rule").build();
 MapsIndoors.getLocationsAsync(null, new MPFilter.Builder().setTypes(Collections.singletonList("Meetingroom")).build(), (locations, miError) -> {
@@ -117,9 +130,10 @@ MapsIndoors.getLocationsAsync(null, new MPFilter.Builder().setTypes(Collections.
     }
 });
 ```
+
 </mi-tab-panel>
 <mi-tab-panel id="kotlin">
-<h3>Kotlin</h3>
+
 ```kotlin
 multipleLocationDisplayRule = LocationDisplayRule.Builder("multipleRule").setVectorDrawableIcon(R.drawable.ic_baseline_air_24).setLabel("multiple display rule").build()
 MapsIndoors.getLocationsAsync(null, MPFilter.Builder().setTypes(listOf("Meetingroom")).build()) { locations, _ ->
@@ -128,15 +142,17 @@ MapsIndoors.getLocationsAsync(null, MPFilter.Builder().setTypes(listOf("Meetingr
     }
 }
 ```
+
 </mi-tab-panel>
 </mi-tabs>
 
 presenting locations using polygons:
 
+<mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
-<h3>Java</h3>
+
 ```java
 PolygonDisplayRule polygonDisplayRule = new PolygonDisplayRule();
 polygonDisplayRule.setIsVisible(true);
@@ -151,9 +167,10 @@ MapsIndoors.getLocationsAsync(null, new MPFilter.Builder().setTypes(Collections.
     }
 });
 ```
+
 </mi-tab-panel>
 <mi-tab-panel id="kotlin">
-<h3>Kotlin</h3>
+
 ```kotlin
 val polygonDisplayRule = PolygonDisplayRule()
 polygonDisplayRule.setIsVisible(true)
@@ -168,24 +185,27 @@ MapsIndoors.getLocationsAsync(null, MPFilter.Builder().setTypes(listOf("Office")
     }
 }
 ```
+
 </mi-tab-panel>
 </mi-tabs>
 
 Style the map using Google Maps Styling:
 Note here: This needs to be applied after mapcontrol is initialised. Further documentation on the google maps styling can be found here: https://developers.google.com/maps/documentation/android-sdk/styling
 
+<mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
-<h3>Java</h3>
+
 ```java
 mMapControl.init(miError -> {
     googleMap.setMapStyle(MapStyleOptions.loadRawResourceStyle(this, R.raw.style_json));
 });
 ```
+
 </mi-tab-panel>
 <mi-tab-panel id="kotlin">
-<h3>Kotlin</h3>
+
 ```kotlin
 mMapControl.init { miError ->
     if (miError == null) {
@@ -193,5 +213,6 @@ mMapControl.init { miError ->
     }
 }
 ```
+
 </mi-tab-panel>
 </mi-tabs>
