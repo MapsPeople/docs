@@ -7,9 +7,20 @@ eleventyNavigation:
   order: 20
 ---
 
-## Style the map using display rules
+There are two ways to change the appearance of the map content in MapsIndoors and Google Maps.
 
-Creating a display rule object:
+* Using Display Rules
+* Using Google Maps styling
+
+Each has its own purpose which will be explained below.
+
+## Style the Map using Display Rules
+
+In the [MapsIndoors CMS](https://cms.mapsindoors.com/types) you can set display rules for the different types of locations in your MapsIndoors content. The changes you make in the CMS will take effect whenever your app reboots or when you call `MapsIndoors.synchroniseContent()` within the app session.
+
+A Display Rule encapsulates both what, how and when a Location should be displayed on the map. A Location is presented on the map using a combination of icon, text and polygon. Each of these can appear at different, independent ranges of zoom-levels. For example a venue can appear as a marker-icon on low zoom-levels, when zooming in the venue name can appear, and zooming even more in the venue polygon can appear.
+
+In some cases, you may also want to programmatically set display rules that define when and how to show a location. Display rules are defined in a Display Rule object.
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
@@ -29,6 +40,13 @@ private var airLocationDisplayRule = LocationDisplayRule.Builder("air rule").set
 
 </mi-tab-panel>
 </mi-tabs>
+
+You can set display rules programatically in multiple ways depending on your use case:
+
+* Modify the Display Rule for the Selected Location
+* Set a Display Rule for a type of Location
+* Set a Display Rule for a single specific Location
+* Set a Display Rule for multiple Locations
 
 Modify displayRule for selected location:
 
