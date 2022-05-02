@@ -112,9 +112,9 @@ MapsIndoors.getLocationsAsync(null, MPFilter.Builder().setTypes(listOf("Office")
 
 Setting a display rule for a type will persist the new display rule for that type throughout the whole app session and across instances of `MPMapControl`.
 
-Setting display rule for a single and multiple locations:
+### Setting Display Rule for a Single and Multiple Locations
 
-single:
+To set new display rules for a single Location, you need to have the Location at hand. Locations can be queried for using `MPLocation` and `getLocationById`. Once you have a location, you can set a custom display rule for it.
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
@@ -139,7 +139,7 @@ mMapControl.setDisplayRule(singleLocationDisplayRule, mpLocation)
 </mi-tab-panel>
 </mi-tabs>
 
-multiple:
+For multiple Locations, you fetch an array of Locations using `getLocationsAsync` instead:
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
