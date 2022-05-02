@@ -190,7 +190,8 @@ MapsIndoors.getLocationsAsync(null, MPFilter.Builder().setTypes(listOf("Office")
 </mi-tabs>
 
 Style the map using Google Maps Styling:
-Note here: This needs to be applied after mapcontrol is initialised. Further documentation on the google maps styling can be found here: https://developers.google.com/maps/documentation/android-sdk/styling
+
+> This needs to be applied after `mMapControl` is initialised. Further documentation on the Google Maps styling can be found here: [https://developers.google.com/maps/documentation/android-sdk/styling](https://developers.google.com/maps/documentation/android-sdk/styling)
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
