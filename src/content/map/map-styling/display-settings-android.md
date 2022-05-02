@@ -77,7 +77,9 @@ mMapControl.clickedPOIHighlightShowingZoomLevel = 16f
 </mi-tab-panel>
 </mi-tabs>
 
-Setting display rule for type:
+### Setting Display Rule for a Type
+
+To set new display rules for a type of Location, you need to know the types of Locations in your Location dataset, so you may look these up in the CMS. The types can also be retrieved in code with `getSolution()`. The type objects can be read from `getTypes()`. In `LocationDisplayRule.Builder`, there are instances where you insert the name of your chosen Type. In the example below, the chosen Type name is `"Office"`.
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
@@ -107,6 +109,8 @@ MapsIndoors.getLocationsAsync(null, MPFilter.Builder().setTypes(listOf("Office")
 
 </mi-tab-panel>
 </mi-tabs>
+
+Setting a display rule for a type will persist the new display rule for that type throughout the whole app session and across instances of `MPMapControl`.
 
 Setting display rule for a single and multiple locations:
 
