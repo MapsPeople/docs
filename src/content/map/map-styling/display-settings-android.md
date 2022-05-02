@@ -170,7 +170,9 @@ MapsIndoors.getLocationsAsync(null, MPFilter.Builder().setTypes(listOf("Meetingr
 </mi-tab-panel>
 </mi-tabs>
 
-presenting locations using polygons:
+### Presenting Locations Using Polygons
+
+To present a polygon, either configure the Display Rule using the CMS, or configure a Display Rule programatically:
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
