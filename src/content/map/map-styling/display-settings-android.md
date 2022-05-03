@@ -51,7 +51,7 @@ You can set display rules programatically in multiple ways depending on your use
 
 ### Modify the Display Rule for the Selected Location
 
-When a Location is selected through assignment of the `selectedLocation` property of `MPMapControl`, this Location is highlighted using the settings specified in the `setClickedPOIHighlight` properties. These properties gace some defaults which can be overridden. Here is an example of overriding the fill and outline color, along with the stroke width and which zoom level is shows in:
+When a Location is selected, this Location is highlighted using the settings specified in the `setClickedPOIHighlight` properties. You can change the highlighting of selected Locations through various setters on `MapControl` as shown below:
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
@@ -111,11 +111,11 @@ MapsIndoors.getLocationsAsync(null, MPFilter.Builder().setTypes(listOf("Office")
 </mi-tab-panel>
 </mi-tabs>
 
-Setting a display rule for a type will persist the new display rule for that type throughout the whole app session and across instances of `MPMapControl`.
+Setting a display rule for a type will only apply to the single instance of `MapControl`.
 
 ### Setting Display Rule for a Single and Multiple Locations
 
-To set new display rules for a single Location, you need to have the Location at hand. Locations can be queried for using `MPLocation` and `getLocationById`. Once you have a location, you can set a custom display rule for it.
+To set new display rules for a single Location, you need to have the Location at hand. Locations can be fetched using `getLocationById`. Once you have a location, you can set a custom display rule for it.
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
@@ -222,7 +222,7 @@ MapsIndoors.getLocationsAsync(null, MPFilter.Builder().setTypes(listOf("Office")
 
 MapsIndoors is built on top of Google Maps which has its own way of styling the map. Google Maps styling will only affect the MapsIndoors map if Google Maps has Points of Interest placed inside or near the buildings that you build a MapsIndoors solution for. By default, MapsIndoors applies a Google Maps styling that hides most POI icons that may collide with MapsIndoors content.
 
-You can apply your own styling to Google Maps using `googleMap.setMapStyle` for Java, or `mMap.setMapStyle` for Kotlin.
+You can apply your own styling to Google Maps using `googleMap.setMapStyle`.
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
@@ -241,7 +241,8 @@ mMapControl.init(miError -> {
 ```kotlin
 mMapControl.init { miError ->
     if (miError == null) {
-        mMap.setMapStyle(MapStyleOptions.loadRawResourceStyle(this, R.raw.style_json))
+        m
+        googleMap.setMapStyle(MapStyleOptions.loadRawResourceStyle(this, R.raw.style_json))
     }
 }
 ```
