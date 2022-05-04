@@ -25,7 +25,7 @@ For a typical Position Provider, the mapping from the positioning's index needs 
 The MapsIndoors backend is closely integrated with the CiscoDNA platform, so the MapsIndoors backend handles the floor mapping conversion for that integration. From an application perspective no Floor mapping implementation is required when integrating CiscoDNA positioning through the MapsIndoors platform.
 
 <!-- Fetch data from solution -->
-{% include "src/content/shared/map/positioning-optional-setup.md" %}
+{% include "src/content/shared/map/positioning-fetch-android.md" %}
 
 ### Implementing Cisco DNA
 
@@ -462,6 +462,9 @@ A Position Provider in MapsIndoors must adhere to the `MPPositionProvider` proto
 Just like in the mock Position Provider example, we need to implement a Position Provider that wraps the MapsIndoors CiscoDNA services to inject the CiscoDNA indoor positioning into MapsIndoors. If you only require this to work for indoor positioning, we would be good with just wrapping the CiscoDNA part. MapsIndoors however has the capability to support wayfinding both outdoors and indoors, so we have come up with a solution that implements two Position Providers, one for CoreLocation (`GPSPositionProvider`) and one for CiscoDNA (`CiscoDNAPositionProvider2`). The `CiscoDNAPositionProvider2` subclasses the `GPSPositionProvider` so it can determine whether the CiscoDNA position or the Core Location position should be used in your application. Both Position Providers are written in Objective C, but can of course be used in Swift as well.
 
 The `CiscoDNAPositionProvider2` communicates with some MapsIndoors services to get the Cisco device id, and uses a message subscription service (MQTT) to subscribe for position updates. Each time a Cisco position is received, its age is determined. If the age of the latest Cisco position is above 120 seconds or the application is not connected to the wifi, the CoreLocation position is used instead.
+
+<!-- Fetch data from solution -->
+{% include "src/content/shared/map/positioning-fetch-ios.md" %}
 
 ## Integration Guide
 

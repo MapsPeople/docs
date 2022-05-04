@@ -23,7 +23,7 @@ The Position Provider should align with the MapsIndoors Floor index convention (
 For a typical Position Provider, the mapping from the positioning's index needs to be mapped to the MapsIndoors Floor format. This is possible through the CMS or creating your own int:int mapping.
 
 <!-- Fetch data from solution -->
-{% include "src/content/shared/map/positioning-optional-setup.md" %}
+{% include "src/content/shared/map/positioning-fetch-android.md" %}
 
 ### Implementing Indoor Atlas
 
@@ -483,6 +483,9 @@ The Position Provider that you supply to MapsIndoors must know about the floor i
 ```
 
 As illustrated, the floor mapping is a dictionary, where the IndoorAtlas floor index operates as the key and the MapsIndoors floor index is the value.
+
+<!-- Fetch data from solution -->
+{% include "src/content/shared/map/positioning-fetch-ios.md" %}
 
 ## Integration Setup Steps
 
