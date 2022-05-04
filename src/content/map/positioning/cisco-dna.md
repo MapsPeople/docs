@@ -463,9 +463,6 @@ Just like in the mock Position Provider example, we need to implement a Position
 
 The `CiscoDNAPositionProvider2` communicates with some MapsIndoors services to get the Cisco device id, and uses a message subscription service (MQTT) to subscribe for position updates. Each time a Cisco position is received, its age is determined. If the age of the latest Cisco position is above 120 seconds or the application is not connected to the wifi, the CoreLocation position is used instead.
 
-<!-- Fetch data from solution -->
-{% include "src/content/shared/map/positioning-fetch-ios.md" %}
-
 ## Integration Guide
 
 1. Make sure you have [integrated MapsIndoors]({{site.url}}/content/getting-started/ios) succesfully.
@@ -489,6 +486,9 @@ The `CiscoDNAPositionProvider2` communicates with some MapsIndoors services to g
 1. Build and run the application. You should now be able to show a blue dot for the user's position.
 
 If you need a working project example with MapsIndoors and CiscoDNA (excluding API keys), you can [download it here](https://drive.google.com/file/d/1nwsdaX0Hm6yaHm5S8JVgqYYb2S0Q4mnT/view?usp=sharing).
+
+<!-- Fetch data from solution -->
+{% include "src/content/shared/map/positioning-fetch-ios.md" %}
 
 </mi-tab-panel>
 </mi-tabs>

@@ -484,9 +484,6 @@ The Position Provider that you supply to MapsIndoors must know about the floor i
 
 As illustrated, the floor mapping is a dictionary, where the IndoorAtlas floor index operates as the key and the MapsIndoors floor index is the value.
 
-<!-- Fetch data from solution -->
-{% include "src/content/shared/map/positioning-fetch-ios.md" %}
-
 ## Integration Setup Steps
 
 1. Make sure you have [integrated MapsIndoors]({{site.url}}/content/getting-started/ios) succesfully.
@@ -530,6 +527,9 @@ As illustrated, the floor mapping is a dictionary, where the IndoorAtlas floor i
 1. Build and run the application. You should now be able to show a blue dot for the user's position.
 
 If you need a working project example with MapsIndoors and IndoorAtlas (excluding API keys), you can [download it here](https://drive.google.com/file/d/1CS13NPYjvLl_Q4zbuinevannsKyuiuBM/view?usp=sharing).
+
+<!-- Fetch data from solution -->
+{% include "src/content/shared/map/positioning-fetch-ios.md" %}
 
 </mi-tab-panel>
 </mi-tabs>
