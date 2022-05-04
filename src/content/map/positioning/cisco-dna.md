@@ -455,7 +455,7 @@ In order to show a user's position in an indoor map with MapsIndoors, a Position
 
 A Position Provider in MapsIndoors must adhere to the `MPPositionProvider` protocol. Once you have an instance of an `MPPositionProvider` you can register it by assigning it to `MapsIndoors.positionProvider`. See the overview of the interface dependencies below.
 
-![cisco-dna-ios](/assets/map/positioning/Cisco_DNA_iOS.png)
+![cisco-dna-ios](/assets/map/positioning/psotioning-diagram.png)
 
 ## Wrapping the CiscoDNA Positioning in a Position Provider
 
