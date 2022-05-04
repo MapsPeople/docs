@@ -16,7 +16,7 @@ At it's core, this is done simply by switching out the API key and reloading the
 
 ### Starting a Solution
 
-When you load your initial Solution, it's important to do it the "correct" way, to ensure it's easy to switch Solutions later if needed.
+To initialise MapsIndoors, do the following:
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="android-java"></mi-tab>
@@ -85,7 +85,7 @@ fun initMapControl(view: View) {
 
 ### Switching Solutions
 
-Since you took the time to set up your Solution "properly" previously, switching Solutions to a different one is as simple as changing the active API key using `setAPIKey()`, along with ensuring that `mMapControl` doesn't retain any uneccesary information from the previously active Solution, which could cause conflicts.
+You switch Solutions by changing the active API key using `setAPIKey()`.
 
 We recommend creating your own function to call in the future for this purpose, like the example here with `switchSolution()`:
 
