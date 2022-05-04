@@ -471,7 +471,7 @@ As previously explained we need to implement a Position Provider that wraps the 
 
 The Position Provider that you supply to MapsIndoors must know about the floor indexes that exist in MapsIndoors. These floor indexes may not exist in the 3rd party system that provides the indoor position. In order to account for this, we have created a floor mapping in the provider, which is basically a lookup table that can give you the MapsIndoors floor index based on another index or id. The mapping is illustrated below:
 
-```json
+```swift
 // { IndoorAtlas floor index : MapsIndoors floor index }
 {
   0:0,
