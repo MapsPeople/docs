@@ -137,12 +137,12 @@ func setupMapIndoors(mapsIndoorsAPIKey: String, googleMapsAPIKey: String) {
     map = GMSMapView(frame: CGRect.zero)
     view = map
     mapControl = MPMapControl(map: map!)
-    
+
     MapsIndoors.provideAPIKey(mapsIndoorsAPIKey, googleAPIKey: googleMapsAPIKey)
     MapsIndoors.synchronizeContent { error in
         // Orient your map to where you need data to be shown. This can e.g. be done by pointing the camera to a specific location or getting the default venue through MapsIndoors and panning the camera there
         self.map?.camera = .camera(withLatitude: 57.057964, longitude: 9.9504112, zoom: 20)
-        
+
         // Setup needed services
         MapsIndoors.positionProvider = MyPositionProvider()
         MapsIndoors.positionProvider?.startPositioning(nil)
@@ -163,7 +163,7 @@ func switchSolution() {
     MapsIndoors.positionProvider?.stopPositioning(nil)
     MapsIndoors.positionProvider = nil
     MPLiveDataManager.sharedInstance().unsubscribeAll()
-    
+
     // Setup MapsIndoors anew
     map = nil
     mapControl = nil
