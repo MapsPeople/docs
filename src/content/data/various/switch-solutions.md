@@ -14,8 +14,6 @@ At it's core, this is done simply by switching out the API key and reloading the
 
 ## Android
 
-The method of handling this in Android and iOS differ somewhat, with Android being slightly more complicated.
-
 ### Starting a Solution
 
 When you load your initial Solution, it's important to do it the "correct" way, to ensure it's easy to switch Solution's later if needed.
@@ -128,4 +126,45 @@ private fun switchSolution() {
 
 ## iOS
 
-jdkcjdcdc
+### Starting a Solution
+
+When you load your initial Solution, it's important to do it the "correct" way, to ensure it's easy to switch Solution's later if needed.
+
+```swift
+func setupMapIndoors(mapsIndoorsAPIKey: String, googleMapsAPIKey: String) {
+    map = GMSMapView(frame: CGRect.zero)
+    view = map
+    mapControl = MPMapControl(map: map!)
+    
+    MapsIndoors.provideAPIKey(mapsIndoorsAPIKey, googleAPIKey: googleMapsAPIKey)
+    MapsIndoors.synchronizeContent { error in
+        // Orient your map to where you need data to be shown. This can e.g. be done by pointing the camera to a specific location or getting the default venue through MapsIndoors and panning the camera there
+        self.map?.camera = .camera(withLatitude: 57.057964, longitude: 9.9504112, zoom: 20)
+        
+        // Setup needed services
+        MapsIndoors.positionProvider = MyPositionProvider()
+        MapsIndoors.positionProvider?.startPositioning(nil)
+        self.mapControl?.enableLiveData(MPLiveDomainType.occupancy, handler: self)
+    }
+}
+```
+
+### Switching Solutions
+
+Since you took the time to set up your Solution "properly" previously, switching Solutions to a different one is as simple as changing the active API key using `setAPIKey()`, along with ensuring that `mMapControl` doesn't retain any uneccesary information from the previously active Solution, which could cause conflicts.
+
+We recommend initialising your own function to call in the future for this purpose, like the example here with `switchSolution()`:
+
+```swift
+func switchSolution() {
+    // Close existing services in use as they are solution specific
+    MapsIndoors.positionProvider?.stopPositioning(nil)
+    MapsIndoors.positionProvider = nil
+    MPLiveDataManager.sharedInstance().unsubscribeAll()
+    
+    // Setup MapsIndoors anew
+    map = nil
+    mapControl = nil
+    setupMapIndoors(mapsIndoorsAPIKey: "YOUR_SECONDARY_API_KEY", googleMapsAPIKey: "YOUR_GOOGLE_API_KEY")
+}
+```
