@@ -87,7 +87,7 @@ fun initMapControl(view: View) {
 
 Since you took the time to set up your Solution "properly" previously, switching Solutions to a different one is as simple as changing the active API key using `setAPIKey()`, along with ensuring that `mMapControl` doesn't retain any uneccesary information from the previously active Solution, which could cause conflicts.
 
-We recommend initialising your own function to call in the future for this purpose, like the example here with `switchSolution()`:
+We recommend creating your own function to call in the future for this purpose, like the example here with `switchSolution()`:
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="android-java"></mi-tab>
@@ -130,7 +130,7 @@ private fun switchSolution() {
 
 Just like Android, when you load your initial Solution, it's important to do it the "correct" way, to ensure it's easy to switch Solutions later if needed.
 
-> You don't have to initialise `positionProvider` or `enableLiveData`. This is only needed if you use third-party Positioning such as Cisco DNA Spaces, or MapsIndoors' LIve Data function.
+> You don't have to initialise `positionProvider` or `enableLiveData`. This is only needed if you use third-party Positioning such as Cisco DNA Spaces or MapsIndoors' Live Data function.
 
 ```swift
 func setupMapIndoors(mapsIndoorsAPIKey: String, googleMapsAPIKey: String) {
@@ -155,7 +155,7 @@ func setupMapIndoors(mapsIndoorsAPIKey: String, googleMapsAPIKey: String) {
 
 To switch Solutions, you first need to ensure that all your existing instances are closed down safely. Once this is done, you can use `setupMapIndoors` to restart with your new desired API key.
 
-We recommend initialising your own function to call in the future for this purpose, like the example here with `switchSolution()`:
+We recommend creating your own function to call in the future for this purpose, like the example here with `switchSolution()`:
 
 ```swift
 func switchSolution() {
