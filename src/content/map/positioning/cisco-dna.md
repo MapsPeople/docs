@@ -474,7 +474,7 @@ The `CiscoDNAPositionProvider2` communicates with some MapsIndoors services to g
 1. In your Objective C Bridging Header, add `#import "CiscoDNAPositionProvider2.h"`.
 1. In `AppDelegate.swift-didFinishLaunchingWithOptions`, add the following code:
 
-    ```objc
+    ```swift
     let pp = MPCiscoDnaPositionProvider2.init()
     pp.tenantId = "my-cisco-dna-spaces-tenant-id"
     MapsIndoors.positionProvider = pp
