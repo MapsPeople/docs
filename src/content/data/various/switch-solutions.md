@@ -128,7 +128,7 @@ private fun switchSolution() {
 
 ### Starting a Solution
 
-Just like Android, when you load your initial Solution, it's important to do it the "correct" way, to ensure it's easy to switch Solutions later if needed.
+When you load your initial Solution, it's beneficial to initialise MapsIndoors properly, to ensure it's easy to switch Solutions later if needed.
 
 > You don't have to initialise `positionProvider` or `enableLiveData`. This is only needed if you use third-party Positioning such as Cisco DNA Spaces or MapsIndoors' Live Data function.
 
