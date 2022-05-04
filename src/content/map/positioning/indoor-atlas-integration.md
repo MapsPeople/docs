@@ -495,7 +495,7 @@ As illustrated, the floor mapping is a dictionary, where the IndoorAtlas floor i
 1. At the time of writing this guide, IndoorAtlas does not support BitCode, so this must be disabled. In the settings, under your XCode project > "Targets" > "Your App Target" > "Build Settings" > "Build Options", set "Enable BitCode" to "No".
 1. In your Apps `Info.plist` file add the following descriptions (preferably right click `Info.plist` and choose "Open as" > "Source Code"):
 
-    ```json
+    ```xml
     <key>NSLocationWhenInUseUsageDescription</key>
     <string>This application uses your location in order to provide wayfinding to indoor facilities.</string>
     <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
