@@ -1,15 +1,18 @@
 ---
-title: Use Google Fused Location Provider with MapsIndoors
+title: Using Google Fused Location Provider
 eleventyNavigation:
-  title: Use Google Fused Location Provider with MapsIndoors
-  parent: map-live-data-third-party-android
-  key: map-live-data-third-party-android-google
-  order: 230
+  title: Using Google Fused Location Provider
+  parent: map-positioning-blue-dot
+  key: map-positioning-google-fused
+  order: 120
 ---
 
 To get started with Google Fused Location Provider, you need to create a positioning implementation which enables communicating the positions received from the API with the MapsIndoors SDK.
 
 The Position Provider implementation exists at the customer application level, and needs to use the `PositionProvider` interface from the MapsIndoors SDK. The MapsIndoors SDK can then use the positioning results given by the given Position Provider, by setting the Position Provider with `MapControl.setPositionProvider(PositionProvider)`.
+
+<!-- Fetch data from solution -->
+{% include "src/content/shared/map/positioning-fetch-android.md" %}
 
 ### Implementing Google Fused Location Provider API
 

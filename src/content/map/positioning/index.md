@@ -1,10 +1,10 @@
 ---
-title: Third Party Positioning for Android
+title: User Positioning
 eleventyNavigation:
-  parent: map-live-data
-  title: Third Party Positioning for Android
-  key: map-live-data-third-party-android
-  order: 500
+  parent: map
+  title: User Positioning
+  key: map-positioning
+  order: 60
 ---
 
 ### How User Positioning Works in MapsIndoors
@@ -15,4 +15,4 @@ This guide will show you how to use a third party positioning provider and imple
 
 A full implementation of three different third party positioning providers can be found here [PositionProviders](https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/tree/feature/third_pary_position_providers/app/src/main/java/com/example/mapsindoorsgettingstarted/PositionProviders)
 
-We recommend reading [Show the Blue Dot with MapsIndoors]({{ site.url }}/content/map/live-data/blue-dot-android/) guides to get a basic understanding of the MapsIndoors positioning provider interface.
+We recommend reading [Show the Blue Dot with MapsIndoors]({{ site.url }}/content/map/positioning/blue-dot-android/) guides to get a basic understanding of the MapsIndoors positioning provider interface.
