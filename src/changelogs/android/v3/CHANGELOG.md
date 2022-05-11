@@ -18,6 +18,14 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 ### Security     in case of vulnerabilities.
 -->
 
+## [3.13.12] 2022-05-11
+
+### Fixed
+
+- Issue with MapControl.onStart() being called before initialization
+- Issue with rendering locations containing polygon display rules that was not an area
+- A memory leak when calling MapControl.onDestroy()
+
 ## [3.13.11] 2022-04-21
 
 ### Fixed
