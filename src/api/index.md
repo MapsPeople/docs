@@ -27,11 +27,49 @@ In Swagger, each `GET` method is pre-loaded with all mandatory fields needed to 
 
 We'll just take a moment to expand upon the last example about airport wait times, giving slighly more detailed explanations on how to achieve such an implementation.
 
-* The API calls can read or update the backend content, whereas the SDK only reads it. Therefore, the API calls are not part of the app, but part of a backend service.
-* Use `GET /{apiKey}/api/routing/routeelements` to fetch the list of route elements used in your solution, and their information structure.
+* The API calls can read or update the backend content, whereas the SDK only reads it. Therefore, the act of making the API calls are not part of the app, but part of a seperate backend service outside of MapsIndoors.
+* Use `GET /{apiKey}/api/routing/routeelements` to fetch the list of route elements used in your solution, and their information structure. This should return a JSON file like this, with appropriate values instead of `string` or `0`:
+
+```json
+[
+  {
+    "id": "string",
+    "datasetId": "string",
+    "externalId": "string",
+    "geometry": {
+      "type": 0
+    },
+    "restrictions": [
+      "string"
+    ],
+    "onewayDirection": 0,
+    "waitTime": 0
+  }
+]
+```
+
 * Use an integration with a third-party sensor system to detect the amount of people present throughout the airport, on the paths of the given routes fetched earlier.
-* Use `PUT /{apiKey}/api/routing/routeelements` to update the information of the route elements, changing some of them to "Blocked" if there are too many people there.
-* Next time the SDK fetches information, it will load some routes as "Blocked". This will cause the route generation to avoid these specific paths, helping to alleviate the congestion.
+* Use `PUT /{apiKey}/api/routing/routeelements` to update the information of the route elements, changing the `restrictions` parameter to `locked` if there are too many people on a given route. An example of this request body could be:
+
+```json
+[
+  {
+    "id": "string",
+    "datasetId": "string",
+    "externalId": "string",
+    "geometry": {
+      "type": 0
+    },
+    "restrictions": [
+      "locked"
+    ],
+    "onewayDirection": 0,
+    "waitTime": 0
+  }
+]
+```
+
+* Next time the SDK fetches information, it will load some routes as `locked` or "Blocked". This will cause the route generation to avoid these specific paths, helping to alleviate the congestion.
 
 <!-- ## Commonly Used Operations
 
