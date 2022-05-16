@@ -1,1 +1,1 @@
-> Please note that data in MapsIndoors is loaded asynchronously. This can occasionally result in behavior where things aren't finishing loading if you call them immediatly after. Please be aware of this when developing using the MapsIndoors SDK!
+> Please note that data in MapsIndoors is loaded asynchronously. This results in behavior where things aren't finishing loading if you call them immediately after. Best practice is to set up a `listener` or `delegate` to inform of when data is ready. Please be aware of this when developing using the MapsIndoors SDK!
