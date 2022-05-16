@@ -21,9 +21,13 @@ In Swagger, each `GET` method is pre-loaded with all mandatory fields needed to 
 ## Example Use Cases
 
 * A conference hall might have a list of vendors that will be presenting on a given date. To ensure easy navigation back and forth between the map and the information page, you can create a lookup table, fetching the MapsIndoors External ID's with `GET /{apiKey}/api/geodata`, and the conference hall's own database. The Integration API would allow this functionality to be easily implemented.
-* An airport might want the various routes to change based on estimated wait times in queues. This can be done by using the Integration API to connect to a live data feed of client's positioning in the airport, and using `GET /{apiKey}/api/routing/routeelements` and `PUT /{apiKey}/api/routing/routeelements`, setting a given Route Element to "Blocked" if too many people are there.
 * Some of our clients have used the Integration API to create their own CMS, for example, using `POST /{apiKey}/api/geodata` to create new desk locations in the Solution for their corporate offices.
 * You can use `PUT /{apiKey}/api/displaytypes` to edit multiple Location Types at once. For example, if you want to have some Location Types only show up at certain times of day, or when other conditions are met.
+* An airport might want the various routes to change based on estimated wait times in queues. This can be done by using the Integration API to connect to a live data feed of client's positioning in the airport, and using `GET /{apiKey}/api/routing/routeelements` and `PUT /{apiKey}/api/routing/routeelements`, setting a given Route Element to "Blocked" if too many people are there.
+
+We'll just take a moment to expand upon the last one, giving slighly more detailed explanations on how to achieve such an implementation.
+
+f
 
 <!-- ## Commonly Used Operations
 
