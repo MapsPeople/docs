@@ -69,6 +69,8 @@ We'll just take a moment to expand upon the last example about airport wait time
 ]
 ```
 
+The other information needed, such as the ID's, can be found in the `GET` call made earlier.
+
 * Next time the SDK fetches information, it will load some routes as `locked` or "Blocked". This will cause the route generation to avoid these specific paths, helping to alleviate the congestion.
 
 <!-- ## Commonly Used Operations
