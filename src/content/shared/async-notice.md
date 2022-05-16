@@ -1,0 +1,1 @@
+> Please note that data in MapsIndoors is loaded asynchronously. This can occasionally result in behaviour where it may appear that things aren't loading, but are simply in the process of doing so, especially on the first instance of loading.
