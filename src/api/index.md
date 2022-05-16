@@ -25,7 +25,7 @@ In Swagger, each `GET` method is pre-loaded with all mandatory fields needed to 
 * You can use `PUT /{apiKey}/api/displaytypes` to edit multiple Location Types at once. For example, if you want to have some Location Types only show up at certain times of day, or when other conditions are met.
 * An airport might want the various routes to change based on estimated wait times in queues. This can be done by using the Integration API to connect to a live data feed of client's positioning in the airport, and using `GET /{apiKey}/api/routing/routeelements` and `PUT /{apiKey}/api/routing/routeelements`, setting a given Route Element to "Blocked" if too many people are there.
 
-We'll just take a moment to expand upon the last example about airport wait times, giving slighly more detailed explanations on how to achieve such an implementation.
+The last example about airport wait times will be expanded upon briefly, giving slighly more detailed explanations on how to achieve such an implementation.
 
 * The API calls can read or update the backend content, whereas the SDK only reads it. Therefore, the act of making the API calls are not part of the app, but part of a seperate backend service outside of MapsIndoors.
 * Use `GET /{apiKey}/api/routing/routeelements` to fetch the list of route elements used in your solution, and their information structure. This should return a JSON file like this, with appropriate values instead of `string` or `0`:
