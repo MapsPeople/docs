@@ -14,6 +14,9 @@ eleventyNavigation:
 <!-- Set up MapsIndoors -->
 {% include "src/content/shared/getting-started/map/show-map.md" %}
 
+<!-- Overview -->
+{% include "src/content/shared/async-notice.md" %}
+
 ### Initialize MapsIndoors
 
 We start by initializing `MapsIndoors`. `MapsIndoors` is used to get and store all references to MapsIndoors-specific data. This includes access to all MapsIndoors-specific geodata.

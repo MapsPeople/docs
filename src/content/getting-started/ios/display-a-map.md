@@ -11,6 +11,9 @@ Now that we have the prerequisite API keys, and the project set up, we can start
 
 ## Display a Map with MapsIndoors
 
+<!-- Overview -->
+{% include "src/content/shared/async-notice.md" %}
+
 In order to accomplish this we will be utilising the [MPMapControl Class](https://app.mapsindoors.com/mapsindoors/reference/ios/v3/interface_m_p_map_control.html). Open the file, `ViewController.swift` and, once again, add in the following import statements to the top of the file,
 
 ```swift
