@@ -6,19 +6,84 @@ eleventyNavigation:
   order: 40
 ---
 
-## Introduction and getting started
+## Introduction and Getting Started
 
 From the MapsIndoors Integration API you can get, add, change and delete data related to your MapsIndoors Solution via a REST service.
 
 Send your requests to this endpoint: [https://integration.mapsindoors.com](https://integration.mapsindoors.com)
 
-> Note: Only https is supported.
+> Note: Only HTTPS is supported. There is a rate limit of 10 requests per second per Solution.
 
 You can access data through the Integration API using a range of endpoints. The endpoints are described in the Swagger interface definition: [https://integration.mapsindoors.com/doc](https://integration.mapsindoors.com/doc/index.html)
 
 In Swagger, each `GET` method is pre-loaded with all mandatory fields needed to get a live example of data. Click the  "_Try it out_" button in Swagger to see the example data.
 
-### Login and credentials
+## Example Use Cases
+
+* A conference hall might have a list of vendors that will be presenting on a given date. To ensure easy navigation back and forth between the map and the information page, you can create a lookup table, fetching the MapsIndoors External ID's with `GET /{apiKey}/api/geodata`, and the conference hall's own database. The Integration API would allow this functionality to be easily implemented.
+* Some of our clients have used the Integration API to create their own CMS, for example, using `POST /{apiKey}/api/geodata` to create new desk locations in the Solution for their corporate offices.
+* You can use `PUT /{apiKey}/api/displaytypes` to edit multiple Location Types at once. For example, if you want to have some Location Types only show up at certain times of day, or when other conditions are met.
+* An airport might want the various routes to change based on estimated wait times in queues. This can be done by using the Integration API to connect to a live data feed of client's positioning in the airport, and using `GET /{apiKey}/api/routing/routeelements` and `PUT /{apiKey}/api/routing/routeelements`, setting a given Route Element to "Blocked" if too many people are there.
+
+The last example about airport wait times will be expanded upon briefly, giving slighly more detailed explanations on how to achieve such an implementation.
+
+* The API calls can read or update the backend content, whereas the SDK only reads it. Therefore, the act of making the API calls are not part of the app, but part of a seperate backend service outside of MapsIndoors.
+* Use `GET /{apiKey}/api/routing/routeelements` to fetch the list of route elements used in your solution, and their information structure. This should return a JSON file like this, with appropriate values instead of `string` or `0`:
+
+```json
+[
+  {
+    "id": "string",
+    "datasetId": "string",
+    "externalId": "string",
+    "geometry": {
+      "type": 0
+    },
+    "restrictions": [
+      "string"
+    ],
+    "onewayDirection": 0,
+    "waitTime": 0
+  }
+]
+```
+
+* Use an integration with a third-party sensor system to detect the amount of people present throughout the airport, on the paths of the given routes fetched earlier.
+* Use `PUT /{apiKey}/api/routing/routeelements` to update the information of the route elements, changing the `restrictions` parameter to `locked` if there are too many people on a given route. An example of this request body could be:
+
+```json
+[
+  {
+    "id": "string",
+    "datasetId": "string",
+    "externalId": "string",
+    "geometry": {
+      "type": 0
+    },
+    "restrictions": [
+      "locked"
+    ],
+    "onewayDirection": 0,
+    "waitTime": 0
+  }
+]
+```
+
+The other information needed, such as the ID's, can be found in the `GET` call made earlier.
+
+* Next time the SDK fetches information, it will load some routes as `locked` or "Blocked". This will cause the route generation to avoid these specific paths, helping to alleviate the congestion.
+
+<!-- ## Commonly Used Operations
+
+If the Integration API is already familiar to you, here we present some of the most commonly used API operations, and some example use-cases. All operations listed here can be found at [https://integration.mapsindoors.com/doc/index.html](https://integration.mapsindoors.com/doc/index.html).
+
+* `GET /{apiKey}/api/geodata` - Fetches geodata objects (Locations) from a given dataset (Solution) as a `.json` file.
+  * This call doesn't have a specific use-case per se, as it's functionality is to fetch the data that you wish to modify with other operations.
+
+* `PUT /{apiKey}/api/geodata` - Updates/modifies a number of existing geodata.
+  * This would often be used in extension of `GET /{apiKey}/api/geodata`, to modify the fetched data. An example use-case for this could be to modify the visibility of a specific Location Type, or to add a specific Custom Property to a given Type. -->
+
+### Login and Credentials
 
 First, log in to the service to get an `access token` to access the data.
 
@@ -31,7 +96,7 @@ No matter what login method you use, you will always need to use the following c
 Content-Type: application/x-www-form-urlencoded
 ```
 
-#### Log in with MapsIndoors username/password
+#### Log in with MapsIndoors Username/Password
 
 To log in with your MapsIndoors login, send them with the `grant_type` set to `password`.
 
@@ -50,7 +115,7 @@ The body of the request must end up containing a query string like this:
 
 `grant_type=password&client_id=client&username=<your username>&password=<your password>`
 
-#### When you are authenticated
+#### When You Are Authenticated
 
 If you sent valid credentials to the Auth API, you will receive a response like this:
 
@@ -71,7 +136,7 @@ authorization: Bearer eyJhbGciOiJ...vmERrovsg
 
 > Note: The access token is valid for 24 hours. After that you will need to reauthenticate, following the same steps as explained above.
 
-## Data description
+## Data Description
 
 ### Dataset
 
@@ -106,7 +171,7 @@ You can create, update, delete all Geodata types: Venue, Building, Floor, Room, 
 
 All Geodata BaseTypes have some common keys that is available for all, and then there is some specific ones for each type, listed in BaseTypeProperties.
 
-#### Object definition
+#### Object Definition
 
 **A Geodata object contains the following:**
 
@@ -214,7 +279,7 @@ To read, change or delete Geodata use the Geodata endpoints described here: [htt
 
 > Note: When you get data, you only specify the `apiKey` hence you get the entire tree! The other Geodata endpoints works on individual Geodata objects.
 
-## Detailed data description
+## Detailed Data Description
 
 ### Geodata
 
@@ -256,7 +321,7 @@ Each Geodata element has a number of properties. Let's look at an example - a co
 
 ```
 
-* **Id**
+* **id**
 
     All elements have a unique 24 character string.
 
@@ -530,9 +595,9 @@ As a simple example: All rooms and areas across any building/venue related to en
 
     The name property must be specified for every language defined in the dataset.
 
-## Interface descriptions
+## Interface Descriptions
 
-### Reverse geocoding
+### Reverse Geocoding
 
 ```bash
 HTTP Get
