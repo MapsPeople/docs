@@ -1,9 +1,10 @@
 ---
-title: Map Styling for iOS
+title: Display Rules in Practice for iOS
+toc: true
 eleventyNavigation:
-  key: map-map-styling-ios
+  key: map-map-styling-display-rules-ios
   parent: map-map-styling
-  title: Map Styling for iOS
+  title: Display Rules in Practice for iOS
   order: 20
 ---
 
