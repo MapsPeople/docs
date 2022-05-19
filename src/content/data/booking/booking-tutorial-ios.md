@@ -1,7 +1,7 @@
 ---
 title: Booking Tutorial
 eleventyNavigation:
-  parent: data-booking-ios
+  parent: data-booking
   key: data-booking-ios-tutorial
   title: Booking Tutorial for iOS
   order: 10

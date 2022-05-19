@@ -1,9 +1,9 @@
 ---
-title: User Authenticated Booking
+title: User Authenticated Booking for Android
 eleventyNavigation:
-  parent: data-booking-android
+  parent: data-booking
   key: data-booking-android-user-auth
-  title: User Authenticated Booking
+  title: User Authenticated Booking for Android
 ---
 
 
