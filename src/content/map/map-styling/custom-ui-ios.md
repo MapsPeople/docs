@@ -2,7 +2,7 @@
 title: Custom UI for iOS
 eleventyNavigation:
   key: map-map-styling-custom-ui-ios
-  parent: map-map-styling-ios
+  parent: map-map-styling
   title: Custom UI for iOS
   order: 30
 ---
