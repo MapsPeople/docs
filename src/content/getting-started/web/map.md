@@ -14,6 +14,9 @@ eleventyNavigation:
 <!-- Set up MapsIndoors -->
 {% include "src/content/shared/getting-started/map/show-map.md" %}
 
+<!-- Overview -->
+{% include "src/content/shared/async-notice.md" %}
+
 <mi-tabs>
 <mi-tab label="Google Maps - Manually" tab-for="gm-manually"></mi-tab>
 <mi-tab label="Google Maps - MI Components" tab-for="gm-components"></mi-tab>
