@@ -4,7 +4,7 @@ eleventyNavigation:
   parent: data-booking
   key: data-booking-ios
   title: Booking for iOS
-  order: 10
+  order: 20
 ---
 
 <!-- Known Issues -->
