@@ -2,9 +2,9 @@
 title: Inspect Route Element for iOS
 eleventyNavigation:
   key: ios-directions-rendering-inspect-route-element
-  parent: ios-directions-rendering
+  parent: directions-renderer
   title: Inspect Route Element for iOS
-  order: 10
+  order: 100
 ---
 
 <!-- Known Issues -->
