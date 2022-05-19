@@ -9,6 +9,12 @@ eleventyNavigation:
 ---
 
 <!-- Overview -->
+{% include "src/content/shared/getting-started/overview.md" %}
+
+<!-- Skills -->
+{% include "src/content/shared/getting-started/skills.md" %}
+
+<!-- Overview -->
 {% include "src/content/shared/getting-started/prerequisites/overview.md" %}
 
 <!-- Google Maps API key -->
