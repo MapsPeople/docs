@@ -8,6 +8,12 @@ eleventyNavigation:
   order: 90
 ---
 
+<!-- Overview -->
+{% include "src/content/shared/getting-started/overview.md" %}
+
+<!-- Skills -->
+{% include "src/content/shared/getting-started/skills.md" %}
+
 MapsIndoors collaborates with Google Maps to provide you with an interactive map of the outside and inside world. In this section, you will learn the prerequisites needed to be met before you can start building your app.
 
 ## Google Maps API Key
