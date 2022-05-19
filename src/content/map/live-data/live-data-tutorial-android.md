@@ -2,7 +2,7 @@
 title: Live Data Tutorial for Android
 eleventyNavigation:
   key: map-live-data-tutorial-android
-  parent: map-live-data-intro-android
+  parent: map-live-data
   title: Live Data Tutorial for Android
   order: 20
 ---
