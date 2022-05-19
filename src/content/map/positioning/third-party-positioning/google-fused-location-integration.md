@@ -2,7 +2,7 @@
 title: Using Google Fused Location Provider
 eleventyNavigation:
   title: Using Google Fused Location Provider
-  parent: map-positioning-blue-dot
+  parent: map-positioning-third-party-positioning
   key: map-positioning-google-fused
   order: 120
 ---

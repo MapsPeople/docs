@@ -1,7 +1,7 @@
 ---
 title: Using Cisco DNA Spaces
 eleventyNavigation:
-  parent: map-positioning-blue-dot
+  parent: map-positioning-third-party-positioning
   title: Using Cisco DNA Spaces
   key: map-positioning-cisco-dna-android
   order: 110
