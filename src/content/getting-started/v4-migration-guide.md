@@ -23,30 +23,48 @@ Both of these are distributed through Maven, and come packaged with a number of 
 
 ## MapsIndoors Initialisation
 
-MapsIndoors is a singleton class, which can be described as the data layer of the SDK.
+MapsIndoors is a singleton class, which can be described as the data layer of the SDK. Below, we will show how initilisation has been simplified between V3 and V4.
 
 ### V3
 
-SDK initialization was started with:
+In V3, SDK initialization was started with:
 
 ```java
 MapsIndoors.initialize(getApplicationContext(), "mapsindoors-key", listener);
 ```
 
-And subsequent setting the Google API key:
+And subsequently setting the Google API key:
 
 ```java
 MapsIndoors.setGoogleAPIKey(getString(R.string.google_maps_key));
 ```
 
-If you wanted to change the MapsIndoors API key, of an already initialized SDK you would invoke:
+If you wanted to change the MapsIndoors API key of an already initialized SDK you would invoke:
 
 ```java
 MapsIndoors.setApiKey("new key")
 ```
 
-And to close down the SDK
+And to close down the SDK, you would call:
 
 ```java
 MapsIndoors.onApplicationTerminate()
+```
+
+### V4
+
+In this new version of the SDK, initialization is started by the new function `MapsIndoors.load()`:
+
+```java
+MapsIndoors.load(getApplicationContext(), "mapsindoors-key", listener);
+```
+
+Map-engine-specific API keys are now handled by `MPMapConfig`, covered in the "MapControl Initialisation" section of this migration guide.
+
+Switching to another MapsIndoors API key, such as for switching active Solutions, is now done by invoking `MapsIndoors.load()` again with a new key. The SDK will close down, and reload with the new API key.
+
+To close down the SDK without reloading a new API key, invoke:
+
+```java
+MapsIndoors.destroy()
 ```
