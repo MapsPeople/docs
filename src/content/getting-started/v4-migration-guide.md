@@ -68,3 +68,40 @@ To close down the SDK without reloading a new API key, invoke:
 ```java
 MapsIndoors.destroy()
 ```
+
+## MapControl Initilisation
+
+MapControl instantiation and initialisation are separate concepts. You create a new instance of `MapControl` and configure it with a map and view - optionally you could set clustering, overlapping or other behavior on the object.
+
+### V3
+
+In V3, `MapControl` was a seperate asynchronous call:
+
+```java
+mMapControl = new MapControl(this);
+mMapControl.setGoogleMap(mMap, view);
+mMapControl.init(miError -> {
+    // MapControl init complete
+});
+```
+
+### V4
+
+`MapControl` now requires a `MPMapConfig` object, which is acquired using a builder on the class `MPMapConfig`. Here you must provide an activity, a map provider (Google Maps or Mapbox), a `mapview` and a map engine API key.
+
+```java
+MPMapConfig mapConfig = new MPMapConfig.Builder(activity, googleMap, "google-api-key", view, true)
+        .setClusteringEnabled(false)
+        .setAllowMarkerOverlap(false)
+        .build();
+```
+
+With a `MPMapConfig` instance, you may create a new `MapControl` instance. This now happens through a factory pattern. This both instantiates and initializes your `MapControl` object (asynchronously)  - if everything went well, you will receive a ready-to-use `MapControl` instance - if not, you will get an error and no `MapControl` instance.
+
+```java
+MapControl.create(mapConfig, (mapControl, miError) -> {
+    // MapControl init complete
+});
+```
+
+Note that this factory method will wait to return, until a valid MapsIndoors solution is loaded, so it is safe to invoke `MapControl.create()` prior to, or in parallel with `MapsIndoors.load()`.
