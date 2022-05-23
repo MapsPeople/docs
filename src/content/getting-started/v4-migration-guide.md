@@ -19,4 +19,34 @@ MapsIndoorsSDKGoogleMaps 4.x.x
 MapsIndoorsSDKMapbox 4.x.x
 --->
 
-Both of these are distributed through Maven, and come packaged with a numer of helper classes.
+Both of these are distributed through Maven, and come packaged with a number of helper classes.
+
+## MapsIndoors Initialisation
+
+MapsIndoors is a singleton class, which can be described as the data layer of the SDK.
+
+### V3
+
+SDK initialization was started with:
+
+```java
+MapsIndoors.initialize(getApplicationContext(), "mapsindoors-key", listener);
+```
+
+And subsequent setting the Google API key:
+
+```java
+MapsIndoors.setGoogleAPIKey(getString(R.string.google_maps_key));
+```
+
+If you wanted to change the MapsIndoors API key, of an already initialized SDK you would invoke:
+
+```java
+MapsIndoors.setApiKey("new key")
+```
+
+And to close down the SDK
+
+```java
+MapsIndoors.onApplicationTerminate()
+```
