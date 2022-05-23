@@ -87,7 +87,7 @@ mMapControl.init(miError -> {
 
 ### V4
 
-`MapControl` now requires a `MPMapConfig` object, which is acquired using a builder on the class `MPMapConfig`. Here you must provide an activity, a map provider (Google Maps or Mapbox), a `mapview` and a map engine API key.
+In V4, `MapControl` now requires a `MPMapConfig` object, which is acquired using a builder on the class `MPMapConfig`. Here you must provide an activity, a map provider (Google Maps or Mapbox), a `mapview` and a map engine API key.
 
 ```java
 MPMapConfig mapConfig = new MPMapConfig.Builder(activity, googleMap, "google-api-key", view, true)
@@ -96,7 +96,7 @@ MPMapConfig mapConfig = new MPMapConfig.Builder(activity, googleMap, "google-api
         .build();
 ```
 
-With a `MPMapConfig` instance, you may create a new `MapControl` instance. This now happens through a factory pattern. This both instantiates and initializes your `MapControl` object (asynchronously)  - if everything went well, you will receive a ready-to-use `MapControl` instance - if not, you will get an error and no `MapControl` instance.
+With a `MPMapConfig` instance, you may create a new `MapControl` instance. This now happens through a factory pattern. This both instantiates and initializes your `MapControl` object asynchronously. If everything succeeded, you will receive a ready-to-use `MapControl` instance - if not, you will get an error and recieve no `MapControl` instance.
 
 ```java
 MapControl.create(mapConfig, (mapControl, miError) -> {
@@ -104,4 +104,4 @@ MapControl.create(mapConfig, (mapControl, miError) -> {
 });
 ```
 
-Note that this factory method will wait to return, until a valid MapsIndoors solution is loaded, so it is safe to invoke `MapControl.create()` prior to, or in parallel with `MapsIndoors.load()`.
+Please note that this factory method will wait to return until a valid MapsIndoors solution is loaded, therefore it is safe to invoke `MapControl.create()` prior to, or in parallel with `MapsIndoors.load()`.
