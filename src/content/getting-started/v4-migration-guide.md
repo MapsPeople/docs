@@ -176,7 +176,7 @@ runOnUiThread( ()-> {
 
 #### V4
 
-In V4, this has been simplified somewhat. Given a route, you can instantiate a new `MPDirectionsRenderer`, and set the route using `setRoute()`. Use the `MPDirectionsRenderer` object to navigate through the route (next/previous leg) as well as configure the animation and styling of the route on the map. By default the route polyline is animated and repeating, but this is customisable on the `MPDirectionsRenderer` instance.
+In V4, this has been simplified somewhat. Given a route, you can instantiate a new `MPDirectionsRenderer`, and set the route using `setRoute()`. Use the `MPDirectionsRenderer` object to navigate through the route (next/previous leg) as well as configure the animation and styling of the route on the map. By default the route is animated and repeating, but this is customisable on the `MPDirectionsRenderer` instance.
 
 ```java
 MPDirectionsRenderer renderer = new MPDirectionsRenderer(mMapControl);
@@ -196,3 +196,14 @@ We have introduced `MPFilterBehavior` and `MPSelectionBehavior`. These object co
 * `setAllowFloorChange(boolean)`
 
 There are statically defined defaults available on the classes.
+
+## The "Go-To" Function
+
+In V4 `MapControl.goTo(MPEntity)` is introduced. This is an easy way to quickly move the camera to almost any MapsIndoors geographical object (referred to as `MPEntity`). The method implements pre-determined defaults for camera behavior, which cannot be configured.
+
+The following classes are of type `MPEntity`:
+
+* `MPLocation`
+* `MPFloor`
+* `MPBuilding`
+* `MPVenue`
