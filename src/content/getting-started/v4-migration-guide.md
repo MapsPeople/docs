@@ -105,3 +105,80 @@ MapControl.create(mapConfig, (mapControl, miError) -> {
 ```
 
 Please note that this factory method will wait to return until a valid MapsIndoors solution is loaded, therefore it is safe to invoke `MapControl.create()` prior to, or in parallel with `MapsIndoors.load()`.
+
+## Display Rules
+
+W.I.P
+
+## DirectionsService & DirectionsRenderer
+
+There are two basic functions here - Retrieving, or querying a route, and rendering it onto the map.
+
+### Query Route
+
+#### V3
+
+In V3, the process to query a route is to instantiate a `MPRoutingProvider` and set the desired travel mode, departure/arrival time, etc. You should also instantiate an `OnRouteResultListener` to recieve the result (or error).
+
+```java
+int timeNowSeconds = (int) (System.currentTimeMillis() / 1000);
+MPRoutingProvider routingProvider = new MPRoutingProvider();
+routingProvider.setTravelMode(TravelMode.WALKING);
+routingProvider.setDateTime(timeNowSeconds, true);
+routingProvider.setOnRouteResultListener((route, error) -> {
+    // You get your route (or error) here!
+});
+
+Point from = new Point(57.039395177203936, 9.939182484455051);
+Point to = new Point(57.03238690202058, 9.93220061362637);
+
+routingProvider.query(from, to);
+```
+
+#### V4
+
+In the V4 SDK, to query a route you must first set up an `MPDirectionsConfig` object. This configuration describes travel mode (driving, walking, etc), departure/arrival time and includes a result listener.
+
+Next, instantiate a new `MPDirectionsServic`, and apply the configuration. Use the `query()` method to search for a route between two points. Please note that the resulting route is returned in the `OnRouteResultListener` set on your `MPDirectionsConfig` object.
+
+```java
+MPDirectionsConfig config = new MPDirectionsConfig.Builder()
+        .setTravelMode(MPTravelMode.WALKING)
+        .setDepartureTime(new Date(System.currentTimeMillis()))
+        .setOnRouteResultListener((route, error) -> {
+            // You get your route (or error) here!
+        })
+        .build();
+
+MPDirectionsService directionsService = new MPDirectionsService();
+directionsService.setConfig(config);
+MPPoint from = new MPPoint(57.039395177203936, 9.939182484455051);
+MPPoint to = new MPPoint(57.03238690202058, 9.93220061362637);
+directionsService.query(from, to);
+```
+
+### Render Route
+
+#### V3
+
+To render a given route in V3, instantiate a `MPDirectionsRenderer` with parameters. Then dot your way to configurable attributes (various animation settings and styling) as well as setting the route. Further, invoke `initMap()`, to start the renderer/animation.
+
+```java
+MPDirectionsRenderer directionsRenderer = new MPDirectionsRenderer(this, mMap, mMapControl, null);
+directionsRenderer.setPolylineAnimated(true);
+directionsRenderer.setAnimated(true);
+directionsRenderer.setRoute(route);
+runOnUiThread( ()-> {
+    directionsRenderer.initMap(true);
+    directionsRenderer.setRouteLegIndex(0);
+});
+```
+
+#### V4
+
+In V4, this has been simplified somewhat. Given a route, you can instantiate a new `MPDirectionsRenderer`, and set the route using `setRoute()`. Use the `MPDirectionsRenderer` object to navigate through the route (next/previous leg) as well as configure the animation and styling of the route on the map. By default the route polyline is animated and repeating, but this is customisable on the `MPDirectionsRenderer` instance.
+
+```java
+MPDirectionsRenderer renderer = new MPDirectionsRenderer(mMapControl);
+renderer.setRoute(route);
+```
