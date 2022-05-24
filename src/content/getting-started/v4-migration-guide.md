@@ -285,3 +285,51 @@ public interface MPPositionProvider {
     @Nullable MPPositionResultInterface getLatestPosition();
 }
 ```
+
+## SDK Interface Changes
+
+### Removed Classes & Interfaces
+
+|   Removed                         |
+|-----------------------------------|
+| ImageSize                         |
+| SphericalUtil                     |
+| Convert                           |
+| DirectionsRenderer (interface)    |
+| DisplayRule                       |
+| Feature                           |
+| FloorTileOfflineManager           |
+| GeometryCollectionGeometry        |
+| GoogleMapsDirectionStatusCodes    |
+| JavaClusteringEngine              |
+| JSONUtil                          |
+| LineStringGeometry                |
+| LintTestClass                     |
+| ListenerCallbacks                 |
+| LocationsUpdatedListener          |
+| MapView (interface)               |
+| MathUtil                          |
+| MPAuthClient                      |
+| MPBadgeType                       |
+| MPBookingListener                 |
+| MPBookingListListener             |
+| MPDataSetCacheManagerSyncListener |
+| MPDistanceMatrixReceiver          |
+| MPFloatRange                      |
+| MPLocationCluster                 |
+| MPLocationClusteringEngine        |
+| MPLocationListListener            |
+| MPOrdering                        |
+| MultiLineStringGeometry           |
+| MultiPointGeometry                |
+| NodeLabel                         |
+| PolyUtil                          |
+| PositionIndicator                 |
+| Renderer                          |
+| RouteVertex                       |
+| TileCacheStrategy                 |
+| TileSize                          |
+| UriLoaderListener                 |
+| Utils                             |
+| DSCUnzipFileTask                  |
+| DSCUrlDownloadingTask             |
