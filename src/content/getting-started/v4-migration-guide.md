@@ -333,3 +333,70 @@ public interface MPPositionProvider {
 | Utils                             |
 | DSCUnzipFileTask                  |
 | DSCUrlDownloadingTask             |
+
+### Renamed Classes & Interfaces
+
+| V3                            | V4                                                                  |
+|-------------------------------|---------------------------------------------------------------------|
+| Object                        | MPObject                                                            |
+| Point                         | MPPoint                                                             |
+| TravelMode                    | MPTravelMOde                                                        |
+| dbglog                        | MPDebugLog                                                          |
+| MPRoutingProvider             | MPDirectionsService                                                 |
+| MPApiKeyValidatorService      | MPApiKeyValidator                                                   |
+| LocationDisplayRule           | MPDisplayRule                                                       |
+| DistanceMatrixResponse        | MPDistanceMantrixResponse                                           |
+| Route                         | MPRoute                                                             |
+| RouteResult                   | MPRouteResult                                                       |
+| Building                      | MPBuilding                                                          |
+| FastSphericalUtils            | MPFastSphericalUtils                                                |
+| DataField                     | MPDataField                                                         |
+| ReadyListener                 | MPReadyListener                                                     |
+| Solution                      | MPSolution                                                          |
+| Venue                         | MPVenue                                                             |
+| AppConfig                     | MPAppConfig                                                         |
+| BadgePosition                 | MPBadgePosition                                                     |
+| BuildingCollection            | MPBuildingCollection                                                |
+| BuildingInfo                  | MPBuildingInfo                                                      |
+| Category                      | MPCategory                                                          |
+| CategoryCollection            | MPCategoryCollection                                                |
+| DataSet                       | MPDataSet                                                           |
+| DataSetManagerStatus          | MPDataSetManagerStatus                                              |
+| Floor                         | MPFloor                                                             |
+| FloorSelectorInterface        | MPFloorSelectorInterface                                            |
+| GeocodedWaypoints             | MPGeocodedWaypoints                                                 |
+| GeoData                       | MPGeoData                                                           |
+| Geometry                      | MPGeometry                                                          |
+| Highway                       | MPHighway                                                           |
+| ImageProvider                 | MPImageProvider                                                     |
+| LocationPropertyNames         | MPLocationPropertyNames                                             |
+| Maneuver                      | MPManeuver                                                          |
+| MapExtend                     | MPMapExtend                                                         |
+| MapStyle                      | MPMapstyle                                                          |
+| MenuInfo                      | MPMenuInfo                                                          |
+| MPBaseType                    | MPLocationBaseType                                                  |
+| MPLocationClusterImageAdapter | MPClusterIconAdapter                                                |
+| MultiPolygonGeometry          | MPMultiPolygonGeometry                                              |
+| NodeData                      | MPNodeData                                                          |
+| PermissionsAndPSListener      | MPPermissionsAndPSListener                                          |
+| POIType                       | MPPOIType                                                           |
+| PolygonDisplayRule            | MPPolygonDisplayRule                                                |
+| PolygonGeometry               | MPPolygonGeometry                                                   |
+| PositionProvider              | MPPositionProvider                                                  |
+| PositionResult                | MPPositionResult & MPPositionResultInterface                        |
+| PropertyData                  | MPPropertyData                                                      |
+| RouteCoordinate               | MPRouteCoordinate                                                   |
+| RouteLeg                      | MPRouteLeg                                                          |
+| RoutePolyline                 | MPRoutePolyline                                                     |
+| RouteProperty                 | MPRouteProperty                                                     |
+| RouteSegmentPath              | MPRouteSegmentPath                                                  |
+| RouteStep                     | MPRouteStep                                                         |
+| RoutingProvider               | MPDirectionsServiceInterface & MPDirectionsServiceExternalInterface |
+| SolutionInfo                  | MPSolutionInfo                                                      |
+| TransitDetails                | MPTransitDetails                                                    |
+| URITemplate                   | MPURITemplate                                                       |
+| UrlResourceGroupType          | MPUrlResourceGroupType                                              |
+| UserRole                      | MPUserRole                                                          |
+| VenueCollection               | MPVenueCollection                                                   |
+| VenueInfo                     | MPVenueInfo                                                         |
+| IFloorSelector                | MPFloorSelectorInterface                                            |
