@@ -139,7 +139,7 @@ routingProvider.query(from, to);
 
 In the V4 SDK, to query a route you must first set up an `MPDirectionsConfig` object. This configuration describes travel mode (driving, walking, etc), departure/arrival time and includes a result listener.
 
-Next, instantiate a new `MPDirectionsServic`, and apply the configuration. Use the `query()` method to search for a route between two points. Please note that the resulting route is returned in the `OnRouteResultListener` set on your `MPDirectionsConfig` object.
+Next, instantiate a new `MPDirectionsService`, and apply the configuration. Use the `query()` method to search for a route between two points. Please note that the resulting route is returned in the `OnRouteResultListener` set on your `MPDirectionsConfig` object.
 
 ```java
 MPDirectionsConfig config = new MPDirectionsConfig.Builder()
