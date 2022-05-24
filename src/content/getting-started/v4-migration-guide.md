@@ -256,21 +256,21 @@ In V3, the snippet below is the `PositionProvider` interface. While perfectly fu
 
 ```java
 public interface PositionProvider {
-	@NonNull String[] getRequiredPermissions();
-	boolean isPSEnabled();
-	void startPositioning( @Nullable String arg );
-	void stopPositioning( @Nullable String arg );
-	boolean isRunning();
-	void addOnPositionUpdateListener( @Nullable OnPositionUpdateListener listener );
-	void removeOnPositionUpdateListener( @Nullable OnPositionUpdateListener listener );
-	void setProviderId( @Nullable String id );
-	void addOnStateChangedListener( @Nullable OnStateChangedListener onStateChangedListener );
-	void removeOnStateChangedListener( @Nullable OnStateChangedListener onStateChangedListener );
-	void checkPermissionsAndPSEnabled( @Nullable PermissionsAndPSListener permissionAPSlist );
-	@Nullable String getProviderId();
-	@Nullable PositionResult getLatestPosition();
-	void startPositioningAfter( @IntRange(from = 0, to = Integer.MAX_VALUE) int delayInMs, @Nullable String arg );
-	void terminate();
+  @NonNull String[] getRequiredPermissions();
+  boolean isPSEnabled();
+  void startPositioning( @Nullable String arg );
+  void stopPositioning( @Nullable String arg );
+  boolean isRunning();
+  void addOnPositionUpdateListener( @Nullable OnPositionUpdateListener listener );
+  void removeOnPositionUpdateListener( @Nullable OnPositionUpdateListener listener );
+  void setProviderId( @Nullable String id );
+  void addOnStateChangedListener( @Nullable OnStateChangedListener onStateChangedListener );
+  void removeOnStateChangedListener( @Nullable OnStateChangedListener onStateChangedListener );
+  void checkPermissionsAndPSEnabled( @Nullable PermissionsAndPSListener permissionAPSlist );
+  @Nullable String getProviderId();
+  @Nullable PositionResult getLatestPosition();
+  void startPositioningAfter( @IntRange(from = 0, to = Integer.MAX_VALUE) int delayInMs, @Nullable String arg );
+  void terminate();
 }
 ```
 
