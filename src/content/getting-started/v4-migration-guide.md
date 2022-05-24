@@ -182,3 +182,17 @@ In V4, this has been simplified somewhat. Given a route, you can instantiate a n
 MPDirectionsRenderer renderer = new MPDirectionsRenderer(mMapControl);
 renderer.setRoute(route);
 ```
+
+## Map & Camera Behavior Configs
+
+In V3, there were many overloaded methods for selection and filtering, where various boolean and integer/double values were set. In V4, the preferred method is configuration objects for heavily configurable use cases. Thus, filtering and selection methods are now dependent on `MP...Behavior` objects.
+
+We have introduced `MPFilterBehavior` and `MPSelectionBehavior`. These object contains behavioral configuration to describe how and if the camera should behave. The following can be configured:
+
+* `setZoomToFit(boolean)`
+* `setMoveCamera(boolean)`
+* `setShowInfoWindow(boolean)`
+* `setAnimationDuration(int)`
+* `setAllowFloorChange(boolean)`
+
+There are statically defined defaults available on the classes.
