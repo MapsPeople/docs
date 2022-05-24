@@ -207,3 +207,43 @@ The following classes are of type `MPEntity`:
 * `MPFloor`
 * `MPBuilding`
 * `MPVenue`
+
+## Map Filtering
+
+### V3
+
+In V3, filtering map content is performed with `MapControl.displaySearchResult()`. This results in a lot of undesirable overloads.
+
+Clearing the map filter is done by invoking `MapControl.clearMap()`.
+
+```java
+boolean displaySearchResults(@NonNull List<MPLocation> locations)
+boolean displaySearchResults(@NonNull List<MPLocation> locations, boolean animateCamera)
+boolean displaySearchResults(@NonNull List<MPLocation> locations, @Nullable ReadyListener readyListener)
+boolean displaySearchResults(@NonNull List<MPLocation> locations, boolean animateCamera, int cameraPadding)
+boolean displaySearchResults(@NonNull List<MPLocation> locations, boolean animateCamera, int cameraPadding, boolean showInfoWindow)
+boolean displaySearchResults(@NonNull List<MPLocation> locations, boolean animateCamera, int cameraPadding, @Nullable ReadyListener readyListener)
+boolean displaySearchResults(@NonNull List<MPLocation> locations, boolean animateCamera, int cameraPadding, boolean showInfoWindow, @Nullable CameraUpdate googleMapCameraUpdate, int durationMs, GoogleMap.CancelableCallback googleMapCancelableCallback)
+boolean displaySearchResults(@NonNull List<MPLocation> locations, boolean animateCamera, int cameraPadding, boolean showInfoWindow, @Nullable CameraUpdate googleMapCameraUpdate, int durationMs, GoogleMap.CancelableCallback googleMapCancelableCallback, @Nullable ReadyListener readyListener)
+```
+
+### V4
+
+To avoid the aforementioned undesirable overloads, in V4, filtering map content is now performed with `MapControl.setFilter(List<MPLocation>, MPFilterBehavior)` or alternatively `MapControl.setFilter(MPFilter, MPFilterBehavior, MPSuccessListener)`. To clear the filter, invoke `MapControl.clearFilter()`.
+
+One way to perform map filtering, is given a list of `MPLocation`, display only these locations on the map.
+
+```java
+MapsIndoors.getLocationsAsync(new MPQuery.Builder().setQuery("stairs").build(), null, (locations, error) -> {
+    if(error == null && !locations.isEmpty()) {
+        mMapControl.setFilter(locations, MPFilterBehavior.DEFAULT);
+    }
+});
+```
+
+Another way is to configure a `MPFilter` object. This is an easy way to only show locations of a given type or category on the map.
+
+```java
+MPFilter filter = new MPFilter.Builder().setTypes(Collections.singletonList("Stairs")).build();
+mMapControl.setFilter(filter, MPFilterBehavior.DEFAULT, null);
+```
