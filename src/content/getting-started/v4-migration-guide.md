@@ -161,7 +161,7 @@ directionsService.query(from, to);
 
 #### V3
 
-To render a given route in V3, instantiate a `MPDirectionsRenderer` with parameters. Then dot your way to configurable attributes (various animation settings and styling) as well as setting the route. Further, invoke `initMap()`, to start the renderer/animation.
+To render a given route in V3, instantiate a `MPDirectionsRenderer` with parameters. Then your IDE should be able to show you the various configurable attributes (various animation settings and styling) as well as setting the route, or refer to further documentation. Further, invoke `initMap()`, to start the renderer/animation.
 
 ```java
 MPDirectionsRenderer directionsRenderer = new MPDirectionsRenderer(this, mMap, mMapControl, null);
