@@ -247,3 +247,41 @@ Another way is to configure a `MPFilter` object. This is an easy way to only sho
 MPFilter filter = new MPFilter.Builder().setTypes(Collections.singletonList("Stairs")).build();
 mMapControl.setFilter(filter, MPFilterBehavior.DEFAULT, null);
 ```
+
+## Positioning Providers
+
+### V3
+
+In V3, the snippet below is the `PositionProvider` interface. While perfectly functional, it leaves a lot be desired in terms of readability and clarity, and avoiding bloat in the code.
+
+```java
+public interface PositionProvider {
+	@NonNull String[] getRequiredPermissions();
+	boolean isPSEnabled();
+	void startPositioning( @Nullable String arg );
+	void stopPositioning( @Nullable String arg );
+	boolean isRunning();
+	void addOnPositionUpdateListener( @Nullable OnPositionUpdateListener listener );
+	void removeOnPositionUpdateListener( @Nullable OnPositionUpdateListener listener );
+	void setProviderId( @Nullable String id );
+	void addOnStateChangedListener( @Nullable OnStateChangedListener onStateChangedListener );
+	void removeOnStateChangedListener( @Nullable OnStateChangedListener onStateChangedListener );
+	void checkPermissionsAndPSEnabled( @Nullable PermissionsAndPSListener permissionAPSlist );
+	@Nullable String getProviderId();
+	@Nullable PositionResult getLatestPosition();
+	void startPositioningAfter( @IntRange(from = 0, to = Integer.MAX_VALUE) int delayInMs, @Nullable String arg );
+	void terminate();
+}
+```
+
+### V4
+
+To fix this in V4, `PositionProvider` has been optimised and renamed to `MPPositionProvider`, to fall in line with other naming conventions. It has been renamed with the MP-prefix and has been heavily trimmed, to only describe the necessary interface for the MapsIndoors SDK to utilize a position provider sufficiently.
+
+```java
+public interface MPPositionProvider {
+    void addOnPositionUpdateListener(@NonNull OnPositionUpdateListener listener);
+    void removeOnPositionUpdateListener(@NonNull OnPositionUpdateListener listener);
+    @Nullable MPPositionResultInterface getLatestPosition();
+}
+```
