@@ -349,7 +349,7 @@ public interface MPPositionProvider {
 | DataSet                       | MPDataSet                                                           |
 | DataSetManagerStatus          | MPDataSetManagerStatus                                              |
 | dbglog                        | MPDebugLog                                                          |
-| DistanceMatrixResponse        | MPDistanceMantrixResponse                                           |
+| DistanceMatrixResponse        | MPDistanceMatrixResponse                                           |
 | FastSphericalUtils            | MPFastSphericalUtils                                                |
 | Floor                         | MPFloor                                                             |
 | FloorSelectorInterface        | MPFloorSelectorInterface                                            |
@@ -363,7 +363,7 @@ public interface MPPositionProvider {
 | LocationPropertyNames         | MPLocationPropertyNames                                             |
 | Maneuver                      | MPManeuver                                                          |
 | MapExtend                     | MPMapExtend                                                         |
-| MapStyle                      | MPMapstyle                                                          |
+| MapStyle                      | MPMapStyle                                                          |
 | MenuInfo                      | MPMenuInfo                                                          |
 | MPApiKeyValidatorService      | MPApiKeyValidator                                                   |
 | MPBaseType                    | MPLocationBaseType                                                  |
