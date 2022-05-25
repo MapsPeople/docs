@@ -7,7 +7,7 @@ eleventyNavigation:
   title: Android BETA - Migrating from V3 to V4
 ---
 
-The Android SDK for MapsIndoors has been upgraded from V3 to V4, which comes with a lot of improvements to stability and flexibility. SDK loading has been improved, and is less error-prone. This guide will cover specific changes to the SDK and how to use it, to provide you a guide on how to upgrade from V3 to V4.
+The Android SDK for MapsIndoors has been upgraded from V3 to V4, which comes with a lot of improvements to stability and flexibility. SDK loading has been improved, and is less error-prone. This guide will cover specific changes to the SDK and how to use it, to provide you with a guide on how to upgrade from V3 to V4.
 
 ## MapsIndoors SDK Map Engine Flavours
 
@@ -27,25 +27,25 @@ MapsIndoors is a singleton class, which can be described as the data layer of th
 
 ### V3
 
-In V3, SDK initialization was started with:
+In V3, SDK initialization is started with:
 
 ```java
 MapsIndoors.initialize(getApplicationContext(), "mapsindoors-key", listener);
 ```
 
-And subsequently setting the Google API key:
+And subsequently setting the Google API key using:
 
 ```java
 MapsIndoors.setGoogleAPIKey(getString(R.string.google_maps_key));
 ```
 
-If you wanted to change the MapsIndoors API key of an already initialized SDK you would invoke:
+If you want to change the MapsIndoors API key of an already initialized SDK you invoke:
 
 ```java
 MapsIndoors.setApiKey("new key")
 ```
 
-And to close down the SDK, you would call:
+And to close down the SDK, call:
 
 ```java
 MapsIndoors.onApplicationTerminate()
@@ -59,7 +59,7 @@ In this new version of the SDK, initialization is started by the new function `M
 MapsIndoors.load(getApplicationContext(), "mapsindoors-key", listener);
 ```
 
-Map-engine-specific API keys are now handled by `MPMapConfig`, covered in the "MapControl initialization" section of this migration guide.
+Map-engine-specific API keys are handled by `MPMapConfig`, covered in the "MapControl Initialization" section of this guide.
 
 Switching to another MapsIndoors API key, such as for switching active Solutions, is now done by invoking `MapsIndoors.load()` again with a new key. The SDK will close down, and reload with the new API key.
 
@@ -75,7 +75,7 @@ MapControl instantiation and initialization are separate concepts. You create a 
 
 ### V3
 
-In V3, `MapControl` was a separate asynchronous call:
+In V3, `MapControl` is a separate asynchronous call:
 
 ```java
 mMapControl = new MapControl(this);
@@ -118,7 +118,7 @@ There are two basic functions here - Retrieving, or querying a route, and render
 
 #### V3
 
-In V3, the process to query a route is to instantiate a `MPRoutingProvider` and set the desired travel mode, departure/arrival time, etc. You should also instantiate an `OnRouteResultListener` to receive the result (or error).
+In V3, the process to query a route is to instantiate a `MPRoutingProvider` and set the desired travel mode, departure/arrival time, etc. You should also instantiate an `OnRouteResultListener` to receive the result (or error in case of failure).
 
 ```java
 int timeNowSeconds = (int) (System.currentTimeMillis() / 1000);
@@ -161,7 +161,7 @@ directionsService.query(from, to);
 
 #### V3
 
-To render a given route in V3, instantiate a `MPDirectionsRenderer` with parameters. Then your IDE should be able to show you the various configurable attributes (various animation settings and styling) as well as setting the route, or refer to further documentation. Further, invoke `initMap()`, to start the renderer/animation.
+To render a given route in V3, instantiate a `MPDirectionsRenderer` with parameters. Then your IDE should be able to show you the various configurable attributes (various animation settings and styling) as well as setting the route. Alternatively, refer to further documentation. To start the renderer/animation, invoke `initMap()`.
 
 ```java
 MPDirectionsRenderer directionsRenderer = new MPDirectionsRenderer(this, mMap, mMapControl, null);
