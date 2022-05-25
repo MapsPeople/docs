@@ -21,9 +21,9 @@ MapsIndoorsSDKMapbox 4.x.x
 
 Both of these are distributed through Maven, and come packaged with a number of helper classes.
 
-## MapsIndoors Initialisation
+## MapsIndoors Initialization
 
-MapsIndoors is a singleton class, which can be described as the data layer of the SDK. Below, we will show how initilisation has been simplified between V3 and V4.
+MapsIndoors is a singleton class, which can be described as the data layer of the SDK. Below you will find an example that demonstrates how initialization has been simplified between V3 and V4.
 
 ### V3
 
@@ -59,7 +59,7 @@ In this new version of the SDK, initialization is started by the new function `M
 MapsIndoors.load(getApplicationContext(), "mapsindoors-key", listener);
 ```
 
-Map-engine-specific API keys are now handled by `MPMapConfig`, covered in the "MapControl Initialisation" section of this migration guide.
+Map-engine-specific API keys are now handled by `MPMapConfig`, covered in the "MapControl initialization" section of this migration guide.
 
 Switching to another MapsIndoors API key, such as for switching active Solutions, is now done by invoking `MapsIndoors.load()` again with a new key. The SDK will close down, and reload with the new API key.
 
@@ -69,13 +69,13 @@ To close down the SDK without reloading a new API key, invoke:
 MapsIndoors.destroy()
 ```
 
-## MapControl Initilisation
+## MapControl Initialization
 
-MapControl instantiation and initialisation are separate concepts. You create a new instance of `MapControl` and configure it with a map and view - optionally you could set clustering, overlapping or other behavior on the object.
+MapControl instantiation and initialization are separate concepts. You create a new instance of `MapControl` and configure it with a map and view - optionally you could set clustering, overlapping or other behavior on the object.
 
 ### V3
 
-In V3, `MapControl` was a seperate asynchronous call:
+In V3, `MapControl` was a separate asynchronous call:
 
 ```java
 mMapControl = new MapControl(this);
@@ -96,7 +96,7 @@ MPMapConfig mapConfig = new MPMapConfig.Builder(activity, googleMap, "google-api
         .build();
 ```
 
-With a `MPMapConfig` instance, you may create a new `MapControl` instance. This now happens through a factory pattern. This both instantiates and initializes your `MapControl` object asynchronously. If everything succeeded, you will receive a ready-to-use `MapControl` instance - if not, you will get an error and recieve no `MapControl` instance.
+With a `MPMapConfig` instance, you may create a new `MapControl` instance. This now happens through a factory pattern. This both instantiates and initializes your `MapControl` object asynchronously. If everything succeeded, you will receive a ready-to-use `MapControl` instance - if not, you will get an error and receive no `MapControl` instance.
 
 ```java
 MapControl.create(mapConfig, (mapControl, miError) -> {
@@ -118,7 +118,7 @@ There are two basic functions here - Retrieving, or querying a route, and render
 
 #### V3
 
-In V3, the process to query a route is to instantiate a `MPRoutingProvider` and set the desired travel mode, departure/arrival time, etc. You should also instantiate an `OnRouteResultListener` to recieve the result (or error).
+In V3, the process to query a route is to instantiate a `MPRoutingProvider` and set the desired travel mode, departure/arrival time, etc. You should also instantiate an `OnRouteResultListener` to receive the result (or error).
 
 ```java
 int timeNowSeconds = (int) (System.currentTimeMillis() / 1000);
@@ -176,7 +176,7 @@ runOnUiThread( ()-> {
 
 #### V4
 
-In V4, this has been simplified somewhat. Given a route, you can instantiate a new `MPDirectionsRenderer`, and set the route using `setRoute()`. Use the `MPDirectionsRenderer` object to navigate through the route (next/previous leg) as well as configure the animation and styling of the route on the map. By default the route is animated and repeating, but this is customisable on the `MPDirectionsRenderer` instance.
+In V4, this has been simplified somewhat. Given a route, you can instantiate a new `MPDirectionsRenderer`, and set the route using `setRoute()`. Use the `MPDirectionsRenderer` object to navigate through the route (next/previous leg) as well as configure the animation and styling of the route on the map. By default the route is animated and repeating, but this is customizable on the `MPDirectionsRenderer` instance.
 
 ```java
 MPDirectionsRenderer renderer = new MPDirectionsRenderer(mMapControl);
@@ -276,7 +276,7 @@ public interface PositionProvider {
 
 ### V4
 
-To fix this in V4, `PositionProvider` has been optimised and renamed to `MPPositionProvider`, to fall in line with other naming conventions. It has been renamed with the MP-prefix and has been heavily trimmed, to only describe the necessary interface for the MapsIndoors SDK to utilize a position provider sufficiently.
+To fix this in V4, `PositionProvider` has been optimized and renamed to `MPPositionProvider`, to fall in line with other naming conventions. It has been renamed with the MP-prefix and has been heavily trimmed, to only describe the necessary interface for the MapsIndoors SDK to utilize a position provider sufficiently.
 
 ```java
 public interface MPPositionProvider {
