@@ -233,7 +233,7 @@ Using the `<mi-search>` component you get an `<input>`element tied tightly toget
   </mi-map-mapbox>
 + <mi-search style="width: 600px;" mapsindoors="true" placeholder="Search">
 + </mi-search>
-<script src="main.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
 ```
@@ -327,7 +327,7 @@ To display a list of search results you can append each search result to a list 
 +  scroll-buttons-enabled="true"
 +  scroll-length="200">
 + </mi-list>
-<script src="main.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
 ```
@@ -388,7 +388,7 @@ To display a list of search results you can append each search result to a list 
   </mi-search>
 + <mi-list style="width: 600px; height: 400px;" scroll-buttons-enabled="true" scroll-length="200">
   </mi-list>
-<script src="main.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
 ```
