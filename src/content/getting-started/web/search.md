@@ -107,12 +107,12 @@ Using the `<mi-search>` component you get a `<input>`element tied tightly togeth
 <body>
   <mi-map-googlemaps style="width: 600px; height: 600px;" gm-api-key="YOUR_GOOGLE_MAPS_API_KEY" mi-api-key="YOUR_MAPSINDOORS_API_KEY" floor-selector-control-position="TOP_RIGHT">
   </mi-map-googlemaps>
-  <script src="main.js"></script>
 + <mi-search
 +  style="width: 600px;"
 +  mapsindoors="true"
 +  placeholder="Search">
 + </mi-search>
+  <script src="main.js"></script>
 </body>
 </html>
 ```
@@ -231,9 +231,9 @@ Using the `<mi-search>` component you get an `<input>`element tied tightly toget
     mi-api-key="YOUR_MAPSINDOORS_API_KEY"
     floor-selector-control-position="TOP_RIGHT">
   </mi-map-mapbox>
-  <script src="main.js"></script>
 + <mi-search style="width: 600px;" mapsindoors="true" placeholder="Search">
 + </mi-search>
+  <script src="main.js"></script>
 </body>
 </html>
 ```
@@ -320,7 +320,6 @@ To display a list of search results you can append each search result to a list 
 <body>
   <mi-map-googlemaps style="width: 600px; height: 600px;" gm-api-key="YOUR_GOOGLE_MAPS_API_KEY" mi-api-key="YOUR_MAPSINDOORS_API_KEY" floor-selector-control-position="TOP_RIGHT">
   </mi-map-googlemaps>
-  <script src="main.js"></script>
   <mi-search style="width: 600px;" mapsindoors="true" placeholder="Search">
   </mi-search>
 + <mi-list
@@ -328,6 +327,7 @@ To display a list of search results you can append each search result to a list 
 +  scroll-buttons-enabled="true"
 +  scroll-length="200">
 + </mi-list>
+  <script src="main.js"></script>
 </body>
 </html>
 ```
@@ -382,13 +382,13 @@ To display a list of search results you can append each search result to a list 
   <script src="https://unpkg.com/@mapsindoors/components@8.2.0/dist/mi-components/mi-components.js"></script>
 </head>
 <body>
-  <mi-map-mapbox style="width: 600px; height: 600px;" accessToken="YOUR_MAPBOX_ACCESS_TOKEN" mi-api-key="YOUR_MAPSINDOORS_API_KEY">
+  <mi-map-mapbox style="width: 600px; height: 600px;" access-token="YOUR_MAPBOX_ACCESS_TOKEN" mi-api-key="YOUR_MAPSINDOORS_API_KEY">
   </mi-map-mapbox>
-  <script src="main.js"></script>
   <mi-search style="width: 600px;" mapsindoors="true" placeholder="Search">
   </mi-search>
 + <mi-list style="width: 600px; height: 400px;" scroll-buttons-enabled="true" scroll-length="200">
   </mi-list>
+  <script src="main.js"></script>
 </body>
 </html>
 ```
