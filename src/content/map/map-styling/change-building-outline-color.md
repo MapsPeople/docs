@@ -11,15 +11,15 @@ eleventyNavigation:
 One way you can alter the look and feel of your map is by changing the color of the outline surrounding your buildings.
 
 <mi-tabs>
-<mi-tab label="iOS" tab-for="iOS"></mi-tab>
 <mi-tab label="Android" tab-for="Android"></mi-tab>
+<mi-tab label="iOS" tab-for="iOS"></mi-tab>
 <mi-tab label="Web" tab-for="Web"></mi-tab>
-<mi-tab-panel id="iOS">
+<mi-tab-panel id="Android">
 
 ffgfgfg
 
 </mi-tab-panel>
-<mi-tab-panel id="Android">
+<mi-tab-panel id="iOS">
 
 ffdkvmfvkj
 
