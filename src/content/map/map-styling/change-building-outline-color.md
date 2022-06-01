@@ -20,6 +20,12 @@ The method to do this is different for each platform.
 
 To change the building outline color, use `setBuildingOutlineStrokeColor()` from the MapControl class.
 
+```java
+fun setBuildingOutlineStrokeColor(strokeColor: Int)
+```
+
+The parameter `strokeColor` takes the color in RGB format (with an alpha-channel value), the the syntax being `AARRGGBB`.
+
 </mi-tab-panel>
 <mi-tab-panel id="iOS">
 
