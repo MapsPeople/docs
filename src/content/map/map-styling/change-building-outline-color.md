@@ -18,7 +18,7 @@ The method to do this is different for each platform.
 <mi-tab label="Web" tab-for="Web"></mi-tab>
 <mi-tab-panel id="Android">
 
-To change the building outline color, use `setBuildingOutlineStrokeColor()` from the MapControl class.
+To change the building outline color, use `setBuildingOutlineStrokeColor()` from the `MapControl` class.
 
 ```java
 setBuildingOutlineStrokeColor(strokeColor: Int)
