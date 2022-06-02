@@ -1,5 +1,6 @@
 ---
 title: Directions Service for Android
+toc: true
 eleventyNavigation:
   key: directions-service-android
   parent: directions-service

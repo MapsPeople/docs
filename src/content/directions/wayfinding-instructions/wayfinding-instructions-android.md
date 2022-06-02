@@ -1,5 +1,6 @@
 ---
 title: Wayfinding Instructions for Android
+toc: true
 eleventyNavigation:
   parent: wayfinding-instructions
   title: Wayfinding Instructions for Android
