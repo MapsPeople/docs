@@ -1,5 +1,6 @@
 ---
 title: Offline Content for Android
+toc: true
 eleventyNavigation:
   key: data-offline-data-android
   parent: data-offline-data
