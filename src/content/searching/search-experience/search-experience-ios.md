@@ -1,5 +1,6 @@
 ---
 title: Create a Search Experience with iOS
+toc: true
 eleventyNavigation:
   parent: searching-search-experience
   title: Create a Search Experience with iOS

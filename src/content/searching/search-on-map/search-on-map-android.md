@@ -1,5 +1,6 @@
 ---
 title: Searching on a Map for Android
+toc: true
 eleventyNavigation:
   parent: searching-search-on-map
   key: searching-search-on-map-android

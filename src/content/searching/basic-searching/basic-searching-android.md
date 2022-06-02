@@ -1,5 +1,6 @@
 ---
 title: Basic Searching for Android
+toc: true
 eleventyNavigation:
   key: searching-basic-search-android
   parent: searching-basic-searching
