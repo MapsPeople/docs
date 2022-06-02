@@ -1,5 +1,6 @@
 ---
 title: Custom UI for iOS
+toc: true
 eleventyNavigation:
   key: map-map-styling-custom-ui-ios
   parent: map-map-styling-ios

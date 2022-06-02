@@ -1,5 +1,6 @@
 ---
 title: Areas
+toc: true
 eleventyNavigation:
   title: Areas
   key: map-various-areas

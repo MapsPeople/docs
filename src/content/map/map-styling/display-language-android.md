@@ -1,5 +1,6 @@
 ---
 title: Display Language for Android
+toc: true
 eleventyNavigation:
   key: map-map-styling-display-language-android
   parent: map-map-styling

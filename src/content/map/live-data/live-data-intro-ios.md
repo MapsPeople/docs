@@ -1,5 +1,6 @@
 ---
 title: Live Data Introduction for iOS
+toc: true
 eleventyNavigation:
   key: map-live-data-intro-iOS
   parent: map-live-data

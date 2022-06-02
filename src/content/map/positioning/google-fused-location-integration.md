@@ -1,5 +1,6 @@
 ---
 title: Using Google Fused Location Provider
+toc: true
 eleventyNavigation:
   title: Using Google Fused Location Provider
   parent: map-positioning-blue-dot

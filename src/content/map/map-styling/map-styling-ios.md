@@ -1,5 +1,6 @@
 ---
 title: Map Styling for iOS
+toc: true
 eleventyNavigation:
   key: map-map-styling-ios
   parent: map-map-styling

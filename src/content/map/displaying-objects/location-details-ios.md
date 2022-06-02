@@ -1,5 +1,6 @@
 ---
 title: Location Details for iOS
+toc: true
 eleventyNavigation:
   parent: map-displaying-objects
   key: map-displaying-objects-location-details-ios

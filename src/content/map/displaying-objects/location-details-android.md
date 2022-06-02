@@ -1,5 +1,6 @@
 ---
 title: Location Details for Android
+toc: true
 eleventyNavigation:
   parent: map-displaying-objects
   key: map-displaying-objects-location-details-android

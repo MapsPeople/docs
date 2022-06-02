@@ -1,5 +1,6 @@
 ---
 title: Display Language for iOS
+toc: true
 eleventyNavigation:
   key: map-map-styling-display-language-ios
   parent: map-map-styling

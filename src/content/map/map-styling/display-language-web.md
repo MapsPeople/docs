@@ -1,5 +1,6 @@
 ---
 title: Display Language for Web
+toc: true
 eleventyNavigation:
   key: map-map-styling-display-language-web
   parent: map-map-styling

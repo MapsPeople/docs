@@ -1,5 +1,6 @@
 ---
 title: Getting a Polygon from a Location for Android
+toc: true
 eleventyNavigation:
   key: map-displaying-objects-polygon-from-location-android
   parent: map-displaying-objects

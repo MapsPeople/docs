@@ -1,5 +1,6 @@
 ---
 title: Display Rules
+toc: true
 eleventyNavigation:
     key: map-map-styling-display-rules
     parent: map-map-styling

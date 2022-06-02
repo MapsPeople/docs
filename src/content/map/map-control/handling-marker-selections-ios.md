@@ -1,5 +1,6 @@
 ---
 title: Handling Marker Selections for iOS
+toc: true
 eleventyNavigation:
   key: map-map-control-marker-selection-ios
   parent: map-map-control

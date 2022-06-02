@@ -1,5 +1,6 @@
 ---
 title: Getting a Polygon from a Location for iOS
+toc: true
 eleventyNavigation:
   key: map-displaying-objects-polygon-from-location-ios
   parent: map-displaying-objects

@@ -1,5 +1,6 @@
 ---
 title: Location Data Sources for Android
+toc: true
 eleventyNavigation:
   parent: map-displaying-objects
   key: map-displaying-objects-location-sources-android

@@ -1,5 +1,6 @@
 ---
 title: Application User Roles
+toc: true
 eleventyNavigation:
     key: map-displaying-objects-app-user-roles
     parent: map-displaying-objects
