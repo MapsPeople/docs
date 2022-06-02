@@ -1,5 +1,6 @@
 ---
 title: Work with MapsIndoors SDK Behind a Firewall
+toc: true
 eleventyNavigation:
   key: Work with MapsIndoors SDK Behind a Firewall
   parent: various

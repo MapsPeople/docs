@@ -1,5 +1,6 @@
 ---
 title: Indoor Positioning with MapsIndoors
+toc: true
 eleventyNavigation:
   key: Indoor Positioning with MapsIndoors
   parent: various

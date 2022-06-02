@@ -1,5 +1,6 @@
 ---
 title: Authentication for Android
+toc: true
 eleventyNavigation:
     key: various-authentication-android
     parent: various-authentication

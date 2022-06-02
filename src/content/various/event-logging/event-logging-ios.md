@@ -1,5 +1,6 @@
 ---
 title: Event Logging for iOS
+toc: true
 eleventyNavigation:
   key: various-event-logging-ios
   parent: various-event-logging

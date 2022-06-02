@@ -1,5 +1,6 @@
 ---
 title: Print Map
+toc: true
 eleventyNavigation:
   key: Print Map
   parent: various

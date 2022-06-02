@@ -1,5 +1,6 @@
 ---
 title: Password Reset
+toc: true
 eleventyNavigation:
     key: various-authentication-passwordreset
     parent: various-authentication

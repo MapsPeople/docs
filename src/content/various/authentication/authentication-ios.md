@@ -1,5 +1,6 @@
 ---
 title: Authentication for iOS
+toc: true
 eleventyNavigation:
     key: various-authentication-ios
     parent: various-authentication

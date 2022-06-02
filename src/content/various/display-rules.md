@@ -1,5 +1,6 @@
 ---
 title: Display Rules
+toc: true
 eleventyNavigation:
     key: display-rules
     parent: various
