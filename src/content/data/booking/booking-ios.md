@@ -1,5 +1,6 @@
 ---
 title: Booking for iOS
+toc: true
 eleventyNavigation:
   parent: data-booking
   key: data-booking-ios

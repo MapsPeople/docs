@@ -1,5 +1,6 @@
 ---
 title: Booking for Web
+toc: true
 eleventyNavigation:
   parent: data-booking
   key: data-booking-web
