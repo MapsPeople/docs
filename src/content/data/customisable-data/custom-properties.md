@@ -1,5 +1,6 @@
 ---
 title: Custom Properties
+toc: true
 eleventyNavigation:
   key: data-customisable-data-custom-properties
   title: Custom Properties
