@@ -1,6 +1,6 @@
 ---
 title: Enable Live Data
-toc: false
+toc: true
 eleventyNavigation:
   title: Enable Live Data
   key: getting-started-web-livedata

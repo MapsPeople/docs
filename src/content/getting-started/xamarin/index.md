@@ -1,5 +1,6 @@
 ---
 title: Getting Started with Xamarin
+toc: true
 eleventyNavigation:
   parent: getting-started
   key: getting-started-xamarin

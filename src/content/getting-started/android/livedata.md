@@ -1,5 +1,6 @@
 ---
 title: Enable Live Data
+toc: true
 eleventyNavigation:
   title: Enable Live Data
   key: getting-started-android-livedata
