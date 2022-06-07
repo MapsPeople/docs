@@ -1,5 +1,6 @@
 ---
 title: Basic Searching for Web
+toc: true
 eleventyNavigation:
   key: searching-basic-search-web
   parent: searching-basic-searching

@@ -1,6 +1,7 @@
 ---
 title: Getting Started
 layout: default
+toc: true
 eleventyNavigation:
   title: Getting Started with iOS
   key: getting-started-ios

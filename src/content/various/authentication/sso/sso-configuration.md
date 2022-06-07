@@ -1,5 +1,6 @@
 ---
 title: SSO Configuration
+toc: true
 eleventyNavigation:
   key: various-authentication-sso-configuration
   title: SSO Configuration

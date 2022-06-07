@@ -1,5 +1,6 @@
 ---
 title: Live Data for Web
+toc: true
 eleventyNavigation:
   key: map-live-data-web
   parent: map-live-data

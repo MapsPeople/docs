@@ -1,5 +1,6 @@
 ---
 title: Location Sources for iOS
+toc: true
 eleventyNavigation:
   key: Location Sources for iOS
   parent: data-customisable-data

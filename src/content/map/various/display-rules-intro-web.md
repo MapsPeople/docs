@@ -1,5 +1,6 @@
 ---
 title: Introduction to Display Rules
+toc: true
 eleventyNavigation:
   title: Introduction to Display Rules
   parent: map-various

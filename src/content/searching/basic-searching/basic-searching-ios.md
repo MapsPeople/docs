@@ -1,5 +1,6 @@
 ---
 title: Basic Searching for iOS
+toc: true
 eleventyNavigation:
   key: searching-basic-search-ios
   parent: searching-basic-searching

@@ -1,5 +1,6 @@
 ---
 title: Live Data Tutorial for Android
+toc: true
 eleventyNavigation:
   key: map-live-data-tutorial-android
   parent: map-live-data-intro-android

@@ -1,5 +1,6 @@
 ---
 title: Display Rules in Practice for Web
+toc: true
 eleventyNavigation:
   title: Display Rules in Practice for Web
   parent: map-map-styling

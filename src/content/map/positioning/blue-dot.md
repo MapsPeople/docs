@@ -1,5 +1,6 @@
 ---
 title: Show User's Location aka. Blue Dot
+toc: true
 eleventyNavigation:
   key: map-positioning-blue-dot
   parent: map-positioning

@@ -1,5 +1,6 @@
 ---
 title: Directions Rendering for iOS
+toc: true
 eleventyNavigation:
   key: ios-directions-rendering
   parent: directions-renderer

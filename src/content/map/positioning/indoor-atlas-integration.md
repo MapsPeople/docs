@@ -1,5 +1,6 @@
 ---
 title: Using Indoor Atlas
+toc: true
 eleventyNavigation:
   title: Using Indoor Atlas
   parent: map-positioning-blue-dot

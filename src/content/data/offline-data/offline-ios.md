@@ -1,5 +1,6 @@
 ---
 title: Offline Content for iOS
+toc: true
 eleventyNavigation:
   key: data-offline-data-ios
   parent: data-offline-data

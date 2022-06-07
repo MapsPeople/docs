@@ -1,5 +1,6 @@
 ---
 title: Create a Map for Web
+toc: true
 eleventyNavigation:
   parent: map-map-control
   key: map-simple-map-web

@@ -1,5 +1,6 @@
 ---
 title: Directions Service for iOS
+toc: true
 eleventyNavigation:
   key: directions-service-ios
   parent: directions-service

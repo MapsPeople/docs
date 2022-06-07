@@ -1,5 +1,6 @@
 ---
 title: Booking for Android
+toc: true
 eleventyNavigation:
   parent: data-booking
   key: data-booking-android

@@ -10,7 +10,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPlugin(embedYouTube);
     // Generates a Table of Content using an Eleventy filter
     eleventyConfig.addPlugin(pluginTOC, {
-        tags: ['h2'],
+        tags: ['h2', 'h3'],
     });
     // Provides syntax highlighting
     eleventyConfig.addPlugin(syntaxHighlight, {

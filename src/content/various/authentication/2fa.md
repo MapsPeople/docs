@@ -1,5 +1,6 @@
 ---
 title: 2-Factor Authentication
+toc: true
 eleventyNavigation:
     key: various-authetication-2fa
     parent: various-authentication

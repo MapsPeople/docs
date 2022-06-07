@@ -1,5 +1,6 @@
 ---
 title: Directions Rendering for Android
+toc: true
 eleventyNavigation:
   key: android-directions-rendering
   parent: directions-renderer

@@ -1,5 +1,6 @@
 ---
 title: Events for Web
+toc: true
 eleventyNavigation:
   title: Events for Web
   parent: map-various

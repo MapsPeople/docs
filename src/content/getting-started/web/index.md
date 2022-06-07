@@ -1,5 +1,6 @@
 ---
 title: Getting Started
+toc: true
 eleventyNavigation:
   title: Getting Started with Web
   key: getting-started-web

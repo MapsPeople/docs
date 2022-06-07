@@ -1,5 +1,6 @@
 ---
 title: Kiosk
+toc: true
 eleventyNavigation:
   key: Kiosk
   parent: various

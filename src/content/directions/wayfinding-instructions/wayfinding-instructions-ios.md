@@ -1,5 +1,6 @@
 ---
 title: Wayfinding Instructions for iOS
+toc: true
 eleventyNavigation:
   parent: wayfinding-instructions
   title: Wayfinding Instructions for iOS

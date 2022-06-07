@@ -1,5 +1,6 @@
 ---
 title: Glossary
+toc: true
 eleventyNavigation:
   key: Glossary
   parent: various
