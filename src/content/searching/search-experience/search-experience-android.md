@@ -1,6 +1,5 @@
 ---
 title: Create a Search Experience with Android
-toc: true
 eleventyNavigation:
   parent: searching-search-experience
   key: searching-search-experience-android
