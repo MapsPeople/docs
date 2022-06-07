@@ -18,6 +18,13 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 ### Security     in case of vulnerabilities.
 -->
 
+## [3.13.13] 2022-06-07
+
+### Fixed
+
+- Fixed issue with contextual route rendering, where a crash would occur if no available marker icon was found.
+- Fixed crash where `BitmapDescriptorFactory` would cause various memory related runtime exceptions under rare circumstances
+
 ## [3.13.12] 2022-05-11
 
 ### Fixed
