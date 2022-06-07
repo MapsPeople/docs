@@ -1,6 +1,5 @@
 ---
 title: Directions Rendering for Web
-toc: true
 eleventyNavigation:
   key: web-directions-rendering
   parent: directions-renderer
