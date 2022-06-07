@@ -1,6 +1,5 @@
 ---
 title: Display Rules for iOS
-toc: true
 eleventyNavigation:
   key: map-map-styling-display-rules-ios
   parent: map-map-styling-ios

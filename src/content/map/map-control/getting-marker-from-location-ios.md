@@ -1,6 +1,5 @@
 ---
 title: Getting a Marker from a Location for iOS
-toc: true
 eleventyNavigation:
   key: map-map-control-marker-from-location-ios
   parent: map-map-control

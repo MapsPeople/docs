@@ -1,6 +1,5 @@
 ---
 title: Configuring a menu with AppConfig
-toc: true
 eleventyNavigation:
   key: map-various-appconfig
   parent: map-various

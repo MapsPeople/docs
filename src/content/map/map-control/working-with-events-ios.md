@@ -1,6 +1,5 @@
 ---
 title: Working with Events for iOS
-toc: true
 eleventyNavigation:
   key: map-map-control-events-ios
   parent: map-map-control

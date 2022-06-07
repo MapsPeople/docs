@@ -1,6 +1,5 @@
 ---
 title: Location Clustering for iOS
-toc: true
 eleventyNavigation:
   title: Location Clustering for iOS
   parent: map-displaying-objects

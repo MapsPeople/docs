@@ -1,6 +1,5 @@
 ---
 title: Location Clustering for Android
-toc: true
 eleventyNavigation:
   title: Location Clustering for Android
   parent: map-displaying-objects
