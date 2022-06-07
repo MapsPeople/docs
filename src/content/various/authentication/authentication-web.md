@@ -1,6 +1,5 @@
 ---
 title: Authentication for Web
-toc: true
 eleventyNavigation:
     key: various-authentication-web
     parent: various-authentication

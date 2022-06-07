@@ -1,6 +1,5 @@
 ---
 title: SSO Authorisation
-toc: true
 eleventyNavigation:
   key: various-authentication-sso-authorisation
   title: SSO Authorisation

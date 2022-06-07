@@ -1,6 +1,5 @@
 ---
 title: Event Logging for Android
-toc: true
 eleventyNavigation:
   key: various-event-logging-android
   parent: various-event-logging
