@@ -56,12 +56,12 @@ There are two main pages in the CMS, "Map" and "Solution Details". The hierarchi
 
 In the CMS there are different levels of users, which has an effect on what you have access to. For example, an "Admin" level user has access to Solution-level settings, whereas an "Editor" primarily has access to create and edit Locations on the Map. This documentation is written with an **Admin** user level in mind.
 
+* **Admin** - Administrators have full access to all menu points and options shown in the list above.
 * **Editor** - Editors can create new Locations, edit and delete existing Locations.
-* **Admin** - Administrators have editor rights and have access to further settings in the CMS
 
 ## Interface Overview
 
-If you prefer to recieve the following information in video format, watch the video below!
+If you prefer to receive the following information in video format, watch the video below!
 
 <iframe width="480" height="300" src="https://www.youtube-nocookie.com/embed/0boSj6X8Ces" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
