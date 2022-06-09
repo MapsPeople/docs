@@ -17,7 +17,7 @@ eleventyNavigation:
 <!-- Overview -->
 {% include "src/content/shared/async-notice.md" %}
 
-> PLEASE NOTE - This "Getting Started" guide is created using a version of the SDK that is known to be fully stable and functioning. When moving beyond the "Getting Started" guide, please be sure to download the latest version of the SDK to ensure the features described in our documentation are reflected in SDK you are using!
+> PLEASE NOTE - This "Getting Started" guide is created using a specific version of the SDK. When moving beyond the "Getting Started" guide, please be sure to download the latest version of the SDK!
 
 <mi-tabs>
 <mi-tab label="Google Maps - Manually" tab-for="gm-manually"></mi-tab>
