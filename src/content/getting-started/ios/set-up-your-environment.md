@@ -92,6 +92,8 @@ When the Google Maps installation is completed, go through these steps to instal
 </mi-tab-panel>
 </mi-tabs>
 
+> PLEASE NOTE - This "Getting Started" guide is created using a version of the SDK that is known to be fully stable and functioning. When moving beyond the "Getting Started" guide, please be sure to download the latest version of the SDK to ensure the features described in our documentation are reflected in SDK you are using!
+
 ## Adding API Credentials
 
 Open back up the project and navigate to the file `AppDelegate.swift`.
