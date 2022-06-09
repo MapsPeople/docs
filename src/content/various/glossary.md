@@ -6,11 +6,11 @@ eleventyNavigation:
   order: 5
 ---
 
-MapsIndoors is a product to help your users navigate your venues and buildings using a digital solution, either on their own smartphone or a kiosk that you provide at certain locations!
+MapsIndoors is a mapping platform designed to help users navigate your venues and buildings using a digital solution, either on their own smartphone or a kiosk that you provide at certain locations.
 
-As a customer purchasing MapsIndoors, you get access to our dedicated team of GeoData specialists, who will convert your floor plans or building blueprints to digital information, alongside a route network, which will then be created as a "Solution" in the MapsIndoors system. You can then manage your information through the Content Management System, or CMS. Here you can create "Locations", making each meeting room or desk-space unique, you can create different User Roles, providing different access permissions from visitors to executives!
+As a customer purchasing MapsIndoors, you get access to our team of GeoData specialists. They will convert your floor plans or building blueprints into digital information, alongside a route network, which will then be created as a "Solution" in the MapsIndoors system. You can manage your information through our content management system, the MapsIndoors CMS. Here you can create "Locations", making each meeting room or desk-space unique and you can create different User Roles, providing different access permissions from visitors to executives.
 
-You also gain access to our SDK's, provided for both Android and iOS for mobile developers, or a JavaScript SDK for web development. Using these SDK's, you can integrate MapsIndoors into your own app, or create a whole new wayfinding app from scratch! The possibilities are many, and the functionalities included in the MapsIndoors SDK open paths to many use-cases. This Documentation site gives you information on the various features present, and how to use them.
+You also gain access to our SDKs for both Android and iOS for mobile developers and a JavaScript SDK for web development. Using these SDKs, you can integrate MapsIndoors into your own app or create a whole new wayfinding app from scratch. This Documentation site gives you information on the various features present and how to use them.
 
 ### Solution
 
