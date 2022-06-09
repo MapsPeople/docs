@@ -7,11 +7,11 @@ eleventyNavigation:
   order: 5
 ---
 
-In order to get an understanding of the concepts used when working with MapsIndoors this space provides a glossary list ordered hierarchically, so that it starts with broad concepts and from there goes into details.
+MapsIndoors is a mapping platform designed to help users navigate your venues and buildings using a digital solution, either on their own smartphone or a kiosk that you provide at certain locations.
 
-The image below is a simplified overview of how the system is comprised.
+As a customer purchasing MapsIndoors, you get access to our team of GeoData specialists. They will convert your floor plans or building blueprints into digital information, alongside a route network, which will then be created as a "Solution" in the MapsIndoors system. You can manage your information through our content management system, the MapsIndoors CMS. Here you can create "Locations", making each meeting room or desk-space unique and you can create different User Roles, providing different access permissions from visitors to executives.
 
-![MIoverview](/assets/various/Glossary_overview.png)
+You also gain access to our SDKs for both Android and iOS for mobile developers and a JavaScript SDK for web development. Using these SDKs, you can integrate MapsIndoors into your own app or create a whole new wayfinding app from scratch. This Documentation site gives you information on the various features present and how to use them.
 
 ### Solution
 
