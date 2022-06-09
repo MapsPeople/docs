@@ -41,4 +41,6 @@ eleventyNavigation:
 
 Both here, and in future code examples, you will always be able to see which of two files the code should go in, by looking at the first line, where the name of the file is written.
 
+> PLEASE NOTE - This "Getting Started" guide is created using a version of the SDK that is known to be fully stable and functioning. When moving beyond the "Getting Started" guide, please be sure to download the latest version of the SDK to ensure the features described in our documentation are reflected in SDK you are using!
+
 <p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/content/getting-started/web/map/">Next up: Show a map</a></p>
