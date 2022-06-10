@@ -18,6 +18,14 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 ### Security     in case of vulnerabilities.
 -->
 
+## [3.13.14] 2022-06-10
+
+### Fixed
+
+- Fixed loading issue, on first run
+- Fixed issue with markers sometimes not appearing, on a fresh app install
+- Fixed issue with overriding `PolygonDisplayRule` not being reflected on the map
+
 ## [3.13.13] 2022-06-07
 
 ### Fixed
