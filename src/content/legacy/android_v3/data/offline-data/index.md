@@ -1,8 +1,8 @@
 ---
 title: Caching and Offline Data
 eleventyNavigation:
-  parent: data
-  key: data-offline-data
+  parent: legacy-android-v3-data
+  key: legacy-android-v3-data-offline-data
   title: Caching and Offline Data
   order: 20
 ---

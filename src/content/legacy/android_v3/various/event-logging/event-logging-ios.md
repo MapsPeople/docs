@@ -1,8 +1,8 @@
 ---
 title: Event Logging for iOS
 eleventyNavigation:
-  key: various-event-logging-ios
-  parent: various-event-logging
+  key: legacy-android-v3-various-event-logging-ios
+  parent: legacy-android-v3-various-event-logging
   title: Event Logging for iOS
   order: 10
 ---

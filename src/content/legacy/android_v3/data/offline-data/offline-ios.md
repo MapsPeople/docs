@@ -2,8 +2,8 @@
 title: Offline Content for iOS
 toc: true
 eleventyNavigation:
-  key: data-offline-data-ios
-  parent: data-offline-data
+  key: legacy-android-v3-data-offline-data-ios
+  parent: legacy-android-v3-data-offline-data
   title: Offline Content for iOS
   order: 20
 ---

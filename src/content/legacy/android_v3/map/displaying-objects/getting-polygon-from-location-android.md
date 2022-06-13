@@ -1,8 +1,8 @@
 ---
 title: Getting a Polygon from a Location for Android
 eleventyNavigation:
-  key: map-displaying-objects-polygon-from-location-android
-  parent: map-displaying-objects
+  key: legacy-android-v3-map-displaying-objects-polygon-from-location-android
+  parent: legacy-android-v3-map-displaying-objects
   title: Getting a Polygon from a Location for Android
   order: 221
 ---

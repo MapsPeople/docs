@@ -2,8 +2,8 @@
 title: Basic Searching for iOS
 toc: true
 eleventyNavigation:
-  key: searching-basic-search-ios
-  parent: searching-basic-searching
+  key: legacy-android-v3-searching-basic-search-ios
+  parent: legacy-android-v3-searching-basic-searching
   title: Basic Searching for iOS
   order: 20
 ---

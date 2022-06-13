@@ -1,9 +1,9 @@
 ---
 title: Create a Search Experience with iOS
 eleventyNavigation:
-  parent: searching-search-experience
+  parent: legacy-android-v3-searching-search-experience
   title: Create a Search Experience with iOS
-  key: searching-search-experience-ios
+  key: legacy-android-v3-searching-search-experience-ios
   order: 20
 ---
 

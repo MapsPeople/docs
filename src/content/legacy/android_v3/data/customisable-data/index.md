@@ -1,8 +1,8 @@
 ---
 title: Customisable Data
 eleventyNavigation:
-  parent: data
-  key: data-customisable-data
+  parent: legacy-android-v3-data
+  key: legacy-android-v3-data-customisable-data
   title: Customisable Data
   order: 30
 ---

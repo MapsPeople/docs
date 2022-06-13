@@ -1,8 +1,8 @@
 ---
 title: Print Map
 eleventyNavigation:
-  key: Print Map
-  parent: various
+  key: legacy-android-v3-Print Map
+  parent: legacy-android-v3-various
   order: 11
 ---
 

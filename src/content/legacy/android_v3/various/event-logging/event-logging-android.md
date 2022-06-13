@@ -1,8 +1,8 @@
 ---
 title: Event Logging for Android
 eleventyNavigation:
-  key: various-event-logging-android
-  parent: various-event-logging
+  key: legacy-android-v3-various-event-logging-android
+  parent: legacy-android-v3-various-event-logging
   title: Event Logging for Android
   order: 20
 ---

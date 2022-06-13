@@ -1,8 +1,8 @@
 ---
 title: Map Control
 eleventyNavigation:
-  parent: map
-  key: map-map-control
+  parent: legacy-android-v3-map
+  key: legacy-android-v3-map-map-control
   title: Map Control
   order: 20
 ---

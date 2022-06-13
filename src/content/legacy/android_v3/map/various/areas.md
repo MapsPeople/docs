@@ -3,8 +3,8 @@ title: Areas
 toc: true
 eleventyNavigation:
   title: Areas
-  key: map-various-areas
-  parent: map-various
+  key: legacy-android-v3-map-various-areas
+  parent: legacy-android-v3-map-various
   order: 1000
 ---
 

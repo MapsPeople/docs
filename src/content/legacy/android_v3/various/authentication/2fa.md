@@ -2,8 +2,8 @@
 title: 2-Factor Authentication
 toc: true
 eleventyNavigation:
-    key: various-authetication-2fa
-    parent: various-authentication
+    key: legacy-android-v3-various-authetication-2fa
+    parent: legacy-android-v3-various-authentication
     title: 2-Factor Authentication
     order: 50
 ---

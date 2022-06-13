@@ -2,8 +2,8 @@
 title: Show User's Location aka. Blue Dot
 toc: true
 eleventyNavigation:
-  key: map-positioning-blue-dot
-  parent: map-positioning
+  key: legacy-android-v3-map-positioning-blue-dot
+  parent: legacy-android-v3-map-positioning
   title: Show User's Location aka. Blue Dot
   order: 100
 ---

@@ -2,8 +2,8 @@
 title: Glossary
 toc: true
 eleventyNavigation:
-  key: Glossary
-  parent: various
+  key: legacy-android-v3-Glossary
+  parent: legacy-android-v3-various
   order: 5
 ---
 

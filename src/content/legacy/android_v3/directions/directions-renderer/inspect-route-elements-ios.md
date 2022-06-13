@@ -2,8 +2,8 @@
 title: Inspect Route Element for iOS
 toc: true
 eleventyNavigation:
-  key: ios-directions-rendering-inspect-route-element
-  parent: ios-directions-rendering
+  key: legacy-android-v3-ios-directions-rendering-inspect-route-element
+  parent: legacy-android-v3-ios-directions-rendering
   title: Inspect Route Element for iOS
   order: 10
 ---

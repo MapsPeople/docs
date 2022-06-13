@@ -2,8 +2,8 @@
 title: Live Data Introduction for Android
 toc: true
 eleventyNavigation:
-  key: map-live-data-intro-android
-  parent: map-live-data
+  key: legacy-android-v3-map-live-data-intro-android
+  parent: legacy-android-v3-map-live-data
   title: Live Data Introduction for Android
   order: 10
 ---

@@ -2,8 +2,8 @@
 title: Directions Service for iOS
 toc: true
 eleventyNavigation:
-  key: directions-service-ios
-  parent: directions-service
+  key: legacy-android-v3-directions-service-ios
+  parent: legacy-android-v3-directions-service
   title: Directions Service for iOS
   order: 20
 ---

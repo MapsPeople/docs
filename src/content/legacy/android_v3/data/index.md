@@ -1,8 +1,8 @@
 ---
 title: Working with Data
 eleventyNavigation:
-  parent: docs
-  key: data
+  parent: legacy-android-v3
+  key: legacy-android-v3-data
   title: Working with Data
   order: 50
 ---

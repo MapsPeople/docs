@@ -2,8 +2,8 @@
 title: Create a Map for Web
 toc: true
 eleventyNavigation:
-  parent: map-map-control
-  key: map-simple-map-web
+  parent: legacy-android-v3-map-map-control
+  key: legacy-android-v3-map-simple-map-web
   title: Create a Map for Web
   order: 10
 ---

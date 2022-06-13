@@ -2,8 +2,8 @@
 title: Display Rules
 toc: true
 eleventyNavigation:
-    key: display-rules
-    parent: various
+    key: legacy-android-v3-display-rules
+    parent: legacy-android-v3-various
     title: Display Rules
     order: 500
 ---

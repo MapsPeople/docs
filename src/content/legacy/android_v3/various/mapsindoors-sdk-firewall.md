@@ -1,8 +1,8 @@
 ---
 title: Work with MapsIndoors SDK Behind a Firewall
 eleventyNavigation:
-  key: Work with MapsIndoors SDK Behind a Firewall
-  parent: various
+  key: legacy-android-v3-Work with MapsIndoors SDK Behind a Firewall
+  parent: legacy-android-v3-various
   order: 8
 ---
 

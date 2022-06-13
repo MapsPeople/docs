@@ -1,8 +1,8 @@
 ---
 title: Wayfinding Instructions
 eleventyNavigation:
-  parent: directions
-  key: wayfinding-instructions
+  parent: legacy-android-v3-directions
+  key: legacy-android-v3-wayfinding-instructions
   title: Wayfinding Instructions
   order: 30
 ---

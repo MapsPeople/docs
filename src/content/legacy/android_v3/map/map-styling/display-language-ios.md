@@ -2,8 +2,8 @@
 title: Display Language for iOS
 toc: true
 eleventyNavigation:
-  key: map-map-styling-display-language-ios
-  parent: map-map-styling
+  key: legacy-android-v3-map-map-styling-display-language-ios
+  parent: legacy-android-v3-map-map-styling
   title: Display Language for iOS
   order: 380
 ---

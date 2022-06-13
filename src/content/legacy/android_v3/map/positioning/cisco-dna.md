@@ -2,9 +2,9 @@
 title: Using Cisco DNA Spaces
 toc: true
 eleventyNavigation:
-  parent: map-positioning-blue-dot
+  parent: legacy-android-v3-map-positioning-blue-dot
   title: Using Cisco DNA Spaces
-  key: map-positioning-cisco-dna-android
+  key: legacy-android-v3-map-positioning-cisco-dna-android
   order: 110
 ---
 

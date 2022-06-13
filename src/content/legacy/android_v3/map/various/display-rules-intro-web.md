@@ -3,8 +3,8 @@ title: Introduction to Display Rules
 toc: true
 eleventyNavigation:
   title: Introduction to Display Rules
-  parent: map-various
-  key: map-various-display-rules
+  parent: legacy-android-v3-map-various
+  key: legacy-android-v3-map-various-display-rules
   order: 210
 ---
 

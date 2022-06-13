@@ -1,8 +1,8 @@
 ---
 title: Authentication for iOS
 eleventyNavigation:
-    key: various-authentication-ios
-    parent: various-authentication
+    key: legacy-android-v3-various-authentication-ios
+    parent: legacy-android-v3-various-authentication
     title: Authentication for iOS
     order: 10
 ---

@@ -3,8 +3,8 @@ title: Search
 toc: true
 eleventyNavigation:
   title: Search
-  key: getting-started-ios-search
-  parent: getting-started-ios
+  key: legacy-android-v3-getting-started-ios-search
+  parent: legacy-android-v3-getting-started-ios
   order: 93
 ---
 

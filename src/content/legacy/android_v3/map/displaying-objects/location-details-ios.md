@@ -1,8 +1,8 @@
 ---
 title: Location Details for iOS
 eleventyNavigation:
-  parent: map-displaying-objects
-  key: map-displaying-objects-location-details-ios
+  parent: legacy-android-v3-map-displaying-objects
+  key: legacy-android-v3-map-displaying-objects-location-details-ios
   title: Location Details for iOS
   order: 100
 ---

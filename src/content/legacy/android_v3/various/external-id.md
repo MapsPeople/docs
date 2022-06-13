@@ -2,8 +2,8 @@
 title: External ID
 toc: true
 eleventyNavigation:
-  key: External ID
-  parent: various
+  key: legacy-android-v3-External ID
+  parent: legacy-android-v3-various
   order: 5
 ---
 

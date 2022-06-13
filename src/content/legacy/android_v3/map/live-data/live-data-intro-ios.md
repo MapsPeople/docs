@@ -2,8 +2,8 @@
 title: Live Data Introduction for iOS
 toc: true
 eleventyNavigation:
-  key: map-live-data-intro-iOS
-  parent: map-live-data
+  key: legacy-android-v3-map-live-data-intro-iOS
+  parent: legacy-android-v3-map-live-data
   title: Live Data Introduction for iOS
   order: 30
 ---

@@ -2,8 +2,8 @@
 title: Switching Solutions
 toc: true
 eleventyNavigation:
-  parent: data-various
-  key: data-various-switching-solutions
+  parent: legacy-android-v3-data-various
+  key: legacy-android-v3-data-various-switching-solutions
   title: Switching Solutions
   order: 10
 ---

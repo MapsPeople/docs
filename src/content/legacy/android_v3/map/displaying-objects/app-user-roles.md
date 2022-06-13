@@ -2,8 +2,8 @@
 title: Application User Roles
 toc: true
 eleventyNavigation:
-    key: map-displaying-objects-app-user-roles
-    parent: map-displaying-objects
+    key: legacy-android-v3-map-displaying-objects-app-user-roles
+    parent: legacy-android-v3-map-displaying-objects
     title: Application User Roles
     order: 1000
 ---

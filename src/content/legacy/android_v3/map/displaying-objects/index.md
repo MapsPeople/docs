@@ -1,8 +1,8 @@
 ---
 title: Displaying Objects
 eleventyNavigation:
-  parent: map
-  key: map-displaying-objects
+  parent: legacy-android-v3-map
+  key: legacy-android-v3-map-displaying-objects
   title: Displaying Objects
   order: 40
 ---

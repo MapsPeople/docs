@@ -1,8 +1,8 @@
 ---
 title: Various
 eleventyNavigation:
-  parent: map
-  key: map-various
+  parent: legacy-android-v3-map
+  key: legacy-android-v3-map-various
   title: Various
   order: 70
 ---

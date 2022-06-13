@@ -1,8 +1,8 @@
 ---
 title: Searching on a Map for Android
 eleventyNavigation:
-  parent: searching-search-on-map
-  key: searching-search-on-map-android
+  parent: legacy-android-v3-searching-search-on-map
+  key: legacy-android-v3-searching-search-on-map-android
   title: Searching on a Map for Android
   order: 10
 ---

@@ -2,8 +2,8 @@
 title: Booking Tutorial
 toc: true
 eleventyNavigation:
-  parent: data-booking-ios
-  key: data-booking-ios-tutorial
+  parent: legacy-android-v3-data-booking-ios
+  key: legacy-android-v3-data-booking-ios-tutorial
   title: Booking Tutorial for iOS
   order: 10
 ---

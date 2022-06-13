@@ -2,8 +2,8 @@
 title: Location Clustering for iOS
 eleventyNavigation:
   title: Location Clustering for iOS
-  parent: map-displaying-objects
-  key: map-displaying-objects-location-clustering-ios
+  parent: legacy-android-v3-map-displaying-objects
+  key: legacy-android-v3-map-displaying-objects-location-clustering-ios
   order: 140
 ---
 

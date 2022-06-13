@@ -2,8 +2,8 @@
 title: Booking for iOS
 toc: true
 eleventyNavigation:
-  parent: data-booking
-  key: data-booking-ios
+  parent: legacy-android-v3-data-booking
+  key: legacy-android-v3-data-booking-ios
   title: Booking for iOS
   order: 10
 ---

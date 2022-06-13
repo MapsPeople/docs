@@ -2,8 +2,8 @@
 title: Display Rules
 toc: true
 eleventyNavigation:
-    key: map-map-styling-display-rules
-    parent: map-map-styling
+    key: legacy-android-v3-map-map-styling-display-rules
+    parent: legacy-android-v3-map-map-styling
     title: Display Rules
     order: 10
 ---

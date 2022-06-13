@@ -3,8 +3,8 @@ title: Using Indoor Atlas
 toc: true
 eleventyNavigation:
   title: Using Indoor Atlas
-  parent: map-positioning-blue-dot
-  key: map-positioning-indoor-atlas
+  parent: legacy-android-v3-map-positioning-blue-dot
+  key: legacy-android-v3-map-positioning-indoor-atlas
   order: 130
 ---
 

@@ -2,8 +2,8 @@
 title: Password Reset
 toc: true
 eleventyNavigation:
-    key: various-authentication-passwordreset
-    parent: various-authentication
+    key: legacy-android-v3-various-authentication-passwordreset
+    parent: legacy-android-v3-various-authentication
     title: Password Reset
     order: 60
 ---

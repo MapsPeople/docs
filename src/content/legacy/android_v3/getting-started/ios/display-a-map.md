@@ -3,8 +3,8 @@ title: Display a Map
 toc: true
 eleventyNavigation:
   title: Display a Map
-  key: getting-started-ios-displayamap
-  parent: getting-started-ios
+  key: legacy-android-v3-getting-started-ios-displayamap
+  parent: legacy-android-v3-getting-started-ios
   order: 92
 ---
 Now that we have the prerequisite API keys, and the project set up, we can start adding basic functionality to the app. We will start by having the app display a map.

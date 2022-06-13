@@ -2,8 +2,8 @@
 title: Live Data for Web
 toc: true
 eleventyNavigation:
-  key: map-live-data-web
-  parent: map-live-data
+  key: legacy-android-v3-map-live-data-web
+  parent: legacy-android-v3-map-live-data
   title: Live Data for Web
   order: 50
 ---

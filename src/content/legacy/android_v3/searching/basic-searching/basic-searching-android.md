@@ -2,8 +2,8 @@
 title: Basic Searching for Android
 toc: true
 eleventyNavigation:
-  key: searching-basic-search-android
-  parent: searching-basic-searching
+  key: legacy-android-v3-searching-basic-search-android
+  parent: legacy-android-v3-searching-basic-searching
   title: Basic Searching for Android
   order: 10
 ---

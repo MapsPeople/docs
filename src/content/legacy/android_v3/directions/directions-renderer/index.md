@@ -1,8 +1,8 @@
 ---
 title: Directions Renderer
 eleventyNavigation:
-  parent: directions
-  key: directions-renderer
+  parent: legacy-android-v3-directions
+  key: legacy-android-v3-directions-renderer
   title: Directions Renderer
   order: 20
 ---

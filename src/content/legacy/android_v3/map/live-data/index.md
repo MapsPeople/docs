@@ -1,8 +1,8 @@
 ---
 title: Live Data
 eleventyNavigation:
-  parent: map
-  key: map-live-data
+  parent: legacy-android-v3-map
+  key: legacy-android-v3-map-live-data
   title: Live Data
   order: 50
 ---

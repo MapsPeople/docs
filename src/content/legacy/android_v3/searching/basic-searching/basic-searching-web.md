@@ -2,8 +2,8 @@
 title: Basic Searching for Web
 toc: true
 eleventyNavigation:
-  key: searching-basic-search-web
-  parent: searching-basic-searching
+  key: legacy-android-v3-searching-basic-search-web
+  parent: legacy-android-v3-searching-basic-searching
   title: Basic Searching for Web
   order: 30
 ---

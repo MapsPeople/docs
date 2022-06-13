@@ -2,8 +2,8 @@
 title: Kiosk
 toc: true
 eleventyNavigation:
-  key: Kiosk
-  parent: various
+  key: legacy-android-v3-Kiosk
+  parent: legacy-android-v3-various
   order: 9
 ---
 

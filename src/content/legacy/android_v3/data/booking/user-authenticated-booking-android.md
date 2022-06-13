@@ -2,8 +2,8 @@
 title: User Authenticated Booking
 toc: true
 eleventyNavigation:
-  parent: data-booking-android
-  key: data-booking-android-user-auth
+  parent: legacy-android-v3-data-booking-android
+  key: legacy-android-v3-data-booking-android-user-auth
   title: User Authenticated Booking
 ---
 

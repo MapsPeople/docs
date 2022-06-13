@@ -1,8 +1,8 @@
 ---
 title: Create a Search Experience
 eleventyNavigation:
-  parent: searching
-  key: searching-search-experience
+  parent: legacy-android-v3-searching
+  key: legacy-android-v3-searching-search-experience
   title: Create a Search Experience
   order: 30
 ---

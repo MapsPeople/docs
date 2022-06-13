@@ -1,8 +1,8 @@
 ---
 title: Authentication for Android
 eleventyNavigation:
-    key: various-authentication-android
-    parent: various-authentication
+    key: legacy-android-v3-various-authentication-android
+    parent: legacy-android-v3-various-authentication
     title: Authentication for Android
     order: 20
 ---

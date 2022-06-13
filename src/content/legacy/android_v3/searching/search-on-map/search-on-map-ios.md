@@ -1,8 +1,8 @@
 ---
 title: Searching on a Map for iOS
 eleventyNavigation:
-  parent: searching-search-on-map
-  key: searching-search-on-map-ios
+  parent: legacy-android-v3-searching-search-on-map
+  key: legacy-android-v3-searching-search-on-map-ios
   title: Searching on a Map for iOS
   order: 20
 ---

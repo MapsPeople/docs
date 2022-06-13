@@ -3,8 +3,8 @@ title: Show a Map
 toc: true
 eleventyNavigation:
   title: Show a Map
-  key: getting-started-web-map
-  parent: getting-started-web
+  key: legacy-android-v3-getting-started-web-map
+  parent: legacy-android-v3-getting-started-web
   order: 130
 ---
 

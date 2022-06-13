@@ -2,8 +2,8 @@
 title: Google Analytics
 toc: true
 eleventyNavigation:
-  key: Google Analytics
-  parent: various
+  key: legacy-android-v3-Google Analytics
+  parent: legacy-android-v3-various
   order: 7
 ---
 

@@ -1,8 +1,8 @@
 ---
 title: Directions Service
 eleventyNavigation:
-  parent: directions
-  key: directions-service
+  parent: legacy-android-v3-directions
+  key: legacy-android-v3-directions-service
   title: Directions Service
   order: 10
 ---

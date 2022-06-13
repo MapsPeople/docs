@@ -1,7 +1,7 @@
 ---
 title: Getting Started with MapsIndoors
 eleventyNavigation:
-  parent: index
-  key: getting-started
+  parent: legacy-android-v3
+  key: legacy-android-v3-getting-started
   title: Getting Started
 ---

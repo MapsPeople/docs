@@ -3,8 +3,8 @@ title: Getting Started
 toc: true
 eleventyNavigation:
   title: Getting Started with Web
-  key: getting-started-web
-  parent: getting-started
+  key: legacy-android-v3-getting-started-web
+  parent: legacy-android-v3-getting-started
   order: 100
 ---
 

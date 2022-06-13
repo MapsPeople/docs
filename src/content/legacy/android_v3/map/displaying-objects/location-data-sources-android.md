@@ -1,8 +1,8 @@
 ---
 title: Location Data Sources for Android
 eleventyNavigation:
-  parent: map-displaying-objects
-  key: map-displaying-objects-location-sources-android
+  parent: legacy-android-v3-map-displaying-objects
+  key: legacy-android-v3-map-displaying-objects-location-sources-android
   title: Location Data Sources for Android
   order: 40
 ---

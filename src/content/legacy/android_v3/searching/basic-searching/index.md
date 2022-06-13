@@ -1,8 +1,8 @@
 ---
 title: Basic Searching
 eleventyNavigation:
-  parent: searching
-  key: searching-basic-searching
+  parent: legacy-android-v3-searching
+  key: legacy-android-v3-searching-basic-searching
   title: Basic Searching
   order: 10
 ---

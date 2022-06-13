@@ -2,8 +2,8 @@
 title: Location Data Sources for iOS
 toc: true
 eleventyNavigation:
-  parent: map-displaying-objects
-  key: map-displaying-objects-location-sources-ios
+  parent: legacy-android-v3-map-displaying-objects
+  key: legacy-android-v3-map-displaying-objects-location-sources-ios
   title: Location Data Sources for iOS
   order: 40
 ---

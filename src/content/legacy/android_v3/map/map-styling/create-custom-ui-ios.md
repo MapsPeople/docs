@@ -1,8 +1,8 @@
 ---
 title: Custom UI for iOS
 eleventyNavigation:
-  key: map-map-styling-custom-ui-ios
-  parent: map-map-styling-ios
+  key: legacy-android-v3-map-map-styling-custom-ui-ios
+  parent: legacy-android-v3-map-map-styling-ios
   title: Custom UI for iOS
   order: 30
 ---

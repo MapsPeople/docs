@@ -1,8 +1,8 @@
 ---
 title: Map Styling
 eleventyNavigation:
-  parent: map
-  key: map-map-styling
+  parent: legacy-android-v3-map
+  key: legacy-android-v3-map-map-styling
   title: Map Styling
   order: 30
 ---

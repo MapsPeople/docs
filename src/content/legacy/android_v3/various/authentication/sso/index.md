@@ -1,9 +1,9 @@
 ---
 title: Single Sign-On
 eleventyNavigation:
-  key: various-authentication-sso
+  key: legacy-android-v3-various-authentication-sso
   title: Single Sign-On
-  parent: various-authentication
+  parent: legacy-android-v3-various-authentication
   order: 40
 ---
 

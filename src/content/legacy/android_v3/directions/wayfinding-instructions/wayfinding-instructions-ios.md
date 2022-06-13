@@ -2,9 +2,9 @@
 title: Wayfinding Instructions for iOS
 toc: true
 eleventyNavigation:
-  parent: wayfinding-instructions
+  parent: legacy-android-v3-wayfinding-instructions
   title: Wayfinding Instructions for iOS
-  key: wayfinding-instructions-ios
+  key: legacy-android-v3-wayfinding-instructions-ios
   order: 20
 ---
 

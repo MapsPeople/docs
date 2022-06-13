@@ -2,8 +2,8 @@
 title: Directions Service for Android
 toc: true
 eleventyNavigation:
-  key: directions-service-android
-  parent: directions-service
+  key: legacy-android-v3-directions-service-android
+  parent: legacy-android-v3-directions-service
   title: Directions Service for Android
   order: 10
 ---

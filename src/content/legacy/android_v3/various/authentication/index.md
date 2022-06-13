@@ -1,9 +1,9 @@
 ---
 title: Authentication
 eleventyNavigation:
-  key: various-authentication
+  key: legacy-android-v3-various-authentication
   title: Authentication
-  parent: various
+  parent: legacy-android-v3-various
   order: 10
 ---
 

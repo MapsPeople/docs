@@ -1,8 +1,8 @@
 ---
 title: Webex Integration
 eleventyNavigation:
-  key: various-webex-integration
-  parent: various
+  key: legacy-android-v3-various-webex-integration
+  parent: legacy-android-v3-various
   title: Webex Integration
   order: 12
 ---

@@ -2,8 +2,8 @@
 title: WCAG Compliance
 toc: true
 eleventyNavigation:
-  key: WCAG Compliance
-  parent: various
+  key: legacy-android-v3-WCAG Compliance
+  parent: legacy-android-v3-various
   order: 12
 ---
 

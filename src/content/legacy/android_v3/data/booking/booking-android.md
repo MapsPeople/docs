@@ -2,8 +2,8 @@
 title: Booking for Android
 toc: true
 eleventyNavigation:
-  parent: data-booking
-  key: data-booking-android
+  parent: legacy-android-v3-data-booking
+  key: legacy-android-v3-data-booking-android
   title: Booking for Android
   order: 20
 ---

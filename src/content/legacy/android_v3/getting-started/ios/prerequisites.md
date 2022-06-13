@@ -3,8 +3,8 @@ title: Prerequisites
 toc: true
 eleventyNavigation:
   title: Prerequisites
-  key: getting-started-ios-prerequisites
-  parent: getting-started-ios
+  key: legacy-android-v3-getting-started-ios-prerequisites
+  parent: legacy-android-v3-getting-started-ios
   order: 90
 ---
 

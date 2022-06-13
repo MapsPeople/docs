@@ -2,8 +2,8 @@
 title: Display Language for Android
 toc: true
 eleventyNavigation:
-  key: map-map-styling-display-language-android
-  parent: map-map-styling
+  key: legacy-android-v3-map-map-styling-display-language-android
+  parent: legacy-android-v3-map-map-styling
   title: Display Language for Android
   order: 390
 ---

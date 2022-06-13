@@ -3,8 +3,8 @@ title: Prerequisites
 toc: true
 eleventyNavigation:
   title: Prerequisites
-  key: getting-started-web-prerequisites
-  parent: getting-started-web
+  key: legacy-android-v3-getting-started-web-prerequisites
+  parent: legacy-android-v3-getting-started-web
   order: 110
 ---
 

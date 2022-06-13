@@ -3,8 +3,8 @@ title: Various
 layout: redirect
 destination: /content/various/glossary/
 eleventyNavigation:
-  key: various
+  key: legacy-android-v3-various
   title: Various
-  parent: docs
+  parent: legacy-android-v3
   order: 60
 ---

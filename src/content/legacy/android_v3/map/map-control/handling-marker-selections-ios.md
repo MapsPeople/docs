@@ -1,8 +1,8 @@
 ---
 title: Handling Marker Selections for iOS
 eleventyNavigation:
-  key: map-map-control-marker-selection-ios
-  parent: map-map-control
+  key: legacy-android-v3-map-map-control-marker-selection-ios
+  parent: legacy-android-v3-map-map-control
   title: Handling Marker Selections for iOS
   order: 220
 ---

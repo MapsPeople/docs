@@ -2,8 +2,8 @@
 title: Directions Rendering for Android
 toc: true
 eleventyNavigation:
-  key: android-directions-rendering
-  parent: directions-renderer
+  key: legacy-android-v3-android-directions-rendering
+  parent: legacy-android-v3-directions-renderer
   title: Directions Rendering for Android
   order: 10
 ---

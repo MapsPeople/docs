@@ -2,8 +2,8 @@
 title: Location Sources for iOS
 toc: true
 eleventyNavigation:
-  key: Location Sources for iOS
-  parent: data-customisable-data
+  key: legacy-android-v3-Location Sources for iOS
+  parent: legacy-android-v3-data-customisable-data
   order: 10
 ---
 

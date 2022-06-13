@@ -2,8 +2,8 @@
 title: Directions Rendering for iOS
 toc: true
 eleventyNavigation:
-  key: ios-directions-rendering
-  parent: directions-renderer
+  key: legacy-android-v3-ios-directions-rendering
+  parent: legacy-android-v3-directions-renderer
   title: Directions Rendering for iOS
   order: 20
 ---

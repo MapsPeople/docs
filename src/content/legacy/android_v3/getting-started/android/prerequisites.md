@@ -3,8 +3,8 @@ title: Prerequisites
 toc: true
 eleventyNavigation:
   title: Prerequisites
-  key: getting-started-android-prerequisites
-  parent: getting-started-android
+  key: legacy-android-v3-getting-started-android-prerequisites
+  parent: legacy-android-v3-getting-started-android
   order: 110
 ---
 

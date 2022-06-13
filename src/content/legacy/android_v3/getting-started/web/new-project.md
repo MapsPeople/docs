@@ -3,8 +3,8 @@ title: Create a New Project
 toc: true
 eleventyNavigation:
   title: Create a New Project
-  key: getting-started-web-project
-  parent: getting-started-web
+  key: legacy-android-v3-getting-started-web-project
+  parent: legacy-android-v3-getting-started-web
   order: 120
 ---
 

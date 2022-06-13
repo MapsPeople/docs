@@ -1,8 +1,8 @@
 ---
 title: Booking
 eleventyNavigation:
-  parent: data
-  key: data-booking
+  parent: legacy-android-v3-data
+  key: legacy-android-v3-data-booking
   title: Booking
   order: 10
 ---

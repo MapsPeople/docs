@@ -3,8 +3,8 @@ title: Events for Web
 toc: true
 eleventyNavigation:
   title: Events for Web
-  parent: map-various
-  key: map-various-events
+  parent: legacy-android-v3-map-various
+  key: legacy-android-v3-map-various-events
   order: 230
 ---
 

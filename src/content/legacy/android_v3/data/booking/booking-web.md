@@ -2,8 +2,8 @@
 title: Booking for Web
 toc: true
 eleventyNavigation:
-  parent: data-booking
-  key: data-booking-web
+  parent: legacy-android-v3-data-booking
+  key: legacy-android-v3-data-booking-web
   title: Booking for Web
   order: 30
 ---

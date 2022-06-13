@@ -2,8 +2,8 @@
 title: Getting Started with Xamarin
 toc: true
 eleventyNavigation:
-  parent: getting-started
-  key: getting-started-xamarin
+  parent: legacy-android-v3-getting-started
+  key: legacy-android-v3-getting-started-xamarin
   title: Getting Started with Xamarin
   order: 9990
 ---

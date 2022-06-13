@@ -1,8 +1,8 @@
 ---
 title: Authentication for Web
 eleventyNavigation:
-    key: various-authentication-web
-    parent: various-authentication
+    key: legacy-android-v3-various-authentication-web
+    parent: legacy-android-v3-various-authentication
     title: Authentication for Web
     order: 30
 ---

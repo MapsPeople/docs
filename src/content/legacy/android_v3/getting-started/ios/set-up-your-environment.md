@@ -3,8 +3,8 @@ title: Set Up Your Environment
 toc: true
 eleventyNavigation:
   title: Set Up Your Environment
-  key: getting-started-ios-setupyourenvironment
-  parent: getting-started-ios
+  key: legacy-android-v3-getting-started-ios-setupyourenvironment
+  parent: legacy-android-v3-getting-started-ios
   order: 91
 ---
 

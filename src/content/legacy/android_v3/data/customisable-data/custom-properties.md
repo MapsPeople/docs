@@ -2,9 +2,9 @@
 title: Custom Properties
 toc: true
 eleventyNavigation:
-  key: data-customisable-data-custom-properties
+  key: legacy-android-v3-data-customisable-data-custom-properties
   title: Custom Properties
-  parent: data-customisable-data
+  parent: legacy-android-v3-data-customisable-data
   order: 3
 ---
 

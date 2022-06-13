@@ -3,8 +3,8 @@ title: Using Google Fused Location Provider
 toc: true
 eleventyNavigation:
   title: Using Google Fused Location Provider
-  parent: map-positioning-blue-dot
-  key: map-positioning-google-fused
+  parent: legacy-android-v3-map-positioning-blue-dot
+  key: legacy-android-v3-map-positioning-google-fused
   order: 120
 ---
 

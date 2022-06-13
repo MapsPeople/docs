@@ -2,8 +2,8 @@
 title: Map Styling for iOS
 toc: true
 eleventyNavigation:
-  key: map-map-styling-ios
-  parent: map-map-styling
+  key: legacy-android-v3-map-map-styling-ios
+  parent: legacy-android-v3-map-map-styling
   title: Map Styling for iOS
   order: 20
 ---

@@ -2,8 +2,8 @@
 title: Display Language for Web
 toc: true
 eleventyNavigation:
-  key: map-map-styling-display-language-web
-  parent: map-map-styling
+  key: legacy-android-v3-map-map-styling-display-language-web
+  parent: legacy-android-v3-map-map-styling
   title: Display Language for Web
   order: 400
 ---

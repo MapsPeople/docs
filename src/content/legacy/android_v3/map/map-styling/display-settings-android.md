@@ -2,8 +2,8 @@
 title: Display Rules in Practice for Android
 toc: true
 eleventyNavigation:
-  key: map-map-styling-display-rules-android
-  parent: map-map-styling
+  key: legacy-android-v3-map-map-styling-display-rules-android
+  parent: legacy-android-v3-map-map-styling
   title: Display Rules in Practice for Android
   order: 20
 ---

@@ -1,8 +1,8 @@
 ---
 title: Location Details for Android
 eleventyNavigation:
-  parent: map-displaying-objects
-  key: map-displaying-objects-location-details-android
+  parent: legacy-android-v3-map-displaying-objects
+  key: legacy-android-v3-map-displaying-objects-location-details-android
   title: Location Details for Android
   order: 100
 ---

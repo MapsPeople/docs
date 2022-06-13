@@ -1,8 +1,8 @@
 ---
 title: Directions Rendering for Web
 eleventyNavigation:
-  key: web-directions-rendering
-  parent: directions-renderer
+  key: legacy-android-v3-web-directions-rendering
+  parent: legacy-android-v3-directions-renderer
   title: Directions Rendering for Web
   order: 30
 ---

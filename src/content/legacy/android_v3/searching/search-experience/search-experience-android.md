@@ -1,8 +1,8 @@
 ---
 title: Create a Search Experience with Android
 eleventyNavigation:
-  parent: searching-search-experience
-  key: searching-search-experience-android
+  parent: legacy-android-v3-searching-search-experience
+  key: legacy-android-v3-searching-search-experience-android
   title: Create a Search Experience with Android
   order: 10
 ---

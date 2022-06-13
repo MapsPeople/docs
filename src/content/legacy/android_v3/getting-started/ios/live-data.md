@@ -3,8 +3,8 @@ title: Live Data
 toc: true
 eleventyNavigation:
   title: Live Data
-  key: getting-started-ios-livedata
-  parent: getting-started-ios
+  key: legacy-android-v3-getting-started-ios-livedata
+  parent: legacy-android-v3-getting-started-ios
   order: 95
 ---
 

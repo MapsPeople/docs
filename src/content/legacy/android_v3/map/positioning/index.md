@@ -1,9 +1,9 @@
 ---
 title: User Positioning
 eleventyNavigation:
-  parent: map
+  parent: legacy-android-v3-map
   title: User Positioning
-  key: map-positioning
+  key: legacy-android-v3-map-positioning
   order: 60
 ---
 

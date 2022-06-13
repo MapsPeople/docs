@@ -1,8 +1,8 @@
 ---
 title: Working with Events for iOS
 eleventyNavigation:
-  key: map-map-control-events-ios
-  parent: map-map-control
+  key: legacy-android-v3-map-map-control-events-ios
+  parent: legacy-android-v3-map-map-control
   title: Working with Events for iOS
   order: 220
 ---

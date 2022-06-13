@@ -1,8 +1,8 @@
 ---
 title: Display Rules for iOS
 eleventyNavigation:
-  key: map-map-styling-display-rules-ios
-  parent: map-map-styling-ios
+  key: legacy-android-v3-map-map-styling-display-rules-ios
+  parent: legacy-android-v3-map-map-styling-ios
   title: Display Rules for iOS
   order: 20
 ---

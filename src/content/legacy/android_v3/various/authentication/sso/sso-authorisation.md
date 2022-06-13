@@ -1,9 +1,9 @@
 ---
 title: SSO Authorisation
 eleventyNavigation:
-  key: various-authentication-sso-authorisation
+  key: legacy-android-v3-various-authentication-sso-authorisation
   title: SSO Authorisation
-  parent: various-authentication-sso
+  parent: legacy-android-v3-various-authentication-sso
   order: 20
 ---
 

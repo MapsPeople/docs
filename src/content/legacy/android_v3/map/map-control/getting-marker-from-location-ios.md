@@ -1,8 +1,8 @@
 ---
 title: Getting a Marker from a Location for iOS
 eleventyNavigation:
-  key: map-map-control-marker-from-location-ios
-  parent: map-map-control
+  key: legacy-android-v3-map-map-control-marker-from-location-ios
+  parent: legacy-android-v3-map-map-control
   title: Getting a Marker from a Location for iOS
   order: 220
 ---

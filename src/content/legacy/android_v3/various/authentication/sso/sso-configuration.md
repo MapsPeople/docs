@@ -2,9 +2,9 @@
 title: SSO Configuration
 toc: true
 eleventyNavigation:
-  key: various-authentication-sso-configuration
+  key: legacy-android-v3-various-authentication-sso-configuration
   title: SSO Configuration
-  parent: various-authentication-sso
+  parent: legacy-android-v3-various-authentication-sso
   order: 10
 ---
 

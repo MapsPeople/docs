@@ -1,8 +1,8 @@
 ---
 title: Indoor Positioning with MapsIndoors
 eleventyNavigation:
-  key: Indoor Positioning with MapsIndoors
-  parent: various
+  key: legacy-android-v3-Indoor Positioning with MapsIndoors
+  parent: legacy-android-v3-various
   order: 8
 ---
 

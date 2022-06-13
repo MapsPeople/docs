@@ -1,8 +1,8 @@
 ---
 title: Getting a Polygon from a Location for iOS
 eleventyNavigation:
-  key: map-displaying-objects-polygon-from-location-ios
-  parent: map-displaying-objects
+  key: legacy-android-v3-map-displaying-objects-polygon-from-location-ios
+  parent: legacy-android-v3-map-displaying-objects
   title: Getting a Polygon from a Location for iOS
   order: 220
 ---

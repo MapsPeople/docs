@@ -4,8 +4,8 @@ layout: default
 toc: true
 eleventyNavigation:
   title: Getting Started with iOS
-  key: getting-started-ios
-  parent: getting-started
+  key: legacy-android-v3-getting-started-ios
+  parent: legacy-android-v3-getting-started
   order: 100
 ---
 
