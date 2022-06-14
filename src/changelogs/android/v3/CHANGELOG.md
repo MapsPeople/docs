@@ -22,7 +22,7 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 
 ### Fixed
 
-- `getDislayRule(MPLocation)` on `MapControl` would return null, even when a display rule exists for the location
+- `getDisplayRule(MPLocation)` on `MapControl` would return null, even when a display rule exists for the location
 
 ## [3.13.14] 2022-06-10
 
