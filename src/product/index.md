@@ -38,13 +38,13 @@ The SDKs enable you to build your own custom app on top of, or as an integral pa
 
 The MapsIndoors SDKs are the engines that ensure your users can view, navigate, and receive important information about the space around them. Common use cases include getting directions from an outdoor location to your indoor locations, searching your indoor locations, showing the relevant information for a specific location, exposing dynamic data for a location, and more. An exhaustive list of features within the SDKs can be found in the reference documentation for each platform.
 
-## Standard Apps
+## MapsIndoors Templates
 
-MapsIndoors Standard Apps are built on top of the SDKs and visualize some of the SDK capabilities. The Standard Apps are plug-and-play and provide a good basic indoor navigation app. Most clients choose to only use the Standard Apps for testing or demo purposes, and use the SDKs to create a completely customized experience for their users.
+The MapsIndoors Template is both a full app and plug-and-play code for you to integrate basic usage of MapsIndoors, containing search and directions functionalities, in your existing app. If you just want to get started with a simple solution with no customisation, this should fulfil your needs. Most clients choose to only use the Template for testing or demo purposes, and use the SDKs to create a completely customized experience for their users.
 
 ![WebApp](/assets/product/webApp.png)
 
-The MapsIndoors Standard App suite also includes a plug-and-play Kiosk web app. This browser-based app can run on an information stand and help one-time users of a facility find their way without needing to install an app.
+For web development, instead of the MapsIndoors Template, a MapsIndoors "Standard App" with similar functionality also includes a plug-and-play Kiosk web app. This browser-based app can run on an information stand and help one-time users of a facility find their way without needing to install an app.
 
 ![Kiosk](/assets/product/Kiosk1.png)
 
