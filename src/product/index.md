@@ -44,7 +44,7 @@ The MapsIndoors Template is both a full app and plug-and-play code for you to in
 
 ![WebApp](/assets/product/webApp.png)
 
-For web development, instead of the MapsIndoors Template, a MapsIndoors "Standard App" with similar functionality also includes a plug-and-play Kiosk web app. This browser-based app can run on an information stand and help one-time users of a facility find their way without needing to install an app.
+For web development, instead of the MapsIndoors Template, a MapsIndoors "Showcase App" with similar functionality, as well as a plug-and-play Kiosk web app exists.
 
 ![Kiosk](/assets/product/Kiosk1.png)
 
