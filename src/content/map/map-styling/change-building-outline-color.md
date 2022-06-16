@@ -42,5 +42,11 @@ The sample uses the example `UIColor.red`, but this can be any standard color su
 
 To change the building outline color, use the `strokeColor` property of the `BuildingOutlineOptions` interface. This property accepts any color as defined by conventional CSS color values. See [https://developer.mozilla.org/en-US/docs/Web/CSS/color_value](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value) for more information on CSS color values.
 
+To do this in practice, on the MapsIndoors instance, call `setBuildingOutlineOptions` to change the appearance of the building outline.
+
+```javascript
+mapsIndoors.setBuildingOutlineOptions({strokeColor: '#3071d9'});
+```
+
 </mi-tab-panel>
 </mi-tabs>
