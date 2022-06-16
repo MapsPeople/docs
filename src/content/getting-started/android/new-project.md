@@ -83,12 +83,12 @@ dependencies {
     ...
     implementation 'com.google.android.gms:play-services-maps:17.0.0'
     implementation 'com.google.code.gson:gson:2.8.6'
-    implementation 'com.mapspeople.mapsindoors:mapsindoorssdk:3.9.2'
+    implementation 'com.mapspeople.mapsindoors:mapsindoorssdk:3.13.15'
     implementation 'com.squareup.okhttp3:okhttp:4.9.0'
 }
 repositories{
     maven {
-        url 'http://maven.mapsindoors.com/'
+        url 'https://maven.mapsindoors.com/'
     }
 }
 ```
