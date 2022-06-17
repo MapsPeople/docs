@@ -209,7 +209,7 @@ Here you can change the title of your app.
 
 The API Keys used to make your MapsIndoors Solution consist of random combinations of letters and numbers. Here, you can assign them an Alias to make it easier to remember.
 
-> NOTE: Do not set an Alias if you want to make it more difficult to find and load your MapsIndoors data in a standard app. In that case, you can only load the data with an API key.
+> NOTE: Do not set an Alias if you want to make it more difficult to find and load your MapsIndoors data. In that case, you should only load the data with an API key.
 
 ![solution-details-app-user-roles](/assets/cms/interface-overview/Solution_Details_App_User_Roles_V2.png)
 
