@@ -40,7 +40,7 @@ The MapsIndoors SDKs are the engines that ensure your users can view, navigate, 
 
 ## MapsIndoors Templates
 
-The MapsIndoors Template is both a full app and plug-and-play code for you to integrate basic usage of MapsIndoors, containing search and directions functionalities, in your existing app. If you just want to get started with a simple solution with no customisation, this should fulfil your needs. Most clients choose to only use the Template for testing or demo purposes, and use the SDKs to create a completely customized experience for their users.
+The MapsIndoors Template is a downloadable starting point for you to integrate basic usage of MapsIndoors, containing search and directions functionalities, into your existing app. If you just want to get started with a simple solution with no customisation, this should fulfil your needs. Most clients choose to only use the Template for testing or demo purposes, and use the SDKs to create a completely customized experience for their users.
 
 ![WebApp](/assets/product/webApp.png)
 
