@@ -1,6 +1,5 @@
 ---
 title: Implementing Asset Tracking for iOS
-toc: true
 eleventyNavigation:
   key: map-live-data-asset-tracking-ios
   parent: map-live-data-intro-iOS
