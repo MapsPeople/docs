@@ -18,6 +18,12 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 ### Security     in case of vulnerabilities.
 -->
 
+## [3.13.15] 2022-06-14
+
+### Fixed
+
+- `getDisplayRule(MPLocation)` on `MapControl` would return null, even when a display rule exists for the location
+
 ## [3.13.14] 2022-06-10
 
 ### Fixed
