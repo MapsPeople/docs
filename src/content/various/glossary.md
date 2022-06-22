@@ -123,19 +123,13 @@ An edge is a line on which a person can be instructed to transport themselves. T
 
 Edges are always straight lines, but Nodes can be used in quick succession to create the impression of a curved Edge.
 
-#### Graph Bounds
+#### Graph Outline
 
-Bounds are used to indicate the geographical area a Venue or Building occupies.
+Outlines are used to indicate the geographical area a Venue or Building occupies.
 
-The Venue Bounds can be altered to fit points where it can conveniently connect to the Google Maps network. This is to ensure a smooth transition between the Directions given by Google Maps and MapsIndoors'.
+The Venue Outlines can be altered to fit points where it can conveniently connect to the Google Maps network. This is to ensure a smooth transition between the Directions given by Google Maps and MapsIndoors'.
 
-The Building Bounds are used to accurately display the area a Building occupies in the world.
-
-#### Speed Factor
-
-An Edge can be manipulated so a person getting Directions that include that Edge will get a faster Duration than they would if they took another Route.
-
-This can be helpful on large Venues where certain hallways are preferred for a simple Route over what might computationally be the faster Route.
+The Building Outlines are used to accurately display the area a Building occupies in the world.
 
 ### Directions
 
