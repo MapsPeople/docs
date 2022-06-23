@@ -123,7 +123,7 @@ MapsIndoors.getAppConfig().getAppSettings().put(AppConfig.APP_SETTING_POI_GROUPI
 
 #### V4
 
-In V4, these settings have been moved to `MPSolutionConfig`, which is located on the MPSolution, in this version these settings have [something about boolean and enum]. They can be fetched and updates like this:
+In V4, these settings have been moved to `MPSolutionConfig`, which is located on the MPSolution, in this version these settings have types (a boolean and an Enum type). This helps ensure that these settings are easier to configure and have no parsing errors. They can be fetched and updates like this:
 
 ```java
 // get the config from the solution
