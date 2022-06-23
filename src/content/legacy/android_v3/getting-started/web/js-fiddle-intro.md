@@ -1,0 +1,1 @@
+If you have followed the tutorial exactly so far, you will now have something like this (due to technical limitations, only the Google Maps result is shown on this page, but Mapbox implementation will also work if you followed this guide):
