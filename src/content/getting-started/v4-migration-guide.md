@@ -141,7 +141,7 @@ MapsIndoors.getSolution().setConfig(config);
 
 ### Main Display Rule
 
-In V4, the solution config will ship with a Main Display Rule, which is used to define the display rule "ground truths" for the solution. Fields in this display rule must not be `null`. If a display rule with `null` in any fields is provided to the config, an `IllegalArgumentException` will be thrown.
+In V4, the solution config will ship with a Main Display Rule, which is used to define the defaults for location and type display rules, when nothing is declared on the specific display rule. Fields in this display rule must not be `null`. If a display rule with `null` in any fields is provided to the config, an `IllegalArgumentException` will be thrown.
 
 ```java
 // gets the main rule, this rule will have all fields filled
