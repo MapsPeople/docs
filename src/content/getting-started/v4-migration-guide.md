@@ -106,9 +106,58 @@ MapControl.create(mapConfig, (mapControl, miError) -> {
 
 Please note that this factory method will wait to return until a valid MapsIndoors solution is loaded, therefore it is safe to invoke `MapControl.create()` prior to, or in parallel with `MapsIndoors.load()`.
 
+## SolutionConfig & AppConfig
+
+### Clustering & Marker Collisions
+
+#### V3
+
+In V3, AppConfig contained information about clustering (`POI_GROUPING`) and collisions (`POI_HIDE_ON_OVERLAP`), which could be fetched and updated like this:
+
+```java
+// get whether collisions are enabled... as a string
+MapsIndoors.getAppConfig().getAppSettings().get(AppConfig.APP_SETTING_POI_HIDE_ON_OVERLAP);
+
+// set whether clustering is enabled... with a string
+MapsIndoors.getAppConfig().getAppSettings().put(AppConfig.APP_SETTING_POI_GROUPING, "true");
+```
+
+#### V4
+
+In V4, these settings have been moved to `MPSolutionConfig`, which is located on the MPSolution, in this version these settings have [something about boolean and enum]. They can be fetched and updates like this:
+
+```java
+// get the config from the solution
+MPSolutionConfig config = MapsIndoors.getSolution().getConfig();
+
+// get the collisionHandling enum from the config
+MPCollisionHandling collisionHandling = config.getCollisionHandling();
+
+// modify the config, this does not have any effect on the SDK yet
+config.setEnableClustering(true);
+
+// re-apply the modified config
+MapsIndoors.getSolution().setConfig(config);
+```
+
+### Main Display Rules
+
+In V4, the solution config will ship with a Main Display Rule, which is used to define the display rule "ground truths" for the solution. Fields in this display rule must not be `null`. If a display rule with `null` in any fields is provided to the config, an `IllegalArgumentException` will be thrown.
+
+```java
+// gets the main rule, this rule will have all fields filled
+MPDisplayRule mainRule = config.getMainDisplayRule();
+
+// create a display rule with not all fields filled
+MPDisplayRule displayRuleWithEmptyFields = ...
+
+// will throw an exception
+config.setMainDisplayRule(displayRuleWithEmptyFields);
+```
+
 ## Display Rules
 
-W.I.P
+> The details of Display Rules in V4 are still being worked on. Watch this space, we will update it as soon as they're ready!
 
 ## DirectionsService & DirectionsRenderer
 
