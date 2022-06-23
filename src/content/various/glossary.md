@@ -167,10 +167,6 @@ A "Public Transit"-only Entry Point inside the Venue is understood to be the poi
 
 A Parking Lot is a "Driving"-specific Entry Point. It will provide a suggestion to park the car at the Parking Lot closest to the Destination. It only displays a Parking Lot when requesting "Driving" directions from outside a Venue to a Location inside a Venue.
 
-### Landmark
-
-Landmarks can be used as navigational identifiers when people describe a route to one another. MapsIndoors does not support Landmarks as special Locations, but they can be constructed using Location Types and Icons.
-
 ### Selection Highlight Color
 
 To illustrate which piece of geodata is selected, we use a highlight color that is the highest possible contrast to the surroundings: Pink. You can read more about the [background for our choice on our MapsIndoors product blog](https://blog.mapspeople.com/new-selection-highlight-color).
