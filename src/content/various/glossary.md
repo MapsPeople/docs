@@ -135,7 +135,7 @@ The Building Bounds are used to accurately display the area a Building occupies 
 
 Directions is the set of instructions for travelling from an Origin to a Destination.
 
-You can get Directions for a Route using the four Travel Modes: "Walking", "Driving", "Biking" and "Public Transportation".
+You can get Directions for a Route using the four Travel Modes: "Walking", "Driving", "Biking" and "Public Transit".
 
 For Directions where the Origin and Destination are both inside a Venue (as defined by the Venue Bounds), Walking is the only Travel Mode available.
 
@@ -161,7 +161,7 @@ The main difference between Directions and Routes are the scope of what is inclu
 
 ### Bus/Tram/Train Stop
 
-A "Public Transportation"-only Entry Point inside the Venue is understood to be the point from which MapsIndoors starts the walking directions.
+A "Public Transit"-only Entry Point inside the Venue is understood to be the point from which MapsIndoors starts the walking directions.
 
 ### Parking Lot
 
