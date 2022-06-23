@@ -165,7 +165,7 @@ A "Public Transit"-only Entry Point inside the Venue is understood to be the poi
 
 ### Parking Lot
 
-A Parking Lot is a "Driving"-specific Entry Point. It will provide a suggestion to park the car at the Parking Lot closest to the Destination. It only displays a Parking Lot when requesting "Driving" directions from outside a Venue to a Location inside a Venue.
+A Parking Lot is a "Driving"- or "Biking"-specific Entry Point. It will provide a suggestion to park the car or bike at the Parking Lot closest to the Destination. It only displays a Parking Lot when requesting "Driving" or "Biking" directions from outside a Venue to a Location inside a Venue.
 
 ### Selection Highlight Color
 
