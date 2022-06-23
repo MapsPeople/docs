@@ -123,11 +123,13 @@ An edge is a line on which a person can be instructed to transport themselves. T
 
 Edges are always straight lines, but Nodes can be used in quick succession to create the impression of a curved Edge.
 
-#### Graph Bounds
+#### Venue / Graph / Building Bounds
 
 Bounds are used to indicate the geographical area a Venue or Building occupies.
 
-The Venue Bounds can be altered to fit points where it can conveniently connect to the Google Maps network. This is to ensure a smooth transition between the Directions given by Google Maps and MapsIndoors'.
+The Venue Bounds can be altered to fit points where it can conveniently connect to the Google Maps network, in conjunction with the Graph Bounds. This is to ensure a smooth transition between the directions given by Google Maps and MapsIndoors.
+
+Graph Bounds describe the area covered by the route network, or graph - This may be smaller than the Venue Bounds.
 
 The Building Bounds are used to accurately display the area a Building occupies in the world.
 
