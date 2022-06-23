@@ -6,7 +6,7 @@ eleventyNavigation:
   title: Android BETA - Migrating from V3 to V4
 ---
 
-The Android SDK for MapsIndoors has been upgraded from V3 to V4, which comes with a lot of improvements to stability and flexibility. SDK loading has been improved, and is less error-prone. This guide will cover specific changes to the SDK and how to use it, to provide you with a guide on how to upgrade from V3 to V4.
+The Android SDK for MapsIndoors has been upgraded from V3 to V4, which comes with a lot of improvements features and flexibility. The MapsIndoors SDK now supports Mapbox as a map provider, alongside containing some reworked and refactored features that simplify development and SDK behavior. This guide will cover specific changes to the SDK and how to use it, to provide you with a guide on how to upgrade from V3 to V4.
 
 ## MapsIndoors SDK Map Engine Flavours
 
