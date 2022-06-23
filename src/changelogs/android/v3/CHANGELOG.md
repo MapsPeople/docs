@@ -18,6 +18,12 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 ### Security     in case of vulnerabilities.
 -->
 
+## [3.13.16] 2022-06-23
+
+### Fixed
+
+- Fixed sometimes deleted `PolygonDisplayRule` would leave behind a `Polygon` on the map that could not be removed
+
 ## [3.13.15] 2022-06-14
 
 ### Fixed
