@@ -140,7 +140,7 @@ config.setEnableClustering(true);
 MapsIndoors.getSolution().setConfig(config);
 ```
 
-### Main Display Rules
+### Main Display Rule
 
 In V4, the solution config will ship with a Main Display Rule, which is used to define the display rule "ground truths" for the solution. Fields in this display rule must not be `null`. If a display rule with `null` in any fields is provided to the config, an `IllegalArgumentException` will be thrown.
 
