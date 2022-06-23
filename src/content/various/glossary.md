@@ -123,7 +123,7 @@ An edge is a line on which a person can be instructed to transport themselves. T
 
 Edges are always straight lines, but Nodes can be used in quick succession to create the impression of a curved Edge.
 
-#### Graph Outline
+#### Graph Bounds
 
 Bounds are used to indicate the geographical area a Venue or Building occupies.
 
