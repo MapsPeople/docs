@@ -18,6 +18,13 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 ### Security     in case of vulnerabilities.
 -->
 
+## [3.13.17] 2022-06-24
+
+### Fixed
+
+- Fixed rare issue where routing to entry points might fail
+- Fixed issue where icons would not update automatically
+
 ## [3.13.16] 2022-06-23
 
 ### Fixed
