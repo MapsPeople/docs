@@ -95,7 +95,7 @@ MPMapConfig mapConfig = new MPMapConfig.Builder(activity, googleMap, "google-api
         .build();
 ```
 
-With a `MPMapConfig` instance, you may create a new `MapControl` instance. This now happens through a factory pattern. This both instantiates and initializes your `MapControl` object asynchronously. If everything succeeded, you will receive a ready-to-use `MapControl` instance - if not, you will get an error and receive no `MapControl` instance.
+With a `MPMapConfig` instance, you may create a new `MapControl` instance. This now happens through a factory pattern. This both instantiates and initializes your `MapControl` object asynchronously. If everything succeeds, you will receive a ready-to-use `MapControl` instance - if not, you will get an error and receive no `MapControl` instance.
 
 ```java
 MapControl.create(mapConfig, (mapControl, miError) -> {
