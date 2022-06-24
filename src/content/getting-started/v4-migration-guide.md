@@ -22,7 +22,7 @@ implementation 'com.mapspeople.mapsindoors:mapboxsdk:4.0.0-beta.9'
 
 MapsIndoors is a singleton class, which can be described as the data layer of the SDK. Below you will find an example that demonstrates how initialization has been simplified between V3 and V4.
 
-**V3**
+#### V3
 
 In V3, SDK initialization is started with:
 
@@ -48,7 +48,7 @@ And to close down the SDK, call:
 MapsIndoors.onApplicationTerminate()
 ```
 
-**V4**
+#### V4
 
 In V4, initialization is started by the new function `MapsIndoors.load()`:
 
@@ -70,7 +70,7 @@ MapsIndoors.destroy()
 
 MapControl instantiation and initialization are separate concepts. You create a new instance of `MapControl` and configure it with a map and view - optionally you could set clustering, overlapping and other behavior on the object.
 
-**V3**
+#### V3
 
 In V3, `MapControl.init()` is a separate asynchronous call:
 
@@ -82,7 +82,7 @@ mMapControl.init(miError -> {
 });
 ```
 
-**V4**
+#### V4
 
 In V4, `MapControl` now requires a `MPMapConfig` object, which is acquired using a builder on the class `MPMapConfig`. Here you must provide an activity, a map provider (Google Maps or Mapbox), a `mapview` and a map engine API key.
 
@@ -107,7 +107,7 @@ Please note that this factory method will wait to return until a valid MapsIndoo
 
 ### Clustering & Marker Collisions
 
-**V3**
+#### V3
 
 In V3, AppConfig contained information about clustering (`POI_GROUPING`) and collisions (`POI_HIDE_ON_OVERLAP`), which could be fetched and updated like this:
 
@@ -119,7 +119,7 @@ MapsIndoors.getAppConfig().getAppSettings().get(AppConfig.APP_SETTING_POI_HIDE_O
 MapsIndoors.getAppConfig().getAppSettings().put(AppConfig.APP_SETTING_POI_GROUPING, "true");
 ```
 
-**V4**
+#### V4
 
 In V4, these settings have been moved to `MPSolutionConfig`, which is located on the MPSolution. Now these settings have types (a boolean and an Enum type). This helps ensure that the settings are easier to configure and have no parsing errors. They can be fetched and updates like this:
 
@@ -162,7 +162,7 @@ There are two basic functions here - Retrieving, or querying a route, and render
 
 ### Query Route
 
-**V3**
+#### V3
 
 In V3, the process to query a route is to instantiate a `MPRoutingProvider` and set the desired travel mode, departure/arrival time, etc. You should also instantiate an `OnRouteResultListener` to receive the result (or error in case of failure).
 
@@ -181,7 +181,7 @@ Point to = new Point(57.03238690202058, 9.93220061362637);
 routingProvider.query(from, to);
 ```
 
-**V4**
+#### V4
 
 In the V4 SDK, to query a route you must first set up an `MPDirectionsConfig` object. This configuration describes travel mode (driving, walking, etc), departure/arrival time and includes a result listener.
 
@@ -205,7 +205,7 @@ directionsService.query(from, to);
 
 ### Render Route
 
-**V3**
+#### V3
 
 To render a given route in V3, instantiate a `MPDirectionsRenderer` with parameters. Then your IDE should be able to show you the various configurable attributes (various animation settings and styling) as well as setting the route. Alternatively, refer to further documentation. To start the renderer/animation, invoke `initMap()`.
 
@@ -220,7 +220,7 @@ runOnUiThread( ()-> {
 });
 ```
 
-**V4**
+#### V4
 
 In V4, this has been simplified. Given a route, you can instantiate a new `MPDirectionsRenderer`, and set the route using `setRoute()`. Use the `MPDirectionsRenderer` object to navigate through the route (next/previous leg) as well as configure the animation and styling of the route on the map. By default the route is animated and repeating, but this is customizable on the `MPDirectionsRenderer` instance.
 
@@ -256,7 +256,7 @@ The following classes are of type `MPEntity`:
 
 ## Map Filtering
 
-**V3**
+#### V3
 
 In V3, filtering map content is performed with `MapControl.displaySearchResult()`. This results in a lot of undesirable overloads.
 
@@ -273,7 +273,7 @@ boolean displaySearchResults(@NonNull List<MPLocation> locations, boolean animat
 boolean displaySearchResults(@NonNull List<MPLocation> locations, boolean animateCamera, int cameraPadding, boolean showInfoWindow, @Nullable CameraUpdate googleMapCameraUpdate, int durationMs, GoogleMap.CancelableCallback googleMapCancelableCallback, @Nullable ReadyListener readyListener)
 ```
 
-**V4**
+#### V4
 
 To avoid the aforementioned undesirable overloads, in V4, filtering map content is now performed with `MapControl.setFilter(List<MPLocation>, MPFilterBehavior)` or alternatively `MapControl.setFilter(MPFilter, MPFilterBehavior, MPSuccessListener)`. To clear the filter, invoke `MapControl.clearFilter()`.
 
@@ -296,7 +296,7 @@ mMapControl.setFilter(filter, MPFilterBehavior.DEFAULT, null);
 
 ## Positioning Providers
 
-**V3**
+#### V3
 
 In V3, the snippet below is the `PositionProvider` interface. While perfectly functional, it leaves a lot be desired in terms of readability and clarity, and avoiding bloat in the code.
 
@@ -320,7 +320,7 @@ public interface PositionProvider {
 }
 ```
 
-**V4**
+#### V4
 
 To fix this in V4, `PositionProvider` has been optimized and renamed to `MPPositionProvider`, to fall in line with other naming conventions. It has been renamed with the MP-prefix and has been heavily trimmed, to only describe the necessary interface for the MapsIndoors SDK to utilize a position provider sufficiently.
 
