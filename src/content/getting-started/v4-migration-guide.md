@@ -10,13 +10,13 @@ The Android SDK for MapsIndoors has been upgraded from V3 to V4, which comes wit
 
 ## MapsIndoors SDK Map Engine Flavors
 
-<!--- This part is not 100% settled, be sure to talk to Frederik to confirm before release!
-As of V4 the MapsIndoors mobile SDKs support both Google Maps and Mapbox. A version of the SDK is available for each map engine.
+With the release of V4 the MapsIndoors SDK is released as two separate libraries depending on the Map Provider. You can get them through Maven by changing your dependency to get:
 
-MapsIndoorsSDKGoogleMaps 4.x.x
+```java
+implementation 'com.mapspeople.mapsindoors:googlemapssdk:4.0.0-beta.9'
 
-MapsIndoorsSDKMapbox 4.x.x
---->
+implementation 'com.mapspeople.mapsindoors:mapboxsdk:4.0.0-beta.9'
+```
 
 Both of these are distributed through Maven, and come packaged with a number of helper classes.
 
