@@ -8,7 +8,7 @@ eleventyNavigation:
 
 The Android SDK for MapsIndoors has been upgraded from V3 to V4, which comes with a lot of improvements, features and flexibility. The MapsIndoors SDK now supports Mapbox as a map provider, alongside some reworked and refactored features that simplify development and SDK behavior. This guide will cover specific changes to the SDK and how to use it to provide you with a guide on how to upgrade from V3 to V4.
 
-## MapsIndoors SDK Map Engine Flavours
+## MapsIndoors SDK Map Engine Flavors
 
 <!--- This part is not 100% settled, be sure to talk to Frederik to confirm before release!
 As of V4 the MapsIndoors mobile SDKs support both Google Maps and Mapbox. A version of the SDK is available for each map engine.
@@ -52,13 +52,13 @@ MapsIndoors.onApplicationTerminate()
 
 ### V4
 
-In this new version of the SDK, initialization is started by the new function `MapsIndoors.load()`:
+In V4, initialization is started by the new function `MapsIndoors.load()`:
 
 ```java
 MapsIndoors.load(getApplicationContext(), "mapsindoors-key", listener);
 ```
 
-Map-engine-specific API keys are handled by `MPMapConfig`, covered in the "MapControl Initialization" section of this guide.
+Map engine specific API keys are handled by `MPMapConfig`, covered in the "MapControl Initialization" section of this guide.
 
 Switching to another MapsIndoors API key, such as for switching active Solutions, is now done by invoking `MapsIndoors.load()` again with a new key. The SDK will close down, and reload with the new API key.
 
@@ -70,11 +70,11 @@ MapsIndoors.destroy()
 
 ## MapControl Initialization
 
-MapControl instantiation and initialization are separate concepts. You create a new instance of `MapControl` and configure it with a map and view - optionally you could set clustering, overlapping or other behavior on the object.
+MapControl instantiation and initialization are separate concepts. You create a new instance of `MapControl` and configure it with a map and view - optionally you could set clustering, overlapping and other behavior on the object.
 
 ### V3
 
-In V3, `MapControl` is a separate asynchronous call:
+In V3, `MapControl.init()` is a separate asynchronous call:
 
 ```java
 mMapControl = new MapControl(this);
@@ -123,7 +123,7 @@ MapsIndoors.getAppConfig().getAppSettings().put(AppConfig.APP_SETTING_POI_GROUPI
 
 #### V4
 
-In V4, these settings have been moved to `MPSolutionConfig`, which is located on the MPSolution, in this version these settings have types (a boolean and an Enum type). This helps ensure that these settings are easier to configure and have no parsing errors. They can be fetched and updates like this:
+In V4, these settings have been moved to `MPSolutionConfig`, which is located on the MPSolution. Now these settings have types (a boolean and an Enum type). This helps ensure that the settings are easier to configure and have no parsing errors. They can be fetched and updates like this:
 
 ```java
 // get the config from the solution
