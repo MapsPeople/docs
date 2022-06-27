@@ -18,6 +18,12 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 ### Security     in case of vulnerabilities.
 -->
 
+## [3.13.18] 2022-06-25
+
+### Fixed
+
+- Fixed rare occurrence where the camera would move to the other side of the world during routing
+
 ## [3.13.17] 2022-06-24
 
 ### Fixed
