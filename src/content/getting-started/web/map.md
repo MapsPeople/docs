@@ -285,7 +285,7 @@ After you added the script tag into `<head>`, add the `<mi-map-mapbox>` custom e
   <script src="https://unpkg.com/@mapsindoors/components@8.2.0/dist/mi-components/mi-components.js"></script>
 </head>
 <body>
-+ <mi-map-mapbox style="width: 600px; height: 600px;" accessToken="YOUR_MAPBOX_ACCESS_TOKEN" mi-api-key="YOUR_MAPSINDOORS_API_KEY">
++ <mi-map-mapbox style="width: 600px; height: 600px;" access-token="YOUR_MAPBOX_ACCESS_TOKEN" mi-api-key="YOUR_MAPSINDOORS_API_KEY">
 + </mi-map-mapbox>
   <script src="main.js"></script>
 </body>
@@ -426,7 +426,7 @@ Using the `<mi-map-mapbox>` element, you can add the [floorSelectorControlPositi
 </head>
 
 <body>
-+ <mi-map-mapbox style="width: 600px; height: 600px;" accessToken="YOUR_MAPBOX_ACCESS_TOKEN" mi-api-key="YOUR_MAPSINDOORS_API_KEY" floor-selector-control-position="TOP_RIGHT">
++ <mi-map-mapbox style="width: 600px; height: 600px;" access-token="YOUR_MAPBOX_ACCESS_TOKEN" mi-api-key="YOUR_MAPSINDOORS_API_KEY" floor-selector-control-position="TOP_RIGHT">
   </mi-map-mapbox>
   <script src="main.js"></script>
 </body>

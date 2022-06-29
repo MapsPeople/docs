@@ -937,7 +937,7 @@ To change between travel modes we first need to add a `<select>` element with al
 </head>
 <body>
   <mi-map-mapbox
-    accessToken="YOUR_MAPBOX_ACCESS_TOKEN"
+    access-token="YOUR_MAPBOX_ACCESS_TOKEN"
     style="width: 600px; height: 600px;"
     mi-api-key="d876ff0e60bb430b8fabb145"
     floor-selector-control-position="TOP_RIGHT">
