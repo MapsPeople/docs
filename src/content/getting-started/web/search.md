@@ -227,7 +227,7 @@ Using the `<mi-search>` component you get an `<input>`element tied tightly toget
 </head>
 <body>
   <mi-map-mapbox style="width: 600px; height: 600px;"
-    accessToken="YOUR_MAPBOX_ACCESS_TOKEN"
+    access-token="YOUR_MAPBOX_ACCESS_TOKEN"
     mi-api-key="YOUR_MAPSINDOORS_API_KEY"
     floor-selector-control-position="TOP_RIGHT">
   </mi-map-mapbox>
