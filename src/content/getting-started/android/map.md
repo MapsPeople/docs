@@ -108,7 +108,7 @@ private fun initMapControl(map : MapboxMap, view: MapView, mapboxKey : String) {
     // Creates a map config, with the map, view and mapbox api key
     val mapConfig = MPMapConfig.Builder(this, map, view, mapboxKey).build() as MPMapConfig
     //Creates a new instance of MapControl
-    MapControl.create(mapConfig) { mapControl, miError -> 
+    MapControl.create(mapConfig) { mapControl, miError ->
     if (mapControl != null && miError == null) {
         // Sets the local MapControl var so that it can be used later
         mMapControl = mapControl

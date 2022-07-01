@@ -81,6 +81,7 @@ dependencies {
     ...
 }
 ```
+
 And add the MapsIndoors Maven repository to your repositories:
 
 ```java
@@ -99,7 +100,6 @@ Put those lines in your proguard-rules files:
 -keepclassmembers class com.mapsindoors.coresdk.models.** { <fields>; }
 -keep class com.mapsindoors.coresdk.MPDebugLog
 ```
-
 
 Sync your project with gradle.
 

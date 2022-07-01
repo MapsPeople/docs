@@ -256,7 +256,7 @@ public class NavigationFragment extends Fragment {
             public void onPageSelected(int position) {
                 super.onPageSelected(position);
                 //When a page is selected call the renderer with the index
-                mMapsActivity.getMpDirectionsRenderer().selectLegIndex(position);               
+                mMapsActivity.getMpDirectionsRenderer().selectLegIndex(position);
                 //Update the floor on mapcontrol if the floor might have changed for the routing
                 mMapsActivity.getMapControl().selectFloor(mMapsActivity.getMpDirectionsRenderer().getSelectedLegFloorLevel());
             }
