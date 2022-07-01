@@ -25,7 +25,7 @@ If you already have an Android device, make sure to enable developer mode and US
 To benefit from the guides, you will need basic knowledge about:
 
 * Android Development
-* Google Maps Android API
+* Mapbox SDK
 
 You can get started in two ways, either by reviewing and modifying the [basic example](#basic-example) or do the [clean setup](#setup-mapsindoors). We recommend following the basic example.
 
@@ -35,7 +35,7 @@ The tutorial will be based on you starting from our basic map implementation. Th
 
 The basic example contains a single `activity` app with already made `fragments` to host the different logic to get a complete app interacting with a map and `MapsIndoors` data.
 
-You can find this basic example here: [Java](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android-Basic) or [Kotlin](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android-Kotlin-Basic)
+You can find this basic example here: [Java](https://github.com/MapsPeople/MapsIndoors-Getting-Started-Mapbox-Android) or [Kotlin](https://github.com/MapsPeople/MapsIndoors-Getting-Started-Mapbox-Android-Kotlin)
 
 You can open the project through Android Studio by navigating through **File -> New -> Project from Version Control -> GitHub**. Log in and clone the project.
 
@@ -43,16 +43,15 @@ You can also follow the steps below to start your app from scratch or to enhance
 
 ## Setup MapsIndoors
 
-If you don't already have a project, we recommend using the Google Maps Activity preset from Android Studio to getting started on developing your MapsIndoors project. You find the Google Maps Activity project through **File -> New -> New Project... -> Google Maps Activity**.
-
 Add the MapsIndoors SDK as a dependency to your project. The _AAR_ for the MapsIndoors SDK contains both Java classes, SDK resources and an `AndroidManifest.xml` template which gets merged into your application's `AndroidManifest.xml` during build process.
 
-Add or merge in the following to your app's build gradle file (usually called `build.gradle`).
+Add the following to your application build gradle file:
 
-Make sure that the minimum Android SDK version is 21 (aka. "Android Lollipop", version 5.0) or above:
+Ensure the minimum Android API is >=21 (5.0, Android Lollipop):
 
 ```java
 android {
+    ...
     defaultConfig {
         minSdkVersion 21
     }
@@ -69,26 +68,25 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    ...
 }
 ```
 
-Add the following dependencies and the MapsIndoors maven repository:
-
-`Gson` and `okhttp` is used by MapsIndoors to function properly with network calls and deserializing.
-
-`play-services-maps` is used for Google Maps which MapsIndoors is build on top of on Android.
+Add the following dependency and the MapsIndoors maven repository:
 
 ```java
 dependencies {
     ...
-    implementation 'com.google.android.gms:play-services-maps:17.0.0'
-    implementation 'com.google.code.gson:gson:2.8.6'
-    implementation 'com.mapspeople.mapsindoors:mapsindoorssdk:3.9.2'
-    implementation 'com.squareup.okhttp3:okhttp:4.9.0'
+    implementation 'com.mapspeople.mapsindoors:mapboxsdk:4.0.0-beta.9'
+    ...
 }
+```
+And add the MapsIndoors Maven repository to your repositories:
+
+```java
 repositories{
     maven {
-        url 'http://maven.mapsindoors.com/'
+        url 'https://maven.mapsindoors.com/'
     }
 }
 ```
@@ -96,11 +94,12 @@ repositories{
 Put those lines in your proguard-rules files:
 
 ```java
--keep interface com.mapsindoors.mapssdk.** { *; }
--keep class com.mapsindoors.mapssdk.errors.** { *; }
--keepclassmembers class com.mapsindoors.mapssdk.models.** { <fields>; }
--keep class com.mapsindoors.mapssdk.dbglog
+-keep interface com.mapsindoors.coresdk.** { *; }
+-keep class com.mapsindoors.coresdk.errors.** { *; }
+-keepclassmembers class com.mapsindoors.coresdk.models.** { <fields>; }
+-keep class com.mapsindoors.coresdk.MPDebugLog
 ```
+
 
 Sync your project with gradle.
 

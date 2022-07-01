@@ -1,5 +1,5 @@
 ---
-title: Prerequisites
+title: Prerequisites - Mapbox
 toc: true
 eleventyNavigation:
   title: Prerequisites
@@ -9,10 +9,10 @@ eleventyNavigation:
 ---
 
 <!-- Overview -->
-{% include "src/content/shared/getting-started/prerequisites/overview.md" %}
+{% include "src/content/shared/getting-started/prerequisites/mapbox/overview-mapbox.md" %}
 
 <!-- Google Maps API key -->
-{% include "src/content/shared/getting-started/prerequisites/api-key-google-maps.md" %}
+{% include "src/content/shared/getting-started/prerequisites/mapbox/api-key-mapbox.md" %}
 
 <!-- MapsIndoors API key -->
 {% include "src/content/shared/getting-started/prerequisites/api-key-mapsindoors.md" %}

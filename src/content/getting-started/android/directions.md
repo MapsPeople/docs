@@ -23,7 +23,7 @@ We have already created a point in the basic example, called `mUserLocation` to 
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L47">MapsActivity.java</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Mapbox-Android/blob/429f2ca4514648c5e43bf50c9c46246164bfb412/app/src/main/java/com/example/mapsindoorsgettingstartedmapbox/MapsActivity.java#L55">MapsActivity.java</a>
 
 ```java
 private Point mUserLocation = new Point(38.897389429704695, -77.03740973527613,0);
@@ -31,7 +31,7 @@ private Point mUserLocation = new Point(38.897389429704695, -77.03740973527613,0
 
 </mi-tab-panel>
 <mi-tab-panel id="kotlin">
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/MapsActivity.kt#L36">MapsActivity.kt</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Mapbox-Android-Kotlin/blob/9df3583787a50e0aa5c59e0a91e0a94c2b3b6225/app/src/main/java/com/example/mapsindoorsgettingstartedmapboxkotlin/MapsActivity.kt#L40">MapsActivity.kt</a>
 
 ```kotlin
 private val mUserLocation: Point = Point(38.897389429704695, -77.03740973527613, 0.0)
@@ -47,7 +47,7 @@ Start by implementing `OnRouteResultListener` to your MapsActivity.
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L39">MapsActivity.java</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Mapbox-Android/blob/429f2ca4514648c5e43bf50c9c46246164bfb412/app/src/main/java/com/example/mapsindoorsgettingstartedmapbox/MapsActivity.java#L47">MapsActivity.java</a>
 
 ```java
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, OnRouteResultListener
@@ -55,7 +55,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 </mi-tab-panel>
 <mi-tab-panel id="kotlin">
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/MapsActivity.kt#L26">MapsActivity.kt</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Mapbox-Android-Kotlin/blob/9df3583787a50e0aa5c59e0a91e0a94c2b3b6225/app/src/main/java/com/example/mapsindoorsgettingstartedmapboxkotlin/MapsActivity.kt#L30">MapsActivity.kt</a>
 
 ```kotlin
 class MapsActivity : FragmentActivity(), OnMapReadyCallback, OnRouteResultListener
@@ -66,7 +66,7 @@ class MapsActivity : FragmentActivity(), OnMapReadyCallback, OnRouteResultListen
 
 implement the `onRouteResult` method and create a method called `createRoute(MPLocation mpLocation)` on your `MapsActivity`.
 
-Use this method to query the `MPRoutingProvider`, which generates a route between two coordinates. We will use this to query a route with our hardcoded `mUserLocation` and a point from a MPLocation.
+Use this method to query the `MPDirectionsService`, which generates a route between two coordinates. We will use this to query a route with our hardcoded `mUserLocation` and a point from a MPLocation.
 
 To generate a route with the `MPLocation`, we start by creating an `onClickListener` on our search `ViewHolder` inside the `SearchItemAdapter`. In the method `onBindViewHolder` we will call our `createRoute` on the `MapsActivity` for our route to be generated.
 
@@ -74,7 +74,7 @@ To generate a route with the `MPLocation`, we start by creating an `onClickListe
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/SearchItemAdapter.java#L37-L40">SearchItemAdapter.java</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Mapbox-Android/blob/429f2ca4514648c5e43bf50c9c46246164bfb412/app/src/main/java/com/example/mapsindoorsgettingstartedmapbox/SearchItemAdapter.java#L38-L42">SearchItemAdapter.java</a>
 
 ```java
 public void onBindViewHolder(ViewHolder holder, int position) {
@@ -82,7 +82,7 @@ public void onBindViewHolder(ViewHolder holder, int position) {
     holder.itemView.setOnClickListener(view -> {
             mMapActivity.createRoute(mLocations.get(position));
             //Clearing map to remove the location filter from our search result
-            mMapActivity.getMapControl().clearMap();
+            mMapActivity.getMapControl().clearFilter();
         });
     ...
 }
@@ -90,7 +90,7 @@ public void onBindViewHolder(ViewHolder holder, int position) {
 
 </mi-tab-panel>
 <mi-tab-panel id="kotlin">
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/SearchItemAdapter.kt#L20-L24">MapsActivity.kt</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Mapbox-Android-Kotlin/blob/9df3583787a50e0aa5c59e0a91e0a94c2b3b6225/app/src/main/java/com/example/mapsindoorsgettingstartedmapboxkotlin/SearchItemAdapter.kt#L23-L27">MapsActivity.kt</a>
 
 ```kotlin
 override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -98,7 +98,7 @@ override fun onBindViewHolder(holder: ViewHolder, position: Int) {
     holder.itemView.setOnClickListener {
         mLocations[position]?.let { locations -> mMapActivity?.createRoute(locations) }
         //Clearing map to remove the location filter from our search result
-        mMapActivity?.getMapControl()?.clearMap()
+        mMapActivity?.getMapControl()?.clearFilter()
     }
     ...
 }
@@ -107,77 +107,88 @@ override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 </mi-tab-panel>
 </mi-tabs>
 
-We start by implementing logic to our createRoute method to query a route through `MPRoutingProvider` and assign the onRouteResultListener to the activity. When we call the `createRoute` through our `onClickListener` we will receive a result through our `onRouteResult` implementation.
+We start by implementing logic to our createRoute method to query a route through `MPDirectionsService` and assign the onRouteResultListener to the activity. When we call the `createRoute` through our `onClickListener` we will receive a result through our `onRouteResult` implementation.
 
 When we receive a result on our listener, we render the route through the `MPDirectionsRenderer`.
 
-We create global variables of the `MPdirectionsRenderer` and `MPRoutingProvider` and create a getter to the `MPDirectionsRenderer` to access it from _fragments_ later on.
+We create global variables of the `MPdirectionsRenderer` and `MPDirectionsService` and create a getter to the `MPDirectionsRenderer` to access it from _fragments_ later on.
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L218-L267">MapsActivity.java</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Mapbox-Android/blob/429f2ca4514648c5e43bf50c9c46246164bfb412/app/src/main/java/com/example/mapsindoorsgettingstartedmapbox/MapsActivity.java#L220-L263">MapsActivity.java</a>
 
 ```java
 void createRoute(MPLocation mpLocation) {
-    if (mpRoutingProvider == null) {
-        mpRoutingProvider = new MPRoutingProvider();
-        mpRoutingProvider.setOnRouteResultListener(this);
+    //If MPRoutingProvider has not been instantiated create it here and assign the results call back to the activity.
+    if (mpDirectionsService == null) {
+        mpDirectionsService = new MPDirectionsService();
+        MPDirectionsConfig config = new MPDirectionsConfig.Builder()
+                .setOnRouteResultListener(this)
+                .setTravelMode(MPTravelMode.WALKING)
+                .build();
+        mpDirectionsService.setConfig(config);
     }
-    mpRoutingProvider.query(mUserLocation, mpLocation.getPoint());
+    //Queries the MPRouting provider for a route with the hardcoded user location and the point from a location.
+    mpDirectionsService.query(mUserLocation, mpLocation.getPoint());
 }
 
 @Override
-public void onRouteResult(@Nullable Route route, @Nullable MIError miError) {
-    ...
+public void onRouteResult(@Nullable MPRoute mpRoute, @Nullable MIError miError) {
+    //Return if either error is not null or the route is null
+    if (miError != null || mpRoute == null) {
+        new AlertDialog.Builder(this)
+                .setTitle("Something went wrong")
+                .setMessage("Something went wrong when generating the route. Try again or change your destination/origin")
+                .show();
+        return;
+    }
     //Create the MPDirectionsRenderer if it has not been instantiated.
     if (mpDirectionsRenderer == null) {
-        mpDirectionsRenderer = new MPDirectionsRenderer(this, mMap, mMapControl, i -> {
-            //Listener call back for when the user changes route leg. (By default is only called when a user presses the RouteLegs end marker)
-            mpDirectionsRenderer.setRouteLegIndex(i);
-            mMapControl.selectFloor(mpDirectionsRenderer.getCurrentFloor());
-        });
+        mpDirectionsRenderer = new MPDirectionsRenderer(mMapControl);
     }
-
     //Set the route on the Directions renderer
-    mpDirectionsRenderer.setRoute(route);
+    mpDirectionsRenderer.setRoute(mpRoute);
     //Create a new instance of the navigation fragment
-    mNavigationFragment = NavigationFragment.newInstance(route, this);
+    mNavigationFragment = NavigationFragment.newInstance(mpRoute, this);
     //Add the fragment to the BottomSheet
     addFragmentToBottomSheet(mNavigationFragment);
-    //As camera movement is involved run this on the UIThread
-    runOnUiThread(()-> {
-        //Starts drawing and adjusting the map according to the route
-        mpDirectionsRenderer.initMap(true);
-        ...
-    });
 }
 ```
 
 </mi-tab-panel>
 <mi-tab-panel id="kotlin">
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/MapsActivity.kt#L185-L225">MapsActivity.kt</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Mapbox-Android-Kotlin/blob/9df3583787a50e0aa5c59e0a91e0a94c2b3b6225/app/src/main/java/com/example/mapsindoorsgettingstartedmapboxkotlin/MapsActivity.kt#L201-L245">MapsActivity.kt</a>
 
 ```kotlin
 fun createRoute(mpLocation: MPLocation) {
     //If MPRoutingProvider has not been instantiated create it here and assign the results call back to the activity.
-    if (mpRoutingProvider == null) {
-        mpRoutingProvider = MPRoutingProvider()
-        mpRoutingProvider?.setOnRouteResultListener(this)
+    if (mpDirectionsService == null) {
+        //Creating a configuration for the MPDirectionsService allows us to set a resultListener and a travelMode.
+        val directionsConfig = MPDirectionsConfig.Builder()
+            .setOnRouteResultListener(this::onRouteResult)
+            .setTravelMode(MPTravelMode.WALKING).build()
+
+        mpDirectionsService = MPDirectionsService()
+        mpDirectionsService!!.setConfig(directionsConfig)
     }
     //Queries the MPRouting provider for a route with the hardcoded user location and the point from a location.
-    mpRoutingProvider?.query(mUserLocation, mpLocation.point)
+    mpDirectionsService?.query(mUserLocation, mpLocation.point)
 }
 
-override fun onRouteResult(@Nullable route: Route?, @Nullable miError: MIError?) {
-    ...
+override fun onRouteResult(@Nullable route: MPRoute?, @Nullable miError: MIError?) {
+    //Return if either error is not null or the route is null
+    if (miError != null || route == null) {
+        android.app.AlertDialog.Builder(this)
+            .setTitle("Something went wrong")
+            .setMessage("Something went wrong when generating the route. Try again or change your destination/origin")
+            .show()
+        return
+    }
+    //Create the MPDirectionsRenderer if it has not been instantiated.
     if (mpDirectionsRenderer == null) {
-        mpDirectionsRenderer = MPDirectionsRenderer(this, mMap, mMapControl, OnLegSelectedListener { i: Int ->
-            //Listener call back for when the user changes route leg. (By default is only called when a user presses the RouteLegs end marker)
-            mpDirectionsRenderer?.setRouteLegIndex(i)
-            mMapControl.selectFloor(mpDirectionsRenderer!!.currentFloor)
-        })
+        mpDirectionsRenderer = MPDirectionsRenderer(mMapControl)
     }
     //Set the route on the Directions renderer
     mpDirectionsRenderer?.setRoute(route)
@@ -185,18 +196,11 @@ override fun onRouteResult(@Nullable route: Route?, @Nullable miError: MIError?)
     mNavigationFragment = NavigationFragment.newInstance(route, this)
     //Start a transaction and assign it to the BottomSheet
     addFragmentToBottomSheet(mNavigationFragment)
-    //As camera movement is involved run this on the UIThread
-    runOnUiThread {
-        //Starts drawing and adjusting the map according to the route
-        mpDirectionsRenderer?.initMap(true)
-    }
 }
 ```
 
 </mi-tab-panel>
 </mi-tabs>
-
-See the full implementation of these methods here: [MapsActivity.java](https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L218-L267) or [MapsActivity.kt](https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/MapsActivity.kt#L185-L225)
 
 Now we will implement logic to our `NavigationFragment` that we can put into our BottomSheet and show the steps for each route, as well as the time and distance it takes to travel the route.
 
@@ -208,7 +212,7 @@ We will start by making a getter for our `MPDirectionsRenderer` that we store on
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
-<a href="https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L127-133">MapsActivity.java</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Mapbox-Android/blob/429f2ca4514648c5e43bf50c9c46246164bfb412/app/src/main/java/com/example/mapsindoorsgettingstartedmapbox/MapsActivity.java#L135-L241">MapsActivity.java</a>
 
 ```java
 public MPDirectionsRenderer getMpDirectionsRenderer() {
@@ -218,7 +222,7 @@ public MPDirectionsRenderer getMpDirectionsRenderer() {
 
 </mi-tab-panel>
 <mi-tab-panel id="kotlin">
-<a href="https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/MapsActivity.kt#L181-183">MapsActivity.kt</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Mapbox-Android-Kotlin/blob/9df3583787a50e0aa5c59e0a91e0a94c2b3b6225/app/src/main/java/com/example/mapsindoorsgettingstartedmapboxkotlin/MapsActivity.kt#L192-L199">MapsActivity.kt</a>
 
 ```kotlin
 fun getMpDirectionsRenderer(): MPDirectionsRenderer? {
@@ -235,11 +239,11 @@ Inside the `NavigationFragment` we will implement logic to navigate through Legs
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/NavigationFragment.java">NavigationFragment.java</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Mapbox-Android/blob/429f2ca4514648c5e43bf50c9c46246164bfb412/app/src/main/java/com/example/mapsindoorsgettingstartedmapbox/NavigationFragment.java">NavigationFragment.java</a>
 
 ```java
 public class NavigationFragment extends Fragment {
-    private Route mRoute;
+    private MPRoute mRoute;
     private MapsActivity mMapsActivity;
     ...
     @Override
@@ -252,9 +256,9 @@ public class NavigationFragment extends Fragment {
             public void onPageSelected(int position) {
                 super.onPageSelected(position);
                 //When a page is selected call the renderer with the index
-                mMapsActivity.getMpDirectionsRenderer().setRouteLegIndex(position);
+                mMapsActivity.getMpDirectionsRenderer().selectLegIndex(position);               
                 //Update the floor on mapcontrol if the floor might have changed for the routing
-                mMapsActivity.getMapControl().selectFloor(mMapsActivity.getMpDirectionsRenderer().getCurrentFloor());
+                mMapsActivity.getMapControl().selectFloor(mMapsActivity.getMpDirectionsRenderer().getSelectedLegFloorLevel());
             }
         });
 
@@ -288,11 +292,11 @@ public class NavigationFragment extends Fragment {
 
 </mi-tab-panel>
 <mi-tab-panel id="kotlin">
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/NavigationFragment.kt">NavigationFragment.kt</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Mapbox-Android-Kotlin/blob/9df3583787a50e0aa5c59e0a91e0a94c2b3b6225/app/src/main/java/com/example/mapsindoorsgettingstartedmapboxkotlin/NavigationFragment.kt">NavigationFragment.kt</a>
 
 ```kotlin
 class NavigationFragment : Fragment() {
-    private var mRoute: Route? = null
+    private var mRoute: MPRoute? = null
     private var mMapsActivity: MapsActivity? = null
 
     ...
@@ -304,9 +308,9 @@ class NavigationFragment : Fragment() {
             override fun onPageSelected(position: Int) {
                 super.onPageSelected(position)
                 //When a page is selected call the renderer with the index
-                mMapsActivity?.getMpDirectionsRenderer()?.setRouteLegIndex(position)
+                mMapsActivity?.getMpDirectionsRenderer()?.selectLegIndex(position)
                 //Update the floor on mapcontrol if the floor might have changed for the routing
-                mMapsActivity?.getMpDirectionsRenderer()?.currentFloor?.let {floorIndex ->
+                mMapsActivity?.getMpDirectionsRenderer()?.selectedLegFloorLevel?.let { floorIndex ->
                     mMapsActivity?.getMapControl()?.selectFloor(floorIndex)
                 }
             }
@@ -349,7 +353,7 @@ class NavigationFragment : Fragment() {
     }
 
     companion object {
-        fun newInstance(route: Route?, mapsActivity: MapsActivity?): NavigationFragment {
+        fun newInstance(route: MPRoute?, mapsActivity: MapsActivity?): NavigationFragment {
             val fragment = NavigationFragment()
             fragment.mRoute = route
             fragment.mMapsActivity = mapsActivity
@@ -362,50 +366,48 @@ class NavigationFragment : Fragment() {
 </mi-tab-panel>
 </mi-tabs>
 
-See the full implementation of `NavigationFragment` and the accompanying adapter here: [NavigationFragment.java](https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/NavigationFragment.java#L31-L117) or [NavigationFragment.kt](https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/NavigationFragment.kt#L18-L105)
-
 We will then create a simple textview to describe each step of the Route Leg in the `RouteLegFragment` for the `ViewPager`:
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/RouteLegFragment.java">RouteLegFragment.java</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Mapbox-Android/blob/429f2ca4514648c5e43bf50c9c46246164bfb412/app/src/main/java/com/example/mapsindoorsgettingstartedmapbox/RouteLegFragment.java">RouteLegFragment.java</a>
 
 ```java
 public class RouteLegFragment extends Fragment {
-    private RouteLeg mRouteLeg;
+    private MPRouteLeg mRouteLeg;
     ...
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         //Assigning views
-        TextView fromTxtView = view.findViewById(R.id.from_text_view);
+        TextView stepTxtView = view.findViewById(R.id.steps_text_view);
         String stepsString = "";
         //A loop to write what to do for each step of the leg.
         for (int i = 0; i < mRouteLeg.getSteps().size(); i++) {
-            RouteStep routeStep = mRouteLeg.getSteps().get(i);
-            stepsString += "Step " + (i + 1) + routeStep.getManeuver() + "\n";
+            MPRouteStep routeStep = mRouteLeg.getSteps().get(i);
+            stepsString += "Step " + (i + 1) + " " + routeStep.getManeuver() + "\n";
         }
-        fromTxtView.setText(stepsString);
+        stepTxtView.setText(stepsString);
     }
 }
 ```
 
 </mi-tab-panel>
 <mi-tab-panel id="kotlin">
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/RouteLegFragment.kt">RouteLegFragment.kt</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Mapbox-Android-Kotlin/blob/9df3583787a50e0aa5c59e0a91e0a94c2b3b6225/app/src/main/java/com/example/mapsindoorsgettingstartedmapboxkotlin/RouteLegFragment.kt">RouteLegFragment.kt</a>
 
 ```kotlin
 class RouteLegFragment : Fragment() {
-    private var mRouteLeg: RouteLeg? = null
+    private var mRouteLeg: MPRouteLeg? = null
 
     ...
 
     override fun onViewCreated(view: View, @Nullable savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         //Assigning views
-        val fromTxtView = view.findViewById<TextView>(R.id.from_text_view)
+        val stepsTxtView = view.findViewById<TextView>(R.id.steps_text_view)
         var stepsString = ""
         //A loop to write what to do for each step of the leg.
         for (i in mRouteLeg!!.steps.indices) {
@@ -415,11 +417,11 @@ class RouteLegFragment : Fragment() {
                 """.trimIndent()
         }
 
-        fromTxtView.text = stepsString
+        stepsTxtView.text = stepsString
     }
 
     companion object {
-        fun newInstance(routeLeg: RouteLeg?): RouteLegFragment {
+        fun newInstance(routeLeg: MPRouteLeg?): RouteLegFragment {
             val fragment = RouteLegFragment()
             fragment.mRouteLeg = routeLeg
             return fragment
@@ -431,8 +433,6 @@ class RouteLegFragment : Fragment() {
 </mi-tab-panel>
 </mi-tabs>
 
-See the full implementation of the fragment here: [RouteLegFragment.java](https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/RouteLegFragment.java#L23-L57) or [RouteLegFragment.kt](https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/RouteLegFragment.kt#L12-L44)
-
 <!-- Travel-mode -->
 {% include "src/content/shared/getting-started/directions/travel-mode.md" %}
 
@@ -443,32 +443,39 @@ To swap Travel Modes you set the Travel Mode before making a query for the route
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
 
-```java/6
+```java
 void createRoute(MPLocation mpLocation) {
     //If MPRoutingProvider has not been instantiated create it here and assign the results call back to the activity.
-    if (mpRoutingProvider == null) {
-        mpRoutingProvider = new MPRoutingProvider();
-        mpRoutingProvider.setOnRouteResultListener(this);
+    if (mpDirectionsService == null) {
+        mpDirectionsService = new MPDirectionsService();
+        MPDirectionsConfig config = new MPDirectionsConfig.Builder()
+                .setOnRouteResultListener(this)
+                .setTravelMode(MPTravelMode.WALKING)
+                .build();
+        mpDirectionsService.setConfig(config);
     }
-    mpRoutingProvider.setTravelMode(TravelMode.WALKING);
     //Queries the MPRouting provider for a route with the hardcoded user location and the point from a location.
-    mpRoutingProvider.query(mUserLocation, mpLocation.getPoint());
+    mpDirectionsService.query(mUserLocation, mpLocation.getPoint());
 }
 ```
 
 </mi-tab-panel>
 <mi-tab-panel id="kotlin">
 
-```kotlin/6
+```kotlin
 fun createRoute(mpLocation: MPLocation) {
     //If MPRoutingProvider has not been instantiated create it here and assign the results call back to the activity.
-    if (mpRoutingProvider == null) {
-        mpRoutingProvider = MPRoutingProvider()
-        mpRoutingProvider?.setOnRouteResultListener(this)
+    if (mpDirectionsService == null) {
+        //Creating a configuration for the MPDirectionsService allows us to set a resultListener and a travelMode.
+        val directionsConfig = MPDirectionsConfig.Builder()
+            .setOnRouteResultListener(this::onRouteResult)
+            .setTravelMode(MPTravelMode.WALKING).build()
+
+        mpDirectionsService = MPDirectionsService()
+        mpDirectionsService!!.setConfig(directionsConfig)
     }
-    mpRoutingProvider?.setTravelMode(TravelMode.WALKING)
     //Queries the MPRouting provider for a route with the hardcoded user location and the point from a location.
-    mpRoutingProvider?.query(mUserLocation, mpLocation.point)
+    mpDirectionsService?.query(mUserLocation, mpLocation.point)
 }
 ```
 

@@ -1,0 +1,1 @@
+MapsIndoors runs on top of Mapbox and on this page, you'll create a Mapbox API key with the relevant APIs enabled, retrieve a MapsIndoors API key and install the necessary dependencies to get started building your own app.

@@ -12,7 +12,7 @@ eleventyNavigation:
 
 {% include "src/content/shared/getting-started/live-data/live-position-demo-preconditions.md" %}
 
-Enabling Live Data through `MapControl` is as simple as calling `mapControl.enableLiveData()` with a [Domain Type](https://app.mapsindoors.com/mapsindoors/reference/android/v3/index.html).
+Enabling Live Data through `MapControl` is as simple as calling `mapControl.enableLiveData()` with a [Domain Type](https://app.mapsindoors.com/mapsindoors/reference/android/v4/index.html).
 
 We will create a new method on our `MapsActivity` called `enableLiveData()` to enable Live Data for the Solution.
 
@@ -20,7 +20,7 @@ We will create a new method on our `MapsActivity` called `enableLiveData()` to e
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L270-L278">MapsActivity.java</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Mapbox-Android/blob/429f2ca4514648c5e43bf50c9c46246164bfb412/app/src/main/java/com/example/mapsindoorsgettingstartedmapbox/MapsActivity.java#L266-L274">MapsActivity.java</a>
 
 ```java
 void enableLiveData() {
@@ -33,7 +33,7 @@ void enableLiveData() {
 
 </mi-tab-panel>
 <mi-tab-panel id="kotlin">
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/MapsActivity.kt#L227-L235">MapsActivity.kt</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Mapbox-Android-Kotlin/blob/9df3583787a50e0aa5c59e0a91e0a94c2b3b6225/app/src/main/java/com/example/mapsindoorsgettingstartedmapboxkotlin/MapsActivity.kt#L247-L255">MapsActivity.kt</a>
 
 ```kotlin
 private fun enableLiveData() {
@@ -55,12 +55,11 @@ In the context of your view controller showing a map, add the call after creatin
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L148-L168">MapsActivity.java</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Mapbox-Android/blob/429f2ca4514648c5e43bf50c9c46246164bfb412/app/src/main/java/com/example/mapsindoorsgettingstartedmapbox/MapsActivity.java#L167">MapsActivity.java</a>
 
 ```java
 void initMapControl(View view) {
-        //Creates a new instance of MapControl
-        mMapControl = new MapControl(this);
+        ...
         //Enable Live Data on the map
         enableLiveData();
         ...
@@ -69,12 +68,11 @@ void initMapControl(View view) {
 
 </mi-tab-panel>
 <mi-tab-panel id="kotlin">
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/MapsActivity.kt#L116-L134">MapsActivity.kt</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Mapbox-Android-Kotlin/blob/9df3583787a50e0aa5c59e0a91e0a94c2b3b6225/app/src/main/java/com/example/mapsindoorsgettingstartedmapboxkotlin/MapsActivity.kt#L132">MapsActivity.kt</a>
 
 ```kotlin
 private fun initMapControl(view: View) {
-    //Creates a new instance of MapControl
-    mMapControl = MapControl(this)
+    ...
     //Enable Live Data on the map
     enableLiveData()
     ...
