@@ -263,6 +263,14 @@ This submenu presents you the option of integrating a Booking system to your Sol
 
 MapsIndoors also provides you the option of integrating a Positioning system to your Solution. The exact menus presented here, like the Booking system, depend on which provider you opt for.
 
+###### Cisco DNA
+
+![solution-details-positioning-provider-ciscodna](/assets/cms/solution-details/Solution_Details_Position_Provider_CiscoDNA.png)
+
+###### IndoorAtlas
+
+![solution-details-positioning-provider-indooratlas](/assets/cms/solution-details/Solution_Details_Position_Provider_IndoorAtlas.png)
+
 ##### Webex
 
 As the options above, the options presented for WebEx integration depends on the exact manner of integration.
