@@ -255,9 +255,24 @@ This submenu presents you the option of integrating a Booking system to your Sol
 
 ![solution-details-booking-provider-google](/assets/cms/solution-details/Solution_Details_Booking_Providers_Google.png)
 
+1. **Service Name** - Name your service.
+1. **Organizer** - Provide a contact email address.
+1. **Token** - 
+1. **Booking Permissions** - 
+
 ###### Office 365
 
 ![solution-details-booking-provider-office365](/assets/cms/solution-details/Solution_Details_Booking_Providers_Office365.png)
+
+1. **Service Name** - Name your service.
+1. **Timeout (ms)** - 
+1. **Tenant Id** - 
+1. **Client Id** - 
+1. **Client Secret** - 
+1. **Redirect Uri** - 
+1. **Organizer** - Provide a contact email address.
+1. **Refresh Token** - 
+1. **Access Type** - 
 
 ##### Position Provider
 
@@ -267,9 +282,17 @@ MapsIndoors also provides you the option of integrating a Positioning system to 
 
 ![solution-details-positioning-provider-ciscodna](/assets/cms/solution-details/Solution_Details_Position_Provider_CiscoDNA.png)
 
+1. **Tenant ID** - 
+1. **Priority** - 
+
 ###### IndoorAtlas
 
 ![solution-details-positioning-provider-indooratlas](/assets/cms/solution-details/Solution_Details_Position_Provider_IndoorAtlas.png)
+
+1. **Key** - 
+1. **Secret** - 
+1. **Priority** - 
+1. **Floor Mapping** - 
 
 ##### Webex
 
