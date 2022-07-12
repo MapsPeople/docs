@@ -283,7 +283,7 @@ MapsIndoors also provides you the option of integrating a Positioning system to 
 ![solution-details-positioning-provider-ciscodna](/assets/cms/solution-details/Solution_Details_Position_Provider_CiscoDNA.png)
 
 1. **Tenant ID** - 
-1. **Priority** - 
+1. **Priority** - Determine which position provider will take priority. Enter "1" for preferred provider.
 
 ###### IndoorAtlas
 
@@ -291,7 +291,7 @@ MapsIndoors also provides you the option of integrating a Positioning system to 
 
 1. **Key** - 
 1. **Secret** - 
-1. **Priority** - 
+1. **Priority** - Determine which position provider will take priority. Enter "1" for preferred provider.
 1. **Floor Mapping** - 
 
 ##### Webex
