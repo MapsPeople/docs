@@ -251,6 +251,14 @@ You can easily delete an API key if it is unused, or has been compromised in som
 
 This submenu presents you the option of integrating a Booking system to your Solution. The exact menus presented here depend on which provider you opt for.
 
+###### Google Calender
+
+![solution-details-booking-provider-google](/assets/cms/solution-details/Solution_Details_Booking_Providers_Google.png)
+
+###### Office 365
+
+![solution-details-booking-provider-office365](/assets/cms/solution-details/Solution_Details_Booking_Providers_Office365.png)
+
 ##### Position Provider
 
 MapsIndoors also provides you the option of integrating a Positioning system to your Solution. The exact menus presented here, like the Booking system, depend on which provider you opt for.
