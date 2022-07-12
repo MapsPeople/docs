@@ -233,7 +233,7 @@ Here you can select which Categories can be used for browsing the app.
 
 Here you manage the active API keys generated for your Solution. To load your MapsIndoors data in your apps, you need an API key.
 
-You can create as many API keys as you want, and it is good practise to use one for each place you need to load data from MapsIndoors (each mobile platform, web app etc.).
+You can create as many API keys as you want, and it is good practice to use one for each place you need to load data from MapsIndoors (each mobile platform, web app etc.).
 
 You can easily delete an API key if it is unused, or has been compromised in some way.
 
@@ -269,7 +269,7 @@ Each Location also has a number of settings associated with it. If you select a 
 
 * **Type** - Locations must have a Type applied, which can be set in the Location details editor. When creating a new Location some settings are inherited from the selected Type e.g. Name and Icon. You can always change the inherited settings to something else if necessary.
 * **Name & Description** - Type in the name of your Location, and a Description. Entering it in the default language is mandatory, but you also have options to enter it in alternative languages.
-* **Area** - Choose the colour of the Area the Location covers. You can also set whether the Area is visible or not.
+* **Area** - Choose the color of the Area the Location covers. You can also set whether the Area is visible or not.
 * **Status** - Toggle whether or not this Location appears in searches.
 * **Restrictions** - Determine which, if any, App User Role Restrictions this Location should be subject to.
 * **Categories** - Add which, if any, Categories this Location belongs to.
