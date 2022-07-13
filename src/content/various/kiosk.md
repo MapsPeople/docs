@@ -51,7 +51,7 @@ When testing the Kiosk, it is highly recommended to use Chrome's "Incognito" or 
 
 ### No URL Parameters
 
-It is also possible to launch the kiosk without utilising URL parameters like those specified above, by using the link [http://kiosk.mapsindoors.com/](http://kiosk.mapsindoors.com/). If the kiosk is launched in this manner, you will be asked to enter an API-key and a Location ID to use as an origin point. The kiosk will then launch based on these parameters.
+It is also possible to launch the kiosk without utilising URL parameters like those specified above, by using the link [http://kiosk.mapsindoors.com/](http://kiosk.mapsindoors.com/). If the kiosk is launched in this manner, you will be asked to enter an API-key and a Location ID to use as an origin point, information on which can be found [here]({{ site.url }}/content/various/kiosk/#configure-the-kiosk). The kiosk will then launch based on these parameters.
 
 ![kiosk-no-url](/assets/various/kiosk-no-url.PNG)
 
