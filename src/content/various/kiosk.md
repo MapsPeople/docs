@@ -28,8 +28,14 @@ This is what the full URL for an app in Kiosk mode could look like:
 
 Splitting the URL, this is what it contains:
 
-* **`demo`** is the `Alias` for your Solution (you can use an API key in the same way if an Alias is not set)
-* **`originLocation=652cf26a26784b4e9a390d8b`** is the Location selected as "origin Location", i.e. where your Kiosk is located in the real world
+* **`demo`** is the `Alias` for your Solution (you can use an API key in the same way if an Alias is not set). Tis is found in "Solution Details" -> "App Settings" -> "API Keys":
+
+![kiosk-api-keys](/assets/cms/solution-details/Solution_Details_API_Keys_V2.png)
+
+* **`originLocation=652cf26a26784b4e9a390d8b`** is the Location selected as "origin Location", i.e. where your Kiosk is located in the real world. This is a Location ID found in the "Location Details" panel, in the "Details" tab:
+
+![kiosk-location-id](/assets/cms/Kiosk_Location_ID.png)
+
 * **`zoom=22`** is the zoom level to start at
 * **`&timeout=20`** is the timeout period (in seconds) before resetting
 * **`&legend=true`** is whether the Legend should be displayed
