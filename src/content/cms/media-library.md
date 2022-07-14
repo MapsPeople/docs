@@ -31,6 +31,10 @@ The Media Library is a feature in the MapsIndoors CMS which enables the user to 
 
 ## Feature List
 
+### Media Library
+
+dmkcmdc
+
 ### Uploading Files
 
 Clicking the "Upload" button opens a local File Explorer window, allowing you to locate the file you wish to upload to the Media Library. If a file with the same name as the selected file already exists in the Media Library, a warning will show up. You may choose to cancel the upload, or to overwrite the existing file, but this will also replace all existing uses of the file with this name. `sampleimage.jpg` and `sampleimage.png` may both exist in the Media Library concurrently, but `sampleimage.jpg` and `SampleImage.jpg` will throw a warning, as this check is not case-sensitive.
@@ -58,10 +62,6 @@ The "Filter" option in the filter-bar opens a drop-down menu allowing you to sel
 
 A secondary filter also exists, allowing you to sort between media that is user-uploaded, and media that MapsPeople has pre-loaded as default options. These MapsIndoors icons cannot be deleted, but using this filter you can opt to not have them displayed.
 
-#### Height & Width Filter
-
-cmicjkdc
-
 #### Search by File Name
 
-cdnjcndjc
+By typing a part of a filename here, the filter will return to display all media in the Media Library containing this string of text. For example, typing `ima` will return all three of `LimaPeru.jpg`, `sampleImage.png` and `imaginePlease.svg`.
