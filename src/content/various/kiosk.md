@@ -28,7 +28,9 @@ This is what the full URL for an app in Kiosk mode could look like:
 
 Splitting the URL, this is what it contains:
 
-* **`demo`** is the `Alias` for your Solution (you can use an API key in the same way if an Alias is not set). This is found in "Solution Details" -> "App Settings" -> "API Keys":
+* **`demo`** is the `Alias` for your Solution (you can use an API key in the same way if an Alias is not set). This is found in "Solution Details" -> "App Settings" -> "App Configuration" for the `Alias`, or "Solution Details" -> "App Settings" -> "API Keys" for API keys:
+
+![kiosk-alias](/assets/cms/solution-details/Solution_Details_Alias.PNG)
 
 ![kiosk-api-keys](/assets/cms/solution-details/Solution_Details_API_Keys_V2.png)
 
@@ -37,7 +39,7 @@ Splitting the URL, this is what it contains:
 ![kiosk-location-id](/assets/cms/Kiosk_Location_ID.png)
 
 * **`zoom=22`** is the zoom level to start at
-* **`&timeout=20`** is the timeout period (in seconds) before resetting
+* **`&timeout=20`** is the timeout period (in seconds) before resetting the map view
 * **`&legend=true`** is whether the Legend should be displayed
 * **`&bearing=180`** is how much the map should be rotated from North (in this case 180 degrees, so due South)
 * **`&pitch=60`** is how much the map should tilt towards the horizon
