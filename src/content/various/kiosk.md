@@ -28,10 +28,18 @@ This is what the full URL for an app in Kiosk mode could look like:
 
 Splitting the URL, this is what it contains:
 
-* **`demo`** is the `Alias` for your Solution (you can use an API key in the same way if an Alias is not set)
-* **`originLocation=652cf26a26784b4e9a390d8b`** is the Location selected as "origin Location", i.e. where your Kiosk is located in the real world
+* **`demo`** is the `Alias` for your Solution (you can use an API key in the same way if an Alias is not set). This is found in "Solution Details" -> "App Settings" -> "App Configuration" for the `Alias`, or "Solution Details" -> "App Settings" -> "API Keys" for API keys:
+
+![kiosk-alias](/assets/cms/solution-details/Solution_Details_Alias.PNG)
+
+![kiosk-api-keys](/assets/cms/solution-details/Solution_Details_API_Keys_V2.png)
+
+* **`originLocation=652cf26a26784b4e9a390d8b`** is the Location selected as "origin Location", i.e. where your Kiosk is located in the real world. This is a Location ID found in the "Location Details" panel, in the "Details" tab:
+
+![kiosk-location-id](/assets/cms/Kiosk_Location_ID.png)
+
 * **`zoom=22`** is the zoom level to start at
-* **`&timeout=20`** is the timeout period (in seconds) before resetting
+* **`&timeout=20`** is the timeout period (in seconds) before resetting the map view
 * **`&legend=true`** is whether the Legend should be displayed
 * **`&bearing=180`** is how much the map should be rotated from North (in this case 180 degrees, so due South)
 * **`&pitch=60`** is how much the map should tilt towards the horizon
@@ -45,7 +53,7 @@ When testing the Kiosk, it is highly recommended to use Chrome's "Incognito" or 
 
 ### No URL Parameters
 
-It is also possible to launch the kiosk without utilising URL parameters like those specified above, by using the link [http://kiosk.mapsindoors.com/](http://kiosk.mapsindoors.com/). If the kiosk is launched in this manner, you will be asked to enter an API-key and a Location ID to use as an origin point. The kiosk will then launch based on these parameters.
+It is also possible to launch the kiosk without utilising URL parameters like those specified above, by using the link [http://kiosk.mapsindoors.com/](http://kiosk.mapsindoors.com/). If the kiosk is launched in this manner, you will be asked to enter an API-key and a Location ID to use as an origin point, information on which can be found [here]({{ site.url }}/content/various/kiosk/#configure-the-kiosk). The kiosk will then launch based on these parameters.
 
 ![kiosk-no-url](/assets/various/kiosk-no-url.PNG)
 
