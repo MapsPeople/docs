@@ -28,7 +28,7 @@ This is what the full URL for an app in Kiosk mode could look like:
 
 Splitting the URL, this is what it contains:
 
-* **`demo`** is the `Alias` for your Solution (you can use an API key in the same way if an Alias is not set). Tis is found in "Solution Details" -> "App Settings" -> "API Keys":
+* **`demo`** is the `Alias` for your Solution (you can use an API key in the same way if an Alias is not set). This is found in "Solution Details" -> "App Settings" -> "API Keys":
 
 ![kiosk-api-keys](/assets/cms/solution-details/Solution_Details_API_Keys_V2.png)
 
