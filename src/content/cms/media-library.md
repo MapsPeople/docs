@@ -33,7 +33,11 @@ The Media Library is a feature in the MapsIndoors CMS which enables the user to 
 
 ### Media Library
 
-dmkcmdc
+The Media Library itself consists of a window which contains an overview of the media present in the Solution, along with functions to manage said media.
+
+Media present in the Media Library is displayed with a preview image. This preview will also contain the filename and the option to delete the Media. If you hover over the preview, the bottom edge will expand to reveal further information about the media, such as dimensions (in pixels) and upload date.
+
+To select a piece of media, click on it to ensure it is selected and highlighted, and then click "Select" in the bottom-right corner.
 
 ### Uploading Files
 
