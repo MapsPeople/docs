@@ -18,6 +18,31 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 ### Security     in case of vulnerabilities.
 -->
 
+## [3.13.18] 2022-06-25
+
+### Fixed
+
+- Fixed rare occurrence where the camera would move to the other side of the world during routing
+
+## [3.13.17] 2022-06-24
+
+### Fixed
+
+- Fixed rare issue where routing to entry points might fail
+- Fixed issue where icons would not update automatically
+
+## [3.13.16] 2022-06-23
+
+### Fixed
+
+- Fixed sometimes deleted `PolygonDisplayRule` would leave behind a `Polygon` on the map that could not be removed
+
+## [3.13.15] 2022-06-14
+
+### Fixed
+
+- `getDisplayRule(MPLocation)` on `MapControl` would return null, even when a display rule exists for the location
+
 ## [3.13.14] 2022-06-10
 
 ### Fixed

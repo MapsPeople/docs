@@ -48,6 +48,8 @@ You can currently only edit Display Rules per Type. Editing Display Rules on sin
 
 In the CMS, you can edit your Display Rules in `Solution Details > Types > Edit [Location Type name] Display Rules`. This will open an overview of all Display Rules properties.
 
+### General
+
 ![display-rules-general](/assets/map/display-rules/Display_Rules_General.png)
 
 The "General" visibility switch determines whether Locations of this Type are visible on the map. Moreover, the Location data is not available to the SDKs when the general visibility is turned off. The system will accept a Boolean here, so either `true` or `false`.
@@ -63,6 +65,8 @@ An example of in-app Display Rules using only the General Visibility option coul
     }
 }
 ```
+
+### Icon
 
 ![display-rules-icon](/assets/map/display-rules/Display_Rules_Icon.png)
 
@@ -98,6 +102,8 @@ An example of in-app Display Rules using only "Icon" Display Rules could look li
 }
 ```
 
+### Label
+
 ![display-rules-label](/assets/map/display-rules/Display_Rules_Label.png)
 
 The "Label" section contains options related to the appearance of the Label. The Label is the text associated with the Location on the map, often positioned next to the Icon.
@@ -131,6 +137,8 @@ An example of in-app Display Rules using only "Label" Display Rules could look l
     }
 }
 ```
+
+### Polygon
 
 ![display-rules-polygon](/assets/map/display-rules/Display_Rules_Polygon.png)
 

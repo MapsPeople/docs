@@ -123,25 +123,21 @@ An edge is a line on which a person can be instructed to transport themselves. T
 
 Edges are always straight lines, but Nodes can be used in quick succession to create the impression of a curved Edge.
 
-#### Graph Bounds
+#### Venue / Graph / Building Bounds
 
 Bounds are used to indicate the geographical area a Venue or Building occupies.
 
-The Venue Bounds can be altered to fit points where it can conveniently connect to the Google Maps network. This is to ensure a smooth transition between the Directions given by Google Maps and MapsIndoors'.
+The Venue Bounds can be altered to fit points where it can conveniently connect to the Google Maps network, in conjunction with the Graph Bounds. This is to ensure a smooth transition between the directions given by Google Maps and MapsIndoors.
+
+Graph Bounds describe the area covered by the route graph. This may be smaller than the Venue Bounds.
 
 The Building Bounds are used to accurately display the area a Building occupies in the world.
-
-#### Speed Factor
-
-An Edge can be manipulated so a person getting Directions that include that Edge will get a faster Duration than they would if they took another Route.
-
-This can be helpful on large Venues where certain hallways are preferred for a simple Route over what might computationally be the faster Route.
 
 ### Directions
 
 Directions is the set of instructions for travelling from an Origin to a Destination.
 
-You can get Directions for a Route using the four Travel Modes: "Walking", "Driving", "Biking" and "Public Transportation".
+You can get Directions for a Route using the four Travel Modes: "Walking", "Driving", "Biking" and "Public Transit".
 
 For Directions where the Origin and Destination are both inside a Venue (as defined by the Venue Bounds), Walking is the only Travel Mode available.
 
@@ -167,15 +163,11 @@ The main difference between Directions and Routes are the scope of what is inclu
 
 ### Bus/Tram/Train Stop
 
-A "Public Transportation"-only Entry Point inside the Venue is understood to be the point from which MapsIndoors starts the walking directions.
+A "Public Transit"-only Entry Point inside the Venue is understood to be the point from which MapsIndoors starts the walking directions.
 
 ### Parking Lot
 
-A Parking Lot is a "Driving"-specific Entry Point. It will provide a suggestion to park the car at the Parking Lot closest to the Destination. It only displays a Parking Lot when requesting "Driving" directions from outside a Venue to a Location inside a Venue.
-
-### Landmark
-
-Landmarks can be used as navigational identifiers when people describe a route to one another. MapsIndoors does not support Landmarks as special Locations, but they can be constructed using Location Types and Icons.
+A Parking Lot is a "Driving"- or "Biking"-specific Entry Point. It will provide a suggestion to park the car or bike at the Parking Lot closest to the Destination. It only displays a Parking Lot when requesting "Driving" or "Biking" directions from outside a Venue to a Location inside a Venue.
 
 ### Selection Highlight Color
 
