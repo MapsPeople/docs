@@ -8,7 +8,7 @@ eleventyNavigation:
   order: 10
 ---
 
-The Media Library is a feature in the MapsIndoors CMS which lets the user upload and manage custom images, to use in the MapsIndoors CMS. The Media Library can be accessed through the dedicated Media Library button, the Location Details panel or the Display Settings panel.
+The Media Library is a feature in the MapsIndoors CMS, expanding upon and replacing the Icon Manager that we used before. The Media Library lets you upload and manage media files, to use in the MapsIndoors CMS. The Media Library can be accessed through the Display Settings panel, and the App Categories page.
 
 **INSERT SCREENSHOT**
 
@@ -20,14 +20,15 @@ The Media Library is a feature in the MapsIndoors CMS which lets the user upload
 1. Sort the content of the Media Library - options are by file name or my upload date, both ascending and descending.
 1. Filter the contents of the Media Library by file type.
 1. Filter the contents of the Media Library, choosing between user uploads or MapsIndoors default icons.
-1. Filter the content of the Media Library by size.
+1. Filter the content of the Media Library by size. <!-- Might need to update later -->
 1. Search the Media Library by file name.
 1. Delete this content from the Media Library.
-1. Preview of the content - Click to highlight this content.
+1. Preview of the content - Click to select this content, which highlights it.
     * Hover on this preview to see more information about this content, such as dimensions and upload date.
 
 1. Cancel this use of the Media Library.
 1. Select the highlighted media.
+1. Sync your Media library to other Solutions you own.
 
 ## Feature List
 
@@ -37,9 +38,9 @@ The Media Library is a feature in the MapsIndoors CMS which lets the user upload
 
 The Media Library consists of a window which contains an overview of the media present in the Solution, along with functions to manage said media.
 
-Media present in the Media Library is displayed with a preview image. This preview will also contain the filename and the option to delete the Media. If you hover over the preview, the bottom edge will expand to reveal further information about the media, such as dimensions (in pixels) and upload date.
+Media present in the Media Library is displayed with a preview image. This preview will also contain the filename and the option to delete the Media. If you hover over the preview, the footer will expand to reveal further information about the media, such as dimensions (in pixels) and upload date.
 
-To select a piece of media, click on it to ensure it is selected and highlighted, and then click "Select" in the bottom-right corner.
+To select a piece of media, click on it to select it To deselect it, click it again, or select another file in the Media Library. Your selection is indicated by a highlight. Confirm the selection of the media by clicking the "Select" button.
 
 ### Uploading Files
 
@@ -78,7 +79,7 @@ The "Filter" option in the filter-bar opens a drop-down menu allowing you to sel
 
 **INSERT SCREENSHOT**
 
-A secondary filter also exists, allowing you to sort between media that is user-uploaded, and media that MapsPeople has pre-loaded as default options. These MapsIndoors icons cannot be deleted, but using this filter you can opt to not have them displayed.
+A secondary filter also exists, allowing you to sort between media that is user-uploaded, and media that MapsPeople has pre-loaded as default options. These "MapsIndoors Icons" cannot be deleted, but using this filter you can opt to not have them displayed.
 
 #### Search by File Name
 
