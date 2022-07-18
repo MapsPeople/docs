@@ -8,7 +8,7 @@ eleventyNavigation:
   order: 10
 ---
 
-The Media Library is a feature in the MapsIndoors CMS which enables the user to upload and manage custom images, to use in the MapsIndoors CMS. The Media Library can be accessed through the dedicated Media Library button, the Location Details panel or the Display Settings panel.
+The Media Library is a feature in the MapsIndoors CMS which lets the user upload and manage custom images, to use in the MapsIndoors CMS. The Media Library can be accessed through the dedicated Media Library button, the Location Details panel or the Display Settings panel.
 
 **INSERT SCREENSHOT**
 
@@ -35,7 +35,7 @@ The Media Library is a feature in the MapsIndoors CMS which enables the user to 
 
 **INSERT SCREENSHOT**
 
-The Media Library itself consists of a window which contains an overview of the media present in the Solution, along with functions to manage said media.
+The Media Library consists of a window which contains an overview of the media present in the Solution, along with functions to manage said media.
 
 Media present in the Media Library is displayed with a preview image. This preview will also contain the filename and the option to delete the Media. If you hover over the preview, the bottom edge will expand to reveal further information about the media, such as dimensions (in pixels) and upload date.
 
