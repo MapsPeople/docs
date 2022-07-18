@@ -47,6 +47,8 @@ To select a piece of media, click on it to ensure it is selected and highlighted
 
 Clicking the "Upload" button opens a local File Explorer window, allowing you to locate the file you wish to upload to the Media Library. If a file with the same name as the selected file already exists in the Media Library, a warning will show up. You may choose to cancel the upload, or to overwrite the existing file, but this will also replace all existing uses of the file with this name. `sampleimage.jpg` and `sampleimage.png` may both exist in the Media Library concurrently, but `sampleimage.jpg` and `SampleImage.jpg` will throw a warning, as this check is not case-sensitive.
 
+> Files cannot be larger than 8 mb.
+
 ### Sort
 
 **INSERT SCREENSHOT**
