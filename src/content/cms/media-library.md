@@ -8,7 +8,7 @@ eleventyNavigation:
   order: 10
 ---
 
-The Media Library is a feature in the MapsIndoors CMS, expanding upon and replacing the Icon Manager that we used before. The Media Library lets you upload and manage media files, to use in the MapsIndoors CMS. The Media Library can be accessed through the Display Settings panel, and the App Categories page.
+The Media Library is a new feature in the MapsIndoors CMS, replacing the Icon Manager that was used before. All features of the Icon Manager are present in the Media Library, but with new and improved functionality. The Media Library lets you upload and manage media files to use in the MapsIndoors CMS, for example to use custom icons for Locations, or to place images of logos on the map. The Media Library can be accessed through the Display Settings panel, and the App Categories page.
 
 **INSERT SCREENSHOT**
 
@@ -17,7 +17,7 @@ The Media Library is a feature in the MapsIndoors CMS, expanding upon and replac
 **INSERT SCREENSHOT**
 
 1. Upload a file to the Media Library.
-1. Sort the content of the Media Library - options are by file name or my upload date, both ascending and descending.
+1. Sort the content of the Media Library - options are by file name or by upload date, both ascending and descending.
 1. Filter the contents of the Media Library by file type.
 1. Filter the contents of the Media Library, choosing between user uploads or MapsIndoors default icons.
 1. Filter the content of the Media Library by size. <!-- Might need to update later -->
@@ -40,7 +40,7 @@ The Media Library consists of a window which contains an overview of the media p
 
 Media present in the Media Library is displayed with a preview image. This preview will also contain the filename and the option to delete the Media. If you hover over the preview, the footer will expand to reveal further information about the media, such as dimensions (in pixels) and upload date.
 
-To select a piece of media, click on it to select it To deselect it, click it again, or select another file in the Media Library. Your selection is indicated by a highlight. Confirm the selection of the media by clicking the "Select" button.
+To select a piece of media, click on it to select it. To deselect it, click it again, or select another file in the Media Library. Your selection is indicated by a highlight. Confirm the selection of the media by clicking the "Select" button.
 
 ### Uploading Files
 
@@ -86,3 +86,5 @@ A secondary filter also exists, allowing you to sort between media that is user-
 **INSERT SCREENSHOT**
 
 By typing a part of a filename here, the filter will return to display all media in the Media Library containing this string of text. For example, typing `ima` will return all three of `LimaPeru.jpg`, `sampleImage.png` and `imaginePlease.svg`.
+
+To read more about connected features, check out our documentation on [Display Rules]({{  site.url }}/content/map/map-styling/display-rules.md), and how to utilise 2D models (LINK) and 3D models (LINK).
