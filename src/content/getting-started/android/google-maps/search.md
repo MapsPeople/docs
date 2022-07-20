@@ -3,8 +3,8 @@ title: Create a Search Experience
 toc: true
 eleventyNavigation:
   title: Search
-  key: getting-started-android-search
-  parent: getting-started-android
+  key: getting-started-android-google-search
+  parent: getting-started-android-google
   order: 140
 ---
 
