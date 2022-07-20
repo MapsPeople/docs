@@ -479,4 +479,4 @@ Expected result:
 
 ![Directions result](/assets/android/getting-started/directions_gif.gif)
 
-<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/content/getting-started/android/livedata/">Next up: Enable Live Data</a></p>
+<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/content/getting-started/android/google-maps/livedata/">Next up: Enable Live Data</a></p>
