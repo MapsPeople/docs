@@ -135,4 +135,4 @@ Expected result:
 
 See the full example of MapsActivity here [MapsActivity.java](https://github.com/MapsPeople/MapsIndoors-Getting-Started-Mapbox-Android/blob/429f2ca4514648c5e43bf50c9c46246164bfb412/app/src/main/java/com/example/mapsindoorsgettingstartedmapbox/MapsActivity.java) or [MapsActivity.kt](https://github.com/MapsPeople/MapsIndoors-Getting-Started-Mapbox-Android-Kotlin/blob/9df3583787a50e0aa5c59e0a91e0a94c2b3b6225/app/src/main/java/com/example/mapsindoorsgettingstartedmapboxkotlin/MapsActivity.kt)
 
-<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/content/getting-started/android/search/">Next up: Search</a></p>
+<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/content/getting-started/android/mapbox/search/">Next up: Search</a></p>

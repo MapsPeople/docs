@@ -458,4 +458,4 @@ Expected result:
 
 The accompanying UI and implementation of this search experience can be found in the getting started app sample. [Getting Started App sample](https://github.com/MapsPeople/MapsIndoors-Getting-Started-Mapbox-Android/) or [Getting Started App sample kotlin](https://github.com/MapsPeople/MapsIndoors-Getting-Started-Mapbox-Android-Kotlin).
 
-<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/content/getting-started/android/directions/">Next up: Directions</a></p>
+<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/content/getting-started/android/mapbox/directions/">Next up: Directions</a></p>
