@@ -59,7 +59,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
 </mi-tab-panel>
 </mi-tabs>
 
-If you are not a customer you can use this demo MapsIndoors API key `d876ff0e60bb430b8fabb145`.
+If you are not a customer yet you can use this demo MapsIndoors API key `d876ff0e60bb430b8fabb145`.
 
 ### Initialize MapsControl
 

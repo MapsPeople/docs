@@ -58,15 +58,15 @@ override fun onCreate(savedInstanceState: Bundle?) {
 </mi-tab-panel>
 </mi-tabs>
 
-If you are not a customer you can use this demo MapsIndoors API key `d876ff0e60bb430b8fabb145`.
+If you are not a customer yet you can use this demo MapsIndoors API key `d876ff0e60bb430b8fabb145`.
 
 ### Initialize MapsControl
 
-We now want to add all the data we get by initializing `MapsIndoors` to our Mapbox map. This is done by initializing `MapControl` onto the Mapbox map. `MapControl` is used as a layer between Google Maps and MapsIndoors.
+We now want to add all the data we get by initializing `MapsIndoors` to our Mapbox map. This is done by initializing `MapControl` onto the Mapbox map. `MapControl` is used as a layer between Mapbox and MapsIndoors.
 
-Here we use Google Maps logic to apply geodata onto the map. This also means we append logic onto many Google Maps listeners, which means that using Google Maps listeners directly might break intended behavior of the MapsIndoors experience. We recommend to check our reference docs, and see if you can add a specific `Listener` through the `MapControl` and always use those when possible.
+Here we use Mapbox logic to apply geodata onto the map. This also means we append logic onto many Mapbox listeners, which means that using Mapbox listeners directly might break intended behavior of the MapsIndoors experience. We recommend to check our reference docs, and see if you can add a specific `Listener` through the `MapControl` and always use those when possible.
 
-Start by creating an `initMapControl` method which is used to initiate the `MapControl` and assign it to our Google map:
+Start by creating an `initMapControl` method which is used to initiate the `MapControl` and assign it to our Mapbox map:
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
