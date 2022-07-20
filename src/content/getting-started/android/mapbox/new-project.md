@@ -18,7 +18,7 @@ This guide explains how to start using a MapsIndoors map in your Android applica
 
 We recommend using Android Studio for using this tutorial. Read how to set it up here: [Installing Android Studio](https://developer.android.com/studio/install)
 
-If you do not have a Android device, you can setup an emulator through Android Studio. You can see how to do that here: [Setting up Android emulator](https://developer.android.com/studio/run/emulator).
+If you do not have an Android device, you can setup an emulator through Android Studio. You can see how to do that here: [Setting up Android emulator](https://developer.android.com/studio/run/emulator).
 
 If you already have an Android device, make sure to enable developer mode and USB debugging. Read about this here: [Enable USB debugging](https://developer.android.com/studio/debug/dev-options#enable)
 
@@ -45,9 +45,9 @@ You can also follow the steps below to start your app from scratch or to enhance
 
 Add the MapsIndoors SDK as a dependency to your project. The _AAR_ for the MapsIndoors SDK contains both Java classes, SDK resources and an `AndroidManifest.xml` template which gets merged into your application's `AndroidManifest.xml` during build process.
 
-Add the following to your application build gradle file:
+Add or merge in the following to your app's build gradle file (usually called `build.gradle`).
 
-Ensure the minimum Android API is >=21 (5.0, Android Lollipop):
+Make sure that the minimum Android SDK version is 21 (aka. "Android Lollipop", version 5.0) or above:
 
 ```java
 android {
@@ -72,7 +72,7 @@ android {
 }
 ```
 
-Add the following dependency and the MapsIndoors maven repository:
+Add the following dependency and the MapsIndoors Maven repository:
 
 ```java
 dependencies {
@@ -92,7 +92,7 @@ repositories{
 }
 ```
 
-Put those lines in your proguard-rules files:
+Put these lines in your proguard-rules files:
 
 ```java
 -keep interface com.mapsindoors.coresdk.** { *; }
@@ -101,7 +101,7 @@ Put those lines in your proguard-rules files:
 -keep class com.mapsindoors.coresdk.MPDebugLog
 ```
 
-Sync your project with gradle.
+Sync your project with Gradle.
 
 > This "Getting Started" guide is created using a specific version of the SDK. When moving beyond the "Getting Started" guide, please be sure to use the latest version of the SDK.
 

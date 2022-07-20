@@ -18,7 +18,7 @@ This guide explains how to start using a MapsIndoors map in your Android applica
 
 We recommend using Android Studio for using this tutorial. Read how to set it up here: [Installing Android Studio](https://developer.android.com/studio/install)
 
-If you do not have a Android device, you can setup an emulator through Android Studio. You can see how to do that here: [Setting up Android emulator](https://developer.android.com/studio/run/emulator).
+If you do not have an Android device, you can setup an emulator through Android Studio. You can see how to do that here: [Setting up Android emulator](https://developer.android.com/studio/run/emulator).
 
 If you already have an Android device, make sure to enable developer mode and USB debugging. Read about this here: [Enable USB debugging](https://developer.android.com/studio/debug/dev-options#enable)
 
@@ -72,7 +72,7 @@ android {
 }
 ```
 
-Add the following dependencies and the MapsIndoors maven repository:
+Add the following dependencies and the MapsIndoors Maven repository:
 
 `Gson` and `okhttp` is used by MapsIndoors to function properly with network calls and deserializing.
 
@@ -93,7 +93,7 @@ repositories{
 }
 ```
 
-Put those lines in your proguard-rules files:
+Put these lines in your proguard-rules files:
 
 ```java
 -keep interface com.mapsindoors.mapssdk.** { *; }
@@ -102,7 +102,7 @@ Put those lines in your proguard-rules files:
 -keep class com.mapsindoors.mapssdk.dbglog
 ```
 
-Sync your project with gradle.
+Sync your project with Gradle.
 
 > This "Getting Started" guide is created using a specific version of the SDK. When moving beyond the "Getting Started" guide, please be sure to use the latest version of the SDK.
 
