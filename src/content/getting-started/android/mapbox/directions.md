@@ -26,7 +26,7 @@ We have already created a point in the basic example, called `mUserLocation` to 
 <a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Mapbox-Android/blob/429f2ca4514648c5e43bf50c9c46246164bfb412/app/src/main/java/com/example/mapsindoorsgettingstartedmapbox/MapsActivity.java#L55">MapsActivity.java</a>
 
 ```java
-private Point mUserLocation = new Point(38.897389429704695, -77.03740973527613,0);
+private Point mUserLocation = Point.fromLngLat(-77.03740973527613,38.897389429704695, 0.0);
 ```
 
 </mi-tab-panel>
@@ -34,7 +34,7 @@ private Point mUserLocation = new Point(38.897389429704695, -77.03740973527613,0
 <a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Mapbox-Android-Kotlin/blob/9df3583787a50e0aa5c59e0a91e0a94c2b3b6225/app/src/main/java/com/example/mapsindoorsgettingstartedmapboxkotlin/MapsActivity.kt#L40">MapsActivity.kt</a>
 
 ```kotlin
-private val mUserLocation: Point = Point(38.897389429704695, -77.03740973527613, 0.0)
+private val mUserLocation: Point = Point.fromLngLat(-77.03740973527613, 38.897389429704695, 0.0)
 ```
 
 </mi-tab-panel>

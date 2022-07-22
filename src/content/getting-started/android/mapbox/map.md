@@ -91,7 +91,7 @@ void initMapControl(MapboxMap map, MapView view, String mapboxApiKey) {
                     CameraOptions cameraPosition = map.cameraForCoordinateBounds(
                             CoordinateBoundsConverter.toCoordinateBounds(venue.getBounds()),
                             new EdgeInsets(0, 0, 0, 0), 0.0, 0.0);
-                    CameraAnimationsUtils.easeTo(map, cameraPosition, new MapAnimationOptions.Builder().duration(3000).build());
+                    CameraAnimationsUtils.flyTo(map, cameraPosition, new MapAnimationOptions.Builder().duration(3000).build());
                 }
             });
         }
