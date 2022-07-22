@@ -87,4 +87,10 @@ A secondary filter also exists, allowing you to sort between media that is user-
 
 By typing a part of a filename here, the filter will return to display all media in the Media Library containing the typed string of text. For example, typing `ima` will return all three of `LimaPeru.jpg`, `sampleImage.png` and `imaginePlease.svg`.
 
+### Sync Manager
+
+**INSERT SCREENSHOT**
+
+The Sync Manager is a feature that allows you to sync your media between Solutions you have access to. The Sync Manager window contains a preview of the media you're currently syncing, above a list of Solutions you can sync to. You then select the Solutions you want to sync to by clicking the box next to their name(s).
+
 To read more about connected features, check out our documentation on [Display Rules]({{  site.url }}/content/map/map-styling/display-rules.md), and how to utilize 2D models (LINK) and 3D models (LINK).
