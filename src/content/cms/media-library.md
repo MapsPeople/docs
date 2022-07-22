@@ -8,7 +8,7 @@ eleventyNavigation:
   order: 10
 ---
 
-The Media Library is a new feature in the MapsIndoors CMS, replacing the Icon Manager that was used before. All features of the Icon Manager are present in the Media Library, but with new and improved functionality. The Media Library lets you upload and manage media files to use in the MapsIndoors CMS, for example to use custom icons for Locations, or to place images of logos on the map. The Media Library can be accessed through the Display Settings panel, and the App Categories page.
+The Media Library is a new feature in the MapsIndoors CMS, replacing the Icon Manager that was used before. All features of the Icon Manager are present in the Media Library, but with new and improved functionality. The Media Library lets you upload and manage media files to use in the MapsIndoors CMS, for example the use of custom icons for Locations, or to place images of logos on the map. The Media Library can be accessed through the Display Settings panel, and the App Categories page.
 
 **INSERT SCREENSHOT**
 
@@ -20,7 +20,7 @@ The Media Library is a new feature in the MapsIndoors CMS, replacing the Icon Ma
 1. Sort the content of the Media Library - options are by file name or by upload date, both ascending and descending.
 1. Filter the contents of the Media Library by file type.
 1. Filter the contents of the Media Library, choosing between user uploads or MapsIndoors default icons.
-1. Filter the content of the Media Library by size. <!-- Might need to update later -->
+1. Filter the content of the Media Library by image dimensions. <!-- Might need to update later -->
 1. Search the Media Library by file name.
 1. Delete this content from the Media Library.
 1. Preview of the content - Click to select this content, which highlights it.
@@ -36,7 +36,7 @@ The Media Library is a new feature in the MapsIndoors CMS, replacing the Icon Ma
 
 **INSERT SCREENSHOT**
 
-The Media Library consists of a window which contains an overview of the media present in the Solution, along with functions to manage said media.
+The Media Library window contains an overview of all uploaded media in the Solution, along with functions to manage said media.
 
 Media present in the Media Library is displayed with a preview image. This preview will also contain the filename and the option to delete the Media. If you hover over the preview, the footer will expand to reveal further information about the media, such as dimensions (in pixels) and upload date.
 
@@ -46,7 +46,7 @@ To select a piece of media, click on it to select it. To deselect it, click it a
 
 **INSERT SCREENSHOT**
 
-Clicking the "Upload" button opens a local File Explorer window, allowing you to locate the file you wish to upload to the Media Library. If a file with the same name as the selected file already exists in the Media Library, a warning will show up. You may choose to cancel the upload, or to overwrite the existing file, but this will also replace all existing uses of the file with this name. `sampleimage.jpg` and `sampleimage.png` may both exist in the Media Library concurrently, but `sampleimage.jpg` and `SampleImage.jpg` will throw a warning, as this check is not case-sensitive.
+Clicking the "Upload" button opens a local File Explorer window, allowing you to locate the file you wish to upload to the Media Library. If a file with the same name as the selected file already exists in the Media Library, a warning will appear. You may choose to cancel the upload, or to overwrite the existing file, but this will also replace all existing uses of the file with this name. `sampleimage.jpg` and `sampleimage.png` may both exist in the Media Library concurrently, but `sampleimage.jpg` and `SampleImage.jpg` will throw a warning, as this check is not case-sensitive.
 
 > Files cannot be larger than 8 mb.
 
@@ -85,6 +85,6 @@ A secondary filter also exists, allowing you to sort between media that is user-
 
 **INSERT SCREENSHOT**
 
-By typing a part of a filename here, the filter will return to display all media in the Media Library containing this string of text. For example, typing `ima` will return all three of `LimaPeru.jpg`, `sampleImage.png` and `imaginePlease.svg`.
+By typing a part of a filename here, the filter will return to display all media in the Media Library containing the typed string of text. For example, typing `ima` will return all three of `LimaPeru.jpg`, `sampleImage.png` and `imaginePlease.svg`.
 
-To read more about connected features, check out our documentation on [Display Rules]({{  site.url }}/content/map/map-styling/display-rules.md), and how to utilise 2D models (LINK) and 3D models (LINK).
+To read more about connected features, check out our documentation on [Display Rules]({{  site.url }}/content/map/map-styling/display-rules.md), and how to utilize 2D models (LINK) and 3D models (LINK).
