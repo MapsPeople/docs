@@ -3,8 +3,8 @@ title: Enable Live Data
 toc: true
 eleventyNavigation:
   title: Enable Live Data
-  key: getting-started-android-livedata
-  parent: getting-started-android
+  key: getting-started-android-google-livedata
+  parent: getting-started-android-google
   order: 170
 ---
 

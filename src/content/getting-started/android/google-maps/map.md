@@ -3,8 +3,8 @@ title: Show a Map
 toc: true
 eleventyNavigation:
   title: Show a Map
-  key: getting-started-android-map
-  parent: getting-started-android
+  key: getting-started-android-google-map
+  parent: getting-started-android-google
   order: 130
 ---
 
@@ -59,7 +59,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
 </mi-tab-panel>
 </mi-tabs>
 
-If you are not a customer you can use this demo MapsIndoors API key `d876ff0e60bb430b8fabb145`.
+If you are not a customer yet you can use this demo MapsIndoors API key `d876ff0e60bb430b8fabb145`.
 
 ### Initialize MapsControl
 
@@ -166,4 +166,4 @@ Expected result:
 
 See the full example of MapsActivity here [MapsActivity.java](https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java) or [MapsActivity.kt](https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/MapsActivity.kt)
 
-<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/content/getting-started/android/search/">Next up: Search</a></p>
+<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/content/getting-started/android/google-maps/search/">Next up: Search</a></p>

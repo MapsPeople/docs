@@ -3,8 +3,8 @@ title: Getting Directions
 toc: true
 eleventyNavigation:
   title: Directions
-  key: getting-started-android-directions
-  parent: getting-started-android
+  key: getting-started-android-google-directions
+  parent: getting-started-android-google
   order: 160
 ---
 
@@ -479,4 +479,4 @@ Expected result:
 
 ![Directions result](/assets/android/getting-started/directions_gif.gif)
 
-<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/content/getting-started/android/livedata/">Next up: Enable Live Data</a></p>
+<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/content/getting-started/android/google-maps/livedata/">Next up: Enable Live Data</a></p>
