@@ -492,4 +492,230 @@ If you need a working project example with MapsIndoors and CiscoDNA (excluding A
 {% include "src/content/shared/map/positioning-fetch-ios.md" %}
 
 </mi-tab-panel>
+<mi-tab-panel id="web">
+
+## MapsIndoors and CiscoDNA
+
+MapsIndoors is a dynamic mapping platform from MapsPeople that can provide maps of your indoor and outdoor localities and helps you create search and navigation experiences for your local users. CiscoDNA is Cisco’s newest digital and cloud-based IT infrastructure management platform. Among many other things, CiscoDNA can pinpoint the physical and geographic position of devices connected wirelessly to the local IT network.
+
+## How User Positioning Works in MapsIndoors
+
+In order to show a user's position in an indoor map with MapsIndoors, a Position Provider must be implemented. MapsIndoors does not implement a Position Provider itself, but rely on 3rd party positioning software to create this experience. In an outdoor environment this Position Provider can be a wrapper of the Core Location Services in iOS.
+
+A Position Provider in MapsIndoors must adhere to the `MPPositionProvider` protocol. Once you have an instance of an `MPPositionProvider` you can register it by assigning it to `MapsIndoors.positionProvider`. See the overview of the interface dependencies below.
+
+![cisco-dna-ios](/assets/map/positioning/positioning-diagram.png)
+
+## Wrapping the CiscoDNA Positioning in a Position Provider
+
+Just like in the mock Position Provider example, we need to implement a Position Provider that wraps the MapsIndoors CiscoDNA services to inject the CiscoDNA indoor positioning into MapsIndoors. If you only require this to work for indoor positioning, we would be good with just wrapping the CiscoDNA part. MapsIndoors however has the capability to support wayfinding both outdoors and indoors, so the shown solution implements two Position Providers, one for CoreLocation (`GPSPositionProvider`) and one for CiscoDNA (`CiscoDNAPositionProvider2`). The `CiscoDNAPositionProvider2` subclasses the `GPSPositionProvider` so it can determine whether the CiscoDNA position or the Core Location position should be used in your application. Both Position Providers are written in Objective C, but can of course be used in Swift as well.
+
+The `CiscoDNAPositionProvider2` communicates with some MapsIndoors services to get the Cisco device id, and uses a message subscription service (MQTT) to subscribe for position updates. Each time a Cisco position is received, its age is determined. If the age of the latest Cisco position is above 120 seconds or the application is not connected to the wifi, the CoreLocation position is used instead.
+
+## Code Sample
+
+```javascript
+//The MapsIndoors API key, and the language code is set before the SDK is initialized
+        mapsindoors.MapsIndoors.setMapsIndoorsApiKey('mapspeople');
+        mapsindoors.MapsIndoors.setLanguage('en');
+
+        const mapView = new mapsindoors.mapView.GoogleMapsView({
+            element: document.getElementById('map'),
+            center: { lat: 57.0588552, lng: 9.9468377 },
+            zoom: 18,
+            maxZoom: 21
+        });
+
+        //Then the MapsIndoors SDK is initialized
+        const mi = new mapsindoors.MapsIndoors({
+            mapView: mapView,
+            floor: "1",
+            labelOptions: {
+                pixelOffset: { width: 0, height: 14 },
+                style: {
+                    fontSize: "11px"
+                }
+            }
+        });
+
+        /************************************************************** CiscoPositioningService **************************************************************/
+        class CiscoPositioningService {
+            /**
+             * @param {string} args.clientIp - The local IP address of the device
+             * @param {string} args.tenantId - The Cisco tenant id.
+             * @param {number} [args.pollingInterval=1000] - The interval that the position will be polled from the backend.
+             * @param {string} [args.region="eu"] - The Cisco app region.
+             */
+            constructor(args = {}) {
+                if (!args.clientIp)
+                    throw new TypeError('Invalid argument: "clientIp"');
+
+                if (!args.tenantId)
+                    throw new TypeError('Invalid argument: "tenantId"');
+
+                this._pollingInterval = 1000;
+                this._tenantId = args.tenantId;
+                this._successCallbacks = new Map();
+                this._errorCallbacks = new Map();
+                this._deviceId = '';
+
+                args.region = args.region || 'eu';
+
+                this.pollingInterval = args.pollInterval;
+
+                fetch(`https://ciscodna.mapsindoors.com/${this._tenantId}/api/ciscodna/devicelookup?clientIp=${args.clientIp}&region=${args.region}`)
+                    .then(this._errorHandler)
+                    .then(res => res.json())
+                    .then(({ deviceId }) => {
+                        this._deviceId = deviceId;
+                        this._startPolling();
+                    }).catch(err => {
+                        console.error(err.message);
+                    });
+            }
+
+            watchPosition(successCallback, errorCallback) {
+                const watchId = Symbol();
+                if (!(successCallback instanceof Function))
+                    throw new TypeError('Invalid argument: "successCallback"');
+
+                if (errorCallback instanceof Function) {
+                    this._errorCallbacks.set(watchId, errorCallback);
+                }
+
+                this._successCallbacks.set(watchId, successCallback);
+
+                if (!this._interval) {
+                    this._startPolling();
+                }
+
+                return watchId;
+            }
+
+            clearWatch(watchId) {
+                this._successCallbacks.delete(watchId);
+                this._errorCallbacks.delete(watchId);
+
+                if (this._successCallbacks.size === 0) {
+                    this._stopPolling();
+                }
+            }
+
+            getCurrentPosition(successCallback, errorCallback) {
+                fetch(`https://ciscodna.mapsindoors.com/${this._tenantId}/api/ciscodna/${this._deviceId}`)
+                    .then(this._errorHandler)
+                    .then(res => res.json())
+                    .then(data => {
+                        this._successCallbacks.forEach(cb => cb.call(null, data));
+                    }).catch(err => {
+                        this._errorCallbacks.forEach(cb => cb.call(null, err));
+                    });
+            }
+
+
+            set pollingInterval(value) {
+                if (!isNaN(value) && this._pollingInterval !== value) {
+                    this._pollingInterval = value;
+                    this._stopPolling();
+                    this._startPolling();
+                }
+            }
+
+            get pollingInterval() {
+                return this._pollingInterval;
+            }
+
+
+            /**
+             * @private
+             */
+            _startPolling() {
+                if (!this._interval && this._deviceId > '' && this._successCallbacks.size > 0) {
+                    this._interval = window.setInterval(() => {
+                        this.getCurrentPosition(response => {
+                            this._successCallbacks.forEach(callback => callback(response));
+                        },
+                            error => {
+                                this._errorCallbacks.forEach(callback => callback(err));
+                            });
+
+                    }, this._pollingInterval);
+                }
+            }
+
+            /**
+             * @private
+             */
+            _stopPolling() {
+                if (this._interval) {
+                    window.clearInterval(this._interval);
+                    this._interval = null;
+                }
+            }
+
+            /**
+             * @private
+             */
+            _errorHandler(response) {
+                if (!response.ok) {
+                    const contentType = response.headers.get('content-type');
+                    if (contentType && contentType.indexOf('application/json') !== -1) {
+                        return response.json().then(({ message }) => {
+                            throw new Error(message);
+                        });
+                    } else {
+                        let statusText;
+                        switch (response.status) {
+                            case 400:
+                                statusText = 'The client IP is invalid.';
+                                break;
+                            case 404:
+                                statusText = 'Device not found.';
+                                break;
+                            case 403:
+                                statusText = 'The TenantId supplied is not authorized to access the device at the location.'
+                                break;
+                            default:
+                                statusText = 'Unknown error.';
+                        }
+
+                        throw new Error(statusText);
+                    }
+                }
+
+                return response;
+            }
+        }
+        /*****************************************************************************************************************************************************/
+
+        const map = mapView.getMap();
+        let watchId;
+
+        mapsindoors.services.SolutionsService.getSolution('57e4e4992e74800ef8b69718').then(solution => {
+            if (solution.positionProviderConfigs && solution.positionProviderConfigs.ciscodna) {
+                const tenantId = solution.positionProviderConfigs.ciscodna.ciscoDnaSpaceTenantId;
+                const region = solution.positionProviderConfigs.ciscodna.ciscoDnaSpaceTenantRegion || 'usa';
+                const clientIp = '10.0.0.134';
+                const cps = new CiscoPositioningService({ clientIp, tenantId, region });
+
+                watchId = cps.watchPosition(function (data) {
+                    console.log(data);
+                    map.setCenter({ lat: data.latitude, lng: data.longitude });
+                }, function (err) {
+                    console.log(err);
+                })
+            }
+        });
+
+
+
+
+
+
+        const floorSelector = document.createElement('div');
+        new mapsindoors.FloorSelector(floorSelector, mi);
+        map.controls[google.maps.ControlPosition.RIGHT_TOP].push(floorSelector);
+```
+
+</mi-tab-panel>
 </mi-tabs>
