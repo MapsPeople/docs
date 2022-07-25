@@ -8,7 +8,7 @@ eleventyNavigation:
   order: 10
 ---
 
-The Media Library is a new feature in the MapsIndoors CMS, replacing the Icon Manager that was used before. All features of the Icon Manager are present in the Media Library, but with new and improved functionality. The Media Library lets you upload and manage media files to use in the MapsIndoors CMS, for example the use of custom icons for Locations, or to place images of logos on the map. The Media Library can be accessed through the Display Settings panel, and the App Categories page.
+The Media Library is a new feature in the MapsIndoors CMS, replacing the Icon Manager that was used before. All features of the Icon Manager are present in the Media Library, but with new and improved functionality. The Media Library lets you upload and manage media files to use in the MapsIndoors CMS, for example the use of custom icons for Locations, or to place images of logos on the map. The Media Library can be accessed through the Display Settings panel, and the App Categories page, found here: `Solution Details -> App Settings -> App Configuration -> App Categories`.
 
 **INSERT SCREENSHOT**
 
@@ -59,7 +59,7 @@ The "Sort" option in the filter-bar provides the option to sort the content of t
 * File Name A-Z
 * File Name Z-A
 * Recently Uploaded
-* Oldest Uploaded
+* Oldest Upload
 
 Clicking on one of these options initiates the sort.
 
@@ -91,6 +91,6 @@ By typing a part of a filename here, the filter will return to display all media
 
 **INSERT SCREENSHOT**
 
-The Sync Manager is a feature that allows you to sync your media between Solutions you have access to. The Sync Manager window contains a preview of the media you're currently syncing, above a list of Solutions you can sync to. You then select the Solutions you want to sync to by clicking the box next to their name(s).
+The Sync Manager is a feature that allows you to sync your media between Solutions you have access to. The Sync Manager window contains a preview of the media you're currently syncing, above a list of Solutions you can sync to. You then select the Solutions you want to sync to by clicking the box next to their name(s). Once synced, the files will appear in the selected Solution's Media Library.
 
 To read more about connected features, check out our documentation on [Display Rules]({{  site.url }}/content/map/map-styling/display-rules.md), and how to utilize 2D models (LINK) and 3D models (LINK).
