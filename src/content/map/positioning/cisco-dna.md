@@ -495,11 +495,11 @@ If you need a working project example with MapsIndoors and CiscoDNA (excluding A
 </mi-tab-panel>
 <mi-tab-panel id="web">
 
-## MapsIndoors and CiscoDNA
+## MapsIndoors & CiscoDNA
 
 MapsIndoors is a dynamic mapping platform from MapsPeople that can provide maps of your indoor and outdoor localities and helps you create search and navigation experiences for your local users. CiscoDNA is Cisco’s newest digital and cloud-based IT infrastructure management platform. Among many other things, CiscoDNA can pinpoint the physical and geographic position of devices connected wirelessly to the local IT network.
 
-## How User Positioning Works in MapsIndoors
+## User Positioning in MapsIndoors
 
 In order to show a user's position in an indoor map with MapsIndoors, a Position Provider must be implemented. MapsIndoors does not implement a Position Provider itself, but rely on 3rd party positioning software to create this experience. In an outdoor environment this Position Provider can be a wrapper of the Core Location Services in iOS.
 
@@ -507,7 +507,7 @@ A Position Provider in MapsIndoors must adhere to the `MPPositionProvider` proto
 
 ![cisco-dna-ios](/assets/map/positioning/positioning-diagram.png)
 
-## Wrapping the CiscoDNA Positioning in a Position Provider
+## Wrapping CiscoDNA Positioning in a Position Provider
 
 Just like in the mock Position Provider example, we need to implement a Position Provider that wraps the MapsIndoors CiscoDNA services to inject the CiscoDNA indoor positioning into MapsIndoors. If you only require this to work for indoor positioning, we would be good with just wrapping the CiscoDNA part. MapsIndoors however has the capability to support wayfinding both outdoors and indoors, so the shown solution implements two Position Providers, one for CoreLocation (`GPSPositionProvider`) and one for CiscoDNA (`CiscoDNAPositionProvider2`). The `CiscoDNAPositionProvider2` subclasses the `GPSPositionProvider` so it can determine whether the CiscoDNA position or the Core Location position should be used in your application. Both Position Providers are written in Objective C, but can of course be used in Swift as well.
 
@@ -597,6 +597,7 @@ Next step is to create `watchPosition` and `clearWatch`, to watch for the positi
             });
     }
 ```
+
 The next step is to create some functions that manage how often the system retrieves an update, or polls, from the Cisco DNA setup.
 
 ```javascript
@@ -707,5 +708,6 @@ const floorSelector = document.createElement('div');
 new mapsindoors.FloorSelector(floorSelector, mi);
 map.controls[google.maps.ControlPosition.RIGHT_TOP].push(floorSelector);
 ```
+
 </mi-tab-panel>
 </mi-tabs>
