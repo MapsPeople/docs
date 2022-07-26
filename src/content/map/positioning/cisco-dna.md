@@ -517,6 +517,8 @@ The `CiscoDNAPositionProvider2` communicates with some MapsIndoors services to g
 
 > Please note that the following code sample assumes that you have already succesfully implemented MapsIndoors into your application.
 
+The first step is to create the class `CiscoPositioningService`, and the constructor for it.
+
 ```javascript
 class CiscoPositioningService {
     /**
@@ -552,7 +554,9 @@ class CiscoPositioningService {
                 console.error(err.message);
             });
     }
+```
 
+```javascript
     watchPosition(successCallback, errorCallback) {
         const watchId = Symbol();
         if (!(successCallback instanceof Function))
@@ -579,7 +583,9 @@ class CiscoPositioningService {
             this._stopPolling();
         }
     }
+```
 
+```javascript
     getCurrentPosition(successCallback, errorCallback) {
         fetch(`https://ciscodna.mapsindoors.com/${this._tenantId}/api/ciscodna/${this._deviceId}`)
             .then(this._errorHandler)
@@ -590,8 +596,9 @@ class CiscoPositioningService {
                 this._errorCallbacks.forEach(cb => cb.call(null, err));
             });
     }
+```
 
-
+```javascript
     set pollingInterval(value) {
         if (!isNaN(value) && this._pollingInterval !== value) {
             this._pollingInterval = value;
@@ -635,6 +642,10 @@ class CiscoPositioningService {
     /**
      * @private
      */
+
+```
+
+```javascript
     _errorHandler(response) {
         if (!response.ok) {
             const contentType = response.headers.get('content-type');
@@ -664,7 +675,7 @@ class CiscoPositioningService {
 
         return response;
     }
-}
+} // end class
 ```
 
 Once the class is created, it can then be used, for example, in the following way:
