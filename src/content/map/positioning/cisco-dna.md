@@ -556,6 +556,8 @@ class CiscoPositioningService {
     }
 ```
 
+Next step is to create `watchPosition` and `clearWatch`, to watch for the positioning updates the system recieves.
+
 ```javascript
     watchPosition(successCallback, errorCallback) {
         const watchId = Symbol();
@@ -583,9 +585,7 @@ class CiscoPositioningService {
             this._stopPolling();
         }
     }
-```
 
-```javascript
     getCurrentPosition(successCallback, errorCallback) {
         fetch(`https://ciscodna.mapsindoors.com/${this._tenantId}/api/ciscodna/${this._deviceId}`)
             .then(this._errorHandler)
@@ -597,6 +597,7 @@ class CiscoPositioningService {
             });
     }
 ```
+The next step is to create some functions that manage how often the system retrieves an update, or polls, from the Cisco DNA setup.
 
 ```javascript
     set pollingInterval(value) {
@@ -644,6 +645,8 @@ class CiscoPositioningService {
      */
 
 ```
+
+Lastly, an error handler is implemented.
 
 ```javascript
     _errorHandler(response) {
