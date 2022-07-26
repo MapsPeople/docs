@@ -515,31 +515,9 @@ The `CiscoDNAPositionProvider2` communicates with some MapsIndoors services to g
 
 ## Code Sample
 
+> Please note that the following code sample assumes that you have already succesfully implemented MapsIndoors into your application.
+
 ```javascript
-//The MapsIndoors API key, and the language code is set before the SDK is initialized
-mapsindoors.MapsIndoors.setMapsIndoorsApiKey('mapspeople');
-mapsindoors.MapsIndoors.setLanguage('en');
-
-const mapView = new mapsindoors.mapView.GoogleMapsView({
-    element: document.getElementById('map'),
-    center: { lat: 57.0588552, lng: 9.9468377 },
-    zoom: 18,
-    maxZoom: 21
-});
-
-//Then the MapsIndoors SDK is initialized
-const mi = new mapsindoors.MapsIndoors({
-    mapView: mapView,
-    floor: "1",
-    labelOptions: {
-        pixelOffset: { width: 0, height: 14 },
-        style: {
-            fontSize: "11px"
-        }
-    }
-});
-
-/************************************************************** CiscoPositioningService **************************************************************/
 class CiscoPositioningService {
     /**
      * @param {string} args.clientIp - The local IP address of the device
@@ -687,8 +665,11 @@ class CiscoPositioningService {
         return response;
     }
 }
-/*****************************************************************************************************************************************************/
+```
 
+Once the class is created, it can then be used, for example, in the following way:
+
+```javascript
 const map = mapView.getMap();
 let watchId;
 
