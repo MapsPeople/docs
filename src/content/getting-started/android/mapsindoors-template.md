@@ -39,7 +39,7 @@ If you are not a customer yet, you can use this demo MapsIndoors API key `{{sdk.
 
 First, download or clone the pre-made project from GitHub: [https://github.com/MapsPeople/MapsIndoorsTemplate-Android](https://github.com/MapsPeople/MapsIndoorsTemplate-Android).
 
-* Open the project you just downloaded, and copy the classes located in `java/com/mapspeople/sportseventactivity` into your own App
+* Open the project you just downloaded, and copy the classes located in `java/com/mapspeople/mapsindoorstemplate` into your own App
 * Add the Maven repository ([http://maven.mapsindoors.com/](http://maven.mapsindoors.com/)) to your project's `build.gradle` file
 * Add the following dependencies from `build.gradle`:
 
