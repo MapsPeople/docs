@@ -4,7 +4,7 @@ eleventyNavigation:
   key: map-map-control-events
   parent: map-map-control
   title: Working with Events
-  order: 20
+  order: 12
 ---
 
 <mi-tabs>
