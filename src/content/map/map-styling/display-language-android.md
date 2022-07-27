@@ -57,4 +57,29 @@ MapsIndoors.setLanguage(lang)
 ```
 
 </mi-tab-panel>
+<mi-tab-panel id="ios">
+
+<!-- Known Issues -->
+{% include "src/content/shared/known-issues-ios.md" %}
+
+<!-- Fixed Language -->
+{% include "src/content/shared/display-language/fixed-language.md" %}
+
+```swift
+MapsIndoors.setLanguage("fr");
+```
+
+<!-- Device Language -->
+{% include "src/content/shared/display-language/device-language.md" %}
+
+```swift
+let languageCode = Locale.current.languageCode
+MapsIndoors.setLanguage(languageCode!);
+```
+
+
+</mi-tab-panel>
+<mi-tab-panel id="web">
+
+</mi-tab-panel>
 </mi-tabs>
