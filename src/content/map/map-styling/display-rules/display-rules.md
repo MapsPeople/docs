@@ -1,10 +1,10 @@
 ---
-title: Display Rules
+title: Introduction to Display Rules
 toc: true
 eleventyNavigation:
-    key: map-map-styling-display-rules
-    parent: map-map-styling
-    title: Display Rules
+    key: map-map-styling-display-rules-intro
+    parent: map-map-styling-display-rules
+    title: Introduction to Display Rules
     order: 10
 ---
 

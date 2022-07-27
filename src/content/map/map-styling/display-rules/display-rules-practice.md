@@ -3,7 +3,7 @@ title: Display Rules in Practice for Web
 toc: true
 eleventyNavigation:
   title: Display Rules in Practice for Web
-  parent: map-map-styling
+  parent: map-map-styling-display-rules
   key: map-map-styling-display-rules-web
   order: 210
 ---
