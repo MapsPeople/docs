@@ -4,7 +4,7 @@ eleventyNavigation:
   key: map-map-control-working-with-markers
   parent: map-map-control
   title: Working with Markers
-  order: 220
+  order: 11
 ---
 
 <mi-tabs>
