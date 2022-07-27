@@ -81,5 +81,14 @@ MapsIndoors.setLanguage(languageCode!);
 </mi-tab-panel>
 <mi-tab-panel id="web">
 
+The web-app will automatically adjust the language to the language set in the user's browser settings, otherwise default to English. When using Safari, the device's language setting will be used. This is limited to the following languages, and will default to English if the selected language is not supported:
+
+* English
+* Danish
+* Spanish
+* Portuguese
+* Italian
+* French
+
 </mi-tab-panel>
 </mi-tabs>
