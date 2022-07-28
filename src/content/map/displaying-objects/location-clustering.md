@@ -295,4 +295,3 @@ return true
 
 </mi-tab-panel>
 </mi-tabs>
-
