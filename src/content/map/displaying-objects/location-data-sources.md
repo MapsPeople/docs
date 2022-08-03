@@ -862,6 +862,22 @@ public void onDestroyView() {
 <!-- Known Issues -->
 {% include "src/content/shared/known-issues-ios.md" %}
 
+## The Concepts
+
+The central concepts in this feature are Location Sources and Location Observers, and they are best described in the following illustration:
+
+![Location Data Sources, Observers and their relation]({{ site.url }}/assets/introductions/location-sources/source_observer.png)
+
+### Location Source
+
+Maintains an array of locations and notifies its Location Observers about location and status updates.
+
+### Location Observer
+
+Can observe a Location Source for status changes and location updates.
+
+## Creating Your own Location Source
+
 In this tutorial we will show how you can build a custom Location Source, representing locations of people. The people locations will be served from a mocked list in the source and displayed on a map in a view controller.
 
 We will start by creating our implementation of a location source.
