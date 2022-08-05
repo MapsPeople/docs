@@ -427,6 +427,8 @@ When uploading an Icon in the PNG format, make sure you upload it in a 3x size t
 
 ### Split and Combine
 
+> This is a paid feature. [Contact us to learn more!](https://resources.mapspeople.com/en-us/contact-us)
+
 Split and Combine are features that enable you to edit a Room's geometry. A Room can either be split in two, or combined with another Room.
 
 The Split and Combine features are useful if you want to make quick changes to your Rooms. If you want to make groundbreaking changes to a Floor or Building layout, reach out to your contact at MapsPeople with your updated CAD drawings.
