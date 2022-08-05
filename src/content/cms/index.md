@@ -425,7 +425,7 @@ We highly recommend using SVGs for Icons across MapsIndoors, but support PNG fil
 
 When uploading an Icon in the PNG format, make sure you upload it in a 3x size to accommodate for it being scaled down on the map. For example, to display a 20x20px Icon on the Map, upload it in 60x60px.
 
-### Split and Combine
+### Split and Combine (Paid Feature)
 
 Split and Combine are features that enable you to edit a Room's geometry. A Room can either be split in two, or combined with another Room.
 
