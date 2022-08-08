@@ -37,7 +37,7 @@ This submenu presents you the option of integrating a Booking system to your Sol
 ![solution-details-booking-provider-office365](/assets/cms/solution-details/Solution_Details_Booking_Providers_Office365.png)
 
 1. **Service Name** - Name your service.
-1. **Timeout (ms)** - 
+1. **Timeout (ms)** - Allowed time (in milliseconds) to wait for resources to respond to event invites. Defaults to 10000.
 1. **Tenant Id** - 
 1. **Client Id** - 
 1. **Client Secret** - 
