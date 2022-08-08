@@ -18,7 +18,18 @@ This submenu presents you the option of integrating a Booking system to your Sol
 
 1. **Service Name** - Name your service.
 1. **Organizer** - Provide a contact email address.
-1. **Token** - 
+1. **Token** - To get your Token, follow these steps - Please note that Administrator access to the GCP Project is required:
+    1. Go to [Google Cloud Console](https://console.cloud.google.com/).
+    1. Navigate to your Project containing your location resources, and ensure it is the active Project.
+    1. Open the top-left menu and navigate to **IAM & Admin > IAM**.
+    1. Click on **Service Accounts** in the IAM & Admin menu
+    1. Click on **Create Service Account**.
+    1. Fill out account details.
+    1. Assign the **Editor** role - Another role can be chosen, as long as it has permissions to manage resources and calendars. 
+    1. Click **Done**.
+    1. Head back to **Service Accounts** and open the newly created service account.
+    1. Navigate to the **Keys** tab and click **Add Key > Create new key > JSON**
+    1. Save and secure the downloaded file, as you will not be able to retrieve it again.
 1. **Booking Permissions** - 
 
 ## Office 365
