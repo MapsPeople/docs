@@ -249,9 +249,13 @@ You can easily delete an API key if it is unused, or has been compromised in som
 
 ##### Booking Provider
 
+> This is a paid feature. [Contact us to learn more!](https://resources.mapspeople.com/en-us/contact-us)
+
 More details on the various Booking Provider menus can be found [here]({{ site.url }}/content/cms/booking-providers.md).
 
 ##### Position Provider
+
+> This is a paid feature. [Contact us to learn more!](https://resources.mapspeople.com/en-us/contact-us)
 
 More details on the various Position Provider menus can be found [here]({{ site.url }}/content/cms/positioning-providers.md).
 
