@@ -249,54 +249,11 @@ You can easily delete an API key if it is unused, or has been compromised in som
 
 ##### Booking Provider
 
-This submenu presents you the option of integrating a Booking system to your Solution. The exact menus presented here depend on which provider you opt for.
-
-###### Google Calender
-
-![solution-details-booking-provider-google](/assets/cms/solution-details/Solution_Details_Booking_Providers_Google.png)
-
-1. **Service Name** - Name your service.
-1. **Organizer** - Provide a contact email address.
-1. **Token** - 
-1. **Booking Permissions** - 
-
-###### Office 365
-
-![solution-details-booking-provider-office365](/assets/cms/solution-details/Solution_Details_Booking_Providers_Office365.png)
-
-1. **Service Name** - Name your service.
-1. **Timeout (ms)** - 
-1. **Tenant Id** - 
-1. **Client Id** - 
-1. **Client Secret** - 
-1. **Redirect Uri** - 
-1. **Organizer** - Provide a contact email address.
-1. **Refresh Token** - 
-1. **Access Type** - 
+More details on the various Booking Provider menus can be found [here]({{ site.url }}/content/cms/booking-providers.md).
 
 ##### Position Provider
 
-MapsIndoors also provides you the option of integrating a Positioning system to your Solution. The exact menus presented here, like the Booking system, depend on which provider you opt for.
-
-###### Cisco DNA
-
-![solution-details-positioning-provider-ciscodna](/assets/cms/solution-details/Solution_Details_Position_Provider_CiscoDNA.png)
-
-1. **Tenant ID** - 
-1. **Priority** - Determine which position provider will take priority. Enter "1" for preferred provider.
-
-###### IndoorAtlas
-
-![solution-details-positioning-provider-indooratlas](/assets/cms/solution-details/Solution_Details_Position_Provider_IndoorAtlas.png)
-
-1. **Key** - 
-1. **Secret** - 
-1. **Priority** - Determine which position provider will take priority. Enter "1" for preferred provider.
-1. **Floor Mapping** - 
-
-##### Webex
-
-As the options above, the options presented for WebEx integration depends on the exact manner of integration.
+More details on the various Position Provider menus can be found [here]({{ site.url }}/content/cms/positioning-providers.md).
 
 ## Editing Data
 
