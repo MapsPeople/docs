@@ -32,7 +32,7 @@ The Booking Service can help with the following tasks:
   - [Performing a Booking of a Location](#performing-a-booking-of-a-location)
   - [Cancelling a Booking of a Location](#cancelling-a-booking-of-a-location)
 
-## Bookable Locations
+## Bookable Locations in Java
 
 To determine whether or not a Location is bookable can be looked up using the `MPBookingService.getBookableLocations()` method. Below is an example of querying for bookable locations:
 
@@ -52,11 +52,11 @@ The above example creates a query for locations that are bookable for a timespan
 
 It is also possible to check a location statically using `MPLocation.isBookable`, but please note that this information is not a dynamic property reflecting the current bookable state from the Booking Service. If `MPLocation.isBookable` is true it means that the Location has a potentially bookable resource known by the integrated booking provider, but still it might be booked for a specific time.
 
-## Bookings
+## Bookings in Java
 
 A Booking is a timeboxed event model referring to the resource being booked and the users participating in the booked event.
 
-### Listing Bookings for a Location
+### Listing Bookings for a Location in Java
 
 Before trying to book a Location for a given time, it is convenient to know in advance whether or not the Location is already booked for the given time.
 
@@ -77,7 +77,7 @@ bookingService.getBookingsUsingQuery(bookingsQuery, (bookings, error) -> {
 
 The above example creates a query for bookings that exists for a location with timespan between 1 hour ago and 24 hours ahead.
 
-### Performing a Booking of a Location
+### Performing a Booking of a Location in Java
 
 It is possible execute a booking creation request using the `MPBookingService.perform()` method which takes a booking object as input. If the booking is successfully performed, the booking will return in the block with an assigned `bookingId`.
 
@@ -110,7 +110,7 @@ Depending on the Booking provider, the participants will receive invites for an 
 
 > By default, the `MPBookingService` performs anonymous bookings using a service account known to MapsIndoors. However, it is also possible to list, perform and cancel Bookings [on behalf of a user](http://docs.mapsindoors.com/data/booking/user-authenticated-booking-android/).
 
-### Cancelling a Booking of a Location
+### Cancelling a Booking of a Location in Java
 
 It is possible to cancel a created Booking using the `MPBookingService.cancelBooking()` method which takes an existing booking object as input.
 
@@ -143,7 +143,7 @@ The Booking Service can help with the following tasks:
   - [Performing a Booking of a Location](#performing-a-booking-of-a-location)
   - [Cancelling a Booking of a Location](#cancelling-a-booking-of-a-location)
 
-## Bookable Locations
+## Bookable Locations in Kotlin
 
 To determine whether or not a Location is bookable can be looked up using the `MPBookingService.getBookableLocations()` method. Below is an example of querying for bookable locations:
 
@@ -163,11 +163,11 @@ The above example creates a query for locations that are bookable for a timespan
 
 It is also possible to check a location statically using `MPLocation.isBookable`, but please note that this information is not a dynamic property reflecting the current bookable state from the Booking Service. If `MPLocation.isBookable` is true it means that the Location has a potentially bookable resource known by the integrated booking provider, but still it might be booked for a specific time.
 
-## Bookings
+## Bookings in Kotlin
 
 A Booking is a timeboxed event model referring to the resource being booked and the users participating in the booked event.
 
-### Listing Bookings for a Location
+### Listing Bookings for a Location in Kotlin
 
 Before trying to book a Location for a given time, it is convenient to know in advance whether or not the Location is already booked for the given time.
 
@@ -188,7 +188,7 @@ bookingService.getBookingsUsingQuery(bookingsQuery) {bookings, error ->
 
 The above example creates a query for bookings that exists for a location with timespan between 1 hour ago and 24 hours ahead.
 
-### Performing a Booking of a Location
+### Performing a Booking of a Location in Kotlin
 
 It is possible execute a booking creation request using the `MPBookingService.perform()` method which takes a booking object as input. If the booking is successfully performed, the booking will return in the block with an assigned `bookingId`.
 
@@ -221,7 +221,7 @@ Depending on the Booking provider, the participants will receive invites for an 
 
 > By default, the `MPBookingService` performs anonymous bookings using a service account known to MapsIndoors. However, it is also possible to list, perform and cancel Bookings [on behalf of a user](http://docs.mapsindoors.com/data/booking/user-authenticated-booking-android/).
 
-### Cancelling a Booking of a Location
+### Cancelling a Booking of a Location in Kotlin
 
 It is possible to cancel a created Booking using the `MPBookingService.cancelBooking()` method which takes an existing booking object as input.
 
@@ -258,7 +258,7 @@ The Booking Service can help with the following tasks:
   
 > By default, the `MPBookingService` performs anonymous Bookings using a service account known to MapsIndoors. However, it is also possible to list, perform and cancel Bookings [on behalf of a user](#user-authenticated-bookings).
 
-## Bookable Locations
+## Bookable Locations for iOS
 
 To determine whether or not a Location is bookable can be looked up using the `MPBookingService.getBookableLocationsUsingQuery()` method. Below is an example of querying for bookable Locations:
 
@@ -278,11 +278,11 @@ The above example creates a query for Locations that are bookable for a timespan
 
 It is also possible to check a location statically using `MPLocation.isBookable`, but please note that this information is not a dynamic property reflecting the current bookable state from the Booking Service. If `MPLocation.isBookable` is true it means that the Location has a potentially bookable resource known by the integrated Booking provider, but still it might be booked for a specific time.
 
-## Bookings
+## Bookings for iOS
 
 A Booking is a timeboxed event model referring to the resource being booked and the users participating in the booked event.
 
-### Listing Bookings for a Location
+### Listing Bookings for a Location for iOS
 
 Before trying to book a Location for a given time, it is convenient to know in advance whether or not the Location is already booked for the given time.
 
@@ -302,7 +302,7 @@ bookingService.getBookingsUsing(bookingsQuery) { (bookings, error) in
 
 The above example creates a query for bookings that exists for a location with timespan between 1 hour ago and 24 hours ahead.
 
-### Performing a Booking of a Location
+### Performing a Booking of a Location for iOS
 
 It is possible execute a booking creation request using the `MPBookingService.perform()` method which takes a booking object as input. If the booking is successfully performed, the booking will return in the block with an assigned `bookingId`.
 
@@ -330,7 +330,7 @@ In the above example a Booking object is created and several properties are assi
 
 Depending on the Booking provider, the participants will receive invites for an event created by this Booking request.
 
-### Cancelling a Booking of a Location
+### Cancelling a Booking of a Location for iOS
 
 It is possible to cancel a created Booking using the `MPBookingService.cancel()` method which takes an existing Booking object as input.
 
@@ -341,7 +341,7 @@ bookingService.cancel(myBooking) { (booking, error) in
 }
 ```
 
-## User Authenticated Bookings
+## User Authenticated Bookings for iOS
 
 By default, the `MPBookingService` performs anonymous bookings using a service account known to MapsIndoors. However, it is also possible to list, perform and cancel Bookings on behalf of a user. For the `MPBookingService` to work on behalf of a user, it must identify the tenant with a given tenant id (optional for single tenant setups) and prove user access with an access token. See the following example.
 
@@ -355,17 +355,17 @@ bookingService.authenticationConfig?.tenantId = "some-tenant-id"
 
 When the above configuration is in place, all following operations through the `MPBookingService` will be performed on behalf of a user. If the access token expires, the different Booking methods will result in errors and a new token must be obtained.
 
-### Obtaining a Tenant ID for User Bookings
+### Obtaining a Tenant ID for User Bookings for iOS
 
 The tenant id is specific for each tenant / Booking provider. If you don't know your tenant id, your IT administrator should be able to provide the information needed. Note that this is optional for single tenant setups and single tenant setups are the most common.
 
-### Obtaining an Access Token for User Bookings
+### Obtaining an Access Token for User Bookings for iOS
 
 Obtaining an access token for working with Bookings on behalf of a user is outside of the scope of this guide. Usually an access token is obtained in a login flow in your own application.
 
 > Note that the access token obtained from a [MapsIndoors Single Sign-on flow]({{ site.url }}/content/various/authentication/sso/) cannot be used as access token for the `MPBookingService`. Single Sign-on access tokens are issued by MapsIndoors and not the underlying tenant. You need to login directly on your Booking tenant to get an access token that can be used for working with the Booking Service as an authenticated user.
 
-### Disabling User Authenticated Bookings
+### Disabling User Authenticated Bookings for iOS
 
 Disabling User Authenticated Bookings is as simple as setting the `authenticationConfig` to `nil`:
 
@@ -399,7 +399,7 @@ The Booking Service can help with the following tasks:
 
 > By default, the `BookingService` performs anonymous Bookings using a service account known to MapsIndoors. However, it is also possible to list, perform and cancel Bookings [on behalf of a user](#user-authenticated-bookings).
 
-## Bookable Locations
+## Bookable Locations for Web
 
 To determine whether or not a `Location` is bookable can be looked up using the `bookingService.getBookableLocationsUsingQuery()` method. Below is an example of querying for bookable Locations:
 
@@ -432,11 +432,11 @@ To check if a specific `Locaiton` is bookable it possible to parse the `Location
   });
 ```
 
-## Bookings
+## Bookings for Web
 
 A Booking is a timeboxed event model referring to the resource being booked and the users participating in the booked event.
 
-### Listing Bookings for a Location
+### Listing Bookings for a Location for Web
 
 Before trying to book a Location for a given time, it is convenient to know in advance whether or not the Location is already booked for the given time.
 
@@ -458,7 +458,7 @@ It is possible to get a list of bookings using the `bookingService.getBookableLo
 
 The above example creates a query for bookings that exists for a location with timespan between 1 hour ago and 24 hours ahead.
 
-### Performing a Booking of a Location
+### Performing a Booking of a Location for Web
 
 It is possible execute a booking creation request using the `bookingService.performBooking()` method which takes a booking object as input. If the booking is successfully performed, the booking will return in the block with an assigned `bookingId`.
 
@@ -488,7 +488,7 @@ In the above example a `Booking` object is created and several properties are as
 
 Depending on the Booking provider, the participants will receive invites for an event created by this Booking request.
 
-### Cancelling a Booking of a Location
+### Cancelling a Booking of a Location for Web
 
 It is possible to cancel a created `Booking` using the `bookingService.cancelBooking()` method which takes an existing `Booking` object as input.
 
@@ -510,7 +510,7 @@ It is possible to cancel a created `Booking` using the `bookingService.cancelBoo
   }
 ```
 
-## User Authenticated Bookings
+## User Authenticated Bookings for Web
 
 By default, the `BookingService` performs anonymous bookings using a service account known to MapsIndoors. However, it is also possible to list, perform and cancel Bookings on behalf of a user. For the `BookingService` to work on behalf of a user, it must identify the tenant with a given tenant id (optional for single tenant setups) and prove user access with an access token. See the following example.
 
@@ -523,17 +523,17 @@ By default, the `BookingService` performs anonymous bookings using a service acc
 
 When the above configuration is in place, all following operations through the `BookingService` will be performed on behalf of a user. If the access token expires, the different Booking methods will result in errors and a new token must be obtained.
 
-### Obtaining a Tenant ID for User Bookings
+### Obtaining a Tenant ID for User Bookings for Web
 
 The tenant id is specific for each tenant / Booking provider. If you don't know your tenant id, your IT administrator should be able to provide the information needed. Note that this is optional for single tenant setups and single tenant setups are the most common.
 
-### Obtaining an Access Token for User Bookings
+### Obtaining an Access Token for User Bookings for Web
 
 Obtaining an access token for working with Bookings on behalf of a user is outside of the scope of this guide. Usually an access token is obtained in a login flow in your own application.
 
 > Note that the access token obtained from a MapsIndoors Single Sign-on flow cannot be used as access token for the `BookingService`. Single Sign-on access tokens are issued by MapsIndoors and not the underlying tenant. You need to login directly on your Booking tenant to get an access token that can be used for working with the Booking Service as an authenticated user.
 
-### Disabling User Authenticated Bookings
+### Disabling User Authenticated Bookings for Web
 
 Disabling User Authenticated Bookings is as simple as calling the `setAuthenticationConfig` with `null` as the argument:
 
