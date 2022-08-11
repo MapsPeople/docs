@@ -12,6 +12,46 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [11.15.0] - 2022-08-11
+
+### Added
+
+- **mi-column**: `monospace` prop for setting the font-family to monospace.
+
+### Fixed
+
+- **mi-data-table**: Adjustments of row heights to a more sensible, smaller height.
+
+## [11.14.0] - 2022-04-25
+
+### Fixed
+
+- **mi-data-table**: Now sorts numeric values as well as strings.
+- **mi-data-table**: The checkbox in the header of the table now has the correct state when selected rows are deleted.
+
+### Added
+
+- **route-instructions-step**: Now supports escalators.
+
+## [11.13.2] - 2022-04-21
+
+### Fixed
+
+- Use font-family property from `midt` in all components
+
+## [11.13.0] - 2022-04-01
+
+### Added
+
+- **mi-dropdown**: Is now aware of its position in the viewport and will adjust the placement of the dropdown accordingly.
+
+## [11.12.2] - 2022-03-29
+
+### Fixed
+
+- **mi-dropdown**: Is now capable of sorting numeric values.
+- **mi-dropdown**: When navigating the list using arrow up or down arrow keys, the currently highlighted item is kept in view by scrolling the list.
+
 ## [11.12.1] - 2022-03-24
 
 ### Fixed
