@@ -52,7 +52,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **mi-dropdown**: Is now capable of sorting numeric values.
 - **mi-dropdown**: When navigating the list using arrow up or down arrow keys, the currently highlighted item is kept in view by scrolling the list.
 
-
 ## [11.12.1] - 2022-03-24
 
 ### Fixed
