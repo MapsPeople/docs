@@ -1,11 +1,11 @@
 ---
-title: Getting Started with Android
+title: Getting Started with Android V3
 toc: true
 eleventyNavigation:
-  title: Getting Started with Android
-  key: getting-started-android
+  title: Getting Started with Android-v3
+  key: getting-started-android-v3
   parent: getting-started
-  order: 100
+  order: 200
 ---
 
 <!-- Overview -->

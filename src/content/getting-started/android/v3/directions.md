@@ -3,9 +3,9 @@ title: Getting Directions
 toc: true
 eleventyNavigation:
   title: Directions
-  key: getting-started-android-directions
-  parent: getting-started-android
-  order: 160
+  key: getting-started-android-v3-directions
+  parent: getting-started-android-v3
+  order: 260
 ---
 
 <!-- Overview -->

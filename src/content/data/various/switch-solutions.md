@@ -19,68 +19,113 @@ At it's core, this is done simply by switching out the API key and reloading the
 To initialise MapsIndoors, do the following:
 
 <mi-tabs>
-<mi-tab label="Java" tab-for="android-java"></mi-tab>
-<mi-tab label="Kotlin" tab-for="android-kotlin"></mi-tab>
-<mi-tab-panel id="android-java">
+<mi-tab label="Java-Google" tab-for="android-java-google"></mi-tab>
+<mi-tab label="Kotlin-Google" tab-for="android-kotlin-google"></mi-tab>
+<mi-tab label="Java-Mapbox" tab-for="android-java-mapbox"></mi-tab>
+<mi-tab label="Kotlin-Mapbox" tab-for="android-kotlin-mapbox"></mi-tab>
+<mi-tab-panel id="android-java-google">
 
 ```java
 protected void onCreate(Bundle savedInstanceState) {
     ...
     mMapView = mapFragment.getView();
-    MapsIndoors.initialize(getApplicationContext(), "YOUR_MAPSINDOORS_API_KEY");
-    MapsIndoors.setGoogleAPIKey(“YOUR_GOOGLE_API_KEY”);
+    MapsIndoors.load(getApplicationContext(), "YOUR_MAPSINDOORS_API_KEY", null);
     mapFragment.getMapAsync(this);
     ...
 }
 @Override
 public void onMapReady(GoogleMap googleMap) {
     mMap = googleMap;
-    if (mMapView != null) {
-        initMapControl(mMapView);
-    }
+
+   if (mMapView != null) {
+       initMapControl(mMapView);
+   }
 }
 void initMapControl(View view) {
-    //Creates a new instance of MapControl
-    mMapControl = new MapControl(this);
-    //Sets the Google map object and the map view to the MapControl
-    mMapControl.setGoogleMap(mMap, view);
-    //Initiates the MapControl
-    mMapControl.init(miError -> {
-        //Orient your map to where you need data to be shown. This could be done by getting the default venue through MapsIndoors and panning the camera there
+    MPMapConfig mapConfig = new MPMapConfig.Builder(this, mMap, getString(R.string.google_maps_key), view, true).build();
+    MapControl.create(mapConfig, (mapControl, miError) -> {
+        mMapControl = mapControl;
+        if (miError == null) {
+            //Orient your map to where you need data to be shown. This could be done by getting the default venue through MapsIndoors and panning the camera there
+        }
     });
 }
 ```
 
 </mi-tab-panel>
-<mi-tab-panel id="android-kotlin">
+<mi-tab-panel id="android-kotlin-google">
 
 ```kotlin
 override fun onCreate(savedInstanceState: Bundle?) {
     ...
-    MapsIndoors.initialize(applicationContext, "YOUR_MAPSINDOORS_API_KEY")
-    MapsIndoors.setGoogleAPIKey(“YOUR_GOOGLE_API_KEY”)
+    MapsIndoors.load(applicationContext, "YOUR_MAPSINDOORS_API_KEY", null)
+
     mapFragment.view?.let {
         mapView = it
     }
-    mapFragment.getMapAsync(this)
     ...
 }
 override fun onMapReady(googleMap: GoogleMap) {
     mMap = googleMap
-    initMapControl(mMapView)
+
+    mapView?.let { view ->
+        initMapControl(view)
+    }
 }
 fun initMapControl(view: View) {
+    MPMapConfig mapConfig = new MPMapConfig.Builder(this, mMap, getString(R.string.google_maps_key), view, true).build();
     //Creates a new instance of MapControl
-    mMapControl = MapControl(this)
-    //Sets the Google map object and the map view to the MapControl
-    mMapControl.setGoogleMap(mMap, view)
-    //Initiates the MapControl
-    mMapControl.init { miError: MIError? ->
-        //Orient your map to where you need data to be shown. This could be done by getting the default venue through MapsIndoors and panning the camera there
+    MapControl.create(config) { mapControl, miError ->
+        if (miError == null) {
+            mMapControl = mapControl!!
+             //Orient your map to where you need data to be shown. This could be done by getting the default venue through MapsIndoors and panning the camera there
+        }
     }
 }
 ```
 
+</mi-tab-panel>
+<mi-tab-panel id="android-java-mapbox">
+
+```java
+protected void onCreate(Bundle savedInstanceState) {
+    ...
+    MapsIndoors.load(getApplicationContext(), "YOUR_MAPSINDOORS_API_KEY", null);
+    ...
+}
+void initMapControl(View view) {
+    MPMapConfig mapConfig = new MPMapConfig.Builder(this, mMapboxMap, mMapView, getString(R.string.mapbox_access_token),true).build();
+    //Creates a new instance of MapControl
+    MapControl.create(mapConfig, (mapControl, miError) -> {
+        mMapControl = mapControl;
+        if (miError == null) {
+            //Orient your map to where you need data to be shown. This could be done by getting the default venue through MapsIndoors and panning the camera there
+        }
+    });
+}
+```
+
+</mi-tab-panel>
+<mi-tab-panel id="android-kotlin-mapbox">
+
+```kotlin
+override fun onCreate(savedInstanceState: Bundle?) {
+    ...
+    MapsIndoors.load(applicationContext, "YOUR_MAPSINDOORS_API_KEY", null)
+    ...
+}
+fun initMapControl(view: View) {
+    val config = MPMapConfig.Builder(this, mMap, mapView, getString(R.string.mapbox_access_token),true).build()
+    //Creates a new instance of MapControl
+    MapControl.create(config) { mapControl, miError ->
+        if (miError == null) {
+            //Orient your map to where you need data to be shown. This could be done by getting the default venue through MapsIndoors and panning the camera there
+        }
+    }
+}
+```
+
+</mi-tab-panel>
 </mi-tabs>
 
 ### Switching Solutions
@@ -90,35 +135,47 @@ You switch Solutions by changing the active API key using `setAPIKey()`.
 We recommend creating your own function to call in the future for this purpose, like the example here with `switchSolution()`:
 
 <mi-tabs>
-<mi-tab label="Java" tab-for="android-java"></mi-tab>
-<mi-tab label="Kotlin" tab-for="android-kotlin"></mi-tab>
-<mi-tab-panel id="android-java">
+<mi-tab label="Java-Google" tab-for="android-java-google"></mi-tab>
+<mi-tab label="Kotlin-Google" tab-for="android-kotlin-google"></mi-tab>
+<mi-tab label="Java-Mapbox" tab-for="android-java-mapbox"></mi-tab>
+<mi-tab label="Kotlin-Mapbox" tab-for="android-kotlin-mapbox"></mi-tab>
+<mi-tab-panel id="android-java-google">
 
 ```java
 protected void switchSolution() {
-    //setApiKey returns a boolean, if MapsIndoors is in a state where it is possible to call setApiKey. This does not validate your api key.
-    if(MapsIndoors.setAPIKey("YOUR_SECONDARY_API_KEY")) {
-        MapsIndoors.setGoogleAPIKey(“YOUR_GOOGLE_API_KEY”);
-        //If you already have a mapControl running this needs to be destroyed
-        mMapControl.onDestroy();
-        mapFragment.getMapAsync(this);  
-    }
+    mMapControl.onDestroy();
+    MapsIndoors.load(getApplication(), "YOUR_SECONDARY_API_KEY", null);
+    mMapView.getMapAsync(this);
 }
 ```
 
 </mi-tab-panel>
-<mi-tab-panel id="android-kotlin">
+<mi-tab-panel id="android-kotlin-google">
 
 ```kotlin
 private fun switchSolution() {
-    //setApiKey returns a boolean, if MapsIndoors is in a state where it is possible to call setApiKey. This does not validate your api key.
-    if (MapsIndoors.setAPIKey("YOUR_SECONDARY_API_KEY")) {
-        MapsIndoors.setGoogleAPIKey(“YOUR_GOOGLE_API_KEY”)
-        //If you already have a mapControl running this needs to be destroyed
-        mMapControl.onDestroy()
-        mMapFragment.getMapAsync(this)
-    }
+    mMapControl.onDestroy()
+    MapsIndoors.load(applicationContext, "YOUR_SECONDARY_API_KEY", null)
+    mMapView.getMapAsync(this)
 }
+```
+
+</mi-tab-panel>
+<mi-tab-panel id="android-java-mapbox">
+
+```java
+mMapControl.onDestroy();
+MapsIndoors.load(getApplicationContext(), "YOUR_SECONDARY_API_KEY", null);
+initMapControl(mMapBoxMap, mMapView);
+```
+
+</mi-tab-panel>
+<mi-tab-panel id="android-kotlin-mapbox">
+
+```kotlin
+mMapControl.onDestroy()
+MapsIndoors.load(applicationContext, "YOUR_SECONDARY_API_KEY", null)
+initMapControl(mMapBoxMap, mMapView)
 ```
 
 </mi-tab-panel>

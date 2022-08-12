@@ -15,7 +15,7 @@ You will work with changing the implementation of the `NavigationFragment` and t
 
 An example of the view XML file for the `NavigationFragment` this guide will use can be found here: [Navigation view](https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/advanced_directions/app/src/main/res/layout/fragment_navigation_list_dialog.xml).
 
-First, add the variable `mLocation` that keeps a reference to the `MPLocation` that was used as the destination for the route. Assign this variable when creating an instance of the `NavigationFragment`. There should already be a reference to the `Route` that should also be assigned.
+First, add the variable `mLocation` that keeps a reference to the `MPLocation` that was used as the destination for the route. Assign this variable when creating an instance of the `NavigationFragment`. There should already be a reference to the `MPRoute` that should also be assigned.
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
@@ -25,9 +25,9 @@ First, add the variable `mLocation` that keeps a reference to the `MPLocation` t
 
 ```java/0,7
 private MPLocation mLocation;
-private Route mRoute;
+private MPRoute mRoute;
 
-public static NavigationFragment newInstance(Route route, MapsActivity mapsActivity, MPLocation location) {
+public static NavigationFragment newInstance(MPRoute route, MapsActivity mapsActivity, MPLocation location) {
     final NavigationFragment fragment = new NavigationFragment();
     fragment.mRoute = route;
     fragment.mMapsActivity = mapsActivity;
@@ -41,11 +41,11 @@ public static NavigationFragment newInstance(Route route, MapsActivity mapsActiv
 <a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android-Kotlin/blob/advanced_directions/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/NavigationFragment.kt#L147-L155">NavigationFragment.kt</a>
 
 ```kotlin/1,7
-private var mRoute: Route? = null
+private var mRoute: MPRoute? = null
 private var mLocation: MPLocation? = null
 
 companion object {
-    fun newInstance(route: Route?, mapsActivity: MapsActivity?, location: MPLocation?): NavigationFragment {
+    fun newInstance(route: MPRoute?, mapsActivity: MapsActivity?, location: MPLocation?): NavigationFragment {
         val fragment = NavigationFragment()
         fragment.mRoute = route
         fragment.mLocation = location
@@ -86,9 +86,9 @@ public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceStat
         public void onPageSelected(int position) {
             super.onPageSelected(position);
             //When a page is selected call the renderer with the index
-            mMapsActivity.getMpDirectionsRenderer().setRouteLegIndex(position);
+            mMapsActivity.getMpDirectionsRenderer().selectLegIndex(position);
             //Update the floor on mapcontrol if the floor might have changed for the routing
-            mMapsActivity.getMapControl().selectFloor(mMapsActivity.getMpDirectionsRenderer().getCurrentFloor());
+            mMapsActivity.getMapControl().selectFloor(mMapsActivity.getMpDirectionsRenderer().getselectedLegFloorLevel());
         }
     });
 
@@ -119,9 +119,9 @@ override fun onViewCreated(view: View, @Nullable savedInstanceState: Bundle?) {
         override fun onPageSelected(position: Int) {
             super.onPageSelected(position)
             //When a page is selected call the renderer with the index
-            mMapsActivity?.getMpDirectionsRenderer()?.setRouteLegIndex(position)
+            mMapsActivity?.getMpDirectionsRenderer()?.selectLegIndex(position)
             //Update the floor on mapcontrol if the floor might have changed for the routing
-            mMapsActivity?.getMpDirectionsRenderer()?.currentFloor?.let {floorIndex ->
+            mMapsActivity?.getMpDirectionsRenderer()?.selectedLegFloorLevel?.let {floorIndex ->
                 mMapsActivity?.getMapControl()?.selectFloor(floorIndex)
             }
         }
@@ -161,13 +161,13 @@ class RouteCollectionAdapter extends FragmentStateAdapter {
         if (position == mRoute.getLegs().size() - 1) {
             return RouteLegFragment.newInstance("Walk to " + mLocation.getName(), (int) mRoute.getLegs().get(position).getDistance(), (int) mRoute.getLegs().get(position).getDuration());
         }else {
-            RouteLeg leg = mRoute.getLegs().get(position);
-            RouteStep firstStep = leg.getSteps().get(0);
-            RouteStep lastFirstStep = mRoute.getLegs().get(position+1).getSteps().get(0);
-            RouteStep lastStep = mRoute.getLegs().get(position+1).getSteps().get(mRoute.getLegs().get(position+1).getSteps().size()-1);
+            MPRouteLeg leg = mRoute.getLegs().get(position);
+            MPRouteStep firstStep = leg.getSteps().get(0);
+            MPRouteStep lastFirstStep = mRoute.getLegs().get(position+1).getSteps().get(0);
+            MPRouteStep lastStep = mRoute.getLegs().get(position+1).getSteps().get(mRoute.getLegs().get(position+1).getSteps().size()-1);
 
-            Building firstBuilding = MapsIndoors.getBuildings().getBuilding(firstStep.getStartPoint().getLatLng());
-            Building lastBuilding = MapsIndoors.getBuildings().getBuilding(lastStep.getStartPoint().getLatLng());
+            MPBuilding firstBuilding = MapsIndoors.getBuildings().getBuilding(firstStep.getStartPoint().getLatLng());
+            MPBuilding lastBuilding = MapsIndoors.getBuildings().getBuilding(lastStep.getStartPoint().getLatLng());
 
             if (firstBuilding != null && lastBuilding != null) {
                 return RouteLegFragment.newInstance(getStepName(lastFirstStep, lastStep), (int) leg.getDistance(), (int) leg.getDuration());
@@ -227,7 +227,7 @@ inner class RouteCollectionAdapter(fragment: Fragment?) :
 </mi-tab-panel>
 </mi-tabs>
 
-The method `getStepName` is however missing, so you must create this. This method creates a string that takes the first and last step of the next leg to create a description for the user on what to do at the end of the currently shown leg. You will also create a method to get a list of the different highway types the route can give the user. These are found as enums through the `Highway` class in the MapsIndoors SDK.
+The method `getStepName` is however missing, so you must create this. This method creates a string that takes the first and last step of the next leg to create a description for the user on what to do at the end of the currently shown leg. You will also create a method to get a list of the different highway types the route can give the user. These are found as enums through the `MPHighway` class in the MapsIndoors SDK.
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
@@ -236,14 +236,14 @@ The method `getStepName` is however missing, so you must create this. This metho
 <a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/advanced_directions/app/src/main/java/com/example/mapsindoorsgettingstarted/NavigationFragment.java#L91-L134">NavigationFragment.java</a>
 
 ```java
-String getStepName(RouteStep startStep, RouteStep endStep) {
+String getStepName(MPRouteStep startStep, MPRouteStep endStep) {
     double startStepZindex = startStep.getStartLocation().getZIndex();
     String startStepFloorName = startStep.getStartLocation().getFloorName();
     String highway = null;
 
     for (String actionName : getActionNames()) {
         if (startStep.getHighway().equals(actionName)) {
-            if (actionName.equals(Highway.STEPS)) {
+            if (actionName.equals(MPHighway.STEPS)) {
                 highway = "stairs";
             }else {
                 highway = actionName;
@@ -270,14 +270,14 @@ String getStepName(RouteStep startStep, RouteStep endStep) {
 
 ArrayList<String> getActionNames() {
     ArrayList<String> actionNames = new ArrayList<>();
-    actionNames.add(Highway.ELEVATOR);
-    actionNames.add(Highway.ESCALATOR);
-    actionNames.add(Highway.STEPS);
-    actionNames.add(Highway.TRAVELATOR);
-    actionNames.add(Highway.RAMP);
-    actionNames.add(Highway.WHEELCHAIRLIFT);
-    actionNames.add(Highway.WHEELCHAIRRAMP);
-    actionNames.add(Highway.LADDER);
+    actionNames.add(MPHighway.ELEVATOR);
+    actionNames.add(MPHighway.ESCALATOR);
+    actionNames.add(MPHighway.STEPS);
+    actionNames.add(MPHighway.TRAVELATOR);
+    actionNames.add(MPHighway.RAMP);
+    actionNames.add(MPHighway.WHEELCHAIRLIFT);
+    actionNames.add(MPHighway.WHEELCHAIRRAMP);
+    actionNames.add(MPHighway.LADDER);
     return actionNames;
 }
 ```
@@ -287,7 +287,7 @@ ArrayList<String> getActionNames() {
 <a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android-Kotlin/blob/advanced_directions/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/NavigationFragment.kt#L65-L113">NavigationFragment.kt</a>
 
 ```kotlin
-fun getStepName(startStep: RouteStep, endStep: RouteStep): String {
+fun getStepName(startStep: MPRouteStep, endStep: MPRouteStep): String {
     val startStepStartPointZIndex = startStep.startLocation?.zIndex
     val startStepStartFloorName = startStep.startLocation?.floorName
     var highway: String? = null
@@ -324,14 +324,14 @@ fun getStepName(startStep: RouteStep, endStep: RouteStep): String {
 fun getActionNames(): Array<String?> {
     if (actionNames == null) {
         actionNames = arrayOf(
-            Highway.ELEVATOR,
-            Highway.ESCALATOR,
-            Highway.STEPS,
-            Highway.TRAVELATOR,
-            Highway.RAMP,
-            Highway.WHEELCHAIRRAMP,
-            Highway.WHEELCHAIRLIFT,
-            Highway.LADDER
+            MPHighway.ELEVATOR,
+            MPHighway.ESCALATOR,
+            MPHighway.STEPS,
+            MPHighway.TRAVELATOR,
+            MPHighway.RAMP,
+            MPHighway.WHEELCHAIRRAMP,
+            MPHighway.WHEELCHAIRLIFT,
+            MPHighway.LADDER
         )
     }
     return actionNames!!
@@ -449,7 +449,7 @@ override fun onViewCreated(
 
 Now you have the revised UI for providing the user with a more explanatory route description when navigating. Now it needs to be rendered onto the map. Since you started from an existing example, this is already implemented. But run through what is done to achieve this behaviour and add some final touches to get the project to build and run.
 
-The `MapsActivity` class handles all route rendering and route generation. This is done with `MPRoutingProvider` and `MPDirectionsRenderer`. The Activity also implements the `OnRouteResultListener`. You need to have a reference to your selected location when you get the result from the route query.
+The `MapsActivity` class handles all route rendering and route generation. This is done with `MPDirections` and `MPDirectionsRenderer`. The Activity also implements the `OnRouteResultListener`. You need to have a reference to your selected location when you get the result from the route query.
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
@@ -463,15 +463,15 @@ private MPLocation mSelectedLocation = null;
 
 //Assign the selected location inisde createRoute
 void createRoute(MPLocation mpLocation) {
-    //If MPRoutingProvider has not been instantiated create it here and assign the results call back to the activity.
-    if (mpRoutingProvider == null) {
-        mpRoutingProvider = new MPRoutingProvider();
-        mpRoutingProvider.setOnRouteResultListener(this);
+    //If MPDirectionsService has not been instantiated create it here and assign the results call back to the activity.
+    if (mpDirectionsService == null) {
+        mpDirectionsService = MPDirectionsService(this);
+        mpDirectionsService.setRouteResultListener(this);
     }
-    mpRoutingProvider.setTravelMode(TravelMode.WALKING);
-    //Queries the MPRouting provider for a route with the hardcoded user location and the point from a location.
+    mpDirectionsService.setTravelMode(MPTravelMode.WALKING);
+    //Queries the MPDirectionsService for a route with the hardcoded user location and the point from a location.
     mSelectedLocation = mpLocation;
-    mpRoutingProvider.query(mUserLocation, mpLocation.getPoint());
+    mpDirectionsService.query(mUserLocation, mpLocation.getPoint());
 }
 ```
 
@@ -486,21 +486,22 @@ private lateinit var mSelectedLocation: MPLocation
 
 //Assign the selected location inisde createRoute
 fun createRoute(mpLocation: MPLocation) {
-    //If MPRoutingProvider has not been instantiated create it here and assign the results call back to the activity.
-    if (mpRoutingProvider == null) {
-        mpRoutingProvider = MPRoutingProvider()
-        mpRoutingProvider?.setOnRouteResultListener(this)
+    //If MPDirectionsService has not been instantiated create it here and assign the results call back to the activity.
+    if (mpDirectionsService == null) {
+        mpDirectionsService = MPDirectionsService(this);
+        mpDirectionsService.setRouteResultListener(this);
     }
-    //Queries the MPRouting provider for a route with the hardcoded user location and the point from a location.
-    mSelectedLocation = mpLocation
-    mpRoutingProvider?.query(mUserLocation, mpLocation.point)
+    mpDirectionsService?.setTravelMode(MPTravelMode.WALKING)
+    //Queries the MPDirectionsService for a route with the hardcoded user location and the point from a location.
+    mSelectedLocation = mpLocation;
+    mpDirectionsService.query(mUserLocation, mpLocation.point);
 }
 ```
 
 </mi-tab-panel>
 </mi-tabs>
 
-First, you have the overwritten `onRouteResult` method that recieves the route when you query the `MPRoutingProvider`. The actions and logic in the method are explained inside the code example. This is where the `mSelectedLocation` is added to the `NavigationFragment.newInstance` method like in the example below.
+First, you have the overwritten `onRouteResult` method that recieves the route when you query the `MPDirectionsService`. The actions and logic in the method are explained inside the code example. This is where the `mSelectedLocation` is added to the `NavigationFragment.newInstance` method like in the example below.
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
@@ -515,7 +516,7 @@ First, you have the overwritten `onRouteResult` method that recieves the route w
 * @param miError an MIError if anything goes wrong when generating a route
 */
 @Override
-public void onRouteResult(@Nullable Route route, @Nullable MIError miError) {
+public void onRouteResult(@Nullable MPRoute route, @Nullable MIError miError) {
     //Return if either error is not null or the route is null
     if (miError != null || route == null) {
         new AlertDialog.Builder(this)
@@ -526,11 +527,7 @@ public void onRouteResult(@Nullable Route route, @Nullable MIError miError) {
     }
     //Create the MPDirectionsRenderer if it has not been instantiated.
     if (mpDirectionsRenderer == null) {
-        mpDirectionsRenderer = new MPDirectionsRenderer(this, mMap, mMapControl, i -> {
-            //Listener call back for when the user changes route leg. (By default is only called when a user presses the RouteLegs end marker)
-            mpDirectionsRenderer.setRouteLegIndex(i);
-            mMapControl.selectFloor(mpDirectionsRenderer.getCurrentFloor());
-        });
+        mpDirectionsRenderer = new MPDirectionsRenderer(mMapControl);
     }
     //Set the route on the Directions renderer
     mpDirectionsRenderer.setRoute(route);
@@ -538,11 +535,6 @@ public void onRouteResult(@Nullable Route route, @Nullable MIError miError) {
     mNavigationFragment = NavigationFragment.newInstance(route, this, mSelectedLocation);
     //Add the fragment to the BottomSheet
     addFragmentToBottomSheet(mNavigationFragment);
-    //As camera movement is involved run this on the UIThread
-    runOnUiThread(()-> {
-        //Starts drawing and adjusting the map according to the route
-        mpDirectionsRenderer.initMap(true);
-    });
 }
 ```
 
@@ -564,11 +556,7 @@ override fun onRouteResult(@Nullable route: Route?, @Nullable miError: MIError?)
     }
     //Create the MPDirectionsRenderer if it has not been instantiated.
     if (mpDirectionsRenderer == null) {
-        mpDirectionsRenderer = MPDirectionsRenderer(this, mMap, mMapControl, OnLegSelectedListener { i: Int ->
-            //Listener call back for when the user changes route leg. (By default is only called when a user presses the RouteLegs end marker)
-            mpDirectionsRenderer?.setRouteLegIndex(i)
-            mMapControl.selectFloor(mpDirectionsRenderer!!.currentFloor)
-        })
+        mpDirectionsRenderer = MPDirectionsRenderer(mMapControl)
     }
     //Set the route on the Directions renderer
     mpDirectionsRenderer?.setRoute(route)
@@ -576,11 +564,6 @@ override fun onRouteResult(@Nullable route: Route?, @Nullable miError: MIError?)
     mNavigationFragment = NavigationFragment.newInstance(route, this, mSelectedLocation)
     //Start a transaction and assign it to the BottomSheet
     addFragmentToBottomSheet(mNavigationFragment)
-    //As camera movement is involved run this on the UIThread
-    runOnUiThread {
-        //Starts drawing and adjusting the map according to the route
-        mpDirectionsRenderer?.initMap(true)
-    }
 }
 ```
 
@@ -631,9 +614,9 @@ mViewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
     public void onPageSelected(int position) {
         super.onPageSelected(position);
         //When a page is selected call the renderer with the index
-        mMapsActivity.getMpDirectionsRenderer().setRouteLegIndex(position);
+        mMapsActivity.getMpDirectionsRenderer().selectLegIndex(position);
         //Update the floor on mapcontrol if the floor might have changed for the routing
-        mMapsActivity.getMapControl().selectFloor(mMapsActivity.getMpDirectionsRenderer().getCurrentFloor());
+        mMapsActivity.getMapControl().selectFloor(mMapsActivity.getMpDirectionsRenderer().getSelectedLegFloorLevel());
     }
 });
 ```
@@ -649,9 +632,9 @@ mViewPager.registerOnPageChangeCallback(object : OnPageChangeCallback() {
     override fun onPageSelected(position: Int) {
         super.onPageSelected(position)
         //When a page is selected call the renderer with the index
-        mMapsActivity?.getMpDirectionsRenderer()?.setRouteLegIndex(position)
+        mMapsActivity?.getMpDirectionsRenderer()?.selectLegIndex(position)
         //Update the floor on mapcontrol if the floor might have changed for the routing
-        mMapsActivity?.getMpDirectionsRenderer()?.currentFloor?.let {floorIndex ->
+        mMapsActivity?.getMpDirectionsRenderer()?.selectedLegFloorLevel?.let {floorIndex ->
             mMapsActivity?.getMapControl()?.selectFloor(floorIndex)
         }
     }

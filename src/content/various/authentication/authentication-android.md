@@ -137,7 +137,7 @@ private void checkApiKeyValidityAndInitializeSDK() {
             //An error happened, authentication was not succesful.
         }else {
             //You have now succesfully gotten access to a solution that requires authentication
-            MapsIndoors.initialize(getApplicationContext(), "apikey");
+            MapsIndoors.load(getApplicationContext(), "apikey", null);
         }
     }
 }
@@ -153,7 +153,7 @@ fun checkApiKeyValidityAndInitializeSDK() {
             //An error happened, authentication was not succesful.
         }else {
             //You have now succesfully gotten access to a solution that requires authentication
-            MapsIndoors.initialize(applicationContext, "apikey");
+            MapsIndoors.load(applicationContext, "apikey", null)
         }
     }
 }

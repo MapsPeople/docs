@@ -19,21 +19,18 @@ This example shows how to setup a query for a route and display the result on a 
 
 ```java
 void getRoute() {
-    MPRoutingProvider directionsService = new MPRoutingProvider();
-    MPDirectionsRenderer directionsRenderer = new MPDirectionsRenderer(mContext, mGoogleMap, mMapControl, null);
+    MPDirectionsService directionsService = new MPDirectionsService(this);
+    MPDirectionsRenderer directionsRenderer = new MPDirectionsRenderer(mMapControl);
 
-    Point origin = new Point(57.057917, 9.950361, 0.0);
-    Point destination = new Point(57.058038, 9.950509, 0.0);
+    MPPoint origin = new MPPoint(57.057917, 9.950361, 0.0);
+    MPPoint destination = new MPPoint(57.058038, 9.950509, 0.0);
 
-    directionsService.setOnRouteResultListener((route, error) -> {
+    directionsService.setRouteResultListener((route, error) -> {
         if (route != null) {
             directionsRenderer.setRoute(route);
-            runOnUiThread( ()-> {
-                directionsRenderer.initMap(true);
-            }
         }
     });
-
+    
     directionsService.query(origin, destination);
 }
 ```
@@ -43,20 +40,18 @@ void getRoute() {
 
 ```kotlin
 fun getRoute() {
-    val directionsService = MPRoutingProvider()
-    val renderer = MPDirectionsRenderer(this, mMap, mMapControl, null)
+    val directionsService = MPDirectionsService(this)
+    val directionsRenderer = MPDirectionsRenderer(mMapControl)
 
-    val origin = Point(57.057917, 9.950361, 0.0)
-    val destination = Point(57.058038, 9.950509, 0.0)
+    val origin = MPPoint(57.057917, 9.950361, 0.0)
+    val destination = MPPoint(57.058038, 9.950509, 0.0)
 
-    directionsService.setOnRouteResultListener { route, miError ->
-        route?.let { mpRoute ->
-            renderer.setRoute(mpRoute)
-            runOnUiThread {
-                renderer.initMap(true)
-            }
+    directionsService.setRouteResultListener { route, error ->
+        route?.let { mpRoute -> 
+            directionsRenderer.setRoute(mpRoute)    
         }
     }
+
     directionsService.query(origin, destination)
 }
 ```
@@ -66,7 +61,7 @@ fun getRoute() {
 
 ## Controlling the Visible Segments on the Directions Renderer
 
-As previously mentioned, the route object is seperated into objects of `RouteLeg`. Each leg is again separated into objects of `RouteStep`. Unless the Route only contains one Leg, the Directions Renderer does not allow the full Route to be rendered all at once. A specific segment of the route can be rendered by setting the `routeLegIndex` on the `MPDirectionsRenderer`
+As previously mentioned, the route object is seperated into objects of `MPRouteLeg`. Each leg is again separated into objects of `MPRouteStep`. Unless the Route only contains one Leg, the Directions Renderer does not allow the full Route to be rendered all at once. A specific segment of the route can be rendered by setting the `legIndex` on the `MPDirectionsRenderer`
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
@@ -75,7 +70,7 @@ As previously mentioned, the route object is seperated into objects of `RouteLeg
 
 ```java/1
 void setLegIndex(int position) {
-    mpDirectionsRenderer.setRouteLegIndex(position);
+    mpDirectionsRenderer.selectLegIndex(position);
 }
 ```
 
@@ -84,18 +79,18 @@ void setLegIndex(int position) {
 
 ```kotlin/1
 fun setRouteLegIndex(position: Int) {
-    mpDirectionsRenderer?.setRouteLegIndex(position)
+    mpDirectionsRenderer?.selectLegIndex(position)
 }
 ```
 
 </mi-tab-panel>
 </mi-tabs>
 
-The length of the `legs` array from `getLegs` on the `Route` object determines the possible values of `routeLegIndex` (`0 ..< length`).
+The length of the `legs` array from `getLegs` on the `MPRoute` object determines the possible values of `routeLegIndex` (`0 ..< length`).
 
 ### Reacting to Label Tapping
 
-**Directions Labels** refer to the labels shown at the end of the rendered route segment path, that may provide contextual information, or show instructions for a required user action at that point. The labels are created as simple `Marker` instances that are rendered as markers on the map. A user is able to long press these, and an event will be forwarded to the listener you can supply when creating `MPDirectionsRenderer`. This can be used to change the Leg to the next Leg in line on the Route.
+**Directions Labels** refer to the labels shown at the end of the rendered route segment path, that may provide contextual information, or show instructions for a required user action at that point. The labels are created as simple `Marker` instances that are rendered as markers on the map. A user is able to long press these, and an event will be forwarded to the listener `OnLegSelectedListener` in `MPDirectionsRenderer`. This can be used to change the Leg to the next Leg in line on the Route.
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
@@ -104,21 +99,20 @@ The length of the `legs` array from `getLegs` on the `Route` object determines t
 
 ```java/3
 void getRoute() {
-    MPRoutingProvider directionsService = new MPRoutingProvider();
-    mpDirectionsRenderer = new MPDirectionsRenderer(mContext, mGoogleMap, mMapControl, legIndex -> {
-        mpDirectionsRenderer.nextLeg();
-    });
+    MPDirectionsService directionsService = new MPDirectionsService(this);
+    MPDirectionsRenderer directionsRenderer = new MPDirectionsRenderer(mMapControl);
 
-    Point origin = new Point(57.057917, 9.950361, 0.0);
-    Point destination = new Point(57.058038, 9.950509, 0.0);
+    MPPoint origin = new MPPoint(57.057917, 9.950361, 0.0);
+    MPPoint destination = new MPPoint(57.058038, 9.950509, 0.0);
 
-    directionsService.setOnRouteResultListener((route, error) -> {
+    directionsService.setRouteResultListener((route, error) -> {
         if (route != null) {
-            mpDirectionsRenderer.setRoute(route);
-            runOnUiThread( ()-> {
-                mpDirectionsRenderer.initMap(true);
-            }
+            directionsRenderer.setRoute(route);
         }
+    });
+    
+    directionsRenderer.setOnLegSelectedListener(i -> {
+        directionsRenderer.selectLegIndex(i);        
     });
 
     directionsService.query(origin, destination);
@@ -130,22 +124,22 @@ void getRoute() {
 
 ```kotlin/3
 fun getRoute() {
-    val directionsService = MPRoutingProvider()
-    mpDirectionsRenderer = MPDirectionsRenderer(this, mMap, mMapControl, OnLegSelectedListener {
-        mpDirectionsRenderer?.nextLeg()
-    })
+    val directionsService = MPDirectionsService(this)
+    val directionsRenderer = MPDirectionsRenderer(mMapControl)
 
-    val origin = Point(57.057917, 9.950361, 0.0)
-    val destination = Point(57.058038, 9.950509, 0.0)
+    val origin = MPPoint(57.057917, 9.950361, 0.0)
+    val destination = MPPoint(57.058038, 9.950509, 0.0)
 
-    directionsService.setOnRouteResultListener { route, miError ->
+    directionsService.setRouteResultListener { route, error ->
         route?.let { mpRoute ->
-            mpDirectionsRenderer?.setRoute(mpRoute)
-            runOnUiThread {
-                mpDirectionsRenderer?.initMap(true)
-            }
+            directionsRenderer.setRoute(mpRoute)
         }
     }
+
+    directionsRenderer.setOnLegSelectedListener { 
+        mpDirectionsRenderer?.selectLegIndex(it)
+    }
+
     directionsService.query(origin, destination)
 }
 ```
@@ -201,10 +195,10 @@ The `MPContextualInfoSetting` can be applied on `MPDirectionsRenderer` by callin
 
 ```java
 //Sets the contextual info to be of locations that has the type "entries" and searches within a max distance of 30 meters from the end point of the current route segment
-mDirectionsRenderer.useContentOfNearbyLocations(new MPContextualInfoSettings.Builder()
-            .setMaxDistance(30.0)
-            .setTypes(Collections.singletonList("entries"))
-            .build());
+mpDirectionsRenderer.useContentOfNearbyLocations(new MPContextualInfoSettings.Builder()
+        .setTypes(Collections.singletonList("entries"))
+        .setMaxDistance(30.0)
+        .build());
 ```
 
 </mi-tab-panel>
@@ -212,9 +206,9 @@ mDirectionsRenderer.useContentOfNearbyLocations(new MPContextualInfoSettings.Bui
 
 ```kotlin
 //Sets the contextual info to be of locations that has the type "entries" and searches within a max distance of 30 meters from the end point of the current route segment
-mDirectionsRenderer?.useContentOfNearbyLocations(MPContextualInfoSettings.Builder()
-            .setMaxDistance(30.0)
+mpDirectionsRenderer?.useContentOfNearbyLocations(MPContextualInfoSettings.Builder()
             .setTypes(Collections.singletonList("entries"))
+            .setMaxDistance(30.0)
             .build())
 ```
 

@@ -2,10 +2,10 @@
 title: Integrating MapsIndoors into your own App
 toc: true
 eleventyNavigation:
-  parent: getting-started-android
-  key: getting-started-android-mapsindoors-template
+  parent: getting-started-android-v3
+  key: getting-started-android-v3-mapsindoors-template
   title: Integrating MapsIndoors into your own App
-  order: 9999
+  order: 99999
 ---
 
 The **MapsIndoors Template** is a downloadable starting point for you to integrate basic usage of MapsIndoors, containing search and directions functionalities, into your existing app. If you just want to get started with a simple solution with no customisation, this should fulfil your needs. Going through this guide will also teach you some principles on how MapsIndoors interacts with an app, and is a natural next step after the "Getting Started" guides.

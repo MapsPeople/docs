@@ -61,20 +61,16 @@ Enabling Live Data through the `MapControl` is an easy way to get Live Data runn
 <mi-tab-panel id="java">
 
 ```java
-mMapControl.init(error -> {
-    mMapControl.enableLiveData(LiveDataDomainTypes.OCCUPANCY_DOMAIN);
-    mMapControl.enableLiveData(LiveDataDomainTypes.AVAILABILITY_DOMAIN);
-});
+mapControl.enableLiveData(LiveDataDomainTypes.OCCUPANCY_DOMAIN);
+mapControl.enableLiveData(LiveDataDomainTypes.AVAILABILITY_DOMAIN);
 ```
 
 </mi-tab-panel>
 <mi-tab-panel id="kotlin">
 
 ```kotlin
-mMapControl.init {
-    mMapControl.enableLiveData(LiveDataDomainTypes.OCCUPANCY_DOMAIN)
-    mMapControl.enableLiveData(LiveDataDomainTypes.AVAILABILITY_DOMAIN)
-}
+mMapControl.enableLiveData(LiveDataDomainTypes.OCCUPANCY_DOMAIN)
+mMapControl.enableLiveData(LiveDataDomainTypes.AVAILABILITY_DOMAIN)
 ```
 
 </mi-tab-panel>
@@ -82,7 +78,7 @@ mMapControl.init {
 
 In the example we enable Live Data for the "Availability" and "Occupancy" Domain types. Internal processes will determine which Topics are relevant for subscription based on where the map is situated. A default rendering mechanism will also alter the appearance of the relevant Locations on the map. As a consequence, the SDK will set custom Display Rules for this rendering. Adding your own, or resetting Display Rules, while Live Data is enabled with default rendering, may break the rendering for the current MapControl instance. Hence, you should not use custom Display Rules unless you are handling the rendering of Live Data on your own.
 
- You can disable the Live Data again by calling `disableLiveData(String domainType)`.
+You can disable the Live Data again by calling `disableLiveData(String domainType)`.
 
 Note that using the `enableLiveData` methods on `MapControl` has some limitations, and is thereby not suitable for all use cases.
 
@@ -141,19 +137,14 @@ Here are examples of using the different methods to render Live Data on your map
 
 ```java
 mMapControl.setOnWillUpdateLocationsOnMap(locations -> {
-   for (MPLocation location : locations) {
-       LiveUpdate occupancy = location.getLiveUpdate("occupancy");
-       LocationDisplayRule currentDisplayRule = mMapControl.getDisplayRule(location);
-       String displayRuleName = location.getId() + "_live";
-       if (occupancy != null) {
-           OccupancyProperty occupancyProperty = occupancy.getOccupancyProperties();
-           LocationDisplayRule occupancyDisplayRule = new LocationDisplayRule
-                   .Builder(displayRuleName, currentDisplayRule)
-                   .setLabel("people = " + occupancyProperty.getNrOfPeople())
-                   .build();
-           mMapControl.setDisplayRule(occupancyDisplayRule, location);
-       }
-   }
+    for (MPLocation location : locations) {
+        LiveUpdate occupancy = location.getLiveUpdate(LiveDataDomainTypes.OCCUPANCY_DOMAIN);
+        MPDisplayRule currentDisplayRule = MapsIndoors.getDisplayRule(location);
+        if (occupancy != null) {
+            OccupancyProperty occupancyProperty = occupancy.getOccupancyProperties();
+            currentDisplayRule.setLabel("people = " + occupancyProperty.getNoOfPeople());
+        }
+    }
 });
 ```
 
@@ -161,18 +152,13 @@ mMapControl.setOnWillUpdateLocationsOnMap(locations -> {
 <mi-tab-panel id="kotlin">
 
 ```kotlin
-mMapControl.setOnWillUpdateLocationsOnMap { locations: List&lt;MPLocation&gt; ->
+mMapControl.setOnWillUpdateLocationsOnMap { locations: List<MPLocation> ->
     for (location in locations) {
-        val occupancy = location.getLiveUpdate("occupancy")
-        val currentDisplayRule = mMapControl.getDisplayRule(location)
-        val displayRuleName = location.id + "_live"
+        val occupancy = location.getLiveUpdate(LiveDataDomainTypes.OCCUPANCY_DOMAIN)
+        val currentDisplayRule = MapsIndoors.getDisplayRule(location)
         if (occupancy != null) {
             val occupancyProperty = occupancy.occupancyProperties
-            val occupancyDisplayRule =
-                LocationDisplayRule.Builder(displayRuleName, currentDisplayRule!!)
-                    .setLabel("people = " + occupancyProperty.nrOfPeople)
-                    .build()
-            mMapControl.setDisplayRule(occupancyDisplayRule, location)
+            currentDisplayRule!!.label = "people = " + occupancyProperty.noOfPeople
         }
     }
 }
@@ -188,17 +174,12 @@ mMapControl.setOnWillUpdateLocationsOnMap { locations: List&lt;MPLocation&gt; ->
 
 ```java
 mMapControl.enableLiveData(LiveDataDomainTypes.OCCUPANCY_DOMAIN, location -> {
-   LiveUpdate occupancy = location.getLiveUpdate("occupancy");
-   LocationDisplayRule currentDisplayRule = mMapControl.getDisplayRule(location);
-   String displayRuleName = location.getId() + "_live";
-   if (occupancy != null) {
-       OccupancyProperty occupancyProperty = occupancy.getOccupancyProperties();
-       LocationDisplayRule occupancyDisplayRule = new LocationDisplayRule
-               .Builder(displayRuleName, currentDisplayRule)
-               .setLabel("people = " + occupancyProperty.getNrOfPeople())
-               .build();
-       mMapControl.setDisplayRule(occupancyDisplayRule, location);
-   }
+   LiveUpdate occupancy = location.getLiveUpdate(LiveDataDomainTypes.OCCUPANCY_DOMAIN);
+    MPDisplayRule currentDisplayRule = MapsIndoors.getDisplayRule(location);
+    if (occupancy != null) {
+        OccupancyProperty occupancyProperty = occupancy.getOccupancyProperties();
+        currentDisplayRule.setLabel("people = " + occupancyProperty.getNoOfPeople());
+    }
 });
 ```
 
@@ -207,16 +188,11 @@ mMapControl.enableLiveData(LiveDataDomainTypes.OCCUPANCY_DOMAIN, location -> {
 
 ```kotlin
 mMapControl.enableLiveData(LiveDataDomainTypes.OCCUPANCY_DOMAIN) { location: MPLocation ->
-    val occupancy = location.getLiveUpdate("occupancy")
-    val currentDisplayRule = mMapControl.getDisplayRule(location)
-    val displayRuleName = location.id + "_live"
+    val occupancy = location.getLiveUpdate(LiveDataDomainTypes.OCCUPANCY_DOMAIN)
+    val currentDisplayRule = MapsIndoors.getDisplayRule(location)
     if (occupancy != null) {
         val occupancyProperty = occupancy.occupancyProperties
-        val occupancyDisplayRule =
-            LocationDisplayRule.Builder(displayRuleName, currentDisplayRule!!)
-                .setLabel("people = " + occupancyProperty.nrOfPeople)
-                .build()
-        mMapControl.setDisplayRule(occupancyDisplayRule, location)
+        currentDisplayRule!!.label = "people = " + occupancyProperty.noOfPeople
     }
 }
 ```
@@ -289,11 +265,11 @@ mapControl.setOnWillUpdateLocationsOnMap(locations -> {
 
 ```kotlin
 mMapControl.setOnWillUpdateLocationsOnMap { locations ->
-            for (location in locations) {
-                val properties = location.getLiveUpdate(LiveDataDomainTypes.OCCUPANCY_DOMAIN)?.occupancyProperties
-                ...
-            }
-        }
+    for (location in locations) {
+        val properties = location.getLiveUpdate(LiveDataDomainTypes.OCCUPANCY_DOMAIN)?.occupancyProperties
+        ...
+    }
+}
 ```
 
 </mi-tab-panel>
