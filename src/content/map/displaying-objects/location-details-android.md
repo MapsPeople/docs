@@ -9,130 +9,69 @@ eleventyNavigation:
 
 This is an example of displaying some details of a MapsIndoors location
 
-Start by creating a `Fragment or an Activity` class that contains the Google map fragment:
+Requirements for this tutorial will be to have a running fragment or activity with a MapsIndoors map loaded and ready to use.
 
-```java
-public class LocationDetailsFragment extends Fragment
-//
-{
+We need a view that shows the details of the location. Here we will just use a simple TextView to display the name and description of a location: 
+
+```xml
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/details_text_view"
+    android:background="@color/cardview_light_background"
+    android:visibility="gone"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:text="This is the text view for details of the location"/>
 ```
 
-Add a `GoogleMap` and a `MapControl` to the class:
+Once the map is ready move the camera to a Venue:
 
-```java
-MapControl mMapControl;
-GoogleMap mGoogleMap;
-```
-
-Add other needed views for this example:
-
-```java
-SupportMapFragment mMapFragment;
-TextView detailsTextView;
-```
-
-The Venue's coordinates:
-
-```java
-static final LatLng VENUE_LAT_LNG = new LatLng( 57.05813067, 9.95058065 );
-```
-
-Setup the needed views for this example:
-
-```java
-private void setupView( View rootView )
-{
-    final FragmentManager fm = getChildFragmentManager();
-    detailsTextView = rootView.findViewById( R.id.details_text_view );
-    mMapFragment = (SupportMapFragment) fm.findFragmentById( R.id.mapfragment );
-    mMapFragment.getMapAsync( mOnMapReadyCallback );
+```kotlin
+val venue = MapsIndoors.getVenues()!!.currentVenue
+activity?.runOnUiThread {
+    if (venue != null) {
+        //Animates the camera to fit the new venue
+        mMap!!.animateCamera(
+            CameraUpdateFactory.newLatLngBounds(
+                toLatLngBounds(venue.bounds!!),
+                19
+            )
+        )
+    }
 }
 ```
 
-Once the map is ready move the camera to the venue location and call the setupMapsIndoors:
+We will then create a listener for when a user clicks on a marker to show the details of the selected location. This is done by setting a `onLocationSelectedListener` on your `MapControl` object. We will also listen to when the info window closes, to remove the DetailsTextView from the view. This is done by setting the `onMarkerInfoWindowCloseListener` on `MapControl`
+When a marker is clicked, get the related MapsIndoors location object and propagate that to a method that fills the text in the `detailsTextView`.
 
-```java
-OnMapReadyCallback mOnMapReadyCallback = new OnMapReadyCallback() {
-    @Override
-    public void onMapReady( GoogleMap googleMap )
-    {
-        mGoogleMap = googleMap;
-        mGoogleMap.moveCamera( CameraUpdateFactory.newLatLngZoom( VENUE_LAT_LNG, 13.0f ) );
-        setupMapsIndoors();
+```kotlin
+mMapControl?.let { mapControl ->
+    mapControl.setOnLocationSelectedListener {
+        if (it != null) {
+            showLocationDetails(it)
+        }
+        return@setOnLocationSelectedListener false
     }
-};
-```
 
-Setup MapsIndoors:
-
-```java
-void setupMapsIndoors()
-{
-    final Activity context = getActivity();
-    if( (context == null) || (mMapFragment == null) || (mMapFragment.getView() == null) )
-    {
-        return;
+    mapControl.setOnMarkerInfoWindowCloseListener {
+        binding.detailsTextView.visibility = View.GONE
+        mMapControl?.setMapPadding(0, 0, 0, 0)
     }
-```
-
-Setting the API key to the desired Solution. Needed here as we are switching Solutions:
-
-```java
-if( !MapsIndoors.getAPIKey().equalsIgnoreCase( getString( R.string.mi_api_key ) ) )
-{
-    MapsIndoors.setAPIKey( getString( R.string.mi_api_key ) );
 }
 ```
 
-Setting the Google API key:
+Create the `showLocationDetails(location: MPLocation)` method in your project.
 
-```java
-MapsIndoors.setGoogleAPIKey( getString( R.string.google_maps_key ) );
+```kotlin
+private fun showLocationDetails(location: MPLocation) {
+    binding.detailsTextView.text =  "Name: " + location.name + "\nDescription: " + location.description
+    binding.detailsTextView.visibility = View.VISIBLE
+    mMapControl?.setMapPadding(0, 0, 0, binding.detailsTextView.height)
+}
 ```
 
-Instantiate and init the MapControl object which will sync data:
+A `TextView` will now appear when a user selects a location and it will disapear again when the user clicks away from the location.
 
-```java
-mMapControl = new MapControl( context );
-mMapControl.setGoogleMap( mGoogleMap, mMapFragment.getView() );
-```
-
-When a marker is clicked, get the related MapsIndoors location object and set the label text based on the name and description of the location:
-
-```java
-mMapControl.setOnMarkerClickListener( marker -> {
-    final MPLocation loc = mMapControl.getLocation( marker );
-    if( loc != null )
-    {
-        marker.showInfoWindow();
-        if( detailsTextView.getVisibility() != View.VISIBLE )
-        {
-```
-
-Show the Name and the description of a POI in a label:
-
-```java
-detailsTextView.setText( "Name: " + loc.getName() + "\nDescription: " + loc.getDescription() );
-detailsTextView.setVisibility( View.VISIBLE );
-rue;
-setOnMarkerInfoWindowCloseListener( marker -> {
-ilsTextView.getVisibility() == View.VISIBLE )
-ilsTextView.setVisibility( View.INVISIBLE );
-```
-
-Init the MapControl object which will sync data:
-
-```java
-mMapControl.init( miError -> {
-    if( miError == null )
-    {
-```
-
-Select a floor and animate the camera to the venue position:
-
-```java
-mMapControl.selectFloor( 1 );
-mGoogleMap.animateCamera( CameraUpdateFactory.newLatLngZoom( VENUE_LAT_LNG, 20f ) );
-```
-
-[See the sample in LocationDetailsFragment.java](https://github.com/mapspeople/MapsIndoorsAndroid-Demo-Samples/blob/master/app/src/main/java/com/mapsindoors/locationdetailsdemo/LocationDetailsFragment.java)
+[See the sample in LocationDetailsFragment.kt](https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/MapsIndoorsSamples/app/src/main/java/com/mapspeople/mapsindoorssamples/ui/locationdetails/LocationDetailsFragment.kt)
