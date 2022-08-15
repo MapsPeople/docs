@@ -509,7 +509,6 @@ At this point you should be able to run this view controller in your own applica
 
 [See the sample in ChangeDisplaySettingController.swift](https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Change%20Display%20Setting/ChangeDisplaySettingController.swift)
 
-
 </mi-tab-panel>
 <mi-tab-panel id="web">
 
