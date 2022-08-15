@@ -126,7 +126,7 @@ The JSON string that you apply in this case can be built using the [Google Maps 
 </mi-tab-panel>
 <mi-tab-panel id="android-kotlin">
 
-## Style the Map using Display Rules
+## Style the Map using Display Rules with Kotlin
 
 In the [MapsIndoors CMS](https://cms.mapsindoors.com/types) you can set display rules for the different types of locations in your MapsIndoors content. The changes you make in the CMS will take effect whenever your app reboots or when you call `MapsIndoors.synchroniseContent()` within the app session.
 
@@ -211,7 +211,7 @@ MapsIndoors.getLocationsAsync(null, MPFilter.Builder().setTypes(listOf("Office")
 }
 ```
 
-## Style the Map using Google Maps Styling
+## Style the Map using Google Maps Styling with Kotlin
 
 > This needs to be applied after `mMapControl` is initialised. Further documentation on the Google Maps styling can be found here: [https://developers.google.com/maps/documentation/android-sdk/styling](https://developers.google.com/maps/documentation/android-sdk/styling)
 
@@ -233,7 +233,7 @@ The JSON string that you apply in this case can be built using the [Google Maps 
 </mi-tab-panel>
 <mi-tab-panel id="ios">
 
-## Style the Map using Display Rules
+## Style the Map using Display Rules on iOS
 
 In the [MapsIndoors CMS](https://cms.mapsindoors.com/types) you can set display rules for the different types of locations in your MapsIndoors content. The changes you make in the CMS will take effect whenever your app reboots or when you call `MapsIndoors.synchroniseContent()` within the app session.
 
