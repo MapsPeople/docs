@@ -2,7 +2,7 @@
 title: Display Rules for iOS
 eleventyNavigation:
   key: map-map-styling-display-rules-ios
-  parent: map-map-styling-display-rules
+  parent: map-map-styling
   title: Display Rules for iOS
   order: 20
 ---

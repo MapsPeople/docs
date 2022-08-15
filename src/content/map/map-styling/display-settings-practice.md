@@ -2,8 +2,8 @@
 title: Display Rules in Practice
 toc: true
 eleventyNavigation:
-  key: map-map-styling-display-rules
-  parent: map-map-styling-display-rules
+  key: map-map-styling-display-rules-practice
+  parent: map-map-styling
   title: Display Rules in Practice
   order: 20
 ---
