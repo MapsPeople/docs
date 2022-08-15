@@ -5,7 +5,7 @@ eleventyNavigation:
   key: map-map-styling-display-language
   parent: map-map-styling
   title: Display Language
-  order: 390
+  order: 40
 ---
 
 <!-- Introduction -->
