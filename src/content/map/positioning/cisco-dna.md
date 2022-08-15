@@ -501,17 +501,11 @@ MapsIndoors is a dynamic mapping platform from MapsPeople that can provide maps 
 
 ## User Positioning in MapsIndoors
 
-In order to show a user's position in an indoor map with MapsIndoors, a Position Provider must be implemented. MapsIndoors does not implement a Position Provider itself, but rely on 3rd party positioning software to create this experience. In an outdoor environment this Position Provider can be a wrapper of the Core Location Services in iOS.
-
-A Position Provider in MapsIndoors must adhere to the `MPPositionProvider` protocol. Once you have an instance of an `MPPositionProvider` you can register it by assigning it to `MapsIndoors.positionProvider`. See the overview of the interface dependencies below.
-
-![cisco-dna-ios](/assets/map/positioning/positioning-diagram.png)
+In order to show a user's position in an indoor map with MapsIndoors, a Position Provider must be implemented. MapsIndoors does not implement a Position Provider itself, but rely on 3rd party positioning software to create this experience. In an outdoor environment, this Position Provider can be a wrapper of the browser's native Geolocation API.
 
 ## Wrapping CiscoDNA Positioning in a Position Provider
 
-Just like in the mock Position Provider example, we need to implement a Position Provider that wraps the MapsIndoors CiscoDNA services to inject the CiscoDNA indoor positioning into MapsIndoors. If you only require this to work for indoor positioning, we would be good with just wrapping the CiscoDNA part. MapsIndoors however has the capability to support wayfinding both outdoors and indoors, so the shown solution implements two Position Providers, one for CoreLocation (`GPSPositionProvider`) and one for CiscoDNA (`CiscoDNAPositionProvider2`). The `CiscoDNAPositionProvider2` subclasses the `GPSPositionProvider` so it can determine whether the CiscoDNA position or the Core Location position should be used in your application. Both Position Providers are written in Objective C, but can of course be used in Swift as well.
-
-The `CiscoDNAPositionProvider2` communicates with some MapsIndoors services to get the Cisco device id, and uses a message subscription service (MQTT) to subscribe for position updates. Each time a Cisco position is received, its age is determined. If the age of the latest Cisco position is above 120 seconds or the application is not connected to the wifi, the CoreLocation position is used instead.
+Just like in the mock Position Provider example, we need to implement a Position Provider that wraps the MapsIndoors CiscoDNA services to inject the CiscoDNA indoor positioning into MapsIndoors. If you only require this to work for indoor positioning, we would be good with just wrapping the CiscoDNA part. MapsIndoors however has the capability to support wayfinding both outdoors and indoors, so the shown solution implements two Position Providers, one for CoreLocation (`GPSPositionProvider`) and one for CiscoDNA (`CiscoDNAPositionProvider2`). The `CiscoDNAPositionProvider2` subclasses the `GPSPositionProvider` so it can determine whether the CiscoDNA position or the Core Location position should be used in your application.
 
 ## Code Sample
 
@@ -640,16 +634,15 @@ The next step is to create some functions that manage how often the system retri
             this._interval = null;
         }
     }
-
-    /**
-     * @private
-     */
-
 ```
 
 Lastly, an error handler is implemented.
 
 ```javascript
+    /**
+     * @private
+     */
+
     _errorHandler(response) {
         if (!response.ok) {
             const contentType = response.headers.get('content-type');
@@ -682,7 +675,7 @@ Lastly, an error handler is implemented.
 } // end class
 ```
 
-Once the class is created, it can then be used, for example, in the following way:
+Once the class is created, it can then be used, for example, in the following way - Keep in mind that you cannot fetch the client/device IP address from the browser, an option to get around this could be a seperate service that returns the IP address:
 
 ```javascript
 const map = mapView.getMap();
