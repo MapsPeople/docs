@@ -100,181 +100,130 @@ class MPSearchItemRecyclerViewAdapter : RecyclerView.Adapter<MPSearchItemRecycle
 }
 ```
 
-Setup member variables for `SearchFragment`:
+Setup member variables for `FullscreenSearchFragment`:
 
-* The selection listener
-* A List View to show the search result
+* A RecyclerView to contain the locations
+* The Adapter and LayoutManager for the RecyclerView
 * Some view components
 
-```java
-OnFragmentInteractionListener mListener;
-ListView mMainMenuList;
-View mMainView;
-EditText mSearchEditTextView;
-ImageButton mSearchClearBtn;
-IconTextListAdapter mListAdapter;
-ViewFlipper mViewFlipper;
-ImageButton mBackButton;
+```kotlin
+private lateinit var mRecyclerView: RecyclerView
+private lateinit var mLinearLayoutManager: LinearLayoutManager
+private val mAdapter: MPSearchItemRecyclerViewAdapter = MPSearchItemRecyclerViewAdapter()
+
+private lateinit var searchInputTextView: TextInputEditText
+
+private var searchHandler: Handler? = null
 
 ```
 
-Init and setup the listView:
+Init and setup the `RecyclerView`:
 
-```java
-mListAdapter = new IconTextListAdapter( getContext(), new ArrayList<>() );
-mMainMenuList.setAdapter( mListAdapter );
-mMainMenuList.setClickable( true );
-mMainMenuList.setOnItemClickListener( mAdapterViewOnItemClickListener );
-mMainMenuList.invalidate();
-```
-
-Init and setup the view components for a better search experience.
-
-Note: Creating a TextWatcher as it's needed for software keyboard support:
-
-```java
-mSearchEditTextView.addTextChangedListener( mEditTextViewTextWatcher );
-mSearchEditTextView.setOnFocusChangeListener( mEditTextViewOnFocusChangeListener );
-```
-
-Close keyboard and search when user presses search on the keyboard:
-
-```java
-mSearchEditTextView.setOnEditorActionListener( mEditTextViewOnEditorActionListener );
-```
-
-Close keyboard and search when user presses enter:
-
-```java
-mSearchEditTextView.setOnKeyListener( mEditTextOnKeyListener );
-```
-
-Clear search button:
-
-```java
-mSearchClearBtn.setOnClickListener( mClearSearchButtonClickListener );
-mSearchClearBtn.setOnFocusChangeListener( mClearSearchButtonFocusChangeListener );
-```
-
-Whenever a user clicks a search result the 'onUserSelectedLocation' of the FragmentInteractionListener is called:
-
-```java
-AdapterView.OnItemClickListener mAdapterViewOnItemClickListener = new AdapterView.OnItemClickListener()
-{
-    @Override
-    public void onItemClick( AdapterView<?> parent, View view, int position, long id )
-    {
-        closeKeyboard();
-        if( mListener != null ) {
-            mListener.onUserSelectedLocation( (MPLocation) mListAdapter.getItem( position ) );
-        }
-    }
-};
-
-```
-
-Declare an interface that will handle the communication between the fragment and the activity:
-
-```java
-public interface OnFragmentInteractionListener
-{
-    void onUserSelectedLocation( @Nullable MPLocation loc );
+```kotlin
+mRecyclerView = binding.searchList
+mLinearLayoutManager = LinearLayoutManager(requireContext())
+mRecyclerView.apply {
+    layoutManager = mLinearLayoutManager
+    adapter = mAdapter
 }
-@NonNull
-public static SearchFragment newInstance()
-{
-    return new SearchFragment();
+```
+
+Init and setup the view components to handle searching inside the `onViewCreated`
+
+```kotlin
+searchInputTextView = binding.searchInputEditText
+
+val imm = requireActivity().getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
+searchInputTextView.addTextChangedListener {
+    searchHandler = Handler(Looper.myLooper()!!)
+    searchHandler!!.postDelayed(searchRunner, 1000)
+}
+searchInputTextView.setOnEditorActionListener { textView, i, keyEvent ->
+    if (i == EditorInfo.IME_ACTION_DONE || i == EditorInfo.IME_ACTION_SEARCH) {
+        if (textView.text.isNotEmpty()) {
+            search(textView.text.toString())
+        }
+        //Making sure keyboard is closed.
+        imm.hideSoftInputFromWindow(textView.windowToken, 0)
+
+        return@setOnEditorActionListener true
+    }
+    return@setOnEditorActionListener false
+}
+```
+
+create a Runnable to execute a search
+
+```kotlin
+private val searchRunner: Runnable = Runnable {
+    val text = searchInputTextView.text
+    if (text?.length!! >= 2) {
+        search(text.toString())
+    }
+}
+```
+
+Add a listener to the Adapter for when a user selects a location, to navigate back to the map and show the selected location. Here we use navigation together with a bundle to tell the other fragment of the selected location
+
+```kotlin
+mAdapter.setOnLocationSelectedListener { location ->
+    if (location != null) {
+        val bundle = Bundle()
+        bundle.putString("locationId", location.locationId)
+        findNavController().navigate(R.id.action_nav_search_fullscreen_to_nav_search, bundle)
+        return@setOnLocationSelectedListener true
+    }
+    return@setOnLocationSelectedListener false
 }
 ```
 
 [See the sample in SearchFragment.java](https://github.com/mapspeople/MapsIndoorsAndroid-Demo-Samples/blob/master/app/src/main/java/com/mapsindoors/searchmapdemo/SearchFragment.java)
 
-Now we will create the "main" controller displaying the map and eventually the selected location.
+Now we will implement the `FullscreenSearchFragment` together with our Fragment or Activity containing a MapsIndoors Map.
 
-Start by creating a Fragment:
+Add a Button to open the `FullscreenSearchFragment` inside your Activity or Fragment view and a assign a Click listener to it.
 
-```java
-public class SearchMapFragment extends Fragment
-//
-{
-```
-
-Add a `GoogleMap` and a `MapControl` to the class:
-
-```java
-MapControl mMapControl;
-GoogleMap mGoogleMap;
-```
-
-Add other needed views for this example:
-
-```java
-SupportMapFragment mMapFragment;
-Button searchButton;
-MPLocation locationToSelect = null;
-```
-
-A listener to report the click on the search Button to the activity:
-
-```java
-private OnFragmentInteractionListener mListener;
-```
-
-The Venue's coordinates:
-
-```java
-static final LatLng VENUE_LAT_LNG = new LatLng( 57.05813067, 9.95058065 );
-```
-
-Setting the API key to the desired Solution:
-
-```java
-if( !MapsIndoors.getAPIKey().equalsIgnoreCase( getString( R.string.mi_api_key ) ) )
-{
-    MapsIndoors.setAPIKey( getString( R.string.mi_api_key ) );
+```kotlin
+binding.searchButton.setOnClickListener {
+    openSearchFragment()
 }
 ```
 
-Instantiate the MapControl object:
+Create the `openSearchFragment` method to navigate to the `FullScreenSearchFragment`
 
-```java
-mMapControl = new MapControl( context );
-mMapControl.setGoogleMap( mGoogleMap, mMapFragment.getView() );
-// Enable the search button only once location data becomes available
-MapsIndoors.addLocationSourceOnStatusChangedListener( locationSourceOnStatusChangedListener );
+```kotlin
+private fun openSearchFragment() {
+    val navController = findNavController()
+    navController.navigate(R.id.action_nav_search_to_nav_search_fullscreen)
+}
 ```
 
-* Initialize the MapControl object which will sync data.
-* When the init is done, if the 'locationToSelect' is not null we call the 'mMapControl.selectLocation()' to select the desired location, otherwise select a floor
+Finally create a way to handle the selected location when a user is navigated to your fragment again. How this example is set up the Map will be reloaded when navigated to it. Therefor we will handle the selection after `MapControl` is created.
 
-```java
-mMapControl.init( miError -> {
-    if( miError == null )
-    {
-        final Activity _context = getActivity();
-        if( _context != null )
-        {
-            mGoogleMap.animateCamera( CameraUpdateFactory.newLatLngZoom( VENUE_LAT_LNG, 20f ) );
-            if( locationToSelect != null )
-            {
-                mMapControl.selectLocation( locationToSelect );
-                locationToSelect = null;
-            }
-            else
-            {
-                mMapControl.selectFloor( 1 );
+```kotlin
+MapControl.create(mapConfig) { mapControl: MapControl?, miError: MIError? ->
+    mMapControl = mapControl
+    //Enable Live Data on the map
+    if (miError == null) {
+        var locationId = arguments?.get("locationId") as String?
+        if (locationId != null) {
+            mMapControl?.selectLocation(locationId, MPSelectionBehavior.DEFAULT)
+        }else {
+            //No errors so getting the first venue (in the white house solution the only one)
+            val venue = MapsIndoors.getVenues()?.defaultVenue
+            activity?.runOnUiThread {
+                if (venue != null) {
+                    //Animates the camera to fit the new venue
+                    mMap!!.animateCamera(
+                        CameraUpdateFactory.newLatLngBounds(
+                            LatLngBoundsConverter.toLatLngBounds(venue.bounds!!),
+                            19
+                        )
+                    )
+                }
             }
         }
     }
-});
-```
-
-A public method to select a location:
-
-```java
-public void selectLocation( MPLocation loc )
-{
-    locationToSelect = loc;
 }
 ```
 
