@@ -1,6 +1,5 @@
 ---
 title: Live Data in Practice
-toc: true
 eleventyNavigation:
   key: map-live-data-practice
   parent: map-live-data

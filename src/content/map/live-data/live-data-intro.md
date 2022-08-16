@@ -1,6 +1,5 @@
 ---
 title: Live Data Introduction
-toc: true
 eleventyNavigation:
   key: map-live-data-intro
   parent: map-live-data
