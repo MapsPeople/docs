@@ -9,12 +9,95 @@ eleventyNavigation:
 
 This is an example of creating a simple search experience using MapsIndoors. We will create a map with a search button that leads to another Fragment that handles the search and selection. On selection of a location, we go back to the map and shows the selected location on the map.
 
-We will start by creating a simple search controller that handles search and selection of MapsIndoors locations
+First create a Fragment or Activity with a map and MapsIndoors loaded.
 
-Declare a listener for our location selection with a `onUserSelectedLocation` method
+We will create a Fragment that will contain a textInput field and a RecyclerView that will show a list of `MPLocations` received from the search.
 
-```java
-public class SearchFragment extends Fragment {
+```kotlin
+class FullscreenSearchFragment : Fragment() {
+```
+
+As we will be using a `RecyclerView` we will need to create a `RecyclerView Adapter` to show our Location results. In this guide we will hijack the Adapter from the Template app:
+
+```kotlin
+class MPSearchItemRecyclerViewAdapter : RecyclerView.Adapter<MPSearchItemRecyclerViewAdapter.ViewHolder>() {
+    private var mLocations: List<MPLocation> = ArrayList()
+    private lateinit var context: Context
+    private var mOnLocationSelectedListener: OnLocationSelectedListener? = null
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        context = parent.context
+        return ViewHolder(FragmentSearchItemBinding.inflate(LayoutInflater.from(parent.context), parent, false))
+    }
+
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val item = mLocations[position]
+        var iconUrl = getTypeIcon(item)
+        iconUrl?.let {
+            MapsIndoors.getImageProvider().loadImageAsync(it) { bitmap, error ->
+                if (bitmap != null && error == null) {
+                    holder.icon.setImageBitmap(bitmap)
+                }
+            }
+        }
+
+        holder.nameView.text = item.name
+
+        if (item.floorName != null && item.buildingName != null) {
+            val buildingName = MapsIndoors.getBuildings()?.getBuilding(item.point.latLng)?.name
+            if (buildingName != null) {
+                holder.subTextView.text = "Floor: " + item.floorName + " - " + buildingName
+            }else {
+                holder.subTextView.text = "Floor: " + item.floorName + " - " + item.buildingName
+            }
+        }else {
+            holder.subTextView.visibility = View.GONE
+        }
+
+        holder.itemView.setOnClickListener {
+            if (mOnLocationSelectedListener != null) {
+                mOnLocationSelectedListener?.onLocationSelected(item)
+            }
+        }
+    }
+
+    private fun getTypeIcon(mpLocation: MPLocation): String? {
+        MapsIndoors.getSolution()?.let {
+            it.types?.forEach { type ->
+                if (mpLocation.type?.equals(type.name, true) == true) {
+                    return type.icon
+                }
+            }
+        }
+        return null
+    }
+
+    fun setOnLocationSelectedListener(onLocationSelectedListener: OnLocationSelectedListener) {
+        mOnLocationSelectedListener = onLocationSelectedListener
+    }
+
+    override fun getItemCount(): Int = mLocations.size
+
+    fun setLocations(locations: List<MPLocation>) {
+        mLocations = locations;
+    }
+
+    fun clear() {
+        mLocations = ArrayList()
+        notifyDataSetChanged()
+    }
+
+    inner class ViewHolder(binding: FragmentSearchItemBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+        val icon: ImageView = binding.locationIconView
+        val nameView: TextView = binding.locationName
+        val subTextView: TextView = binding.locationSubtext
+
+        override fun toString(): String {
+            return super.toString() + " '" + subTextView.text + "'"
+        }
+    }
+}
 ```
 
 Setup member variables for `SearchFragment`:

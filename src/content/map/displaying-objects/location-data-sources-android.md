@@ -7,7 +7,7 @@ eleventyNavigation:
   order: 40
 ---
 
-In this tutorial we will show how you can build a custom Location Source, representing locations of robot vacuums. The people's locations will be served from a mocked list and displayed on a map.
+In this tutorial we will show how you can build a custom Location Source, representing locations of robot vacuums. The robots locations will be served from a mocked list and displayed on a map.
 
 We will start by creating our implementation of a location source.
 
@@ -19,7 +19,7 @@ implement the methods from MPLocationSource and extend the constructor of the `R
 class RobotVacuumLocationSource(private val robots: ArrayList<MPLocation>): MPLocationSource {
     private val mObservers = ArrayList<MPLocationsObserver>()
     private var mStatus = MPLocationSourceStatus.NOT_INITIALIZED
-    
+
     override fun getLocations(): MutableList<MPLocation> {
         return robots
     }
