@@ -341,8 +341,8 @@ In the example we are enabling Live Data for the Domain Type "Occupancy". Intern
 
 Note that using the `enableLiveData()` methods on `MPMapControl` has some limitations and is thereby not suitable for all use cases.
 
-* Since `MPMapControl` will try to determine relevant Live Data subscriptions based on where the map is currently situated, it might not detect Live Data updates of the Position domain representing moving objects entering the visible region of the map.
-* Since `MPMapControl` does not know which Live Updates that are relevant to show it will need to subscribe to all Live Data in the visible region, which, depending on your amount of Live Data, may or may not lead to app performance implications.
+- Since `MPMapControl` will try to determine relevant Live Data subscriptions based on where the map is currently situated, it might not detect Live Data updates of the Position domain representing moving objects entering the visible region of the map.
+- Since `MPMapControl` does not know which Live Updates that are relevant to show it will need to subscribe to all Live Data in the visible region, which, depending on your amount of Live Data, may or may not lead to app performance implications.
 
 ### Enable Live Data through MPLiveDataManager in iOS
 
