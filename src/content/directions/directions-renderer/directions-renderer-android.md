@@ -30,7 +30,7 @@ void getRoute() {
             directionsRenderer.setRoute(route);
         }
     });
-    
+
     directionsService.query(origin, destination);
 }
 ```
@@ -47,8 +47,8 @@ fun getRoute() {
     val destination = MPPoint(57.058038, 9.950509, 0.0)
 
     directionsService.setRouteResultListener { route, error ->
-        route?.let { mpRoute -> 
-            directionsRenderer.setRoute(mpRoute)    
+        route?.let { mpRoute ->
+            directionsRenderer.setRoute(mpRoute)
         }
     }
 
@@ -110,9 +110,9 @@ void getRoute() {
             directionsRenderer.setRoute(route);
         }
     });
-    
+
     directionsRenderer.setOnLegSelectedListener(i -> {
-        directionsRenderer.selectLegIndex(i);        
+        directionsRenderer.selectLegIndex(i);
     });
 
     directionsService.query(origin, destination);
@@ -136,7 +136,7 @@ fun getRoute() {
         }
     }
 
-    directionsRenderer.setOnLegSelectedListener { 
+    directionsRenderer.setOnLegSelectedListener {
         mpDirectionsRenderer?.selectLegIndex(it)
     }
 

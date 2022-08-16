@@ -11,7 +11,7 @@ This is an example of displaying some details of a MapsIndoors location
 
 Requirements for this tutorial will be to have a running fragment or activity with a MapsIndoors map loaded and ready to use.
 
-We need a view that shows the details of the location. Here we will just use a simple TextView to display the name and description of a location: 
+We need a view that shows the details of the location. Here we will just use a simple TextView to display the name and description of a location:
 
 ```xml
 <TextView

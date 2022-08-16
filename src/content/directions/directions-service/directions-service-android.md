@@ -24,7 +24,7 @@ MPPoint origin = new MPPoint(57.057917, 9.950361, 0.0);
 MPPoint destination = new MPPoint(57.058038, 9.950509, 0.0);
 
 directionsService.setRouteResultListener((route, error) -> {
-    
+
 });
 
 directionsService.query(origin, destination);
