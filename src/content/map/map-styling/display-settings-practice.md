@@ -76,7 +76,7 @@ MPLocation mpLocation = MapsIndoors.getLocationById("MyLocationId");
 mMapControl.setDisplayRule(singleLocationDisplayRule, mpLocation);
 ```
 
-For multiple Locations, you fetch an array of Locations using `getLocationsAsync` instead:
+For multiple Locations, you fetch a list of Locations using `getLocationsAsync` instead:
 
 ```java
 multipleLocationDisplayRule = new LocationDisplayRule.Builder("multipleRule").setVectorDrawableIcon(R.drawable.ic_baseline_air_24).setLabel("multiple display rule").build();
@@ -120,7 +120,7 @@ mMapControl.init(miError -> {
 });
 ```
 
-The JSON string that you apply in this case can be built using the [Google Maps Styling Wizard](https://mapstyle.withgoogle.com/). Read more about styling the Google Map in the [Google Maps iOS SDK Docs](https://developers.google.com/maps/documentation/ios-sdk/styling).
+The JSON string that you apply in this case can be built using the [Google Maps Styling Wizard](https://mapstyle.withgoogle.com/). Read more about styling the Google Map in the [Google Maps Android SDK Docs](https://developers.google.com/maps/documentation/android-sdk/styling).
 
 </mi-tab-panel>
 <mi-tab-panel id="android-kotlin">
@@ -180,7 +180,7 @@ val mpLocation = MapsIndoors.getLocationById("MyLocationId")
 mMapControl.setDisplayRule(singleLocationDisplayRule, mpLocation)
 ```
 
-For multiple Locations, you fetch an array of Locations using `getLocationsAsync` instead:
+For multiple Locations, you fetch a list of Locations using `getLocationsAsync` instead:
 
 ```kotlin
 multipleLocationDisplayRule = LocationDisplayRule.Builder("multipleRule").setVectorDrawableIcon(R.drawable.ic_baseline_air_24).setLabel("multiple display rule").build()
@@ -227,7 +227,7 @@ mMapControl.init { miError ->
 }
 ```
 
-The JSON string that you apply in this case can be built using the [Google Maps Styling Wizard](https://mapstyle.withgoogle.com/). Read more about styling the Google Map in the [Google Maps iOS SDK Docs](https://developers.google.com/maps/documentation/ios-sdk/styling).
+The JSON string that you apply in this case can be built using the [Google Maps Styling Wizard](https://mapstyle.withgoogle.com/). Read more about styling the Google Map in the [Google Maps Android SDK Docs](https://developers.google.com/maps/documentation/android-sdk/styling).
 
 </mi-tab-panel>
 <mi-tab-panel id="ios">
