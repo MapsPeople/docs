@@ -13,9 +13,9 @@ The Android SDK for MapsIndoors has been upgraded from V3 to V4, which comes wit
 With the release of V4 the MapsIndoors SDK is released as two separate libraries depending on the Map Provider - Google Maps or Mapbox. You can get them through Maven by changing your dependency to get:
 
 ```java
-implementation 'com.mapspeople.mapsindoors:googlemapssdk:4.0.0-beta.9'
+implementation 'com.mapspeople.mapsindoors:googlemapssdk:4.0.0-beta.14'
 
-implementation 'com.mapspeople.mapsindoors:mapboxsdk:4.0.0-beta.9'
+implementation 'com.mapspeople.mapsindoors:mapboxsdk:4.0.0-beta.14'
 ```
 
 ## MapsIndoors Initialization
