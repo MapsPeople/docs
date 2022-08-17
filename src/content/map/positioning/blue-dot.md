@@ -130,7 +130,7 @@ And remember to start your `PositionProvider` instance with `start()`, so it beg
 mPositionProvider?.start()
 ```
 
-The MapsIndoors only support having a single position provider attached at a time. If you wish to have multiple positioning providers, remove your old provider before setting a new one - or incoorporate multiple positioning systems into a single `MPPositionProvider` imlpementation. 
+The MapsIndoors only support having a single position provider attached at a time. If you wish to have multiple positioning providers, remove your old provider before setting a new one - or incoorporate multiple positioning systems into a single `MPPositionProvider` imlpementation.
 
 In order for the MapsIndoors SDK to render the positioning on the map, make sure to invoke `showUserPosition(true)` on your `MapControl` instance.
 
@@ -138,15 +138,16 @@ In order for the MapsIndoors SDK to render the positioning on the map, make sure
 // Enable showing the position indicator (aka. the blue dot)
 mMapControl?.showUserPosition(true)
 ```
+
 You should now have a position indicator on the map, jumping around inside The White House.
 
 ## Styling the Blue Dot
 
 The default blue dot styling is boring, and likely needs to be styled to fit your application and make sense to users.
 
-Like with most other things in the MapsIndoors SDK, the styling of the blue dot is dictated by a display rule. 
+Like with most other things in the MapsIndoors SDK, the styling of the blue dot is dictated by a display rule.
 
-A good approach is to attach an `OnPositionUpdateListener` on your `PositionProvider` instance. 
+A good approach is to attach an `OnPositionUpdateListener` on your `PositionProvider` instance.
 
 ```kotlin
 mPositionProvider?.addOnPositionUpdateListener(object: OnPositionUpdateListener {
