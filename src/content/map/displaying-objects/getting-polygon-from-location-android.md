@@ -9,38 +9,37 @@ eleventyNavigation:
 
 Some locations in MapsIndoors can have additional polygon information. These polygons can be used to render a room or area in a special way or make geofences, calculating whether another point or location is contained within the polygon. If a `MPLocation` has polygons, these can be retrieved using:
 
-```java
-Geometry geometry = location.getGeometry();
-switch( geometry.getIType() ) {
-    case Geometry.TYPE_POINT: {
-        Point point = (Point) geometry;
-        break;
+```kotlin
+val geometry: MPGeometry = location.geometry
+when (geometry.iType) {
+    MPGeometry.TYPE_POINT -> {
+        val point = geometry
     }
-    case Geometry.TYPE_POLYGON: {
-        PolygonGeometry polygon = (PolygonGeometry) geometry;
+    MPGeometry.TYPE_POLYGON -> {
+        val polygon: MPPolygonGeometry = geometry as MPPolygonGeometry
 
         // Using GMS helper classes
         // Get all the paths in the polygon
-        final List<List<LatLng>> paths = polygon.getGMSPath();
-
-        final int pathCount = paths.size();
+        val paths: List<List<MPLatLng>> = polygon.gmsPath
+        val pathCount = paths.size
 
         // Outer ring (first)
-        List<LatLng> path = paths.get( 0 );
-        for( final LatLng coordinate : path ) {
-            double lat = coordinate.latitude;
-            double lng = coordinate.longitude;
+        val path = paths[0]
+        for (coordinate in path) {
+            val lat = coordinate.lat
+            val lng = coordinate.lng
         }
 
         // Optional: Inner rings (holes)
-        for( int i = 1; i < pathCount; i++ ) {
-            List<LatLng> hole = paths.get( i );
-            for( final LatLng coordinate : hole ) {
-                double lat = coordinate.latitude;
-                double lng = coordinate.longitude;
+        var i = 1
+        while (i < pathCount) {
+            val hole = paths[i]
+            for (coordinate in hole) {
+                val lat = coordinate.lat
+                val lng = coordinate.lng
             }
+            i++
         }
-        break;
     }
 }
 ```

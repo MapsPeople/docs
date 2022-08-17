@@ -11,14 +11,14 @@ This tutorial will show how to work with the route model returned from a directi
 
 This tutorial will be based off the **MapsIndoors Samples** example found here: [WayFinding](https://github.com/MapsPeople/MapsIndoors-Android-Examples/tree/main/MapsIndoorsSamples/app/src/main/java/com/mapspeople/mapsindoorssamples/ui/wayfinding).
 
-An example of the view XML file for the `WayfindingFragment` this guide will use can be found here: [Navigation view](https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/MapsIndoorsSamples/app/src/main/res/layout/fragment_wayfinding.xml).
+An example of the view XML file for the `WayfindingFragment` this guide will use can be found here: [Wayfinding view](https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/MapsIndoorsSamples/app/src/main/res/layout/fragment_wayfinding.xml).
 
 First, create variables for `MPLocation` and `MPRoute` objects to use later in describing wayfinding. Also create a Variable for `MPDirectionsRenderer` so we can control rendering through changes in the `ViewPager`.
 
 <mi-tabs>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="kotlin">
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android-Kotlin/blob/advanced_directions/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/NavigationFragment.kt#L147-L155">NavigationFragment.kt</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/MapsIndoorsSamples/app/src/main/java/com/mapspeople/mapsindoorssamples/ui/wayfinding/WayfindingFragment.kt#L31-L32">WayfindingFragment.kt</a>
 
 ```kotlin
 private var mRoute: MPRoute? = null
@@ -39,7 +39,7 @@ First, start by changing the code inside `onCreateView`.
 <mi-tabs>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="kotlin">
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android-Kotlin/blob/advanced_directions/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/NavigationFragment.kt#L35-L63">NavigationFragment.kt</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/MapsIndoorsSamples/app/src/main/java/com/mapspeople/mapsindoorssamples/ui/wayfinding/WayfindingFragment.kt#L36-L57">WayfindingFragment.kt</a>
 
 ```kotlin
 override fun onCreateView(view: View, @Nullable savedInstanceState: Bundle?) {
@@ -72,7 +72,7 @@ Next we will create `FragmentStateAdapter` that will be used on the `ViewPager` 
 <mi-tabs>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="kotlin">
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android-Kotlin/blob/advanced_directions/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/NavigationFragment.kt#L115-L145">NavigationFragment.kt</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/MapsIndoorsSamples/app/src/main/java/com/mapspeople/mapsindoorssamples/ui/wayfinding/WayfindingFragment.kt#L169-L197">WayfindingFragment.kt</a>
 
 ```kotlin
 inner class RouteCollectionAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
@@ -114,7 +114,7 @@ Let's create a method to textually describe each Leg. This method creates a stri
 <mi-tabs>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="kotlin">
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android-Kotlin/blob/advanced_directions/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/NavigationFragment.kt#L65-L113">NavigationFragment.kt</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/MapsIndoorsSamples/app/src/main/java/com/mapspeople/mapsindoorssamples/ui/wayfinding/WayfindingFragment.kt#L120-L167">WayfindingFragment.kt</a>
 
 ```kotlin
 fun getStepName(startStep: MPRouteStep, endStep: MPRouteStep): String {
@@ -175,7 +175,7 @@ Now, lets create the `RouteLegFragment` to give context for the Legs in the `Way
 <mi-tabs>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="kotlin">
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android-Kotlin/blob/advanced_directions/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/RouteLegFragment.kt#L46-L53">RouteLegFragment.kt</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/MapsIndoorsSamples/app/src/main/java/com/mapspeople/mapsindoorssamples/ui/wayfinding/RouteLegFragment.kt#L48-L56">RouteLegFragment.kt</a>
 
 ```kotlin/0-2,6-8
 private var mStep: String? = null
@@ -201,7 +201,7 @@ You must also update the `onViewCreated` method to use the new views added earli
 <mi-tabs>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="kotlin">
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android-Kotlin/blob/advanced_directions/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/RouteLegFragment.kt#L24-L44">RouteLegFragment.kt</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/MapsIndoorsSamples/app/src/main/java/com/mapspeople/mapsindoorssamples/ui/wayfinding/RouteLegFragment.kt#L30-L46">RouteLegFragment.kt</a>
 
 ```kotlin
 override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -233,7 +233,7 @@ We will create a method named getRoute that queries a route between two location
 <mi-tabs>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="kotlin">
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android-Kotlin/blob/advanced_directions/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/MapsActivity.kt#L186-L195">MapsActivity.kt</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/MapsIndoorsSamples/app/src/main/java/com/mapspeople/mapsindoorssamples/ui/wayfinding/WayfindingFragment.kt#L98-L118">WayfindingFragment.kt</a>
 
 ```kotlin
 fun getRoute() {
@@ -267,7 +267,7 @@ To change the routing when swapping between tabs on the viewpager, use the call 
 <mi-tabs>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="kotlin">
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android-Kotlin/blob/advanced_directions/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/NavigationFragment.kt#L40-L54">NavigationFragment.kt</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/MapsIndoorsSamples/app/src/main/java/com/mapspeople/mapsindoorssamples/ui/wayfinding/WayfindingFragment.kt#L41-L50">WayfindingFragment.kt</a>
 
 ```kotlin
 val routeLegAdapter = RouteCollectionAdapter(this)
