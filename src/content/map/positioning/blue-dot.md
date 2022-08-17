@@ -16,11 +16,12 @@ In this tutorial we will cover from start to end, how you can implement a positi
 
 We will start by creating our implementation of the `MPPositionProvider` interface.
 
-# Implementing a Position Provider
+## Implementing a Position Provider
+
 Create the class `PositionProvider` that implements `MPPositionProvider`:
 
 ```kotlin
-class PositionProvider : MPPositionProvider 
+class PositionProvider : MPPositionProvider
 ```
 
 Add some member variables to `PositionProvider`:
@@ -66,7 +67,7 @@ fun start(){
     mPositionProducer = Timer(true)
     mPositionProducer?.scheduleAtFixedRate(object: TimerTask() {
         override fun run() {
-        
+
         }
     }, 0, 1000L)
 }
@@ -102,13 +103,14 @@ override fun run() {
     }
 }
 ```
+
 When we have derived a new position and assigned it to `mLatestPosition`, we invoke `onPositionUpdate()` on each attached update listener.
 
 We have now completed the implementation of `PositionProvider` - we will now cover how this is integrated with the MapsIndoors SDK so the produced positioning is reflected on the map, as well as how we can configure the blue dot styling.
 
 [See the full implementation of PositionProvider in our samples repository](https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/MapsIndoorsSamples/app/src/main/java/com/mapspeople/mapsindoorssamples/ui/positioning/PositionProvider.kt)
 
-# Integrating with MapsIndoors SDK
+## Integrating with MapsIndoors SDK
 
 In order for your `PositionProvider`'s produced positions to be rendered on the map, you need to attach it to the MapsIndoors SDK. Simply use `MapsIndoors.setPositionProvider()` to set the position provider on the SDK.
 
@@ -121,7 +123,9 @@ MapsIndoors.load(requireActivity().applicationContext, "your mapsindoors api key
     MapsIndoors.setPositionProvider(mPositionProvider)
 }
 ```
+
 And remember to start your `PositionProvider` instance with `start()`, so it begins producing positioning results.
+
 ```kotlin
 mPositionProvider?.start()
 ```
@@ -136,7 +140,7 @@ mMapControl?.showUserPosition(true)
 ```
 You should now have a position indicator on the map, jumping around inside The White House.
 
-# Styling the Blue Dot
+## Styling the Blue Dot
 
 The default blue dot styling is boring, and likely needs to be styled to fit your application and make sense to users.
 
