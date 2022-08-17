@@ -56,9 +56,9 @@ private fun getCircularImageWithText(text: String, textSize: Int, width: Int, he
 Applying a ClusterIconAdapter on runtime can be done like this:
 
 ```kotlin
-mMapControl.setClusterIconAdapter { 
-    return@setClusterIconAdapter getCircularImageWithText(it.size.toString(), 15, 30, 30) 
+mMapControl.setClusterIconAdapter {
+    return@setClusterIconAdapter getCircularImageWithText(it.size.toString(), 15, 30, 30)
 }
 ```
 
-[See the sample in LocationClusteringFragment.java](https://github.com/mapspeople/MapsIndoorsAndroid-Demo-Samples/blob/master/app/src/main/java/com/mapsindoors/locationclustering/LocationClusteringFragment.java)
+[See the sample in LocationClusteringFragment.kt](https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/MapsIndoorsSamples/app/src/main/java/com/mapspeople/mapsindoorssamples/ui/locationclustering/LocationClusteringFragment.kt)

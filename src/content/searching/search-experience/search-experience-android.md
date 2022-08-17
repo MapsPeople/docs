@@ -177,7 +177,7 @@ mAdapter.setOnLocationSelectedListener { location ->
 }
 ```
 
-[See the sample in SearchFragment.java](https://github.com/mapspeople/MapsIndoorsAndroid-Demo-Samples/blob/master/app/src/main/java/com/mapsindoors/searchmapdemo/SearchFragment.java)
+[See the sample in FullscreenSearchFragment.kt](https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/MapsIndoorsSamples/app/src/main/java/com/mapspeople/mapsindoorssamples/ui/search/FullscreenSearchFragment.kt)
 
 Now we will implement the `FullscreenSearchFragment` together with our Fragment or Activity containing a MapsIndoors Map.
 
@@ -227,4 +227,4 @@ MapControl.create(mapConfig) { mapControl: MapControl?, miError: MIError? ->
 }
 ```
 
-[See the sample in SearchMapFragment.java](https://github.com/mapspeople/MapsIndoorsAndroid-Demo-Samples/blob/master/app/src/main/java/com/mapsindoors/searchmapdemo/SearchMapFragment.java)
+[See the sample in SearchFragment.kt](https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/MapsIndoorsSamples/app/src/main/java/com/mapspeople/mapsindoorssamples/ui/search/SearchFragment.kt)
