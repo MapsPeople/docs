@@ -1,6 +1,5 @@
 ---
 title: Using Cisco DNA Spaces
-toc: true
 eleventyNavigation:
   parent: map-positioning-blue-dot
   title: Using Cisco DNA Spaces
@@ -18,7 +17,7 @@ To get started with Cisco DNA positioning, the MapsIndoors SDK offers all the re
 
 The Position Provider implementation exists at the customer application level, and needs to use the `PositionProvider` interface from the MapsIndoors SDK. The MapsIndoors SDK can then use the positioning results given by the Position Provider when setting the Position Provider with `MapControl.setPositionProvider(PositionProvider)`.
 
-### Floor Mapping
+### Floor Mapping for Android
 
 The Position Provider should align with the MapsIndoors Floor index convention (floors are indexed as e.g 0, 10, 20, 30 corresponding to ground floor, 1st floor, 2nd floor, 3rd floor, with negative floors indices allowed as well to indicate Floors below ground, e.g. -10). It is therefore up to the Position Provider class to convert any given Floor indexing from the positioning source to that of MapsIndoors.
 
@@ -29,7 +28,7 @@ The MapsIndoors backend is closely integrated with the CiscoDNA platform, so the
 <!-- Fetch data from solution -->
 {% include "src/content/shared/map/positioning-fetch-android.md" %}
 
-### Implementing Cisco DNA
+### Implementing Cisco DNA for Android
 
 This Guide requires you to already have an activity that shows a MapsIndoors Map as well as a Cisco DNA network with positioning active.
 
@@ -447,11 +446,11 @@ A full example of the Cisco DNA position provider together with `PositionProvide
 </mi-tab-panel>
 <mi-tab-panel id="ios">
 
-## MapsIndoors and CiscoDNA
+## MapsIndoors and CiscoDNA for iOS
 
 MapsIndoors is a dynamic mapping platform from MapsPeople that can provide maps of your indoor and outdoor localities and helps you create search and navigation experiences for your local users. CiscoDNA is Cisco’s newest digital and cloud-based IT infrastructure management platform. Among many other things, CiscoDNA can pinpoint the physical and geographic position of devices connected wirelessly to the local IT network.
 
-## How User Positioning Works in MapsIndoors
+## How User Positioning Works in MapsIndoors for iOS
 
 In order to show a user's position in an indoor map with MapsIndoors, a Position Provider must be implemented. MapsIndoors does not implement a Position Provider itself, but rely on 3rd party positioning software to create this experience. In an outdoor environment this Position Provider can be a wrapper of the Core Location Services in iOS.
 
@@ -459,13 +458,13 @@ A Position Provider in MapsIndoors must adhere to the `MPPositionProvider` proto
 
 ![cisco-dna-ios](/assets/map/positioning/positioning-diagram.png)
 
-## Wrapping the CiscoDNA Positioning in a Position Provider
+## Wrapping the CiscoDNA Positioning in a Position Provider for iOS
 
 Just like in the mock Position Provider example, we need to implement a Position Provider that wraps the MapsIndoors CiscoDNA services to inject the CiscoDNA indoor positioning into MapsIndoors. If you only require this to work for indoor positioning, we would be good with just wrapping the CiscoDNA part. MapsIndoors however has the capability to support wayfinding both outdoors and indoors, so the shown solution implements two Position Providers, one for CoreLocation (`GPSPositionProvider`) and one for CiscoDNA (`CiscoDNAPositionProvider2`). The `CiscoDNAPositionProvider2` subclasses the `GPSPositionProvider` so it can determine whether the CiscoDNA position or the Core Location position should be used in your application. Both Position Providers are written in Objective C, but can of course be used in Swift as well.
 
 The `CiscoDNAPositionProvider2` communicates with some MapsIndoors services to get the Cisco device id, and uses a message subscription service (MQTT) to subscribe for position updates. Each time a Cisco position is received, its age is determined. If the age of the latest Cisco position is above 120 seconds or the application is not connected to the wifi, the CoreLocation position is used instead.
 
-## Integration Guide
+## Integration Guide for iOS
 
 1. Make sure you have [integrated MapsIndoors]({{site.url}}/content/getting-started/ios) succesfully.
 1. Download and unzip [this zip file](https://drive.google.com/file/d/1rbtB872NQ81m93xsxdzxA7gn8MtW1Ksl/view?usp=sharing) containing the CiscoDNA integration source.
@@ -495,21 +494,19 @@ If you need a working project example with MapsIndoors and CiscoDNA (excluding A
 </mi-tab-panel>
 <mi-tab-panel id="web">
 
-## MapsIndoors & CiscoDNA
+## MapsIndoors & CiscoDNA for Web
 
 MapsIndoors is a dynamic mapping platform from MapsPeople that can provide maps of your indoor and outdoor localities and helps you create search and navigation experiences for your local users. CiscoDNA is Cisco’s newest digital and cloud-based IT infrastructure management platform. Among many other things, CiscoDNA can pinpoint the physical and geographic position of devices connected wirelessly to the local IT network.
 
-## User Positioning in MapsIndoors
+## User Positioning in MapsIndoors for Web
 
 In order to show a user's position in an indoor map with MapsIndoors, a Position Provider must be implemented. MapsIndoors does not implement a Position Provider itself, but rely on 3rd party positioning software to create this experience. In an outdoor environment, this Position Provider can be a wrapper of the browser's native Geolocation API.
-
-## Wrapping CiscoDNA Positioning in a Position Provider
-
-Just like in the mock Position Provider example, we need to implement a Position Provider that wraps the MapsIndoors CiscoDNA services to inject the CiscoDNA indoor positioning into MapsIndoors. If you only require this to work for indoor positioning, we would be good with just wrapping the CiscoDNA part. MapsIndoors however has the capability to support wayfinding both outdoors and indoors, so the shown solution implements two Position Providers, one for CoreLocation (`GPSPositionProvider`) and one for CiscoDNA (`CiscoDNAPositionProvider2`). The `CiscoDNAPositionProvider2` subclasses the `GPSPositionProvider` so it can determine whether the CiscoDNA position or the Core Location position should be used in your application.
 
 ## Code Sample
 
 > Please note that the following code sample assumes that you have already succesfully implemented MapsIndoors into your application.
+
+The Web SDK doesn't have a built-in interface like the Android and iOS SDKs. However, by following these steps, you should be able to achieve the same functionality.
 
 The first step is to create the class `CiscoPositioningService`, and the constructor for it.
 
