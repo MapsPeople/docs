@@ -1,6 +1,5 @@
 ---
 title: User Authenticated Booking
-toc: true
 eleventyNavigation:
   parent: data-booking
   key: data-booking-android-user-auth
