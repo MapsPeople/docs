@@ -67,7 +67,7 @@ Create a `Fragment` or `Activity` that contains a map with MapsIndoors loaded.
 Add a `BASE_POSITION MPLatLng` that will be used to calculate a random location for the Robot Vacuums.
 
 ```kotlin
-private var BASE_POSITION = MPLatLng(57.0582502, 9.9504788)
+private val BASE_POSITION = MPLatLng(57.0582502, 9.9504788)
 ```
 
 Then we need to add some variables:

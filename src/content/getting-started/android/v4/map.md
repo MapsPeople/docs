@@ -153,7 +153,7 @@ private fun initMapControl(view: View) {
 <a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/MapBox/mapsindoorsgettingstartedjava/src/main/java/com/mapspeople/mapsindoorsgettingstartedjava/MapsActivity.java#L137-L158">MapsActivity.java</a>
 
 ```java
-void initMapControl(View view) {
+void initMapControl() {
     MPMapConfig mapConfig = new MPMapConfig.Builder(this, mMapboxMap, mMapView, getString(R.string.mapbox_access_token),true).build();
     //Creates a new instance of MapControl
     MapControl.create(mapConfig, (mapControl, miError) -> {
@@ -179,7 +179,7 @@ void initMapControl(View view) {
 <a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/MapBox/mapsindoorsgettingstartedkotlin/src/main/java/com/mapspeople/mapsindoorsgettingstartedkotlin/MapsActivity.kt#L102-L120">MapsActivity.kt</a>
 
 ```kotlin
-private fun initMapControl(view: View) {
+private fun initMapControl() {
     //Creates a new instance of MapControl
     val config = MPMapConfig.Builder(this, mMap, mapView, getString(R.string.mapbox_access_token),true).build()
     MapControl.create(config) { mapControl, miError ->

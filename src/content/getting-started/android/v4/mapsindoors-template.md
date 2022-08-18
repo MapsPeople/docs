@@ -29,6 +29,10 @@ First, you need to [setup at a new project in the Google Cloud Console](https://
 
 When the above 3 APIs and the relevant SDK are enabled, you can retrieve the API key from the [Credentials page](https://console.cloud.google.com/project/_/apiui/credential). On the Credentials page, click _Create credentials_ > _API key_.
 
+### Get Your Mapbox Access Token
+
+If using the Mapbox template you will need a Mapbox access token as well as a download token. You can read how this is done here: [Configure credentials](https://docs.mapbox.com/android/maps/guides/install/#configure-credentials).
+
 ### Get Your MapsIndoors API key
 
 If you are not a customer yet, you can use this demo MapsIndoors API key `{{sdk.tutorialAPIKey}}` to follow this guide, or you can [contact MapsPeople](https://resources.mapspeople.com/contact-us) to get your building drawings processed and hosted by us to receive a unique API key. For the purpose of this guide, both methods will work.

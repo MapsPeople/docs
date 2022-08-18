@@ -49,9 +49,9 @@ MapsIndoors.getDisplayRule(MPSolutionDisplayRule.SELECTION).setPolygonStrokeWidt
 <mi-tab-panel id="kotlin">
 
 ```kotlin
-MapsIndoors.getDisplayRule(MPSolutionDisplayRule.SELECTION)?.setPolygonStrokeColor(blue)
-MapsIndoors.getDisplayRule(MPSolutionDisplayRule.SELECTION)?.setPolygonFillColor(green)
-MapsIndoors.getDisplayRule(MPSolutionDisplayRule.SELECTION)?.setPolygonStrokeWidth(8f)
+MapsIndoors.getDisplayRule(MPSolutionDisplayRule.SELECTION)?.polygonStrokeColor = blue
+MapsIndoors.getDisplayRule(MPSolutionDisplayRule.SELECTION)?.polygonFillColor = green
+MapsIndoors.getDisplayRule(MPSolutionDisplayRule.SELECTION)?.polygonStrokeWidth = 8f
 ```
 
 </mi-tab-panel>
@@ -178,10 +178,10 @@ val mpDisplayRule = MapsIndoors.getDisplayRule("Office")
 mpDisplayRule?.let {
     it.setIcon(R.drawable.ic_baseline_bolt_24, Color.GRAY)
     it.isPolygonVisible = true
-    it.setPolygonZoomFrom(12f)
-    it.setPolygonZoomTo(21f)
-    it.setPolygonFillColor("#0000FF")
-    it.setPolygonStrokeColor("#0000FF")
+    it.polygonZoomFrom = 12f
+    it.polygonZoomTo = 21f
+    it.polygonFillColor = "0000FF"
+    it.polygonStrokeColor = "0000FF"
 }
 ```
 

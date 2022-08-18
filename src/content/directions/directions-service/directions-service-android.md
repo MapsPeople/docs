@@ -34,7 +34,7 @@ directionsService.query(origin, destination);
 <mi-tab-panel id="kotlin">
 
 ```kotlin
-val directionsService = MPDirectionsService(this)
+val directionsService = MPDirectionsService(mContext)
 val directionsRenderer = MPDirectionsRenderer(mMapControl)
 
 val origin = MPPoint(57.057917, 9.950361, 0.0)
@@ -63,7 +63,7 @@ void createRoute(MPLocation mpLocation) {
     //If MPDirectionsService has not been instantiated create it here and assign the results call back to the activity.
     if (mpDirectionsService == null) {
         mpDirectionsService = new MPDirectionsService(mContext);
-        mpDirectionsService.setRouteResultListener(this);
+        mpDirectionsService.setRouteResultListener(this::onRouteResult);
     }
     mpDirectionsService.setTravelMode(MPTravelMode.WALKING);
       //Queries the MPDirectionsService for a route with the hardcoded user location and the point from a location.
@@ -79,7 +79,7 @@ fun createRoute(mpLocation: MPLocation) {
     //If MPDirectionsService has not been instantiated create it here and assign the results call back to the activity.
     if (mpDirectionsService == null) {
         mpDirectionsService = MPDirectionsService(mContext)
-        mpDirectionsService?.setRouteResultListener(this)
+        mpDirectionsService?.setRouteResultListener(this::onRouteResult)
     }
     mpDirectionsService?.setTravelMode(MPTravelMode.WALKING)
     //Queries the MPDirectionsService for a route with the hardcoded user location and the point from a location.
@@ -105,7 +105,7 @@ For wheelchair users or other users with limited mobility, it may be relevant to
 
 ```java/7-8
 void getRoute() {
-  MPDirectionsService directionsService = new MPDirectionsService(this);
+  MPDirectionsService directionsService = new MPDirectionsService(mContext);
   MPDirectionsRenderer directionsRenderer = new MPDirectionsRenderer(mMapControl);
 
   MPPoint origin = new MPPoint(57.057917, 9.950361, 0.0);
@@ -126,7 +126,7 @@ void getRoute() {
 
 ```kotlin/7-8
 fun getRoute() {
-  val directionsService = MPDirectionsService(this)
+  val directionsService = MPDirectionsService(mContext)
   val directionsRenderer = MPDirectionsRenderer(mMapControl)
 
   val origin = MPPoint(57.057917, 9.950361, 0.0)
@@ -229,7 +229,7 @@ For more information about App User Roles, see [this documentation]({{ site.url 
 
 ## Transit Departure and Arrival Time
 
-When using the Transit travel mode, you must set a **departure date** or an **arrival date** on the route using the `setDateTime` method on `MPRoutingProvider`. The `date` parameter is the epoch time, in seconds, as an integer, and it is only possible to use one of these properties at a time.
+When using the Transit travel mode, you must set a **departure date** or an **arrival date** on the route using the `setTime` method on `MPDirectionsService` and declaring if it is a departure or not through `setIsDeparture`. The `date` parameter is the epoch time, in seconds, as an integer, and it is only possible to use one of these properties at a time.
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
