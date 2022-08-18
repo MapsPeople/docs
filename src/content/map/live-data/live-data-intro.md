@@ -52,6 +52,7 @@ A live update is the model for a message carrying one piece of Live Data, for ex
 <mi-tab label="Android - Java" tab-for="java"></mi-tab>
 <mi-tab label="Android - Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab label="iOS" tab-for="ios"></mi-tab>
+<mi-tab label="Web" tab-for="web"></mi-tab>
 <mi-tab-panel id="java">
 
 ## Enable Live Data in Your App in Java
