@@ -66,8 +66,8 @@ It is possible to get a list of bookings using the `MPBookingService.getBookings
 MPBookingService bookingService = MPBookingService.getInstance();
 MPBookingsQuery bookingsQuery = new MPBookingsQuery.Builder()
         .setLocation(myRoomLocation)
-        .setStartTime(new Date())
-        .setEndTime(new Date(System.currentTimeMillis() + 60*60*1000))
+        .setStartTime(new Date(System.currentTimeMillis() - 60*60*1000))
+        .setEndTime(new Date(System.currentTimeMillis() + 24*60*60*1000))
         .build();
 
 bookingService.getBookingsUsingQuery(bookingsQuery, (bookings, error) -> {
