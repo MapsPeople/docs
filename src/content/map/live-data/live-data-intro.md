@@ -337,12 +337,12 @@ Enabling of Live Data through `MPMapControl` can be done as simple as calling `M
   self.mapControl.enableLiveData(MPLiveDomainType.position)
 ```
 
-In the example we are enabling Live Data for the Domain Type "Occupancy". Internal processes will determine which topics are relevant for subscription based on where the map is situated. A default rendering mechanism will also alter the appearance of the relevant locations on the map. As a consequence, the SDK will set [custom display rules]({{ site.url }}/content/map/map-styling/map-styling-ios/) for this rendering. Adding your own or resetting display rules while Live Data is enabled with default rendering may break the rendering for the current `MPMapControl` instance. Hence, you should not use custom display rules unless you are [handling the rendering of Live Data](#rendering-live-data-locations) by your own.
+In the example we are enabling Live Data for the Domain Type "Occupancy". Internal processes will determine which topics are relevant for subscription based on where the map is situated. A default rendering mechanism will also alter the appearance of the relevant locations on the map. As a consequence, the SDK will set [custom display rules]({{ site.url }}/content/map/map-styling/map-styling-ios/) for this rendering. Adding your own or resetting display rules while Live Data is enabled with default rendering may break the rendering for the current `MPMapControl` instance. Hence, you should not use custom display rules unless you are [handling the rendering of Live Data](#rendering-live-data-locations) on your own.
 
-Note that using the `enableLiveData()` methods on `MPMapControl` has some limitations and is thereby not suitable for all use cases.
+Note that using the `enableLiveData()` methods on `MPMapControl` has some limitations and is therefore not suitable for all use cases.
 
 - Since `MPMapControl` will try to determine relevant Live Data subscriptions based on where the map is currently situated, it might not detect Live Data updates of the Position domain representing moving objects entering the visible region of the map.
-- Since `MPMapControl` does not know which Live Updates that are relevant to show it will need to subscribe to all Live Data in the visible region, which, depending on your amount of Live Data, may or may not lead to app performance implications.
+- Since `MPMapControl` does not know which Live Updates are relevant to show, it will need to subscribe to all Live Data in the visible region, which, depending on your amount of Live Data, may or may not impact app performance.
 
 ### Enable Live Data through MPLiveDataManager in iOS
 
@@ -446,7 +446,7 @@ extension MyClass : MPMapControlDelegate {
 
 ### Handling State Changes and Errors in iOS
 
-In order to get notified about state changes and errors happening in the Live Data Manager, `MPLiveDataManagerDelegate` utilizes other methods as shown in the example below:
+In order to get notified about state changes and errors happening in the Live Data Manager, `MPLiveDataManagerDelegate` provides methods as shown in the example below:
 
 ```swift
 extension MyClass : MPLiveDataManagerDelegate {
@@ -474,7 +474,7 @@ extension MyClass : MPLiveDataManagerDelegate {
 }
 ```
 
-Live Updates are of course dependent on network connectivity, so the Live Data Manager will try to recover from common errors like network dropout. On the contrary, the Live Data Manager will not try to recover from subscription errors alone as this could be caused by a non-existing topic for a given Dataset, thus it does not make sense retrying the failing subscription.
+Live Updates are of course dependent on network connectivity, so the Live Data Manager will try to recover from common errors like network dropout. However, the Live Data Manager will not try to recover from subscription errors alone as this could be caused by a non-existing topic for a given Dataset, thus it does not make sense retrying the failing subscription.
 
 To learn more, visit the [Live Data tutorial for iOS]({{ site.url }}/content/map/live-data/live-data-intro-ios/) and the [reference guide](https://app.mapsindoors.com/mapsindoors/reference/ios/v3/interface_m_p_live_data_manager.html).
 

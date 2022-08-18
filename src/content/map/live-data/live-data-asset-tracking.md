@@ -7,15 +7,15 @@ eleventyNavigation:
   order: 30
 ---
 
+There are many potential use cases of the Live Data implementation provided in the SDK. In this guide, we will run through how to implement some Asset Tracking.
+
+Scenarios where asset tracking would be useful could for example be a hospital wishing to keep track of resources such as wheelchairs, both monitoring their location, and whether or not they are currently being used. This is also going to be the example used in this tutorial.
+
 <mi-tabs>
 <mi-tab label="Android - Java" tab-for="java"></mi-tab>
 <mi-tab label="Android - Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab label="iOS" tab-for="ios"></mi-tab>
 <mi-tab-panel id="java">
-
-There are many potential use cases of the Live Data implementation provided in the SDK. In this guide, we will run through how to implement some Asset Tracking.
-
-Scenarios where asset tracking would be useful could for example be a hospital wishing to keep track of resources such as wheelchairs, both monitoring their location, and whether or not they are currently being used. This is also going to be the example used in this tutorial.
 
 > This tutorial also assumes that you have set up the system and integration that you wish to use to monitor your assets. This tutorial only demonstrates how to display this in MapsIndoors, as accounting for all variations of integrations would be unfeasible. All concepts described in this tutorial can be read about in more detail at [Live Data Introduction for Android]({{ site.url }}/content/map/live-data/live-data-intro-android) and [Live Data Tutorial for Android]({{ site.url }}/content/map/live-data/live-data-tutorial-android).
 
@@ -34,10 +34,6 @@ Information about how to handle [listening for Live Data Updates]({{ site.url }}
 
 </mi-tab-panel>
 <mi-tab-panel id="kotlin">
-
-There are many potential use cases of the Live Data implementation provided in the SDK. In this guide, we will run through how to implement some Asset Tracking.
-
-Scenarios where asset tracking would be useful could for example be a hospital wishing to keep track of resources such as wheelchairs, both monitoring their location, and whether or not they are currently being used. This is also going to be the example used in this tutorial.
 
 > This tutorial also assumes that you have set up the system and integration that you wish to use to monitor your assets. This tutorial only demonstrates how to display this in MapsIndoors, as accounting for all variations of integrations would be unfeasible. All concepts described in this tutorial can be read about in more detail at [Live Data Introduction for Android]({{ site.url }}/content/map/live-data/live-data-intro-android) and [Live Data Tutorial for Android]({{ site.url }}/content/map/live-data/live-data-tutorial-android).
 
@@ -59,10 +55,6 @@ Information about how to handle [listening for Live Data Updates]({{ site.url }}
 
 <!-- Known Issues -->
 {% include "src/content/shared/known-issues-ios.md" %}
-
-There are many potential use cases of the Live Data implementation provided in the SDK. In this guide, we will run through how to implement some Asset Tracking.
-
-Scenarios where asset tracking would be useful could for example be a hospital wishing to keep track of resources such as wheelchairs, both monitoring their location, and whether or not they are currently being used. This is also going to be the example used in this tutorial.
 
 > This tutorial also assumes that you have set up the system and integration that you wish to use to monitor your assets. This tutorial only demonstrates how to display this in MapsIndoors, as accounting for all variations of integrations would be unfeasible. All concepts described in this tutorial can be read about in more detail at [Live Data Introduction for iOS]({{ site.url }}/content/map/live-data/live-data-intro-ios) and [Live Data Tutorial for iOS]({{ site.url }}/content/map/live-data/live-data-tutorial-ios).
 

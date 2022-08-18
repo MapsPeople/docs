@@ -384,7 +384,7 @@ fileprivate func toggleLiveData(_ button: UIButton, _ domainType: String) {
 }
 ```
 
-Define an objective-c method `togglePosition()` that will receive events from your `positionButton`. In this method create a `position` Topic Criteria and call `togglePosition` with the button and the Topic Criteria.
+Define an Objective-C method `togglePosition()` that will receive events from your `positionButton`. In this method create a `position` Topic Criteria and call `togglePosition` with the button and the Topic Criteria.
 
 ```swift
 @objc func togglePosition(button:UIButton) {
@@ -392,7 +392,7 @@ Define an objective-c method `togglePosition()` that will receive events from yo
 }
 ```
 
-Define an objective-c method `toggleOccupancy()` that will receive events from your `occupancyButton`. In this method create a `occupancy` Topic Criteria and call `togglePosition` with the button and the Topic Criteria.
+Define an Objective-C method `toggleOccupancy()` that will receive events from your `occupancyButton`. In this method create a `occupancy` Topic Criteria and call `togglePosition` with the button and the Topic Criteria.
 
 ```swift
 @objc func toggleOccupancy(button:UIButton) {
@@ -448,6 +448,7 @@ Create an extension for `LiveDataController` to make it adopt the `MPMappedLocat
 
 ```swift
 extension LiveDataController : MPMappedLocationUpdateHandler {
+    }
 ```
 
 In the `LiveDataController` extension, add the method `handleLiveUpdate()` that handles a Live Update for a `MPLocation`. This method should only handle the `occupancy` Domain Type, so the first thing is to check for a `MPLiveUpdate` object for the `occupancy` Domain Type. After this verification, do the following:
