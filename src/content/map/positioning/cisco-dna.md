@@ -500,7 +500,7 @@ MapsIndoors is a dynamic mapping platform from MapsPeople that can provide maps 
 
 ## User Positioning in MapsIndoors for Web
 
-In order to show a user's position in an indoor map with MapsIndoors, a Position Provider must be implemented. MapsIndoors does not implement a Position Provider itself, but rely on 3rd party positioning software to create this experience. In an outdoor environment, this Position Provider can be a wrapper of the browser's native Geolocation API.
+In order to show a user's position on an indoor map with MapsIndoors, a Position Provider must be implemented. The MapsIndoors JavaScript SDK does not provide a default Position Provider but relies on 3rd party positioning software to create this experience. In an outdoor environment, this Position Provider can be a wrapper of the browser's native Geolocation API.
 
 ## Code Sample
 
