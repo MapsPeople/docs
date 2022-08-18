@@ -506,7 +506,7 @@ In order to show a user's position on an indoor map with MapsIndoors, a Position
 
 > Please note that the following code sample assumes that you have already succesfully implemented MapsIndoors into your application.
 
-The Web SDK doesn't have a built-in interface like the Android and iOS SDKs. However, by following these steps, you should be able to achieve the same functionality.
+The JavaScript SDK doesn't have a built-in interface like the Android and iOS SDKs. However, by following these steps, you should be able to achieve the same functionality.
 
 The first step is to create the class `CiscoPositioningService`, and the constructor for it.
 
