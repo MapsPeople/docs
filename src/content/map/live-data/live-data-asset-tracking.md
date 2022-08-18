@@ -23,12 +23,12 @@ Enabling Live Data through `MapControl` is an easy way to get Live Data running 
 
 ```java
 mMapControl.init(error -> {
-    mMapControl.enableLiveData(LiveDataDomainTypes.OCCUPANCY_DOMAIN);
+    mMapControl.enableLiveData(LiveDataDomainTypes.POSITION_DOMAIN);
     mMapControl.enableLiveData(LiveDataDomainTypes.AVAILABILITY_DOMAIN);
 });
 ```
 
-`MapControl` has a default way of rendering the Live Data Location called by this method. If you wish to render the Live Data in another way, you can add handlers for this, as described in [this section]({{ site.url }}/content/map/live-data/live-data-intro-android/#rendering-live-data-locations).
+`MapControl` has a default way of rendering the Live Data for POIs, which is enabled by invoking `enableLiveData()`. If you wish to render the Live Data in another way, you can add handlers for this, as described in [this section]({{ site.url }}/content/map/live-data/live-data-intro-android/#rendering-live-data-locations).
 
 Information about how to handle [listening for Live Data Updates]({{ site.url }}/content/map/live-data/live-data-intro-android/#listening-for-live-updates) could also be extremely relevant for a use-case such as the one described in this tutorial, since a user might need to receive the latest information possible on where available wheelchairs are located.
 
@@ -45,12 +45,12 @@ Enabling Live Data through `MapControl` is an easy way to get Live Data running 
 
 ```kotlin
 mMapControl.init {
-    mMapControl.enableLiveData(LiveDataDomainTypes.OCCUPANCY_DOMAIN)
+    mMapControl.enableLiveData(LiveDataDomainTypes.POSITION_DOMAIN)
     mMapControl.enableLiveData(LiveDataDomainTypes.AVAILABILITY_DOMAIN)
 }
 ```
 
-`MapControl` has a default way of rendering the Live Data Location called by this method. If you wish to render the Live Data in another way, you can add handlers for this, as described in [this section]({{ site.url }}/content/map/live-data/live-data-intro-android/#rendering-live-data-locations).
+`MapControl` has a default way of rendering the Live Data for POIs, which is enabled by invoking `enableLiveData()`. If you wish to render the Live Data in another way, you can add handlers for this, as described in [this section]({{ site.url }}/content/map/live-data/live-data-intro-android/#rendering-live-data-locations).
 
 Information about how to handle [listening for Live Data Updates]({{ site.url }}/content/map/live-data/live-data-intro-android/#listening-for-live-updates) could also be extremely relevant for a use-case such as the one described in this tutorial, since a user might need to receive the latest information possible on where available wheelchairs are located.
 
