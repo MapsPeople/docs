@@ -14,4 +14,20 @@ First, initialize a `PositionProvider`, which can be used with `MPDirectionsQuer
 
 In order to use the `PositionProvider` to extract a `MPPoint`, you need to use `MapsIndoors.latestPositionResult.geometry`. This returns an `MPPoint`. which will serve as the origin point for the directions query. This `MPPoint` is then given to the method `MPDirectionsQuery initWithOriginPoint:destination:`.
 
+```swift
+let userPosition = MapsIndoors.positionProvider?.latestPositionResult?.geometry
+let destination = MPPoint.init(lat: 57.058038, lon: 9.950509, zValue:0)!
+
+if let origin = userPosition {
+    
+    let directionsQuery = MPDirectionsQuery.init(originPoint: origin, destination: destination)
+
+    directions.routing(with: directionsQuery) { (route, error) in
+
+    }
+}
+```
+
+Further details on how user positioning works, and how to display it, can be found [here]({{ site.url}}/content/map/positioning/blue-dot/).
+
 This result's in directions queries originating from the user's current location.
