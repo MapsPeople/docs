@@ -58,7 +58,7 @@ From MapsIndoors SDK version 3.32.0 and upwards, in order for CocoaPods to fetch
     target 'YOUR_APPLICATION_TARGET_NAME_HERE' do
       use_frameworks!
 
-      pod 'MapsIndoors', '~>3.34.0'
+      pod 'MapsIndoors', '~>3.41.0'
 
     end
     ```
