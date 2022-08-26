@@ -19,7 +19,7 @@ let userPosition = MapsIndoors.positionProvider?.latestPositionResult?.geometry
 let destination = MPPoint.init(lat: 57.058038, lon: 9.950509, zValue:0)!
 
 if let origin = userPosition {
-    
+
     let directionsQuery = MPDirectionsQuery.init(originPoint: origin, destination: destination)
 
     directions.routing(with: directionsQuery) { (route, error) in
