@@ -1,0 +1,1 @@
+The following section rely on the existence of Live Position Data. If you do not have access to a MapsIndoors Dataset that have a Live Data integration, you should use our demo API key: `{{sdk.tutorialAPIKey}}`.
