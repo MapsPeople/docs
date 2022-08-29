@@ -1,7 +1,7 @@
 ---
 title: Map
 eleventyNavigation:
-  parent: docs
+  parent: legacy-android-v3
   key: v3-map
   title: Map
   order: 20

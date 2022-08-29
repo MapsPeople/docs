@@ -1,7 +1,7 @@
 ---
 title: Directions & Routing
 eleventyNavigation:
-  parent: docs
+  parent: legacy-android-v3
   key: v3-directions
   title: Directions & Routing
   order: 30

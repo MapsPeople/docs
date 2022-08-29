@@ -90,6 +90,10 @@ module.exports = function (eleventyConfig) {
         return collectionApi.getFilteredByTags("legacy");
     });
 
+    eleventyConfig.addCollection("legacy-android-v3", function (collectionApi) {
+        return collectionApi.getFilteredByTags("legacy-android-v3");
+    });
+
     eleventyConfig.addCollection("docs", function (collectionApi) {
         return collectionApi.getFilteredByTags("docs");
     });

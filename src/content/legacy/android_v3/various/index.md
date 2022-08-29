@@ -5,6 +5,6 @@ destination: /content/various/glossary/
 eleventyNavigation:
   key: v3-various
   title: Various
-  parent: docs
+  parent: legacy-android-v3
   order: 60
 ---

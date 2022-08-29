@@ -1,7 +1,7 @@
 ---
 title: Searching
 eleventyNavigation:
-  parent: docs
+  parent: legacy-android-v3
   key: v3-searching
   title: Searching
   order: 40
