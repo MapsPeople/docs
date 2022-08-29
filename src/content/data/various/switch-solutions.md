@@ -1,6 +1,5 @@
 ---
 title: Switching Solutions
-toc: true
 eleventyNavigation:
   parent: data-various
   key: data-various-switching-solutions
