@@ -221,7 +221,7 @@ googleMap.setMapStyle(MapStyleOptions.loadRawResourceStyle(this, R.raw.style_jso
 
 The JSON string that you apply in this case can be built using the [Google Maps Styling Wizard](https://mapstyle.withgoogle.com/). Read more about styling the Google Map in the [Google Maps Android SDK Docs](https://developers.google.com/maps/documentation/android-sdk/styling).
 
-## Style the Map using Mapbox Styling
+## Style the Map using Mapbox Styling with Kotlin
 
 > Further documentation on the Mapbox styling can be found here: [https://docs.mapbox.com/android/maps/guides/styles/set-a-style/](https://docs.mapbox.com/android/maps/guides/styles/set-a-style/)
 
