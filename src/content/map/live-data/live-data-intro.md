@@ -62,15 +62,13 @@ A live update is the model for a message carrying one piece of Live Data, for ex
 Enabling Live Data through the `MapControl` is an easy way to get Live Data running in your app.
 
 ```java
-mMapControl.init(error -> {
-    mMapControl.enableLiveData(LiveDataDomainTypes.OCCUPANCY_DOMAIN);
-    mMapControl.enableLiveData(LiveDataDomainTypes.AVAILABILITY_DOMAIN);
-});
+mapControl.enableLiveData(LiveDataDomainTypes.OCCUPANCY_DOMAIN);
+mapControl.enableLiveData(LiveDataDomainTypes.AVAILABILITY_DOMAIN);
 ```
 
 In the example we enable Live Data for the "Availability" and "Occupancy" Domain types. Internal processes will determine which Topics are relevant for subscription based on where the map is situated. A default rendering mechanism will also alter the appearance of the relevant Locations on the map. As a consequence, the SDK will set custom Display Rules for this rendering. Adding your own, or resetting Display Rules, while Live Data is enabled with default rendering, may break the rendering for the current MapControl instance. Hence, you should not use custom Display Rules unless you are handling the rendering of Live Data on your own.
 
- You can disable the Live Data again by calling `disableLiveData(String domainType)`.
+You can disable the Live Data again by calling `disableLiveData(String domainType)`.
 
 Note that using the `enableLiveData` methods on `MapControl` has some limitations, and is thereby not suitable for all use cases.
 
@@ -193,15 +191,13 @@ Live Updates are dependent on network connectivity, so the Live Data Manager wil
 Enabling Live Data through the `MapControl` is an easy way to get Live Data running in your app.
 
 ```kotlin
-mMapControl.init {
-    mMapControl.enableLiveData(LiveDataDomainTypes.OCCUPANCY_DOMAIN)
-    mMapControl.enableLiveData(LiveDataDomainTypes.AVAILABILITY_DOMAIN)
-}
+mMapControl.enableLiveData(LiveDataDomainTypes.OCCUPANCY_DOMAIN)
+mMapControl.enableLiveData(LiveDataDomainTypes.AVAILABILITY_DOMAIN)
 ```
 
 In the example we enable Live Data for the "Availability" and "Occupancy" Domain types. Internal processes will determine which Topics are relevant for subscription based on where the map is situated. A default rendering mechanism will also alter the appearance of the relevant Locations on the map. As a consequence, the SDK will set custom Display Rules for this rendering. Adding your own, or resetting Display Rules, while Live Data is enabled with default rendering, may break the rendering for the current MapControl instance. Hence, you should not use custom Display Rules unless you are handling the rendering of Live Data on your own.
 
- You can disable the Live Data again by calling `disableLiveData(String domainType)`.
+You can disable the Live Data again by calling `disableLiveData(String domainType)`.
 
 Note that using the `enableLiveData` methods on `MapControl` has some limitations, and is thereby not suitable for all use cases.
 
