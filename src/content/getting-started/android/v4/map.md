@@ -24,34 +24,58 @@ We start by initializing `MapsIndoors`. `MapsIndoors` is used to get and store a
 Place the following initialization code in the `onCreate` method in the `MapsActivity` that displays the Google map. You should also assign the `mapFragment` view to a local variable, as we will use this later to initialize `MapControl` inside the `onCreate`, after it has been created:
 
 <mi-tabs>
-<mi-tab label="Java" tab-for="java"></mi-tab>
-<mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
-<mi-tab-panel id="java">
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L60-L65">MapsActivity.java</a>
+<mi-tab label="Java-Google" tab-for="java-google"></mi-tab>
+<mi-tab label="Kotlin-Google" tab-for="kotlin-google"></mi-tab>
+<mi-tab label="Java-Mapbox" tab-for="java-Mapbox"></mi-tab>
+<mi-tab label="Kotlin-Mapbox" tab-for="kotlin-Mapbox"></mi-tab>
+<mi-tab-panel id="java-google">
+<a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/Google_Maps/mapsindoorsgettingstartedjava/src/main/java/com/mapspeople/mapsindoorsgettingstartedjava/MapsActivity.java#L64-L67">MapsActivity.java</a>
 
 ```java
 protected void onCreate(Bundle savedInstanceState) {
     ...
     mMapView = mapFragment.getView();
-    MapsIndoors.initialize(getApplicationContext(), "YOUR_MAPSINDOORS_API_KEY");
-    MapsIndoors.setGoogleAPIKey(“YOUR_GOOGLE_API_KEY”);
+    MapsIndoors.load(getApplicationContext(), "YOUR_MAPSINDOORS_API_KEY", null);
     ...
 }
 ```
 
 </mi-tab-panel>
-<mi-tab-panel id="kotlin">
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/MapsActivity.kt#L50-L55">MapsActivity.kt</a>
+<mi-tab-panel id="kotlin-google">
+<a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/Google_Maps/mapsindoorsgettingstartedkotlin/src/main/java/com/mapspeople/mapsindoorsgettingstartedkotlin/MapsActivity.kt#L52-L56">MapsActivity.kt</a>
 
 ```kotlin
 override fun onCreate(savedInstanceState: Bundle?) {
     ...
-    MapsIndoors.initialize(applicationContext, "YOUR_MAPSINDOORS_API_KEY")
-    MapsIndoors.setGoogleAPIKey(“YOUR_GOOGLE_API_KEY”)
+    MapsIndoors.load(applicationContext, "YOUR_MAPSINDOORS_API_KEY", null)
 
     mapFragment.view?.let {
         mapView = it
     }
+    ...
+}
+```
+
+</mi-tab-panel>
+<mi-tab-panel id="java-Mapbox">
+<a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/MapBox/mapsindoorsgettingstartedjava/src/main/java/com/mapspeople/mapsindoorsgettingstartedjava/MapsActivity.java#L65">MapsActivity.java</a>
+
+```java
+protected void onCreate(Bundle savedInstanceState) {
+    ...
+    MapsIndoors.load(getApplicationContext(), "YOUR_MAPSINDOORS_API_KEY", null);
+    ...
+}
+```
+
+</mi-tab-panel>
+<mi-tab-panel id="kotlin-Mapbox">
+<a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/MapBox/mapsindoorsgettingstartedkotlin/src/main/java/com/mapspeople/mapsindoorsgettingstartedkotlin/MapsActivity.kt#L49">MapsActivity.kt</a>
+
+```kotlin
+override fun onCreate(savedInstanceState: Bundle?) {
+    ...
+    MapsIndoors.load(applicationContext, "YOUR_MAPSINDOORS_API_KEY", null)
     ...
 }
 ```
@@ -70,26 +94,27 @@ Here we use Google Maps logic to apply geodata onto the map. This also means we 
 Start by creating an `initMapControl` method which is used to initiate the `MapControl` and assign it to our Google map:
 
 <mi-tabs>
-<mi-tab label="Java" tab-for="java"></mi-tab>
-<mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
-<mi-tab-panel id="java">
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L135-L168">MapsActivity.java</a>
+<mi-tab label="Java-Google" tab-for="java-google"></mi-tab>
+<mi-tab label="Kotlin-Google" tab-for="kotlin-google"></mi-tab>
+<mi-tab label="Java-Mapbox" tab-for="java-mapbox"></mi-tab>
+<mi-tab label="Kotlin-Mapbox" tab-for="kotlin-mapbox"></mi-tab>
+<mi-tab-panel id="java-google">
+<a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/Google_Maps/mapsindoorsgettingstartedjava/src/main/java/com/mapspeople/mapsindoorsgettingstartedjava/MapsActivity.java#L146-L168">MapsActivity.java</a>
 
 ```java
 void initMapControl(View view) {
-    //Creates a new instance of MapControl
-    mMapControl = new MapControl(this);
-    //Sets the Google map object and the map view to the MapControl
-    mMapControl.setGoogleMap(mMap, view);
-    //Initiates the MapControl
-    mMapControl.init(miError -> {
+    MPMapConfig mapConfig = new MPMapConfig.Builder(this, mMap, getString(R.string.google_maps_key), view, true).build();
+    MapControl.create(mapConfig, (mapControl, miError) -> {
+        mMapControl = mapControl;
+        //Enable Live Data on the map
+        enableLiveData();
         if (miError == null) {
             //No errors so getting the first venue (in the white house solution the only one)
-            Venue venue = MapsIndoors.getVenues().getCurrentVenue();
+            MPVenue venue = MapsIndoors.getVenues().getCurrentVenue();
             runOnUiThread( ()-> {
                 if (venue != null) {
                     //Animates the camera to fit the new venue
-                    mMap.animateCamera(CameraUpdateFactory.newLatLngBounds(venue.getLatLngBoundingBox(), 19));
+                        mMap.animateCamera(CameraUpdateFactory.newLatLngBounds(LatLngBoundsConverter.toLatLngBounds(venue.getBounds()), 19));
                 }
             });
         }
@@ -98,23 +123,77 @@ void initMapControl(View view) {
 ```
 
 </mi-tab-panel>
-<mi-tab-panel id="kotlin">
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/MapsActivity.kt#L108-L134">MapsActivity.kt</a>
+<mi-tab-panel id="kotlin-google">
+<a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/Google_Maps/mapsindoorsgettingstartedkotlin/src/main/java/com/mapspeople/mapsindoorsgettingstartedkotlin/MapsActivity.kt#L117-L135">MapsActivity.kt</a>
 
 ```kotlin
 private fun initMapControl(view: View) {
+    MPMapConfig mapConfig = new MPMapConfig.Builder(this, mMap, getString(R.string.google_maps_key), view, true).build();
     //Creates a new instance of MapControl
-    mMapControl = MapControl(this)
-    //Sets the Google map object and the map view to the MapControl
-    mMapControl.setGoogleMap(mMap, view)
-    mMapControl.init { miError ->
+    MapControl.create(config) { mapControl, miError ->
         if (miError == null) {
+            mMapControl = mapControl!!
+            //Enable live data on the map
+            enableLiveData()
             //No errors so getting the first venue (in the white house solution the only one)
             val venue = MapsIndoors.getVenues()?.currentVenue
+            venue?.bounds?.let {
+                runOnUiThread {
+                    //Animates the camera to fit the new venue
+                    mMap.animateCamera(CameraUpdateFactory.newLatLngBounds(LatLngBoundsConverter.toLatLngBounds(it), 19))
+                }
+            }
+        }
+    }
+}
+```
 
-            runOnUiThread {
-                //Animates the camera to fit the new venue
-                mMap.animateCamera(CameraUpdateFactory.newLatLngBounds(venue?.latLngBoundingBox, 19));
+</mi-tab-panel>
+<mi-tab-panel id="java-mapbox">
+<a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/MapBox/mapsindoorsgettingstartedjava/src/main/java/com/mapspeople/mapsindoorsgettingstartedjava/MapsActivity.java#L137-L158">MapsActivity.java</a>
+
+```java
+void initMapControl() {
+    MPMapConfig mapConfig = new MPMapConfig.Builder(this, mMapboxMap, mMapView, getString(R.string.mapbox_access_token),true).build();
+    //Creates a new instance of MapControl
+    MapControl.create(mapConfig, (mapControl, miError) -> {
+        mMapControl = mapControl;
+        //Enable Live Data on the map
+        enableLiveData();
+        if (miError == null) {
+            //No errors so getting the first venue (in the white house solution the only one)
+            MPVenue venue = MapsIndoors.getVenues().getCurrentVenue();
+            runOnUiThread( ()-> {
+                if (venue != null) {
+                    //Animates the camera to fit the new venue
+                    CameraAnimationsUtils.flyTo(mMapboxMap, mMapboxMap.cameraForCoordinateBounds(CoordinateBoundsConverter.toCoordinateBounds(venue.getBounds()), new EdgeInsets(0,0,0,0), null, null));
+                }
+            });
+        }
+    });
+}
+```
+
+</mi-tab-panel>
+<mi-tab-panel id="kotlin-mapbox">
+<a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/MapBox/mapsindoorsgettingstartedkotlin/src/main/java/com/mapspeople/mapsindoorsgettingstartedkotlin/MapsActivity.kt#L102-L120">MapsActivity.kt</a>
+
+```kotlin
+private fun initMapControl() {
+    //Creates a new instance of MapControl
+    val config = MPMapConfig.Builder(this, mMap, mapView, getString(R.string.mapbox_access_token),true).build()
+    MapControl.create(config) { mapControl, miError ->
+        if (miError == null) {
+            mMapControl = mapControl!!
+            //Enable live data on the map
+            enableLiveData()
+            //No errors so getting the first venue (in the white house solution the only one)
+            val venue = MapsIndoors.getVenues()?.currentVenue
+            venue?.bounds?.let {
+                runOnUiThread {
+                    //Animates the camera to fit the new venue
+                    mMap.flyTo(mMap.cameraForCoordinateBounds(CoordinateBoundsConverter.toCoordinateBounds(it)))
+                }
             }
         }
     }
@@ -127,10 +206,12 @@ private fun initMapControl(view: View) {
 In your `onMapReady` callback function, assign the `mMap` variable with the `GoogleMap` you get from the callback and call the `initMapControl` method with the `mMapView` you assigned in the `onCreate` to set up a Google map with MapsIndoors Venues, Buildings and Locations:
 
 <mi-tabs>
-<mi-tab label="Java" tab-for="java"></mi-tab>
-<mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
-<mi-tab-panel id="java">
-<a href="https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L135-L168">MapsActivity.java</a>
+<mi-tab label="Java-Google" tab-for="java-google"></mi-tab>
+<mi-tab label="Kotlin-Google" tab-for="kotlin-google"></mi-tab>
+<mi-tab label="Java-Mapbox" tab-for="java-mapbox"></mi-tab>
+<mi-tab label="Kotlin-Mapbox" tab-for="kotlin-mapbox"></mi-tab>
+<mi-tab-panel id="java-google">
+<a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/Google_Maps/mapsindoorsgettingstartedjava/src/main/java/com/mapspeople/mapsindoorsgettingstartedjava/MapsActivity.java#L138-L144">MapsActivity.java</a>
 
 ```java
 @Override
@@ -144,8 +225,8 @@ public void onMapReady(GoogleMap googleMap) {
 ```
 
 </mi-tab-panel>
-<mi-tab-panel id="kotlin">
-<a href="https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/MapsActivity.kt#L108-L134">MapsActivity.kt</a>
+<mi-tab-panel id="kotlin-google">
+<a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/Google_Maps/mapsindoorsgettingstartedkotlin/src/main/java/com/mapspeople/mapsindoorsgettingstartedkotlin/MapsActivity.kt#L109-L115">MapsActivity.kt</a>
 
 ```kotlin
 override fun onMapReady(googleMap: GoogleMap) {
@@ -158,12 +239,38 @@ override fun onMapReady(googleMap: GoogleMap) {
 ```
 
 </mi-tab-panel>
+<mi-tab-panel id="java-mapbox">
+<a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/MapBox/mapsindoorsgettingstartedjava/src/main/java/com/mapspeople/mapsindoorsgettingstartedjava/MapsActivity.java#L118">MapsActivity.java</a>
+
+```java
+protected void onCreate(Bundle savedInstanceState) {
+    ...
+    initMapControl();
+    ...
+}
+```
+
+</mi-tab-panel>
+<mi-tab-panel id="kotlin-mapbox">
+<a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/MapBox/mapsindoorsgettingstartedkotlin/src/main/java/com/mapspeople/mapsindoorsgettingstartedkotlin/MapsActivity.kt#L99">MapsActivity.kt</a>
+
+```kotlin
+override fun onCreate(savedInstanceState: Bundle?) {
+    ...
+    initMapControl();
+    ...
+}
+```
+
+</mi-tab-panel>
 </mi-tabs>
 
 Expected result:
 
 ![Map result](/assets/android/getting-started/map_gif.gif)
 
-See the full example of MapsActivity here [MapsActivity.java](https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java) or [MapsActivity.kt](https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/MapsActivity.kt)
+See the full example of MapsActivity here: [MapsActivity.java](https://github.com/MapsPeople/MapsIndoors-Android-Examples/tree/main/Google_Maps/mapsindoorsgettingstartedjava) or [MapsActivity.kt](https://github.com/MapsPeople/MapsIndoors-Android-Examples/tree/main/Google_Maps/mapsindoorsgettingstartedkotlin)
 
-<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/content/getting-started/android/search/">Next up: Search</a></p>
+The Mapbox examples can be found here: [MapsActivity.java](https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/MapBox/mapsindoorsgettingstartedjava/src/main/java/com/mapspeople/mapsindoorsgettingstartedjava/MapsActivity.java) or [MapsActivity.kt](https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/MapBox/mapsindoorsgettingstartedkotlin/src/main/java/com/mapspeople/mapsindoorsgettingstartedkotlin/MapsActivity.kt)
+
+<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/content/getting-started/android/v4/search/">Next up: Search</a></p>
