@@ -53,7 +53,7 @@ User roles can also be set for a specific direction query using `DirectionsQuery
 To fetch User Roles from the SDK, you call `getUserRoles`:
 
 ```java
-final List<UserRole> cmsUserRoles = MapsIndoors.getUserRoles();
+final List<MPUserRole> cmsUserRoles = MapsIndoors.getUserRoles();
 ```
 
 To set User Roles, `applyUserRoles` is used:
