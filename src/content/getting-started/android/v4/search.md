@@ -30,7 +30,7 @@ Create a search method that takes a search string as a parameter on your `MapsAc
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L170-L216">MapsActivity.java</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/Google_Maps/mapsindoorsgettingstartedjava/src/main/java/com/mapspeople/mapsindoorsgettingstartedjava/MapsActivity.java#L170-L216">MapsActivity.java</a>
 
 ```java
 void search(String searchQuery) {
@@ -47,7 +47,7 @@ void search(String searchQuery) {
 
 </mi-tab-panel>
 <mi-tab-panel id="kotlin">
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/MapsActivity.kt#L136-L175">MapsActivity.kt</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/Google_Maps/mapsindoorsgettingstartedkotlin/src/main/java/com/mapspeople/mapsindoorsgettingstartedkotlin/MapsActivity.kt#L137-L176">MapsActivity.kt</a>
 
 ```kotlin
 private fun search(searchQuery: String) {
@@ -74,7 +74,7 @@ To call our search method with the text in the search input field, we then add a
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L70-L91">MapsActivity.java</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/Google_Maps/mapsindoorsgettingstartedjava/src/main/java/com/mapspeople/mapsindoorsgettingstartedjava/MapsActivity.java#L73-L93">MapsActivity.java</a>
 
 ```java
 protected void onCreate(Bundle savedInstanceState) {
@@ -107,7 +107,7 @@ protected void onCreate(Bundle savedInstanceState) {
 
 </mi-tab-panel>
 <mi-tab-panel id="kotlin">
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/MapsActivity.kt#L61-L83">MapsActivity.kt</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/Google_Maps/mapsindoorsgettingstartedkotlin/src/main/java/com/mapspeople/mapsindoorsgettingstartedkotlin/MapsActivity.kt#L62-L84">MapsActivity.kt</a>
 
 ```kotlin
 override fun onCreate(savedInstanceState: Bundle?) {
@@ -149,7 +149,7 @@ Observe that the `SearchFragment`is just a simple _fragment_ with a `RecyclerVie
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/SearchFragment.java">SearchFragment.java</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/Google_Maps/mapsindoorsgettingstartedjava/src/main/java/com/mapspeople/mapsindoorsgettingstartedjava/SearchFragment.java">SearchFragment.java</a>
 
 ```java
 public class SearchFragment extends Fragment {
@@ -179,7 +179,7 @@ public class SearchFragment extends Fragment {
 
 </mi-tab-panel>
 <mi-tab-panel id="kotlin">
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/SearchFragment.kt">SearchFragment.kt</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/Google_Maps/mapsindoorsgettingstartedkotlin/src/main/java/com/mapspeople/mapsindoorsgettingstartedkotlin/SearchFragment.kt">SearchFragment.kt</a>
 
 ```kotlin
 class SearchFragment : Fragment() {
@@ -216,7 +216,7 @@ Create a getter for your `MapControl` object on the `MapsActivity` so that it ca
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L119-L125">MapsActivity.java</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/Google_Maps/mapsindoorsgettingstartedjava/src/main/java/com/mapspeople/mapsindoorsgettingstartedjava/MapsActivity.java#L121-L127">MapsActivity.java</a>
 
 ```java
 public MapControl getMapControl() {
@@ -226,7 +226,7 @@ public MapControl getMapControl() {
 
 </mi-tab-panel>
 <mi-tab-panel id="kotlin">
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/MapsActivity.kt#L177-L179">MapsActivity.kt</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/Google_Maps/mapsindoorsgettingstartedkotlin/src/main/java/com/mapspeople/mapsindoorsgettingstartedkotlin/MapsActivity.kt#L178-L180">MapsActivity.kt</a>
 
 ```kotlin
 fun getMapControl(): MapControl {
@@ -243,7 +243,7 @@ Inside the `SearchItemAdapter` implement logic to display the locations you get 
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/SearchItemAdapter.java">SearchItemAdapter.java</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/Google_Maps/mapsindoorsgettingstartedjava/src/main/java/com/mapspeople/mapsindoorsgettingstartedjava/SearchItemAdapter.java">SearchItemAdapter.java</a>
 
 ```java
 class SearchItemAdapter extends RecyclerView.Adapter<ViewHolder> {
@@ -258,23 +258,14 @@ class SearchItemAdapter extends RecyclerView.Adapter<ViewHolder> {
         holder.text.setText(mLocations.get(position).getName());
 
         if (mMapActivity != null) {
-            //We start by checking if there is a specific Location icon assigned to the location
-            LocationDisplayRule locationDisplayRule = mMapActivity.getMapControl().getDisplayRule(mLocations.get(position));
+            MPDisplayRule locationDisplayRule = MapsIndoors.getDisplayRule(mLocations.get(position));
 
-            if (locationDisplayRule != null && locationDisplayRule.getIcon() != null) {
-                //There is a specific icon on this location so we use that
-                mMapActivity.runOnUiThread(()-> {
-                    holder.imageView.setImageBitmap(locationDisplayRule.getIcon());
-                });
-            }else {
-                //Location does not have a specific displayRule, we instead use type Display rule
-                LocationDisplayRule typeDisplayRule = mMapActivity.getMapControl().getDisplayRule(mLocations.get(position).getType());
-
-                if (typeDisplayRule != null) {
+            if (locationDisplayRule != null) {
+                locationDisplayRule.getIconAsync(bitmap -> {
                     mMapActivity.runOnUiThread(()-> {
-                        holder.imageView.setImageBitmap(typeDisplayRule.getIcon());
+                        holder.imageView.setImageBitmap(bitmap);
                     });
-                }
+                });
             }
         }
     }
@@ -295,7 +286,7 @@ class ViewHolder extends RecyclerView.ViewHolder {
 
 </mi-tab-panel>
 <mi-tab-panel id="kotlin">
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/SearchItemAdapter.kt">SearchItemAdapter.kt</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/Google_Maps/mapsindoorsgettingstartedkotlin/src/main/java/com/mapspeople/mapsindoorsgettingstartedkotlin/SearchItemAdapter.kt">SearchItemAdapter.kt</a>
 
 ```kotlin
 internal class SearchItemAdapter(private val mLocations: List<MPLocation?>, private val mMapActivity: MapsActivity?) : RecyclerView.Adapter<ViewHolder>() {
@@ -306,24 +297,9 @@ internal class SearchItemAdapter(private val mLocations: List<MPLocation?>, priv
         holder.text.text = mLocations[position]?.name
 
         if (mMapActivity != null) {
-            val locationDisplayRule: LocationDisplayRule? = mMapActivity.getMapControl().getDisplayRule(mLocations[position])
-
-            if (locationDisplayRule != null && locationDisplayRule.icon != null) {
-                mMapActivity.runOnUiThread(Runnable {
-                    holder.imageView.setImageBitmap(
-                        locationDisplayRule.icon
-                    )
-                })
-            } else {
-                //Location does not have a special displayRule using type Display rule
-                val typeDisplayRule: LocationDisplayRule? = mMapActivity.getMapControl().getDisplayRule(mLocations[position]?.type)
-
-                if (typeDisplayRule != null) {
-                    mMapActivity.runOnUiThread(Runnable {
-                        holder.imageView.setImageBitmap(
-                            typeDisplayRule.icon
-                        )
-                    })
+            mLocations[position]?.let { MapsIndoors.getDisplayRule(it) }?.getIconAsync {
+                mMapActivity.runOnUiThread {
+                    holder.imageView.setImageBitmap(it)
                 }
             }
         }
@@ -356,7 +332,7 @@ You can use the `addFragmentToBottomSheet` too add the created _fragment_ to the
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L170-L216">MapsActivity.java</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/Google_Maps/mapsindoorsgettingstartedjava/src/main/java/com/mapspeople/mapsindoorsgettingstartedjava/MapsActivity.java#L170-L216">MapsActivity.java</a>
 
 ```java
 void search(String searchQuery) {
@@ -383,7 +359,7 @@ void search(String searchQuery) {
 
 </mi-tab-panel>
 <mi-tab-panel id="kotlin">
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/MapsActivity.kt#L136-L175">MapsActivity.kt</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/Google_Maps/mapsindoorsgettingstartedkotlin/src/main/java/com/mapspeople/mapsindoorsgettingstartedkotlin/MapsActivity.kt#L137-L176">MapsActivity.kt</a>
 
 ```kotlin
 private fun search(searchQuery: String) {
@@ -428,7 +404,7 @@ Since the default `displaySearchResults(List<MPLocation> locations)` uses camera
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L191-L193">MapsActivity.java</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/Google_Maps/mapsindoorsgettingstartedjava/src/main/java/com/mapspeople/mapsindoorsgettingstartedjava/MapsActivity.java#L191-L193">MapsActivity.java</a>
 
 ```java
 void search(String searchQuery) {
@@ -437,7 +413,7 @@ void search(String searchQuery) {
         ...
         //Calling displaySearch results on the ui thread as camera movement is involved
         runOnUiThread(()-> {
-            mMapControl.displaySearchResults(list, true);
+            mMapControl.setFilter(list, MPFilterBehavior.DEFAULT);
         });
     });
 }
@@ -445,13 +421,13 @@ void search(String searchQuery) {
 
 </mi-tab-panel>
 <mi-tab-panel id="kotlin">
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/MapsActivity.kt#L153">MapsActivity.kt</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/Google_Maps/mapsindoorsgettingstartedkotlin/src/main/java/com/mapspeople/mapsindoorsgettingstartedkotlin/MapsActivity.kt#L154">MapsActivity.kt</a>
 
 ```kotlin
 private fun search(searchQuery: String) {
     MapsIndoors.getLocationsAsync(mpQuery, mpFilter) { list: List<MPLocation?>?, miError: MIError? ->
         //Calling displaySearchResults on the ui thread as camera movement is involved
-        runOnUiThread { mMapControl.displaySearchResults(list, true) }
+        runOnUiThread { mMapControl.setFilter(list, MPFilterBehavior.DEFAULT) }
     }
 }
 ```
@@ -463,6 +439,6 @@ Expected result:
 
 ![Search result](/assets/android/getting-started/search_gif.gif)
 
-The accompanying UI and implementation of this search experience can be found in the getting started app sample. [Getting Started App sample](https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/tree/master/app/src/main/java/com/example/mapsindoorsgettingstarted) or [Getting Started App sample kotlin](https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin).
+The accompanying UI and implementation of this search experience can be found in the getting started app sample. [Getting Started App sample](https://github.com/MapsPeople/MapsIndoors-Android-Examples/tree/main/Google_Maps/mapsindoorsgettingstartedjava) or [Getting Started App sample kotlin](https://github.com/MapsPeople/MapsIndoors-Android-Examples/tree/main/Google_Maps/mapsindoorsgettingstartedkotlin).
 
-<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/content/getting-started/android/directions/">Next up: Directions</a></p>
+<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/content/getting-started/android/v4/directions/">Next up: Directions</a></p>
