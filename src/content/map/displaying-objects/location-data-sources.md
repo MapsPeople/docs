@@ -205,7 +205,6 @@ fun updateLocations() {
 
 [See the samples in the locationsources folder](https://github.com/MapsPeople/MapsIndoors-Android-Examples/tree/main/MapsIndoorsSamples/app/src/main/java/com/mapspeople/mapsindoorssamples/ui/locationsources)
 
-
 </mi-tab-panel>
 <mi-tab-panel id="ios">
 
