@@ -11,5 +11,5 @@ Here you will find documentation for older versions of the MapsIndoors SDK's. Th
 
 * **iOS v2** - End-of-life.
 * **Android v2** - End-of-life.
-* **Web v3** - Maintained, but no further updates.
-* **Android v3** - Maintained, but no further updates.
+* **Web v3** - Maintainance.
+* **Android v3** - Maintainance.
