@@ -14,7 +14,7 @@ eleventyNavigation:
 <!-- Environment -->
 {% include "src/content/shared/getting-started/project/environment.md" %}
 
-This guide explains how to start using a MapsIndoors map in your Android application using the MapsIndoors Android SDK v3.
+This guide explains how to start using a MapsIndoors map in your Android application using the MapsIndoors Android SDK v4.
 
 We recommend using Android Studio for using this tutorial. Read how to set it up here: [Installing Android Studio](https://developer.android.com/studio/install)
 
@@ -27,7 +27,7 @@ To benefit from the guides, you will need basic knowledge about:
 * Android Development
 * Google Maps Android API
 
-You can get started in two ways, either by reviewing and modifying the [basic example](#basic-example) or do the [clean setup](#setup-mapsindoors). We recommend following the basic example.
+You can get started in two ways, either by reviewing and modifying the [basic example](#basic-example) or do the [clean setup](#setup-mapsindoors). The clean setup is only written for google maps, and we do recommend following the basic example
 
 ## Basic Example
 
@@ -35,7 +35,9 @@ The tutorial will be based on you starting from our basic map implementation. Th
 
 The basic example contains a single `activity` app with already made `fragments` to host the different logic to get a complete app interacting with a map and `MapsIndoors` data.
 
-You can find this basic example here: [Java](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android-Basic) or [Kotlin](https://github.com/MapsIndoors/MapsIndoors-Getting-Started-Android-Kotlin-Basic)
+You can find the basic example for Google Maps here: [Java](https://github.com/MapsPeople/MapsIndoors-Android-Examples/tree/main/Google_Maps/mapsindoorsgettingstartedbasicjava) or [Kotlin](https://github.com/MapsPeople/MapsIndoors-Android-Examples/tree/main/Google_Maps/mapsindoorsgettingstartedbasickotlin)
+
+The Mapbox basic example is located here:  [Java](https://github.com/MapsPeople/MapsIndoors-Android-Examples/tree/main/MapBox/mapsindoorsgettingstartedbasicjava) or [Kotlin](https://github.com/MapsPeople/MapsIndoors-Android-Examples/tree/main/MapBox/mapsindoorsgettingstartedbasickotlin)
 
 You can open the project through Android Studio by navigating through **File -> New -> Project from Version Control -> GitHub**. Log in and clone the project.
 
@@ -83,7 +85,7 @@ dependencies {
     ...
     implementation 'com.google.android.gms:play-services-maps:17.0.0'
     implementation 'com.google.code.gson:gson:2.8.6'
-    implementation 'com.mapspeople.mapsindoors:mapsindoorssdk:3.13.15'
+    implementation 'com.mapspeople.mapsindoors:googlemapssdk:4.0.0-beta.9'
     implementation 'com.squareup.okhttp3:okhttp:4.9.0'
 }
 repositories{
@@ -106,4 +108,4 @@ Sync your project with gradle.
 
 > This "Getting Started" guide is created using a specific version of the SDK. When moving beyond the "Getting Started" guide, please be sure to use the latest version of the SDK.
 
-<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/content/getting-started/android/map/">Next up: Show a map</a></p>
+<p class="next-article"><a class="mi-button mi-button--outline" href="{{ site.url }}/content/getting-started/android/v4/map/">Next up: Show a map</a></p>
