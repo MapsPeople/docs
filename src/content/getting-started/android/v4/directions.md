@@ -4,7 +4,7 @@ toc: true
 eleventyNavigation:
   title: Directions
   key: getting-started-android-directions
-  parent: getting-started-android
+  parent: getting-started-android-v4
   order: 160
 ---
 

@@ -3,8 +3,8 @@ title: Show a Map
 toc: true
 eleventyNavigation:
   title: Show a Map
-  key: getting-started-android-map
-  parent: getting-started-android
+  key: getting-started-android-map-v3
+  parent: getting-started-android-v3
   order: 130
 ---
 

@@ -4,7 +4,7 @@ toc: true
 eleventyNavigation:
   title: Prerequisites
   key: getting-started-android-prerequisites
-  parent: getting-started-android
+  parent: getting-started-android-v4
   order: 110
 ---
 

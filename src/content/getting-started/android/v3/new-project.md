@@ -3,8 +3,8 @@ title: Create a New Project
 toc: true
 eleventyNavigation:
   title: Create a New Project
-  key: getting-started-android-project
-  parent: getting-started-android
+  key: getting-started-android-project-v3
+  parent: getting-started-android-v3
   order: 120
 ---
 
