@@ -61,8 +61,9 @@ The level of caching can be changed:
 <mi-tab-panel id="java">
 
 ```java
-MPDataSetCache dataset = MPDataSetCacheManager.getInstance().getDataSetByID("API KEY");
-MPDataSetCacheManager.getInstance().synchronizeDataSetsWithScope(Collections.singletonList(dataset), MPDataSetCacheScope.DETAILED);
+MPDataSetCache dataSet = MPDataSetCacheManager.getInstance().getDataSetByID("API KEY");
+dataSet.setScope(mContext, MPDataSetCacheScope.DETAILED);
+MPDataSetCacheManager.getInstance().synchronizeDataSets(Collections.singletonList(dataSet));
 ```
 
 </mi-tab-panel>
@@ -70,8 +71,8 @@ MPDataSetCacheManager.getInstance().synchronizeDataSetsWithScope(Collections.sin
 
 ```kotlin
 val dataset = MPDataSetCacheManager.getInstance().getDataSetByID("API KEY")
-MPDataSetCacheManager.getInstance()
-.synchronizeDataSetsWithScope(listOf(dataset), MPDataSetCacheScope.FULL)
+dataset?.setScope(mContext, MPDataSetCacheScope.DETAILED)
+MPDataSetCacheManager.getInstance().synchronizeDataSets(Collections.singletonList(dataset))
 ```
 
 </mi-tab-panel>
@@ -177,8 +178,9 @@ To change the extent of caching, for example in a management menu:
 <mi-tab-panel id="java">
 
 ```java
-MPDataSetCache dataset = MPDataSetCacheManager.getInstance().getDataSetByID("API KEY");
-MPDataSetCacheManager.getInstance().synchronizeDataSetsWithScope(Collections.singletonList(dataset), MPDataSetCacheScope.DETAILED);
+MPDataSetCache dataSet = MPDataSetCacheManager.getInstance().getDataSetByID("API KEY");
+dataSet.setScope(mContext, MPDataSetCacheScope.DETAILED);
+MPDataSetCacheManager.getInstance().synchronizeDataSets(Collections.singletonList(dataSet));
 ```
 
 </mi-tab-panel>
@@ -186,8 +188,8 @@ MPDataSetCacheManager.getInstance().synchronizeDataSetsWithScope(Collections.sin
 
 ```kotlin
 val dataset = MPDataSetCacheManager.getInstance().getDataSetByID("API KEY")
-MPDataSetCacheManager.getInstance()
-.synchronizeDataSetsWithScope(listOf(dataset), MPDataSetCacheScope.DETAILED)
+dataset?.setScope(mContext, MPDataSetCacheScope.DETAILED)
+MPDataSetCacheManager.getInstance().synchronizeDataSets(Collections.singletonList(dataset))
 ```
 
 </mi-tab-panel>
@@ -203,7 +205,7 @@ The estimated and cached size of a dataset is available via:
 <mi-tab-panel id="java">
 
 ```java
-dataSet.getCacheItem().getCacheSize();
+dataSet.getCacheItem().getCacheSize(mContext);
 dataSet.getCacheItem().getSyncSize();
 ```
 
@@ -211,7 +213,7 @@ dataSet.getCacheItem().getSyncSize();
 <mi-tab-panel id="kotlin">
 
 ```kotlin
-dataSet?.cacheItem?.cacheSize
+dataSet?.cacheItem?.getCacheSize(mContext)
 dataSet?.cacheItem?.syncSize
 ```
 
@@ -258,9 +260,6 @@ dataSetCacheManager.synchronizeDataSets();
 
 // sync specific datasets
 dataSetCacheManager.synchronizeDataSets(dataSets);
-
-// sync specific datasets with a specific scope
-dataSetCacheManager.synchronizeDataSetsWithScope(dataSets, MPDataSetCacheScope.FULL);
 ```
 
 </mi-tab-panel>
@@ -274,9 +273,6 @@ dataSetCacheManager.synchronizeDataSets()
 
 // sync specific datasets
 dataSetCacheManager.synchronizeDataSets(dataSets)
-
-// sync specific datasets with a specific scope
-dataSetCacheManager.synchronizeDataSetsWithScope(dataSets, MPDataSetCacheScope.FULL)
 ```
 
 </mi-tab-panel>
