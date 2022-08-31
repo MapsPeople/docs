@@ -9,6 +9,12 @@ eleventyNavigation:
 
 Changelog for MapsIndoors SDK for JavaScript. This document structure is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and the project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [4.17.7] - 2022-07-12
+
+### Fixed
+
+- Device position dot and circle is now always shown no matter how `PositionControl.watchPosition` is invoked.
+
 ## [4.17.6] - 2022-04-22
 
 ### Fixed
