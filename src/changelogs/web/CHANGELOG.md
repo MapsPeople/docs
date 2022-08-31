@@ -13,13 +13,13 @@ Changelog for MapsIndoors SDK for JavaScript. This document structure is based o
 
 ### Added
 
-- Support for wall extrusions, room extrusions and 3D models on Mapbox maps.
+- Support for wall extrusions, room extrusions, and 3D models on Mapbox maps.
 
 ## [4.17.7] - 2022-07-12
 
 ### Fixed
 
-- Device position dot and circle is now always shown no matter how `PositionControl.watchPosition` is invoked.
+- Device position dot and circle are now always shown no matter how `PositionControl.watchPosition` is invoked.
 
 ## [4.17.6] - 2022-04-22
 
