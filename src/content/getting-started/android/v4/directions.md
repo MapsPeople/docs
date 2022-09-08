@@ -23,7 +23,7 @@ We have already created a point in the basic example, called `mUserLocation` to 
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
-<a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/Google_Maps/mapsindoorsgettingstartedjava/src/main/java/com/mapspeople/mapsindoorsgettingstartedjava/MapsActivity.java#L50">MapsActivity.java</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/Google_Maps/mapsindoorsgettingstartedjava/src/main/java/com/mapspeople/mapsindoorsgettingstartedjava/MapsActivity.java#L49">MapsActivity.java</a>
 
 ```java
 private MPPoint mUserLocation = new MPPoint(38.897389429704695, -77.03740973527613,0);
@@ -49,7 +49,7 @@ Start by implementing `OnRouteResultListener` to your MapsActivity.
 <mi-tab label="Java-Mapbox" tab-for="java-Mapbox"></mi-tab>
 <mi-tab label="Kotlin-Mapbox" tab-for="kotlin-Mapbox"></mi-tab>
 <mi-tab-panel id="java-google">
-<a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/Google_Maps/mapsindoorsgettingstartedjava/src/main/java/com/mapspeople/mapsindoorsgettingstartedjava/MapsActivity.java#L42">MapsActivity.java</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/Google_Maps/mapsindoorsgettingstartedjava/src/main/java/com/mapspeople/mapsindoorsgettingstartedjava/MapsActivity.java#L41">MapsActivity.java</a>
 
 ```java
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, OnRouteResultListener
@@ -73,7 +73,7 @@ public class MapsActivity extends FragmentActivity implements OnRouteResultListe
 
 </mi-tab-panel>
 <mi-tab-panel id="kotlin-mapbox">
-<a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/MapBox/mapsindoorsgettingstartedkotlin/src/main/java/com/mapspeople/mapsindoorsgettingstartedkotlin/MapsActivity.kt#L27">MapsActivity.kt</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/MapBox/mapsindoorsgettingstartedkotlin/src/main/java/com/mapspeople/mapsindoorsgettingstartedkotlin/MapsActivity.kt#L26">MapsActivity.kt</a>
 
 ```kotlin
 class MapsActivity : FragmentActivity(), OnRouteResultListener
@@ -92,7 +92,7 @@ To generate a route with the `MPLocation`, we start by creating an `onClickListe
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
-<a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/Google_Maps/mapsindoorsgettingstartedjava/src/main/java/com/mapspeople/mapsindoorsgettingstartedjava/SearchItemAdapter.java#L38-L42">SearchItemAdapter.java</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/Google_Maps/mapsindoorsgettingstartedjava/src/main/java/com/mapspeople/mapsindoorsgettingstartedjava/SearchItemAdapter.java#L38-L46">SearchItemAdapter.java</a>
 
 ```java
 public void onBindViewHolder(ViewHolder holder, int position) {
@@ -108,7 +108,7 @@ public void onBindViewHolder(ViewHolder holder, int position) {
 
 </mi-tab-panel>
 <mi-tab-panel id="kotlin">
-<a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/Google_Maps/mapsindoorsgettingstartedkotlin/src/main/java/com/mapspeople/mapsindoorsgettingstartedkotlin/SearchItemAdapter.kt#L20-L24">MapsActivity.kt</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/Google_Maps/mapsindoorsgettingstartedkotlin/src/main/java/com/mapspeople/mapsindoorsgettingstartedkotlin/SearchItemAdapter.kt#L18-L24">MapsActivity.kt</a>
 
 ```kotlin
 override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -135,7 +135,7 @@ We create global variables of the `MPdirectionsRenderer` and `MPDirectionsServic
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
-<a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/Google_Maps/mapsindoorsgettingstartedjava/src/main/java/com/mapspeople/mapsindoorsgettingstartedjava/MapsActivity.java#L222-L253">MapsActivity.java</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/Google_Maps/mapsindoorsgettingstartedjava/src/main/java/com/mapspeople/mapsindoorsgettingstartedjava/MapsActivity.java#L221-L252">MapsActivity.java</a>
 
 ```java
 void createRoute(MPLocation mpLocation) {
@@ -207,7 +207,7 @@ We will start by making a getter for our `MPDirectionsRenderer` that we store on
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
-<a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/Google_Maps/mapsindoorsgettingstartedjava/src/main/java/com/mapspeople/mapsindoorsgettingstartedjava/MapsActivity.java#L129-L135">MapsActivity.java</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/Google_Maps/mapsindoorsgettingstartedjava/src/main/java/com/mapspeople/mapsindoorsgettingstartedjava/MapsActivity.java#L128-L134">MapsActivity.java</a>
 
 ```java
 public MPDirectionsRenderer getMpDirectionsRenderer() {
@@ -253,7 +253,7 @@ public class NavigationFragment extends Fragment {
                 //When a page is selected call the renderer with the index
                 mMapsActivity.getMpDirectionsRenderer().selectLegIndex(position);
                 //Update the floor on mapcontrol if the floor might have changed for the routing
-                mMapsActivity.getMapControl().selectFloor(mMapsActivity.getMpDirectionsRenderer().getSelectedLegFloorLevel());
+                mMapsActivity.getMapControl().selectFloor(mMapsActivity.getMpDirectionsRenderer().getSelectedLegFloorIndex());
             }
         });
 
@@ -305,7 +305,7 @@ class NavigationFragment : Fragment() {
                 //When a page is selected call the renderer with the index
                 mMapsActivity?.getMpDirectionsRenderer()?.selectLegIndex(position)
                 //Update the floor on mapcontrol if the floor might have changed for the routing
-                mMapsActivity?.getMpDirectionsRenderer()?.selectedLegFloorLevel?.let {floorIndex ->
+                mMapsActivity?.getMpDirectionsRenderer()?.selectedLegFloorIndex?.let {floorIndex ->
                     mMapsActivity?.getMapControl()?.selectFloor(floorIndex)
                 }
             }

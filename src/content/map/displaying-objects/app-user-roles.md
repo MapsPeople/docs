@@ -50,10 +50,10 @@ User roles can also be set for a specific direction query using `DirectionsQuery
 </mi-tab-panel>
 <mi-tab-panel id="Android">
 
-To fetch User Roles from the SDK, you call `getUserRoles`:
+To fetch User Roles from the SDK, you call `MapsIndoors.getUserRoles()` to retrieve a collection of `MPUserRoles` tied to a loaded solution:
 
 ```java
-final List<MPUserRole> cmsUserRoles = MapsIndoors.getUserRoles();
+final List<MPUserRole> cmsUserRoles = MapsIndoors.getUserRoles().getUserRoles();
 ```
 
 To set User Roles, `applyUserRoles` is used:

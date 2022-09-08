@@ -175,7 +175,7 @@ Now, lets create the `RouteLegFragment` to give context for the Legs in the `Way
 <mi-tabs>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="kotlin">
-<a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/MapsIndoorsSamples/app/src/main/java/com/mapspeople/mapsindoorssamples/ui/wayfinding/RouteLegFragment.kt#L48-L56">RouteLegFragment.kt</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/MapsIndoorsSamples/app/src/main/java/com/mapspeople/mapsindoorssamples/ui/wayfinding/RouteLegFragment.kt#L47-L55">RouteLegFragment.kt</a>
 
 ```kotlin/0-2,6-8
 private var mStep: String? = null
@@ -201,7 +201,7 @@ You must also update the `onViewCreated` method to use the new views added earli
 <mi-tabs>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="kotlin">
-<a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/MapsIndoorsSamples/app/src/main/java/com/mapspeople/mapsindoorssamples/ui/wayfinding/RouteLegFragment.kt#L30-L46">RouteLegFragment.kt</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/MapsIndoorsSamples/app/src/main/java/com/mapspeople/mapsindoorssamples/ui/wayfinding/RouteLegFragment.kt#L29-L47">RouteLegFragment.kt</a>
 
 ```kotlin
 override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -277,7 +277,7 @@ viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback(
     override fun onPageSelected(position: Int) {
         super.onPageSelected(position)
         mDirectionsRenderer?.selectLegIndex(position)
-        mDirectionsRenderer?.selectedLegFloorLevel
+        mDirectionsRenderer?.selectedLegFloorIndex
     }
 })
 ```
