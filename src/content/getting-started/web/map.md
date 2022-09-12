@@ -312,7 +312,7 @@ miMapElement.addEventListener('mapsIndoorsReady', () => {
 </mi-tab-panel>
 </mi-tabs>
 
-You should now see a Google Maps map with MapsIndoors data loaded on top.
+You should now see a map from your chosen provider with MapsIndoors data loaded on top.
 
 ## Show a Floor Selector
 
