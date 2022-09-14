@@ -9,6 +9,12 @@ eleventyNavigation:
 
 Changelog for MapsIndoors SDK for JavaScript. This document structure is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and the project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [4.18.1] - 2022-09-07
+
+### Fixed
+
+- Labels are now centered when the icon is not visible.
+
 ## [4.18.0] - 2022-08-31
 
 ### Added
