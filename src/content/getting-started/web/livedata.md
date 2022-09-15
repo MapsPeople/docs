@@ -34,7 +34,7 @@ const mapViewOptions = {
   maxZoom: 22,
 };
 const mapViewInstance = new mapsindoors.mapView.GoogleMapsView(mapViewOptions);
-+ const mapsIndoorsInstance = new mapsindoors.MapsIndoors({ mapView: mapViewInstance });
+const mapsIndoorsInstance = new mapsindoors.MapsIndoors({ mapView: mapViewInstance });
 const googleMapsInstance = mapViewInstance.getMap();
 
 const externalDirectionsProvider = new mapsindoors.directions.GoogleMapsProvider();
@@ -174,7 +174,7 @@ const mapViewOptions = {
   maxZoom: 22,
 };
 const mapViewInstance = new mapsindoors.mapView.MapboxView(mapViewOptions);
-+ const mapsIndoorsInstance = new mapsindoors.MapsIndoors({ mapView: mapViewInstance });
+const mapsIndoorsInstance = new mapsindoors.MapsIndoors({ mapView: mapViewInstance });
 const mapboxInstance = mapViewInstance.getMap();
 
 const externalDirectionsProvider = new mapsindoors.directions.MapboxProvider();

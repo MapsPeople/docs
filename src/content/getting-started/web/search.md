@@ -725,7 +725,6 @@ function onSearch() {
 
 +   // Filter map to only display search results
 +   mapsIndoorsInstance.filter(locations.map(location => location.id), false);
-+ });
 }
 ```
 
@@ -760,7 +759,6 @@ miSearchElement.addEventListener('results', (event) => {
 + miMapElement.getMapsIndoorsInstance().then((mapsIndoorsInstance) => {
 +   // Filter map to only display search results
 +   mapsIndoorsInstance.filter(event.detail.map(location => location.id), false);
-+ });
 ```
 
 </mi-tab-panel>
@@ -806,7 +804,6 @@ function onSearch() {
 
 +   // Filter map to only display search results
 +   mapsIndoorsInstance.filter(locations.map(location => location.id), false);
- });
 }
 ```
 
@@ -841,7 +838,6 @@ miSearchElement.addEventListener('results', (event) => {
 + miMapElement.getMapsIndoorsInstance().then((mapsIndoorsInstance) => {
 +   // Filter map to only display search results
 +   mapsIndoorsInstance.filter(event.detail.map(location => location.id), false);
-+ });
 });
 ```
 
