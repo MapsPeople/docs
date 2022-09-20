@@ -48,5 +48,7 @@ To do this in practice, on the MapsIndoors instance, call `setBuildingOutlineOpt
 mapsIndoors.setBuildingOutlineOptions({strokeColor: '#3071d9'});
 ```
 
+Additional variables such as `strokeFill` (for the fill color of the building) and `strokeWeight` (for the thickness of the stroke) can also be used here, see the [reference docs](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/BuildingOutlineOptions.html) for the full list.
+
 </mi-tab-panel>
 </mi-tabs>
