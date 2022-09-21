@@ -128,6 +128,8 @@ From left to right, the functionalities in the Toolbar are as follows (you can a
 
 **Doors** are a node that indiciate the presence of a door - or other entryway - in a building. The Doors in your Solution are created by our specialists, but you have certain options in the menu to customise them with.
 
+![door-menu](/assets/cms/interface-overview/door_menu.png)
+
 * **Type** - Lets you define what type of Door this is. Each Type has different defaults.
   * **Door** - A Door between two Rooms inside the same Building.
   * **ElevatorDoor** - A Door for an elevator, comes with a built-in Delay.
@@ -142,9 +144,13 @@ From left to right, the functionalities in the Toolbar are as follows (you can a
 * **Delay (seconds)** - Set a Delay in seconds for routes that pass through this door. Used in estimated arrival time calculations.
 * **Radius (meters)** - Set the Radius in meters for this door, to ensure it touches the Route Network.
 * **Floor Index** - Define which Floor your Door is on - Usually `ground floor = 0`, `1st floor = 10` and so on, but this may have been customised in the CMS.
-* **One way direction (bearing)** - The exit angle of a one-way Door, in degrees, like a compass bearing. In the example below, the entered value would be 45, as the user would exit at a 45 degree bearing.
+* **One way direction (bearing)** - The exit angle of a one-way Door, in degrees, like a compass bearing. In the illustration below, the entered value would be 45, as the user would exit at a 45 degree bearing.
+
+![one-way-bearing](/assets/cms/interface-overview/one_way_bearing_compass.png)
 
 **Barriers** are similar to Doors in the sense that they are nodes on a route network, but are not rendered as Doors. However, many of the settings and restrictions are the same.
+
+![barrier-menu](/assets/cms/interface-overview/barrier_menu.png)
 
 * **Restrictions** - Set optional restrictions on who can use this Door.
   * **Open for all** - Open for all Users.
@@ -153,7 +159,7 @@ From left to right, the functionalities in the Toolbar are as follows (you can a
 * **Delay (seconds)** - Set a Delay in seconds for routes that pass through this door. Used in estimated arrival time calculations.
 * **Radius (meters)** - Set the Radius in meters for this door, to ensure it touches the Route Network.
 * **Floor Index** - Define which Floor your Door is on - Usually `ground floor = 0`, `1st floor = 10` and so on, but this may have been customised in the CMS.
-* **One way direction (bearing)** - The exit angle of a one-way Door, in degrees, like a compass bearing. In the example below, the entered value would be 45, as the user would exit at a 45 degree bearing.
+* **One way direction (bearing)** - The exit angle of a one-way Door, in degrees, like a compass bearing. In the illustration above, the entered value would be 45, as the user would exit at a 45 degree bearing.
 
 ### Solution Details
 
