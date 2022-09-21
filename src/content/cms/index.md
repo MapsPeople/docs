@@ -124,6 +124,37 @@ From left to right, the functionalities in the Toolbar are as follows (you can a
 
 <iframe width="480" height="300" src="https://www.youtube-nocookie.com/embed/ZymL18piH5Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+#### Doors & Barriers
+
+**Doors** are a node that indiciate the presence of a door - or other entryway - in a building. The doors in your Solution are created by our specialists, but you have certain options in the menu to customise them with.
+
+* **Type** - Lets you define what type of door this is.
+  * **Door** - A door between two Rooms inside the same Building.
+  * **ElevatorDoor** - A door for an elevator, comes with a built in Delay.
+  * **ExternalDoor** - A type of door that links to the outside route network, only connects to one Room.
+  * **InterBuildingDoor** - A door that connects between two Rooms in two different Buildings.
+  * **Opening** - An entryway between two Rooms inside the same Building, but with no physical door.
+  * **Hatchway** - A specific kind of door that opens upwards or downwards, for example up to an attic or down to a basement.
+* **Restrictions** - Set optional restrictions on who can use this door.
+  * **Open for all** - Open for all Users.
+  * **Open for specific App User Roles** - Define certain App User Roles that can access this door.
+  * **Closed for all** - No Users can use this door.
+* **Delay (seconds)** - Set a delay in seconds for routes that pass through this door. Used in estimated arrival time calculations.
+* **Radius (meters)** - Set the radius in meters for this door, to ensure it hits the Route Network.
+* **Floor Index** - Define which floor your door is on - Usually `ground floor = 0`, `1st floor = 1` and so on, but this may have been customised in the CMS.
+* **One way direction (bearing)** - The exit angle of a one-way door, in degrees, like a compass bearing. In the example below, the entered value would be 45, as the user would exit at a 45 degree bearing.
+
+**Barriers** are similar to doors in the sense that they are nodes on a route network, but are not rendered as doors. However, many of the settings and restrictions are the same.
+
+* **Restrictions** - Set optional restrictions on who can use this door.
+  * **Open for all** - Open for all Users.
+  * **Open for specific App User Roles** - Define certain App User Roles that can access this door.
+  * **Closed for all** - No Users can use this door.
+* **Delay (seconds)** - Set a delay in seconds for routes that pass through this door. Used in estimated arrival time calculations.
+* **Radius (meters)** - Set the radius in meters for this door, to ensure it hits the Route Network.
+* **Floor Index** - Define which floor your door is on - Usually `ground floor = 0`, `1st floor = 1` and so on, but this may have been customised in the CMS.
+* **One way direction (bearing)** - The exit angle of a one-way door, in degrees, like a compass bearing. In the example below, the entered value would be 45, as the user would exit at a 45 degree bearing.
+
 ### Solution Details
 
 Under Solution Details you can find several subpages, which are described below:
