@@ -126,6 +126,8 @@ From left to right, the functionalities in the Toolbar are as follows (you can a
 
 #### Doors & Barriers
 
+Doors and Barriers are nodes that allow to manipulate certain elements of the Route Network - They only appear if you click the **Show Network** button mentioned above.
+
 **Doors** are a node that indiciate the presence of a door - or other entryway - in a building. The Doors in your Solution are created by our specialists, but you have certain options in the menu to customise them with.
 
 ![door-menu](/assets/cms/interface-overview/door_menu.png)
