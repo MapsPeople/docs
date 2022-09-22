@@ -10,31 +10,33 @@ eleventyNavigation:
 
 The Media Library is a new feature in the MapsIndoors CMS, replacing the Icon Manager that was used before. All features of the Icon Manager are present in the Media Library, but with new and improved functionality. The Media Library lets you upload and manage media files to use in the MapsIndoors CMS, for example the use of custom icons for Locations, or to place images of logos on the map. The Media Library can be accessed through the Display Settings panel, and the App Categories page, found here: `Solution Details -> App Settings -> App Configuration -> App Categories`.
 
-**INSERT SCREENSHOT**
+![media-library-access](/assets/cms/media-library/media-library-access.png)
 
 ## Interface Overview
 
-**INSERT SCREENSHOT**
+![media-library-overview](/assets/cms/media-library/media-library-overview.png)
 
 1. Upload a file to the Media Library.
 1. Sort the content of the Media Library - options are by file name or by upload date, both ascending and descending.
 1. Filter the contents of the Media Library by file type.
 1. Filter the contents of the Media Library, choosing between user uploads or MapsIndoors default icons.
-1. Filter the content of the Media Library by image dimensions. <!-- Might need to update later -->
 1. Search the Media Library by file name.
 1. Delete this content from the Media Library.
 1. Preview of the content - Click to select this content, which highlights it.
     * Hover on this preview to see more information about this content, such as dimensions and upload date.
 
 1. Cancel this use of the Media Library.
+1. A warning if your file is too large, it may impact performence - Click the box to proceed anyways. Only appears when accesing Media Library via `Icon` menu.
 1. Select the highlighted media.
 1. Sync your Media library to other Solutions you own.
+
+<!-- 1. Filter the content of the Media Library by image dimensions.  THIS IS NOT IN THE CURRENT FEATURE SCOPE -->
 
 ## Feature List
 
 ### Media Library
 
-**INSERT SCREENSHOT**
+![media-library](/assets/cms/media-library/media-library.png)
 
 The Media Library window contains an overview of all uploaded media in the Solution, along with functions to manage said media.
 
@@ -48,21 +50,19 @@ When accessing the Media Library through the `Icon` menu point, you will be pres
 
 ### Uploading Files
 
-**INSERT SCREENSHOT**
-
 Clicking the "Upload" button opens a local File Explorer window, allowing you to locate the file you wish to upload to the Media Library. If a file with the same name as the selected file already exists in the Media Library, a warning will appear. You may choose to cancel the upload, or to overwrite the existing file, but this will also replace all existing uses of the file with this name. `sampleimage.jpg` and `sampleimage.png` may both exist in the Media Library concurrently, but `sampleimage.jpg` and `SampleImage.jpg` will throw a warning, as this check is not case-sensitive.
 
 > Files cannot be larger than 8 mb.
 
 ### Sort
 
-**INSERT SCREENSHOT**
+![media-library-sort](/assets/cms/media-library/media-library-sort.png)
 
 The "Sort" option in the filter-bar provides the option to sort the content of the Media Library alphabetically or by upload date, both ascending and descending. This provides the following options in a drop-down menu:
 
 * File Name A-Z
 * File Name Z-A
-* Recently Uploaded
+* Recently Uploaded (default)
 * Oldest Upload
 
 Clicking on one of these options initiates the sort.
