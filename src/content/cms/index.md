@@ -411,11 +411,11 @@ A great tool to strip unnecesary elements from your SVG-file is [SVGOMG by Jake 
 
 #### Syncing Icons to Other Solutions
 
-If you have multiple Solutions, you can sync Icons across multiple Solutions to make sure you can use the same Icons in all of your Solutions.
+If you have multiple Solutions, you can sync Media across multiple Solutions to make sure you can use the same Media in all of your Solutions.
 
-Open the Icon Manager (you can find it on a Location Detail screen when you set the Icon for that Location). Find the Icon you want to sync to one or more Solutions, and click the "Sync"-icon next to the filename of the Icon. Then you can select which other Solutions you want to sync this Icon to.
+Open the Media Library. Find the image you want to sync to one or more Solutions, and click the "Sync"-icon in the top-left corner. Then you can select which other Solutions you want to sync this image to.
 
-When you sync an Icon, if the Icon exists in the target Solution (i.e. an Icon with the exact same filename), you override the Icon in the target Solution. If the Icon does not exist in the target Solution, it is added.
+When you sync an image, if the image exists in the target Solution (i.e. an image with the exact same filename), you override the image in the target Solution. If the image does not exist in the target Solution, it is added.
 
 #### PNG Image File Support
 
