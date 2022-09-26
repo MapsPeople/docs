@@ -355,19 +355,19 @@ function initStreetView(streetViewConfig) {
 
 Please see the official [Google Street View Service documentation](https://developers.google.com/maps/documentation/javascript/streetview) for more information.
 
-### Icon Manager
+### 2D Models and Icons
 
-Anywhere in the CMS you can change Icons for one or more markers on the Map, you use the Icon Manager to do so. Click the "Change"-button to invoke it.
+The Media Library currently supports 2D models and Icons.
 
-In the Icon Manager, you can choose between a predefined set of MapsIndoors icons, and a list of your uploaded icons. Click on an icon in either place, and set it to close the icon manager and preview the icon on the map. Click "Save" in the details editor to update the Location with your selected icon.
+Anywhere in the CMS you can change Icons for one or more markers on the Map, you use the Media Library to do so. This is done by accessing the Display Rules panel, and clicking "Open Media Library" on the "Icon" menu panel. More information about the media library can be found [here](https://docs.mapsindoors.com/content/cms/media-library/).
 
-We highly recommend using icons in the SVG format.
+In the Media Library, you can navigate all uploaded media, both 2D models and icons. Media can be either in .jpg, .png or .svg file formats. For icons specifically, we highly recommend using the SVG format.
 
-Remember to keep your icons at a reasonable size. The Icon Manager will prompt you if an icon is larger than 128x64px, as that would take up a large amount of space on the map. There is a hard limit on the size of 900x600px or 150kb. The icon files should also be optimized and compressed to be as small as possible.
+Icons have a suggested limit of 128x64 pixels, and no more than 150kb in size, but this can be overridden. There is a hard limit on file size of 8 mb.
 
-We support bulk uploading of image files to the Icon Manager.
+We support bulk uploading of image files to the Media Library.
 
-To delete an Icon, click the "trash bin" on the Icons you want to delete. It is strongly advised to change Icons on the Locations, Location Types or Categories before deleting their associated Icon file. However, if you delete an Icon that is already used by a Location, the Location will revert back to using the Icon for its Location Type. If you delete an Icon that is used by a Category or Location Type, it will revert to using a generic marker on the Map.
+Before deleting a piece of media, it is strongly advised to change to a different image on any Locations, Location Types or Categories that uses it before deleting. However, if you delete an image that is already used by a Location, the Location will revert back to using the Icon for its Location Type. If you delete an Icon that is used by a Category or Location Type, it will revert to using a generic marker on the Map.
 
 #### Uploading SVGs
 
