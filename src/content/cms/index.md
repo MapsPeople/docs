@@ -367,8 +367,6 @@ Icons have a suggested limit of 128x64 pixels, and no more than 150kb in size, b
 
 We support bulk uploading of image files to the Media Library.
 
-Before deleting a piece of media, it is strongly advised to change to a different image on any Locations, Location Types or Categories that uses it before deleting. However, if you delete an image that is already used by a Location, the Location will revert back to using the Icon for its Location Type. If you delete an Icon that is used by a Category or Location Type, it will revert to using a generic marker on the Map.
-
 #### Uploading SVGs
 
 SVG is a vector file format, which lets MapsIndoors convert your Icon in a range of sizes to get the best looking Icon in every situation.
