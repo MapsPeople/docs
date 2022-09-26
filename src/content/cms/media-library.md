@@ -69,31 +69,27 @@ Clicking on one of these options initiates the sort.
 
 ### Filters
 
-**INSERT SCREENSHOT**
-
 Various filtering options have been built into the Media Library, to ensure that you have an easy time finding exactly the media you need.
 
 #### Type Filter
 
-**INSERT SCREENSHOT**
+![media-library-filter-filetype](/assets/cms/media-library/media-library-filter-filetype.png)
 
 The "Filter" option in the filter-bar opens a drop-down menu allowing you to select which file-type should be displayed. These are currently `.svg`, `.png` and `.jpg/.jpeg`. You can select more than one option. If no option is selected, content of all file types will be displayed.
 
 #### MapsIndoors Filter
 
-**INSERT SCREENSHOT**
+![media-library-filter](/assets/cms/media-library/media-library-filter.png)
 
 A secondary filter also exists, allowing you to sort between media that is user-uploaded, and media that MapsPeople has pre-loaded as default options. These "MapsIndoors Icons" cannot be deleted, but using this filter you can opt to not have them displayed.
 
 #### Search by File Name
 
-**INSERT SCREENSHOT**
-
 By typing a part of a filename here, the filter will return to display all media in the Media Library containing the typed string of text. For example, typing `ima` will return all three of `LimaPeru.jpg`, `sampleImage.png` and `imaginePlease.svg`.
 
 ### Sync Manager
 
-**INSERT SCREENSHOT**
+![media-library-sync](/assets/cms/media-library/media-library-sync.png)
 
 The Sync Manager is a feature that allows you to sync your media between Solutions you have access to. The Sync Manager window contains a preview of the media you're currently syncing, above a list of Solutions you can sync to. You then select the Solutions you want to sync to by clicking the box next to their name(s). Once synced, the files will appear in the selected Solution's Media Library.
 
