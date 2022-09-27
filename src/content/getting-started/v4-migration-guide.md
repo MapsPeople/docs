@@ -105,8 +105,6 @@ Please note that this factory method will wait to return until a valid MapsIndoo
 
 ## SolutionConfig & AppConfig
 
-### Clustering & Marker Collisions
-
 #### V3
 
 In V3, AppConfig contained information about clustering (`POI_GROUPING`) and collisions (`POI_HIDE_ON_OVERLAP`), which could be fetched and updated like this:
@@ -130,27 +128,12 @@ MPSolutionConfig config = MapsIndoors.getSolution().getConfig();
 // get the collisionHandling enum from the config
 MPCollisionHandling collisionHandling = config.getCollisionHandling();
 
-// modify the config, this does not have any effect on the SDK yet
+// update the config
 config.setEnableClustering(true);
-
-// re-apply the modified config
-MapsIndoors.getSolution().setConfig(config);
+config.setCollisionHandling(MPCollisionHandling.ALLOW_OVERLAP);
 ```
 
-### Main Display Rule
-
-In V4, the solution config will ship with a Main Display Rule, which is used to define the defaults for location and type display rules, when nothing is declared on the specific display rule. Fields in this display rule must not be `null`. If a display rule with `null` in any fields is provided to the config, an `IllegalArgumentException` will be thrown.
-
-```java
-// gets the main rule, this rule will have all fields filled
-MPDisplayRule mainRule = config.getMainDisplayRule();
-
-// create a display rule with not all fields filled
-MPDisplayRule displayRuleWithEmptyFields = ...
-
-// will throw an exception
-config.setMainDisplayRule(displayRuleWithEmptyFields);
-```
+<b>NB:</b> As a consequence the SDK will no longer respect these settings in the appConfig, they will have to be set in the solutionConfig.
 
 ## Display Rules
 
@@ -395,7 +378,7 @@ public interface MPPositionProvider {
 | DataSet                       | MPDataSet                                                           |
 | DataSetManagerStatus          | MPDataSetManagerStatus                                              |
 | dbglog                        | MPDebugLog                                                          |
-| DistanceMatrixResponse        | MPDistanceMatrixResponse                                           |
+| DistanceMatrixResponse        | MPDistanceMatrixResponse                                            |
 | FastSphericalUtils            | MPFastSphericalUtils                                                |
 | Floor                         | MPFloor                                                             |
 | FloorSelectorInterface        | MPFloorSelectorInterface                                            |
