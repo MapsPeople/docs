@@ -355,19 +355,17 @@ function initStreetView(streetViewConfig) {
 
 Please see the official [Google Street View Service documentation](https://developers.google.com/maps/documentation/javascript/streetview) for more information.
 
-### Icon Manager
+### 2D Models and Icons
 
-Anywhere in the CMS you can change Icons for one or more markers on the Map, you use the Icon Manager to do so. Click the "Change"-button to invoke it.
+The Media Library currently supports 2D models and Icons.
 
-In the Icon Manager, you can choose between a predefined set of MapsIndoors icons, and a list of your uploaded icons. Click on an icon in either place, and set it to close the icon manager and preview the icon on the map. Click "Save" in the details editor to update the Location with your selected icon.
+Anywhere in the CMS you can change Icons for one or more markers on the Map, you use the Media Library to do so. This is done by accessing the Display Rules panel, and clicking "Open Media Library" on the "Icon" menu panel. More information about the media library can be found [here](https://docs.mapsindoors.com/content/cms/media-library/).
 
-We highly recommend using icons in the SVG format.
+In the Media Library, you can navigate all uploaded media, both 2D models and icons. Media can be either in .jpg, .png or .svg file formats. For icons specifically, we highly recommend using the SVG format.
 
-Remember to keep your icons at a reasonable size. The Icon Manager will prompt you if an icon is larger than 128x64px, as that would take up a large amount of space on the map. There is a hard limit on the size of 900x600px or 150kb. The icon files should also be optimized and compressed to be as small as possible.
+Icons have a suggested limit of 128x64 pixels, and no more than 150kb in size, but this can be overridden. There is a hard limit on file size of 8 mb.
 
-We support bulk uploading of image files to the Icon Manager.
-
-To delete an Icon, click the "trash bin" on the Icons you want to delete. It is strongly advised to change Icons on the Locations, Location Types or Categories before deleting their associated Icon file. However, if you delete an Icon that is already used by a Location, the Location will revert back to using the Icon for its Location Type. If you delete an Icon that is used by a Category or Location Type, it will revert to using a generic marker on the Map.
+We support bulk uploading of image files to the Media Library.
 
 #### Uploading SVGs
 
@@ -413,11 +411,11 @@ A great tool to strip unnecesary elements from your SVG-file is [SVGOMG by Jake 
 
 #### Syncing Icons to Other Solutions
 
-If you have multiple Solutions, you can sync Icons across multiple Solutions to make sure you can use the same Icons in all of your Solutions.
+If you have multiple Solutions, you can sync Media across multiple Solutions to make sure you can use the same Media in all of your Solutions.
 
-Open the Icon Manager (you can find it on a Location Detail screen when you set the Icon for that Location). Find the Icon you want to sync to one or more Solutions, and click the "Sync"-icon next to the filename of the Icon. Then you can select which other Solutions you want to sync this Icon to.
+Open the Media Library. Find the image you want to sync to one or more Solutions, and click the "Sync"-icon in the top-left corner. Then you can select which other Solutions you want to sync this image to.
 
-When you sync an Icon, if the Icon exists in the target Solution (i.e. an Icon with the exact same filename), you override the Icon in the target Solution. If the Icon does not exist in the target Solution, it is added.
+When you sync an image, if the image exists in the target Solution (i.e. an image with the exact same filename), you override the image in the target Solution. If the image does not exist in the target Solution, it is added.
 
 #### PNG Image File Support
 
