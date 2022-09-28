@@ -93,4 +93,4 @@ By typing a part of a filename here, the filter will return to display all media
 
 The Sync Manager is a feature that allows you to sync your media between Solutions you have access to. The Sync Manager window contains a preview of the media you're currently syncing, above a list of Solutions you can sync to. You then select the Solutions you want to sync to by clicking the box next to their name(s). Once synced, the files will appear in the selected Solution's Media Library.
 
-To read more about connected features, check out our documentation on [Display Rules]({{  site.url }}/content/map/map-styling/display-rules.md), and how to utilize 2D models (LINK) and 3D models (LINK).
+To read more about connected features, check out our documentation on [Display Rules]({{  site.url }}/content/map/map-styling/display-rules.md), and how to utilize [2D Models](https://docs-beta.mapsindoors.com/content/cms/#2d-models-and-icons).
