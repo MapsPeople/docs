@@ -4,6 +4,7 @@ eleventyNavigation:
   parent: data-booking
   key: data-booking-android-user-auth
   title: User Authenticated Booking
+  order: 20
 ---
 
 <!-- reference to normal booking example -->
