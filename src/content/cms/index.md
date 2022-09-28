@@ -359,13 +359,13 @@ Please see the official [Google Street View Service documentation](https://devel
 
 The Media Library currently supports 2D models and Icons.
 
-Anywhere in the CMS you can change Icons for one or more markers on the Map, you use the Media Library to do so. This is done by accessing the Display Rules panel, and clicking "Open Media Library" on the "Icon" menu panel. More information about the media library can be found [here](https://docs.mapsindoors.com/content/cms/media-library/).
+In the CMS you can change the Icons for markers on the Map by using the Media Library. This is done by opening the Media Library from the Icon and 2D model sections in the Display Rules editor, both on Location and Type level. More information about the Media Library can be found [here](https://docs.mapsindoors.com/content/cms/media-library/).
 
-In the Media Library, you can navigate all uploaded media, both 2D models and icons. Media can be either in .jpg, .png or .svg file formats. For icons specifically, we highly recommend using the SVG format.
+In the Media Library, you can see and manage all uploaded media, both 2D models and icons. Media can be either in .jpg, .png or .svg file formats. For icons specifically, we highly recommend using the SVG format.
 
 Icons have a suggested limit of 128x64 pixels, and no more than 150kb in size, but this can be overridden. There is a hard limit on file size of 8 mb.
 
-We support bulk uploading of image files to the Media Library.
+> If your images appear "too large" on the map, please revisit your settings.
 
 #### Uploading SVGs
 
@@ -413,9 +413,9 @@ A great tool to strip unnecesary elements from your SVG-file is [SVGOMG by Jake 
 
 If you have multiple Solutions, you can sync Media across multiple Solutions to make sure you can use the same Media in all of your Solutions.
 
-Open the Media Library. Find the image you want to sync to one or more Solutions, and click the "Sync"-icon in the top-left corner. Then you can select which other Solutions you want to sync this image to.
+Open the Media Library. Find the Media you want to sync to one or more Solutions, and click the "Sync"-icon. Then you can select which other Solutions you want to sync this Media to.
 
-When you sync an image, if the image exists in the target Solution (i.e. an image with the exact same filename), you override the image in the target Solution. If the image does not exist in the target Solution, it is added.
+When you sync a piece of Media, if the Media exists in the target Solution (i.e. a piece of Media with the exact same filename), you override the Media in the target Solution. If the Media does not exist in the target Solution, it is added.
 
 #### PNG Image File Support
 
