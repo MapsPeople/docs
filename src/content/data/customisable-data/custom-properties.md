@@ -54,20 +54,10 @@ let type = data.type
 Using the above screenshot as an example basis you fetch the entire custom property using the following code:
 
 ```java
-DataField data = location.getField("email");
+String email = (String) location.getProperty("email");
 ```
 
-To retrieve individual segments of the property, you can use:
-
-```java
-String text = data.getText();
-String value = data.getValue();
-String type = data.getType();
-```
-
-* `data.getText();` retrieves the content of the `key` field, and in the given example, would return `email`.
-* `data.getValue();` retrieves the content of the `value` field, and in the given example, would return `123@email.com`.
-* `data.getType();` retrieves the type of the Custom Property, and will in most known cases return `text`.
+When retrieving custom properties, they are always returned as a String.
 
 </mi-tab-panel>
 <mi-tab-panel id="Web">

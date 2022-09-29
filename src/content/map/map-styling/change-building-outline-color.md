@@ -18,10 +18,12 @@ The method to do this is different for each platform.
 <mi-tab label="Web" tab-for="Web"></mi-tab>
 <mi-tab-panel id="Android">
 
-To change the building outline color, use `setBuildingOutlineStrokeColor()` from the `MapControl` class.
+To change the building outline color, along with other display properties, you must get and modify the Display Rule.
+
+Note that the DisplayRule will be null if MapsIndoors is not loaded.
 
 ```java
-setBuildingOutlineStrokeColor(strokeColor: Int)
+MapsIndoors.getDisplayRule(MPSolutionDisplayRule.BUILDING_OUTLINE).setPolygonStrokeColor(Color.BLUE);
 ```
 
 The parameter `strokeColor` takes the color in RGB format (with an alpha-channel value), the the syntax being `AARRGGBB`.

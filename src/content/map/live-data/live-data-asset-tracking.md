@@ -22,10 +22,8 @@ Scenarios where asset tracking would be useful could for example be a hospital w
 Enabling Live Data through `MapControl` is an easy way to get Live Data running in your app. For this use case, `LiveDataDomainTypes.POSITION_DOMAIN` and `LiveDataDomainTypes.AVAILABILITY_DOMAIN` should be enabled, as you need to know the position of the wheelchair, and whether or not it is in use - `LiveDataDomainTypes.OCCUPANCY_DOMAIN`, which monitors the number of people using, often used for meeting rooms, is not needed in this use case.
 
 ```java
-mMapControl.init(error -> {
-    mMapControl.enableLiveData(LiveDataDomainTypes.POSITION_DOMAIN);
-    mMapControl.enableLiveData(LiveDataDomainTypes.AVAILABILITY_DOMAIN);
-});
+mMapControl.enableLiveData(LiveDataDomainTypes.POSITION_DOMAIN);
+mMapControl.enableLiveData(LiveDataDomainTypes.AVAILABILITY_DOMAIN);
 ```
 
 `MapControl` has a default way of rendering the Live Data for POIs, which is enabled by invoking `enableLiveData()`. If you wish to render the Live Data in another way, you can add handlers for this, as described in [this section]({{ site.url }}/content/map/live-data/live-data-intro-android/#rendering-live-data-locations).
@@ -40,10 +38,8 @@ Information about how to handle [listening for Live Data Updates]({{ site.url }}
 Enabling Live Data through `MapControl` is an easy way to get Live Data running in your app. For this use case, `LiveDataDomainTypes.POSITION_DOMAIN` and `LiveDataDomainTypes.AVAILABILITY_DOMAIN` should be enabled, as you need to know the position of the wheelchair, and whether or not it is in use - `LiveDataDomainTypes.OCCUPANCY_DOMAIN`, which monitors the number of people using, often used for meeting rooms, is not needed in this use case.
 
 ```kotlin
-mMapControl.init {
-    mMapControl.enableLiveData(LiveDataDomainTypes.POSITION_DOMAIN)
-    mMapControl.enableLiveData(LiveDataDomainTypes.AVAILABILITY_DOMAIN)
-}
+mMapControl.enableLiveData(LiveDataDomainTypes.POSITION_DOMAIN)
+mMapControl.enableLiveData(LiveDataDomainTypes.AVAILABILITY_DOMAIN)
 ```
 
 `MapControl` has a default way of rendering the Live Data for POIs, which is enabled by invoking `enableLiveData()`. If you wish to render the Live Data in another way, you can add handlers for this, as described in [this section]({{ site.url }}/content/map/live-data/live-data-intro-android/#rendering-live-data-locations).

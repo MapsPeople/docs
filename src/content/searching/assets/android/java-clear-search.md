@@ -1,3 +1,3 @@
 ```java
-mMapControl.clearMap();
+mMapControl.clearFilter();
 ```

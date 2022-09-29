@@ -1,3 +1,3 @@
 ```kotlin
-mMapControl.clearMap()
+mMapControl.clearFilter()
 ```

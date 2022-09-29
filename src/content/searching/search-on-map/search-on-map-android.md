@@ -19,13 +19,14 @@ MPQuery query = new MPQuery.Builder().
 
 // Init the filter builder and build a filter, the criteria in this case we want 1 coffee machine from the 1st floor
 MPFilter filter = new MPFilter.Builder().
+        setTake(1).
         setFloorIndex(1).
         build();
 
 // Query the data
 MapsIndoors.getLocationsAsync( query, filter, ( locs, err ) -> {
     if( locs != null && locs.size() != 0 ) {
-        mMapControl.displaySearchResults( locs, true );
+        mMapControl.setFilter( locs, MPFilterBehavior.DEFAULT );
     }
 } );
 ```
@@ -47,7 +48,7 @@ MPFilter filter = new MPFilter.Builder().
 // Query the data
 MapsIndoors.getLocationsAsync(query, filter, (locs, err) -> {
     if(locs != null && locs.size() != 0 ){
-        mMapControl.displaySearchResults( locs, true, 40 );
+        mMapControl.setFilter( locs, MPFilterBehavior.DEFAULT );
     }
 });
 ```
