@@ -217,7 +217,7 @@ Building outlines and selections are now also DisplayRules, so that you can cust
 
 ##### Editing Selection and Building Outline
 
-The following methods are examples of how you can use DisplayRules to get the outline color of a building, or if selecting a building highlights it.
+The following methods are examples of how you can use DisplayRules to set the outline color of a building, or if selecting a building highlights it.
 
 ```java
 MapsIndoors.getDisplayRule(MPSolutionDisplayRule.BUILDING_OUTLINE).setPolygonStrokeColor(Color.BLUE);
