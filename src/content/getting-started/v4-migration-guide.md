@@ -138,13 +138,13 @@ config.setCollisionHandling(MPCollisionHandling.ALLOW_OVERLAP);
 
 ## Display Rules
 
-The Display rules handling of the sdk has received a major overhaul in v4. To simplify editing locations etc.
+The manner in which the SDK handles Display Rules has recieved a major overhaul in V4. This is intended to simplify usage, such as editing Display Rules for certain Locations.
 
 #### V3
 
 In V3 you would create new DisplayRule objects and add them onto Locations through MapControl.
 
-Editing a single location:
+##### Editing a single location
 
 ```java
 LocationDisplayRule singleLocationDisplayRule = new LocationDisplayRule.Builder("singleRule").setVectorDrawableIcon(R.drawable.ic_baseline_air_24).setLabel("single display rule").build();
@@ -152,7 +152,7 @@ MPLocation mpLocation = MapsIndoors.getLocationById("MyLocationId");
 mMapControl.setDisplayRule(singleLocationDisplayRule, mpLocation);
 ```
 
-Editing multiple locations:
+##### Editing multiple locations
 
 ```java
 multipleLocationDisplayRule = new LocationDisplayRule.Builder("multipleRule").setVectorDrawableIcon(R.drawable.ic_baseline_air_24).setLabel("multiple display rule").build();
@@ -165,9 +165,9 @@ MapsIndoors.getLocationsAsync(null, new MPFilter.Builder().setTypes(Collections.
 
 #### V4
 
-In V4 DisplayRules have been changed to a reference based approach. You now receive MPDisplayRules through MapsIndoors and are able to change the values, and see it be reflected on the map instantaneously.
+In V4, DisplayRules have been changed to a reference-based approach. You now receive `MPDisplayRules` through MapsIndoors and are able to change the values, and see it reflected on the map instantly.
 
-Editing a single DisplayRule
+##### Editing a single DisplayRule
 
 ```java
 MPLocation mpLocation = MapsIndoors.getLocationById("MyLocationId");
@@ -177,7 +177,7 @@ if (mpDisplayRule != null) {
 }
 ```
 
-Editing multiple DiplayRules
+##### Editing multiple DisplayRules
 
 ```java
 MapsIndoors.getLocationsAsync(null, new MPFilter.Builder().setTypes(Collections.singletonList("Meetingroom")).build(), (locations, error) -> {
@@ -196,7 +196,7 @@ MapsIndoors.getLocationsAsync(null, new MPFilter.Builder().setTypes(Collections.
 });
 ```
 
-Resetting display rules:
+##### Resetting Display Rules
 
 ```java
 MapsIndoors.getLocationsAsync(null, new MPFilter.Builder().setTypes(Collections.singletonList("Meetingroom")).build(), (locations, error) -> {
@@ -211,12 +211,18 @@ MapsIndoors.getLocationsAsync(null, new MPFilter.Builder().setTypes(Collections.
 });
 ```
 
-Building outlines and selection is now also moved to just being DisplayRule so that you can customize the looks just like you can when doing it on locations. Note that Mapsindoors have to be finished loading for theese DisplayRules to not be null.
+Building outlines and selections are now also DisplayRules, so that you can customize the looks just like you can when doing it on locations. 
 
-Editing selection and building outline:
+> Please note that MapsIndoors has to have finished loading for these DisplayRules to not be `null`.
 
+##### Editing Selection and Building Outline
+
+The following methods are examples of how you can use DisplayRules to get the outline color of a building, or if selecting a building highlights it.
+
+```java
 MapsIndoors.getDisplayRule(MPSolutionDisplayRule.BUILDING_OUTLINE).setPolygonStrokeColor(Color.BLUE);
 MapsIndoors.getDisplayRule(MPSolutionDisplayRule.SELECTION_HIGHLIGHT).setPolygonVisible(false);
+```
 
 ## DirectionsService & DirectionsRenderer
 
@@ -245,9 +251,9 @@ routingProvider.query(from, to);
 
 #### V4
 
-In V4 MPRoutingProvider has been renamed to MPDirectionsService, to allign with other platforms. It has also changed the way of setting a departure or arrival. As shown below.
+In V4, `MPRoutingProvider` has been renamed to `MPDirectionsService`, to align with other platforms. It has also changed the method of setting a departure or arrival, as shown below.
 
-Instantiate a new `MPDirectionsService`, and apply settings needed for a route. Use the `query()` method to search for a route between two points.
+Instantiate a new `MPDirectionsService`, and apply the settings needed for a route. Use the `query()` method to search for a route between two points.
 
 ```java
 Date date = new Date();
