@@ -211,7 +211,7 @@ MapsIndoors.getLocationsAsync(null, new MPFilter.Builder().setTypes(Collections.
 });
 ```
 
-Building outlines and selections are now also DisplayRules, so that you can customize the looks just like you can when doing it on locations. 
+Building outlines and selections are now also DisplayRules, so that you can customize the looks just like you can when doing it on locations.
 
 > Please note that MapsIndoors has to have finished loading for these DisplayRules to not be `null`.
 
