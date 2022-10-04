@@ -44,6 +44,8 @@ Media present in the Media Library is displayed with a preview image. This previ
 
 To select a piece of media, click on it to select it. To deselect it, click it again, or select another file in the Media Library. Your selection is indicated by a highlight. Confirm the selection of the media by clicking the "Select" button.
 
+> When using the Integration API, all images must reside on a server that has CORS enabled. Otherwise the images can't be loaded when using the JavaScript SDK.
+
 #### Icons
 
 When accessing the Media Library through the `Icon` menu point, you will be presented with a slightly different functionality than elsewhere. If you select a piece of content larger than 128x64 pixels in size, or larger than 150 kb in file size, you will be presented with a warning, in which you will have to confirm your choice before allowing you to proceed. This is to prevent unintentional performance impacts by uploading too large icons.
