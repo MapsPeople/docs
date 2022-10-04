@@ -8,6 +8,8 @@ eleventyNavigation:
   order: 140
 ---
 
+> PLEASE NOTE: The Android version of SDK v3 has entered maintenance mode, and will only recieve critical bug fixes. Only SDK v4 will recieve new feature updates. If you are a new user of MapsIndoors, we STRONGLY recommend following the [SDK v4 "Getting Started Guide"](https://docs.mapsindoors.com/content/getting-started/android/v4/) instead.
+
 <!-- Overview -->
 {% include "src/content/shared/getting-started/search/overview.md" %}
 
