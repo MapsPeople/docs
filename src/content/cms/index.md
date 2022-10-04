@@ -365,7 +365,7 @@ In the Media Library, you can see and manage all uploaded media, both 2D models 
 
 Icons have a suggested limit of 128x64 pixels, and no more than 150kb in size, but this can be overridden. There is a hard limit on file size of 8 mb.
 
-Please note, that when using the Integration API, all references to Media must reside on a server that has CORS enabled. Otherwise the Media can't be loaded when using the JavaScript SDK.
+Please note, that when using the Integration API, all Media must reside on a server that has CORS enabled. Otherwise the Media can't be loaded when using the JavaScript SDK.
 
 > If your images appear "too large" on the map, please revisit your settings.
 
