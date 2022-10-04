@@ -367,6 +367,8 @@ Icons have a suggested limit of 128x64 pixels, and no more than 150kb in size, b
 
 > If your images appear "too large" on the map, please revisit your settings.
 
+> When using the Integration API, all references to Media must reside on a server that has CORS enabled. Otherwise the Media can't be loaded when using the JavaScript SDK.
+
 #### Uploading SVGs
 
 SVG is a vector file format, which lets MapsIndoors convert your Icon in a range of sizes to get the best looking Icon in every situation.
