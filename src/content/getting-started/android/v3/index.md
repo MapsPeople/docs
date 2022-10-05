@@ -8,6 +8,8 @@ eleventyNavigation:
   order: 100
 ---
 
+> PLEASE NOTE: A newer version of the Android SDK exists. If you are a new user of MapsIndoors, we recommend following the [SDK v4 "Getting Started Guide"](https://docs.mapsindoors.com/content/getting-started/android/v4/) instead.
+
 <!-- Overview -->
 {% include "src/content/shared/getting-started/overview.md" %}
 

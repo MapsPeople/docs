@@ -8,6 +8,8 @@ eleventyNavigation:
   order: 170
 ---
 
+> PLEASE NOTE: A newer version of the Android SDK exists. If you are a new user of MapsIndoors, we recommend following the [SDK v4 "Getting Started Guide"](https://docs.mapsindoors.com/content/getting-started/android/v4/) instead.
+
 {% include "src/content/shared/live-data/live-data-intro.md" %}
 
 {% include "src/content/shared/getting-started/live-data/live-position-demo-preconditions.md" %}
