@@ -55,7 +55,7 @@ mapboxMap.getStyle { style ->
 </mi-tab-panel>
 <mi-tab-panel id="web">
 
-In order to insert a heatmap between layers on the JS SDK, refer to the [Mapbox GL JS API Reference](https://docs.mapbox.com/mapbox-gl-js/api/map/#map#addlayer). Then use the following code snippet but replace `map` with your Mapbox instance:
+In order to insert a heatmap between layers on the JS SDK, refer to the [Mapbox GL JS API Reference](https://docs.mapbox.com/mapbox-gl-js/api/map/#map#addlayer). Then use the following code snippet but replace `map` with your Mapbox instance, and insert the relevant parameters from the API Reference:
 
 ```js
 map.addLayer({....}, 'MI_POLYGON_LAYER');
