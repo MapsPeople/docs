@@ -9,6 +9,22 @@ eleventyNavigation:
 
 Changelog for MapsIndoors SDK for JavaScript. This document structure is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and the project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [4.20.0] - 2022-10-06
+
+### Added
+
+- Support for 2D models on Mapbox maps.
+
+## [4.19.0] - 2022-09-29
+
+### Added
+
+- Support for 2D models on Google maps.
+
+### Changed
+
+- MICommon has been updated to the latest version.
+
 ## [4.18.1] - 2022-09-07
 
 ### Fixed
