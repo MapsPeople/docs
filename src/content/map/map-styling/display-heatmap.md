@@ -63,5 +63,3 @@ map.addLayer({....}, 'MI_POLYGON_LAYER');
 
 </mi-tab-panel>
 </mi-tabs>
-
-
