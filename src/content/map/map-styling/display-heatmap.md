@@ -50,25 +50,16 @@ mapboxMap.getStyle { style ->
 </mi-tab-panel>
 <mi-tab-panel id="ios">
 
-<!-- Known Issues -->
-{% include "src/content/shared/known-issues-ios.md" %}
-
-```swift
-let languageCode = Locale.current.languageCode
-MapsIndoors.setLanguage(languageCode!);
-```
+> This feature is not currently available for iOS.
 
 </mi-tab-panel>
 <mi-tab-panel id="web">
 
-The web-app will automatically adjust the language to the language set in the user's browser settings, otherwise default to English. When using Safari, the device's language setting will be used. This is limited to the following languages, and will default to English if the selected language is not supported:
+In order to insert a heatmap between layers on the JS SDK, refer to the [Mapbox GL JS API Reference](https://docs.mapbox.com/mapbox-gl-js/api/map/#map#addlayer). Then use the following code snippet but replace `map` with your Mapbox instance:
 
-* English
-* Danish
-* Spanish
-* Portuguese
-* Italian
-* French
+```js
+map.addLayer({....}, 'MI_POLYGON_LAYER');
+```
 
 </mi-tab-panel>
 </mi-tabs>
