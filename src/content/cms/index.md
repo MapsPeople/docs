@@ -138,7 +138,7 @@ Doors and Barriers are Route Elements that allow to manipulate certain portions 
   * **ExternalDoor** - A type of Door that links to the outside Route Network, only connects to one Room.
   * **InterBuildingDoor** - A Door that connects between two Rooms in two different Buildings.
   * **Opening** - An entryway between two Rooms inside the same Building, but with no physical door.
-  * **Hatchway** - A specific kind of Door that is used for smaller rooms in some specific situations. 
+  * **Hatchway** - A specific kind of Door that is used for smaller rooms in some specific situations.
 * **Restrictions** - Set optional restrictions on who can use this Door.
   * **Open for all** - Open for all Users.
   * **Open for specific App User Roles** - Define certain App User Roles that can use this Door.
