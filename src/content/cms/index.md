@@ -126,9 +126,9 @@ From left to right, the functionalities in the Toolbar are as follows (you can a
 
 #### Doors & Barriers
 
-Doors and Barriers are nodes that allow to manipulate certain elements of the Route Network - They only appear if you click the **Show Network** button mentioned above.
+Doors and Barriers are Route Elements that allow to manipulate certain portions of the Route Network. They only appear if you click the **Show Network** button mentioned above.
 
-**Doors** are a node that indiciate the presence of a door - or other entryway - in a building. The Doors in your Solution are created by our specialists, but you have certain options in the menu to customise them with.
+**Doors** are a Route Element that indicates the presence of a door - or other entryway - in a building.
 
 ![door-menu](/assets/cms/interface-overview/door_menu.png)
 
@@ -138,30 +138,30 @@ Doors and Barriers are nodes that allow to manipulate certain elements of the Ro
   * **ExternalDoor** - A type of Door that links to the outside Route Network, only connects to one Room.
   * **InterBuildingDoor** - A Door that connects between two Rooms in two different Buildings.
   * **Opening** - An entryway between two Rooms inside the same Building, but with no physical door.
-  * **Hatchway** - A specific kind of Door that opens upwards or downwards, for example up to an attic or down to a basement.
+  * **Hatchway** - A specific kind of Door that is used for smaller rooms in some specific situations. 
 * **Restrictions** - Set optional restrictions on who can use this Door.
   * **Open for all** - Open for all Users.
   * **Open for specific App User Roles** - Define certain App User Roles that can use this Door.
   * **Closed for all** - No Users can use this door.
 * **Delay (seconds)** - Set a Delay in seconds for routes that pass through this door. Used in estimated arrival time calculations.
 * **Radius (meters)** - Set the Radius in meters for this door, to ensure it touches the Route Network.
-* **Floor Index** - Define which Floor your Door is on - Usually `ground floor = 0`, `1st floor = 10` and so on, but this may have been customised in the CMS.
+* **Floor Index** - Use this to move a Door between two Floors.
 * **One way direction (bearing)** - The exit angle of a one-way Door, in degrees, like a compass bearing. In the illustration below, the entered value would be 45, as the user would exit at a 45 degree bearing.
 
 ![one-way-bearing](/assets/cms/interface-overview/one_way_bearing_compass.png)
 
-**Barriers** are similar to Doors in the sense that they are nodes on a route network, but are not rendered as Doors. However, many of the settings and restrictions are the same.
+**Barriers** are similar to Doors in the sense that they are used to for the route network. Many of the settings and restrictions you can set are the same between the two kinds.
 
 ![barrier-menu](/assets/cms/interface-overview/barrier_menu.png)
 
-* **Restrictions** - Set optional restrictions on who can use this Door.
+* **Restrictions** - Set optional restrictions on who can bypass this Barrier.
   * **Open for all** - Open for all Users.
-  * **Open for specific App User Roles** - Define certain App User Roles that can use this Door.
-  * **Closed for all** - No Users can use this door.
-* **Delay (seconds)** - Set a Delay in seconds for routes that pass through this door. Used in estimated arrival time calculations.
-* **Radius (meters)** - Set the Radius in meters for this door, to ensure it touches the Route Network.
-* **Floor Index** - Define which Floor your Door is on - Usually `ground floor = 0`, `1st floor = 10` and so on, but this may have been customised in the CMS.
-* **One way direction (bearing)** - The exit angle of a one-way Door, in degrees, like a compass bearing. In the illustration above, the entered value would be 45, as the user would exit at a 45 degree bearing.
+  * **Open for specific App User Roles** - Define certain App User Roles that can bypass this Barrier.
+  * **Closed for all** - No Users can bypass this Barrier.
+* **Delay (seconds)** - Set a Delay in seconds for routes that pass through this Barrier. Used in estimated arrival time calculations.
+* **Radius (meters)** - Set the Radius in meters for this Barrier, to ensure it touches the Route Network.
+* **Floor Index** - Use this to move a Barrier between two Floors.
+* **One way direction (bearing)** - The exit angle of a one-way Barrier, in degrees, like a compass bearing. In the illustration above, the entered value would be 45, as the user would exit at a 45 degree bearing.
 
 ### Solution Details
 
