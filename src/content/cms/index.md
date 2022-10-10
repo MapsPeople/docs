@@ -126,13 +126,13 @@ From left to right, the functionalities in the Toolbar are as follows (you can a
 
 #### Doors & Barriers
 
-Doors and Barriers are Route Elements that allow to manipulate certain portions of the Route Network. They only appear if you click the **Show Network** button mentioned above.
+Doors and Barriers are Route Elements that allow you to manipulate certain portions of the Route Network. They appear if you click the **Show Network** button mentioned above.
 
 **Doors** are a Route Element that indicates the presence of a door - or other entryway - in a building.
 
 ![door-menu](/assets/cms/interface-overview/door_menu.png)
 
-* **Type** - Lets you define what type of Door this is. Each Type has different defaults.
+* **Type** - Lets you define what type of Door this is. Each type has different defaults.
   * **Door** - A Door between two Rooms inside the same Building.
   * **ElevatorDoor** - A Door for an elevator, comes with a built-in Delay.
   * **ExternalDoor** - A type of Door that links to the outside Route Network, only connects to one Room.
@@ -144,13 +144,13 @@ Doors and Barriers are Route Elements that allow to manipulate certain portions 
   * **Open for specific App User Roles** - Define certain App User Roles that can use this Door.
   * **Closed for all** - No Users can use this door.
 * **Delay (seconds)** - Set a Delay in seconds for routes that pass through this door. Used in estimated arrival time calculations.
-* **Radius (meters)** - Set the Radius in meters for this door, to ensure it touches the Route Network.
+* **Radius (meters)** - Set the Radius in meters for this Door, to ensure it touches the Route Network.
 * **Floor Index** - Use this to move a Door between two Floors.
 * **One way direction (bearing)** - The exit angle of a one-way Door, in degrees, like a compass bearing. In the illustration below, the entered value would be 45, as the user would exit at a 45 degree bearing.
 
 ![one-way-bearing](/assets/cms/interface-overview/one_way_bearing_compass.png)
 
-**Barriers** are similar to Doors in the sense that they are used to for the route network. Many of the settings and restrictions you can set are the same between the two kinds.
+**Barriers** are similar to Doors in the sense that they are used to modify the Route Network. Many of the settings and restrictions you can set are the same between the two kinds.
 
 ![barrier-menu](/assets/cms/interface-overview/barrier_menu.png)
 
