@@ -19,7 +19,7 @@ This guide will focus on how to display the heatmap layer in a visually pleasing
 
 ## Inserting the heatmap layer between MapsIndoors layers
 
-Once you have created your heatmaps with your map provider, you will need a way to get it to work with the layers that MapsIndoors already applies to your Mapbox map. By following the above guides, you should be able to simply overlay it on top of everything. But in order for it to be integrated more seamlessly in the MapsIndoors layers, you could also choose to insert between the tiles that MapsIndoors uses (for example the indoor walls and rooms) and the markers containing your Locations on top.
+Once you have created your heatmaps with your map provider, you will need a way to get it to work with the layers that MapsIndoors already applies to your Mapbox map. By following the above guides, you should be able to simply overlay it on top of everything. But in order for it to be integrated more seamlessly in the MapsIndoors layers, you could also choose to insert between the tile layer and the layer containing the area polygons.
 
 <mi-tabs>
 <mi-tab label="Android" tab-for="android"></mi-tab>
@@ -41,7 +41,7 @@ mapboxMap.getStyle { style ->
 
 ```kotlin
 mapboxMap.getStyle { style ->
-    style.addLayerBelow(createHeatmapLayer(), Layers.POI)
+    style.addLayerBelow(createHeatmapLayer(), MPLayers.POI)
 }
 ```
 
