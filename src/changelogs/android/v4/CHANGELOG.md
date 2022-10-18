@@ -18,6 +18,21 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 ### Security     in case of vulnerabilities.
 -->
 
+## [4.0.1] 2022-10-18
+
+### Added
+
+- Added `getLocationsByExternalIds` to `MapsIndoors`
+  - This can be used to get a list of locations based on a corresponding list of external ids
+- Exposed layer names on Mapbox implementation, allowing custom layers to be inserted between `MapsIndoors` layers
+  - The list of layers can be accessed from the `MPLayers` class
+
+### Fixed
+
+- Fixed issue with display rule inheritance from the main display rule
+- Fixed memory issue that could occur when loading a large amount of 2D models
+- Various minor fixes
+
 ## [4.0.0] 2022-09-29
 
 ### Added
