@@ -82,9 +82,9 @@ class MapsActivity : FragmentActivity(), OnRouteResultListener
 </mi-tab-panel>
 </mi-tabs>
 
-implement the `onRouteResult` method and create a method called `createRoute(MPLocation mpLocation)` on your `MapsActivity`.
+Implement the [`onRouteResult` method](https://app.mapsindoors.com/mapsindoors/reference/android/v4/MapsIndoorsSDK/com.mapsindoors.core/-on-route-result-listener/on-route-result.html?query=abstract%20fun%20onRouteResult(route:%20MPRoute,%20error:%20MIError)) and create a method called `createRoute(MPLocation mpLocation)` on your `MapsActivity`.
 
-Use this method to query the `MPDirectionsService`, which generates a route between two coordinates. We will use this to query a route with our hardcoded `mUserLocation` and a point from a MPLocation.
+Use this method to query the [`MPDirectionsService`](https://app.mapsindoors.com/mapsindoors/reference/android/v4/MapsIndoorsSDK/com.mapsindoors.core/-m-p-directions-service/index.html?query=class%20MPDirectionsService%20:%20MPDirectionsServiceInterface), which generates a route between two coordinates. We will use this to query a route with our hardcoded `mUserLocation` and a point from a MPLocation.
 
 To generate a route with the `MPLocation`, we start by creating an `onClickListener` on our search `ViewHolder` inside the `SearchItemAdapter`. In the method `onBindViewHolder` we will call our `createRoute` on the `MapsActivity` for our route to be generated.
 
@@ -125,11 +125,11 @@ override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 </mi-tab-panel>
 </mi-tabs>
 
-We start by implementing logic to our createRoute method to query a route through `MPDirectionsService` and assign the onRouteResultListener to the activity. When we call the `createRoute` through our `onClickListener` we will receive a result through our `onRouteResult` implementation.
+We start by implementing logic to our createRoute method to query a route through [`MPDirectionsService`](https://app.mapsindoors.com/mapsindoors/reference/android/v4/MapsIndoorsSDK/com.mapsindoors.core/-m-p-directions-service/index.html?query=class%20MPDirectionsService%20:%20MPDirectionsServiceInterface) and assign the onRouteResultListener to the activity. When we call the `createRoute` through our `onClickListener` we will receive a result through our `onRouteResult` implementation.
 
 When we receive a result on our listener, we render the route through the `MPDirectionsRenderer`.
 
-We create global variables of the `MPdirectionsRenderer` and `MPDirectionsService` and create a getter to the `MPDirectionsRenderer` to access it from _fragments_ later on.
+We create global variables of the [`MPdirectionsRenderer`](https://app.mapsindoors.com/mapsindoors/reference/android/v4/MapsIndoorsSDK/com.mapsindoors.core/-m-p-directions-renderer/index.html?query=class%20MPDirectionsRenderer) and [`MPDirectionsService`](https://app.mapsindoors.com/mapsindoors/reference/android/v4/MapsIndoorsSDK/com.mapsindoors.core/-m-p-directions-service/index.html?query=class%20MPDirectionsService%20:%20MPDirectionsServiceInterface) and create a getter to the [`MPdirectionsRenderer`](https://app.mapsindoors.com/mapsindoors/reference/android/v4/MapsIndoorsSDK/com.mapsindoors.core/-m-p-directions-renderer/index.html?query=class%20MPDirectionsRenderer) to access it from _fragments_ later on.
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
@@ -201,7 +201,7 @@ Now we will implement logic to our `NavigationFragment` that we can put into our
 
 Here we'll use a `viewpager` to allow the user to switch between each step, as well as display a "close" button so we are able to remove the route and the bottom sheet from the activity.
 
-We will start by making a getter for our `MPDirectionsRenderer` that we store on `MapsActivity`:
+We will start by making a getter for our [`MPdirectionsRenderer`](https://app.mapsindoors.com/mapsindoors/reference/android/v4/MapsIndoorsSDK/com.mapsindoors.core/-m-p-directions-renderer/index.html?query=class%20MPDirectionsRenderer) that we store on `MapsActivity`:
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>

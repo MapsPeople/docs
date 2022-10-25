@@ -18,16 +18,16 @@ This guide explains how to start using a MapsIndoors map in your Android applica
 
 We recommend using Android Studio for using this tutorial. Read how to set it up here: [Installing Android Studio](https://developer.android.com/studio/install)
 
-If you do not have a Android device, you can setup an emulator through Android Studio. You can see how to do that here: [Setting up Android emulator](https://developer.android.com/studio/run/emulator).
+If you do not have a Android device, you can [set up an emulator through Android Studio](https://developer.android.com/studio/run/emulator).
 
-If you already have an Android device, make sure to enable developer mode and USB debugging. Read about this here: [Enable USB debugging](https://developer.android.com/studio/debug/dev-options#enable)
+If you already have an Android device, make sure to [enable developer mode and USB debugging](https://developer.android.com/studio/debug/dev-options#enable)
 
 To benefit from the guides, you will need basic knowledge about:
 
 * Android Development
 * Google Maps Android API
 
-You can get started in two ways, either by reviewing and modifying the [basic example](#basic-example) or do the [clean setup](#setup-mapsindoors). The clean setup is only written for google maps, and we do recommend following the basic example
+You can get started in two ways, either by reviewing and modifying the [basic example](#basic-example) or do the [clean setup](#setup-mapsindoors). The clean setup is only written for Google Maps, and we recommend following the [basic example](#basic-example).
 
 ## Basic Example
 
