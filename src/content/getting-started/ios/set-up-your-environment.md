@@ -45,7 +45,7 @@ MapsIndoors can either be installed using CocoaPods ([Getting Started with Cocoa
 
 ### Installing MapsIndoors Using CocoaPods
 
-From MapsIndoors SDK version 3.32.0 and upwards, in order for CocoaPods to fetch the SDK properly it is neccessary to install `git-lfs` ([Install Guide](https://git-lfs.github.com/)).
+From MapsIndoors SDK version 3.32.0 and up, in order for CocoaPods to fetch the SDK properly it is neccessary to install `git-lfs` ([Install Guide](https://git-lfs.github.com/)).
 
 1. Create an empty text file named `Podfile` in your project directory (same folder as your *.xcodeproj*).
 2. Add your dependecies to the Podfile as followed (replace `YOUR_APPLICATION_TARGET_NAME_HERE` with your project name),
@@ -53,13 +53,12 @@ From MapsIndoors SDK version 3.32.0 and upwards, in order for CocoaPods to fetch
     ```text
     source 'https://github.com/CocoaPods/Specs.git'
 
-    platform :ios, '15.0'
+    platform :ios, '15.0' # Replace 15.0 with you iOS Minimum Deployment Target
 
     target 'YOUR_APPLICATION_TARGET_NAME_HERE' do
       use_frameworks!
 
-      pod 'MapsIndoors', '~>3.41.0'
-
+      pod 'MapsIndoors', '~>{{ ios.sdkVersion }}'
     end
     ```
 
@@ -80,14 +79,11 @@ From MapsIndoors SDK version 3.32.0 and upwards, in order for CocoaPods to fetch
 
 ### Install MapsIndoors Manually
 
-In order for MapsIndoors to be operational, the following dependencies must also be installed,
+In order for MapsIndoors to be operational, the Google Maps SDK must also be installed since MapsIndoors rely on it:
 
-* [Google Maps iOS SDK](https://developers.google.com/maps/documentation/ios-sdk/overview): [manual install](https://developers.google.com/maps/documentation/ios-sdk/start#install-manually), [using Carthage](https://developers.google.com/maps/documentation/ios-sdk/start#use-carthage) or [using CocoaPods](https://developers.google.com/maps/documentation/ios-sdk/start#use-cocoapods). You should use [Google Maps iOS version 4.2.0](https://dl.google.com/dl/cpdc/870a9df85dbcbadc/GoogleMaps-4.2.0.tar.gz) since MapsIndoors >=3.30.0 is linked against this version.
-* [JSONModel](https://github.com/jsonmodel/jsonmodel): [manual install](https://github.com/jsonmodel/jsonmodel#manual), [using Carthage](https://github.com/jsonmodel/jsonmodel#carthage) or [using CocoaPods](https://github.com/jsonmodel/jsonmodel#cocoapods).
-* [MQTTClient](https://github.com/novastone-media/MQTT-Client-Framework): [manual install](https://github.com/novastone-media/MQTT-Client-Framework#manually), [using Carthage](https://github.com/novastone-media/MQTT-Client-Framework#carthage) or [using CocoaPods](https://github.com/novastone-media/MQTT-Client-Framework#cocoapods).
-* [SSZipArchive](https://github.com/ZipArchive/ZipArchive): [manual install](https://github.com/ZipArchive/ZipArchive#manual), [using Carthage](https://github.com/ZipArchive/ZipArchive#carthage) or [using CocoaPods](https://github.com/ZipArchive/ZipArchive#cocoapods).
+* [Google Maps iOS SDK](https://developers.google.com/maps/documentation/ios-sdk/overview): [manual install](https://developers.google.com/maps/documentation/ios-sdk/start#install-manually). You should use [Google Maps iOS version 4.2.0](https://dl.google.com/dl/cpdc/870a9df85dbcbadc/GoogleMaps-4.2.0.tar.gz) since MapsIndoors >= 3.30.0 is linked against this version.
 
-When the dependencies are installed, go through these steps to install MapsIndoors:
+When the Google Maps SDK dependency is installed, go through these steps to install MapsIndoors:
 
 * Download and unzip the latest [MapsIndoors.xcframework](https://github.com/MapsIndoors/MapsIndoorsIOS/releases/download/{{ ios.sdkVersion }}/MapsIndoors.xcframework.zip).
 * Drag and drop the framework into your XCode project. In the dialog that pops up, choose “Copy items if needed” and make sure the framework is added to the correct target.
