@@ -12,7 +12,7 @@ eleventyNavigation:
 
 {% include "src/content/shared/getting-started/live-data/live-position-demo-preconditions.md" %}
 
-Enabling Live Data through `MapControl` is as simple as calling `mapControl.enableLiveData()` with a [Domain Type](https://app.mapsindoors.com/mapsindoors/reference/android/v3/index.html).
+Enabling Live Data through [`MapControl`](https://app.mapsindoors.com/mapsindoors/reference/android/v4/MapsIndoorsSDK/com.mapsindoors.core/-map-control/index.html?query=class%20MapControl) is as simple as [calling `mapControl.enableLiveData()`](https://app.mapsindoors.com/mapsindoors/reference/android/v4/MapsIndoorsSDK/com.mapsindoors.core/-map-control/enable-live-data.html?query=open%20fun%20enableLiveData(domainType:%20String)) with a [Domain Type](https://app.mapsindoors.com/mapsindoors/reference/android/v3/index.html).
 
 We will create a new method on our `MapsActivity` called `enableLiveData()` to enable Live Data for the Solution.
 
@@ -47,9 +47,9 @@ private fun enableLiveData() {
 </mi-tab-panel>
 </mi-tabs>
 
-By consequence, `MapControl` will manage the Live Data subscriptions needed for the currently visible map and provide a default rendering of the Live Data updates depending on the Domain Type.
+By consequence, [`MapControl`](https://app.mapsindoors.com/mapsindoors/reference/android/v4/MapsIndoorsSDK/com.mapsindoors.core/-map-control/index.html?query=class%20MapControl) will manage the Live Data subscriptions needed for the currently visible map and provide a default rendering of the Live Data updates depending on the Domain Type.
 
-In the context of your view controller showing a map, add the call after creating your `MapControl` object used in the `Activity` in the `initMapControl()` method created earlier.
+In the context of your view controller showing a map, add the call after creating your [`MapControl`](https://app.mapsindoors.com/mapsindoors/reference/android/v4/MapsIndoorsSDK/com.mapsindoors.core/-map-control/index.html?query=class%20MapControl) object used in the `Activity` in the `initMapControl()` method created earlier.
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>

@@ -17,14 +17,14 @@ eleventyNavigation:
 Start by creating a new activity or _fragment_ to facilitate searches on your application. Here we will be using a _fragment_ for search and show to search results on, while using a bottom sheet to display the results. We also create a search input field on our main map _activity_ for the user to input the text they want to search for.
 This is already setup in the basic example app.
 
-To perform a search you will need to have initiated `MapsIndoors`. This was shown in the previous section of the getting started tutorial how you do this.
+To perform a search you will need to have initiated [`MapsIndoors`](https://app.mapsindoors.com/mapsindoors/reference/android/v4/MapsIndoorsSDK/com.mapsindoors.core/-maps-indoors/index.html?query=class%20MapsIndoors). This was shown in the previous section of the getting started tutorial how you do this.
 
 For advanced usage of the search functionality read the Search guide and tutorials connected to it: [Search Guide]({{ site.url }}/content/searching/)
 
 <!-- Results list -->
 {% include "src/content/shared/getting-started/search/results-list.md" %}
 
-Create a search method that takes a search string as a parameter on your `MapsActivity` class. In this example we only use the `setTake` on the `MPFilter` to limit our result to 30 locations. We will expand on this method later.
+Create a search method that takes a search string as a parameter on your `MapsActivity` class. In this example we only use the [`setTake` on the `MPFilter`](https://app.mapsindoors.com/mapsindoors/reference/android/v4/MapsIndoorsSDK/com.mapsindoors.core/-m-p-filter/index.html?query=open%20class%20MPFilter) to limit our result to 30 locations. We will expand on this method later.
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
@@ -210,7 +210,7 @@ class SearchFragment : Fragment() {
 
 See the full example of `SearchFragment` here: [SearchFragment.java](https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/SearchFragment.java) or [SearchFragment.kt](https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/SearchFragment.kt)
 
-Create a getter for your `MapControl` object on the `MapsActivity` so that it can be used in the `SearchAdapter`.
+Create a getter for your [`MapControl` object](https://app.mapsindoors.com/mapsindoors/reference/android/v4/MapsIndoorsSDK/com.mapsindoors.core/-map-control/index.html?query=class%20MapControl) on the `MapsActivity` so that it can be used in the `SearchAdapter`.
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
@@ -392,11 +392,11 @@ See the full example of the search method here: [MapsActivity.java](https://gith
 <!-- Filter map -->
 {% include "src/content/shared/getting-started/search/filter-map.md" %}
 
-When getting a search result, you might want to only show those search results on the map. You can do this through calling `displaySearchResults(List<MPLocation> locations)` on `MapControl`. This method has different parameters to make it easier for you as a developer to fit your exact need in terms of animation and more. This can be read in the [JavaDoc of `MapControl`](https://app.mapsindoors.com/mapsindoors/reference/android/v3/com/mapsindoors/mapssdk/MapControl.html).
+When getting a search result, you might want to only show those search results on the map. You can do this through [calling `displaySearchResults(List<MPLocation> locations)` on `MapControl`](https://app.mapsindoors.com/mapsindoors/reference/android/v4/MapsIndoorsSDK/com.mapsindoors.core/-map-control/index.html?query=class%20MapControl). This method has different parameters to make it easier for you as a developer to fit your exact need in terms of animation and more. This can be read in the [JavaDoc of `MapControl`](https://app.mapsindoors.com/mapsindoors/reference/android/v3/com/mapsindoors/mapssdk/MapControl.html).
 
 The standard implementation animates the camera to fit all Locations on the map and show the info window of a Location, if it's a list of only one Location.
 
-When you are done showing the search results you can call `clearMap()` on `MapControl`.
+When you are done showing the search results you can [call `clearMap()` on `MapControl`](https://app.mapsindoors.com/mapsindoors/reference/android/v4/MapsIndoorsSDK/com.mapsindoors.core/-map-control/index.html?query=class%20MapControl).
 
 Since the default `displaySearchResults(List<MPLocation> locations)` uses camera animation we will call it from the UI Thread and implement it in our search method inside the getLocationsAsync result with the list from the method.
 

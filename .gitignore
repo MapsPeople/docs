@@ -120,3 +120,4 @@ dist
 
 dist
 src/assets/*.css
+.idea/

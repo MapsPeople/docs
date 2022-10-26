@@ -31,7 +31,7 @@ var mapView = GMSMapView.map(withFrame: CGRect.init(x: 0, y: 0, width: UIScreen.
 }
 ```  
 
-The MPMapControl class the is connective class between the Google Map and the MapsIndoors. It allows the two services to collaborate by overlaying the MapsIndoors information over the Google Maps information.
+The [MPMapControl Class](https://app.mapsindoors.com/mapsindoors/reference/ios/v3/interface_m_p_map_control.html) the is connective class between the Google Map and the MapsIndoors. It allows the two services to collaborate by overlaying the MapsIndoors information over the Google Maps information.
 
 *Note: This also means logic is appended onto many Google Maps listeners, which means that using Google Maps listeners directly might break intended behavior of the MapsIndoors experience. We recommend checking our [reference docs](https://app.mapsindoors.com/mapsindoors/reference/ios/v3/index.html), and see if you can add a specific `Listener` through the `MapControl`. If this is possible, it is highly recommend you do so.*
 
