@@ -2,10 +2,10 @@
 title: User's Location as Point of Origin for Android
 toc: true
 eleventyNavigation:
-key: android-directions-rendering-location-as-origin
-parent: android-directions-rendering
-title: User's Location as Point of Origin for Android
-order: 20
+    key: android-directions-rendering-location-as-origin
+    parent: android-directions-rendering
+    title: User's Location as Point of Origin for Android
+    order: 20
 ---
 
 Often you may want to get directions starting from a user's actual current location, instead of from another fixed Location. The following code snippet gives an example on how to implement this.
