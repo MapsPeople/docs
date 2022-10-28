@@ -41,7 +41,7 @@ MPLocationService.sharedInstance().getLocationsByExternalIds(externalIds)
 Running the below snippet will return an Array of `MPLocations`.
 
 ```js
-locationsService.getLocationsByExternalId(externalIds: string[])
+locationsService.getLocationsByExternalId(externalIds)
 ```
 
 </mi-tab-panel>
