@@ -9,6 +9,18 @@ eleventyNavigation:
 
 Changelog for MapsIndoors SDK for JavaScript. This document structure is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and the project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [4.21.0] - 2022-10-27
+
+### Added
+
+- Support for getting locations by external ID.
+
+## [4.20.2] - 2022-10-25
+
+### Fixed
+
+- Fix bug where a runtime 3D model URL change would not render the new model.
+
 ## [4.20.1] - 2022-10-11
 
 ### Fixed
