@@ -3,6 +3,8 @@ title: Google Analytics
 toc: true
 ---
 
+<!--THIS PAGE IS UNLISTED-->
+
 ## Overview
 
 Google Analytics is a free tool that gives you the opportunity to analyze data to get a deeper understanding of your customers and how they use your app. Examples include understanding which places are hardest to find in your venue or what users typically search for when looking for a location.
