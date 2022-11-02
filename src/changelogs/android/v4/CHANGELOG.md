@@ -28,6 +28,11 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 
 ### Fixed
 
+- Fixed 2D model rendering related issues
+- Fixed Live Data badges in some cases overlapping the icon or label
+- Fixed issue with Main Display Rule not being respected in some instances
+- Fixed race-condition crash that could occur on Google Maps
+
 ## [4.0.1] 2022-10-18
 
 ### Added
