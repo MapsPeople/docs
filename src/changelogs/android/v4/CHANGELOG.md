@@ -18,6 +18,16 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 ### Security     in case of vulnerabilities.
 -->
 
+## [4.0.2] 2022-11-02
+
+### Added
+
+- Added Reverse Geocoding interface
+  - It can be used to fetch mapsindoors data from a given geographical coordinate
+- Added ability to use a `Context` when building a `MPMapConfig`, instead of an `Activity`
+
+### Fixed
+
 ## [4.0.1] 2022-10-18
 
 ### Added
