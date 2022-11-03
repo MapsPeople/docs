@@ -22,7 +22,7 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 
 Please note that support for iOS 10 in MapsIndoors SDK v3 will soon end. The minimum supported version will then be iOS 11. The required version of Xcode will remain Xcode 13 a bit longer.
 
-## [3.43.0] 2022-10-28
+## [3.43.0] 2022-11-03
 
 ### Added
 
