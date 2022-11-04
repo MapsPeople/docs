@@ -22,7 +22,7 @@ eleventyNavigation:
 
 <mi-tab-panel id="gm-manually">
 
-MapsIndoors Locations can be retrieved in the mapsindoors namespace using the `LocationsService.getLocations()` method but first you need to add a `<input>` and `<button>` element to the DOM.
+MapsIndoors Locations can be retrieved in the mapsindoors namespace using the [`LocationsService.getLocations()` method](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/mapsindoors.services.LocationsService.html#.getLocations) but first you need to add a `<input>` and `<button>` element to the DOM.
 
 * Create an `<input>` and `<button>` element in `<body>`.
 * Attach an `onclick` event to the `<button>` element and call a `onSearch` method, which you will create next.
@@ -142,7 +142,7 @@ miMapElement.addEventListener('mapsIndoorsReady', () => {
 </mi-tab-panel>
 <mi-tab-panel id="mb-manually">
 
-MapsIndoors Locations can be retrieved in the `mapsindoors` namespace using the `LocationsService.getLocations()` method but first you need to add an `<input>` and `<button>` element to the DOM.
+MapsIndoors Locations can be retrieved in the `mapsindoors` namespace using the [`LocationsService.getLocations()` method](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/mapsindoors.services.LocationsService.html#.getLocations) but first you need to add an `<input>` and `<button>` element to the DOM.
 
 * Create an `<input>` and `<button>` element in `<body>`.
 * Attach an `onclick` event to the `<button>` element and call a `onSearch` method, which you will create next.
@@ -725,7 +725,6 @@ function onSearch() {
 
 +   // Filter map to only display search results
 +   mapsIndoorsInstance.filter(locations.map(location => location.id), false);
-+ });
 }
 ```
 
@@ -760,7 +759,6 @@ miSearchElement.addEventListener('results', (event) => {
 + miMapElement.getMapsIndoorsInstance().then((mapsIndoorsInstance) => {
 +   // Filter map to only display search results
 +   mapsIndoorsInstance.filter(event.detail.map(location => location.id), false);
-+ });
 ```
 
 </mi-tab-panel>
@@ -806,7 +804,6 @@ function onSearch() {
 
 +   // Filter map to only display search results
 +   mapsIndoorsInstance.filter(locations.map(location => location.id), false);
- });
 }
 ```
 
@@ -841,7 +838,6 @@ miSearchElement.addEventListener('results', (event) => {
 + miMapElement.getMapsIndoorsInstance().then((mapsIndoorsInstance) => {
 +   // Filter map to only display search results
 +   mapsIndoorsInstance.filter(event.detail.map(location => location.id), false);
-+ });
 });
 ```
 

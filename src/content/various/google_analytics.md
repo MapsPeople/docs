@@ -1,11 +1,9 @@
 ---
 title: Google Analytics
 toc: true
-eleventyNavigation:
-  key: Google Analytics
-  parent: various
-  order: 7
 ---
+
+<!--THIS PAGE IS UNLISTED-->
 
 ## Overview
 

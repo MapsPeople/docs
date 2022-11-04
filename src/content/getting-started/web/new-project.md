@@ -18,7 +18,7 @@ eleventyNavigation:
 1. Start by creating a new project folder. The location is not important, just remember the location, and ensure your newly created project folder is empty.
 1. Inside that, create two empty files: `index.html` and `main.js`.
 
-    > The file `index.html` is the entry point for our application and contains the HTML code. The file `main.js` will be read by `index.html` and consists of the JavaScript code for the actual application to run.
+    > The file `index.html` is the entry point for our application and contains the HTML code. The file `main.js` will be read by `index.html` and consists of the JavaScript code for the actual application to run. To run the demo you will be creating in this tutorial, open `index.html` in your web browser.
 
 1. Open `index.html`. Create a basic HTML structure and include the `main.js` file, as follows:
 

@@ -231,7 +231,7 @@ Now our example app is ready to provide Directions. Next up is how to give it an
 
 ### Draw a Route on the Map
 
-To display a route on the map, we use the _coordinates_ of an _Origin_ and _Destination_ and draw a line between them. For this, we use MapsIndoors' `directionsRender`.
+To display a route on the map, we use the _coordinates_ of an _Origin_ and _Destination_ and draw a line between them. For this, we use MapsIndoors' [`directionsRenderer`](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/mapsindoors.directions.DirectionsRenderer.html).
 
 The _Destination_ coordinate is retrieved dynamically, using the coordinate of the selected Location in the search results list. Therefore, you must search for the destination to get directions, and then click the result, in the text list. Different solutions can of course be implemented into your own solution later. In this tutorial, the _Origin_ is a hardcoded coordinate.
 

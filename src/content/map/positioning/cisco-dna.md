@@ -1,6 +1,5 @@
 ---
 title: Using Cisco DNA Spaces
-toc: true
 eleventyNavigation:
   parent: map-positioning-blue-dot
   title: Using Cisco DNA Spaces
@@ -11,13 +10,14 @@ eleventyNavigation:
 <mi-tabs>
 <mi-tab label="Android" tab-for="android"></mi-tab>
 <mi-tab label="iOS" tab-for="ios"></mi-tab>
+<mi-tab label="Web" tab-for="web"></mi-tab>
 <mi-tab-panel id="android">
 
 To get started with Cisco DNA positioning, the MapsIndoors SDK offers all the required building blocks without any external dependencies.
 
 The Position Provider implementation exists at the customer application level, and needs to use the `PositionProvider` interface from the MapsIndoors SDK. The MapsIndoors SDK can then use the positioning results given by the Position Provider when setting the Position Provider with `MapControl.setPositionProvider(PositionProvider)`.
 
-### Floor Mapping
+### Floor Mapping for Android
 
 The Position Provider should align with the MapsIndoors Floor index convention (floors are indexed as e.g 0, 10, 20, 30 corresponding to ground floor, 1st floor, 2nd floor, 3rd floor, with negative floors indices allowed as well to indicate Floors below ground, e.g. -10). It is therefore up to the Position Provider class to convert any given Floor indexing from the positioning source to that of MapsIndoors.
 
@@ -28,7 +28,7 @@ The MapsIndoors backend is closely integrated with the CiscoDNA platform, so the
 <!-- Fetch data from solution -->
 {% include "src/content/shared/map/positioning-fetch-android.md" %}
 
-### Implementing Cisco DNA
+### Implementing Cisco DNA for Android
 
 This Guide requires you to already have an activity that shows a MapsIndoors Map as well as a Cisco DNA network with positioning active.
 
@@ -446,11 +446,11 @@ A full example of the Cisco DNA position provider together with `PositionProvide
 </mi-tab-panel>
 <mi-tab-panel id="ios">
 
-## MapsIndoors and CiscoDNA
+## MapsIndoors and CiscoDNA for iOS
 
 MapsIndoors is a dynamic mapping platform from MapsPeople that can provide maps of your indoor and outdoor localities and helps you create search and navigation experiences for your local users. CiscoDNA is Cisco’s newest digital and cloud-based IT infrastructure management platform. Among many other things, CiscoDNA can pinpoint the physical and geographic position of devices connected wirelessly to the local IT network.
 
-## How User Positioning Works in MapsIndoors
+## How User Positioning Works in MapsIndoors for iOS
 
 In order to show a user's position in an indoor map with MapsIndoors, a Position Provider must be implemented. MapsIndoors does not implement a Position Provider itself, but rely on 3rd party positioning software to create this experience. In an outdoor environment this Position Provider can be a wrapper of the Core Location Services in iOS.
 
@@ -458,13 +458,13 @@ A Position Provider in MapsIndoors must adhere to the `MPPositionProvider` proto
 
 ![cisco-dna-ios](/assets/map/positioning/positioning-diagram.png)
 
-## Wrapping the CiscoDNA Positioning in a Position Provider
+## Wrapping the CiscoDNA Positioning in a Position Provider for iOS
 
 Just like in the mock Position Provider example, we need to implement a Position Provider that wraps the MapsIndoors CiscoDNA services to inject the CiscoDNA indoor positioning into MapsIndoors. If you only require this to work for indoor positioning, we would be good with just wrapping the CiscoDNA part. MapsIndoors however has the capability to support wayfinding both outdoors and indoors, so the shown solution implements two Position Providers, one for CoreLocation (`GPSPositionProvider`) and one for CiscoDNA (`CiscoDNAPositionProvider2`). The `CiscoDNAPositionProvider2` subclasses the `GPSPositionProvider` so it can determine whether the CiscoDNA position or the Core Location position should be used in your application. Both Position Providers are written in Objective C, but can of course be used in Swift as well.
 
 The `CiscoDNAPositionProvider2` communicates with some MapsIndoors services to get the Cisco device id, and uses a message subscription service (MQTT) to subscribe for position updates. Each time a Cisco position is received, its age is determined. If the age of the latest Cisco position is above 120 seconds or the application is not connected to the wifi, the CoreLocation position is used instead.
 
-## Integration Guide
+## Integration Guide for iOS
 
 1. Make sure you have [integrated MapsIndoors]({{site.url}}/content/getting-started/ios) succesfully.
 1. Download and unzip [this zip file](https://drive.google.com/file/d/1rbtB872NQ81m93xsxdzxA7gn8MtW1Ksl/view?usp=sharing) containing the CiscoDNA integration source.
@@ -490,6 +490,214 @@ If you need a working project example with MapsIndoors and CiscoDNA (excluding A
 
 <!-- Fetch data from solution -->
 {% include "src/content/shared/map/positioning-fetch-ios.md" %}
+
+</mi-tab-panel>
+<mi-tab-panel id="web">
+
+## MapsIndoors & CiscoDNA for Web
+
+MapsIndoors is a dynamic mapping platform from MapsPeople that can provide maps of your indoor and outdoor localities and helps you create search and navigation experiences for your local users. CiscoDNA is Cisco’s newest digital and cloud-based IT infrastructure management platform. Among many other things, CiscoDNA can pinpoint the physical and geographic position of devices connected wirelessly to the local IT network.
+
+## User Positioning in MapsIndoors for Web
+
+In order to show a user's position on an indoor map with MapsIndoors, a Position Provider must be implemented. The MapsIndoors JavaScript SDK does not provide a default Position Provider but relies on 3rd party positioning software to create this experience. In an outdoor environment, this Position Provider can be a wrapper of the browser's native Geolocation API.
+
+## Code Sample
+
+> Please note that the following code sample assumes that you have already succesfully implemented MapsIndoors into your application.
+
+The JavaScript SDK doesn't have a built-in interface like the Android and iOS SDKs. However, by following these steps, you should be able to achieve the same functionality.
+
+The first step is to create the class `CiscoPositioningService`, and the constructor for it.
+
+```javascript
+class CiscoPositioningService {
+    /**
+     * @param {string} args.clientIp - The local IP address of the device
+     * @param {string} args.tenantId - The Cisco tenant id.
+     * @param {number} [args.pollingInterval=1000] - The interval that the position will be polled from the backend.
+     * @param {string} [args.region="eu"] - The Cisco app region.
+     */
+    constructor(args = {}) {
+        if (!args.clientIp)
+            throw new TypeError('Invalid argument: "clientIp"');
+
+        if (!args.tenantId)
+            throw new TypeError('Invalid argument: "tenantId"');
+
+        this._pollingInterval = 1000;
+        this._tenantId = args.tenantId;
+        this._successCallbacks = new Map();
+        this._errorCallbacks = new Map();
+        this._deviceId = '';
+
+        args.region = args.region || 'eu';
+
+        this.pollingInterval = args.pollInterval;
+
+        fetch(`https://ciscodna.mapsindoors.com/${this._tenantId}/api/ciscodna/devicelookup?clientIp=${args.clientIp}&region=${args.region}`)
+            .then(this._errorHandler)
+            .then(res => res.json())
+            .then(({ deviceId }) => {
+                this._deviceId = deviceId;
+                this._startPolling();
+            }).catch(err => {
+                console.error(err.message);
+            });
+    }
+```
+
+Next step is to create `watchPosition` and `clearWatch`, to watch for the positioning updates the system recieves.
+
+```javascript
+    watchPosition(successCallback, errorCallback) {
+        const watchId = Symbol();
+        if (!(successCallback instanceof Function))
+            throw new TypeError('Invalid argument: "successCallback"');
+
+        if (errorCallback instanceof Function) {
+            this._errorCallbacks.set(watchId, errorCallback);
+        }
+
+        this._successCallbacks.set(watchId, successCallback);
+
+        if (!this._interval) {
+            this._startPolling();
+        }
+
+        return watchId;
+    }
+
+    clearWatch(watchId) {
+        this._successCallbacks.delete(watchId);
+        this._errorCallbacks.delete(watchId);
+
+        if (this._successCallbacks.size === 0) {
+            this._stopPolling();
+        }
+    }
+
+    getCurrentPosition(successCallback, errorCallback) {
+        fetch(`https://ciscodna.mapsindoors.com/${this._tenantId}/api/ciscodna/${this._deviceId}`)
+            .then(this._errorHandler)
+            .then(res => res.json())
+            .then(data => {
+                this._successCallbacks.forEach(cb => cb.call(null, data));
+            }).catch(err => {
+                this._errorCallbacks.forEach(cb => cb.call(null, err));
+            });
+    }
+```
+
+The next step is to create some functions that manage how often the system retrieves an update, or polls, from the Cisco DNA setup.
+
+```javascript
+    set pollingInterval(value) {
+        if (!isNaN(value) && this._pollingInterval !== value) {
+            this._pollingInterval = value;
+            this._stopPolling();
+            this._startPolling();
+        }
+    }
+
+    get pollingInterval() {
+        return this._pollingInterval;
+    }
+
+
+    /**
+     * @private
+     */
+    _startPolling() {
+        if (!this._interval && this._deviceId > '' && this._successCallbacks.size > 0) {
+            this._interval = window.setInterval(() => {
+                this.getCurrentPosition(response => {
+                    this._successCallbacks.forEach(callback => callback(response));
+                },
+                    error => {
+                        this._errorCallbacks.forEach(callback => callback(err));
+                    });
+
+            }, this._pollingInterval);
+        }
+    }
+
+    /**
+     * @private
+     */
+    _stopPolling() {
+        if (this._interval) {
+            window.clearInterval(this._interval);
+            this._interval = null;
+        }
+    }
+```
+
+Lastly, an error handler is implemented.
+
+```javascript
+    /**
+     * @private
+     */
+
+    _errorHandler(response) {
+        if (!response.ok) {
+            const contentType = response.headers.get('content-type');
+            if (contentType && contentType.indexOf('application/json') !== -1) {
+                return response.json().then(({ message }) => {
+                    throw new Error(message);
+                });
+            } else {
+                let statusText;
+                switch (response.status) {
+                    case 400:
+                        statusText = 'The client IP is invalid.';
+                        break;
+                    case 404:
+                        statusText = 'Device not found.';
+                        break;
+                    case 403:
+                        statusText = 'The TenantId supplied is not authorized to access the device at the location.'
+                        break;
+                    default:
+                        statusText = 'Unknown error.';
+                }
+
+                throw new Error(statusText);
+            }
+        }
+
+        return response;
+    }
+} // end class
+```
+
+Once the class is created, it can then be used, for example, in the following way - Keep in mind that you cannot fetch the client/device IP address from the browser, an option to get around this could be a seperate service that returns the IP address:
+
+```javascript
+const map = mapView.getMap();
+let watchId;
+
+mapsindoors.services.SolutionsService.getSolution('57e4e4992e74800ef8b69718').then(solution => {
+    if (solution.positionProviderConfigs && solution.positionProviderConfigs.ciscodna) {
+        const tenantId = solution.positionProviderConfigs.ciscodna.ciscoDnaSpaceTenantId;
+        const region = solution.positionProviderConfigs.ciscodna.ciscoDnaSpaceTenantRegion || 'usa';
+        const clientIp = '10.0.0.134';
+        const cps = new CiscoPositioningService({ clientIp, tenantId, region });
+
+        watchId = cps.watchPosition(function (data) {
+            console.log(data);
+            map.setCenter({ lat: data.latitude, lng: data.longitude });
+        }, function (err) {
+            console.log(err);
+        })
+    }
+});
+
+const floorSelector = document.createElement('div');
+new mapsindoors.FloorSelector(floorSelector, mi);
+map.controls[google.maps.ControlPosition.RIGHT_TOP].push(floorSelector);
+```
 
 </mi-tab-panel>
 </mi-tabs>

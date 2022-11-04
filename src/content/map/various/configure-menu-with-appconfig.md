@@ -13,7 +13,7 @@ eleventyNavigation:
 > This guide uses code from the "Getting Started" guide. If you have not completed it yet, it is <b>highly recommended</b> to complete it in order to achieve a better understanding of the MapsIndoors SDK. The guide can be found [here]({{ site.url }}/content/getting-started/android/). If you just want to follow this guide, the getting started code can be found here for [java](https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android)/[kotlin](https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android-Kotlin).
 
 <!-- lets make a "new" fragment -->
-First, make a new fragment for the menu, and call it `MenuFragment`, this fragment will take a list of `MenuInfo` which will become the elements of the menu.
+First, make a new fragment for the menu, and call it `MenuFragment`, this fragment will take a list of `MPMenuInfo` which will become the elements of the menu.
 
 > If you have not followed the getting started guide, the code for `fragment_search_list` can be seen [here](https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/res/layout/fragment_search_list.xml).
 
@@ -24,10 +24,10 @@ First, make a new fragment for the menu, and call it `MenuFragment`, this fragme
 
 ```java
 public class MenuFragment extends Fragment {
-    private List<MenuInfo> mMenuInfos = null;
+    private List<MPMenuInfo> mMenuInfos = null;
     private MapsActivity mMapActivity = null;
 
-    public static MenuFragment newInstance(List<MenuInfo>  menuInfos, MapsActivity mapsActivity) {
+    public static MenuFragment newInstance(List<MPMenuInfo>  menuInfos, MapsActivity mapsActivity) {
         final MenuFragment fragment = new MenuFragment();
         fragment.mMenuInfos = menuInfos;
         fragment.mMapActivity = mapsActivity;
@@ -56,7 +56,7 @@ public class MenuFragment extends Fragment {
 
 ```kotlin
 class MenuFragment : Fragment() {
-    private lateinit var mMenuInfos: List<MenuInfo?>
+    private lateinit var mMenuInfos: List<MPMenuInfo?>
     private lateinit var mMapActivity: MapsActivity
 
 
@@ -72,7 +72,7 @@ class MenuFragment : Fragment() {
     }
 
     companion object {
-        fun newInstance(menuInfos: List<MenuInfo?>, mapsActivity: MapsActivity): MenuFragment {
+        fun newInstance(menuInfos: List<MPMenuInfo?>, mapsActivity: MapsActivity): MenuFragment {
             val fragment = MenuFragment()
             fragment.mMenuInfos = menuInfos
             fragment.mMapActivity = mapsActivity
@@ -86,7 +86,7 @@ class MenuFragment : Fragment() {
 </mi-tabs>
 
 <!-- also a "new" adapter -->
-Next make an adapter for this list of `MenuInfo`. In this example the adapter reuses the `ViewHolder` created for the search experience in the getting started guide. For now, Just set the name of the item in `onBindViewHolder`, the icon and click listener will be set later.
+Next make an adapter for this list of `MPMenuInfo`. In this example the adapter reuses the `ViewHolder` created for the search experience in the getting started guide. For now, Just set the name of the item in `onBindViewHolder`, the icon and click listener will be set later.
 > If you have not followed the getting started guide, the code can be seen here for [java](https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/SearchItemAdapter.java#L72-L82)/[kotlin](https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android-Kotlin/blob/main/app/src/main/java/com/example/mapsindoorsgettingstartedkotlin/SearchItemAdapter.kt#L53-L62).
 
 <mi-tabs>
@@ -97,10 +97,10 @@ Next make an adapter for this list of `MenuInfo`. In this example the adapter re
 ```java
 public class MenuItemAdapter extends RecyclerView.Adapter<ViewHolder> {
 
-    private final List<MenuInfo> mMenuInfos;
+    private final List<MPMenuInfo> mMenuInfos;
     private final MapsActivity mMapActivity;
 
-    MenuItemAdapter(List<MenuInfo> menuInfoList, MapsActivity activity) {
+    MenuItemAdapter(List<MPMenuInfo> menuInfoList, MapsActivity activity) {
         mMenuInfos = menuInfoList;
         mMapActivity = activity;
     }
@@ -131,7 +131,7 @@ public class MenuItemAdapter extends RecyclerView.Adapter<ViewHolder> {
 
 ```kotlin
 internal class MenuItemAdapter(
-    private val mMenuInfos: List<MenuInfo?>,
+    private val mMenuInfos: List<MPMenuInfo?>,
     private val mMapActivity: MapsActivity?
 ) : RecyclerView.Adapter<ViewHolder>() {
 
@@ -156,7 +156,7 @@ internal class MenuItemAdapter(
 </mi-tabs>
 
 <!-- lets download an image -->
-The icon for the `MenuInfo` is saved as an URL, as such it has to be downloaded to be displayed. Open a network connection in a background thread and download the image as a stream and save it in a `Bitmap`, then update the item's view back on the Main thread.
+The icon for the `MPMenuInfo` is saved as an URL, as such it has to be downloaded to be displayed. Open a network connection in a background thread and download the image as a stream and save it in a `Bitmap`, then update the item's view back on the Main thread.
 > This is a very rudimentary example, and should not be replicated in production code, see it as an exercise to implement a better way to download and display the icons.
 
 <mi-tabs>
@@ -215,9 +215,9 @@ if (iconUrl != null) {
 </mi-tabs>
 
 <!-- lets filter the map -->
-To show which locations belong to the category of the selected `MenuInfo`, call `MapsIndoors.getLocationsAsync(MPQuery, MPFilter, OnLocationsReadyListener)`. The `MPQuery` can just be empty as nothing specific needs to be queried. Set the category on the `MPFilter`, this has to be the category key `MenuInfo.getCategoryKey()`, as this key is shared with locations in the SDK.
+To show which locations belong to the category of the selected `MPMenuInfo`, call `MapsIndoors.getLocationsAsync(MPQuery, MPFilter, OnLocationsReadyListener)`. The `MPQuery` can just be empty as nothing specific needs to be queried. Set the category on the `MPFilter`, this has to be the category key `MPMenuInfo.getCategoryKey()`, as this key is shared with locations in the SDK.
 
-Finally, in the `OnLocationsReadyListener` call `MapControl.displaySearchResults(MPLocation)` as this will filter the map to only show the selected locations.
+Finally, in the `OnLocationsReadyListener` call `MapControl.setFilter(List<MPLocation>, MPFilterBehavior)` as this will filter the map to only show the selected locations.
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
@@ -234,7 +234,7 @@ holder.itemView.setOnClickListener(view -> {
     MPFilter filter = new MPFilter.Builder().setCategories(Collections.singletonList(mMenuInfos.get(position).getCategoryKey())).build();
     MapsIndoors.getLocationsAsync(query, filter, (locations, error) -> {
         if (error == null && locations != null) {
-            mMapActivity.getMapControl().displaySearchResults(locations);
+            mMapActivity.getMapControl().setFilter(locations, MPFilterBehavior.DEFAULT)
         }
     });
 });
@@ -259,7 +259,7 @@ holder.itemView.setOnClickListener { view ->
         query, filter
     ) { locations: List<MPLocation?>?, error: MIError? ->
         if (error == null && locations != null) {
-            mMapActivity?.getMapControl()?.displaySearchResults(locations)
+            mMapActivity?.getMapControl()?.setFilter(locations, MPFilterBehavior.DEFAULT)
         }
     }
 }
@@ -269,7 +269,7 @@ holder.itemView.setOnClickListener { view ->
 </mi-tabs>
 
 <!-- lets hijack the search button -->
-Then, in order to show the menu, hijack the search icon's `onClickListener` method. The `MenuInfo` can be fetched via `MapControl.getAppConfig().getMenuInfo(String)`, and will give a menu corresponding to the inputted String, in this guide `"mainmenu"` has been used as it is the default.
+Then, in order to show the menu, hijack the search icon's `onClickListener` method. The `MPMenuInfo` can be fetched via `MapsIndoors.getAppConfig().getMenuInfo(String)`, and will give a menu corresponding to the inputted String, in this guide `"mainmenu"` has been used as it is the default.
 
 ```java
 @Override
@@ -326,7 +326,8 @@ override fun onCreate(savedInstanceState: Bundle?) {
 
 <!-- remove the filter -->
 
-Finally to clear the category filter from the map call `MapControl.clearMap()`, in this example it is called when closing the menu sheet, it the `onDestroyView` method of `MenuFragment`.
+Finally to clear the category filter from the map call `MapControl.clearFilter()`, in this example it is called when closing the menu sheet, it the `onDestroyView` method of `MenuFragment`.
+
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
@@ -336,7 +337,7 @@ Finally to clear the category filter from the map call `MapControl.clearMap()`, 
 @Override
 public void onDestroyView() {
     // When we close the menu fragment we want to display all locations again, not just whichever were selected last
-    mMapActivity.getMapControl().clearMap();
+    mMapActivity.getMapControl().clearFilter();
     super.onDestroyView();
 }
 ```
@@ -347,7 +348,7 @@ public void onDestroyView() {
 ```kotlin
 override fun onDestroyView() {
     // When we close the menu fragment we want to display all locations again, not just whichever were selected last
-    mMapActivity.getMapControl().clearMap()
+    mMapActivity.getMapControl().clearFilter()
     super.onDestroyView()
 }
 ```
@@ -355,4 +356,5 @@ override fun onDestroyView() {
 </mi-tab-panel>
 </mi-tabs>
 
-The code shown in this guide can be found here for [java](https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/tree/feature/appconfig)/[kotlin](https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android-Kotlin/tree/feature/appconfig).
+<!-- **TODO: UPDATE APP LINKS**
+The code shown in this guide can be found here for [java](https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/tree/feature/appconfig)/[kotlin](https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android-Kotlin/tree/feature/appconfig). -->

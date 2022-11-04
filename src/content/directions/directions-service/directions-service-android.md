@@ -8,7 +8,7 @@ eleventyNavigation:
   order: 10
 ---
 
-The class `MPRoutingProvider` is used to request routes from one point to another. The minimum required input to receive a route is an `origin` and a `destination`.
+The class `MPDirectionsService` is used to request routes from one point to another. The minimum required input to receive a route is an `origin` and a `destination`.
 This example shows how to setup and execute a query for a Route:
 
 <mi-tabs>
@@ -17,13 +17,13 @@ This example shows how to setup and execute a query for a Route:
 <mi-tab-panel id="java">
 
 ```java
-MPRoutingProvider directionsService = new MPRoutingProvider();
-MPDirectionsRenderer directionsRenderer = new MPDirectionsRenderer(mContext, mGoogleMap, mMapControl, null);
+MPDirectionsService directionsService = new MPDirectionsService(mContext);
+MPDirectionsRenderer directionsRenderer = new MPDirectionsRenderer(mMapControl);
 
-Point origin = new Point(57.057917, 9.950361, 0.0);
-Point destination = new Point(57.058038, 9.950509, 0.0);
+MPPoint origin = new MPPoint(57.057917, 9.950361, 0.0);
+MPPoint destination = new MPPoint(57.058038, 9.950509, 0.0);
 
-directionsService.setOnRouteResultListener((route, error) -> {
+directionsService.setRouteResultListener((route, error) -> {
 
 });
 
@@ -34,14 +34,13 @@ directionsService.query(origin, destination);
 <mi-tab-panel id="kotlin">
 
 ```kotlin
-val directionsService = MPRoutingProvider()
-val directionsRenderer = MPDirectionsRenderer(this, mMap, mMapControl, null)
+val directionsService = MPDirectionsService(mContext)
+val directionsRenderer = MPDirectionsRenderer(mMapControl)
 
-val origin = Point(57.057917, 9.950361, 0.0)
-val destination = Point(57.058038, 9.950509, 0.0)
+val origin = MPPoint(57.057917, 9.950361, 0.0)
+val destination = MPPoint(57.058038, 9.950509, 0.0)
 
-directionsService.setOnRouteResultListener { route, miError ->
-}
+directionsService.setRouteResultListener { route, error -> }
 
 directionsService.query(origin, destination)
 ```
@@ -52,7 +51,7 @@ directionsService.query(origin, destination)
 <!-- Travel-mode -->
 {% include "src/content/shared/getting-started/directions/travel-mode.md" %}
 
-Set the **travel mode** on your request using the `setTravelMode` method on `MPRoutingProvider`:
+Set the **travel mode** on your request using the `setTravelMode` method on `MPDirectionsService`:
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
@@ -61,14 +60,14 @@ Set the **travel mode** on your request using the `setTravelMode` method on `MPR
 
 ```java/6
 void createRoute(MPLocation mpLocation) {
-    //If MPRoutingProvider has not been instantiated create it here and assign the results call back to the activity.
-    if (mpRoutingProvider == null) {
-        mpRoutingProvider = new MPRoutingProvider();
-        mpRoutingProvider.setOnRouteResultListener(this);
+    //If MPDirectionsService has not been instantiated create it here and assign the results call back to the activity.
+    if (mpDirectionsService == null) {
+        mpDirectionsService = new MPDirectionsService(mContext);
+        mpDirectionsService.setRouteResultListener(this::onRouteResult);
     }
-    mpRoutingProvider.setTravelMode(TravelMode.WALKING);
-    //Queries the MPRouting provider for a route with the hardcoded user location and the point from a location.
-    mpRoutingProvider.query(mUserLocation, mpLocation.getPoint());
+    mpDirectionsService.setTravelMode(MPTravelMode.WALKING);
+      //Queries the MPDirectionsService for a route with the hardcoded user location and the point from a location.
+    mpDirectionsService.query(mUserLocation, mpLocation.getPoint());
 }
 ```
 
@@ -77,14 +76,14 @@ void createRoute(MPLocation mpLocation) {
 
 ```kotlin/6
 fun createRoute(mpLocation: MPLocation) {
-    //If MPRoutingProvider has not been instantiated create it here and assign the results call back to the activity.
-    if (mpRoutingProvider == null) {
-        mpRoutingProvider = MPRoutingProvider()
-        mpRoutingProvider?.setOnRouteResultListener(this)
+    //If MPDirectionsService has not been instantiated create it here and assign the results call back to the activity.
+    if (mpDirectionsService == null) {
+        mpDirectionsService = MPDirectionsService(mContext)
+        mpDirectionsService?.setRouteResultListener(this::onRouteResult)
     }
-    mpRoutingProvider?.setTravelMode(TravelMode.WALKING)
-    //Queries the MPRouting provider for a route with the hardcoded user location and the point from a location.
-    mpRoutingProvider?.query(mUserLocation, mpLocation.point)
+    mpDirectionsService?.setTravelMode(MPTravelMode.WALKING)
+    //Queries the MPDirectionsService for a route with the hardcoded user location and the point from a location.
+    mpDirectionsService?.query(mUserLocation, mpLocation.point)
 }
 ```
 
@@ -97,7 +96,7 @@ The travel modes generally only apply for outdoor navigation. Indoor navigation 
 
 ### Avoiding Stairs and Steps
 
-For wheelchair users or other users with limited mobility, it may be relevant to request a Route that avoids stairs and steps. Avoid certain **way types** on the route using the `addRouteRestriction` method on `MPRoutingProvider`.
+For wheelchair users or other users with limited mobility, it may be relevant to request a Route that avoids stairs and steps. Avoid certain **way types** on the route using the `addRouteRestriction` method on `MPDirectionsService`.
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
@@ -106,19 +105,18 @@ For wheelchair users or other users with limited mobility, it may be relevant to
 
 ```java/7-8
 void getRoute() {
-  MPRoutingProvider directionsService = new MPRoutingProvider();
-  MPDirectionsRenderer directionsRenderer = new MPDirectionsRenderer(mContext, mGoogleMap, mMapControl, null);
+  MPDirectionsService directionsService = new MPDirectionsService(mContext);
+  MPDirectionsRenderer directionsRenderer = new MPDirectionsRenderer(mMapControl);
 
-  Point origin = new Point(57.057917, 9.950361, 0.0);
-  Point destination = new Point(57.058038, 9.950509, 0.0);
+  MPPoint origin = new MPPoint(57.057917, 9.950361, 0.0);
+  MPPoint destination = new MPPoint(57.058038, 9.950509, 0.0);
 
-  directionsService.addRouteRestriction(Highway.STEPS);
-  directionsService.addRouteRestriction(Highway.ESCALATOR);
-  
-  directionsService.setOnRouteResultListener((route, error) -> {
+  directionsService.addAvoidWayType(MPHighway.STEPS);
+  directionsService.addAvoidWayType(MPHighway.ELEVATOR);
+
+  directionsService.setRouteResultListener((route, error) -> {
 
   });
-
   directionsService.query(origin, destination);
 }
 ```
@@ -128,26 +126,25 @@ void getRoute() {
 
 ```kotlin/7-8
 fun getRoute() {
-    val directionsService = MPRoutingProvider()
-    val directionsRenderer = MPDirectionsRenderer(this, mMap, mMapControl, null)
+  val directionsService = MPDirectionsService(mContext)
+  val directionsRenderer = MPDirectionsRenderer(mMapControl)
 
-    val origin = Point(57.057917, 9.950361, 0.0)
-    val destination = Point(57.058038, 9.950509, 0.0)
+  val origin = MPPoint(57.057917, 9.950361, 0.0)
+  val destination = MPPoint(57.058038, 9.950509, 0.0)
 
-    directionsService.addRouteRestriction(Highway.STEPS)
-    directionsService.addRouteRestriction(Highway.ESCALATOR)
+  directionsService.addAvoidWayType(MPHighway.STEPS)
+  directionsService.addAvoidWayType(MPHighway.ELEVATOR)
 
-    directionsService.setOnRouteResultListener { route, miError ->
-    }
+  directionsService.setRouteResultListener { route, error -> }
 
-    directionsService.query(origin, destination)
+  directionsService.query(origin, destination)
 }
 ```
 
 </mi-tab-panel>
 </mi-tabs>
 
-When Route restrictions are set on the `MPRoutingProvider` they will be applied to any subsequent queries as well. You can remove them again by calling `clearRouteRestrictions`.
+When Route restrictions are set on the `MPDirectionsService` they will be applied to any subsequent queries as well. You can remove them again by calling `clearRouteRestrictions`.
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
@@ -156,7 +153,7 @@ When Route restrictions are set on the `MPRoutingProvider` they will be applied 
 
 ```java/1
 void clearRouteRestrictions() {
-  mpRoutingProvider.clearRouteRestrictions();
+  mpDirectionsService.clearRouteRestrictions();
 }
 ```
 
@@ -165,7 +162,7 @@ void clearRouteRestrictions() {
 
 ```kotlin/1
 fun clearRouteRestrictions() {
-    mpRoutingProvider?.clearRouteRestrictions()
+    mpDirectionsService?.clearRouteRestrictions()
 }
 ```
 
@@ -184,7 +181,7 @@ You can get the available Roles with help of the `MapsIndoors.getAppliedUserRole
 <mi-tab-panel id="java">
 
 ```java/1
-List<UserRole> getUserRoles() {
+List<MPUserRole> getUserRoles() {
   return MapsIndoors.getAppliedUserRoles();
 }
 ```
@@ -193,8 +190,8 @@ List<UserRole> getUserRoles() {
 <mi-tab-panel id="kotlin">
 
 ```kotlin/1
-fun getUserRoles(): List<UserRole>? {
-    return MapsIndoors.getAppliedUserRoles()
+fun getUserRoles(): List<MPUserRole>? {
+  return MapsIndoors.getAppliedUserRoles()
 }
 ```
 
@@ -209,7 +206,7 @@ User Roles can be set on a global level using `MapsIndoors.applyUserRoles`.
 <mi-tab-panel id="java">
 
 ```java/1
-void setUserRoles(List<UserRole> userRoles) {
+void setUserRoles(List<MPUserRole> userRoles) {
     MapsIndoors.applyUserRoles(userRoles);
 }
 ```
@@ -218,7 +215,7 @@ void setUserRoles(List<UserRole> userRoles) {
 <mi-tab-panel id="kotlin">
 
 ```kotlin/1
-fun setUserRoles(userRoles: List<UserRole>) {
+fun setUserRoles(userRoles: List<MPUserRole>) {
     MapsIndoors.applyUserRoles(userRoles)
 }
 ```
@@ -226,86 +223,43 @@ fun setUserRoles(userRoles: List<UserRole>) {
 </mi-tab-panel>
 </mi-tabs>
 
-This will affect all following Directions requests as well as search queries with `MPLocationService`. User Roles can also be overwritten on the `MPRoutingProvider` by using `setUserRoles`.
-
-<mi-tabs>
-<mi-tab label="Java" tab-for="java"></mi-tab>
-<mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
-<mi-tab-panel id="java">
-
-```java/7
-void getRoute() {
-  MPRoutingProvider directionsService = new MPRoutingProvider();
-  MPDirectionsRenderer directionsRenderer = new MPDirectionsRenderer(mContext, mGoogleMap, mMapControl, null);
-
-  Point origin = new Point(57.057917, 9.950361, 0.0);
-  Point destination = new Point(57.058038, 9.950509, 0.0);
-
-  directionsService.setUserRoles(MapsIndoors.getAppliedUserRoles());
-
-  directionsService.setOnRouteResultListener((route, error) -> {
-
-  });
-
-  directionsService.query(origin, destination);
-}
-```
-
-</mi-tab-panel>
-<mi-tab-panel id="kotlin">
-
-```kotlin/7
-fun getRoute() {
-    val directionsService = MPRoutingProvider()
-    val directionsRenderer = MPDirectionsRenderer(this, mMap, mMapControl, null)
-
-    val origin = Point(57.057917, 9.950361, 0.0)
-    val destination = Point(57.058038, 9.950509, 0.0)
-
-    directionsService.setUserRoles(MapsIndoors.getUserRoles())
-
-    directionsService.setOnRouteResultListener { route, miError ->
-    }
-    directionsService.query(origin, destination)
-}
-```
-
-</mi-tab-panel>
-</mi-tabs>
-
-User Role restrictions set for a specific Directions Query will take precedence over User Roles set on a global level.
+This will affect all following Directions requests as well as search queries with `MapsIndoors`.
 
 For more information about App User Roles, see [this documentation]({{ site.url }}/content/map/displaying-objects/app-user-roles/).
 
 ## Transit Departure and Arrival Time
 
-When using the Transit travel mode, you must set a **departure date** or an **arrival date** on the route using the `setDateTime` method on `MPRoutingProvider`. The `date` parameter is the epoch time, in seconds, as an integer, and it is only possible to use one of these properties at a time.
+When using the Transit travel mode, you must set a **departure date** or an **arrival date** on the route using the `setTime` method on `MPDirectionsService` and declaring if it is a departure or not through `setIsDeparture`. The `date` parameter is the epoch time, in seconds, as an integer, and it is only possible to use one of these properties at a time.
 
 <mi-tabs>
 <mi-tab label="Java" tab-for="java"></mi-tab>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
 <mi-tab-panel id="java">
 
-```java/1,5
-void setDepartureTime(int date) {
-  mpRoutingProvider.setDateTime(date, true);
+```java/1-2,6-7
+void setDepartureTime(Date date) {
+    mpDirectionsService.setIsDeparture(true);
+    mpDirectionsService.setTime(date);
 }
 
-void setArrivalTime(int date) {
-  mpRoutingProvider.setDateTime(date, false);
+void setArrivalTime(Date date) {
+    mpDirectionsService.setIsDeparture(false);
+    mpDirectionsService.setTime(date);
 }
 ```
 
 </mi-tab-panel>
 <mi-tab-panel id="kotlin">
 
-```kotlin/1,5
-fun setDepartureTime(date: Int) {
-    mpRoutingProvider?.setDateTime(date, true)
+```kotlin/1-2,6-7
+fun setDepartureTime(date: Date?) {
+    mpDirectionsService.setIsDeparture(true)
+    mpDirectionsService.setTime(date)
 }
 
-fun setArrivalTime(date: Int) {
-    mpRoutingProvider?.setDateTime(date, false)
+fun setArrivalTime(date: Date?) {
+    mpDirectionsService.setIsDeparture(false)
+    mpDirectionsService.setTime(date)
 }
 ```
 

@@ -18,10 +18,12 @@ The method to do this is different for each platform.
 <mi-tab label="Web" tab-for="Web"></mi-tab>
 <mi-tab-panel id="Android">
 
-To change the building outline color, use `setBuildingOutlineStrokeColor()` from the `MapControl` class.
+To change the building outline color, along with other display properties, you must get and modify the Display Rule.
+
+Note that the DisplayRule will be null if MapsIndoors is not loaded.
 
 ```java
-setBuildingOutlineStrokeColor(strokeColor: Int)
+MapsIndoors.getDisplayRule(MPSolutionDisplayRule.BUILDING_OUTLINE).setPolygonStrokeColor(Color.BLUE);
 ```
 
 The parameter `strokeColor` takes the color in RGB format (with an alpha-channel value), the the syntax being `AARRGGBB`.
@@ -47,6 +49,10 @@ To do this in practice, on the MapsIndoors instance, call `setBuildingOutlineOpt
 ```javascript
 mapsIndoors.setBuildingOutlineOptions({strokeColor: '#3071d9'});
 ```
+
+Additional variables such as `strokeWeight` (for the thickness of the stroke) can also be used here, see the [reference docs](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/BuildingOutlineOptions.html) for the full list.
+
+You can also modify the fill color of a building, not just the outline. This is done using Display Rules, and more can be read about that [here](/content/map/map-styling/display-rules/#polygon).
 
 </mi-tab-panel>
 </mi-tabs>

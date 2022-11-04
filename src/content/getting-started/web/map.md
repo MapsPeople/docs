@@ -91,7 +91,7 @@ const mapsIndoorsInstance = new mapsindoors.MapsIndoors({
 });
 ```
 
-What happens in this snippet is we create a `mapViewInstance` that pulls up a `GoogleMapsView` with some `mapViewOptions`. The options define which element in the html-file to display the map in (in this case `<div id="map">`), where the map should center, what zoom level to display, and what the max zoom level is.
+What happens in this snippet is we create a `mapViewInstance` that pulls up a [`GoogleMapsView`](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/mapsindoors.mapView.GoogleMapsView.html) with some [`mapViewOptions`](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/mapsindoors.mapView.GoogleMapsView.html). The options define which element in the html-file to display the map in (in this case `<div id="map">`), where the map should center, what zoom level to display, and what the max zoom level is.
 
 <!-- Add screenshot -->
 
@@ -239,7 +239,7 @@ const mapsIndoorsInstance = new mapsindoors.MapsIndoors({
 });
 ```
 
-What happens in this snippet is we create a `mapViewInstance` that pulls up a `MapboxView` with some `mapViewOptions`. The options define which element in the html-file to display the map in (in this case `<div id="map">`), where the map should center, what zoom level to display, and what the max zoom level is.
+What happens in this snippet is we create a `mapViewInstance` that pulls up a [`GoogleMapsView`](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/mapsindoors.mapView.GoogleMapsView.html) with some [`mapViewOptions`](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/mapsindoors.mapView.GoogleMapsView.html). The options define which element in the html-file to display the map in (in this case `<div id="map">`), where the map should center, what zoom level to display, and what the max zoom level is.
 
 > Go here https://docs.mapbox.com/help/glossary/access-token/ for information about how to obtain a Mapbox access token.
 
@@ -312,7 +312,7 @@ miMapElement.addEventListener('mapsIndoorsReady', () => {
 </mi-tab-panel>
 </mi-tabs>
 
-You should now see a Google Maps map with MapsIndoors data loaded on top.
+You should now see a map from your chosen provider with MapsIndoors data loaded on top.
 
 ## Show a Floor Selector
 
@@ -326,7 +326,7 @@ Next, we'll add a Floor Selector for changing between Floors.
 
 <mi-tab-panel id="gm-manually">
 
-First, we add an empty `<div>` element programmatically. Then we create a new `FloorSelector` _instance_ and push the `floorSelectorElement` to the `googleMapsInstance` to position it as a map controller:
+First, we add an empty `<div>` element programmatically. Then we create a new [`FloorSelector` _instance_](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/FloorSelector.html) and push the `floorSelectorElement` to the `googleMapsInstance` to position it as a map controller:
 
 ```diff-js
 // main.js
@@ -382,7 +382,7 @@ Using the `<mi-map-googlemaps>` element, you can add the [floorSelectorControlPo
 </mi-tab-panel>
 <mi-tab-panel id="mb-manually">
 
-First, we add an empty `<div>` element programmatically. Then we create a new `FloorSelector` _instance_ and push the `floorSelectorElement` to the `mapboxInstance` to position it as a map controller:
+First, we add an empty `<div>` element programmatically. Then we create a new [`FloorSelector` _instance_](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/FloorSelector.html) and push the `floorSelectorElement` to the `mapboxInstance` to position it as a map controller:
 
 ```diff-js
 // main.js

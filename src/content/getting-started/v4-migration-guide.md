@@ -1,9 +1,11 @@
 ---
-title: Android BETA - Migrating from V3 to V4
+title: Migrating from V3 to V4
 toc: true
 eleventyNavigation:
-  key: getting-started-v4-migration-android
-  title: Android BETA - Migrating from V3 to V4
+    parent: getting-started-android-v4
+    key: getting-started-v4-migration-android
+    title: Migrating from V3 to V4
+    order: 10
 ---
 
 The Android SDK for MapsIndoors has been upgraded from V3 to V4, which comes with improved interfaces and flexibility for developing your own map experience. The MapsIndoors SDK now supports Mapbox as a map provider, alongside some reworked and refactored features that simplify development and SDK behavior. This guide will cover specific changes to the SDK and how to use it to provide you with a guide on how to upgrade from V3 to V4.
@@ -13,9 +15,9 @@ The Android SDK for MapsIndoors has been upgraded from V3 to V4, which comes wit
 With the release of V4 the MapsIndoors SDK is released as two separate libraries depending on the Map Provider - Google Maps or Mapbox. You can get them through Maven by changing your dependency to get:
 
 ```java
-implementation 'com.mapspeople.mapsindoors:googlemapssdk:4.0.0-beta.9'
+implementation 'com.mapspeople.mapsindoors:googlemaps:4.0.0'
 
-implementation 'com.mapspeople.mapsindoors:mapboxsdk:4.0.0-beta.9'
+implementation 'com.mapspeople.mapsindoors:mapbox:4.0.0'
 ```
 
 ## MapsIndoors Initialization
@@ -88,8 +90,7 @@ In V4, `MapControl` now requires a `MPMapConfig` object, which is acquired using
 
 ```java
 MPMapConfig mapConfig = new MPMapConfig.Builder(activity, googleMap, "google-api-key", view, true)
-        .setClusteringEnabled(false)
-        .setAllowMarkerOverlap(false)
+        .setShowFloorSelector(true)
         .build();
 ```
 
@@ -104,8 +105,6 @@ MapControl.create(mapConfig, (mapControl, miError) -> {
 Please note that this factory method will wait to return until a valid MapsIndoors solution is loaded, therefore it is safe to invoke `MapControl.create()` prior to, or in parallel with `MapsIndoors.load()`.
 
 ## SolutionConfig & AppConfig
-
-### Clustering & Marker Collisions
 
 #### V3
 
@@ -130,31 +129,100 @@ MPSolutionConfig config = MapsIndoors.getSolution().getConfig();
 // get the collisionHandling enum from the config
 MPCollisionHandling collisionHandling = config.getCollisionHandling();
 
-// modify the config, this does not have any effect on the SDK yet
+// update the config
 config.setEnableClustering(true);
-
-// re-apply the modified config
-MapsIndoors.getSolution().setConfig(config);
+config.setCollisionHandling(MPCollisionHandling.ALLOW_OVERLAP);
 ```
 
-### Main Display Rule
-
-In V4, the solution config will ship with a Main Display Rule, which is used to define the defaults for location and type display rules, when nothing is declared on the specific display rule. Fields in this display rule must not be `null`. If a display rule with `null` in any fields is provided to the config, an `IllegalArgumentException` will be thrown.
-
-```java
-// gets the main rule, this rule will have all fields filled
-MPDisplayRule mainRule = config.getMainDisplayRule();
-
-// create a display rule with not all fields filled
-MPDisplayRule displayRuleWithEmptyFields = ...
-
-// will throw an exception
-config.setMainDisplayRule(displayRuleWithEmptyFields);
-```
+<b>NB:</b> As a consequence the SDK will no longer respect these settings in the appConfig, they will have to be set in the solutionConfig.
 
 ## Display Rules
 
-> The details of Display Rules in V4 are still being worked on. Watch this space, we will update it as soon as they're ready!
+The manner in which the SDK handles Display Rules has recieved a major overhaul in V4. This is intended to simplify usage, such as editing Display Rules for certain Locations.
+
+#### V3
+
+In V3 you would create new DisplayRule objects and add them onto Locations through MapControl.
+
+##### Editing a single location
+
+```java
+LocationDisplayRule singleLocationDisplayRule = new LocationDisplayRule.Builder("singleRule").setVectorDrawableIcon(R.drawable.ic_baseline_air_24).setLabel("single display rule").build();
+MPLocation mpLocation = MapsIndoors.getLocationById("MyLocationId");
+mMapControl.setDisplayRule(singleLocationDisplayRule, mpLocation);
+```
+
+##### Editing multiple locations
+
+```java
+multipleLocationDisplayRule = new LocationDisplayRule.Builder("multipleRule").setVectorDrawableIcon(R.drawable.ic_baseline_air_24).setLabel("multiple display rule").build();
+MapsIndoors.getLocationsAsync(null, new MPFilter.Builder().setTypes(Collections.singletonList("Meetingroom")).build(), (locations, miError) -> {
+    if (locations != null) {
+        mMapControl.setDisplayRule(multipleLocationDisplayRule, locations);
+    }
+});
+```
+
+#### V4
+
+In V4, DisplayRules have been changed to a reference-based approach. You now receive `MPDisplayRules` through MapsIndoors and are able to change the values, and see it reflected on the map instantly.
+
+##### Editing a single DisplayRule
+
+```java
+MPLocation mpLocation = MapsIndoors.getLocationById("MyLocationId");
+MPDisplayRule mpDisplayRule = MapsIndoors.getDisplayRule(mpLocation);
+if (mpDisplayRule != null) {
+    mpDisplayRule.setIcon(R.drawable.ic_baseline_air_24, Color.GRAY);
+}
+```
+
+##### Editing multiple DisplayRules
+
+```java
+MapsIndoors.getLocationsAsync(null, new MPFilter.Builder().setTypes(Collections.singletonList("Meetingroom")).build(), (locations, error) -> {
+    if (locations != null) {
+        MPDisplayRuleOptions displayRuleOptions = new MPDisplayRuleOptions().setIcon(R.drawable.ic_baseline_chair_24)
+                .setPolygonStrokeColor(Color.BLUE)
+                .setPolygonVisible(true)
+                .setLabel("Meeting Room");
+        for (MPLocation location : locations) {
+            MPDisplayRule displayRule = MapsIndoors.getDisplayRule(location);
+            if (displayRule != null) {
+                displayRule.applyOptions(displayRuleOptions);
+            }
+        }
+    }
+});
+```
+
+##### Resetting Display Rules
+
+```java
+MapsIndoors.getLocationsAsync(null, new MPFilter.Builder().setTypes(Collections.singletonList("Meetingroom")).build(), (locations, error) -> {
+    if (locations != null) {
+        for (MPLocation location : locations) {
+            MPDisplayRule displayRule = MapsIndoors.getDisplayRule(location);
+            if (displayRule != null) {
+                displayRule.reset();
+            }
+        }
+    }
+});
+```
+
+Building outlines and selections are now also DisplayRules, so that you can customize the looks just like you can when doing it on locations.
+
+> Please note that MapsIndoors has to have finished loading for these DisplayRules to not be `null`.
+
+##### Editing Selection and Building Outline
+
+The following methods are examples of how you can use DisplayRules to set the outline color of a building, or if selecting a building highlights it.
+
+```java
+MapsIndoors.getDisplayRule(MPSolutionDisplayRule.BUILDING_OUTLINE).setPolygonStrokeColor(Color.BLUE);
+MapsIndoors.getDisplayRule(MPSolutionDisplayRule.SELECTION_HIGHLIGHT).setPolygonVisible(false);
+```
 
 ## DirectionsService & DirectionsRenderer
 
@@ -183,21 +251,21 @@ routingProvider.query(from, to);
 
 #### V4
 
-In the V4 SDK, to query a route you must first set up an `MPDirectionsConfig` object. This configuration describes travel mode (driving, walking, etc), departure/arrival time and includes a result listener.
+In V4, `MPRoutingProvider` has been renamed to `MPDirectionsService`, to align with other platforms. It has also changed the method of setting a departure or arrival, as shown below.
 
-Next, instantiate a new `MPDirectionsService`, and apply the configuration. Use the `query()` method to search for a route between two points. Please note that the resulting route is returned in the `OnRouteResultListener` set on your `MPDirectionsConfig` object.
+Instantiate a new `MPDirectionsService`, and apply the settings needed for a route. Use the `query()` method to search for a route between two points.
 
 ```java
-MPDirectionsConfig config = new MPDirectionsConfig.Builder()
-        .setTravelMode(MPTravelMode.WALKING)
-        .setDepartureTime(new Date(System.currentTimeMillis()))
-        .setOnRouteResultListener((route, error) -> {
-            // You get your route (or error) here!
-        })
-        .build();
-
+Date date = new Date();
 MPDirectionsService directionsService = new MPDirectionsService();
-directionsService.setConfig(config);
+directionsService.setIsDeparture(true);
+directionsService.setTime(date);
+directionsService.setTravelMode(TravelMode.WALKING);
+
+directionsService.setOnRouteResultListener((route, error) -> {
+    // You get your route (or error) here!
+})
+
 MPPoint from = new MPPoint(57.039395177203936, 9.939182484455051);
 MPPoint to = new MPPoint(57.03238690202058, 9.93220061362637);
 directionsService.query(from, to);
@@ -395,7 +463,7 @@ public interface MPPositionProvider {
 | DataSet                       | MPDataSet                                                           |
 | DataSetManagerStatus          | MPDataSetManagerStatus                                              |
 | dbglog                        | MPDebugLog                                                          |
-| DistanceMatrixResponse        | MPDistanceMatrixResponse                                           |
+| DistanceMatrixResponse        | MPDistanceMatrixResponse                                            |
 | FastSphericalUtils            | MPFastSphericalUtils                                                |
 | Floor                         | MPFloor                                                             |
 | FloorSelectorInterface        | MPFloorSelectorInterface                                            |

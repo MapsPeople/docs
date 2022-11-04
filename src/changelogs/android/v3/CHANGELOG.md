@@ -18,6 +18,20 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 ### Security     in case of vulnerabilities.
 -->
 
+## [3.13.19] 2022-07-20
+
+### Added
+
+- Re-introduced old overlap strategy where the entire marker would be made invisible if it overlapped another.
+  - Use `mapControl.setMarkerIndependentIconLabel(false)` to enable it.
+
+### Fixed
+
+- Fixed issue where older devices would be unable to connect to MapsIndoors services
+- Fixed issue where reload would cause markers to ignore location specific rules
+- Fixed crash that could occur when destroying mapcontrol
+- Fixed issue where rendering would seem to stop, only to resume a while later
+
 ## [3.13.18] 2022-06-25
 
 ### Fixed
