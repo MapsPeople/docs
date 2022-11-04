@@ -26,18 +26,21 @@ The following diagram represents the flow of information from MapsIndoors to Goo
 <mi-tab-panel id="android">
 
 If you are developing using the Android SDK for MapsIndoors, we recommend this "Getting Started" guide for Google Analytics.
+
 * [Get started with Google Analytics](https://firebase.google.com/docs/analytics/get-started?technology=android&platform=android#java)
 
 </mi-tab-panel>
 <mi-tab-panel id="ios">
 
 If you are developing using the iOS SDK for MapsIndoors, we recommend this "Getting Started" guide for Google Analytics.
+
 * [Get started with Google Analytics](https://firebase.google.com/docs/analytics/get-started?technology=android&platform=ios#swift)
 
 </mi-tab-panel>
 <mi-tab-panel id="web">
 
 If you are developing using the Web SDK for MapsIndoors, we recommend this "Getting Started" guide for Google Analytics.
+
 * [Get started with Google Analytics](https://firebase.google.com/docs/analytics/get-started?technology=android&platform=web#web-version-9)
 
 </mi-tab-panel>
@@ -68,18 +71,21 @@ In order to define custom events, such as the ones above, in your application, y
 <mi-tab-panel id="android">
 
 If you are developing using the Android SDK for MapsIndoors, this guide describes how to set up logging of custom events in Google Analytics.
+
 * [Log events with Google Analytics](https://firebase.google.com/docs/analytics/events?platform=android#java)
 
 </mi-tab-panel>
 <mi-tab-panel id="ios">
 
 If you are developing using the iOS SDK for MapsIndoors, this guide describes how to set up logging of custom events in Google Analytics.
+
 * [Log events with Google Analytics](https://firebase.google.com/docs/analytics/events?platform=ios#swift)
 
 </mi-tab-panel>
 <mi-tab-panel id="web">
 
 If you are developing using the Web SDK for MapsIndoors, this guide describes how to set up logging of custom events in Google Analytics.
+
 * [Log events with Google Analytics](https://firebase.google.com/docs/analytics/events?platform=web#web-version-9)
 
 </mi-tab-panel>
