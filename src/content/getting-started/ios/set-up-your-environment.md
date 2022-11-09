@@ -87,6 +87,8 @@ When the Google Maps SDK dependency is installed, go through these steps to inst
 
 * Download and unzip the latest [MapsIndoors.xcframework](https://github.com/MapsIndoors/MapsIndoorsIOS/releases/download/{{ ios.sdkVersion }}/MapsIndoors.xcframework.zip).
 * Drag and drop the framework into your XCode project. In the dialog that pops up, choose “Copy items if needed” and make sure the framework is added to the correct target.
+* From XCode, right click the imported framework and click "Show in Finder".
+* In Finder, Locate ios-arm64 > MapsIndoors.framework > MapsIndoors.bundle, and drag the bundle into your XCode project as well. This time, make sure to uncheck “Copy items if needed”.
 
 </mi-tab-panel>
 </mi-tabs>
