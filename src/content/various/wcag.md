@@ -21,7 +21,7 @@ Technically, it is possible to build an app that is AAA compliant under the WCAG
 
 MapsPeople provides an External Visually Impaired Voluntary Product Accessibility Template (VPAT) upon request, which details the guidelines and compliance level related to each MapsIndoors SDK.
 
-> Compliance of SDKs indicate that a WCAG compliant application can be built using the SDK. 
+> Compliance of SDKs indicate that a WCAG compliant application can be built using the SDK.
 
 #### A - Beginner Level
 
@@ -70,7 +70,7 @@ MapsPeople provides an External Visually Impaired Voluntary Product Accessibilit
 | 1.4.4 – Resize Text                              | _Text can be resized to 200% without loss of content or function_ | Compliant                                                  | Compliant          | Compliant                                                  |
 | 1.4.5 – Images of Text                           | _Don’t use images of text_                                        | Compliant                                                  | Compliant          | Compliant                                                  |
 | 1.4.10 (VCAG 2.1)                                | _Reflow_                                                          | Compliant                                                  | Compliant          | Compliant                                                  |
-| 1.4.11 (VCAG 2.1)                                | _Non-Text Contrast _                                              | Compliant                                                  | Compliant          | Compliant                                                  |
+| 1.4.11 (VCAG 2.1)                                | _Non-Text Contrast_                                              | Compliant                                                  | Compliant          | Compliant                                                  |
 | 1.4.12 (VCAG 2.1)                                | _Text Spacing (AA)_                                               | Compliant                                                  | Compliant          | Compliant                                                  |
 | 1.4.13 (VCAG 2.1)                                | _Content on Hover or Focus_                                       | Not Relevant                                               | Not relevant       | Compliant                                                  |
 | 2.4.5 – Multiple Ways                            | _Offer several ways to find pages_                                | Compliant                                                  | Compliant          | Compliant                                                  |
