@@ -19,7 +19,7 @@ Technically, it is possible to build an app that is AAA compliant under the WCAG
 
 ### VPAT
 
-MapsPeople provides an External Visually Impaired Voluntary Product Accessibility Template (VPAT) upon request, which details the guidelines and compliance level related to each MapsIndoors SDK.
+MapsPeople provides an External Visually Impaired Voluntary Product Accessibility Template (VPAT), which details the guidelines and compliance level related to each MapsIndoors SDK. This document can also be acquired in PDF format upon request.
 
 > Compliance of SDKs indicate that a WCAG compliant application can be built using the SDK.
 
