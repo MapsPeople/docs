@@ -46,8 +46,8 @@ MapsIndoors.GoogleAPIKey = "YOUR_GOOGLE_API_KEY";
 
 _You will also need to setup your `AndroidManifest.xml` file in Xamarin, like you would for a normal Android project._
 
-Continue reading the [Getting Started with Android](({{site.url}}/content/getting-started/android/prerequisites)).
+Continue reading the [Getting Started with Android](({{site.url}}/content/getting-started/android/v4/prerequisites/).
 
 ## Further Reading
 
-Most of what you want to do can be done by looking at examples from iOS and Android [elsewhere in the documentation]({{site.url}}/content/map/), and put them into the C# language syntax.
+Most of what you want to do can be done by looking at examples from iOS and Android elsewhere in the documentation, and put them into the C# language syntax.
