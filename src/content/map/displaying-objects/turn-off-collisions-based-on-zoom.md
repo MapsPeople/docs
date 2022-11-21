@@ -18,7 +18,9 @@ When using the MapsIndoors SDK, the system for detecting collisions will sometim
 
 For Android, there are two ways of implementing this, and which you should use depends on your desired map behavior.
 
-If you wish for the collision behavior to change when the maps stops moving, you should use this piece of code.
+### Google Maps for Android
+
+If you wish for the collision behavior to change when the maps stops moving, you should use this piece of code. This would generally be the most performance-friendly option.
 
 ```java
 val maxZoomForCollisions = 20 //set your desired zoom level upon which the collision behaviour changes
@@ -32,7 +34,7 @@ mGoogleMap.setOnCameraIdleListener {
 }
 ```
 
-However, if you wish for the collision behavior to change when the maps starts moving, you should use this.
+However, if you wish for the collision behavior to change when the maps starts moving instead, you should use this.
 
 ```java
 val maxZoomForCollisions = 20 //set your desired zoom level upon which the collision behaviour changes
@@ -46,26 +48,54 @@ mGoogleMap.setOnCameraMoveListener {
 }
 ```
 
+### Mapbox for Android
+
+The code for Mapbox is somewhat different - Here you must make an `onMoveListener`, and insert the implementation into the relevant section - `onMove`, `onMoveBegin` or `onMoveEnd`. Generally, `onMoveEnd` would be recommended, and will be shown below, as it is the most performance-friendly, but code may be moved into the others, if your specific functionality can be achieved through this.
+
+```java
+val maxZoomForCollisions = 20
+
+mMapBoxMap?.addOnMoveListener(object : OnMoveListener {
+    override fun onMove(detector: MoveGestureDetector): Boolean {
+      // insert implementation here if desired
+      return false
+    }
+
+    override fun onMoveBegin(detector: MoveGestureDetector) {
+      // insert implementation here if desired
+    }
+
+    override fun onMoveEnd(detector: MoveGestureDetector) {
+        if (mMapBoxMap?.cameraState?.zoom!! >= maxZoomForCollisions) {
+            MapsIndoors.getSolution()?.config?.setCollisionHandling(MPCollisionHandling.ALLOW_OVERLAP)
+        } else {
+            MapsIndoors.getSolution()?.config?.setCollisionHandling(MPCollisionHandling.REMOVE_LABEL_FIRST)
+        }
+    }
+
+})
+```
 
 </mi-tab-panel>
 <mi-tab-panel id="iOS">
 
-To fetch User Roles from the SDK, you call `MapsIndoors.getUserRoles()` to retrieve a collection of `MPUserRoles` tied to a loaded solution:
-
-```java
-final List<MPUserRole> cmsUserRoles = MapsIndoors.getUserRoles().getUserRoles();
-```
-
-To set User Roles, `applyUserRoles` is used:
-
-```java
-MapsIndoors.applyUserRoles(savedUserRoles);
-```
-
-> For more information, see the [reference documentation](https://app.mapsindoors.com/mapsindoors/reference/android/v3/index.html).
+```swift
+//Define zoom range
+        let minZoom : Float = 16.0
+        let maxZoom : Float = 22.0
+        let zoomRange = (minZoom...maxZoom)
+        
+        //do a check against the current projection level
+        //the following needs to be put in method that is invoked everytime there is a zoom level change
+        if ( zoomRange ~= (self.map?.camera.zoom)!) {
+            MPMapControl.locationHideOnIconOverlapEnabled = true
+        }
+```        
 
 </mi-tab-panel>
 <mi-tab-panel id="Web">
+
+Please note that on Web it is only possible to do this when using Mapbox as a map provider.
 
 ```js
 mapView.on('zoom_changed', () => {
@@ -76,7 +106,6 @@ mapView.on('zoom_changed', () => {
     }
 });
 ```
-
 
 </mi-tab-panel>
 </mi-tabs>
