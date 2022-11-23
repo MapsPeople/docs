@@ -66,11 +66,13 @@ mMapBoxMap?.addOnMoveListener(object : OnMoveListener {
     }
 
     override fun onMoveEnd(detector: MoveGestureDetector) {
+        // the implementation starts here
         if (mMapBoxMap?.cameraState?.zoom!! >= maxZoomForCollisions) {
             MapsIndoors.getSolution()?.config?.setCollisionHandling(MPCollisionHandling.ALLOW_OVERLAP)
         } else {
             MapsIndoors.getSolution()?.config?.setCollisionHandling(MPCollisionHandling.REMOVE_LABEL_FIRST)
         }
+        // the implementation ends here
     }
 
 })
@@ -79,23 +81,34 @@ mMapBoxMap?.addOnMoveListener(object : OnMoveListener {
 </mi-tab-panel>
 <mi-tab-panel id="iOS">
 
+Please note that on iOS it is only possible to do this when using **Google Maps** as a map provider.
+
 ```swift
 //Define zoom range
-        let minZoom : Float = 16.0
-        let maxZoom : Float = 22.0
-        let zoomRange = (minZoom...maxZoom)
-        
-        //do a check against the current projection level
-        //the following needs to be put in method that is invoked everytime there is a zoom level change
-        if ( zoomRange ~= (self.map?.camera.zoom)!) {
-            MPMapControl.locationHideOnIconOverlapEnabled = true
-        }
+let minZoom : Float = 16.0
+let maxZoom : Float = 22.0
+let zoomRange = (minZoom...maxZoom)
+
+//1. Implement GMSMapViewDelegate on your view controller
+//class [YourClassNAme]: UIViewController, GMSMapViewDelegate
+
+//2. Use GMSMApViewDelegate to listen to changes in one of four events mapView:didChangeCameraPosition
+
+self.mapView?.delegate = self
+
+func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
+    //3. do a check against the current projection level
+    //the following needs to be put in method that is invoked everytime there is a zoom level change
+    if ( zoomRange ~= (self.mapView?.camera.zoom)!) {
+        MPMapControl.locationHideOnIconOverlapEnabled = true
+    }
+}
 ```        
 
 </mi-tab-panel>
 <mi-tab-panel id="Web">
 
-Please note that on Web it is only possible to do this when using Mapbox as a map provider.
+Please note that on Web it is only possible to do this when using **Mapbox** as a map provider.
 
 ```js
 mapView.on('zoom_changed', () => {
