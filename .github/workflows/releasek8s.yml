@@ -28,5 +28,4 @@ jobs:
                   password: ${{ secrets.DOCKER_PASSWORD }}
                   registry: eu.gcr.io
                   repository: mapsindoors-services/docs
-                  tags: |
-                        ${{ env.IMAGE }}:${{ steps.prep.outputs.BUILD_ID }}
+                  tags: ${{ steps.prep.outputs.BUILD_ID }}
