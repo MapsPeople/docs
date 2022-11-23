@@ -103,7 +103,7 @@ func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D)
         MPMapControl.locationHideOnIconOverlapEnabled = true
     }
 }
-```        
+```
 
 </mi-tab-panel>
 <mi-tab-panel id="Web">
