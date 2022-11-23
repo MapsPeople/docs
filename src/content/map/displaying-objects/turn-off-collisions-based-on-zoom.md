@@ -99,7 +99,7 @@ let zoomRange = (minZoom...maxZoom)
 self.mapView?.delegate = self //this is needed since the delegate will inform of event updates on the map view; we will use it below
 
 
-//the following is invoked on tap. you can place zoom checking anywhere in your code that is being updated 
+//the following is invoked on tap. you can place zoom checking anywhere in your code that is being updated
 func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
     //3. do a check against the current projection level and make changes
     //the following is the actual to be put in method that is invoked everytime there is a zoom level change
