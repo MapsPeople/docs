@@ -81,7 +81,7 @@ mMapBoxMap?.addOnMoveListener(object : OnMoveListener {
 </mi-tab-panel>
 <mi-tab-panel id="iOS">
 
-Please note that on iOS it is only possible to do this when using **Google Maps** as a map provider.
+> Please note that on iOS it is only possible to do this when using **Google Maps** as a map provider.
 
 First you must define your zoom range, where you wish for the behaviour to occur. Then, if not already done for other purposes in your code, you must implement `GMSMapViewDelegate` on your view controller, and then use it to listen for changes in `mapView:didChangeCameraPosition`. The last function `mapView` checks for activity on the map, and adjusts accordingly.
 
@@ -112,7 +112,9 @@ func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D)
 </mi-tab-panel>
 <mi-tab-panel id="Web">
 
-Please note that on Web it is only possible to do this when using **Mapbox** as a map provider.
+> Please note that on Web it is only possible to do this when using **Mapbox** as a map provider.
+
+This is accomplished by checking if there is a `zoom_changed` event, and if there is, enabling or disabling the `text-allow-overlap` depending on the zoom levels.
 
 ```js
 mapView.on('zoom_changed', () => {
