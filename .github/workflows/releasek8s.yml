@@ -14,7 +14,13 @@ jobs:
         steps:
             - name: Checkout
               uses: actions/checkout@v2
-
+            - name: Generate build ID
+              id: prep
+              run: |
+                  branch=${GITHUB_REF##*/}
+                  sha=${GITHUB_SHA::8}
+                  ts=$(date +%s)
+                  echo "::set-output name=BUILD_ID::${ts}_${sha}-${branch}"
             - name: Build and push Docker images
               uses: docker/build-push-action@v1.1.0
               with:
@@ -22,4 +28,5 @@ jobs:
                   password: ${{ secrets.DOCKER_PASSWORD }}
                   registry: eu.gcr.io
                   repository: mapsindoors-services/docs
-                  tag_with_sha: true
+                  tags: |
+                        ${{ env.IMAGE }}:${{ steps.prep.outputs.BUILD_ID }}
