@@ -22,7 +22,7 @@ For Android, there are two ways of implementing this, and which you should use d
 
 If you wish for the collision behavior to change when the maps stops moving, you should use this piece of code. This would generally be the most performance-friendly option.
 
-```java
+```kotlin
 val maxZoomForCollisions = 20 //set your desired zoom level upon which the collision behaviour changes
 
 mGoogleMap.setOnCameraIdleListener {
@@ -36,7 +36,7 @@ mGoogleMap.setOnCameraIdleListener {
 
 However, if you wish for the collision behavior to change when the maps starts moving instead, you should use this.
 
-```java
+```kotlin
 val maxZoomForCollisions = 20 //set your desired zoom level upon which the collision behaviour changes
 
 mGoogleMap.setOnCameraMoveListener {
@@ -52,7 +52,7 @@ mGoogleMap.setOnCameraMoveListener {
 
 The code for Mapbox is somewhat different - Here you must make an `onMoveListener`, and insert the implementation into the relevant section - `onMove`, `onMoveBegin` or `onMoveEnd`. Generally, `onMoveEnd` would be recommended, and will be shown below, as it is the most performance-friendly, but code may be moved into the others, if your specific functionality can be achieved through this.
 
-```java
+```kotlin
 val maxZoomForCollisions = 20
 
 mMapBoxMap?.addOnMoveListener(object : OnMoveListener {
