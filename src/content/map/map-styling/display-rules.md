@@ -80,8 +80,8 @@ The "Icon" section contains options related to the appearance of the Icon.
 1. **Zoom to** - Sets the maximum Zoom Level at which the Icon is visible.
     * The value should be a number between 1 and 22, with 1 being very far away, and 22 being very close (22 not available for all Solutions). In a general use case, most users will only need values between 15 and 22.
     * If you are developing using the JavaScript SDK for Google Maps, the value must be an integer. If you are developing for Android or iOS, or using a different map provider, the value may be fractional.
-1. **Icon** - Use the Icon Manager in the CMS to control which Icon is shown on the map.
-    * The Icon Manager is a tool to select the displayed Icon from either a pre-loaded selection of Icons, or for you to upload your own.
+1. **Icon** - Use the Media Library in the CMS to control which Icon is shown on the map.
+    * The Media Library is a tool to select the displayed Icon from either a pre-loaded selection of Icons, or for you to upload your own.
     * In-app, you can provide a URL to a desired Icon.
         * In-app, you can also define `iconSize`, by giving the desired size in pixels.
 

@@ -87,8 +87,6 @@ In the above example, a target is added to `nextRouteLegButton` and  `nextRouteL
 
 It is possible to show contextual information on the start or end points of the rendered path of a route segment by configuring the directions renderer to look for nearby Locations or POIs.
 
-![Show content of nearby locations](/assets/ios/directions-renderer/directions_renderer_contextual_info.png)
-
 This is done by creating an appropriate `MPDirectionsRendererContextualInfoSettings` object and passing it to the directions renderer. If the `contextualInfoSettings` property is not set, no contextual information will be searched for and shown.
 
 ```swift
