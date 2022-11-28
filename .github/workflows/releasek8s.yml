@@ -19,7 +19,7 @@ jobs:
               run: |
                   branch=${GITHUB_REF##*/}
                   sha=${GITHUB_SHA::8}
-                  ts=$(date +%s)
+                  ts=$(date +'%Y.%m.%d.%H.%M')
                   echo "BUILD_ID=${ts}_${sha}-${branch}" >> $GITHUB_OUTPUT
             - name: Build and push Docker images
               uses: docker/build-push-action@v1.1.0
