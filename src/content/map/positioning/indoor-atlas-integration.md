@@ -220,8 +220,8 @@ class myFragment: Fragment(), OnMapReadyCallback {
 Lastly, we need to tell `MapControl` that we want to show the position on the map.
 
 <mi-tabs>
-<mi-tab label="Java" tab-for="java"></mi-tab>
-<mi-tab-panel id="java">
+<mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
+<mi-tab-panel id="kotlin">
 <a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/MapsIndoorsSamples/app/src/main/java/com/mapspeople/mapsindoorssamples/ui/positioning/PositioningFragment.kt#L93-L97">PositioningFragment.kt</a>
 
 ```kotlin

@@ -31,8 +31,8 @@ dependencies {
 We will start implementing the Fused Location position provider. Create a class called `GPSPositionProvider` that implements the `MPPositionProvider` interface from the MapsIndoors SDK, and create a constructor that takes a `Context` as parameter and create an instance of the FusedLocationProviderClient.
 
 <mi-tabs>
-<mi-tab label="Java" tab-for="java"></mi-tab>
-<mi-tab-panel id="java">
+<mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
+<mi-tab-panel id="kotlin">
 <a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/MapsIndoorsSamples/app/src/main/java/com/mapspeople/mapsindoorssamples/ui/positioning/GPSPositionProvider.kt#L8-L12">GPSPositionProvider.kt</a>
 
 ```kotlin
@@ -48,8 +48,8 @@ class GPSPositionProvider(context: Context): MPPositionProvider {
 We will start by implementing logic to each of the implemented methods from the `MPPositionProvider` interface.
 
 <mi-tabs>
-<mi-tab label="Java" tab-for="java"></mi-tab>
-<mi-tab-panel id="java">
+<mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
+<mi-tab-panel id="kotlin">
 <a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/MapsIndoorsSamples/app/src/main/java/com/mapspeople/mapsindoorssamples/ui/positioning/GPSPositionProvider.kt#L42-L52">GPSPositionProvider.kt</a>
 
 ```kotlin
@@ -81,8 +81,8 @@ We will then start implementing the code to get Google Fused Location positionin
 We start by implementing the `startPositioning` and `stopPositioning` methods:
 
 <mi-tabs>
-<mi-tab label="Java" tab-for="java"></mi-tab>
-<mi-tab-panel id="java">
+<mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
+<mi-tab-panel id="kotlin">
 <a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/MapsIndoorsSamples/app/src/main/java/com/mapspeople/mapsindoorssamples/ui/positioning/GPSPositionProvider.kt#L32-L40">GPSPositionProvider.kt</a>
 
 ```kotlin
@@ -104,8 +104,8 @@ class GPSPositionProvider(context: Context): MPPositionProvider {
 Implement the `LocationCallBack` to the provider to receive and handle the location updates.
 
 <mi-tabs>
-<mi-tab label="Java" tab-for="java"></mi-tab>
-<mi-tab-panel id="java">
+<mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
+<mi-tab-panel id="kotlin">
 <a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/MapsIndoorsSamples/app/src/main/java/com/mapspeople/mapsindoorssamples/ui/positioning/GPSPositionProvider.kt#32-L40">GPSPositionProvider.kt</a>
 
 ```kotlin
@@ -129,8 +129,8 @@ class GPSPositionProvider(context: Context): MPPositionProvider {
 Now to use our implemented position provider. We will handle that in our activity or fragment.
 
 <mi-tabs>
-<mi-tab label="Java" tab-for="java"></mi-tab>
-<mi-tab-panel id="java">
+<mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
+<mi-tab-panel id="kotlin">
 <a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/MapsIndoorsSamples/app/src/main/java/com/mapspeople/mapsindoorssamples/ui/positioning/PositioningFragment.kt#L40-L54">PositioningFragment.kt</a>
 
 ```kotlin
@@ -161,8 +161,8 @@ class MyFragment: Fragment(), OnMapReadyCallback {
 Lastly, we need to tell `MapControl` that we want to show the position on the map.
 
 <mi-tabs>
-<mi-tab label="Java" tab-for="java"></mi-tab>
-<mi-tab-panel id="java">
+<mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
+<mi-tab-panel id="kotlin">
 <a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/MapsIndoorsSamples/app/src/main/java/com/mapspeople/mapsindoorssamples/ui/positioning/PositioningFragment.kt#L93-L97">PositioningFragment.kt</a>
 
 ```kotlin
