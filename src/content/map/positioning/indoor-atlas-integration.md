@@ -15,7 +15,7 @@ eleventyNavigation:
 
 To get started with Indoor Atlas positioning, you need to create a positioning implementation which enables communicating the positions received from Indoor Atlas with the MapsIndoors SDK.
 
-The Position Provider implementation exists at the customer application level, and needs to use the `PositionProvider` interface from the MapsIndoors SDK. The MapsIndoors SDK can then use the positioning results given by the given Position Provider, by setting the Position Provider with `MapControl.setPositionProvider(PositionProvider)`.
+The Position Provider implementation exists at the customer application level, and needs to use the `MPPositionProvider` interface from the MapsIndoors SDK. The MapsIndoors SDK can then use the positioning results given by the given Position Provider, by setting the Position Provider with `MapsIndoors.setPositionProvider(MPPositionProvider)`.
 
 ### Floor Mapping
 
@@ -30,152 +30,35 @@ For a typical Position Provider, the mapping from the positioning's index needs 
 
 This Guide requires you to already have an activity that shows a MapsIndoors Map as well as a Indoor Atlas beacon network for positioning. We use Indoor Atlas v3 for this guide. Here is how to set it up in your project: [Indoor Atlas setup](https://indooratlas.freshdesk.com/support/solutions/articles/36000050564-setup-positioning-sdk-with-android)
 
-We start by implementing a Positioning Provider service. This service is needed so you can have multiple positioning providers running in the same application, and have the code stored in one location.
+To begin, we will start implementing the Indoor Atlas position provider. Create a class called `IndoorAtlasPositionProvider` that implements the `MPPositionProvider` interface from the MapsIndoors SDK, and create a constructor that takes a `Context` as parameter. If you have IndoorAtlas setup through MapsIndoors you can use the MPIndoorAtlasConfig from your solution as a convenience on setup.
 
-To begin, create a simple class with a constructor that receives an `Activity` and a `MapControl` object.
+<a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/MapsIndoorsSamples/app/src/main/java/com/mapspeople/mapsindoorssamples/ui/positioning/IndoorAtlasPositionProvider.kt#L8-L18">IndoorAtlasPositionProvider.kt</a>
 
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/feature/third_pary_position_providers/app/src/main/java/com/example/mapsindoorsgettingstarted/PositionProviders/PositionProviderService.java#L21-L32">PositionProviderService.java</a>
-
-```java
-public class PositionProviderService {
-    private MapControl mMapControl;
-    private Activity mActivity;
-
-    public PositionProviderService(Activity activity, MapControl mapControl) {
-        mMapControl = mapControl;
-        mActivity = activity;
-    }
+```kotlin
+class IndoorAtlasPositionProvider(private val context: Context, private val config: MPIndoorAtlasConfig): MPPositionProvider {
+    private var mLatestPosition: MPPositionResultInterface? = null
+    private var mLatestBearing: Float? = null
+    private var indoorAtlasClient: IALocationManager? = null
 }
 ```
 
-Now we will start implementing the Indoor Atlas position provider. Create a class called `IndoorAtlasPositionProvider` that implements the `PositionProvider` interface from the MapsIndoors SDK, also create a constructor that takes a `Context` as parameter.
+We will start by implementing methods from the `MPPositionProvider` interface.
 
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/master/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L270-L278">IndoorAtlasPositionProvider.java</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/MapsIndoorsSamples/app/src/main/java/com/mapspeople/mapsindoorssamples/ui/positioning/IndoorAtlasPositionProvider.kt#L116-L126">IndoorAtlasPositionProvider.kt</a>
 
-```java
-public class IndoorAtlasPositionProvider implements PositionProvider {
-    private Context mContext;
-
-    //Used for the PositionProvider Interface
-    private boolean mIsRunning;
-    private boolean mIsIPSEnabled;
-
-    public IndoorAtlasPositionProvider(@NonNull Context context) {
-        mContext = context;
-    }
-}
-```
-
-We will start by implementing logic to each of the implemented methods from the `PositionProvider` interface.
-
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/feature/third_pary_position_providers/app/src/main/java/com/example/mapsindoorsgettingstarted/PositionProviders/IndoorAtlasPositionProvider.java#L117-L210">IndoorAtlasPositionProvider.java</a>
-
-```java
-public class IndoorAtlasPositionProvider implements PositionProvider {
+```kotlin
+class IndoorAtlasPositionProvider(private val context: Context, private val config: MPIndoorAtlasConfig): MPPositionProvider {
     ...
-    private final String[] REQUIRED_PERMISSIONS = new String[]{
-            "android.permission.ACCESS_FINE_LOCATION",
-            "android.permission.ACCESS_COARSE_LOCATION",
-            "android.permission.BLUETOOTH_ADMIN",
-            "android.permission.BLUETOOTH"
-    };
-
-    private boolean mIsIPSEnabled;
-    private boolean mIsRunning;
-    private String mProviderId;
-    private final List<OnStateChangedListener> mOnStateChangedListenersList = new ArrayList<>();
-    private final List<OnPositionUpdateListener> mOnPositionUpdateListeners = new ArrayList<>();
-    private PositionResult mLatestPosition;
-
-    private IALocationManager mIndoorAtlasClient;
-
-    ...
-    @NonNull
-    @Override
-    public String[] getRequiredPermissions() {
-        return REQUIRED_PERMISSIONS;
+    override fun addOnPositionUpdateListener(p0: OnPositionUpdateListener) {
+        positionUpdateListeners.add(p0)
     }
 
-    @Override
-    public boolean isPSEnabled() {
-        return mIsIPSEnabled;
+    override fun removeOnPositionUpdateListener(p0: OnPositionUpdateListener) {
+        positionUpdateListeners.remove(p0)
     }
 
-    @Override
-    public void startPositioning(@Nullable String s) {
-        //Implemented later in guide.
-    }
-
-    @Override
-    public void stopPositioning(@Nullable String s) {
-        //Implemented later in guide.
-    }
-
-    @Override
-    public boolean isRunning() {
-        return mIsRunning;
-    }
-
-    @Override
-    public void addOnPositionUpdateListener(@Nullable OnPositionUpdateListener onPositionUpdateListener) {
-        if( onPositionUpdateListener != null ) {
-            onPositionUpdateListeners.remove( onPositionUpdateListener );
-            onPositionUpdateListeners.add( onPositionUpdateListener );
-        }
-    }
-
-    @Override
-    public void removeOnPositionUpdateListener(@Nullable OnPositionUpdateListener onPositionUpdateListener) {
-        if( onPositionUpdateListener != null ) {
-            onPositionUpdateListeners.remove( onPositionUpdateListener );
-        }
-    }
-
-    @Override
-    public void setProviderId(@Nullable String id) {
-        mProviderId = id;
-    }
-
-    @Override
-    public void addOnStateChangedListener(@Nullable OnStateChangedListener onStateChangedListener) {
-        if( onStateChangedListener != null ) {
-            onStateChangedListenersList.remove( onStateChangedListener );
-            onStateChangedListenersList.add( onStateChangedListener );
-        }
-    }
-
-    @Override
-    public void removeOnStateChangedListener(@Nullable OnStateChangedListener onStateChangedListener) {
-        if( onStateChangedListener != null ) {
-            onStateChangedListenersList.remove( onStateChangedListener );
-        }
-    }
-
-    @Override
-    public void checkPermissionsAndPSEnabled(@Nullable PermissionsAndPSListener permissionsAndPSListener) {
-        //The implementation of PSUtils and this permission check can be foud on the finished sample. Linked at the bottom of the guide.
-        PSUtils.checkLocationPermissionAndServicesEnabled( getRequiredPermissions(), mContext, permissionsAndPSListener );
-    }
-
-    @Nullable
-    @Override
-    public String getProviderId() {
-        return mProviderId;
-    }
-
-    @Nullable
-    @Override
-    public PositionResult getLatestPosition() {
-        return mLatestPosition;
-    }
-
-    @Override
-    public void startPositioningAfter(int i, @Nullable String s) {
-        //Not used
-    }
-
-    @Override
-    public void terminate() {
+    override fun getLatestPosition(): MPPositionResultInterface? {
+        return mLatestPosition
     }
 }
 ```
@@ -186,112 +69,99 @@ For Indoor Atlas to work you will need to supply Indoor Atlas with a API key and
 
 We start by creating a method to initiate the Indoor Atlas client. Here the method is called `initClient`.
 
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/feature/third_pary_position_providers/app/src/main/java/com/example/mapsindoorsgettingstarted/PositionProviders/IndoorAtlasPositionProvider.java#L70-L115">IndoorAtlasPositionProvider.java</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/MapsIndoorsSamples/app/src/main/java/com/mapspeople/mapsindoorssamples/ui/positioning/IndoorAtlasPositionProvider.kt#L91-L97">IndoorAtlasPositionProvider.kt</a>
 
-```java
-public class IndoorAtlasPositionProvider implements PositionProvider {
+```kotlin
+class IndoorAtlasPositionProvider(private val context: Context, private val config: MPIndoorAtlasConfig): MPPositionProvider {
     ...
-    private Map<Integer, Integer> mFloorMapping;
-
     private void initClient(){
-        //Here we use the MapsIndoorsSDK Config for IndoorAtlas to provide the API key and the Secret key. Alternatively you can store the strings as a String resouce and get that here instead.
-        Map<String, Object> config = MapsIndoors.getSolution().getPositionProviderConfig().get("indooratlas3");
-        String apiKey = (String) config.get("key");
-        String secret = (String) config.get("secret");
-        //Again here we use the config object to retrieve a stored Floor mapping on the MapsIndoors config.
-        //Here you can alternatively rewrite the constructFloorMapping to make an int:int mapping between IndoorAtlas floor indexes and the MapsIndoors indexes. This is further explained in the floor mapping section
-        mFloorMapping = constructFloorMapping(config);
+        val extras = Bundle(2)
+        extras.putString(IALocationManager.EXTRA_API_KEY, config.key)
+        extras.putString(IALocationManager.EXTRA_API_SECRET, config.secret)
 
-        if(apiKey == null || TextUtils.isEmpty(apiKey)|| secret == null || TextUtils.isEmpty(secret) || mFloorMapping.isEmpty()){
-            Log.e(this.getClass().getSimpleName(), "IndoorAtlas API key/secret is either null or empty string, or floor mapping is missing!");
-            mCanDeliver = false;
-        } else {
-            mCanDeliver = true;
-        }
-
-        Bundle extras = new Bundle(2);
-        extras.putString(IALocationManager.EXTRA_API_KEY, apiKey);
-        extras.putString(IALocationManager.EXTRA_API_SECRET, secret);
-
-        mIndoorAtlasClient = IALocationManager.create(mContext, extras);
-        mIndoorAtlasClient.registerOrientationListener(new IAOrientationRequest( 1, 0 ), mOrientationListener);
-
-        // Enable switching to GPS when outside, in the IndoorAtlas SDK
-        mIndoorAtlasClient.lockIndoors(false);
+        indoorAtlasClient = IALocationManager.create(context, extras)
     }
-
-    private Map<Integer, Integer> constructFloorMapping(Map<String, Object> config){
-        Map<Integer, Integer> floorMapping = new HashMap<>();
-
-        Object mappingObject = config.get("floorMapping");
-        if(mappingObject != null){
-            LinkedTreeMap<String, Double> map = (LinkedTreeMap<String, Double>) mappingObject;
-
-            // Convert to int:int map
-            for(Map.Entry<String, Double> entry : map.entrySet()){
-                int key = Integer.parseInt(entry.getKey());
-                double val = entry.getValue();
-                floorMapping.put(key, (int)val);
-            }
-        }
-
-        return floorMapping;
-    }
+    ...
 }
 ```
 
-Create the `IAOrientationListener` we register in the `init` method and a `positionUpdate` method.
+Create a `IAOrientationListener` and `IALocationListener` we will register theese to the IndoorAtlas client when we start positioning. We will also implement a `notifyPositionUpdate` method to notify the Positionupdate Listeners of a position change.
 
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/feature/third_pary_position_providers/app/src/main/java/com/example/mapsindoorsgettingstarted/PositionProviders/IndoorAtlasPositionProvider.java#L212-L258">IndoorAtlasPositionProvider.java</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/MapsIndoorsSamples/app/src/main/java/com/mapspeople/mapsindoorssamples/ui/positioning/IndoorAtlasPositionProvider.kt#L8-L89">IndoorAtlasPositionProvider.kt</a>
 
-```java
-public class IndoorAtlasPositionProvider implements PositionProvider {
-    private float mLatestBearing;
-    private long mLastHeadingUpdateTime;
-    private static final long MIN_TIME_BETWEEN_UPDATES_IN_MS = 100;
-    ...
-    private IAOrientationListener mOrientationListener = new IAOrientationListener() {
-        @Override
-        public void onHeadingChanged( long timestamp, double heading ) {
-            if( mLatestPosition != null ) {
-                final long dt = timestamp - mLastHeadingUpdateTime;
+```kotlin
+class IndoorAtlasPositionProvider(private val context: Context, private val config: MPIndoorAtlasConfig): MPPositionProvider {
+    private var mLastHeadingUpdateTime: Long = 0
+    private val MIN_TIME_BETWEEN_UPDATES_IN_MS: Long = 100
+    private var mLatestBearing: Float? = null
 
-                if( dt < MIN_TIME_BETWEEN_UPDATES_IN_MS ) {
-                    return;
+    private val orientationListener: IAOrientationListener = object : IAOrientationListener {
+        override fun onHeadingChanged(timestamp: Long, heading: Double) {
+            mLatestPosition?.let {
+                val dt: Long = timestamp - mLastHeadingUpdateTime
+
+                if (dt < MIN_TIME_BETWEEN_UPDATES_IN_MS) {
+                    return
                 }
 
-                mLastHeadingUpdateTime = timestamp;
+                mLastHeadingUpdateTime = timestamp
 
-                final float bearing = (float) heading;
+                it.bearing = heading.toFloat()
+                mLatestBearing = it.bearing
 
-                mLatestPosition.setBearing( bearing );
-                mLatestBearing = bearing;
-
-                reportPositionUpdate();
+                notifyPositionUpdate()
             }
         }
 
-        @Override
-        public void onOrientationChange( long timestamp, @Nullable double[] quaternion ) {
-            if( mLatestPosition != null ) {
-                final long dt = timestamp - mLastOrientationUpdateTime;
+        override fun onOrientationChange(p0: Long, p1: DoubleArray?) {
+            //Empty as we only use heading here
+        }
+    }
 
-                if( dt < MIN_TIME_BETWEEN_UPDATES_IN_MS ) {
-                    return;
+    private val locationListener = object : IALocationListener {
+        override fun onLocationChanged(location: IALocation?) {
+            location?.let {
+                val lat = it.latitude
+                val lng = it.longitude
+                val floorLevel = it.floorLevel
+                val accuracy = it.accuracy
+
+                val hasFloorLevel = it.hasFloorLevel()
+
+                val positionResult = MPPositionResult(MPPoint(lat, lng), accuracy)
+                positionResult.androidLocation = it.toLocation()
+                if (mLatestBearing != null) {
+                    positionResult.bearing = mLatestBearing!!
+                }
+                //Notice we use a method from our IndoorAtlasConfig to retreive the correct MapsIndoors floor level from the IndoorAtlas result. If you do not have a config set up through the CMS,
+                //You can create a method that handles the floor mapping itself.
+                if (hasFloorLevel) {
+                    if (config.getMappedFloorIndex(floorLevel) != null) {
+                        positionResult.floorIndex = config.getMappedFloorIndex(floorLevel)!!
+                    }else {
+                        positionResult.floorIndex = MPFloor.DEFAULT_GROUND_FLOOR_INDEX
+                    }
+                }else {
+                    positionResult.floorIndex = MPFloor.DEFAULT_GROUND_FLOOR_INDEX
                 }
 
-                mLastOrientationUpdateTime = timestamp;
+                positionResult.provider = this@IndoorAtlasPositionProvider
+
+                mLatestPosition = positionResult
+                notifyPositionUpdate()
             }
         }
-    };
+
+        override fun onStatusChanged(p0: String?, p1: Int, p2: Bundle?) {
+            //Blank for this, can be used to report if indoor atlas is unavailable etc.
+        }
+    }
 
 
-    public void reportPositionUpdate() {
-        if(mIsRunning){
-            for(OnPositionUpdateListener listener : onPositionUpdateListeners){
-                if(listener != null && mLatestPosition != null){
-                    listener.onPositionUpdate(mLatestPosition);
-                }
+    fun notifyPositionUpdate() {
+        for (positionUpdateListener in positionUpdateListeners) {
+            mLatestPosition?.let {
+                positionUpdateListener.onPositionUpdate(it)
             }
         }
     }
@@ -300,154 +170,73 @@ public class IndoorAtlasPositionProvider implements PositionProvider {
 
 Implement the `startPositoning` and `stopPositioning` method:
 
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/feature/third_pary_position_providers/app/src/main/java/com/example/mapsindoorsgettingstarted/PositionProviders/IndoorAtlasPositionProvider.java#L128-L143">IndoorAtlasPositionProvider.java</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/MapsIndoorsSamples/app/src/main/java/com/mapspeople/mapsindoorssamples/ui/positioning/IndoorAtlasPositionProvider.kt#L99-L114">IndoorAtlasPositionProvider.kt</a>
 
 ```java
-public class IndoorAtlasPositionProvider implements PositionProvider {
-    ...
-    @Override
-    public void startPositioning(@Nullable String s) {
-        if(!mIsRunning){
-            initClient();
-            mIndoorAtlasClient.requestLocationUpdates( IALocationRequest.create(), locationListener );
-            mIsRunning = true;
-        }
+fun startPositioning() {
+    if (indoorAtlasClient == null) {
+        initClient()
     }
-
-    @Override
-    public void stopPositioning(@Nullable String s) {
-        if(mIsRunning && mIndoorAtlasClient != null) {
-            mIndoorAtlasClient.removeLocationUpdates(locationListener);
-            mIsRunning = false;
-        }
-    }
-    ...
+    indoorAtlasClient?.registerOrientationListener(IAOrientationRequest(1.0, 0.0), orientationListener)
+    indoorAtlasClient?.requestLocationUpdates(IALocationRequest.create(), locationListener)
+    indoorAtlasClient?.lockIndoors(false)
 }
-```
 
-Create the `locationListener` referenced in the `startPositioning` and `stopPositioning`:
-
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/feature/third_pary_position_providers/app/src/main/java/com/example/mapsindoorsgettingstarted/PositionProviders/IndoorAtlasPositionProvider.java#L260-L300">IndoorAtlasPositionProvider.java</a>
-
-```java
-public class IndoorAtlasPositionProvider implements PositionProvider {
-    ...
-    private final IALocationListener locationListener = new IALocationListener() {
-        @Override
-        public void onLocationChanged( @Nullable final IALocation location ) {
-            final double latitude = location.getLatitude();
-            final double longitude = location.getLongitude();
-            final int floorLevel = location.getFloorLevel();
-            final float accuracy = location.getAccuracy();
-
-            final boolean hasFloorLevel = location.hasFloorLevel();
-
-            if( isRunning() ) {
-                mIsIPSEnabled = true;
-
-                final MPPositionResult newLocation = new MPPositionResult( new Point( latitude, longitude ), accuracy, mLatestBearing);
-                newLocation.setAndroidLocation( location.toLocation() );
-                mLatestPosition = newLocation;
-
-                if( hasFloorLevel ) {
-                    final int miFloorIndex;
-
-                    if( mFloorMapping.containsKey(floorLevel) ) {
-                        miFloorIndex = mFloorMapping.get(floorLevel);
-                    } else {
-                        miFloorIndex = Floor.DEFAULT_GROUND_FLOOR_INDEX;
-                    }
-
-                    mLatestPosition.setFloor( miFloorIndex );
-                } else {
-                    mLatestPosition.setFloor( Floor.DEFAULT_GROUND_FLOOR_INDEX );
-                }
-
-                mLatestPosition.setProvider( IndoorAtlasPositionProvider.this );
-                reportPositionUpdate();
-            }
-        }
-
-        @Override
-        public void onStatusChanged(@Nullable final String provider, final int status, @Nullable final Bundle extras ) {
-
-        }
-    };
-}
-```
-
-Now we need to start up our `PositionProvider` to get positioning onto our Map. This we will do through our `PositionProviderService`. We start with creating a method to setup the IndoorAtlas `positionProvider` from the `PositionProviderService`.
-
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/feature/third_pary_position_providers/app/src/main/java/com/example/mapsindoorsgettingstarted/PositionProviders/PositionProviderService.java#L70-L117">PositionProviderService.java</a>
-
-```java
-public class PositionProviderService implements PositionProvider {
-    PositionProvider indoorAtlasPositionProvider;
-
-    public void setupIndoorAtlasPositioning() {
-        mActivity.runOnUiThread(()-> {
-            Map<String, Object> indoorAtlasConfig = MapsIndoors.getSolution().getPositionProviderConfig().get("indooratlas3");
-            mIndoorAtlasPositionProvider = new IndoorAtlasPositionProvider(mActivity, indoorAtlasConfig);
-            //We start by making sure we have the permissions to enable Indoor Atlas positioning.
-            mIndoorAtlasPositionProvider.checkPermissionsAndPSEnabled(new PermissionsAndPSListener() {
-                @Override
-                public void onPermissionDenied() { }
-
-                @Override
-                public void onPermissionGranted() {
-                    onIndoorAtlasPermissionsGiven();
-                }
-
-                @Override
-                public void onGPSPermissionAndServiceEnabled() { }
-
-                @Override
-                public void onPermissionRequestError() { }
-            });
-        });
-    }
-
-    void onIndoorAtlasPermissionsGiven() {
-        MapsIndoors.setPositionProvider(mIndoorAtlasPositionProvider);
-        MapsIndoors.startPositioning();
-        mMapControl.showUserPosition(true);
-
-        mIndoorAtlasPositionProvider.addOnPositionUpdateListener(new OnPositionUpdateListener() {
-            @Override
-            public void onPositioningStarted(@NonNull @NotNull PositionProvider positionProvider) { }
-
-            @Override
-            public void onPositionFailed(@NonNull @NotNull PositionProvider positionProvider) { }
-
-            @Override
-            public void onPositionUpdate(@NonNull @NotNull PositionResult positionResult) {
-                mActivity.runOnUiThread(() -> {
-                    mMapControl.getPositionIndicator().setIconFromDisplayRule( new LocationDisplayRule.Builder( "BlueDotRule" )
-                            .setVectorDrawableIcon(android.R.drawable.presence_invisible, 23, 23 )
-                            .setTint(Color.BLUE)
-                            .setShowLabel(true)
-                            .setLabel("You")
-                            .setLabel(null)
-                            .build());
-                });
-            }
-        });
+fun stopPositioning() {
+    indoorAtlasClient?.let {
+        it.unregisterOrientationListener(orientationListener)
+        it.removeLocationUpdates(locationListener)
+        it.lockIndoors(true)
     }
 }
 ```
 
-Lastly, we need to start this up after initializing our `MapControl`.
+Our implemented positioning provider will be handled in an activity or fragment.
 
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/feature/third_pary_position_providers/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L186-L189">MapsActivity.java</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/MapsIndoorsSamples/app/src/main/java/com/mapspeople/mapsindoorssamples/ui/positioning/PositioningFragment.kt#L40-L54">PositioningFragment.kt</a>
 
-```java
-mMapControl.init(miError -> {
-    mPositionProviderService = new PositionProviderService(yourActivity, mMapControl);
-    mPositionProviderService.setupIndoorAtlasPositioning();
+```kotlin
+class myFragment: Fragment(), OnMapReadyCallback {
+    private var mPositionProvider: IndoorAtlasPositionProvider? = null
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?,): View {
+        ...
+        MapsIndoors.load(requireActivity().applicationContext, "myapikey") {
+            // Attach the position provider to the SDK
+            mPositionProvider = IndoorAtlasPositionProvider(requireActivity(), MapsIndoors.getSolution()!!.indoorAtlasConfig!!)
+            MapsIndoors.setPositionProvider(mPositionProvider)
+        }
+
+        //Have a buttton or other logic to start positioning:
+        binding.startPositioningButton.setOnClickListener {
+            //Remember to handle permissions specific to the Position provider you are using
+            mPositionProvider?.startPositioning()
+        }
+        ...
+    }
 }
 ```
 
-A full example implementation of the Indoor Atlas position provider together with `PositionProviderService` can be found here: [PositionProviders](https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/tree/feature/third_pary_position_providers/app/src/main/java/com/example/mapsindoorsgettingstarted/PositionProviders)
+Lastly, we need to tell `MapControl` that we want to show the position on the map.
+
+<mi-tabs>
+<mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
+<mi-tab-panel id="kotlin">
+<a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/MapsIndoorsSamples/app/src/main/java/com/mapspeople/mapsindoorssamples/ui/positioning/PositioningFragment.kt#L93-L97">PositioningFragment.kt</a>
+
+```kotlin
+MapControl.create(mapConfig) { mapControl: MapControl?, miError: MIError? ->
+    mMapControl = mapControl
+
+    // Enable showing the position indicator (aka. the blue dot)
+    mMapControl?.showUserPosition(true)
+}
+```
+
+</mi-tab-panel>
+</mi-tabs>
+
+A full example implementation of the Indoor Atlas position provider can be found here: [PositionProviders](https://github.com/MapsPeople/MapsIndoors-Android-Examples/tree/main/MapsIndoorsSamples/app/src/main/java/com/mapspeople/mapsindoorssamples/ui/positioning)
 
 </mi-tab-panel>
 <mi-tab-panel id="ios">

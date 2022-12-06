@@ -15,7 +15,7 @@ eleventyNavigation:
 
 To get started with Cisco DNA positioning, the MapsIndoors SDK offers all the required building blocks without any external dependencies.
 
-The Position Provider implementation exists at the customer application level, and needs to use the `PositionProvider` interface from the MapsIndoors SDK. The MapsIndoors SDK can then use the positioning results given by the Position Provider when setting the Position Provider with `MapControl.setPositionProvider(PositionProvider)`.
+The Position Provider implementation exists at the customer application level, and needs to use the `MPPositionProvider` interface from the MapsIndoors SDK. The MapsIndoors SDK can then use the positioning results given by the Position Provider when setting the Position Provider with `MapsIndoors.setPositionProvider(MPPositionProvider)`.
 
 ### Floor Mapping for Android
 
@@ -32,143 +32,40 @@ The MapsIndoors backend is closely integrated with the CiscoDNA platform, so the
 
 This Guide requires you to already have an activity that shows a MapsIndoors Map as well as a Cisco DNA network with positioning active.
 
-We start by implementing a Positioning Provider service. This service is needed so you can have multiple positioning providers running in the same application, and have the code stored in one location.
+Now we will start implementing the CiscoDNA position provider. Create a class called `CiscoDNAPositionProvider` that implements the `MPPositionProvider` interface from the MapsIndoors SDK. Then create a constructor that takes a `Context`.
 
-To begin, create a class with a constructor that receives an `Activity` and a `MapControl` object.
+<a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/MapsIndoorsSamples/app/src/main/java/com/mapspeople/mapsindoorssamples/ui/positioning/CiscoDNAPositionProvider.kt#L18-L22">CiscoDNAPositionProvider.kt</a>
 
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/feature/third_pary_position_providers/app/src/main/java/com/example/mapsindoorsgettingstarted/PositionProviders/PositionProviderService.java#L22-L32">PositionProviderService.java</a>
-
-```java
-public class PositionProviderService {
-    private MapControl mMapControl;
-    private Activity mActivity;
-
-    public PositionProviderService(Activity activity, MapControl mapControl) {
-        mMapControl = mapControl;
-        mActivity = activity;
-    }
+```kotlin
+class CiscoDNAPositionProvider (private val context: Context, private val config: MPCiscoDNAConfig): MPPositionProvider {
+    private var mLatestPosition: MPPositionResultInterface? = null
+    private val positionUpdateListeners = ArrayList<OnPositionUpdateListener>()
+    //If you do not have CiscoDNA set up through MapsIndoors you can write your tenantId here instead of using one from the config
+    private val tenantId: String? = config.tenantId
 }
 ```
 
-Now we will start implementing the CiscoDNA position provider. Create a class called `CiscoDNAPositionProvider` that implements the `PositionProvider` interface from the MapsIndoors SDK. Then create a constructor that takes a `Context`, as well as a String named `tenantId`.
+We will start by implementing logic to each of the implemented methods from the `MPPositionProvider` interface. Some of these will be generic, while others will be specific to CiscoDNA.
 
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/feature/third_pary_position_providers/app/src/main/java/com/example/mapsindoorsgettingstarted/PositionProviders/CiscoDNAPositionProvider.java#L37-L84">CiscoDNAPositionProvider.java</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/MapsIndoorsSamples/app/src/main/java/com/mapspeople/mapsindoorssamples/ui/positioning/CiscoDNAPositionProvider.kt#L191-L201">CiscoDNAPositionProvider.kt</a>
 
-```java
-public class CiscoDNAPositionProvider implements PositionProvider {
-    private Context mContext;
-    private String mTenantId;
+```kotlin
+class CiscoDNAPositionProvider (private val context: Context, private val config: MPCiscoDNAConfig): MPPositionProvider {
+    private var mLatestPosition: MPPositionResultInterface? = null
+    private val positionUpdateListeners = ArrayList<OnPositionUpdateListener>()
+    ...
 
-    //Used for the PositionProvider Interface
-    private boolean mIsRunning;
-    private boolean mIsIPSEnabled;
-
-    public CiscoDNAPositionProvider(@NonNull Context context, @NonNull String tenantId){
-        mContext = context;
-        mIsRunning = false;
-        mTenantId = tenantId;
-    }
-}
-```
-
-We will start by implementing logic to each of the implemented methods from the `PositionProvider` interface. Some of these will be generic, while others will be specific to CiscoDNA.
-
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/feature/third_pary_position_providers/app/src/main/java/com/example/mapsindoorsgettingstarted/PositionProviders/CiscoDNAPositionProvider.java#L177-L271">CiscoDNAPositionProvider.java</a>
-
-```java
-public class CiscoDNAPositionProvider implements PositionProvider {
-    //Implement the necessary variables for the interface logic
-    private boolean mIsIPSEnabled;
-    private boolean mIsRunning;
-    private String mProviderId;
-    private final List<OnStateChangedListener> mOnStateChangedListenersList = new ArrayList<>();
-    private final List<OnPositionUpdateListener> mOnPositionUpdateListeners = new ArrayList<>();
-    private PositionResult mLatestPosition;
-
-    @NonNull
-    @Override
-    public String[] getRequiredPermissions() {
-        //Specific to CiscoDNA as it only uses Wifi it does not require any permissions
-        return new String[0];
+    override fun addOnPositionUpdateListener(p0: OnPositionUpdateListener) {
+        positionUpdateListeners.add(p0)
     }
 
-    @Override
-    public boolean isPSEnabled() {
-        return mIsIPSEnabled;
+    override fun removeOnPositionUpdateListener(p0: OnPositionUpdateListener) {
+        positionUpdateListeners.remove(p0)
     }
 
-    @Override
-    public void startPositioning(@Nullable String s) {
-        //This will be implemented when we have setup the required CISCO dna logic.
+    override fun getLatestPosition(): MPPositionResultInterface? {
+        return mLatestPosition
     }
-
-    @Override
-    public void stopPositioning(@Nullable String s) {
-        //This will be implemented when we have setup the required CISCO dna logic.
-    }
-
-    @Override
-    public boolean isRunning() {
-        return mIsRunning;
-    }
-
-    @Override
-    public void addOnPositionUpdateListener(@Nullable OnPositionUpdateListener onPositionUpdateListener) {
-        if(onPositionUpdateListener != null && !mOnPositionUpdateListeners.contains(onPositionUpdateListener)){
-            mOnPositionUpdateListeners.add(onPositionUpdateListener);
-        }
-    }
-
-    @Override
-    public void removeOnPositionUpdateListener(@Nullable OnPositionUpdateListener onPositionUpdateListener) {
-        if(onPositionUpdateListener != null){
-            mOnPositionUpdateListeners.remove(onPositionUpdateListener);
-        }
-    }
-
-    @Override
-    public void setProviderId(@Nullable String s) {
-        mProviderId = s;
-    }
-
-    @Override
-    public void addOnStateChangedListener(@Nullable OnStateChangedListener onStateChangedListener) {
-        if(onStateChangedListener != null && !mOnStateChangedListenersList.contains(onStateChangedListener)){
-            mOnStateChangedListenersList.add(onStateChangedListener);
-        }
-    }
-
-    @Override
-    public void removeOnStateChangedListener(@Nullable OnStateChangedListener onStateChangedListener) {
-        if(onStateChangedListener != null){
-            mOnStateChangedListenersList.remove(onStateChangedListener);
-        }
-    }
-
-    @Override
-    public void checkPermissionsAndPSEnabled(@Nullable PermissionsAndPSListener permissionsAndPSListener) {
-        // Do locations permissions check here... this is not necessary for CiscoDNA, as it is
-        // a wifi based positioning system, meaning the positioning is completely external to the
-        // device itself.
-    }
-
-    @Nullable
-    @Override
-    public String getProviderId() {
-        return mProviderId;
-    }
-
-    @Nullable
-    @Override
-    public PositionResult getLatestPosition() {
-        return mLatestPosition;
-    }
-
-    @Override
-    public void startPositioningAfter(int i, @Nullable String s) { }
-
-    @Override
-    public void terminate() { }
 }
 ```
 
@@ -180,30 +77,31 @@ The CiscoDNA positioning requires three parameters:
 
 Start by creating a method to retrieve the LAN address:
 
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/feature/third_pary_position_providers/app/src/main/java/com/example/mapsindoorsgettingstarted/PositionProviders/CiscoDNAPositionProvider.java#L134-L153">CiscoDNAPositionProvider.java</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/MapsIndoorsSamples/app/src/main/java/com/mapspeople/mapsindoorssamples/ui/positioning/CiscoDNAPositionProvider.kt#L136-L153">CiscoDNAPositionProvider.kt</a>
 
-```java
-public class CiscoDNAPositionProvider implements PositionProvider {
+```kotlin
+class CiscoDNAPositionProvider (private val context: Context, private val config: MPCiscoDNAConfig): MPPositionProvider {
+    private var ciscoDeviceId: String? = null
+    private var lan: String? = null
+    private var wan: String? = null
     ...
-    @Nullable
-    private String getLocalAddress(){
+    private fun getLocalAddress(): String? {
         try {
-            for (Enumeration<NetworkInterface> en = NetworkInterface.getNetworkInterfaces(); en.hasMoreElements();) {
-                NetworkInterface intf = en.nextElement();
-                for (Enumeration<InetAddress> enumIpAddr = intf.getInetAddresses(); enumIpAddr.hasMoreElements();) {
-                    InetAddress inetAddress = enumIpAddr.nextElement();
-                    if (!inetAddress.isLoopbackAddress() && inetAddress instanceof Inet4Address) {
-                        String ipv4 = inetAddress.getHostAddress().toString();
-                        Log.i(TAG, "LAN: " + ipv4);
-                        return ipv4;
+            val en = NetworkInterface.getNetworkInterfaces()
+            while (en.hasMoreElements()) {
+                val intf = en.nextElement()
+                val enumIpAddr = intf.inetAddresses
+                while (enumIpAddr.hasMoreElements()) {
+                    val inetAddress = enumIpAddr.nextElement()
+                    if (!inetAddress.isLoopbackAddress && inetAddress is Inet4Address) {
+                        return inetAddress.getHostAddress()
                     }
                 }
             }
-        } catch (SocketException ex) {
-            Log.e(this.getClass().getSimpleName(), "Failed to resolve LAN address");
+        } catch (ex: SocketException) {
+            Log.e(this.javaClass.simpleName, "Failed to resolve LAN address")
         }
-
-        return null;
+        return null
     }
     ...
 }
@@ -211,78 +109,81 @@ public class CiscoDNAPositionProvider implements PositionProvider {
 
 Then create a method to retrieve the WAN address (we recommend using a 3rd party service for this):
 
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/feature/third_pary_position_providers/app/src/main/java/com/example/mapsindoorsgettingstarted/PositionProviders/CiscoDNAPositionProvider.java#L155-L175">CiscoDNAPositionProvider.java</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/MapsIndoorsSamples/app/src/main/java/com/mapspeople/mapsindoorssamples/ui/positioning/CiscoDNAPositionProvider.kt#L155-L173">CiscoDNAPositionProvider.kt</a>
 
-```java
-public class CiscoDNAPositionProvider implements PositionProvider {
+```kotlin
+class CiscoDNAPositionProvider (private val context: Context, private val config: MPCiscoDNAConfig): MPPositionProvider {
+    private var ciscoDeviceId: String? = null
+    private var lan: String? = null
+    private var wan: String? = null
     ...
-    private void fetchExternalAddress(@NonNull ReadyListener listener){
-        OkHttpClient httpClient = new OkHttpClient();
-        Request request = new Request.Builder().url("https://ipinfo.io/ip").build();
-
-        httpClient.newCall(request).enqueue(new Callback() {
-            @Override
-            public void onFailure(@NotNull Call call, @NotNull IOException e) {
-                listener.onResult();
+    private fun fetchExternalAddress(listener: MPReadyListener) {
+        val httpClient = OkHttpClient()
+        val request: Request = Request.Builder().url("https://ipinfo.io/ip").build()
+        httpClient.newCall(request).enqueue(object : Callback {
+            override fun onFailure(call: Call, e: IOException) {
+                listener.onResult()
             }
 
-            @Override
-            public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
-                if(response.isSuccessful()){
-                    String str = response.body().string();
-                    mWan = str;
-                    Log.i(TAG, "WAN: " + mWan);
+            @Throws(IOException::class)
+            override fun onResponse(call: Call, response: Response) {
+                if (response.isSuccessful) {
+                    val str = response.body!!.string()
+                    wan = str
+                    response.close()
                 }
-                listener.onResult();
+                listener.onResult()
             }
-        });
+        })
     }
     ...
 }
 ```
 
-Lastly, we need the Tenant ID. This is an ID you might have hardcoded inside your app, or saved as a string resource. Otherwise you can use the `PositionProviderConfig` fields from MapsIndoors to get this ID like this:
+If all of the three above mentioned strings can be acquired, you can ask our endpoint for a CiscoDNA Device ID string. A device ID is only available if there has been a recorded positioning for the device in the past 24 hours. We will implement this as a new method into our `CiscoDNAPositionProvider`.
 
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/feature/third_pary_position_providers/app/src/main/java/com/example/mapsindoorsgettingstarted/PositionProviders/PositionProviderService.java#L35-L36">PositionProviderService.java</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/MapsIndoorsSamples/app/src/main/java/com/mapspeople/mapsindoorssamples/ui/positioning/CiscoDNAPositionProvider.kt#L101-L134">CiscoDNAPositionProvider.kt</a>
 
-```java
-Map<String, Object> ciscoDnaConfig = MapsIndoors.getSolution().getPositionProviderConfig().get("ciscodna");
-String tenantId = (String) ciscoDnaConfig.get("ciscoDnaSpaceTenantId");
-```
-
-If all of the three above mentioned strings can be acquired, you can ask our endpoint for a CiscoDNA Device ID string. A device ID is only available if there has been a recorded positioning for the device, in the past 24 hours. We will implement this as a new method into our `CiscoDNAPositionProvider`.
-
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/feature/third_pary_position_providers/app/src/main/java/com/example/mapsindoorsgettingstarted/PositionProviders/CiscoDNAPositionProvider.java#L105-L132">CiscoDNAPositionProvider.java</a>
-
-```java
-public class CiscoDNAPositionProvider implements PositionProvider {
+```kotlin
+class CiscoDNAPositionProvider (private val context: Context, private val config: MPCiscoDNAConfig): MPPositionProvider {
+    private var ciscoDeviceId: String? = null
+    private var lan: String? = null
+    private var wan: String? = null
+    val MAPSINDOORS_CISCO_ENDPOINT = "https://ciscodna.mapsindoors.com/"
     ...
-    private void updateAddressesAndId(ReadyListener onComplete) {
-        mLan = getLocalAddress();
-        fetchExternalAddress(() -> {
-            if(mTenantId != null && mLan != null && mWan != null){
-                String url = MAPSINDOORS_CISCO_ENDPOINT + mTenantId + "/api/ciscodna/devicelookup?clientIp=" + mLan + "&wanIp=" + mWan;
-                OkHttpClient client = new OkHttpClient();
-                Request request = new Request.Builder().url(url).build();
+    /**
+     * This method is responsible for gathering the local and external IP addresses
+     * as well as acquiring a device ID from the Cisco DNA API.
+     */
+    private fun updateAddressesAndId(onComplete: MPReadyListener?) {
+        lan = getLocalAddress()
+        //mCiscoDeviceId = null;
+        fetchExternalAddress {
+            if (tenantId != null && lan != null && wan != null) {
+                val url: String = "$MAPSINDOORS_CISCO_ENDPOINT$tenantId/api/ciscodna/devicelookup?clientIp=$lan&wanIp=$wan"
+                val client = OkHttpClient()
+                val request: Request = Request.Builder().url(url).build()
                 try {
-                    Response response = client.newCall(request).execute();
-                    if (response.isSuccessful()) {
-                        Gson gson = new Gson();
-                        String json = response.body().string();
-                        JsonObject jsonObject = gson.fromJson(json, JsonObject.class);
-                        mCiscoDeviceId = jsonObject.get("deviceId").getAsString();
+                    val response = client.newCall(request).execute()
+                    if (response.isSuccessful) {
+                        val gson = Gson()
+                        val json = response.body!!.string()
+                        val jsonObject =
+                            gson.fromJson(json, JsonObject::class.java)
+                        ciscoDeviceId = jsonObject["deviceId"].asString
                     } else {
-                        Log.i(TAG, "Could not obtain deviceId from backend deviceID request! Code: " + response.code());
+                        Log.d(
+                            "ciscodnaprovider",
+                            "Could not obtain deviceId from backend deviceID request! Code: " + response.code
+                        )
                     }
-                    response.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
+                    response.close()
+                } catch (e: IOException) {
+                    e.printStackTrace()
                 }
             }
-            if(onComplete != null){
-                onComplete.onResult();
-            }
-        });
+            onComplete?.onResult()
+        }
     }
     ...
 }
@@ -290,158 +191,148 @@ public class CiscoDNAPositionProvider implements PositionProvider {
 
 Now you can make a method to start a subscription that we use when starting positioning to receive position updates. You use the SDKs `LiveDataManager` to create a subscription.
 
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/feature/third_pary_position_providers/app/src/main/java/com/example/mapsindoorsgettingstarted/PositionProviders/CiscoDNAPositionProvider.java#L86-L103">CiscoDNAPositionProvider.java</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/MapsIndoorsSamples/app/src/main/java/com/mapspeople/mapsindoorssamples/ui/positioning/CiscoDNAPositionProvider.kt#L52-L64">CiscoDNAPositionProvider.kt</a>
 
-```java
-public class CiscoDNAPositionProvider implements PositionProvider {
-    private CiscoDNATopic mTopic;
-    private boolean mIsSubscribed;
+```kotlin
+class CiscoDNAPositionProvider (private val context: Context, private val config: MPCiscoDNAConfig): MPPositionProvider {
+    private var ciscoDNATopic: CiscoDNATopic? = null;
     ...
-    private void startSubscription(){
-        mTopic = new CiscoDNATopic(mTenantId, mCiscoDeviceId);
+    private fun startSubscription() {
+        ciscoDNATopic = CiscoDNATopic(tenantId!!, ciscoDeviceId!!)
+        LiveDataManager.getInstance().setOnTopicSubscribedListener { topic: MPLiveTopic ->
+            if (topic == ciscoDNATopic) {
+                Log.i("CiscoDNA", "topic subscribed to succesfully")
+            }
+        }
+        LiveDataManager.getInstance().subscribeTopic(ciscoDNATopic)
+    }
 
-        if(!mIsSubscribed){
-            LiveDataManager.getInstance().setOnTopicSubscribedListener(topic -> {
-                if(topic.equals(mTopic)){
-                    mIsIPSEnabled = true;
-                    mIsSubscribed = true;
+    private fun unsubscribe() {
+        LiveDataManager.getInstance().unsubscribeTopic(ciscoDNATopic)
+    }
+    ...
+}
+```
+
+To handle the subscription we just created, we need to create some callbacks in the constructor of the `MPPositionProvider` to handle the position results and lifecycle of the subscription:
+
+<a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/MapsIndoorsSamples/app/src/main/java/com/mapspeople/mapsindoorssamples/ui/positioning/CiscoDNAPositionProvider.kt#L44-L49">CiscoDNAPositionProvider.kt</a>
+
+```kotlin
+class CiscoDNAPositionProvider (private val context: Context, private val config: MPCiscoDNAConfig): MPPositionProvider {
+    init {
+        LiveDataManager.getInstance().setOnReceivedLiveUpdateListener { mpLiveTopic, liveUpdate ->
+            if (liveUpdate.id == ciscoDeviceId) {
+                mLatestPosition = liveUpdate.positionResult
+                notifyPositionUpdate()
+            }
+        }
+    }
+    ...
+}
+```
+
+Implement the `startPositoning` and `stopPositioning` method as well as a `update` and `obtainInitialPosition` to get the initial position from CiscoDNA:
+
+<a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/MapsIndoorsSamples/app/src/main/java/com/mapspeople/mapsindoorssamples/ui/positioning/CiscoDNAPositionProvider.kt#L66-L103">CiscoDNAPositionProvider.kt</a>
+
+```kotlin
+class CiscoDNAPositionProvider (private val context: Context, private val config: MPCiscoDNAConfig): MPPositionProvider {
+    val MAPSINDOORS_CISCO_ENDPOINT = "https://ciscodna.mapsindoors.com/"
+    private val tenantId: String? = config.tenantId
+    private var ciscoDeviceId: String? = null
+    ...
+
+    fun startPositioning() {
+        update { startSubscription() }
+    }
+
+    fun stopPositioning() {
+        LiveDataManager.getInstance().unsubscribeTopic(ciscoDNATopic)
+    }
+
+    fun update(onreadyListener: MPReadyListener) {
+        updateAddressesAndId {
+            if (!ciscoDeviceId.isNullOrEmpty()) {
+                if (mLatestPosition == null) {
+                    obtainInitialPosition(onreadyListener)
+                }else {
+                    onreadyListener.onResult()
                 }
-            });
-            LiveDataManager.getInstance().subscribeTopic(mTopic);
+            }
         }
     }
 
-    private void unsubscribe(){
-        LiveDataManager.getInstance().unsubscribeTopic(mTopic);
-        mIsSubscribed = false;
-    }
-    ...
-}
-```
-
-To handle the subscription we just created, we need to create some callbacks in the constructor of the `PositionProvider` to handle the position results and lifecycle of the subscription:
-
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/feature/third_pary_position_providers/app/src/main/java/com/example/mapsindoorsgettingstarted/PositionProviders/CiscoDNAPositionProvider.java#L59-L84">CiscoDNAPositionProvider.java</a>
-
-```java
-public class CiscoDNAPositionProvider implements PositionProvider {
-    public CiscoDNAPositionProvider(@NonNull Context context, @NonNull String tenantId){
-        mContext = context;
-        mIsRunning = false;
-        mTenantId = tenantId;
-
-        LiveDataManager.getInstance().setOnTopicUnsubscribedListener(topic -> {
-            if(topic.matchesCriteria(mTopic)){
-                mIsSubscribed = false;
-                mCiscoDeviceId = null;
-                mIsIPSEnabled = false;
-            }
-        });
-
-        LiveDataManager.getInstance().setOnReceivedLiveUpdateListener((topic, message) -> {
-            if(message.getId().equals(mCiscoDeviceId)){
-                mLatestPosition = message.getPositionResult();
-
-                // Report to listeners
-                for(OnPositionUpdateListener listener : mOnPositionUpdateListeners){
-                    listener.onPositionUpdate(mLatestPosition);
+    private fun obtainInitialPosition(listener: MPReadyListener) {
+        val url = "$MAPSINDOORS_CISCO_ENDPOINT$tenantId/api/ciscodna/$ciscoDeviceId"
+        val request: Request = Request.Builder().url(url).build()
+        if (ciscoDeviceId != null && tenantId != null) {
+            val httpClient = OkHttpClient()
+            httpClient.newCall(request).enqueue(object : Callback {
+                override fun onFailure(call: Call, e: IOException) {
+                    listener.onResult()
                 }
-            }
-        });
-    }
-    ...
-}
-```
 
-Implement the `startPositoning` and `stopPositioning` method:
-
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/feature/third_pary_position_providers/app/src/main/java/com/example/mapsindoorsgettingstarted/PositionProviders/CiscoDNAPositionProvider.java#L188-L208">CiscoDNAPositionProvider.java</a>
-
-```java
-public class CiscoDNAPositionProvider implements PositionProvider {
-    @Override
-    public void startPositioning(@Nullable String s) {
-        if(!mIsRunning){
-            mIsRunning = true;
-            updateAddressesAndId(() -> {
-                if(mCiscoDeviceId != null && !mCiscoDeviceId.isEmpty()){
-                    startSubscription();
+                @Throws(IOException::class)
+                override fun onResponse(call: Call, response: Response) {
+                    if (response.code == HttpURLConnection.HTTP_NOT_FOUND) {
+                        listener.onResult()
+                        return
+                    }
+                    val json = response.body!!.string()
+                    val positionResult: CiscoDNAEntry = Gson().fromJson(json, CiscoDNAEntry::class.java)
+                    mLatestPosition = positionResult
+                    notifyPositionUpdate()
+                    listener.onResult()
+                    response.close()
                 }
-            });
+            })
         }
-    }
-
-    @Override
-    public void stopPositioning(@Nullable String s) {
-        if(mIsRunning){
-            mIsRunning = false;
-            if(mIsSubscribed){
-                unsubscribe();
-            }
-        }
-    }  
-}
-```
-
-Now we need to start up our `PositionProvider` to get positioning onto our map. This we will do through our `PositionProviderService`. We start by creating a method to setup the Cisco DNA `positionProvider` from the `PositionProviderService`.
-
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/feature/third_pary_position_providers/app/src/main/java/com/example/mapsindoorsgettingstarted/PositionProviders/PositionProviderService.java#L34-L68">PositionProviderService.java</a>
-
-```java
-public class PositionProviderService {
-    private PositionProvider mCiscoDNAPositionProvider;
-    ...
-    public void setupCiscoPositioning(){
-        Map<String, Object> ciscoDnaConfig = MapsIndoors.getSolution().getPositionProviderConfig().get("ciscodna");
-        String tenantId = (String) ciscoDnaConfig.get("ciscoDnaSpaceTenantId");
-
-        if(tenantId == null || tenantId.isEmpty()){
-            // Cannot setup CiscoDNA positioning in this case
-            return;
-        }
-
-        mCiscoDNAPositionProvider = new CiscoDNAPositionProvider(mActivity, tenantId);
-        MapsIndoors.setPositionProvider(mCiscoDNAPositionProvider);
-        MapsIndoors.startPositioning();
-        mMapControl.showUserPosition(true);
-
-        mCiscoDNAPositionProvider.addOnPositionUpdateListener(new OnPositionUpdateListener() {
-            @Override
-            public void onPositioningStarted(@NonNull PositionProvider positionProvider) { }
-
-            @Override
-            public void onPositionFailed(@NonNull PositionProvider positionProvider) { }
-
-            @Override
-            public void onPositionUpdate(@NonNull PositionResult positionResult) {
-                mActivity.runOnUiThread(() -> {
-                    mMapControl.getPositionIndicator().setIconFromDisplayRule( new LocationDisplayRule.Builder( "BlueDotRule" )
-                            .setVectorDrawableIcon(android.R.drawable.presence_invisible, 23, 23 )
-                            .setTint(Color.BLUE)
-                            .setShowLabel(true)
-                            .setLabel("You")
-                            .setLabel(null)
-                            .build());
-                });
-            }
-        });
     }
     ...
 }
 ```
 
-Lastly, we need to start this up after initializing our `MapControl`.
+Our implemented positioning provider will be handled in an activity or fragment.
 
-<a href="https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/blob/feature/third_pary_position_providers/app/src/main/java/com/example/mapsindoorsgettingstarted/MapsActivity.java#L186-L188">MapsActivity.java</a>
+<a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/MapsIndoorsSamples/app/src/main/java/com/mapspeople/mapsindoorssamples/ui/positioning/PositioningFragment.kt#L40-L54">PositioningFragment.kt</a>
 
-```java
-mMapControl.init(miError -> {
-    mPositionProviderService = new PositionProviderService(yourActivity, mMapControl);
-    mPositionProviderService.setupCiscoPositioning();
+```kotlin
+class myFragment: Fragment(), OnMapReadyCallback {
+    private var mPositionProvider: CiscoDNAPositionProvider? = null
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?,): View {
+        ...
+        MapsIndoors.load(requireActivity().applicationContext, "myapikey") {
+            mPositionProvider = IndoorAtlasPositionProvider(requireActivity(), MapsIndoors.getSolution()!!.indoorAtlasConfig!!)
+            // Attach the position provider to the SDK
+            MapsIndoors.setPositionProvider(mPositionProvider)
+        }
+
+        //Have a buttton or other logic to start positioning:
+        binding.startPositioningButton.setOnClickListener {
+            //Remember to handle permissions specific to the Position provider you are using
+            mPositionProvider?.startPositioning()
+        }
+        ...
+    }
 }
 ```
 
-A full example of the Cisco DNA position provider together with `PositionProviderService` can be found here: [PositionProviders](https://github.com/MapsPeople/MapsIndoors-Getting-Started-Android/tree/feature/third_pary_position_providers/app/src/main/java/com/example/mapsindoorsgettingstarted/PositionProviders)
+Lastly, we need to tell `MapControl` that we want to show the position on the map.
+
+<a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/MapsIndoorsSamples/app/src/main/java/com/mapspeople/mapsindoorssamples/ui/positioning/PositioningFragment.kt#L93-L97">PositioningFragment.kt</a>
+
+```kotlin
+MapControl.create(mapConfig) { mapControl: MapControl?, miError: MIError? ->
+    mMapControl = mapControl
+
+    // Enable showing the position indicator (aka. the blue dot)
+    mMapControl?.showUserPosition(true)
+}
+```
+
+A full example implementation of the Cisco DNA position provider can be found here: [PositionProviders](https://github.com/MapsPeople/MapsIndoors-Android-Examples/tree/main/MapsIndoorsSamples/app/src/main/java/com/mapspeople/mapsindoorssamples/ui/positioning)
 
 </mi-tab-panel>
 <mi-tab-panel id="ios">
