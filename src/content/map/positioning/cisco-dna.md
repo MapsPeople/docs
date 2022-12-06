@@ -140,7 +140,7 @@ class CiscoDNAPositionProvider (private val context: Context, private val config
 }
 ```
 
-If all of the three above mentioned strings can be acquired, you can ask our endpoint for a CiscoDNA Device ID string. A device ID is only available if there has been a recorded positioning for the device, in the past 24 hours. We will implement this as a new method into our `CiscoDNAPositionProvider`.
+If all of the three above mentioned strings can be acquired, you can ask our endpoint for a CiscoDNA Device ID string. A device ID is only available if there has been a recorded positioning for the device in the past 24 hours. We will implement this as a new method into our `CiscoDNAPositionProvider`.
 
 <a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/MapsIndoorsSamples/app/src/main/java/com/mapspeople/mapsindoorssamples/ui/positioning/CiscoDNAPositionProvider.kt#L101-L134">CiscoDNAPositionProvider.kt</a>
 
@@ -232,7 +232,7 @@ class CiscoDNAPositionProvider (private val context: Context, private val config
 }
 ```
 
-Implement the `startPositoning` and `stopPositioning` method as well as a `update` and `obtainInitialPosition` to get the initial position from CiscoDNA
+Implement the `startPositoning` and `stopPositioning` method as well as a `update` and `obtainInitialPosition` to get the initial position from CiscoDNA:
 
 <a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/MapsIndoorsSamples/app/src/main/java/com/mapspeople/mapsindoorssamples/ui/positioning/CiscoDNAPositionProvider.kt#L66-L103">CiscoDNAPositionProvider.kt</a>
 
@@ -293,7 +293,7 @@ class CiscoDNAPositionProvider (private val context: Context, private val config
 }
 ```
 
-Now to use our implemented position provider. We will handle that in our activity or fragment.
+Our implemented positioning provider will be handled in an activity or fragment.
 
 <a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/MapsIndoorsSamples/app/src/main/java/com/mapspeople/mapsindoorssamples/ui/positioning/PositioningFragment.kt#L40-L54">PositioningFragment.kt</a>
 

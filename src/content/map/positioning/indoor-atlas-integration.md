@@ -30,7 +30,7 @@ For a typical Position Provider, the mapping from the positioning's index needs 
 
 This Guide requires you to already have an activity that shows a MapsIndoors Map as well as a Indoor Atlas beacon network for positioning. We use Indoor Atlas v3 for this guide. Here is how to set it up in your project: [Indoor Atlas setup](https://indooratlas.freshdesk.com/support/solutions/articles/36000050564-setup-positioning-sdk-with-android)
 
-To begin, we will start implementing the Indoor Atlas position provider. Create a class called `IndoorAtlasPositionProvider` that implements the `MPPositionProvider` interface from the MapsIndoors SDK, also create a constructor that takes a `Context` as parameter. If you have IndoorAtlas setup through MapsIndoors you can use the MPIndoorAtlasConfig from your solution as a convenience on setup.
+To begin, we will start implementing the Indoor Atlas position provider. Create a class called `IndoorAtlasPositionProvider` that implements the `MPPositionProvider` interface from the MapsIndoors SDK, and create a constructor that takes a `Context` as parameter. If you have IndoorAtlas setup through MapsIndoors you can use the MPIndoorAtlasConfig from your solution as a convenience on setup.
 
 <a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/MapsIndoorsSamples/app/src/main/java/com/mapspeople/mapsindoorssamples/ui/positioning/IndoorAtlasPositionProvider.kt#L8-L18">IndoorAtlasPositionProvider.kt</a>
 
@@ -191,7 +191,7 @@ fun stopPositioning() {
 }
 ```
 
-Now to use our implemented position provider. We will handle that in our activity or fragment.
+Our implemented positioning provider will be handled in an activity or fragment.
 
 <a href="https://github.com/MapsPeople/MapsIndoors-Android-Examples/blob/main/MapsIndoorsSamples/app/src/main/java/com/mapspeople/mapsindoorssamples/ui/positioning/PositioningFragment.kt#L40-L54">PositioningFragment.kt</a>
 

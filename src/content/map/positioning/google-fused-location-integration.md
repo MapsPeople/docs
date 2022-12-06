@@ -126,7 +126,7 @@ class GPSPositionProvider(context: Context): MPPositionProvider {
 </mi-tab-panel>
 </mi-tabs>
 
-Now to use our implemented position provider. We will handle that in our activity or fragment.
+Our implemented positioning provider will be handled in an activity or fragment.
 
 <mi-tabs>
 <mi-tab label="Kotlin" tab-for="kotlin"></mi-tab>
