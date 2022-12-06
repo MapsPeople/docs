@@ -7,7 +7,7 @@ eleventyNavigation:
   order: 7
 ---
 
-Google Analytics has it's own documentation, which will be referred to a lot on this page. This page will mainly serve as an overview and inspiration as to what you might want to use Google Analytics for in your MapsIndoors application.
+While Google Analytics is a useful tool that can help a lot in tracking data for your MapsIndoors application, it has it's own documentation maintained by Google, which will be referred to a lot on this page. This page will mainly serve as an overview and inspiration as to what you might want to use Google Analytics for in your MapsIndoors application.
 
 ## Overview
 
@@ -72,7 +72,7 @@ In order to define custom events, such as the ones above, in your application, y
 
 If you are developing using the Android SDK for MapsIndoors, this guide describes how to set up logging of custom events in Google Analytics.
 
-* [Log events with Google Analytics](https://firebase.google.com/docs/analytics/events?platform=android#java)
+* [Log events with Google Analytics](https://firebase.google.com/docs/analytics/events?platform=android)
 
 </mi-tab-panel>
 <mi-tab-panel id="ios">
