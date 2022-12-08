@@ -462,7 +462,7 @@ You should now be able to switch between the first and second Floors of The Whit
   </mi-tab-panel>
 
   <mi-tab-panel id="mb-components">
-    <iframe width="100%" src="//jsfiddle.net/mapspeople/vr1wkmho/1/embedded/js,html/" frameborder="0"></iframe>
+    <iframe width="100%" src="//jsfiddle.net/mapspeople/vr1wkmho/4/embedded/js,html/" frameborder="0"></iframe>
   </mi-tab-panel>
 </mi-tabs>
 
