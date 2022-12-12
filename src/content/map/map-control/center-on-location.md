@@ -12,6 +12,8 @@ There are many instances in which you would want to center the map on a specific
 
 A specific example could be if you want to center the map on a selected Location, when clicking a Location in a list of search results. This would be done by creating an `onClickListener` for each result in a list of results, and using the `goTo(location)` function on each.
 
+The Javascript SDK does unfortunately not feature a built-in `goTo(location)` function, however, you can create a similar function yourself, that you can then assign to each item on the search results.
+
 <mi-tabs>
 <mi-tab label="Android" tab-for="android"></mi-tab>
 <mi-tab label="iOS" tab-for="ios"></mi-tab>
@@ -50,7 +52,13 @@ MPLocationService.sharedInstance().getLocationsUsing(query, filter: filter) { (l
 </mi-tab-panel>
 <mi-tab-panel id="web">
 
-
+```js
+async function goTo() {
+    const locationInfo = await mapsindoors.services.LocationsService.getLocation('48208d7347534f3a95c79092');
+    const coords = locationInfo.properties.anchor.coordinates;
+    mapView.setCenter({ lat: coords[1], lng: coords[0] });
+}
+```
 
 </mi-tab-panel>
 </mi-tabs>
