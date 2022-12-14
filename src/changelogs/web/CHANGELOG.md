@@ -9,6 +9,13 @@ eleventyNavigation:
 
 Changelog for MapsIndoors SDK for JavaScript. This document structure is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and the project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [4.21.1] - 2022-12-13
+
+### Fixed
+
+- Fix a bug where wrong or flickering MapsIndoors tiles were sometimes shown on a Google Maps map.
+- MapsIndoors tiles will now be correctly changed when changing the MapsIndoors API key.
+
 ## [4.21.0] - 2022-10-27
 
 ### Added
