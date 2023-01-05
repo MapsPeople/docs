@@ -28,6 +28,17 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 
 ### Deprecated
 
+- Deprecated `getCurrentStyle()` and `setCurrentStyle(String)` in `MPFloor`
+
+### Fixed
+
+- Fixed issue where main and solution type rules could not be fetched by name
+- Fixed issue where SDK would crash during startup
+- Fixed issue where giving `MPPoint`s with no floorIndexes to `MPDirectionsService` would result in bugged routes
+- Fixed issue when generating `MPPolygonGeometry` from `MPMultiPolygonGeometry`
+- Fixed memory leak where the SDK would hold onto the maps `FrameLayout`
+- Fixed issues that could occur if the SDK is shut down during startup
+
 ## [4.0.2] 2022-11-02
 
 ### Added
