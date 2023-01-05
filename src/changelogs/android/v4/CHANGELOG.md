@@ -18,6 +18,16 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 ### Security     in case of vulnerabilities.
 -->
 
+## [4.0.3] 2023-01-05
+
+### Added
+
+- Added factory methods `fromValue(int)` and `fromStringValue(String)` to `MPCollisionHandling`
+- Added `removeOnFloorUpdateListener(OnFloorUpdateListener)` to `MapControl`
+- Added `isInside(MPLatLng)` method to `MPGeometry`
+
+### Deprecated
+
 ## [4.0.2] 2022-11-02
 
 ### Added
