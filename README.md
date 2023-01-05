@@ -145,7 +145,7 @@ Eleventy uses Markdown ([cheatsheet](https://github.com/adam-p/markdown-here/wik
 #### Linting Markdown
 
 To ensure consistency throughout the Markdown-files, we use a linter. The best linter for VS Code is the extension with the telling name "[VS Code Markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)".
-
+ 
 Two rules are turned off specifically:
 
 * [MD013 - Line length](https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md013)
