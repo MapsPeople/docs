@@ -18,6 +18,18 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 ### Security     in case of vulnerabilities.
 -->
 
+## [3.13.21] 2023-01-10
+
+### Fixed
+
+- Fixed issue where destroying `MapControl` could result in a crash
+
+## [3.13.20] 2023-01-02
+
+### Fixed
+
+- Fixed issue where tiles would not render when map is loaded
+
 ## [3.13.19] 2022-07-20
 
 ### Added
