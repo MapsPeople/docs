@@ -45,7 +45,7 @@ self.view.addSubview(mapView)
 Running the app like this does indeed display a map, however this is through the use of Google Maps exclusively and with a default map region displayed. Let us try and add in MapsIndoors and showcase a specific location. To accomplish this we add in following after the previously inserted code,
 
 ```swift
-self.mapControl = MPMapControl.init(map: mapView) 
+self.mapControl = MPMapControl.init(map: mapView)
 
 MapsIndoors.synchronizeContent { error in
       let query = MPQuery.init()
