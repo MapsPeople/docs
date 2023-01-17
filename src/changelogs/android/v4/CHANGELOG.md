@@ -18,6 +18,15 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 ### Security     in case of vulnerabilities.
 -->
 
+## [4.0.4] 2023-01-17
+
+### Fixed
+
+- Fixed issue with the livedata SDK where subscribing to some domains would subscribe to multiple domains instead
+- Fixed issue where ´MPApiKeyValidator´ would send multiple errors instead of just one
+- Fixed issue where the SDK would update UI elements on non-main thread
+- Fixed memory leaks where the map view was leaked
+
 ## [4.0.3] 2023-01-05
 
 ### Added
