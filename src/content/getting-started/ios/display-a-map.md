@@ -26,7 +26,8 @@ Furthermore, within the ViewController class, add in a map controller variable a
 ```swift
 class ViewController: UIViewController {
 private var mapControl:MPMapControl?
-var mapView = GMSMapView.map(withFrame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height), camera: GMSCameraPosition())
+var mapView = GMSMapView.map(withFrame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height), camera: GMSCameraPosition(target: CLLocationCoordinate2D(latitude: 50, longitude: 50), zoom: 10))
+// replace the coordinates above with that of your desired location
 ...
 }
 ```  
@@ -44,16 +45,19 @@ self.view.addSubview(mapView)
 Running the app like this does indeed display a map, however this is through the use of Google Maps exclusively and with a default map region displayed. Let us try and add in MapsIndoors and showcase a specific location. To accomplish this we add in following after the previously inserted code,
 
 ```swift
-self.mapControl = MPMapControl.init(map: mapView)  
-let query = MPQuery.init()  
-let filter = MPFilter.init()  
-query.query = "White House"  
-filter.take = 1  
-MPLocationService.sharedInstance().getLocationsUsing(query, filter: filter) { (locations, error) in  
-    if let location = locations?.first {  
-        self.mapControl?.go(to:location)  
-    }  
-}
+self.mapControl = MPMapControl(map: mapView)
+
+MapsIndoors.synchronizeContent { error in
+      let query = MPQuery()
+      let filter = MPFilter()
+      query.query = "White House"
+      filter.take = 1
+      MPLocationService.sharedInstance().getLocationsUsing(query, filter: filter) { (locations, error) in
+        if let location = locations?.first {
+          self.mapControl?.go(to:location)
+        }
+      }
+    }
 ```
 
 We have now added a *very* simple search feature! Running the app now should yield a combined map of The White House, showing both the external and internal geographical information. However, let us try and understand what is actually happening.
