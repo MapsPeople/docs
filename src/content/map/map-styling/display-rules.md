@@ -156,13 +156,13 @@ The "Polygon" section contains options related to the appearance of the Polygon.
     * If you are developing using the JavaScript SDK for Google Maps, the value must be an integer. If you are developing for Android or iOS, or using a different map provider, the value may be fractional.
 1. **Stroke color** - Controls the stroke color of the Polygon.
     * In the CMS, you can select a color using the color picker displayed when clicking the color input field.
-    * If setting the color in-app, the value provided must be in HEX code (eg. #3071D9).
+    * If setting the color in-app, the value provided must be in 6-digit HEX code (eg. #3071D9).
 1. **Stroke width** - Controls the stroke width (in pixels) of the Polygon.
 1. **Stroke opacity** - Controls the stroke opacity of the Polygon.
     * The value here should be between 0 and 1, for example a value of 1 gives 100% opacity, 0.2 gives 20% opacity, etc.
 1. **Fill color** - Controls the fill color of the Polygon.
     * In the CMS, you can select a color using the color picker displayed when clicking the color input field.
-    * If setting the color in-app, the value provided must be in HEX code (eg. #3071D9).
+    * If setting the color in-app, the value provided must be in 6-digit HEX code (eg. #3071D9).
 1. **Fill opacity** - Controls the fill opacity of the Polygon.
     * The value here should be between 0 and 1, for example a value of 1 gives 100% opacity, 0.2 gives 20% opacity, etc.
 
