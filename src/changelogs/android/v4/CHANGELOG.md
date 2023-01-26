@@ -19,6 +19,7 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 -->
 
 ## [4.0.5] 2023-01-26
+
 ### Added
 
 - Added Extension functions for converters, these are usable from kotlin projects
