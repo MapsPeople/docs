@@ -18,12 +18,24 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 ### Security     in case of vulnerabilities.
 -->
 
+## [4.0.5] 2023-01-26
+
+### Added
+
+- Added Extension functions for converters, these are usable from kotlin projects
+
+### Fixed
+
+- Fixed issue where SDK would try to use destroyed context to access files directory
+- Fixed `MPSelectionBehavior` and `MPFilterBehavior` super class `MPMapBehavior` not being public
+- Fixed a number of memory leaks
+
 ## [4.0.4] 2023-01-17
 
 ### Fixed
 
 - Fixed issue with the livedata SDK where subscribing to some domains would subscribe to multiple domains instead
-- Fixed issue where ´MPApiKeyValidator´ would send multiple errors instead of just one
+- Fixed issue where `MPApiKeyValidator` would send multiple errors instead of just one
 - Fixed issue where the SDK would update UI elements on non-main thread
 - Fixed memory leaks where the map view was leaked
 
