@@ -12,6 +12,31 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [12.1] - 2023-01-25
+
+### Added
+
+- Support for French (AZERTY) and German (QWERTZ) layout keyboards.
+
+## [12.0.1] - 2022-12-12
+
+### Changed
+
+- Upgrading various dependencies to the latest versions.
+
+## [12.0.0] - 2022-12-08
+
+### Changed
+
+- **mi-map-mapbox**: The Floor Selector is going to be shown all the time, without map interaction.
+- **mi-map-googlemaps**: The Floor Selector is going to be shown all the time, without map interaction. The attribute value of `myPositionControlPosition` and `floorSelectorControlPosition` should now be strings corresponding to value of `google.maps.ControlPosition`.
+
+## [11.15.1] - 2022-08-15
+
+### Fixed
+
+- **mi-dropdown**: In Safari dropdown will be closed when clicked outside of the dropdown.
+
 ## [11.15.0] - 2022-08-11
 
 ### Added
