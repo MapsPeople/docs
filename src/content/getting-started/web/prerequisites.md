@@ -25,6 +25,18 @@ Some Web Service APIs are also needed for the MapsIndoors SDK, so make sure to e
 
 Remember to enable relevant Maps products (i.e. Maps JavaScript API) in your Google project and include these on your API key if you apply restrictions.
 
+## Alternatively: Get your Mapbox Access Token
+
+You need to create and setup a Mapbox Access Token by following the steps in the link below:
+
+* [Mapbox Access Token documentation](https://docs.mapbox.com/help/getting-started/access-tokens/)
+
+Remember to enable relevant _scopes_ on the Mapbox Access Token, such as:
+
+* [Vector Tiles API](https://docs.mapbox.com/api/maps/vector-tiles/)
+* [Styles API](https://docs.mapbox.com/api/maps/styles/)
+* [Directions API](https://docs.mapbox.com/api/navigation/directions/)
+
 ## Get your MapsIndoors API Key
 
 In order to include MapsIndoors in your app, you need an API key. If you are not a customer you can use this API key `{{sdk.tutorialAPIKey}}` to follow the guide.
