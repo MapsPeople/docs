@@ -140,11 +140,11 @@ config.setCollisionHandling(MPCollisionHandling.ALLOW_OVERLAP);
 
 #### V3
 
-In V3, the `getName()` method return the venue's <i>Administrative ID</i>, shadowing its <i>Display Name</i>.
+In V3, the `getName()` method return the venue's *Administrative ID*, shadowing its *Display Name*.
 
 #### V4
 
-In V4, the `getName()` method now returns the venue's <i>Display Name</i>. A new method has been added: `getAdministrativeId()` which returns the venue's <i>Administrative ID</i>.
+In V4, the `getName()` method now returns the venue's *Display Name*. A new method has been added: `getAdministrativeId()` which returns the venue's *Administrative ID*.
 
 ## Display Rules
 
