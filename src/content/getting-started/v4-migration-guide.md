@@ -136,6 +136,16 @@ config.setCollisionHandling(MPCollisionHandling.ALLOW_OVERLAP);
 
 <b>NB:</b> As a consequence the SDK will no longer respect these settings in the appConfig, they will have to be set in the solutionConfig.
 
+## Venue Name
+
+#### V3
+
+In V3, the `getName()` method return the venue's *Administrative ID*, shadowing its *Display Name*.
+
+#### V4
+
+In V4, the `getName()` method now returns the venue's *Display Name*. A new method has been added: `getAdministrativeId()` which returns the venue's *Administrative ID*.
+
 ## Display Rules
 
 The manner in which the SDK handles Display Rules has recieved a major overhaul in V4. This is intended to simplify usage, such as editing Display Rules for certain Locations.
