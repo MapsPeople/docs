@@ -25,9 +25,22 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 - Deprecated `MPBuilding.getInitialZIndex()` and added `getInitialFloorIndex()` to replace it
 - Deprecated `MPBuilding.getFloorByZIndex()` and added `getFloorByIndex` to replace it
 - Deprecated `MPDataSetCache.setScope(Context, MPDataSetCacheScope)` and added `setScope(MPDataSetCacheScope) to replace it
-- Deprecated `MPDataSetCacheItem.getCacheSize(Context)` and added `getCacheSize() to replace it
-- Deprecated `MPDirectionsService(Context) CTOR and added `MPDirectionsService()` to replace it
+- Deprecated `MPDataSetCacheItem.getCacheSize(Context)` and added `getCacheSize()` to replace it
+- Deprecated `MPDirectionsService(Context)` CTOR and added `MPDirectionsService()` to replace it
 - Deprecated `MPFloor.getZIndex()` and added `getFloorIndex` to replace it
+- Deprecated `MPFloor.setZIndex()` and added `setFloorIndex` to replace it
+- Deprecated `MPRouteCoordinate.getZIndex()` and added `getFloorIndex` to replace it
+- Deprecated `MPRouteCoordinate.setZIndex()` and added `setFloorIndex` to replace it
+- Deprecated `MPSolutionInfo` as it duplicates information from `MPSolution`
+
+### Fixed
+
+- Fixed `ANY_DOMAIN` livedata domain not having any effect
+- Fixed rare issue where collision between markers could cause a crash
+- Fixed issue where setting some listeners could cause a crash
+- Fixed reference documentation around `MPVenue.getName()`, see [the migration guide](https://docs.mapsindoors.com/content/getting-started/v4-migration-guide/#venue-name) for more information
+- Various fixes and improvements
+
 ## [4.0.5] 2023-01-26
 
 ### Added
