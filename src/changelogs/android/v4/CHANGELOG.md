@@ -18,6 +18,16 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 ### Security     in case of vulnerabilities.
 -->
 
+## [4.1.0] 2023-02-21
+
+### Deprecated
+
+- Deprecated `MPBuilding.getInitialZIndex()` and added `getInitialFloorIndex()` to replace it
+- Deprecated `MPBuilding.getFloorByZIndex()` and added `getFloorByIndex` to replace it
+- Deprecated `MPDataSetCache.setScope(Context, MPDataSetCacheScope)` and added `setScope(MPDataSetCacheScope) to replace it
+- Deprecated `MPDataSetCacheItem.getCacheSize(Context)` and added `getCacheSize() to replace it
+- Deprecated `MPDirectionsService(Context) CTOR and added `MPDirectionsService()` to replace it
+- Deprecated `MPFloor.getZIndex()` and added `getFloorIndex` to replace it
 ## [4.0.5] 2023-01-26
 
 ### Added
