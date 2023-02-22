@@ -9,6 +9,12 @@ eleventyNavigation:
 
 Changelog for MapsIndoors SDK for JavaScript. This document structure is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and the project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [4.21.2] - 2023-02-22
+
+### Fixed
+
+- Fix slow animation in Mapbox when fitting to new map bounds.
+
 ## [4.21.1] - 2022-12-13
 
 ### Fixed
