@@ -9,6 +9,23 @@ eleventyNavigation:
 
 Changelog for MapsIndoors SDK for JavaScript. This document structure is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and the project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [4.21.3] - 2023-04-13
+
+### Added
+
+- Support for Solution Config
+- Support for Settings 3D
+
+### Changed
+
+- Updated the MapsPeople logo
+
+### Fixed
+
+- Fixed a bug occuring when using deallocate with the map
+- Aligned 3D rotation across platforms
+- Fixed timing issue for 2D and 3D layers on Mapbox.
+
 ## [4.21.2] - 2023-02-22
 
 ### Fixed
