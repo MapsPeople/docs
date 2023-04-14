@@ -41,7 +41,8 @@ Insert the MapsIndoors SDK script tag into `<head>`, followed by the Google Maps
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MapsIndoors</title>
-+ <script src="https://app.mapsindoors.com/mapsindoors/js/sdk/4.5.1/mapsindoors-4.5.1.js.gz?apikey=YOUR_MAPSINDOORS_API_KEY"></script>
+    
++ <script src="https://app.mapsindoors.com/mapsindoors/js/sdk/4.21.2/mapsindoors-4.21.2.js.gz?apikey=YOUR_MAPSINDOORS_API_KEY"></script>
 + <script src="https://maps.googleapis.com/maps/api/js?libraries=geometry&key=YOUR_GOOGLE_MAPS_API_KEY"></script>
 </head>
 <body>
@@ -64,7 +65,7 @@ Add an empty `<div>` element to `<body>` with the `id` attribute set to "map":
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MapsIndoors</title>
-  <script src="https://app.mapsindoors.com/mapsindoors/js/sdk/4.5.1/mapsindoors-4.5.1.js.gz?apikey=YOUR_MAPSINDOORS_API_KEY"></script>
+  <script src="https://app.mapsindoors.com/mapsindoors/js/sdk/4.21.2/mapsindoors-4.21.2.js.gz?apikey=YOUR_MAPSINDOORS_API_KEY"></script>
   <script src="https://maps.googleapis.com/maps/api/js?libraries=geometry&key=YOUR_GOOGLE_MAPS_API_KEY"></script>
 </head>
 <body>
@@ -187,7 +188,7 @@ Insert the MapsIndoors SDK script tag into `<head>`, followed by the Mapbox `scr
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MapsIndoors</title>
-+ <script src="https://app.mapsindoors.com/mapsindoors/js/sdk/4.17.0/mapsindoors-4.17.0.js.gz?apikey=YOUR_MAPSINDOORS_API_KEY"></script>
++ <script src="https://app.mapsindoors.com/mapsindoors/js/sdk/4.21.2/mapsindoors-4.21.2.js.gz?apikey=YOUR_MAPSINDOORS_API_KEY"></script>
 + <script src='https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.js'></script>
 + <link href='https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.css' rel='stylesheet' />
 </head>
@@ -210,7 +211,7 @@ Add an empty `<div>` element to `<body>` with the `id` attribute set to "map":
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MapsIndoors</title>
-  <script src="https://app.mapsindoors.com/mapsindoors/js/sdk/4.17.0/mapsindoors-4.17.0.js.gz?apikey=YOUR_MAPSINDOORS_API_KEY"></script>
+  <script src="https://app.mapsindoors.com/mapsindoors/js/sdk/4.21.2/mapsindoors-4.21.2.js.gz?apikey=YOUR_MAPSINDOORS_API_KEY"></script>
   <script src='https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.js'></script>
   <link href='https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.css' rel='stylesheet' />
 </head>
