@@ -9,6 +9,16 @@ eleventyNavigation:
 
 Changelog for MapsIndoors SDK for JavaScript. This document structure is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and the project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [4.21.4] - 2023-04-18
+
+### Changed
+
+- The light setup for 3D models for a more accurate color representation.
+
+### Fixed
+
+- The issue that caused the 3D models to blink when panning the map.
+
 ## [4.21.3] - 2023-04-13
 
 ### Added
