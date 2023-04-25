@@ -9,6 +9,12 @@ eleventyNavigation:
 
 Changelog for MapsIndoors SDK for JavaScript. This document structure is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and the project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [4.21.5] - 2023-04-25
+
+### Fixed
+
+- A leftover console message was removed.
+
 ## [4.21.4] - 2023-04-18
 
 ### Changed
