@@ -18,6 +18,16 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 ### Security     in case of vulnerabilities.
 -->
 
+## [4.1.2] 2023-05-11
+
+### Fixed
+- Fixed map padding not being applied to camera movement when using Mapbox
+- Fixed delay when selecting a location until its info window appeared on Mapbox
+- Fixed `selectLocation` not moving the camera when the location was outside the viewport
+- Fixed crash that could occur when Mapbox can not generate a route
+- Fixed issue where large areas were not being shown on Google Maps
+- Fixed issue where SDK would crash if solution data is unavailable remotely, but the local cache data stored
+- Fixed issue where location display rules would receive a unidentifiable name/id
 ## [4.1.0] 2023-02-21
 
 ### Deprecated
