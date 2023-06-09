@@ -8,15 +8,26 @@ eleventyNavigation:
 
 ## Introduction and Getting Started
 
-From the MapsIndoors Integration API you can get, add, change and delete data related to your MapsIndoors Solution via a REST service.
-
-Send your requests to this endpoint: [https://integration.mapsindoors.com](https://integration.mapsindoors.com)
-
-> Note: Only HTTPS is supported. There is a rate limit of 10 requests per second per Solution.
+The MapsIndoors Integration API offers an alternative to changing your Mapsindoors data via the [CMS](https://cms.mapsindoors.com).
+From this API you can get, add, change and delete either directly via third party tools like [Postman](https://www.postman.com) or via the provided Swagger frontend.
 
 You can access data through the Integration API using a range of endpoints. The endpoints are described in the Swagger interface definition: [https://integration.mapsindoors.com/doc](https://integration.mapsindoors.com/doc/index.html)
 
 In Swagger, each `GET` method is pre-loaded with all mandatory fields needed to get a live example of data. Click the  "_Try it out_" button in Swagger to see the example data.
+
+> **_NOTE:_**  ⚠️ Only HTTPS is supported. There is a rate limit of 10 requests per second per Solution.
+
+## Getting started using swagger
+
+The Integration API can be access using our [swagger](https://cms.mapsindoors.com/doc) frontend. The first thing you want to do is to log in. This is done by pressing Authorize:
+
+![Swagger Authorize]({{ site.url }}/assets/api/v1/SwaggerLogin.png)
+
+After this a confirmation window will be shown. Everything is already prefilled here, so just press Authorize and you will be lead to the mapsindoos Authorize service. Use your email and your password here to login.
+
+![Swagger Authorize]({{ site.url }}/assets/api/v1/SwaggerLogin2.png)
+
+Once logged in you can start using the Integration API.
 
 ## Example Use Cases
 
@@ -75,7 +86,8 @@ The other information needed, such as the ID's, can be found in the `GET` call m
 
 <!-- ## Commonly Used Operations
 
-If the Integration API is already familiar to you, here we present some of the most commonly used API operations, and some example use-cases. All operations listed here can be found at [https://integration.mapsindoors.com/doc/index.html](https://integration.mapsindoors.com/doc/index.html).
+If the Integration API is already familiar to you, here we present some of the most commonly used API operations, and some example use-cases. All operations listed here can be found at
+[https://integration.mapsindoors.com/doc/index.html](https://integration.mapsindoors.com/doc/index.html).
 
 * `GET /{apiKey}/api/geodata` - Fetches geodata objects (Locations) from a given dataset (Solution) as a `.json` file.
   * This call doesn't have a specific use-case per se, as it's functionality is to fetch the data that you wish to modify with other operations.
@@ -85,11 +97,12 @@ If the Integration API is already familiar to you, here we present some of the m
 
 ### Login and Credentials
 
-First, log in to the service to get an `access token` to access the data.
-
-This requires a POST request to our Auth API at the following endpoint: https://auth.mapsindoors.com/connect/token
+First, log in to the service to get an `access token` to access the data. To get an access token you will need to use the Mapsindoors Autorization API. We use an [OAuth2 get token approach](https://auth0.com/docs/api/authentication#get-token) for this.
 
 The Auth API supports multiple ways to log in. The most common way is with your MapsIndoors username and password. If you need to sign in with other providers, please [contact support](https://mapspeople.com/support).
+
+> **_NOTE:_**  To obtain an access token do a POST call to:  https://auth.mapsindoors.com/connect/token
+
 No matter what login method you use, you will always need to use the following content-type header when talking to the Auth API:
 
 ```bash
@@ -112,8 +125,13 @@ password: <your password>
 Replacing `<your username>` and `<your password>` with your own credentials, and leaving `grant_type` and `client_id` as stated above.
 
 The body of the request must end up containing a query string like this:
-
 `grant_type=password&client_id=client&username=<your username>&password=<your password>`
+
+An example on how to login using curl (replace username and password):
+```bash
+curl -H "Content-Type: application/x-www-form-urlencoded" -X POST https://auth.mapsindoors.com/connect/token -d "grant_type=password&client_id=client&username=example@example.com&password=youpassword"
+```
+
 
 #### When You Are Authenticated
 
@@ -135,6 +153,49 @@ authorization: Bearer eyJhbGciOiJ...vmERrovsg
 ```
 
 > Note: The access token is valid for 24 hours. After that you will need to reauthenticate, following the same steps as explained above.
+
+## Setting up access using Postman
+
+As an alternative to use Swagger, the integration API can be accessed via [Postman](https://www.postman.com) by importing the swagger definition. Postman is a free of charge tool and can either be [downloaded as a standalone tool](https://www.postman.com/downloads) or you can create a new user (for free) and [use it online](https://web.postman.co/home).
+
+Either way, you will need to do three things before starting using Postman: Importing the REST Mapsindoors Integration API definition, tell postman where to make it's calls and finally set up Autorization for it.
+
+### Importing to Postman
+The first thing you need before getting started is importing the Mapsindoors Integration API definition to Postman.
+First click import, paste this link and click import:
+
+> https://integration.mapsindoors.com/swagger/v1/swagger.json
+
+![Postman Import]({{ site.url }}/assets/api/v1/postmanimport.png)
+
+### Direct Postman to the API.
+
+Now a new collection called "Integration API" will be created. Select it and change the Variable "baseUrl" to: https://integration.mapsindoors.com
+> **_NOTE:_**  ⚠️ Remember to save changes! click the floppy disk icon.
+
+![Postman BaseVariable]({{ site.url }}/assets/api/v1/postmanbasevariable.png)
+
+### Setup Postman authorization
+
+Finally we need to set authorization up for it. Go to the Authorization tab and change "Type" from No Auth to OAuth2.
+Here select Password Credentials as Grant Type.
+
+Now set the:
+- "Access Token URL" to `https://auth.mapsindoors.com/connect/token`
+- "Client ID" to `client`
+- Username to your username used in the [CMS](https://cms.mapsindoors.com).
+- Password to your password
+- Scope to `integration`
+
+Click "Get New Access Token" and a postman will log in using your credentials.
+Be sure to save your changes again by clicking the floppy disk icon.
+
+![Postman Auth]({{ site.url }}/assets/api/v1/postmanAuth.png)
+
+You should now be able to access your mapsindoors data in Postman.
+
+![Postman Usage]({{ site.url }}/assets/api/v1/postmanGetExample.png)
+
 
 ## Data Description
 
@@ -163,13 +224,13 @@ It tells which languages are defined for this project, which language is the def
 
 ### Geodata
 
-All geospatial data, Geodata, is arranged in a simple tree. Each element has a parent ID (except the root) so as an example, a point of interest (POI) can have a Room parent. The Room will typically be on a Floor in a Building on a Venue. Venues are always the root object (identified with parent ID is null), and is defined by "_An overall geographical area which typically comprises the area of one or more buildings and their relevant surrounding areas such as lawns and parking lots_".
+All geospatial data, Geodata, is arranged in a [tree data structure](https://en.wikipedia.org/wiki/Tree_(data_structure) "Tree structure"). Each element has a parent ID (except the root) so as an example, a point of interest (POI) can have a Room as parent. The Room will typically be on a Floor in a Building on a Venue. Venues are always the overall root object (identified with parent ID is null), and is defined by "_An overall geographical area which typically comprises of an area of one or more buildings and their relevant surrounding areas such as lawns and parking lots_".
 
 ![Geodata Structure]({{ site.url }}/assets/api/v1/geodata-structure.png)
 
-You can create, update, delete all Geodata types: Venue, Building, Floor, Room, Area and POI.
+Using the POST, PUT and DELETE endpoints for geodata, you can create, update and delete geodata. There are 6 types of geodata: Venue, Building, Floor, Room, Area and POI.
 
-All Geodata BaseTypes have some common keys that is available for all, and then there is some specific ones for each type, listed in BaseTypeProperties.
+All Geodata BaseTypes have some common keys that applies for all geodata, and then there is some specific ones for each type, listed in BaseTypeProperties.
 
 #### Object Definition
 
