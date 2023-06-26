@@ -9,6 +9,21 @@ eleventyNavigation:
 
 Changelog for MapsIndoors SDK for JavaScript. This document structure is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and the project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [4.23.0] - 2023-06-23
+
+### Added
+
+- `mapsindoors.MapsIndoors.addVenuesToSync(venueIds: string[])` - Adds one or more venue IDs to the list of venues to synchronize data for.
+- `mapsindoors.MapsIndoors.removeVenuesToSync(venueIds: string[])` - Removes one or more venue IDs from the list of venues to synchronize data for.
+
+### Fixed
+
+- The SDK usage logging is now correctly sent before the page unloads.
+
+### Changed
+
+- The rendering of 2D models on Mapbox now uses WebGL and three.js to improve performance.
+
 ## [4.22.0] - 2023-06-14
 
 ### Added
