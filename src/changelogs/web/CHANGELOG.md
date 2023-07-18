@@ -9,6 +9,49 @@ eleventyNavigation:
 
 Changelog for MapsIndoors SDK for JavaScript. This document structure is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and the project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [4.24.2] - 2023-07-12
+
+### Fixed
+
+- Only sync derived geometries, if the 3D module is enabled.
+
+## [4.24.1] - 2023-07-11
+
+### Fixed
+
+- The rendering of 2D models on iOS devices.
+
+## [4.24.0] - 2023-07-06
+
+### Added
+
+- Support for an upcoming position control Web Component.
+
+## [4.23.1] - 2023-06-29
+
+### Fixed
+
+- Directions on Google Maps rendering below polygons with a fill color.
+- Polygon styling from the main display rule would show on venue, building, and floor polygons.
+- Setting the polygon stroke width to 0 would render a 2px width stroke around it.
+- The PositionControl button would under some circumstances not be visible.
+- In some cases, Mapbox wouldn’t show tiles when zoomed to the max zoom level.
+
+## [4.23.0] - 2023-06-23
+
+### Added
+
+- `mapsindoors.MapsIndoors.addVenuesToSync(venueIds: string[])` - Adds one or more venue IDs to the list of venues to synchronize data for.
+- `mapsindoors.MapsIndoors.removeVenuesToSync(venueIds: string[])` - Removes one or more venue IDs from the list of venues to synchronize data for.
+
+### Fixed
+
+- The SDK usage logging is now correctly sent before the page unloads.
+
+### Changed
+
+- The rendering of 2D models on Mapbox now uses WebGL and three.js to improve performance.
+
 ## [4.22.0] - 2023-06-14
 
 ### Added
