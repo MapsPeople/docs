@@ -9,6 +9,135 @@ eleventyNavigation:
 
 Changelog for MapsIndoors SDK for JavaScript. This document structure is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and the project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [4.26.5] - 2023-12-11
+
+### Fixed
+
+- A Mapbox-related issue where highlighted `Locations` were hidden due to collisions with other `Locations`.
+
+## [4.26.4] - 2023-12-07
+
+### Fixed
+
+- To avoid rendering issues, the ViewState is not updated before a floor has been set.
+- Google Maps DirectionsService now uses the set language.
+
+## [4.26.3] - 2023-11-29
+
+### Fixed
+
+- Resolved issue where Mapbox DistanceMatrix calls failed if only one origin and one destination were specified.
+
+## [4.26.2] - 2023-11-28
+
+### Fixed
+
+- Fixed default `badgePosition` for the `hoverHighlight` state.
+
+## [4.26.1] - 2023-11-24
+
+### Fixed
+
+- Fixed an issue with DisplayRules where the `iconPlacement` property would not be respected.
+- Fixed an issue with DisplayRules where the `badgePosition` property would not be respected.
+
+## [4.26.0] - 2023-11-23
+
+### Added
+
+- Highlight locations: Introduced a new `highlight()` method to visually emphasize specific locations on the map. This method takes an array of location IDs as its argument. It shares the same functionality and arguments as the `filter()` method, providing an alternative way to filter locations based on their IDs. The `getHighlight()` method returns an array containing the IDs of all currently highlighted locations.
+- Select a location: Added new methods `selectLocation()` and `deselectLocation()` to control the selection of specific locations on the map. Use `selectLocation()` to select a location and `deselectLocation()` to clear the current selection. The `getSelectedLocation()` method returns the currently selected location object.
+- Hover a location: Introduced methods `hoverLocation()` and `unhoverLocation()` to manage the hovered location. Use `hoverLocation()` to set a location as hovered and `unhoverLocation()` to remove the hovered state. The `getHoveredLocation()` method returns the currently hovered location object.
+- State DisplayRules: Added `stateDisplayRules` to the Solution Config, allowing users to specify which states should be displayed for locations on the map. Available states include `hover`, `highlight`, `selection`, `hoverHighlight`, and `hoverSelection`.
+
+## [4.25.0] - 2023-10-30
+
+### Added
+
+- Added new `tilt(pitch: number)` and `rotate(bearing: number)` methods to the MapboxView class to align the interface between the `GoogleMapsView` and `MapboxView` classes.
+- Added a common set of `getBearing()` and `getPitch()` methods to both `GoogleMapsView` and `MapboxView` classes.
+
+## [4.24.9] - 2023-10-10
+
+### Changed
+
+- Direction polyline is placed below wall/room extrusion and 3D Model.
+
+## [4.24.8] - 2023-09-19
+
+### Added
+
+- Support for Building Outline
+
+## [4.24.7] - 2023-08-28
+
+### Added
+
+- Added support for zoom levels 23, 24, 25 and 999 (acting as "max zoom"). These are only rendered when using Mapbox map.
+
+## [4.24.6] - 2023-08-22
+
+### Fixed
+
+- For 3D models, the Z and Y axis have been swapped to align with the glTF specification (See https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html#coordinate-system-and-units)
+
+## [4.24.4] - 2023-08-03
+
+### Fixed
+
+- Labels for Venues and Building were set not to be visible by default.
+
+## [4.24.3] - 2023-07-26
+
+### Fixed
+
+- Clicking on a 3D model would under some circumstances emit the wrong Location in the click event.
+- `mouseenter` and `mouseleave` events now also trigger for polygons with an opacity of 0.
+- `mouseenter` and `mouseleave` events now also trigger when Locations appear or disappear when zooming in or out (due to Display Rule zoom levels).
+
+## [4.24.2] - 2023-07-12
+
+### Fixed
+
+- Only sync derived geometries, if the 3D module is enabled.
+
+## [4.24.1] - 2023-07-11
+
+### Fixed
+
+- The rendering of 2D models on iOS devices.
+
+## [4.24.0] - 2023-07-06
+
+### Added
+
+- Support for an upcoming position control Web Component.
+
+## [4.23.1] - 2023-06-29
+
+### Fixed
+
+- Directions on Google Maps rendering below polygons with a fill color.
+- Polygon styling from the main display rule would show on venue, building, and floor polygons.
+- Setting the polygon stroke width to 0 would render a 2px width stroke around it.
+- The PositionControl button would under some circumstances not be visible.
+- In some cases, Mapbox wouldn’t show tiles when zoomed to the max zoom level.
+
+## [4.23.0] - 2023-06-23
+
+### Added
+
+- `mapsindoors.MapsIndoors.addVenuesToSync(venueIds: string[])` - Adds one or more venue IDs to the list of venues to synchronize data for.
+- `mapsindoors.MapsIndoors.removeVenuesToSync(venueIds: string[])` - Removes one or more venue IDs from the list of venues to synchronize data for.
+
+### Fixed
+
+- The SDK usage logging is now correctly sent before the page unloads.
+
+### Changed
+
+- The rendering of 2D models on Mapbox now uses WebGL and three.js to improve performance.
+
 ## [4.22.0] - 2023-06-14
 
 ### Added
