@@ -9,6 +9,301 @@ eleventyNavigation:
 
 Changelog for MapsIndoors SDK for JavaScript. This document structure is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and the project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [4.36.0] - 2024-06-27
+
+### Added
+
+- **Multi-Stop Navigation:**
+  - The `mapsindoors.services.DirectionsService.getRoute` now supports multi-stop routes with:
+    - **`stops` parameter** (array of `LatLngLiteral`): Defines stop locations, including optional floor.
+    - **`optimize` parameter** (boolean, defaults to `false`): Optimizes the route for the shortest travel time.
+  - The `mapsindoors.directions.DirectionsRenderer` has a new constructor parameter:
+    - **`defaultRouteStopIconProvider`**: Sets the default route stop icon provider. Setting this parameter to `null` disables the rendering of default stop icons.
+  - The `mapsindoors.directions.DirectionsRenderer.setRoute` now takes an extra parameter:
+    - **`stopConfigs`**: A map of `RouteStopConfig` objects. The key is the stop index, and the value is the `RouteStopConfig` object.
+  - **`RouteStopConfig`**: An interface describing two properties, `label` and `iconProvider`. `{ label: string, iconProvider: RouteStopIconProvider }`.
+  - **`RouteStopIconProvider`**: An interface containing the `getImage(stop_number: number)` method. Implemented by the `mapsindoors.directions.DefaultRouteStopIconProvider` class.
+
+### Fixed
+
+- Fixed an issue with the `mapsindoors.BadgeRenderer` and the `scale` parameter.
+
+## [4.35.0] - 2024-06-12
+
+### Changed
+
+- Only selectable locations can be hoverable.
+
+### Added
+
+- Missing live data domain types to JSDocs.
+
+## [4.34.0] - 2024-06-05
+
+### Added
+
+- Extended Mapbox v3 functionalities:
+  - The fade effect for extruded buildings now uses numeric values between 0 and 1.
+  - New constructor parameter on the MapboxV3View:
+    - `showRoadNameLabels`: A boolean parameter that dictates whether Mapbox road names should be shown. By default, Mapbox road names are hidden when MapsIndoors data is shown.
+  - The `MapboxFeatures` getter is deprecated. Use the similar `FeatureType` getter instead to show or hide specific Mapbox features.
+
+### Fixed
+
+- Fixed an issue where an empty tileUrl on a Venue would break directions functionality.
+
+## [4.33.0] - 2024-04-29
+
+### Fixed
+
+- Fixed an issue with polygons that were clickable even though they were not visible.
+
+### Added
+
+- Extended Mapbox v3 handles:
+  - Added two new functions: `setSlot()` and `getSlot()`. It is now possible to set a different value for `slot` property on a specific layer.
+
+## [4.32.0] - 2024-04-16
+
+### Fixed
+
+- Fixed an issue where labels were not visible in the Safari browser for Google Maps.
+- Fixed an issue where the direction polyline was rendered in the wrong order for Mapbox v3.
+
+### Added
+
+- Extended Label Style:
+  - Added new `labelType` called Graphic Label.
+  - `Graphic Label`: Only visible when Graphic Label type is selected. Opens Media Library with prefiltered MapsIndoors Labels. Controls what image is used as background image of a Graphic Label.
+
+## [4.31.0] - 2024-03-25
+
+### Fixed
+
+- Fixed selection issue when selection pin was not elevated on top of extrusions for Mapbox v3.
+- Fixed an issue with `labelStyle.haloWidth`, `labelStyle.haloBlur` and `labelStyle.textOpacity` not respecting value 0.
+- Fixed an issue when Mapbox v3 map markers were visible even when they were disabled.
+- Fixed an issue with setting solution API Key not working after the map was initialized.
+
+### Added
+
+- Exposed three new methods for Mapbox v3 map view:
+  - `hideFeatures()`: sets visibility of passed array of MapboxFeatures to none.
+  - `MapboxFeatures`: gets MapboxFeatures that visibility can be set to none.
+  - `getHiddenFeatures()`: gets currently hidden features.
+
+## [4.30.0] - 2024-02-15
+
+### Changed
+
+- Upgraded MICommon to v3.6.1 to accommodate more strict CSP headers.
+
+### Fixed
+
+- Fixed the `TypeError: this.getMapView(...).setFloorPlan is not a function` error.
+- Fixed an issue where using fractional zoom levels in DisplayRules caused rendering issues.
+
+### Added
+
+- Support for setting Locations as selectable or non-selectable.
+
+## [4.29.3] - 2024-02-06
+
+### Fixed
+
+- Fixed an issue with the `setDisplayRule()` method that prevented the set DisplayRule from being applied.
+
+## [4.29.2] - 2024-02-05
+
+### Fixed
+
+- Fix Flat Label interpolation on zoom levels above 22.
+
+## [4.29.1] - 2024-01-30
+
+### Fixed
+
+- Issue when Mapbox' extruded buildings were visible after the page reload.
+
+## [4.29.0] - 2024-01-24
+
+### Added
+
+- Support for two new types of labels: Text and Flat.
+- New section to Display Rules called Label Style where you can style:
+  - `labelType`: Label type displayed on the map, either Text or Flat.
+  - `textSize`: Controls the size of the label.
+  - `textColor`: Controls the color of the label.
+  - `textOpacity`: Controls the opacity of the label.
+  - `haloColor`: Controls the color of the halo effect around the label.
+  - `haloWidth`: Width of the halo effect around the label.
+  - `haloBlur`: Controls the blur effect of the halo effect.
+  - `bearing`: Only visible when Flat Label type is selected. Controls bearing of the Flat Label.
+
+## [4.28.0] - 2024-01-23
+
+## Added
+
+- Support for 2D Walls (floor plans).
+- Constructor parameter: `buildingSelectionMode` for specifying the building selection mode (`manual` or `automatic`). Defaults to `automatic`.
+- Constructor parameter: `floorSelectionMode` for specifying the floor selection mode (`manual` or `automatic`). Defaults to `automatic`.
+- `setBuildingSelectionMode(mode)`: Sets the building selection mode to either `manual` or `automatic`.
+- `getBuildingSelectionMode()`: Returns the current building selection mode.
+- `setFloorSelectionMode(mode)`: Sets the floor selection mode to either `manual` or `automatic`.
+- `getFloorSelectionMode()`: Returns the current floor selection mode.
+- `avoidHighwayTypes` and `excludeHighwayTypes` parameters to `DistanceMatrixService.getDistanceMatrix()`:
+  - Both parameters are optional string arrays of highway types to avoid or exclude when calculating a distance matrix.
+  - Both parameters take precedence over the `avoidStairs` parameter.
+- `avoidHighwayTypes` and `excludeHighwayTypes` parameters to `DirectionsService.getRoute()`:
+  - Both parameters are optional string arrays of highway types to avoid or exclude when calculating a route.
+  - Both parameters take precedence over the `avoidStairs` parameter.
+- Supported highway types for `avoidHighwayTypes` and `excludeHighwayTypes` parameters:
+  - `'ramp'`, `'stairs'`, `'ladder'`, `'escalator'`, `'travelator'`, `'elevator'`, `'unclassified'`, `'residential'`, `'footway'`, `'wheelchairramp'`, `'wheelchairlift'`
+
+### Fixed
+
+- Live data badges is now also visible when the POI is highlighted or selected.
+
+## [4.27.0] - 2024-01-16
+
+### Added
+
+- New MapView: `MapboxV3View`.
+  - Support for Mapbox GL JS v3.
+  - Exposed map view constructor parameters:
+    - `mapsIndoorsTransitionLevel`: controls transition between Mapbox and MapsIndoors data.
+    - `showMapMarkers`: boolean parameter that dictates if Mapbox map markers should be shown or not. By default Mapbox markers will be hidden  when MapsIndoors data is shown.
+    - `lightPreset`: sets global light. Can be set to: 'day', 'dawn', 'dusk' or 'night'.
+
+## [4.26.5] - 2023-12-11
+
+### Fixed
+
+- A Mapbox-related issue where highlighted `Locations` were hidden due to collisions with other `Locations`.
+
+## [4.26.4] - 2023-12-07
+
+### Fixed
+
+- To avoid rendering issues, the ViewState is not updated before a floor has been set.
+- Google Maps DirectionsService now uses the set language.
+
+## [4.26.3] - 2023-11-29
+
+### Fixed
+
+- Resolved issue where Mapbox DistanceMatrix calls failed if only one origin and one destination were specified.
+
+## [4.26.2] - 2023-11-28
+
+### Fixed
+
+- Fixed default `badgePosition` for the `hoverHighlight` state.
+
+## [4.26.1] - 2023-11-24
+
+### Fixed
+
+- Fixed an issue with DisplayRules where the `iconPlacement` property would not be respected.
+- Fixed an issue with DisplayRules where the `badgePosition` property would not be respected.
+
+## [4.26.0] - 2023-11-23
+
+### Added
+
+- Highlight locations: Introduced a new `highlight()` method to visually emphasize specific locations on the map. This method takes an array of location IDs as its argument. It shares the same functionality and arguments as the `filter()` method, providing an alternative way to filter locations based on their IDs. The `getHighlight()` method returns an array containing the IDs of all currently highlighted locations.
+- Select a location: Added new methods `selectLocation()` and `deselectLocation()` to control the selection of specific locations on the map. Use `selectLocation()` to select a location and `deselectLocation()` to clear the current selection. The `getSelectedLocation()` method returns the currently selected location object.
+- Hover a location: Introduced methods `hoverLocation()` and `unhoverLocation()` to manage the hovered location. Use `hoverLocation()` to set a location as hovered and `unhoverLocation()` to remove the hovered state. The `getHoveredLocation()` method returns the currently hovered location object.
+- State DisplayRules: Added `stateDisplayRules` to the Solution Config, allowing users to specify which states should be displayed for locations on the map. Available states include `hover`, `highlight`, `selection`, `hoverHighlight`, and `hoverSelection`.
+
+## [4.25.0] - 2023-10-30
+
+### Added
+
+- Added new `tilt(pitch: number)` and `rotate(bearing: number)` methods to the MapboxView class to align the interface between the `GoogleMapsView` and `MapboxView` classes.
+- Added a common set of `getBearing()` and `getPitch()` methods to both `GoogleMapsView` and `MapboxView` classes.
+
+## [4.24.9] - 2023-10-10
+
+### Changed
+
+- Direction polyline is placed below wall/room extrusion and 3D Model.
+
+## [4.24.8] - 2023-09-19
+
+### Added
+
+- Support for Building Outline
+
+## [4.24.7] - 2023-08-28
+
+### Added
+
+- Added support for zoom levels 23, 24, 25 and 999 (acting as "max zoom"). These are only rendered when using Mapbox map.
+
+## [4.24.6] - 2023-08-22
+
+### Fixed
+
+- For 3D models, the Z and Y axis have been swapped to align with the glTF specification (See https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html#coordinate-system-and-units)
+
+## [4.24.4] - 2023-08-03
+
+### Fixed
+
+- Labels for Venues and Building were set not to be visible by default.
+
+## [4.24.3] - 2023-07-26
+
+### Fixed
+
+- Clicking on a 3D model would under some circumstances emit the wrong Location in the click event.
+- `mouseenter` and `mouseleave` events now also trigger for polygons with an opacity of 0.
+- `mouseenter` and `mouseleave` events now also trigger when Locations appear or disappear when zooming in or out (due to Display Rule zoom levels).
+
+## [4.24.2] - 2023-07-12
+
+### Fixed
+
+- Only sync derived geometries, if the 3D module is enabled.
+
+## [4.24.1] - 2023-07-11
+
+### Fixed
+
+- The rendering of 2D models on iOS devices.
+
+## [4.24.0] - 2023-07-06
+
+### Added
+
+- Support for an upcoming position control Web Component.
+
+## [4.23.1] - 2023-06-29
+
+### Fixed
+
+- Directions on Google Maps rendering below polygons with a fill color.
+- Polygon styling from the main display rule would show on venue, building, and floor polygons.
+- Setting the polygon stroke width to 0 would render a 2px width stroke around it.
+- The PositionControl button would under some circumstances not be visible.
+- In some cases, Mapbox wouldn’t show tiles when zoomed to the max zoom level.
+
+## [4.23.0] - 2023-06-23
+
+### Added
+
+- `mapsindoors.MapsIndoors.addVenuesToSync(venueIds: string[])` - Adds one or more venue IDs to the list of venues to synchronize data for.
+- `mapsindoors.MapsIndoors.removeVenuesToSync(venueIds: string[])` - Removes one or more venue IDs from the list of venues to synchronize data for.
+
+### Fixed
+
+- The SDK usage logging is now correctly sent before the page unloads.
+
+### Changed
+
+- The rendering of 2D models on Mapbox now uses WebGL and three.js to improve performance.
+
 ## [4.22.0] - 2023-06-14
 
 ### Added
@@ -206,7 +501,7 @@ Changelog for MapsIndoors SDK for JavaScript. This document structure is based o
 
 ### Added
 
-- The `LocationsService` now supports filtering by `Location` type. (`mapsindoors.services.LocationsService.getLocations({types: ['Staris']})`).
+- The `LocationsService` now supports filtering by `Location` type. (`mapsindoors.services.LocationsService.getLocations({types: ['Stairs']})`).
 - `synchronizeContent()` has been added to MapsIndoors as a static member. It will synchronize the MapsIndoors data from the backend to the client when called.
 
 ## [4.13.0] - 2021-08-17
