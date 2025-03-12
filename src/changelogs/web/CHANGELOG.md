@@ -9,6 +9,416 @@ eleventyNavigation:
 
 Changelog for MapsIndoors SDK for JavaScript. This document structure is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and the project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [4.39.1] - 2025-03-12
+
+### Fixed
+
+- Fixed a bug that prevented the `synchronizeContent` function from updating the MapsIndoors data.
+
+## [4.39.0] - 2025-03-05
+
+### Added
+
+- `fitVenue` method now accepts an optional `options` object with `padding` and `maxZoom` parameters.
+- `fitBuilding` method now accepts an optional `options` object with `padding` and `maxZoom` parameters.
+
+### Fixed
+
+- Fixed an issue where calling `fitBuilding` on a MapsIndoors instance would throw an `Uncaught (in promise) Error: Invalid GeoJSON object!` error.
+- Fixed an issue where 2D models in some cases weren't clickable.
+
+## [4.38.7] - 2025-02-27
+
+### Fixed
+
+- Fixed an edge case in which locations placed far from the venue could cause performance issues or crash the SDK.
+- Fixed URL encoding for the `getLocations` function in `LocationsService` and other API request functions, resolving potential issues with special characters in query parameters.
+
+## [4.38.6] - 2025-01-27
+
+### Fixed
+
+- Fixed an issue where inactive `Locations` would show up on the map.
+- Fixed an issue where the `DirectionsService` could crash when no route could be found between two points.
+- Fixed the click handling for `Flat Labels` on `MapboxView` and `MapboxV3View`.
+- Fixed an issue where `GoogleMapsView` would throw an `Uncaught TypeError: a.url.substr is not a function` error in the console, related to `Graphic Labels`.
+
+## [4.38.5] - 2025-01-21
+
+### Fixed
+
+- Fixed an issue that sometimes caused the 3D buildings on `MapboxV3View` to block the MapsIndoors data.
+
+## [4.38.4] - 2025-01-13
+
+### Fixed
+
+- Fixed an issue that caused the `DirectionsRenderer` to throw an unexpected error.
+- Fixed an issue where setting a different Mapbox style on the `MapboxV3View` would cause the SDK to throw an error.
+- Fixed an issue where 2D models on Google Maps wouldn't get removed from the map when changing floors.
+
+## [4.38.3] - 2025-01-07
+
+### Fixed
+
+- Fixed missing labels for Google Maps. A misconfiguration in the label rendering logic caused this issue.
+- Fixed an issue where calling `fitVenue()` on a MapsIndoors instance would throw an `Uncaught (in promise) Error: Invalid GeoJSON object!` error.
+- Fixed the `getFloor` method to ensure it returns a string value.
+
+## [4.38.2] - 2024-12-18
+
+### Fixed
+
+- Fixed an issue where the `floorNames` property on `Venue` objects could be null. This ensures venue objects always have valid floor names, preventing potential errors when accessing floor information.
+- Fixed an issue where the `DirectionsRenderer` would throw an `Uncaught (in promise) Error: Invalid GeoJSON object!` error.
+- Fixed an issue where setting the `venue` parameter for `LocationsService.getLocations()` would return an empty result.
+
+## [4.38.1] - 2024-12-12
+
+### Fixed
+
+- Fixed an issue where calling `goTo` would reset the map's pitch/tilt. The map now retains the same pitch/tilt as it had before calling `goTo`. This was fixed in the `fitBounds` method on both `MapboxView` and `MapboxV3View`.
+
+## [4.38.0] - 2024-12-10
+
+### Added
+
+- Added optional `automatedZoomLimit` property to `SolutionConfig`. The `automatedZoomLimit` controls how far the SDK automatically zooms in, e.g., when fitting to a venue, building, or location.
+- Added the `goTo` method in the MapsIndoors class to improve the map navigation. This method fits the map view to a given feature with optional padding and a maximum zoom level. If the maximum zoom is not set when calling `goTo`, it will fall back to the `automatedZoomLimit` in the `SolutionConfig`. If neither is set, it will use the map's maximum supported zoom level.
+
+### Changed
+
+- To improve performance, the strategy for loading data is changed from eager to lazy. This means the initial data load is much faster because the SDK only loads the data needed to render the initial map view. Then, when the map changes, more data is loaded as needed, e.g., if the floor is changed. This is an internal change and has been implemented without any changes to the SDK's public interface.
+
+## [4.37.1] - 2024-11-26
+
+### Fixed
+
+- Fixed a potential `TypeError: Cannot read properties of undefined`.
+- Fixed typo in internal variable name that could cause unexpected behavior.
+
+## [4.37.0] - 2024-11-25
+
+### Added
+
+- Support for Label Positioning for Floating Labels. (Mapbox only)
+- New section to Label Style Display Rules:
+  - `labelStylePosition`: sets the position of the label, relative to the Locations' anchor point. It can be set to: 'top', 'right', 'bottom', or 'left'.
+
+## [4.36.3] - 2024-10-10
+
+### Fixed
+
+- The SDK will no longer throw an error if the `venue.styles` property is undefined. This fixes a potential issue where the application might crash if the venue data was missing the styles property.
+
+## [4.36.2] - 2024-08-29
+
+### Fixed
+
+- `showMapMarkers` boolean also shows/hides Mapbox’s transit icons.
+- Fix issue with 2D geometry not always being shown.
+
+## [4.36.1] - 2024-07-22
+
+### Fixed
+
+- `getVenue()` and `getBuilding()` on the MapsIndoors instance wouldn't return the correct translation after calling `setLanguage()`.
+
+## [4.36.0] - 2024-06-27
+
+### Added
+
+- **Multi-Stop Navigation:**
+  - The `mapsindoors.services.DirectionsService.getRoute` now supports multi-stop routes with:
+    - **`stops` parameter** (array of `LatLngLiteral`): Defines stop locations, including optional floor.
+    - **`optimize` parameter** (boolean, defaults to `false`): Optimizes the route for the shortest travel time.
+  - The `mapsindoors.directions.DirectionsRenderer` has a new constructor parameter:
+    - **`defaultRouteStopIconProvider`**: Sets the default route stop icon provider. Setting this parameter to `null` disables the rendering of default stop icons.
+  - The `mapsindoors.directions.DirectionsRenderer.setRoute` now takes an extra parameter:
+    - **`stopConfigs`**: A map of `RouteStopConfig` objects. The key is the stop index, and the value is the `RouteStopConfig` object.
+  - **`RouteStopConfig`**: An interface describing two properties, `label` and `iconProvider`. `{ label: string, iconProvider: RouteStopIconProvider }`.
+  - **`RouteStopIconProvider`**: An interface containing the `getImage(stop_number: number)` method. Implemented by the `mapsindoors.directions.DefaultRouteStopIconProvider` class.
+
+### Fixed
+
+- Fixed an issue with the `mapsindoors.BadgeRenderer` and the `scale` parameter.
+
+## [4.35.0] - 2024-06-12
+
+### Changed
+
+- Only selectable locations can be hoverable.
+
+### Added
+
+- Missing live data domain types to JSDocs.
+
+## [4.34.0] - 2024-06-05
+
+### Added
+
+- Extended Mapbox v3 functionalities:
+  - The fade effect for extruded buildings now uses numeric values between 0 and 1.
+  - New constructor parameter on the MapboxV3View:
+    - `showRoadNameLabels`: A boolean parameter that dictates whether Mapbox road names should be shown. By default, Mapbox road names are hidden when MapsIndoors data is shown.
+  - The `MapboxFeatures` getter is deprecated. Use the similar `FeatureType` getter instead to show or hide specific Mapbox features.
+
+### Fixed
+
+- Fixed an issue where an empty tileUrl on a Venue would break directions functionality.
+
+## [4.33.0] - 2024-04-29
+
+### Fixed
+
+- Fixed an issue with polygons that were clickable even though they were not visible.
+
+### Added
+
+- Extended Mapbox v3 handles:
+  - Added two new functions: `setSlot()` and `getSlot()`. It is now possible to set a different value for `slot` property on a specific layer.
+
+## [4.32.0] - 2024-04-16
+
+### Fixed
+
+- Fixed an issue where labels were not visible in the Safari browser for Google Maps.
+- Fixed an issue where the direction polyline was rendered in the wrong order for Mapbox v3.
+
+### Added
+
+- Extended Label Style:
+  - Added new `labelType` called Graphic Label.
+  - `Graphic Label`: Only visible when Graphic Label type is selected. Opens Media Library with prefiltered MapsIndoors Labels. Controls what image is used as background image of a Graphic Label.
+
+## [4.31.0] - 2024-03-25
+
+### Fixed
+
+- Fixed selection issue when selection pin was not elevated on top of extrusions for Mapbox v3.
+- Fixed an issue with `labelStyle.haloWidth`, `labelStyle.haloBlur` and `labelStyle.textOpacity` not respecting value 0.
+- Fixed an issue when Mapbox v3 map markers were visible even when they were disabled.
+- Fixed an issue with setting solution API Key not working after the map was initialized.
+
+### Added
+
+- Exposed three new methods for Mapbox v3 map view:
+  - `hideFeatures()`: sets visibility of passed array of MapboxFeatures to none.
+  - `MapboxFeatures`: gets MapboxFeatures that visibility can be set to none.
+  - `getHiddenFeatures()`: gets currently hidden features.
+
+## [4.30.0] - 2024-02-15
+
+### Changed
+
+- Upgraded MICommon to v3.6.1 to accommodate more strict CSP headers.
+
+### Fixed
+
+- Fixed the `TypeError: this.getMapView(...).setFloorPlan is not a function` error.
+- Fixed an issue where using fractional zoom levels in DisplayRules caused rendering issues.
+
+### Added
+
+- Support for setting Locations as selectable or non-selectable.
+
+## [4.29.3] - 2024-02-06
+
+### Fixed
+
+- Fixed an issue with the `setDisplayRule()` method that prevented the set DisplayRule from being applied.
+
+## [4.29.2] - 2024-02-05
+
+### Fixed
+
+- Fix Flat Label interpolation on zoom levels above 22.
+
+## [4.29.1] - 2024-01-30
+
+### Fixed
+
+- Issue when Mapbox' extruded buildings were visible after the page reload.
+
+## [4.29.0] - 2024-01-24
+
+### Added
+
+- Support for two new types of labels: Text and Flat.
+- New section to Display Rules called Label Style where you can style:
+  - `labelType`: Label type displayed on the map, either Text or Flat.
+  - `textSize`: Controls the size of the label.
+  - `textColor`: Controls the color of the label.
+  - `textOpacity`: Controls the opacity of the label.
+  - `haloColor`: Controls the color of the halo effect around the label.
+  - `haloWidth`: Width of the halo effect around the label.
+  - `haloBlur`: Controls the blur effect of the halo effect.
+  - `bearing`: Only visible when Flat Label type is selected. Controls bearing of the Flat Label.
+
+## [4.28.0] - 2024-01-23
+
+## Added
+
+- Support for 2D Walls (floor plans).
+- Constructor parameter: `buildingSelectionMode` for specifying the building selection mode (`manual` or `automatic`). Defaults to `automatic`.
+- Constructor parameter: `floorSelectionMode` for specifying the floor selection mode (`manual` or `automatic`). Defaults to `automatic`.
+- `setBuildingSelectionMode(mode)`: Sets the building selection mode to either `manual` or `automatic`.
+- `getBuildingSelectionMode()`: Returns the current building selection mode.
+- `setFloorSelectionMode(mode)`: Sets the floor selection mode to either `manual` or `automatic`.
+- `getFloorSelectionMode()`: Returns the current floor selection mode.
+- `avoidHighwayTypes` and `excludeHighwayTypes` parameters to `DistanceMatrixService.getDistanceMatrix()`:
+  - Both parameters are optional string arrays of highway types to avoid or exclude when calculating a distance matrix.
+  - Both parameters take precedence over the `avoidStairs` parameter.
+- `avoidHighwayTypes` and `excludeHighwayTypes` parameters to `DirectionsService.getRoute()`:
+  - Both parameters are optional string arrays of highway types to avoid or exclude when calculating a route.
+  - Both parameters take precedence over the `avoidStairs` parameter.
+- Supported highway types for `avoidHighwayTypes` and `excludeHighwayTypes` parameters:
+  - `'ramp'`, `'stairs'`, `'ladder'`, `'escalator'`, `'travelator'`, `'elevator'`, `'unclassified'`, `'residential'`, `'footway'`, `'wheelchairramp'`, `'wheelchairlift'`
+
+### Fixed
+
+- Live data badges is now also visible when the POI is highlighted or selected.
+
+## [4.27.0] - 2024-01-16
+
+### Added
+
+- New MapView: `MapboxV3View`.
+  - Support for Mapbox GL JS v3.
+  - Exposed map view constructor parameters:
+    - `mapsIndoorsTransitionLevel`: controls transition between Mapbox and MapsIndoors data.
+    - `showMapMarkers`: boolean parameter that dictates if Mapbox map markers should be shown or not. By default Mapbox markers will be hidden  when MapsIndoors data is shown.
+    - `lightPreset`: sets global light. Can be set to: 'day', 'dawn', 'dusk' or 'night'.
+
+## [4.26.5] - 2023-12-11
+
+### Fixed
+
+- A Mapbox-related issue where highlighted `Locations` were hidden due to collisions with other `Locations`.
+
+## [4.26.4] - 2023-12-07
+
+### Fixed
+
+- To avoid rendering issues, the ViewState is not updated before a floor has been set.
+- Google Maps DirectionsService now uses the set language.
+
+## [4.26.3] - 2023-11-29
+
+### Fixed
+
+- Resolved issue where Mapbox DistanceMatrix calls failed if only one origin and one destination were specified.
+
+## [4.26.2] - 2023-11-28
+
+### Fixed
+
+- Fixed default `badgePosition` for the `hoverHighlight` state.
+
+## [4.26.1] - 2023-11-24
+
+### Fixed
+
+- Fixed an issue with DisplayRules where the `iconPlacement` property would not be respected.
+- Fixed an issue with DisplayRules where the `badgePosition` property would not be respected.
+
+## [4.26.0] - 2023-11-23
+
+### Added
+
+- Highlight locations: Introduced a new `highlight()` method to visually emphasize specific locations on the map. This method takes an array of location IDs as its argument. It shares the same functionality and arguments as the `filter()` method, providing an alternative way to filter locations based on their IDs. The `getHighlight()` method returns an array containing the IDs of all currently highlighted locations.
+- Select a location: Added new methods `selectLocation()` and `deselectLocation()` to control the selection of specific locations on the map. Use `selectLocation()` to select a location and `deselectLocation()` to clear the current selection. The `getSelectedLocation()` method returns the currently selected location object.
+- Hover a location: Introduced methods `hoverLocation()` and `unhoverLocation()` to manage the hovered location. Use `hoverLocation()` to set a location as hovered and `unhoverLocation()` to remove the hovered state. The `getHoveredLocation()` method returns the currently hovered location object.
+- State DisplayRules: Added `stateDisplayRules` to the Solution Config, allowing users to specify which states should be displayed for locations on the map. Available states include `hover`, `highlight`, `selection`, `hoverHighlight`, and `hoverSelection`.
+
+## [4.25.0] - 2023-10-30
+
+### Added
+
+- Added new `tilt(pitch: number)` and `rotate(bearing: number)` methods to the MapboxView class to align the interface between the `GoogleMapsView` and `MapboxView` classes.
+- Added a common set of `getBearing()` and `getPitch()` methods to both `GoogleMapsView` and `MapboxView` classes.
+
+## [4.24.9] - 2023-10-10
+
+### Changed
+
+- Direction polyline is placed below wall/room extrusion and 3D Model.
+
+## [4.24.8] - 2023-09-19
+
+### Added
+
+- Support for Building Outline
+
+## [4.24.7] - 2023-08-28
+
+### Added
+
+- Added support for zoom levels 23, 24, 25 and 999 (acting as "max zoom"). These are only rendered when using Mapbox map.
+
+## [4.24.6] - 2023-08-22
+
+### Fixed
+
+- For 3D models, the Z and Y axis have been swapped to align with the glTF specification (See https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html#coordinate-system-and-units)
+
+## [4.24.4] - 2023-08-03
+
+### Fixed
+
+- Labels for Venues and Building were set not to be visible by default.
+
+## [4.24.3] - 2023-07-26
+
+### Fixed
+
+- Clicking on a 3D model would under some circumstances emit the wrong Location in the click event.
+- `mouseenter` and `mouseleave` events now also trigger for polygons with an opacity of 0.
+- `mouseenter` and `mouseleave` events now also trigger when Locations appear or disappear when zooming in or out (due to Display Rule zoom levels).
+
+## [4.24.2] - 2023-07-12
+
+### Fixed
+
+- Only sync derived geometries, if the 3D module is enabled.
+
+## [4.24.1] - 2023-07-11
+
+### Fixed
+
+- The rendering of 2D models on iOS devices.
+
+## [4.24.0] - 2023-07-06
+
+### Added
+
+- Support for an upcoming position control Web Component.
+
+## [4.23.1] - 2023-06-29
+
+### Fixed
+
+- Directions on Google Maps rendering below polygons with a fill color.
+- Polygon styling from the main display rule would show on venue, building, and floor polygons.
+- Setting the polygon stroke width to 0 would render a 2px width stroke around it.
+- The PositionControl button would under some circumstances not be visible.
+- In some cases, Mapbox wouldn’t show tiles when zoomed to the max zoom level.
+
+## [4.23.0] - 2023-06-23
+
+### Added
+
+- `mapsindoors.MapsIndoors.addVenuesToSync(venueIds: string[])` - Adds one or more venue IDs to the list of venues to synchronize data for.
+- `mapsindoors.MapsIndoors.removeVenuesToSync(venueIds: string[])` - Removes one or more venue IDs from the list of venues to synchronize data for.
+
+### Fixed
+
+- The SDK usage logging is now correctly sent before the page unloads.
+
+### Changed
+
+- The rendering of 2D models on Mapbox now uses WebGL and three.js to improve performance.
+
 ## [4.22.0] - 2023-06-14
 
 ### Added
@@ -206,7 +616,7 @@ Changelog for MapsIndoors SDK for JavaScript. This document structure is based o
 
 ### Added
 
-- The `LocationsService` now supports filtering by `Location` type. (`mapsindoors.services.LocationsService.getLocations({types: ['Staris']})`).
+- The `LocationsService` now supports filtering by `Location` type. (`mapsindoors.services.LocationsService.getLocations({types: ['Stairs']})`).
 - `synchronizeContent()` has been added to MapsIndoors as a static member. It will synchronize the MapsIndoors data from the backend to the client when called.
 
 ## [4.13.0] - 2021-08-17
@@ -532,233 +942,4 @@ Methods:
 
 - `MapsIndoors.setMap()` is removed.
 - `DirectionsRenderer.getMap()` is removed.
-- `zIndex` is removed on `DirectionsRendererOptions`.
-
-## [3.12.1] - 2020-10-06
-
-### Fixed
-
-- The search algorithm in MICommon has been updated so a partial match on the start of a word would be ranked higher.
-
-## [3.12.0] - 2020-08-18
-
-### Added
-
-- Locations for Venues, Buildings, and Floors is now included in the results from LocationsService.getLocations().
-- getFieldForKey on Locations objects for getting data for custom property with key, disregarding casing of key.
-
-### Fixed
-
-- Filtering locations using categories in LocationsService.getLocations().
-- Filtering locations using venue or building had no effect in LocationsService.getLocations().
-- Sometimes querying using the take parameter would return fewer results than expected.
-
-## [3.11.0] - 2020-07-27
-
-### Added
-
-- Added support for [OpenID Connect](https://openid.net/connect/) authentication flow.
-
-### Fixed
-
-- Fixed issue where the SDK would throw an error if locations were requested before data had been loaded.
-
-## [3.10.0] - 2020-06-11
-
-### Added
-
-- Added option to DirectionsRenderer to control if the map's viewport will be fitted to the bounds of the rendered route.
-
-## [3.9.0] - 2020-05-02
-
-### Added
-
-- This release is build on MICommon
-
-## [3.8.1] - 2020-04-01
-
-### Fixed
-
-- Inaccessible localStorage in the browser will no longer crash the SDK.
-
-## [3.8.0] - 2020-03-02
-
-### Changed
-
-- Added externalId property on location properties object. roomId is now deprecated.
-
-## [3.7.1] - 2020-02-06
-
-### Fixed
-
-- PositionControl no longer regards saved position permission as invoked by clicking on the position control.
-
-## [3.7.0] - 2020-01-31
-
-### Added
-
-- PositionControl to show device position on the map.
-
-### Fixed
-
-- Error response body is now relayed correctly.
-
-## [3.6.0] - 2020-01-02
-
-### Changed
-
-- ShareService.directionsToPhone now requires country code to be provided seperately.
-
-## [3.5.1] - 2019-12-19
-
-### Changed
-
-- Changed the locations service to utilize the new backend apis new url structure.
-
-### Fixed
-
-- Fixed a bug where VenuesService.getBuildings calls for solutions/venues with no buildings caused rejection.
-
-## [3.5.0] - 2019-12-17
-
-### Added
-
-- Share service with function to send route directions via text message to phone.
-
-### Fixed
-
-- Fixed a bug where user roles were not passed along to distance matrix call.
-- Fixed bug where getBuilding returned undefined until the map had been moved.
-
-## [3.4.1] - 2019-10-30
-
-### Added
-
-- Client side caching. Most request are now beeing cached in the browser.
-- Added support for separate visibility control of label and icon
-
-### Fixed
-
-- The DirectionsService will now return a route object with the status "ZERO_RESULTS" if no route could be calculated.
-  Before it unintentional threw an error.
-- Fixed a bug where the imageURL property on locations sometimes would be named imageurl.
-
-## [3.4.0] - 2019-08-28
-
-### Changed
-
-- Floor calculation when building comes into focus according to agreed upon strategy, including respecting default floor of a building.
-- The filter method now respects the fitView boolean also when clearing filter.
-
-### Fixed
-
-- Make sure selected/highlighted floor is always visible (no need to scroll) when focusing building.
-
-## [3.3.2] - 2019-08-15
-
-### Fixed
-
-- App config cache is now based on solution to avoid misconfiguration when switching solution.
-
-## [3.3.1] - 2019-07-31
-
-### Fixed
-
-- No longer assume that location `imageURL` always is received in lowercase from the backend.
-
-## [3.3.0] - 2019-07-15
-
-### Added
-
-- `SolutionsService.getUserRoles()` gets a list of user roles that can be used for filtering the directions result. This prevents routes from going through restriced areas.
-
-### Changed
-
-- userRoles parameter added to DirectionsService.getRoute() for filtering the directions result. The userRoles paramter takes a array of user role ids.
-- Directions to a venue can now make directions via a parking lot when driving or bicycling.
-
-## [3.2.3] - 2019-06-27
-
-### Fixed
-
-- Fixed a bug in `mapsindoors.DirectionsRenderer`.
-  When `setRoute(null)` was called to remove the route from map it would throw an error.
-- Fixed the "Cannot read property 'toJSON()' of null" error caused by looking for buildings in view before the map has a bounding box.
-
-## [3.2.2] - 2019-06-24
-
-### Changed
-
-- Fixed build toolchain to prevent IE11 crash.
-
-## [3.2.1] - 2019-05-24
-
-### Added
-
-- Added the ability to change the api key at runtime via `mapsindoors.MapsIndoors.setApiKey(key);`
-- Added the functions to get and set the language at runtime:
-  - `mapsindoors.MapsIndoors.setLanguage(language);`
-  - `mapsindoors.MapsIndoors.getLanguage();`
-
-### Changed
-
-- The SDK now selects the fastest backend server based on a latency test.
-- A list of known backends is stored in localStorage for the SDK to choose from.
-  The list of known backends are updated automatically as part of the latency test.
-
-## [3.1.1] - 2019-03-14
-
-### Fixed
-
-- Fixed a crash caused by setting mapStyle via the MapsIndoors constructor.
-
-## [3.1.0] - 2019-03-13
-
-### Changed
-
-- It's now posible to set a displayRule for a list of location ids or types. `myMapsIndoors.setDisplayRule(["abc", "cde", "fgh"], { visible: false });`
-
-### Added
-
-- Added the functions setMapStyle, getMapStyle and getMapStyles to MapsIndoors.
-  - setMapStyle() set a new indoor map style.
-  - getMapStyle() get the current style of the indoors map.
-  - getMapStyles() get a list of availeble indoor map styles.
-
-## [3.0.5] - 2019-02-27
-
-### Fixed
-
-- Optimized map performance by reducing the amount POIs
-
-## [3.0.2] - 2019-02-19
-
-### Fixed
-
-- Support for IE 11
-
-## [3.0.0] - 2018-10-23
-
-### Changed
-
-- Script must now be loaded with apikey parameter instead of solutionId, e.g. `https://app.mapsindoors.com/mapsindoors/js/sdk/mapsindoors-3.0.0-rc0.js?apikey=57e4e4992e74800ef8b69718`
-- All services are now shared instances, so they cannot be newed. E.g. you must rewrite `let directionsService = new mapsindoors.DirectionsService();` to `let miDirectionsService =  mapsindoors.DirectionsService;`
-- Location click events for a MapsIndoors instance are now subscribable with the event name `click` instead of `location_click`, e.g.         `google.maps.event.addListener(myMapsIndoors, 'click', (poi) => { console.log(poi.id); });`
-- `DirectionService.route()` has been renamed to `DirectionService.getRoute()`.
-- `DirectionRenderer.setDirections()` has been renamed to `DirectionRenderer.setRoute()`.
-- `DirectionService.getRoute()` request parameter `travelMode` has been renamed to `mode`.
-- `DirectionRenderer.setDirections()` now only accepts a single route instead of a route result, e.g. `DirectionRenderer.setRoute(myRouteResult.routes[0])`.
-- To highlight locations on a map through a `MapsIndoors` instance, instead of providing a query object to `MapsIndoors.find()`, you must now pass a list of `locationId`'s to `MapsIndoors.filter()`.
-
-### Removed
-
-- Removed `MapsIndoors.find()`, use `MapsIndoors.filter()` instead
-- Removed `MapsIndoors.locate()`, use `MapsIndoors.filter()` instead
-
-### Added
-
-- Icons for single Locations can now be updated independantly, by referencing the location id. E.g. `myMapsIndoors.setDisplayRule('some-location-id', { icon: { url: 'https://icon.url' } });`
-
-### Fixed
-
-- Fixed a rendering bug that was causing MapsIndoors' map markers to occasionally disappear
+- `zIndex` is removed on `DirectionsRendererOptions`
