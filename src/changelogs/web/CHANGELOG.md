@@ -9,6 +9,25 @@ eleventyNavigation:
 
 Changelog for MapsIndoors SDK for JavaScript. This document structure is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and the project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [4.59.1] - 2026-08-07
+
+### Performance
+
+- Reduced Mapbox v3 pointer hit testing by sharing rendered-feature queries between mouse-enter and location-hover handling and limiting processing to approximately 60 frames per second.
+- Reduced Mapbox v3 redraw work and visual flashing during zoom by reusing MapsIndoors data while the new viewport remains within the last successfully loaded viewport. Expanded or shifted viewports still reload data, and dynamic icon scaling continues to update on every zoom.
+- Reduced view-model build work by resolving each location's display rule and settings once per update instead of repeating the same resolution across rendering passes.
+- Avoided a redundant full view-state rebuild when deselecting while no location is selected, reducing startup work in applications that clear selection after the map becomes ready.
+- Removed ineffective full-venue, all-floor location and derived-geometry request warming. Floor changes use viewport-grid cache keys, so the speculative requests generally could not be reused and only added startup network activity.
+- Kept the previous floor visible until the next floor is fully built, preventing incomplete or empty partial data from flashing during rapid floor changes or on slower connections.
+- Removed automatic view-model prebuilding for every floor, preventing background work from racing active floor changes on large solutions. Previously visited floors remain cached and uncached floors load on demand.
+- Reduced outdoor location and derived-geometry requests by merging visible grid cells into one request per venue while preserving viewport bounds and `ignoreViewportBounds` behavior.
+
+### Fixed
+
+- Fixed Mapbox v3 style changes accumulating duplicate zoom handlers, which caused every later zoom to repeat basemap building-opacity and label-visibility updates. The zoom handler is now registered once and checks the active style at runtime, reducing redundant work and CPU usage after switching styles.
+- The map no longer stays blank until the first zoom/drag/resize when its container has no size at load time; it re-renders once the container reaches a real size.
+- Mapbox v3: the room hover-highlight again honors `stateDisplayRules.hover` and can be disabled by neutralizing the rule.
+
 ## [4.59.0] - 2026-07-30
 
 ### Features
