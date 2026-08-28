@@ -9,6 +9,57 @@ eleventyNavigation:
 
 Changelog for MapsIndoors SDK for JavaScript. This document structure is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and the project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [4.59.4] - 2026-08-28
+
+### Fixed
+
+- Mapbox v3: 2D models no longer stay floating after 3D extrusions are hidden (for example via the 2D/3D switch). Models drop to the floor immediately and lift again when extrusions are shown, instead of waiting for a zoom or camera move.
+- Mapbox v3: 2D models that are not sitting on a room extrusion (point furniture) are no longer lifted to the default extrusion height with nothing underneath.
+
+## [4.59.3] - 2026-08-21
+
+### Fixed
+
+- Maps now reach `ready` after otherwise-successful initialization even if a consumer `venue_changed` or startup `zoom_changed` listener throws; those errors remain observable, and genuine SDK or map initialization failures still prevent `ready`.
+  - Startup `zoom_changed` isolation applies only during the synchronous `enableZoom22()` call; elsewhere, listener errors still throw synchronously.
+- Mapbox v3 now initializes reliably when zoom level 22 is enabled, without a `Style is not done loading` error.
+- Improved backend discovery so maps initialize and recover more reliably when a previously used host is slow, down, or stale:
+  - Retries transient failures with a 5-second timeout per round, sharing one three-round budget across remembered hosts and default fallbacks.
+  - After the first remembered-host round fails, default fallbacks join any transient survivors from that round.
+  - Invalid configuration responses and session tokens that cannot be sent as headers cannot be chosen.
+  - Candidate URLs are normalized to HTTP(S) origins; malformed URLs are ignored, and a stale remembered host does not hide an equivalent default.
+  - Overlapping forced configuration refreshes are coalesced.
+
+## [4.59.2] - 2026-08-18
+
+### Features
+
+- Added the building-entrance (`entry`) connector type to `legBoundaryIcons`, shown at building entrances alongside the floor-transition connectors and using the same shared scale.
+
+### Fixed
+
+- Fixed connector icons at a leg boundary (notably the building-entrance `entry` icon) rendering on only one of the two legs they join, and floor-transition icons lingering on a later leg that merely revisited the same floor. A boundary connector is now scoped to the legs it borders, so it shows while any of them is navigated and never on an unrelated leg; a same-floor boundary icon sits on a shared junction vertex so it touches both adjoining legs' lines. An entrance with an undefined outside-endpoint level still renders a single ground marker.
+- Fixed connector icons (`legBoundaryIcons`) sometimes sitting off the route line: markers now land on the drawn polyline — the arc-length midpoint of the segment for same-floor connectors, and the actual end vertices for floor-transition connectors — instead of the semantic start/end location or their off-line arithmetic mean.
+
+## [4.59.1] - 2026-08-07
+
+### Performance
+
+- Reduced Mapbox v3 pointer hit testing by sharing rendered-feature queries between mouse-enter and location-hover handling and limiting processing to approximately 60 frames per second.
+- Reduced Mapbox v3 redraw work and visual flashing during zoom by reusing MapsIndoors data while the new viewport remains within the last successfully loaded viewport. Expanded or shifted viewports still reload data, and dynamic icon scaling continues to update on every zoom.
+- Reduced view-model build work by resolving each location's display rule and settings once per update instead of repeating the same resolution across rendering passes.
+- Avoided a redundant full view-state rebuild when deselecting while no location is selected, reducing startup work in applications that clear selection after the map becomes ready.
+- Removed ineffective full-venue, all-floor location and derived-geometry request warming. Floor changes use viewport-grid cache keys, so the speculative requests generally could not be reused and only added startup network activity.
+- Kept the previous floor visible until the next floor is fully built, preventing incomplete or empty partial data from flashing during rapid floor changes or on slower connections.
+- Removed automatic view-model prebuilding for every floor, preventing background work from racing active floor changes on large solutions. Previously visited floors remain cached and uncached floors load on demand.
+- Reduced outdoor location and derived-geometry requests by merging visible grid cells into one request per venue while preserving viewport bounds and `ignoreViewportBounds` behavior.
+
+### Fixed
+
+- Fixed Mapbox v3 style changes accumulating duplicate zoom handlers, which caused every later zoom to repeat basemap building-opacity and label-visibility updates. The zoom handler is now registered once and checks the active style at runtime, reducing redundant work and CPU usage after switching styles.
+- The map no longer stays blank until the first zoom/drag/resize when its container has no size at load time; it re-renders once the container reaches a real size.
+- Mapbox v3: the room hover-highlight again honors `stateDisplayRules.hover` and can be disabled by neutralizing the rule.
+
 ## [4.59.0] - 2026-07-30
 
 ### Features
