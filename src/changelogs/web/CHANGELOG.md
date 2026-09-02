@@ -9,6 +9,161 @@ eleventyNavigation:
 
 Changelog for MapsIndoors SDK for JavaScript. This document structure is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and the project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [4.61.0] - 2026-09-02
+
+### Added
+
+- Handles for host apps to show their own splash screen until the first map load is done:
+  - `loading_progress` events with `phase` (`initializing`, `fetching_locations`, `building_geometry`, `loading_2d_models`, `loading_3d_models`, `applying_to_map`, `complete`) and `progress` from 0 to 1.
+  - `content_ready` when the first locations have been painted on the map, not only fetched. This is later than `ready` on large solutions. Forced after 45 seconds if the first load never finishes, so a host splash cannot hang forever.
+  - `getLoadingProgress()` so a subscriber that attaches after construction can read the current phase.
+
+## [4.60.0] - 2026-09-02
+
+### Fixed
+
+- `ImageCache.get`: blob object URL is now revoked when the browser fails to decode a successfully fetched image, preventing a memory leak.
+- `MQTTSubscriptionClient.subscribe`/`unsubscribe` no longer crash when called without an established connection; they now reject cleanly.
+- `MQTTSubscriptionClient.disconnect` no longer throws when called before a connection exists.
+- Null-safety guards in `GoogleMaps2DModel`: `getPanes()` return value, `fromLatLngToDivPixel` pixel coordinates, and `parentNode` in `onRemove` are now checked before use.
+- `style.zIndex` was assigned a raw `number`; converted to `String()` as the DOM property requires.
+- Pre-existing logic bug in `MapsIndoorsDirectionsProvider.getEntryPointsFor`: `(!graphIds as any) > ''` always evaluated to `false`; corrected to `!graphIds`.
+- `GoogleMaps/index.ts` `#setStyle` was incorrectly returning `{}` instead of `null` for the no-viewmodel case.
+- `Mapboxv3/index.ts` `#onMouseMove` property access semantics restored after optional-chaining was inadvertently introduced during typing.
+- `config.language` setter widened to `string | null | undefined` to match the falsy input its `normalized > ''` guard already handles; getter explicitly annotated `string` so reads stay narrow.
+- `ViewState.DataSourceFunction` corrected to allow nulls inside the returned array, which the pipeline has always filtered.
+- `Http.getApiConfig` assigned `null` to `#apiConfig`, declared `Promise<ApiConfig> | undefined`; now assigns `undefined`.
+- 2D model elevation bookkeeping in `Mapboxv3/index.ts` (beyond `main`): `setViewData` no longer overwrites the stashed `_model2DTranslation` with `[0, 0, 0]` when the per-floor view-model cache hands back already-flattened features, and it now also restores the stash when 3D extrusions are visible, so a floor switch while extrusions are toggled cannot leave 2D models stuck at floor level.
+
+### Changed
+
+- **Breaking (types only):** `IndoorLatLng.zLevel` is now optional. An outdoor endpoint carries no level, which is what makes a building entrance split a leg at all; the declaration no longer contradicts the `zLevel ?? 0` coalescing its consumers already do. TypeScript callers assigning `point.zLevel` straight to a `number` will need to coalesce. No runtime behaviour changes.
+
+### Internal
+
+- JSDoc now runs against transpiled TypeScript output and fails when the docs index is missing.
+- `Config` exported from `src/core/config`, replacing ten `new (config.constructor as any)()` casts in tests with `new Config()`.
+- `byClass` narrowing predicate added to `BuildViewModels` tests, removing six union-property casts.
+- `tsc --noEmit` is clean across the repo (was 10 errors).
+- `MapsIndoors.getRawDisplayRule(target)` added (private) — returns the rule as set rather than the merged effective rule, so a caller that temporarily replaces one can restore it. `setDisplayRule`'s `target` type widened to include the batched `Map` form that `DisplayRuleCollection.set` already implemented, and `displayRule` made optional to match.
+- `SolutionConfig.directionsRendererConfig` accepted and merged recursively on update (arrays overwrite); a configless solution keeps it `undefined`.
+- `RouteStopIconProvider.getImage` now returns `Promise<HTMLImageElement | null>` — a custom stop icon URL resolves `null` when it fails to load. The interface also gains an optional `scale`. `DirectionsRenderer` handles both.
+- `DefaultRouteStopIconProvider` accepts `iconUrl` and `scale`: a configured URL replaces the drawn numbered pin and is fetched server-resized at 24 × scale × DPR.
+- TypeScript migration of `reducedMotion`, `arrowGlyphs`, and `resolveIconFetch` (+ tests), ported from `main`. `ARROW_GLYPHS` frozen `as const` with an exported `ArrowStyle` key union; `URLSearchParams.set` values in `resolveIconFetch` wrapped in `String()` (previously relied on implicit coercion, output unchanged).
+
+- TypeScript migration of `src/ViewState/` — ViewModels, BuildViewModels, IconCollisionHandler, ViewState class, and tests; the folder is now tsc- and eslint-clean.
+- Additions: `ViewModelProperties.ts` with a `featureClass` union over view-model property shapes plus shared `ViewDataFeature`/`ViewModelFeature`/`ViewModelMap`/`Size`/`PixelPoint` types; `StatefulDisplayRule` (merged-rule type with default-guaranteed fields required, returned by a typed `getStatefulDisplayRule`); `renderTemplate` typed with a generic conditional return (`RenderedTemplate<T>`) so guaranteed templates yield `string`; `createMockMapsIndoors` typed mock factory pattern for tests; `#selectedLocation`/`#hoveredLocation` typed `Location | null`, fixing property-access-on-never errors in `mapsindoors.ts`.
+
+- TypeScript migration of `src/modules/` — `BadgeRenderer`, `CollisionHandler`, `DisplayRuleCollection`, `FloorSelector`, `ImageCache`, `LiveData` (incl. `LiveDataService`, `LiveDataInfo`, `MQTTSubscriptionClient`, `DefaultLiveDataBadgeForLocation`), `PositionControl`, `PositionProviderBase`, `ResourceCache`.
+- `setLiveUpdate` and `getTopicsForCurrentMapBounds` converted from async to sync; the `await`s were redundant.
+- `@typescript-eslint/no-explicit-any` raised from `warn` to `error`.
+- TypeScript migration of `src/directions/DirectionsProviders/GoogleMaps/` and `src/directions/DirectionsRenderers/GoogleMaps/`. `GoogleMapsProvider.getRoute` loop typed with `Partial<Leg>`; `mapSteps` returns `Partial<Step>[]`. `Leg` extended with optional `arrival_time`/`departure_time` (Google Maps transit passthrough fields); `Step.highway` widened to `string | null`.
+
+- TypeScript migration of `src/directions/DirectionsProviders/Mapbox/` and `src/directions/DirectionsRenderers/` (`DefaultRouteAnimation`, `DefaultRouteStopIconProvider`, `DirectionsRenderer`).
+
+- TypeScript migration of `src/services/` and `src/directions/DirectionsProviders/MapsIndoors/`. All service files now type-check under `strict: true` / `noImplicitAny: true`. Key additions: `Service.cacheableRequest<T>` generic; `DistanceMatrixRequest` interface; internal `DirectionsMatrix` / `DirectionsMatrixRow` / `DirectionsMatrixElement` types for route-matrix merging; `DirectionsResult` interface extended with `IndoorLatLng`, `LegReason`, and backend-confirmed fields on `Leg`, `Step`, and `StepContext`; `LatLng.toUrlValue` / `computeDistanceBetween` widened to accept structural `{lat, lng}` shape.
+
+- `GoogleMaps/index` and `Mapbox/index` directions renderers ported from `main` with types applied on top, plus their test suites. Shared option blocks moved to `src/interfaces/DirectionsRendererOptions.ts`.
+- `setStepIndex` sets `legIndex` unconditionally again in both renderers; the `undefined` guard added during typing suppressed a real KVO transition, leaving the previous leg drawn.
+- `DirectionsRenderer` ported from `main` with types applied on top, plus its three test suites; new `ProviderDirectionsRenderer` and `DirectionsRendererConfig` interfaces.
+- `DirectionsService.getRoute` resolves the analytics-only navigation context (location and venue ids) concurrently with the route request instead of before it, so directions no longer wait on the `/locations?near=` lookup.
+- `getGlyph(arrowStyle)` added to `arrowGlyphs`, replacing the duplicated lookup-and-fallback in both renderers and the `as ArrowStyle` cast each needed. It matches own properties only, so an `arrowStyle` naming an inherited member such as `toString` now falls back to the default glyph instead of resolving to a truthy function and drawing nothing. Deliberate divergence from `main`.
+
+- TypeScript migration of `GoogleMaps2DModel`, `GoogleMapsBlueDot`, and partial `Mapboxv3/MapboxBlueDot` with concrete field and method types.
+
+- New shared interfaces: `Model2DViewModelProperties` / `Model2DFeature` (`src/interfaces/Model2DViewModel.ts`) and `PositionCoords` / `PositionEvent` (`src/interfaces/PositionEvent.ts`), reusable across all map provider implementations.
+- `calculate2DModelBounds` return type narrowed from `number[]` to `GeoJSON.BBox`.
+- `tsconfig.json` updated to include test files for editor jest-globals support; `tsconfig.test.json` added for CI type-checking of tests.
+- TypeScript migration of `MapboxV3View` and supporting files (`FeatureType`, `Mapbox2DModel`, `MapboxBlueDot`) with concrete field and method types.
+- `MapboxV3ViewOptions` interface defined, extending `mapboxgl.MapOptions`, to type the constructor.
+- `getMap(): mapboxgl.Map | null` typed, propagating the map type to all internal call sites.
+- `#getGeoJSONSource()` private helper centralises `getSource()` → `GeoJSONSource` casts for `setData()` calls.
+- Mapbox expression variables typed as `mapboxgl.ExpressionSpecification`; `ZOOM_RANGE_FILTER` as `mapboxgl.FilterSpecification`.
+- `FeatureType` converted from `Object.freeze({})` to `as const` with an exported union type.
+- `mapbox-gl@3.20.0` added as devDependency for compile-time type checking; runtime version remains host-controlled.
+- `src/types/mapboxgl-global.d.ts` replaces the `declare const mapboxgl: any` stub with a typed global and namespace backed by the package types.
+- `tsconfig.json` `types` array set to `["google.maps", "mapbox-gl", "node"]`.
+
+- TypeScript migration of `src/types/` and `src/interfaces/` — `DisplayRule`, `SolutionConfig`, `LocationSettings`, `Location`, `Building`, `Venue`, `LatLng`, `LatLngBounds`, `Settings3D`.
+
+- TypeScript migration of `src/core/` — `Http`, `Logger`, `StorageProvider`, `config`, `EventBus`. New interfaces: `ApiConfig`, `AuthClient`, `ApiConfigWithHeaders` (Http), `LogEvent`, `LogEntry` (Logger). `esbuild` upgraded `0.14.54 → 0.16.17` for `satisfies` keyword support.
+
+- TypeScript migration of `src/mapsindoors.ts`:
+  - `MapsIndoorsObservables` interface types the `#observables` KVO store, eliminating `unknown` casts on every `get`/`set` call.
+  - `FitViewOptions`, `DisplayRuleTarget`, and `LocationSettingsTarget` introduced to type the public fit-view, display-rule, and location-settings method signatures.
+  - Constructor and method signatures updated to use specific types (`FloorIndex`, `SelectionMode`, `MapView`, `Building`, `Venue`, `MapStyle`, `LabelOptions`, `BuildingOutlineOptions`) throughout.
+  - Dead boolean comparison against `AppConfig.appSettings` values (always `string`) removed.
+  - Floor-prefetch set narrowed from `Set<string>` to `Set<FloorIndex>`.
+  - New `MapView` interface (`src/interfaces/MapView.ts`) contracts all three view implementations; `PositionProvider` interface introduced for blue-dot duck-typing.
+  - Legacy Mapbox v2 files silenced with `// @ts-nocheck` pending retirement.
+
+- Unit-test coverage initiative (tests-only, no source changes) — overall line coverage raised from ~30% to ~49%:
+  - Pure logic & collections: `ViewModel`, `WallExtrusionViewModel`, `IconViewModel`, `IconCollisionHandler`, `DisplayRuleCollection`.
+  - DOM & browser APIs: `FloorSelector`, `ImageCache`, `StorageProvider`.
+  - Live data, route animation & logging: `DefaultRouteAnimation`, `LiveData`/`LiveDataInfo`, `MQTTSubscriptionClient`, `ShareService`, `SyncService`.
+  - `MapsIndoors` class: shared `__fixtures__/mapsIndoorsTestKit.ts` plus statics, display-rule, state and interaction suites (`mapsindoors.ts` 0% → ~72%).
+  - Rendering pipeline: `BuildViewModels` (50% → 83%) and `ViewState` (82% → 98%).
+  
+- Smoke-test fixtures corrected: removed a dead solution alias and bumped Mapbox GL JS to 3.22.0 to match the Web App.
+
+- `ignoreViewportBounds` is honoured again when the app config supplies a JSON boolean `true` rather than the string `'true'`. The boolean arm of the check was dropped during the TypeScript conversion of `mapsindoors.js` (it had been kept as `=== true as any`, then removed with the `any`), while both readers of the field still tested for either form. `AppConfig.appSettings` is typed `Record<string, string | boolean>` accordingly — the previous string-only type is what made the boolean comparison a type error in the first place.
+
+- Merged `main` through release 4.59.1. The directions-renderer work was already ported, so the merge carried the ten perf/fix commits: Mapbox v3 pointer hit-testing and duplicate zoom handlers, `ViewState` viewport reuse (`LatLngBounds.contains`, `reuseContainedViewport`), floor-prefetch removal (`ViewState.prefetchFloors` and the `LocationsService` all-floors warming both deleted), merged outdoor requests, `buildViewModels` display-rule/settings memoization, `deselectLocation`/floor-change short-circuits, and the zero-size-container resize heal.
+- TypeScript migration of `resizeHeal` and `hoverStateGating` (+ tests), ported from `main`. `deriveHoverGating` narrows the hover rule's numeric fields explicitly rather than asserting, since `DisplayRule`'s index signature types them `unknown`.
+- `mapboxgl-global.d.ts` re-exports `GeoJSONFeature`, needed to type the rendered features the single mousemove query now fans out to both handlers.
+- `ViewState`'s two ported floor-sequencing tests live in `index.floorSequencing.test.ts`: they require `jest.mock('./BuildViewModels')`, which would break the real-pipeline tests in `index.test.ts`.
+
+## [4.59.4] - 2026-08-28
+
+### Fixed
+
+- Mapbox v3: 2D models no longer stay floating after 3D extrusions are hidden (for example via the 2D/3D switch). Models drop to the floor immediately and lift again when extrusions are shown, instead of waiting for a zoom or camera move.
+- Mapbox v3: 2D models that are not sitting on a room extrusion (point furniture) are no longer lifted to the default extrusion height with nothing underneath.
+
+## [4.59.3] - 2026-08-21
+
+### Fixed
+
+- Maps now reach `ready` after otherwise-successful initialization even if a consumer `venue_changed` or startup `zoom_changed` listener throws; those errors remain observable, and genuine SDK or map initialization failures still prevent `ready`.
+  - Startup `zoom_changed` isolation applies only during the synchronous `enableZoom22()` call; elsewhere, listener errors still throw synchronously.
+- Mapbox v3 now initializes reliably when zoom level 22 is enabled, without a `Style is not done loading` error.
+- Improved backend discovery so maps initialize and recover more reliably when a previously used host is slow, down, or stale:
+  - Retries transient failures with a 5-second timeout per round, sharing one three-round budget across remembered hosts and default fallbacks.
+  - After the first remembered-host round fails, default fallbacks join any transient survivors from that round.
+  - Invalid configuration responses and session tokens that cannot be sent as headers cannot be chosen.
+  - Candidate URLs are normalized to HTTP(S) origins; malformed URLs are ignored, and a stale remembered host does not hide an equivalent default.
+  - Overlapping forced configuration refreshes are coalesced.
+
+## [4.59.2] - 2026-08-18
+
+### Features
+
+- Added the building-entrance (`entry`) connector type to `legBoundaryIcons`, shown at building entrances alongside the floor-transition connectors and using the same shared scale.
+
+### Fixed
+
+- Fixed connector icons at a leg boundary (notably the building-entrance `entry` icon) rendering on only one of the two legs they join, and floor-transition icons lingering on a later leg that merely revisited the same floor. A boundary connector is now scoped to the legs it borders, so it shows while any of them is navigated and never on an unrelated leg; a same-floor boundary icon sits on a shared junction vertex so it touches both adjoining legs' lines. An entrance with an undefined outside-endpoint level still renders a single ground marker.
+- Fixed connector icons (`legBoundaryIcons`) sometimes sitting off the route line: markers now land on the drawn polyline — the arc-length midpoint of the segment for same-floor connectors, and the actual end vertices for floor-transition connectors — instead of the semantic start/end location or their off-line arithmetic mean.
+
+## [4.59.1] - 2026-08-07
+
+### Performance
+
+- Reduced Mapbox v3 pointer hit testing by sharing rendered-feature queries between mouse-enter and location-hover handling and limiting processing to approximately 60 frames per second.
+- Reduced Mapbox v3 redraw work and visual flashing during zoom by reusing MapsIndoors data while the new viewport remains within the last successfully loaded viewport. Expanded or shifted viewports still reload data, and dynamic icon scaling continues to update on every zoom.
+- Reduced view-model build work by resolving each location's display rule and settings once per update instead of repeating the same resolution across rendering passes.
+- Avoided a redundant full view-state rebuild when deselecting while no location is selected, reducing startup work in applications that clear selection after the map becomes ready.
+- Removed ineffective full-venue, all-floor location and derived-geometry request warming. Floor changes use viewport-grid cache keys, so the speculative requests generally could not be reused and only added startup network activity.
+- Kept the previous floor visible until the next floor is fully built, preventing incomplete or empty partial data from flashing during rapid floor changes or on slower connections.
+- Removed automatic view-model prebuilding for every floor, preventing background work from racing active floor changes on large solutions. Previously visited floors remain cached and uncached floors load on demand.
+- Reduced outdoor location and derived-geometry requests by merging visible grid cells into one request per venue while preserving viewport bounds and `ignoreViewportBounds` behavior.
+
+### Fixed
+
+- Fixed Mapbox v3 style changes accumulating duplicate zoom handlers, which caused every later zoom to repeat basemap building-opacity and label-visibility updates. The zoom handler is now registered once and checks the active style at runtime, reducing redundant work and CPU usage after switching styles.
+- The map no longer stays blank until the first zoom/drag/resize when its container has no size at load time; it re-renders once the container reaches a real size.
+- Mapbox v3: the room hover-highlight again honors `stateDisplayRules.hover` and can be disabled by neutralizing the rule.
+
 ## [4.59.0] - 2026-07-30
 
 ### Features
